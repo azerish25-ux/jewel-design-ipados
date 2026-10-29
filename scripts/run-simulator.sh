@@ -1,10 +1,12 @@
 #!/bin/bash
 set -euo pipefail
+APP=$(find "$PWD/tests/iOS/bin/Debug" -type d -name '*.app' | head -1)
+test -n "$APP" && test -f "$APP/Info.plist"
+printf 'Installing %s\n' "$APP"
 xcrun simctl list devices available -j > artifacts/devices.json
 UDID=$(python3 -c 'import json; d=json.load(open("artifacts/devices.json")); print(next(v["udid"] for k,vs in d["devices"].items() if "iOS" in k for v in vs if "iPad" in v["name"]))')
 xcrun simctl boot "$UDID" || true
 xcrun simctl bootstatus "$UDID" -b
-APP=$(find tests/iOS/bin/Debug -type d -name '*.app' | head -1)
 xcrun simctl install "$UDID" "$APP"
 xcrun simctl launch "$UDID" com.jeweldesign.reusesmoke
 DATA=$(xcrun simctl get_app_container "$UDID" com.jeweldesign.reusesmoke data)
