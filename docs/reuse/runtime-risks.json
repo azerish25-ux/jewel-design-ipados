@@ -1,0 +1,98 @@
+[
+  {
+    "component": "desktop",
+    "path": "GV.CounterSketch.Shared/InternetUtility.cs",
+    "nonblank": 59,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "desktop",
+    "path": "GV.CounterSketch.Shared/PlatformInvokeGDI32.cs",
+    "nonblank": 19,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "desktop",
+    "path": "GV.CounterSketch.Shared/PlatformInvokeUSER32.cs",
+    "nonblank": 18,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "desktop",
+    "path": "GV.CounterSketch.Shared/WindowSearcher.cs",
+    "nonblank": 47,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "desktop",
+    "path": "GV.CounterSketch.Studio.Utilities.Helpers/MessageFilter.cs",
+    "nonblank": 35,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "desktop",
+    "path": "GV.CounterSketch.Studio.Utilities.Helpers/NativeMethods.cs",
+    "nonblank": 9,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "cad",
+    "path": "CS/CSUtilINI.cs",
+    "nonblank": 107,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "cad",
+    "path": "GemvisionCommon.Utilities.Networking/NetworkConnection.cs",
+    "nonblank": 118,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "cad",
+    "path": "GV.CounterSketch.Shared/InternetUtility.cs",
+    "nonblank": 59,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "cad",
+    "path": "GV.CounterSketch.Shared/PlatformInvokeGDI32.cs",
+    "nonblank": 19,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "cad",
+    "path": "GV.CounterSketch.Shared/PlatformInvokeUSER32.cs",
+    "nonblank": 18,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  },
+  {
+    "component": "cad",
+    "path": "GV.CounterSketch.Shared/WindowSearcher.cs",
+    "nonblank": 47,
+    "features": [
+      "native import: library must be checked for iOS"
+    ]
+  }
+]
