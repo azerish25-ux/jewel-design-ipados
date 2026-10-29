@@ -22,6 +22,8 @@ for i in $(seq 1 60); do
 done
 cat artifacts/app-console.txt || true
 find "$DATA" -maxdepth 3 -name 'reuse-result*' -print
-xcrun simctl spawn "$UDID" log show --last 4m --predicate 'process == "iOS"' > artifacts/app-system.log || true
+xcrun simctl spawn "$UDID" log show --last 4m --predicate 'eventMessage CONTAINS[c] "com.jeweldesign.reusesmoke" OR process == "iOS"' > artifacts/app-system.log || true
+mkdir -p artifacts/crash-reports
+find "$HOME/Library/Logs/DiagnosticReports" -maxdepth 1 -name 'iOS*.ips' -mmin -15 -exec cp {} artifacts/crash-reports/ \; || true
 echo 'Simulator result missing' >&2
 exit 1
