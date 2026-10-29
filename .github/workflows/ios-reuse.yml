@@ -7,6 +7,11 @@ permissions:
   contents: read
 jobs:
   ios:
+    name: iOS ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [simulator, device]
     runs-on: macos-26
     timeout-minutes: 40
     defaults:
@@ -41,16 +46,18 @@ jobs:
         run: dotnet run --project tests/Console | tee artifacts/portable-smoke.txt
       - name: Build iPad simulator app
         id: simulator
+        if: matrix.target == 'simulator'
         run: dotnet build tests/iOS -c Debug -r iossimulator-arm64 -p:EnableCodeSigning=false -bl:artifacts/simulator.binlog | tee artifacts/simulator-build.txt
       - name: Run iPad simulator smoke
+        if: matrix.target == 'simulator'
         timeout-minutes: 8
         run: bash scripts/run-simulator.sh
       - name: Build unsigned device AOT app
-        if: ${{ !cancelled() && steps.simulator.outcome == 'success' }}
-        run: dotnet build tests/iOS -c Release -r ios-arm64 -p:EnableCodeSigning=false -p:BuildIpa=false -p:MtouchLink=None -bl:artifacts/device.binlog | tee artifacts/device-build.txt
+        if: matrix.target == 'device'
+        run: dotnet build tests/iOS -c Release -r ios-arm64 -p:EnableCodeSigning=false -p:BuildIpa=false -p:MtouchLink=SdkOnly -bl:artifacts/device.binlog | tee artifacts/device-build.txt
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         if: always()
         with:
-          name: ios-reuse-evidence
+          name: ios-reuse-evidence-${{ matrix.target }}
           path: artifacts/
           retention-days: 14
