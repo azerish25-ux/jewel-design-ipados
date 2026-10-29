@@ -8,7 +8,8 @@ UDID=$(python3 -c 'import json; d=json.load(open("artifacts/devices.json")); pri
 xcrun simctl boot "$UDID" || true
 xcrun simctl bootstatus "$UDID" -b
 xcrun simctl install "$UDID" "$APP"
-xcrun simctl launch "$UDID" com.jeweldesign.reusesmoke
+xcrun simctl launch --console-pty --terminate-running-process "$UDID" com.jeweldesign.reusesmoke > artifacts/app-console.txt 2>&1 &
+LAUNCH_PID=$!
 DATA=$(xcrun simctl get_app_container "$UDID" com.jeweldesign.reusesmoke data)
 for i in $(seq 1 60); do
   if test -f "$DATA/Documents/reuse-result.txt"; then
@@ -19,5 +20,8 @@ for i in $(seq 1 60); do
   fi
   sleep 1
 done
+cat artifacts/app-console.txt || true
+find "$DATA" -maxdepth 3 -name 'reuse-result*' -print
+xcrun simctl spawn "$UDID" log show --last 4m --predicate 'process == "iOS"' > artifacts/app-system.log || true
 echo 'Simulator result missing' >&2
 exit 1
