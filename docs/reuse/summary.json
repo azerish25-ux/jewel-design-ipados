@@ -1,0 +1,20 @@
+[
+  {
+    "component": "desktop",
+    "inputFiles": 1228,
+    "retainedFiles": 753,
+    "nonblank": 50586
+  },
+  {
+    "component": "cad",
+    "inputFiles": 1553,
+    "retainedFiles": 638,
+    "nonblank": 30353
+  },
+  {
+    "component": "geometry",
+    "inputFiles": 25,
+    "retainedFiles": 25,
+    "nonblank": 3100
+  }
+]

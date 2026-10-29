@@ -1,0 +1,46 @@
+name: Recovered CSharp iOS reuse
+on:
+  push:
+    branches: ['codex/dotnet-ios-reuse']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ios:
+    runs-on: macos-26
+    timeout-minutes: 40
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+        with:
+          global-json-file: global.json
+      - name: Verify unchanged recovered sources
+        run: node scripts/verify-sources.cjs
+      - name: Install iOS workload
+        run: dotnet workload install ios
+      - name: Record toolchain
+        run: |
+          mkdir -p artifacts
+          dotnet --info > artifacts/dotnet.txt
+          dotnet workload list > artifacts/workloads.txt
+          xcodebuild -version > artifacts/xcode.txt
+          xcrun simctl list devices available > artifacts/simulators.txt
+      - name: Portable runtime proof
+        run: dotnet run --project tests/Console | tee artifacts/portable-smoke.txt
+      - name: Build iPad simulator app
+        run: dotnet build tests/iOS -c Debug -r iossimulator-arm64 -p:EnableCodeSigning=false -bl:artifacts/simulator.binlog | tee artifacts/simulator-build.txt
+      - name: Run offline iPad simulator proof
+        run: bash scripts/run-simulator.sh
+      - name: Build unsigned device AOT app
+        run: dotnet build tests/iOS -c Release -r ios-arm64 -p:EnableCodeSigning=false -p:BuildIpa=false -p:MtouchLink=None -bl:artifacts/device.binlog | tee artifacts/device-build.txt
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: ios-reuse-evidence
+          path: artifacts/
+          retention-days: 14

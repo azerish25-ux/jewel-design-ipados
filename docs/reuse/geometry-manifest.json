@@ -1,0 +1,156 @@
+{
+  "inputFiles": 25,
+  "method": "Conservative whole-file closed set against .NET BCL only; no stubs or original Windows libraries",
+  "retained": [
+    {
+      "path": "GemvisionGeometry.Calc/BlendCurve.cs",
+      "sha256": "8A68AC267EA5F72049431C222272A95F5DD7130E8A0D3C4887BE4011FB2150F0",
+      "lines": 74,
+      "nonblank": 68
+    },
+    {
+      "path": "GemvisionGeometry.Calc/BlendPolyLineCorners.cs",
+      "sha256": "E9A6B7DED99F42966939A0D7442EC1379C36D1716F91BF306A5E8A72E2693CEB",
+      "lines": 58,
+      "nonblank": 55
+    },
+    {
+      "path": "GemvisionGeometry.Calc/EdgeType.cs",
+      "sha256": "8924DA1129908E3EED8CE63594F6F84ECFF264B03709805715B9A796DF8B61B8",
+      "lines": 8,
+      "nonblank": 6
+    },
+    {
+      "path": "GemvisionGeometry.Calc/PolylineOffset.cs",
+      "sha256": "7D54D0D693319D5AC81DC0817FC864500424079178B1DFC1930E92C11C4F0595",
+      "lines": 318,
+      "nonblank": 285
+    },
+    {
+      "path": "GemvisionGeometry.FileIO/IoMesh.cs",
+      "sha256": "5F1F20417F26930CA25AE8664DF2BA06202650E2B1A2BDA70ADDD9B90A05A22D",
+      "lines": 132,
+      "nonblank": 127
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/CurveDefinition.cs",
+      "sha256": "18D717C87CBF62A35BFC61D595435D7C44EF3374010F2F8F5DEB7C8057263583",
+      "lines": 352,
+      "nonblank": 320
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/CurveSegment.cs",
+      "sha256": "3B7AFB86347779E9E1E64B6147E2CD8F1C4DE28373D9FE2878A3D89F320ECC43",
+      "lines": 250,
+      "nonblank": 224
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GBoundingBox.cs",
+      "sha256": "5F5654A2CBF33F18B72AE8DEA664C3F8A40E98803DC9EA2FC6E02AA912B20E67",
+      "lines": 214,
+      "nonblank": 188
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GMesh.cs",
+      "sha256": "0ABDDFE1522EDA438428ABEE65E2F6A3C535A527CB347BB8D71B027C31629771",
+      "lines": 27,
+      "nonblank": 21
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GMeshFace.cs",
+      "sha256": "953C0149A3209685585CFDE334E2CF478FF450BE08BB5AA0E468CB29F7347E9A",
+      "lines": 34,
+      "nonblank": 25
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GNurbsCurve.cs",
+      "sha256": "91276103ED3ECF80742AEFB969CEB23F8EDC137B6169CE13061B0BFC408D8852",
+      "lines": 65,
+      "nonblank": 52
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GNurbsSurface.cs",
+      "sha256": "FBC291FDD79CB0CB36633E711F916EA751847EBBEF1D8746FC705EC3328FA0E7",
+      "lines": 84,
+      "nonblank": 72
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GPoint3D.cs",
+      "sha256": "BA1612B7CE3B829D79EA4B1A177F31BD708107C23F713AE16A1AB71E5BD69BCE",
+      "lines": 265,
+      "nonblank": 225
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GPoint3F.cs",
+      "sha256": "4CA7AF0D90666301EFD4E1C2E1485E3EE1118759AFE70711392048D28CF20E19",
+      "lines": 190,
+      "nonblank": 159
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GPoint4D.cs",
+      "sha256": "DBC5C15EEF53756FF30D70737729F3F9E03BE49C0AE5F7B5580188B116B84DCC",
+      "lines": 197,
+      "nonblank": 169
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GPolyline.cs",
+      "sha256": "0D6B880C10C7073214334FCC476821F0355471CA7D63A96A92922FE8834E0AAE",
+      "lines": 92,
+      "nonblank": 82
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GTransform.cs",
+      "sha256": "5D0473E9968AE41A5B9236913FC7DEA18054E79C0624596A8CD20B3B931E6610",
+      "lines": 168,
+      "nonblank": 141
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GTriangle.cs",
+      "sha256": "1DCCED460E131533CD1C95197A0D44BBC8D2179740F9BDF0AFB68A80DE2BC56C",
+      "lines": 18,
+      "nonblank": 13
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GVector3D.cs",
+      "sha256": "314B005D5F9C0972203A88390C464B566259702B27CBA2FD74C6C348890798DD",
+      "lines": 225,
+      "nonblank": 189
+    },
+    {
+      "path": "GemvisionGeometry.Geometry/GVector3F.cs",
+      "sha256": "86D8ACCB9E00ED7B58571095A3AB24985C01DDA6458FE125E61C8017BA32AC16",
+      "lines": 228,
+      "nonblank": 192
+    },
+    {
+      "path": "GemvisionGeometry.Helpers/GCurveHelper.cs",
+      "sha256": "E834ED575F54758632064F0ACEF461B1760D9B451172C3C5450F21A4475117AF",
+      "lines": 173,
+      "nonblank": 167
+    },
+    {
+      "path": "GemvisionGeometry.Helpers/GInterval.cs",
+      "sha256": "D1A7B2EAF34BFF611834DA801A86CBD282D709D545A32E9C844545CE9703BCE3",
+      "lines": 51,
+      "nonblank": 44
+    },
+    {
+      "path": "GemvisionGeometry.Helpers/GList.cs",
+      "sha256": "E60A2FE745C1EA855AC316C3E0F2D6AD7AE746A7ECF711715D73C3445D0628DD",
+      "lines": 35,
+      "nonblank": 29
+    },
+    {
+      "path": "GemvisionGeometry.Helpers/GMath.cs",
+      "sha256": "0D9DC7D9C4EB4FEA2028A3F89AAE0CEA08017E5F7072603D83095211CF11113B",
+      "lines": 178,
+      "nonblank": 158
+    },
+    {
+      "path": "GemvisionGeometry.Helpers/GNurbsMath.cs",
+      "sha256": "577BEC0822BC8AF21DD8229FDFEE420E2C87C4AD821D461D9358B740F40C7199",
+      "lines": 95,
+      "nonblank": 89
+    }
+  ]
+}

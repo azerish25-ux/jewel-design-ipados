@@ -1,0 +1,4525 @@
+{
+  "inputFiles": 1228,
+  "method": "Conservative whole-file closed set against .NET BCL only; no stubs or original Windows libraries",
+  "retained": [
+    {
+      "path": "DesignLibrary.Enumerations/EImageType.cs",
+      "sha256": "CB513A55324087BEBA0E82220E5052AE001E4D41E75BD4BD23833FFD26B56872",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "DesignLibrary.OldLibraryConverter.ZipIt/LocalFile.cs",
+      "sha256": "FA979FF2268E3B9E5483DCE6E4063842B99F709A76D90B2E0F427831F00CD252",
+      "lines": 166,
+      "nonblank": 143
+    },
+    {
+      "path": "DesignLibrary.OldLibraryConverter.ZipIt/ZipFile.cs",
+      "sha256": "1036847A24839FDAE92CAB087520C41CFA4A3DF23DDE6DD94DF272DAB29072BC",
+      "lines": 141,
+      "nonblank": 120
+    },
+    {
+      "path": "DesignLibrary/FileData.cs",
+      "sha256": "2EF1FE8596ED70AD9537A201F5D658699761C9E570EC3425295A1DA68A09CC5B",
+      "lines": 13,
+      "nonblank": 8
+    },
+    {
+      "path": "EnvDTE/_DTE.cs",
+      "sha256": "0E4E2990AFAB40670A6996A88C8F8E94362062BAED9CEF7DC566F36A6CC83B93",
+      "lines": 34,
+      "nonblank": 29
+    },
+    {
+      "path": "EnvDTE/Debugger.cs",
+      "sha256": "B99AFE0D170C9AEACA91117BEFEEA8AFD57DF5A8B3B71D3418E97E56B6545690",
+      "lines": 23,
+      "nonblank": 19
+    },
+    {
+      "path": "EnvDTE/DTE.cs",
+      "sha256": "74019CA5D347A52B55314A6FCB58CD336C3D299041D22C6989BE91E44C64DB76",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "EnvDTE/Process.cs",
+      "sha256": "536D85F093373B19B2EC6E564273F1987ACF0501BF20EF749BB3DEFA60D36C9E",
+      "lines": 37,
+      "nonblank": 31
+    },
+    {
+      "path": "EnvDTE/Processes.cs",
+      "sha256": "0F3348455EC23432C06D43EEDBE9403AA92A9FE988A58F6E0241C7420BB36DFA",
+      "lines": 20,
+      "nonblank": 17
+    },
+    {
+      "path": "extractlibrary/SearchClass.cs",
+      "sha256": "F42C7C79BBD3A008AE156A09FA210835A87D26D382F6FAE282D3099CAF5884F1",
+      "lines": 23722,
+      "nonblank": 23714
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspChildControlTypeAttribute.cs",
+      "sha256": "40A5342FB7F0385B822B36CEA71C1BB6154420080B1754E3E88AEF63B1A4412C",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspDataFieldAttribute.cs",
+      "sha256": "4FABD386D4B3AEDDE59E30D2A63AE2254A4F2E1D1DF335769C0D55E85D7A17C8",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspDataFieldsAttribute.cs",
+      "sha256": "E55730B9855A9C046498B95F87CB3B28FB50FE0380C2F9DE19132578B7105A00",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMethodPropertyAttribute.cs",
+      "sha256": "2FC22416D0CEE782D25D2C5EF3A52BB19511966061BE8F2CB411B506F024F582",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcActionAttribute.cs",
+      "sha256": "3E2C4F852341C7A6C12FDFB34762FD145104543BF014A111F92CA1117B6C10A5",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcActionSelectorAttribute.cs",
+      "sha256": "CC7602D2DD8CA5EDB8BAFF47ED1EA19BEDBD59981D902346DED0FF24EE6260F5",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcAreaAttribute.cs",
+      "sha256": "3D0E3B0C9C4B5A4C2C32E7523F19C88888AADCA46C081EC377BA1E14306FE923",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcAreaMasterLocationFormatAttribute.cs",
+      "sha256": "922AC8AAE7D4E74317032E32B2834E9D1EA07D4F89257D4445AD2F31297B6349",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcAreaPartialViewLocationFormatAttribute.cs",
+      "sha256": "C413FFB6E57251BA43847D11FC55D09DCB016D875AEDAB8D2416F8C5EEF112CD",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcAreaViewLocationFormatAttribute.cs",
+      "sha256": "4E2B055A70411CF7AAC1476710F81F90DE76448E0547491AF2B06C353747EE44",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcControllerAttribute.cs",
+      "sha256": "E4ADB99254B4F0D046FBF5A732EE91A834A26383E6065F3C665E50BB3D9E579B",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcDisplayTemplateAttribute.cs",
+      "sha256": "4D2D5830360DC5B7185CE79E6D041194B0BAE780E19DA5708FC18A4EDA6ED4C1",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcEditorTemplateAttribute.cs",
+      "sha256": "43ED71615C66782CA5629360F0DF68CD332856099DD9767F14BBA4DCCB024121",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcMasterAttribute.cs",
+      "sha256": "06D41489294E1C69C70495D040A0940416C142A29B9E41581300EFA82C43C201",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcMasterLocationFormatAttribute.cs",
+      "sha256": "4F3FBB2FFF5B4C88AA39DFE472E2EC1DE5F90218D9A9D5B842FA78194F5AFA8E",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcModelTypeAttribute.cs",
+      "sha256": "84DA35DAD57D1B6D64E20D9E3709A1D1A4FCB45AD8D72CCCAF1ECB93D29DC4C0",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcPartialViewAttribute.cs",
+      "sha256": "99D33B049E54C57149AF1764634B73BFDBDBB6F518FED6ED0ED8A881D19A769A",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcPartialViewLocationFormatAttribute.cs",
+      "sha256": "9632509B86F4D3AC34A932D92D5243BBDCA3C14D31AC80D48889DAC409FF9BFF",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcSuppressViewErrorAttribute.cs",
+      "sha256": "0C3A4582C0F995424C22F4C238657A4E919C7A01270BD2F30D27A051BC4E1112",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcTemplateAttribute.cs",
+      "sha256": "8254B8538D289451BDE40BC498A2768A1EC34AFC7DA961E3BC1177B66C0839A7",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcViewAttribute.cs",
+      "sha256": "F20C96AD91023F41201AC99652F33E5A88CA5F11B1A6C2AD22F27371D0B38984",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcViewComponentAttribute.cs",
+      "sha256": "5143918582C8D91BD6194EF8689830745466A842ABB33AE73E1383861215CDB3",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcViewComponentViewAttribute.cs",
+      "sha256": "8506AB37CC00C0F8BECDDCD732F29108DF165C50B363A9D393520EBF6F686E38",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspMvcViewLocationFormatAttribute.cs",
+      "sha256": "1B6DA355ED327DBA9F03990A2EE0A85BF274FA551BB79495C650FF3F6AF76B66",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspRequiredAttributeAttribute.cs",
+      "sha256": "8ED37FA83F078C13129E88561B5AED01B31FC432A6729DF85A954960E5B53E5C",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AspTypePropertyAttribute.cs",
+      "sha256": "0E26CC7E02984E716FEB7BCDBD1AF9D61DBD3236860AB40B601F7DF61834F089",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AssertionConditionAttribute.cs",
+      "sha256": "B9E4780E3190FBA6D5EF79BCB687DD7C74CA07789021E334345F07D026432945",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AssertionConditionType.cs",
+      "sha256": "910C825BC6FFA17F9F64A8D1B7B0563118F5FAFE7E8AAD0A9BE9E67F0A326E0C",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/AssertionMethodAttribute.cs",
+      "sha256": "17A411448A56CF35690276B562E8428CF3120826938C938D03C697059045B067",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/BaseTypeRequiredAttribute.cs",
+      "sha256": "7F854CB3F96751CD1D985A929323FFFFD9E8D528B6B6C1080DEE5145C155D67C",
+      "lines": 17,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/CanBeNullAttribute.cs",
+      "sha256": "FD3562BC8871EAD1AFCD1997C4104BDDD5A3DF865279F635532E2C9A86E51839",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/CannotApplyEqualityOperatorAttribute.cs",
+      "sha256": "B0525B005C89511F8FDDBC071DCF3CE9A6D2FD2BF9AA08436A441E875329C8BC",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/CollectionAccessAttribute.cs",
+      "sha256": "9B76CD5114A4C46DAE18586745F12523DE62DDC9522170C7CB2B52C7096C8447",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/CollectionAccessType.cs",
+      "sha256": "3C04BDBAAF03CD0B19377CAB7BD885FFCC83BDF8E48A63E8053BD8578B23169B",
+      "lines": 13,
+      "nonblank": 10
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/ContractAnnotationAttribute.cs",
+      "sha256": "734BB3ADE74D0DF2F60DD68A952CE50B1685A2AC95DBD280E3A9067BEF26AE30",
+      "lines": 24,
+      "nonblank": 18
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/HtmlAttributeValueAttribute.cs",
+      "sha256": "5942A28C5666B83E041523320BF0AA4F357A94111D9C4288774D772A4F557AEA",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/HtmlElementAttributesAttribute.cs",
+      "sha256": "C3087F7896BECC45A6ED0A8C4F12E7EB2B352A5B040677B3FCBC94EF5636C34C",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/ImplicitNotNullAttribute.cs",
+      "sha256": "6B75363704ACBCAE668DBC961E497257FD7CD9DA1CAFEE2F14AE2EFA5769D1A5",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/ImplicitUseKindFlags.cs",
+      "sha256": "C59820B7C28DF7CD2698472A0AE02A7136E15619BBC1CF258CB06CB2DF5BAB6F",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/ImplicitUseTargetFlags.cs",
+      "sha256": "0DEA0E0418AE87D4FF25F354BC248EA66F6952B8225CC034B4A5CAB26017733C",
+      "lines": 13,
+      "nonblank": 10
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/InstantHandleAttribute.cs",
+      "sha256": "85213D0DBE39A8894BF4560E27C6301EE985E302166AC2A0C97AD56B0F345182",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/InvokerParameterNameAttribute.cs",
+      "sha256": "1CE0A6DB29CC5120B31AA3E05D3C1509F670D9BA5B8F670C9C4EBC4C7F3035D1",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/ItemCanBeNullAttribute.cs",
+      "sha256": "C472CB8854D5D615CBB0A75AEB93864948445C5C5AF3B40B88D6499ACBB46521",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/ItemNotNullAttribute.cs",
+      "sha256": "6959485AD79530FBF1FD9B690B33DF420835086B1A8697793188AA0BBADA5B77",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/LinqTunnelAttribute.cs",
+      "sha256": "2171FD01A2C4BB13FF691F7291A5E80F7CAB238D8BA4892E486C3D950D2DBBF3",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/LocalizationRequiredAttribute.cs",
+      "sha256": "D35C5411830E5B7038928B7F770A5C11D3AD9C0948E55ED1F132986CFE997774",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/MacroAttribute.cs",
+      "sha256": "CA98575F8D5B2B0BC1E2F8AF5BAE9BC2BA0929E473F30A9858B5883926F19396",
+      "lines": 14,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/MeansImplicitUseAttribute.cs",
+      "sha256": "BA73585B869ACF55F3B6D942E84BB025862210F02ADB86C4533B78EE9B36957B",
+      "lines": 35,
+      "nonblank": 27
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/MustUseReturnValueAttribute.cs",
+      "sha256": "B3F12D55EA750E83A93E4813C129D22B96109B4DDDE4024372796E267256E95E",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/NoEnumerationAttribute.cs",
+      "sha256": "01B619D2BAC133DAE91A4FB89CEF919382F25534BF43808FDF45675E59B3D8C0",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/NoReorder.cs",
+      "sha256": "51B6D925BCCF888564A4B1A3BB2137C6704F43E525CBD6815E7EE97A6DE14C22",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/NotifyPropertyChangedInvocatorAttribute.cs",
+      "sha256": "B7D4E2489BDDE210D70E9A6C150C8C1DA018D7F5425EA7570055246B843F8BDB",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/NotNullAttribute.cs",
+      "sha256": "FDDFCA724A5B912E87E2BCB9AB1949594DBA38DB08D8A4FBE492E7611F11D5C3",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/PathReferenceAttribute.cs",
+      "sha256": "8A3AAA04DEC802533D128774084228A29EEA2ABA6E031C47107AE5493DB0AE6E",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/ProvidesContextAttribute.cs",
+      "sha256": "CB87748F7AB6E9232E5534C3DE9CFF659889ECDE6A49D247069073EC20DA3740",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/PublicAPIAttribute.cs",
+      "sha256": "24B8805D121CF9A20B27817CEA207073108D0974CDF68333B752AB84133B8717",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/PureAttribute.cs",
+      "sha256": "528C4ED488A657C70525D8AD092180686B10F35C39BCC3EF7BF18E8469043787",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RazorDirectiveAttribute.cs",
+      "sha256": "2C9D5C62CB1233329D5CD999533A475DAED524C49D7F01CBD03984B910233A25",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RazorHelperCommonAttribute.cs",
+      "sha256": "8CB45FFAD23EF82992DF1836922E58C69A5CD6BC425E84329C2C0A430EBEEDFD",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RazorImportNamespaceAttribute.cs",
+      "sha256": "61A238FB429A5DBED67B52BBE505B087C254B4F52E9356B49F602B75189092E2",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RazorInjectionAttribute.cs",
+      "sha256": "A8A5E40AE38802E3F3C8E795A8FE2CCAFD73DEFED12C1194DA4D78A6C9990F96",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RazorLayoutAttribute.cs",
+      "sha256": "444BB0C7E1B087863F613278B84B57512720603F5293BE8F136F3365DA98FC04",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RazorSectionAttribute.cs",
+      "sha256": "732AC1846092B307D590CD4C2DDCD4A09937048D944D7D5523A2FF014FCC7ADF",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RazorWriteLiteralMethodAttribute.cs",
+      "sha256": "B89D0BD8B831A3F4D41E24F31D986ABF7139D4BADD14DABE74DD1C832A5492A9",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RazorWriteMethodAttribute.cs",
+      "sha256": "A5CE48840948229C526CB4BB6A3951E8D3D8A3B6AE0047B2F23B75F17944AAAE",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RazorWriteMethodParameterAttribute.cs",
+      "sha256": "3E9FEE33EDD975821BA7F981CDE90A4C9032BD1440412AF794B1A068FE5C7C44",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/RegexPatternAttribute.cs",
+      "sha256": "68E5429CFBC24E3DD3473D98C39C146FE0868043DDCCADC6DD54B2A6F3C71E21",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/SourceTemplateAttribute.cs",
+      "sha256": "777FFB72D0C679E8875011BA5C160F40E7D8A511B9B8FA7F8A2462DC919712CB",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/StringFormatMethodAttribute.cs",
+      "sha256": "87947B534D71D1B6635F90CDBE83ECBD83CB37654227EDD1492677F999FD6F8A",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/TerminatesProgramAttribute.cs",
+      "sha256": "151DC585B1BF5A1D62CB67D282F742EB803DFA36F74DA96EA1D657A5830F006C",
+      "lines": 10,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/UsedImplicitlyAttribute.cs",
+      "sha256": "1F2203D3E52DE130882DBFA6427819AE2AA9508198F02253DD8BAD7E26552CA2",
+      "lines": 33,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/ValueProviderAttribute.cs",
+      "sha256": "7570069175A94DEDB8F95E6D7336BC2C1B15E7357514F5D482E57AEB5110849F",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/XamlItemBindingOfItemsControlAttribute.cs",
+      "sha256": "95E445D739A49B68FF7390A45D3B4477C7DDB2508213F323F439C119644D2829",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common.Annotations/XamlItemsControlAttribute.cs",
+      "sha256": "57CE845082C315997634616DAD9EC064FE4338D6E0AE3880C905C1792518C756",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Common/GlobalErrorHandler.cs",
+      "sha256": "A596AD2309ECC3FB1B5B15525E85BA0E23DFDF97EA28E6B350EC2FE063CBDA5E",
+      "lines": 63,
+      "nonblank": 55
+    },
+    {
+      "path": "GV.CounterSketch.Common/StringExtensions.cs",
+      "sha256": "BC277CFFF3F14FC681C2AF0D92676895ACF5E74DF707291A3D62BCABBE8DB968",
+      "lines": 26,
+      "nonblank": 22
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcActionAttribute.cs",
+      "sha256": "90491FAA43E84F2D62D1C2C1A36433798497515838742E20176A4967DBA00C81",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcActionSelectorAttribute.cs",
+      "sha256": "C04202A245620E564D1BA2017330085039EFFF859E37DAD27D092BBB407861A6",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcAreaAttribute.cs",
+      "sha256": "572277369048683486562E41104A9DF5ED49D25F5D649DD3BF082465F69F4974",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcControllerAttribute.cs",
+      "sha256": "EE48152361244E6931EB72CECF0F616A2EC3A5557426FAC1735E8C86584C828B",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcDisplayTemplateAttribute.cs",
+      "sha256": "32AE7A551E4116C0C25E4C0655973C04F94D9518B4250B60DC9B1E15FA2FF21E",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcEditorTemplateAttribute.cs",
+      "sha256": "F7120A879C48C7150D2DAC686EDAC1D2C9B5657A70A7A7F5F710BDC4D636087C",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcMasterAttribute.cs",
+      "sha256": "556FE420D30C7E0EB42BE037885318C14D22B760CF6ED128F572D81806FEC68E",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcModelTypeAttribute.cs",
+      "sha256": "FBF4CA6EA50A89A9011B56233A280CCFA91BF9ADC59A7A3ABC13C01C03A2022F",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcPartialViewAttribute.cs",
+      "sha256": "A703B570B69CD7994C660101B97045CB00BCF117596BEAECF24E003E6F4B2B0B",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcSupressViewErrorAttribute.cs",
+      "sha256": "02D1D9D57F40B27A4D9015CB3E48257EE9EC860907174E9763CE55D06D1AA10F",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcTemplateAttribute.cs",
+      "sha256": "45BEAEB14EBD4C52766C5F8FA92100D67BCE465034FFE9381CE7DAB19774F26D",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcViewAttribute.cs",
+      "sha256": "C1777A7D77260EBDE16173667F2EBD5A18E367F299652B7EB3D6EB4F0F3F6D21",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/BaseTypeRequiredAttribute.cs",
+      "sha256": "A2409BBD0BAC4AC30987F847CA709E72AD240E849B7F4CBF8EC470794F08BA5D",
+      "lines": 17,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/CanBeNullAttribute.cs",
+      "sha256": "C37018FC41545FE876F4B2BE7CEFB406D8C4CEDA1195410C1B504B5E18DEC0CB",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/CannotApplyEqualityOperatorAttribute.cs",
+      "sha256": "DF96A7032648D11D931CC3E0F3622121A1389F7470CDF6C51314F130CC507E81",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/ContractAnnotationAttribute.cs",
+      "sha256": "889746A609509368C183E1FBB84CA01DE9A9AAEBE566A8324A776DEBB731E76A",
+      "lines": 23,
+      "nonblank": 17
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/HtmlAttributeValueAttribute.cs",
+      "sha256": "7575A506FD7E1D0E5C1851C695A93C389E997CDB3C59E71E19EE0B982E069481",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/HtmlElementAttributesAttribute.cs",
+      "sha256": "E004B4A92BFCD103D918E5548B238C539F62A04A73344E5CBB0D03A71A458434",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/ImplicitUseKindFlags.cs",
+      "sha256": "8263535491A5F08E0B69A0BE18BEB1591D054B0CA64664AD6645743F8553F277",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/ImplicitUseTargetFlags.cs",
+      "sha256": "D329741F1BC1F1957B7037F6D011C67D6CBDBA4DB83B81B75D60672704ABBB38",
+      "lines": 13,
+      "nonblank": 10
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/InstantHandleAttribute.cs",
+      "sha256": "537F722F6B0342B63771B3765660FB86E56548E31D10C44E16E68FA0798C5485",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/InvokerParameterNameAttribute.cs",
+      "sha256": "264E39A3997B82840AE9B725A2D2A132778AC495C08A3ADAF6398875FBA7CEA9",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/LocalizationRequiredAttribute.cs",
+      "sha256": "22E31F7D0A1B51419BB759CF8715FC6B87A109F25D195AB7319D3828373D9A67",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/MeansImplicitUseAttribute.cs",
+      "sha256": "B5E844E26AC3A315FA254F2FB4FCCD46A1C6040D0E39F8A2F24ACF3019B5F3AC",
+      "lines": 35,
+      "nonblank": 27
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/NotifyPropertyChangedInvocatorAttribute.cs",
+      "sha256": "4B8C9A069D561E962BFFBE5F9E332EA347CA36E9FFC89CC1FA4898F296799732",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/NotNullAttribute.cs",
+      "sha256": "0E2BBAD7E016C9DE4A7E026A58C5CF25E4B5508F4DB8A9BE0A0E91EA950653F5",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/PathReferenceAttribute.cs",
+      "sha256": "AFB32084BCAA8ED274E3F24AF11C85877CA08E5D88D64973B4211445D2389780",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/PublicAPIAttribute.cs",
+      "sha256": "09B45560282BE07DC3B01F82A325FECC393B019D5A914CD7B6BAF073D4329329",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/PureAttribute.cs",
+      "sha256": "93C2F68C306B2CC5B59437C32C549BA6D9DF73289FB9B1499AEEAC9F5846C0AE",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/RazorSectionAttribute.cs",
+      "sha256": "1EA769CAAA14462677C4574540C0D66069B8F56B94A79653C07A274E72CA31CD",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/StringFormatMethodAttribute.cs",
+      "sha256": "7D62DA257B3D01D4D979A7BBDBA0A31CF892528CEB9C250707A1FBA8C04FA387",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/UsedImplicitlyAttribute.cs",
+      "sha256": "16D08A64A9BF23931F2105245B14A9235CE1B893FCA16EF4C527ABF07B69B3B9",
+      "lines": 33,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/BoundingBox.cs",
+      "sha256": "AE1237D2AAD0B17438880257CEC54030B2489ABBA68828B356FF21C3306B077B",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/CurvePoint.cs",
+      "sha256": "1CF8DC3B39C922ABCF7DBA819A5372E973239C837DD84424F39265AC67B727C9",
+      "lines": 44,
+      "nonblank": 33
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/NurbsCurve.cs",
+      "sha256": "C8524FF749345AEB3123E74E31F8C69B647DB935828AD9F5BD528CB9BE575FE7",
+      "lines": 89,
+      "nonblank": 73
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/Point2D.cs",
+      "sha256": "1BAAAB5C2497EDB9145E1A48D3D0FCACC19F859BD35F49D19445A2B2A7FEE970",
+      "lines": 24,
+      "nonblank": 18
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/Point3D.cs",
+      "sha256": "E849EB85A0229E40DB20F4540F7085109AB69982873509D67BC9D1802A15D904",
+      "lines": 28,
+      "nonblank": 21
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/Point4D.cs",
+      "sha256": "D26400B73A02A15805842DA4A0F36C0F649F130B9D75799321B17AC1A8BA09DF",
+      "lines": 32,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/CustomDesignRenderItem.cs",
+      "sha256": "7D25F69E2ADB7B10F70871340E0D70D99AADEAA086F588B38E7A9E50DB50D87C",
+      "lines": 44,
+      "nonblank": 33
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/CustomDesignRenderTypeEnum.cs",
+      "sha256": "02BC397C02BBD5CDD5B5858020F1478BE48886CE4DD4ADC807772B9C36E93E20",
+      "lines": 19,
+      "nonblank": 16
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/DesignToPublish.cs",
+      "sha256": "80029369A7F1207E0F1980886D4691B22E470E5E96EB461D1CDE89D9C4D200AA",
+      "lines": 28,
+      "nonblank": 20
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/GemTableSizeInfo.cs",
+      "sha256": "CF63D1134641D732DC4CAEB85A0A9A75595AADB3152589A8BEA2046088C78399",
+      "lines": 23,
+      "nonblank": 16
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/OrderGemData.cs",
+      "sha256": "9C68CEE286E068A2A528BDAAACEC7BE4575DFC8F6CDB020920AA57134CDE41A0",
+      "lines": 32,
+      "nonblank": 22
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/QuickEstimateData.cs",
+      "sha256": "1FA59CB3F3F0C7D5A45412CB00A98B08391E798ED1F154646CA364CD659AAF2A",
+      "lines": 45,
+      "nonblank": 34
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/QuickEstimateRequestData.cs",
+      "sha256": "DC5B25241D65A7293A3DAC87213C00F1A67038D9BEF95F19627FD8B120A3918D",
+      "lines": 60,
+      "nonblank": 41
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model/UIControlStackLocation.cs",
+      "sha256": "C46ED374592FF252D6FDB4FFB774A0C6170AD77434DDD76569FAF74C1F634A26",
+      "lines": 15,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model/UIControlStatus.cs",
+      "sha256": "67EF981CE9C5305312837FD2016C88B48639DE2D369DAA7D1268172B142EFF5C",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model/UIControlType.cs",
+      "sha256": "5604365A7CC3AECCBCD3DCECD2F33451CE1E87FC174F76D56FEA016965404121",
+      "lines": 81,
+      "nonblank": 78
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioCurrency.cs",
+      "sha256": "BF786260C79E7CD82C980B752063B30768CEDC3E441EBC7493C002873E35B376",
+      "lines": 201,
+      "nonblank": 198
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioGemColorQuality.cs",
+      "sha256": "23D261D46E501974DF33515A16D5C8F8EC3661698CBB4FD66F2920A97F176384",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioGemShape.cs",
+      "sha256": "EE6DFBFE2DA62A0A85680409CFD922EB6FBE0F2982CB318ACF81A7DAECBC3EFC",
+      "lines": 43,
+      "nonblank": 40
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioGemType.cs",
+      "sha256": "6C60E81D2F4A8CAF92282C3C5894D128C498068052D9A55010520E43E532A8C0",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioMetalQuality.cs",
+      "sha256": "CA1D0DAE7649F3F869A62C3AEB7CEDDF3ACE367263FA8878C570764B206C45B3",
+      "lines": 67,
+      "nonblank": 64
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioSetType.cs",
+      "sha256": "DCC6A2412547E15CE71D8EFF42CADA1019E581B24E63E5FD5F4E902262D02EEB",
+      "lines": 15,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/StudioGem.cs",
+      "sha256": "C87BA3EE53779DB02DD451F62D648609B7A2C5183CF235EB501EC04F934FF584",
+      "lines": 89,
+      "nonblank": 65
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/StudioMetal.cs",
+      "sha256": "23CCD370012CBABAC49EEE816D079C9839FF2452AAE7855CD0F26211F885FA91",
+      "lines": 21,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/StudioQuickEstimateRequest.cs",
+      "sha256": "2C05490359317167808C77E3F6AEFBBA0755813DFC46472FE92F712CF8F819FF",
+      "lines": 85,
+      "nonblank": 58
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/StudioQuickEstimateResult.cs",
+      "sha256": "43168C5F27E33C8E2B77B76D1496BE42710D3386F5483094408A1F1C28753C3F",
+      "lines": 31,
+      "nonblank": 22
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/UserMarkup.cs",
+      "sha256": "EAFDAB6069DC18093B9A7368DF4420F8882BC5115719DE7ADBFB58E4DF25F316",
+      "lines": 67,
+      "nonblank": 49
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities.Helpers/EnumHelper.cs",
+      "sha256": "0C63E7D4EF220C021CA686CCC79CC6637E6683CDBF7A1241DBF2D6B1E4F7B8C2",
+      "lines": 28,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities.Helpers/FileFormatHelper.cs",
+      "sha256": "CEF4CEB85A5727DE643439FBE9615D56BC41F73287203AB148A65A99262165C8",
+      "lines": 51,
+      "nonblank": 48
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities.Helpers/GemCaratHelper.cs",
+      "sha256": "CADE622A45DC1D269BBDFE1468B80D05529651A57E92096035750FEA9C8CEFE7",
+      "lines": 347,
+      "nonblank": 345
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities.Helpers/HeadStyleHelper.cs",
+      "sha256": "665187CF24D60B33F6EB108E6350C2778E60CF77A614440D91F167A6F09B0E30",
+      "lines": 330,
+      "nonblank": 327
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities/DeltaHelper.cs",
+      "sha256": "199438068674032311E8CDD765C4CF9DAACC4D550C35EF12F4B822515EB463D2",
+      "lines": 62,
+      "nonblank": 57
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities/ImageHelper.cs",
+      "sha256": "DF930CA89DEDBBD9546C1777E776D99D478E1AB3CC5E9A464B517599F49F0751",
+      "lines": 12,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Shared/ComponentsEnum.cs",
+      "sha256": "BF315674DC35EBC88BC014B29C4F8A4C39ACB2FC96CD7C17DBBC35DCEF2BCB73",
+      "lines": 24,
+      "nonblank": 21
+    },
+    {
+      "path": "GV.CounterSketch.Shared/CSMetalHelper.cs",
+      "sha256": "C6C5C953E69B386139B7D2A870191CF920BF2123FC38ACD2DDAFEC9C20179059",
+      "lines": 291,
+      "nonblank": 280
+    },
+    {
+      "path": "GV.CounterSketch.Shared/EnumExtensions.cs",
+      "sha256": "E07FC69C4BFE98134578F46A89E102E0DEA457325A02AF49B4FEF9B747622206",
+      "lines": 49,
+      "nonblank": 43
+    },
+    {
+      "path": "GV.CounterSketch.Shared/FileSystemHelper.cs",
+      "sha256": "996F2C8B3C33AD1EBE09A850B60A54C8B6CC69261781384D5DDBB33AFB97A0DD",
+      "lines": 91,
+      "nonblank": 85
+    },
+    {
+      "path": "GV.CounterSketch.Shared/Font.cs",
+      "sha256": "0A9EFB62E613F7805736E95DE0EA32757E99F2A0E45A4AACD5F77439CB49828D",
+      "lines": 58,
+      "nonblank": 55
+    },
+    {
+      "path": "GV.CounterSketch.Shared/GemActions.cs",
+      "sha256": "E2DC6B16C6A057B815C5E0CFC63CD953E616C0E077235D3557340DADB3EA1457",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared/GemMaterial.cs",
+      "sha256": "A72E2FBD706C309DDFA3DD23814E2E41C11A9AF63466513C885DF2DC400F4AAA",
+      "lines": 237,
+      "nonblank": 234
+    },
+    {
+      "path": "GV.CounterSketch.Shared/HeadStyle.cs",
+      "sha256": "ACE221BE2CC126D9D83192E911EF7FFCD06FA67A1EB931064562986222266CA6",
+      "lines": 706,
+      "nonblank": 703
+    },
+    {
+      "path": "GV.CounterSketch.Shared/HeadStyleListItemIndexPair.cs",
+      "sha256": "4E28BE019B1CC45EEA090D22EA63377185F593A6EA82552074DB62F2449BF462",
+      "lines": 34,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketch.Shared/InternetUtility.cs",
+      "sha256": "E7E5D01EFFEDC3918F6DDBFCDD5F4F10CEF33BD2D15D2F9B8915C583A3E50983",
+      "lines": 67,
+      "nonblank": 59
+    },
+    {
+      "path": "GV.CounterSketch.Shared/ListItemIndexPair.cs",
+      "sha256": "34E9CFF41F788DFA5C446B330BAB4AE67C5CBA1CC23ACBA147F1AE9DBF0BA893",
+      "lines": 38,
+      "nonblank": 29
+    },
+    {
+      "path": "GV.CounterSketch.Shared/Log.cs",
+      "sha256": "3752789891F76B03D8A84EB48D566916DAE7C9A7BE9161B1A626178819163CFC",
+      "lines": 229,
+      "nonblank": 212
+    },
+    {
+      "path": "GV.CounterSketch.Shared/LogHelper.cs",
+      "sha256": "ECACF1075C8E5C10CC391CAB34F0D3BEC88BB005A904549104F7CED427626A4A",
+      "lines": 11,
+      "nonblank": 8
+    },
+    {
+      "path": "GV.CounterSketch.Shared/MetalMaterial.cs",
+      "sha256": "E2790C5255C85A8EA90A15D4E020A873FDC42CA4893A966061452A88F53EA0F5",
+      "lines": 53,
+      "nonblank": 50
+    },
+    {
+      "path": "GV.CounterSketch.Shared/PlatformInvokeGDI32.cs",
+      "sha256": "475E3D8BBBD26453CB86DA85FE5E29861963E6EE8F4EDC93FCDEE57887E2BC64",
+      "lines": 28,
+      "nonblank": 19
+    },
+    {
+      "path": "GV.CounterSketch.Shared/PlatformInvokeUSER32.cs",
+      "sha256": "4A0939D2DAB1D016E47072A61BF1F44152BC0ED50CF3C5862E41D8B18323CB9E",
+      "lines": 27,
+      "nonblank": 18
+    },
+    {
+      "path": "GV.CounterSketch.Shared/SIZE.cs",
+      "sha256": "97BF64FE153185B5FF0E260383B0093B148B52F4F3EF7336B14F316FA7F676FD",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared/ValueListItem.cs",
+      "sha256": "6F8B4E9F1E118396974D55BA3EE0C6FF0E10F7932B717567D7E66C0917A0C709",
+      "lines": 616,
+      "nonblank": 613
+    },
+    {
+      "path": "GV.CounterSketch.Shared/WindowSearcher.cs",
+      "sha256": "04C1641C7AE72A24555C2294E5C91F7627B6712A4ED4A91553DDA51B8BC901E2",
+      "lines": 58,
+      "nonblank": 47
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcActionAttribute.cs",
+      "sha256": "471B6DDC33420D5FD7586660AF59FE527675D4C6C2518384455C6CF4537222DF",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcActionSelectorAttribute.cs",
+      "sha256": "895D3927B008195EF2C4227E91CE29497A228B6BD0B9209937D7DC8D14C0437E",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcAreaAttribute.cs",
+      "sha256": "9BCC7D2331E70C0CF2BF298F19FECB28CD48972B20CF1AC68FE06A395A213B8E",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcControllerAttribute.cs",
+      "sha256": "7440BFAAF85D35404D3E09B563A89548899C08CF8345D59CB47E5B0BBDCED011",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcDisplayTemplateAttribute.cs",
+      "sha256": "08EAE2CFBF30E174611AE1A11F31521F731F838DD99AD5519C448D1BF2AC63F6",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcEditorTemplateAttribute.cs",
+      "sha256": "EA52B221512DFC05B30D7B2ED3794899C9046AAB3B93FF1E44AEF3B45C8B3858",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcMasterAttribute.cs",
+      "sha256": "B1D572658856BF1CAA28745BA0F34A0A48F1314B6B572367E2B5F6460CD6C5C0",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcModelTypeAttribute.cs",
+      "sha256": "F95CF95D855E5EE7CA98894D39AE573A323CA973D03713309CBEE878636DC235",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcPartialViewAttribute.cs",
+      "sha256": "2B83E28A7AAFE400C4ACB11F80937B01DF723D143D3FE129FB5B43FDD18B7A5A",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcSupressViewErrorAttribute.cs",
+      "sha256": "9B4A226308375225D08FF387B677DABA795CD90D8156DD853DC0346CB751F990",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcTemplateAttribute.cs",
+      "sha256": "71718DDEEE4000F723EB3272456D162C1DF9E9F9B41834874C8B4B4969C29176",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/AspMvcViewAttribute.cs",
+      "sha256": "8D5B3A0DFE4EBCE12995B7E3C890AC9CFF4228099A16C049835A17B64BA16E71",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/BaseTypeRequiredAttribute.cs",
+      "sha256": "3544A3822BF24E55972EED87573BA008A8F48A05ACFE51A975ABBBDC2B3CFB04",
+      "lines": 17,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/CanBeNullAttribute.cs",
+      "sha256": "90D5AD9B0E95555599BEF78F4A3A2167A2F407D22920B0DA9E96B3BB23CAEEFE",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/CannotApplyEqualityOperatorAttribute.cs",
+      "sha256": "473E255D23B3E0CA8719B48004F421AB773899EAF98F6C56C2086F2A3BDE28E9",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/ContractAnnotationAttribute.cs",
+      "sha256": "822A3CA760DBCD947E852B4F4D5A08D260D2CDA1A003089731DAD0D120FDA8FE",
+      "lines": 23,
+      "nonblank": 17
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/HtmlAttributeValueAttribute.cs",
+      "sha256": "55135C06A50F8BFCF04660103B190E7F026BA15E8E15B265305465BEF220480A",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/HtmlElementAttributesAttribute.cs",
+      "sha256": "FA5C89448D329A0CB882EA2D0AB1E25E085FC68D8A177D43FB045A591C2A2E74",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/ImplicitUseKindFlags.cs",
+      "sha256": "411069131501A7CE94CBFE7B557DFC8BC8F6F08355B2F7F50BA22814303A55D0",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/ImplicitUseTargetFlags.cs",
+      "sha256": "3E58459759E5F2791005BB375FDCE1E9B67E117000D0B9A21BD0EC712ED709E9",
+      "lines": 13,
+      "nonblank": 10
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/InstantHandleAttribute.cs",
+      "sha256": "98D673F3271AC126BD75FB79C98C1774E4158B5059CAD3DD38B61B76CEAE6365",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/InvokerParameterNameAttribute.cs",
+      "sha256": "97385163BE0B33EE25773BC6AA16A0BB4508AC6649A539909EB462E4E1FC9324",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/LocalizationRequiredAttribute.cs",
+      "sha256": "F5519BF046C470F1CF912BFCFAB3467452DFE8ED21F8699B07DA230520A34666",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/MeansImplicitUseAttribute.cs",
+      "sha256": "D0C7088D57E86FD53BA4F997C65A5C064F06343BE00C29FFD6CBB2ED4E066EFD",
+      "lines": 35,
+      "nonblank": 27
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/NotifyPropertyChangedInvocatorAttribute.cs",
+      "sha256": "45F6C821C22C11AEF220A41B87D01434645914AB0FB85FD1A950D7E82FDCA2F4",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/NotNullAttribute.cs",
+      "sha256": "00D4C070BB6895AE5B88E077AF0A739D5BC636B0F849DF7FF5D8A2C3A7B9C4E9",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/PathReferenceAttribute.cs",
+      "sha256": "5F7BE396777C5842E9CE5665082F99241408BE6CB12519E6549F9852766613DA",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/PublicAPIAttribute.cs",
+      "sha256": "A1B89EF4ADD2B92DCF531FF282F6D98F427C6A8ED2300415DA6E006CBA15AA25",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/PureAttribute.cs",
+      "sha256": "15CA4B7D02036FB772BAA7BBDCC92AB562D67BFBBB14FD302F2445F6F21DDF59",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/RazorSectionAttribute.cs",
+      "sha256": "FF775D761AE394941A681B29DA50B3DFEA9D430D822980EA755698C0FF33DF49",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/StringFormatMethodAttribute.cs",
+      "sha256": "8B8BCA7EB680F0F398BE054F9A33226736EBBA592F36DC249BF01CA47C4198B2",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Annotations/UsedImplicitlyAttribute.cs",
+      "sha256": "2CD854A4A7ACB1EE36F3B0A4FB7727A0FC62C928096B37BDAA5AA9DF6881B639",
+      "lines": 33,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls.BLL/CSUIAttribute.cs",
+      "sha256": "DE9C039677950B68D07A32729088199746F6D2B7149171685D91289FDFA9424B",
+      "lines": 39,
+      "nonblank": 30
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls.BLL/CSUser.cs",
+      "sha256": "8C56C7B312C891A08C870B661FAF117843F6D166176B45431CC02228CA58C560",
+      "lines": 24,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls.MarkupConverter/HtmlFromXamlConverter.cs",
+      "sha256": "858D2181D0E83F9FB2B7B8442618B595B028B238ABBAE37088D24C36619A6FCB",
+      "lines": 334,
+      "nonblank": 323
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls.MarkupConverter/HtmlLexicalAnalyzer.cs",
+      "sha256": "767381DFF60484D323B38555EA6C6B485D0B40C7637782406166D990E9AEE644",
+      "lines": 473,
+      "nonblank": 440
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls.MarkupConverter/HtmlParser.cs",
+      "sha256": "F1D809675792FD54F1966277C576F1194E6211E48EC48317978EC8828BB0C10C",
+      "lines": 277,
+      "nonblank": 251
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls.MarkupConverter/HtmlSchema.cs",
+      "sha256": "1ABB9235361389274288B711D846724ABA723C1EDCFE945158C0D74425B0DA81",
+      "lines": 568,
+      "nonblank": 534
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls.MarkupConverter/HtmlTokenType.cs",
+      "sha256": "F43BB5B39B807EF3EC7C3648D528764F3391230EFBB8922E25BCEC4A44DA24D7",
+      "lines": 16,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls.MarkupConverter/IMarkupConverter.cs",
+      "sha256": "0DFFDECB49ED9BBEB47E6A509260E0FBAE4FFE5C702E34630747439035600787",
+      "lines": 11,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls/BindableObject.cs",
+      "sha256": "726941EAD24E0FE4C609F8084ECB9C820BF08FB84571575446D841129613EE24",
+      "lines": 64,
+      "nonblank": 54
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls/DebugReportEventArgs.cs",
+      "sha256": "14716C363A16833B1CA022EDD95DB1C6E32F8D9E3A0FE1B9E21AAC4B0B880F62",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls/EnumHelper.cs",
+      "sha256": "95EFBBAAF1AA0D64399E05EDB7C8B2EB8E7E089E22C24FDED5851FDDA9F2BED2",
+      "lines": 50,
+      "nonblank": 45
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Controls/StringLogicalComparer.cs",
+      "sha256": "83F93BA2A3D35A47555DBD97F9089EA99EA3C3DA0BBD07356A4F54E99E38DFAF",
+      "lines": 235,
+      "nonblank": 223
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/AssignCustomerThemeByKeyIdCompletedEventArgs.cs",
+      "sha256": "72EB79825789559D4204A73CD17F12AF8D3F4F159E551775083BE96E66081556",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/CreateCustomerThemeCompletedEventArgs.cs",
+      "sha256": "D0719CE9E4D5B688D15820A1087D502DB1BF343FDB42FD7DEFEBB198A038AB47",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/Customer.cs",
+      "sha256": "5E7FAF9FF62AC1A92224E651B0480C819AADE8F799575E6BD7B01F69B7E380F1",
+      "lines": 98,
+      "nonblank": 86
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/CustomerTheme.cs",
+      "sha256": "BC17760953121134B0760E96A24A98C2CE5EA3CE304427E067B43228F2E42454",
+      "lines": 198,
+      "nonblank": 176
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/DeleteCustomerThemeCompletedEventArgs.cs",
+      "sha256": "388193DEF54DBB5B11558EBFA38711D341474D136715A811B2944B9CC772EF8F",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/GetAvailableCustomerThemesByKeyIdCompletedEventArgs.cs",
+      "sha256": "A7A133FF71A37311E1118DFD9AAB576D8CA10041DE7FFADE10A09A7940F08AC2",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/GetAvailableCustomerThemesCompletedEventArgs.cs",
+      "sha256": "E321E44DDA0552B0547F4F403031A7A367DA369C2BB7ECDA06246A45E64211FD",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/GetCustomersAssignedToCustomerThemeByThemeIdAndUserTypeCompletedEventArgs.cs",
+      "sha256": "99B7B8A111656FA97BF5B36ED487614428A90FA4562D9F7E4270354BBD498EDE",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/GetCustomersByUserTypeCompletedEventArgs.cs",
+      "sha256": "639EFCA324004F17D49F85117C98B234C7422DA0B3F9ED3AC0C6C9D527FB79DE",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/GetCustomersCompletedEventArgs.cs",
+      "sha256": "E054DA16C146B93537C7B7B2E44436D1541354C1BB1D69BDAA5AC2E9EBB772D9",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/GetCustomerUserTypesCompletedEventArgs.cs",
+      "sha256": "D5A64C897C9D7232A54AE3C6352175E628F7E7A809BEAD93E8E590E59068FEFC",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/RemoveAssignedCustomerThemeByKeyIdCompletedEventArgs.cs",
+      "sha256": "2BFCE4168CB97283F44DCEECE7682823666C6F6AE5BF593B7C7EB629EED0CED4",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.CounterSketchThemeServiceReference/UpdateCustomerThemeCompletedEventArgs.cs",
+      "sha256": "A93CF30C9CFF1962645882EAB0CBEE2C2AD957437B82E5E88E18676E7CF37924",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Database/CSReadFromLibrary.cs",
+      "sha256": "78B8EEDF25FBBEEEC87421EEB05067694F269F58B16213610644FD717EB38E95",
+      "lines": 35,
+      "nonblank": 31
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Database/DBHelper.cs",
+      "sha256": "ED82121B49C8541192037CECAA8E8F88F2024BC55D3F653AE9638A61F5BBD960",
+      "lines": 92,
+      "nonblank": 84
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Database/DesignAttribute.cs",
+      "sha256": "F2C149EB48838B6E44E07F562BB5948895C2D9A34D4AC314ADCA752010D7FA45",
+      "lines": 11,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Database/DesignComponent.cs",
+      "sha256": "A8A6EF1881D5A542D8B2D029430943EFD287BC57F44D4788CDEA2B03AD997ACA",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Database/DesignGem.cs",
+      "sha256": "5EF4C273C7A53A924D4BE7DB701DD0B90000523E2433C1AB84FD21F0BBF30BAA",
+      "lines": 41,
+      "nonblank": 22
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Database/DesignGroupDesign.cs",
+      "sha256": "9CEED755A9CF9005FDDBEAB1833DA272E60DFA81C2553BB537B6F04D2FB3C2C1",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Database/DesignInfo.cs",
+      "sha256": "98FD16F1CC916EDB8FC084C1C3F0BE963055DF682935D9A77A6FF61AFBAB49FD",
+      "lines": 39,
+      "nonblank": 22
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Database/SearchResultInfo.cs",
+      "sha256": "677D711310C478787033718865B45E4C7E332A658A57C9D8F55343C686ED057D",
+      "lines": 57,
+      "nonblank": 37
+    },
+    {
+      "path": "GV.CounterSketch.Studio.FeatureServiceReference/FeatureDTO.cs",
+      "sha256": "BBF68516E219970789EBCC52EB7C61CB861ACDC8C9EF8B9530BD522A75E2D4AB",
+      "lines": 78,
+      "nonblank": 68
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/ApplicationMessageType.cs",
+      "sha256": "EEC5535A9C2CA4F5AAE9CB6DD412C047BC4ACE4F63A616E0FCA7AC42DD9840B5",
+      "lines": 14,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumCurrencyTypeOption.cs",
+      "sha256": "E14727230B5470E2E7A8DDE20501E2B521ED96AD7B27AD2CFAC06423B8F08F79",
+      "lines": 200,
+      "nonblank": 197
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumEngagementOptions.cs",
+      "sha256": "4A9A04DBFFBA1A6142BC1647BC1536C39D484F437A816C6D0EECE5A34FB577C5",
+      "lines": 12,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumEngraving.cs",
+      "sha256": "DE762202080CB9A80586DDD64E6DD7022E0E6E3176DAEAA61981DE33A08E243D",
+      "lines": 12,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumEngravingFillColor.cs",
+      "sha256": "8C1CF20ABFB9F78BD643807FB91495D00F1BDB7E04E89A41D2827C13A1EE73E4",
+      "lines": 13,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumEngravingFontsSize.cs",
+      "sha256": "70B48D9B4C6311D15D20A6A1A9A307EE466FAE9CE4D4E185076930D0A3CFA83E",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumFinishing.cs",
+      "sha256": "D8206B377C4F0C12BB6389DDB35BF8C89B27CB40FF974F8ADDAF19FCAA075331",
+      "lines": 16,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumHallmarking.cs",
+      "sha256": "B5E2204AD196DF4BF156DD7AA5F1A969AB841231E19FB52EB80BE7D898283A45",
+      "lines": 16,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumMoreThanARing.cs",
+      "sha256": "D874EF897F02EA2B6E6B3F67C2EED97E578D2A5D2E6A40951E8F575B8AF84FF8",
+      "lines": 12,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumRenderResolutions.cs",
+      "sha256": "76A8327FE3A86E73618ED198EDE8406D5CC0FA6F04E78A53DFE6CD85C7884233",
+      "lines": 48,
+      "nonblank": 45
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumSearchResultSortType.cs",
+      "sha256": "93D121FED343B6899A7996EE534E61E2A7F57DA077D2E3C93A0C816CD570E77A",
+      "lines": 28,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSEnumStoneOptions.cs",
+      "sha256": "610CB2C06227C07200E8BB12D4AAEF3285D5ABE4E3465FAF090051AB18561980",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSPreferenceTabs.cs",
+      "sha256": "D3A9C0E1272D1BBE9027E78DAC856886727DE2857D1F8D78EBA835B21307935C",
+      "lines": 14,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSSearchGroupControlType.cs",
+      "sha256": "F045D2D344B92CCEEE1830C0BDC9748F8D825773B07C42B5C20A42464E949397",
+      "lines": 13,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/CSSearchGroupType.cs",
+      "sha256": "15DCCF196A129DBD6FEBEE8469DD705EED19BC25842E3D241DC93D3EFF0FCC9F",
+      "lines": 16,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/EnumSearchResultSortType.cs",
+      "sha256": "309BB15AC71DE2F3E0DBF4286E711324C047DAE8DBF8D3F10F33CAEA728A249C",
+      "lines": 18,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/GemColorType.cs",
+      "sha256": "9E83A5E4E21D56D6AF8038C5C0C6322184A47B185AF26BC5674ECBEDF527A1B6",
+      "lines": 30,
+      "nonblank": 27
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/GemGroupType.cs",
+      "sha256": "38A19D98ED2FE03DA916F380351D0D807DAECF9231819537B5430272D0CB7F18",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/GemShapeType.cs",
+      "sha256": "C6E6289BDC15A32FEDA97CAE9A39BDD867E075CD8F342DFCBF43A776D30C1E36",
+      "lines": 38,
+      "nonblank": 35
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/ImageType.cs",
+      "sha256": "2326510BD37D8877B7EBA5EAB9435946653A61D43348237A08C8F52676055DCA",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/InventoryManagementDisplayCollectionType.cs",
+      "sha256": "224D0B40CA6D20AF29F792EDED83D17DDCD4063A5EBA06E469AEE0917862C5CF",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/LoadDesignSource.cs",
+      "sha256": "14A5183EF4F5B7E90FD9E6D404C9FC8B0E5A918FFF8B93B2525A082214A6EC34",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/SearchModeEnum.cs",
+      "sha256": "944C9D45FB6BA25D86678DAE7E7ED2470B2DFCD3563332F797B6E657711AE2D7",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects.Enums/UIRingSizeOptionEnum.cs",
+      "sha256": "0620FC158C1342AF57FE86D7CC604C5E8EFA213E730CFF5A7E77E4A27E1EDCF6",
+      "lines": 22,
+      "nonblank": 19
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects/CustomerInfo.cs",
+      "sha256": "19EB01D42D8724B9C61E07BC6AF18CBD8D04937319676A3D4AB8C8D9AB523484",
+      "lines": 29,
+      "nonblank": 16
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects/LookBookPage.cs",
+      "sha256": "6321BCAAEAEA812DBE40630A612C5D05D422D3C147B00CB13AA4119A1F691316",
+      "lines": 31,
+      "nonblank": 17
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects/ProjectType.cs",
+      "sha256": "C07F94C437AFACDFDA0EC43245A5C5EBBB0EC0A7D3434054D6F70547E75467E3",
+      "lines": 11,
+      "nonblank": 8
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model.Objects/SortableObservableCollection.cs",
+      "sha256": "ED7C162838E5D68012E69C93BE12D49A2DD50CCB59CC1297EB0CED28E669C215",
+      "lines": 25,
+      "nonblank": 19
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Model/TileCommandType.cs",
+      "sha256": "6C015A8F13EA322A020CA53E80606A902382BEFE795C848DB938C8D1A4DC3B28",
+      "lines": 15,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Properties/Resources.cs",
+      "sha256": "268A06F92512633A680E9990CF07F91FDA4DD4D655B303933C5B21E6E06159CE",
+      "lines": 55,
+      "nonblank": 45
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/AbortPrintJobCompletedEventArgs.cs",
+      "sha256": "F55276EE2730C47F2DDE360C697894AEBDF1070AA70C0A3AA5CAAB883449DEF2",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/AreSecondaryMetalObjectsVisibleCompletedEventArgs.cs",
+      "sha256": "21FE41EE56DEF6848B756C6452C356E40B2B7659D7D58A87540EB5BB28248641",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/AreSecondaryMetalObjectsVisibleForComponentCompletedEventArgs.cs",
+      "sha256": "90EBFA32E257529819472422313416369CE80302F91AB631B10A07825282744C",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/CheckConnectionToProJet1200CompletedEventArgs.cs",
+      "sha256": "308F22188106090C4BCA503793426C92B1FCBBEF57396CB59EB3BF0123BF90EB",
+      "lines": 47,
+      "nonblank": 40
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/CheckFirmwareVersionCompletedEventArgs.cs",
+      "sha256": "E19C39050706D126AB25EAC6BF907E3BFEF19F87E095461764DB5EC0E1A5A244",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/ClearUnifiedMeshCompletedEventArgs.cs",
+      "sha256": "D8ABBA2FB1F35526494B27BB6E638CB05D2932C6878A3ECBF8B9826FB9EFD328",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/ConnectionValidCompletedEventArgs.cs",
+      "sha256": "70B05DA044363FBE63F30C3A464F5BCACD6876612258C19552892043FDCBC521",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/CSCreateSupportsForCSItemCompletedEventArgs.cs",
+      "sha256": "F4EB923D5483DFC611CC3F784E6E6F195821F1ADBDE6CCB3065F99D96D92692D",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DeleteSavedJobCompletedEventArgs.cs",
+      "sha256": "1C049A27D1ECCC2A690277DF4E658EFE0AF94B58F9174B89200A34D3A12C1B53",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DocumentCreateAnyGemAnyColorMaterialGroupForSelectedGemsCompletedEventArgs.cs",
+      "sha256": "C5EE2D18046A96649FC7CF6B1653F33A937972838653010C7DE0BA1ACA9A058B",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DocumentGetModifiedCompletedEventArgs.cs",
+      "sha256": "A399C09F3A01FF4171FB67C3C22A8E17D508ABF77ED7A46A31E2838ECD578872",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DocumentGetRingSizeIndexFromSizeTextCompletedEventArgs.cs",
+      "sha256": "60CF7574ECC459AEE568E8D210D247C1E71161B03C74A0EDF0039325E55179C0",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DocumentGetRingSizeTextFromSizeIndexCompletedEventArgs.cs",
+      "sha256": "FE53FE159429773B812418D72862E8E530F5A601D0436E42A3815F84431DD4A4",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DocumentGetRingSizeTranslatedCompletedEventArgs.cs",
+      "sha256": "0B19F0E0B3422432A4E9F7994F7E286CB26D296A4E2D126877E6BA893ED6F0DD",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DocumentGetStudioGemListCompletedEventArgs.cs",
+      "sha256": "23CB4CA135E1860A243F8875D41DDC8859C22600C55AD7BF9F26FC2A9D4537D7",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DocumentUserDataFindValueCompletedEventArgs.cs",
+      "sha256": "6E6FFFC6786556DD82B81C7FB8072952F770037C48CEC6C5F3AFD77CCC625E31",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DocumentUserDataGetAllDataElementsCompletedEventArgs.cs",
+      "sha256": "D08EF9ABBD7633E5FF36BD82D0F9329906C1AAAE20C98B1DC8FA4B7419C4C994",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/DocumentUserDataGetOrderDataCompletedEventArgs.cs",
+      "sha256": "0077D23308A96B77528E2E8B2E8E1AF90C3BC0ABB66962950768030007D7B9A6",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/EditorGetPartsForCurveEditrFromGraphObjectCompletedEventArgs.cs",
+      "sha256": "7C62EE4502876B12E03F8B93593ED5AC741CC56F2F67CDE4D1B37138D1CD6F19",
+      "lines": 48,
+      "nonblank": 41
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/ExportDesignAs3DMCompletedEventArgs.cs",
+      "sha256": "578ED9FACC1EBD5A6C3BB8F8645A74BF2D007AE5CF3274AC9F978E451A6A0B5B",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/ExportDesignAsSTLCompletedEventArgs.cs",
+      "sha256": "7CC1EACA267BD82E38B0927D1B54993FEEB778D1B5DBB5002FBB4CE305B27352",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/FindProjetPrinterCompletedEventArgs.cs",
+      "sha256": "0F64F5A2DCAB1753885FFE958AF1AD1F8003EE39723CD8C65E3C2CF4ADC972BD",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetActivationStateCompletedEventArgs.cs",
+      "sha256": "837F7335D720835E42FB7C715087EAFBDAF41D1A9EC26FCEAD24C7B6E0560333",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetAllRingSizesForCurrentRingSizeRegionCompletedEventArgs.cs",
+      "sha256": "9F3AFA1B23FE3AFB186A7ECA9810A0F26ED36C492904FD7FFB9D75674811F88B",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetComponentsCompletedEventArgs.cs",
+      "sha256": "E01DE94ABF4270C7958B07C73FCFA0736024A0AD1D4FD0E3B05A118C26103E7C",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetCurrentViewportImageBitmapCompletedEventArgs.cs",
+      "sha256": "6B85094D789598B85DC459357E76B277346CFA1A106E683A729C6E0BCFAC9459",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetDesignerFromUserDataCompletedEventArgs.cs",
+      "sha256": "542C020172B334DC251A6A6F1634FCD6412194AF19F9A62CF2819ED811A19371",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetDesignIterationCountCompletedEventArgs.cs",
+      "sha256": "2869B60A8B92385F5EBDCBFA91EFF6BE8D075A4BBC878CF6CFAE17780CAE6924",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetDisplayObjectBinObjByComponentAndMaterialClassificationCompletedEventArgs.cs",
+      "sha256": "2FCE5D213243CE19CC3CD3B682C70138EDA9D38785FB710B141B06E5D5E599DA",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetDocumentFilenameCompletedEventArgs.cs",
+      "sha256": "79CD96679DA79D848F7F02A7EA6BF4960BACEE61DC39DCE419CD0781C782CAC1",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetFeaturedDesignIterationsCompletedEventArgs.cs",
+      "sha256": "C011EA3EB09E7C14F8E8DA1B7E48AFD1E190246D347FB20C3A4A1D6F0A19A127",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetFreehandComponentVisibilityCompletedEventArgs.cs",
+      "sha256": "4B34BBE89116151748894AB64A30C339BC4F3126D5FBE7020EB6000D4D24A107",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetGemMaterialsCompletedEventArgs.cs",
+      "sha256": "232A14051513DDD96CFBD881D451E44DF239B28E198C673587FBF3D151D8D500",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetManualSizedStonesCompletedEventArgs.cs",
+      "sha256": "24097C53AFE9FEE51F2C2D2200C9D978693671730FD393E12C0C6D0274725A48",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetMetalMaterialsCompletedEventArgs.cs",
+      "sha256": "C79BAB1917E280F125C4AB06949C6CC0D61F24C0275441D4C7A12819655422D5",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetMetalVolumesPerComponentCompletedEventArgs.cs",
+      "sha256": "CC6CBE43E7B342982B0E1F1D684EA39F4A14152726D22822E09871C74BA22E86",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetNotesToCustomerForCurrentDesignCompletedEventArgs.cs",
+      "sha256": "90B706D283C6CCCBFE641AD9FCC09C3FD73BB04DCF0A0949EB252B84CCC5FC86",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetNumberofVisibleFreehandPartsCompletedEventArgs.cs",
+      "sha256": "37CD3460C11600115B8EF5AEBC4D2A9DAD99BA978A48934B327EAD1A7B9E3194",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetPrinterMaterialCompletedEventArgs.cs",
+      "sha256": "5CDA700F9C615ACEA01527998FBFACD596326CD2C3D1E9EE57DBDFFEFD024EB8",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetRhinoSerialCodeCompletedEventArgs.cs",
+      "sha256": "69A262CC8ED394A14D3D00F27EDB267C7C6311A3432C3ED665E05415D4A5008C",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetRhinoThreadIdCompletedEventArgs.cs",
+      "sha256": "F4846B81C52725A74DBFBFA23A33A9B11A019D2B71663F6F42040ED55E34068D",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetRhinoWindowHandleCompletedEventArgs.cs",
+      "sha256": "49DDF1D0FF45B3ABC829B697AE786DD2A3E0F939427D5ACFE2897E34B9F68BBE",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetSavedJobsCompletedEventArgs.cs",
+      "sha256": "C909AF0E0C221F0ABF8E8019BCFC9EA893AF29BBFC387AD29FD952C232B90C60",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetSPINumberFromUserDataCompletedEventArgs.cs",
+      "sha256": "196C26E71DB35FFC6E5F0DF989117A13B6AE72CD6369DA7F6FDBBAA20D9F604E",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GetVisibleComponentsCompletedEventArgs.cs",
+      "sha256": "F5EA54BC54A20D94C16B5977562BA5DE84AE61401DBF0D53FF9944426144BF0A",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/GraphItemFindUserDataValueCompletedEventArgs.cs",
+      "sha256": "B4063CCA49B1E5C08BE9805A5E161CD175C05EB0A1FD26E194C2EE1B0D475687",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/IsComponentsEnumVisibleCompletedEventArgs.cs",
+      "sha256": "A54E6776428571AB757C3D37B8EA58C720B19448CBF1EFB72D1B008766ACF691",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/IsDisplayConduitEnabledCompletedEventArgs.cs",
+      "sha256": "0EA12F231B6EDB9689B5DE510779024DA44F15B34EC8475E4820D92D20A84F2E",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/IsDocumentCanvasEmptyCompletedEventArgs.cs",
+      "sha256": "9E9DF90973E1F0CA36BF148B363878C2455242333B8A16043618147D4568133E",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/IsManualSizingModeOnCompletedEventArgs.cs",
+      "sha256": "A28B65A257792A7C19D760288ADC28D1D430DAF61CDB33EE040758D360DEE97E",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/IsProjetDialogLoadedCompletedEventArgs.cs",
+      "sha256": "361F6BB61EE50589DED52D14F9CE0CB310A0A58B35812FBC56C4CC3643CBB405",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/IsRhino64BitCompletedEventArgs.cs",
+      "sha256": "2C64AC94D7E785EAB566DBDC689C84604D5509ADBC6F2D3531C9E2021128F957",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/IsUsbKeyBeingUsedCompletedEventArgs.cs",
+      "sha256": "2A424DFBF2B04F396E31439B893788B120FFBA13AA7694E42A9528D5E23FD9D8",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/MaterialClassification.cs",
+      "sha256": "54E81C523516E8FFFE80FBA5FD2C28D9AF944BE74F8B5AF8A63FECEDF71A9188",
+      "lines": 55,
+      "nonblank": 52
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/NurbsGetBoundingBoxCompletedEventArgs.cs",
+      "sha256": "CA0C377A0D2CCDDA7A9F7364DEA1149D969C38DB6A6203A5FD4CC5C762B1DD41",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/NurbsGetClosestPointCompletedEventArgs.cs",
+      "sha256": "52ADC91901B948F195F94ED53222F8D77A5E9C0F1E7C052D6A89D04B95F17AF2",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/NurbsGetNormalizedPointAtCompletedEventArgs.cs",
+      "sha256": "D8BBA99BAA0D9BBC14C1DB5CAD84C04EB9FD4F59538E7E74F779C22C558BD8AB",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/NurbsGetPolylineCompletedEventArgs.cs",
+      "sha256": "71880DAA0BEA6EDC4BD1AD25371449E3F8E3CF6BC364551B71283902CC75168B",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/NurbsRebuildCompletedEventArgs.cs",
+      "sha256": "CDC873688BECD628BE77078DBA564AC0EE22D553092479E09DC6B924496AD833",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/NurbsSetDomainCompletedEventArgs.cs",
+      "sha256": "FD85C8FBD8CAC8D57BBFDF63696654A88E4C27CAD0FEEFD2A6DAAC1F5C84D9A7",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/OrderCheckNonCenterGemsExistCompletedEventArgs.cs",
+      "sha256": "8FEC0BD23D0BDD32862A7686B998C2A8A9142BCAC81B6250B0D9CAD7E69515E5",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/OrderGetAccentGemDataCompletedEventArgs.cs",
+      "sha256": "B9BDB5DF71071914E2568B9D9A5F4C800F8A667318D27E1868165DD276D10B87",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/OrderGetAllGemDataCompletedEventArgs.cs",
+      "sha256": "CB6BB3A998E488D48EACB553A3E5879A449A7EB0C873E13086376651B541B971",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/OrderGetCurrentRingSizesCompletedEventArgs.cs",
+      "sha256": "07DE7289E06089E5E7D02B16BFD7E700712E8D560A35156C32CFE2FF93D8D534",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/OrderGetCurrentRingSizesDiameterCompletedEventArgs.cs",
+      "sha256": "8C609C459BB8CAD2358E42F6F9B17C8266E1E2263B9C12F8AB6C790081B03EAA",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/OrderGetCurrentRingSizesUomCompletedEventArgs.cs",
+      "sha256": "1B73B4DF0ED54550BBF8CE04BBAAA4E4208CC7CE9111DD3B684CF84DEFB6C346",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/OrderGetExpandedSliderListCompletedEventArgs.cs",
+      "sha256": "75DC83B459F4B22A90F06B71539B980F8B3F762AC2A84C482A4222379B6FD526",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/PrintMultipleJobsCompletedEventArgs.cs",
+      "sha256": "7EB99C0B5AEF6902BA339A58C01F7F5D8D2222D71AF15A74A7DB942702220234",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/PrintUnifiedMeshToProJet1200CompletedEventArgs.cs",
+      "sha256": "F3AEB62E8BD63A406785A30AE156B08B3B0BCD59AC4C7B886F053644CC7C05B4",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/RhinoCreateViewPortCompletedEventArgs.cs",
+      "sha256": "40226680DA2778314D723BFF4C9FD72F5746FAD3BBF265E35F7B24EE1EF24F39",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/RhinoGetActiveViewWindowHandleCompletedEventArgs.cs",
+      "sha256": "07E69252C6C821E4D4FE2E3C95187D2CD68D2266561CE0EC97F905178FE33ECC",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/RhinoGetVersionCompletedEventArgs.cs",
+      "sha256": "DA7C6016C9163BD9843BF90DC3A3E7592A90E485746D659E1964EE28348F1273",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/RhinoGetWindowHandleCompletedEventArgs.cs",
+      "sha256": "AA9D3752543610E0B083A437F22F8D372256085ED4807EEB3C0B827DE1F417D9",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/RhinoWindowReparentCompletedEventArgs.cs",
+      "sha256": "ABBF1BB767657F1D4F4E9008F392518BC872033170EED1D7E1BC6BF984CD45DE",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/SavePrintJobCompletedEventArgs.cs",
+      "sha256": "0218E9C9F49239D6464C0FC76F5443E0A964FECFFEF1B484D198AA3A7A718E0A",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/SaveViewportToImageCompletedEventArgs.cs",
+      "sha256": "51884300ADCDCE7C93AE8264212AAE91C2EE1238F0B2F702D263414B142B4A1B",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/SetKeepAliveProcessIdsCompletedEventArgs.cs",
+      "sha256": "08A46FB3DC5A075C6196FD4E3915A35F039D391EEA7B8ECC5BD7422EFBA88EC9",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/SetMeshFromComponentCompletedEventArgs.cs",
+      "sha256": "50A444AAE4D8763B69B75AE31453F253FB5B1E1FF2B5B4B512EBC5E88160CF74",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/SetSupportScalesCompletedEventArgs.cs",
+      "sha256": "F56460DEC3FB585F164AF3086DAE619C137200961B3B02BF96987DE8286FFA2F",
+      "lines": 29,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Studio.RhinoServicesReference/UpdateFirmwareAndActivateCompletedEventArgs.cs",
+      "sha256": "AF3565931576C6BC76870A40A74A17399EDB1891EE8987BD73FD15E1BD31EF28",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Studio.UserControls.PagedListBox/IPagedListBoxItem.cs",
+      "sha256": "3F09A7F9CC4BF1F0F8B4F1A484DBB0DCF34954473FE6722FF17F263738F22FB3",
+      "lines": 19,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Extensions/CollectionExtensions.cs",
+      "sha256": "A843819B9A7C070BA2765C610869627103AF5955FE16EEEEC7593B5D4B9C5194",
+      "lines": 16,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Extensions/DirectoryInfoExtensions.cs",
+      "sha256": "B535A667B624E5F99CFA890CFEE10950FF507B7AE441929D4BD556093D4550A1",
+      "lines": 21,
+      "nonblank": 18
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Extensions/EnumerableExtentions.cs",
+      "sha256": "84FB9725191D012E3E2EC4105351395DADE404091028AB512FDB90E9475C9C36",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Extensions/EnumExtensions.cs",
+      "sha256": "4A8AE6EEA945BF145597BAF0520244F72BD6D735DBC7B4B6A6B75930EE301496",
+      "lines": 79,
+      "nonblank": 70
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Extensions/IEnumerableExtensions.cs",
+      "sha256": "C5068C86C1963E28B03B3B0B7798009E5D05EC99E27E8FC034B76564DA082B4F",
+      "lines": 25,
+      "nonblank": 22
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Extensions/StringExtensions.cs",
+      "sha256": "5297C193866EA9F836040D6A16CB6563B7213803AB154E722ED1868D7A0C05CC",
+      "lines": 18,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Gestures/MouseWheelDirection.cs",
+      "sha256": "418D0099EE75C074806892EB2361B76C6A752B4E3AA23AEA56F203AF354A1AF5",
+      "lines": 8,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/DoubleToFractionHelper.cs",
+      "sha256": "3649AE2FDB3FB3DE06145D27EC28FB2EC37673B7BAC47C40F4E1154F51CE9E65",
+      "lines": 93,
+      "nonblank": 88
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/EnumHelper.cs",
+      "sha256": "0336F03DAFB87E7984A9575D268536677CFB17B614883FACF324D65E42FF94E3",
+      "lines": 70,
+      "nonblank": 63
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/EnvironmentHelper.cs",
+      "sha256": "811B0013DB23A2F262F2448A4513340F488672C203E6979F0A38B438A0EAB2FF",
+      "lines": 16,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/EulaHelper.cs",
+      "sha256": "DA4E0D3E59978B63A14EF5C0228781E36818757D83B3A74F90FBE41166D6540F",
+      "lines": 6,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/Features.cs",
+      "sha256": "8A932BDC2910F84B697EBA0E80607DF1BB166CF0A83379F61E7E567FA9D52991",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/FileFolderHelper.cs",
+      "sha256": "D3D30412730D0384B2B48F6C95AB423D30F9BFB8F3EA04E6C5D2665E9640A383",
+      "lines": 59,
+      "nonblank": 54
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/IOleMessageFilter.cs",
+      "sha256": "335F638A5C1BC3774DB7E9DE8A82E5F6340CB06F19AAFD0C0337645D5E4A4EE4",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/KeyBypassHelper.cs",
+      "sha256": "5F194031C0B5E3FABD131982EAB2381E98C9472452C0C962CF04C008A8D17A23",
+      "lines": 24,
+      "nonblank": 21
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/MeleeGemInfo.cs",
+      "sha256": "DABE3197772B020CAEAB724F23EF5368E52B7160109E6E4FC4F17FF66D7BE1B6",
+      "lines": 11,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/MessageFilter.cs",
+      "sha256": "818CA5075EEBA58C1D7B5E0490C8DBB380FDAD967C2529BE29E00445BFA61E9F",
+      "lines": 43,
+      "nonblank": 35
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/NativeMethods.cs",
+      "sha256": "2C071AD18FE1E6EBEC2A13361BF9FF75F88E5CC8A89E9D9665C83630629B6ED6",
+      "lines": 12,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/RandomHelper.cs",
+      "sha256": "9DFAE0DEA9606F4D45E5612FD0E761226830E3BB9A76EB18E5E361753922663C",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/ResourceHelper.cs",
+      "sha256": "EE7DB0E82B879271C1C02BC26606DD297223B29129115FAB6BE6F682F8FC80E8",
+      "lines": 42,
+      "nonblank": 37
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/SafeHBitmapHandle.cs",
+      "sha256": "131AF85DADC40ECEE6697CD5DC4F45382A80B369F6DA443AC892F75B553F8EB1",
+      "lines": 21,
+      "nonblank": 17
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/StullerGemHelper.cs",
+      "sha256": "B19C9C03FE5F4CC65AD64A30729D35B0D72470DC775E1175072317B620CFBE27",
+      "lines": 35,
+      "nonblank": 28
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.Helpers/UserCred.cs",
+      "sha256": "DBBBC52CCCDCE38E3645D2E1692EDF0D9DB4373307A493DC21A7E044514035EA",
+      "lines": 11,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities.USB/youknow.cs",
+      "sha256": "08169C8B4A9ABAF20750BAC0FD37088CAA9AF822816A22E8132C43A7711172C4",
+      "lines": 273,
+      "nonblank": 259
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities/DesignGem.cs",
+      "sha256": "6B5BFD789E927A68A5878884C08A17A9B414F5E74FDFB7A7182F81B8E6F7A839",
+      "lines": 15,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities/IListItemConverter.cs",
+      "sha256": "8857694F0AA1B74406B45273617BFCCC281B3E6324622A0402C6D6A7DAF279DD",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities/RhinoPosition.cs",
+      "sha256": "849ACF080C56FC281B9E890BA81AFBF0CE68CFF3DB4D4513D4BA5A61189B221F",
+      "lines": 84,
+      "nonblank": 69
+    },
+    {
+      "path": "GV.CounterSketch.Studio.Utilities/WrappingStream.cs",
+      "sha256": "F1FC4598D2F4D37B3C406989F4BB78B52F921B8963FB4B51306D9EF6FC93F4C4",
+      "lines": 161,
+      "nonblank": 139
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ViewModel/MaterialAssignmentMode.cs",
+      "sha256": "1A212332DBB728D176402E5017BC1CB6553E97193D2AAA69E9B9D2A93078D02F",
+      "lines": 12,
+      "nonblank": 10
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ViewModel/RenderHandOptionsPagedListBoxItem.cs",
+      "sha256": "6CEBF513B6C1C264525CC0432B47A833A4C1B01EDA3C5CBCEBCC5F7652C075EE",
+      "lines": 23,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ViewModel/RenderObjectPagedListBoxItem.cs",
+      "sha256": "C69614E4C674A1037797C2E6212BC4801A17B251770BACFBA91A383A5AAF7DA9",
+      "lines": 23,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ViewModel/Sections.cs",
+      "sha256": "BE3C9A86973AF983E9184D7F30C8E9098F4AD61EF9C3183C84C4B424C1C1B552",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/Adler.cs",
+      "sha256": "16823A80F554B28BB39186FB4FA2BF8DCAA906DE7596E4DA01B04D5989695801",
+      "lines": 72,
+      "nonblank": 68
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/BlockState.cs",
+      "sha256": "5E073FE5B0DEAD350D6D7605488E38E6D54D36788870AC7800202518A1E14936",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/CompressionLevel.cs",
+      "sha256": "32DB7E517CB9D2648177AB97283C2AD980BB2963E81D9020409420B511E25259",
+      "lines": 20,
+      "nonblank": 18
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/CompressionMode.cs",
+      "sha256": "C02E61EDD4D8BFDDB1EC7EEC8A4791F2A4937BE7FCA91D07110FC0271752C4C7",
+      "lines": 8,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/CompressionStrategy.cs",
+      "sha256": "AA63C02AB16B43087F82D96F512A77FEE593C63948CA3CFEC9A4589E34E6B4B8",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/CRC32.cs",
+      "sha256": "5651858D2792FC4341921878F22C571D50E1DED935550AF045D929935BEDBDE0",
+      "lines": 154,
+      "nonblank": 138
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/CrcCalculatorStream.cs",
+      "sha256": "330E3003067D4BBE5CBA97D9588DFCD40D418724B8D35C253A46B17655F35458",
+      "lines": 149,
+      "nonblank": 123
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/DeflateFlavor.cs",
+      "sha256": "8761F85C0DAB7A1B678472382EB6BE2584EDDD60A40AFC048552C3EA00C8B9F7",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/DeflateManager.cs",
+      "sha256": "81C30CFBD330F9D59B2573F174A0B50C1EA8F6CD7D21A6C1F3E34D2BDAA9D501",
+      "lines": 1318,
+      "nonblank": 1194
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/DeflateStream.cs",
+      "sha256": "2F560F68684C6571BFC78BB31BEF1F7AC28E3D6D3D1D8D0D2FB3229F91144AA8",
+      "lines": 235,
+      "nonblank": 206
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/FlushType.cs",
+      "sha256": "94F3228536372555455E100223C85DF27F95AB2720715AFBA79AEA31254EEEF0",
+      "lines": 11,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/GZipStream.cs",
+      "sha256": "46522F4552628B46515EFABBD71DE8FD8B1034EEC2EF20317AD3DEF08ECF3AF7",
+      "lines": 341,
+      "nonblank": 303
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/InflateBlocks.cs",
+      "sha256": "68540E6137AC42E74C2F4DD6A01EC9543726220B71438E63EAD3DFE3BAB12E4F",
+      "lines": 621,
+      "nonblank": 589
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/InflateCodes.cs",
+      "sha256": "B323949316E9D6E0281BE2695983730A8D5A94C18478272B424830AA15D6B357",
+      "lines": 630,
+      "nonblank": 601
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/InflateManager.cs",
+      "sha256": "E380EBB0881F983326D437B0C6C0EA13704CAB1A16FCB009C0D230E8F06C8633",
+      "lines": 355,
+      "nonblank": 332
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/InfTree.cs",
+      "sha256": "085065616570B349AE198DFC93C9FE23E63D9F6E3982E1BF11A37B8F43B2A04C",
+      "lines": 513,
+      "nonblank": 481
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/InternalConstants.cs",
+      "sha256": "A8E46CB25C9C561665A5EAA13C80E0AD975848DE32EBD72EA0392AF28224474D",
+      "lines": 25,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/InternalInflateConstants.cs",
+      "sha256": "005F7D309DA336A13089E7D279AF14557BA5426F1CA17CDE8AB8B5CED11B9D1A",
+      "lines": 11,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/localFile.cs",
+      "sha256": "D3E3B6F4E205C3C8DAD45D98602848BDA608952DAB53FF75C24C190F4B00BCF3",
+      "lines": 428,
+      "nonblank": 396
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/SharedUtils.cs",
+      "sha256": "5F31A2A88A4759E36013D4E1FDF3845081D915EAE81FBF0557C878FE764BDD3C",
+      "lines": 42,
+      "nonblank": 36
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/StaticTree.cs",
+      "sha256": "BAA8E789852434E1669844F4AF2D37A8279C63B8D673F28D8DDD5247B8CBDC31",
+      "lines": 111,
+      "nonblank": 98
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/Tree.cs",
+      "sha256": "7B768574A50E2F07ADB9CDD5DE87A53D6C78335EBDCFBA3DEC52AE8601F6D02C",
+      "lines": 317,
+      "nonblank": 297
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/zipFile.cs",
+      "sha256": "F4D4F4379CF09CF4D5406AA2D61AF268C26C8FFECE842A2080EA84D6F817B266",
+      "lines": 304,
+      "nonblank": 271
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/ZlibBaseStream.cs",
+      "sha256": "C74EFEC37E69D34B17A9EEB92EE95CFC7057F7CBAEC4D0F0163E98AA2028DBFE",
+      "lines": 541,
+      "nonblank": 496
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/ZlibCodec.cs",
+      "sha256": "5C3539DB91358C87E7077617FE5D4D8C5DD7A2BC8FF9A15BF1906DE81A710724",
+      "lines": 264,
+      "nonblank": 224
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/ZlibConstants.cs",
+      "sha256": "ACA695E55D9EA28F400B0B9D47237C5ACB13CAD934F054158E3779A2AE748CFF",
+      "lines": 25,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/ZlibException.cs",
+      "sha256": "0DE372AF5334208A16B3EF8428B02C402653F41E3814C1DD018B8EDB63CF78C1",
+      "lines": 18,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/ZlibStream.cs",
+      "sha256": "3453005A4823AB2DE7E0520F2CECA219495205D6B2AA8777F84B4AB88ECE3AC4",
+      "lines": 216,
+      "nonblank": 189
+    },
+    {
+      "path": "GV.CounterSketch.Studio.ZipIt/ZlibStreamFlavor.cs",
+      "sha256": "EABEA85B21E743E28FC6388E81005729F1AA995CA180BBD76C100859893BEDA3",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "GV.CounterSketch.Studio/ApplicationMessageEventArgs.cs",
+      "sha256": "15E30B2188459B79ECDE01B534783286E268C0091891EFA65A44BEBA1E72715B",
+      "lines": 27,
+      "nonblank": 20
+    },
+    {
+      "path": "GV.CounterSketch.Studio/ArgumentsReceivedEventArgs.cs",
+      "sha256": "6E57546FC64BD59A6E41C06F11C69D3057F17D477137A33FC6D6312944672B96",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Studio/DebugTraceListener.cs",
+      "sha256": "FC8620CD0BEDE8F232A7D4C7C1AF9B7F900CDC80B29BA5C2491C4A6C05F2BB79",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/AddAnswerCompletedEventArgs.cs",
+      "sha256": "C0C3C136BE38C4AA4B888A93A95289E255E9F7ADF6EDD021FC0F0910F92F5C8E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/AddAnswerCompletedEventHandler.cs",
+      "sha256": "64460AAF709CD5305BEF2EEE5D546907FD5A1AAAD32CCE70579F4A75FF17077D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/AddAssignmentCompletedEventArgs.cs",
+      "sha256": "8CADEEE55E7CF23C14B85EBF98F5AD4CF7F98BBFBEE677587953521BC05DD0BA",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/AddAssignmentCompletedEventHandler.cs",
+      "sha256": "D08F942766DC25C923303C5F8480278DCBDC416DAA72447EA65C80EF59EA4339",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/AddAssignmentNewCompletedEventArgs.cs",
+      "sha256": "CABC25B05585C8293E0FF1799F3B172F008A49E9673F0698D4AD90DA164FD4F2",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/AddAssignmentNewCompletedEventHandler.cs",
+      "sha256": "98FCD9D74C2CFA5296398059F1569863885475FACD999FAF6611A74F39158B46",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/AddQuestionCompletedEventArgs.cs",
+      "sha256": "7BC42F2B7DC061EBF4C4E0AB03408B6D352844045DB79276C0FF81261BF0DEC3",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/AddQuestionCompletedEventHandler.cs",
+      "sha256": "E81DA81485893D106AB631E0C99AB6186084F5C995C51EC494AAFF0C9A020D7C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/ApplicationEvent.cs",
+      "sha256": "8483C9D402D6E24B173C08AE0C9E0087FD060D5567BBDFDD43CC6A87BC4CD8A5",
+      "lines": 83,
+      "nonblank": 71
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/ApplicationEventType.cs",
+      "sha256": "3993A12625C9D466177462A3D94B9ABF924106902E8C2E28524AE6A4C2AE1EA8",
+      "lines": 99,
+      "nonblank": 96
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CopyAttributesFromIDToLinkedIDCompletedEventHandler.cs",
+      "sha256": "F1AB6012EB9A083FB0D25E5B201BE20D95B29AC3C1BAEF335D3E01B4E980B1D6",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CounterSketchCost.cs",
+      "sha256": "5811129237A795B73C592427F5F549E1084B68981F85150C7D9EDE4E482A0DBE",
+      "lines": 221,
+      "nonblank": 191
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CreateCatalogOrderCompletedEventHandler.cs",
+      "sha256": "E490656F31373043C3A0598473144F7E94DDB50B517F47BA417E2455BE7BCB04",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CreateCatalogOrderNewCompletedEventHandler.cs",
+      "sha256": "3DE618D70710826D7125C1BD3BEB16A197BFCF693127D0CBC88A33D3F4A20BF3",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CreateNewBandCompletedEventArgs.cs",
+      "sha256": "5C3C51CF15AB65BC2E8DD3644894DCDA1CB46EAAE90C982E5E5E6654DACF1587",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CreateNewBandCompletedEventHandler.cs",
+      "sha256": "0EE613F739B8729D13AD3A728DB6495E0EDFBBB17E2B61B1B07487251BBECA4C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSD_SetDesignerBlocksCompletedEventHandler.cs",
+      "sha256": "28DB7F3DC337F7DA7ACED618823EF97B63CA9E94949612359120D875FAC969FB",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSFeedbackQuestion.cs",
+      "sha256": "68E396773AEC13464C9DC108325148829F34FA548CB34C7DB9390D28C43A59AA",
+      "lines": 99,
+      "nonblank": 85
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSFeedbackQuestionAnswer.cs",
+      "sha256": "1001DE6492F8AA129193290971B18F597E29F44D74B9A5386C91B5675AAA2A29",
+      "lines": 69,
+      "nonblank": 59
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSFeedbackResult.cs",
+      "sha256": "AD7E073C28B1FCE4BA0F50A76328ADC18109F37280A702A5153BD6F0EE848D4F",
+      "lines": 100,
+      "nonblank": 86
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_AddAttributeToDesignComponentNoRepeatsCompletedEventHandler.cs",
+      "sha256": "E9BBFBD067545C0E88A455859FBABDB049C00E4FCB91837FF1DE58C10F9677FE",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_AddGemToDesignCompletedEventArgs.cs",
+      "sha256": "69A8F01A204BB34EF7FAF71BFE359C5FD56514F075F03F8EA3E96936275CC41D",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_AddGemToDesignCompletedEventHandler.cs",
+      "sha256": "7DA9605B9BAA2650B902062F47292E06BC8F09BCB33B49A25699BC0CA8F86883",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_AddMetalCountToComponentCompletedEventHandler.cs",
+      "sha256": "321B836F33951611CA9C022A49EF8E648DFFF64A72F5A925A88AAD0A70076AF8",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_AddVolumeToComponentCompletedEventHandler.cs",
+      "sha256": "0BFAB1DAF84DD0DAA83203C49610687171B93136E870ED8DE7D76A3D369EC5A5",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DeleteGemComponentDesignVersionIdCompletedEventHandler.cs",
+      "sha256": "4C101A6EF88AF4E6AAF0BBDFEF9BD36E050A8A04219FB4589D41C8FE9B918C1A",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DeleteGemsFromDesignVersionCompletedEventArgs.cs",
+      "sha256": "129FB22A953FFA2D3A8EFC84DFF3B9AEF0BCB8D879F7211CD226DC034F13A927",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DeleteGemsFromDesignVersionCompletedEventHandler.cs",
+      "sha256": "25E648A2F4FA8A8BCBE530C6F013CB9C271F53201AD088DFFDF2F46447C6AE9E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DesignVersionAddAttributeCompletedEventHandler.cs",
+      "sha256": "1CE47CF456CD0891C17E74FA7A823A204EEE4C773D84987898F4B6FF1D167564",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DesignVersionComponentAddAttributeCompletedEventHandler.cs",
+      "sha256": "B0EC75ADFFEF18442756ECB320515F76461F366099DFD572AC343B904DF97EB0",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DesignVersionComponentDeleteAttributeCompletedEventHandler.cs",
+      "sha256": "87505136639A82A01F39496AEB147576ECE81E44DB5206EFA922B224D7246FD8",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DesignVersionComponentUpdateAttributeCompletedEventHandler.cs",
+      "sha256": "F656D4C9C612B4447ED1D82C4BB489E6020544155604278DE0D217AFAE419DBF",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DesignVersionDeleteAttributeCompletedEventHandler.cs",
+      "sha256": "D87BFA1B4B9F6017E6C9B60E6E33E8A8B87A6081E74825D825812A6186397145",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DesignVersionUpdateAttributeCompletedEventHandler.cs",
+      "sha256": "68962381FE6E9A62D2B810E1C555B62BFB392D4D83D9C230F5144915398DD660",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DownloadCleanFileCompletedEventArgs.cs",
+      "sha256": "BA26D7E9C34F5F7F043DA30CA8B26AA46CCF21AD79738CE654D156B162CD8904",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DownloadCleanFileCompletedEventHandler.cs",
+      "sha256": "64019EBBE7330EB50A3A53509079E3347323C44067D9478E98EAF8CC3C21AB8D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DownloadOriginalFileCompletedEventArgs.cs",
+      "sha256": "FB95DBF06671084F4BCE4765808677A80EB3728D61FF8014D755E7D1F4C1C796",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_DownloadOriginalFileCompletedEventHandler.cs",
+      "sha256": "2BC3ECB8B459415D44AB5128503307BB2860E53D937865F6AC3E8ABE7153A7D8",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetDesignAndRelatedInfoByIdCompletedEventArgs.cs",
+      "sha256": "0640D6569111B83962A091A7FB755713D1293822FCFA4427A3699D86292C53FD",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetDesignAndRelatedInfoByIdCompletedEventHandler.cs",
+      "sha256": "E40D65DF37573E3E63ECAB33455B72DEDFEAFAB97874BE8CEDC1460558F00F0C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetDesignAttributeValueByDesignIdAndAttributeIdCompletedEventArgs.cs",
+      "sha256": "C0B85A8F62B369CDB1E6E59E2F5DB6093FF4FB2DC734CFEDCA4E581DC049ED2D",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetDesignAttributeValueByDesignIdAndAttributeIdCompletedEventHandler.cs",
+      "sha256": "42D176B459479CCB0BC81202302C2871134021221DBC31CEBA859695A7EAB6A0",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetDesignComponentAttributesByAttributeTypeIdAndDesignComponentIdCompletedEventArgs.cs",
+      "sha256": "3A963DB49886A8BD10AC72574666B1C730786BCFF36426ACAC60A9A1FC420FC8",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetDesignComponentAttributesByAttributeTypeIdAndDesignComponentIdCompletedEventHandler.cs",
+      "sha256": "AF0BF081E4973DC227F8F246B27DB8E515D5196F224417A3BF32E796C4A77517",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetDesignIdFromDesignVersionIDCompletedEventArgs.cs",
+      "sha256": "1235789F6061160ABD9A91BECF4E4F0D273EDB60CBB930F70267E4B573E6D177",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetDesignIdFromDesignVersionIDCompletedEventHandler.cs",
+      "sha256": "E10E707B33D48D91399EEC4A3D426EDB59C50CD7A6E9043D80962E6EFB7E3DBA",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetMaxVersionFromDesignIdCompletedEventArgs.cs",
+      "sha256": "58AF9A400CDBC0C6FC67792BB332E9DEB079A720242B8A7B71030C764182BC99",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetMaxVersionFromDesignIdCompletedEventHandler.cs",
+      "sha256": "462AA3A7735DBFF882DA76205A317C42A7D7AD2A9165D87C1B6C4E3F5ADCC959",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetVersionFromDesignVersionIDCompletedEventArgs.cs",
+      "sha256": "06492E7812A8573F97FF4AC8DAF431233A5A2F35667717C33C5C6CF4097D04A2",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_GetVersionFromDesignVersionIDCompletedEventHandler.cs",
+      "sha256": "EEBF53F0A5F022C676F2BA35A757FA73F999F3019F1A84B2999A026B7812AD02",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_RingRailDeleteDesignCompletedEventHandler.cs",
+      "sha256": "87F048F7AF603EAEB0223722BBBD4FCE6ECB6B307F268CC0D6A2F1388BD36922",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_RingRailSetDesignCompletedEventHandler.cs",
+      "sha256": "1B49B8E206E16193FF6C7FA869D03C0017FA9B7811050A3DDD7809188E0D6969",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_SetBlocksUsedCompletedEventHandler.cs",
+      "sha256": "DA82CE2A3B1921F376CA4D147B642F327C52CDCB61E70D47E28D4E0CF618CA11",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_SetComponentListCompletedEventHandler.cs",
+      "sha256": "B1D34BF0B3DC113CB12023C18D644B71A8D52CBA7A19A9D4BBEF9FA84BBE3289",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_SetNumberOfControlsCompletedEventHandler.cs",
+      "sha256": "FD932D6A9FDD3FFFD1EEE1A533381E6871A61420F387F8AB4F32876FBC2D398E",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CSG_UploadCleanedFileCompletedEventHandler.cs",
+      "sha256": "884F93FF6FC9CB3A541D0423445DCAD262077E8C466590BF5C316EDC4F80D661",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CustomerHead.cs",
+      "sha256": "0F75D8D7D0BA9291BC5F08FE41468FD7B331184A17F22A0A4F00F5C5CF4C94E5",
+      "lines": 130,
+      "nonblank": 112
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/CustomerStone.cs",
+      "sha256": "6574641CACEE632F245BDCCEBF4D42FEDA6EC89259DC1DBC74F89382F030AA7C",
+      "lines": 146,
+      "nonblank": 126
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DeleteCatalogOrderCompletedEventHandler.cs",
+      "sha256": "DF951EC345E19B5FF383475E87ACF938AE663CFB2588FDC82943F6799D8A97D1",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignCanBeStullerApprovedCompletedEventArgs.cs",
+      "sha256": "255B092E43F450A561289C731DC46901FDAE7EA71AAD8B016792F9A16E0B53C6",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignCanBeStullerApprovedCompletedEventHandler.cs",
+      "sha256": "F760154DEB9E61DA750AEED985664132BBBAAE1DF9A6E4DC955F4E66E866FFD3",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignIteraionAddCompletedEventArgs.cs",
+      "sha256": "03FE0B8CE6A35C8BF854D59185C260E6745BCD6B32DDF07AE7CD57FD210E8ED1",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignIteraionAddCompletedEventHandler.cs",
+      "sha256": "347B3D0F5D7470AC7AFDFB24FE6B05E74A72E01C618C0FE33720707B5FFCD3BA",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignIteraionComponentAddCompletedEventArgs.cs",
+      "sha256": "1AC6ABEFCC82849A0651247A0A842D27214BDDD0B45FC54DB9402F0AF8C29C9E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignIteraionComponentAddCompletedEventHandler.cs",
+      "sha256": "AEEB98DA177938C3BCDD8C539CE67BEAA67755E16BEE169BB76708451FA1CF34",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignIteraionComponentSetFoundAndDeleteAttributesCompletedEventHandler.cs",
+      "sha256": "E476FC07ECE9828FCE8F872E73CC52E32CE1195BED4657AB873C2140C8F17E16",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignIteraionSetNotFoundCompletedEventHandler.cs",
+      "sha256": "175C8A45E41EAF1BAE6B88591DF2A95B06ED2D6F677E6A423E1F2AF8AD067181",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignIterationComponantAttributesGetCompletedEventArgs.cs",
+      "sha256": "A3E1B5C41220E18AB1A9E05DD8CAF0D74BEB910A20C9783F5C624B77F23E5719",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignIterationComponantAttributesGetCompletedEventHandler.cs",
+      "sha256": "C4FF197244126E070E9A01152097334DC2B1A3EF1D2BBB060B096B64CE0853F7",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignLockCompletedEventArgs.cs",
+      "sha256": "90C4E91936EB8C510DF23B355D2C77857B3DE81D91303BF55558A12097F47C3F",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignLockCompletedEventHandler.cs",
+      "sha256": "7393169E28CEDF870116427B6D107367D4EAE94F409BE0D9442CE36CA4063BBE",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignLockInfoCompletedEventArgs.cs",
+      "sha256": "B98B729E70FFBADAC46652A59D37B3046F043BF2EFEE0435984901EA92057319",
+      "lines": 66,
+      "nonblank": 57
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignLockInfoCompletedEventHandler.cs",
+      "sha256": "8C4C40020D6FAF415BA274C1592A4592C8AB239EEDFE0D3184279BB8201760B2",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignNumbersGetCompletedEventArgs.cs",
+      "sha256": "2069F3C12D3F4DE9CF6CA523B7A09D2A2CFE16361770C9FB4D3E0764A45171C9",
+      "lines": 57,
+      "nonblank": 49
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignNumbersGetCompletedEventHandler.cs",
+      "sha256": "38D42767F4CC47A9327EE58D251ED7449AACD141317EBB6EF8D6FDB01C62F74C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignReleaseLockCompletedEventHandler.cs",
+      "sha256": "28359F460941C1BA0AEA29BC0465AB44A52C87EB352D596C8B01F204A64E0592",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignsSetStatusCompletedEventArgs.cs",
+      "sha256": "98A81BDCC4717B1633CBBB602E83D44548C5EB55348FD5FEBC00D9848CA268FF",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DesignsSetStatusCompletedEventHandler.cs",
+      "sha256": "450C65CCF22B46BD4FB4D7BE81C75963A908C28B9AD65C75E87542CDDDD296CA",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadCAMSettingsCompletedEventArgs.cs",
+      "sha256": "05E097D32178200115B5635463D0EDF4BAD71B953D19DA1EFD5370521442CC24",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadCAMSettingsCompletedEventHandler.cs",
+      "sha256": "4E01771D0E9A6585151DBFD8DA5BE5960CAAF6A00D11F033F4A5ACD2F0427026",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadCAMSettingsFileCompletedEventArgs.cs",
+      "sha256": "CD711DE3563F9B69C4F9C2C2287BB0A682FC7A26B1448CDBAB8BAB9DC2233B38",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadCAMSettingsFileCompletedEventHandler.cs",
+      "sha256": "2526647884D5003B0E2C9D2DA4F671C3B792E0BED3C426B79464D47DBA25EDAE",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadDesignForReviewCompletedEventArgs.cs",
+      "sha256": "DBD7301F8D73CBFCC431EB8F8B98633B19CDF9FA2BED09526D829526167655E1",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadDesignForReviewCompletedEventHandler.cs",
+      "sha256": "97846887441BED549C7859F425948765574713CDBFA829C114FFB28AA23E306F",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadFileCompletedEventArgs.cs",
+      "sha256": "1EC70B4A185A2AE570C2FA0C88A3A1DE6D8F0A72CBCCA93EC35F876ABA53565E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadFileCompletedEventHandler.cs",
+      "sha256": "19B79FC46ABF879DE1C487B85A90C7D5A5A5072A6445506CC3D42109D2FEFD92",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadImageCompletedEventArgs.cs",
+      "sha256": "92A71A1ED4DD6A81F3D5126C6056C793E72976B99C9C22B199874B21A8AEF20E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadImageCompletedEventHandler.cs",
+      "sha256": "89E2637FC662364180E42BB67CB34F52B0C7E58D29C6B9A16E6259986AE67F01",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadLatestCounterSketchVersionCompletedEventArgs.cs",
+      "sha256": "A467886C397FD8240C02DFD856B0EC63960B4E399CCF87CB087BB3FB07585818",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/DownloadLatestCounterSketchVersionCompletedEventHandler.cs",
+      "sha256": "6421A7872E76BC0E9772FA05848CB4576A867C28BFC8A849A2CDF33EA4DD2D73",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/EntityKey.cs",
+      "sha256": "861C1F6F4E1AC280AC700D5181E65C164B72DAEC21513CC75E496FAFE2AB2855",
+      "lines": 68,
+      "nonblank": 58
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/EntityKeyMember.cs",
+      "sha256": "0107A78B9BA242F32269EF167897C23659C52D703BB69007188D19C1E51204B6",
+      "lines": 53,
+      "nonblank": 45
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/EntityObject.cs",
+      "sha256": "A3F796964FA9CBD1BC30C1EA1B8301141F632631B1286414B911A99C33228826",
+      "lines": 32,
+      "nonblank": 28
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/EntityReference.cs",
+      "sha256": "0525FBA17CCE18AFEED37AD638F9F6E65182883FB4519A87D3F7C5E4D62DB809",
+      "lines": 32,
+      "nonblank": 28
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/EntityReferenceOfIterationAttributeType.cs",
+      "sha256": "DCB1740E698F935FBC77C0EB9DB3EFC4F2FAC14E442A4C6F376774CDAA38AF58",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/Error.cs",
+      "sha256": "9A1BF7E10D0B0C69877231271680CCCF99D25234CA04830CAB29A76F87E5EB21",
+      "lines": 68,
+      "nonblank": 58
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/ExtensionDataObject.cs",
+      "sha256": "23A46C77E33753AABBDC5E18C3AD01D000851DC3E6E898C5200D43991EC19F25",
+      "lines": 23,
+      "nonblank": 19
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/FeedbackQuestionType.cs",
+      "sha256": "032B4652C15D6D681074249DE1E44C4F13611EB77DE0248B6E8171D547759B2D",
+      "lines": 16,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/FindADesign2CompletedEventArgs.cs",
+      "sha256": "D5D4224BA3E7D8234E9A2902B73933870749DC9ECF20A383B71F0282E30D1087",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/FindADesign2CompletedEventHandler.cs",
+      "sha256": "3632D1BDBD158B1FA8156E8083C38AD6D493823A21DDAFADF2B5AB003416FF81",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/FindADesignCompletedEventArgs.cs",
+      "sha256": "F74FED96397D29DF9F0F5D8E3053FFA50FF1EE595A881388AA50D399B5075B8B",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/FindADesignCompletedEventHandler.cs",
+      "sha256": "1B974CFA9625BD3B3440A2D1CE48731BCE18326BB060225F30E184CC926E34B1",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/FindADesignWithGuidCompletedEventArgs.cs",
+      "sha256": "8BC032465A441F0BD641FB84990591674105588B7DBA7141D2831D17D1BD0288",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/FindADesignWithGuidCompletedEventHandler.cs",
+      "sha256": "A9AE6160B39CC815F5A2135F1A8105C092D828251D0483E8B0656E345E22A576",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GeoCodeAddressCompletedEventArgs.cs",
+      "sha256": "D02AC61368B2F064564878857388DDDBAC4EDCB986B2166C958C835A5DE6F45F",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GeoCodeAddressCompletedEventHandler.cs",
+      "sha256": "65545E9D95C098713DC5A63885F66AE2152FAAC0EF0635ED39021551F6DBD0FD",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllAttributesCompletedEventArgs.cs",
+      "sha256": "D8E0ED8B5F98B7A4A41943EB6D88DE2B9521926C4AF895786C8B9F099E9CC496",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllAttributesCompletedEventHandler.cs",
+      "sha256": "93A1DE960C90A6EE313DC486184152982DF74134E034D919E2397AC03FB08F8F",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllAttributeTypesCompletedEventArgs.cs",
+      "sha256": "14257779864D13E902E99A1B22FE6C24436BBDBAE695BEF8A332677CA50397FD",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllAttributeTypesCompletedEventHandler.cs",
+      "sha256": "2BF70FAAE23C10AC19130762D8355E9C319A6F76CDE5811FDE4B1876D9ABC588",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllBandSizesCompletedEventArgs.cs",
+      "sha256": "97C18C623203D3A5B3C0E11C527211350AFD9D3D973FC99DA0C68F54CFE8C5A4",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllBandSizesCompletedEventHandler.cs",
+      "sha256": "3CD849B477A4D597163F2C6C6430C23EC844BC86FC204E18C00D7DA8C83AA9BC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignIterationComponentIdCompletedEventArgs.cs",
+      "sha256": "57F248B36366EBF13E7C3D063B97F37CA573178983BB64FA039FF4FC019DA05D",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignIterationComponentIdCompletedEventHandler.cs",
+      "sha256": "5EF1BB46669011BA812E2F652C6285682BAB1D2F6BDFB3677314A21CD9329C66",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignIterationComponentIdFoundCompletedEventArgs.cs",
+      "sha256": "32C2D541C5C1F1C1954C00DF4FF9473119E76097F98FBC67D02F465A9644AD04",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignIterationComponentIdFoundCompletedEventHandler.cs",
+      "sha256": "7C13B60B33FBE8822CD4440245402E86EFE7E8016784D24680341B9735F79AEA",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsAndRelatedInfoByKewordSearchCompletedEventArgs.cs",
+      "sha256": "44CDF20B41173476CF6A5058190B6748EB1B2E94EB48808F4167BC737AEAB20C",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsAndRelatedInfoByKewordSearchCompletedEventHandler.cs",
+      "sha256": "454E519D2E330826804185A8A256F854CB61334DBE6D864CB5F7E65B7BCAB80B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsAndRelatedInfoCompletedEventArgs.cs",
+      "sha256": "29154ACF6891C115348DD850771063CFC6FEFA4CE589F1C72C51ABAC70F44226",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsAndRelatedInfoCompletedEventHandler.cs",
+      "sha256": "54D75BD5B81BC9C028380B534ECE9D4515540EA4BFAD178AC53CA3F9B21C9CF3",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByPaidStatusCompletedEventHandler.cs",
+      "sha256": "06F4BCB57615AD7E4F0CF3ED4772E32243DC6F9DC122848A011978572E91F392",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusesOrderByDesignIdByKewordSearchCompletedEventArgs.cs",
+      "sha256": "6F9D18A665F3465ED38D5CB69C78CA8FA396BB5556BAD5821A68B8EF5BAE8783",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusesOrderByDesignIdByKewordSearchCompletedEventHandler.cs",
+      "sha256": "72AE33896ABC8113712339E7D9BFE9A5BFF3EF27978CE135D26390D04B2FCAB3",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusesOrderByDesignIdCompletedEventArgs.cs",
+      "sha256": "95906503933EE3196B7B49AE241659ED667878507FDEE02204348D6CD88A86CE",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusesOrderByDesignIdCompletedEventHandler.cs",
+      "sha256": "D875FBD904751C5020D83242AD149E2691160E550590202510A39140BD82D6AB",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusOrderByDesignIdCompletedEventArgs.cs",
+      "sha256": "92DA65130A5F50F13CC0B45C327FC92C2503DDA9E4ABFCD83A32EF1CCA445841",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusOrderByDesignIdCompletedEventHandler.cs",
+      "sha256": "8450B65B61C5A19ED02715D8422505F35D8FFD7162805E91C2728F6466B41A0D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusOrderByStatusDateByKewordSearchCompletedEventArgs.cs",
+      "sha256": "B0DBB8CD52DECE9B177BDD41EE48605B79626372660C91FE505DE64703F7E0B9",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusOrderByStatusDateByKewordSearchCompletedEventHandler.cs",
+      "sha256": "898EA59ABB00EBCCFE379A2E37429445ED9887CAFD933EC18B6F7948593B58DC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusOrderByStatusDateCompletedEventArgs.cs",
+      "sha256": "0064D642A97EC227EB8020B2406540BE1479DE93314EBC75809D8AE27052D721",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsByStatusOrderByStatusDateCompletedEventHandler.cs",
+      "sha256": "B67A0E4E1E99558C093854F1BE2D7730EDBC734D01CAA80536B492E229BD5F6D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsCompletedEventArgs.cs",
+      "sha256": "CE6A45E6BB3A8FA9C1F27558B56198ADE032EE7298F97E5BA1D5B8E0AC142ACF",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignsCompletedEventHandler.cs",
+      "sha256": "E9C1C19F7F72F2065D99EF6B585B3D2CCE91E644B6EB4C960E0802D19D2D2C08",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignTypesCompletedEventArgs.cs",
+      "sha256": "1AADEDEE32A5A70649A951CAFCEDDD5D7A91373CCDAA005ADD299F396F8E958D",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllDesignTypesCompletedEventHandler.cs",
+      "sha256": "F896A6A74C4EFE6EAEAB23D9659766EB28C1C778047BC293BBE2444AF3C2C3CB",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllQuestionTypesCompletedEventArgs.cs",
+      "sha256": "E6BB2B82733C190D3299C6A5002E776E72FD485807127E7956005679F7244B41",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllQuestionTypesCompletedEventHandler.cs",
+      "sha256": "B0ED9E772A06228A9B4D6409C51101CACAEA464B28A3DEF6382B8B76BF028FCF",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllStullerComponentAttributeTypesCompletedEventArgs.cs",
+      "sha256": "0A3082CB391B5F7BDE6423FE323C37763F29DAC087936386F20BF64C2E9C28DF",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAllStullerComponentAttributeTypesCompletedEventHandler.cs",
+      "sha256": "786212932E3957EAA6CC5C74A783710773BCD0272B0B950448E5C63190D9B2CC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAssignmentGroupByIdCompletedEventArgs.cs",
+      "sha256": "5B6FF83D7991D4602CD96C4B5A490A6BE52A85A4F7E5D1EF72FEB8794BFF4833",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAssignmentGroupByIdCompletedEventHandler.cs",
+      "sha256": "F5909B71C1D2E799FFE2803D96D0E7D12911EC86A823D2C0E41784728B6BF8A4",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAssignmentNumberByAssignmentIdCompletedEventArgs.cs",
+      "sha256": "B5667F98A2B2A59BA753BC8DF975691110A4F60EB104AF47C1B43A6F29E7856C",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAssignmentNumberByAssignmentIdCompletedEventHandler.cs",
+      "sha256": "1669B58D9D827ED5B71085E8A63A706468A4F53124922CDD98A78A967774956F",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAssignmentsByDesignerGuidCompletedEventArgs.cs",
+      "sha256": "7C80254537A93C1C5FA81CCFC9A7AAE9192381316C1143AD902F812F1C517A85",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetAssignmentsByDesignerGuidCompletedEventHandler.cs",
+      "sha256": "BDD2AC5AF74411FE278441D46611078AB8188D962317192CC4C69232A2B17024",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCAMSettingFilesCompletedEventArgs.cs",
+      "sha256": "EC5AFEDEC4BE8ED98832FC580A1F2111A293EB5FB6C0460653AF8E91A9BBB944",
+      "lines": 39,
+      "nonblank": 33
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCAMSettingFilesCompletedEventHandler.cs",
+      "sha256": "5E8080431B559E546825071097888035A247EE2D34E056A400F2156B2E8D84D7",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogBaseShippingCostCompletedEventArgs.cs",
+      "sha256": "E9DFB500B8F48C936CDB3FE9ADC7B1CB9527500C3476274079FBB3BB38862003",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogBaseShippingCostCompletedEventHandler.cs",
+      "sha256": "E1FBF50E6A5AA5C14E1E10844B1C765523F9A61D042D378978525A7A492CEB7D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogCostPerPageCompletedEventArgs.cs",
+      "sha256": "3374B13E544CF2AA8CE47BB531640558D3328CEB4A32C7C1D4C958EF63CA1F3E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogCostPerPageCompletedEventHandler.cs",
+      "sha256": "6707743943CCE3823B403F492048F9D4222A65C680E27636B70C4BDFC5B78D04",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogOrderByIdCompletedEventArgs.cs",
+      "sha256": "8C24EDDB9819F77464F5565DA127DD8FFB3C4123C24F9DEA78A988D0BEF1A52C",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogOrderByIdCompletedEventHandler.cs",
+      "sha256": "410BF1FB642382263BD28F5124A6C4342168FD8C5513F445437879F1FC282842",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogOrdersByKeyIdCompletedEventArgs.cs",
+      "sha256": "BB01CC1A31B08B838EAA51F7E1348C9A26254ED6252FC4C855252AD86A324B6A",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogOrdersByKeyIdCompletedEventHandler.cs",
+      "sha256": "4ADCA320AE1C3DFF20E2BCA2C56F6FF8C667A7A32F29BC30E9D57B46C156E692",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogOrdersCompletedEventArgs.cs",
+      "sha256": "D3CCE2FB2A7E53B6585524C5BCF0D1B77FF7B0DFCB24D131C8971801C71A5858",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogOrdersCompletedEventHandler.cs",
+      "sha256": "4478A0BE1689088CFB443D20FFA5323F03765896259A9FD28616D5F694FFBE09",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogPerCopyShippingCostCompletedEventArgs.cs",
+      "sha256": "9F81A3FADFF977D17B0CF6463E64A21FE059C8860710E37528FC9214D8B7300F",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetCatalogPerCopyShippingCostCompletedEventHandler.cs",
+      "sha256": "92841565B3E2319C891A8E171B23A123070A08ECAC0CDEB063EFBF0C34629689",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDebugVersionStringCompletedEventArgs.cs",
+      "sha256": "1A1BB5FE552A9A1FA4589C0C6E171CA7BE30AC5A012AF9C930EB28729F2EC671",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDebugVersionStringCompletedEventHandler.cs",
+      "sha256": "DB54E7EB75D31ED3F9B82BEB769D3A039B3FB93A759AFD12DB01E1886713E348",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignComponentAttributesByDesignComponentIdCompletedEventArgs.cs",
+      "sha256": "9CC79C952B36E0EEB028F7CE0A70595C759735D5C91F179E98ED6F4AFB23D5D4",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignComponentAttributesByDesignComponentIdCompletedEventHandler.cs",
+      "sha256": "A794B7FFEE7DFF9927D8730FF1AE28964ABA128D47B945E5527BD79F19FAC1DE",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignComponentCountByDesignIdCompletedEventArgs.cs",
+      "sha256": "D2A70DA24C3220BD3ADD2B76A6F7A668EA644FA127F123D46D9BDE3ECA7196B6",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignComponentCountByDesignIdCompletedEventHandler.cs",
+      "sha256": "930E3370C3F29F7AF57B95C92005C4E866DC63A76D6F5CEC2A8C545D22B886F3",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignerByGuidCompletedEventArgs.cs",
+      "sha256": "830860C688027BD489E05B39759C374E296D05EC282D5DBDC32BE983B52C5754",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignerByGuidCompletedEventHandler.cs",
+      "sha256": "65BA5F0EFA8ED8A3D47ED78E0666DBE60F9352E929A1035C2DC93DE5AC691788",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignerByUsernameCompletedEventArgs.cs",
+      "sha256": "E46B8042229BFEF95ACF2E83F55FC2B96CE5161FBFF0207CCB65DEA66C1F5AA7",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignerByUsernameCompletedEventHandler.cs",
+      "sha256": "B9D7BEB5FA2A5FDDB2F3B18452AA4A8007AD00E761F6B4C308EA59F0BE5C0385",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignFilenameByDesignIdCompletedEventArgs.cs",
+      "sha256": "580619DE6B0517768416093B3E4FCB918BB72C301F333ACE392551EDC4CA9F53",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignFilenameByDesignIdCompletedEventHandler.cs",
+      "sha256": "1D43B608136D5AB4D1DE0428980B448FA4CD2E0CDBFF9EFA94A8389636ADE323",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignHistoryCompletedEventArgs.cs",
+      "sha256": "B240336FB8B56EB800B3C3D15C264DD7A289FF7C042E62FE85EE3C37786975A2",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignHistoryCompletedEventHandler.cs",
+      "sha256": "A2DEE126F2F47402C0CBA579A5BE24D9388B8F0FEEE2EC06E1920C8F22C96D88",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignInfoCompletedEventArgs.cs",
+      "sha256": "F5F50DFB4CA8A6C10FB3CD921A49D21EB879124881797684F6C7554224DFB302",
+      "lines": 66,
+      "nonblank": 57
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignInfoCompletedEventHandler.cs",
+      "sha256": "1F4CE2547C6DD9BF7754E9929784B20DE7D3A200C250C5321464FD8D9E2B4FBE",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignIterationValuesCompletedEventArgs.cs",
+      "sha256": "7395283EBF9AF5F64EE3D66EE6C831C425209917D2F48BBBCABA4C3F9ADDC0C7",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignIterationValuesCompletedEventHandler.cs",
+      "sha256": "18A20555E777CEAB0E1988D4DC03B44DC40AFB09414C15A23A410F0330D54298",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignMetalSpecificationByDesignComponentIdCompletedEventArgs.cs",
+      "sha256": "E7708A8A756669BC6A51A0D36014D25819FFB6C1642B35F1FD6ED38D66A67A4B",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignMetalSpecificationByDesignComponentIdCompletedEventHandler.cs",
+      "sha256": "FC91E313E5548D19C1DE9EA145616FB8A91B2DB561ADF60477F36739899D00D7",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignRingRailSpecificationByDesignIdCompletedEventArgs.cs",
+      "sha256": "615D9E26D3907D5E761B455ED283F0755669931C2CC59B045F8C42C42A58FF91",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignRingRailSpecificationByDesignIdCompletedEventHandler.cs",
+      "sha256": "CF1CE63E1DFB1FE477537814F5D629EFE80AC4A9960EABAC3438683A5C13F1A5",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignsByDesignerGuidCompletedEventArgs.cs",
+      "sha256": "CA886E1C9495A0E98B5F870475BD7C01C9F09F17D2491F4BC8A3BF49D0AD3FC7",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignsByDesignerGuidCompletedEventHandler.cs",
+      "sha256": "A3092F87AEE75AD48F70473E5F656C23E930BE1AC9E1F4AD0E63F1E39B93C573",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignSignatureCompletedEventArgs.cs",
+      "sha256": "73E8223AB262A7FA08A09071C80932A8883D8946F6E4E8C28BC489C352D98580",
+      "lines": 39,
+      "nonblank": 33
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignSignatureCompletedEventHandler.cs",
+      "sha256": "A0755B94DFA9930BFCE60158851CB1A792C85F1746D3811152D9142A94EDD895",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignSignaturesCompletedEventArgs.cs",
+      "sha256": "0D43DAA0932E9E3C7277EBD663EDA1D0995F64C03EFBAE7E56E0956D15D6797D",
+      "lines": 57,
+      "nonblank": 49
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignSignaturesCompletedEventHandler.cs",
+      "sha256": "CCF8680630B7BCB770AB8579F65C925A1AECBE75A1EDF87EF5EA042BC0EA2793",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignVersionComponentIdCompletedEventArgs.cs",
+      "sha256": "DC8BF62285CB00724C0D7B83D39DAAEBD86CBEB8EFD895F43064318EDF93080B",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDesignVersionComponentIdCompletedEventHandler.cs",
+      "sha256": "7A3A131E2D27F00098CC9C207DDA1C7595E7FAF701085DADAD78CAE3318E84ED",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDICIDsFromLinkedDICIDCompletedEventArgs.cs",
+      "sha256": "B52BD377C660C91EBA1F22907F2D42D026686954B858A261151D0461DA3EB6B3",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetDICIDsFromLinkedDICIDCompletedEventHandler.cs",
+      "sha256": "6F57F23418D2593DB592C44821EED7464211A96BE40C18D151E597FD27B8AFBB",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetExchangeRateCompletedEventArgs.cs",
+      "sha256": "962263C2E8B3F291837F161F3477065D3854E4F96DB2D93AF8B1283CEE14E882",
+      "lines": 39,
+      "nonblank": 33
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetExchangeRateCompletedEventHandler.cs",
+      "sha256": "00B839DE188A732F9FCAFFEECEDA823AB43773A930685BC9DAE630BBA1B443F0",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetIterationAttributesByTypeIdCompletedEventArgs.cs",
+      "sha256": "1321B3F594298E860D102EEE5D7E52A0183250B6B2DACF2C67702D2AAD170628",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetIterationAttributesByTypeIdCompletedEventHandler.cs",
+      "sha256": "51F16D501FA96818CE9F08541EAA80C7BE9DA6CE406278FA3CC1C4A04F7E767F",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetIterationGemInfoCompletedEventArgs.cs",
+      "sha256": "60ADB917BDD1F78F58A1EEEEF7B35F866A93546DCE061C1338BC30BE19CC5081",
+      "lines": 120,
+      "nonblank": 105
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetIterationGemInfoCompletedEventHandler.cs",
+      "sha256": "CE11FD32E11A379935BDDFDEE5C99BD9424AB15703FBDF0F02914C19B032D4E7",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetIterationOptionsCompletedEventArgs.cs",
+      "sha256": "CD7637192D0512D305C01512AD3E868B0698A97A6DCA5F01FDF6F5A2C39789CC",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetIterationOptionsCompletedEventHandler.cs",
+      "sha256": "16AE522EC3853A517E6484E0634E1A1D4FBF65BF9C928B1AA478E98A64E2A96A",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetKeyCodeByKeyIdCompletedEventArgs.cs",
+      "sha256": "D5D914CE0331A4DF7B5A4FDB3734FA9BECDF88748AD1231304213068DDF78993",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetKeyCodeByKeyIdCompletedEventHandler.cs",
+      "sha256": "1F9E4F93C44AAB8A221573C4EF8322BD6F621DDAEA2EDF2FDE0E4070A3C7F18A",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/getKeyIdFromCSCodeCompletedEventArgs.cs",
+      "sha256": "A77A12224EA6C1793DB3262ACCB2EEDB3CCB9A69067D16600ECBEB2B1145555C",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/getKeyIdFromCSCodeCompletedEventHandler.cs",
+      "sha256": "B22001BA2608C63EDAB9F7B57E08ACE8FDF0D2C1541248FF15EFFFE98B7FD336",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLastNoticeIdCompletedEventArgs.cs",
+      "sha256": "2FB5FAD0FD83CC7D842EE78CAFA1548CA17211150E8FD20F3BD75F1FF104CE4B",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLastNoticeIdCompletedEventHandler.cs",
+      "sha256": "B798B5FA5BB1547083A1E318600C5C0D2181C42BAC1760EC54BF7E2A39654032",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLatestCounterSketchVersionStringCompletedEventArgs.cs",
+      "sha256": "A83AFA305057C44AEE3BE19BDBDBEBEA71595829769EF201274CE3ECDF7D4364",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLatestCounterSketchVersionStringCompletedEventHandler.cs",
+      "sha256": "D36ADF99EE6C49271593C0D0A8000F1B5CE401E353247FA21C64EE3F2F8B4F98",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLatestDesignerVersionStringCompletedEventArgs.cs",
+      "sha256": "9CD6CFB2E5367B38435578E4ED0B3441DBC4401EE621DED702A3B0FEE6D2AEF3",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLatestDesignerVersionStringCompletedEventHandler.cs",
+      "sha256": "F6C76D0EA80FF83695FC5B49F911A6D97ACCD1D68B16B2DB971EA8594422A0B8",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLatestNoticeByKeyIdCompletedEventArgs.cs",
+      "sha256": "4E18EA840CB7D8E15B8A6333815536294424287DF0C781CF4AE85C23D7E9D780",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLatestNoticeByKeyIdCompletedEventHandler.cs",
+      "sha256": "601EC640237055C51AC74027B3C417382C6B339BC3FC71E23D97B7E6681AE307",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLatestPublicCounterSketchVersionStringCompletedEventArgs.cs",
+      "sha256": "F6E6E03623605303CC5D40819FECD8613FED0859833CD011475F6D9025EA6973",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetLatestPublicCounterSketchVersionStringCompletedEventHandler.cs",
+      "sha256": "594E8860786471F292D5836677E8E80424266BE6982596E8298A30F8320C6F2E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/getMatchingBandsCompletedEventArgs.cs",
+      "sha256": "6BFF8CDB3DC07A45AEFBADDAA6BA8AF438B55E0F49D56B251B5EFE2157B7BFF9",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/getMatchingBandsCompletedEventHandler.cs",
+      "sha256": "48017058FD18B80EA36ABF98E7B3E0FF4406FC350E0908C5B12C51A91287E7C8",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetMyCounterSketchVersionStringCompletedEventArgs.cs",
+      "sha256": "0FA73A2E153C8BB370E5E2C6CAE78729E87FC515212C681CDE29033AC04A2BD6",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetMyCounterSketchVersionStringCompletedEventHandler.cs",
+      "sha256": "D2157F87A955B1BD7F5D07CE9596B4A19ADE95EA953F10B6C8D90061F9C4127B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetMyLibraryFilesCompletedEventArgs.cs",
+      "sha256": "9BF91E988AE799E79F6B3AB10FB83C14380FE5963882957495E07D30D0CA91DB",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetMyLibraryFilesCompletedEventHandler.cs",
+      "sha256": "C78BC1E21834867965AC9359B49628A77985B32A771270515F067D133F5FF8F8",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetMyLibraryVersionCompletedEventArgs.cs",
+      "sha256": "77AB108696945222716619D5552F05CAF3CD6A681B342B9D425A03BF2C0F5D70",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetMyLibraryVersionCompletedEventHandler.cs",
+      "sha256": "9D6BFFFFF23F06A0F712557AFA54999C5319054DF0CED2F1CC27A2AD8D82657D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetMyLibraryZBinCompletedEventArgs.cs",
+      "sha256": "3AB3A134C791B45CD6E02CD33E3362FDFC74D2ADC02B7F0D3599B5DD9238298E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetMyLibraryZBinCompletedEventHandler.cs",
+      "sha256": "7E37A045C973A05786E477D8588F991FA2BBE18EC97FFC4F882BD8067CD3653C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetNoticeTypeByNoticeIdCompletedEventArgs.cs",
+      "sha256": "B883AF3C8A86D8573776BE499835728F0509C2A55DF0660A24EB628A7D00E739",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetNoticeTypeByNoticeIdCompletedEventHandler.cs",
+      "sha256": "FEBDAA7B0F7D0F9E7E4AD9FB9B5B8ACAE7C3FC79928446CBB72FFC69EE5B1765",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetQuickEstimateCompletedEventArgs.cs",
+      "sha256": "601E532C0E9D864AEE58F8C3A87A56BAEDEC912ABF24A4A40B55392D193274D3",
+      "lines": 48,
+      "nonblank": 41
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetQuickEstimateCompletedEventHandler.cs",
+      "sha256": "F907E99EB0907632340CF149392ACF310FB290FBFC3A778140EA83D56774327F",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetQuickEstimateWeightCorrectionsByDesignIdCompletedEventArgs.cs",
+      "sha256": "07A1E77CA798E4DED1F14BB024192F787CA6C57809E584CC3DD066427B119176",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetQuickEstimateWeightCorrectionsByDesignIdCompletedEventHandler.cs",
+      "sha256": "6C5C5369CAE92C8CB413FFAF5A2985EEB88AF356A41D4F5F652C59845E102DAC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetQuotesByKeyIdCompletedEventArgs.cs",
+      "sha256": "9316F0E235FF180F24BF030EE9CD37773BE41FD982672BE6FF8D7F960F711820",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetQuotesByKeyIdCompletedEventHandler.cs",
+      "sha256": "3599ACD1DFB736C1F859860093DA2522109FAF47F5FD9543C600EC4FD87B89AC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetRequiredLibraryFilesCompletedEventArgs.cs",
+      "sha256": "382F45D7A78393BE3AF28203A96E9F75CF88827418FC5DF683B71D0A9C7EE665",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetRequiredLibraryFilesCompletedEventHandler.cs",
+      "sha256": "C512EF981E96E21D5FB80D192BD14ABC636E4B3CCD4AF2DEA89BFEAE85506A14",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetServiceExceptionHistoryCompletedEventArgs.cs",
+      "sha256": "2CFB2D51ED3EEA0E8CD5DB464BA2439490C6DD73821F9D249D81E7AC8ADFD987",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetServiceExceptionHistoryCompletedEventHandler.cs",
+      "sha256": "A100F9067C80F3396D0E3195BBBA2FC7DA50DA0CA7999E1E9CC9D11D238AD0BC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetSurveyQuestionsCompletedEventArgs.cs",
+      "sha256": "D2C3D983513AE9088DB6A2ECA9D9415418C6A92B72D811CD65CB719FB3C29373",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetSurveyQuestionsCompletedEventHandler.cs",
+      "sha256": "6F3BE55290D4FBFF985930252A5818E6C38D49B26F6BB9EF00A9D2433F142EF4",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetUserTypeIdCompletedEventArgs.cs",
+      "sha256": "C32C025A0AECF27998745FA341670C169530BE6845F0814E9A2C27EEDC5D4DCC",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetUserTypeIdCompletedEventHandler.cs",
+      "sha256": "29DC602F4F71C76892F5E2F20C4CECB9AE3A19F2B6744A2058BAE8A0B27DE9F2",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetUserTypesCompletedEventArgs.cs",
+      "sha256": "2121E9C6CD6BF329C5986345ECA79573927B68A900BEBD51E97293FF539282D3",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetUserTypesCompletedEventHandler.cs",
+      "sha256": "2F2A916E67F10AB02F01481E4B7D20CFDAB1B748B6E80633915AACAE09898D01",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetValidIterationsCompletedEventArgs.cs",
+      "sha256": "C8E84F916D05D6BDB95CDBEE45F71C9AC4A68852EDCCCF4173E6979078C709D6",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetValidIterationsCompletedEventHandler.cs",
+      "sha256": "3092909F71782234909EEB7E82859376B8E2F37F34B8A7D0E77AC797589A8B53",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetValidIterationsListCompletedEventArgs.cs",
+      "sha256": "6C37B9794DE6AD8DCE5CA0B0343E3EA03E9992946909FE437662E7D4CF26D0C8",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/GetValidIterationsListCompletedEventHandler.cs",
+      "sha256": "62E6CE0FA4CA4F0F2AA49DE0C56C2619241BDFCE23C188C74E9177D42F3570E9",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/HasActiveSurveysCompletedEventArgs.cs",
+      "sha256": "721D49FB950D5DA4A5406F86AF2AB84F346E13C1C50668492E5A92FBC345FE64",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/HasActiveSurveysCompletedEventHandler.cs",
+      "sha256": "6F739E9FDF749622BB3575F63C84E7B4349978A8C06181D7BD0BBA2073BB4EBD",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/HasAssignmentDocumentByAssignmentIdCompletedEventArgs.cs",
+      "sha256": "F172498DF6E6FA5B816E9ED5106A40EC78A1F4B2A17D3966D8B33A152ADF36DD",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/HasAssignmentDocumentByAssignmentIdCompletedEventHandler.cs",
+      "sha256": "7C7665C47B81DC85F91F2F9862A8BF3E0D51C011D0658C6DEDEAE20854BF22C4",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/Head.cs",
+      "sha256": "21AE58E96D595B5C30DD49383D4CB796E5EB95157D82BAB2EAB95E7339080D8B",
+      "lines": 160,
+      "nonblank": 138
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationAttribute.cs",
+      "sha256": "9F0B4F944BA9594B16C42549CF78A815ECC36E18D9BC62A524CB6AB334C9C097",
+      "lines": 77,
+      "nonblank": 67
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationAttributeIdGetCompletedEventArgs.cs",
+      "sha256": "16D0F0323419D1A5CD0A13590F27E2FB486461B5F09FB3FAB198A7C968683FD7",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationAttributeIdGetCompletedEventHandler.cs",
+      "sha256": "D68F8062E7D1D407DADB7E363D860CFABF7C7B273497BBEB8788E6F112F3E570",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationAttributeSetCompletedEventArgs.cs",
+      "sha256": "71C34F2ABC6D51BC9C5FBD9341CF20770DD3D6978B4B4C0CAC408B76CC284787",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationAttributeSetCompletedEventHandler.cs",
+      "sha256": "78FE73D5EEE45DE86E1EF6DDEE54F5358C2801BBE7170868519B42CC1DF8AAB5",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationComponentAttributeClearCompletedEventHandler.cs",
+      "sha256": "D4E37A8F441AB39B91F4342ED757FD0A514756F3640C46F3553E707CBA4D3CBF",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationComponentAttributeGetCompletedEventArgs.cs",
+      "sha256": "DF5BC40E8A8FEA54C73A091A32C88C9EA6818242B5D33E4DED6C7B367A3DFE3E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationComponentAttributeGetCompletedEventHandler.cs",
+      "sha256": "98B080C7555AF8A184E72C90A117EDB654C39DB3407A345049670031A17765C9",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationComponentAttributeIndexGetCompletedEventArgs.cs",
+      "sha256": "4F9AC25110A42CC4A6B2E46335CB8F4220140BDA774104A00E5A39FB637A460A",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationComponentAttributeIndexGetCompletedEventHandler.cs",
+      "sha256": "C4017E75B0CE21D1486F0E190AE61215747AA6F91DE2FD4DF6B0ED8000E56F73",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationComponentAttributeIndexSetCompletedEventHandler.cs",
+      "sha256": "91DC534076E3B4B490051173120721D2EE993DC6DCE6F3A621B529007CCC8446",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationComponentAttributeIndexSetListCompletedEventHandler.cs",
+      "sha256": "957480A79241027614ACE3E3C3F1CCA0E47AB770CBC0C000F7DC51BB019CCF93",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/IterationComponentAttributeSetCompletedEventHandler.cs",
+      "sha256": "F3D9B06629AD64E83BF032EDE8D1FAB653F76646FED153EC62D56DFFF7C40AE0",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/Mounting.cs",
+      "sha256": "C39CA9297044968E8043F07C8E69B2AD35C9B3FE203361096F7EC901B9162D87",
+      "lines": 159,
+      "nonblank": 137
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/QuoteStatusResult.cs",
+      "sha256": "84D00AF6D12DB334F64C3B2A6D5CF1B8CC4767859B4A0DE29D8EA751C8950C73",
+      "lines": 68,
+      "nonblank": 58
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/RelatedEnd.cs",
+      "sha256": "B4A88173A8DA83C71C269174DA923CDF5911321F6337FE8EB6DD49458B2CD9A9",
+      "lines": 25,
+      "nonblank": 21
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/ReviewerUploadFileTempCompletedEventArgs.cs",
+      "sha256": "E31F4DFFEE32A02D99E110706B503DE12DAFE67B667ABE6A9A88A1BA453643C3",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/ReviewerUploadFileTempCompletedEventHandler.cs",
+      "sha256": "716588AD84EA0329F035ED7A56BCF9ADD1529ABDB68A743AF57926EFDA9EB320",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SaveFeedbackCompletedEventHandler.cs",
+      "sha256": "986809F91B61C4D183971C83C5539F75C770C3F4AC3FB147C006E2A8599A758D",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendApplicationEventsCompletedEventHandler.cs",
+      "sha256": "F7D84250369E73A0946AD0FE99D800461EFA329601223A69FDB56C866B96899E",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/sendbytes1CompletedEventArgs.cs",
+      "sha256": "8FBD39F422B68CFD52271A2AF17F2364444F79CB72E8DD45291DF3E3C8527E49",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/sendbytes1CompletedEventHandler.cs",
+      "sha256": "BAF1ED12DF4A9BAB01B37A215ABEB6637EA4A65B10A89D81BF5BEC88D58D034C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/sendbytes3CompletedEventArgs.cs",
+      "sha256": "8EFDD1181BBDAE72E1FB69D6EA3C5C75422ABB49751B3B8773FC290B6F4B524A",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/sendbytes3CompletedEventHandler.cs",
+      "sha256": "909B96CED24D30782631E2C47A70546C0FF9CE41DC9340DCFF515EE53E57B3F4",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/sendbytes4CompletedEventArgs.cs",
+      "sha256": "E4862BE046867012A440CAA306BB733AF3237FE74EAEBCD18C83577527ECF156",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/sendbytes4CompletedEventHandler.cs",
+      "sha256": "D33051FEDCA3DD14F685F67E34BFA90B0F000A5603EA48E8D475984E28B4D156",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/sendbytesCompletedEventArgs.cs",
+      "sha256": "7A79AFE7CACA5B96EA222B897F68091B701E6638ABC48A5C7DCDF97FF9376066",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/sendbytesCompletedEventHandler.cs",
+      "sha256": "FD8EEB97531842BC4276AC85627984A4CB2754EDC2D66281773900689B97461C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendDetailedRequestForQuoteCompletedEventArgs.cs",
+      "sha256": "9051BF9424C15E117D6E7C3B0938F004F230B90AC438B609A71DAD59D8ED49DF",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendDetailedRequestForQuoteCompletedEventHandler.cs",
+      "sha256": "1339C8AE8099B0F919A80764C0EEECA9856AF5825E53F010A5B9474ABC8F9760",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendFullRequestForQuoteCompletedEventArgs.cs",
+      "sha256": "D6C7BF01CB0D5B9E06F0ECBEF8B9641B50A6C80FD73704BF6CC107E17D185A2F",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendFullRequestForQuoteCompletedEventHandler.cs",
+      "sha256": "AA14C5EB5E636F478096078F0FE2BE941F4F25D08A6CCC901FE1D1CA2092E098",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendImmediateEventCompletedEventHandler.cs",
+      "sha256": "E6F598856F529DBA6C5C42F0374FC2B6417926532C6EB720D6697FD245BC61AB",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendInstallationSpecificApplicationEventsCompletedEventHandler.cs",
+      "sha256": "397D3B6B05F2D9CB5215B8E54ADD8BF14510E5DEC522BD31C0DAB7B9E1CFAFC6",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendMailCompletedEventArgs.cs",
+      "sha256": "68CE60DFED9DFE707240B336DC1E529A2793394BE967456BF8344FE93D40F4C8",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendMailCompletedEventHandler.cs",
+      "sha256": "5BAE880F976634D65DB2E85FC1E2797A0B8FAD054A5FE68EE1E4E72A6BDE646C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendMailFromUserCompletedEventArgs.cs",
+      "sha256": "00FBDA49F2C99A3694AC3F666B8221D79BD266335C1A71D9159F5A5D5B518E00",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendMailFromUserCompletedEventHandler.cs",
+      "sha256": "B373835B7ED9172A5AFB525A4CAF67CF896581E814BC801485804951C7EC0B19",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendPrototypeOrderCompletedEventArgs.cs",
+      "sha256": "7B7AA26B9FA425FFF44299ED15CDAF419968FD5E3C13A1B9332968147D145955",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendPrototypeOrderCompletedEventHandler.cs",
+      "sha256": "FD61372035EB71B89CA49CC2F49E52CD73D9A3458F538BAC04B48370CFE928AE",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendQuoteOrderRequestCompletedEventArgs.cs",
+      "sha256": "7701CF2BD919F8B1451CE196817DF47E334CF47317B39712671E4EFD2496610D",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendQuoteOrderRequestCompletedEventHandler.cs",
+      "sha256": "14A037383262BD48B35E32E70EC985BD9458D707E117CBD885A518D1E26543EC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendQuoteRequestCompletedEventArgs.cs",
+      "sha256": "AA83786291659804EB003A5D16A65604182493843609E711D37BB6F3FB947754",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendQuoteRequestCompletedEventHandler.cs",
+      "sha256": "EE8D2647C52182C99706909FB3EFE3696F46084F264FB0C0FC7F888CADE29F80",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendRequestForQuoteCompletedEventArgs.cs",
+      "sha256": "86F7B28FE91D613CA2CED3C1044F4FDA3E7B552001C77EAB21E470791405047B",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SendRequestForQuoteCompletedEventHandler.cs",
+      "sha256": "E992CA28E0F93AF6DFB7752994DED0A0176CC36874993DF8A0121DB0F6C95782",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/SetLinkedIDToCompletedEventHandler.cs",
+      "sha256": "5F994F9294516809351EC8C41BAAB11665CA305A219C04DA1323739EF4920460",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/setVersion1CompletedEventHandler.cs",
+      "sha256": "37E8E7E0D139271BB57BC98DCBA8B2A91E590520179E6C1B467616DD6F66AFF6",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/setVersionCompletedEventHandler.cs",
+      "sha256": "DFC04399737B031507052CCECE0AA8612BD86C9464C7308B31A42354CE9E5ED8",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/Stone.cs",
+      "sha256": "C265BDE297C87A98C0ADC3252B4B4A8F18CBF517012F5B5E926AD90A0E025B07",
+      "lines": 146,
+      "nonblank": 126
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/StructuralObject.cs",
+      "sha256": "7BDB27B2E19FD1E08D01742E7784C905E76EEA16D2AD5241856F2549739BEB6C",
+      "lines": 25,
+      "nonblank": 21
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/StullerServicesAreActiveCompletedEventArgs.cs",
+      "sha256": "C90BC296B3C36B54AAA4E9552C2B9387BADB300847D4D654CFF8B67CC3F7D8B8",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/StullerServicesAreActiveCompletedEventHandler.cs",
+      "sha256": "4DF0D524BE6B4555C4DA08122836E36C8CB0C287FAD6249E62B3B954EC021AA0",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/TransmitDebuggingReportCompletedEventHandler.cs",
+      "sha256": "B497E05E710E2CA8132FAD43B054AE843D9E27DFE173B96EB6CE8585DA80812B",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/TransmitDetailedDebuggingReportCompletedEventHandler.cs",
+      "sha256": "431E37FAC70FC7DB8306A9EADDD2C1CC826A478AD2CA657E88C9E5044B85CCE2",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UpdateAssignmentOnDesignerCompletedEventHandler.cs",
+      "sha256": "F75DED63306765828AE438C62D9FF35F28A369A634E48F53BCD363BC8BF55036",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UpdateCatalogOrderCompletedEventHandler.cs",
+      "sha256": "1341C30FB5719E7571137C7D8DB518131DE2B2DECBA56B4A35BCA36915BF471F",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UpdateCatalogOrderCreationStatusCompletedEventHandler.cs",
+      "sha256": "77D1FFB29F182F94966D0EB706A7BE024A7E025DFFF7B85817CC7123F142FB3E",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UpdateCatalogOrderShipmentCompletedEventHandler.cs",
+      "sha256": "6A6B88EE68AC63AF3EB318718DA8C93BAA21D6A8964125A9AA1AE21FCAE879CC",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UpdateDesignPaidStatusCompletedEventHandler.cs",
+      "sha256": "D61B6B990BDC4BF4C27F4A0D95BA16322B25A3B7DE35A23AB587155A3EEF900B",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UpdateKeyInformation_2CompletedEventHandler.cs",
+      "sha256": "5CC3AB1F5C4902E5275F6177E543B454E6F7E5F0E47A2ACD2E1594EBFD0824F2",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UpdateKeyInformationCompletedEventHandler.cs",
+      "sha256": "F14B2955937A0E0D7BE5799B66441034B91B872F811DC576720AFB37DF3A3BC1",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UpdateUserTypeOnKeyCodeCompletedEventHandler.cs",
+      "sha256": "CDAE65278FF38F7DBAACD1F3C6FBB133AA4A24B0B5CD43C95A13397659DE1A82",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UploadCAMSettingsCompletedEventArgs.cs",
+      "sha256": "AD3601AAA1C2A4B2F62718D0A474C8BEC24915CEA24B29643E779A93E1068BEA",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UploadCAMSettingsCompletedEventHandler.cs",
+      "sha256": "18D87A7A715C3D1A5EDE367862A28F3657A95BE5D36695AF7E835B0C2DEE854C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UploadCAMSettingsFileCompletedEventArgs.cs",
+      "sha256": "91A8FDFD8A214FFD16A2F1790AF3AB9C880D2B070B8CD4E5C4D62CF6B90D1885",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UploadCAMSettingsFileCompletedEventHandler.cs",
+      "sha256": "B78F972C193553B7736C7FF61E98C2A141B4C8374284BFF7D6DB081200B769DA",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UploadFileCompletedEventArgs.cs",
+      "sha256": "39E3D7C0CB22FEF231C3355CF2170DD66B1A7108A03E5FFF19E537D45891BF7E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/UploadFileCompletedEventHandler.cs",
+      "sha256": "56462E19030F6E3647CFDDA84C1E7461D262D6A972F776FDCD184C5C13849A5D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/ValidateDesignerInfoCompletedEventArgs.cs",
+      "sha256": "55334A3799C431DD950FDD178C3A6756C93007D42352E33B991A65A7FCE8D353",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketchServices.WebServices/ValidateDesignerInfoCompletedEventHandler.cs",
+      "sha256": "8228F36BAC30712FBAA22172B40F9FD007040C8BE0C4C8A8950B8C5F6405A2C0",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "SmartAssembly.Attributes/PoweredByAttribute.cs",
+      "sha256": "09CF4649D4D052AA30D36216FF3C32AD163C72BBF9B6EE9C5A4D1555FE4B0ECD",
+      "lines": 11,
+      "nonblank": 8
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/AssemblyType.cs",
+      "sha256": "FE0A90D703F5C1BBD28055D6BE6407B108789E88D008223F09E0C9E6E309F00C",
+      "lines": 19,
+      "nonblank": 16
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/CounterSketchCost.cs",
+      "sha256": "95D332E0F4E6FE82DC9C946FD8B8AE767D38BAC54F0FDA77E7463CFE9CD8719F",
+      "lines": 262,
+      "nonblank": 232
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/CounterSketchPrototypeResponse.cs",
+      "sha256": "47476E375D2A917B7F9810EBBEAD2AD52A464A547609457C227AD4DCABC5E236",
+      "lines": 111,
+      "nonblank": 97
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/CounterSketchQuote.cs",
+      "sha256": "2EC9F71FA565DA0F5C8B02D6431B11E3DE8F5EFB3F8090F47AC46F1E379896D7",
+      "lines": 528,
+      "nonblank": 470
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/CounterSketchQuoteComment.cs",
+      "sha256": "77AFBCC2821F9E7601112CA326269D6D3B4C137A69E77AD40EB99E27BAD50A93",
+      "lines": 73,
+      "nonblank": 63
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/CounterSketchQuoteResponse.cs",
+      "sha256": "E36D77080720EAAB549C1561220705C858BA6FFED6C13C0BB0EDB086D006BE3F",
+      "lines": 91,
+      "nonblank": 79
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/CounterSketchQuoteStatus.cs",
+      "sha256": "7762D61BBFE88E7A57F2E15DAC12758AEE982F4A6E7C4AFACDF479342A50CAFD",
+      "lines": 110,
+      "nonblank": 96
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/CounterSketchQuoteStatusResponse.cs",
+      "sha256": "22C5BB7FB5C0252A957C59E3383450306B2E6011F949907222DAEF8C31504FDC",
+      "lines": 53,
+      "nonblank": 45
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/CustomerHead.cs",
+      "sha256": "B0C63D3B613DE28D389F4BCD10B91F082EA93C2163CE11CB6ACA04314F9C9C58",
+      "lines": 148,
+      "nonblank": 130
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/CustomerStone.cs",
+      "sha256": "215CF450080E0CF49AEBCE3A6C8E24DDA9322E62E53CA3D091219AE4D628AFD9",
+      "lines": 167,
+      "nonblank": 147
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/Error.cs",
+      "sha256": "49D3E1A14A6EBC7647299B91E26DE9892C19734CF292904819A109900552FF64",
+      "lines": 72,
+      "nonblank": 62
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/FinishType.cs",
+      "sha256": "D644A042CA7ABFD5BF70E7A72169F0320B88EE29527811AC18A251719B3FEA5D",
+      "lines": 23,
+      "nonblank": 20
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/Head.cs",
+      "sha256": "6A00677C106D4C2E097F27A0CD52E545B603CD0ED0B605059FD8C979EEA8CA2F",
+      "lines": 186,
+      "nonblank": 164
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/Mounting.cs",
+      "sha256": "6C0EBD142C7514675688E5912476ADFF31DE839F33974BC5F74CB7CC3F0D5754",
+      "lines": 186,
+      "nonblank": 164
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/RequestSource.cs",
+      "sha256": "8B8DE3BE057E4D19188417D579B47C99180A12662C6B354DBF6D2596E369752F",
+      "lines": 35,
+      "nonblank": 32
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/SettingType.cs",
+      "sha256": "B3CCE5FB4F4185BA2F5A32F2DE4756AF67437BFBB4FFB3D0F37AAF56FE7E9817",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/Stone.cs",
+      "sha256": "695D1FF7F10B898BDFB03CE87627FF37B2744530901D2BF84C66988CCBA634BB",
+      "lines": 167,
+      "nonblank": 147
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/StonesType.cs",
+      "sha256": "1C5921FCC776A5CAC4BDDA0F528C8948A2AC84A0A5AC091BE9E1279A3E877BAD",
+      "lines": 19,
+      "nonblank": 16
+    },
+    {
+      "path": "Stuller.Web.Services.GV.Pricing/TrademarkType.cs",
+      "sha256": "FAB7F66D869BB8C7FB5877815BFD36CD165B2173E79B365158D38EE163851560",
+      "lines": 21,
+      "nonblank": 18
+    }
+  ],
+  "excludedFromExport": [
+    {
+      "path": "GV.CounterSketch.Shared/StullerFileService.cs",
+      "reason": "Embedded vendor developer credential; not uploaded",
+      "nonblank": 55
+    }
+  ]
+}

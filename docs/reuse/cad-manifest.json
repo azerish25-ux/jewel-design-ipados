@@ -1,0 +1,3835 @@
+{
+  "inputFiles": 1553,
+  "method": "Conservative whole-file closed set against .NET BCL only; no stubs or original Windows libraries",
+  "retained": [
+    {
+      "path": "CounterSketchServer.CounterSketchServices/AddAnswerCompletedEventArgs.cs",
+      "sha256": "719EF67B121898F0176E68B8DBC30350405287A7020ABD43C61D684F48810EBF",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/AddAnswerCompletedEventHandler.cs",
+      "sha256": "38C02604A94FEED413A13A7751A600C90421A4548BC14EB570515AF3D3D71F8D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/AddAssignmentCompletedEventArgs.cs",
+      "sha256": "8194160F12CC0C28494A55D409DDBD96D919E1330EBF6DB434D08B6875D96696",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/AddAssignmentCompletedEventHandler.cs",
+      "sha256": "A6E455A14BFE7AB882FCC0E47D91A565B65C1806D895112D026A6F59345FD8ED",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/AddAssignmentNewCompletedEventArgs.cs",
+      "sha256": "FCEE3C9B629D27A7617D0A5FB39DBE79CEBB89BBF742181396FCB21FC29C9308",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/AddAssignmentNewCompletedEventHandler.cs",
+      "sha256": "721A0781BEBFFF76BF6B4518FE33E5A3EBD6C82F90A92E97E261828AC9B8669E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/AddQuestionCompletedEventArgs.cs",
+      "sha256": "8A5E984B79EEDF58FCB8204785854E30EAF05648483A066964B4798E965FBAB2",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/AddQuestionCompletedEventHandler.cs",
+      "sha256": "BB2F6F3935B1A6CDBBADCEB864FED2819E129D227987B4F2FF1D72707C066F30",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/ApplicationEvent.cs",
+      "sha256": "1030AF4DA6F8663EFEF2B860236BEA8D816F40B4279CBD5B4312317E9698F532",
+      "lines": 72,
+      "nonblank": 62
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/ApplicationEventType.cs",
+      "sha256": "090E26071F725A6EE810EFD882DDC81D743721B36465E032A19E55C0B1217911",
+      "lines": 99,
+      "nonblank": 96
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CopyAttributesFromIDToLinkedIDCompletedEventHandler.cs",
+      "sha256": "C083BA95C796F04759448D7EE422B47CF2EEEBD4931997FEB72D2A501F1E7517",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CounterSketchCost.cs",
+      "sha256": "44D926A0C9DB0A011A2AD63A634B48037D995A0F8BEA353824324CB29F426961",
+      "lines": 201,
+      "nonblank": 173
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CreateCatalogOrderCompletedEventHandler.cs",
+      "sha256": "07A498D8F6B145065B92353827192E54785C3DC86C5777A8CDAB951CAD08F71A",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CreateCatalogOrderNewCompletedEventHandler.cs",
+      "sha256": "AC54F03868737B07AE0A9D9FDA785624C28BCE99FB069B6DFB3F314A80BA8AAF",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CreateNewBandCompletedEventArgs.cs",
+      "sha256": "8CE39A07B9F775247498B8F89F1D66579AC1ECA066D8402C67F9B44F6CF52AF2",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CreateNewBandCompletedEventHandler.cs",
+      "sha256": "06D588691A6E27EAC75CDDBB85B427310768DF215D0712ECC384EDADBDDD7EB9",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSD_SetDesignerBlocksCompletedEventHandler.cs",
+      "sha256": "53015DB1DE4E3611D31B05F1D5F7F86BDC41319A2C28E6543413BCB6DDEEA49B",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSFeedbackQuestion.cs",
+      "sha256": "DD7E0C22EB02FA1A893A69EB12E374DD04B3A77BFE208589442BD6BC21586A59",
+      "lines": 87,
+      "nonblank": 75
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSFeedbackQuestionAnswer.cs",
+      "sha256": "E3FC781A61826002D5AB8B216070FE7D8C87774469A6BD8F84D123C88F7BF2D1",
+      "lines": 59,
+      "nonblank": 51
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSFeedbackResult.cs",
+      "sha256": "D3CD32ACE27E0440FF3FFCE8C4AC74B82C8AC20DB8B33770BCED560676D45C38",
+      "lines": 88,
+      "nonblank": 76
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_AddAttributeToDesignComponentNoRepeatsCompletedEventHandler.cs",
+      "sha256": "4883135B391B5FB1845953A737EE94EF8784C3BCEBD5263437C3A452ED58E3B5",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_AddGemToDesignCompletedEventArgs.cs",
+      "sha256": "6D8CA33C64F8122EB24FC1EAB22C25D01FC187A99B8AD13693652DFDB7A7BFF5",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_AddGemToDesignCompletedEventHandler.cs",
+      "sha256": "1EF15013244C9AAC3560D82318B8C5BE722D82E161D048A02264CEC76B1BDD15",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_AddMetalCountToComponentCompletedEventHandler.cs",
+      "sha256": "62DFBA100D96B4517EC19C1B7350E586DDAA59F313D0E0A517B88C723F9146E6",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_AddVolumeToComponentCompletedEventHandler.cs",
+      "sha256": "0C447F498547263D9620C9EB44902154D9A6BFC5676F6DC96F94742FE833F894",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DeleteGemComponentDesignVersionIdCompletedEventHandler.cs",
+      "sha256": "EA6F18FA3E02B900A5431DA73EBC2E84E3367466D9A5C5FC98C3EF061BCB30A1",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DeleteGemsFromDesignVersionCompletedEventArgs.cs",
+      "sha256": "A0AB4029956E263C91BF132268E530B5756B8DB5CD6ADCEEEAA02515A9A4BC0F",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DeleteGemsFromDesignVersionCompletedEventHandler.cs",
+      "sha256": "AB6AA1189350C0B2E7BA3D4BA9B2EEBE9D9F587FA990A00E0ECACAAA9EEF2D93",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DesignVersionAddAttributeCompletedEventHandler.cs",
+      "sha256": "7FFAA88A61ACACD7E5CBE1B10F6DF4419E7576FC047B0CC88A034640133FF51F",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DesignVersionComponentAddAttributeCompletedEventHandler.cs",
+      "sha256": "0D4754F4B654E97A0E7EDCCBBB7FC15D1EAF660670117AA3041CBF7EFC40D02F",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DesignVersionComponentDeleteAttributeCompletedEventHandler.cs",
+      "sha256": "621785A45EA503444C646A54A96445F1C603AF5976CE7998AC14604809B2EAA1",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DesignVersionComponentUpdateAttributeCompletedEventHandler.cs",
+      "sha256": "A791320DE0539FF5CDA841419B75528AC1B51B6AB4D6D0D379493D822EEEE00D",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DesignVersionDeleteAttributeCompletedEventHandler.cs",
+      "sha256": "44170BA2F267CCA9D554D58B29A286A4B067C3EE158E09CC3EE4440AEE09B3C1",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DesignVersionUpdateAttributeCompletedEventHandler.cs",
+      "sha256": "457D917A4BAC0091030783BFE03C0949012972AE0C3CC6C34D2BC1B042AA834D",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DownloadCleanFileCompletedEventArgs.cs",
+      "sha256": "57CFC41E796D67C2E73FCA4C7024C9039BC24017C4E0FC8E2AE8F7EF439128A8",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DownloadCleanFileCompletedEventHandler.cs",
+      "sha256": "60039D38BF0991D3D1BDCECAC8133E3917A734CC21D814A97F90412AD5681B7F",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DownloadOriginalFileCompletedEventArgs.cs",
+      "sha256": "D029FD89B55352488910587250A3520D60FAD89A5DFDF2695BCBFA172572CC40",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_DownloadOriginalFileCompletedEventHandler.cs",
+      "sha256": "01572AEF13FB8B86FB9EFF74B1251B4DFAF48260DAFB8EEE881AE527CBB1C92E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetDesignAndRelatedInfoByIdCompletedEventArgs.cs",
+      "sha256": "1C832A80FF6D1C7DE1913D222C6505FAFDDDC4A66DC9243C3F26F2516B778C74",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetDesignAndRelatedInfoByIdCompletedEventHandler.cs",
+      "sha256": "60661A83B449BDF2D5932412913726A970BAE4D480DAF696D646A55EE2C77BA8",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetDesignAttributeValueByDesignIdAndAttributeIdCompletedEventArgs.cs",
+      "sha256": "55A33700DF7C0B921B5D2ACD105DBEBDF691ADF01BFD3FDC92B97F6058A271AE",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetDesignAttributeValueByDesignIdAndAttributeIdCompletedEventHandler.cs",
+      "sha256": "391D2851CE45D2189165CDB74A2CA2703E96055FFA6DC166FF04B623BE6FC974",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetDesignComponentAttributesByAttributeTypeIdAndDesignComponentIdCompletedEventArgs.cs",
+      "sha256": "761B513243556122C1C553F36C13CC9EBDE551E8DEFCD144FBCD00351AE2CC77",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetDesignComponentAttributesByAttributeTypeIdAndDesignComponentIdCompletedEventHandler.cs",
+      "sha256": "C5CB1E2DC19E465769364E26AB8441AD8BB257ECCFB54AED96B88FD59386D4D9",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetDesignIdFromDesignVersionIDCompletedEventArgs.cs",
+      "sha256": "46F043C35AD730C901A28C1912C1C905960B99AD661650DB0F8D2DEDA098C410",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetDesignIdFromDesignVersionIDCompletedEventHandler.cs",
+      "sha256": "2E91F179C941ACBBF348C358AA29A04BE239BC7D7A9AE9C38DB036F82B4608CA",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetMaxVersionFromDesignIdCompletedEventArgs.cs",
+      "sha256": "E5F1F5A7B464D1F4FB3DD80874CE2C972F0DF28B97AD5D2A3C46C426CC0703B4",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetMaxVersionFromDesignIdCompletedEventHandler.cs",
+      "sha256": "7F91C921514416A824CDCF5FFEE868428A8295F4B32FBF6DAE6EBD862F2B893E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetVersionFromDesignVersionIDCompletedEventArgs.cs",
+      "sha256": "5C49BCADD6C03597888E0D0F1912B2D195B9AF03B6288EC884C687B90D31F296",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_GetVersionFromDesignVersionIDCompletedEventHandler.cs",
+      "sha256": "99B464CE83B75E7D4CD99FEFB37E3B2323A307D8652B30A2BCABA8CA5828C022",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_RingRailDeleteDesignCompletedEventHandler.cs",
+      "sha256": "B460F73288E45C2A1D62C457CC51B5D8384E5284382747DFF6D7ED43C5B20B89",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_RingRailSetDesignCompletedEventHandler.cs",
+      "sha256": "8EA5462B092063B8CB3C1EBCEB31202F96AFB0F22D94FE2BF28AE719A719F910",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_SetBlocksUsedCompletedEventHandler.cs",
+      "sha256": "CF649CFA75DE5255CE5657B4AE5FD4D27CF5FBD6FED5F128487999E2AA500680",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_SetComponentListCompletedEventHandler.cs",
+      "sha256": "67CE4E1C99D27EC01118572832A219E6277848BFF4513B91093A836111B473F9",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_SetNumberOfControlsCompletedEventHandler.cs",
+      "sha256": "82527DC2A91890E43B8DF303A8E91F59977F7442DD6F657118FBE2B4CE9F21D6",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CSG_UploadCleanedFileCompletedEventHandler.cs",
+      "sha256": "CA33F18B961313401AF72CDCFFFD408CDB0DBAE9C11CF25C9FFA51C2C7EFDA09",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CustomerHead.cs",
+      "sha256": "F97E9B8BCC1CC836140A11BC7C0301E6281F47B68D03C3677DB993DF0E03A8C4",
+      "lines": 116,
+      "nonblank": 100
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/CustomerStone.cs",
+      "sha256": "C9513A6E053EF4FF71D8DEA49D6F78B296D6096EE39D8BB398D30A5B7E773B8D",
+      "lines": 131,
+      "nonblank": 113
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DeleteCatalogOrderCompletedEventHandler.cs",
+      "sha256": "06B155FD08074653271C9A3DF8DAB467AEB9BDDA85B797A4A357998AA2AD3A16",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignCanBeStullerApprovedCompletedEventArgs.cs",
+      "sha256": "FBC7F7AC534B91B621B4401CD00F879069E187382A415CF89235FB6F9AE8B10F",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignCanBeStullerApprovedCompletedEventHandler.cs",
+      "sha256": "5B9A18213190AA67A2B269FDBD088490492936BEFC484001FB44C17C0AC823D5",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignIteraionAddCompletedEventArgs.cs",
+      "sha256": "CCEECE0977153452B45E1A45231F1BB6C799F6C26C890429CD014DE738EAB36D",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignIteraionAddCompletedEventHandler.cs",
+      "sha256": "F91D5F8B33C71EE70739A7914D2DE4CFC1B8F027BC4D0C0355B77883ABEE794B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignIteraionComponentAddCompletedEventArgs.cs",
+      "sha256": "2C131C8585A745BFC1CE0130806F3E09D25966774DA88EF4B5F961AFE76D84A9",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignIteraionComponentAddCompletedEventHandler.cs",
+      "sha256": "6409E4BBD9DA2045AE6D6210A375813F6F9CA0E9C280DFDAE49DDEDD4442F4CC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignIteraionComponentSetFoundAndDeleteAttributesCompletedEventHandler.cs",
+      "sha256": "F4E21E1627A836592791759BA753C2B2AED490F3A4287CCB8E39EB1ECF3FD832",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignIteraionSetNotFoundCompletedEventHandler.cs",
+      "sha256": "F5DE8B4AA377535C8ED53947EBFCE3F01BB9E5499CFCF53B7115AB6C62E73008",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignIterationComponantAttributesGetCompletedEventArgs.cs",
+      "sha256": "B312EA63A4CC3264E5B2F62AAE914EC0146B831DA47E843B4A9E736A19C3A060",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignIterationComponantAttributesGetCompletedEventHandler.cs",
+      "sha256": "4839305D862D690E69D6AE2898B3FAB802839B01696DC882618CA992E0A651D7",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignLockCompletedEventArgs.cs",
+      "sha256": "3726FE986CF0F52DFE35EBA3B8CEBB3C97A35C706918BB1B77238CBA8263E30A",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignLockCompletedEventHandler.cs",
+      "sha256": "7BA403FD02C980C25FF75CB0E76200038D3E0AC47EBA273452BFEC7A0FF0BC8C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignLockInfoCompletedEventArgs.cs",
+      "sha256": "10C1BF985EFBDCB81617E6834D30A11A7C59318C646AF022B802EC1C09C098A3",
+      "lines": 66,
+      "nonblank": 57
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignLockInfoCompletedEventHandler.cs",
+      "sha256": "49E1390FD489D4BDEDBA68CD30FA0E7E3F49D1ED76B70229708132544111D6AF",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignNumbersGetCompletedEventArgs.cs",
+      "sha256": "1B92EF525A7569F2FC57E28408848D542C9ADF04AAB5E1A7C7F2075CC3B74D97",
+      "lines": 57,
+      "nonblank": 49
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignNumbersGetCompletedEventHandler.cs",
+      "sha256": "6AC1FF5E626561238ACE79D62C85013144FAEC6AFB3A2F22575DEF9E77794EFD",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignReleaseLockCompletedEventHandler.cs",
+      "sha256": "E2746156C982AB895043FC1D05F653A976763266B402C01153C7C86AF61C1041",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignsSetStatusCompletedEventArgs.cs",
+      "sha256": "CB1D93169FADFBDD71D92D29618BB9BF6D8DEC58E2F4F926A5691EE1CB699222",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DesignsSetStatusCompletedEventHandler.cs",
+      "sha256": "9167259FCB933F4637DC1FAA1B92702D3813D9C13417CA0D8EF2481751B63A2D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadCAMSettingsCompletedEventArgs.cs",
+      "sha256": "98DE2D51C9F285104D7527FAB6B3342F065ADCE6377AABD7E01A275350EE8673",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadCAMSettingsCompletedEventHandler.cs",
+      "sha256": "FC29F65E25F4D3B4BC2ED487618AB15F279751B78D0938650595DD727AE7DBCA",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadCAMSettingsFileCompletedEventArgs.cs",
+      "sha256": "68BD9B244E4D3C1EEE137BA8D922A44FEC5DCC51208A750BB703C43C7F0FDDB3",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadCAMSettingsFileCompletedEventHandler.cs",
+      "sha256": "DD14152F933F4BD7862C83A89B568A0F08CCDF164E88819EA96AE55D3AFC4F07",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadDesignForReviewCompletedEventArgs.cs",
+      "sha256": "7492B21910AF86DA1CE73166CB2AC14E79F74751287490E91983ECC31B41EF29",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadDesignForReviewCompletedEventHandler.cs",
+      "sha256": "5E0D0C3C3F44347B41E29C537A77E3E26836E14FAA6C561545532E056FE52383",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadFileCompletedEventArgs.cs",
+      "sha256": "45BBF485DA91C5C660E52274E092CCCF259EFC5C47AECE01F3F31E1626D56BD4",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadFileCompletedEventHandler.cs",
+      "sha256": "9C482B85522BE9A353317E703BADFDC0CF5E00FA702CB1C8011E886A03505531",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadImageCompletedEventArgs.cs",
+      "sha256": "DE7C4458384EE37F73A0956D5AE55FB8E11CA6F1960914DE1E83D1AA2BF14CA6",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadImageCompletedEventHandler.cs",
+      "sha256": "94AC6429DF74DED0472922CBE420679FF031C1CAD22B9E46648110DDDBACD240",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadLatestCounterSketchVersionCompletedEventArgs.cs",
+      "sha256": "5CE78DD51B9A54C4D946A0381E05BB7E3702E0142C3C329FD6876BDDB38922FE",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/DownloadLatestCounterSketchVersionCompletedEventHandler.cs",
+      "sha256": "ED9E552A17E2C0EBD829CB6961F321616E5B4BE6397D09CF64FAD87B86982AB1",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/EntityKey.cs",
+      "sha256": "5D90607456053D57E149E5CC3A8130A988580751EF66D9554605D283DC2B2EC6",
+      "lines": 58,
+      "nonblank": 50
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/EntityKeyMember.cs",
+      "sha256": "9D89D20E29046F1E8F32EC56C94F4C6E5AD8CB3F36474B294FBB70CFF1B316E9",
+      "lines": 44,
+      "nonblank": 38
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/EntityObject.cs",
+      "sha256": "570799095A9B0441CC500DF8A60229B3AFE9CD91325118EF12BE7C153EC6D64D",
+      "lines": 31,
+      "nonblank": 27
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/EntityReference.cs",
+      "sha256": "E2E6F8A269AB5BC45927B7ED1717165F16003D83A3FF650190105E4390E11FD8",
+      "lines": 31,
+      "nonblank": 27
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/EntityReferenceOfIterationAttributeType.cs",
+      "sha256": "E2F12C9DDF7D227A583B419BC89CFF91ED6D712D7DA1F09529392870D2221263",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/Error.cs",
+      "sha256": "2A65B8E3EA1457F14F9E14C6798D5CEE32BC226863E935498D7559CE1DC784AD",
+      "lines": 58,
+      "nonblank": 50
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/ExtensionDataObject.cs",
+      "sha256": "1EC9868408A6F4EF00ACA432352C519F7ABE987276E05189223EA3879FE777FE",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/FeedbackQuestionType.cs",
+      "sha256": "71914EB22B89CF2AABE3F666ACB4AFFCC34ED1E892C06BE8D2D2252CBB6EF469",
+      "lines": 16,
+      "nonblank": 13
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/FindADesign2CompletedEventArgs.cs",
+      "sha256": "17DEA2CE9A8806A01E1A1D1273A6A88235BEE4D01B86A5C2410C6A4D1FEFF5EE",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/FindADesign2CompletedEventHandler.cs",
+      "sha256": "27A418101C94940FEFD8442D20ED48D4BF63F32D189960CD62E7A21105E2DEC3",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/FindADesignCompletedEventArgs.cs",
+      "sha256": "2F20A3CE77CC692D10503E0D2D637296021DF6EDD9B050301299D153C9EB1DAF",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/FindADesignCompletedEventHandler.cs",
+      "sha256": "6013ADF46CF10972D86252C118EB69AF4D2851EC34FC5AB051C54E9257EFC00B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/FindADesignWithGuidCompletedEventArgs.cs",
+      "sha256": "B5BD5AF515BDF2A8EEBD8CF094B2214E5E5085289A4AB805BA1CBEB43D8BBB51",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/FindADesignWithGuidCompletedEventHandler.cs",
+      "sha256": "8F04D4E9C9EE8BD13F63F1D1A464EC25E0D453B721361CAE4635E14C76A453C7",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GeoCodeAddressCompletedEventArgs.cs",
+      "sha256": "2332C597E6B1DBAC1660CF91D73741268C75F32B48BDD8F84118951CF793207D",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GeoCodeAddressCompletedEventHandler.cs",
+      "sha256": "6684903B5882D26A3E59505F7A14A217AED5F5C662D9FBC6BF9F484BDA73BE81",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllAttributesCompletedEventArgs.cs",
+      "sha256": "D81C6A4E28573DCC5625F4DBC95C4751DE3620E326B882EB35D24811443A3E46",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllAttributesCompletedEventHandler.cs",
+      "sha256": "0AA0E113A1A0B6C416C5076A7DA04CAE0D90794E2264B340B76CDC6A3D911F69",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllAttributeTypesCompletedEventArgs.cs",
+      "sha256": "33F1155A0D5FDA95CB673C9544FD549B3C764848E54379D8111C83C041FFC862",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllAttributeTypesCompletedEventHandler.cs",
+      "sha256": "3288528B3CBD041192FB36A5CB34F2071CE8872CF02008C6B717F4ABEE5A736B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllBandSizesCompletedEventArgs.cs",
+      "sha256": "86921A235957A460C5993FB39D7AAA9D785091765DB029881E7B7B19C7C301DC",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllBandSizesCompletedEventHandler.cs",
+      "sha256": "CDB3D44C1E5163AD9031B92872A0E62D9C00031F090B1A9FBA42EC63CBCF8B04",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignIterationComponentIdCompletedEventArgs.cs",
+      "sha256": "AE04E479EF9571E72BCD080023C04890AB5B3E4682D7E30FA191ACCE9B6F0EB5",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignIterationComponentIdCompletedEventHandler.cs",
+      "sha256": "AD6C1E49C4B872B4DECF35D19A2FED7B44B2BDA8C99ACC4A0D00E9FED1B25D28",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignIterationComponentIdFoundCompletedEventArgs.cs",
+      "sha256": "01B9330816D87B153B49B666200C40E91BFF7FA8D33DEEBE60B0D30A2801BF50",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignIterationComponentIdFoundCompletedEventHandler.cs",
+      "sha256": "A54665CB8B245D31CEDDF41D5ADDAF5E8B422CAF4B5CE24F79B3872F21BD279E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsAndRelatedInfoByKewordSearchCompletedEventArgs.cs",
+      "sha256": "455C80354290AE8C220A71356AC9B0F76E24CABB79CB2BE9FC02CE30411B9592",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsAndRelatedInfoByKewordSearchCompletedEventHandler.cs",
+      "sha256": "7445C3280F1F7C75A9615ACEABC5199029614F86D57BC07FE76DAA3D07C0CD5E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsAndRelatedInfoCompletedEventArgs.cs",
+      "sha256": "7A02DB511D263EC9BD7ED4A9B90654B39659B6BFB6FEA935B76DFC8CCED3DA67",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsAndRelatedInfoCompletedEventHandler.cs",
+      "sha256": "D0CF55601D27CFC3952F6FBCB74BD76CE214072CF29094DB4A90189AD11B698E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByPaidStatusCompletedEventHandler.cs",
+      "sha256": "25270F9B7B1AE176ED1F2E74F32FEF6C0E8D647FCE1DA1254AC213D0CBDD14C2",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusesOrderByDesignIdByKewordSearchCompletedEventArgs.cs",
+      "sha256": "CC97F0C14371A9C23F3D98D8BF13E8441EFA5946D17A7A9F0B5029D42BE8BAF8",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusesOrderByDesignIdByKewordSearchCompletedEventHandler.cs",
+      "sha256": "849007C1AC5869C1953B75FAE0CDEEBCD62E37D2C840113EFC78940C6F103E26",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusesOrderByDesignIdCompletedEventArgs.cs",
+      "sha256": "59C3F1FE9DC3EF432027E46578DA74E728533942D7E84B4AD44D0D9330031770",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusesOrderByDesignIdCompletedEventHandler.cs",
+      "sha256": "E152EA965579C7BE39FD431319D7D7123A990038C94FAF077B77BCD09FF7D350",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusOrderByDesignIdCompletedEventArgs.cs",
+      "sha256": "D53A74FF14D722A3019E08032C3DC2A3623C3080A6C8534A9576E1E894EBFE40",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusOrderByDesignIdCompletedEventHandler.cs",
+      "sha256": "3AEFAC1A3677064D37AF7F4BA398335BD1AAE0003F124E8B323FE2C89470DAB6",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusOrderByStatusDateByKewordSearchCompletedEventArgs.cs",
+      "sha256": "AE56A6AAC5C6E5A834BE1A11B0C2ACEDD5F420A0F5771CDF8B0C4598078C3450",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusOrderByStatusDateByKewordSearchCompletedEventHandler.cs",
+      "sha256": "4A4DD5C7560D4B201E4EFA3C4CCD3AF78385254470528D5BFF871E185271184E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusOrderByStatusDateCompletedEventArgs.cs",
+      "sha256": "DD4BCC10E42F9B1EC0864CB6DAB46A6CEB804EC84EEA1CCB9DCDC9C87408683E",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsByStatusOrderByStatusDateCompletedEventHandler.cs",
+      "sha256": "C98F33FED87D3E493B303D300C20659690A12DA3D309F7D570C02EA303E6D289",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsCompletedEventArgs.cs",
+      "sha256": "FC6DCEBC66CEB1A12043394B0A12D0575F153E5A2BD3393335D808DAC104CBCA",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignsCompletedEventHandler.cs",
+      "sha256": "D5C9679DBDE59921E70BC929AFADE5564607EF58F8A95E81115E022428B55993",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignTypesCompletedEventArgs.cs",
+      "sha256": "9508749AB5A8B93D13E6611778ACACB8BBB38A3BE51699CF20529DD26A5C9023",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllDesignTypesCompletedEventHandler.cs",
+      "sha256": "E56BBED3E36F200F52BC92ADAB64030ED610476578C96EE4A0F77B1149AE0B58",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllQuestionTypesCompletedEventArgs.cs",
+      "sha256": "1544DE0A2ED721DBE245DEF27B7F7B5790E07CC1738BF7C7828B379ABA0D6D50",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllQuestionTypesCompletedEventHandler.cs",
+      "sha256": "57E45AF910D0EDCD71A4719DB0C1F11E0C698B26B4087F5409D10CECA64BE1D1",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllStullerComponentAttributeTypesCompletedEventArgs.cs",
+      "sha256": "40BD8F0DC60066286B813BB623CC564B3C6C7E9A05286729B65583CF5C73C452",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAllStullerComponentAttributeTypesCompletedEventHandler.cs",
+      "sha256": "4679FE3747351B22350C330412D2749546B48BDAD17ABD94D5EC9275870CFB44",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAssignmentGroupByIdCompletedEventArgs.cs",
+      "sha256": "1A8C1830072B662EAA47E68A6976C7C824BB4AB8C64AEFEF004A91AF7FCA61AB",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAssignmentGroupByIdCompletedEventHandler.cs",
+      "sha256": "0E42B30605D2C92398A8096A74751699E8CACF4DA161540A6973994F383C020D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAssignmentNumberByAssignmentIdCompletedEventArgs.cs",
+      "sha256": "08BE0FDF016C4BDF002EBAC978E5C4DA57FE73AC633CB34D2C4E87CC0612D9AC",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAssignmentNumberByAssignmentIdCompletedEventHandler.cs",
+      "sha256": "7017961FA864112BF1E418D43B30DA57BE295AE1169CA8C8A8A11FA022D7391D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAssignmentsByDesignerGuidCompletedEventArgs.cs",
+      "sha256": "1A274F2FE61040254ABB22A4966F9B304ED7BC38A83D25004254D9E04206C8CA",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetAssignmentsByDesignerGuidCompletedEventHandler.cs",
+      "sha256": "8A62FE773A53AD2D82309EFC8BE182C9DE36C480D3FD6C53620045284EC4A17B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCAMSettingFilesCompletedEventArgs.cs",
+      "sha256": "38819CF09FF3B815C4B32D711E96AB03B671D1D4BE00B5BEC482D7CF9B3A60D8",
+      "lines": 39,
+      "nonblank": 33
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCAMSettingFilesCompletedEventHandler.cs",
+      "sha256": "FCD2306FF0D5D4119F368D1279C518D3BBA2E270CBF6A4B9098283742AD90667",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogBaseShippingCostCompletedEventArgs.cs",
+      "sha256": "06B349DF956E144EA399D724F0BAF29CA324C51FEDEE9608F035F38A0198AD64",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogBaseShippingCostCompletedEventHandler.cs",
+      "sha256": "C892EE0EE3675BBF33A5EDFD1CC56E16B7A9506E22D9847692A31289DA80336A",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogCostPerPageCompletedEventArgs.cs",
+      "sha256": "353710050FFA7BFC70DB8045D4684A1815F922701794CD7E2FA5086341E9A60C",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogCostPerPageCompletedEventHandler.cs",
+      "sha256": "1E54AFF2E2E3BC7D13635BA8998F37DEA495208443844146F326511A7E725286",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogOrderByIdCompletedEventArgs.cs",
+      "sha256": "536F345336FFC23FC521C334AA87C26871681EF77A31D1CD8B5C2FC0FCD689F7",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogOrderByIdCompletedEventHandler.cs",
+      "sha256": "F7CCE140F81B6B69ACB413105E9E0DBDEA1DB86CC1CA5A3BDD30FB038817249C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogOrdersByKeyIdCompletedEventArgs.cs",
+      "sha256": "69121AF2341F9CB21468D63E595F0747B329D0524F6903D24C8216B13008AB51",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogOrdersByKeyIdCompletedEventHandler.cs",
+      "sha256": "AD06398AE92F5AF7B596EAFBA64EBA57B3AA48F99891532AFB8F6E3258351809",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogOrdersCompletedEventArgs.cs",
+      "sha256": "A949E0359FAC86F381BBF4121E91BBF321C1712AE48B0DB76A5102A590DFF33A",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogOrdersCompletedEventHandler.cs",
+      "sha256": "0B0BE07F07F94548CDC4BFC9EE84C9081A589C4CA6A69401960A7C4F07F7FE2E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogPerCopyShippingCostCompletedEventArgs.cs",
+      "sha256": "548ED4C0341E1E508F6FCF267BB84ED1B062B7A4FA57CF2F541E85A469AE7587",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetCatalogPerCopyShippingCostCompletedEventHandler.cs",
+      "sha256": "34841ADC7F8763333278CBA4E8DAD59BD99AAFACEE14F020D38D07A3429E3F1B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDebugVersionStringCompletedEventArgs.cs",
+      "sha256": "474AE9A564F7177F1CF0D74FA733C17769B3CB45E18F35CD49AC228DD853D8BE",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDebugVersionStringCompletedEventHandler.cs",
+      "sha256": "3898A6AE66A5895F8D9A1DCEBD93E424B77D37F933B4D0A3BB7F895625594A56",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignComponentAttributesByDesignComponentIdCompletedEventArgs.cs",
+      "sha256": "666DC4B3D56E8BDB8B88A71F44B08FE61C56330BCE3F41B137CD489C4A573D0C",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignComponentAttributesByDesignComponentIdCompletedEventHandler.cs",
+      "sha256": "2927D71B05CC3E13A5B26EC8F994A4C4ADD329EB35397AEA8CC5FB449DE36D57",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignComponentCountByDesignIdCompletedEventArgs.cs",
+      "sha256": "CDACF4CC8685225036B5E965EE6A7BB2DE0470D7B475733849CE0204EB79D297",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignComponentCountByDesignIdCompletedEventHandler.cs",
+      "sha256": "6A96FE12F3D10C532174BBC546305F9C4EB4E7039AC861505F220E0BFCBEF2EF",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignerByGuidCompletedEventArgs.cs",
+      "sha256": "190BEFF758B0D103AA9A82EB7CB234A06845A8753C0FD09EFFC71FDA9CC746D9",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignerByGuidCompletedEventHandler.cs",
+      "sha256": "BE3027E3665C0753E1B4E33AFB535B845E3421AB2831D2C14D49957905E1EE04",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignerByUsernameCompletedEventArgs.cs",
+      "sha256": "DF7D3A6D9182367EDDFE594FB53C21506CAC00D3697DFA91D498FA0806689EDD",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignerByUsernameCompletedEventHandler.cs",
+      "sha256": "32DB9187F74F116C347D3A9282CC1E06EE59681CEAD3406106C9A7320C6CF05E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignFilenameByDesignIdCompletedEventArgs.cs",
+      "sha256": "C503BF697957A45A1B80BE850528489E5EDA22B57FBB80E34928F6C869363830",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignFilenameByDesignIdCompletedEventHandler.cs",
+      "sha256": "8C78D3BFD98898A809718611EA566A8614781D0A2EE50E1C8515A672A82C1947",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignHistoryCompletedEventArgs.cs",
+      "sha256": "44430BD6518CC8A89D1AB10398B5B422C28A8B79D3CA5947854A8065A5BBB0C2",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignHistoryCompletedEventHandler.cs",
+      "sha256": "0EFB7163A5DC45BD7C713A5CB73DB6C25A6DE240FE7F88CD780D10DE5FA8B3E3",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignInfoCompletedEventArgs.cs",
+      "sha256": "5C686CEA371E2EC7A6F502C26640E902C4A2F71F8CD6A4B4848863F80B86485E",
+      "lines": 66,
+      "nonblank": 57
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignInfoCompletedEventHandler.cs",
+      "sha256": "D12BEDF0285C75FEECC23AA659B5EC902FEC8BA044012BE4236F3655CF2B6249",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignIterationValuesCompletedEventArgs.cs",
+      "sha256": "DD299E610ABB5A054D51E51AEEA06935D91F0FA34D96AFF237E1CF7FA0230617",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignIterationValuesCompletedEventHandler.cs",
+      "sha256": "057E443ECCD43350B16383AEA824307CD8B3CF7C5DE7403BF5FA492B2BCAE8D9",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignMetalSpecificationByDesignComponentIdCompletedEventArgs.cs",
+      "sha256": "4400638147698A224AAD6B74D8756387CB90553FDD67B31CCF72509EB831E6F2",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignMetalSpecificationByDesignComponentIdCompletedEventHandler.cs",
+      "sha256": "930075386A9DB4C20C525B5111B2D2E7628C97EB4D145870C26759E8526A69F1",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignRingRailSpecificationByDesignIdCompletedEventArgs.cs",
+      "sha256": "31FECC94A1388F167113790C4CC8E9639192B37EE19C999EF7B709C00F88B70C",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignRingRailSpecificationByDesignIdCompletedEventHandler.cs",
+      "sha256": "5B70C369D2ACC9EDD4380DF6ED406F7FEFC7C4D589605CD61C38D61BDB7DA3E2",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignsByDesignerGuidCompletedEventArgs.cs",
+      "sha256": "0AD57C4C2E50BF7FBDAA3A6D05B007D6AC43B3F4EA9DC36C50FC86D62ADFD485",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignsByDesignerGuidCompletedEventHandler.cs",
+      "sha256": "C9AD6C270EFC84570E1C9A730BED11908843478E4110D545F623A3B84C76B0BB",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignSignatureCompletedEventArgs.cs",
+      "sha256": "A989787806BF410705C8EFC6F6A382315910FDBA1E5466BD9CB2FA63A0E5D161",
+      "lines": 39,
+      "nonblank": 33
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignSignatureCompletedEventHandler.cs",
+      "sha256": "519B0F0CDD1B279751C4492C83EDB7C2396CFE0027A4DDA1DE5AFB5A9A6F4DB7",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignSignaturesCompletedEventArgs.cs",
+      "sha256": "6F71B92B711E5E4580BDF5E61D876CD6D0800243B140FF529FC39CF53E3EC8F2",
+      "lines": 57,
+      "nonblank": 49
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignSignaturesCompletedEventHandler.cs",
+      "sha256": "198B71B96AC4871096D93C0945E6904E46EF20C6DCE5BA63A6DA7A36B0D49310",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignVersionComponentIdCompletedEventArgs.cs",
+      "sha256": "46EB866EEB174893151175247B8177185A801C4EA3D1A18E78B6DFDD8F1D4D14",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDesignVersionComponentIdCompletedEventHandler.cs",
+      "sha256": "FF35A615226B5B1F91615BA8DA413FF1DFB606668A30104CF43815841AAF7FA3",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDICIDsFromLinkedDICIDCompletedEventArgs.cs",
+      "sha256": "2D7CD2E975156EEC101ED2C41312056E753DFBECC0391E98E95F1CB2795E1272",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetDICIDsFromLinkedDICIDCompletedEventHandler.cs",
+      "sha256": "1B0736E1ECA82E86B685D9A5AC3C60008687E317653C946B23465B3AD7301F3E",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetExchangeRateCompletedEventArgs.cs",
+      "sha256": "6F7563EB82860E130780D795860126A6A17038EEBFA673925486CF72BD75B8F7",
+      "lines": 39,
+      "nonblank": 33
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetExchangeRateCompletedEventHandler.cs",
+      "sha256": "3D852CC6176A154CC199408111F4DB7E83DDDAA93E1171F64823FAC8D1326D95",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetIterationAttributesByTypeIdCompletedEventArgs.cs",
+      "sha256": "D280BF03595F05A8E55C9D061F828CFCBA238E410378690268395966B7A66504",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetIterationAttributesByTypeIdCompletedEventHandler.cs",
+      "sha256": "601565586F5CF5C5C65915B5218A81DE8BAE24F8998C63B8470DBD84CCC1CDD9",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetIterationGemInfoCompletedEventArgs.cs",
+      "sha256": "5B2868A7320FBF09FC0DDAC598F825D8DF0F235A1E9E5540661F2E096042AAD5",
+      "lines": 120,
+      "nonblank": 105
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetIterationGemInfoCompletedEventHandler.cs",
+      "sha256": "3D1FE64F620D4062545348A83F73E0D57840D9DC53886084B32BD9A942D41A46",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetIterationOptionsCompletedEventArgs.cs",
+      "sha256": "D6B5EF4AE60863F546A3113B8970BB7D67402C5969D6AD5D7DCC5637EA37B67D",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetIterationOptionsCompletedEventHandler.cs",
+      "sha256": "31A94D85313D26FA573D6796461BE24BFCA0CE697E6BF3870D8F5B5CF0072094",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetKeyCodeByKeyIdCompletedEventArgs.cs",
+      "sha256": "886DBA03BD86522401EF6EE650FB86EE04EEE5FC3A34E07B36F710BD25DF6A00",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetKeyCodeByKeyIdCompletedEventHandler.cs",
+      "sha256": "09F2EB285C9EDF840CC076B5E5710857AAF6B17BB1167112AAD709479344E53C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLastNoticeIdCompletedEventArgs.cs",
+      "sha256": "06F7C236910D5A33DC64F040BEE3C0D8F33B06E5EB8936C7994F1FE91622842A",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLastNoticeIdCompletedEventHandler.cs",
+      "sha256": "8D329B9816CDAF1A90BC89184136E984EDBB14A3EC9E66EBA742C704CEB384AE",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLatestCounterSketchVersionStringCompletedEventArgs.cs",
+      "sha256": "66F69329484347BD66F47B94C2CF9ACA9EF96A7FCAFC100C38AD41C7C786BE9B",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLatestCounterSketchVersionStringCompletedEventHandler.cs",
+      "sha256": "3AC3702820B8AEAECF88304CE380CE2B89C403791C6C947DFC3037A3BD36BF1D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLatestDesignerVersionStringCompletedEventArgs.cs",
+      "sha256": "43239F86A278CCFCFA5027CEF80C250932AFFDF857A1082440E5D830AA86F71B",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLatestDesignerVersionStringCompletedEventHandler.cs",
+      "sha256": "C25D08459F574292D094D265AF682B613013BB320161B28C899972DEF8A58334",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLatestNoticeByKeyIdCompletedEventArgs.cs",
+      "sha256": "D059F1FD4963D5650A021789A4F8152F0414934F29EDBC251728EBB7EFC730C8",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLatestNoticeByKeyIdCompletedEventHandler.cs",
+      "sha256": "108D59DF356A3C889ED9262A72F3FE42E31961695C534301A31A33FC5207F327",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLatestPublicCounterSketchVersionStringCompletedEventArgs.cs",
+      "sha256": "7B6C1AFF0DDB3F31A89B919A57B5E6076DC3E2641A27CAC0AE757A86755BBFC2",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetLatestPublicCounterSketchVersionStringCompletedEventHandler.cs",
+      "sha256": "4D46E836C0F065C6C530698798642D59AF6FB0F97A3B7098ED58D37C27089BF5",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/getMatchingBandsCompletedEventArgs.cs",
+      "sha256": "BF5B73868F85EF13AC21909879843D545C6798A0DD894F44EAED566B3D090812",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/getMatchingBandsCompletedEventHandler.cs",
+      "sha256": "A53C6E56DED59BDDEEB34B3C4CC6B778AF1F7FFC320BE83CA7437C55BAB03382",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetMyCounterSketchVersionStringCompletedEventArgs.cs",
+      "sha256": "3667C517DD69039CE8B2A293963E1533D19FF34B8D04B59CA8B31D52F3A7DAB6",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetMyCounterSketchVersionStringCompletedEventHandler.cs",
+      "sha256": "E5841CE4E3F9DF891A11B54C88AF46B8A869511877B2BFCB6D079B0E2F071C2D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetMyLibraryFilesCompletedEventArgs.cs",
+      "sha256": "AFA72CC80EB8F2D86547E53672695991B10B7B9223962753CC1966AF299F7971",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetMyLibraryFilesCompletedEventHandler.cs",
+      "sha256": "5FB1109141C50DEDA4B3AB69B6C577E6011E87834E70149BBDC6DECD2CF12A1A",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetMyLibraryVersionCompletedEventArgs.cs",
+      "sha256": "C8CC85A52AC42831EE125B5C5ADB5D0F3E22BB58A676F9A091E67E4FE2D42EF0",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetMyLibraryVersionCompletedEventHandler.cs",
+      "sha256": "D51F3F27D7B18962FD0C8AAF8BEB8B4736452F8CEA8CF7536630E115B2664F2D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetMyLibraryZBinCompletedEventArgs.cs",
+      "sha256": "496C5CD32D274BD9ED7AAC9BB6CBB3278B3486F614B42712B3BFFFB9AFC68282",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetMyLibraryZBinCompletedEventHandler.cs",
+      "sha256": "DBAAF3C8947E8395DED6E63F465FCE5C2DF85CFD5A9DEE1C17D951EADB6F6E3B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetNoticeTypeByNoticeIdCompletedEventArgs.cs",
+      "sha256": "4A64F8724B38A83503C09FC53899C35454DC5931151CC1E8DDAB6D396685EDA8",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetNoticeTypeByNoticeIdCompletedEventHandler.cs",
+      "sha256": "B893E50DCEA0EE26A864F23117A8F5E13A6AECF99242D6A7E90B5BE33B249F9F",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetQuickEstimateCompletedEventArgs.cs",
+      "sha256": "00D221CE80F3D2B994BC142A13A56A01574C899701909CFC670BF6DD0B655300",
+      "lines": 48,
+      "nonblank": 41
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetQuickEstimateCompletedEventHandler.cs",
+      "sha256": "1D09541E702F7A11EDD89953E03F0E9A51D75681C8E8EB2647173BF8A6A596DA",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetQuickEstimateWeightCorrectionsByDesignIdCompletedEventArgs.cs",
+      "sha256": "DE69B7FAC64259DA5EB2230BAF5221C82F78EA677257824FD177E4C614F2E06C",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetQuickEstimateWeightCorrectionsByDesignIdCompletedEventHandler.cs",
+      "sha256": "2ED8EC5581CABBC39C41E5F284BC00482A6C02D68FA91FCC7113025BB1DD00B4",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetQuotesByKeyIdCompletedEventArgs.cs",
+      "sha256": "FB5E27E6DF90B3644AAF7886FC80FB6274D54781D8AC08E03A7E99FB9D4C1AB7",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetQuotesByKeyIdCompletedEventHandler.cs",
+      "sha256": "E9BBFFDE782C16A3C27B7D90FD23E509ACBFAB8602F64D1854B043487A4FD6EC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetRequiredLibraryFilesCompletedEventArgs.cs",
+      "sha256": "881975BA4E790EE285095DDD8DF01F46C07CB65745C3770B6E7053AE55B4F87B",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetRequiredLibraryFilesCompletedEventHandler.cs",
+      "sha256": "997DE8D6C976BD0B490184DA6AA5D4C7C37C174CA27C8D93C3797914B8DAD313",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetServiceExceptionHistoryCompletedEventArgs.cs",
+      "sha256": "40E18412A95345CAA8297CDDF704166CB55ED5A1F94032F88E54DFB39EAD4BDE",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetServiceExceptionHistoryCompletedEventHandler.cs",
+      "sha256": "9ADCF54F27D0F524F4844F4FD5711BEA3E50042DB639EE1725BBCE9EA7E1DA63",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetSurveyQuestionsCompletedEventArgs.cs",
+      "sha256": "D275B569405ED54BA95ED9EC8B56590F02953FC57F6223E6809042E991B963D1",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetSurveyQuestionsCompletedEventHandler.cs",
+      "sha256": "2D99CCFDF70E90CD98D2DE9080B3C0DED20C066682EAAA539E7815A80B9155D3",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetUserTypeIdCompletedEventArgs.cs",
+      "sha256": "3439901ECF29BA7FF9D9D2AE62C98A8DF692A42D4D5C9FF1B883DFBF3E30AADC",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetUserTypeIdCompletedEventHandler.cs",
+      "sha256": "8602C33B5A3AC83614B16D8C22909A583C2647BFD733C927DE06B12172EE9FD7",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetUserTypesCompletedEventArgs.cs",
+      "sha256": "11CA3ECB83061744B2D5FC2C75AF5692B958BFA2D7C8D2427A48BDE5138828B3",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetUserTypesCompletedEventHandler.cs",
+      "sha256": "4E64FAF563B1BA25ADE82831CF633C4CCCCBDEA3097C749AB1E8D288978DDCAB",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetValidIterationsCompletedEventArgs.cs",
+      "sha256": "EBB24C425BB0614FA7DEAD2C2BCD1790A9E9B2804131D8C256072B8C80741945",
+      "lines": 31,
+      "nonblank": 26
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetValidIterationsCompletedEventHandler.cs",
+      "sha256": "67570669DA9E0028B2CBFF56176898E211CA13F19711A9A9D0990BE98AA8E33D",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetValidIterationsListCompletedEventArgs.cs",
+      "sha256": "416CB578E27FF73FC7050D893934552451B81222B887AB40084FF3D23776E713",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/GetValidIterationsListCompletedEventHandler.cs",
+      "sha256": "B8FECFA07C3B09CE38AA8BFF643427B959A9452EE6F5361D469146882F52DD22",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/HasActiveSurveysCompletedEventArgs.cs",
+      "sha256": "B011FF1FCE7FD75E050C4E75B422DC9F2A48519B0F54595DFD80B5C4C96A2DBA",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/HasActiveSurveysCompletedEventHandler.cs",
+      "sha256": "7263E62535A3CAC53AD167CD6717C65162D97235B0C3D681F8D1AEA6FBE22B50",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/HasAssignmentDocumentByAssignmentIdCompletedEventArgs.cs",
+      "sha256": "7BAE24854AEE51E46EA06C291FF3C23A4D3FDECA18A07F23F0DAEAC1465CCD22",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/HasAssignmentDocumentByAssignmentIdCompletedEventHandler.cs",
+      "sha256": "4E814681582805AAF30CA6B379AAB30F43F86920699BE6C25C4522AF8C7AF227",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/Head.cs",
+      "sha256": "AE451BF8E9C06FBE6114B2AA197882F326FEBA42DA9BE6B604C0372BD1342A75",
+      "lines": 144,
+      "nonblank": 124
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationAttribute.cs",
+      "sha256": "8321731AC7E5DD1F71859665617AA0B2489CB03112B8636FC1A28FB92E428BA1",
+      "lines": 73,
+      "nonblank": 63
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationAttributeIdGetCompletedEventArgs.cs",
+      "sha256": "F1B9EEE6849C8F8CC7C9660ACB013434A522E6FE0712C16D165016233BDD05A8",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationAttributeIdGetCompletedEventHandler.cs",
+      "sha256": "A6A90E7D44277DD6C1868FABE36346F2A4A7D528CD7436483A20057154DC7217",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationAttributeSetCompletedEventArgs.cs",
+      "sha256": "76254E44C1097A5A068950983061B4AA2858A09CA0B81A5F46CE77AD746E515C",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationAttributeSetCompletedEventHandler.cs",
+      "sha256": "272D9238B983DB48D98D0D8C3FCD6031A6D17AF075830D85D7047BA68DFDEE96",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationComponentAttributeClearCompletedEventHandler.cs",
+      "sha256": "19B4AA8E498AC59D537715987E345FABF48BC11E865ECBE4B79491A01BAB9DF3",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationComponentAttributeGetCompletedEventArgs.cs",
+      "sha256": "95A634F68B3CE9392E1A332FB62F8AC881F3CBF5E79019DD344F13A0CD0BBFFC",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationComponentAttributeGetCompletedEventHandler.cs",
+      "sha256": "B84A6254DA83459D68BC3823F1CEC8E52E0A8C3E1FC89793F0D76A33AB7306CC",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationComponentAttributeIndexGetCompletedEventArgs.cs",
+      "sha256": "2CB229EB4DDAC5E2B634EB9400EA83C46B0F41E4D5679A8AFFB49C2F46B74B07",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationComponentAttributeIndexGetCompletedEventHandler.cs",
+      "sha256": "E5905AD18091DEA7D7C727CA982E827FB82054773A322C7AE782F2DB901F8042",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationComponentAttributeIndexSetCompletedEventHandler.cs",
+      "sha256": "EA526B275340570D7327041AACC7F3032A2CDB6C017D06B8911B8A11E85DBC1E",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationComponentAttributeIndexSetListCompletedEventHandler.cs",
+      "sha256": "24E80AD4CF176C1F6CD75DCBEE6E7D97E77B63381590563F9DC00F6D5E87A33C",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/IterationComponentAttributeSetCompletedEventHandler.cs",
+      "sha256": "A30ED77669A9605E30A7BCB54E2459880497D664EBB8FB9804D8025A462D4FA1",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/Mounting.cs",
+      "sha256": "0F07B96723D043730EB1C08CAE66DB8B2D003719B81DC0153CE23762E031AFB8",
+      "lines": 143,
+      "nonblank": 123
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/QuoteStatusResult.cs",
+      "sha256": "F666C1271E18AE4970B02B7852D90338600D2C7D7023991C9A6170E0A7EA51FF",
+      "lines": 58,
+      "nonblank": 50
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/RelatedEnd.cs",
+      "sha256": "DBE6DE3A7517AF846604D06606F4381A7C6C1522800353609B06EEB98AAB5600",
+      "lines": 19,
+      "nonblank": 16
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/ReviewerUploadFileTempCompletedEventArgs.cs",
+      "sha256": "D8E7AA81B1DB150F1A70880E5A90B775395130CDE84EF7A1F69154FC66D8D93E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/ReviewerUploadFileTempCompletedEventHandler.cs",
+      "sha256": "2D98CD001C7C370B086890063616DDD466A512CA4F5AB27E751CDB64DC24A2B2",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SaveFeedbackCompletedEventHandler.cs",
+      "sha256": "C79B1A22948B053C600D859AE0B15D294ABC4ACBC0919994BF9E38842B904972",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendApplicationEventsCompletedEventHandler.cs",
+      "sha256": "E84BEFDDED9FA9B4DCDFF88749EDA75180B037C810F72F6D0E2749D397C56486",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendDetailedRequestForQuoteCompletedEventArgs.cs",
+      "sha256": "81D078A40F89D75D1A4DA6B7820840B4A8D4C22058A14E01712CAD6F281ABC5C",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendDetailedRequestForQuoteCompletedEventHandler.cs",
+      "sha256": "9D672C3A72B152DB8C3626E22CA75F2B79C9D26A35223CF6FE631F10013CA18A",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendFullRequestForQuoteCompletedEventArgs.cs",
+      "sha256": "FEC74A32A0BCF683E308A7AB4572C50B41AA22BD769A655FE62FE55F76965AA6",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendFullRequestForQuoteCompletedEventHandler.cs",
+      "sha256": "1985B7068515BE1016F1BD5C90764B9930135E1B83FDC61FF754B5C71CA8476B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendImmediateEventCompletedEventHandler.cs",
+      "sha256": "357AC7F96104C72D582D5E73E753FB93CF2F5A8D525EF42C8C485B073307B12F",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendInstallationSpecificApplicationEventsCompletedEventHandler.cs",
+      "sha256": "37B3D7C83A3C2E11157A51D55AEA8C4DEBEA2D4A51C9ECD4B59BFC67ED93FFC4",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendMailCompletedEventArgs.cs",
+      "sha256": "7CA1DF928303A3AA707BA88F2C7488D20E175F3A8C8ACFA8A8F8DC1706339ED1",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendMailCompletedEventHandler.cs",
+      "sha256": "87DB02BB85D432031C055C7D2E69004FF106264A11FCEA6F64CC4B4B90C20775",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendMailFromUserCompletedEventArgs.cs",
+      "sha256": "176278DD3240B4A97FB3BAE4B55D03C9AFEA82E2DF406AF376D5CEE09786C2AB",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendMailFromUserCompletedEventHandler.cs",
+      "sha256": "D024833DE5404C8D31CF6E969626F288960E3449FF8560EDE0ECF57155DD1E3C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendPrototypeOrderCompletedEventArgs.cs",
+      "sha256": "85DD774BA822EDE38B10F19FF87BD0C170D00B28F9784078807140C35273E550",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendPrototypeOrderCompletedEventHandler.cs",
+      "sha256": "04756C25870EC9A993508341F10E29EF7E8F2B6AD0E2210E57BBB9ECFF62B626",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendQuoteOrderRequestCompletedEventArgs.cs",
+      "sha256": "EA3D83EB35AF2EA152733BC7EF419C9B04D0471AD04742EC439ACA3EBC29357F",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendQuoteOrderRequestCompletedEventHandler.cs",
+      "sha256": "E14DA1FC34AE078115DEC8D28AB076158476880CB3D3CEA0AB6260299C07D601",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendQuoteRequestCompletedEventArgs.cs",
+      "sha256": "159131A9AFF40DE9B75636FA78AE06E5A881B9A7EA6B0B0AAB8C22C0A1BAC37F",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendQuoteRequestCompletedEventHandler.cs",
+      "sha256": "65FF42DFD82F12DD2AD236A7B3A0F2F4148B420AA9A6329119197AED83582F02",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendRequestForQuoteCompletedEventArgs.cs",
+      "sha256": "F0777925AACBDC8D64203552D688EA6323BA4E9C0D5E0612B1496E916458A125",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SendRequestForQuoteCompletedEventHandler.cs",
+      "sha256": "D3A92ED5BAE8190B7C2D3DEA8F979D004B1EFD7A25E846501EDE5123EAA3D234",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/SetLinkedIDToCompletedEventHandler.cs",
+      "sha256": "E46981B41731548FB90D7A7C0745AB1142596229BF7F7709E411950FA68CC77E",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/setVersion1CompletedEventHandler.cs",
+      "sha256": "7FA0E2D67765726D4C88FBCB1413641385B448A286D42B55B641A1024C0CD659",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/setVersionCompletedEventHandler.cs",
+      "sha256": "974124F8475EF01919F1EF3E3D3DB0F41E99F6FBF493A0F358CD72235852A73E",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/Stone.cs",
+      "sha256": "376767397623E29A79960D48A820533034360747CFB9C8E49553B352A88C91E5",
+      "lines": 131,
+      "nonblank": 113
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/StructuralObject.cs",
+      "sha256": "5A9BFD19E9CEB5F529A24350A2941929338F31180DA6EBC99CBAF65C63B634D3",
+      "lines": 19,
+      "nonblank": 16
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/StullerServicesAreActiveCompletedEventArgs.cs",
+      "sha256": "C4FD7D3D20A9BBAC14F81F2349961EF3BB513EC35E9448A5ADD0C24F9C2D670A",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/StullerServicesAreActiveCompletedEventHandler.cs",
+      "sha256": "DF9569CAE3D2AAF2973772E94E3EFA13517C5A3D1458DE09AC85DA158CCE4C4C",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/TransmitDebuggingReportCompletedEventHandler.cs",
+      "sha256": "BFF51F36EA9E9304401B74C5766C29056CFD7713745388F54199E07919F4FF3F",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/TransmitDetailedDebuggingReportCompletedEventHandler.cs",
+      "sha256": "E370E2A766F05089A2E3ECC0063DD40FE031A6051552E332F08EFB338FB40790",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UpdateAssignmentOnDesignerCompletedEventHandler.cs",
+      "sha256": "64F4F96486B6E8436B5CC67260797433F2DA176E61C1AE3F616AAF7747F5B171",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UpdateCatalogOrderCompletedEventHandler.cs",
+      "sha256": "850A59772F3CFE1E01F633663C709D72F029B830B38CA9E765DBC932ACBDC979",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UpdateCatalogOrderCreationStatusCompletedEventHandler.cs",
+      "sha256": "8BA58875A9B4A400E19D9C56FE4B2A67D6F4B44B86EBB347F9E78B61306DAFFC",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UpdateCatalogOrderShipmentCompletedEventHandler.cs",
+      "sha256": "FF6535BEED4E4062007E809B640543DDBF715BD3FAB1F9419B0F6C64AD03FA81",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UpdateDesignPaidStatusCompletedEventHandler.cs",
+      "sha256": "E0EAD88BAC56EE1C7ADABF76C13A9D7D7DD16D5845A703B720EFAC8E08915029",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UpdateKeyInformation_2CompletedEventHandler.cs",
+      "sha256": "E6939E2CFB88AFB3C0A0A53365ECB0550C978E25436C3AD1B0FA3DF872DE1B7C",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UpdateKeyInformationCompletedEventHandler.cs",
+      "sha256": "DD3615C11767C8B64D0E3523CB88644FA9CB8FFAB79DD0572CA416462BB9408D",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UpdateUserTypeOnKeyCodeCompletedEventHandler.cs",
+      "sha256": "63F89F6F256D2454A6AA5036B84122600B7A4F35EFBB5910BFA3F8F8B2E5F0E9",
+      "lines": 8,
+      "nonblank": 5
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UploadCAMSettingsCompletedEventArgs.cs",
+      "sha256": "47DC9ABAF4008EEC5BF2A5B3322C16F7837E7EBC54FE2BB1DCD3D50482A6040E",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UploadCAMSettingsCompletedEventHandler.cs",
+      "sha256": "E9EEED3AB0CB23C52E0B63137A81195FA16662EF68D8D270C8E09B1EEE080E8F",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UploadCAMSettingsFileCompletedEventArgs.cs",
+      "sha256": "1C0FDFFBED6EDA96C04D06029F6D0591A507EF2C1087932D707C4E3C3CC8A970",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UploadCAMSettingsFileCompletedEventHandler.cs",
+      "sha256": "C2AA3ADA6D6F22F3B320C9E909FF5197729A54F85ADBF91E66045ACEB8EFD41B",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UploadFileCompletedEventArgs.cs",
+      "sha256": "C2AC805435D891510E87D36635A72722FA002848036E2D5C0A6CD82AD2E46C29",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/UploadFileCompletedEventHandler.cs",
+      "sha256": "35C4D3938C354198802EDB73E8BFB371F890400CFA20EE59C022E6D201D6A020",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/ValidateDesignerInfoCompletedEventArgs.cs",
+      "sha256": "E3653A5A66DB65B55378E586582B6B803593740E2EB8A0E86BA8EA1A35B221D0",
+      "lines": 30,
+      "nonblank": 25
+    },
+    {
+      "path": "CounterSketchServer.CounterSketchServices/ValidateDesignerInfoCompletedEventHandler.cs",
+      "sha256": "DD0812927426C8D60500E131B0C7CD9BF36EB381B014ACC6F3A61F6B7CE31393",
+      "lines": 7,
+      "nonblank": 4
+    },
+    {
+      "path": "CounterSketchServer.Utilities.Extensions/FilenameExtensions.cs",
+      "sha256": "691EA94051D4C5BDA203270EB9B822D0C5B09DB1E22ECD46094859F1CDD2B586",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "CounterSketchServer.Utilities.Extensions/StringExtensions.cs",
+      "sha256": "B367C48F0DDF9874CDB59FF2F54662B1B9DB9898439A735EA5C49A62B4B9C09A",
+      "lines": 18,
+      "nonblank": 15
+    },
+    {
+      "path": "CS.Annotations/AspChildControlTypeAttribute.cs",
+      "sha256": "75B5548D136E8D24CCC1552C16989D1D3FC28C52FB1297DE69300C798126A7BC",
+      "lines": 18,
+      "nonblank": 13
+    },
+    {
+      "path": "CS.Annotations/AspDataFieldAttribute.cs",
+      "sha256": "A69121EB8A17707636E22AADAC79D717B2ABF973DAF4D66ADAEE27BDB66000C5",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspDataFieldsAttribute.cs",
+      "sha256": "915178844622ED34E464FABE07831F9F04BC465DD04E08FF428F0C1945F6E34B",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMethodPropertyAttribute.cs",
+      "sha256": "61A9F10B9495D65AA4999A1A584BEF8359CEA2A47EED941E3D187A6F7615E9ED",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcActionAttribute.cs",
+      "sha256": "746DAC7A2A207879C486E3E64707474446BF20A023D9A870A8E79A686E03DFB6",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "CS.Annotations/AspMvcActionSelectorAttribute.cs",
+      "sha256": "8C05499C6170D8938FFF2F02F316511976315D88D453BA9F3C462D878531560D",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcAreaAttribute.cs",
+      "sha256": "6F7A47D44943E542CAFD1F6951329DC9DF7A20D7F33C5FCE57C7E24584F4F491",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "CS.Annotations/AspMvcAreaMasterLocationFormatAttribute.cs",
+      "sha256": "5BDF01262E936F10C3C685835DD838823580EC38C460B7ECACE0BA6E5A7D8ECF",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/AspMvcAreaPartialViewLocationFormatAttribute.cs",
+      "sha256": "4401F6D4A2912B7FA46D53C34F4C6B606940101C39EA6155A507EBD1F817608E",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/AspMvcAreaViewLocationFormatAttribute.cs",
+      "sha256": "0FEB7E76BE6BDF0B71C59ABB3E4CD3F591E0A399C88FA9F28F6C76B7F497F44D",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/AspMvcControllerAttribute.cs",
+      "sha256": "8A5518E982DCF380BA5A98F7FFCC8520B2F4C87E1F61668D5CA92A2A1BABDC7D",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "CS.Annotations/AspMvcDisplayTemplateAttribute.cs",
+      "sha256": "3847ADC7B453D62FF499966E7C4F0E673212839DA6D28AA5D86F6273D7B1E36E",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcEditorTemplateAttribute.cs",
+      "sha256": "1EFC046E6FB838EFDA5B10014D0BB9A05CF280AFC080CB037625ADEE915FF357",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcMasterAttribute.cs",
+      "sha256": "E8220D45BF76C8FE3DA7CFD035B1AA37552A6D0268DE296BD2BB44CA45F94B61",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcMasterLocationFormatAttribute.cs",
+      "sha256": "7869556F12CCBC931515F23F9EE2CBDFBFCAAC9E80E3D0711A26DDFF4C06CA44",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/AspMvcModelTypeAttribute.cs",
+      "sha256": "6F4DD3AA082C80F23D59704F4DD52240245053590AEE35F3C9256B76CC14147F",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcPartialViewAttribute.cs",
+      "sha256": "86A6A8B9D4AE5DD9F14BFD68E16D7B87F7A75DD36AEAE26F83FA931096AC4BB8",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcPartialViewLocationFormatAttribute.cs",
+      "sha256": "82C4D33AA82260AF1EBDED38CBEA571906F8975CC83A51510B3BA5B0B8B5F46F",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/AspMvcSupressViewErrorAttribute.cs",
+      "sha256": "40AF3C86DA6161DE9A59151271D35F577607855F2712FEB78A35BFFBEDB9EA23",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcTemplateAttribute.cs",
+      "sha256": "3A2DA165F211433CDF4E8E0E4904082BF58BC9A524CE0F96C5BB88C3EBDA368C",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcViewAttribute.cs",
+      "sha256": "EE3E949B2C2976D03B88A5738F9AB06CEEA7EE435C488EFF035F191667E94C1D",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/AspMvcViewLocationFormatAttribute.cs",
+      "sha256": "2391789E89C8EF6BBAF4E6005CD4D631AA8BC79D17269620BF42E8F8BC4EE897",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/AspRequiredAttributeAttribute.cs",
+      "sha256": "29618B64EA8E2E770FCD008161A525DB696D55E94C88333F35255259CBCE77B1",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/AspTypePropertyAttribute.cs",
+      "sha256": "06733ED71B8C0202A63098265004FC0CA842A641C3DAB6C5C5DE147EF1A83B52",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/AssertionConditionAttribute.cs",
+      "sha256": "70CEB66B0BF176ABF6F41CF87373BC0CF583A6F055FBAB1C678320F282EF0F49",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/AssertionConditionType.cs",
+      "sha256": "653C4A6C0DA2E50538AB8593EBF661C8FADCB987B75859B22AA1DB3FE3189CD8",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "CS.Annotations/AssertionMethodAttribute.cs",
+      "sha256": "D1DF69A3085BF9BCE1EBE7EFD58BB3BA251D42D7ADCBAAA0E328853E107F5469",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/BaseTypeRequiredAttribute.cs",
+      "sha256": "CB6402E8CC1C08741793566F088BDC2C098F8BD0E486A5406A54D266BF27EE94",
+      "lines": 17,
+      "nonblank": 13
+    },
+    {
+      "path": "CS.Annotations/CanBeNullAttribute.cs",
+      "sha256": "74C4F465936E7B198685EA020996ACBD00B5C48012A88E4CCBA71E02AC252B8D",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/CannotApplyEqualityOperatorAttribute.cs",
+      "sha256": "88F98274BBE8568B659ADEFEE04EC29FE8CC2AE96C879970DFAD9B2930634306",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/CollectionAccessAttribute.cs",
+      "sha256": "F845AEC2FC0E210F60C35D70510468FEB19DE9F6C9D85E1638F379B92636CA2D",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/CollectionAccessType.cs",
+      "sha256": "8D78CD0077E91644ABDD57693A3C6AB01F54502A4994D5612BF1E9DFFE4186A7",
+      "lines": 13,
+      "nonblank": 10
+    },
+    {
+      "path": "CS.Annotations/ContractAnnotationAttribute.cs",
+      "sha256": "7D559214675B161CB18432D4652AF060078A9A843D14483FEAC0E10ACB796343",
+      "lines": 23,
+      "nonblank": 17
+    },
+    {
+      "path": "CS.Annotations/HtmlAttributeValueAttribute.cs",
+      "sha256": "C1DF296DAA0BBDBFB8E070625DD3C73633D47A1AEBB3613EBF77B67D2E5ACD1F",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "CS.Annotations/HtmlElementAttributesAttribute.cs",
+      "sha256": "7AFAC984C9FA418585011996EB7256536FD5E628F7A598A9F8C41AC2D209B628",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "CS.Annotations/ImplicitUseKindFlags.cs",
+      "sha256": "1B56FF723A14B4DDEFE753F930E801A0B8A814F19376E347A6BDED25862DE96A",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/ImplicitUseTargetFlags.cs",
+      "sha256": "6A17A225DC409F64B83137E7D430A953DAE9DD2CD6794462D39491D9B3BB610E",
+      "lines": 13,
+      "nonblank": 10
+    },
+    {
+      "path": "CS.Annotations/InstantHandleAttribute.cs",
+      "sha256": "35B3C9CE1F48064277953AFC2991F73860162AE2587B8C125EE2352A9D0E7FD4",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/InvokerParameterNameAttribute.cs",
+      "sha256": "08B4F44C376B5C83333B69CCEB954F23B7DAE5EDAC2F68E54DDA955617A23524",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/ItemCanBeNullAttribute.cs",
+      "sha256": "F1FCBB0190D4C2DEF73E22387C60CEA29C174371C76FC52B7E414CE5DB6122CD",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/ItemNotNullAttribute.cs",
+      "sha256": "504EDA7D7B55CCCC3DB07FB7E73976AC7612D3A60BF482348266CF9A453DEC0A",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/LinqTunnelAttribute.cs",
+      "sha256": "4C2E978F7D87B11459904D5EA6E0BED32BE389C07AAC5BC2FE7DF54F9661E217",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/LocalizationRequiredAttribute.cs",
+      "sha256": "77A593883C17BFFFF2E5DA6C8FC4B58711F86ADB8199E8A26A10FF7168ACF7B2",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "CS.Annotations/MacroAttribute.cs",
+      "sha256": "9FF288B4AF537A61178FBE4E849F2766D533367869196AE0EA14A32259C69E7F",
+      "lines": 14,
+      "nonblank": 9
+    },
+    {
+      "path": "CS.Annotations/MeansImplicitUseAttribute.cs",
+      "sha256": "64ABD1F607A79AEBFA54DC2B3AF030E060A0F1F392AF01E3EB52BF7048BCB22B",
+      "lines": 35,
+      "nonblank": 27
+    },
+    {
+      "path": "CS.Annotations/NoEnumerationAttribute.cs",
+      "sha256": "2D03380D3AD55F981C227CB885CF457FA61FD7FC65141A3D01690E440DCA62D7",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/NoReorder.cs",
+      "sha256": "C481D16031096354CA4797B9ADE945C064405E51FECB44DC8928F0770471C3B0",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/NotifyPropertyChangedInvocatorAttribute.cs",
+      "sha256": "F3CFE28252DEC89DF0857BB844D525B411BE6D12AA0C2A4F4BB913068877226C",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "CS.Annotations/NotNullAttribute.cs",
+      "sha256": "C94D08DB5CCCD16225CD6D73D210CCA7C2B8F48CD66EC21B04CCC007D45329F3",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/PathReferenceAttribute.cs",
+      "sha256": "E024CB39DABA61E2D87105C523996059B0709F824D659049DABA5EE414B71410",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "CS.Annotations/PublicAPIAttribute.cs",
+      "sha256": "C2BDA2DA2DD340CB29168B0A459C5767503D395F6FFCCC44E16E8859EAA93639",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "CS.Annotations/PureAttribute.cs",
+      "sha256": "BE431D955164420E1C4D89DCAF3BB617DACAA24EC4E7CF77287531A01D743E21",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/RazorHelperCommonAttribute.cs",
+      "sha256": "D5877890FF8AAAC6E544479BFE88AB0D2D9A50D2A8517CF0DF9E6DCBEC96D059",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/RazorImportNamespaceAttribute.cs",
+      "sha256": "80543AB90D6FA149CE5BB4CF531F236C7B3BC448602A5CD0E215E71F573CB125",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/RazorInjectionAttribute.cs",
+      "sha256": "5EFB94820362D86D87FF40E1145FB1B44B38237AC4C12B7D29EDE2F34BBA457F",
+      "lines": 18,
+      "nonblank": 13
+    },
+    {
+      "path": "CS.Annotations/RazorLayoutAttribute.cs",
+      "sha256": "38D3D76CD730A8627D51020A0D148952E82E12044C3668A307FCB4F427A5DFE3",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/RazorSectionAttribute.cs",
+      "sha256": "F2D3F07E81AC411F61E99AE9A10E9D7975BC377C5935DDCD45C5E025A63EC154",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/RazorWriteLiteralMethodAttribute.cs",
+      "sha256": "D7DD49A093C56F531B568BCEDDA5C0C65B95B09DFFF9F13281B6BF54D17C2763",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/RazorWriteMethodAttribute.cs",
+      "sha256": "F891EC5D69CC4063410EB92C3B5121059B42AD07946AF52AD73A259025821242",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/RazorWriteMethodParameterAttribute.cs",
+      "sha256": "426BFC7D00E5767CC27F6DA6E55E3E7E5883A51D471687FB7EE95367D4FE7055",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/RegexPatternAttribute.cs",
+      "sha256": "B942B03D9A34EAEF03719958D89DA0D78992F02E10A5E1698F767DFC6949C228",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/SourceTemplateAttribute.cs",
+      "sha256": "7D28D0A7E80160FA4DF6473E8252231CCF67331BEE1705726BA5A21ADFB403F6",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/StringFormatMethodAttribute.cs",
+      "sha256": "D065A4B0AD759B207BA73987B934CF7A1D7965DF1DAFE9D1F9BC3564BC1D13C5",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Annotations/TerminatesProgramAttribute.cs",
+      "sha256": "4539DC69F397D78E678846720212DD7B0D2D3D40746676DBDC8341DC843B780B",
+      "lines": 10,
+      "nonblank": 7
+    },
+    {
+      "path": "CS.Annotations/UsedImplicitlyAttribute.cs",
+      "sha256": "012DC1182E21C46722FE6DEF97000F7AC59DAB3D6E5CBEF4AC45338B531DC471",
+      "lines": 33,
+      "nonblank": 25
+    },
+    {
+      "path": "CS.Annotations/ValueProviderAttribute.cs",
+      "sha256": "D66F7EE1465562CDE2680C9E05AB7103F113DBFBB4D657577036F36DEFB7B17B",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "CS.Annotations/XamlItemBindingOfItemsControlAttribute.cs",
+      "sha256": "CB50C6082E9EE08B72262F899FA3AE92AD4210F3371D8EC8AD38FDEEEB324BED",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Annotations/XamlItemsControlAttribute.cs",
+      "sha256": "C9D62F1E8EF472AD4A252303FBA210D12451F961AF168CA15F8AF1A4D4448637",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.CSObjects/ArrowDir.cs",
+      "sha256": "9FBF1C4C2387524D2079792396665291487A2BBB0171B075E31B9A971DC3803D",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "CS.CSValues.Interfaces/ICSValue.cs",
+      "sha256": "BA72A80E3D814B3C43AEC865C5F58D354D198F02068BDE79D0173CFB20F42E66",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.CSValues.Interfaces/ICSValueGemSize.cs",
+      "sha256": "0045788B7552731122367D0ED0A5A0A94A9A54B07215990DC1FC8BD73F2241B6",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CS.CSValues/GemMinMaxInfo.cs",
+      "sha256": "ED1D9D116C2EDA4559E2C66B59FC17615773AA387553B3068CA4EFDDFA13E568",
+      "lines": 31,
+      "nonblank": 21
+    },
+    {
+      "path": "CS.CSValues/GemTableSizeExclusion.cs",
+      "sha256": "F2E05C6F69D36A6E78F7EEC7ED9AD80D3465F6DC91B676EEA4EDDD82337A2FD2",
+      "lines": 40,
+      "nonblank": 30
+    },
+    {
+      "path": "CS.CSValues/ScriptVarType.cs",
+      "sha256": "7DBAD6027C50EA87B328DE4D683A81E9D97EE8B396449517A55B43F62B1B3C77",
+      "lines": 28,
+      "nonblank": 25
+    },
+    {
+      "path": "CS.JSonDoc/CSJsonIds.cs",
+      "sha256": "E22395881501C82D181E0E130A4D0878CADAFC1414049B8965DE3EC0E5E61B71",
+      "lines": 205,
+      "nonblank": 104
+    },
+    {
+      "path": "CS.Material/Environment.cs",
+      "sha256": "7C3B85FB17D5EF2308A5F901507C610C2C4DD658A2C9FF18CDB211B1E544BC5B",
+      "lines": 11,
+      "nonblank": 9
+    },
+    {
+      "path": "CS.Material/GroundPlaneMaterial.cs",
+      "sha256": "2B3DA7FE541977468B544E74C5A93C5AEBA8D175637BBC8DC18B792C59C6A0C1",
+      "lines": 46,
+      "nonblank": 44
+    },
+    {
+      "path": "CS.Material/HandMaterial.cs",
+      "sha256": "D002B110F33B23F8BBCA5A67AFD98CA7769C55FB189BFECAD94F9DD94E05003D",
+      "lines": 25,
+      "nonblank": 23
+    },
+    {
+      "path": "CS.Material/PolishMaterial.cs",
+      "sha256": "329C2BF1C3B19FE9C04B7F1812EFCD423472DC89A7ED0301776DD30D3AB31EC3",
+      "lines": 26,
+      "nonblank": 24
+    },
+    {
+      "path": "CS.Material/Resolution.cs",
+      "sha256": "ABAC8D0E77D24FF596BECA968B97F2E431B049DDDE456EDE5ACA3E5558078EAC",
+      "lines": 48,
+      "nonblank": 45
+    },
+    {
+      "path": "CS.Material/ShirtMaterial.cs",
+      "sha256": "F92B02095B71F79BE654ECCE857AC29FF10B57E3BF66C572506D7231B140A6F4",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "CS.Parametric.Channels/ChannelArrayType.cs",
+      "sha256": "C5FD7990C42F025639BB612671F058D5CF322AA145F53B889468EFF83090D2CA",
+      "lines": 12,
+      "nonblank": 9
+    },
+    {
+      "path": "CS.Parametric.Channels/ChannelDataType.cs",
+      "sha256": "73B0CD23401A2467B19FA7C5DE2F6782CC9096A2B73AC9A16C0A164CF8356BDE",
+      "lines": 30,
+      "nonblank": 27
+    },
+    {
+      "path": "CS.Parametric.Channels/ChannelFlag.cs",
+      "sha256": "2D1E7C739484CE59631B84E291086D2598A385F0C14EFBF87D32E9929C120151",
+      "lines": 13,
+      "nonblank": 10
+    },
+    {
+      "path": "CS.Parametric.Interfaces/IFontSource.cs",
+      "sha256": "6C55B2662D3DE4F5EC065E3FF647DF5EC558D7754AEB05BA09BE04803D986B6C",
+      "lines": 14,
+      "nonblank": 9
+    },
+    {
+      "path": "CS.Parametric/BlockLoopCheckStatus.cs",
+      "sha256": "0651E7FF83E63A77D68F0767C2C5F78A4EA7999376BFAFC6E24FB919633A2F2B",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "CS.Parametric/BlockProcessingStatus.cs",
+      "sha256": "8A29B81E037A682AC71590F941BC14E491C2B7397F2E9EB41029A4575953547D",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "CS.Parametric/CAMSetting.cs",
+      "sha256": "2A6F01A627591B92453CC0E016D62EC57D5207315DCBB4E347DB7025EEE6E592",
+      "lines": 11,
+      "nonblank": 7
+    },
+    {
+      "path": "CS.Parametric/CAMValue.cs",
+      "sha256": "13057DABE47628435DF10AE4D1A1CE0C7B599C656B596BC70BD4749C272F3D33",
+      "lines": 19,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Parametric/CSArrowIODirection.cs",
+      "sha256": "4E92459E12E041D92840CFA5A43F0E0F4D7EB432EF6463E69C6BB8C252E1E36C",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "CS.Parametric/CSBlockInput.cs",
+      "sha256": "B2D59B7B06CE0BBBA339578E62E11B292DFAF2E828016796CF87344CFC64C6AE",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Parametric/CSBlockOutput.cs",
+      "sha256": "6621DAA0586A59C11C2F9E0DB07064FCF12669747C8C6C474E92799A8E25D93A",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Parametric/CSPatchWireFunctionResult.cs",
+      "sha256": "0EEEDE0FE8584BE9F92E5FD6D85F240CA513ECBA7F3365C132B4EF48E92DAA80",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "CS.Parametric/DesignInfo.cs",
+      "sha256": "773DA315ACA614D4E225B595BDAF8D3D02B6708E723AD18D85924701238883A0",
+      "lines": 13,
+      "nonblank": 8
+    },
+    {
+      "path": "CS.Parametric/DisplayComponents.cs",
+      "sha256": "5AEF9DFE16E26B10195394BCC71CAED4DE6257FED76B489601EF16A95D9FBCA1",
+      "lines": 32,
+      "nonblank": 29
+    },
+    {
+      "path": "CS.Parametric/PatchWireOptions.cs",
+      "sha256": "0139F1B0D383D6E8B40E9A35DC4B84AA71568740DADFC3B01A187F9AEDD7C4FF",
+      "lines": 169,
+      "nonblank": 159
+    },
+    {
+      "path": "CS.Parametric/PatchWirePos.cs",
+      "sha256": "6BAF5F7ACF3D599D0A454B76875B20286F6CFDEA509FF9EA3E916B3F07EFEAAA",
+      "lines": 22,
+      "nonblank": 13
+    },
+    {
+      "path": "CS.Parametric/PatchWirePosSetting.cs",
+      "sha256": "575C90BA1AF47A17D5BD499BD723870270B608819B0C2796263DAE09FCBD5039",
+      "lines": 19,
+      "nonblank": 11
+    },
+    {
+      "path": "CS.Parametric/PatchWireSettings.cs",
+      "sha256": "FD2EA64DF092247165E97121EED42D0CD6799A5D74361E418463AC98D8FD683F",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CS.Pattern/CompareChannelConnections.cs",
+      "sha256": "CA35B399720F8D3E740227C0062CB4C44F7645BBEA044AD0F7558BD7BC66A9A9",
+      "lines": 33,
+      "nonblank": 27
+    },
+    {
+      "path": "CS.Profile/On4dPoint.cs",
+      "sha256": "F953D89A437F9D77096CAC927F841AC471B6D28A0D71AC106BC6DD8603179741",
+      "lines": 16,
+      "nonblank": 10
+    },
+    {
+      "path": "CS.Reporting/CSReportRingRail.cs",
+      "sha256": "2EADA4E60127BE42F1AC5CDDC38A51407BEF27948E62C8BFDEE369BECA732917",
+      "lines": 11,
+      "nonblank": 7
+    },
+    {
+      "path": "CS.Reporting/CSReportSurface.cs",
+      "sha256": "E06F6EC015D8A8A78FEFA648CB25A1CAA1216E83E59E0B2C382F5CDA2DDE4A98",
+      "lines": 33,
+      "nonblank": 25
+    },
+    {
+      "path": "CS.Reporting/GemPlace.cs",
+      "sha256": "10CF43ADEE72678E410646B4DB2FB6AD585B7D7B202A3EC6CD09BC5B0BE56A1C",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "CS.Reporting/IOReportingTypes.cs",
+      "sha256": "235FB0A549D7A55B199F593B6DACC862525A585032BD78F2B3A5490AF8D0FC0D",
+      "lines": 20,
+      "nonblank": 17
+    },
+    {
+      "path": "CS.Reporting/MetalParts.cs",
+      "sha256": "88266DC831A25012F98662A5F3B568DD06135C9327E5580ADA67879E6EF130C2",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "CS.Selection/SelectionMode.cs",
+      "sha256": "7C6A1E1A578CD6DA02877DB8570B8283EFC0BF7BA613F0359353962AF9033F80",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "CS.Utilities.Helpers/NetFabError.cs",
+      "sha256": "510781052B1104338E69A7C2DC69BF971652E17973308A9EFC15B7C44BFCD689",
+      "lines": 43,
+      "nonblank": 41
+    },
+    {
+      "path": "CS/CameraView.cs",
+      "sha256": "1130791B078E2AF7D7BF1E0DB567CE7BC879486B0F49C7CC7D76B471E2A66CF3",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "CS/CSPatchWireAttribute.cs",
+      "sha256": "85863FB1E2DDD5101AAEAF10B6832F46DF23A5B5A0AE481952A6387B964D6A66",
+      "lines": 100,
+      "nonblank": 81
+    },
+    {
+      "path": "CS/CSUtilBlockInputChannelNames.cs",
+      "sha256": "1C43BE2EDE8707B76783C2D61535AFE9F27A6F8A1F856CE5DC1BFA09B2C2FE5D",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CS/CSUtilBlockNames.cs",
+      "sha256": "A897B4F517F015FB8533D6DEF442576C5AB9136EB4E0BDA4DAF35003BF8F4A74",
+      "lines": 29,
+      "nonblank": 16
+    },
+    {
+      "path": "CS/CSUtilBlockOutputChannelNames.cs",
+      "sha256": "44D599B0D231BC4B9A05C6FFFAB4F3141C295E6CF19776B8D6A4DB0C56D13855",
+      "lines": 15,
+      "nonblank": 9
+    },
+    {
+      "path": "CS/CSUtilINI.cs",
+      "sha256": "71EA2E35377CEB753B500ADD27A0BFE72614EDCB4DD11BB13EE57F24D2A87477",
+      "lines": 130,
+      "nonblank": 107
+    },
+    {
+      "path": "CS/CSValueChooserUIElementType.cs",
+      "sha256": "81BC33EB1906A87B37057913E963343C8BA53F1F35762016D8AA1E229866E65C",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CS/CSValueGemUIElementType.cs",
+      "sha256": "E5B62BA71E8F6206085BEBD3C6FF6A6426D99D33D84593BE1066F1A827207F8D",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CS/CSValueOnOffUIElementType.cs",
+      "sha256": "E3113B3C04F0AB36AD661E647D77FC06414DB890EE56AEA8A1E9524D46FAC36A",
+      "lines": 8,
+      "nonblank": 6
+    },
+    {
+      "path": "CS/CSValueRangeUIElementType.cs",
+      "sha256": "0FD2EEFBF1DECE85084C0F1658835DB4699B512D108A84E3FD12F993D61AE2D4",
+      "lines": 11,
+      "nonblank": 9
+    },
+    {
+      "path": "CS/CSValueRingSizeUIElementType.cs",
+      "sha256": "F481EB19690E5E4239757641E2D34E5E34842B944C6932C203DA1D5C1244F47B",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CS/CSValueStringUIElementType.cs",
+      "sha256": "72EF9EF45AF2E749A61763DC360EB9113DC74434B5128336285AAFCBB0B14CB9",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CS/ESelectionType.cs",
+      "sha256": "118B6565D4087845CAE7DD47BFC4C996856133A2B3C2BE4404BF0099E68D557E",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "CS/Force.cs",
+      "sha256": "C30C55C41DC8E8D8EB2C59145A3D0EE53041580C3A0013F7837E2525084D36CF",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "CS/IOTypes.cs",
+      "sha256": "ED604006F3BD8F3F8DB9C51C56973679929FAB1864D8FD17A4538E862DB43276",
+      "lines": 27,
+      "nonblank": 24
+    },
+    {
+      "path": "CS/LayerNumber.cs",
+      "sha256": "470162A2A4C51814B81BEBF997427D75646F69E831885328124AF0DB3C0C6B3F",
+      "lines": 25,
+      "nonblank": 22
+    },
+    {
+      "path": "CSBlocks.Core/CSGroupOfGemsIdentifier.cs",
+      "sha256": "9E8D20D4CD874A7A8E109183DAE995EE9355FDDC395D975D80F40A591F40ECF5",
+      "lines": 92,
+      "nonblank": 78
+    },
+    {
+      "path": "CSBlocks.Core/ScaleToGemShape.cs",
+      "sha256": "932D0538BA6E4BB6B715CB90C4B7120B325AF6236D2DBC58A5DB8E73FEC42E5B",
+      "lines": 29,
+      "nonblank": 22
+    },
+    {
+      "path": "CSBlocks.Settings.Heads.CSHeadBuilderV1.Obsolete/CSHeadStyles1.cs",
+      "sha256": "9382B30BB1DD4CF8C7F0C3A473C21152F132371F55951BCFB775F3C4DFBE8990",
+      "lines": 343,
+      "nonblank": 340
+    },
+    {
+      "path": "CSBlocks.Settings.Heads.CSHeadBuilderV1.Obsolete/CSHeadStyles2.cs",
+      "sha256": "AA7D081F3BDF1ABFE0D6BD6E474E3E7BC0C4FEA4BDD197F1C678BEDD677271A6",
+      "lines": 6986,
+      "nonblank": 6972
+    },
+    {
+      "path": "CSBlocks.Settings.Heads.CSHeadBuilderV1.Obsolete/CSHeadStyles3.cs",
+      "sha256": "BD97D0B2EC9B44930327B011E92B61D9554074FD641714E58C6A4F0BD4482864",
+      "lines": 2869,
+      "nonblank": 2858
+    },
+    {
+      "path": "CSBlocks.Settings.Heads.CSHeadBuilderV1.Obsolete/CSHeadStyles4.cs",
+      "sha256": "3794DA76271E78EB71AEB2F6969A89C66BB452C4D24A39ACC2302E046ACE35E0",
+      "lines": 1083,
+      "nonblank": 1073
+    },
+    {
+      "path": "CSBlocks.Settings.Heads.CSHeadBuilderV1.Obsolete/CSHeadStyles5.cs",
+      "sha256": "340CF12873956AD54A9B2F0FB8A64A65093212C0A227C5352B92B8B061D34EEB",
+      "lines": 860,
+      "nonblank": 849
+    },
+    {
+      "path": "CSBlocks.Settings.Heads.CSHeadBuilderV1/CSHeadStyles.cs",
+      "sha256": "F35C21EF508B455A14B3A626371C6673781C28BC55317A8A9AE30C85E32165C0",
+      "lines": 1363,
+      "nonblank": 1352
+    },
+    {
+      "path": "CSBlocks/CSBlocks.cs",
+      "sha256": "7D9E18B45E39E46104779059DBCFCF1DC9CA0892F40091C74F9E6FCCCFD60CCC",
+      "lines": 6,
+      "nonblank": 4
+    },
+    {
+      "path": "CSDatas.Interfaces/ICSBoolean.cs",
+      "sha256": "572C4DB2601BD92DA08CB0FC0C7E0A2A6E6DC25B22BE557E1675B7241AF5907C",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CSDatas.Interfaces/ICSDouble.cs",
+      "sha256": "3018AA884BCAF6D2BB9E3E8B9D256B1170593FCCAE0052A8D255775F88CCEA41",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CSDatas.Interfaces/ICSFlippable.cs",
+      "sha256": "3761093C9D964F0043AE343DC06BBDA208E1E6CEA4CF207327E3755F3F387FFA",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CSDatas.Interfaces/ICSInteger.cs",
+      "sha256": "F5FF1B4BB635EDF4C29FA206A158F8973B82EF61B09CD9D5CB9D6EA75D10C3C1",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CSDatas.Interfaces/ICSString.cs",
+      "sha256": "F90A3EC827B843F865095A35E7EEAA2DF5E19D62C2CB123D1407D513EE6350C5",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "CSDatas/ChannelCornerType.cs",
+      "sha256": "680D965FD6052FC0AD619B4384DAA8E48038157B60FCC1A95E3160F8738EE12C",
+      "lines": 9,
+      "nonblank": 7
+    },
+    {
+      "path": "CSDatas/CSOptionsExport.cs",
+      "sha256": "9D9F427EE293CAF926E5E5852FE9AEC5E9FC530775188787D6B109F9F28CD5FD",
+      "lines": 19,
+      "nonblank": 11
+    },
+    {
+      "path": "CSDatas/GemSettingType.cs",
+      "sha256": "A6A716156A583B10B94992B1F52BD19564C52E2FF6ED56424B75CF56E3175951",
+      "lines": 48,
+      "nonblank": 45
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/CabochonBullet.cs",
+      "sha256": "004C413240BCBFBA9976F54C7DBE0E27199A256806DB08342BD46AAB6CD8670E",
+      "lines": 92,
+      "nonblank": 83
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/CabochonCushion.cs",
+      "sha256": "6AFCA57BF76C0CC546EB9649D1B832B9331E8C5DD86B62170B60528A589E90B0",
+      "lines": 50,
+      "nonblank": 41
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/CabochonEmerald.cs",
+      "sha256": "904DBE2FEB8FF4D347B6711E66DEDD5AEF0427F101FBDEEF4C0A56BB2155DEDB",
+      "lines": 44,
+      "nonblank": 35
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/CabochonHeart.cs",
+      "sha256": "AEC882EC6909E4D57EB12F8B4604AAE949FED423481FA6868664019C9BCCBA0A",
+      "lines": 49,
+      "nonblank": 40
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/CabochonMarquise.cs",
+      "sha256": "10FB100357F85747075E08A52397A0CC92CF558DC6E7AA034376B867AF5EC6C7",
+      "lines": 48,
+      "nonblank": 39
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/CabochonOval.cs",
+      "sha256": "1D2E5FF83CA7D97DE4EB0B6E48DA9235EA33909250961F4629A37CA0C66F894C",
+      "lines": 50,
+      "nonblank": 41
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/CabochonPear.cs",
+      "sha256": "4C613317685264C302D9F531789EE8EF3DD68B5F1D3BBB80369150011688AD46",
+      "lines": 47,
+      "nonblank": 38
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/CabochonRound.cs",
+      "sha256": "FC81C46DCA01949C6B53A908C31B6FA4195727FFDA0AC934D51D8840A378A695",
+      "lines": 92,
+      "nonblank": 83
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/CabochonSquare.cs",
+      "sha256": "5FF0F1497D6BC89EC99DB1A773837AADB7038F7DC6248CE6A8B13EF6642FD885",
+      "lines": 51,
+      "nonblank": 42
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondBaguetteStraight.cs",
+      "sha256": "F7C60C8C11AC0750FF3D960D80E51C09433BDD20FAD921375F5E98E7D0B745BC",
+      "lines": 152,
+      "nonblank": 143
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondBaguetteTapered.cs",
+      "sha256": "D73022AC34A0FB5B8D30FF4248B2CB61A686CCAF33661C6D5F32228AF460785B",
+      "lines": 138,
+      "nonblank": 129
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondCalf.cs",
+      "sha256": "246A8301E9E7BF1A833EA49D37808DC1F46AE55CAA09A79E02C76358CDD0F207",
+      "lines": 45,
+      "nonblank": 36
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondCushion.cs",
+      "sha256": "3E0A4518B1B4FEDA83D3D36EB29352DC0CFBC16C609E5D7E6CB9B4C61DE0EA42",
+      "lines": 53,
+      "nonblank": 44
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondCushionRotated90.cs",
+      "sha256": "CA4D2DCF4451AB65229085617A627C17EF818655B565B400FB1EE1978D2222F0",
+      "lines": 53,
+      "nonblank": 44
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondCushionSquare.cs",
+      "sha256": "C11008106A5055F4EA8A404D90EDEAAF89697C43DDB8083945E8667B3A6184B0",
+      "lines": 54,
+      "nonblank": 45
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondEmerald.cs",
+      "sha256": "96AC7F9B7F09A778E88DF108A03CCC8003EF40E18A8E1EC7055A343499057025",
+      "lines": 75,
+      "nonblank": 66
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondEmeraldCustom.cs",
+      "sha256": "CE4D762F071931EE54495604B2EB4FD036AB265C491400B7F6C6B7FA73EE65E9",
+      "lines": 75,
+      "nonblank": 66
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondEmeraldRotated90.cs",
+      "sha256": "8CD83537F2531CE94ED3355A7BD1F04EC000FB345FD12EA1E544A600DB9DF604",
+      "lines": 47,
+      "nonblank": 38
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondEmeraldSquare.cs",
+      "sha256": "20AC0CB186272E46DB6C8C6AC96DA174A99B7BAEEA713789BB812A9BC1CCBDC7",
+      "lines": 88,
+      "nonblank": 79
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondHalfMoon.cs",
+      "sha256": "942E4221AB07AD83C1A89DBDFF2564A77C04903B3DA44268581348A217D96FFB",
+      "lines": 92,
+      "nonblank": 83
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondHeart.cs",
+      "sha256": "7F7DFA15A30402DF025F376DE85CA10439C118B0D82FCFE99DB51515577BD4D4",
+      "lines": 49,
+      "nonblank": 40
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondMarquise.cs",
+      "sha256": "CC9A26CA05F35E60DBD93056325A05EF59067F03F9896B0962DBEF383A7415E8",
+      "lines": 78,
+      "nonblank": 69
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondMarquiseRotated90.cs",
+      "sha256": "C1BE4DB4B664B177A09D1643917021B575F344FA3FC3ECA65BCCEAF529DEF24C",
+      "lines": 49,
+      "nonblank": 40
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondOctagon.cs",
+      "sha256": "6BC236EB854B8526E50152A1733FC811D85836EF1129B5B97E0C6265FF324D7A",
+      "lines": 51,
+      "nonblank": 42
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondOval.cs",
+      "sha256": "1935244F7758D4EB5ED7D93C08617BAFA0FE13B6681842CD6CB678C33227FBFE",
+      "lines": 128,
+      "nonblank": 119
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondOvalRotated90.cs",
+      "sha256": "3EA86E1888BE4847C18B768CA6F91E6C7817927CD5523198F4DE7BCB9BA3F0B6",
+      "lines": 56,
+      "nonblank": 47
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondPear.cs",
+      "sha256": "ACFDDCE3FC755305313E22D7C8979D44293F373D52B45D8E88C84234E8F386F1",
+      "lines": 76,
+      "nonblank": 67
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondPrincess.cs",
+      "sha256": "BF62A1FD12316E4B5718F835EDAF919669BD1B80092BC5F301AC63B9B05A72E6",
+      "lines": 94,
+      "nonblank": 85
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondRadiant.cs",
+      "sha256": "EC9AA2C48C72D14108E3A963F4CC8916DE4BF2BDB2217E472B63B04A30D8F2AF",
+      "lines": 44,
+      "nonblank": 35
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondRadiantSquare.cs",
+      "sha256": "A6065E5D451AE56107AE4BE2B564641D50BA1067FDD1FB05FD5119F6C8A42C0A",
+      "lines": 54,
+      "nonblank": 45
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondRound.cs",
+      "sha256": "B16127055A2D2A01AC8CC61FF2083BD929AC7D8D0CFC978F540C6939E51DFEDE",
+      "lines": 193,
+      "nonblank": 184
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondTriangle.cs",
+      "sha256": "41F3A598039755AC8E0C6C5224DBFE2EFE0FD86D7A200F40D48AFB6BA1926470",
+      "lines": 45,
+      "nonblank": 36
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondTrillionCurved.cs",
+      "sha256": "EF9AC029FE6CCBCA06A0E07EDC0DB25198E6226BB109A7593946A2F4DFCC83BC",
+      "lines": 47,
+      "nonblank": 38
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondTrillionCurved2.cs",
+      "sha256": "CCA802BFF27F9C1BE29221B538A508705D699F7ED47C7798AC66118A54B11D1F",
+      "lines": 47,
+      "nonblank": 38
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondTrillionStraight.cs",
+      "sha256": "0379C3852251AC47307CE2034CB5835EA1D3458EF5B2795F85A2B8AB8F5EC7E9",
+      "lines": 47,
+      "nonblank": 38
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/DiamondTrillionStraight2.cs",
+      "sha256": "A237EAE5721AA1BB005CD8B7AD40F36566EEFCC479BDD8F7315B4EFE53F542F5",
+      "lines": 47,
+      "nonblank": 38
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemCushion.cs",
+      "sha256": "479BAEB4CA0098A531E5E403C597FB04966075360A3F6A833E8E7507ED36054B",
+      "lines": 50,
+      "nonblank": 41
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemEmerald.cs",
+      "sha256": "896096FEDD47E0B01D81EC2EE6E138020DDAB2BDCAD7FE886DA3489EFE28DCBC",
+      "lines": 44,
+      "nonblank": 35
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemHeart.cs",
+      "sha256": "801EE6DF541DD599499F85D1FB610F373D35A59CB5B838D5543E7F5514FBF5A3",
+      "lines": 49,
+      "nonblank": 40
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemMarquise.cs",
+      "sha256": "8CFB3B79588DCA10DFA333DFB0007FDB31A873BCEDDB48FC0276B5ACE5DAF766",
+      "lines": 48,
+      "nonblank": 39
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemOval.cs",
+      "sha256": "0E2661BF4819FC3C6588F779E8632FB0C7FB2F46CE32E7B9A5B8E39C6B287B8B",
+      "lines": 50,
+      "nonblank": 41
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemPear.cs",
+      "sha256": "04ED3DB681CFCBAEF9C4F852B187B48F29F2C80E87A1D6834430E440C01801C5",
+      "lines": 47,
+      "nonblank": 38
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemRound.cs",
+      "sha256": "898964A0E8A8114DC9101AF52D7E8C4891F17A2900AF698BD930713FD915887C",
+      "lines": 92,
+      "nonblank": 83
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemSquare.cs",
+      "sha256": "0D63FA6D85B0497B0861C7921D66FE325375730B93CAAA8DE5A8D2CCBF37C03A",
+      "lines": 51,
+      "nonblank": 42
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemTriangle.cs",
+      "sha256": "037D24B2047C78E0E286DA180EE1E4534009E565D1A550B02C54648ECB79AB09",
+      "lines": 45,
+      "nonblank": 36
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/GemTrillion.cs",
+      "sha256": "4FA51D2B65D2FD1974D31B3DD33FB85ED86ADDC0CD2BB975AFE501FE623BAFBD",
+      "lines": 45,
+      "nonblank": 36
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleCalf.cs",
+      "sha256": "37066FDAAEB3DE9734CEEE6C4B83191DF45728332561B0CC02E1CFDE3C3E18AE",
+      "lines": 45,
+      "nonblank": 36
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleEmerald.cs",
+      "sha256": "29530B99DD71F55741FA45E2F2CE6F87CD5D4A344ABF91C08C90644D49D9C36B",
+      "lines": 44,
+      "nonblank": 35
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleEmeraldSquare.cs",
+      "sha256": "7679C93BB6521C5A71BCE9DBF8F418DFCAA4ACB4186F2F841446BA93AF67392A",
+      "lines": 51,
+      "nonblank": 42
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleHeart.cs",
+      "sha256": "8D9A15967FBA42C10C1CC2AA2ADA33C94F83E646E35E194F04B128186DC5CAA4",
+      "lines": 49,
+      "nonblank": 40
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleMarquise.cs",
+      "sha256": "4000A8E30F970D09172937FC0732CA8318CA5BA1378B8D34F0CFCF6BC4052661",
+      "lines": 48,
+      "nonblank": 39
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleOval.cs",
+      "sha256": "323875A901B39D84F0D5AC203E84C4BE51B029B1CFA6D3CBFF0147CD9C450949",
+      "lines": 50,
+      "nonblank": 41
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimplePear.cs",
+      "sha256": "763A6CF44D1FBFE5250EC9998C66CEE40554B823BCA1A45EEC8F7FEA5963BF28",
+      "lines": 47,
+      "nonblank": 38
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimplePrincess.cs",
+      "sha256": "F6F3640B5B0AEC6911EBC8F2EDC14DCA21987A9264DB10C60579D9D704B01A27",
+      "lines": 51,
+      "nonblank": 42
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleRadiant.cs",
+      "sha256": "85A6CD17C4748846C1CE72146E2327C853AA6829B78B8C41F143BD074904C859",
+      "lines": 44,
+      "nonblank": 35
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleRound.cs",
+      "sha256": "1DC519C01FED18D4EFCBA8C0CF27FA8A29C40CC1D9E7F38E6610E3E6690CE574",
+      "lines": 92,
+      "nonblank": 83
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleTrillionCurved.cs",
+      "sha256": "6B2E4E81CDC4EE8DB8B63811ADC4607059A1749EAB4DC46C3204EDE6DE8CFE51",
+      "lines": 45,
+      "nonblank": 36
+    },
+    {
+      "path": "CSGemInstance.GemTableData.GemTables/SimpleTrillionStraight.cs",
+      "sha256": "9A8492C8E972D7705C2726263D4380D4933498BB99D84B7C5C3838C19BA3AEFF",
+      "lines": 45,
+      "nonblank": 36
+    },
+    {
+      "path": "CSGemInstance.GemTableData/CSGem.cs",
+      "sha256": "C73CBC8D6676D897D13DC82729ACC3D25BBF909D3AB0A3603566292631534257",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CSGemInstance.GemTableData/GemSize.cs",
+      "sha256": "22AAB9AADF38EB3C7AF211CC65A8642DC58C25AFFE8E8275A73AB70BAD515B3D",
+      "lines": 43,
+      "nonblank": 31
+    },
+    {
+      "path": "CSGemInstance.GemTableData/GemSizePercent.cs",
+      "sha256": "CB2A72EEAF53EEE71BBDC68BCAFF58335B0C4AEB0A22A2EC805AD07F14EE08ED",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "CSGemInstance.GemTableData/GemSizeTapered.cs",
+      "sha256": "8BC38DD2BF3218DA8BEC82C585344E50BFF9B68F4BD1F5B8486FB408934050D6",
+      "lines": 13,
+      "nonblank": 10
+    },
+    {
+      "path": "CSGemInstance.GemTableData/GemTableHelper.cs",
+      "sha256": "02E46DD62D10A9DBAC7C7093D2ECB928329E3BAAB83616D7E25E0012C96AD27B",
+      "lines": 206,
+      "nonblank": 186
+    },
+    {
+      "path": "CSGemInstance.GemTableData/GemTableLayer.cs",
+      "sha256": "D00672611EBE8E891B9883F98D41AD56E0C083DC547F47E407D7341F9D2FCF6F",
+      "lines": 18,
+      "nonblank": 15
+    },
+    {
+      "path": "CSGemInstance.GemTableData/GemTableShape.cs",
+      "sha256": "C6CEE5D99709FA8C04B3C0C057525ABBC5584CE693A11281EAA8BB2BC4CA0FDB",
+      "lines": 70,
+      "nonblank": 67
+    },
+    {
+      "path": "CSGemInstance.GemTableData/GemTableType.cs",
+      "sha256": "962FD391C75CAFB1ABE67D2E469F87B8E0873278D46429FA9D08CBAFDCA10A14",
+      "lines": 18,
+      "nonblank": 15
+    },
+    {
+      "path": "CSGemInstance.GemTableData/IGemTable.cs",
+      "sha256": "604FFF221CF43C0F7C2E6F09F59E64EB97C9946DF41E068DBBF5FACDDAC3AD49",
+      "lines": 21,
+      "nonblank": 12
+    },
+    {
+      "path": "CSGemInstance/CSGemInstanceDefinitionHelper.cs",
+      "sha256": "A6F4F931D19FA0AECD84F78493722A769998AF6B70714CD6816C652148453D4F",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "CSGemInstance/CSUtil.cs",
+      "sha256": "8D0CDDE21FB3C3965261B01D061287184B145D33D5AAEC9BE05E1877DCBE5206",
+      "lines": 30,
+      "nonblank": 24
+    },
+    {
+      "path": "CSMaterials/MaterialClassification.cs",
+      "sha256": "D3A01C0F772758FBF34B942291309D6AE69A210697AE734C052CA83088117D66",
+      "lines": 35,
+      "nonblank": 32
+    },
+    {
+      "path": "CSMaterials/MaterialGroup.cs",
+      "sha256": "EDDF1908A7D59A2FFBFCA70225C167D2CC6F940D0D243C4D43B368AD7B2DEBBA",
+      "lines": 149,
+      "nonblank": 129
+    },
+    {
+      "path": "CSMaterials/MaterialGroupHelper.cs",
+      "sha256": "D712E499CEE88031D208165AEDC550C058FF8408C4FAF95F7DD0133F29CA6E01",
+      "lines": 23,
+      "nonblank": 17
+    },
+    {
+      "path": "CSMaterials/MaterialGroupItem.cs",
+      "sha256": "6D01DB470205F726ADF6FC43E9D33092DA294CED1FF8995CB4291B4B82D3D8F1",
+      "lines": 26,
+      "nonblank": 19
+    },
+    {
+      "path": "CSRingSizes.RingSize/ERingSizeOption.cs",
+      "sha256": "3FE896055421FE6D145AAE7AA6B77A2A3DF5B825E94D825C633995E7DEAA8AF3",
+      "lines": 13,
+      "nonblank": 11
+    },
+    {
+      "path": "CSRingSizes.RingSize/RingSize.cs",
+      "sha256": "22897BA64325E516C8DCB2601EE931F16F5F8372539DED65C318560BA190734A",
+      "lines": 83,
+      "nonblank": 71
+    },
+    {
+      "path": "CSRingSizes.RingSize/RingSizeEur.cs",
+      "sha256": "FF5D11307656507428E14EC34EFB5DBE37048A0760F08696555AD1D00047D038",
+      "lines": 28,
+      "nonblank": 20
+    },
+    {
+      "path": "CSRingSizes.RingSize/RingSizeFrance.cs",
+      "sha256": "4AAF85B332D2AB91FFC0866FC0CEEB63CA9B16FD80A351B8DD44348B80E84892",
+      "lines": 41,
+      "nonblank": 33
+    },
+    {
+      "path": "CSRingSizes.RingSize/RingSizeGerman.cs",
+      "sha256": "20C7FA241F2D71A856028415CDEB8F8BA6AF8C841737EB2587D752436EC0823C",
+      "lines": 41,
+      "nonblank": 33
+    },
+    {
+      "path": "CSRingSizes.RingSize/RingSizeJapan.cs",
+      "sha256": "F3036F056B44B19556E17C76FCB35C146202A4734731B780AB9C1C8A82DFEC97",
+      "lines": 28,
+      "nonblank": 20
+    },
+    {
+      "path": "CSRingSizes.RingSize/RingSizeSwiss.cs",
+      "sha256": "3234933105B89D391A92938DD28D75A6401E3620113BB8B9DBA8BE82A7BA5316",
+      "lines": 41,
+      "nonblank": 33
+    },
+    {
+      "path": "CSRingSizes.RingSize/RingSizeUK.cs",
+      "sha256": "1151C89F070782CAA72E91F7EBB48905869D1E83783A2C7C2CBC0FDE6404E871",
+      "lines": 34,
+      "nonblank": 26
+    },
+    {
+      "path": "CSRingSizes.RingSize/RingSizeUSA.cs",
+      "sha256": "C4169DA8C34E48167FD743EB0F1BDC763DD1B8D3EB26DA5C8056875DADBF3B34",
+      "lines": 61,
+      "nonblank": 52
+    },
+    {
+      "path": "CSRingSizes.RingSize/UniversalRingSize.cs",
+      "sha256": "EF7FE5DA02E2DA105EE733E6835B0827936E87B2CD623A48FC32085F974F74D7",
+      "lines": 26,
+      "nonblank": 18
+    },
+    {
+      "path": "GemvisionCommon.Helpers/EnumHelper.cs",
+      "sha256": "C718E2519593BE5E2A90456F6669D9D661FA86F09942A35FA14F2D4B4176CE25",
+      "lines": 19,
+      "nonblank": 16
+    },
+    {
+      "path": "GemvisionCommon.Helpers/FileSystemHelper.cs",
+      "sha256": "2CBB39EF0656A4A16DD03B8F94397F8DBE2804477C36B604446785E4A5D3E785",
+      "lines": 190,
+      "nonblank": 173
+    },
+    {
+      "path": "GemvisionCommon.Helpers/RetryHelper.cs",
+      "sha256": "C451D4C751EF81FF9B575A6C3BF6D8F75DF23713B2EEC1342EC77E5DD1974FED",
+      "lines": 55,
+      "nonblank": 47
+    },
+    {
+      "path": "GemvisionCommon.Utilities.Networking.Enums/NetworkConnectionResult.cs",
+      "sha256": "D450A27DDA1E94F932F59777CDCE0CA4C821D46C608A6B02D31C9F78B4B60849",
+      "lines": 54,
+      "nonblank": 51
+    },
+    {
+      "path": "GemvisionCommon.Utilities.Networking.Enums/NetworkConnectionType.cs",
+      "sha256": "B4D05F12E32E007A0417FBDD1DFCAEB14F4ACBFFBF0006B6FA058F82EB090035",
+      "lines": 8,
+      "nonblank": 6
+    },
+    {
+      "path": "GemvisionCommon.Utilities.Networking.Enums/ResourceDisplayType.cs",
+      "sha256": "F251300176B6FBE85F47836FB61FC9D53643E120E3BD064BCEF648D27E1B11CD",
+      "lines": 18,
+      "nonblank": 16
+    },
+    {
+      "path": "GemvisionCommon.Utilities.Networking.Enums/ResourceScope.cs",
+      "sha256": "8128AE3F4F0C23F4D87D2DBDDDEA9FEDE62CDD27B1823E99B61F1AE01B5B0A76",
+      "lines": 11,
+      "nonblank": 9
+    },
+    {
+      "path": "GemvisionCommon.Utilities.Networking.Enums/ResourceType.cs",
+      "sha256": "4DF0E34B6E420797606F51A39284590EB1CBF8A637D2A3F42291723835DE71BB",
+      "lines": 10,
+      "nonblank": 8
+    },
+    {
+      "path": "GemvisionCommon.Utilities.Networking.Structs/NetworkConnectionConfig.cs",
+      "sha256": "33B97FEA7E61FBF4008152E55ACD6D094BE6449FDD752532347ED2F61AE60985",
+      "lines": 24,
+      "nonblank": 16
+    },
+    {
+      "path": "GemvisionCommon.Utilities.Networking.Structs/NetworkResource.cs",
+      "sha256": "2D944C36E9D6BC1DAA53B32AECFBC033902D0C1555914ED0576AA9C57ADECA20",
+      "lines": 23,
+      "nonblank": 13
+    },
+    {
+      "path": "GemvisionCommon.Utilities.Networking/NetworkConnection.cs",
+      "sha256": "AB6955E862EA7857D68529EAEC13A9618937B31FFFBC1738E032ED3DC4C71464",
+      "lines": 151,
+      "nonblank": 118
+    },
+    {
+      "path": "GemvisionCommon.Utilities.Serialization/SerializableDictionary.cs",
+      "sha256": "539A3004A44F6DE89992BF08285DE90038B49A0782D768D337243ED9226A6BB1",
+      "lines": 59,
+      "nonblank": 54
+    },
+    {
+      "path": "GemvisionCommon/Constants.cs",
+      "sha256": "D016D4CA7C44F7B21FE2CB808B20509B33F1131587D81D9844423334579BE17A",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcActionAttribute.cs",
+      "sha256": "90491FAA43E84F2D62D1C2C1A36433798497515838742E20176A4967DBA00C81",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcActionSelectorAttribute.cs",
+      "sha256": "C04202A245620E564D1BA2017330085039EFFF859E37DAD27D092BBB407861A6",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcAreaAttribute.cs",
+      "sha256": "572277369048683486562E41104A9DF5ED49D25F5D649DD3BF082465F69F4974",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcControllerAttribute.cs",
+      "sha256": "EE48152361244E6931EB72CECF0F616A2EC3A5557426FAC1735E8C86584C828B",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcDisplayTemplateAttribute.cs",
+      "sha256": "32AE7A551E4116C0C25E4C0655973C04F94D9518B4250B60DC9B1E15FA2FF21E",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcEditorTemplateAttribute.cs",
+      "sha256": "F7120A879C48C7150D2DAC686EDAC1D2C9B5657A70A7A7F5F710BDC4D636087C",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcMasterAttribute.cs",
+      "sha256": "556FE420D30C7E0EB42BE037885318C14D22B760CF6ED128F572D81806FEC68E",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcModelTypeAttribute.cs",
+      "sha256": "FBF4CA6EA50A89A9011B56233A280CCFA91BF9ADC59A7A3ABC13C01C03A2022F",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcPartialViewAttribute.cs",
+      "sha256": "A703B570B69CD7994C660101B97045CB00BCF117596BEAECF24E003E6F4B2B0B",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcSupressViewErrorAttribute.cs",
+      "sha256": "02D1D9D57F40B27A4D9015CB3E48257EE9EC860907174E9763CE55D06D1AA10F",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcTemplateAttribute.cs",
+      "sha256": "45BEAEB14EBD4C52766C5F8FA92100D67BCE465034FFE9381CE7DAB19774F26D",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/AspMvcViewAttribute.cs",
+      "sha256": "C1777A7D77260EBDE16173667F2EBD5A18E367F299652B7EB3D6EB4F0F3F6D21",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/BaseTypeRequiredAttribute.cs",
+      "sha256": "A2409BBD0BAC4AC30987F847CA709E72AD240E849B7F4CBF8EC470794F08BA5D",
+      "lines": 17,
+      "nonblank": 13
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/CanBeNullAttribute.cs",
+      "sha256": "C37018FC41545FE876F4B2BE7CEFB406D8C4CEDA1195410C1B504B5E18DEC0CB",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/CannotApplyEqualityOperatorAttribute.cs",
+      "sha256": "DF96A7032648D11D931CC3E0F3622121A1389F7470CDF6C51314F130CC507E81",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/ContractAnnotationAttribute.cs",
+      "sha256": "889746A609509368C183E1FBB84CA01DE9A9AAEBE566A8324A776DEBB731E76A",
+      "lines": 23,
+      "nonblank": 17
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/HtmlAttributeValueAttribute.cs",
+      "sha256": "7575A506FD7E1D0E5C1851C695A93C389E997CDB3C59E71E19EE0B982E069481",
+      "lines": 16,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/HtmlElementAttributesAttribute.cs",
+      "sha256": "E004B4A92BFCD103D918E5548B238C539F62A04A73344E5CBB0D03A71A458434",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/ImplicitUseKindFlags.cs",
+      "sha256": "8263535491A5F08E0B69A0BE18BEB1591D054B0CA64664AD6645743F8553F277",
+      "lines": 14,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/ImplicitUseTargetFlags.cs",
+      "sha256": "D329741F1BC1F1957B7037F6D011C67D6CBDBA4DB83B81B75D60672704ABBB38",
+      "lines": 13,
+      "nonblank": 10
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/InstantHandleAttribute.cs",
+      "sha256": "537F722F6B0342B63771B3765660FB86E56548E31D10C44E16E68FA0798C5485",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/InvokerParameterNameAttribute.cs",
+      "sha256": "264E39A3997B82840AE9B725A2D2A132778AC495C08A3ADAF6398875FBA7CEA9",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/LocalizationRequiredAttribute.cs",
+      "sha256": "22E31F7D0A1B51419BB759CF8715FC6B87A109F25D195AB7319D3828373D9A67",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/MeansImplicitUseAttribute.cs",
+      "sha256": "B5E844E26AC3A315FA254F2FB4FCCD46A1C6040D0E39F8A2F24ACF3019B5F3AC",
+      "lines": 35,
+      "nonblank": 27
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/NotifyPropertyChangedInvocatorAttribute.cs",
+      "sha256": "4B8C9A069D561E962BFFBE5F9E332EA347CA36E9FFC89CC1FA4898F296799732",
+      "lines": 19,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/NotNullAttribute.cs",
+      "sha256": "0E2BBAD7E016C9DE4A7E026A58C5CF25E4B5508F4DB8A9BE0A0E91EA950653F5",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/PathReferenceAttribute.cs",
+      "sha256": "AFB32084BCAA8ED274E3F24AF11C85877CA08E5D88D64973B4211445D2389780",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/PublicAPIAttribute.cs",
+      "sha256": "09B45560282BE07DC3B01F82A325FECC393B019D5A914CD7B6BAF073D4329329",
+      "lines": 20,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/PureAttribute.cs",
+      "sha256": "93C2F68C306B2CC5B59437C32C549BA6D9DF73289FB9B1499AEEAC9F5846C0AE",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/RazorSectionAttribute.cs",
+      "sha256": "1EA769CAAA14462677C4574540C0D66069B8F56B94A79653C07A274E72CA31CD",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/StringFormatMethodAttribute.cs",
+      "sha256": "7D62DA257B3D01D4D979A7BBDBA0A31CF892528CEB9C250707A1FBA8C04FA387",
+      "lines": 15,
+      "nonblank": 11
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Annotations/UsedImplicitlyAttribute.cs",
+      "sha256": "16D08A64A9BF23931F2105245B14A9235CE1B893FCA16EF4C527ABF07B69B3B9",
+      "lines": 33,
+      "nonblank": 25
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/BoundingBox.cs",
+      "sha256": "6FEE9002F1DB85088FD9F2590C24549EE20449BA14773BB43FC5C01D5AFF9339",
+      "lines": 38,
+      "nonblank": 32
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/CurvePoint.cs",
+      "sha256": "A9BB95F634A934277221703F6DFED699B20DE79F8EEA5CC1B9DEE96261FE9FCA",
+      "lines": 44,
+      "nonblank": 33
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/NurbsCurve.cs",
+      "sha256": "E7FD0ACB171CF939219433F90A1F43551EFBAB41A48C609E2EFDDECAACDAE4FD",
+      "lines": 89,
+      "nonblank": 73
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/Point2D.cs",
+      "sha256": "8C4DC3F16D2034BE809CDF13589B70A67B33D5EB4C38C841D23E74738F4D8D97",
+      "lines": 24,
+      "nonblank": 18
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/Point3D.cs",
+      "sha256": "D1A03E1059A6DE46F791801C6E0F0971CAE239666E447B0B4DBE0C034B591B9A",
+      "lines": 28,
+      "nonblank": 21
+    },
+    {
+      "path": "GV.CounterSketch.Shared.CAD/Point4D.cs",
+      "sha256": "58103A987C7D4546BBF3F1C43D4028081E7B76B0A8B38331AAA948D839CD5B6F",
+      "lines": 32,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/CustomDesignRenderItem.cs",
+      "sha256": "FDB7D8398475D911E7389CA7E527CB9EB829C1FB2407B7A599717395EFD052C3",
+      "lines": 44,
+      "nonblank": 33
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/CustomDesignRenderTypeEnum.cs",
+      "sha256": "02BC397C02BBD5CDD5B5858020F1478BE48886CE4DD4ADC807772B9C36E93E20",
+      "lines": 19,
+      "nonblank": 16
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/DesignToPublish.cs",
+      "sha256": "AC5F51FCAAAEAAA4C3D63CFBD3F655BDC22ED2CA0CA382A4FC4E04F412A4BE1C",
+      "lines": 28,
+      "nonblank": 20
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/GemTableSizeInfo.cs",
+      "sha256": "849A0D9B779DBD6635D6BE8259F40875F54BA24CD22998158E50BDCFD6BC1879",
+      "lines": 23,
+      "nonblank": 16
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/OrderGemData.cs",
+      "sha256": "2A58C6E99ECB2300F266764A4507A3964FB91145592AF6C7496657EA8B928902",
+      "lines": 32,
+      "nonblank": 22
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/QuickEstimateData.cs",
+      "sha256": "317DDA0C5077D7B48FB659BF5AD7335657AB2CA7952973B9CEF0721CC81DCD4C",
+      "lines": 45,
+      "nonblank": 34
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model.Objects/QuickEstimateRequestData.cs",
+      "sha256": "C615D64F55CCC109BCC262D8968B60A4F1B0D28F5AEF672B8C105BE3ACA5F931",
+      "lines": 60,
+      "nonblank": 41
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model/UIControlStackLocation.cs",
+      "sha256": "C46ED374592FF252D6FDB4FFB774A0C6170AD77434DDD76569FAF74C1F634A26",
+      "lines": 15,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model/UIControlStatus.cs",
+      "sha256": "67EF981CE9C5305312837FD2016C88B48639DE2D369DAA7D1268172B142EFF5C",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Model/UIControlType.cs",
+      "sha256": "5604365A7CC3AECCBCD3DCECD2F33451CE1E87FC174F76D56FEA016965404121",
+      "lines": 81,
+      "nonblank": 78
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioCurrency.cs",
+      "sha256": "BF786260C79E7CD82C980B752063B30768CEDC3E441EBC7493C002873E35B376",
+      "lines": 201,
+      "nonblank": 198
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioGemColorQuality.cs",
+      "sha256": "23D261D46E501974DF33515A16D5C8F8EC3661698CBB4FD66F2920A97F176384",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioGemShape.cs",
+      "sha256": "EE6DFBFE2DA62A0A85680409CFD922EB6FBE0F2982CB318ACF81A7DAECBC3EFC",
+      "lines": 43,
+      "nonblank": 40
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioGemType.cs",
+      "sha256": "6C60E81D2F4A8CAF92282C3C5894D128C498068052D9A55010520E43E532A8C0",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioMetalQuality.cs",
+      "sha256": "CA1D0DAE7649F3F869A62C3AEB7CEDDF3ACE367263FA8878C570764B206C45B3",
+      "lines": 67,
+      "nonblank": 64
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing.Enums/StudioSetType.cs",
+      "sha256": "DCC6A2412547E15CE71D8EFF42CADA1019E581B24E63E5FD5F4E902262D02EEB",
+      "lines": 15,
+      "nonblank": 12
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/StudioGem.cs",
+      "sha256": "D22A9F3D0961CF0AF110F4D98D95F2E08792BAF58E98AF6F1A0A2160C8D03DB2",
+      "lines": 89,
+      "nonblank": 65
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/StudioMetal.cs",
+      "sha256": "E5B40EE44BCD6105F49CEC06DE731AEB95BC9444E0EF1230EEF76A6BA2C34935",
+      "lines": 21,
+      "nonblank": 15
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/StudioQuickEstimateRequest.cs",
+      "sha256": "2592BDC2C9E4F59DDA6692178C5FCD3931415CC9D8DCFA910B0FE3F66D20D7FF",
+      "lines": 85,
+      "nonblank": 58
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/StudioQuickEstimateResult.cs",
+      "sha256": "DA6B4BF385421C150EA84060A0D4FD4AC885D8C3BBCA80A7AC55D3618211F3B4",
+      "lines": 31,
+      "nonblank": 22
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Pricing/UserMarkup.cs",
+      "sha256": "E42C2999A7EBD74134352C1C1C88CDBEA2BD988A98045E1B10855E8FD8A89AD2",
+      "lines": 67,
+      "nonblank": 49
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities.Helpers/EnumHelper.cs",
+      "sha256": "0C63E7D4EF220C021CA686CCC79CC6637E6683CDBF7A1241DBF2D6B1E4F7B8C2",
+      "lines": 28,
+      "nonblank": 24
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities.Helpers/FileFormatHelper.cs",
+      "sha256": "CEF4CEB85A5727DE643439FBE9615D56BC41F73287203AB148A65A99262165C8",
+      "lines": 51,
+      "nonblank": 48
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities.Helpers/GemCaratHelper.cs",
+      "sha256": "436AD12BDA91E2C023B33FDE8255F1E95849ABEC5702C07791A280546A8A946B",
+      "lines": 347,
+      "nonblank": 345
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities.Helpers/HeadStyleHelper.cs",
+      "sha256": "665187CF24D60B33F6EB108E6350C2778E60CF77A614440D91F167A6F09B0E30",
+      "lines": 330,
+      "nonblank": 327
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities/DeltaHelper.cs",
+      "sha256": "BA9A864E91ECC63E0F7EBDD726CB2419FFE6CDADB3705C17DCF5195C6C1E5A91",
+      "lines": 62,
+      "nonblank": 57
+    },
+    {
+      "path": "GV.CounterSketch.Shared.Utilities/ImageHelper.cs",
+      "sha256": "DE6DD4B20DD0492A1CEA95D5499EDC8DED961851C47C176C8B4DAE193D657BE7",
+      "lines": 12,
+      "nonblank": 9
+    },
+    {
+      "path": "GV.CounterSketch.Shared/ComponentsEnum.cs",
+      "sha256": "BF315674DC35EBC88BC014B29C4F8A4C39ACB2FC96CD7C17DBBC35DCEF2BCB73",
+      "lines": 24,
+      "nonblank": 21
+    },
+    {
+      "path": "GV.CounterSketch.Shared/CSMetalHelper.cs",
+      "sha256": "C6C5C953E69B386139B7D2A870191CF920BF2123FC38ACD2DDAFEC9C20179059",
+      "lines": 291,
+      "nonblank": 280
+    },
+    {
+      "path": "GV.CounterSketch.Shared/EnumExtensions.cs",
+      "sha256": "E07FC69C4BFE98134578F46A89E102E0DEA457325A02AF49B4FEF9B747622206",
+      "lines": 49,
+      "nonblank": 43
+    },
+    {
+      "path": "GV.CounterSketch.Shared/FileSystemHelper.cs",
+      "sha256": "996F2C8B3C33AD1EBE09A850B60A54C8B6CC69261781384D5DDBB33AFB97A0DD",
+      "lines": 91,
+      "nonblank": 85
+    },
+    {
+      "path": "GV.CounterSketch.Shared/Font.cs",
+      "sha256": "0A9EFB62E613F7805736E95DE0EA32757E99F2A0E45A4AACD5F77439CB49828D",
+      "lines": 58,
+      "nonblank": 55
+    },
+    {
+      "path": "GV.CounterSketch.Shared/GemActions.cs",
+      "sha256": "E2DC6B16C6A057B815C5E0CFC63CD953E616C0E077235D3557340DADB3EA1457",
+      "lines": 17,
+      "nonblank": 14
+    },
+    {
+      "path": "GV.CounterSketch.Shared/GemMaterial.cs",
+      "sha256": "A72E2FBD706C309DDFA3DD23814E2E41C11A9AF63466513C885DF2DC400F4AAA",
+      "lines": 237,
+      "nonblank": 234
+    },
+    {
+      "path": "GV.CounterSketch.Shared/HeadStyle.cs",
+      "sha256": "ACE221BE2CC126D9D83192E911EF7FFCD06FA67A1EB931064562986222266CA6",
+      "lines": 706,
+      "nonblank": 703
+    },
+    {
+      "path": "GV.CounterSketch.Shared/HeadStyleListItemIndexPair.cs",
+      "sha256": "EA933BA5AFEC29CCB01E36E8C62A4A6052D0ECB00108C97C2D96AC359D84DCD5",
+      "lines": 34,
+      "nonblank": 26
+    },
+    {
+      "path": "GV.CounterSketch.Shared/InternetUtility.cs",
+      "sha256": "1B9B425D1F83EC5997AA86EDBCD5EDEA63702426BDEDC3BDD8C4DB4108BC04E4",
+      "lines": 67,
+      "nonblank": 59
+    },
+    {
+      "path": "GV.CounterSketch.Shared/ListItemIndexPair.cs",
+      "sha256": "8AC50C0BE60611366913BBE859262BAC5F6B663F23324A9093F7622960CFCDEA",
+      "lines": 38,
+      "nonblank": 29
+    },
+    {
+      "path": "GV.CounterSketch.Shared/MetalMaterial.cs",
+      "sha256": "E2790C5255C85A8EA90A15D4E020A873FDC42CA4893A966061452A88F53EA0F5",
+      "lines": 53,
+      "nonblank": 50
+    },
+    {
+      "path": "GV.CounterSketch.Shared/PlatformInvokeGDI32.cs",
+      "sha256": "058938A454D0355230BD03236018854AC2C932AFB18B238DCD625FEAEEFB4739",
+      "lines": 28,
+      "nonblank": 19
+    },
+    {
+      "path": "GV.CounterSketch.Shared/PlatformInvokeUSER32.cs",
+      "sha256": "2DB7780BEC31D310F346C4FE9D82D1528C3F28977A2FAD0FB3CC6796A4A85342",
+      "lines": 27,
+      "nonblank": 18
+    },
+    {
+      "path": "GV.CounterSketch.Shared/SIZE.cs",
+      "sha256": "97BF64FE153185B5FF0E260383B0093B148B52F4F3EF7336B14F316FA7F676FD",
+      "lines": 9,
+      "nonblank": 6
+    },
+    {
+      "path": "GV.CounterSketch.Shared/ValueListItem.cs",
+      "sha256": "6F8B4E9F1E118396974D55BA3EE0C6FF0E10F7932B717567D7E66C0917A0C709",
+      "lines": 616,
+      "nonblank": 613
+    },
+    {
+      "path": "GV.CounterSketch.Shared/WindowSearcher.cs",
+      "sha256": "C995E1D32FA5EFC63B592296D46943B7C3DF7F858FECE9089F5781145D299D83",
+      "lines": 58,
+      "nonblank": 47
+    },
+    {
+      "path": "GV.CSStudioPatchWire/PartHelper.cs",
+      "sha256": "D7DB5FA9273768BE86235E661CE6E0B8B8431FE65D9D8BD47F1F4AA5C5CA1B08",
+      "lines": 7,
+      "nonblank": 5
+    },
+    {
+      "path": "OctTree/testDir.cs",
+      "sha256": "4E90C1B903299AF2A2E121B15676E00F3957869B15C999FC46E9999A77A44690",
+      "lines": 15,
+      "nonblank": 9
+    },
+    {
+      "path": "OctTree/TriBoxOriginal.cs",
+      "sha256": "24589181C073D3CFD02C0C449D7BF07503E710C5C51D3EE70B14CA7E05478388",
+      "lines": 309,
+      "nonblank": 282
+    },
+    {
+      "path": "RhinoScript4/IRhinoScript.cs",
+      "sha256": "AC617DC3A9212CC6D4E6D3FA6D9F835C5492FBDFF1B38C567AE64012FA28E428",
+      "lines": 20,
+      "nonblank": 16
+    },
+    {
+      "path": "SmartAssembly.Attributes/PoweredByAttribute.cs",
+      "sha256": "09CF4649D4D052AA30D36216FF3C32AD163C72BBF9B6EE9C5A4D1555FE4B0ECD",
+      "lines": 11,
+      "nonblank": 8
+    }
+  ],
+  "excludedFromExport": [
+    {
+      "path": "GV.CounterSketch.Shared/StullerFileService.cs",
+      "reason": "Embedded vendor developer credential; not uploaded",
+      "nonblank": 55
+    }
+  ]
+}
