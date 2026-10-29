@@ -1,0 +1,2 @@
+src/Recovered/**/*.cs -text
+*.sh text eol=lf
