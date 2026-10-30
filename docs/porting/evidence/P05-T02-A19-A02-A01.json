@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P05-T02-A19-A02-A01",
+  "status": "local_verified_candidate_surface_apple_pending",
+  "requirements": [
+    "BLD-0516",
+    "SER-0551",
+    "CAD-031"
+  ],
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilSweep.cs",
+      "sha256": "0eb51c30834e795d99bf1d52e76e92ee540d42a0b196411557471abc612398da"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2.cs",
+      "sha256": "25c517ede878f84c989f96e03100c2ed0d49c5e3fc4debcf4efe060ca7d1bf2f"
+    }
+  ],
+  "kernel": {
+    "commit": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "modified": false,
+    "contractSources": [
+      {
+        "path": "src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_NSections.cxx",
+        "normalizedLfSha256": "ffe844a077c4a0b46648b22215c4f4e038baab4bfca20176785b190d3316a597"
+      },
+      {
+        "path": "src/ModelingData/TKG3d/Geom/Geom_BSplineSurface.hxx",
+        "normalizedLfSha256": "d84a88d95ab7fb1581ba54447e428c19c78e1af2deb8dc451deab2e79335a079"
+      },
+      {
+        "path": "src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_Sweep.cxx",
+        "normalizedLfSha256": "530d74f50d01c3c2ccd5761054c258d41dda6312d9bc9325c3ec8ea3aed13cbd"
+      },
+      {
+        "path": "src/ModelingAlgorithms/TKTopAlgo/BRepGProp/BRepGProp.hxx",
+        "normalizedLfSha256": "f7064074d856a469c112726afd47bf7be689a48c1896162f59ac1349d80466a2"
+      }
+    ]
+  },
+  "originalInputObservation": {
+    "Rail1": {
+      "FirstParameter": 0.20207582394075796,
+      "LastParameter": 6.485261131120344,
+      "Length": 54.4576,
+      "Degree": 2,
+      "PoleCount": 11,
+      "IsRational": true
+    },
+    "Rail2": {
+      "FirstParameter": 0.2833436316568267,
+      "LastParameter": 1.5021227826813965,
+      "Length": 71.49068792113884,
+      "Degree": 3,
+      "PoleCount": 38,
+      "IsRational": true
+    },
+    "RequestedClosed": false,
+    "EffectiveClosed": false,
+    "MaintainHeight": true,
+    "Rows": [
+      {
+        "Index": 0,
+        "Source": 0,
+        "FirstRailParameter": 0.20207582394075796,
+        "SecondRailParameter": 0.2833436316568267,
+        "Domain": {
+          "FirstParameter": 0,
+          "LastParameter": 1,
+          "Length": 15.52965732413208,
+          "Degree": 2,
+          "PoleCount": 19,
+          "IsRational": true
+        },
+        "Closed": true,
+        "FirstRailPoint": {
+          "X": 1.6240706231476902,
+          "Y": 0,
+          "Z": 8.513676355233063
+        },
+        "SecondRailPoint": {
+          "X": 2.421989341644986,
+          "Y": 0,
+          "Z": 12.696512760454809
+        },
+        "FirstRailOnProfile": {
+          "Parameter": 0,
+          "Point": {
+            "X": 1.6240706231476891,
+            "Y": -2.615685446016869e-13,
+            "Z": 8.513676355233063
+          },
+          "Distance": 2.615709007519932e-13
+        },
+        "SecondRailOnProfile": {
+          "Parameter": 0.49999999999998357,
+          "Point": {
+            "X": 2.421989341654622,
+            "Y": -2.3288479595946314e-16,
+            "Z": 12.696512760452974
+          },
+          "Distance": 9.8090111455895e-12
+        },
+        "Start": {
+          "X": 1.6240706231476891,
+          "Y": -2.615685446016869e-13,
+          "Z": 8.513676355233063
+        },
+        "End": {
+          "X": 1.6240706231476891,
+          "Y": -2.615685446016869e-13,
+          "Z": 8.513676355233063
+        }
+      },
+      {
+        "Index": 1,
+        "Source": 1,
+        "FirstRailParameter": 3.141592653589793,
+        "SecondRailParameter": 0.8843555498290852,
+        "Domain": {
+          "FirstParameter": 0,
+          "LastParameter": 1,
+          "Length": 6.983043105678367,
+          "Degree": 2,
+          "PoleCount": 19,
+          "IsRational": true
+        },
+        "Closed": true,
+        "FirstRailPoint": {
+          "X": 1.0614254119330356e-15,
+          "Y": 0,
+          "Z": -8.667196228921199
+        },
+        "SecondRailPoint": {
+          "X": -1.8987472903295554e-15,
+          "Y": 0,
+          "Z": -10.367196228921198
+        },
+        "FirstRailOnProfile": {
+          "Parameter": 0,
+          "Point": {
+            "X": 1.0614254119330356e-15,
+            "Y": -1.3078427230084344e-13,
+            "Z": -8.667196228921199
+          },
+          "Distance": 1.3078427230084344e-13
+        },
+        "SecondRailOnProfile": {
+          "Parameter": 0.49999999999998357,
+          "Point": {
+            "X": 1.2696153677880856e-15,
+            "Y": -1.1644239797973157e-16,
+            "Z": -10.3671962289212
+          },
+          "Distance": 3.6342157869732504e-15
+        },
+        "Start": {
+          "X": 1.0614254119330356e-15,
+          "Y": -1.3078427230084344e-13,
+          "Z": -8.667196228921199
+        },
+        "End": {
+          "X": 1.0614254119330356e-15,
+          "Y": -1.3078427230084344e-13,
+          "Z": -8.667196228921199
+        }
+      },
+      {
+        "Index": 2,
+        "Source": 2,
+        "FirstRailParameter": 6.081109483238827,
+        "SecondRailParameter": 1.4853674680013433,
+        "Domain": {
+          "FirstParameter": 0,
+          "LastParameter": 1,
+          "Length": 15.529657324132064,
+          "Degree": 2,
+          "PoleCount": 19,
+          "IsRational": true
+        },
+        "Closed": true,
+        "FirstRailPoint": {
+          "X": -1.624070623147698,
+          "Y": 0,
+          "Z": 8.51367635523306
+        },
+        "SecondRailPoint": {
+          "X": -2.4219893416450353,
+          "Y": 0,
+          "Z": 12.696512760454794
+        },
+        "FirstRailOnProfile": {
+          "Parameter": 0,
+          "Point": {
+            "X": -1.6240706231477,
+            "Y": -2.615685446016869e-13,
+            "Z": 8.51367635523306
+          },
+          "Distance": 2.615761784516651e-13
+        },
+        "SecondRailOnProfile": {
+          "Parameter": 0.49999999999998357,
+          "Point": {
+            "X": -2.421989341654637,
+            "Y": -2.3288479595946314e-16,
+            "Z": 12.696512760452963
+          },
+          "Distance": 9.774755760177929e-12
+        },
+        "Start": {
+          "X": -1.6240706231477,
+          "Y": -2.615685446016869e-13,
+          "Z": 8.51367635523306
+        },
+        "End": {
+          "X": -1.6240706231477,
+          "Y": -2.615685446016869e-13,
+          "Z": 8.51367635523306
+        }
+      }
+    ]
+  },
+  "implementation": {
+    "maps": [
+      "ExplicitLinear",
+      "SectionPlanes"
+    ],
+    "sectionPlanes": "Normalized quaternion anchor tilt interpolation, bracketed native guide-plane intersections, analytic implicit first/second derivatives and cached exact guide-knot preimages.",
+    "frame": "Paired points define width column; height flag selects unit normal or uniform span scaling. Copied NURBS controls/weights/domains form common section basis.",
+    "surface": "Native GeomFill composition to actual BRep face; no preview, byte patch or synthetic mesh.",
+    "rationalityCorrection": "Wrapper includes both rational directions and actual minimum weights; no kernel source edits.",
+    "acceptance": "Counted finite inputs, common profile-rail incidence, native error <= tolerance, all supplied profiles and sampled rail constraints checked before accepting result."
+  },
+  "failuresReproduced": [
+    {
+      "failure": "Linear parameter map on real rails",
+      "frameFlips": 4,
+      "approximationError": 1.818807932040206,
+      "requestedTolerance": 1e-7,
+      "decision": "Reject this mode for the real inputs; retain explicit analytical mode."
+    },
+    {
+      "failure": "Section rational flag omitted constant-along-path profile weights",
+      "boundaryLoss": 0.0390781681334351,
+      "poleError": 3.580361673049448e-15,
+      "normalizedWeightError": 0.2928932188134531,
+      "decision": "Correct section rationality before approximation; do not patch output coefficients."
+    },
+    {
+      "failure": "Default area quadrature",
+      "measured": 125.88365679362005,
+      "expected": 125.66370614359172,
+      "decision": "Documented adaptive1e-10 integration; unchanged analytic1e-6 assertion."
+    }
+  ],
+  "checks": {
+    "native": {
+      "contactSamples": 271,
+      "derivativeComponents": 384,
+      "abiGuards": 16,
+      "rationalCylinder": "40*pi area within1e-6, adaptive1e-10 quadrature;65 circle-equation samples.",
+      "reportSha256": "b9e6f195723922c3f7821f021ed0dbe25b534b374bf162acf9ebb189c09cabea",
+      "report": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; candidate-four-span-curves=pass; native-arc-length-samples=50; native-affine-copy=pass; native-closest-point=pass; native-trim-reverse=pass; native-ordered-join=pass; native-unit-tangents=pass; native-curve-line-events=pass; native-closed-seam=pass; native-curve-bounds=pass; native-uniform-affine-and-closure=pass; native-nurbs-construction=pass; published-rotation-reference=pass; native-sweep-feasibility=observed; tangent-plane-three-section-shell=pass; three-section-shell-area=100; constant-section-max-residual=8.8817841970012523e-16; varying-section-max-residual=1.1102230246251565e-15; variable-width-max-residual=1.7763568394002505e-15; variable-width-area=120.1980390271856; arc-length-guide-max-residual=0.0015191738065429255; arc-length-guide-area=99.988685370456992; arc-length-untrimmed-projection=0.0015191738065429255; arc-length-worst-sample=3,3.6000000000000001,1; arc-length-guide-contact=rejected; contact-on-border-retained-profiles=1/3; arbitrary-two-rail-correspondence=unverified; paired-rail-native-surface=pass; paired-contact-samples=271; paired-derivative-components=384; paired-max-residual=3.5527136788005009e-15; paired-surface-error=8.7754519199127298e-15; paired-abi-guards=16; rational-profile-cylinder=pass; original134-full-block-parity=unverified; analytic fixtures only, no CounterSketch/PC parity claim."
+    },
+    "managed": {
+      "actual134Samples": 301,
+      "edit": "Radius+.25; structural save/reopen and actual surface rebuild with9 matching points and unchanged retained original.",
+      "ownership": "Affine/retain/input isolation, typed failures/zero entries and output survival after graph/input disposal; no-op source bytes preserved. Foreign-context and disposed-input handles rejected before native creation.",
+      "reportSha256": "addffb41fc51f5810d1d66e91384355177259ddd4301cddaa92359b4a2b20460",
+      "report": "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. PASS candidate native curves: actual native unit tangents/50 analytic directions, actual ordered NURBS join, actual NURBS trim/reverse/open-end projection, actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim. PASS ring rail candidate: source default7/ZX radius plan, actual NURBS output, recorded library radius edit/save/reopen/rebuild/undo; stored input supplied explicitly, no full channel/graph/UI/export/PC parity claim. PASS native finite curve-line events: exact linear NURBS, diameter/rays/finite/skew/tangent/trim/3D and point/overlap/reversed ranges, explicit fuzzy tolerance and typed guards; no Rhino ordering/full builder/PC claim. PASS native closed-curve seam: copied circle/affine/corner curves, requested domain start, wrapped points/length/orientation, reverse/closest/trim and ownership/error guards; no original-PC/full OutsideRail claim. PASS native curve bounds: unpadded optimal extrema and explicit padding, circle/trim/interior maximum/affine ellipse/line/translation/seam/reverse, input preservation and typed guards; no arbitrary-spline/Rhino/PC guarantee. PASS outside rail candidate: actual source-ordered unlocked/locked deformation, split/join/seam/direction, defaults/radius fallback/priority/scale0, independent sampled ellipse, stored-input edit/save/reopen/rebuild/undo and ownership/errors; no actual chooser/graph/PC claim. PASS stored native profiles:155 exact NURBS imports against independent homogeneous points, degrees/weights/domains including non-clamped knots, stored chooser edit/save/reopen/rebuild/undo and all5 actual-profile OutsideRail choices; no active graph/PC claim. PASS evaluated value-channel geometry: generated override changes actual selected-profile OutsideRail, state save/reopen rebuild and inactive chooser/missing-curve/ownership guards; explicit input bindings, not full graph/PC parity. PASS record-bound rail builders:actual saved RingRail/OutsideRail links, generation, consumer rewire/save/reopen/rebuild/reversal, disconnected/non-numeric defaults and ownership; no full scheduler/PC claim. PASS graph-managed rail outputs:source curve/number/metadata conversions, dependency generation, real curve edges, replacement/retained readers, failure cache/disposal and cycle guards; known candidate subset. PASS select ring rail:150 exact-source forwarding cases, null vs empty/numeric/profile/native curve, Boolean defaults/threshold/NaN, saved selection/edit/reopen/downstream and retained generations/disposal; known candidate subset. PASS saved transform producers:16093 exact-source translation/scale/scalar-add cases, saved6 translations/all7 original scales via placement, all7 scale plans also on explicit resolved links, native application/source preservation, override/edit/save/reopen/forwarding/cycle/cleanup; no full transform-chain/PC parity. PASS two-rail profile placement:4496 extracted frame/seam cases; actual native circle/ellipse/3D/finite ray/overlap/order/height floor, original3 placement->Add->scale chains, native sizing/edit/save/reopen/chooser/no-hit reset/failure/cycle/cleanup; candidate subset, no original-PC parity. PASS saved rotation producers:44217 recovered-wrapper/published-native cases, actual6 saved nodes, cardinal/noise/threshold/large-angle/order/mirror/default/finite guards, affine products/native application/source preservation, edit/save/reopen/forwarding/failure/cycle/cleanup; published6 comparison only, no original Rhino5/PC parity. PASS expandable transform consumer:12285 exact source socket cases, original3 native profile pipelines/metadata/parameters/matrix/points, source-specific multiply order, nested/selector copies, edit/save/reopen/retained readers, invalid/missing/overflow/cycle/cleanup; known non-array candidate subset, no original-PC parity. PASS collection socket constructors:12285 exact-source zero-fixed-input cases; source replay preserved while native collection execution is tested separately. PASS owned native collections:18 source output comparisons, original6 array/unarray chains, nested/per-item metadata, trailing-empty/null/wildcard semantics, retained snapshots across rebuild/disposal, save/reopen/failure/cycle/cleanup; known candidate subset, no full array-consumer/PC parity. PASS native array consumers:49 source first-item cases; nested transform flatten/object preservation/null copy, actual native leaf geometry/metadata/order, source aggregate bounds/first transform capability, direct-method rejection/helper-flatten curve queries, arithmetic array channels, saved reopen/failure/disposal; candidate subset, no original-PC/full data parity. PASS explicit sweep2 preparation:3906 exact stable-order cases; open/mixed clamps, closed native seam/remap/ties/ownership, original134 actual3 profile copies/metadata/params, real near-knot seam domain/geometry, edit/save/reopen/cleanup; no BRep or original-PC sweep claim. PASS managed paired-rail surface:301 actual134 rail/profile samples, native BRep/affine/retain/input isolation/edit-save-reopen/error cleanup; experimental explicit map, no original-PC/full sweep-block parity."
+    },
+    "repository": "Production provenance and full repository/source/security/ledger checks pass;0 full parity rows verified."
+  },
+  "review": {
+    "correctness": "Native/managed RED tests preceded APIs; real failures diagnosed and corrected without tolerance relaxation; both maps and height flags checked by finite differences.",
+    "architecture": "Focused native location/surface module and managed SafeHandle adapter; graph.Generate(134) still unsupported pending BRep channels and full block contract.",
+    "ownership": "Explicit SafeHandle leases for raw-ID arrays; zero failure outputs; dynamic diagnostics own text and pass capacity canaries.",
+    "performance": "Cached continuity partitions;4096 profile bound and80-iteration root cap. Large-scene latency/cancellation/process-memory gates open.",
+    "security": "Recovery/kernel read-only; no original scripts/accounts/credentials; local outputs/cache D:."
+  },
+  "remaining": [
+    "typed owned BRep graph values, metadata/forwarding/arrays and source134 dynamic outputs",
+    "closed/single-profile/no-param and other sweep variants",
+    "ambiguous/tangent/multiple guide roots and incompatible profile contact parameterizations",
+    "complete continuity/tolerance/height/interpolation/topology comparison to original Rhino5",
+    "PC/iPad/PC corpus, export/render/touch UI and physical device",
+    "Apple execution/AOT artifacts for this new implementation"
+  ],
+  "scope": "Candidate real surface from recovered original134 inputs; no selected final backend or full source-block/feature/PC parity. Ledger remains0/1451.",
+  "implementationSources": [
+    {
+      "path": "native/GeometryBridge/CandidateProbe/candidate_paired_sweep.cpp",
+      "normalizedLfSha256": "4dce45ca3c330ffc695f2589771d3f0f428367ddde477048783f6dc94b048d8e"
+    },
+    {
+      "path": "native/GeometryBridge/CandidateProbe/candidate_paired_sweep.hpp",
+      "normalizedLfSha256": "230a5baa9f93b390c83fc5bf385da70dab6380ad9823aec64ccdcd30be7937d3"
+    },
+    {
+      "path": "native/GeometryBridge/CandidateProbe/candidate_abi.cpp",
+      "normalizedLfSha256": "64c7e590e8526f89f2a90358db270e4064f0dee19374a9067a05ad941b445ca5"
+    },
+    {
+      "path": "src/Port/Geometry.Candidate/CandidateContext.Sweeps.cs",
+      "normalizedLfSha256": "2fcd2dda09bb3be5f34162488ef4e83e59ca3ccc47e3f4481f7bb26f2873c6ee"
+    },
+    {
+      "path": "src/Port/Geometry.Candidate/NativeMethods.Sweeps.cs",
+      "normalizedLfSha256": "3583af2be556a056f70c31ad60e838a42f0b004457ba0201a8bc6e1ebd974667"
+    },
+    {
+      "path": "tests/Port/Geometry.Candidate.Contracts/PairedSweepAssertions.cs",
+      "normalizedLfSha256": "717eda7c0a5c4d0d60d0508f0718305f821bf33d492774ad5ab6e3150ea00dad"
+    }
+  ]
+}

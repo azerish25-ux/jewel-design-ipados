@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 namespace JewelDesign.Geometry.Candidate;
 
-internal static class NativeMethods
+internal static partial class NativeMethods
 {
     private const string Library="__Internal";
     [DllImport(Library,EntryPoint="jd_candidate_abi_version",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]

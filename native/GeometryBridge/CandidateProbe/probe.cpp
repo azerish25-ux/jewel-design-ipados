@@ -31,6 +31,7 @@ void run_candidate_abi_contracts();
 void run_candidate_curve_contracts();
 void run_rotation_reference_contracts();
 std::string run_candidate_sweep_contracts();
+std::string run_candidate_paired_sweep_contracts();
 
 namespace {
 void require(bool condition,const char* message) { if(!condition)throw std::runtime_error(message); }
@@ -49,7 +50,7 @@ std::string run()
     run_candidate_abi_contracts();
     run_candidate_curve_contracts();
     run_rotation_reference_contracts();
-    const std::string sweepExperiment=run_candidate_sweep_contracts();
+    const std::string sweepExperiment=run_candidate_sweep_contracts()+run_candidate_paired_sweep_contracts();
     const double pi=std::acos(-1.0);
     auto outer=BRepPrimAPI_MakeCylinder(10.0,3.0).Shape();
     auto inner=BRepPrimAPI_MakeCylinder(gp_Ax2(gp_Pnt(0,0,-1),gp_Dir(0,0,1)),8.0,5.0).Shape();

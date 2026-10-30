@@ -36,7 +36,7 @@ file(SHA256 "${ROTATION_REFERENCE_DIR}/rotation-methods.inc" ROTATION_REFERENCE_
 if(NOT ROTATION_REFERENCE_HASH STREQUAL "40fdcbece9ffcf20b50c02472869a337a96235f0327fd31b5301ed1751b09560")
   message(FATAL_ERROR "Prepared rotation comparison methods do not match their immutable pin")
 endif()
-add_library(jewel_occt_candidate_objects OBJECT probe.cpp candidate_abi_contracts.cpp candidate_curve_contracts.cpp candidate_abi.cpp rotation_reference.cpp candidate_sweep_contracts.cpp)
+add_library(jewel_occt_candidate_objects OBJECT probe.cpp candidate_abi_contracts.cpp candidate_curve_contracts.cpp candidate_abi.cpp rotation_reference.cpp candidate_sweep_contracts.cpp candidate_paired_sweep_contracts.cpp candidate_paired_sweep.cpp candidate_paired_abi_contracts.cpp)
 target_include_directories(jewel_occt_candidate_objects PRIVATE "${ROTATION_REFERENCE_DIR}")
 target_include_directories(jewel_occt_candidate_objects PRIVATE "${CMAKE_BINARY_DIR}/inc" "${CMAKE_CURRENT_BINARY_DIR}/occt/inc")
 add_library(jewel_occt_candidate STATIC $<TARGET_OBJECTS:jewel_occt_candidate_objects>)

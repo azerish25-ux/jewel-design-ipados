@@ -72,6 +72,10 @@ int32_t jd_candidate_curve_bounds(uint64_t context,uint64_t shape,double toleran
 int32_t jd_candidate_curve_closed(uint64_t context,uint64_t shape,uint32_t* closed,char* diagnostic,uint32_t capacity);
 /* Standard full knot vector, Euclidean XYZ poles and optional declared rational weights. */
 int32_t jd_candidate_nurbs(uint64_t context,uint32_t degree,uint32_t pole_count,uint32_t rational,const double* coordinates,uint32_t coordinate_count,const double* weights,uint32_t weight_count,const double* full_knots,uint32_t knot_count,uint64_t* output,char* diagnostic,uint32_t capacity);
+/* Experimental open-path paired correspondence; no closed/no-param Rhino block policy. */
+int32_t jd_candidate_paired_sweep(uint64_t context,uint64_t rail1,uint64_t rail2,const uint64_t* profiles,uint32_t count,const double* parameters1,uint32_t count1,const double* parameters2,uint32_t count2,uint32_t maintain_height,uint32_t correspondence,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity);
+int32_t jd_candidate_surface_bounds(uint64_t context,uint64_t shape,double* first_u,double* last_u,double* first_v,double* last_v,char* diagnostic,uint32_t capacity);
+int32_t jd_candidate_surface_point(uint64_t context,uint64_t shape,double u,double v,double* x,double* y,double* z,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

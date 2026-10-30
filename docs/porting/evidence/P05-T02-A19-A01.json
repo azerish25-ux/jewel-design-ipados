@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P05-T02-A19-A01",
-  "status": "local_verified_apple_pending",
+  "status": "verified_bounded_native_preparation",
   "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
   "source": {
     "target": "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacySweepPreparation.cs",
@@ -91,12 +91,12 @@
     {
       "id": 41121468167,
       "scope": "native host and macOS iPad/iPhone",
-      "status": "queued"
+      "status": "success_artifacts_inspected"
     },
     {
       "id": 41121471937,
       "scope": "macOS unsigned ios-arm64 AOT",
-      "status": "queued"
+      "status": "success_artifacts_inspected"
     },
     {
       "id": 41121469593,
@@ -109,5 +109,6 @@
       "status": "success_workflow_inspection"
     }
   ],
-  "nextPlan": "docs/porting/plans/P05-T02-A19-A02-native-two-rail-surface.md"
+  "nextPlan": "docs/porting/plans/P05-T02-A19-A02-native-two-rail-surface.md",
+  "appleEvidence": "docs/evidence/apple/sweep-preparation-results.json"
 }

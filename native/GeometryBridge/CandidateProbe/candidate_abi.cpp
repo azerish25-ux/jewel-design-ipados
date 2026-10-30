@@ -1,3 +1,5 @@
+#include "candidate_paired_sweep.hpp"
+#include <BRepAdaptor_Surface.hxx>
 #include "candidate_abi.h"
 #include <BRepPrimAPI_MakeBox.hxx>
 #include <BRepBuilderAPI_MakeEdge.hxx>
@@ -43,6 +45,7 @@
 #include <cmath>
 #include <cstring>
 #include <exception>
+#include <string>
 #include <limits>
 #include <memory>
 #include <mutex>
@@ -50,7 +53,7 @@
 #include <unordered_map>
 
 namespace {
-struct Failure { int32_t code;const char* message; };
+struct Failure { int32_t code;std::string message; };
 [[noreturn]] void fail(int32_t code,const char* message) { throw Failure{code,message}; }
 struct ShapeRecord { TopoDS_Shape shape;uint32_t references=1; };
 struct Context {
@@ -82,7 +85,7 @@ int32_t report(int32_t status,const char* message,char* diagnostic,uint32_t capa
 template<class Body> int32_t protect(Body&& body,char* diagnostic,uint32_t capacity) noexcept
 {
     try {body();return report(JD_CANDIDATE_OK,"",diagnostic,capacity);}
-    catch(const Failure& error) {return report(error.code,error.message,diagnostic,capacity);}
+    catch(const Failure& error) {return report(error.code,error.message.c_str(),diagnostic,capacity);}
     catch(const Standard_Failure& error) {return report(JD_CANDIDATE_KERNEL_FAILURE,error.GetMessageString()?error.GetMessageString():"Native kernel failure",diagnostic,capacity);}
     catch(const std::bad_alloc&) {return report(JD_CANDIDATE_OUT_OF_MEMORY,"Native allocation failed",diagnostic,capacity);}
     catch(const std::exception& error) {return report(JD_CANDIDATE_INTERNAL_ERROR,error.what(),diagnostic,capacity);}
@@ -703,4 +706,45 @@ extern "C" int32_t jd_candidate_nurbs(uint64_t context,uint32_t degree,uint32_t 
             *output=storeCurveEdge(value,curve);
         });
     },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_paired_sweep(uint64_t context,uint64_t rail1,uint64_t rail2,const uint64_t* profiles,uint32_t count,const double* parameters1,uint32_t count1,const double* parameters2,uint32_t count2,uint32_t maintain_height,uint32_t correspondence,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+ return protect([&]{
+  outputHandle(output);
+  if(!profiles||!parameters1||!parameters2||count<2||count>4096||count!=count1||count!=count2||maintain_height>1||correspondence>1||!std::isfinite(tolerance)||tolerance<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Invalid counted paired sweep inputs");
+  withContext(context,[&](Context& value){
+   double first1,last1,first2,last2;auto first=copiedEdgeSpline(value,rail1,first1,last1),second=copiedEdgeSpline(value,rail2,first2,last2);
+   std::vector<double> a(parameters1,parameters1+count),b(parameters2,parameters2+count);
+   for(uint32_t i=0;i<count;i++)if(!std::isfinite(a[i])||!std::isfinite(b[i])||a[i]<first1||a[i]>last1||b[i]<first2||b[i]>last2)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Paired parameters outside finite edge domains");
+   std::vector<occ::handle<Geom_BSplineCurve>> curves;curves.reserve(count);
+   for(uint32_t i=0;i<count;i++){double f,l;auto curve=copiedEdgeSpline(value,profiles[i],f,l);if(curve->FirstParameter()!=f||curve->LastParameter()!=l)curve->Segment(f,l,0.0);curves.push_back(curve);}
+   try{auto sweep=jewel::candidate::make_paired_sweep(first,second,curves,a,b,maintain_height==1,tolerance,static_cast<jewel::candidate::PairedCorrespondence>(correspondence));*output=store(value,sweep.shape);}
+   catch(const std::invalid_argument& error){fail(JD_CANDIDATE_INVALID_ARGUMENT,error.what());}
+   catch(const std::runtime_error& error){throw Standard_Failure(error.what());}
+  });
+ },diagnostic,capacity);
+}
+extern "C" int32_t jd_candidate_surface_bounds(uint64_t context,uint64_t shape,double* first_u,double* last_u,double* first_v,double* last_v,char* diagnostic,uint32_t capacity)
+{
+ return protect([&]{
+  if(!first_u||!last_u||!first_v||!last_v)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing surface bounds output");
+  *first_u=0;*last_u=0;*first_v=0;*last_v=0;
+  withContext(context,[&](Context& value){const auto& input=findShape(value,shape).shape;if(input.ShapeType()!=TopAbs_FACE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Surface query requires a face");
+   BRepAdaptor_Surface surface(TopoDS::Face(input));double u0=surface.FirstUParameter(),u1=surface.LastUParameter(),v0=surface.FirstVParameter(),v1=surface.LastVParameter();
+   if(!std::isfinite(u0)||!std::isfinite(u1)||!std::isfinite(v0)||!std::isfinite(v1)||u0>=u1||v0>=v1)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Unsupported surface domain");
+   *first_u=u0;*last_u=u1;*first_v=v0;*last_v=v1;
+  });
+ },diagnostic,capacity);
+}
+extern "C" int32_t jd_candidate_surface_point(uint64_t context,uint64_t shape,double u,double v,double* x,double* y,double* z,char* diagnostic,uint32_t capacity)
+{
+ return protect([&]{
+  if(!x||!y||!z)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing surface point output");*x=0;*y=0;*z=0;
+  if(!std::isfinite(u)||!std::isfinite(v))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Nonfinite surface parameter");
+  withContext(context,[&](Context& value){const auto& input=findShape(value,shape).shape;if(input.ShapeType()!=TopAbs_FACE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Surface query requires a face");
+   BRepAdaptor_Surface surface(TopoDS::Face(input));if(u<surface.FirstUParameter()||u>surface.LastUParameter()||v<surface.FirstVParameter()||v>surface.LastVParameter())fail(JD_CANDIDATE_INVALID_ARGUMENT,"Surface parameter outside face domain");
+   auto point=surface.Value(u,v);if(!std::isfinite(point.X())||!std::isfinite(point.Y())||!std::isfinite(point.Z()))fail(JD_CANDIDATE_KERNEL_FAILURE,"Nonfinite native surface point");*x=point.X();*y=point.Y();*z=point.Z();
+  });
+ },diagnostic,capacity);
 }

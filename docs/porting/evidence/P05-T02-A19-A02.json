@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P05-T02-A19-A02",
-  "status": "in_progress_local_feasibility_observed_apple_pending",
+  "status": "in_progress_paired_surface_local_verified",
   "kernel": {
     "commit": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
     "enabledAdditionalToolkit": "TKBool",
@@ -154,13 +154,13 @@
       "id": 41124372444,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41124372444",
       "scope": "native host and macOS actual iPad/iPhone feasibility execution",
-      "status": "queued"
+      "status": "success_feasibility_artifacts_inspected"
     },
     {
       "id": 41124376646,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41124376646",
       "scope": "macOS unsigned ios-arm64 AOT compile/link",
-      "status": "queued"
+      "status": "success_feasibility_artifacts_inspected"
     },
     {
       "id": 41124372905,
@@ -179,5 +179,7 @@
   "environmentNotes": [
     "Some D: documentation writes disappeared after reporting success; after five seconds, exact held contents were rewritten/staged/verified in one operation. No data was moved to C:.",
     "The Node REPL subprocess environment returned NuGet path1 errors; the same wrapped host suite passed through the workspace PowerShell executor. Saved final verification is from that successful executor; no SDK deletion/global configuration change."
-  ]
+  ],
+  "appleFeasibilityEvidence": "docs/evidence/apple/native-sweep-feasibility-results.json",
+  "pairedSurfaceEvidence": "docs/porting/evidence/P05-T02-A19-A02-A01.json"
 }

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "commit": "f0738d822923e1e670656f6235a0798834061a5b",
+  "runtimeRun": 41124372444,
+  "deviceRun": 41124376646,
+  "scope": "Bounded auxiliary-spine five-shell feasibility observations only; predates new paired location/surface API and real134 surface generation.",
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "898991f4a9e2fbd86548ed59c5c63dd3bfc9a78cecfad8cf41ac33634eeff945",
+      "nativeExperiment": "native-sweep-feasibility=observed; tangent-plane-three-section-shell=pass; three-section-shell-area=100; constant-section-max-residual=8.8817841970012523e-16; varying-section-max-residual=9.1551335970444749e-16; variable-width-max-residual=1.7763568394002505e-15; variable-width-area=120.19803902718559; arc-length-guide-max-residual=0.0015191738065429238; arc-length-guide-area=99.988685370462363; arc-length-untrimmed-projection=0.0015191738065429238; arc-length-worst-sample=3,3.6000000000000001,1; arc-length-guide-contact=rejected; contact-on-border-retained-profiles=1/3; arbitrary-two-rail-correspondence=unverified;"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "898991f4a9e2fbd86548ed59c5c63dd3bfc9a78cecfad8cf41ac33634eeff945",
+      "nativeExperiment": "native-sweep-feasibility=observed; tangent-plane-three-section-shell=pass; three-section-shell-area=100; constant-section-max-residual=8.8817841970012523e-16; varying-section-max-residual=9.1551335970444749e-16; variable-width-max-residual=1.7763568394002505e-15; variable-width-area=120.19803902718559; arc-length-guide-max-residual=0.0015191738065429238; arc-length-guide-area=99.988685370462363; arc-length-untrimmed-projection=0.0015191738065429238; arc-length-worst-sample=3,3.6000000000000001,1; arc-length-guide-contact=rejected; contact-on-border-retained-profiles=1/3; arbitrary-two-rail-correspondence=unverified;"
+    }
+  ],
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "ec31517f206ee6a1bccbf604065284576e5879b9b19d7f12f28e441dd7a47759  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "651bc26637e2c959d6299dc14e3bac2520c379af41b746e305ec5c3a14ba73b5",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  },
+  "kernelSourceHashes": "d915aea2b498290857940a6bee123fc4c52ded05f1ca48477b79ad8898f3beb5  .local/native/occt-source/src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.hxx\n32cbbe2081a488416cda2db9e217a5fb37fddc8c2677cb124bcd21281e64940c  .local/native/occt-source/src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.cxx\n877e020f7fc60340a2ca66c1734832eb53e68891ecdaece12cc6ed2e0f08c65d  .local/native/occt-source/src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_GuideTrihedronAC.cxx\n"
+}

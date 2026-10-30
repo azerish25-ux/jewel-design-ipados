@@ -12678,7 +12678,9 @@
       ],
       "evidence": [
         "docs/porting/evidence/P05-T02-A19-A01.json",
-        "docs/porting/ADR-0035-explicit-sweep-preparation.md"
+        "docs/porting/ADR-0035-explicit-sweep-preparation.md",
+        "docs/porting/evidence/P05-T02-A19-A02-A01.json",
+        "docs/porting/ADR-0037-paired-native-surface.md"
       ],
       "guid": "f19ea1ff-57e7-4922-9ff7-87535b49c1c6",
       "legacy": false,
@@ -12686,7 +12688,7 @@
         "path": "docs/evidence/audit/serialization-matrix.json",
         "id": "SER-0551"
       },
-      "implementationScope": "Exact1.0 header and explicit134 native preparation only; no swept surface/BRep yet. Original geometry/PC-iPad-PC, other sweep modes/versions and full acceptance remain open."
+      "implementationScope": "Candidate exact1.0 input decoding/preparation plus actual native face from recovered134 inputs, edit/save/reopen. Source BRep graph output/dynamic metadata, closed/no-param/other variants and complete original-PC/native topology/continuity/physical acceptance remain open."
     },
     {
       "id": "SER-0552",

@@ -59,3 +59,7 @@ Next beyond this plan: no-param branch, other sweep builders and versions, caps/
 ## Implemented first analytical increment
 
 Windows lower-level TKBool executes five actual shell cases: tangent-plane constant/varying section/equal-domain/divergent-width controls plus measured rejected arc-length case.174 rail/section samples per built case; analytic areas100 and110+sqrt(104). ContactOnBorder retains1/3 profiles. These observations reject direct general integration; arbitrary correspondence and other planned cases remain required. [Decision](../ADR-0036-native-sweep-feasibility.md) and [measured evidence](../evidence/P05-T02-A19-A02.json). No production ABI or original134 registration.
+
+## Paired surface increment
+
+The [paired native/managed constructor](P05-T02-A19-A02-A01-paired-native-surface.md) now passes real134 contacts and radius edit/save/reopen on Windows. [ADR0037](../ADR-0037-paired-native-surface.md) documents explicit maps, rationality correction and full source/graph/PC gaps. Preparation and earlier feasibility Apple artifacts are inspected; new constructor Apple proof remains pending.

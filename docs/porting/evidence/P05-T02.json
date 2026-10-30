@@ -103,7 +103,16 @@
     "docs/porting/evidence/P05-T02-A19-A01.json",
     "native/GeometryBridge/CandidateProbe/candidate_sweep_contracts.cpp",
     "docs/porting/ADR-0036-native-sweep-feasibility.md",
-    "docs/porting/evidence/P05-T02-A19-A02.json"
+    "docs/porting/evidence/P05-T02-A19-A02.json",
+    "native/GeometryBridge/CandidateProbe/candidate_paired_sweep.hpp",
+    "native/GeometryBridge/CandidateProbe/candidate_paired_sweep.cpp",
+    "native/GeometryBridge/CandidateProbe/candidate_paired_sweep_contracts.cpp",
+    "native/GeometryBridge/CandidateProbe/candidate_paired_abi_contracts.cpp",
+    "src/Port/Geometry.Candidate/CandidateContext.Sweeps.cs",
+    "src/Port/Geometry.Candidate/NativeMethods.Sweeps.cs",
+    "tests/Port/Geometry.Candidate.Contracts/PairedSweepAssertions.cs",
+    "docs/porting/ADR-0037-paired-native-surface.md",
+    "docs/porting/evidence/P05-T02-A19-A02-A01.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -441,8 +450,14 @@
     {
       "id": "P05-T02-A19-A02",
       "scope": "Genuine native two-rail swept surface/BRep construction, topology and constraint comparison",
-      "status": "in_progress_local_native_feasibility",
+      "status": "in_progress_local_paired_surface",
       "evidence": "docs/porting/evidence/P05-T02-A19-A02.json"
+    },
+    {
+      "id": "P05-T02-A19-A02-A01",
+      "scope": "Guarded paired location/surface native API from actual134 input geometry, managed ownership and edit/save/reopen",
+      "status": "local_verified_apple_pending",
+      "evidence": "docs/porting/evidence/P05-T02-A19-A02-A01.json"
     }
   ],
   "checks": [
