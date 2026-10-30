@@ -41,3 +41,5 @@ LOC is not a completion target. Provenance plus behavior establish reuse, not a 
     node scripts/porting.cjs card BLD-0001
 
 Do not load the entire corpus or giant source-members.json into context. Start with one task, bounded rows and exact files.
+
+If D: reports a transient I/O or missing-device error, wait five seconds and retry the same operation. Keep work and caches on D: and preserve confirmed-live jobs.

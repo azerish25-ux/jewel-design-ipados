@@ -20,5 +20,15 @@
   "review": null,
   "blockers": [
     "Both-family macOS execution and updated AOT evidence pending; no physical-device claim"
-  ]
+  ],
+  "ciRuns": [
+    {
+      "id": 40988302637,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40988302637",
+      "commit": "32a6912bb5b474e8233729eb45d87b181ccf42de",
+      "observedStatus": "iPad running; iPhone and device queued",
+      "verification": "pending"
+    }
+  ],
+  "nextAction": "Poll this same run; inspect all family assertions and AOT warnings before closing the task. Do not infer physical-device or full application parity."
 }
