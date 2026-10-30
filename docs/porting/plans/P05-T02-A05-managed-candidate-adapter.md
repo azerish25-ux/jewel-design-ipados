@@ -29,3 +29,5 @@ Official guidance: [native interop best practices](https://learn.microsoft.com/e
 RED observed locally: dotnet build of contracts failed with missing candidate project and CS0246 types before implementation. Initial managed library then compiled with 0 warnings/errors. Framework-only D:-local SafeHandle probe proved IsClosed=false after Dispose while a child lease exists; adapter therefore tracks logical disposed state under its gate instead of equating IsClosed with logical Dispose. Real Apple adapter execution remains required.
 
 Simulator GREEN: run41028520528 at fc4a605 passed actual CandidateContext interop/ownership/error/parent-lease contracts on iPad and iPhone with dynamic code disabled. Both report/family hashes inspected in docs/evidence/apple/managed-candidate-adapter-results.json. Adapter-specific device run41028523338 remains live; no device or full phase completion claimed.
+
+Device build GREEN: run41028523338 passed unsigned Release ios-arm64 linking/platform inspection (52 warnings/0 errors). Bounded A05 adapter experiment verified; full production ABI/SDK acceptance, physical execution and broad trim safety remain open.
