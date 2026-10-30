@@ -46,8 +46,18 @@
   "followUp": {
     "failedRepositoryRun": 41053744865,
     "cause": "Fresh Ubuntu checkout has no .local directory; mkdtemp requires parent. Regression now explicitly creates repository-local parent before fixtures.",
-    "repairCommit": "pending",
+    "repairCommit": "eb5946c52ae5352521a88c08480dfdcad527d0d7",
     "appleRepairRun": 41053744118,
-    "appleRepairStatus": "queued"
+    "appleRepairStatus": "queued",
+    "repositoryRun": 41053858089,
+    "repositoryResult": "success",
+    "cleanCheckout": {
+      "command": "Run shell scheduling regressions from isolated D: fixture checkout initially lacking .local",
+      "exitCode": 0,
+      "passed": 5,
+      "log": ".local/evidence/P05-T02-A08/launcher-clean-checkout.txt"
+    },
+    "laterAppleRun": 41053858250,
+    "laterAppleStatus": "queued"
   }
 }
