@@ -133,7 +133,15 @@
     "docs/porting/ADR-0033-owned-native-collections.md",
     "docs/porting/plans/P03-T03-A13-A02-owned-native-collections.md",
     "docs/evidence/apple/transform-consumer-results.json",
-    "docs/evidence/apple/pure-array-device-results.json"
+    "docs/evidence/apple/pure-array-device-results.json",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.ArrayApplication.cs",
+    "tests/Port/Geometry.Candidate.Contracts/ArrayConsumerAssertions.cs",
+    "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyArrayQueries.cs",
+    "scripts/verify-array-query-oracle.cjs",
+    "tests/array-query-oracle.test.cjs",
+    "docs/porting/ADR-0034-array-consumers.md",
+    "docs/porting/plans/P03-T03-A13-A03-array-consumers.md",
+    "docs/evidence/apple/pure-array-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -508,6 +516,27 @@
       "expectedExitCode": 0,
       "artifact": "tests/Port/Documents.Contracts/ArrayValueAssertions.cs",
       "actual": "PASS all earlier source289/33/789 pure collection semantics, codec161/80/100 structural/reference/scalar cases."
+    },
+    {
+      "command": "dotnet run --project tests/Port/Geometry.Candidate.HostTests (RED before A03)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/ArrayConsumerAssertions.cs",
+      "actual": "RED Array object transforms require A13-A03 while stored consumer52 reads array131."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/ArrayConsumerAssertions.cs",
+      "actual": "PASS49 exact-source first-item trees; mixed nested native profile/rail object arrays, matrix-input recursive flatten/order, null copy/metadata/points, source bbox union/native leaf extents, source first transform capability, placement/OutsideRail array curve/radius queries, arithmetic9 Cartesian results/all channels/empty scalar/null failure, reopen/retained snapshots/managed and native failures/zero entries; previous full native/source cases pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/array-query-oracle.test.cjs tests/array-oracle.test.cjs tests/collection-execution-oracle.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "scripts/verify-array-query-oracle.cjs",
+      "actual": "12/12 query first-index/bbox growth/nested-array capability and existing arithmetic/copy/collection source tamper controls pass."
     }
   ],
   "review": {
@@ -542,7 +571,8 @@
     "rotation": "Reviewed XYZ product convention and affine4-term arithmetic; strict mirror and source default/degree input semantics; published epsilon/noise policy vs original-native unknowns; finite guards rather than truncating invalid projective rows; pinned acquisition/hash/notice protection, test-only source/native ABI separation, host import resolver and iOS static linkage, independent basis/native point/order comparisons, immutable cache/save/cycle/ownership; no application-time network or native substitute geometry.",
     "transformConsumer": "Reviewed source load replay vs unchanged stored arrays, negative-index spare dependencies, prefix transform input ordering and source-specific profile/rail/pure metadata ordering; supported transform capabilities on curve data, actual native geometry duplication and snapshot ownership; profile names/sweep bits/no path interpretation, numeric/empty/missing/invalid/overflow behavior, explicit unsupported producers/arrays and no preview/default substitute. Material/segmentation/invalid4x4/full scene side effects and PC/UI/full parity remain open.",
     "pureArrays": "Reviewed immutable child snapshots vs explicit native reference non-ownership, distinct null/empty/nested semantics, ref-latching arithmetic and Cartesian order, empty-array scalar fallback/null failure, factory/traversal/cartesian bounds without truncation, source body drift protection, exact1.0 common headers/future bytes and fixed constructor cases. Native collection emission remains blocked explicitly until owned per-item snapshots; full parent scope retained.",
-    "ownedCollections": "Reviewed multi-channel/item ownership and old default0 compatibility; immutable relay values and raw profile document data, reference rewriting/retains/metadata, rollback on partial capture/output failures and overflow bounds, dynamic count/trailing empty/one-level/null/wildcard source behavior, retained readers/context lifetime, selector copies and explicit A03 unsupported gates. No native pointers serialized and no array reduced to a curve/number. Broader source error/material/data/PC/UI parity remains open."
+    "ownedCollections": "Reviewed multi-channel/item ownership and old default0 compatibility; immutable relay values and raw profile document data, reference rewriting/retains/metadata, rollback on partial capture/output failures and overflow bounds, dynamic count/trailing empty/one-level/null/wildcard source behavior, retained readers/context lifetime, selector copies and explicit A03 unsupported gates. No native pointers serialized and no array reduced to a curve/number. Broader source error/material/data/PC/UI parity remains open.",
+    "arrayConsumers": "Reviewed distinct recursive object duplication vs input flattening vs aggregate bounds vs repeated-first curve selection vs first-non-array transform capability; source-specific matrix order and null/numeric behavior, actual native per-leaf copies and metadata, disposal/rollback, no-bound/invalid arithmetic errors and no array reduction surrogate. Native Rhino/other data/material/full scene/error/UI/PC/physical gates remain open."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -686,7 +716,7 @@
       "id": 41112023137,
       "commit": "2bf2ee22c54b1868349de4a5461d96c43f31ac91",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41112023137",
-      "verification": "Pure array source289 pairs/33 null failures/789 trees plus zero-fixed12285 and prior native shared suites queued; actual family/report inspection pending. Native collection execution not implemented at this checkpoint."
+      "verification": "SUCCESS: actual pure289/33/789 and ctor12285/native/family reports inspected on iPad/iPhone in pure-array-results.json. Does not execute later native arrays."
     },
     {
       "id": 41112027142,
@@ -991,6 +1021,36 @@
       "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
       "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa",
       "scope": "P03-T03-A13-A02 exact Array/Unarray Update/output/wildcard/count/nesting/null source; candidate native ownership is an adapter policy, full scheduler/PC/data flags remain open"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObject.cs",
+      "sha256": "1595978ecab1c44d1647d1e56d8953098efd784e961d7cc45c9aa2a8a40db45d",
+      "scope": "A13-A03 source-specific transform flatten/object duplicate, aggregate bounds, first-item curve and transform capabilities, array arithmetic; other native/source data/PC policy remains open"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSDataArray.cs",
+      "sha256": "f7f0425e3e35fb0835ac161303a3cc7fa269c7f4f765938db91dd76956620b03",
+      "scope": "A13-A03 source-specific transform flatten/object duplicate, aggregate bounds, first-item curve and transform capabilities, array arithmetic; other native/source data/PC policy remains open"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSUtilMath.cs",
+      "sha256": "9d382e01fd346db528c15f379380fce5faf8ecb9759079e4ae45c4299e5e03f0",
+      "scope": "A13-A03 source-specific transform flatten/object duplicate, aggregate bounds, first-item curve and transform capabilities, array arithmetic; other native/source data/PC policy remains open"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.Parametric.Channels/CSInputChannel.cs",
+      "sha256": "1b3a8f3c40e751163d0aa493a0044d4a961be981579db831b30c841824fdf74c",
+      "scope": "A13-A03 source-specific transform flatten/object duplicate, aggregate bounds, first-item curve and transform capabilities, array arithmetic; other native/source data/PC policy remains open"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
+      "sha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714",
+      "scope": "A13-A03 source-specific transform flatten/object duplicate, aggregate bounds, first-item curve and transform capabilities, array arithmetic; other native/source data/PC policy remains open"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Maths/CSAdd.cs",
+      "sha256": "e939e06e0c315b4c6cba790187b896e865131fcf5a9bc131857bf5eef77abfc0",
+      "scope": "A13-A03 source-specific transform flatten/object duplicate, aggregate bounds, first-item curve and transform capabilities, array arithmetic; other native/source data/PC policy remains open"
     }
   ],
   "subtasks": [
@@ -1083,7 +1143,7 @@
     {
       "id": "P03-T03-A13-A01",
       "scope": "Immutable pure array semantics, source arithmetic/flatten/copy, zero-fixed sockets and20 exact headers",
-      "status": "local_verified_apple_pending",
+      "status": "verified_simulator_subset",
       "plan": "docs/porting/plans/P03-T03-A13-owned-arrays.md"
     },
     {
@@ -1091,6 +1151,12 @@
       "scope": "Owned multi-channel/per-item native collection snapshots and known source Array/Unarray execution",
       "status": "local_verified_apple_pending",
       "plan": "docs/porting/plans/P03-T03-A13-A02-owned-native-collections.md"
+    },
+    {
+      "id": "P03-T03-A13-A03",
+      "scope": "Represented-data array transforms/bounds/first-item/capability/arithmetic provider integration",
+      "status": "local_verified_apple_pending",
+      "plan": "docs/porting/plans/P03-T03-A13-A03-array-consumers.md"
     }
   ]
 }

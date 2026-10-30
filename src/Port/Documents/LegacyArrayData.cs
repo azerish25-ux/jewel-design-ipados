@@ -4,6 +4,13 @@ namespace JewelDesign.Documents;
 public static class LegacyArrayData
 {
     public const int MaximumDepth=256,MaximumItems=65536;
+    /// <summary>CSInputChannel.GetFirstData follows only the first nested item; it never searches later values.</summary>
+    public static LegacyChannelValue FirstItem(LegacyChannelValue value)
+    {
+        ArgumentNullException.ThrowIfNull(value);int depth=0;
+        while(value.Array is{} items){if(++depth>MaximumDepth)throw new NotSupportedException("First-item query exceeds explicit depth limit.");if(items.Count==0)return LegacyChannelValue.Missing;value=items[0];}
+        return value;
+    }
     public static LegacyChannelValue Flatten(LegacyChannelValue array)
     {
         ArgumentNullException.ThrowIfNull(array);if(array.Array is null)throw new ArgumentException("Expected array data.",nameof(array));

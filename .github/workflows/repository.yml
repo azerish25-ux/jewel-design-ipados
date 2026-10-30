@@ -66,7 +66,7 @@ jobs:
       - name: Prepare pinned published rotation comparison
         run: node scripts/prepare-rotation-reference.cjs
       - name: Numeric oracle provenance controls
-        run: node --test tests/numeric-oracle.test.cjs tests/value-channel-oracle.test.cjs tests/select-rail-oracle.test.cjs tests/transform-producer-oracle.test.cjs tests/profile-placement-oracle.test.cjs tests/rotation-oracle.test.cjs tests/rotation-reference-source.test.cjs tests/consumer-sockets-oracle.test.cjs tests/array-oracle.test.cjs tests/collection-execution-oracle.test.cjs
+        run: node --test tests/numeric-oracle.test.cjs tests/value-channel-oracle.test.cjs tests/select-rail-oracle.test.cjs tests/transform-producer-oracle.test.cjs tests/profile-placement-oracle.test.cjs tests/rotation-oracle.test.cjs tests/rotation-reference-source.test.cjs tests/consumer-sockets-oracle.test.cjs tests/array-oracle.test.cjs tests/collection-execution-oracle.test.cjs tests/array-query-oracle.test.cjs
       - name: Verify recovered value-channel method oracle
         run: |
           node scripts/verify-value-channel-oracle.cjs
@@ -77,6 +77,7 @@ jobs:
           node scripts/verify-consumer-sockets-oracle.cjs
           node scripts/verify-array-oracle.cjs
           node scripts/verify-collection-execution-oracle.cjs
+          node scripts/verify-array-query-oracle.cjs
       - name: Verify source-derived portfolio XML contracts
         run: node scripts/run-local.cjs dotnet run --project tools/PortfolioContractGenerator -- "$GITHUB_WORKSPACE" --verify
       - name: Graph snapshot contracts

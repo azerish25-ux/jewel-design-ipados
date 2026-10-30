@@ -6,7 +6,7 @@ public sealed partial class CandidateRailGraphSession
 {
     private CandidateShape? ResolveCurveData(LegacyChannelValue data)
     {
-        if(data.Array is not null)throw new NotSupportedException("Array curve conversion requires A13-A03 first-item semantics.");
+        data=LegacyArrayData.FirstItem(data);
         if(data.Curve is{} reference)return ResolveCurve(reference);
         if(data.Profile is{} selection){
             using var imported=StoredMatrixProfileCandidate.Build(context,Values.Document.Records[selection.GroupRecordIndex].MatrixProfiles!,selection.ProfileIndex);

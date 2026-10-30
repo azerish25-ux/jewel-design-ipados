@@ -9,19 +9,15 @@ public sealed partial class CandidateRailGraphSession
         var links=Inputs(index);
         LegacyChannelValue Read(int slot)=>links[slot].ObjectIndex<0?LegacyChannelValue.Missing:Values.ReadOutput(links[slot].ObjectIndex,links[slot].ChannelIndex);
         if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.AddTypeGuid)
-            {double sum=TransformProducerCandidate.AddScalars(Read(0),Read(1));return new(null,null,LegacyChannelValue.FromNumber(sum),new[]{LegacyChannelValue.FromNumber(0.0-sum),LegacyChannelValue.FromNumber(1.0-sum)});}
+            {var sum=LegacyArrayArithmetic.Add(Read(0),Read(1));return new(null,null,sum.Value,new[]{sum.Negated,sum.OneMinus});}
         LegacyAffineTransform transform;
         if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.RotateObjectTypeGuid)
             transform=RotationProducerCandidate.Build(Read(0),Read(1),Read(2),Read(3));
         else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.TranslateObjectTypeGuid)
             transform=TransformProducerCandidate.Translation(Read(0),Read(1),Read(2),Read(3));
         else{
-            var data=Read(0);
-            var curve=ResolveCurveData(data)??throw new NotSupportedException("ScaleObjectToSize requires supported object bounds; source UpdateMissing(Object/Bounding Box).");
-            using(curve){
-                var bounds=context.GetCurveBounds(curve,settings.BoundsTolerance);
-                transform=TransformProducerCandidate.ScaleToSize(bounds,Read(1),Read(2),Read(3));
-            }
+            var bounds=DataBounds(Read(0))??throw new NotSupportedException("ScaleObjectToSize requires supported object bounds; source UpdateMissing(Object/Bounding Box).");
+            transform=TransformProducerCandidate.ScaleToSize(bounds,Read(1),Read(2),Read(3));
         }
         return new(null,null,LegacyChannelValue.FromTransform(transform));
     }

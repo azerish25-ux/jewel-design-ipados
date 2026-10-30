@@ -51,7 +51,7 @@ internal static class OwnedCollectionAssertions
             Check(graph.ReadOutput(131,0).Array!.Count==3,"Original profile array length");
             foreach(int index in new[]{116,123,128}){Check(graph.OutputChannelCount(index)==4&&graph.ReadOutput(index,3).Array!.Count==0,"Source trailing empty output array was corrected away");Check(graph.ReadProfileMetadata(index).Name is not null,"Unarray profile metadata lost");}
             Throws<NotSupportedException>(()=>graph.RetainCurve(131));
-            Throws<NotSupportedException>(()=>graph.TryReadTransform(131,0,out _));
+            Check(graph.TryReadTransform(131,0,out _),"Array first profile transform capability missing");
             Check(LegacyCsg4Codec.Write(graph.Values.ExportCurrentDocument()).AsSpan().SequenceEqual(original),"Collection generation changed source document");
             foreach(int index in new[]{53,59,61,81,157,179,183,187,190,216,222,232,235,238})Throws<NotSupportedException>(()=>graph.Generate(index));
             int x=document.Records[114].SimpleBlock!.ObjectIndices[0];graph.Values.SetValue(x,graph.Values.ReadState(x).Numeric.RealValue+20);graph.Generate(131);

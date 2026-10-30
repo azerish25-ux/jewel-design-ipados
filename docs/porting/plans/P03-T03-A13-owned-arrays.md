@@ -18,9 +18,9 @@ A01 owns Documents array value/algebra/replay/header allowlist, independent read
 - [x] Independently decode/read/write/rewire/future20 exact headers;161/80/100 counts; no runtime execution claim.
 - [x] Source-body/tamper/differential/document/native-adjacent/provenance/repository checks, review.
 - [x] Commit/push A01 at2bf2ee2; dispatch native/shared Apple41112023137 and unsigned device41112027142, both queued.
-- [ ] Inspect actual pure-array289/33/789 and zero-fixed12285/native/family/AOT artifacts.
+- [x] Inspect actual pure-array289/33/789 and zero-fixed12285/native/family/AOT artifacts. Actual iPad/iPhone and unsigned arm64/platform IOS52 warnings0 errors recorded in pure-array-results.json; later native arrays separate.
 - [x] A02 owned native collection execution implemented/tested locally; Apple validation remains separate. See P03-T03-A13-A02-owned-native-collections.md.
-- [ ] A03 complete known collection-consuming behavior (required).
+- [x] A03 known represented-data consuming behavior implemented/tested locally; Apple/full data acceptance remains open. See P03-T03-A13-A03-array-consumers.md.
 
 Retain original CSUnarray1 odd trailing empty array and one-level expansion; null input throws in source. CSArray outputIndex-1 wildcard and expandable HasLink=false load quirks must not be corrected silently. Full arrays/material/data/4x4/segments/all builders/UI/PC/physical parity remain open;0/1451 verified. All local files/cache D:, wait5 seconds/retry transient D errors.
 
