@@ -138,3 +138,7 @@ These work-card actions are checkpoints, not a claim that a phase takes minutes.
 ## Independent P04-T03-A01 portfolio XML metadata
 
 [XML metadata plan](../plans/P04-T03-A01-portfolio-xml.md) uses source-derived contracts and synthetic fixtures while real PC portfolios remain missing. [ADR 0007](../ADR-0007-portfolio-xml-metadata.md) separates XML preservation/filenames from native load, clone, history, sidecar and folder reconciliation. Full parent dependencies/gates remain.
+
+## Independent P04-T03-A02 inventory
+
+[Member-inventory plan](../plans/P04-T03-A02-portfolio-package.md) composes existing metadata/CSG primitives without silently applying native reconciliation. [ADR 0008](../ADR-0008-portfolio-member-inventory.md) records synthetic fixture scope, immutable ownership and remaining folder/history/sidecar gates.

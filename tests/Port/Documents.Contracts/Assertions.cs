@@ -13,6 +13,7 @@ public static class Assertions
         using var memory = new MemoryStream(); stream.CopyTo(memory);
         var original = memory.ToArray();
         Check(Convert.ToHexString(SHA256.HashData(original)).ToLowerInvariant() == "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd", "Fixture changed");
+        var packageResult=PortfolioPackageAssertions.Run(original);
         var input = (byte[])original.Clone();
         var document = LegacyCsg4Codec.Read(input);
         Check(document.Records.Count == 241 && document.NumericRecordCount == 74, "Fixture record counts");
@@ -102,7 +103,7 @@ public static class Assertions
             File.WriteAllBytes(Path.Combine(outputFolder, "edited.csg"), edited);
             File.WriteAllBytes(Path.Combine(outputFolder, "restored.csg"), restored);
         }
-        return portfolioResult + "; " + editBridgeResult + "; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.";
+        return packageResult+"; "+portfolioResult + "; " + editBridgeResult + "; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.";
     }
 
     private static void LeafCrc(byte[] data, LegacyCsg4Record record)

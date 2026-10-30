@@ -177,6 +177,14 @@
         "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/ProjectType.cs",
         "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs"
       ]
+    },
+    {
+      "path": "src/Port/Documents/LegacyPortfolioPackage.cs",
+      "classification": "new immutable portfolio inventory and data replacement; source-informed filename candidates, not native reconciliation",
+      "sources": [
+        "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+        "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs"
+      ]
     }
   ]
 }

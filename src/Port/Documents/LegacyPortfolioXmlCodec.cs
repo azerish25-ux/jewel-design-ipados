@@ -64,17 +64,18 @@ public sealed class LegacyPortfolioXmlDocument
     private readonly Encoding encoding;
     private readonly LegacyPortfolioXmlLimits limits;
     private readonly bool modified;
-    public int DesignCount=>DesignElements(tree).Length;
+    private readonly Lazy<XElement[]> designs;
+    public int DesignCount=>designs.Value.Length;
 
     internal LegacyPortfolioXmlDocument(XDocument tree,byte[] original,Encoding encoding,LegacyPortfolioXmlLimits limits,bool modified)
-    {this.tree=tree;this.original=original;this.encoding=encoding;this.limits=limits;this.modified=modified;}
+    {this.tree=tree;this.original=original;this.encoding=encoding;this.limits=limits;this.modified=modified;designs=new(()=>DesignElements(tree));}
 
     public string? ReadProjectText(string field){ValidateField(field,projectText);return Scalar(tree.Root!,field);}
-    public string? ReadDesignText(int ordinal,string field){ValidateField(field,designText);return Scalar(Design(tree,ordinal),field);}
+    public string? ReadDesignText(int ordinal,string field){ValidateField(field,designText);return Scalar(Design(ordinal),field);}
     public Guid? ReadDesignGuid(int ordinal,string field)
     {
         if(field is not ("BaseDesignInstance" or "DesignInstance"))throw new ArgumentException("Not a declared design GUID field",nameof(field));
-        var text=Scalar(Design(tree,ordinal),field);if(text is null)return null;
+        var text=Scalar(Design(ordinal),field);if(text is null)return null;
         if(!Guid.TryParse(text,out var id))throw new InvalidDataException("Invalid design GUID field");return id;
     }
     public LegacyPortfolioXmlDocument WithProjectText(string field,string? value){ValidateField(field,projectText);return Change(null,field,value);}
@@ -86,7 +87,7 @@ public sealed class LegacyPortfolioXmlDocument
     private LegacyPortfolioXmlDocument Change(int? ordinal,string field,string? value,bool nullable=false)
     {
         if(value is not null){if(value.Length>limits.MaxCharacters)throw new InvalidDataException("Metadata exceeds character limit");XmlConvert.VerifyXmlChars(value);}
-        var parent=ordinal.HasValue?Design(tree,ordinal.Value):tree.Root!;
+        var parent=ordinal.HasValue?Design(ordinal.Value):tree.Root!;
         if(Scalar(parent,field,nullable)==value)return this;
         var copy=new XDocument(tree);var target=ordinal.HasValue?Design(copy,ordinal.Value):copy.Root!;
         var element=Single(target,field);if(element is null){element=new XElement(field);target.Add(element);}
@@ -116,8 +117,12 @@ public sealed class LegacyPortfolioXmlDocument
         return element.Value;
     }
     private static XElement[] DesignElements(XDocument document)=>Single(document.Root!,"Designs")?.Elements("Design").ToArray()??Array.Empty<XElement>();
+    private XElement Design(int ordinal)
+    {var items=designs.Value;if((uint)ordinal>=(uint)items.Length)throw new ArgumentOutOfRangeException(nameof(ordinal));return items[ordinal];}
     private static XElement Design(XDocument document,int ordinal)
     {var items=DesignElements(document);if((uint)ordinal>=(uint)items.Length)throw new ArgumentOutOfRangeException(nameof(ordinal));return items[ordinal];}
+
+    internal bool HasSameOrigin(LegacyPortfolioXmlDocument other)=>original.AsSpan().SequenceEqual(other.original);
 
     internal byte[] Encode()
     {
