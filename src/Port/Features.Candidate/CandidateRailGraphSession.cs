@@ -6,9 +6,13 @@ namespace JewelDesign.Features.Candidate;
 public enum CandidateRailOutputKind { Ring,Outside }
 public sealed record CandidateRailOutputInfo(CandidateRailOutputKind Kind,double? Radius,double? DataScale,IReadOnlyList<OutsideRailKernelDiagnostic> Diagnostics);
 
-/// <summary>Known rail generation/cache owner. This is not the complete original graph scheduler.</summary>
-public sealed class CandidateRailGraphSession:ILegacyValueNodeProvider,IDisposable
+/// <summary>Known rail/transform dependency cache owner. This is not the complete original graph scheduler.</summary>
+public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,IDisposable
 {
+    private static readonly IReadOnlyDictionary<Guid,int> InputCounts=new Dictionary<Guid,int>{
+        [RingRailV1Candidate.TypeGuid]=1,[OutsideRailV1Candidate.TypeGuid]=6,[LegacyCsg4Codec.SelectRingRailTypeGuid]=3,
+        [LegacyCsg4Codec.AddTypeGuid]=2,[LegacyCsg4Codec.TranslateObjectTypeGuid]=4,[LegacyCsg4Codec.ScaleObjectToSizeTypeGuid]=4
+    };
     private sealed class Output:IDisposable
     {
         internal CandidateShape? Curve {get;}
@@ -34,22 +38,27 @@ public sealed class CandidateRailGraphSession:ILegacyValueNodeProvider,IDisposab
         Check();if((uint)index>=(uint)Values.Document.Records.Count)return false;
         var record=Values.Document.Records[index];
         return record.SimpleBlock is not null&&record.Version==new LegacyCsg4Version(1,0)&&
-            (record.TypeGuid==RingRailV1Candidate.TypeGuid||record.TypeGuid==OutsideRailV1Candidate.TypeGuid||record.TypeGuid==LegacyCsg4Codec.SelectRingRailTypeGuid);
+            InputCounts.ContainsKey(record.TypeGuid);
     }
     public IReadOnlyList<SerializedChannelLink> Inputs(int index)
     {
-        if(!Supports(index))throw new NotSupportedException("Unsupported rail producer.");
-        var record=Values.Document.Records[index];var block=record.SimpleBlock!;int count=record.TypeGuid==RingRailV1Candidate.TypeGuid?1:record.TypeGuid==LegacyCsg4Codec.SelectRingRailTypeGuid?3:6;
+        if(!Supports(index))throw new NotSupportedException("Unsupported candidate producer.");
+        var record=Values.Document.Records[index];var block=record.SimpleBlock!;int count=InputCounts[record.TypeGuid];
         var result=new SerializedChannelLink[count];
         for(int i=0;i<count;i++)result[i]=i<block.ObjectIndices.Count?new(block.ObjectIndices[i],block.ChannelIndices[i]):SerializedChannelLink.Disconnected;
         return Array.AsReadOnly(result);
+    }
+    private bool IsDefaultRailRoot(int index)
+    {
+        var type=Values.Document.Records[index].TypeGuid;
+        return Supports(index)&&(type==RingRailV1Candidate.TypeGuid||type==OutsideRailV1Candidate.TypeGuid||type==LegacyCsg4Codec.SelectRingRailTypeGuid);
     }
     public void Generate(params int[] roots)
     {
         Check();ArgumentNullException.ThrowIfNull(roots);if(pending is not null)throw new InvalidOperationException("Reentrant rail generation.");
         pending=new();
         try{
-            var targets=roots.Length==0?Enumerable.Range(0,Values.Document.Records.Count).Where(Supports).ToArray():roots;
+            var targets=roots.Length==0?Enumerable.Range(0,Values.Document.Records.Count).Where(IsDefaultRailRoot).ToArray():roots;
             if(targets.Length!=0)Values.Generate(targets);
             var merged=new Dictionary<int,Output>(outputs);
             foreach(var pair in pending)merged[pair.Key]=pair.Value;
@@ -62,9 +71,11 @@ public sealed class CandidateRailGraphSession:ILegacyValueNodeProvider,IDisposab
     public void Update(int index)
     {
         Check();if(pending is null)throw new InvalidOperationException("Use the rail graph Generate method.");
-        if(!Supports(index))throw new NotSupportedException("Unsupported rail producer.");
+        if(!Supports(index))throw new NotSupportedException("Unsupported candidate producer.");
         Output entry;
-        if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.SelectRingRailTypeGuid){
+        if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.AddTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.TranslateObjectTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.ScaleObjectToSizeTypeGuid){
+            entry=TransformOutput(index);
+        }else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.SelectRingRailTypeGuid){
             entry=SelectOutput(index);
         }else if(Values.Document.Records[index].TypeGuid==RingRailV1Candidate.TypeGuid){
             using var result=RingRailV1Candidate.BuildFromNodeCore(context,Values,index,false);
@@ -111,8 +122,10 @@ public sealed class CandidateRailGraphSession:ILegacyValueNodeProvider,IDisposab
     {
         if(!Supports(record))return Values.ReadOutput(record,channel);
         bool outside=Values.Document.Records[record].TypeGuid==OutsideRailV1Candidate.TypeGuid;
-        if(channel!=0&&!(channel==1&&outside))return LegacyChannelValue.Empty;
+        bool add=Values.Document.Records[record].TypeGuid==LegacyCsg4Codec.AddTypeGuid;
+        if(channel!=0&&!(channel==1&&outside)&&!(add&&channel is 1 or 2))return LegacyChannelValue.Empty;
         var output=Find(record);
+        if(add&&channel>0){double number=0;output.Data.GetDouble(ref number);return LegacyChannelValue.FromNumber(channel==1?0.0-number:1.0-number);}
         return channel==0?output.Data:LegacyChannelValue.FromNumber(0);
     }
     public void Dispose()

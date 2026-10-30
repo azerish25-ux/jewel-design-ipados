@@ -124,7 +124,8 @@
     "tests/Port/Geometry.Candidate.Contracts/RailNodeAssertions.cs",
     "docs/porting/plans/P04-T01-A04-rail-bindings.md",
     "docs/porting/ADR-0025-rail-consumer-bindings.md",
-    "docs/evidence/apple/rail-bindings-managed-results.json"
+    "docs/evidence/apple/rail-bindings-managed-results.json",
+    "docs/evidence/apple/rail-bindings-results.json"
   ],
   "fixtures": [
     {
@@ -156,7 +157,7 @@
     {
       "id": "P04-T01-A04",
       "scope": "Exact legacy rail consumer header encoding/saved rewiring and node-bound native geometry builds",
-      "status": "local_verified_apple_pending"
+      "status": "verified_simulator_subset"
     }
   ],
   "checks": [
@@ -357,7 +358,7 @@
       "id": 41086518672,
       "commit": "e90440ab27573a6d0b31e41b7466c1a72861a5d0",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41086518672",
-      "verification": "Saved rail consumer bindings host confirmed running; iPad/iPhone queued; terminal artifact verification pending"
+      "verification": "SUCCESS: actual native/CSharp saved-consumer/header/generation/family assertions inspected on iPad/iPhone in rail-bindings-results.json; complete graph/PC/physical still open."
     },
     {
       "id": 41086522718,

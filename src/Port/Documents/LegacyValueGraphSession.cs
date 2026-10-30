@@ -3,13 +3,14 @@ namespace JewelDesign.Documents;
 
 public readonly record struct LegacyProfileSelection(int GroupRecordIndex,int ProfileIndex);
 
-/// <summary>Known empty, numeric or profile channel data. Unknown producers throw rather than becoming empty.</summary>
+/// <summary>Known missing, empty, numeric, profile, curve-reference or affine channel data. Unknown producers throw rather than becoming empty.</summary>
 public sealed class LegacyChannelValue
 {
     private readonly double number;
     public bool HasNumber {get;}
     public LegacyProfileSelection? Profile {get;}
     public LegacyCurveSelection? Curve {get;}
+    public LegacyAffineTransform? Transform {get;}
     public bool IsMissing {get;}
     public static LegacyChannelValue Missing {get;}=new(true);
     public static LegacyChannelValue Empty {get;}=new();
@@ -18,6 +19,8 @@ public sealed class LegacyChannelValue
     private LegacyChannelValue(double value){HasNumber=true;number=value;}
     private LegacyChannelValue(LegacyProfileSelection profile){Profile=profile;}
     private LegacyChannelValue(LegacyCurveSelection curve){Curve=curve;}
+    private LegacyChannelValue(LegacyAffineTransform transform){Transform=transform;}
+    public static LegacyChannelValue FromTransform(LegacyAffineTransform transform)=>new(transform);
     public static LegacyChannelValue FromCurve(int record,int channel)=>new(new LegacyCurveSelection(record,channel));
     public static LegacyChannelValue FromNumber(double value)=>Number(value);
     internal static LegacyChannelValue Number(double value)=>new(value);

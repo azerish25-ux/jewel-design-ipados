@@ -55,7 +55,20 @@
     "tests/select-rail-oracle.test.cjs",
     "tests/select-ring-rail-v1-reference.test.cjs",
     "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacySelectRingRail.cs",
-    "tests/Port/Geometry.Candidate.Contracts/SelectRailAssertions.cs"
+    "tests/Port/Geometry.Candidate.Contracts/SelectRailAssertions.cs",
+    "src/Port/Documents/LegacyAffineTransform.cs",
+    "src/Port/Features.Candidate/TransformProducerCandidate.cs",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.Transforms.cs",
+    "tests/Port/Geometry.Candidate.Contracts/TransformProducerAssertions.cs",
+    "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyTransformProducers.cs",
+    "scripts/verify-transform-producer-oracle.cjs",
+    "tests/transform-producer-oracle.test.cjs",
+    "tests/transform-producers-v1-reference.test.cjs",
+    "reference/file-proof/transform-producers-v1.cjs",
+    "docs/evidence/audit/transform-producer-reference.json",
+    "docs/porting/ADR-0028-transform-producers.md",
+    "docs/porting/plans/P03-T03-A09-transform-producers.md",
+    "docs/evidence/apple/rail-outputs-device-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -255,6 +268,34 @@
       "expectedExitCode": 0,
       "artifact": "src/Port/Documents/LegacyCsg4Codec.cs",
       "actual": "PASS241 records/74 numeric; four writer outputs read by two independent readers and exact source/rebuild/restoration hashes."
+    },
+    {
+      "command": "dotnet run --project tests/Port/Geometry.Candidate.HostTests (before A09)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/TransformProducerAssertions.cs",
+      "actual": "RED Translation producer header missing at saved node50. Later integration identified missing Add111 then placement110; no dependency was defaulted."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/TransformProducerAssertions.cs",
+      "actual": "PASS16093 source Update comparisons;6 original translations/4 original scales native application,3 untouched placement-dependent scales reject,7 scale plans on explicit resolved links; override/save/reopen/forwarding/cycle/zero native entries and all earlier native suites pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/transform-producer-oracle.test.cjs tests/transform-producers-v1-reference.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "scripts/verify-transform-producer-oracle.cjs",
+      "actual": "7/7 source-mirror/size-floor/Add tamper and independent header/future/bounds/mismatch controls pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
+      "actual": "125 known headers/116 opaque/100 scalar handles; independent common header/reference/future/no-op/rewire/reversal and all prior document/channel suites pass."
     }
   ],
   "review": {
@@ -283,7 +324,8 @@
     },
     "valueChannels": "Reviewed source empty-vs-zero/conversion/ref semantics, exact arithmetic/CAM signed-zero and override latching distinct from setter/previous state; preflight dependency validation, no unsupported defaulting, read cycle/depth guards and serialized link count preservation. Complete scheduler/UI/CAM serialization/native producer/failure/concurrency/PC equivalence remain explicit. Native profile temporaries and binding snapshot ownership reviewed.",
     "railOutputs": "Reviewed no native dependency/handles in document channel data, explicit supported producer/dependency validation, no recursive generation, source curve vs numeric and Scale1/0 metadata, immutable output snapshots/retained readers, allocation exception cleanup and pending output disposal. Candidate native-cache commit differs from unproven original failure/dirty/parallel policies; scalar updates are not rolled back after later native errors.",
-    "selectRingRail": "Reviewed exact1.0 GUID/full-body schema, disconnected-null vs inactive/invalid-empty distinction, source conditional ordering, supported-data forwarding despite UI filter, retained alias native ownership/old-generation snapshots, noncurve getter rejection, cycle/unsupported preflight and native entry cleanup. No recovered scripts/credentials/Windows execution. Full parity0/1451 remains unchanged."
+    "selectRingRail": "Reviewed exact1.0 GUID/full-body schema, disconnected-null vs inactive/invalid-empty distinction, source conditional ordering, supported-data forwarding despite UI filter, retained alias native ownership/old-generation snapshots, noncurve getter rejection, cycle/unsupported preflight and native entry cleanup. No recovered scripts/credentials/Windows execution. Full parity0/1451 remains unchanged.",
+    "transformProducers": "Reviewed data kind isolation/immutability; exact GUID/version/whole-frame read; native input alias/import lifetimes, raw extent floor/origin arithmetic, strict mirror X/Z only, Add outputs, no-argument rail-root compatibility, explicit placement/array/unsupported bounds failures, source-body/tamper controls, actual native point comparisons and file preservation. Source observation matrix constructors are stubs, not original Rhino matrix golden proof."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -361,7 +403,7 @@
       "id": 41089016432,
       "commit": "f3685f3431c574ea02c4998cae83e638f064b95f",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41089016432",
-      "verification": "Graph-managed rail outputs unsigned device queued; terminal artifact verification pending"
+      "verification": "SUCCESS: actual arm64/platform IOS unsigned Release52 warnings0 errors/hash inspected; rail-outputs-device-results.json. Native simulator reports remain pending."
     },
     {
       "id": 41091410852,
@@ -490,6 +532,36 @@
       "path": "recovery/canonical/cad/CS.Parametric.Channels/CSOutputChannel.cs",
       "sha256": "f9f90f12b0a91f87ed50d1e2eb13cbc2ba9d477e858f7c159baf87db2c7d5f38",
       "scope": "P03-T03-A08 exact selector Update, null Data vs empty CSData, Boolean conversion and output assignment; no full scheduler/display/export proof"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTranslateObjectXform.cs",
+      "sha256": "863bb6cf6dc9227db1374f2a38afa127dc1002bd177f5e63a2b291926d6c47a0",
+      "scope": "P03-T03-A09 exact producer Update/input/storage/bounds contracts; scalar Add branch only; native Rhino matrix/tolerance/full-array parity not established"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSScaleObjectToSizeXform.cs",
+      "sha256": "0e8bce0c130d7e4aee9e689440c97c1b1da517250ab15ab352bf9fc4307c413a",
+      "scope": "P03-T03-A09 exact producer Update/input/storage/bounds contracts; scalar Add branch only; native Rhino matrix/tolerance/full-array parity not established"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSXformData.cs",
+      "sha256": "506539cd932118bc583f62b6a3a8efc6d9e95cd9cb58a8da0ade7157cb6f2afc",
+      "scope": "P03-T03-A09 exact producer Update/input/storage/bounds contracts; scalar Add branch only; native Rhino matrix/tolerance/full-array parity not established"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSProfileData.cs",
+      "sha256": "e48301069692d00776c426803ae0e3a86b2c137a8a7015e9d6adcee7e0617ff6",
+      "scope": "P03-T03-A09 exact producer Update/input/storage/bounds contracts; scalar Add branch only; native Rhino matrix/tolerance/full-array parity not established"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Maths/CSAdd.cs",
+      "sha256": "e939e06e0c315b4c6cba790187b896e865131fcf5a9bc131857bf5eef77abfc0",
+      "scope": "P03-T03-A09 exact producer Update/input/storage/bounds contracts; scalar Add branch only; native Rhino matrix/tolerance/full-array parity not established"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
+      "sha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714",
+      "scope": "GetArrayCount known non-array fallback0; complete CSData conversions/arrays not ported"
     }
   ],
   "subtasks": [
@@ -536,6 +608,12 @@
       "scope": "Exact SelectRingRail1.0 saved header, null/empty distinction and owned supported-data/native curve forwarding",
       "status": "local_verified_apple_pending",
       "plan": "docs/porting/plans/P03-T03-A08-select-ring-rail.md"
+    },
+    {
+      "id": "P03-T03-A09",
+      "scope": "Saved translation/scale producer plans, transform data and scalar Add prerequisite; ten original paths run, three scales placement-gated",
+      "status": "local_verified_subset_apple_pending",
+      "plan": "docs/porting/plans/P03-T03-A09-transform-producers.md"
     }
   ]
 }

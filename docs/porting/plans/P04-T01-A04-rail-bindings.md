@@ -10,6 +10,6 @@ Sources: sealed legacy rail classes have no Read/Write overrides; CSBlock/CSObje
 - [x] Native RingRail/OutsideRail BuildFromNode reads header links, generates the known upstream slice and honors disconnected/defaults. Test real project links, alternate radius/thickness wiring, save/reopen/rebuild and ownership.
 - [x] Run document/native/source/reference/provenance checks, update decoded inventory and ADR0025 with scope limits.
 - [x] Push/dispatch Apple simulator/AOT tests, preserving existing runs. Runs41086518672/41086522718 ate90440a confirmed live/queued.
-- [ ] Inspect actual binding/native/family/AOT artifacts before bounded verification.
+- [x] Inspect actual binding/native/family/AOT artifacts before bounded verification. Native iPad/iPhone and arm64/platform IOS unsigned Release52 warnings0 errors inspected in rail-bindings-results.json; no PC/physical parity.
 
 Limits: not a generic decoder of arbitrary CSBlock derived payloads; no full graph scheduling/geometry output caching/dirty propagation, activation/error/UI/material/output-data lifecycle or original-PC/physical parity. Existing scalar/profile engine rejects unsupported producers. Existing link API edits stored slots only; adding/removing sockets needs source-specific behavior later.

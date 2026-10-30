@@ -1,0 +1,16 @@
+{
+  "run": 41089016432,
+  "commit": "f3685f3431c574ea02c4998cae83e638f064b95f",
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41089016432",
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "f440da6cf3d7082170275bcf6f5b2ac02c111fbaf729f67da35fd9d3afd03d78  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "29ebee20f5a7d27de19a6c65ebd5333dc7ad6062d76f97ab5d4b0b40c8d5a99e",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  },
+  "scope": "Unsigned Release/AOT compile/link only for graph-owned rail outputs. Native simulator41089011365 remains live; no physical or runtime claim from device artifact."
+}

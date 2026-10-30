@@ -1,0 +1,17 @@
+# ADR0028: affine data and known transform producers
+
+Status: local source/native verification; Apple execution pending.
+
+Add immutable twelve-double LegacyAffineTransform to Documents. It represents affine coefficients with last row0,0,0,1; it owns no native handle and is not a new serialized field. Channel values carry it separately from numbers, curves and profiles; numeric/Boolean conversions fail without changing caller defaults. CandidateAffine remains the explicit native boundary.
+
+Admit only exact1.0 common-header identities TranslateObjectXform, ScaleObjectToSizeXform and CSAdd. Their recovered sealed classes have no extra binary serializer fields. Six/seven/three records independently fully consume their frames. Known headers125/opaque116/scalar handles100. Unknown versions remain opaque, raw common fields and input arrays stay structural and immutable.
+
+Known translation defaultsXYZ/mirror to0 and uses mirror>.5 to replaceX/Z with0-value, preservingY. Scale resolves an actual native profile or owned curve, reads unpadded candidate tight bounds using explicit settings.BoundsTolerance, replaces each extent<.01 with1, defaults target dimensions to those adjusted extents and divides. Scaling is about WorldXY origin, with no bounding-box-center translation. Unsupported or missing object bounds reject explicitly. Native tolerance/extrema vs Rhino and native matrix coefficient bit parity remain unverified.
+
+CSAdd's known non-array branch provides sum,0-sum,1-sum on channels0/1/2; invalid channels return empty CSData. No array value producer is admitted, and original Cartesian-array/flatten semantics remain required. Exact Update extraction retains array source branches, with observation stubs explicitly rejecting those unmodeled branches. Source helper GetArrayCount returns0 for every supported non-array kind.
+
+Candidate graph caches pure transform/number outputs as generation snapshots. Selection forwards them unchanged; later upstream-only rebuilding does not change a previously selected value. No-argument Generate retains its established known-rail roots; added producer families require explicit roots. Unsupported closure still fails before applying overrides, rather than substituting stored scalar fields.
+
+Source-derived regression coverage:16093 extracted Update comparisons over missing/empty/curve/transform inputs and finite/-0/NaN/infinity values, strict mirror/size-floor boundaries, scalar Add and outputs. Separate analytical assertions prove origin and boundary arithmetic. Actual six translation/four scale paths run; three original scale paths depend on unported placement110/117/124 through Add111/118/125 and reject. Explicitly resolved input fixtures exercise all seven scale implementations without claiming original-chain execution. Actual native affine application checks17 curve parameters and input preservation; source override/edit/save/reopen, selector snapshots, failure/cycle and native entry cleanup pass.
+
+Next actual dependency: CSProfilePlacer2RailXform1 nodes110/117/124, fed by already supported ring4/outside13 and scalars94/95. Port its normalized-length/orientation/finite30-unit ray/height/outer-parameter/seam behavior using actual native curves; then enable untouched scale112/119/126 chains. Rotation/expandable transform consumer, original full arrays/data lifecycle, broader scheduler/PC/UI/physical and complete app parity remain open. No full parity row closes.
