@@ -1,0 +1,4596 @@
+{
+  "schemaVersion": 1,
+  "status": "source_inventory_only",
+  "scope": "Pinned library serialized type footprint, not executed graph reachability, transitive dependency closure, field decoding or geometry parity",
+  "inputs": [
+    {
+      "path": "reference/fixtures/library-item-4.csg",
+      "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd"
+    },
+    {
+      "path": "docs/evidence/audit/serialization-matrix.json",
+      "sha256": "539f7ed096d739c98a3dc2c92c49c884efc3b48d93dca19ea929e01488a835c8"
+    },
+    {
+      "path": "docs/evidence/audit/cad-type-inventory.json",
+      "sha256": "a3a916e0a49175b2d447460b438ac14f60b575179c8bd58ff70519fa3fd42581"
+    },
+    {
+      "path": "reference/file-proof/csg-v4.cjs",
+      "sha256": "de244c99025e7c9cc80104e1a9657ecc549020595e834b1724ea907668c9d93c"
+    }
+  ],
+  "counts": {
+    "serializedNodes": 241,
+    "registrationGuids": 43,
+    "numericDecoded": 74,
+    "opaquePayloads": 167,
+    "unknownGuids": 0,
+    "ambiguousGuids": 0,
+    "legacyNodes": 33,
+    "uniqueDirectStaticCalls": 44
+  },
+  "types": [
+    {
+      "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+      "nodeIndices": [
+        0,
+        14,
+        30,
+        60,
+        83,
+        86,
+        89,
+        141,
+        156,
+        178,
+        182,
+        186,
+        189,
+        193,
+        223,
+        227,
+        231,
+        234,
+        237
+      ],
+      "recordVersions": [
+        "1.2"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 19,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0003",
+          "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+          "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+          "sourceSha256": "ce4e4dff7195be6c67532933ee0daa7a3f2077d9056434fb14112a8f95a9d6d0",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+            "CS.CSObjects.CSTreeObject",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "OnUtil.OpenFile",
+              "line": 525
+            },
+            {
+              "call": "OnUtil.CloseFile",
+              "line": 541
+            },
+            {
+              "call": "OnUtil.CloseFile",
+              "line": 547
+            },
+            {
+              "call": "OnUtil.CloseFile",
+              "line": 554
+            },
+            {
+              "call": "OnUtil.OpenFile",
+              "line": 590
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+                "line": 240,
+                "end": 271,
+                "declaredBy": "CS.CSObjects.CSTreeObjects.CSPatchWireStart"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+                "line": 450,
+                "end": 454,
+                "declaredBy": "CS.CSObjects.CSTreeObjects.CSPatchWireStart"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+                "line": 283,
+                "end": 294,
+                "declaredBy": "CS.CSObjects.CSTreeObjects.CSPatchWireStart"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+                "line": 456,
+                "end": 462,
+                "declaredBy": "CS.CSObjects.CSTreeObjects.CSPatchWireStart"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+      "nodeIndices": [
+        1,
+        5,
+        32,
+        39,
+        91,
+        101,
+        135,
+        150,
+        168,
+        195,
+        202
+      ],
+      "recordVersions": [
+        "1.1"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 11,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0002",
+          "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+          "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSBlockGroupStart.cs",
+          "sourceSha256": "a6d6c8320753be1a053409ed260a3a08e426dbf683cf632597933e2053e97326",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+            "CS.CSObjects.CSTreeObject",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSBlockGroupStart.cs",
+                "line": 118,
+                "end": 142,
+                "declaredBy": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSBlockGroupStart.cs",
+                "line": 156,
+                "end": 164,
+                "declaredBy": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSBlockGroupStart.cs",
+                "line": 144,
+                "end": 154,
+                "declaredBy": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSBlockGroupStart.cs",
+                "line": 166,
+                "end": 172,
+                "declaredBy": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "dd5c2342-d89a-440e-a76e-624a1faf2b68",
+      "nodeIndices": [
+        2
+      ],
+      "recordVersions": [
+        "1.2"
+      ],
+      "numericDecoded": 1,
+      "opaquePayloads": 0,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0023",
+          "type": "CS.CSValues.CSValueRingSize",
+          "path": "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs",
+          "sourceSha256": "df9c4a0cbb44fe040098edcc0e3caa55fe34e18889d42953450162c93efc69d3",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CS.CSValues.CSValueRingSize",
+            "CS.CSValues.CSValue",
+            "CS.CSValues.CSValueBase",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs",
+                "line": 80,
+                "end": 92,
+                "declaredBy": "CS.CSValues.CSValueRingSize"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs",
+                "line": 241,
+                "end": 247,
+                "declaredBy": "CS.CSValues.CSValueRingSize"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs",
+                "line": 75,
+                "end": 78,
+                "declaredBy": "CS.CSValues.CSValueRingSize"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs",
+                "line": 234,
+                "end": 239,
+                "declaredBy": "CS.CSValues.CSValueRingSize"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 275,
+                "end": 279,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+      "nodeIndices": [
+        3,
+        12,
+        38,
+        47,
+        100,
+        109,
+        137,
+        154,
+        176,
+        201,
+        210
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 11,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0001",
+          "type": "CS.CSObjects.CSBlockGroupEnd",
+          "path": "recovery/canonical/cad/CS.CSObjects/CSBlockGroupEnd.cs",
+          "sourceSha256": "0424b112eeafdee706eab70a5edba44417d28cb481f05e672f2a2e8d7c30c3ce",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CS.CSObjects.CSBlockGroupEnd",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 895,
+                "end": 948,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1048,
+                "end": 1051,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 950,
+                "end": 979,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1053,
+                "end": 1060,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "65aa45c6-d1cd-4c45-92bb-b5a9a6a2ec47",
+      "nodeIndices": [
+        4
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0355",
+          "type": "CSBlocks.Rails.Obsolete.CSRingRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSRingRail1.cs",
+          "sourceSha256": "fd06635926c702a605d94a812847f7f84c6d0a7fde5db362e4f1e8d0bf74267b",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Rails.Obsolete.CSRingRail1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+      "nodeIndices": [
+        6,
+        33,
+        62,
+        92,
+        93,
+        159,
+        196
+      ],
+      "recordVersions": [
+        "1.1"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 7,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0011",
+          "type": "CS.CSValues.CSValueChooser",
+          "path": "recovery/canonical/cad/CS.CSValues/CSValueChooser.cs",
+          "sourceSha256": "c3ddad50ff84ce50d624e1d4ab733e806caeab4a03aa77bd3b87ad55b1596fd6",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CS.CSValues.CSValueChooser",
+            "CS.CSValues.CSValue",
+            "CS.CSValues.CSValueBase",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueChooser.cs",
+                "line": 315,
+                "end": 324,
+                "declaredBy": "CS.CSValues.CSValueChooser"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 400,
+                "end": 423,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueChooser.cs",
+                "line": 304,
+                "end": 313,
+                "declaredBy": "CS.CSValues.CSValueChooser"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 381,
+                "end": 398,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 275,
+                "end": 279,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2",
+      "nodeIndices": [
+        7,
+        31,
+        63,
+        90,
+        160,
+        194
+      ],
+      "recordVersions": [
+        "1.1"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 6,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0077",
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "sourceSha256": "d17c7ef34039576d3e9455840d9778b1a96a8d8f2cafc578d364c02b6331c205",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Core.CSGroupOfMatrixProfiles",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilRhino.FindObjectInDocument",
+              "line": 67
+            },
+            {
+              "call": "CSUtilRhino.FindObjectInDocument",
+              "line": 109
+            },
+            {
+              "call": "CSUtilIO.ReadArray",
+              "line": 226
+            },
+            {
+              "call": "CSUtilIO.ReadArray",
+              "line": 241
+            },
+            {
+              "call": "CSUtilIO.ReadArray",
+              "line": 254
+            },
+            {
+              "call": "CSUtilIO.GeometryBaseFromString",
+              "line": 279
+            },
+            {
+              "call": "CSUtilIO.WriteArray",
+              "line": 387
+            },
+            {
+              "call": "CSUtilIO.WriteArray",
+              "line": 391
+            },
+            {
+              "call": "CSUtilIO.WriteArray",
+              "line": 393
+            },
+            {
+              "call": "CSUtilIO.GeometryBaseToString",
+              "line": 405
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+                "line": 219,
+                "end": 269,
+                "declaredBy": "CSBlocks.Core.CSGroupOfMatrixProfiles"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+                "line": 384,
+                "end": 395,
+                "declaredBy": "CSBlocks.Core.CSGroupOfMatrixProfiles"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+                "line": 271,
+                "end": 290,
+                "declaredBy": "CSBlocks.Core.CSGroupOfMatrixProfiles"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+                "line": 397,
+                "end": 410,
+                "declaredBy": "CSBlocks.Core.CSGroupOfMatrixProfiles"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+      "nodeIndices": [
+        8,
+        9,
+        10,
+        19,
+        20,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        34,
+        35,
+        36,
+        37,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        84,
+        87,
+        94,
+        96,
+        97,
+        98,
+        99,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        136,
+        144,
+        145,
+        146,
+        147,
+        153,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        197,
+        198,
+        199,
+        200,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        225,
+        229
+      ],
+      "recordVersions": [
+        "1.1"
+      ],
+      "numericDecoded": 73,
+      "opaquePayloads": 0,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0022",
+          "type": "CS.CSValues.CSValueRange",
+          "path": "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+          "sourceSha256": "6e91cd07b702be06eed36463cb71a513693b21f7084572c508ad714592bb2a65",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CS.CSValues.CSValueRange",
+            "CS.CSValues.CSValue",
+            "CS.CSValues.CSValueBase",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+                "line": 142,
+                "end": 149,
+                "declaredBy": "CS.CSValues.CSValueRange"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+                "line": 413,
+                "end": 420,
+                "declaredBy": "CS.CSValues.CSValueRange"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+                "line": 137,
+                "end": 140,
+                "declaredBy": "CS.CSValues.CSValueRange"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+                "line": 405,
+                "end": 411,
+                "declaredBy": "CS.CSValues.CSValueRange"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 275,
+                "end": 279,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "nodeIndices": [
+        11,
+        15,
+        24,
+        28,
+        46,
+        108,
+        130,
+        148,
+        149,
+        151,
+        152,
+        169,
+        209,
+        224,
+        228
+      ],
+      "recordVersions": [
+        "1.1"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 15,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0020",
+          "type": "CS.CSValues.CSValueOnOff",
+          "path": "recovery/canonical/cad/CS.CSValues/CSValueOnOff.cs",
+          "sourceSha256": "ee9bebfe414f04407923e75d892d13654a5854498b34fc022aabe1cee086d382",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CS.CSValues.CSValueOnOff",
+            "CS.CSValues.CSValue",
+            "CS.CSValues.CSValueBase",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 295,
+                "end": 327,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 400,
+                "end": 423,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 281,
+                "end": 293,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 381,
+                "end": 398,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 275,
+                "end": 279,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3",
+      "nodeIndices": [
+        13
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0353",
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "sourceSha256": "33aa3bd1e6dddc2b5332bd1ef350d30751aebb5d93440eda00f5ba9e81d2ea1a",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilGeometry.GetMinMax",
+              "line": 81
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 90
+            },
+            {
+              "call": "CSUtilRingRail.GetRingRailPointExtents",
+              "line": 92
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 102
+            },
+            {
+              "call": "CSUtilRingRail.GetRingRailPointExtents",
+              "line": 104
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 112
+            },
+            {
+              "call": "CSUtilRingRail.GetRingRailPointExtents",
+              "line": 114
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 120
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 128
+            },
+            {
+              "call": "Intersection.CurveCurve",
+              "line": 130
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 150
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 151
+            },
+            {
+              "call": "Curve.JoinCurves",
+              "line": 154
+            },
+            {
+              "call": "Intersection.CurveCurve",
+              "line": 160
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "e10a6966-719f-4ba9-9efe-b7ad0378b5f3",
+      "nodeIndices": [
+        16
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0352",
+          "type": "CSBlocks.Rails.CSSelectRingRail",
+          "path": "recovery/canonical/cad/CSBlocks.Rails/CSSelectRingRail.cs",
+          "sourceSha256": "9322a3c04187a9f4b1cb8aeb2836982787429b4e95fd1e8b2db04a75a5642256",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Rails.CSSelectRingRail",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "adb397e0-30f0-49f4-adfc-94a2fc9109b6",
+      "nodeIndices": [
+        17,
+        142
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 2,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0104",
+          "type": "CSBlocks.Core.Obsolete.CSGroupOfGems1",
+          "path": "recovery/canonical/cad/CSBlocks.Core.Obsolete/CSGroupOfGems1.cs",
+          "sourceSha256": "c8535a86bee7edcbbd2ea6b8fd586e869e334109fd4513ecf17775cf786d4b10",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Core.Obsolete.CSGroupOfGems1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilIO.ReadArray",
+              "line": 141
+            },
+            {
+              "call": "CSUtilIO.ReadArray",
+              "line": 142
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CSBlocks.Core.Obsolete/CSGroupOfGems1.cs",
+                "line": 112,
+                "end": 154,
+                "declaredBy": "CSBlocks.Core.Obsolete.CSGroupOfGems1"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CSBlocks.Core.Obsolete/CSGroupOfGems1.cs",
+                "line": 207,
+                "end": 222,
+                "declaredBy": "CSBlocks.Core.Obsolete.CSGroupOfGems1"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CSBlocks.Core.Obsolete/CSGroupOfGems1.cs",
+                "line": 86,
+                "end": 110,
+                "declaredBy": "CSBlocks.Core.Obsolete.CSGroupOfGems1"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CSBlocks.Core.Obsolete/CSGroupOfGems1.cs",
+                "line": 201,
+                "end": 205,
+                "declaredBy": "CSBlocks.Core.Obsolete.CSGroupOfGems1"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "29ba96a4-2b1b-4dfa-b0d9-8b635d2ede90",
+      "nodeIndices": [
+        18,
+        143
+      ],
+      "recordVersions": [
+        "1.1"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 2,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0013",
+          "type": "CS.CSValues.CSValueGem",
+          "path": "recovery/canonical/cad/CS.CSValues/CSValueGem.cs",
+          "sourceSha256": "a240427826ef53cfe34a785222d073b7a3fb8f1c49207b5192547ce1e2172076",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CS.CSValues.CSValueGem",
+            "CS.CSValues.CSValue",
+            "CS.CSValues.CSValueBase",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueGem.cs",
+                "line": 535,
+                "end": 566,
+                "declaredBy": "CS.CSValues.CSValueGem"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueGem.cs",
+                "line": 589,
+                "end": 612,
+                "declaredBy": "CS.CSValues.CSValueGem"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueGem.cs",
+                "line": 528,
+                "end": 533,
+                "declaredBy": "CS.CSValues.CSValueGem"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValueGem.cs",
+                "line": 568,
+                "end": 587,
+                "declaredBy": "CS.CSValues.CSValueGem"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 275,
+                "end": 279,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc",
+      "nodeIndices": [
+        29
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0264",
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "sourceSha256": "1b0bee86199263b3e45c4fd9ffee9f62914642605902135de5b88f57d9b6e7cb",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "NurbsCurve.Convert",
+              "line": 74
+            },
+            {
+              "call": "CSUtilMath.ToRadians",
+              "line": 88
+            },
+            {
+              "call": "CSUtilMath.ToRadians",
+              "line": 90
+            },
+            {
+              "call": "OnUtil.ON_CrossProduct",
+              "line": 101
+            },
+            {
+              "call": "OnUtil.ON_CrossProduct",
+              "line": 109
+            },
+            {
+              "call": "CSUtilGem.GetGemZOffset",
+              "line": 112
+            },
+            {
+              "call": "CSUtilGeometry.OriginOffset",
+              "line": 113
+            },
+            {
+              "call": "OnUtil.ON_CrossProduct",
+              "line": 202
+            },
+            {
+              "call": "CSUtilMath.Orient3Point",
+              "line": 213
+            },
+            {
+              "call": "OnUtil.ON_CrossProduct",
+              "line": 235
+            },
+            {
+              "call": "CSUtilMath.Orient3Point",
+              "line": 246
+            },
+            {
+              "call": "OnUtil.ON_CrossProduct",
+              "line": 267
+            },
+            {
+              "call": "CSUtilMath.Orient3Point",
+              "line": 278
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c",
+      "nodeIndices": [
+        48,
+        54,
+        211,
+        217
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 4,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0334",
+          "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+          "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer1RailXform1.cs",
+          "sourceSha256": "7e271a237a09a747a8873de57a1284fa2a07c0f745c3165c85f0dde5e2560207",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilMath.Orient3Point",
+              "line": 63
+            },
+            {
+              "call": "CSUtilMath.Orient3Point",
+              "line": 71
+            },
+            {
+              "call": "CSUtilMath.Orient3Point",
+              "line": 77
+            },
+            {
+              "call": "CSUtilMath.Orient3Point",
+              "line": 88
+            },
+            {
+              "call": "CSUtilMath.Orient3Point",
+              "line": 99
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
+      "nodeIndices": [
+        49,
+        55,
+        112,
+        119,
+        126,
+        212,
+        218
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 7,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0608",
+          "type": "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSScaleObjectToSizeXform.cs",
+          "sourceSha256": "0e8bce0c130d7e4aee9e689440c97c1b1da517250ab15ab352bf9fc4307c413a",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "Transform.Scale",
+              "line": 66
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "f9af1449-1903-4d26-92df-6febc8a61427",
+      "nodeIndices": [
+        50,
+        56,
+        113,
+        120,
+        213,
+        219
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 6,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0617",
+          "type": "CSBlocks.Transforms.CSTranslateObjectXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTranslateObjectXform.cs",
+          "sourceSha256": "863bb6cf6dc9227db1374f2a38afa127dc1002bd177f5e63a2b291926d6c47a0",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Transforms.CSTranslateObjectXform",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "Transform.Translation",
+              "line": 60
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+      "nodeIndices": [
+        51,
+        57,
+        114,
+        121,
+        214,
+        220
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 6,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0603",
+          "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
+          "sourceSha256": "1576cb1341103a055848513030df23ddbf17bd7ff060e8f2b72c9fa1320b5ffb",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Transforms.CSRotateObjectDegXform",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilMath.Rotation",
+              "line": 49
+            },
+            {
+              "call": "CSUtilMath.ToRadians",
+              "line": 49
+            },
+            {
+              "call": "CSUtilMath.Rotation",
+              "line": 50
+            },
+            {
+              "call": "CSUtilMath.ToRadians",
+              "line": 50
+            },
+            {
+              "call": "CSUtilMath.Rotation",
+              "line": 51
+            },
+            {
+              "call": "CSUtilMath.ToRadians",
+              "line": 51
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+      "nodeIndices": [
+        52,
+        58,
+        115,
+        122,
+        127,
+        215,
+        221
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 7,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0611",
+          "type": "CSBlocks.Transforms.CSTransformObject",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObject.cs",
+          "sourceSha256": "1595978ecab1c44d1647d1e56d8953098efd784e961d7cc45c9aa2a8a40db45d",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Transforms.CSTransformObject",
+            "CS.CSObjects.CSBlocks.CSBlockExpandableInput",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+                "line": 93,
+                "end": 102,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlockExpandableInput"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+                "line": 82,
+                "end": 91,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlockExpandableInput"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+      "nodeIndices": [
+        53,
+        59,
+        116,
+        123,
+        128,
+        216,
+        222
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 7,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0654",
+          "type": "CSBlocks.Utilities.Obsolete.CSUnarray1",
+          "path": "recovery/canonical/cad/CSBlocks.Utilities.Obsolete/CSUnarray1.cs",
+          "sourceSha256": "699228bf6b3982fc7adcaa7e77e37247df7449b4a6945acde5fe188476f854ed",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Utilities.Obsolete.CSUnarray1",
+            "CS.CSObjects.CSBlocks.CSBlockExpandableInput",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+                "line": 93,
+                "end": 102,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlockExpandableInput"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+                "line": 82,
+                "end": 91,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlockExpandableInput"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "nodeIndices": [
+        61,
+        81,
+        131,
+        132,
+        133,
+        157,
+        179,
+        183,
+        187,
+        190,
+        232,
+        235,
+        238
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 13,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0640",
+          "type": "CSBlocks.Utilities.CSArray",
+          "path": "recovery/canonical/cad/CSBlocks.Utilities/CSArray.cs",
+          "sourceSha256": "757402a379d77af792cf915e735b04b871c282b8911889b1bedacdcc2f699d0f",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Utilities.CSArray",
+            "CS.CSObjects.CSBlocks.CSBlockExpandableInput",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+                "line": 93,
+                "end": 102,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlockExpandableInput"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+                "line": 82,
+                "end": 91,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlockExpandableInput"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "dd1e8b0b-c53f-42c5-adbc-d53c516b62af",
+      "nodeIndices": [
+        72
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0463",
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSUnderBezelRailTopOuter1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSUnderBezelRailTopOuter1.cs",
+          "sourceSha256": "d25b7a61a56565e7a590adc7883b740314396cb0ab7028447fd44a01700af8d1",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Settings.Obsolete.Bezels.CSUnderBezelRailTopOuter1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilMath.GetUnscaledXforms",
+              "line": 50
+            },
+            {
+              "call": "CSUtilGeometry.OriginOffsetXY",
+              "line": 62
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "79a34a3e-d655-478a-8740-9ddcd3bcc9ba",
+      "nodeIndices": [
+        73
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0452",
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelSurfaceOutside1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelSurfaceOutside1.cs",
+          "sourceSha256": "c2e9edb01dc3275adcd4abba1f554bbbfb6ea53af397eb3cac8a6afdecbdb9ac",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Settings.Obsolete.Bezels.CSBezelSurfaceOutside1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilMath.ToRadians",
+              "line": 132
+            },
+            {
+              "call": "CSUtilMath.ToRadians",
+              "line": 134
+            },
+            {
+              "call": "CSUtilMath.AngleOfPointD",
+              "line": 137
+            },
+            {
+              "call": "CSUtilMath.ToRadians",
+              "line": 139
+            },
+            {
+              "call": "CSUtilRailRevolve.RailRevolve",
+              "line": 150
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "c9cc249e-0ccd-498c-93b0-96480fb6b232",
+      "nodeIndices": [
+        74
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0447",
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelRailBottomInner1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelRailBottomInner1.cs",
+          "sourceSha256": "9bcb88000c9af32ea266a5c9672aa2dd631038e7933cc427ef84be49c4f2a907",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Settings.Obsolete.Bezels.CSBezelRailBottomInner1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilGeometry.OriginOffsetXY",
+              "line": 56
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e",
+      "nodeIndices": [
+        75,
+        77,
+        79,
+        80,
+        226,
+        230
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 6,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0552",
+          "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2NoProfiles.cs",
+          "sourceSha256": "4364502af8bdf01e00bc82ba65ef19b9482cffafd2418a5b38de2ece5568449d",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilMath.MatrixCompare",
+              "line": 80
+            },
+            {
+              "call": "CSUtilSweepRC.MatchCurveDirection2",
+              "line": 107
+            },
+            {
+              "call": "CSUtilSweep.Sweep2NoProfile",
+              "line": 109
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "a4353b42-35a7-423f-ae34-c3b1b25adec4",
+      "nodeIndices": [
+        76
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0462",
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSUnderBezelRailTopInner1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSUnderBezelRailTopInner1.cs",
+          "sourceSha256": "a13dd010ca9db2990a9da10b1152247aae1fdb70c3d758f54472b1c39a4cc347",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Settings.Obsolete.Bezels.CSUnderBezelRailTopInner1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilGeometry.OriginOffsetXY",
+              "line": 56
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "9daf23c3-6347-4674-a7f4-328bd7126363",
+      "nodeIndices": [
+        78
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0449",
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelRailSeat1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelRailSeat1.cs",
+          "sourceSha256": "fa8a056ed163bfcd383b41da4fd41c659c311e24fa584789c9f1b4700c0b187e",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Settings.Obsolete.Bezels.CSBezelRailSeat1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilMath.ToRadians",
+              "line": 61
+            },
+            {
+              "call": "CSUtilGeometry.OriginOffsetXY",
+              "line": 66
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "31141403-9292-4819-8b70-b767f836d440",
+      "nodeIndices": [
+        82
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0535",
+          "type": "CSBlocks.Solids.Obsolete.CSJoinSurface1",
+          "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinSurface1.cs",
+          "sourceSha256": "83e762d3b66ae2f3a1cdf33645c9a5e2ac111d5bb23a81111fb2d512676d1f1c",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Solids.Obsolete.CSJoinSurface1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilRhino.JoinAllBreps_BackwardCompatibility",
+              "line": 57
+            },
+            {
+              "call": "CSUtilRhino.JoinAllBreps_BackwardCompatibility",
+              "line": 71
+            },
+            {
+              "call": "CSUtilRhino.JoinAllBreps_BackwardCompatibility",
+              "line": 100
+            },
+            {
+              "call": "CSUtilRhino.JoinAllBreps_BackwardCompatibility",
+              "line": 117
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "666100f2-c854-4a48-bca8-fbf6d94eed85",
+      "nodeIndices": [
+        85,
+        88
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 2,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0057",
+          "type": "CSBlocks.Caps.CSProfileCapNorth",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCapNorth.cs",
+          "sourceSha256": "db40349a9264aa409129a89c76f91b74fe328e765044f77705f0a793d3efc331",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Caps.CSProfileCapNorth",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilMath.AveragePlaneOfCurve",
+              "line": 40
+            },
+            {
+              "call": "Transform.ChangeBasis",
+              "line": 45
+            },
+            {
+              "call": "Transform.Translation",
+              "line": 47
+            },
+            {
+              "call": "CSUtilRailRevolve.RailRevolve",
+              "line": 61
+            },
+            {
+              "call": "CSUtilGeometry.CreateDomeRC",
+              "line": 61
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "38455005-5ef2-43db-8fb9-60e447d75d59",
+      "nodeIndices": [
+        95,
+        129,
+        180,
+        184
+      ],
+      "recordVersions": [
+        "1.1"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 4,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0010",
+          "type": "CS.CSValues.CSValue",
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "sourceSha256": "a7ccbf583e3576daf067140b5af52b21941bfc316e905cfebb48402b0ece6210",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CS.CSValues.CSValue",
+            "CS.CSValues.CSValueBase",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 295,
+                "end": 327,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 400,
+                "end": 423,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 281,
+                "end": 293,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 381,
+                "end": 398,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+                "line": 275,
+                "end": 279,
+                "declaredBy": "CS.CSValues.CSValue"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "fc789225-3f3b-41f5-9eb0-6c25d4fc54b8",
+      "nodeIndices": [
+        110,
+        117,
+        124
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 3,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0336",
+          "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer2RailXform1",
+          "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer2RailXform1.cs",
+          "sourceSha256": "5e230f30b088d5cfd76867c62bc96e0ae43b4be83d261e356d239d23595ca8d6",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Profiles.Obsolete.CSProfilePlacer2RailXform1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilGeometry.OrientProfileToCurveNalp",
+              "line": 67
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "8793b48f-30c7-4841-9314-157a5c7bb629",
+      "nodeIndices": [
+        111,
+        118,
+        125
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 3,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0290",
+          "type": "CSBlocks.Maths.CSAdd",
+          "path": "recovery/canonical/cad/CSBlocks.Maths/CSAdd.cs",
+          "sourceSha256": "e939e06e0c315b4c6cba790187b896e865131fcf5a9bc131857bf5eef77abfc0",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Maths.CSAdd",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "f19ea1ff-57e7-4922-9ff7-87535b49c1c6",
+      "nodeIndices": [
+        134
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0551",
+          "type": "CSBlocks.Sweeps.CSSimpleSweep2",
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2.cs",
+          "sourceSha256": "25c517ede878f84c989f96e03100c2ed0d49c5e3fc4debcf4efe060ca7d1bf2f",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Sweeps.CSSimpleSweep2",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilSweep.Sweep2NoParam",
+              "line": 126
+            },
+            {
+              "call": "CSUtilSweep.Sweep2",
+              "line": 131
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8",
+      "nodeIndices": [
+        138,
+        139
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 2,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0055",
+          "type": "CSBlocks.Caps.CSProfileCap",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCap.cs",
+          "sourceSha256": "9adefc9dae390feb8dc2459e97ad842092306f57d640bba6c22b2904601ba737",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Caps.CSProfileCap",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilMath.AveragePlaneOfCurve",
+              "line": 40
+            },
+            {
+              "call": "Transform.ChangeBasis",
+              "line": 45
+            },
+            {
+              "call": "Transform.Translation",
+              "line": 48
+            },
+            {
+              "call": "CSUtilRailRevolve.RailRevolve",
+              "line": 56
+            },
+            {
+              "call": "CSUtilGeometry.CreateDomeRC",
+              "line": 56
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "ce5be8f9-4162-4438-99e4-a2606573f739",
+      "nodeIndices": [
+        140
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0533",
+          "type": "CSBlocks.Solids.Obsolete.CSJoinBrep1",
+          "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinBrep1.cs",
+          "sourceSha256": "e89c3e1fc4828c155505109d80b4f560440bbb0046c7c7699f433d576609b12c",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Solids.Obsolete.CSJoinBrep1",
+            "CS.CSObjects.CSBlocks.CSBlockExpandableInput",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilRhino.JoinAllBreps",
+              "line": 60
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+                "line": 93,
+                "end": 102,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlockExpandableInput"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+                "line": 82,
+                "end": 91,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlockExpandableInput"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "75c4e7c9-b17a-45af-9b5a-fcbd39e8eee0",
+      "nodeIndices": [
+        155
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0247",
+          "type": "CSBlocks.Gems.Obsolete.CSGemOnCrv1",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemOnCrv1.cs",
+          "sourceSha256": "0d10eda29ea891835e25c4c9978699d3f0f6709f20a60af389b8092e05b0106b",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Gems.Obsolete.CSGemOnCrv1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "0b55db1b-e05c-470f-87c1-723e9c81a30a",
+      "nodeIndices": [
+        158
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0271",
+          "type": "CSBlocks.Gems.Obsolete.CSSortGems1",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSSortGems1.cs",
+          "sourceSha256": "031e23636258777700138da6885140c6ecfb765257dc5531d31bbf47bdf37da8",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Gems.Obsolete.CSSortGems1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilGemRails.SortGems",
+              "line": 41
+            },
+            {
+              "call": "CSUtilGemRails.CreateRails",
+              "line": 44
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "5fde6939-bfe2-421d-bb00-6720ca131f6b",
+      "nodeIndices": [
+        177
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0178",
+          "type": "CSBlocks.Cutters.Obsolete.CSChannelFromGems1",
+          "path": "recovery/canonical/cad/CSBlocks.Cutters.Obsolete/CSChannelFromGems1.cs",
+          "sourceSha256": "79fd9d8eff1f8b40aab5e6f40802921662eabe76c4750837887d5b747a741696",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Cutters.Obsolete.CSChannelFromGems1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "20208fc4-d012-4524-a54d-41d657d6c5dd",
+      "nodeIndices": [
+        181,
+        185
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 2,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0621",
+          "type": "CSBlocks.Transforms.Obsolete.CSMirror1",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms.Obsolete/CSMirror1.cs",
+          "sourceSha256": "45807392baf55e457b0960d086473f54af8b8e805b877242ace52b1d01dd8309",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Transforms.Obsolete.CSMirror1",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "Transform.Scale",
+              "line": 66
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 84
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 102
+            },
+            {
+              "call": "Transform.Scale",
+              "line": 136
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "d8022cc9-8ac7-4416-9195-551f462e4150",
+      "nodeIndices": [
+        188
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 1,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0523",
+          "type": "CSBlocks.Solids.CSBooleanDifference",
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+          "sourceSha256": "1147a8fd9208503c5b14945ed726327149acc2e5282d30239dfbb5b650aa1594",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Solids.CSBooleanDifference",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilDataHelper.GetCleanBrepInput",
+              "line": 38
+            },
+            {
+              "call": "CSUtilDataHelper.GetCleanBrepInput",
+              "line": 39
+            },
+            {
+              "call": "Brep.CreateBooleanIntersection",
+              "line": 40
+            },
+            {
+              "call": "Brep.CreateBooleanDifference",
+              "line": 40
+            },
+            {
+              "call": "CSUtilDataHelper.CleanBrepArray",
+              "line": 46
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "7fcb7f8b-ae18-45ba-9214-71ab069103af",
+      "nodeIndices": [
+        191,
+        239
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 2,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0101",
+          "type": "CSBlocks.Core.Obsolete.CSBoundingBox2",
+          "path": "recovery/canonical/cad/CSBlocks.Core.Obsolete/CSBoundingBox2.cs",
+          "sourceSha256": "785d1f57ec122283f07256d19398e115f56c9fa0f7e103078f4349eb9bd65789",
+          "legacy": true,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Core.Obsolete.CSBoundingBox2",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "ab0b1915-63d5-447e-aa30-ab28e9422c1e",
+      "nodeIndices": [
+        192,
+        240
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 2,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0634",
+          "type": "CSBlocks.UDT.CSPullToRail",
+          "path": "recovery/canonical/cad/CSBlocks.UDT/CSPullToRail.cs",
+          "sourceSha256": "d362f87d827e076d0989306f859aab375282605d6d06c0822e4a6e888ecc984a",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.UDT.CSPullToRail",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilMath.GetUnscaledXform",
+              "line": 75
+            },
+            {
+              "call": "CSUtilMath.AngleOfPointD",
+              "line": 80
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "guid": "bed891fd-e917-4968-b3d1-418d293e0e92",
+      "nodeIndices": [
+        233,
+        236
+      ],
+      "recordVersions": [
+        "1.0"
+      ],
+      "numericDecoded": 0,
+      "opaquePayloads": 2,
+      "registrationAmbiguous": false,
+      "registrations": [
+        {
+          "serializerId": "SER-0528",
+          "type": "CSBlocks.Solids.CSCapPlanarHoles",
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSCapPlanarHoles.cs",
+          "sourceSha256": "fc4ab6c5848dbaa297ce00768fe2b3e02cc5eb947a34c7216325f56dc0001e0e",
+          "legacy": false,
+          "inventoryMatches": 1,
+          "baseChain": [
+            "CSBlocks.Solids.CSCapPlanarHoles",
+            "CS.CSObjects.CSBlocks.CSBlock",
+            "CS.CSObjects.CSObject"
+          ],
+          "resolutionIssues": [],
+          "directStaticCalls": [
+            {
+              "call": "CSUtilRhino.CapPlanarHoles",
+              "line": 43
+            },
+            {
+              "call": "CSUtilGeometry.FixBrepSolidOrientation",
+              "line": 48
+            }
+          ],
+          "serializerSources": {
+            "Read": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 342,
+                "end": 435,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "Write": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 914,
+                "end": 939,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "ReadJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 437,
+                "end": 518,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "WriteJson": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+                "line": 941,
+                "end": 965,
+                "declaredBy": "CS.CSObjects.CSBlocks.CSBlock"
+              }
+            ],
+            "MajorMinorVersion": [
+              {
+                "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+                "line": 1071,
+                "end": 1075,
+                "declaredBy": "CS.CSObjects.CSObject"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "directStaticCallFootprint": [
+    {
+      "call": "Brep.CreateBooleanDifference",
+      "evidence": [
+        {
+          "type": "CSBlocks.Solids.CSBooleanDifference",
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+          "line": 40,
+          "guid": "d8022cc9-8ac7-4416-9195-551f462e4150"
+        }
+      ]
+    },
+    {
+      "call": "Brep.CreateBooleanIntersection",
+      "evidence": [
+        {
+          "type": "CSBlocks.Solids.CSBooleanDifference",
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+          "line": 40,
+          "guid": "d8022cc9-8ac7-4416-9195-551f462e4150"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilDataHelper.CleanBrepArray",
+      "evidence": [
+        {
+          "type": "CSBlocks.Solids.CSBooleanDifference",
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+          "line": 46,
+          "guid": "d8022cc9-8ac7-4416-9195-551f462e4150"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilDataHelper.GetCleanBrepInput",
+      "evidence": [
+        {
+          "type": "CSBlocks.Solids.CSBooleanDifference",
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+          "line": 38,
+          "guid": "d8022cc9-8ac7-4416-9195-551f462e4150"
+        },
+        {
+          "type": "CSBlocks.Solids.CSBooleanDifference",
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+          "line": 39,
+          "guid": "d8022cc9-8ac7-4416-9195-551f462e4150"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilGem.GetGemZOffset",
+      "evidence": [
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 112,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilGemRails.CreateRails",
+      "evidence": [
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSSortGems1",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSSortGems1.cs",
+          "line": 44,
+          "guid": "0b55db1b-e05c-470f-87c1-723e9c81a30a"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilGemRails.SortGems",
+      "evidence": [
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSSortGems1",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSSortGems1.cs",
+          "line": 41,
+          "guid": "0b55db1b-e05c-470f-87c1-723e9c81a30a"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilGeometry.CreateDomeRC",
+      "evidence": [
+        {
+          "type": "CSBlocks.Caps.CSProfileCapNorth",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCapNorth.cs",
+          "line": 61,
+          "guid": "666100f2-c854-4a48-bca8-fbf6d94eed85"
+        },
+        {
+          "type": "CSBlocks.Caps.CSProfileCap",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCap.cs",
+          "line": 56,
+          "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilGeometry.FixBrepSolidOrientation",
+      "evidence": [
+        {
+          "type": "CSBlocks.Solids.CSCapPlanarHoles",
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSCapPlanarHoles.cs",
+          "line": 48,
+          "guid": "bed891fd-e917-4968-b3d1-418d293e0e92"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilGeometry.GetMinMax",
+      "evidence": [
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 81,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilGeometry.OrientProfileToCurveNalp",
+      "evidence": [
+        {
+          "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer2RailXform1",
+          "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer2RailXform1.cs",
+          "line": 67,
+          "guid": "fc789225-3f3b-41f5-9eb0-6c25d4fc54b8"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilGeometry.OriginOffset",
+      "evidence": [
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 113,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilGeometry.OriginOffsetXY",
+      "evidence": [
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSUnderBezelRailTopOuter1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSUnderBezelRailTopOuter1.cs",
+          "line": 62,
+          "guid": "dd1e8b0b-c53f-42c5-adbc-d53c516b62af"
+        },
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelRailBottomInner1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelRailBottomInner1.cs",
+          "line": 56,
+          "guid": "c9cc249e-0ccd-498c-93b0-96480fb6b232"
+        },
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSUnderBezelRailTopInner1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSUnderBezelRailTopInner1.cs",
+          "line": 56,
+          "guid": "a4353b42-35a7-423f-ae34-c3b1b25adec4"
+        },
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelRailSeat1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelRailSeat1.cs",
+          "line": 66,
+          "guid": "9daf23c3-6347-4674-a7f4-328bd7126363"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilIO.GeometryBaseFromString",
+      "evidence": [
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 279,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilIO.GeometryBaseToString",
+      "evidence": [
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 405,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilIO.ReadArray",
+      "evidence": [
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 226,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        },
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 241,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        },
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 254,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        },
+        {
+          "type": "CSBlocks.Core.Obsolete.CSGroupOfGems1",
+          "path": "recovery/canonical/cad/CSBlocks.Core.Obsolete/CSGroupOfGems1.cs",
+          "line": 141,
+          "guid": "adb397e0-30f0-49f4-adfc-94a2fc9109b6"
+        },
+        {
+          "type": "CSBlocks.Core.Obsolete.CSGroupOfGems1",
+          "path": "recovery/canonical/cad/CSBlocks.Core.Obsolete/CSGroupOfGems1.cs",
+          "line": 142,
+          "guid": "adb397e0-30f0-49f4-adfc-94a2fc9109b6"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilIO.WriteArray",
+      "evidence": [
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 387,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        },
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 391,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        },
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 393,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilMath.AngleOfPointD",
+      "evidence": [
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelSurfaceOutside1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelSurfaceOutside1.cs",
+          "line": 137,
+          "guid": "79a34a3e-d655-478a-8740-9ddcd3bcc9ba"
+        },
+        {
+          "type": "CSBlocks.UDT.CSPullToRail",
+          "path": "recovery/canonical/cad/CSBlocks.UDT/CSPullToRail.cs",
+          "line": 80,
+          "guid": "ab0b1915-63d5-447e-aa30-ab28e9422c1e"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilMath.AveragePlaneOfCurve",
+      "evidence": [
+        {
+          "type": "CSBlocks.Caps.CSProfileCapNorth",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCapNorth.cs",
+          "line": 40,
+          "guid": "666100f2-c854-4a48-bca8-fbf6d94eed85"
+        },
+        {
+          "type": "CSBlocks.Caps.CSProfileCap",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCap.cs",
+          "line": 40,
+          "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilMath.GetUnscaledXform",
+      "evidence": [
+        {
+          "type": "CSBlocks.UDT.CSPullToRail",
+          "path": "recovery/canonical/cad/CSBlocks.UDT/CSPullToRail.cs",
+          "line": 75,
+          "guid": "ab0b1915-63d5-447e-aa30-ab28e9422c1e"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilMath.GetUnscaledXforms",
+      "evidence": [
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSUnderBezelRailTopOuter1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSUnderBezelRailTopOuter1.cs",
+          "line": 50,
+          "guid": "dd1e8b0b-c53f-42c5-adbc-d53c516b62af"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilMath.MatrixCompare",
+      "evidence": [
+        {
+          "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2NoProfiles.cs",
+          "line": 80,
+          "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilMath.Orient3Point",
+      "evidence": [
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 213,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        },
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 246,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        },
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 278,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        },
+        {
+          "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+          "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer1RailXform1.cs",
+          "line": 63,
+          "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c"
+        },
+        {
+          "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+          "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer1RailXform1.cs",
+          "line": 71,
+          "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c"
+        },
+        {
+          "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+          "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer1RailXform1.cs",
+          "line": 77,
+          "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c"
+        },
+        {
+          "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+          "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer1RailXform1.cs",
+          "line": 88,
+          "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c"
+        },
+        {
+          "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+          "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer1RailXform1.cs",
+          "line": 99,
+          "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilMath.Rotation",
+      "evidence": [
+        {
+          "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
+          "line": 49,
+          "guid": "8c04b2e7-408f-40cd-920f-803c3a395275"
+        },
+        {
+          "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
+          "line": 50,
+          "guid": "8c04b2e7-408f-40cd-920f-803c3a395275"
+        },
+        {
+          "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
+          "line": 51,
+          "guid": "8c04b2e7-408f-40cd-920f-803c3a395275"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilMath.ToRadians",
+      "evidence": [
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 88,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        },
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 90,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        },
+        {
+          "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
+          "line": 49,
+          "guid": "8c04b2e7-408f-40cd-920f-803c3a395275"
+        },
+        {
+          "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
+          "line": 50,
+          "guid": "8c04b2e7-408f-40cd-920f-803c3a395275"
+        },
+        {
+          "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
+          "line": 51,
+          "guid": "8c04b2e7-408f-40cd-920f-803c3a395275"
+        },
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelSurfaceOutside1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelSurfaceOutside1.cs",
+          "line": 132,
+          "guid": "79a34a3e-d655-478a-8740-9ddcd3bcc9ba"
+        },
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelSurfaceOutside1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelSurfaceOutside1.cs",
+          "line": 134,
+          "guid": "79a34a3e-d655-478a-8740-9ddcd3bcc9ba"
+        },
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelSurfaceOutside1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelSurfaceOutside1.cs",
+          "line": 139,
+          "guid": "79a34a3e-d655-478a-8740-9ddcd3bcc9ba"
+        },
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelRailSeat1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelRailSeat1.cs",
+          "line": 61,
+          "guid": "9daf23c3-6347-4674-a7f4-328bd7126363"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilRailRevolve.RailRevolve",
+      "evidence": [
+        {
+          "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelSurfaceOutside1",
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezelSurfaceOutside1.cs",
+          "line": 150,
+          "guid": "79a34a3e-d655-478a-8740-9ddcd3bcc9ba"
+        },
+        {
+          "type": "CSBlocks.Caps.CSProfileCapNorth",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCapNorth.cs",
+          "line": 61,
+          "guid": "666100f2-c854-4a48-bca8-fbf6d94eed85"
+        },
+        {
+          "type": "CSBlocks.Caps.CSProfileCap",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCap.cs",
+          "line": 56,
+          "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilRhino.CapPlanarHoles",
+      "evidence": [
+        {
+          "type": "CSBlocks.Solids.CSCapPlanarHoles",
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSCapPlanarHoles.cs",
+          "line": 43,
+          "guid": "bed891fd-e917-4968-b3d1-418d293e0e92"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilRhino.FindObjectInDocument",
+      "evidence": [
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 67,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        },
+        {
+          "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+          "line": 109,
+          "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilRhino.JoinAllBreps",
+      "evidence": [
+        {
+          "type": "CSBlocks.Solids.Obsolete.CSJoinBrep1",
+          "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinBrep1.cs",
+          "line": 60,
+          "guid": "ce5be8f9-4162-4438-99e4-a2606573f739"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilRhino.JoinAllBreps_BackwardCompatibility",
+      "evidence": [
+        {
+          "type": "CSBlocks.Solids.Obsolete.CSJoinSurface1",
+          "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinSurface1.cs",
+          "line": 57,
+          "guid": "31141403-9292-4819-8b70-b767f836d440"
+        },
+        {
+          "type": "CSBlocks.Solids.Obsolete.CSJoinSurface1",
+          "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinSurface1.cs",
+          "line": 71,
+          "guid": "31141403-9292-4819-8b70-b767f836d440"
+        },
+        {
+          "type": "CSBlocks.Solids.Obsolete.CSJoinSurface1",
+          "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinSurface1.cs",
+          "line": 100,
+          "guid": "31141403-9292-4819-8b70-b767f836d440"
+        },
+        {
+          "type": "CSBlocks.Solids.Obsolete.CSJoinSurface1",
+          "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinSurface1.cs",
+          "line": 117,
+          "guid": "31141403-9292-4819-8b70-b767f836d440"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilRingRail.GetRingRailPointExtents",
+      "evidence": [
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 92,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 104,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 114,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilSweep.Sweep2",
+      "evidence": [
+        {
+          "type": "CSBlocks.Sweeps.CSSimpleSweep2",
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2.cs",
+          "line": 131,
+          "guid": "f19ea1ff-57e7-4922-9ff7-87535b49c1c6"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilSweep.Sweep2NoParam",
+      "evidence": [
+        {
+          "type": "CSBlocks.Sweeps.CSSimpleSweep2",
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2.cs",
+          "line": 126,
+          "guid": "f19ea1ff-57e7-4922-9ff7-87535b49c1c6"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilSweep.Sweep2NoProfile",
+      "evidence": [
+        {
+          "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2NoProfiles.cs",
+          "line": 109,
+          "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e"
+        }
+      ]
+    },
+    {
+      "call": "CSUtilSweepRC.MatchCurveDirection2",
+      "evidence": [
+        {
+          "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2NoProfiles.cs",
+          "line": 107,
+          "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e"
+        }
+      ]
+    },
+    {
+      "call": "Curve.JoinCurves",
+      "evidence": [
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 154,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        }
+      ]
+    },
+    {
+      "call": "Intersection.CurveCurve",
+      "evidence": [
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 130,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 160,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        }
+      ]
+    },
+    {
+      "call": "NurbsCurve.Convert",
+      "evidence": [
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 74,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        }
+      ]
+    },
+    {
+      "call": "OnUtil.CloseFile",
+      "evidence": [
+        {
+          "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+          "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+          "line": 541,
+          "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1"
+        },
+        {
+          "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+          "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+          "line": 547,
+          "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1"
+        },
+        {
+          "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+          "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+          "line": 554,
+          "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1"
+        }
+      ]
+    },
+    {
+      "call": "OnUtil.ON_CrossProduct",
+      "evidence": [
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 101,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        },
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 109,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        },
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 202,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        },
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 235,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        },
+        {
+          "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSGemPlacer2.cs",
+          "line": 267,
+          "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc"
+        }
+      ]
+    },
+    {
+      "call": "OnUtil.OpenFile",
+      "evidence": [
+        {
+          "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+          "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+          "line": 525,
+          "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1"
+        },
+        {
+          "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+          "path": "recovery/canonical/cad/CS.CSObjects.CSTreeObjects/CSPatchWireStart.cs",
+          "line": 590,
+          "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1"
+        }
+      ]
+    },
+    {
+      "call": "Transform.ChangeBasis",
+      "evidence": [
+        {
+          "type": "CSBlocks.Caps.CSProfileCapNorth",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCapNorth.cs",
+          "line": 45,
+          "guid": "666100f2-c854-4a48-bca8-fbf6d94eed85"
+        },
+        {
+          "type": "CSBlocks.Caps.CSProfileCap",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCap.cs",
+          "line": 45,
+          "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8"
+        }
+      ]
+    },
+    {
+      "call": "Transform.Scale",
+      "evidence": [
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 90,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 102,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 112,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 120,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 128,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 150,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 151,
+          "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3"
+        },
+        {
+          "type": "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSScaleObjectToSizeXform.cs",
+          "line": 66,
+          "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c"
+        },
+        {
+          "type": "CSBlocks.Transforms.Obsolete.CSMirror1",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms.Obsolete/CSMirror1.cs",
+          "line": 66,
+          "guid": "20208fc4-d012-4524-a54d-41d657d6c5dd"
+        },
+        {
+          "type": "CSBlocks.Transforms.Obsolete.CSMirror1",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms.Obsolete/CSMirror1.cs",
+          "line": 84,
+          "guid": "20208fc4-d012-4524-a54d-41d657d6c5dd"
+        },
+        {
+          "type": "CSBlocks.Transforms.Obsolete.CSMirror1",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms.Obsolete/CSMirror1.cs",
+          "line": 102,
+          "guid": "20208fc4-d012-4524-a54d-41d657d6c5dd"
+        },
+        {
+          "type": "CSBlocks.Transforms.Obsolete.CSMirror1",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms.Obsolete/CSMirror1.cs",
+          "line": 136,
+          "guid": "20208fc4-d012-4524-a54d-41d657d6c5dd"
+        }
+      ]
+    },
+    {
+      "call": "Transform.Translation",
+      "evidence": [
+        {
+          "type": "CSBlocks.Transforms.CSTranslateObjectXform",
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTranslateObjectXform.cs",
+          "line": 60,
+          "guid": "f9af1449-1903-4d26-92df-6febc8a61427"
+        },
+        {
+          "type": "CSBlocks.Caps.CSProfileCapNorth",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCapNorth.cs",
+          "line": 47,
+          "guid": "666100f2-c854-4a48-bca8-fbf6d94eed85"
+        },
+        {
+          "type": "CSBlocks.Caps.CSProfileCap",
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCap.cs",
+          "line": 48,
+          "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "All serialized nodes included; active outputs and graph edge reachability not decoded for opaque records.",
+    "Numeric decoding covers only the two existing supported numeric record classes, not all value types.",
+    "Direct lexical static calls omit instance calls, dispatch, base methods and transitive helpers. Zero calls is not geometry-free.",
+    "Registration GUID/source mapping and serializer locations do not prove supported record versions or runtime parity.",
+    "Nested preview/gem checksums remain opaque as recorded by the independent reader.",
+    "Current candidate handles/booleans do not regenerate this design. Native rails, profiles, sweeps, caps, gem data, morphing, legacy semantics and PC oracle remain required."
+  ]
+}

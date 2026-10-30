@@ -32,6 +32,8 @@ jobs:
         run: node --test tests/ios-device.test.cjs
       - name: Verify full recovery, source links and work ledgers
         run: node tools/repository/check.cjs --record
+      - name: Verify available library serialized type footprint
+        run: node scripts/library-type-footprint.cjs --check
       - name: Build source and metadata audit tools
         run: |
           node scripts/run-local.cjs dotnet build tools/SourceAudit --nologo -v:q

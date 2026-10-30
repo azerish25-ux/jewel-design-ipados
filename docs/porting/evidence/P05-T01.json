@@ -8,7 +8,10 @@
     "docs/porting/kernel/transform-caller-contracts.json",
     "docs/porting/kernel/TRANSFORM_SEMANTICS.md",
     "docs/porting/kernel/surface-caller-contracts.json",
-    "docs/porting/kernel/SURFACE_SEMANTICS.md"
+    "docs/porting/kernel/SURFACE_SEMANTICS.md",
+    "scripts/library-type-footprint.cjs",
+    "docs/porting/kernel/library-type-footprint.json",
+    "docs/porting/kernel/LIBRARY_TYPE_FOOTPRINT.md"
   ],
   "sourceEvidence": [
     {
@@ -112,6 +115,11 @@
       "id": "P05-T01-A03",
       "scope": "Loft/planar extrusion, sampled seam score/tie rules, short-segment and join path; sweeps and native semantics still open",
       "status": "source_observed"
+    },
+    {
+      "id": "P05-T01-A04",
+      "scope": "Pinned library serialized type/legacy/source footprint; not active graph reachability or transitive runtime closure",
+      "status": "source_inventory_verified"
     }
   ],
   "checks": [
@@ -128,6 +136,13 @@
       "expectedExitCode": 0,
       "artifact": "docs/porting/kernel/transform-caller-contracts.json",
       "actual": "Matrix expressions, point failure behavior, output order, duplicate/flip asymmetry and dispatch return behavior recorded; no PC/native runtime claim"
+    },
+    {
+      "command": "node scripts/run-local.cjs node scripts/library-type-footprint.cjs --write; node scripts/run-local.cjs node scripts/library-type-footprint.cjs --check",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/porting/kernel/library-type-footprint.json",
+      "actual": "241 nodes/43 GUIDs, 0 unknown/ambiguous registrations, 33 legacy-node occurrences, 74 numeric decoded/167 opaque payloads, 44 unique direct lexical static call names. Source hashes and registration anchors validated; instance/helper/base/runtime closure unproved."
     }
   ],
   "review": {
