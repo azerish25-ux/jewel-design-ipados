@@ -96,7 +96,8 @@
     "src/Port/Features.Candidate/StoredMatrixProfileCandidate.cs",
     "tests/Port/Geometry.Candidate.Contracts/StoredProfileAssertions.cs",
     "docs/porting/plans/P05-T02-A18-stored-nurbs-import.md",
-    "docs/porting/ADR-0023-stored-nurbs-import.md"
+    "docs/porting/ADR-0023-stored-nurbs-import.md",
+    "docs/evidence/apple/stored-nurbs-import-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -418,7 +419,7 @@
     {
       "id": "P05-T02-A18",
       "scope": "Exact standard NURBS construction/all155 stored curve import and stored chooser actual-profile OutsideRail path",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_stored_nurbs_import"
     }
   ],
   "checks": [
@@ -937,13 +938,13 @@
       "id": 41079138260,
       "commit": "d1caac56fd2adeb29a46389b34f76bd2e9b6cb65",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41079138260",
-      "verification": "Exact stored NURBS import host and iPad/iPhone jobs confirmed running; terminal verification pending"
+      "verification": "SUCCESS: inspected actual iPad/iPhone/imports/all5 OutsideRail/stored chooser reports and hashes; stored-nurbs-import-results.json. New value graph not covered."
     },
     {
       "id": 41079142975,
       "commit": "d1caac56fd2adeb29a46389b34f76bd2e9b6cb65",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41079142975",
-      "verification": "Exact stored NURBS import unsigned device job confirmed running; terminal verification pending"
+      "verification": "SUCCESS: inspected unsigned arm64/platform IOS executable and Release log52 warnings0 errors; no physical execution"
     }
   ]
 }

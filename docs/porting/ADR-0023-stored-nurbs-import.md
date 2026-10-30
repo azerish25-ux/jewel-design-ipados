@@ -1,6 +1,6 @@
 # ADR0023: exact stored NURBS import and stored profile selection
 
-Status: actual Windows native/CSharp tests pass for all155 curves and all five outside-profile choices; Apple validation pending.
+Status: bounded Windows/iPad/iPhone155-curve import/all5 profile-choice assertions and unsigned device linking verified atd1caac5.
 
 CandidateNurbsDefinition copies standard full knots, Euclidean3D poles and optional declared rational weights. CreateNurbs passes counted primitive arrays through the context/SafeHandle factory to a real Geom_BSplineCurve and validated BRep edge. The native boundary checks finite coordinates/knots/positive weights, counts/domain/multiplicity and explicit degree/resource/continuous-edge limits. Unsupported input never becomes a fitted polyline, mesh, cached preview or circle.
 
@@ -17,3 +17,5 @@ Candidate geometry uses a nonperiodic native representation over the valid store
 Next: bind decoded headers/links to real graph/chooser activation and override behavior, output rail-data properties and dependent builders; retain original-PC/physical-device/rendering/performance/cancellation/process-memory and full application parity requirements.
 
 [Work card](plans/P05-T02-A18-stored-nurbs-import.md), [task evidence](evidence/P05-T02.json), [pinned end-knot convention](https://github.com/mcneel/opennurbs/blob/eb92af3ba1806b0a34a99aba0d3bda83e3d46083/opennurbs_knot.cpp).
+
+[Actual Apple import reports](../evidence/apple/stored-nurbs-import-results.json) preserve selected/actual families, assertions and hashes; new channel evaluation is a separate checkpoint.

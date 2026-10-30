@@ -10,7 +10,7 @@ Sources: CSValue.Value/IsOn/Update/GetOutputChannelData, CSValueOnOff/Chooser ge
 - [x] Add structural existing-scalar input-link rewiring preserving bounds/header/raw fields and exact save/reopen/reversal.
 - [x] Test real fixture values, inactive/empty/zero/missing/conversion, override latching/previous state, negated/one-minus/special channels/CAM/-0/NaN, cycles/unknowns, rewires/save/reopen and generated chooser-to-native profile flow.
 - [x] Run local source oracle, document/native/reference/provenance checks; document known subset vs complete graph semantics in ADR0024.
-- [ ] Push/dispatch actual Apple simulator/AOT jobs, preserving earlier runs.
+- [x] Push/dispatch actual Apple simulator/AOT jobs, preserving earlier runs. Runs41084116370/41084119917 at8a764f7 confirmed live/queued.
 - [ ] Inspect actual channel/source-case/native-geometry/family/AOT artifacts before bounded verification.
 
 Limits: no full graph scheduling/dirty propagation/loop/UI semantics, unsupported producer implementations, IsUIDisabled/chooser disabled cycling, CAM serialization/migration, arbitrary input kinds or original-PC/physical/app parity. Legacy known input1.x mode initializes absent CAM fields to constructor defaults; runtime CAM state is explicit.

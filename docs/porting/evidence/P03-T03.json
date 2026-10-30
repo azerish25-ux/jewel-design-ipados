@@ -263,6 +263,18 @@
       "id": 41000064618,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41000064618",
       "verification": "success; clean checkout repository and bounded proofs for 47ef665"
+    },
+    {
+      "id": 41084116370,
+      "commit": "8a764f74e08cedbd094e3174dfd804ad1cff9c6b",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41084116370",
+      "verification": "Value-channel/source-oracle/native bridge host running; iPad/iPhone queued confirmed live; terminal verification pending"
+    },
+    {
+      "id": 41084119917,
+      "commit": "8a764f74e08cedbd094e3174dfd804ad1cff9c6b",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41084119917",
+      "verification": "Value-channel/source-oracle/native bridge unsigned device running confirmed live; terminal verification pending"
     }
   ],
   "requirementIds": [

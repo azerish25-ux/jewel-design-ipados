@@ -11,6 +11,8 @@ Pinned OCCT Geom_BSplineCurve constructors require Euclidean poles/optional posi
 - [x] Execute OutsideRail using actual stored selected curve, real radius/thickness/lock candidates, edit/save/reopen/rebuild/undo; distinguish native geometry rebuild from full PC project serialization.
 - [x] Run Windows native/shared/document/reference/provenance gates, review and record source hashes.
 - [x] Push and dispatch actual macOS simulator/device tests; preserve existing runs. Runs41079138260/41079142975 atd1caac5 confirmed running.
-- [ ] Inspect actual family/native/import/chooser and AOT platform reports before bounded verification.
+- [x] Inspect actual family/native/import/chooser and AOT platform reports before bounded verification.
 
 Limits: negative/zero weights, native degree/resource/continuity limits or invalid data must reject explicitly, never fit a surrogate. Native periodic representation, extrapolation and original Rhino numeric/ordering policies remain comparison gates. General chooser nesting/IsOn/override/channels/output-data and PC/physical/device-performance acceptance remain in scope.
+
+Bounded [Apple native-import execution/AOT reports](../../evidence/apple/stored-nurbs-import-results.json) atd1caac5 inspected; active graph/PC/physical parity remains open.
