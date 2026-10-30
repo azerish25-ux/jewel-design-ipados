@@ -60,6 +60,34 @@
       "fullyConsumed": true
     },
     {
+      "index": 51,
+      "type": "CSRotateObjectDegXform",
+      "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+      "identifier": "Profile Rotate 1",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Rotate 1"
+        }
+      ],
+      "objects": [
+        43,
+        44,
+        45,
+        -1
+      ],
+      "channels": [
+        0,
+        0,
+        0,
+        -5
+      ],
+      "fullyConsumed": true
+    },
+    {
       "index": 55,
       "type": "CSScaleObjectToSizeXform",
       "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
@@ -105,6 +133,34 @@
         40,
         41,
         42,
+        46
+      ],
+      "channels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 57,
+      "type": "CSRotateObjectDegXform",
+      "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+      "identifier": "Profile Rotate 2",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Rotate 2"
+        }
+      ],
+      "objects": [
+        43,
+        44,
+        45,
         46
       ],
       "channels": [
@@ -196,6 +252,34 @@
       "fullyConsumed": true
     },
     {
+      "index": 114,
+      "type": "CSRotateObjectDegXform",
+      "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+      "identifier": "Profile Rotate 1",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Rotate 1"
+        }
+      ],
+      "objects": [
+        105,
+        106,
+        107,
+        -1
+      ],
+      "channels": [
+        0,
+        0,
+        0,
+        -5
+      ],
+      "fullyConsumed": true
+    },
+    {
       "index": 118,
       "type": "CSAdd",
       "guid": "8793b48f-30c7-4841-9314-157a5c7bb629",
@@ -265,6 +349,34 @@
         102,
         103,
         104,
+        108
+      ],
+      "channels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 121,
+      "type": "CSRotateObjectDegXform",
+      "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+      "identifier": "Profile Rotate 2",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Rotate 2"
+        }
+      ],
+      "objects": [
+        105,
+        106,
+        107,
         108
       ],
       "channels": [
@@ -384,6 +496,34 @@
       "fullyConsumed": true
     },
     {
+      "index": 214,
+      "type": "CSRotateObjectDegXform",
+      "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+      "identifier": "Profile Rotate 1",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Rotate 1"
+        }
+      ],
+      "objects": [
+        206,
+        207,
+        208,
+        -1
+      ],
+      "channels": [
+        0,
+        0,
+        0,
+        -5
+      ],
+      "fullyConsumed": true
+    },
+    {
       "index": 218,
       "type": "CSScaleObjectToSizeXform",
       "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
@@ -438,9 +578,41 @@
         0
       ],
       "fullyConsumed": true
+    },
+    {
+      "index": 220,
+      "type": "CSRotateObjectDegXform",
+      "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+      "identifier": "Profile Rotate 2",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Rotate 2"
+        }
+      ],
+      "objects": [
+        206,
+        207,
+        208,
+        209
+      ],
+      "channels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "fullyConsumed": true
     }
   ],
   "sources": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
+      "sha256": "1576cb1341103a055848513030df23ddbf17bd7ff060e8f2b72c9fa1320b5ffb"
+    },
     {
       "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTranslateObjectXform.cs",
       "sha256": "863bb6cf6dc9227db1374f2a38afa127dc1002bd177f5e63a2b291926d6c47a0"

@@ -11,7 +11,7 @@ public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,I
 {
     private static readonly IReadOnlyDictionary<Guid,int> InputCounts=new Dictionary<Guid,int>{
         [RingRailV1Candidate.TypeGuid]=1,[OutsideRailV1Candidate.TypeGuid]=6,[LegacyCsg4Codec.SelectRingRailTypeGuid]=3,
-        [LegacyCsg4Codec.ProfilePlacement2RailTypeGuid]=4,[LegacyCsg4Codec.AddTypeGuid]=2,[LegacyCsg4Codec.TranslateObjectTypeGuid]=4,[LegacyCsg4Codec.ScaleObjectToSizeTypeGuid]=4
+        [LegacyCsg4Codec.ProfilePlacement2RailTypeGuid]=4,[LegacyCsg4Codec.RotateObjectTypeGuid]=4,[LegacyCsg4Codec.AddTypeGuid]=2,[LegacyCsg4Codec.TranslateObjectTypeGuid]=4,[LegacyCsg4Codec.ScaleObjectToSizeTypeGuid]=4
     };
     private sealed class Output:IDisposable
     {
@@ -76,7 +76,7 @@ public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,I
         Output entry;
         if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.ProfilePlacement2RailTypeGuid){
             entry=PlacementOutput(index);
-        }else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.AddTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.TranslateObjectTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.ScaleObjectToSizeTypeGuid){
+        }else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.RotateObjectTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.AddTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.TranslateObjectTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.ScaleObjectToSizeTypeGuid){
             entry=TransformOutput(index);
         }else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.SelectRingRailTypeGuid){
             entry=SelectOutput(index);

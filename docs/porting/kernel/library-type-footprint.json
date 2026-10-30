@@ -31,7 +31,7 @@
     {
       "path": "src/Port/Documents/LegacyCsg4Codec.cs",
       "normalization": "utf8-lf",
-      "sha256": "4e3eaa456ac25bf2bc5fa031874f0c81f4ed6e7d42ac6d49d06e879e63bffc00"
+      "sha256": "b56dcc7297a2217dfad30be2b4133fc7db3c91d27f7697bafe3144775355364c"
     },
     {
       "path": "src/Port/Documents/LegacyCsg4Scalar.cs",
@@ -71,7 +71,7 @@
     {
       "path": "reference/file-proof/transform-producers-v1.cjs",
       "normalization": "utf8-lf",
-      "sha256": "ea5697667c4c82cf67164219e38b8672c145ff31a7eac22976cbe00ff1cab7a4"
+      "sha256": "8292a2494ff1916225628506fa864b67698f05ae4f9f723526a6fc4da6679019"
     },
     {
       "path": "reference/file-proof/profile-placement-v1.cjs",
@@ -85,11 +85,11 @@
     "numericDecoded": 74,
     "scalarDecoded": 100,
     "railBlockHeadersDecoded": 3,
-    "transformProducerHeadersDecoded": 16,
+    "transformProducerHeadersDecoded": 22,
     "profilePlacementHeadersDecoded": 3,
     "matrixProfileGroupsDecoded": 6,
     "embeddedProfileCurves": 155,
-    "opaquePayloads": 113,
+    "opaquePayloads": 107,
     "unknownGuids": 0,
     "ambiguousGuids": 0,
     "legacyNodes": 33,
@@ -1776,10 +1776,10 @@
       "numericDecoded": 0,
       "scalarDecoded": 0,
       "railHeadersDecoded": 0,
-      "transformHeadersDecoded": 0,
+      "transformHeadersDecoded": 6,
       "placementHeadersDecoded": 0,
       "matrixProfilesDecoded": 0,
-      "opaquePayloads": 6,
+      "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
         {

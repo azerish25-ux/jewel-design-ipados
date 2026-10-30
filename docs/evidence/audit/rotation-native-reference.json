@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+  "sourceRepository": "https://github.com/mcneel/opennurbs",
+  "files": [
+    {
+      "file": "opennurbs_xform.cpp",
+      "sha256": "7b922be97b2d05c50cd5865e32826d87fc2f4926304f55f21bf9344478580258",
+      "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_xform.cpp"
+    },
+    {
+      "file": "opennurbs_defines.h",
+      "sha256": "773d75ecf3dab2d792de490da99a175be548c394a81f11cd9a04cec5c1fe7bd6",
+      "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_defines.h"
+    },
+    {
+      "file": "LICENSE",
+      "sha256": "de437cd429817f50999710543b9d3e743b17b35b4c96842393b9d39f7bb9b3bd",
+      "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/LICENSE"
+    }
+  ],
+  "methods": [
+    {
+      "signature": "void ON_Xform::Rotation( \n        double angle,",
+      "sha256": "a7e6abc35e6cb602238ffb1f8983ace7110fb9cded18b855a5b9739a683875f0"
+    },
+    {
+      "signature": "void ON_Xform::Rotation(  \n        double sin_angle,",
+      "sha256": "1178a6264f5b57fb7b5dcb7bbdc3cb94d0f80dd3200872fd82d0e62f0acc9e6a"
+    }
+  ],
+  "generatedSha256": "40fdcbece9ffcf20b50c02472869a337a96235f0327fd31b5301ed1751b09560",
+  "scope": "Published openNURBS6 comparison only, not original Rhino5 binary/runtime parity. No production runtime dependency."
+}

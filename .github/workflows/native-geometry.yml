@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - "native/GeometryBridge/CandidateProbe/**"
+      - "scripts/prepare-rotation-reference.cjs"
       - "tests/iOS.Native/**"
       - "tests/Smoke/**"
       - "src/Port/Geometry.Candidate/**"
@@ -37,6 +38,8 @@ jobs:
           mkdir -p artifacts
           git -C .local/native/occt-source rev-parse HEAD > artifacts/native-source.txt
           sha256sum .local/native/occt-source/LICENSE_LGPL_21.txt .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt > artifacts/native-license-hashes.txt
+      - name: Prepare pinned published rotation comparison
+        run: node scripts/prepare-rotation-reference.cjs | tee artifacts/native-rotation-reference.json
       - name: Configure genuine modeling kernel
         run: cmake -S native/GeometryBridge/CandidateProbe -B .local/native/host -DCMAKE_BUILD_TYPE=Release -DOCCT_SOURCE_DIR="$PWD/.local/native/occt-source" | tee artifacts/native-configure.txt
       - name: Compile candidate API usage before kernel build
@@ -86,6 +89,8 @@ jobs:
           xcodebuild -version > artifacts/xcode.txt
           dotnet --info > artifacts/dotnet.txt
           shasum -a 256 .local/native/occt-source/LICENSE_LGPL_21.txt .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt > artifacts/native-license-hashes.txt
+      - name: Prepare pinned published rotation comparison
+        run: node scripts/prepare-rotation-reference.cjs | tee artifacts/native-rotation-reference.json
       - name: Configure actual iOS simulator kernel
         run: cmake -S native/GeometryBridge/CandidateProbe -B .local/native/ios-sim -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphonesimulator -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0 -DOCCT_SOURCE_DIR="$PWD/.local/native/occt-source" | tee artifacts/native-configure.txt
       - name: Compile candidate API usage before kernel build

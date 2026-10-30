@@ -11,7 +11,9 @@ public sealed partial class CandidateRailGraphSession
         if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.AddTypeGuid)
             return new(null,null,LegacyChannelValue.FromNumber(TransformProducerCandidate.AddScalars(Read(0),Read(1))));
         LegacyAffineTransform transform;
-        if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.TranslateObjectTypeGuid)
+        if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.RotateObjectTypeGuid)
+            transform=RotationProducerCandidate.Build(Read(0),Read(1),Read(2),Read(3));
+        else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.TranslateObjectTypeGuid)
             transform=TransformProducerCandidate.Translation(Read(0),Read(1),Read(2),Read(3));
         else{
             var data=Read(0);

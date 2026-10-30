@@ -82,7 +82,21 @@
     "docs/porting/plans/P03-T03-A10-profile-placement.md",
     "docs/evidence/apple/rail-outputs-results.json",
     "docs/evidence/apple/select-rail-device-results.json",
-    "docs/evidence/apple/select-rail-results.json"
+    "docs/evidence/apple/select-rail-results.json",
+    "src/Port/Features.Candidate/RotationProducerCandidate.cs",
+    "tests/Port/Geometry.Candidate.Contracts/RotationProducerAssertions.cs",
+    "tests/Port/Geometry.Candidate.Contracts/NativeRotationReference.cs",
+    "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyRotation.cs",
+    "native/GeometryBridge/CandidateProbe/rotation_reference.cpp",
+    "scripts/prepare-rotation-reference.cjs",
+    "scripts/verify-rotation-oracle.cjs",
+    "tests/rotation-oracle.test.cjs",
+    "tests/rotation-reference-source.test.cjs",
+    "docs/evidence/audit/rotation-native-reference.json",
+    "docs/porting/ADR-0030-rotation-producers.md",
+    "docs/porting/plans/P03-T03-A11-rotation-producers.md",
+    "docs/evidence/apple/transform-producer-results.json",
+    "docs/evidence/apple/profile-placement-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -338,6 +352,41 @@
       "expectedExitCode": 0,
       "artifact": "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
       "actual": "128 known headers/113 opaque/100 scalar handles; placement independent common fields/links, no-op/rewire/future/reopen/restoration and all earlier document suites pass."
+    },
+    {
+      "command": "dotnet run --project tests/Port/Geometry.Candidate.HostTests (RED before A11)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/RotationProducerAssertions.cs",
+      "actual": "RED Unsupported linked producer record114 when saved rotation is requested."
+    },
+    {
+      "command": "node scripts/build-native-windows.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "native/GeometryBridge/CandidateProbe/rotation_reference.cpp",
+      "actual": "PASS genuine native probe includes published-rotation-reference=pass; two pinned unmodified Rotation bodies compile, native cardinal/identity/no-write/argument controls pass; real host DLL built and all prior CSharp/native contracts pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/RotationProducerAssertions.cs",
+      "actual": "PASS44217 recovered-wrapper/native-axis/native-XYZ comparisons, independent order/basis/cardinal/threshold/large finite cases, actual6 saved nodes/native affine length/points/source preservation, edit/save/reopen/forwarding/failure/cycle/zero native entries; prior source4496/source16093/native suites pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/rotation-oracle.test.cjs tests/rotation-reference-source.test.cjs tests/transform-producers-v1-reference.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "scripts/verify-rotation-oracle.cjs",
+      "actual": "11/11 exact recovered bodies/order/mirror/degree tamper, immutable published source/defines/notice pins and independent22 transform/math header/future/bounds controls pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
+      "actual": "PASS134 known headers/107 opaque/100 scalar handles; independent six rotation common headers, future version/no-op/rewire/reopen/restoration and all earlier document suites."
     }
   ],
   "review": {
@@ -368,7 +417,8 @@
     "railOutputs": "Reviewed no native dependency/handles in document channel data, explicit supported producer/dependency validation, no recursive generation, source curve vs numeric and Scale1/0 metadata, immutable output snapshots/retained readers, allocation exception cleanup and pending output disposal. Candidate native-cache commit differs from unproven original failure/dirty/parallel policies; scalar updates are not rolled back after later native errors.",
     "selectRingRail": "Reviewed exact1.0 GUID/full-body schema, disconnected-null vs inactive/invalid-empty distinction, source conditional ordering, supported-data forwarding despite UI filter, retained alias native ownership/old-generation snapshots, noncurve getter rejection, cycle/unsupported preflight and native entry cleanup. No recovered scripts/credentials/Windows execution. Full parity0/1451 remains unchanged.",
     "transformProducers": "Reviewed data kind isolation/immutability; exact GUID/version/whole-frame read; native input alias/import lifetimes, raw extent floor/origin arithmetic, strict mirror X/Z only, Add outputs, no-argument rail-root compatibility, explicit placement/array/unsupported bounds failures, source-body/tamper controls, actual native point comparisons and file preservation. Source observation matrix constructors are stubs, not original Rhino matrix golden proof.",
-    "profilePlacement": "Reviewed source normalized fraction/native parameter distinction, frame handedness/Y scale, finite30-unit ray, line-A event ordering and paired reversed overlap ranges, floor.01, empty optional output reset, immutable additional channel snapshot, centralized native curve lifetime, explicit degenerate/missing/cycle failures and transactional cache policy. Observation stubs are not original native oracle; no unsupported producer/default or stored height substitute is used."
+    "profilePlacement": "Reviewed source normalized fraction/native parameter distinction, frame handedness/Y scale, finite30-unit ray, line-A event ordering and paired reversed overlap ranges, floor.01, empty optional output reset, immutable additional channel snapshot, centralized native curve lifetime, explicit degenerate/missing/cycle failures and transactional cache policy. Observation stubs are not original native oracle; no unsupported producer/default or stored height substitute is used.",
+    "rotation": "Reviewed XYZ product convention and affine4-term arithmetic; strict mirror and source default/degree input semantics; published epsilon/noise policy vs original-native unknowns; finite guards rather than truncating invalid projective rows; pinned acquisition/hash/notice protection, test-only source/native ABI separation, host import resolver and iOS static linkage, independent basis/native point/order comparisons, immutable cache/save/cycle/ownership; no application-time network or native substitute geometry."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -464,25 +514,25 @@
       "id": 41094371196,
       "commit": "e6b1315fcec7fbd68ddda84496642f40691603d9",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41094371196",
-      "verification": "Transform/source16093/native host/iPad/iPhone queued. Actual report/family/ownership inspection pending."
+      "verification": "SUCCESS: actual iPad/iPhone source16093/native transform/known original vs unresolved placement/family/ownership cases inspected; transform-producer-results.json. Later placement/rotation not covered."
     },
     {
       "id": 41094375299,
       "commit": "e6b1315fcec7fbd68ddda84496642f40691603d9",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41094375299",
-      "verification": "Transform unsigned ARM64 device build queued. Actual platform/log/warnings/hash inspection pending; no physical execution."
+      "verification": "SUCCESS: actual unsigned arm64/platform IOS Release52 warnings0 errors/hash inspected; transform-producer-results.json. No physical execution."
     },
     {
       "id": 41097782561,
       "commit": "fc69ec956db4af37e17452bf2e0a21c9809545b0",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41097782561",
-      "verification": "Placement host/iPad/iPhone queued; actual source4496/native/original-chain/no-hit/family/ownership report inspection pending."
+      "verification": "SUCCESS: actual native iPad/iPhone source4496/original3 placement/Add/scale/default/reset/edit/family/ownership assertions inspected in profile-placement-results.json; no rotation or PC/physical proof."
     },
     {
       "id": 41097786376,
       "commit": "fc69ec956db4af37e17452bf2e0a21c9809545b0",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41097786376",
-      "verification": "Placement unsigned ARM64 device build queued; actual platform/AOT/log/hash verification pending. No physical execution."
+      "verification": "SUCCESS: unsigned arm64/platform IOS Release52 warnings0 errors/executable hash inspected in profile-placement-results.json; no physical execution."
     }
   ],
   "requirementIds": [
@@ -649,6 +699,16 @@
       "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
       "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4",
       "scope": "P03-T03-A10 source placement Update, frame helpers, normalized-fraction seam rules and blank-before-update; native kernel/constructor/degenerate/PC equivalence not established"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
+      "sha256": "1576cb1341103a055848513030df23ddbf17bd7ff060e8f2b72c9fa1320b5ffb",
+      "scope": "P03-T03-A11 source XYZ/mirror/degree/product plan and helper forwarding; published6 native comparison is separate from original Rhino5 proof"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilMath.cs",
+      "sha256": "36e57a1539a49c419a49c78b066c105563cd26a821c4234ce170b9eeabc23fe7",
+      "scope": "P03-T03-A11 source XYZ/mirror/degree/product plan and helper forwarding; published6 native comparison is separate from original Rhino5 proof"
     }
   ],
   "subtasks": [
@@ -699,17 +759,27 @@
     {
       "id": "P03-T03-A09",
       "scope": "Saved translation/scale producer plans, transform data and scalar Add prerequisite; ten original paths run, three scales placement-gated",
-      "status": "local_verified_subset_apple_pending",
+      "status": "verified_simulator_subset",
       "plan": "docs/porting/plans/P03-T03-A09-transform-producers.md"
     },
     {
       "id": "P03-T03-A10",
       "scope": "Exact two-rail placement/frame/native intersection outputs and original3 placement->Add->scale regeneration",
-      "status": "local_verified_apple_pending",
+      "status": "verified_simulator_subset",
       "plan": "docs/porting/plans/P03-T03-A10-profile-placement.md",
       "relatedRows": [
         "BLD-0301",
         "SER-0336"
+      ]
+    },
+    {
+      "id": "P03-T03-A11",
+      "scope": "Six saved rotation producers, finite affine products and pinned published-native numeric comparison",
+      "status": "local_verified_apple_pending",
+      "plan": "docs/porting/plans/P03-T03-A11-rotation-producers.md",
+      "relatedRows": [
+        "BLD-0568",
+        "SER-0603"
       ]
     }
   ]

@@ -47,3 +47,9 @@ An existing WinLibs GNU16.1.0/UCRT toolchain and Ninja were found without instal
     node scripts/build-native-windows.cjs
 
 It requires an existing g++/CMake/Ninja on PATH and the pinned .local/native/occt-source checkout. It installs nothing and reuses .local/native/windows-gnu for incremental builds. Do not launch another build/configure against that directory while its current Ninja process is live. This helper is Windows candidate validation, not Apple or original CounterSketch/Rhino execution. Mac CI remains required. The helper also builds the Windows-only jewel_occt_candidate_host.dll and runs the existing managed geometry contracts against that real module through a process-lifetime DllImport resolver. This does not load the original CounterSketch/Rhino application or replace Apple testing.
+
+Native candidate comparison tests also require the pinned published rotation reference. The Windows helper prepares it automatically; host/simulator/device Actions do the same before CMake. For manual native configuration run this first:
+
+    node scripts/run-local.cjs node scripts/prepare-rotation-reference.cjs
+
+The first preparation fetches three hash-pinned public files; subsequent builds use .local/reference/opennurbs6-rotation. Source/defines/license and method hashes are emitted in native-rotation-reference.json CI artifacts. Keep this cache and generated include on D: locally. This is a test-only published6 math comparison, not the original Rhino5 SDK or a production runtime download; see [ADR0030](ADR-0030-rotation-producers.md).

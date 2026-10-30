@@ -13860,7 +13860,7 @@
       "kind": "serializer",
       "phase": "P04",
       "title": "CSBlocks.Transforms.CSRotateObjectDegXform",
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDegXform.cs",
@@ -13869,14 +13869,21 @@
       ],
       "acceptance": "Exercise this declared GUID and supported record-version branches with non-default serialized fields; PC -> iPad -> PC must retain graph identity/connections/data and remain editable. Compare computed geometry separately. Reserved expired-node GUID requires expected-error behavior, not successful geometry.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node scripts/build-native-windows.cjs",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P03-T03.json",
+        "docs/porting/ADR-0030-rotation-producers.md"
+      ],
       "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
       "legacy": false,
       "details": {
         "path": "docs/evidence/audit/serialization-matrix.json",
         "id": "SER-0603"
-      }
+      },
+      "implementationScope": "Exact saved1.0 finite-angle managed/native candidate, not original Rhino5/PC/physical/UI or all invalid matrix behavior acceptance."
     },
     {
       "id": "SER-0604",

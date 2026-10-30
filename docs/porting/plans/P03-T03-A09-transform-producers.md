@@ -15,7 +15,7 @@ Owned files: exact GUID header codec, affine/channel data, candidate graph dispa
 - [x] Six original translations/four original scales execute; three original scale chains explicitly reject their unported placement dependency. All seven scale plans execute with explicit resolved Add inputs. Real native application, edit/save/reopen, selector forwarding, failure/cycle and cleanup pass.
 - [x] Focused/adjacent native/document/reference/provenance/repository checks, review and ADR/evidence.
 - [x] Commit/push e6b1315 and dispatch macOS native simulator/device41094371196/41094375299; both queued.
-- [ ] Inspect actual source16093/native/transform/family/AOT reports before bounded verification.
+- [x] Inspect actual source16093/native/transform/family/AOT reports before bounded verification. Actual native iPad/iPhone and unsigned arm64/platform IOS52 warnings0 errors inspected in transform-producer-results.json; this checkpoint predates placement.
 
 Limits: native tight bounds vs original Rhino tolerance/bits remain a PC gate. Array/solid/other data bounds, complete Unset validity, rotation/placement/expandable transform consumer, scheduler/UI/render/export/PC/physical/full-design parity remain required. No full parity row closes. All local writes/cache stay D:.
 
