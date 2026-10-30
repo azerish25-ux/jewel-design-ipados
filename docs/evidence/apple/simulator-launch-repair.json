@@ -38,9 +38,16 @@
     },
     {
       "path": "tests/simulator-launch.test.cjs",
-      "sha256": "8d3113ef6d8ba28e597587a4d802e3910187b7a4a2422935355144f593539dd2"
+      "sha256": "4d793806e4fc0e004704d7c08ddd34eb44f150b76e5a1c86355eb31e778d7ce9"
     }
   ],
   "scope": "Mocked simctl scheduling/file publication tests exercise real Bash harness only; not iOS execution. Real Apple rerun pending. Original assertions retained; no feature or PC parity claim.",
-  "review": "Reviewed correctness, freshness, failure propagation, bounded scheduling, architecture/security and unchanged source provenance. Terminate earlier process before clearing output to prevent stale publication race. Actual Apple rerun still required."
+  "review": "Reviewed correctness, freshness, failure propagation, bounded scheduling, architecture/security and unchanged source provenance. Terminate earlier process before clearing output to prevent stale publication race. Actual Apple rerun still required.",
+  "followUp": {
+    "failedRepositoryRun": 41053744865,
+    "cause": "Fresh Ubuntu checkout has no .local directory; mkdtemp requires parent. Regression now explicitly creates repository-local parent before fixtures.",
+    "repairCommit": "pending",
+    "appleRepairRun": 41053744118,
+    "appleRepairStatus": "queued"
+  }
 }

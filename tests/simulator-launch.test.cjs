@@ -8,6 +8,7 @@ const bash=process.platform==='win32'?'C:/Program Files/Git/bin/bash.exe':'bash'
 // These fixtures simulate simctl scheduling/file publication, never iOS or geometry.
 // Every fixture, mock output and shell temp stays beneath the repository.
 function scenario(name){
+ fs.mkdirSync(path.join(root,'.local'),{recursive:true});
  const dir=fs.mkdtempSync(path.join(root,'.local/simulator-regression-'));
  fs.mkdirSync(path.join(dir,'artifacts'));
  fs.mkdirSync(path.join(dir,'data/Documents'),{recursive:true});
