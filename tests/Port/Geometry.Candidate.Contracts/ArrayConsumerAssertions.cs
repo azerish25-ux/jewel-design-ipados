@@ -22,10 +22,16 @@ internal static class ArrayConsumerAssertions
         var n=LegacyChannelValue.FromNumber(2);var empty=LegacyChannelValue.Empty;var missing=LegacyChannelValue.Missing;var curve=LegacyChannelValue.FromCurve(4,0);
         var values=new[]{n,empty,missing,curve,LegacyChannelValue.FromTransform(LegacyAffineTransform.Identity),LegacyChannelValue.FromArray(Array.Empty<LegacyChannelValue>()),LegacyChannelValue.FromArray(new[]{n,curve})};
         int count=0;
+        LegacyChannelValue AsCurve(LegacyChannelValue v)=>v.Curve.HasValue||v.Profile.HasValue?v:LegacyChannelValue.Missing;
         foreach(var a in values)foreach(var b in values){
             var value=LegacyChannelValue.FromArray(new[]{a,b});
             var observed=Oracle.Values.From(value,_=>null,_=>null);
-            Check(ReferenceEquals(LegacyArrayData.FirstItem(value),Oracle.Values.First(observed)),"Source first-item conversion differs");count++;
+            Check(ReferenceEquals(LegacyArrayData.FirstItem(value),Oracle.Values.First(observed)),"Source first-item conversion differs");
+            var routes=Recovered.CurveRouting.Values.Observe(value);
+            Check(ReferenceEquals(routes.Property,AsCurve(LegacyArrayData.FirstItem(value))),"Curve property routing differs");
+            Check(routes.Method.IsMissing,"Direct curve method unexpectedly accepts arrays");
+            var flat=LegacyArrayData.Flatten(value).Array!;
+            Check(ReferenceEquals(routes.Helper,flat.Count==0?LegacyChannelValue.Missing:AsCurve(flat[0])),"Flatten curve helper routing differs");count++;
         }
         return count;
     }
@@ -79,9 +85,9 @@ internal static class ArrayConsumerAssertions
             Check(observed.GetTransform(out var sourceTransform)&&graph.TryReadTransform(131,0,out _),"Flat profile array transform capability differs");Check(graph.TryReadTransform(131,0,out var actual),"Array matrix missing");Matrix(actual,sourceTransform.Matrix);
         }
         using(var graph=new CandidateRailGraphSession(context,Wire(document,131,(8,0),(9,0)).WithInputLink(49,0,131,0),settings))Throws<NotSupportedException>(()=>graph.Generate(49));
-        // Repeated first-item geometry conversion for nested rail input and OutsideRail profile/radius arrays.
+        // Direct curve methods reject arrays; OutsideRail helpers flatten arrays before selecting.
         var firstDoc=Wire(Wire(document,132,(4,0),(13,0)),133,(132,0),(13,0)).WithInputLink(110,0,133,0);
-        using(var graph=new CandidateRailGraphSession(context,firstDoc,settings)){graph.Generate(110);Check(graph.ReadOutput(110,3).HasNumber,"Nested first rail geometry missing");}
+        using(var graph=new CandidateRailGraphSession(context,firstDoc,settings))Throws<NotSupportedException>(()=>graph.Generate(110));
         var missingFirst=Wire(document,16,(-1,-5),(-1,-5),(-1,-5));
         missingFirst=Wire(missingFirst,133);
         foreach(var bad in new[]{(16,0),(133,0),(8,0)}){
@@ -90,6 +96,8 @@ internal static class ArrayConsumerAssertions
         }
         var outside=Wire(Wire(document,132,(7,0),(4,0)),133,(4,0),(8,0)).WithInputLink(13,1,132,0).WithInputLink(13,0,133,0);
         using(var graph=new CandidateRailGraphSession(context,outside,settings)){graph.Generate(13);using var curve=graph.RetainCurve(13);var d=context.InspectCurve(curve);Near(context.PointAt(curve,d.FirstParameter).Z,document.Records[2].Scalar!.Value+4.38);}
+        var flattenedOutside=Wire(Wire(document,133),132,(133,0),(7,0)).WithInputLink(13,1,132,0);
+        using(var graph=new CandidateRailGraphSession(context,flattenedOutside,settings)){graph.Generate(13);using var curve=graph.RetainCurve(13);var d=context.InspectCurve(curve);Near(context.PointAt(curve,d.FirstParameter).Z,document.Records[2].Scalar!.Value+4.38);}
         // Provider arithmetic emits all source array channels; non-array scalar fallback remains distinct.
         var arithmetic=Wire(Wire(document,132,(8,0),(9,0),(11,0)),133,(10,0),(8,0),(11,0)).WithInputLink(111,0,132,0).WithInputLink(111,1,133,0);
         using(var graph=new CandidateRailGraphSession(context,arithmetic,settings)){
@@ -101,6 +109,6 @@ internal static class ArrayConsumerAssertions
         var nullMath=Wire(document,16,(-1,-5),(-1,-5),(-1,-5));nullMath=Wire(Wire(nullMath,132,(16,0),(8,0)),133,(9,0)).WithInputLink(111,0,132,0).WithInputLink(111,1,133,0);
         using(var graph=new CandidateRailGraphSession(context,nullMath,settings))Throws<NullReferenceException>(()=>graph.Generate(111));
         Check(context.DiagnosticLiveShapeCount==0,"Array consumer tests leaked native entries");
-        return "PASS native array consumers:"+firstCases+" source first-item cases; nested transform flatten/object preservation/null copy, actual native leaf geometry/metadata/order, source aggregate bounds/first transform capability, rail/profile first-item queries, arithmetic array channels, saved reopen/failure/disposal; candidate subset, no original-PC/full data parity.";
+        return "PASS native array consumers:"+firstCases+" source first-item cases; nested transform flatten/object preservation/null copy, actual native leaf geometry/metadata/order, source aggregate bounds/first transform capability, direct-method rejection/helper-flatten curve queries, arithmetic array channels, saved reopen/failure/disposal; candidate subset, no original-PC/full data parity.";
     }
 }

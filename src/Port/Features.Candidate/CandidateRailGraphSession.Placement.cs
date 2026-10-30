@@ -6,7 +6,8 @@ public sealed partial class CandidateRailGraphSession
 {
     private CandidateShape? ResolveCurveData(LegacyChannelValue data)
     {
-        data=LegacyArrayData.FirstItem(data);
+        // Legacy CSInputChannel.GetNurbsCurve() calls the data virtual directly; CSDataArray has no curve override.
+        if(data.Array is not null)return null;
         if(data.Curve is{} reference)return ResolveCurve(reference);
         if(data.Profile is{} selection){
             using var imported=StoredMatrixProfileCandidate.Build(context,Values.Document.Records[selection.GroupRecordIndex].MatrixProfiles!,selection.ProfileIndex);

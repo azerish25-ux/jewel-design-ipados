@@ -97,7 +97,10 @@
     "tests/Port/Geometry.Candidate.Contracts/StoredProfileAssertions.cs",
     "docs/porting/plans/P05-T02-A18-stored-nurbs-import.md",
     "docs/porting/ADR-0023-stored-nurbs-import.md",
-    "docs/evidence/apple/stored-nurbs-import-results.json"
+    "docs/evidence/apple/stored-nurbs-import-results.json",
+    "src/Port/Features.Candidate/Sweep2PreparationCandidate.cs",
+    "docs/porting/ADR-0035-explicit-sweep-preparation.md",
+    "docs/porting/evidence/P05-T02-A19-A01.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -420,6 +423,22 @@
       "id": "P05-T02-A18",
       "scope": "Exact standard NURBS construction/all155 stored curve import and stored chooser actual-profile OutsideRail path",
       "status": "verified_bounded_stored_nurbs_import"
+    },
+    {
+      "id": "P05-T02-A19",
+      "scope": "Original134 genuine two-rail sweep/BRep and source constraints",
+      "status": "in_progress"
+    },
+    {
+      "id": "P05-T02-A19-A01",
+      "scope": "Explicit-parameter source/native preparation only; actual three profile inputs, seam/remap/clamp/order/ownership",
+      "status": "local_verified_apple_pending",
+      "evidence": "docs/porting/evidence/P05-T02-A19-A01.json"
+    },
+    {
+      "id": "P05-T02-A19-A02",
+      "scope": "Genuine native two-rail swept surface/BRep construction, topology and constraint comparison",
+      "status": "pending"
     }
   ],
   "checks": [

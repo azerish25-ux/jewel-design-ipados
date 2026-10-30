@@ -607,7 +607,8 @@ extern "C" int32_t jd_candidate_curve_seam(uint64_t context,uint64_t shape,doubl
             const double period=last-first,end=seam+period;
             if(!std::isfinite(period)||period<=0||!std::isfinite(end)||end<=seam)
                 fail(JD_CANDIDATE_INVALID_ARGUMENT,"Unsupported seam domain");
-            curve->Segment(first,last);
+            // Default Segment tolerance can snap a near-end knot and change the period.
+            curve->Segment(first,last,0.0);
             if(!curve->IsClosed())fail(JD_CANDIDATE_INVALID_ARGUMENT,"Seam relocation requires a closed curve");
             curve->SetPeriodic();curve->SetOrigin(seam,0.0);
             // Native Segment inserts/clamps the endpoints and removes periodicity.

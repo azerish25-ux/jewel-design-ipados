@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "commit": "67ffd14fec882b9303cff1e9c29cca207003b2bc",
+  "runtimeRun": 41115161610,
+  "deviceRun": 41115165223,
+  "runtimeConclusion": "success",
+  "deviceConclusion": "success_artifact_inspection_pending",
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "b65ba508df1e5757c26aad1fd5207449070056593a6a37a3b51c546bd1f527af",
+      "collectionReport": "PASS owned native collections:18 source output comparisons, original6 array/unarray chains, nested/per-item metadata, trailing-empty/null/wildcard semantics, retained snapshots across rebuild/disposal, save/reopen/failure/cycle/cleanup; known candidate subset, no full array-consumer/PC parity."
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "b65ba508df1e5757c26aad1fd5207449070056593a6a37a3b51c546bd1f527af",
+      "collectionReport": "PASS owned native collections:18 source output comparisons, original6 array/unarray chains, nested/per-item metadata, trailing-empty/null/wildcard semantics, retained snapshots across rebuild/disposal, save/reopen/failure/cycle/cleanup; known candidate subset, no full array-consumer/PC parity."
+    }
+  ],
+  "scope": "Native owned collections:18 source output comparisons and original6 array/unarray chains. Predates corrected array consumers and Sweep2 preparation. No original-PC/full app/physical proof.",
+  "deviceLimitation": "Workflow completed successfully; artifact download returned HTTP503 Egress is over the account limit twice. No device artifact claims until inspection."
+}

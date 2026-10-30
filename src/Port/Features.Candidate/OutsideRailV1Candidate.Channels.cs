@@ -33,7 +33,8 @@ public static partial class OutsideRailV1Candidate
         LegacyChannelValue Read(int input){var link=inputs[input];return link.ObjectIndex<0?LegacyChannelValue.Empty:session.ReadOutput(link.ObjectIndex,link.ChannelIndex);}
         CandidateShape? Curve(LegacyChannelValue value)
         {
-            value=LegacyArrayData.FirstItem(value);
+            // CSDataHelper.GetNurbsCurve flattens before selecting its first item.
+            if(value.Array is not null){var flat=LegacyArrayData.Flatten(value).Array!;if(flat.Count==0)return null;value=flat[0];}
             if(value.Profile is{} profile){
                 using var imported=StoredMatrixProfileCandidate.Build(context,session.Document.Records[profile.GroupRecordIndex].MatrixProfiles!,profile.ProfileIndex);
                 return context.Retain(imported.Curve);

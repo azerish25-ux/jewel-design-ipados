@@ -1,0 +1,17 @@
+# ADR0035: explicit two-rail sweep preparation
+
+Status: Windows native/source tests pass; Apple verification pending. Parent A19 and all full parity gates remain open.
+
+CSSimpleSweep2 record134 has exact1.0 GUID f19ea1ff-57e7-4922-9ff7-87535b49c1c6 and seven stored links [4,13,131,132,133,129,130]. The eighth constructor seam option is absent/default false and only affects the no-parameter branch. The explicit branch consumes whole profile curves, so profile segmentation is not a prerequisite for this record.
+
+Sweep2PreparationCandidate resolves the existing upstream graph and creates independently owned native rail/profile copies. It preserves the source distinction between flattened curve inputs and top-level numeric parameter arrays. Both closed rails move to the first supplied seams and map subsequent original points to copied rails; other rail pairs clamp parameters to their domains. The extracted source bubble order compares only first-rail parameters, retaining ties and NaN comparison behavior in the ordering utility. Finite native preparation rejects nonfinite parameters. Profiles, both parameter arrays and metadata follow that same order. Requested closed, effective closed and maintain-height flags remain separate.
+
+The real OutsideRail input exposed an initial native Segment tolerance snap: first0.2749659743167715 became0.27496597431680014, shortening the period by about2.86e-14. Initial Segment now explicitly uses zero tolerance; the existing16-epsilon output-domain guard remains strict. Tests retain exact requested seam/end checks and65 wrapped points/length on this actual curve.
+
+This also corrects ADR0034's earlier overly broad curve conversion claim. CSInputChannel.NurbsCurve follows the first nested item; CSInputChannel.GetNurbsCurve() calls the data virtual directly, and CSDataArray has no override; CSDataHelper.GetNurbsCurve recursively flattens and selects the first flattened leaf. Placement uses the direct method and must reject arrays. OutsideRail uses the helper and can skip leading empty nested arrays. Exact source bodies and49 query trees now cover all three routes, with native caller regressions.
+
+Local tests include3906 exact recovered order comparisons; open/mixed clamps, closed native seam/remap/ties, source input isolation, profile kind/count/nonfinite/failed-seam validation, cleanup of partial copies, and original134's three actual profiles/parameters/metadata. Radius edit/save/reopen rebuilds the preparation, no-op serialization stays byte-identical and prepared copies survive graph disposal. A failing noncurve-profile test preceded native-kind validation. Header/reference/tamper/corruption tests and existing native/document suites pass.
+
+This boundary does not create a swept surface or BRep. graph.Generate(134) remains explicitly unsupported. Source RhinoSweep2 tolerances/rebuild/refit, rail/profile continuity and orientation, maintain-height geometry, periodic topology, split output rules and original-Rhino comparison remain A19-A02 and later acceptance. Candidate failure policy rejects unsupported native inputs instead of reproducing Rhino ignored seam failures or skipped failed profile duplicates. No-param sweep, original-PC application round trips, rendering/UI/offline catalog and physical-device proof remain open. No full parity row closes.
+
+See [bounded evidence](evidence/P05-T02-A19-A01.json), [work card](plans/P05-T02-A19-A01-sweep-preparation.md) and [independent header](../evidence/audit/sweep2-header-reference.json).

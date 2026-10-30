@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P05-T02-A19-A01",
+  "status": "local_verified_apple_pending",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "source": {
+    "target": "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacySweepPreparation.cs",
+    "source": "recovery/canonical/cad/CSBlockUtil/CSUtilSweep.cs",
+    "sourceSha256": "0eb51c30834e795d99bf1d52e76e92ee540d42a0b196411557471abc612398da",
+    "wholeBodySha256": "a5ef147c4a5b3ec7a31fef46ae73666b58e6050c4497773bd7adb55bd9d21011",
+    "clampSha256": "6f9a5a68ab93309dd76877c4c0b5554eaebf15b8e50f062074b79ca69a490068",
+    "orderSha256": "6dc7e883647c0aa3d7363a4f3df4eb552091dc0c81222817dc39655c3cb21a1c"
+  },
+  "routing": {
+    "target": "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyCurveRouting.cs",
+    "entries": [
+      {
+        "source": "recovery/canonical/cad/CSDatas/CSDataArray.cs",
+        "body": "public CSDataArray GetFlattenArray()\n\t{\n\t\tCSDataArray cSDataArray = new CSDataArray();\n\t\tforeach (CSData item in Array.ToList())\n\t\t{\n\t\t\tif (item == null)\n\t\t\t{\n\t\t\t\tcSDataArray.Append(new CSData());\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tif (!(item is ICSArray iCSArray))\n\t\t\t{\n\t\t\t\tcSDataArray.Append(item);\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tCSDataArray flattenArray = iCSArray.GetFlattenArray();\n\t\t\tif (flattenArray == null)\n\t\t\t{\n\t\t\t\tcSDataArray.Append(new CSData());\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tforeach (CSData item2 in flattenArray.Array.ToList())\n\t\t\t{\n\t\t\t\tcSDataArray.Append(item2);\n\t\t\t}\n\t\t}\n\t\treturn cSDataArray;\n\t}",
+        "sourceSha256": "f7f0425e3e35fb0835ac161303a3cc7fa269c7f4f765938db91dd76956620b03",
+        "bodySha256": "b7bb4c2dcd8785c9a6483b9f1a56805e57a90dae312c3a1ebcb2acee711c50f9"
+      },
+      {
+        "source": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
+        "body": "public static CSDataArray GetFlattenArray(CSData data)\n\t{\n\t\tif (data == null)\n\t\t{\n\t\t\treturn new CSDataArray();\n\t\t}\n\t\tif (data is ICSArray iCSArray)\n\t\t{\n\t\t\treturn iCSArray.GetFlattenArray();\n\t\t}\n\t\treturn new CSDataArray(data);\n\t}",
+        "sourceSha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714",
+        "bodySha256": "3824e769a9db25ee5285475298117c8b88653ec42665eb6665e5f30470625c75"
+      },
+      {
+        "source": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
+        "body": "public static bool GetNurbsCurve(CSData data, out NurbsCurve value)\n\t{\n\t\tvalue = null;\n\t\tif (data == null)\n\t\t{\n\t\t\treturn false;\n\t\t}\n\t\tCSDataArray flattenArray = GetFlattenArray(data);\n\t\tif (flattenArray.GetArrayCount() <= 0)\n\t\t{\n\t\t\treturn false;\n\t\t}\n\t\tNurbsCurve nurbsCurve = (flattenArray.GetArrayItem(0) as ICSCurve)?.GetNurbsCurve();\n\t\tif (nurbsCurve == null)\n\t\t{\n\t\t\treturn false;\n\t\t}\n\t\tvalue = nurbsCurve;\n\t\treturn true;\n\t}",
+        "sourceSha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714",
+        "bodySha256": "911061a1c28cd9b3c37879666dad34861e17a5a322e96341120e8d03b3b3addf"
+      },
+      {
+        "source": "recovery/canonical/cad/CS.Parametric.Channels/CSInputChannel.cs",
+        "body": "private CSData GetFirstData\n\t{\n\t\tget\n\t\t{\n\t\t\tif (OutputChannelBlock == null)\n\t\t\t{\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\tCSOutputChannel outputChannel = OutputChannelBlock.GetOutputChannel(OutputChannelIndex);\n\t\t\tif (outputChannel == null)\n\t\t\t{\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\tCSData cSData = outputChannel.Data;\n\t\t\twhile (cSData is ICSArray)\n\t\t\t{\n\t\t\t\tICSArray iCSArray = cSData as ICSArray;\n\t\t\t\tcSData = ((iCSArray.GetArrayCount() == 0) ? null : iCSArray.GetArrayItem(0));\n\t\t\t}\n\t\t\treturn cSData;\n\t\t}\n\t}",
+        "sourceSha256": "1b3a8f3c40e751163d0aa493a0044d4a961be981579db831b30c841824fdf74c",
+        "bodySha256": "e5f7caa5f8b9404311dd5f7e8e78f4675b8ad1eb39938ea106922434c4293ee4"
+      },
+      {
+        "source": "recovery/canonical/cad/CS.Parametric.Channels/CSInputChannel.cs",
+        "body": "public NurbsCurve NurbsCurve\n\t{\n\t\tget\n\t\t{\n\t\t\tNurbsCurve result = _defaultValue as NurbsCurve;\n\t\t\tCSData getFirstData = GetFirstData;\n\t\t\tif (getFirstData == null)\n\t\t\t{\n\t\t\t\treturn result;\n\t\t\t}\n\t\t\tif (getFirstData is ICSCurve iCSCurve)\n\t\t\t{\n\t\t\t\treturn iCSCurve.GetNurbsCurve();\n\t\t\t}\n\t\t\treturn result;\n\t\t}\n\t}",
+        "sourceSha256": "1b3a8f3c40e751163d0aa493a0044d4a961be981579db831b30c841824fdf74c",
+        "bodySha256": "345e56d3191abec10e8cfd8192fb427cbff004f8de6438b4dcd84fae2c265c57"
+      },
+      {
+        "source": "recovery/canonical/cad/CS.Parametric.Channels/CSInputChannel.cs",
+        "body": "public OnNurbsCurve GetNurbsCurve()\n\t{\n\t\treturn (OutputChannelBlock?.GetOutputChannelData(OutputChannelIndex))?.GetNurbsCurve().Convert();\n\t}",
+        "sourceSha256": "1b3a8f3c40e751163d0aa493a0044d4a961be981579db831b30c841824fdf74c",
+        "bodySha256": "23630a6b8f0b459ff9c6f5727dceade61ebd5bf49119dfdc07bb42af618b84e7"
+      }
+    ]
+  },
+  "nativeCorrection": {
+    "pin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "file": "native/GeometryBridge/CandidateProbe/candidate_abi.cpp",
+    "operation": "jd_candidate_curve_seam initial Segment(first,last,0.0)",
+    "observedBefore": {
+      "originalFirst": 0.2749659743167715,
+      "originalLast": 1.4937451253413414,
+      "segmentedFirst": 0.27496597431680014,
+      "requestedSeam": 0.2833436316568267,
+      "expectedLast": 1.5021227826813965,
+      "actualLast": 1.5021227826813681
+    },
+    "cause": "Default native Segment tolerance snaps a near-start knot, shortening the copied period. Explicit zero tolerance preserves source interval; existing 16-epsilon domain validation remains unchanged.",
+    "kernelSourceSha256": "1c0de7612992d171766a5d5378a2ed807855340776dd7b689c69de347a80641a"
+  },
+  "checks": [
+    "RED missing preparation/header interface before implementation (earlier working session)",
+    "RED actual134 native seam failed strict domain check before initial Segment tolerance fix",
+    "RED array direct-method query accepted arrays before routing correction",
+    "RED public preparation accepted a solid profile; expected CandidateGeometryException failed; typed curve validation fixes it",
+    "PASS native/CSharp host suites including3906 stable-order comparisons, open/closed/mixed/ties/native seam/ownership; actual134 three copied profiles and original parameters/metadata; edit/save/reopen and zero retained entries",
+    "PASS Documents.Tests structural no-op/rewire/reopen/future version/corrupt payload,162 headers/79 opaque/100 scalars",
+    "PASS seven source/header controls including tamper/future/corruption failures",
+    "PASS production CSG independent reader crosscheck",
+    "PASS library footprint and production provenance/repository integrity"
+  ],
+  "scope": "Preparation only. Whole source curves in explicit134 branch; no-param path, genuine swept surface/BRep, output topology, Rhino5 comparison, PC app regeneration, rendering/UI/physical proof remain open.",
+  "review": {
+    "correctness": "Exact source stable order/clamp; separate property/direct/helper routing; real source near-knot seam guard kept strict; native profile kind validated.",
+    "ownership": "Prepared independent native copies survive graph disposal; failure releases partial shapes and preserves input document; limits reject unsupported data.",
+    "performance": "Finite parameters and bounded array count; source stable bubble ordering retained, no latency claim for large inputs.",
+    "security": "No original scripts/account requests/credentials; recovery read-only; local writes and tool state under D:.",
+    "architecture": "Explicit prepared input boundary; graph.Generate(134) continues to reject unsupported BRep production."
+  }
+}
