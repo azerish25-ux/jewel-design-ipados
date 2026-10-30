@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "status": "source_observed_not_ported",
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSRingRail1.cs",
+      "sha256": "fd06635926c702a605d94a812847f7f84c6d0a7fde5db362e4f1e8d0bf74267b"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSRingRailData.cs",
+      "sha256": "072b59834ae3a8a6dde5b5960917d83a470fdb5f82b80616cd6755138c697b9b"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSRailData.cs",
+      "sha256": "93625e6a74feac6ee3e0b17b2faaa146abdead5f6f19f88231d8f7368ec4b20b"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs",
+      "sha256": "df9c4a0cbb44fe040098edcc0e3caa55fe34e18889d42953450162c93efc69d3"
+    }
+  ],
+  "node": {
+    "type": "CSBlocks.Rails.Obsolete.CSRingRail1",
+    "guid": "65aa45c6-d1cd-4c45-92bb-b5a9a6a2ec47",
+    "fixtureOrdinal": 4,
+    "input": "iRingRadius.GetDouble(ref radius), initialized7.0; channel conversion behavior needs full evaluator integration",
+    "operation": "OnCircle(OnUtil.On_zx_plane,radius), GetNurbForm to OnNurbsCurve; <=0 -> UpdateError(GetNurbForm failed)",
+    "output": "CSRingRailData(converted NURBS,radius); CSRailData.SetCurve converts to NURBS and copies nonempty user strings without explicit SetDomain"
+  },
+  "ringSize": "CSValueRingSize version1.2 stores radius in mm. Major1/minor<=1 converts stored US size with ConvertFromUSToMMRadius. Do not treat all stored ring values as US sizes.",
+  "publicCorroboration": {
+    "commit": "eb92af3ba1806b0a34a99aba0d3bda83e3d46083",
+    "plane": "https://github.com/mcneel/opennurbs/blob/eb92af3ba1806b0a34a99aba0d3bda83e3d46083/opennurbs_statics.cpp",
+    "circle": "https://github.com/mcneel/opennurbs/blob/eb92af3ba1806b0a34a99aba0d3bda83e3d46083/opennurbs_circle.cpp",
+    "facts": "Modern official World_zx has origin0, local X=world Z, local Y=world X, normal=world Y. Circle NURBS is rational quadratic with9 poles and4 quarter spans over0..2pi.",
+    "limit": "Modern official source corroborates a proposed test oracle, not original Rhino5 binary/parameterization proof."
+  },
+  "candidateHazard": "Pinned OCCT default Convert_TgtThetaOver2 selects3 spans for a full circle. Explicit Convert_TgtThetaOver2_4 is available. Equal geometric locus alone does not prove compatible curve parameters; test actual domain/poles/weights/parameter samples before use.",
+  "requiredCases": [
+    "ZX and translated/rotated frames, seam direction",
+    "Default/missing radius7, positive/zero/negative/nonfinite source error behavior",
+    "Quadratic rational four-span representation and non-linear parameter-to-angle samples",
+    "Legacy ring1.1 size conversion vs1.2 stored-radius units",
+    "Downstream rails/profile/loft/morph parameter behavior and original-PC comparison"
+  ],
+  "scope": "Audit only; no claim that the available design or its rail regenerates on iPad."
+}
