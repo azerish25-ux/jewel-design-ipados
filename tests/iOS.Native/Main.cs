@@ -23,7 +23,9 @@ public class AppDelegate:UIApplicationDelegate
    if(status!=0||!result.StartsWith("PASS OCCT ",StringComparison.Ordinal))throw new Exception("Native candidate status "+status+": "+result);
    var managedResult=ReuseSmoke.Checks.Run();
    result+=Environment.NewLine+managedResult;
-   File.WriteAllText(path,result);Console.WriteLine(result);
+   File.WriteAllText(path+".pending",result);
+   File.Move(path+".pending",path,overwrite:true);
+   Console.WriteLine(result);
   }catch(Exception error){File.WriteAllText(path,"FAIL "+error);Console.WriteLine(error);}
   return true;
  }

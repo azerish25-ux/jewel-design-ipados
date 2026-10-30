@@ -9,3 +9,5 @@ Architecture: reference existing tests/Smoke from tests/iOS.Native; do not copy 
 - [ ] Require both native and managed PASS lines in simulator runner, keeping both families and current time budget.
 - [ ] Watch tests/Smoke changes in candidate workflows; run repository checks plus native simulator/device macOS jobs, inspect actual artifacts and failures.
 - [ ] Commit/push source, record exact commits/runs/hashes and bounded results. No PC project/geometry/UI/physical-device feature row is closed by coexistence.
+
+Review correction: remove prior result/family/started files from the installed app data container before launching, and publish successful combined output by same-directory pending-file rename. This prevents stale results and partial success reads during manual reruns.

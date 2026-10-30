@@ -11,8 +11,10 @@ test -f "$APP/Info.plist"
 xcrun simctl boot "$UDID" > "$OUT/boot.txt" 2>&1 || true
 xcrun simctl bootstatus "$UDID" -b | tee "$OUT/bootstatus.txt"
 xcrun simctl install "$UDID" "$APP"
-xcrun simctl launch --terminate-running-process "$UDID" com.jeweldesign.nativegeometry | tee "$OUT/launch.txt"
 DATA=$(xcrun simctl get_app_container "$UDID" com.jeweldesign.nativegeometry data)
+# A result from an earlier launch cannot prove this invocation ran.
+rm -f "$DATA/Documents/native-result.txt" "$DATA/Documents/native-result.txt.family" "$DATA/Documents/native-result.txt.started"
+xcrun simctl launch --terminate-running-process "$UDID" com.jeweldesign.nativegeometry | tee "$OUT/launch.txt"
 for i in $(seq 1 120); do
  if test -f "$DATA/Documents/native-result.txt"; then
   cp "$DATA/Documents/native-result.txt" "$OUT/result.txt"
