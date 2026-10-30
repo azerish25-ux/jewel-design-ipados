@@ -16,7 +16,8 @@
     "docs/porting/plans/P05-T02-A01-native-candidate.md",
     "docs/porting/ADR-0009-native-cad-candidate.md",
     ".github/workflows/native-device.yml",
-    "docs/porting/plans/P05-T02-A02-native-device.md"
+    "docs/porting/plans/P05-T02-A02-native-device.md",
+    "docs/porting/plans/P05-T02-A03-combined-runtime.md"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -50,9 +51,21 @@
       "id": "P05-T02-A02",
       "scope": "Unsigned iPhoneOS arm64 native-linked Release/Mono AOT build and Mach-O platform inspection; no physical execution",
       "status": "ci_pending"
+    },
+    {
+      "id": "P05-T02-A03",
+      "scope": "Recovered/production CSharp contract suite plus analytical native CAD in one iOS executable",
+      "status": "ci_pending"
     }
   ],
-  "checks": [],
+  "checks": [
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Console; node scripts/verify-sources.cjs; node scripts/verify-production.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Managed assertions passed with explicit known zlib diagnostic; 1414 lab and 12 unchanged Domain source hashes verified. This does not run the combined iOS/native app."
+    }
+  ],
   "review": {
     "scope": "Acquisition/platform experiment; no local iOS/native compiler execution asserted",
     "security": "Public source commit pinned, no original account/runtime/key use; upload text only",
@@ -61,7 +74,8 @@
     "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending.",
     "currentStatus": "Native compile/link and host/iPad analytical runtime proof observed. iPhone emitted PASS and family=iphone but step timed out; increase simulator step budget to 20 minutes, rerun required.",
     "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed.",
-    "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs."
+    "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs.",
+    "combinedRuntime": "Existing shared Smoke referenced rather than copied. Native report/status and all managed gated assertions must finish before final PASS file. Runner requires both PASS lines and actual family. Existing zlib diagnostic remains visibly non-gating. Local managed suite passed; Mac coexistence pending."
   },
   "blockers": [
     "Clean terminal iPhone simulator execution pending; captured report is insufficient while job failed",

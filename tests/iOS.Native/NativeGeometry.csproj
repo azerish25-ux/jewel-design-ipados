@@ -12,6 +12,7 @@
     <NativeCandidateArchive Condition="'$(RuntimeIdentifier)' == 'ios-arm64'">../../.local/native/ios-device-all.a</NativeCandidateArchive>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="../Smoke/Smoke.csproj" />
     <NativeReference Include="$(NativeCandidateArchive)">
       <Kind>Static</Kind>
       <ForceLoad>true</ForceLoad>

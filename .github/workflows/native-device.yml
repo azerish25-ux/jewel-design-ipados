@@ -5,6 +5,7 @@ on:
     paths:
       - "native/GeometryBridge/CandidateProbe/**"
       - "tests/iOS.Native/**"
+      - "tests/Smoke/**"
       - ".github/workflows/native-device.yml"
   workflow_dispatch:
 permissions:

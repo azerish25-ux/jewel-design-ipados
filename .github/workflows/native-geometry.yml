@@ -5,6 +5,7 @@ on:
     paths:
       - "native/GeometryBridge/CandidateProbe/**"
       - "tests/iOS.Native/**"
+      - "tests/Smoke/**"
       - "scripts/run-native-simulator.sh"
       - "scripts/ios-device.cjs"
       - ".github/workflows/native-geometry.yml"

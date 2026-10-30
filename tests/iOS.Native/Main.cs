@@ -21,6 +21,8 @@ public class AppDelegate:UIApplicationDelegate
    var buffer=new byte[8192];int status=RunNative(buffer,(uint)buffer.Length);int end=Array.IndexOf(buffer,(byte)0);
    if(end<0)throw new Exception("Native report missing terminator");var result=Encoding.UTF8.GetString(buffer,0,end);
    if(status!=0||!result.StartsWith("PASS OCCT ",StringComparison.Ordinal))throw new Exception("Native candidate status "+status+": "+result);
+   var managedResult=ReuseSmoke.Checks.Run();
+   result+=Environment.NewLine+managedResult;
    File.WriteAllText(path,result);Console.WriteLine(result);
   }catch(Exception error){File.WriteAllText(path,"FAIL "+error);Console.WriteLine(error);}
   return true;
