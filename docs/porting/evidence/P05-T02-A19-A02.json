@@ -147,5 +147,37 @@
     "ownership": "Native automatic objects and actual geometry queries; valid independent input wires checked. Complete production transaction/lifetime policy remains later work.",
     "security": "Recovery read-only; no scripts/accounts/credentials; writes remain in D:. Source hashes in native CI artifacts.",
     "performance": "Five small shells/870 point queries; no interactive large-model performance claim."
-  }
+  },
+  "implementationCommit": "f0738d822923e1e670656f6235a0798834061a5b",
+  "ciRuns": [
+    {
+      "id": 41124372444,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41124372444",
+      "scope": "native host and macOS actual iPad/iPhone feasibility execution",
+      "status": "queued"
+    },
+    {
+      "id": 41124376646,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41124376646",
+      "scope": "macOS unsigned ios-arm64 AOT compile/link",
+      "status": "queued"
+    },
+    {
+      "id": 41124372905,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41124372905",
+      "scope": "repository bounded proof and source integrity",
+      "status": "in_progress"
+    }
+  ],
+  "reproduceCommands": [
+    "node scripts/build-native-windows.cjs",
+    "node scripts/run-local.cjs .local/native/windows-gnu/occt_candidate_test.exe",
+    "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+    "node scripts/run-local.cjs node scripts/verify-production.cjs",
+    "node scripts/run-local.cjs node tools/repository/check.cjs"
+  ],
+  "environmentNotes": [
+    "Some D: documentation writes disappeared after reporting success; after five seconds, exact held contents were rewritten/staged/verified in one operation. No data was moved to C:.",
+    "The Node REPL subprocess environment returned NuGet path1 errors; the same wrapped host suite passed through the workspace PowerShell executor. Saved final verification is from that successful executor; no SDK deletion/global configuration change."
+  ]
 }
