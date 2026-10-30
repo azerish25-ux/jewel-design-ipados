@@ -15,6 +15,7 @@ Owned: exact header allowlist + independent reader/inventory; candidate placemen
 - [x] Compare extracted source frame/control/seam logic with declared observation stubs; independent analytical circle/ellipse/finite ray/no hit/height floor/paired reversed overlap checks.
 - [x] Regenerate original Add/scale paths; native affine application, edits/save/reopen, frame/height/channel defaults, no-hit reset, failure/cycle/cleanup; preserve earlier suites.
 - [x] Review, source hashes, document/native/reference/provenance/repository checks.
-- [ ] Commit/push and dispatch Apple tests; inspect source-specific native/family/AOT artifacts.
+- [x] Commit/push fc69ec9 and dispatch placement native41097782561/device41097786376; both queued.
+- [ ] Inspect source-specific native/source4496/original-chain/family/AOT artifacts.
 
 Limits: candidate kernel tolerance, event sorting/multiplicity and vector/Unset behavior require original-PC comparison. Array input flattening, arbitrary data kinds, source scheduler failure effects, all other placement versions, full transform consumer/rotation/sweep/UI/PC/physical parity remain required. No full parity row closes. Every local write/cache stays D:; wait5 seconds/retry transient D: errors.

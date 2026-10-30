@@ -81,7 +81,8 @@
     "docs/porting/ADR-0029-profile-placement.md",
     "docs/porting/plans/P03-T03-A10-profile-placement.md",
     "docs/evidence/apple/rail-outputs-results.json",
-    "docs/evidence/apple/select-rail-device-results.json"
+    "docs/evidence/apple/select-rail-device-results.json",
+    "docs/evidence/apple/select-rail-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -451,7 +452,7 @@
       "id": 41091410852,
       "commit": "f580a24e5e70e6daf55c4f6f89836da94160d62c",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41091410852",
-      "verification": "Selector host/iPad/iPhone queued; source150/native/family/ownership reports still require inspection."
+      "verification": "SUCCESS: actual iPad/iPhone native selector/source150/null-empty/ownership/save/reopen/family assertions inspected; select-rail-results.json. Later transform/placement not covered."
     },
     {
       "id": 41091415494,
@@ -470,6 +471,18 @@
       "commit": "e6b1315fcec7fbd68ddda84496642f40691603d9",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41094375299",
       "verification": "Transform unsigned ARM64 device build queued. Actual platform/log/warnings/hash inspection pending; no physical execution."
+    },
+    {
+      "id": 41097782561,
+      "commit": "fc69ec956db4af37e17452bf2e0a21c9809545b0",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41097782561",
+      "verification": "Placement host/iPad/iPhone queued; actual source4496/native/original-chain/no-hit/family/ownership report inspection pending."
+    },
+    {
+      "id": 41097786376,
+      "commit": "fc69ec956db4af37e17452bf2e0a21c9809545b0",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41097786376",
+      "verification": "Placement unsigned ARM64 device build queued; actual platform/AOT/log/hash verification pending. No physical execution."
     }
   ],
   "requirementIds": [
@@ -680,7 +693,7 @@
     {
       "id": "P03-T03-A08",
       "scope": "Exact SelectRingRail1.0 saved header, null/empty distinction and owned supported-data/native curve forwarding",
-      "status": "local_verified_apple_pending",
+      "status": "verified_simulator_subset",
       "plan": "docs/porting/plans/P03-T03-A08-select-ring-rail.md"
     },
     {
