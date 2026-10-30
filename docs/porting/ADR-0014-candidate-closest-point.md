@@ -1,6 +1,6 @@
 # ADR0014: candidate bounded closest-point query
 
-Status: actual Windows native/CSharp tests passed; Apple verification pending.
+Status: actual Windows native/CSharp tests passed; bounded Apple runtime/device evidence recorded in [closest-point results](../evidence/apple/native-closest-point-results.json).
 
 The query uses the actual located3D edge curve and its domain, native orthogonal projection/extrema, and explicit comparison with both endpoints. It reports parameter/point/distance through fixed-width outputs, validates finite data and rejects unsupported solids or failed native convergence. Source geometry and ownership remain unchanged.
 

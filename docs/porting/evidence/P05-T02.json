@@ -73,7 +73,8 @@
     "tests/Port/Geometry.Candidate.Contracts/CurveLineAssertions.cs",
     "docs/porting/plans/P05-T02-A14-curve-line-events.md",
     "docs/porting/ADR-0018-candidate-curve-line-events.md",
-    "docs/evidence/apple/native-affine-results.json"
+    "docs/evidence/apple/native-affine-results.json",
+    "docs/evidence/apple/native-closest-point-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -211,7 +212,7 @@
     {
       "id": "P05-T02-A10",
       "scope": "Actual native bounded3D curve closest-point parameter/position/distance query",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_native_closest_point"
     },
     {
       "id": "P05-T02-A11",
@@ -569,13 +570,13 @@
       "id": 41050888195,
       "commit": "a1ae9d9",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41050888195",
-      "verification": "Native/CSharp closest-point host/iPad/iPhone runtime dispatched; terminal evidence pending"
+      "verification": "SUCCESS: inspected iPad/iPhone native/CSharp closest-point reports and actual families; native-closest-point-results.json. Later open-arc test coverage belongs to A11."
     },
     {
       "id": 41050890977,
       "commit": "a1ae9d9",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41050890977",
-      "verification": "Unsigned device closest-point adapter build dispatched; terminal evidence pending"
+      "verification": "SUCCESS: unsigned arm64/platform IOS Release build52 warnings0 errors; not physical execution."
     },
     {
       "id": 41051769607,
@@ -612,6 +613,18 @@
       "commit": "89ec8148212b28cdbc93d037e166343e437b52b2",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41054797842",
       "verification": "Native tangent unsigned device build queued; terminal evidence pending"
+    },
+    {
+      "id": 41057789927,
+      "commit": "5239e15327313dc58d12a113cd76512e52e8b8d5",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41057789927",
+      "verification": "Finite native curve-line host confirmed in progress; iPad/iPhone queued; terminal verification pending"
+    },
+    {
+      "id": 41057793178,
+      "commit": "5239e15327313dc58d12a113cd76512e52e8b8d5",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41057793178",
+      "verification": "Finite native curve-line unsigned device queued; terminal verification pending"
     }
   ]
 }

@@ -60,7 +60,6 @@ Later operations have local passes; Apple verification is not yet recorded in th
 
 | Operation | Runtime | Unsigned device |
 | --- | --- | --- |
-| Bounded closest point | [41050888195](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41050888195) | [41050890977](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41050890977) |
 | NURBS trim/reverse | [41051769607](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051769607) | [41051772180](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051772180) |
 | Ordered pair join | [41052693327](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41052693327) | [41052697300](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41052697300) |
 
@@ -77,3 +76,5 @@ Tangent checkpoint89ec814 dispatched [native host/iPad/iPhone41054794303](https:
 Affine scale/shear/translation/source preservation is now bounded-verified on iPad/iPhone and unsigned device: [reports](../evidence/apple/native-affine-results.json). Original Rhino policy and physical-device gates remain open.
 
 P05-T02-A14 adds real finite3D curve-line point/overlap events, exact linear NURBS and immutable counted CSharp event results. Windows native/CSharp tests pass finite axis rays, diameter/tangent/trim/skew/3D cases and reversed/scaled/contained overlaps with source parameters retained; native buffer guards reject partial writes. [ADR0018](ADR-0018-candidate-curve-line-events.md) records pinned-kernel overlap corrections, explicit fuzzy metadata and ordering/coverage limits. Apple tests pending; full OutsideRail still needs accurate bounds, closed seam relocation and recovered caller/graph composition.
+
+Closest-point checkpointa1ae9d9 is bounded-verified on iPad/iPhone plus unsigned device: [reports](../evidence/apple/native-closest-point-results.json). This includes3D circle/transformed/seam consistency; later open-arc endpoint checks remain A11. Curve-line checkpoint5239e15 has [host/iPad/iPhone41057789927](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41057789927) and [unsigned device41057793178](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41057793178) dispatched; host live/Apple queued. Preserve these jobs and inspect their reports before marking Apple verification.
