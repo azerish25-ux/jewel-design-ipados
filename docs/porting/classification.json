@@ -99,6 +99,16 @@
         "recovery/canonical/cad/CS/CSUndoTable.cs",
         "recovery/canonical/cad/CS/CUndoItem.cs"
       ]
+    },
+    {
+      "path": "src/Port/Domain/InstanceIdentity.cs",
+      "classification": "adapted recovered read-side GUID rule plus new raw-text provenance",
+      "source": "recovery/canonical/cad/CS.CSObjects/CSObject.cs"
+    },
+    {
+      "path": "src/Port/Graph/GraphIdentityScope.cs",
+      "classification": "new reference-based session identity/view mapping and parameter handles; no codec or graph command implementation",
+      "source": "recovery/canonical/cad/CS.CSObjects/CSObject.cs"
     }
   ]
 }

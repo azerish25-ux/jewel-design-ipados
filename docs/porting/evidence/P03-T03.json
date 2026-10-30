@@ -22,7 +22,12 @@
     "tests/numeric-oracle.test.cjs",
     "docs/porting/ADR-0002-numeric-value-plans.md",
     "docs/porting/plans/P03-T03-A04-numeric-values.md",
-    "docs/evidence/apple/numeric-value-results.json"
+    "docs/evidence/apple/numeric-value-results.json",
+    "src/Port/Domain/InstanceIdentity.cs",
+    "src/Port/Graph/GraphIdentityScope.cs",
+    "tests/Port/Graph.Contracts/SessionIdentityAssertions.cs",
+    "docs/porting/plans/P03-T03-A05-session-identity.md",
+    "docs/porting/ADR-0004-session-parameter-identity.md"
   ],
   "fixtures": [],
   "checks": [
@@ -113,6 +118,20 @@
       "expectedExitCode": 0,
       "artifact": "docs/evidence/apple/numeric-value-results.json",
       "actual": "iPad and iPhone executed 909 numeric cases; source-body guard and six mutation controls ran before build; no native undo/codec claim"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Graph.Tests (before session identity implementation)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Graph.Contracts/SessionIdentityAssertions.cs",
+      "actual": "RED CS0103/CS0246: InstanceIdentity and session identity APIs absent"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Graph.Tests",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Graph.Contracts/SessionIdentityAssertions.cs",
+      "actual": "PASS raw/effective zero/duplicate/legacy GUIDs, mapped identity lifetime and ownership; adjacent 6130 undo steps and existing snapshot checks pass"
     }
   ],
   "review": {
@@ -130,10 +149,19 @@
       "security": "No credentials, external execution or hidden I/O",
       "performance": "Constant-time planning; one small immutable allocation",
       "limitations": "No live callbacks, exception ordering, graph mutation, UI transaction, undo, codec or CAD"
+    },
+    "sessionIdentity": {
+      "correctness": "Guid.TryParse/NewGuid branch preserved; reference identities distinguish records; explicit view membership prevents stale retargeting",
+      "readability": "Registration provenance named InitialIdentity; snapshot and session addresses remain separate contracts",
+      "architecture": "Domain GUID helper plus managed Graph scope/view/handle; no native or codec dependency",
+      "security": "No authorization use of GUIDs, external execution, credentials or hidden I/O; caller-owned mappings validated for scope/shape",
+      "performance": "Linear view validation and constant-time address resolution; owner/view references retain original provenance for session lifetime",
+      "limitations": "No cross-load identity matching, live mutable instance-GUID setter, codec write, applied graph commands or link remapping"
     }
   },
   "blockers": [
-    "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
+    "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished",
+    "Session identity macOS execution pending; codec/live graph integration remains unfinished"
   ],
   "ciRuns": [
     {
@@ -235,6 +263,11 @@
       "scope": "Immutable scalar parameter state from CSValue.SetValue; not an applied edit",
       "status": "verified_simulator",
       "plan": "docs/porting/plans/P03-T03-A04-numeric-values.md"
+    },
+    {
+      "id": "P03-T03-A05",
+      "scope": "Raw/effective registration GUIDs and stable session parameter handles across explicit mapped views",
+      "status": "implemented_local"
     }
   ]
 }

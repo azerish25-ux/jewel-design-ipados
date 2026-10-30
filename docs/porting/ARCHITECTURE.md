@@ -48,3 +48,5 @@ Implemented capture-local addressing: [ADR 0001](ADR-0001-snapshot-parameter-add
 Implemented scalar parameter planning: [ADR 0002](ADR-0002-numeric-value-plans.md). Plans do not execute graph changes or stand in for undo records.
 
 Implemented portable undo scheduling: [ADR 0003](ADR-0003-portable-undo-journal.md). Actual native/parameter snapshot adapters remain unfinished.
+
+Session parameter identity: [ADR 0004](ADR-0004-session-parameter-identity.md) defines raw/effective registration GUIDs and explicit identity mappings between captured views; codec persistence remains open.

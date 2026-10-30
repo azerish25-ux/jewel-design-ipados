@@ -11,3 +11,5 @@ The key is a serialized/schema field name such as CSValue.WriteJson's Value, nev
 This is new infrastructure derived from recovered semantics, not recovered algorithm reuse. It prevents accidental stale edits; addresses cannot be serialized, stored as project identity, or carried across graph replacement/reordering. P04 must reconcile raw/effective instance identities and unknown fields. Undo/document identity will need an explicit mapping when mutable graph editing is implemented. Do not guess that mapping from labels or overwrite stored GUIDs.
 
 Verification: tests/Port/Graph.Contracts/ParameterAddressAssertions.cs is invoked by Graph.Tests, Console smoke, and the iPad/iPhone simulator harness. Cases include repeat lookup/hash-set equality, duplicate slots, ordinal keys, foreign captures, empty captures, invalid indices and null/blank arguments. No PC reopen, geometry regeneration or parameter-write claim is made.
+
+[ADR 0004](ADR-0004-session-parameter-identity.md) adds session handles that can survive explicitly mapped views. This single-capture address API stays scoped to its original snapshot.

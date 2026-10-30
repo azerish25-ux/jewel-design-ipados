@@ -6,6 +6,7 @@ public static class Assertions {
  public static string Run(){
  ParameterAddressAssertions.Run();
  var undoResult = UndoJournalAssertions.Run();
+ var identityResult = SessionIdentityAssertions.Run();
  var type=Guid.Parse("56b84606-7f1d-41fb-b81f-f521d9a9577d");
  var raw=new byte[]{0,255,10,0,127};var links=new List<SerializedChannelLink>{SerializedChannelLink.Disconnected,new(-1,-1),new(777,99)};
  var node=new GraphNodeSnapshot(9,type,new(1,1),"Top Thickness",null,uint.MaxValue,raw,links);
@@ -18,6 +19,6 @@ public static class Assertions {
  Check(graph.Nodes[0].Identifier==graph.Nodes[1].Identifier&&graph.Nodes[1].StoredInstanceGuid=="malformed-preserve-me","Labels/identity coerced");Check(graph.Nodes[1].Version.Major==99&&graph.Nodes[1].TypeGuid==Guid.Empty,"Unknown metadata lost");
  Throws<NotSupportedException>(()=>((IList<GraphNodeSnapshot>)graph.Nodes)[0]=other);Throws<NotSupportedException>(()=>((IList<SerializedChannelLink>)node.InputLinks)[0]=new(1,0));
  Throws<ArgumentNullException>(()=>new GraphSnapshot(null!));Throws<ArgumentException>(()=>new GraphSnapshot(new GraphNodeSnapshot[]{null!}));
- return undoResult+"; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.";
+ return identityResult+"; "+undoResult+"; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.";
  }
 }

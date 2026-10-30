@@ -383,7 +383,12 @@
             "tests/numeric-oracle.test.cjs",
             "docs/porting/ADR-0002-numeric-value-plans.md",
             "docs/porting/plans/P03-T03-A04-numeric-values.md",
-            "docs/evidence/apple/numeric-value-results.json"
+            "docs/evidence/apple/numeric-value-results.json",
+            "src/Port/Domain/InstanceIdentity.cs",
+            "src/Port/Graph/GraphIdentityScope.cs",
+            "tests/Port/Graph.Contracts/SessionIdentityAssertions.cs",
+            "docs/porting/plans/P03-T03-A05-session-identity.md",
+            "docs/porting/ADR-0004-session-parameter-identity.md"
           ],
           "evidence": [
             "docs/porting/evidence/P03-T03.json"
