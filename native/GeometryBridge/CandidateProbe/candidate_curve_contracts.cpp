@@ -112,6 +112,30 @@ void run_candidate_curve_contracts()
     ok(jd_candidate_curve_point(context.id,linear,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,0);
     ok(jd_candidate_shape_release(context.id,linear,error,sizeof(error)));
     rejected=99;checkCurve(jd_candidate_line(context.id,1,2,3,1,2,3,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"Degenerate native line created");
+
+    uint64_t relocated=0;ok(jd_candidate_curve_seam(context.id,circle,.3,&relocated,error,sizeof(error)));
+    ok(jd_candidate_curve_inspect(context.id,relocated,&first,&last,&length,&degree,&poles,&rational,error,sizeof(error)));
+    nearCurve(first,.3);nearCurve(last,.3+2*pi);nearCurve(length,14*pi);
+    for(int i=0;i<=64;i++){
+        const double parameter=.3+2*pi*i/64.0;double wrapped=parameter;
+        if(wrapped>2*pi)wrapped-=2*pi;
+        double sourceX=0,sourceY=0,sourceZ=0;
+        ok(jd_candidate_curve_point(context.id,circle,wrapped,&sourceX,&sourceY,&sourceZ,error,sizeof(error)));
+        ok(jd_candidate_curve_point(context.id,relocated,parameter,&x,&y,&z,error,sizeof(error)));
+        nearCurve(x,sourceX);nearCurve(y,sourceY);nearCurve(z,sourceZ);
+    }
+    uint64_t openSeam=0;ok(jd_candidate_curve_trim(context.id,circle,0,pi/2,&openSeam,error,sizeof(error)));
+    rejected=99;checkCurve(jd_candidate_curve_seam(context.id,openSeam,.3,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"Open seam input accepted");
+    for(double bad:{-.1,7.0,std::numeric_limits<double>::quiet_NaN(),std::numeric_limits<double>::infinity()}){
+        rejected=99;checkCurve(jd_candidate_curve_seam(context.id,circle,bad,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"Invalid seam parameter accepted");
+    }
+    rejected=99;checkCurve(jd_candidate_curve_seam(context.id,box,0,&rejected,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION&&rejected==0,"Solid seam produced fake curve");
+    checkCurve(jd_candidate_curve_seam(context.id,circle,.3,nullptr,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Missing seam output accepted");
+    uint64_t seamAffine=0,seamAffineResult=0;ok(jd_candidate_affine(context.id,circle,matrix,12,&seamAffine,error,sizeof(error)));
+    ok(jd_candidate_curve_seam(context.id,seamAffine,.7,&seamAffineResult,error,sizeof(error)));
+    double sourceX=0,sourceY=0,sourceZ=0;ok(jd_candidate_curve_point(context.id,seamAffine,.7,&sourceX,&sourceY,&sourceZ,error,sizeof(error)));
+    ok(jd_candidate_curve_point(context.id,seamAffineResult,.7,&x,&y,&z,error,sizeof(error)));nearCurve(x,sourceX);nearCurve(y,sourceY);nearCurve(z,sourceZ);
+    for(uint64_t owned:{relocated,openSeam,seamAffine,seamAffineResult})ok(jd_candidate_shape_release(context.id,owned,error,sizeof(error)));
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }

@@ -53,4 +53,6 @@ internal static class NativeMethods
     [DllImport(Library,EntryPoint="jd_candidate_curve_line_intersections",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
     internal static extern int CurveLineIntersections(ContextHandle context,ShapeHandle shape,double sx,double sy,double sz,double ex,double ey,double ez,double tolerance,
         [Out,MarshalAs(UnmanagedType.LPArray,SizeParamIndex=10)]NativeCurveLineEvent[]? events,uint eventCapacity,out uint count,out double effectiveFuzzy,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_curve_seam",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int CurveSeam(ContextHandle context,ShapeHandle shape,double seam,out ulong output,[Out]byte[] diagnostic,uint capacity);
 }

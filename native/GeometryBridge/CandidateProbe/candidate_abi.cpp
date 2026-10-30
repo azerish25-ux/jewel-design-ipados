@@ -371,6 +371,13 @@ occ::handle<Geom_BSplineCurve> copiedEdgeSpline(Context& value,uint64_t shape,do
     const auto& input=findShape(value,shape).shape;
     if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Curve operation requires an edge");
     auto curve=BRep_Tool::Curve(TopoDS::Edge(input),first,last);
+    // Affine modification wraps its exact spline in Geom_TrimmedCurve.
+    // Keep the edge interval while copying the actual basis geometry.
+    for(;;){
+        auto trimmed=occ::down_cast<Geom_TrimmedCurve>(curve);
+        if(trimmed.IsNull())break;
+        curve=trimmed->BasisCurve();
+    }
     auto spline=occ::down_cast<Geom_BSplineCurve>(curve);
     if(spline.IsNull())fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Candidate operation requires a NURBS curve");
     if(!std::isfinite(first)||!std::isfinite(last)||last<=first)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid edge curve domain");
@@ -582,6 +589,30 @@ extern "C" int32_t jd_candidate_curve_line_intersections(uint64_t context,uint64
             if(!events&&!event_capacity)return;
             if(event_capacity<found.size())fail(JD_CANDIDATE_INVALID_ARGUMENT,"Intersection buffer too small");
             std::copy(found.begin(),found.end(),events);
+        });
+    },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_curve_seam(uint64_t context,uint64_t shape,double seam,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        outputHandle(output);
+        if(!std::isfinite(seam))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Seam parameter must be finite");
+        withContext(context,[&](Context& value){
+            double first=0,last=0;auto curve=copiedEdgeSpline(value,shape,first,last);
+            if(seam<first||seam>last)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Seam parameter outside edge domain");
+            const double period=last-first,end=seam+period;
+            if(!std::isfinite(period)||period<=0||!std::isfinite(end)||end<=seam)
+                fail(JD_CANDIDATE_INVALID_ARGUMENT,"Unsupported seam domain");
+            curve->Segment(first,last);
+            if(!curve->IsClosed())fail(JD_CANDIDATE_INVALID_ARGUMENT,"Seam relocation requires a closed curve");
+            curve->SetPeriodic();curve->SetOrigin(seam,0.0);
+            // Native Segment inserts/clamps the endpoints and removes periodicity.
+            curve->Segment(seam,end,0.0);
+            const double slack=16*std::numeric_limits<double>::epsilon()*std::max({1.0,std::abs(seam),std::abs(end)});
+            if(curve->IsPeriodic()||std::abs(curve->FirstParameter()-seam)>slack||std::abs(curve->LastParameter()-end)>slack)
+                fail(JD_CANDIDATE_KERNEL_FAILURE,"Native seam domain was not preserved");
+            *output=storeCurveEdge(value,curve);
         });
     },diagnostic,capacity);
 }

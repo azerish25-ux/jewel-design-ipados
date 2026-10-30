@@ -70,4 +70,8 @@ public sealed partial class CandidateContext
             return new(x,y,z);
         }
     }
+    /// <summary>Copy a closed native NURBS with domain starting at the requested in-domain seam.</summary>
+    public CandidateShape RelocateClosedCurveSeam(CandidateShape shape,double seam)=>CreateShape(diagnostic=>{
+        var status=NativeMethods.CurveSeam(_handle,shape.Handle,seam,out var id,diagnostic,DiagnosticCapacity);return(status,id);
+    },shape);
 }
