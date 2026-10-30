@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "scope": "Production lift of material identifiers and density mapping only; not CAD or PC document parity",
+  "files": [
+    {
+      "source": "recovery/canonical/cad/GV.CounterSketch.Shared/GemMaterial.cs",
+      "target": "src/Port/Domain/Recovered/GemMaterial.cs",
+      "disposition": "unchanged",
+      "sha256": "a72e2fbd706c309ddfa3dd23814e2e41c11a9af63466513c885df2dc400f4aaa",
+      "nonblank": 234
+    },
+    {
+      "source": "recovery/canonical/cad/GV.CounterSketch.Shared.Utilities.Helpers/GemCaratHelper.cs",
+      "target": "src/Port/Domain/Recovered/GemCaratHelper.cs",
+      "disposition": "unchanged",
+      "sha256": "436ad12bda91e2c023b33fde8255f1e95849abec5702c07791a280546a8a946b",
+      "nonblank": 345
+    }
+  ]
+}

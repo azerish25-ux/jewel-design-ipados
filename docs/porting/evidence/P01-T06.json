@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "taskId": "P01-T06",
-  "status": "in_progress",
+  "status": "complete",
   "outputs": [
     "scripts/ios-device.cjs",
     "tests/ios-device.test.cjs",
-    "scripts/run-simulator.sh"
+    "scripts/run-simulator.sh",
+    "docs/evidence/apple/device-family-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -15,12 +16,19 @@
       "expectedExitCode": 0,
       "artifact": "tests/ios-device.test.cjs",
       "actual": "Four selection regressions pass after observed missing-module failure"
+    },
+    {
+      "command": "GitHub Actions explicit iPad, iPhone and device matrix",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40988302637",
+      "actual": "Actual UIKit device families match; selected math/domain assertions pass; unsigned AOT 47 warnings / 0 errors"
     }
   ],
-  "review": null,
-  "blockers": [
-    "Both-family macOS execution and updated AOT evidence pending; no physical-device claim"
-  ],
+  "review": {
+    "result": "Verified selected-device inventories, runtime family marker files, assertion output and device build log. Compression remains a diagnostic failure; no physical-device or full CAD claim."
+  },
+  "blockers": [],
   "ciRuns": [
     {
       "id": 40988302637,

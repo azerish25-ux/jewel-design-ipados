@@ -1,0 +1,36 @@
+{
+  "run": 40988302637,
+  "commit": "32a6912bb5b474e8233729eb45d87b181ccf42de",
+  "families": [
+    {
+      "family": "ipad",
+      "actual": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D798106A-0403-425E-8352-3E7056FA9F79"
+      },
+      "result": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException"
+    },
+    {
+      "family": "iphone",
+      "actual": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "10B884BF-749F-4E8B-AFCD-26AB8F1DBD01"
+      },
+      "result": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException"
+    }
+  ],
+  "deviceAot": {
+    "errors": 0,
+    "warnings": 47,
+    "elapsed": "00:12:03.77",
+    "signed": false,
+    "physicalRun": false
+  },
+  "compressionCompatibility": "unresolved"
+}

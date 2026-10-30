@@ -1,3 +1,3 @@
-# Planned production modules
+# Production port modules
 
-Production work belongs here, separate from recovery/ and src/Recovered experiments. Follow docs/porting/ARCHITECTURE.md and P03 onward. No placeholder app or success-returning dummy backend is supplied. Owning work cards create their actual projects and tests.
+Domain now contains the unchanged recovered GemMaterial identifiers and specific-gravity helper, with byte-hash provenance and 114 recovered-baseline comparisons. Graph has a buildable dependency boundary; graph state/evaluation remains unimplemented. Follow the P03 cards and architecture contracts; these material tests are not CAD or PC document parity.

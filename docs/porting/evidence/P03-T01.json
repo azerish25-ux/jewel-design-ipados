@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P03-T01",
+  "status": "in_progress",
+  "outputs": [
+    "src/Port/Domain/Domain.csproj",
+    "src/Port/Graph/Graph.csproj",
+    "tests/Port/Domain.Tests/Domain.Tests.csproj"
+  ],
+  "fixtures": [],
+  "checks": [
+    {
+      "command": "dotnet run --project tests/Port/Domain.Tests",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Domain.Tests/Program.cs",
+      "actual": "114 recovered-baseline material comparisons, fixed ID/density checks and three undefined-ID cases pass after missing-domain failure"
+    },
+    {
+      "command": "dotnet run --project tests/Console",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Smoke/Checks.cs",
+      "actual": "Original 16 math goldens plus 114 production material comparisons pass; known compression incompatibility stays diagnostic"
+    }
+  ],
+  "review": {
+    "scope": "579 nonblank lines in two byte-identical recovered files; no CAD/PC binary parity claim. Graph boundary project only, no fake evaluator."
+  },
+  "blockers": [
+    "Production-domain macOS simulator execution pending"
+  ]
+}

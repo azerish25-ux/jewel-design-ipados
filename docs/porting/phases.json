@@ -203,14 +203,15 @@
         {
           "id": "P01-T06",
           "title": "Add iPad/iPhone device profiles and collect unsigned Release AOT warnings",
-          "status": "in_progress",
+          "status": "complete",
           "depends": [
             "P01-T04"
           ],
           "outputs": [
             "scripts/ios-device.cjs",
             "tests/ios-device.test.cjs",
-            "scripts/run-simulator.sh"
+            "scripts/run-simulator.sh",
+            "docs/evidence/apple/device-family-results.json"
           ],
           "evidence": [
             "docs/porting/evidence/P01-T06.json"
@@ -315,7 +316,7 @@
         "tests/Port/Domain.Tests/"
       ],
       "goal": "Extract existing algorithms and graph state into portable CSharp projects with explicit platform boundaries.",
-      "status": "not_started",
+      "status": "in_progress",
       "blockers": [],
       "plan": "docs/porting/phases/P03-portable-domain-and-graph-contracts.md",
       "acceptance": [
@@ -328,10 +329,16 @@
         {
           "id": "P03-T01",
           "title": "Create Domain, Graph and Domain.Tests projects",
-          "status": "not_started",
+          "status": "in_progress",
           "depends": [],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "src/Port/Domain/Domain.csproj",
+            "src/Port/Graph/Graph.csproj",
+            "tests/Port/Domain.Tests/Domain.Tests.csproj"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P03-T01.json"
+          ]
         },
         {
           "id": "P03-T02",

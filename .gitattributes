@@ -7,3 +7,4 @@ reference/fixtures/*.csg -text
 *.md text eol=lf
 *.json text eol=lf
 *.yml text eol=lf
+src/Port/Domain/Recovered/** -text -whitespace
