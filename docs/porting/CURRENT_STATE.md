@@ -2,7 +2,7 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P05-T02-A20 imports genuine rational tensor NURBS faces with immutable U-major controls/full knots. Windows1445 independent homogeneous tensor checks cover rational/nonuniform/nonclamped domains and collapsed apex, plus native ownership/errors. [ADR0039](ADR-0039-rational-tensor-surfaces.md). Next actual design nodes are dome caps138/139 then join140; their recovered algorithms/plane placement remain required. New Apple tests pending; full parity0/1451.
+Latest implementation: P05-T02-A21 explicitly adapts recovered Rhino5 dome profile data, supported by acquired SDK static inspection and pinned published setter/domain references. Windows21 threshold/sign/radius profiles and693 exact-source native point comparisons pass. [ADR0040](ADR-0040-recovered-rhino5-dome.md). Rail-revolve tensor, plane/placement and actual caps138/139 then join140 remain required. New Apple proof pending; full parity0/1451.
 
 Earlier inspected Apple native checkpoint: pure-array2bf2ee2 passed iPad/iPhone289 arithmetic pairs/33 null failures/789 flatten-copy trees plus12285 collection constructor cases, and unsigned arm64 iOS build52 warnings0 errors; [reports](../evidence/apple/pure-array-results.json). This predates native collection execution and consumers, tracked separately below.
 

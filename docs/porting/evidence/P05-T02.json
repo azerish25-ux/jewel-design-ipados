@@ -117,7 +117,13 @@
     "src/Port/Geometry.Candidate/CandidateContext.NurbsSurfaces.cs",
     "tests/Port/Geometry.Candidate.Contracts/NurbsSurfaceAssertions.cs",
     "docs/porting/ADR-0039-rational-tensor-surfaces.md",
-    "docs/porting/evidence/P05-T02-A20.json"
+    "docs/porting/evidence/P05-T02-A20.json",
+    "src/Port/Features.Candidate/RailRevolveTensorCandidate.cs",
+    "scripts/verify-dome-profile-oracle.cjs",
+    "tests/Port/Geometry.Candidate.Contracts/DomeProfileAssertions.cs",
+    "docs/porting/ADR-0040-recovered-rhino5-dome.md",
+    "docs/porting/evidence/P05-T02-A21.json",
+    "docs/evidence/audit/rhino5-control-point-setter.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -470,6 +476,13 @@
       "status": "local_verified_apple_pending",
       "plan": "docs/porting/plans/P05-T02-A20-nurbs-surfaces.md",
       "evidence": "docs/porting/evidence/P05-T02-A20.json"
+    },
+    {
+      "id": "P05-T02-A21",
+      "scope": "Recovered Rhino5 dome profile and rail-revolve prerequisite math",
+      "status": "in_progress_local_dome_verified",
+      "plan": "docs/porting/plans/P05-T02-A21-recovered-dome-math.md",
+      "evidence": "docs/porting/evidence/P05-T02-A21.json"
     }
   ],
   "checks": [

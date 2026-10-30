@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "status": "static_published_and_acquired_sdk_comparison",
+  "assembly": {
+    "path": "D:/MAIN SOFTWARE/jewerly software/analysis/runtime-prerequisites/rhino5/System/RhinoCommon.dll",
+    "sha256": "df4c761c2e3bd3824a0e6ab234a7be7fc95bb5045de27af3e4c3c24dfdc73867",
+    "identity": "RhinoCommon, Version=5.1.30000.16, Culture=neutral, PublicKeyToken=552281e97c755530"
+  },
+  "decompilation": {
+    "type": "Rhino.Geometry.Collections.NurbsCurvePointList",
+    "sha256": "f94318ac07ef8d1a9c3e0714e89773e6ab5cd246d5611278ebe6a0c7f11766a5",
+    "tool": "existing D:-local ILSpy10.1.1.8388, static only",
+    "observation": "SetPoint(int,Point4d) passes the point by reference to ON_NurbsCurve_SetCV2."
+  },
+  "publishedNative": {
+    "repository": "https://github.com/mcneel/rhinocommon",
+    "commit": "3aebe3553b5e2c78ed4d5ae1c21f3e752a6b7f69",
+    "path": "c/on_nurbscurve.cpp",
+    "normalizedLfSha256": "2e2bdd506a1d236d9309b167759b690bee33c2156e16f355aa23de24b7d6053c",
+    "symbol": "ON_NurbsCurve_SetCV2",
+    "observation": "Multiplies input XYZ by W before the native homogeneous SetCV, confirming Euclidean XYZ plus weight at this published wrapper seam."
+  },
+  "officialVersionExplanation": "https://discourse.mcneel.com/t/nurbscurve-different-behaviour-between-rhino-net-and-rhinocommon/75376/2",
+  "scope": "Read-only static evidence and published reference; no Rhino/native function was executed and no license/activation was bypassed. It supports Rhino5 dome interpretation but does not alone prove every installer or private native algorithm.",
+  "lineConstructor": {
+    "sdkType": "Rhino.Geometry.LineCurve",
+    "sdkObservation": "Point3d constructor calls ON_LineCurve_New3.",
+    "publishedWrapperCommit": "3aebe3553b5e2c78ed4d5ae1c21f3e752a6b7f69",
+    "publishedWrapperPath": "c/on_linecurve.cpp",
+    "publishedWrapperNormalizedLfSha256": "2a016ad68639c1e937df3e6cc5128d5982b3e7c3ed161274356b2f2b9ba945f7",
+    "publishedObservation": "New3 calls native ON_LineCurve(point,point).",
+    "openNurbsReferenceCommit": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "openNurbsReferencePath": "opennurbs_linecurve.cpp",
+    "openNurbsReferenceNormalizedLfSha256": "b9888f5b948f5fc24ca1638ad468bd1dbfba790aff123181d395fbea1f446dd6",
+    "domainRule": "0..line length, with fallback1 if length<=2.3283064365386962890625e-10.",
+    "limitation": "Published6 reference and acquired5 managed call-site; private Rhino5 native implementation not executed."
+  }
+}
