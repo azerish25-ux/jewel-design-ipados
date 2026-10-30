@@ -66,7 +66,8 @@
     "docs/porting/ADR-0016-candidate-ordered-join.md",
     "docs/evidence/apple/native-arc-length-results.json",
     "docs/porting/plans/P05-T02-A13-native-tangents.md",
-    "docs/porting/ADR-0017-candidate-unit-tangents.md"
+    "docs/porting/ADR-0017-candidate-unit-tangents.md",
+    "docs/evidence/apple/native-affine-device-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -488,7 +489,7 @@
       "id": 41049836353,
       "commit": "c77a316",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41049836353",
-      "verification": "SUCCESS: affine unsigned device build; artifact inspection pending, not physical execution"
+      "verification": "SUCCESS: inspected actual arm64/platform IOS executable and Release log52 warnings0 errors; native-affine-device-results.json. No physical execution."
     },
     {
       "id": 41050888195,
@@ -525,6 +526,18 @@
       "commit": "d0936e4f6ca134d7b388edac844a8189cc3375e4",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41052697300",
       "verification": "Ordered native join unsigned device build dispatched; terminal evidence pending"
+    },
+    {
+      "id": 41054794303,
+      "commit": "89ec8148212b28cdbc93d037e166343e437b52b2",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41054794303",
+      "verification": "Native tangent host runtime in progress; iPad/iPhone queued; terminal evidence pending"
+    },
+    {
+      "id": 41054797842,
+      "commit": "89ec8148212b28cdbc93d037e166343e437b52b2",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41054797842",
+      "verification": "Native tangent unsigned device build queued; terminal evidence pending"
     }
   ]
 }

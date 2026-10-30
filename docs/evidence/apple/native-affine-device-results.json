@@ -1,0 +1,11 @@
+{
+  "run": 41049836353,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41049836353",
+  "commit": "c77a316",
+  "warnings": 52,
+  "errors": 0,
+  "architectures": "arm64",
+  "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+  "executableSha256Report": "b4b90950a3ce28b93a4b40f847b007688ffb5f76f5e4b3cf942923b8372f1ea0  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+  "scope": "Unsigned actual ios-arm64 Release compile/link of affine candidate adapter and earlier suites. Not execution; runtime41049833154 remains live. Later closest/trim/join/tangent changes not covered."
+}
