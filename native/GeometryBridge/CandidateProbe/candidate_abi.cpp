@@ -791,3 +791,23 @@ extern "C" int32_t jd_candidate_nurbs_surface(uint64_t context,uint32_t degree_u
   withContext(context,[&](Context& value){occ::handle<Geom_BSplineSurface> surface;if(rational)surface=new Geom_BSplineSurface(poles,nativeWeights,u,v,um,vm,static_cast<int>(degree_u),static_cast<int>(degree_v),false,false);else surface=new Geom_BSplineSurface(poles,u,v,um,vm,static_cast<int>(degree_u),static_cast<int>(degree_v),false,false);BRepBuilderAPI_MakeFace face(surface,tolerance);if(!face.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native tensor surface face construction failed");*output=store(value,face.Shape());});
  },diagnostic,capacity);
 }
+
+extern "C" int32_t jd_candidate_curve_nurbs_export(uint64_t context,uint64_t shape,uint32_t* degree,uint32_t* pole_count,uint32_t* knot_count,uint32_t* rational,double* coordinates,uint32_t coordinate_capacity,double* weights,uint32_t weight_capacity,double* full_knots,uint32_t knot_capacity,char* diagnostic,uint32_t capacity)
+{
+ return protect([&]{
+  if(degree)*degree=0;if(pole_count)*pole_count=0;if(knot_count)*knot_count=0;if(rational)*rational=0;
+  if(!degree||!pole_count||!knot_count||!rational)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing NURBS export metadata");
+  withContext(context,[&](Context& value){
+   double first=0,last=0;auto curve=copiedEdgeSpline(value,shape,first,last);
+   if(curve->IsPeriodic())fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Periodic NURBS export is not represented by candidate full knots");
+   if(curve->FirstParameter()!=first||curve->LastParameter()!=last)curve->Segment(first,last,0.0);
+   const auto& knots=curve->KnotSequence();
+   if(curve->NbPoles()<2||curve->NbPoles()>65536||knots.Length()!=curve->NbPoles()+curve->Degree()+1)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"NURBS export exceeds counted representation");
+   *degree=static_cast<uint32_t>(curve->Degree());*pole_count=static_cast<uint32_t>(curve->NbPoles());*knot_count=static_cast<uint32_t>(knots.Length());*rational=curve->IsRational()?1u:0u;
+   if(!coordinates&&!weights&&!full_knots&&coordinate_capacity==0&&weight_capacity==0&&knot_capacity==0)return;
+   if(!coordinates||!full_knots||coordinate_capacity<*pole_count*3||knot_capacity<*knot_count||(*rational&&(!weights||weight_capacity<*pole_count)))fail(JD_CANDIDATE_INVALID_ARGUMENT,"NURBS export buffers too small or missing");
+   for(uint32_t i=0;i<*pole_count;i++){const auto& p=curve->Pole(static_cast<int>(i)+1);coordinates[i*3]=p.X();coordinates[i*3+1]=p.Y();coordinates[i*3+2]=p.Z();if(*rational)weights[i]=curve->Weight(static_cast<int>(i)+1);}
+   for(uint32_t i=0;i<*knot_count;i++)full_knots[i]=knots.Value(knots.Lower()+static_cast<int>(i));
+  });
+ },diagnostic,capacity);
+}

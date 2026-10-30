@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "candidate_abi.h"
 #include <cmath>
 #include <limits>
@@ -188,6 +189,19 @@ void run_candidate_curve_contracts()
     checkCurve(jd_candidate_nurbs(context.id,2,3,1,nurbsPoints,9,nurbsWeights,3,unsortedKnots,6,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Unsorted NURBS knots");
     checkCurve(jd_candidate_nurbs(context.id,2,3,1,nullptr,9,nurbsWeights,3,nurbsKnots,6,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Null NURBS controls");
     checkCurve(jd_candidate_nurbs(context.id,2,3,1,nurbsPoints,9,nurbsWeights,3,nurbsKnots,6,nullptr,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Null NURBS output");
+    uint32_t ed=0,en=0,ek=0,er=0;
+    ok(jd_candidate_curve_nurbs_export(context.id,circle,&ed,&en,&ek,&er,nullptr,0,nullptr,0,nullptr,0,error,sizeof(error)));
+    checkCurve(ed==2&&en==9&&ek==12&&er==1,"Circle NURBS export metadata");
+    double ec[27],ew[9],eks[12];std::fill(ec,ec+27,987);std::fill(ew,ew+9,987);std::fill(eks,eks+12,987);
+    for(int mode=0;mode<4;mode++){
+      checkCurve(jd_candidate_curve_nurbs_export(context.id,circle,&ed,&en,&ek,&er,ec,mode==0?26:27,mode==3?nullptr:ew,mode==1?8:9,eks,mode==2?11:12,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Short/null NURBS export buffer accepted");
+      checkCurve(ed==2&&en==9&&ek==12&&er==1,"Short query lost required metadata");
+      checkCurve(std::all_of(ec,ec+27,[](double v){return v==987;})&&std::all_of(ew,ew+9,[](double v){return v==987;})&&std::all_of(eks,eks+12,[](double v){return v==987;}),"Failed export partially wrote buffers");
+    }
+    checkCurve(jd_candidate_curve_nurbs_export(context.id,circle,nullptr,&en,&ek,&er,ec,27,ew,9,eks,12,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Missing export metadata accepted");
+    checkCurve(jd_candidate_curve_nurbs_export(context.id,box,&ed,&en,&ek,&er,nullptr,0,nullptr,0,nullptr,0,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION&&ed==0&&en==0&&ek==0&&er==0,"BRep export accepted or stale metadata retained");
+    ok(jd_candidate_curve_nurbs_export(context.id,circle,&ed,&en,&ek,&er,ec,27,ew,9,eks,12,error,sizeof(error)));
+    nearCurve(ec[0],0);nearCurve(ec[1],0);nearCurve(ec[2],7);nearCurve(ew[1],std::sqrt(.5));nearCurve(eks[11],2*pi);
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }

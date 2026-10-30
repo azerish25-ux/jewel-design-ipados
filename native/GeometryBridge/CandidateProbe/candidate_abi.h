@@ -80,6 +80,10 @@ int32_t jd_candidate_surface_point(uint64_t context,uint64_t shape,double u,doub
 int32_t jd_candidate_shape_bounds(uint64_t context,uint64_t shape,uint32_t accurate,double* min_x,double* min_y,double* min_z,double* max_x,double* max_y,double* max_z,double* padding,char* diagnostic,uint32_t capacity);
 /* Explicit Euclidean U-major poles, optional weights, full nonperiodic knot vectors. */
 int32_t jd_candidate_nurbs_surface(uint64_t context,uint32_t degree_u,uint32_t degree_v,uint32_t count_u,uint32_t count_v,uint32_t rational,const double* coordinates,uint32_t coordinate_count,const double* weights,uint32_t weight_count,const double* knots_u,uint32_t knot_count_u,const double* knots_v,uint32_t knot_count_v,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity);
+/* Copied nonperiodic native NURBS controls, clipped to actual edge interval.
+ * Null arrays/zero capacities query metadata. Short buffers report required
+ * metadata and InvalidArgument without writing any data arrays. No new handles. */
+int32_t jd_candidate_curve_nurbs_export(uint64_t context,uint64_t shape,uint32_t* degree,uint32_t* pole_count,uint32_t* knot_count,uint32_t* rational,double* coordinates,uint32_t coordinate_capacity,double* weights,uint32_t weight_capacity,double* full_knots,uint32_t knot_capacity,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

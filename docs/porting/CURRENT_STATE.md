@@ -2,7 +2,7 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P05-T02-A21 adapts recovered Rhino5 dome profiles and rail-revolve tensor math. Windows21 profiles/693 source-point comparisons,20 tensor coefficient comparisons and204 native boundary samples pass; new Apple tensor execution pending. [ADR0040](ADR-0040-recovered-rhino5-dome.md). Actual caps138/139 still need native curve export, plane/placement, then join140. Full parity0/1451.
+Latest implementation: P05-T02-A22 exports actual native curve controls/weights/full knots as detached immutable definitions. Windows14 curve cases/462 native reimport samples include actual115/122 before and after radius edit/save/reopen; raw ABI buffer guards and ownership checks pass. Apple export tests pending. [ADR0041](ADR-0041-native-curve-export.md). Earlier dome/tensor implementation1138bee is under Apple testing. Actual caps138/139 still need plane/placement, then join140. Full parity0/1451.
 
 Inspected Apple checkpoints: [BRep graph](../evidence/apple/brep-graph-results.json) and [rational NURBS surfaces](../evidence/apple/nurbs-surface-results.json) passed on iPad/iPhone simulators and unsigned arm64 iOS build (52 warnings,0 errors). These results predate the new dome/tensor adapter; physical-device and original-PC acceptance remain open.
 
