@@ -15,13 +15,13 @@ internal static class ProjectionAssertions
             var node = snapshot.Nodes[i]; var record = document.Records[i];
             if (node.TypeGuid != record.TypeGuid || node.Version.Major != record.Version.Major || node.Version.Minor != record.Version.Minor
                 || !node.CopyOriginalRecordBytes().AsSpan().SequenceEqual(record.CopyOriginalRecordBytes())) throw new Exception("Projection lost provenance");
-            if (record.Scalar is { } scalar)
+            if (record.Header is { } header)
             {
-                if (node.BitFlags != scalar.Flags || node.Identifier != scalar.Identifier || !node.IsInstanceIdentityDecoded || !node.AreInputLinksDecoded
+                if (node.BitFlags != header.Flags || node.Identifier != header.Identifier || !node.IsInstanceIdentityDecoded || !node.AreInputLinksDecoded
                     || scope.InitialView.NodeIdentities[i].InitialIdentity is not { WasGenerated: true }) throw new Exception("Known legacy header projection");
-                if (node.InputLinks.Count != scalar.ObjectIndices.Count) throw new Exception("Projected channel count");
+                if (node.InputLinks.Count != header.ObjectIndices.Count) throw new Exception("Projected channel count");
                 for (int j = 0; j < node.InputLinks.Count; j++)
-                    if (node.InputLinks[j] != new SerializedChannelLink(scalar.ObjectIndices[j], scalar.ChannelIndices[j])) throw new Exception("Link normalized");
+                    if (node.InputLinks[j] != new SerializedChannelLink(header.ObjectIndices[j], header.ChannelIndices[j])) throw new Exception("Link normalized");
             }
             else if (node.BitFlags is not null || node.Identifier is not null || node.IsInstanceIdentityDecoded || node.AreInputLinksDecoded
                 || scope.InitialView.NodeIdentities[i].InitialIdentity is not null) throw new Exception("Opaque metadata or runtime GUID invented");

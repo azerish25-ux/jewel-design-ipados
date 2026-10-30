@@ -31,6 +31,40 @@
     {
       "path": "reference/file-proof/IndependentVerifier/Program.cs",
       "sha256": "c03c1d0b62538b38a29fe712bdef150d2dfbf7720f0e892f3a5900b375d38e0f"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfMatrixProfiles.cs",
+      "sha256": "d17c7ef34039576d3e9455840d9778b1a96a8d8f2cafc578d364c02b6331c205",
+      "scope": "P04-T01-A03 direct NURBS/group/name/sweep/header serialization and selected profile forwarding; runtime not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CS/CSUtilIO.cs",
+      "sha256": "cd1babaea902077a6fd9ab84b53e33d7f44ac349b73124e514d0caca4aff2734",
+      "scope": "P04-T01-A03 direct NURBS/group/name/sweep/header serialization and selected profile forwarding; runtime not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4",
+      "scope": "P04-T01-A03 direct NURBS/group/name/sweep/header serialization and selected profile forwarding; runtime not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+      "sha256": "32460012d6e5d127d9bce60be12a1c5e2432265c827a47940e92292e0be1dd8b",
+      "scope": "P04-T01-A03 direct NURBS/group/name/sweep/header serialization and selected profile forwarding; runtime not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSProfileData.cs",
+      "sha256": "e48301069692d00776c426803ae0e3a86b2c137a8a7015e9d6adcee7e0617ff6",
+      "scope": "P04-T01-A03 direct NURBS/group/name/sweep/header serialization and selected profile forwarding; runtime not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueChooser.cs",
+      "sha256": "c3ddad50ff84ce50d624e1d4ab733e806caeab4a03aa77bd3b87ad55b1596fd6",
+      "scope": "P04-T01-A03 direct NURBS/group/name/sweep/header serialization and selected profile forwarding; runtime not implied"
+    },
+    {
+      "url": "https://github.com/mcneel/opennurbs/blob/eb92af3ba1806b0a34a99aba0d3bda83e3d46083/opennurbs_nurbscurve.cpp",
+      "scope": "Pinned modern openNURBS legacy1.0 Read/Write field corroboration; distinct from original runtime oracle"
     }
   ],
   "outputs": [
@@ -56,7 +90,14 @@
     "reference/file-proof/check-additional-scalars.cjs",
     "docs/evidence/audit/additional-scalar-production-results.json",
     "docs/porting/ADR-0010-additional-legacy-scalars.md",
-    "docs/evidence/apple/additional-scalar-codec-results.json"
+    "docs/evidence/apple/additional-scalar-codec-results.json",
+    "src/Port/Documents/LegacyCsg4MatrixProfiles.cs",
+    "tests/Port/Documents.Contracts/MatrixProfileAssertions.cs",
+    "reference/file-proof/matrix-profiles-v1.cjs",
+    "tests/matrix-profiles-reference.test.cjs",
+    "docs/evidence/audit/matrix-profile-reference.json",
+    "docs/porting/plans/P04-T01-A03-matrix-profiles.md",
+    "docs/porting/ADR-0022-embedded-matrix-profiles.md"
   ],
   "fixtures": [
     {
@@ -79,6 +120,11 @@
       "id": "P04-T01-A02",
       "scope": "Three additional scalar types, exact version1.1; independent reader/oracle before production codec extension",
       "status": "verified_bounded_codec_profiles"
+    },
+    {
+      "id": "P04-T01-A03",
+      "scope": "Six immutable stored matrix-profile groups,155 raw NURBS curves and structural encoding/common header projection",
+      "status": "local_verified_apple_pending"
     }
   ],
   "checks": [
@@ -155,6 +201,43 @@
       "expectedExitCode": 0,
       "artifact": "docs/evidence/apple/additional-scalar-codec-results.json",
       "actual": "Both simulator jobs passed full shared assertions including100 scalar codec profiles, dynamic-code=False. Full app/PC/graph integration not implied."
+    },
+    {
+      "subtaskId": "P04-T01-A03",
+      "command": "dotnet build Documents.Contracts before MatrixProfiles API",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED3 absent typed profile API errors; .local/evidence/P04-T01-A03/red.txt"
+    },
+    {
+      "subtaskId": "P04-T01-A03",
+      "command": "Independent matrix profile reader inspection",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Initial expected one group was contradicted by6 fully consumed groups. Broadened fixture expectation to all six,155 curves/4012 controls; no profile subset substitution."
+    },
+    {
+      "subtaskId": "P04-T01-A03",
+      "command": "dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "All155 NURBS knot/control/bbox/reserved/sweep/name data match independent raw-bit oracle; exact no-op/edit/reopen, synthetic1.0/unknown outer+inner/malformed/truncated/immutable and NaN/-0 checks pass.106 decoded headers,100 scalar handles/74 bounded,135 opaque. Existing document/portfolio/graph assertions pass.",
+      "artifact": ".local/evidence/P04-T01-A03/document-proof.log"
+    },
+    {
+      "subtaskId": "P04-T01-A03",
+      "command": "node scripts/build-native-windows.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Earlier real native/managed/OutsideRail stored-input pipeline passes with the new typed document model; this is not native import of the newly decoded profiles.",
+      "artifact": ".local/evidence/P04-T01-A03/native-adjacent-proof.log"
+    },
+    {
+      "subtaskId": "P04-T01-A03",
+      "command": "node --test matrix/scalar/ring/outside reference tests; production CSG/additional scalar crosscheck",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "10 reference tests, independent four-output archive hashes and three scalar edit comparisons pass; all240 other records preserved in each scalar case."
     }
   ],
   "review": {
@@ -165,7 +248,8 @@
     "performance": "CRC table and bounded linear parsing/writing; default 64MiB configurable; fixture 383069 bytes",
     "limitations": "Nested preview/gem checksums opaque; no native-load side effects, portfolio, all 654 schemas, migration, PC app reopen or geometry generation",
     "appleStartup": "Same source commit passed both families in parallel control; failed main iPad lacked managed result. Exact startup cause remains unproven, no codec workaround applied.",
-    "additionalScalars": "Production exact1.1 scalar profiles now implemented over shared immutable header/bit encoding; Numeric API remains bounded subset74. Additional26 plus existing74=100;141 records remain opaque. Source/independent oracle/full-body/save checks pass locally. Graph sessions still74 and UI/CAM/PC/native regeneration untouched; Apple results pending. Both iPad/iPhone shared-suite runs41034629346 passed; actual reports and hashes inspected. Parent P04 remains incomplete."
+    "additionalScalars": "Production exact1.1 scalar profiles now implemented over shared immutable header/bit encoding; Numeric API remains bounded subset74. Additional26 plus existing74=100;141 records remain opaque. Source/independent oracle/full-body/save checks pass locally. Graph sessions still74 and UI/CAM/PC/native regeneration untouched; Apple results pending. Both iPad/iPhone shared-suite runs41034629346 passed; actual reports and hashes inspected. Parent P04 remains incomplete.",
+    "matrixProfiles": "Reviewed allocation/byte/count consistency before reads, unsupported nested schema remains wholly opaque, immutable raw geometry and exact bit encoding, common header projection without scalar handle inflation, no resolution of stored path labels, and source graph/native/PC limits. No arbitrary original native code or BinaryFormatter execution."
   },
   "blockers": [
     "Full P04 still needs P02/P03, representative PC corpus/oracle, all serializers/portfolio/migration and geometry/sidecar integration"

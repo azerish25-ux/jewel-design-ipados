@@ -42,17 +42,20 @@ public sealed class LegacyCsg4Record
     public int OriginalFileOffset { get; }
     public LegacyCsg4Scalar? Scalar {get;}
     public LegacyCsg4Numeric? Numeric=>Scalar as LegacyCsg4Numeric;
-    public string? OpaqueReason => Scalar is not null ? null :
+    public LegacyCsg4MatrixProfiles? MatrixProfiles {get;}
+    public ILegacyCsg4Header? Header=>(ILegacyCsg4Header?)Scalar??MatrixProfiles;
+    public string? OpaqueReason => Header is not null ? null :
+        TypeGuid==LegacyCsg4Codec.MatrixProfilesTypeGuid?"Matrix profile version or nested NURBS format is not decoded":
         TypeGuid == LegacyCsg4Codec.RangeTypeGuid || TypeGuid == LegacyCsg4Codec.RingTypeGuid ? "Numeric record version is not decoded" : LegacyCsg4Codec.IsPlainScalarType(TypeGuid) ? "Scalar record version is not decoded" : "Record type is not decoded";
 
-    internal LegacyCsg4Record(Guid type, LegacyCsg4Version version, int offset, byte[] originalRecord, LegacyCsg4Scalar? scalar)
+    internal LegacyCsg4Record(Guid type, LegacyCsg4Version version, int offset, byte[] originalRecord, LegacyCsg4Scalar? scalar,LegacyCsg4MatrixProfiles? matrixProfiles=null)
     {
-        TypeGuid = type; Version = version; OriginalFileOffset = offset; this.originalRecord = originalRecord; Scalar = scalar;
+        TypeGuid = type; Version = version; OriginalFileOffset = offset; this.originalRecord = originalRecord; Scalar = scalar;MatrixProfiles=matrixProfiles;
     }
     public byte[] CopyOriginalRecordBytes() => (byte[])originalRecord.Clone();
-    internal byte[] EncodePayload() => Scalar?.Encode() ?? originalRecord.AsSpan(8, originalRecord.Length - 12).ToArray();
+    internal byte[] EncodePayload() => Scalar?.Encode() ?? MatrixProfiles?.Encode() ?? originalRecord.AsSpan(8, originalRecord.Length - 12).ToArray();
     internal LegacyCsg4Record WithValue(double value) => new(TypeGuid, Version, OriginalFileOffset, originalRecord,
-        (Scalar ?? throw new NotSupportedException(OpaqueReason)).WithValue(value));
+        (Scalar ?? throw new NotSupportedException(OpaqueReason??"Record has no stored scalar value")).WithValue(value),MatrixProfiles);
 }
 
 /// <summary>Immutable library archive model; it does not contain regenerated CAD geometry.</summary>
@@ -63,6 +66,7 @@ public sealed class LegacyCsg4Document
     public IReadOnlyList<LegacyCsg4Record> Records { get; }
     public int NumericRecordCount => Records.Count(r => r.Numeric is not null);
     public int ScalarRecordCount => Records.Count(r=>r.Scalar is not null);
+    public int MatrixProfileRecordCount=>Records.Count(r=>r.MatrixProfiles is not null);
     public string IntegrityCoverage => "File-info/category/graph-directory/leaf CRCs checked; preview, gem and envelope nested checksums remain opaque";
     internal LegacyCsg4Document(byte[] prefix, LegacyCsg4Record[] records) { this.prefix = prefix; Records = Array.AsReadOnly(records); }
 
@@ -70,7 +74,7 @@ public sealed class LegacyCsg4Document
     public LegacyCsg4Document WithNumericValue(int ordinal, double value)
     {
         if ((uint)ordinal >= (uint)Records.Count) throw new ArgumentOutOfRangeException(nameof(ordinal));
-        if(Records[ordinal].Numeric is null)throw new NotSupportedException(Records[ordinal].OpaqueReason??"Use WithScalarValue for decoded plain scalar records.");
+        if(Records[ordinal].Numeric is null)throw new NotSupportedException(Records[ordinal].OpaqueReason??(Records[ordinal].Scalar is not null?"Use WithScalarValue for decoded plain scalar records.":"Record has no stored numeric value."));
         return WithScalarValue(ordinal,value);
     }
 

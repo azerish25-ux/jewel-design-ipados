@@ -31,12 +31,22 @@
     {
       "path": "src/Port/Documents/LegacyCsg4Codec.cs",
       "normalization": "utf8-lf",
-      "sha256": "4baf9e8da3a588d73d4462f1a19248559c2fd50a501ba3b4547190915a15f4bc"
+      "sha256": "fa9e8532422d5405e634b47e8e27ecdb63655b1c3f86408628e8247c8ad77535"
     },
     {
       "path": "src/Port/Documents/LegacyCsg4Scalar.cs",
       "normalization": "utf8-lf",
-      "sha256": "522e1931341645d27a3fb73de2e1f6dde1fa5ad43de6c7ffa61615cdd23cbdf9"
+      "sha256": "5e558ede70a79566ad5c9712634e60c52ecd200822a8d5615821fd71d9e64638"
+    },
+    {
+      "path": "src/Port/Documents/LegacyCsg4MatrixProfiles.cs",
+      "normalization": "utf8-lf",
+      "sha256": "9843082cc2d1d86465fab711c1c87cd05a3e0f4e41579455671e544e9de385e2"
+    },
+    {
+      "path": "reference/file-proof/matrix-profiles-v1.cjs",
+      "normalization": "utf8-lf",
+      "sha256": "24700de4001f0c2cf24a42fa203c2d91fc084e5ce298cab0bfe7b6bc3b6eaecb"
     }
   ],
   "counts": {
@@ -44,7 +54,9 @@
     "registrationGuids": 43,
     "numericDecoded": 74,
     "scalarDecoded": 100,
-    "opaquePayloads": 141,
+    "matrixProfileGroupsDecoded": 6,
+    "embeddedProfileCurves": 155,
+    "opaquePayloads": 135,
     "unknownGuids": 0,
     "ambiguousGuids": 0,
     "legacyNodes": 33,
@@ -79,6 +91,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 19,
       "registrationAmbiguous": false,
       "registrations": [
@@ -182,6 +195,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 11,
       "registrationAmbiguous": false,
       "registrations": [
@@ -254,6 +268,7 @@
       ],
       "numericDecoded": 1,
       "scalarDecoded": 1,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
@@ -338,6 +353,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 11,
       "registrationAmbiguous": false,
       "registrations": [
@@ -409,6 +425,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -487,6 +504,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 7,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
@@ -566,7 +584,8 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
-      "opaquePayloads": 6,
+      "matrixProfilesDecoded": 6,
+      "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
         {
@@ -751,6 +770,7 @@
       ],
       "numericDecoded": 73,
       "scalarDecoded": 73,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
@@ -839,6 +859,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 15,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
@@ -913,6 +934,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1042,6 +1064,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1115,6 +1138,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1197,6 +1221,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1271,6 +1296,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1399,6 +1425,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 4,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1498,6 +1525,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 7,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1580,6 +1608,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 6,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1662,6 +1691,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 6,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1765,6 +1795,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 7,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1844,6 +1875,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 7,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1929,6 +1961,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 13,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2002,6 +2035,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2083,6 +2117,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2176,6 +2211,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2258,6 +2294,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 6,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2343,6 +2380,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2420,6 +2458,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2501,6 +2540,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2591,6 +2631,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2687,6 +2728,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 4,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2762,6 +2804,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 3,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2841,6 +2884,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 3,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2913,6 +2957,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2995,6 +3040,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3088,6 +3134,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3166,6 +3213,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3238,6 +3286,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3319,6 +3368,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3392,6 +3442,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3481,6 +3532,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3575,6 +3627,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3648,6 +3701,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3730,6 +3784,7 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
+      "matrixProfilesDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -4651,6 +4706,7 @@
   "limits": [
     "All serialized nodes included; active outputs and graph edge reachability not decoded for opaque records.",
     "Stored-double decoding covers only five exact observed profiles: Range1.1/RingSize1.2 and Value/OnOff/Chooser1.1. Full value runtime behavior and other versions remain open.",
+    "Matrix profiles decode known group1.0/1.1 and direct NURBS1.0 data only; no actual chooser/native curve generation or complete group UI/runtime parity.",
     "Direct lexical static calls omit instance calls, dispatch, base methods and transitive helpers. Zero calls is not geometry-free.",
     "Registration GUID/source mapping and serializer locations do not prove supported record versions or runtime parity.",
     "Nested preview/gem checksums remain opaque as recorded by the independent reader.",

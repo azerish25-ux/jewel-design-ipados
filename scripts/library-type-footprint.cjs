@@ -2,6 +2,7 @@ const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const root=path.resolve(__dirname,'..');
 const {parse,hash}=require('../reference/file-proof/csg-v4.cjs');
 const {readAdditionalScalars}=require('../reference/file-proof/scalar-v1.cjs');
+const {readMatrixProfiles}=require('../reference/file-proof/matrix-profiles-v1.cjs');
 const read=name=>fs.readFileSync(path.join(root,name));
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function build(){
@@ -9,6 +10,7 @@ function build(){
  if(hash(bytes)!=='73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd')throw Error('Unexpected fixture');
  const parsed=parse(bytes);
  const additional=new Set(readAdditionalScalars(bytes).extras.map(x=>x.index));
+ const profileGroups=readMatrixProfiles(bytes).groups,profiles=new Set(profileGroups.map(x=>x.index));
  if(parsed.count!==241)throw Error('Unexpected serialized node table');
  const matrixPath='docs/evidence/audit/serialization-matrix.json',inventoryPath='docs/evidence/audit/cad-type-inventory.json';
  const matrix=JSON.parse(read(matrixPath)),inventory=JSON.parse(read(inventoryPath));
@@ -30,7 +32,7 @@ function build(){
     serializerSources:Object.fromEntries(Object.entries(row.effectiveMethods).map(([method,items])=>[method,items.map(x=>({path:x.path,line:x.line,end:x.end,declaredBy:x.type}))]))});
   }
   types.push({guid,nodeIndices:nodes.map(x=>x.index),recordVersions:[...new Set(nodes.map(x=>x.major+'.'+x.minor))].sort(),
-   numericDecoded:nodes.filter(x=>x.numeric).length,scalarDecoded:nodes.filter(x=>x.numeric||additional.has(x.index)).length,opaquePayloads:nodes.filter(x=>!x.numeric&&!additional.has(x.index)).length,
+   numericDecoded:nodes.filter(x=>x.numeric).length,scalarDecoded:nodes.filter(x=>x.numeric||additional.has(x.index)).length,matrixProfilesDecoded:nodes.filter(x=>profiles.has(x.index)).length,opaquePayloads:nodes.filter(x=>!x.numeric&&!additional.has(x.index)&&!profiles.has(x.index)).length,
    registrationAmbiguous:registrations.length>1,registrations});
  }
  types.sort((a,b)=>a.nodeIndices[0]-b.nodeIndices[0]);
@@ -41,15 +43,17 @@ function build(){
  }
  return {schemaVersion:1,status:'source_inventory_only',
   scope:'Pinned library serialized type footprint, not executed graph reachability, transitive dependency closure, complete field/runtime decoding or geometry parity',
-  inputs:[fixture,matrixPath,inventoryPath,'reference/file-proof/csg-v4.cjs','reference/file-proof/scalar-v1.cjs','src/Port/Documents/LegacyCsg4Codec.cs','src/Port/Documents/LegacyCsg4Scalar.cs'].map(p=>({path:p,normalization:p.endsWith('.csg')?'none':'utf8-lf',sha256:sha(p.endsWith('.csg')?read(p):Buffer.from(read(p).toString('utf8').replaceAll('\r\n','\n')))})),
+  inputs:[fixture,matrixPath,inventoryPath,'reference/file-proof/csg-v4.cjs','reference/file-proof/scalar-v1.cjs','src/Port/Documents/LegacyCsg4Codec.cs','src/Port/Documents/LegacyCsg4Scalar.cs','src/Port/Documents/LegacyCsg4MatrixProfiles.cs','reference/file-proof/matrix-profiles-v1.cjs'].map(p=>({path:p,normalization:p.endsWith('.csg')?'none':'utf8-lf',sha256:sha(p.endsWith('.csg')?read(p):Buffer.from(read(p).toString('utf8').replaceAll('\r\n','\n')))})),
   counts:{serializedNodes:parsed.count,registrationGuids:types.length,numericDecoded:parsed.numericCount,scalarDecoded:parsed.numericCount+additional.size,
-   opaquePayloads:parsed.count-parsed.numericCount-additional.size,unknownGuids:types.filter(x=>!x.registrations.length).length,
+   matrixProfileGroupsDecoded:profiles.size,embeddedProfileCurves:profileGroups.reduce((n,g)=>n+g.curves.length,0),
+   opaquePayloads:parsed.count-parsed.numericCount-additional.size-profiles.size,unknownGuids:types.filter(x=>!x.registrations.length).length,
    ambiguousGuids:types.filter(x=>x.registrationAmbiguous).length,
    legacyNodes:types.filter(x=>x.registrations.length===1&&x.registrations[0].legacy).reduce((sum,x)=>sum+x.nodeIndices.length,0),
    uniqueDirectStaticCalls:callMap.size},types,
   directStaticCallFootprint:[...callMap].sort((a,b)=>a[0].localeCompare(b[0])).map(([call,evidence])=>({call,evidence})),
   limits:['All serialized nodes included; active outputs and graph edge reachability not decoded for opaque records.',
    'Stored-double decoding covers only five exact observed profiles: Range1.1/RingSize1.2 and Value/OnOff/Chooser1.1. Full value runtime behavior and other versions remain open.',
+   'Matrix profiles decode known group1.0/1.1 and direct NURBS1.0 data only; no actual chooser/native curve generation or complete group UI/runtime parity.',
    'Direct lexical static calls omit instance calls, dispatch, base methods and transitive helpers. Zero calls is not geometry-free.',
    'Registration GUID/source mapping and serializer locations do not prove supported record versions or runtime parity.',
    'Nested preview/gem checksums remain opaque as recorded by the independent reader.',
@@ -59,7 +63,7 @@ function markdown(report){
  const c=report.counts;
  const lines=['# Available library serialized type footprint','',
   'Generated by node scripts/library-type-footprint.cjs --write. [Machine-readable report](library-type-footprint.json).',
-  '',c.serializedNodes+' serialized nodes use '+c.registrationGuids+' registration GUIDs; '+c.scalarDecoded+' scalar payloads are decoded (including '+c.numericDecoded+' bounded numeric) and '+c.opaquePayloads+' remain opaque. '+c.legacyNodes+' nodes map to legacy registrations. This is a serialized footprint, not an executed dependency graph or a regenerated jewelry design.','',
+  '',c.serializedNodes+' serialized nodes use '+c.registrationGuids+' registration GUIDs; '+c.scalarDecoded+' scalar payloads are decoded (including '+c.numericDecoded+' bounded numeric), plus '+c.matrixProfileGroupsDecoded+' matrix-profile groups with '+c.embeddedProfileCurves+' stored curves; '+c.opaquePayloads+' remain opaque. '+c.legacyNodes+' nodes map to legacy registrations. This is a serialized footprint, not an executed dependency graph or a regenerated jewelry design.','',
   '| Registered type | Nodes | Serialized versions | Legacy | Scalar decoded | Direct static call sites |',
   '| --- | ---: | --- | --- | ---: | ---: |'];
  for(const group of report.types){

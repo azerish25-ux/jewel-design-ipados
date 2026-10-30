@@ -1,7 +1,7 @@
 namespace JewelDesign.Documents;
 
 /// <summary>Immutable stored-double/header schema. It does not imply runtime Boolean/chooser behavior.</summary>
-public class LegacyCsg4Scalar
+public class LegacyCsg4Scalar:ILegacyCsg4Header
 {
     private readonly StoredText name;
     private readonly (StoredText Type,StoredText Key,StoredText Value)[] userData;

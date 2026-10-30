@@ -19,6 +19,7 @@ internal sealed class CsgCursor
     public void Need(int count) { if (count < 0 || Position < 0 || Position > limit - count) throw new InvalidDataException("Read outside bounded region at " + Position); }
     public int Int() { Need(4); int value = BinaryPrimitives.ReadInt32LittleEndian(bytes.AsSpan(Position, 4)); Position += 4; return value; }
     public uint UInt() => unchecked((uint)Int());
+    public byte Byte(){Need(1);return bytes[Position++];}
     public double Double() { Need(8); long bits = BinaryPrimitives.ReadInt64LittleEndian(bytes.AsSpan(Position, 8)); Position += 8; return BitConverter.Int64BitsToDouble(bits); }
     public Guid Guid() { Need(16); var id = new Guid(bytes.AsSpan(Position, 16)); Position += 16; return id; }
     public int Count(int max) { int n = Int(); if (n < 0 || n > max) throw new InvalidDataException("Count outside configured bound"); return n; }

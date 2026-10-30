@@ -19,6 +19,7 @@ public static class Assertions
         Check(document.Records.Count == 241 && document.NumericRecordCount == 74, "Fixture record counts");
         Check(document.Records.Count(r => r.Numeric?.Identifier == "Top Thickness") == 2, "Duplicate label fixture");
         var additionalScalars=AdditionalScalarAssertions.Run(document,original,outputFolder);
+        var matrixProfiles=MatrixProfileAssertions.Run(document,original);
         ProjectionAssertions.Run(document);
         var editBridgeResult = EditBridgeAssertions.Run(document, original);
         var selected = document.Records[8];
@@ -104,7 +105,7 @@ public static class Assertions
             File.WriteAllBytes(Path.Combine(outputFolder, "edited.csg"), edited);
             File.WriteAllBytes(Path.Combine(outputFolder, "restored.csg"), restored);
         }
-        return additionalScalars+"; "+packageResult+"; "+portfolioResult + "; " + editBridgeResult + "; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.";
+        return matrixProfiles+"; "+additionalScalars+"; "+packageResult+"; "+portfolioResult + "; " + editBridgeResult + "; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.";
     }
 
     private static void LeafCrc(byte[] data, LegacyCsg4Record record)
