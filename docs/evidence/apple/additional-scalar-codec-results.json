@@ -1,0 +1,32 @@
+{
+  "run": 41034629346,
+  "commit": "aee7ffcc138b9ec294219637401b5cb58e3bd842",
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41034629346",
+  "results": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D798106A-0403-425E-8352-3E7056FA9F79"
+      },
+      "actualRuntimeFamily": "ipad",
+      "report": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; PASS session identity: raw/effective GUID rules, duplicate/zero/legacy identity, explicit rename/reorder/delete/restore mappings and ownership guards; no codec migration or applied graph-edit claim.; PASS undo journal: 6130 differential steps against source-linked CSUndoTable; reference identity, grouping, prune/pause/lock/branch and target failures; test targets only, no native object/PC claim.; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.; PASS production ring sizes: seven regions, 1172 catalog/boundary cases in two cultures, radius/diameter/index/text and invalid input parity; recovered-source baseline, no PC binary/geometry claim.; PASS numeric value plans: 909 bit-exact recovered-method cases; epsilon/no-op/prechange ordering, unclamped values and nonfinite payloads; no live callbacks, undo, codec or CAD claim.; PASS additional scalar codec: 26 source/oracle-matched Value/OnOff/Chooser records, 100 total scalars/74 bounded numeric; structural edit/reopen/reversal and other-record/bit/version/bounds fidelity; no UI/graph regeneration or PC claim.; PASS portfolio package: immutable member/sidecar preservation, real CSG edit/reopen, metadata/history candidates, ownership/case/path/bounds guards and unresolved-entry diagnostics; synthetic inventory, no native folder/PC claim.; PASS portfolio XML: source-derived 16/27 property contracts, nested/unknown/nil/path and UTF8/UTF16 preservation, bounded DTD rejection and paired filenames; synthetic fixtures only; dynamic-code=False; no PC portfolio/load-mutation claim.; PASS library edit session: real handles, setter epsilon/previous state, grouped scalar undo/redo, branch/foreign/opaque guards and rebuilt archive reopening; no native snapshot or CAD claim.; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException",
+      "sha256": "4e600642219067ffb33c3dfce63e610c0acf17092d1affc579a2c3991ac26ccf"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "10B884BF-749F-4E8B-AFCD-26AB8F1DBD01"
+      },
+      "actualRuntimeFamily": "iphone",
+      "report": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; PASS session identity: raw/effective GUID rules, duplicate/zero/legacy identity, explicit rename/reorder/delete/restore mappings and ownership guards; no codec migration or applied graph-edit claim.; PASS undo journal: 6130 differential steps against source-linked CSUndoTable; reference identity, grouping, prune/pause/lock/branch and target failures; test targets only, no native object/PC claim.; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.; PASS production ring sizes: seven regions, 1172 catalog/boundary cases in two cultures, radius/diameter/index/text and invalid input parity; recovered-source baseline, no PC binary/geometry claim.; PASS numeric value plans: 909 bit-exact recovered-method cases; epsilon/no-op/prechange ordering, unclamped values and nonfinite payloads; no live callbacks, undo, codec or CAD claim.; PASS additional scalar codec: 26 source/oracle-matched Value/OnOff/Chooser records, 100 total scalars/74 bounded numeric; structural edit/reopen/reversal and other-record/bit/version/bounds fidelity; no UI/graph regeneration or PC claim.; PASS portfolio package: immutable member/sidecar preservation, real CSG edit/reopen, metadata/history candidates, ownership/case/path/bounds guards and unresolved-entry diagnostics; synthetic inventory, no native folder/PC claim.; PASS portfolio XML: source-derived 16/27 property contracts, nested/unknown/nil/path and UTF8/UTF16 preservation, bounded DTD rejection and paired filenames; synthetic fixtures only; dynamic-code=False; no PC portfolio/load-mutation claim.; PASS library edit session: real handles, setter epsilon/previous state, grouped scalar undo/redo, branch/foreign/opaque guards and rebuilt archive reopening; no native snapshot or CAD claim.; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException",
+      "sha256": "4e600642219067ffb33c3dfce63e610c0acf17092d1affc579a2c3991ac26ccf"
+    }
+  ],
+  "scope": "Observed archive4 profiles only: five scalar types/100 records, including74 existing bounded numeric and26 new Value/OnOff/Chooser1.1. Structural no-op/edit/reopen/reversal, header/bit/CRC/other-record tests passed on both simulator families. Generic graph handles still74; UI/control policy/CAM/geometry/PC application round trip/physical execution remain unverified."
+}

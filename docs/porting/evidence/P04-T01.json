@@ -55,7 +55,8 @@
     "tests/Port/Documents.Contracts/AdditionalScalarAssertions.cs",
     "reference/file-proof/check-additional-scalars.cjs",
     "docs/evidence/audit/additional-scalar-production-results.json",
-    "docs/porting/ADR-0010-additional-legacy-scalars.md"
+    "docs/porting/ADR-0010-additional-legacy-scalars.md",
+    "docs/evidence/apple/additional-scalar-codec-results.json"
   ],
   "fixtures": [
     {
@@ -77,7 +78,7 @@
     {
       "id": "P04-T01-A02",
       "scope": "Three additional scalar types, exact version1.1; independent reader/oracle before production codec extension",
-      "status": "production_locally_verified_apple_pending"
+      "status": "verified_bounded_codec_profiles"
     }
   ],
   "checks": [
@@ -147,6 +148,13 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "actual": "Shared managed and adjacent four-output Node/CSharp proof pass;1414 recovered and12 adopted source hashes unchanged. Known compression defect remains diagnostic."
+    },
+    {
+      "command": "gh run view/download41034629346; verify iPad/iPhone result/family and hashes",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/apple/additional-scalar-codec-results.json",
+      "actual": "Both simulator jobs passed full shared assertions including100 scalar codec profiles, dynamic-code=False. Full app/PC/graph integration not implied."
     }
   ],
   "review": {
@@ -157,7 +165,7 @@
     "performance": "CRC table and bounded linear parsing/writing; default 64MiB configurable; fixture 383069 bytes",
     "limitations": "Nested preview/gem checksums opaque; no native-load side effects, portfolio, all 654 schemas, migration, PC app reopen or geometry generation",
     "appleStartup": "Same source commit passed both families in parallel control; failed main iPad lacked managed result. Exact startup cause remains unproven, no codec workaround applied.",
-    "additionalScalars": "Production exact1.1 scalar profiles now implemented over shared immutable header/bit encoding; Numeric API remains bounded subset74. Additional26 plus existing74=100;141 records remain opaque. Source/independent oracle/full-body/save checks pass locally. Graph sessions still74 and UI/CAM/PC/native regeneration untouched; Apple results pending."
+    "additionalScalars": "Production exact1.1 scalar profiles now implemented over shared immutable header/bit encoding; Numeric API remains bounded subset74. Additional26 plus existing74=100;141 records remain opaque. Source/independent oracle/full-body/save checks pass locally. Graph sessions still74 and UI/CAM/PC/native regeneration untouched; Apple results pending. Both iPad/iPhone shared-suite runs41034629346 passed; actual reports and hashes inspected. Parent P04 remains incomplete."
   },
   "blockers": [
     "Full P04 still needs P02/P03, representative PC corpus/oracle, all serializers/portfolio/migration and geometry/sidecar integration"
