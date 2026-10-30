@@ -398,6 +398,18 @@
       "commit": "c77a316",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41049836353",
       "verification": "Unsigned device affine adapter build dispatched; terminal proof pending"
+    },
+    {
+      "id": 41050888195,
+      "commit": "a1ae9d9",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41050888195",
+      "verification": "Native/CSharp closest-point host/iPad/iPhone runtime dispatched; terminal evidence pending"
+    },
+    {
+      "id": 41050890977,
+      "commit": "a1ae9d9",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41050890977",
+      "verification": "Unsigned device closest-point adapter build dispatched; terminal evidence pending"
     }
   ]
 }
