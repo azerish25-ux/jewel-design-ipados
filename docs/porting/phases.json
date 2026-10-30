@@ -451,7 +451,7 @@
         "reference/file-proof/"
       ],
       "goal": "Read and write portfolios, CSG graphs and legacy records while retaining unknown data and editable identities.",
-      "status": "not_started",
+      "status": "in_progress",
       "blockers": [],
       "plan": "docs/porting/phases/P04-loss-preserving-pc-document-codecs.md",
       "acceptance": [
@@ -464,10 +464,24 @@
         {
           "id": "P04-T01",
           "title": "Create Documents and Documents.Tests with an independent fixture reader",
-          "status": "not_started",
+          "status": "in_progress",
           "depends": [],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "src/Port/Documents/Documents.csproj",
+            "src/Port/Documents/LegacyCsg4Models.cs",
+            "src/Port/Documents/LegacyCsg4Binary.cs",
+            "src/Port/Documents/LegacyCsg4Codec.cs",
+            "tests/Port/Documents.Contracts/Documents.Contracts.csproj",
+            "tests/Port/Documents.Contracts/Assertions.cs",
+            "tests/Port/Documents.Tests/Documents.Tests.csproj",
+            "tests/Port/Documents.Tests/Program.cs",
+            "scripts/check-production-csg.cjs",
+            "docs/porting/plans/P04-T01-A01-legacy-csg4-codec.md",
+            "docs/porting/ADR-0005-legacy-csg4-codec.md"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P04-T01.json"
+          ]
         },
         {
           "id": "P04-T02",

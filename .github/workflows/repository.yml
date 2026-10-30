@@ -48,6 +48,10 @@ jobs:
         run: node scripts/run-local.cjs dotnet run --project tests/Port/Domain.Tests
       - name: Portable recovered checks with explicit compression diagnostic
         run: node scripts/run-local.cjs dotnet run --project tests/Console
+      - name: Production legacy CSG structural round trip
+        run: |
+          node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production
+          node scripts/run-local.cjs node scripts/check-production-csg.cjs
       - name: Bounded real CSG edit and preservation proof
         run: node scripts/run-local.cjs node reference/file-proof/run-file-proof.cjs
       - name: Independent CSharp verification and negative CRC control
@@ -61,4 +65,6 @@ jobs:
             .local/file-proof/file-roundtrip-result.json
             .local/file-proof/independent-verification.json
             .local/file-proof/independent/*.log
+            .local/file-proof/production/production-crosscheck.json
+            .local/file-proof/production/independent/*.log
           retention-days: 14

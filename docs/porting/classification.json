@@ -109,6 +109,39 @@
       "path": "src/Port/Graph/GraphIdentityScope.cs",
       "classification": "new reference-based session identity/view mapping and parameter handles; no codec or graph command implementation",
       "source": "recovery/canonical/cad/CS.CSObjects/CSObject.cs"
+    },
+    {
+      "path": "src/Port/Documents/LegacyCsg4Models.cs",
+      "classification": "new/adapted structural legacy format implementation from recovered schemas and bounded proof; no unchanged recovered LOC claim",
+      "sources": [
+        "recovery/canonical/cad/CS/CSDocument.cs",
+        "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+        "recovery/canonical/cad/CS.CSValues/CSValueBase.cs",
+        "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+        "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs"
+      ]
+    },
+    {
+      "path": "src/Port/Documents/LegacyCsg4Binary.cs",
+      "classification": "new/adapted structural legacy format implementation from recovered schemas and bounded proof; no unchanged recovered LOC claim",
+      "sources": [
+        "recovery/canonical/cad/CS/CSDocument.cs",
+        "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+        "recovery/canonical/cad/CS.CSValues/CSValueBase.cs",
+        "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+        "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs"
+      ]
+    },
+    {
+      "path": "src/Port/Documents/LegacyCsg4Codec.cs",
+      "classification": "new/adapted structural legacy format implementation from recovered schemas and bounded proof; no unchanged recovered LOC claim",
+      "sources": [
+        "recovery/canonical/cad/CS/CSDocument.cs",
+        "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+        "recovery/canonical/cad/CS.CSValues/CSValueBase.cs",
+        "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+        "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs"
+      ]
     }
   ]
 }

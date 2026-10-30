@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P04-T01",
+  "status": "in_progress",
+  "requirementIds": [],
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/cad/CS/CSDocument.cs",
+      "sha256": "d8cbca6158b69134393102250094f1e0c9049e9ec0416e533d40d1a5b57f962e"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+      "sha256": "32460012d6e5d127d9bce60be12a1c5e2432265c827a47940e92292e0be1dd8b"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueBase.cs",
+      "sha256": "fafe18940dce04c46749dc3d747d05a1407293995ec3c80f4136ffafb2c5085a"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+      "sha256": "6e91cd07b702be06eed36463cb71a513693b21f7084572c508ad714592bb2a65"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs",
+      "sha256": "df9c4a0cbb44fe040098edcc0e3caa55fe34e18889d42953450162c93efc69d3"
+    },
+    {
+      "path": "reference/file-proof/csg-v4.cjs",
+      "sha256": "de244c99025e7c9cc80104e1a9657ecc549020595e834b1724ea907668c9d93c"
+    },
+    {
+      "path": "reference/file-proof/IndependentVerifier/Program.cs",
+      "sha256": "c03c1d0b62538b38a29fe712bdef150d2dfbf7720f0e892f3a5900b375d38e0f"
+    }
+  ],
+  "outputs": [
+    "src/Port/Documents/Documents.csproj",
+    "src/Port/Documents/LegacyCsg4Models.cs",
+    "src/Port/Documents/LegacyCsg4Binary.cs",
+    "src/Port/Documents/LegacyCsg4Codec.cs",
+    "tests/Port/Documents.Contracts/Documents.Contracts.csproj",
+    "tests/Port/Documents.Contracts/Assertions.cs",
+    "tests/Port/Documents.Tests/Documents.Tests.csproj",
+    "tests/Port/Documents.Tests/Program.cs",
+    "scripts/check-production-csg.cjs",
+    "docs/porting/plans/P04-T01-A01-legacy-csg4-codec.md",
+    "docs/porting/ADR-0005-legacy-csg4-codec.md"
+  ],
+  "fixtures": [
+    {
+      "path": "reference/fixtures/library-item-4.csg",
+      "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+      "scope": "one decoded library design; not representative PC portfolio corpus"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "P04-T01-A01",
+      "scope": "Production structural legacy library codec and independent fixture readers",
+      "status": "implemented_local",
+      "depends": [
+        "P03-T01",
+        "P00"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests (before implementation)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Documents.Contracts/Assertions.cs",
+      "actual": "RED CS0246: production Documents API absent"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/Assertions.cs",
+      "actual": "241/74 records; full rebuild byte identity, edit/reopen/reversal, unknown/version/UTF16/IEEE754 and negative integrity cases pass"
+    },
+    {
+      "command": "node scripts/check-production-csg.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "scripts/check-production-csg.cjs",
+      "actual": "Four production output files accepted by independent Node/zlib and CSharp readers; exact original/rebuild/reversal hashes and unchanged records/metadata"
+    },
+    {
+      "command": "dotnet build src/Port/Documents --nologo -v:q",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "src/Port/Documents/Documents.csproj",
+      "actual": "zero warnings, zero errors"
+    }
+  ],
+  "review": {
+    "correctness": "No offset patching; known fields fully encoded, opaque data retained, bounded reads and explicit version rejection; independence verified by two readers",
+    "readability": "Separate immutable models, binary primitives and envelope codec",
+    "architecture": "BCL-only Documents module; no Rhino, UI, graph execution or file-layer identity guessing",
+    "security": "No scripts/credential use or external requests; count/byte/frame bounds before allocation; raw text never executed",
+    "performance": "CRC table and bounded linear parsing/writing; default 64MiB configurable; fixture 383069 bytes",
+    "limitations": "Nested preview/gem checksums opaque; no native-load side effects, portfolio, all 654 schemas, migration, PC app reopen or geometry generation"
+  },
+  "blockers": [
+    "macOS production codec execution pending",
+    "Full P04 still needs P02/P03, representative PC corpus/oracle, all serializers/portfolio/migration and geometry/sidecar integration"
+  ]
+}

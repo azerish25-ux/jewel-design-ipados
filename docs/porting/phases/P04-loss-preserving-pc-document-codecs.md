@@ -126,3 +126,7 @@ Consume [architecture contracts](../ARCHITECTURE.md). Public boundary changes re
 - [ ] Handoff exact paths, commands and remaining risks.
 
 These work-card actions are checkpoints, not a claim that a phase takes minutes.
+
+## Independent P04-T01-A01
+
+[Legacy library codec plan](../plans/P04-T01-A01-legacy-csg4-codec.md) consumes the existing hash-locked library fixture and portable foundations. It can progress without a Windows oracle, while full P04 retains P02/P03 and PC/native parity gates. [ADR 0005](../ADR-0005-legacy-csg4-codec.md) specifies the supported profiles, opaque coverage and absence of regeneration.

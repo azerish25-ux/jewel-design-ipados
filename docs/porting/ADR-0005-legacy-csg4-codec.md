@@ -1,0 +1,17 @@
+# ADR 0005: structural legacy CSG-4 library codec
+
+Status: accepted for independent P04-T01-A01; full P04 remains incomplete.
+
+LegacyCsg4Codec reads the observed archive-4 envelope/container marker, file-info 1.0/1.1 (1.1 field layout confirmed in recovered writer), category/graph 1.0, directory GUIDs and bounded CRC leaf records. Range 1.1 and RingSize 1.2 numeric bodies are decoded from recovered field order. Other record types/versions remain opaque and non-editable. Unsupported container/header/directory/category/info schemas fail explicitly; no factory or geometry is executed.
+
+The writer rebuilds the directory, every known numeric body, leaf framing/CRC, scoped directory CRC, graph framing and EOF length. It does not patch an input offset. Known fields preserve flags, layer values, ordered duplicate user-data triples, arrays, UI integer, exact IEEE754 bits, UTF16 code units and zero-length/terminated string representation. Opaque leaf payloads and prefix regions retain original bytes. Original offsets/record copies are provenance, not durable parameter IDs or regenerated geometry. Model edits return new immutable documents.
+
+WithNumericValue is a file-layer value replacement, not CSValue.SetValue or a UI edit command: it performs no epsilon threshold, clamping, step snapping, undo, GUID migration or graph generation. Read does not apply native load side effects such as adding designer provenance or Identifier/Original user data. P03/P04 integration must choose those policies explicitly before application save parity. Rebuilding this graph does not update cached preview/gem geometry; the application save pipeline still needs a real evaluator, renderer and sidecars. No portfolio/PC application reopen claim is made.
+
+File-info, category, graph-directory and leaf CRCs are verified. The native graph CRC covers the directory prefix and excludes nested leaf chunks; each leaf has its own CRC. Preview/settings/gem nested checksum scopes remain opaque and unverified, explicitly exposed by IntegrityCoverage. This is not complete native 3DM validation. Input/file/count/string limits are configurable; defaults are test/runtime bounds, not an assertion about every valid PC project size.
+
+Raw nonfinite doubles and unpaired UTF16 code units are retained to avoid destructive normalization. These self-roundtrip tests establish binary preservation, not original PC acceptance of those values. The earlier limited reference readers intentionally reject nonfinite values and are used only on the finite exported fixture cases. Unknown type/version preservation is tested separately; unsupported numeric editing throws.
+
+The shared real fixture verifies 241 records/74 numeric, byte-identical structural no-op and reversal, 4.38-to-4.48 edit/reopen, raw/opaque/alias isolation and CRC/truncation/count/header/version/EOF rejection. Node/zlib and the separate CSharp bitwise-CRC reader independently verify the four exported files and unchanged record/metadata hashes. The same embedded-fixture assertions run through Console and iPad/iPhone. These are file-format tests, not PC/native geometry or activation tests.
+
+The independent child consumes existing fixture evidence and portable foundations; it does not waive missing P02 original-PC corpus/oracle, P03 unit/persistence policy or P04 all-serializer/portfolio/migration gates. No full requirement row is marked verified.

@@ -50,3 +50,5 @@ Implemented scalar parameter planning: [ADR 0002](ADR-0002-numeric-value-plans.m
 Implemented portable undo scheduling: [ADR 0003](ADR-0003-portable-undo-journal.md). Actual native/parameter snapshot adapters remain unfinished.
 
 Session parameter identity: [ADR 0004](ADR-0004-session-parameter-identity.md) defines raw/effective registration GUIDs and explicit identity mappings between captured views; codec persistence remains open.
+
+Production legacy library codec: [ADR 0005](ADR-0005-legacy-csg4-codec.md). The file layer rebuilds records and preserves opaque data; application save still requires graph regeneration and explicit migration/sidecar policies.
