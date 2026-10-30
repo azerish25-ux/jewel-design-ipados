@@ -61,6 +61,7 @@ jobs:
         run: |
           node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production
           node scripts/run-local.cjs node scripts/check-production-csg.cjs
+          node scripts/run-local.cjs node reference/file-proof/check-additional-scalars.cjs
       - name: Bounded real CSG edit and preservation proof
         run: node scripts/run-local.cjs node reference/file-proof/run-file-proof.cjs
       - name: Independent CSharp verification and negative CRC control

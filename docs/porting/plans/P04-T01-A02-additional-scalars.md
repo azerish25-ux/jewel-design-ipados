@@ -13,3 +13,5 @@ Recovered source chain inspected: CSObject.Read -> CSBlock.Read -> CSValueBase.R
 Owned initial oracle: reference/file-proof/scalar-v1.cjs, tests/scalar-v1-reference.test.cjs, docs/evidence/audit/plain-scalar-reference.json. Production follow-up: LegacyCsg4 models/codec/projection/edit session and Documents.Contracts; keep source recovery read-only.
 
 Reference RED/green complete: missing module failure observed first, then all4 actual-fixture/boundary tests passed. The source-hashed reference report confirms26 complete bodies. Production still74 decoded bounded numeric records; structural writing, graph integration and Mac checks remain future work.
+
+Production local GREEN:100 scalar payloads (existing74 bounded numeric plus26 plain) decode and structurally round trip.26 independent-oracle cases and3 exported Node crosschecks pass, preserving240 other records per edit. The Numeric API and existing graph/edit-session scope remain74. New Scalar API and shared encoding are documented in ADR0010. Apple proof remains pending.

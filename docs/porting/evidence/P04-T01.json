@@ -50,7 +50,12 @@
     "reference/file-proof/scalar-v1.cjs",
     "tests/scalar-v1-reference.test.cjs",
     "docs/evidence/audit/plain-scalar-reference.json",
-    "docs/porting/plans/P04-T01-A02-additional-scalars.md"
+    "docs/porting/plans/P04-T01-A02-additional-scalars.md",
+    "src/Port/Documents/LegacyCsg4Scalar.cs",
+    "tests/Port/Documents.Contracts/AdditionalScalarAssertions.cs",
+    "reference/file-proof/check-additional-scalars.cjs",
+    "docs/evidence/audit/additional-scalar-production-results.json",
+    "docs/porting/ADR-0010-additional-legacy-scalars.md"
   ],
   "fixtures": [
     {
@@ -72,7 +77,7 @@
     {
       "id": "P04-T01-A02",
       "scope": "Three additional scalar types, exact version1.1; independent reader/oracle before production codec extension",
-      "status": "reference_verified_production_pending"
+      "status": "production_locally_verified_apple_pending"
     }
   ],
   "checks": [
@@ -123,6 +128,25 @@
       "expectedExitCode": 0,
       "artifact": "docs/evidence/audit/plain-scalar-reference.json",
       "actual": "4 cases pass. All26 bodies fully consumed: 15OnOff/7Chooser/4Value at1.1; future versions skipped, CRC/bounds/link mismatch rejected, raw NaN/-zero/infinity bits preserved in reference report. Production codec still74 numeric."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production (before implementation)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED CS1061 missing Scalar/ScalarRecordCount/WithScalarValue APIs before implementing exact profiles"
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production; node scripts/run-local.cjs node reference/file-proof/check-additional-scalars.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/audit/additional-scalar-production-results.json",
+      "actual": "100 scalar payloads/74 bounded numeric; all26 independent-oracle headers/bits matched,26 edit/reopen/reversal and240-other-record checks,3 saved outputs independently inspected. Future/string/link/nonfinite guards pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Console; node scripts/verify-sources.cjs; node scripts/verify-production.cjs; node scripts/run-local.cjs node scripts/check-production-csg.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Shared managed and adjacent four-output Node/CSharp proof pass;1414 recovered and12 adopted source hashes unchanged. Known compression defect remains diagnostic."
     }
   ],
   "review": {
@@ -133,7 +157,7 @@
     "performance": "CRC table and bounded linear parsing/writing; default 64MiB configurable; fixture 383069 bytes",
     "limitations": "Nested preview/gem checksums opaque; no native-load side effects, portfolio, all 654 schemas, migration, PC app reopen or geometry generation",
     "appleStartup": "Same source commit passed both families in parallel control; failed main iPad lacked managed result. Exact startup cause remains unproven, no codec workaround applied.",
-    "additionalScalars": "Source chain read; OnOff has no extra archive fields and Chooser only derives in-memory image override list after base.Read. Stored value is double, not bool. Reference parser does not edit/write CSG or execute runtime reader/graph/UI. Production model, edit/reopen and Apple proof pending; CAM/other versions excluded."
+    "additionalScalars": "Production exact1.1 scalar profiles now implemented over shared immutable header/bit encoding; Numeric API remains bounded subset74. Additional26 plus existing74=100;141 records remain opaque. Source/independent oracle/full-body/save checks pass locally. Graph sessions still74 and UI/CAM/PC/native regeneration untouched; Apple results pending."
   },
   "blockers": [
     "Full P04 still needs P02/P03, representative PC corpus/oracle, all serializers/portfolio/migration and geometry/sidecar integration"

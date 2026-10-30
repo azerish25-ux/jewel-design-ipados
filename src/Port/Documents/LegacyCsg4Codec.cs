@@ -7,6 +7,10 @@ public static class LegacyCsg4Codec
 {
     public static readonly Guid RangeTypeGuid = new("56b84606-7f1d-41fb-b81f-f521d9a9577d");
     public static readonly Guid RingTypeGuid = new("dd5c2342-d89a-440e-a76e-624a1faf2b68");
+    public static readonly Guid ValueTypeGuid=new("38455005-5ef2-43db-8fb9-60e447d75d59");
+    public static readonly Guid OnOffTypeGuid=new("a5d6b280-42fe-4188-8ff0-9ac6caed7831");
+    public static readonly Guid ChooserTypeGuid=new("6c85fe71-927a-4d28-9335-8f1eb8713979");
+    internal static bool IsPlainScalarType(Guid type)=>type==ValueTypeGuid||type==OnOffTypeGuid||type==ChooserTypeGuid;
     private static readonly Guid marker = new("b237ee6c-ac7e-4725-86ee-54bccda34fea");
     private const uint RecordCode = 0x40008000;
     private const string Header = "3D Geometry File Format        4";
@@ -50,11 +54,13 @@ public static class LegacyCsg4Codec
             var frame = g.Chunk(RecordCode); CsgCrc32.Check(bytes, frame);
             var body = new CsgCursor(bytes, frame.Payload, frame.CrcOffset, limits);
             var version = Version(body);
-            LegacyCsg4Numeric? numeric = null;
+            LegacyCsg4Scalar? scalar=null;
             if ((types[n] == RangeTypeGuid && version == new LegacyCsg4Version(1, 1))
                 || (types[n] == RingTypeGuid && version == new LegacyCsg4Version(1, 2)))
-                numeric = ReadNumeric(body, version, types[n] == RangeTypeGuid, frame.CrcOffset);
-            records[n] = new LegacyCsg4Record(types[n], version, frame.Offset, bytes.AsSpan(frame.Offset, frame.End - frame.Offset).ToArray(), numeric);
+                scalar=ReadScalar(body,version,true,types[n]==RangeTypeGuid,frame.CrcOffset);
+            else if(IsPlainScalarType(types[n])&&version==new LegacyCsg4Version(1,1))
+                scalar=ReadScalar(body,version,false,false,frame.CrcOffset);
+            records[n] = new LegacyCsg4Record(types[n], version, frame.Offset, bytes.AsSpan(frame.Offset, frame.End - frame.Offset).ToArray(), scalar);
             g.Position = frame.End;
         }
         RequireEnd(g, graph.CrcOffset); r.Position = graph.End;
@@ -65,15 +71,17 @@ public static class LegacyCsg4Codec
 
     private static LegacyCsg4Version Version(CsgCursor r) => new(r.Int(), r.Int());
     private static void RequireEnd(CsgCursor r, int expected) { if (r.Position != expected) throw new InvalidDataException("Unexpected trailing frame data"); }
-    private static LegacyCsg4Numeric ReadNumeric(CsgCursor r, LegacyCsg4Version version, bool range, int end)
+    private static LegacyCsg4Scalar ReadScalar(CsgCursor r, LegacyCsg4Version version, bool bounded, bool stepPresent, int end)
     {
         var name = r.Text(); uint flags = r.UInt(); int layer = r.Int(); var userData = r.UserData();
         var objects = r.Ints(); var channels = r.Ints(); var categories = r.Ints();
         if (objects.Length != channels.Length) throw new InvalidDataException("Link array count mismatch");
         int ui = r.Int(), offset = r.Position;
-        double value = r.Double(), min = r.Double(), max = r.Double(); double? step = range ? r.Double() : null;
-        RequireEnd(r, end);
-        return new LegacyCsg4Numeric(version, name, flags, layer, userData, objects, channels, categories, ui, value, min, max, step, offset);
+        double value=r.Double();
+        if(!bounded){RequireEnd(r,end);return new LegacyCsg4Scalar(version,name,flags,layer,userData,objects,channels,categories,ui,value,offset);}
+        double min=r.Double(),max=r.Double();double? step=stepPresent?r.Double():null;
+        RequireEnd(r,end);
+        return new LegacyCsg4Numeric(version,name,flags,layer,userData,objects,channels,categories,ui,value,min,max,step,offset);
     }
 
     public static byte[] Write(LegacyCsg4Document document)

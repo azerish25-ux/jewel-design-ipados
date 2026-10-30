@@ -1,30 +1,50 @@
 {
   "schemaVersion": 1,
   "status": "source_inventory_only",
-  "scope": "Pinned library serialized type footprint, not executed graph reachability, transitive dependency closure, field decoding or geometry parity",
+  "scope": "Pinned library serialized type footprint, not executed graph reachability, transitive dependency closure, complete field/runtime decoding or geometry parity",
   "inputs": [
     {
       "path": "reference/fixtures/library-item-4.csg",
+      "normalization": "none",
       "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd"
     },
     {
       "path": "docs/evidence/audit/serialization-matrix.json",
+      "normalization": "utf8-lf",
       "sha256": "539f7ed096d739c98a3dc2c92c49c884efc3b48d93dca19ea929e01488a835c8"
     },
     {
       "path": "docs/evidence/audit/cad-type-inventory.json",
+      "normalization": "utf8-lf",
       "sha256": "a3a916e0a49175b2d447460b438ac14f60b575179c8bd58ff70519fa3fd42581"
     },
     {
       "path": "reference/file-proof/csg-v4.cjs",
+      "normalization": "utf8-lf",
       "sha256": "de244c99025e7c9cc80104e1a9657ecc549020595e834b1724ea907668c9d93c"
+    },
+    {
+      "path": "reference/file-proof/scalar-v1.cjs",
+      "normalization": "utf8-lf",
+      "sha256": "518f056d804e99fa4ddf74aa9b7d37baef7482392256046cc4ba8fb54b575842"
+    },
+    {
+      "path": "src/Port/Documents/LegacyCsg4Codec.cs",
+      "normalization": "utf8-lf",
+      "sha256": "4baf9e8da3a588d73d4462f1a19248559c2fd50a501ba3b4547190915a15f4bc"
+    },
+    {
+      "path": "src/Port/Documents/LegacyCsg4Scalar.cs",
+      "normalization": "utf8-lf",
+      "sha256": "522e1931341645d27a3fb73de2e1f6dde1fa5ad43de6c7ffa61615cdd23cbdf9"
     }
   ],
   "counts": {
     "serializedNodes": 241,
     "registrationGuids": 43,
     "numericDecoded": 74,
-    "opaquePayloads": 167,
+    "scalarDecoded": 100,
+    "opaquePayloads": 141,
     "unknownGuids": 0,
     "ambiguousGuids": 0,
     "legacyNodes": 33,
@@ -58,6 +78,7 @@
         "1.2"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 19,
       "registrationAmbiguous": false,
       "registrations": [
@@ -160,6 +181,7 @@
         "1.1"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 11,
       "registrationAmbiguous": false,
       "registrations": [
@@ -231,6 +253,7 @@
         "1.2"
       ],
       "numericDecoded": 1,
+      "scalarDecoded": 1,
       "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
@@ -314,6 +337,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 11,
       "registrationAmbiguous": false,
       "registrations": [
@@ -384,6 +408,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -461,7 +486,8 @@
         "1.1"
       ],
       "numericDecoded": 0,
-      "opaquePayloads": 7,
+      "scalarDecoded": 7,
+      "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
         {
@@ -539,6 +565,7 @@
         "1.1"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 6,
       "registrationAmbiguous": false,
       "registrations": [
@@ -723,6 +750,7 @@
         "1.1"
       ],
       "numericDecoded": 73,
+      "scalarDecoded": 73,
       "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
@@ -810,7 +838,8 @@
         "1.1"
       ],
       "numericDecoded": 0,
-      "opaquePayloads": 15,
+      "scalarDecoded": 15,
+      "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
         {
@@ -883,6 +912,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1011,6 +1041,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1083,6 +1114,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1164,6 +1196,7 @@
         "1.1"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1237,6 +1270,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1364,6 +1398,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 4,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1462,6 +1497,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 7,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1543,6 +1579,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 6,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1624,6 +1661,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 6,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1726,6 +1764,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 7,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1804,6 +1843,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 7,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1888,6 +1928,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 13,
       "registrationAmbiguous": false,
       "registrations": [
@@ -1960,6 +2001,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2040,6 +2082,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2132,6 +2175,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2213,6 +2257,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 6,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2297,6 +2342,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2373,6 +2419,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2453,6 +2500,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2542,6 +2590,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2637,7 +2686,8 @@
         "1.1"
       ],
       "numericDecoded": 0,
-      "opaquePayloads": 4,
+      "scalarDecoded": 4,
+      "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
         {
@@ -2711,6 +2761,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 3,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2789,6 +2840,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 3,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2860,6 +2912,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -2941,6 +2994,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3033,6 +3087,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3110,6 +3165,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3181,6 +3237,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3261,6 +3318,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3333,6 +3391,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3421,6 +3480,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 1,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3514,6 +3574,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3586,6 +3647,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -3667,6 +3729,7 @@
         "1.0"
       ],
       "numericDecoded": 0,
+      "scalarDecoded": 0,
       "opaquePayloads": 2,
       "registrationAmbiguous": false,
       "registrations": [
@@ -4587,7 +4650,7 @@
   ],
   "limits": [
     "All serialized nodes included; active outputs and graph edge reachability not decoded for opaque records.",
-    "Numeric decoding covers only the two existing supported numeric record classes, not all value types.",
+    "Stored-double decoding covers only five exact observed profiles: Range1.1/RingSize1.2 and Value/OnOff/Chooser1.1. Full value runtime behavior and other versions remain open.",
     "Direct lexical static calls omit instance calls, dispatch, base methods and transitive helpers. Zero calls is not geometry-free.",
     "Registration GUID/source mapping and serializer locations do not prove supported record versions or runtime parity.",
     "Nested preview/gem checksums remain opaque as recorded by the independent reader.",

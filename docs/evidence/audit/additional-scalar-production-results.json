@@ -1,0 +1,33 @@
+{
+  "scope": "Independent Node CRC/full-body/bit/header/other-record verification of production CSharp structural outputs; no PC application or geometry regeneration claim",
+  "sourceSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "cases": [
+    {
+      "file": "scalar-0.csg",
+      "index": 6,
+      "type": "CS.CSValues.CSValueChooser",
+      "beforeBits": "0000000000000000",
+      "afterBits": "3fc0000000000000",
+      "otherRecordsPreserved": 240,
+      "sha256": "1cf8b12473f9f2dae9aa3fba539724fba81dcd97ed29867da7190825fd11b32e"
+    },
+    {
+      "file": "scalar-1.csg",
+      "index": 11,
+      "type": "CS.CSValues.CSValueOnOff",
+      "beforeBits": "3ff0000000000000",
+      "afterBits": "0000000000000000",
+      "otherRecordsPreserved": 240,
+      "sha256": "a4a6376fdd0c5eeedbedb5a2dfb4d66ccfa7d0452babf33047580c55b4d95998"
+    },
+    {
+      "file": "scalar-2.csg",
+      "index": 95,
+      "type": "CS.CSValues.CSValue",
+      "beforeBits": "3fe0000000000000",
+      "afterBits": "0000000000000000",
+      "otherRecordsPreserved": 240,
+      "sha256": "1249a872acf93997e7d631d3f91c560bcd22703d2876c881f5fc63405f94c11f"
+    }
+  ]
+}
