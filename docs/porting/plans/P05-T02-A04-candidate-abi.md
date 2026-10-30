@@ -15,3 +15,5 @@ Owned: native/GeometryBridge/CandidateProbe/candidate_abi.h/.cpp/candidate_abi_c
 - [ ] Review lock order, allocation failures, counter overflow, output mutation, read/write bounds and ownership; preserve missing cancellation/leak/PC/SDK-selection gates. Commit/push checkpoints with exact evidence.
 
 RED evidence: run 41025275608 host job 123961805120 failed early at missing candidate_abi.h. Implementation added only after inspecting that log. Green implementation remains on development branch pending actual native/runtime proof. Runs 41025671193 and 41025674158 test the implementation.
+
+GREEN: c724936 passed host/iPad/iPhone native ownership contracts in 41025671193 and unsigned device build41025674158 (52 warnings/0 errors). Evidence docs/evidence/apple/candidate-abi-results.json. Main may advance to 9db50bf: its diff from tested c724936 contains documentation only. The newer CSharp adapter remains branch-only pending actual Apple adapter runtime proof.

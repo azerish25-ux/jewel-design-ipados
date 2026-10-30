@@ -1,0 +1,41 @@
+{
+  "nativeRuntimeRun": 41025671193,
+  "deviceBuildRun": 41025674158,
+  "commit": "c724936",
+  "runtimeUrl": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41025671193",
+  "deviceUrl": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41025674158",
+  "hostReport": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; analytic fixtures only, no CounterSketch/PC parity claim.\n",
+  "results": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "report": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; analytic fixtures only, no CounterSketch/PC parity claim.\nPASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; PASS session identity: raw/effective GUID rules, duplicate/zero/legacy identity, explicit rename/reorder/delete/restore mappings and ownership guards; no codec migration or applied graph-edit claim.; PASS undo journal: 6130 differential steps against source-linked CSUndoTable; reference identity, grouping, prune/pause/lock/branch and target failures; test targets only, no native object/PC claim.; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.; PASS production ring sizes: seven regions, 1172 catalog/boundary cases in two cultures, radius/diameter/index/text and invalid input parity; recovered-source baseline, no PC binary/geometry claim.; PASS numeric value plans: 909 bit-exact recovered-method cases; epsilon/no-op/prechange ordering, unclamped values and nonfinite payloads; no live callbacks, undo, codec or CAD claim.; PASS portfolio package: immutable member/sidecar preservation, real CSG edit/reopen, metadata/history candidates, ownership/case/path/bounds guards and unresolved-entry diagnostics; synthetic inventory, no native folder/PC claim.; PASS portfolio XML: source-derived 16/27 property contracts, nested/unknown/nil/path and UTF8/UTF16 preservation, bounded DTD rejection and paired filenames; synthetic fixtures only; dynamic-code=False; no PC portfolio/load-mutation claim.; PASS library edit session: real handles, setter epsilon/previous state, grouped scalar undo/redo, branch/foreign/opaque guards and rebuilt archive reopening; no native snapshot or CAD claim.; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException",
+      "sha256": "8b1c004378590dfb297fae8c119bca03fc91170161aad85bc505ea25be085c8c"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "report": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; analytic fixtures only, no CounterSketch/PC parity claim.\nPASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; PASS session identity: raw/effective GUID rules, duplicate/zero/legacy identity, explicit rename/reorder/delete/restore mappings and ownership guards; no codec migration or applied graph-edit claim.; PASS undo journal: 6130 differential steps against source-linked CSUndoTable; reference identity, grouping, prune/pause/lock/branch and target failures; test targets only, no native object/PC claim.; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.; PASS production ring sizes: seven regions, 1172 catalog/boundary cases in two cultures, radius/diameter/index/text and invalid input parity; recovered-source baseline, no PC binary/geometry claim.; PASS numeric value plans: 909 bit-exact recovered-method cases; epsilon/no-op/prechange ordering, unclamped values and nonfinite payloads; no live callbacks, undo, codec or CAD claim.; PASS portfolio package: immutable member/sidecar preservation, real CSG edit/reopen, metadata/history candidates, ownership/case/path/bounds guards and unresolved-entry diagnostics; synthetic inventory, no native folder/PC claim.; PASS portfolio XML: source-derived 16/27 property contracts, nested/unknown/nil/path and UTF8/UTF16 preservation, bounded DTD rejection and paired filenames; synthetic fixtures only; dynamic-code=False; no PC portfolio/load-mutation claim.; PASS library edit session: real handles, setter epsilon/previous state, grouped scalar undo/redo, branch/foreign/opaque guards and rebuilt archive reopening; no native snapshot or CAD claim.; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException",
+      "sha256": "8b1c004378590dfb297fae8c119bca03fc91170161aad85bc505ea25be085c8c"
+    }
+  ],
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "18d6a6d4dc8b1e3b1519d548a520c5298e4b8f0f69341ff9588ca2522e37d7ad  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n"
+  },
+  "scope": "Experimental native C ABI contract assertions executed host/iPad/iPhone; combined recovered/production suite also executed. Unsigned device app build only. Future CSharp SafeHandle adapter is newer and not covered by this run. Entry counts are not process-memory leak metrics; cancellation, full SDK semantics, native archive, PC and physical tests remain open."
+}

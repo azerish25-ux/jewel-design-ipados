@@ -34,7 +34,8 @@
     "src/Port/Geometry.Candidate/AssemblyInfo.cs",
     "tests/Port/Geometry.Candidate.Contracts/Geometry.Candidate.Contracts.csproj",
     "tests/Port/Geometry.Candidate.Contracts/Assertions.cs",
-    "docs/porting/plans/P05-T02-A05-managed-candidate-adapter.md"
+    "docs/porting/plans/P05-T02-A05-managed-candidate-adapter.md",
+    "docs/evidence/apple/candidate-abi-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -77,7 +78,7 @@
     {
       "id": "P05-T02-A04",
       "scope": "Independent experimental handle ownership ABI over actual candidate BReps; not production T04 completion",
-      "status": "implementation_ci_pending"
+      "status": "verified_bounded_candidate_abi"
     },
     {
       "id": "P05-T02-A05",
@@ -129,7 +130,7 @@
     "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs.",
     "combinedRuntime": "Combined app passed native analytical and shared recovered/production managed assertions on iPad/iPhone run41023784246, dynamic-code=False. Newer freshness/device build41024529850 passed ios-arm64/platform IOS with 52 warnings/0 errors. Broader recovered reflection/XML trim risks remain; no physical execution or all-class behavior claim.",
     "resultFreshness": "Clear prior result/family/started before launch. Publish combined success via same-directory pending-file rename; Mac regression pending.",
-    "ownershipAbi": "Real OCCT box/copy/translation/booleans through versioned C IDs/status. Global unique nonreused IDs; per-context locks; lookup drops registry lock before waiting for context. Final close marks closed before erase. Retain/release overflow guarded; C++ exception categories caught; failed creation outputs zeroed and optional diagnostics bounded. GREEN runtime/platform results pending; cancellation/process-memory leak/SDK selection/PC gates open.",
+    "ownershipAbi": "Real OCCT box/copy/translation/booleans through versioned C IDs/status. Global unique nonreused IDs; per-context locks; lookup drops registry lock before waiting for context. Final close marks closed before erase. Retain/release overflow guarded; C++ exception categories caught; failed creation outputs zeroed and optional diagnostics bounded. GREEN runtime/platform results pending; cancellation/process-memory leak/SDK selection/PC gates open. Host/iPad/iPhone runtime passed in 41025671193; unsigned device build41025674158 passed 52 warnings/0 errors. See candidate-abi-results.json. New managed adapter not covered.",
     "redLogSha256": "7ce7453be4e8313065e8ee0886c5635144b572c2b87dae594eae3823abd400a3",
     "managedAdapter": "Header widths/entrypoints/Cdecl matched; input SafeHandles marshal lifetime; per-context gate covers native result plus child parent-lease creation; explicit logical Dispose separate from IsClosed. Native creation cleanup and paired parent leases reviewed. Windows build proves managed compilation only; Apple real/native/disposal/trim tests pending. No full kernel/cancellation/process-memory/physical/PC claim."
   },
@@ -178,13 +179,13 @@
       "id": 41025671193,
       "commit": "c724936",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41025671193",
-      "verification": "native host/iPad/iPhone implementation verification dispatched; inspect terminal results"
+      "verification": "Host/iPad/iPhone executed real candidate ABI ownership contracts plus existing native/managed suites; all passed."
     },
     {
       "id": 41025674158,
       "commit": "c724936",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41025674158",
-      "verification": "unsigned native device implementation verification dispatched; inspect terminal results"
+      "verification": "Native ABI combined unsigned device build passed, 52 warnings/0 errors, final platform IOS."
     },
     {
       "id": 41023784246,
