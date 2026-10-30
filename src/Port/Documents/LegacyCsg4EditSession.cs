@@ -6,8 +6,8 @@ namespace JewelDesign.Documents;
 /// <summary>Handle-based scalar archive-data editing. Native object snapshots, UI and CAD evaluation are separate.</summary>
 public sealed class LegacyCsg4EditSession
 {
-    private readonly Dictionary<GraphNodeIdentity, NumericTarget> targets = new(ReferenceEqualityComparer.Instance);
-    private readonly UndoJournal<NumericTarget, double> journal = new();
+    private readonly Dictionary<GraphNodeIdentity, ScalarTarget> targets = new(ReferenceEqualityComparer.Instance);
+    private readonly UndoJournal<ScalarTarget, double> journal = new();
     public LegacyCsg4Document Document { get; private set; }
     public GraphIdentityView View { get; }
     public IReadOnlyList<GraphParameterHandle> Parameters { get; }
@@ -22,9 +22,9 @@ public sealed class LegacyCsg4EditSession
         var handles = new List<GraphParameterHandle>();
         for (int i = 0; i < document.Records.Count; i++)
         {
-            if (document.Records[i].Numeric is not { } numeric) continue;
+            if (document.Records[i].Scalar is not { } scalar) continue;
             var handle = View.AddressParameter(i, "Value");
-            targets.Add(handle.NodeIdentity, new NumericTarget(this, i, numeric.Value));
+            targets.Add(handle.NodeIdentity, new ScalarTarget(this, i, scalar.Value));
             handles.Add(handle);
         }
         Parameters = Array.AsReadOnly(handles.ToArray());
@@ -44,20 +44,20 @@ public sealed class LegacyCsg4EditSession
     public bool Redo() => journal.RedoLast();
     public byte[] ExportArchiveData() => LegacyCsg4Codec.Write(Document);
 
-    private NumericTarget Resolve(GraphParameterHandle handle)
+    private ScalarTarget Resolve(GraphParameterHandle handle)
     {
         View.ResolveNode(handle); // validates null, scope and membership before any mutation
         if (!StringComparer.Ordinal.Equals(handle.FieldKey, "Value") || !targets.TryGetValue(handle.NodeIdentity, out var target))
-            throw new NotSupportedException("Only decoded legacy numeric Value fields are editable in this session.");
+            throw new NotSupportedException("Only decoded legacy scalar Value fields are editable in this session.");
         return target;
     }
 
-    private sealed class NumericTarget : IUndoTarget<double>
+    private sealed class ScalarTarget : IUndoTarget<double>
     {
         private readonly LegacyCsg4EditSession owner;
         private readonly int ordinal;
         public NumericValueState State { get; private set; }
-        public NumericTarget(LegacyCsg4EditSession owner, int ordinal, double value)
+        public ScalarTarget(LegacyCsg4EditSession owner, int ordinal, double value)
         {
             this.owner = owner; this.ordinal = ordinal; State = new NumericValueState(value, value);
         }
@@ -67,7 +67,7 @@ public sealed class LegacyCsg4EditSession
             var plan = State.PlanSetValue(value);
             if (!plan.RequiresChange) return plan;
             // Prepare immutable file data before publishing state or recording history.
-            var nextDocument = owner.Document.WithNumericValue(ordinal, plan.After.RealValue);
+            var nextDocument = owner.Document.WithScalarValue(ordinal, plan.After.RealValue);
             State = plan.AtPreChange ?? throw new InvalidOperationException("Changed plan lacks PreChange state");
             owner.journal.RecordObjectStateInUndoList(this, "SetValue");
             owner.Document = nextDocument;

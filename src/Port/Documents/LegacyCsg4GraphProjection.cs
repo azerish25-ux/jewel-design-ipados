@@ -10,12 +10,12 @@ public static class LegacyCsg4GraphProjection
         ArgumentNullException.ThrowIfNull(document);
         var nodes = document.Records.Select((record, ordinal) =>
         {
-            var numeric = record.Numeric;
-            var links = numeric is null ? Array.Empty<SerializedChannelLink>()
-                : numeric.ObjectIndices.Select((index, channel) => new SerializedChannelLink(index, numeric.ChannelIndices[channel])).ToArray();
+            var scalar = record.Scalar;
+            var links = scalar is null ? Array.Empty<SerializedChannelLink>()
+                : scalar.ObjectIndices.Select((index, channel) => new SerializedChannelLink(index, scalar.ChannelIndices[channel])).ToArray();
             return new GraphNodeSnapshot(ordinal, record.TypeGuid, new(record.Version.Major, record.Version.Minor),
-                numeric?.Identifier, null, numeric?.Flags, record.CopyOriginalRecordBytes(), links,
-                isInstanceIdentityDecoded: numeric is not null, areInputLinksDecoded: numeric is not null);
+                scalar?.Identifier, null, scalar?.Flags, record.CopyOriginalRecordBytes(), links,
+                isInstanceIdentityDecoded: scalar is not null, areInputLinksDecoded: scalar is not null);
         });
         return new GraphSnapshot(nodes);
     }

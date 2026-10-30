@@ -12,7 +12,9 @@
     "tests/Port/Documents.Contracts/EditBridgeAssertions.cs",
     "docs/porting/plans/P04-T05-A01-legacy-edit-bridge.md",
     "docs/porting/ADR-0006-legacy-scalar-edit-bridge.md",
-    "docs/evidence/apple/legacy-edit-session-results.json"
+    "docs/evidence/apple/legacy-edit-session-results.json",
+    "tests/Port/Documents.Contracts/AdditionalScalarEditAssertions.cs",
+    "docs/porting/plans/P04-T05-A02-all-scalar-handles.md"
   ],
   "fixtures": [
     {
@@ -30,6 +32,11 @@
       "id": "P04-T05-A01.2",
       "scope": "Handle-based scalar file transactions and rebuilt export",
       "status": "verified_simulator"
+    },
+    {
+      "id": "P04-T05-A02",
+      "scope": "All100 decoded scalar Value handles and source-backed header/link projection; mixed scalar-only file undo, no runtime graph/geometry",
+      "status": "locally_verified_apple_pending"
     }
   ],
   "checks": [
@@ -67,6 +74,18 @@
       "expectedExitCode": 0,
       "artifact": "docs/evidence/apple/legacy-edit-session-results.json",
       "actual": "Both families execute real-fixture handle edits, scalar history and structural export assertions; no native object or geometry claim"
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests (RED)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "Known legacy header projection failed before consumers changed from Numeric74 to Scalar100"
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production; node scripts/run-local.cjs node reference/file-proof/check-additional-scalars.cjs; node scripts/run-local.cjs node scripts/check-production-csg.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "100 parameters/header-link projections, mixed four-type transaction, source setter epsilon/previous state, save/reopen and byte-identical undo/redo, retained opaque/foreign guards. Existing26-oracle structural tests and independent readers pass."
     }
   ],
   "review": {
@@ -75,7 +94,8 @@
     "architecture": "Documents depends on portable Graph/Domain, with no cycle/native dependency; native capture/evaluation remains separate",
     "security": "No credentials, accounts, scripts or hidden I/O; foreign handles rejected",
     "performance": "Initial projection linear in archive size; value edits reuse header view and copy immutable record array; bounded history preserves recovered scheduling",
-    "limitations": "Not full native snapshot semantics, CAM/metadata restoration, UI gestures, graph evaluation, geometry or PC application reopening"
+    "limitations": "Not full native snapshot semantics, CAM/metadata restoration, UI gestures, graph evaluation, geometry or PC application reopening",
+    "additionalScalarHandles": "All3 added classes inherit nonvirtual CSValue.SetValue(double); same source-backed state plan applies. Scalar target uses WithScalarValue and decoded header/links. Initial view remains immutable provenance/address state; current values are in Document/ReadValue. No UI Boolean/chooser policy, native object snapshots, graph/CAD regeneration or PC claim. Apple runtime pending."
   },
   "blockers": [
     "Full P04-T05 still requires all serializer/portfolio/migration coverage and original-PC/native regeneration evidence"

@@ -7,8 +7,9 @@ internal static class EditBridgeAssertions
 {
     public static string Run(LegacyCsg4Document document, byte[] original)
     {
+        var additional=AdditionalScalarEditAssertions.Run(document,original);
         var editor = new LegacyCsg4EditSession(document);
-        if (editor.Parameters.Count != 74 || editor.View.Snapshot.Nodes.Count != 241) throw new Exception("Editor lost record/parameter slots");
+        if (editor.Parameters.Count != 100 || editor.View.Snapshot.Nodes.Count != 241) throw new Exception("Editor lost record/parameter slots");
         var handle = editor.GetParameter(8);
         var duplicateOrdinal = document.Records.Select((r, i) => (r, i)).First(x => x.i != 8 && x.r.Numeric?.Identifier == "Top Thickness").i;
         var duplicate = editor.GetParameter(duplicateOrdinal);
@@ -59,7 +60,7 @@ internal static class EditBridgeAssertions
         var tiny = new LegacyCsg4EditSession(document.WithNumericValue(8, .000001));
         tiny.BeginEditTransaction(); tiny.SetValue(tiny.GetParameter(8), 4.48); tiny.EndEditTransaction(); tiny.Undo();
         if (tiny.ReadValue(tiny.GetParameter(8)).RealValue != .000001) throw new Exception("Exact file scalar capture lost tiny input");
-        return "PASS library edit session: real handles, setter epsilon/previous state, grouped scalar undo/redo, branch/foreign/opaque guards and rebuilt archive reopening; no native snapshot or CAD claim.";
+        return additional+"; PASS library edit session: real handles, setter epsilon/previous state, grouped scalar undo/redo, branch/foreign/opaque guards and rebuilt archive reopening; no native snapshot or CAD claim.";
     }
 
     private static void Equal(byte[] expected, byte[] actual, string message) { if (!expected.AsSpan().SequenceEqual(actual)) throw new Exception(message); }

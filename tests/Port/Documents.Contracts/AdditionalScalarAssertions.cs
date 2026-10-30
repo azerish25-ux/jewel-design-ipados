@@ -55,6 +55,8 @@ public static class AdditionalScalarAssertions
         }
         var future=(byte[])original.Clone();BinaryPrimitives.WriteInt32LittleEndian(future.AsSpan(selected.OriginalFileOffset+8),99);LeafCrc(future,selected);
         var futureDoc=LegacyCsg4Codec.Read(future);Check(futureDoc.Records[selectedIndex].Scalar is null,"Future scalar decoded speculatively");
+        ProjectionAssertions.Run(futureDoc);
+        Throws<NotSupportedException>(()=>new LegacyCsg4EditSession(futureDoc).GetParameter(selectedIndex));
         Same(future,LegacyCsg4Codec.Write(futureDoc),"Future scalar not retained opaque");
         Throws<NotSupportedException>(()=>futureDoc.WithScalarValue(selectedIndex,0));
         var malformed=(byte[])original.Clone();BinaryPrimitives.WriteInt32LittleEndian(malformed.AsSpan(selected.OriginalFileOffset+16),int.MaxValue);LeafCrc(malformed,selected);
