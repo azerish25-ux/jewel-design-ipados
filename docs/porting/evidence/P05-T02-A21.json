@@ -39,5 +39,30 @@
     "Actual caps138/139 with opposite136 channels and join140",
     "PC/native topology/UI/physical and new Apple execution"
   ],
-  "scope": "Dome profile prerequisite only; full cap/feature parity and full1451-row acceptance remain open."
+  "scope": "Dome profile prerequisite only; full cap/feature parity and full1451-row acceptance remain open.",
+  "implementationCommit": "b1081dd0e14104770a276573c81333b52fea3d3b",
+  "ciRuns": [
+    {
+      "id": 41142423453,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41142423453",
+      "scope": "native host/macOS iPad/iPhone with recovered dome source gate",
+      "status": "queued"
+    },
+    {
+      "id": 41142426231,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41142426231",
+      "scope": "macOS unsigned ios-arm64 AOT",
+      "status": "queued"
+    },
+    {
+      "id": 41142383758,
+      "scope": "repository/source provenance",
+      "status": "in_progress"
+    },
+    {
+      "id": 41142383872,
+      "scope": "managed recovered iOS reuse",
+      "status": "in_progress"
+    }
+  ]
 }
