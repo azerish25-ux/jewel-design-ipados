@@ -1,0 +1,137 @@
+{
+  "scope": "First native candidate probe subset, not all 315 call semantics or backend selection",
+  "staticInventoryFamilies": 315,
+  "selectedSourceCalls": [
+    {
+      "call": "Brep.CreateBooleanDifference",
+      "callSites": 25,
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.FrenchHalo/CSFrenchHaloProduction.cs",
+          "line": 299,
+          "symbol": "CSBlocks.Settings.FrenchHalo.CSFrenchHaloProduction"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.FrenchHalo/CSFrenchHaloProduction.cs",
+          "line": 304,
+          "symbol": "CSBlocks.Settings.FrenchHalo.CSFrenchHaloProduction"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.FrenchHalo/CSFrenchHaloProduction.cs",
+          "line": 315,
+          "symbol": "CSBlocks.Settings.FrenchHalo.CSFrenchHaloProduction"
+        }
+      ],
+      "status": "required semantic/PC comparison not verified"
+    },
+    {
+      "call": "Brep.CreateBooleanIntersection",
+      "callSites": 2,
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+          "line": 40,
+          "symbol": "CSBlocks.Solids.CSBooleanDifference"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanIntersection.cs",
+          "line": 36,
+          "symbol": "CSBlocks.Solids.CSBooleanIntersection"
+        }
+      ],
+      "status": "required semantic/PC comparison not verified"
+    },
+    {
+      "call": "Brep.CreateBooleanUnion",
+      "callSites": 1,
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanUnion.cs",
+          "line": 28,
+          "symbol": "CSBlocks.Solids.CSBooleanUnion"
+        }
+      ],
+      "status": "required semantic/PC comparison not verified"
+    },
+    {
+      "call": "Mesh.CreateFromBrep",
+      "callSites": 11,
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Utilities.Helpers/ProjetHelper.cs",
+          "line": 1712,
+          "symbol": "CounterSketchServer.Utilities.Helpers.ProjetHelper.ModelRotationType"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Helpers/MeshRepairHelper.cs",
+          "line": 435,
+          "symbol": "CS.Utilities.Helpers.MeshRepairHelper"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Helpers/MeshRepairHelper.cs",
+          "line": 533,
+          "symbol": "CS.Utilities.Helpers.MeshRepairHelper"
+        }
+      ],
+      "status": "required semantic/PC comparison not verified"
+    },
+    {
+      "call": "VolumeMassProperties.Compute",
+      "callSites": 3,
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Travis/MeshRepair.cs",
+          "line": 231,
+          "symbol": "CS.Utilities.Travis.MeshRepair"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Bails/CSVolumeCentroid.cs",
+          "line": 69,
+          "symbol": "CSBlocks.Bails.CSVolumeCentroid"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Bails/CSVolumeCentroid.cs",
+          "line": 74,
+          "symbol": "CSBlocks.Bails.CSVolumeCentroid"
+        }
+      ],
+      "status": "required semantic/PC comparison not verified"
+    }
+  ],
+  "fixtures": [
+    {
+      "name": "cylinder subtraction annulus",
+      "expectedVolume": "pi * (10^2 - 8^2) * 3",
+      "toleranceAbsolute": 0.000001,
+      "checks": [
+        "BRep validity",
+        "one solid",
+        "native face triangulations"
+      ]
+    },
+    {
+      "name": "overlapping boxes",
+      "expectedIntersectionVolume": 4,
+      "expectedUnionVolume": 12,
+      "toleranceAbsolute": 1e-7
+    },
+    {
+      "name": "disjoint boxes",
+      "expectedSolidCount": 0,
+      "expectedVolume": 0
+    },
+    {
+      "name": "rational circle NURBS",
+      "expectedLength": "20*pi",
+      "toleranceAbsolute": 0.000001
+    }
+  ],
+  "notCovered": [
+    "Recovered builder execution",
+    "PC original results and tolerance equivalence",
+    "Sweeps/lofts/trims/fillets/morphs/repair complete coverage",
+    "Native CounterSketch/3DM archive compatibility",
+    "General operation C ABI handles/ownership/cancellation/leak checks",
+    "Physical devices and distribution/license prerequisites"
+  ]
+}

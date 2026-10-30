@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P05-T02",
+  "status": "in_progress",
+  "outputs": [
+    "native/GeometryBridge/CandidateProbe/occt-pin.json",
+    "native/GeometryBridge/CandidateProbe/requirements.json",
+    "native/GeometryBridge/CandidateProbe/CMakeLists.txt",
+    "native/GeometryBridge/CandidateProbe/probe.cpp",
+    "native/GeometryBridge/CandidateProbe/main.cpp",
+    "tests/iOS.Native/NativeGeometry.csproj",
+    "tests/iOS.Native/Main.cs",
+    "tests/iOS.Native/Info.plist",
+    "scripts/run-native-simulator.sh",
+    ".github/workflows/native-geometry.yml",
+    "docs/porting/plans/P05-T02-A01-native-candidate.md",
+    "docs/porting/ADR-0009-native-cad-candidate.md"
+  ],
+  "fixtures": [],
+  "sourceEvidence": [
+    {
+      "repository": "https://github.com/Open-Cascade-SAS/OCCT",
+      "commit": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+      "tag": "V8.0.1",
+      "licenses": [
+        {
+          "path": "LICENSE_LGPL_21.txt",
+          "sha256": "e237fa56668030e928551ddd60f05df5fe957f75eab874bbd017e085ed722e7c"
+        },
+        {
+          "path": "OCCT_LGPL_EXCEPTION.txt",
+          "sha256": "04580a884ea6cea294402649ff7b5cbb167d47462d1340a4ed33e550db10a81b"
+        }
+      ]
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+      "sha256": "1147a8fd9208503c5b14945ed726327149acc2e5282d30239dfbb5b650aa1594"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "P05-T02-A01",
+      "scope": "Pinned native analytic fixture candidate build/execution",
+      "status": "implemented_unbuilt"
+    }
+  ],
+  "checks": [],
+  "review": {
+    "scope": "Acquisition/platform experiment; no local iOS/native compiler execution asserted",
+    "security": "Public source commit pinned, no original account/runtime/key use; upload text only",
+    "limits": "Windows host has no active C++ compiler in PATH; actual host/iOS builds must run in CI",
+    "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim"
+  },
+  "blockers": [
+    "Native candidate host/iOS compilation and runtime results pending",
+    "Full kernel semantic mapping, candidate decision, native ABI and cancellation/leak/physical-device/PC evidence incomplete"
+  ]
+}

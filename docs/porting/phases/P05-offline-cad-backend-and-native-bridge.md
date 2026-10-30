@@ -118,3 +118,7 @@ Consume [architecture contracts](../ARCHITECTURE.md). Public boundary changes re
 - [ ] Handoff exact paths, commands and remaining risks.
 
 These work-card actions are checkpoints, not a claim that a phase takes minutes.
+
+## Independent P05-T02-A01 candidate experiment
+
+[Native experiment plan](../plans/P05-T02-A01-native-candidate.md) consumes a source-backed operation subset and pinned public candidate. It does not waive the full 315-family/PC oracle or backend-selection gates. [ADR 0009](../ADR-0009-native-cad-candidate.md) records genuine analytical fixtures and unverified distribution/native lifecycle requirements.

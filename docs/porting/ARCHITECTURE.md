@@ -58,3 +58,5 @@ Legacy scalar file-edit bridge and unknown-header contracts: [ADR 0006](ADR-0006
 Saved portfolio XML metadata: [ADR 0007](ADR-0007-portfolio-xml-metadata.md) preserves unknown data and keeps Windows paths inert; native loading and package reconciliation remain separate.
 
 Portfolio member inventory and raw-data replacement: [ADR 0008](ADR-0008-portfolio-member-inventory.md). Native reconciliation, filesystem import and regenerated application save remain separate.
+
+Native CAD candidate experiment: [ADR 0009](ADR-0009-native-cad-candidate.md) is a pinned analytical probe, not a selected backend or production operation ABI.

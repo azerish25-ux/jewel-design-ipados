@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/Open-Cascade-SAS/OCCT.git",
+  "tag": "V8.0.1",
+  "commit": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+  "purpose": "independent native geometry candidate only; not recovered source or selected backend",
+  "licenses": [
+    "LICENSE_LGPL_21.txt",
+    "OCCT_LGPL_EXCEPTION.txt"
+  ],
+  "officialBuildSource": "adm/scripts/ios_build.sh",
+  "enabledToolkits": [
+    "TKPrim",
+    "TKBO",
+    "TKMesh"
+  ]
+}

@@ -581,7 +581,7 @@
         "docs/decisions/"
       ],
       "goal": "Prove a real on-device geometry backend against the recovered operation requirements.",
-      "status": "not_started",
+      "status": "in_progress",
       "blockers": [],
       "plan": "docs/porting/phases/P05-offline-cad-backend-and-native-bridge.md",
       "acceptance": [
@@ -602,12 +602,27 @@
         {
           "id": "P05-T02",
           "title": "Evaluate iOS-capable kernels using actual sweeps, trims, booleans, meshing and archive fixtures",
-          "status": "not_started",
+          "status": "in_progress",
           "depends": [
             "P05-T01"
           ],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "native/GeometryBridge/CandidateProbe/occt-pin.json",
+            "native/GeometryBridge/CandidateProbe/requirements.json",
+            "native/GeometryBridge/CandidateProbe/CMakeLists.txt",
+            "native/GeometryBridge/CandidateProbe/probe.cpp",
+            "native/GeometryBridge/CandidateProbe/main.cpp",
+            "tests/iOS.Native/NativeGeometry.csproj",
+            "tests/iOS.Native/Main.cs",
+            "tests/iOS.Native/Info.plist",
+            "scripts/run-native-simulator.sh",
+            ".github/workflows/native-geometry.yml",
+            "docs/porting/plans/P05-T02-A01-native-candidate.md",
+            "docs/porting/ADR-0009-native-cad-candidate.md"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P05-T02.json"
+          ]
         },
         {
           "id": "P05-T03",
