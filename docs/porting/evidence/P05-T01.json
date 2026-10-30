@@ -72,6 +72,10 @@
     {
       "path": "recovery/canonical/cad/CSDatas.Interfaces/ICSTransformable.cs",
       "sha256": "5cf08fefb3e3563bb4ca82d28f2ca496e56d5cffa70a56515e3274a73da7325e"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+      "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa"
     }
   ],
   "fixtures": [],

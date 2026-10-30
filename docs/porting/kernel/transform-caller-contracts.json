@@ -42,6 +42,10 @@
     {
       "path": "recovery/canonical/cad/CSDatas.Interfaces/ICSTransformable.cs",
       "sha256": "5cf08fefb3e3563bb4ca82d28f2ca496e56d5cffa70a56515e3274a73da7325e"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+      "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa"
     }
   ],
   "nodes": [
@@ -79,7 +83,7 @@
       "guid": "bae265de-e413-4c18-949f-b984a32f698d",
       "source": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObjectXform.cs",
       "behavior": "Gather nonnull NonExpandableInputChannels, flatten; identity accumulator; for each nonnull valid transform, accumulator=value*accumulator. Invalid transforms skipped. Emit CSXformData even when no valid inputs.",
-      "edgeCases": "Preserve literal NonExpandableInputChannels property usage pending expansion-base inspection; matrix multiplication/storage conventions require independent points and PC oracle, not name-based inference."
+      "edgeCases": "Base NonExpandableInputChannels is literally InputChannels.GetRange(0, Count-1): excludes last slot regardless of link state. CreateExpansionInputChannel uses/reuses trailing unlinked slot and appends when last linked; Read/ReadJson call it. AddLink sets a link without appending another slot itself. Channel lifecycle must therefore be exercised, not inferred from the property name. Matrix conventions still require point fixtures and PC oracle."
     }
   ],
   "shared": {
