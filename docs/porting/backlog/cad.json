@@ -832,7 +832,7 @@
       "kind": "cad",
       "phase": "P07",
       "title": "One-, two- and four-rail sweeps with parameters and seam handling",
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2.cs",
@@ -861,8 +861,14 @@
         }
       ],
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": []
+      "testCommands": [
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P05-T02-A19-A01.json",
+        "docs/porting/ADR-0035-explicit-sweep-preparation.md"
+      ],
+      "implementationScope": "Exact1.0 header and explicit134 native preparation only; no swept surface/BRep yet. Original geometry/PC-iPad-PC, other sweep modes/versions and full acceptance remain open."
     },
     {
       "id": "CAD-032",

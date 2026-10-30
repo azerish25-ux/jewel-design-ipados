@@ -12664,7 +12664,7 @@
       "kind": "serializer",
       "phase": "P04",
       "title": "CSBlocks.Sweeps.CSSimpleSweep2",
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2.cs",
@@ -12673,14 +12673,20 @@
       ],
       "acceptance": "Exercise this declared GUID and supported record-version branches with non-default serialized fields; PC -> iPad -> PC must retain graph identity/connections/data and remain editable. Compare computed geometry separately. Reserved expired-node GUID requires expected-error behavior, not successful geometry.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P05-T02-A19-A01.json",
+        "docs/porting/ADR-0035-explicit-sweep-preparation.md"
+      ],
       "guid": "f19ea1ff-57e7-4922-9ff7-87535b49c1c6",
       "legacy": false,
       "details": {
         "path": "docs/evidence/audit/serialization-matrix.json",
         "id": "SER-0551"
-      }
+      },
+      "implementationScope": "Exact1.0 header and explicit134 native preparation only; no swept surface/BRep yet. Original geometry/PC-iPad-PC, other sweep modes/versions and full acceptance remain open."
     },
     {
       "id": "SER-0552",

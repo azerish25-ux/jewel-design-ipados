@@ -85,5 +85,29 @@
     "performance": "Finite parameters and bounded array count; source stable bubble ordering retained, no latency claim for large inputs.",
     "security": "No original scripts/account requests/credentials; recovery read-only; local writes and tool state under D:.",
     "architecture": "Explicit prepared input boundary; graph.Generate(134) continues to reject unsupported BRep production."
-  }
+  },
+  "implementationCommit": "afe45a89df6a590762bb07b6c50bdc9799b25cee",
+  "ciRuns": [
+    {
+      "id": 41121468167,
+      "scope": "native host and macOS iPad/iPhone",
+      "status": "queued"
+    },
+    {
+      "id": 41121471937,
+      "scope": "macOS unsigned ios-arm64 AOT",
+      "status": "queued"
+    },
+    {
+      "id": 41121469593,
+      "scope": "repository bounded proofs",
+      "status": "queued"
+    },
+    {
+      "id": 41121469600,
+      "scope": "managed recovered iOS reuse",
+      "status": "queued"
+    }
+  ],
+  "nextPlan": "docs/porting/plans/P05-T02-A19-A02-native-two-rail-surface.md"
 }
