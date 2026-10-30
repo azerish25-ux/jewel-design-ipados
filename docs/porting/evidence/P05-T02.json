@@ -299,6 +299,18 @@
       "commit": "e54d076",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41043305181",
       "verification": "Corrected unsigned Apple device build confirmed live; terminal proof pending."
+    },
+    {
+      "id": 41046672200,
+      "commit": "dae97a1",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41046672200",
+      "verification": "Native host/iPad/iPhone ring rail subcomponent runtime dispatched; terminal proof pending"
+    },
+    {
+      "id": 41046675230,
+      "commit": "dae97a1",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41046675230",
+      "verification": "Unsigned device ring rail subcomponent build dispatched; terminal proof pending"
     }
   ]
 }
