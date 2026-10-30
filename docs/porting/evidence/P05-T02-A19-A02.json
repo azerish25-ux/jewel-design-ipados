@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P05-T02-A19-A02",
+  "status": "in_progress_local_feasibility_observed_apple_pending",
+  "kernel": {
+    "commit": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "enabledAdditionalToolkit": "TKBool",
+    "sources": [
+      {
+        "path": "src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.hxx",
+        "sha256": "d915aea2b498290857940a6bee123fc4c52ded05f1ca48477b79ad8898f3beb5"
+      },
+      {
+        "path": "src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.cxx",
+        "sha256": "32cbbe2081a488416cda2db9e217a5fb37fddc8c2677cb124bcd21281e64940c"
+      },
+      {
+        "path": "src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_GuideTrihedronAC.cxx",
+        "sha256": "877e020f7fc60340a2ca66c1734832eb53e68891ecdaece12cc6ed2e0f08c65d"
+      },
+      {
+        "path": "src/ModelingAlgorithms/TKOffset/BRepOffsetAPI/BRepOffsetAPI_MakePipeShell.hxx",
+        "sha256": "b3be351a9ea1f8215cd6070a97c5059f7d88a5f06284ef885dc2eb8ee50032c5"
+      }
+    ]
+  },
+  "experiment": {
+    "file": "native/GeometryBridge/CandidateProbe/candidate_sweep_contracts.cpp",
+    "primaryRail": {
+      "start": [
+        0,
+        0,
+        0
+      ],
+      "end": [
+        10,
+        0,
+        0
+      ],
+      "domain": [
+        2,
+        12
+      ]
+    },
+    "secondaryRail": {
+      "start": [
+        0,
+        4,
+        0
+      ],
+      "end": [
+        10,
+        4,
+        0
+      ],
+      "domain": [
+        40,
+        60
+      ]
+    },
+    "profileStations": [
+      0,
+      3,
+      10
+    ],
+    "profileShape": "Closed planar rectangles, width4; height1/1/1 or1/2/1.",
+    "geometrySamplesPerBuiltCase": 174,
+    "builtCases": 5,
+    "tangentPlane": {
+      "constantFaces": 4,
+      "constantArea": 100,
+      "constantMaximumResidual": 8.881784197001252e-16,
+      "varyingMaximumResidual": 1.1102230246251565e-15,
+      "equalDomainControl": true,
+      "maximumAcceptedResidual": 0.000001,
+      "variableWidthMaximumResidual": 1.7763568394002505e-15,
+      "variableWidthArea": 120.1980390271856,
+      "variableWidthExpectation": "Divergent straight rails width4→6, constant unit section height; area110+sqrt(104)."
+    },
+    "arcLengthGuide": {
+      "maximumResidual": 0.0015191738065429255,
+      "accepted": false,
+      "worstSample": [
+        3,
+        3.6,
+        1
+      ],
+      "independentUntrimmedSurfaceProjectionAtWorstSample": 0.0015191738065429255,
+      "measuredArea": 99.98868537045699,
+      "diagnosis": "Also fails with equal native domains0..10; mode-specific geometry loss, not a parameter-domain normalization fix. No tolerance relaxation."
+    },
+    "contactOnBorder": {
+      "suppliedProfileCount": 3,
+      "retainedProfileCount": 1,
+      "retainedProfile": "last",
+      "sourceReason": "Set(ContactOnBorder) selects automatic law; Add clears mySeq before appending each section."
+    }
+  },
+  "checks": [
+    "RED initial native compile missing BRepFill_PipeShell.hxx with existing minimal toolkit configuration",
+    "GREEN added TKBool only; complete static host module and runner link successfully",
+    "RED strict combined assertion catches arc-length contact error; independent native surface projection confirms geometry deviation",
+    "Differential equal/unequal domains with tangent-plane/arc-length isolates mode, not native domain values",
+    "Strict positive tangent-plane controls retain tolerance1e-6; every rail and all four sides of three supplied profiles sampled, valid BRep/no silent solid caps, area100/4 faces for constant control",
+    "Known unsupported arc-length result explicitly reported rejected; ContactOnBorder single-profile replacement measured and reported",
+    "PASS final C++ runner and full adjacent managed/native host suites with TKBool linked; production provenance/repository checks pass."
+  ],
+  "decision": "BRepFill tangent-plane multi-section operator is a demonstrated analytical building block, not a general two-rail sweep. Reject direct ContactOnBorder integration because it replaces earlier sections. Arc-length mode fails the contact criterion on this fixture. Design explicit correspondence/height operator before production API or node134 registration.",
+  "remaining": [
+    "independent arbitrary per-profile parameter pairs",
+    "variable rail width/maintain-height behavior",
+    "nonplanar rails/closed seams/orientation/degenerate contact",
+    "native typed ownership ABI and BRep outputs",
+    "real original134 geometry edit/save/reopen",
+    "original Rhino5/PC regeneration and full parity",
+    "Apple simulator/device and physical verification"
+  ],
+  "scope": "Native feasibility observations only; no swept surface production API or original134 success registration; full1451-row parity remains unverified.",
+  "localNativeReport": {
+    "sha256": "3f727fa7b6ad0eff1e20d563282aa538f34d05a6b9f6a150965885f365704dc7",
+    "normalization": "LF",
+    "report": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; candidate-four-span-curves=pass; native-arc-length-samples=50; native-affine-copy=pass; native-closest-point=pass; native-trim-reverse=pass; native-ordered-join=pass; native-unit-tangents=pass; native-curve-line-events=pass; native-closed-seam=pass; native-curve-bounds=pass; native-uniform-affine-and-closure=pass; native-nurbs-construction=pass; published-rotation-reference=pass; native-sweep-feasibility=observed; tangent-plane-three-section-shell=pass; three-section-shell-area=100; constant-section-max-residual=8.8817841970012523e-16; varying-section-max-residual=1.1102230246251565e-15; variable-width-max-residual=1.7763568394002505e-15; variable-width-area=120.1980390271856; arc-length-guide-max-residual=0.0015191738065429255; arc-length-guide-area=99.988685370456992; arc-length-untrimmed-projection=0.0015191738065429255; arc-length-worst-sample=3,3.6000000000000001,1; arc-length-guide-contact=rejected; contact-on-border-retained-profiles=1/3; arbitrary-two-rail-correspondence=unverified; analytic fixtures only, no CounterSketch/PC parity claim."
+  },
+  "localManagedReport": {
+    "sha256": "4fa740aba7b48ef11da7c75ef4e99ac22e0736f9cdb4da80f6a6066c29f8390c",
+    "normalization": "LF",
+    "sweepPreparationPassed": true,
+    "scope": "Full adjacent managed/native host suites with the expanded TKBool module. Separate native entry exercises the new feasibility cases."
+  },
+  "implementationSources": [
+    {
+      "path": "native/GeometryBridge/CandidateProbe/candidate_sweep_contracts.cpp",
+      "sha256": "0d7fc076a37123b717894a10ca232d2e47fa577126ef8989577812d98a6479dd"
+    },
+    {
+      "path": "native/GeometryBridge/CandidateProbe/CMakeLists.txt",
+      "sha256": "a1aa4bda81c1650bfd13083c7c30d9264af69f728aee00305e20a3658a4438ee"
+    },
+    {
+      "path": "native/GeometryBridge/CandidateProbe/probe.cpp",
+      "sha256": "93f28f5136a188f6442a01425eb29b96671c8152b8e38fbe7ba0257b984762c1"
+    }
+  ],
+  "review": {
+    "correctness": "Positive tangent-plane controls retain1e-6 contact and independent area/topology expectations; rejected arc-length mode and lost-profile behavior are explicitly measured, never feature acceptance.",
+    "architecture": "Native test/experiment only; public ABI and node134 production dispatch unchanged. TKBool is minimal required toolkit.",
+    "ownership": "Native automatic objects and actual geometry queries; valid independent input wires checked. Complete production transaction/lifetime policy remains later work.",
+    "security": "Recovery read-only; no scripts/accounts/credentials; writes remain in D:. Source hashes in native CI artifacts.",
+    "performance": "Five small shells/870 point queries; no interactive large-model performance claim."
+  }
+}

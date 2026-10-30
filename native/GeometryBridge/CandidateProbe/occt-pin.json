@@ -12,6 +12,7 @@
   "enabledToolkits": [
     "TKPrim",
     "TKBO",
-    "TKMesh"
+    "TKMesh",
+    "TKBool"
   ]
 }

@@ -30,6 +30,7 @@
 void run_candidate_abi_contracts();
 void run_candidate_curve_contracts();
 void run_rotation_reference_contracts();
+std::string run_candidate_sweep_contracts();
 
 namespace {
 void require(bool condition,const char* message) { if(!condition)throw std::runtime_error(message); }
@@ -48,6 +49,7 @@ std::string run()
     run_candidate_abi_contracts();
     run_candidate_curve_contracts();
     run_rotation_reference_contracts();
+    const std::string sweepExperiment=run_candidate_sweep_contracts();
     const double pi=std::acos(-1.0);
     auto outer=BRepPrimAPI_MakeCylinder(10.0,3.0).Shape();
     auto inner=BRepPrimAPI_MakeCylinder(gp_Ax2(gp_Pnt(0,0,-1),gp_Dir(0,0,1)),8.0,5.0).Shape();
@@ -86,7 +88,7 @@ std::string run()
         try { BRepPrimAPI_MakeCylinder invalid(-1.0,2.0);invalid.Shape(); } catch(const Standard_Failure&) { ++invalidFailures; }
     }
     require(invalidFailures==16,"Invalid native cylinder did not fail");
-    std::ostringstream report;report<<"PASS OCCT 8.0.1 native candidate: annulus-volume="<<volume(ring)<<"; solids="<<count(ring,TopAbs_SOLID)<<"; native-triangles="<<triangles<<"; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length="<<GCPnts_AbscissaPoint::Length(adaptor)<<"; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; candidate-four-span-curves=pass; native-arc-length-samples=50; native-affine-copy=pass; native-closest-point=pass; native-trim-reverse=pass; native-ordered-join=pass; native-unit-tangents=pass; native-curve-line-events=pass; native-closed-seam=pass; native-curve-bounds=pass; native-uniform-affine-and-closure=pass; native-nurbs-construction=pass; published-rotation-reference=pass; analytic fixtures only, no CounterSketch/PC parity claim.";return report.str();
+    std::ostringstream report;report<<"PASS OCCT 8.0.1 native candidate: annulus-volume="<<volume(ring)<<"; solids="<<count(ring,TopAbs_SOLID)<<"; native-triangles="<<triangles<<"; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length="<<GCPnts_AbscissaPoint::Length(adaptor)<<"; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; candidate-four-span-curves=pass; native-arc-length-samples=50; native-affine-copy=pass; native-closest-point=pass; native-trim-reverse=pass; native-ordered-join=pass; native-unit-tangents=pass; native-curve-line-events=pass; native-closed-seam=pass; native-curve-bounds=pass; native-uniform-affine-and-closure=pass; native-nurbs-construction=pass; published-rotation-reference=pass; ";report<<sweepExperiment;report<<"analytic fixtures only, no CounterSketch/PC parity claim.";return report.str();
 }
 }
 extern "C" int jd_occt_candidate_run(char* output,unsigned int capacity)

@@ -50,6 +50,10 @@ for i in $(seq 1 120); do
   grep -q 'PASS legacy array values:289 exact-source arithmetic pairs/33 null-item failures;789 source flatten/copy trees,' "$OUT/result.txt"
   grep -q 'PASS collection socket constructors:12285 exact-source zero-fixed-input cases;' "$OUT/result.txt"
   grep -q 'PASS owned native collections:18 source output comparisons,' "$OUT/result.txt"
+  grep -q 'native-sweep-feasibility=observed;' "$OUT/result.txt"
+  grep -q 'tangent-plane-three-section-shell=pass;' "$OUT/result.txt"
+  grep -q 'contact-on-border-retained-profiles=1/3;' "$OUT/result.txt"
+  grep -q 'arbitrary-two-rail-correspondence=unverified;' "$OUT/result.txt"
   grep -q 'PASS explicit sweep2 preparation:3906 exact stable-order cases;' "$OUT/result.txt"
   grep -q 'PASS native array consumers:49 source first-item cases;' "$OUT/result.txt"
   exit 0

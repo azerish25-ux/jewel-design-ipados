@@ -26,9 +26,9 @@ Files: create native/GeometryBridge/CandidateProbe/candidate_sweep_contracts.cpp
 
 Consumes: PreparedSweep2Candidate rails/profiles/order/Parameters1/Parameters2/EffectiveClosed/MaintainHeight from A01. Native experiment uses independent analytic inputs first; it does not register134.
 
-- [ ] Pin MakePipeShell.hxx/cxx and BRepFill_PipeShell.hxx hashes with kernel revision; record exact methods and missing correspondence controls.
+- [x] Pin MakePipeShell.hxx/cxx and BRepFill_PipeShell.hxx hashes with kernel revision; record exact methods and missing correspondence controls.
 - [ ] Define failing analytic two-straight-rail/three-section case with known surface points, boundaries and section locations. Include unequal native domains, nonuniform stations and independent second-rail correspondence.
-- [ ] Build minimal required toolkit closure on Windows D: and macOS; fail on API/link errors before expensive full builds.
+- [ ] Build minimal required toolkit closure on both Windows D: and macOS. Windows TKBool runner/module succeeds; Apple pending.
 - [ ] Evaluate genuine native construction. Verify both rail residuals and all section residuals against independent points, valid topology, face count/orientation and input isolation. A passing Build/mesh alone fails acceptance.
 - [ ] Compare asymmetric/variable-width/height cases with height flag false/true; closed primary/secondary seams; nonplanar rail; profile direction mismatch; degenerate/self-intersecting/impossible contact cases.
 - [ ] If proposed API cannot respect both explicit lists or height behavior, record the exact failing fixture and design a deeper native constrained operator. Do not silently discard the second parameter list or choose a visually similar loft.
@@ -55,3 +55,7 @@ Files: src/Port/Features.Candidate/CandidateRailGraphSession.Sweep.cs (new), dis
 - [ ] Compare Windows Rhino output/tolerances/topology and PC/iPad/PC editable reopening when a contained licensed Windows reference and real portfolio corpus exist. These full parity gates remain open independently of candidate experiments.
 
 Next beyond this plan: no-param branch, other sweep builders and versions, caps/join/solid semantics where callers request them, segmentation for paths that actually require it, scheduling/undo/BRep serialization, export/render/touch UI, catalog and physical-device acceptance.
+
+## Implemented first analytical increment
+
+Windows lower-level TKBool executes five actual shell cases: tangent-plane constant/varying section/equal-domain/divergent-width controls plus measured rejected arc-length case.174 rail/section samples per built case; analytic areas100 and110+sqrt(104). ContactOnBorder retains1/3 profiles. These observations reject direct general integration; arbitrary correspondence and other planned cases remain required. [Decision](../ADR-0036-native-sweep-feasibility.md) and [measured evidence](../evidence/P05-T02-A19-A02.json). No production ABI or original134 registration.

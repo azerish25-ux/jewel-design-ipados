@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "commit": "6f18df483aab38b8d40cfc9fd2194eaf7adb948b",
+  "runtimeRun": 41117797147,
+  "deviceRun": 41117800707,
+  "status": "historical_execution_pass_source_routing_correction_pending",
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D798106A-0403-425E-8352-3E7056FA9F79"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "7e1a349b458ce5f1747577b42c3ab7f65d374699aefb682b2e6906c6ffd40c8c",
+      "arrayReport": "PASS native array consumers:49 source first-item cases; nested transform flatten/object preservation/null copy, actual native leaf geometry/metadata/order, source aggregate bounds/first transform capability, rail/profile first-item queries, arithmetic array channels, saved reopen/failure/disposal; candidate subset, no original-PC/full data parity."
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "F94FB7BA-C33C-4B3B-B505-F0FB478DB847"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "7e1a349b458ce5f1747577b42c3ab7f65d374699aefb682b2e6906c6ffd40c8c",
+      "arrayReport": "PASS native array consumers:49 source first-item cases; nested transform flatten/object preservation/null copy, actual native leaf geometry/metadata/order, source aggregate bounds/first transform capability, rail/profile first-item queries, arithmetic array channels, saved reopen/failure/disposal; candidate subset, no original-PC/full data parity."
+    }
+  ],
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "998f1ec65c4c6948b011b82c4b3fbcc983dc2948480e7850b11163e1094c9b9e  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "e533bc9ea51059f6a3ed1dbc919298642243c5a9011b42e9c9b95362e37aba8e",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  },
+  "scope": "Runtime execution of the earlier array-consuming checkpoint only. Its over-broad first-item curve routing was corrected in afe45a8/ADR0035; passing these historical tests does not verify those corrected source semantics or sweep preparation."
+}

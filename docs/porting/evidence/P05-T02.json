@@ -100,7 +100,10 @@
     "docs/evidence/apple/stored-nurbs-import-results.json",
     "src/Port/Features.Candidate/Sweep2PreparationCandidate.cs",
     "docs/porting/ADR-0035-explicit-sweep-preparation.md",
-    "docs/porting/evidence/P05-T02-A19-A01.json"
+    "docs/porting/evidence/P05-T02-A19-A01.json",
+    "native/GeometryBridge/CandidateProbe/candidate_sweep_contracts.cpp",
+    "docs/porting/ADR-0036-native-sweep-feasibility.md",
+    "docs/porting/evidence/P05-T02-A19-A02.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -438,7 +441,8 @@
     {
       "id": "P05-T02-A19-A02",
       "scope": "Genuine native two-rail swept surface/BRep construction, topology and constraint comparison",
-      "status": "pending"
+      "status": "in_progress_local_native_feasibility",
+      "evidence": "docs/porting/evidence/P05-T02-A19-A02.json"
     }
   ],
   "checks": [

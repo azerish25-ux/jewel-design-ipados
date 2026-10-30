@@ -101,12 +101,12 @@
     {
       "id": 41121469593,
       "scope": "repository bounded proofs",
-      "status": "queued"
+      "status": "success_workflow_inspection"
     },
     {
       "id": 41121469600,
       "scope": "managed recovered iOS reuse",
-      "status": "queued"
+      "status": "success_workflow_inspection"
     }
   ],
   "nextPlan": "docs/porting/plans/P05-T02-A19-A02-native-two-rail-surface.md"
