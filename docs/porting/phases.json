@@ -11,7 +11,7 @@
         "docs/porting/"
       ],
       "goal": "Preserve and index the entire recovery, sanitize remote credentials and publish a reproducible agent handoff.",
-      "status": "in_progress",
+      "status": "complete",
       "blockers": [],
       "plan": "docs/porting/phases/P00-recovery-integrity-and-agent-handoff.md",
       "acceptance": [
@@ -96,12 +96,17 @@
         {
           "id": "P00-T06",
           "title": "Publish to main without force and verify remote state",
-          "status": "not_started",
+          "status": "complete",
           "depends": [
             "P00-T05"
           ],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "recovery/manifests/summary.json",
+            "docs/porting/ROADMAP.md"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P00-T06.json"
+          ]
         }
       ]
     },

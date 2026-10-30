@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P00-T06",
+  "status": "complete",
+  "publishedCommit": "222d85370fa3981dd430176a1fadde0ade1fe144",
+  "requirementIds": [],
+  "sourceEvidence": [
+    "recovery/manifests/summary.json"
+  ],
+  "outputs": [
+    "recovery/manifests/summary.json",
+    "docs/porting/ROADMAP.md"
+  ],
+  "fixtures": [],
+  "checks": [
+    {
+      "command": "Non-forced Git push, followed by GitHub main ref and contents verification",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "https://github.com/azerish25-ux/jewel-design-ipados/commit/222d85370fa3981dd430176a1fadde0ade1fe144",
+      "expected": "Main contains the complete recovery",
+      "actual": "Main SHA matches; 10405 source files, 744 resource objects and zero missing declared files in the Git tree"
+    },
+    {
+      "command": "GitHub Actions Repository integrity and bounded proofs on main",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40977217171",
+      "expected": "Fresh Linux checkout passes integrity, security, portable and independent format checks",
+      "actual": "success"
+    }
+  ],
+  "review": {
+    "artifact": "docs/evidence/repository-review.json",
+    "result": "Repository delivery approved; no application parity claim"
+  },
+  "blockers": []
+}

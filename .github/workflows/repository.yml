@@ -14,15 +14,15 @@ jobs:
       run:
         shell: bash
     env:
-      DOTNET_CLI_TELEMETRY_OPTOUT: "1"
-      DOTNET_GENERATE_ASPNET_CERTIFICATE: "false"
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: 'false'
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
         with:
-          node-version: "24"
+          node-version: '24'
       - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
         with:
           global-json-file: global.json
@@ -30,6 +30,10 @@ jobs:
         run: node --test tools/repository/security.test.cjs
       - name: Verify full recovery, source links and work ledgers
         run: node tools/repository/check.cjs --record
+      - name: Build source and metadata audit tools
+        run: |
+          node scripts/run-local.cjs dotnet build tools/SourceAudit --nologo -v:q
+          node scripts/run-local.cjs dotnet build tools/RecoveryMetadata --nologo -v:q
       - name: Verify unchanged reuse experiment
         run: node scripts/verify-sources.cjs
       - name: Portable recovered checks with explicit compression diagnostic
