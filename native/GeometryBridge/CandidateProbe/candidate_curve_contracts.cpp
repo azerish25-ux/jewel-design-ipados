@@ -65,6 +65,13 @@ void run_candidate_curve_contracts()
     ok(jd_candidate_curve_closest(context.id,quarter,10,0,-2,&nearestParameter,&nearestX,&nearestY,&nearestZ,&nearestDistance,error,sizeof(error)));
     nearCurve(nearestX,7);nearCurve(nearestY,0);nearCurve(nearestZ,0);nearCurve(nearestDistance,std::sqrt(13.0));
     checkCurve(jd_candidate_curve_trim(context.id,circle,1,0,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Invalid trim interval accepted");
+    uint64_t secondArc=0,joined=0;ok(jd_candidate_curve_trim(context.id,circle,pi/2,pi,&secondArc,error,sizeof(error)));
+    ok(jd_candidate_curve_join(context.id,quarter,secondArc,1e-8,&joined,error,sizeof(error)));
+    ok(jd_candidate_curve_inspect(context.id,joined,&first,&last,&length,&degree,&poles,&rational,error,sizeof(error)));nearCurve(length,7*pi);
+    ok(jd_candidate_curve_point(context.id,joined,first,&x,&y,&z,error,sizeof(error)));nearCurve(x,0);nearCurve(y,0);nearCurve(z,7);
+    ok(jd_candidate_curve_point(context.id,joined,last,&x,&y,&z,error,sizeof(error)));nearCurve(x,0);nearCurve(y,0);nearCurve(z,-7);
+    checkCurve(jd_candidate_curve_join(context.id,secondArc,quarter,1e-8,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Unordered native join accepted");
+    ok(jd_candidate_shape_release(context.id,secondArc,error,sizeof(error)));ok(jd_candidate_shape_release(context.id,joined,error,sizeof(error)));
     ok(jd_candidate_shape_release(context.id,quarter,error,sizeof(error)));ok(jd_candidate_shape_release(context.id,reversed,error,sizeof(error)));
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");

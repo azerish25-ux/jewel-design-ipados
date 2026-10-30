@@ -8,6 +8,7 @@
 #include <Geom_TrimmedCurve.hxx>
 #include <Geom_BSplineCurve.hxx>
 #include <GeomConvert.hxx>
+#include <GeomConvert_CompCurveToBSplineCurve.hxx>
 #include <Convert_ParameterisationType.hxx>
 #include <GeomAbs_CurveType.hxx>
 #include <GCPnts_AbscissaPoint.hxx>
@@ -397,6 +398,24 @@ extern "C" int32_t jd_candidate_curve_reverse(uint64_t context,uint64_t shape,ui
         withContext(context,[&](Context& value){
             double first=0,last=0;auto curve=copiedEdgeSpline(value,shape,first,last);
             curve->Segment(first,last);curve->Reverse();*output=storeCurveEdge(value,curve);
+        });
+    },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_curve_join(uint64_t context,uint64_t first,uint64_t second,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        outputHandle(output);
+        if(!std::isfinite(tolerance)||tolerance<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Join tolerance must be finite and positive");
+        withContext(context,[&](Context& value){
+            double a0=0,a1=0,b0=0,b1=0;auto a=copiedEdgeSpline(value,first,a0,a1);auto b=copiedEdgeSpline(value,second,b0,b1);
+            a->Segment(a0,a1);b->Segment(b0,b1);
+            const double gap=a->Value(a1).Distance(b->Value(b0));
+            if(!std::isfinite(gap)||gap>tolerance)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Ordered curve endpoints are disconnected");
+            GeomConvert_CompCurveToBSplineCurve operation(a);
+            if(!operation.Add(b,tolerance,true,true,0))fail(JD_CANDIDATE_KERNEL_FAILURE,"Native curve join failed");
+            auto joined=operation.BSplineCurve();if(joined.IsNull())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native curve join returned null");
+            *output=storeCurveEdge(value,joined);
         });
     },diagnostic,capacity);
 }

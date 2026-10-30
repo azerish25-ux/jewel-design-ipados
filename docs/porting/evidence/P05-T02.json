@@ -61,7 +61,9 @@
     "docs/porting/plans/P05-T02-A10-curve-closest-point.md",
     "docs/porting/ADR-0014-candidate-closest-point.md",
     "docs/porting/plans/P05-T02-A11-trim-reverse.md",
-    "docs/porting/ADR-0015-candidate-trim-reverse.md"
+    "docs/porting/ADR-0015-candidate-trim-reverse.md",
+    "docs/porting/plans/P05-T02-A12-ordered-curve-join.md",
+    "docs/porting/ADR-0016-candidate-ordered-join.md"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -139,6 +141,11 @@
     {
       "id": "P05-T02-A11",
       "scope": "Actual copied NURBS segmentation/reversal and open-end closest-point regression",
+      "status": "local_native_verified_apple_pending"
+    },
+    {
+      "id": "P05-T02-A12",
+      "scope": "Actual endpoint-connected ordered native NURBS pair concatenation",
       "status": "local_native_verified_apple_pending"
     }
   ],
@@ -264,6 +271,18 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "actual": "Native+CSharp quarter trim/length/domain/endpoints/reverse/source preservation/open-end projection/invalid intervals and all earlier contracts pass."
+    },
+    {
+      "command": "dotnet build Geometry.Candidate.Contracts before JoinCurves",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED missing JoinCurves method before implementation"
+    },
+    {
+      "command": "node scripts/build-native-windows.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Native+CSharp quarter-arc join produces actual half-circle with analytic length/endpoints, input preservation, disposal-safe output and rejected ordering/tolerance. All earlier geometry/ownership/ring assertions pass."
     }
   ],
   "review": {
@@ -286,7 +305,8 @@
     "arcLength": "Pinned GCPnts overloads inspected. Actual integrated length plus abscissa solver, explicit tolerance, convergence/domain/finite checks, fixed-width outputs and existing SafeHandles. No source-compatible tolerance/PC/outside-rail or process-memory claim. Native module and managed client built together; stable production capability negotiation remains open.",
     "affine": "Pinned gp_GTrsf SetValue/SetForm/IsSingular and GTransform Copy=true inspected. Matrix width/layout/count explicit; native input bounds/finiteness checked, result owned and validated, CSharp existing gated factory/SafeHandle lifetime reused. No full source caller singular/orientation/PC semantics claimed; Apple proof pending.",
     "closestPoint": "Pinned bounded GeomAPI_ProjectPointOnCurve and located BRep_Tool::Curve overload inspected. Native extrema IsDone checked; endpoints compared; no invented point after failure. Equal-candidate ordering is explicitly candidate behavior. Finite/domain/output/ownership checks reused; future open/general/degenerate/Rhino-tie/tolerance/PC tests and Apple proof remain incomplete.",
-    "trimReverse": "Pinned Segment/Reverse and BRep edge creation inspected. Deep located curve copies, explicit supported interval/domain, geometry reversal, owned edges and typed errors reuse existing boundary. Open-end projection now tested. Inspection precision bug diagnosed with actual values and tightened native integration. Original caller/periodicity/seam/PC/physical policies and Apple proof remain open."
+    "trimReverse": "Pinned Segment/Reverse and BRep edge creation inspected. Deep located curve copies, explicit supported interval/domain, geometry reversal, owned edges and typed errors reuse existing boundary. Open-end projection now tested. Inspection precision bug diagnosed with actual values and tightened native integration. Original caller/periodicity/seam/PC/physical policies and Apple proof remain open.",
+    "orderedJoin": "Pinned native concatenation constructor/Add flags inspected. Input curves copied and restricted; endpoint continuity checked before native append; actual validated BRep output and existing context/SafeHandle lifetime reused. Uniform-ratio native parameterization and ordered-only policy are candidate behavior, not original Rhino join/output equivalence. Apple/full outside-rail/PC/physical checks remain open."
   },
   "blockers": [
     "Full CAD semantic mapping/candidate acceptance and broader recovered trim safety remain incomplete",

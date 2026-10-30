@@ -47,6 +47,8 @@ int32_t jd_candidate_affine(uint64_t context,uint64_t shape,const double* matrix
 int32_t jd_candidate_curve_closest(uint64_t context,uint64_t shape,double px,double py,double pz,double* parameter,double* x,double* y,double* z,double* distance,char* diagnostic,uint32_t capacity);
 int32_t jd_candidate_curve_trim(uint64_t context,uint64_t shape,double first,double last,uint64_t* output,char* diagnostic,uint32_t capacity);
 int32_t jd_candidate_curve_reverse(uint64_t context,uint64_t shape,uint64_t* output,char* diagnostic,uint32_t capacity);
+/* Ordered end-to-start pair join; no automatic source-compatible reordering. */
+int32_t jd_candidate_curve_join(uint64_t context,uint64_t first,uint64_t second,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

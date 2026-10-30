@@ -58,6 +58,14 @@ internal static class CurveAssertions
                 var sample=context.PointAt(quarter,.3);var opposite=context.PointAt(reversed,Math.PI/2-.3);Point(opposite,sample.X,sample.Y,sample.Z);
                 Point(context.PointAt(quarter,0),0,0,7);
             }
+            using(var firstArc=context.TrimCurve(circle,0,Math.PI/2))using(var secondArc=context.TrimCurve(circle,Math.PI/2,Math.PI)){
+                using var joined=context.JoinCurves(firstArc,secondArc,1e-8);var joinedInfo=context.InspectCurve(joined);Near(joinedInfo.Length,7*Math.PI);
+                Point(context.PointAt(joined,joinedInfo.FirstParameter),0,0,7);Point(context.PointAt(joined,joinedInfo.LastParameter),0,0,-7);
+                Point(context.PointAt(firstArc,0),0,0,7);Point(context.PointAt(secondArc,Math.PI/2),7,0,0);
+                Check(Fails(()=>{using var rejected=context.JoinCurves(secondArc,firstArc,1e-8);}).Status==CandidateNativeStatus.InvalidArgument,"Unordered join silently reordered inputs");
+                Check(Fails(()=>{using var rejected=context.JoinCurves(firstArc,secondArc,0);}).Status==CandidateNativeStatus.InvalidArgument,"Invalid join tolerance");
+                firstArc.Dispose();secondArc.Dispose();Near(context.InspectCurve(joined).Length,7*Math.PI);
+            }
             Check(Fails(()=>{using var rejected=context.TrimCurve(circle,1,0);}).Status==CandidateNativeStatus.InvalidArgument,"Decreasing trim interval");
             Check(Fails(()=>{using var rejected=context.TrimCurve(circle,0,7);}).Status==CandidateNativeStatus.InvalidArgument,"Out-of-domain trim interval");
             using var moved=context.Translate(circle,1,2,3);
@@ -81,6 +89,6 @@ internal static class CurveAssertions
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,0),new(1,0,0)));});
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,1),new(0,0,1)));});
         Check(context.DiagnosticLiveShapeCount==0,"Curve ownership retained native entries");
-        return "PASS candidate native curves: actual NURBS trim/reverse/open-end projection, actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
+        return "PASS candidate native curves: actual ordered NURBS join, actual NURBS trim/reverse/open-end projection, actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
     }
 }

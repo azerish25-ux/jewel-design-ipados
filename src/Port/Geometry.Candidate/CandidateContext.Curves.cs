@@ -54,4 +54,7 @@ public sealed partial class CandidateContext
     public CandidateShape ReverseCurve(CandidateShape shape)=>CreateShape(diagnostic=>{
         var status=NativeMethods.CurveReverse(_handle,shape.Handle,out var id,diagnostic,DiagnosticCapacity);return(status,id);
     },shape);
+    public CandidateShape JoinCurves(CandidateShape first,CandidateShape second,double tolerance)=>CreateShape(diagnostic=>{
+        var status=NativeMethods.CurveJoin(_handle,first.Handle,second.Handle,tolerance,out var id,diagnostic,DiagnosticCapacity);return(status,id);
+    },first,second);
 }
