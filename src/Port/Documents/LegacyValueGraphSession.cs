@@ -9,10 +9,14 @@ public sealed class LegacyChannelValue
     private readonly double number;
     public bool HasNumber {get;}
     public LegacyProfileSelection? Profile {get;}
+    public LegacyCurveSelection? Curve {get;}
     public static LegacyChannelValue Empty {get;}=new();
     private LegacyChannelValue(){}
     private LegacyChannelValue(double value){HasNumber=true;number=value;}
     private LegacyChannelValue(LegacyProfileSelection profile){Profile=profile;}
+    private LegacyChannelValue(LegacyCurveSelection curve){Curve=curve;}
+    public static LegacyChannelValue FromCurve(int record,int channel)=>new(new LegacyCurveSelection(record,channel));
+    public static LegacyChannelValue FromNumber(double value)=>Number(value);
     internal static LegacyChannelValue Number(double value)=>new(value);
     internal static LegacyChannelValue ProfileData(int record,int profile)=>new(new LegacyProfileSelection(record,profile));
     public bool GetDouble(ref double value){if(!HasNumber)return false;value=number;return true;}
@@ -23,11 +27,12 @@ public sealed class LegacyChannelValue
 public sealed class LegacyValueGraphSession
 {
     private readonly Dictionary<int,ScalarValueRuntime> states=new();
+    private readonly ILegacyValueNodeProvider? provider;
     public LegacyCsg4Document Document {get;}
     public bool IsCamValueMode {get;set;}
-    public LegacyValueGraphSession(LegacyCsg4Document document)
+    public LegacyValueGraphSession(LegacyCsg4Document document,ILegacyValueNodeProvider? provider=null)
     {
-        ArgumentNullException.ThrowIfNull(document);Document=document;
+        ArgumentNullException.ThrowIfNull(document);Document=document;this.provider=provider;
         for(int i=0;i<document.Records.Count;i++)if(document.Records[i].Scalar is{} scalar)
             states.Add(i,new(new(scalar.Value,scalar.Value)));
     }
@@ -47,8 +52,11 @@ public sealed class LegacyValueGraphSession
             if(mark==2)continue;
             if(mark==1)throw new InvalidOperationException("Cycle in supported value dependency slice.");
             var record=Record(item.Node);
-            if(record.Scalar is null&&record.MatrixProfiles is null)throw new NotSupportedException("Unsupported linked producer at record "+item.Node);
+            if(record.Scalar is null&&record.MatrixProfiles is null&&!(provider?.Supports(item.Node)??false))throw new NotSupportedException("Unsupported linked producer at record "+item.Node);
             marks[item.Node]=1;stack.Push((item.Node,true));
+            if(provider?.Supports(item.Node)??false){
+                var links=provider.Inputs(item.Node);for(int i=links.Count-1;i>=0;i--)if(links[i].ObjectIndex>=0)stack.Push((links[i].ObjectIndex,false));
+            }
             if(record.Scalar is{} scalar){
                 int inputs=record.TypeGuid==LegacyCsg4Codec.ChooserTypeGuid?3:2;
                 for(int input=Math.Min(inputs,scalar.ObjectIndices.Count)-1;input>=0;input--)
@@ -57,7 +65,7 @@ public sealed class LegacyValueGraphSession
         }
         // Preflight above rejects cycles/unsupported dependencies before applying overrides.
         foreach(int node in order){
-            if(!states.ContainsKey(node))continue;
+            if(!states.ContainsKey(node)){if(provider?.Supports(node)??false)provider.Update(node);continue;}
             double value=0;bool available=ReadInput(node,1,new(),0).GetDouble(ref value);
             states[node]=states[node].ApplyOverride(available,value);
         }
@@ -78,6 +86,7 @@ public sealed class LegacyValueGraphSession
             var record=Record(node);
             if(record.MatrixProfiles is{} group)
                 return channel>=0&&channel<group.Curves.Count?LegacyChannelValue.ProfileData(node,channel):LegacyChannelValue.Empty;
+            if(provider?.Supports(node)??false)return provider.ReadOutput(node,channel);
             if(record.Scalar is null||!states.TryGetValue(node,out var state))throw new NotSupportedException("Unsupported output producer at record "+node);
             bool on=true;bool hasBoolean=ReadInput(node,0,path,depth).GetBoolean(ref on);on=!hasBoolean||on;
             if(record.TypeGuid==LegacyCsg4Codec.ChooserTypeGuid&&channel==3){

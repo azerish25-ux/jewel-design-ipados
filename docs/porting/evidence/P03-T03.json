@@ -40,7 +40,12 @@
     "tests/value-channel-oracle.test.cjs",
     "docs/evidence/audit/value-channel-source-oracle.json",
     "docs/porting/plans/P03-T03-A06-value-channels.md",
-    "docs/porting/ADR-0024-value-channel-generations.md"
+    "docs/porting/ADR-0024-value-channel-generations.md",
+    "src/Port/Documents/ILegacyValueNodeProvider.cs",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.cs",
+    "tests/Port/Geometry.Candidate.Contracts/RailGraphAssertions.cs",
+    "docs/porting/plans/P03-T03-A07-rail-outputs.md",
+    "docs/porting/ADR-0026-graph-managed-rail-outputs.md"
   ],
   "fixtures": [],
   "checks": [
@@ -182,6 +187,29 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "actual": "8 source provenance/tamper controls pass; all7 extracted channel method bodies exactly match canonical source."
+    },
+    {
+      "subtaskId": "P03-T03-A07",
+      "command": "dotnet build Geometry.Candidate.Contracts before CandidateRailGraphSession",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED2 absent graph-session API errors; .local/evidence/P03-T03-A07/red.txt"
+    },
+    {
+      "subtaskId": "P03-T03-A07",
+      "command": "node scripts/build-native-windows.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Actual original saved nodes, ring->outside curve/radius edges, source curve/number/metadata conversions, generated values and export/save/reopen/rebuild, retained readers across replacement, failed/cyclic native-cache cleanup and final zero native entries pass. Existing import/consumer/channel/native suites pass.",
+      "artifact": ".local/evidence/P03-T03-A07/native-proof.log"
+    },
+    {
+      "subtaskId": "P03-T03-A07",
+      "command": "dotnet run Documents.Tests; source oracle/numeric controls",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Document/profile/rail bindings,28160 source channel differential cases and8 oracle tamper/provenance controls pass after provider extension.",
+      "artifact": ".local/evidence/P03-T03-A07/document-proof.log"
     }
   ],
   "review": {
@@ -208,7 +236,8 @@
       "performance": "Linear view validation and constant-time address resolution; owner/view references retain original provenance for session lifetime",
       "limitations": "No cross-load identity matching, live mutable instance-GUID setter, codec write, applied graph commands or link remapping"
     },
-    "valueChannels": "Reviewed source empty-vs-zero/conversion/ref semantics, exact arithmetic/CAM signed-zero and override latching distinct from setter/previous state; preflight dependency validation, no unsupported defaulting, read cycle/depth guards and serialized link count preservation. Complete scheduler/UI/CAM serialization/native producer/failure/concurrency/PC equivalence remain explicit. Native profile temporaries and binding snapshot ownership reviewed."
+    "valueChannels": "Reviewed source empty-vs-zero/conversion/ref semantics, exact arithmetic/CAM signed-zero and override latching distinct from setter/previous state; preflight dependency validation, no unsupported defaulting, read cycle/depth guards and serialized link count preservation. Complete scheduler/UI/CAM serialization/native producer/failure/concurrency/PC equivalence remain explicit. Native profile temporaries and binding snapshot ownership reviewed.",
+    "railOutputs": "Reviewed no native dependency/handles in document channel data, explicit supported producer/dependency validation, no recursive generation, source curve vs numeric and Scale1/0 metadata, immutable output snapshots/retained readers, allocation exception cleanup and pending output disposal. Candidate native-cache commit differs from unproven original failure/dirty/parallel policies; scalar updates are not rolled back after later native errors."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -346,6 +375,36 @@
       "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
       "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4",
       "scope": "P03-T03-A06 source activation/conversion/output/update/chooser field contracts; complete scheduling and callbacks not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSRailData.cs",
+      "sha256": "93625e6a74feac6ee3e0b17b2faaa146abdead5f6f19f88231d8f7368ec4b20b",
+      "scope": "P03-T03-A07 source curve data/no numeric coercion/metadata/numeric scale0 and consumer/output getter contracts; scheduler/cache equivalence not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSRingRailData.cs",
+      "sha256": "072b59834ae3a8a6dde5b5960917d83a470fdb5f82b80616cd6755138c697b9b",
+      "scope": "P03-T03-A07 source curve data/no numeric coercion/metadata/numeric scale0 and consumer/output getter contracts; scheduler/cache equivalence not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSOutsideRingRailData.cs",
+      "sha256": "b33afc516a4bbf85b0f0d1f9f6e55d80d6a7cf00efab7d0b944c1ba141753f15",
+      "scope": "P03-T03-A07 source curve data/no numeric coercion/metadata/numeric scale0 and consumer/output getter contracts; scheduler/cache equivalence not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4",
+      "scope": "P03-T03-A07 source curve data/no numeric coercion/metadata/numeric scale0 and consumer/output getter contracts; scheduler/cache equivalence not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSRingRail1.cs",
+      "sha256": "fd06635926c702a605d94a812847f7f84c6d0a7fde5db362e4f1e8d0bf74267b",
+      "scope": "P03-T03-A07 source curve data/no numeric coercion/metadata/numeric scale0 and consumer/output getter contracts; scheduler/cache equivalence not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+      "sha256": "33aa3bd1e6dddc2b5332bd1ef350d30751aebb5d93440eda00f5ba9e81d2ea1a",
+      "scope": "P03-T03-A07 source curve data/no numeric coercion/metadata/numeric scale0 and consumer/output getter contracts; scheduler/cache equivalence not implied"
     }
   ],
   "subtasks": [
@@ -380,6 +439,11 @@
     {
       "id": "P03-T03-A06",
       "scope": "Recovered value field/output/update behavior, known scalar/profile generations and evaluated native geometry input slice",
+      "status": "local_verified_apple_pending"
+    },
+    {
+      "id": "P03-T03-A07",
+      "scope": "Pure external producer/curve token boundary and owned native known-rail generation/cache",
       "status": "local_verified_apple_pending"
     }
   ]

@@ -69,6 +69,7 @@ public static class Assertions
         var storedProfiles=StoredProfileAssertions.Run();
         var valueGeometry=ValueGraphGeometryAssertions.Run();
         var railNodes=RailNodeAssertions.Run();
-        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam+" "+bounds+" "+outsideRail+" "+storedProfiles+" "+valueGeometry+" "+railNodes;
+        var railGraph=RailGraphAssertions.Run();
+        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam+" "+bounds+" "+outsideRail+" "+storedProfiles+" "+valueGeometry+" "+railNodes+" "+railGraph;
     }
 }
