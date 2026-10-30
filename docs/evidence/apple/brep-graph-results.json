@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "commit": "cd61173725c6a36b7f79adb04e71a9e0386458ea",
+  "runtimeRun": 41138747229,
+  "deviceRun": 41138750349,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D798106A-0403-425E-8352-3E7056FA9F79"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "3cf551af198b2dffe238d829251f6518c1c753effee102d1aaeaa6c37d16c77d",
+      "managedReport": "PASS owned BRep graph:real134 typed output/name/edit-save-reopen, kind rejection/transform metadata, nested mixed arrays/unarray/wildcards/affine, retained snapshots and failed-generation cleanup; candidate subset, no original-PC/full block parity."
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "F94FB7BA-C33C-4B3B-B505-F0FB478DB847"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "3cf551af198b2dffe238d829251f6518c1c753effee102d1aaeaa6c37d16c77d",
+      "managedReport": "PASS owned BRep graph:real134 typed output/name/edit-save-reopen, kind rejection/transform metadata, nested mixed arrays/unarray/wildcards/affine, retained snapshots and failed-generation cleanup; candidate subset, no original-PC/full block parity."
+    }
+  ],
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "cf0c96a9954724c5b09dc6042f82eeab91de22dce9eccc1bdc1650007c98cc72  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "c1b5e27f05c6e0fb1fab43deb55a7ae3b73477b57a13fe8e52e21759aea86414",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  },
+  "scope": "Candidate-only runtime assertions and unsigned device build. Original-PC, full feature, physical-device and full1451-row parity remain unverified."
+}

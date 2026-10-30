@@ -7,10 +7,10 @@ Source CSUtilGeometry.CreateDomeRC and CSUtilRailRevolve.RailRevolve(NurbsCurve,
 - [x] RED missing explicit Rhino5 dome definition.
 - [x] Preserve threshold abs(dome)<.005, five controls/weight.70710678/full-knot expansion; immutable data; no smoothing/weight correction.
 - [x] Compare exact recovered CreateDomeRC body with finite observation types honoring verified Rhino5 setter semantics; boundary/sign/radius/native samples.
-- [ ] Adapt recovered rail-revolve tensor math with exact direction/zAdjust/weight product; native tensor verification.
+- [x] Adapt recovered rail-revolve tensor math with exact direction/zAdjust/weight product; native tensor verification.
 - [ ] Average plane, centering/inverse metadata and actual cap/join graph integration still required; no planar substitute.
 - [ ] Review/source/repository/native checks, commit/push and new Apple tests; full PC/physical/native topology parity remains open.
 
 All local output/cache D:; retry transient D errors after5 seconds; recovery/kernel read-only.
 
-Local recovered dome profile checks pass21 cases/693 points. Flat-line parameter domain preserves published length/fallback rule; do not normalize it silently. Rail-revolve/plane/caps/join remain required. [Decision](../ADR-0040-recovered-rhino5-dome.md), [evidence](../evidence/P05-T02-A21.json).
+Local recovered dome profile checks pass21 cases/693 points. Flat-line parameter domain preserves published length/fallback rule; do not normalize it silently. Tensor grids now pass20 exact-source coefficient comparisons and204 native boundary samples. Plane/caps/join remain required. [Decision](../ADR-0040-recovered-rhino5-dome.md), [evidence](../evidence/P05-T02-A21.json).

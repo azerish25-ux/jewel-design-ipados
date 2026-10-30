@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "commit": "d6e98aad5b21ba2fd568519ee53dbd9cd0c258b5",
+  "runtimeRun": 41140499080,
+  "deviceRun": 41140501585,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "1560A45E-C4D6-421A-B28D-D4CBB7AEB16E"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "a60467409d95e0ae257f9651fdaaa8b6527d436f324fa80a1906114118b55276",
+      "managedReport": "PASS rational NURBS surfaces:1445 independent homogeneous tensor points, U-major/rational/nonuniform/nonclamped active domains/collapsed apex, immutable definitions, native face/affine/error/disposal; cap algorithm/PC parity separate."
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "10B884BF-749F-4E8B-AFCD-26AB8F1DBD01"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "a60467409d95e0ae257f9651fdaaa8b6527d436f324fa80a1906114118b55276",
+      "managedReport": "PASS rational NURBS surfaces:1445 independent homogeneous tensor points, U-major/rational/nonuniform/nonclamped active domains/collapsed apex, immutable definitions, native face/affine/error/disposal; cap algorithm/PC parity separate."
+    }
+  ],
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "d8ac9587046d4d4a4811c9c1cc7e7fcc69376b822d319b1be2a9b9f00a9942f2  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "360d458bc413d223429214efa52e148aba838f5b003e7791c6ca584e3c2a0071",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  },
+  "scope": "Candidate-only runtime assertions and unsigned device build. Original-PC, full feature, physical-device and full1451-row parity remain unverified."
+}

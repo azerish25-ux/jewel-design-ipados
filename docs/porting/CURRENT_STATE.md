@@ -2,7 +2,9 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P05-T02-A21 explicitly adapts recovered Rhino5 dome profile data, supported by acquired SDK static inspection and pinned published setter/domain references. Windows21 threshold/sign/radius profiles and693 exact-source native point comparisons pass. [ADR0040](ADR-0040-recovered-rhino5-dome.md). Rail-revolve tensor, plane/placement and actual caps138/139 then join140 remain required. New Apple proof pending; full parity0/1451.
+Latest implementation: P05-T02-A21 adapts recovered Rhino5 dome profiles and rail-revolve tensor math. Windows21 profiles/693 source-point comparisons,20 tensor coefficient comparisons and204 native boundary samples pass; new Apple tensor execution pending. [ADR0040](ADR-0040-recovered-rhino5-dome.md). Actual caps138/139 still need native curve export, plane/placement, then join140. Full parity0/1451.
+
+Inspected Apple checkpoints: [BRep graph](../evidence/apple/brep-graph-results.json) and [rational NURBS surfaces](../evidence/apple/nurbs-surface-results.json) passed on iPad/iPhone simulators and unsigned arm64 iOS build (52 warnings,0 errors). These results predate the new dome/tensor adapter; physical-device and original-PC acceptance remain open.
 
 Earlier inspected Apple native checkpoint: pure-array2bf2ee2 passed iPad/iPhone289 arithmetic pairs/33 null failures/789 flatten-copy trees plus12285 collection constructor cases, and unsigned arm64 iOS build52 warnings0 errors; [reports](../evidence/apple/pure-array-results.json). This predates native collection execution and consumers, tracked separately below.
 

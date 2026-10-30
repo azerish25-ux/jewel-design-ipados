@@ -1,6 +1,6 @@
 # ADR0040: recovered Rhino5 dome profile semantics
 
-Status: local source/native profile comparisons pass; Apple dome checks pending. Full cap placement/tensor/join behavior remains unfinished.
+Status: local source/native profile and tensor comparisons pass; new Apple tensor checks pending. Full cap placement/join behavior remains unfinished.
 
 The acquired RhinoCommon5.1.30000.16 assembly's NurbsCurvePointList.SetPoint(int,Point4d) forwards the point to ON_NurbsCurve_SetCV2. The published wrapper at pinned commit3aebe3553b5e2c78ed4d5ae1c21f3e752a6b7f69 multiplies input XYZ by W before passing the homogeneous native point. This agrees with [McNeel's version explanation](https://discourse.mcneel.com/t/nurbscurve-different-behaviour-between-rhino-net-and-rhinocommon/75376/2): Rhino5 takes Euclidean XYZ plus weight; Rhino6 changes semantics. [Static artifact evidence](../evidence/audit/rhino5-control-point-setter.json) records hashes and the acquired/published distinction. No original SDK/native code was executed.
 
@@ -10,4 +10,6 @@ Following the flat branch uncovered a parameter-domain shortcut: the acquired Li
 
 The exact recovered CreateDomeRC body is extracted into a data observation harness with the verified5 setter and published line-domain policy. Twenty-one threshold/sign/radius cases pass693 native point comparisons, plus degree/control/domain/endpoint checks. Oracle body, threshold and weight tampering controls pass. Existing native graph/tensor suites stay passing. [Evidence](evidence/P05-T02-A21.json).
 
-Next: recovered RailRevolve tensor construction, copied native curve definition export, average-plane/orientation/centering and inverse-transform metadata; then actual caps138/139 and legacy join140. No planar cap, mesh, geometry patch or modern-API substitution closes those gates. Full source/native topology/PC/physical parity remains open.
+The tensor adapter now preserves the recovered RailRevolve math: profile XY radius scaling, weight products, UV transposition, optional explicit reference radius, and NaN-only zAdjust fallback. The flat branch intentionally flattens rail Z. Twenty exact-source grid comparisons cover both directions, signs/flat profiles, nonconstant rail Z, rational rail weights and explicit radii;204 native face boundary points pass. Zero reference radius retains nonfinite coefficients and the native constructor rejects them with a typed error; no silent repair. Immutable definition views expose copied/read-only control data. The source observation harness extracts the unmodified tensor math and covers clamped knots; original interop conversion is not executed.
+
+Next: copied native curve definition export, average-plane/orientation/centering and inverse-transform metadata; then actual caps138/139 and legacy join140. No planar cap, mesh, geometry patch or modern-API substitution closes those gates. Full source/native topology/PC/physical parity remains open.
