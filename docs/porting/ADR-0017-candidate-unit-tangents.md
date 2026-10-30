@@ -1,6 +1,6 @@
 # ADR0017: candidate native unit tangent query
 
-Status: implemented; actual Windows C ABI and CSharp tests pass. Apple runtime and device proof pending.
+Status: bounded Windows/iPad/iPhone assertions and unsigned device linking verified at5239e15; full Rhino/PC/physical parity remains open.
 
 Recovered CSOutsideRail1.Update chooses final direction from TangentAt(Domain.Min) dot XAxis after relocating the seam. Add CandidateContext.TangentAt(shape,parameter) returning CandidateVector3, backed by jd_candidate_curve_tangent and the existing context gate and SafeHandles. This is a query with no new native ownership.
 
@@ -16,3 +16,5 @@ Sources inspected at kernel commit b8f597c677811d1f9f4d8a97f5ae2825c0353a42:
 - BRepAdaptor_Curve.hxx: inheritance and edge domain.
 
 Hashes and commands are recorded in [P05-T02 evidence](evidence/P05-T02.json). Existing recovered source remains unchanged.
+
+Bounded Apple execution/device proof for the ordered-join, unit-tangent and finite-intersection assertions is recorded together at checkpoint5239e15: [actual reports](../evidence/apple/native-curve-line-results.json). Later seam/bounds/outside/uniform-affine work is a separate checkpoint.

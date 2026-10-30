@@ -10,6 +10,8 @@ Interface: CandidateContext.TangentAt(CandidateShape,double)->CandidateVector3. 
 - [x] Add C ABI implementation/declaration and CSharp import/adapter; document bounded domain/unit normalization and error policy in ADR0017.
 - [x] Actual C ABI and managed tests:50 normalized-length circle positions against independent unit sin/cos; endpoints, trim/reverse orientation, translated copy and affine scale/shear direction; source preservation; invalid/nonfinite/outside parameters, solid/null outputs and ownership counts.
 - [x] Run D:-local Windows native and CSharp suite plus repository/provenance checks; record exact source hashes and output.
-- [ ] Dispatch/preserve macOS iPad/iPhone runtime and unsigned arm64 device build; mark verified only after inspecting reports.
+- [x] Dispatch/preserve macOS iPad/iPhone runtime and unsigned arm64 device build; mark verified only after inspecting reports.
 
 Owned files: candidate_abi.h/.cpp, candidate_curve_contracts.cpp, probe.cpp, NativeMethods.cs, CandidateContext.Curves.cs, CurveAssertions.cs and plan/ADR/evidence. No changes to recovery, no full OutsideRail/PC/physical-device/process-memory claim. Arbitrary stationary or continuity-break NURBS fixtures remain a broader input-coverage gate.
+
+Bounded [Apple execution/device reports](../../evidence/apple/native-curve-line-results.json) at5239e15 include these exact assertions. Original Rhino/PC/physical and broader cases remain open.

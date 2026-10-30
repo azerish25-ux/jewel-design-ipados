@@ -89,7 +89,8 @@
     "tests/outside-rail-v1-reference.test.cjs",
     "docs/evidence/audit/outside-rail-input-reference.json",
     "docs/porting/ADR-0021-outside-rail-geometry-core.md",
-    "docs/porting/plans/P05-T02-A17-outside-rail-composition.md"
+    "docs/porting/plans/P05-T02-A17-outside-rail-composition.md",
+    "docs/evidence/apple/native-curve-line-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -346,17 +347,20 @@
     {
       "id": "P05-T02-A12",
       "scope": "Actual endpoint-connected ordered native NURBS pair concatenation",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_native_ordered_join",
+      "appleEvidence": "docs/evidence/apple/native-curve-line-results.json"
     },
     {
       "id": "P05-T02-A13",
       "scope": "Actual native bounded unit tangent through managed ownership adapter for recovered outside-rail direction branch",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_native_unit_tangents",
+      "appleEvidence": "docs/evidence/apple/native-curve-line-results.json"
     },
     {
       "id": "P05-T02-A14",
       "scope": "Finite native3D curve-line Point/Overlap events, exact linear NURBS construction and managed counted-event ownership bridge",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_native_curve_line_events",
+      "appleEvidence": "docs/evidence/apple/native-curve-line-results.json"
     },
     {
       "id": "P05-T02-A15",
@@ -826,13 +830,13 @@
       "id": 41057789927,
       "commit": "5239e15327313dc58d12a113cd76512e52e8b8d5",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41057789927",
-      "verification": "Finite native curve-line host confirmed in progress; iPad/iPhone queued; terminal verification pending"
+      "verification": "SUCCESS: inspected actual iPad/iPhone families/native/managed intersection, ordered-join and50-tangent reports/hashes; native-curve-line-results.json"
     },
     {
       "id": 41057793178,
       "commit": "5239e15327313dc58d12a113cd76512e52e8b8d5",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41057793178",
-      "verification": "Finite native curve-line unsigned device queued; terminal verification pending"
+      "verification": "SUCCESS: inspected unsigned arm64/platform IOS Release executable and log52 warnings0 errors; no physical execution"
     },
     {
       "id": 41059567171,
@@ -857,6 +861,18 @@
       "commit": "df208e2f14c2a67e5c522db31d2c3f520ab75151",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41061370035",
       "verification": "Native refined curve bounds unsigned device queued; terminal verification pending"
+    },
+    {
+      "id": 41069909325,
+      "commit": "07d0cae7d17153f2e9e57b2eb3a8c319fbfb3c23",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41069909325",
+      "verification": "OutsideRail composition and uniform-affine correction host and iPad/iPhone job confirmed in progress; terminal verification pending"
+    },
+    {
+      "id": 41069913934,
+      "commit": "07d0cae7d17153f2e9e57b2eb3a8c319fbfb3c23",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41069913934",
+      "verification": "OutsideRail composition and uniform-affine correction unsigned device confirmed in progress; terminal verification pending"
     }
   ]
 }

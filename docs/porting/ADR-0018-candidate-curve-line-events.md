@@ -1,6 +1,6 @@
 # ADR0018: finite native curve/line events
 
-Status: experimental candidate implementation. Windows native/CSharp analytical tests are recorded in P05-T02; Apple runtime/device verification remains separate.
+Status: bounded Windows/iPad/iPhone assertions and unsigned device linking verified at5239e15; full Rhino/PC/physical parity remains open.
 
 Recovered CSUtilRingRail intersects a rail with four finite100-unit axis rays, using the first event. CSOutsideRail1 also intersects a finite horizontal segment, requires two events in its locked branch, splits/rejoins curves, and finally intersects a positive-Z ray. Bounding boxes or plane projections cannot replace these queries.
 
@@ -21,3 +21,5 @@ Analytical tests cover diameter points, four axis rays, finite short/skew segmen
 Full OutsideRail remains incomplete: accurate bounds, closed seam handling, general imported-curve fixtures, recovered graph/caller failure policy and automatic join orientation must still be composed and compared. Arbitrary curved overlaps, continuity-break/near-coincident cases, original-PC ordering, physical devices, cancellation and process-memory acceptance stay open. No full application parity row is closed.
 
 See [work card](plans/P05-T02-A14-curve-line-events.md) and [task evidence](evidence/P05-T02.json).
+
+Bounded Apple execution/device proof for the ordered-join, unit-tangent and finite-intersection assertions is recorded together at checkpoint5239e15: [actual reports](../evidence/apple/native-curve-line-results.json). Later seam/bounds/outside/uniform-affine work is a separate checkpoint.

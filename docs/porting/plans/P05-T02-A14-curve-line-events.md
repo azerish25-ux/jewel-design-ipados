@@ -13,8 +13,10 @@ C ABI: fixed-width136-byte event (two uint32 fields plus16 doubles), count/capac
 - [x] Run native and managed analytical tests: two circle diameter points and fractions, four finite axis rays, finite short/disjoint/skew lines, tangent and trim endpoints, reversed line, exact/reversed overlaps and true3D crossing, invalid inputs/buffers and zero retained shape entries.
 - [x] Run Windows native/CSharp suite and repository/provenance gates, record inputs and logs; review layout/bounds/error handling.
 - [x] Dispatch actual macOS iPad/iPhone and unsigned device builds; preserve earlier jobs. Runs41057789927/41057793178 at5239e15 confirmed live/queued.
-- [ ] Inspect terminal Apple reports, actual families, native/managed event markers and device platform/warnings before bounded verification. Rhino, full OutsideRail/PC/physical/cancellation/process-memory parity remain open.
+- [x] Inspect terminal Apple reports, actual families, native/managed event markers and device platform/warnings before bounded verification. Rhino, full OutsideRail/PC/physical/cancellation/process-memory parity remain open.
 
 Owned: candidate_abi.h/.cpp, candidate_curve_contracts.cpp, probe.cpp, NativeMethods.cs, new managed intersection files, new shared contracts and Assert runner, plan/ADR/evidence. Accurate bounds, seam relocation, general imported geometry, full recovered caller lifecycle and full portfolio/UI are still required.
 
 Observed native overlap representation/direction/contained-range defects were corrected without weakening endpoint assertions; see ADR0018. Apple runner now requires both native/managed event markers. Local host proof passed; Apple remains pending.
+
+Actual [iPad/iPhone/device reports](../../evidence/apple/native-curve-line-results.json) at5239e15 inspected; full original-PC/kernel-family/application parity stays open.
