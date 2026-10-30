@@ -28,6 +28,8 @@ jobs:
           global-json-file: global.json
       - name: Security scanner regression cases
         run: node --test tools/repository/security.test.cjs
+      - name: Simulator selection regressions
+        run: node --test tests/ios-device.test.cjs
       - name: Verify full recovery, source links and work ledgers
         run: node tools/repository/check.cjs --record
       - name: Build source and metadata audit tools

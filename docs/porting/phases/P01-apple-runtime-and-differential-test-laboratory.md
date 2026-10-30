@@ -93,7 +93,7 @@ Consume [architecture contracts](../ARCHITECTURE.md). Public boundary changes re
 
 **Files:** use the owned paths above. Create `docs/porting/evidence/P01-T06.json` and the focused test or analysis artifact named in that record. Never edit recovery/ to make a port test pass.
 
-**Consumes:** P01-T05. **Produces:** a reviewed implementation or analysis artifact for this task with its exact verification command.
+**Consumes:** P01-T04. **Produces:** a reviewed implementation or analysis artifact for this task with its exact verification command.
 
 - [ ] Read matching source bodies and run `node scripts/porting.cjs backlog P01 10`. Record fields, defaults, error paths and dependencies under the selected requirement IDs.
 - [ ] Define normal, boundary and failure cases from the mandatory acceptance contract below. Add the failing test first and run it. Acquisition/analysis tasks instead validate the currently missing or incorrect artifact fields; do not invent a meaningless unit test.

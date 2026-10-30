@@ -203,12 +203,18 @@
         {
           "id": "P01-T06",
           "title": "Add iPad/iPhone device profiles and collect unsigned Release AOT warnings",
-          "status": "not_started",
+          "status": "in_progress",
           "depends": [
             "P01-T04"
           ],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "scripts/ios-device.cjs",
+            "tests/ios-device.test.cjs",
+            "scripts/run-simulator.sh"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P01-T06.json"
+          ]
         }
       ]
     },

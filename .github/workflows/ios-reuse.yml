@@ -7,6 +7,8 @@ on:
       - "tests/iOS/**"
       - "tests/Smoke/**"
       - "scripts/run-simulator.sh"
+      - "scripts/ios-device.cjs"
+      - "tests/ios-device.test.cjs"
       - ".github/workflows/ios-reuse.yml"
   workflow_dispatch:
 permissions:
@@ -17,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: ${{ fromJSON(github.event_name == 'workflow_dispatch' && '["simulator","device"]' || '["simulator"]') }}
+        target: ${{ fromJSON(github.event_name == 'workflow_dispatch' && '["ipad","iphone","device"]' || '["ipad","iphone"]') }}
     runs-on: macos-26
     timeout-minutes: 40
     defaults:
@@ -50,14 +52,14 @@ jobs:
           xcrun simctl list devices available > artifacts/simulators.txt
       - name: Portable runtime proof
         run: dotnet run --project tests/Console | tee artifacts/portable-smoke.txt
-      - name: Build iPad simulator app
+      - name: Build universal simulator test app
         id: simulator
-        if: matrix.target == 'simulator'
+        if: matrix.target != 'device'
         run: dotnet build tests/iOS -c Debug -r iossimulator-arm64 -p:EnableCodeSigning=true -p:CodesignKey=- -p:CodesignRequireProvisioningProfile=false -p:MtouchDebug=false -p:EnableDiagnostics=false -bl:artifacts/simulator.binlog | tee artifacts/simulator-build.txt
-      - name: Run iPad simulator smoke
-        if: matrix.target == 'simulator'
+      - name: Run requested simulator family
+        if: matrix.target != 'device'
         timeout-minutes: 8
-        run: bash scripts/run-simulator.sh
+        run: SIMULATOR_FAMILY=${{ matrix.target }} bash scripts/run-simulator.sh
       - name: Build unsigned device AOT app
         if: matrix.target == 'device'
         run: dotnet build tests/iOS -c Release -r ios-arm64 -p:EnableCodeSigning=false -p:BuildIpa=false -p:MtouchLink=SdkOnly -bl:artifacts/device.binlog | tee artifacts/device-build.txt

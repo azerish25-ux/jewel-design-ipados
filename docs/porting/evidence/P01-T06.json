@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P01-T06",
+  "status": "in_progress",
+  "outputs": [
+    "scripts/ios-device.cjs",
+    "tests/ios-device.test.cjs",
+    "scripts/run-simulator.sh"
+  ],
+  "fixtures": [],
+  "checks": [
+    {
+      "command": "node --test tests/ios-device.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/ios-device.test.cjs",
+      "actual": "Four selection regressions pass after observed missing-module failure"
+    }
+  ],
+  "review": null,
+  "blockers": [
+    "Both-family macOS execution and updated AOT evidence pending; no physical-device claim"
+  ]
+}
