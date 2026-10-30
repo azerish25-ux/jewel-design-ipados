@@ -12,6 +12,7 @@ Owned files: known GUID allowlist/common header, missing channel flag, Candidate
 - [x] Distinguish Missing from Empty in pure channel data; preserve earlier conversions; graph-owned selector cache forwards any supported data and retains curves/metadata without regenerating them.
 - [x] Test saved library selection/invalid output, absent inputs, empty vs missing, noncurve pass-through, selected alias across upstream-only regeneration, downstream consumer, save/reopen, cycles and zero retained native entries.
 - [x] Local source/document/native/provenance/footprint checks, review, ADR and evidence; preserve known compression diagnostic.
-- [ ] Commit/push; dispatch macOS native simulator/device tests; inspect artifacts before bounded platform verification.
+- [x] Commit/push f580a24; dispatch macOS native simulator/device runs41091410852/41091415494. Both confirmed queued; preserve earlier jobs.
+- [ ] Inspect actual selector/source150/native/family/ownership/AOT artifacts before bounded platform verification.
 
 Limits: explicit known dependency closure still generates both rails. Source scheduling/dirty/parallel/side-effects/material/render/export/physical/PC parity remains open. Candidate output lifetime is an adapter policy, not proof of original object alias/disposal behavior.

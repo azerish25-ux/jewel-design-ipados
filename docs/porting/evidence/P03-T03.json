@@ -362,6 +362,18 @@
       "commit": "f3685f3431c574ea02c4998cae83e638f064b95f",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41089016432",
       "verification": "Graph-managed rail outputs unsigned device queued; terminal artifact verification pending"
+    },
+    {
+      "id": 41091410852,
+      "commit": "f580a24e5e70e6daf55c4f6f89836da94160d62c",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41091410852",
+      "verification": "Selector host/iPad/iPhone queued; source150/native/family/ownership reports still require inspection."
+    },
+    {
+      "id": 41091415494,
+      "commit": "f580a24e5e70e6daf55c4f6f89836da94160d62c",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41091415494",
+      "verification": "Selector unsigned device queued; platform/AOT/build log/hash inspection pending. No physical execution claim."
     }
   ],
   "requirementIds": [
