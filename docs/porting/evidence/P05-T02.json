@@ -56,7 +56,8 @@
     "docs/porting/ADR-0012-candidate-arc-length.md",
     "src/Port/Geometry.Candidate/CandidateAffine.cs",
     "docs/porting/plans/P05-T02-A09-affine-geometry.md",
-    "docs/porting/ADR-0013-candidate-affine.md"
+    "docs/porting/ADR-0013-candidate-affine.md",
+    "docs/evidence/apple/ring-rail-candidate-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -114,7 +115,7 @@
     {
       "id": "P05-T02-A07",
       "scope": "Source-derived ring rail radius/ZX plan and actual native subcurve rebuild from edited stored radius",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_ring_subcomponent"
     },
     {
       "id": "P05-T02-A08",
@@ -346,13 +347,13 @@
       "id": 41046672200,
       "commit": "dae97a1",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41046672200",
-      "verification": "Native host/iPad/iPhone ring rail subcomponent runtime dispatched; terminal proof pending"
+      "verification": "Host/iPad/iPhone jobs completed success; actual ring rail default/radius/edit-save-reopen-native-rebuild-undo reports and family hashes inspected."
     },
     {
       "id": 41046675230,
       "commit": "dae97a1",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41046675230",
-      "verification": "Unsigned device ring rail subcomponent build dispatched; terminal proof pending"
+      "verification": "Unsigned Release ring-subcomponent device build passed arm64/platform IOS,52 warnings/0 errors; no physical execution."
     },
     {
       "id": 41048645156,
@@ -365,6 +366,18 @@
       "commit": "4d8bb800b74bcb7c0b1f8cc8844d0a60ba033643",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41048648756",
       "verification": "Unsigned device normalized length adapter build dispatched and confirmed live/queued; terminal result pending"
+    },
+    {
+      "id": 41049833154,
+      "commit": "c77a316",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41049833154",
+      "verification": "Host/iPad/iPhone affine operation runtime dispatched; terminal proof pending"
+    },
+    {
+      "id": 41049836353,
+      "commit": "c77a316",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41049836353",
+      "verification": "Unsigned device affine adapter build dispatched; terminal proof pending"
     }
   ]
 }

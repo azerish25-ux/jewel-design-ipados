@@ -59,3 +59,5 @@ Development checkpoint dae97a1 adds a Features.Candidate ring-rail geometry/inpu
 The corrected generic native curve adapter is now verified on iPad/iPhone and unsigned device build: [curve results](../evidence/apple/native-curve-results.json). The high-level untrimmed SDK conversion reintroduced periodicity; full-period trimmed conversion preserves the strict9-pole/four-span/domain/parameter assertions. Windows CSharp/native tests also pass. Main can advance to917c66c, excluding the newer ring-rail subcomponent still under test. Full curve families/PC/physical/graph parity remain incomplete.
 
 Development checkpoint4d8bb80 adds actual native normalized arc-length parameter inversion; Windows native/CSharp tests pass50 analytic samples and guards. Apple runs41048645156/41048648756 pending; outside-rail algorithm and Rhino tolerance equivalence remain incomplete.
+
+RingRail candidate passed actual Windows/iPad/iPhone native tests and unsigned device build; docs/evidence/apple/ring-rail-candidate-results.json. Main may advance toc737973; newer arc-length/affine changes remain Apple pending. No full channel/graph/UI/PC parity claimed.
