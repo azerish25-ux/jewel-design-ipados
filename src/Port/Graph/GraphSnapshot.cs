@@ -51,6 +51,26 @@ public sealed class GraphSnapshot
 {
     public IReadOnlyList<GraphNodeSnapshot> Nodes { get; }
 
+    /// <summary>Capture-local address using an exact serialized field key, never a display label.</summary>
+    public GraphParameterAddress AddressParameter(int nodeOrdinal, string fieldKey)
+    {
+        ArgumentNullException.ThrowIfNull(fieldKey);
+        if (string.IsNullOrWhiteSpace(fieldKey))
+            throw new ArgumentException("A nonblank field key is required.", nameof(fieldKey));
+        if ((uint)nodeOrdinal >= (uint)Nodes.Count)
+            throw new ArgumentOutOfRangeException(nameof(nodeOrdinal));
+        return new GraphParameterAddress(this, nodeOrdinal, fieldKey);
+    }
+
+    /// <summary>Reject stale/foreign addresses instead of guessing from labels, GUIDs or table indices.</summary>
+    public GraphNodeSnapshot ResolveNode(GraphParameterAddress address)
+    {
+        ArgumentNullException.ThrowIfNull(address);
+        if (!address.BelongsTo(this))
+            throw new ArgumentException("The address belongs to a different snapshot.", nameof(address));
+        return Nodes[address.NodeOrdinal];
+    }
+
     public GraphSnapshot(IEnumerable<GraphNodeSnapshot> nodes)
     {
         ArgumentNullException.ThrowIfNull(nodes);

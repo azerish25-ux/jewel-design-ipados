@@ -7,4 +7,5 @@ The model captures data; it does not evaluate, validate an archive schema or reg
 - Type GUID is distinct from instance identity. CSObject.Read/ReadJson can generate a runtime GUID when stored identity is absent/invalid. Snapshot StoredInstanceGuid preserves raw text; P04 must explicitly reconcile original bytes and effective runtime identity. The DTO does not choose migration policy.
 - Unknown versions/GUIDs/flag bits and duplicate display labels are retained. That is preservation, not a claim those records can execute.
 - Original record bytes are opaque provenance. A writer must reconcile known-field edits, unknown regions, version policy and CRC before saving; copying original bytes after an edit would produce stale data.
-- Units, parameter-address semantics, graph scheduling and CAD evaluation remain incomplete work.
+- [Snapshot-scoped parameter addresses](ADR-0001-snapshot-parameter-addresses.md) distinguish identical slots without trusting labels or raw GUIDs. Addresses cannot cross snapshots; they do not validate field existence or establish persistent codec identity.
+- Units, persistent cross-load parameter identity, graph scheduling and CAD evaluation remain incomplete work.

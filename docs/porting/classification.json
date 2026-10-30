@@ -19,6 +19,15 @@
         "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
         "recovery/canonical/cad/CS/CSParaGraph.cs"
       ]
+    },
+    {
+      "path": "src/Port/Graph/GraphParameterAddress.cs",
+      "classification": "new capture-local identity boundary; no persistent codec identity mapping",
+      "sources": [
+        "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+        "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+        "recovery/canonical/cad/CS/CSParaGraph.cs"
+      ]
     }
   ]
 }

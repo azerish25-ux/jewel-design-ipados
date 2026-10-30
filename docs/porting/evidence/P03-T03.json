@@ -4,7 +4,10 @@
   "status": "in_progress",
   "outputs": [
     "src/Port/Graph/GraphSnapshot.cs",
-    "tests/Port/Graph.Contracts/Assertions.cs"
+    "tests/Port/Graph.Contracts/Assertions.cs",
+    "src/Port/Graph/GraphParameterAddress.cs",
+    "tests/Port/Graph.Contracts/ParameterAddressAssertions.cs",
+    "docs/porting/ADR-0001-snapshot-parameter-addresses.md"
   ],
   "fixtures": [],
   "checks": [
@@ -13,26 +16,74 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "artifact": "src/Port/Graph/GraphSnapshot.cs",
-      "actual": "Snapshot isolation, exact sentinel, table indices and unknown metadata contracts pass; unit/parameter identity and iOS verification remain unfinished"
+      "actual": "Snapshot and scoped parameter address contracts pass locally; node resolution is capture-local, not codec field decoding"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Graph.Tests (before implementation)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Graph.Contracts/ParameterAddressAssertions.cs",
+      "actual": "RED: missing GraphParameterAddress, AddressParameter and ResolveNode; normal, duplicate, foreign and invalid address cases compiled only after implementation"
     }
   ],
   "review": {
-    "scope": "Recovered snapshots remain unchanged; original bytes are provenance, not regenerated serialization output"
+    "correctness": "Reference-scoped owner plus slot and ordinal key prevents ambiguous/stale resolution; constructor internal and owner check mandatory",
+    "readability": "One small address class; explicit factory and node-only resolver",
+    "architecture": "No Windows/native references and no archive identity migration decision; ADR records scope",
+    "security": "No credentials, original runtime execution, network access or raw payload alteration",
+    "performance": "Constant-time allocation/equality/resolution; one retained immutable snapshot owner per live address",
+    "limitations": "Not field existence validation, graph evaluation, undo integration, codec write or PC roundtrip"
   },
   "blockers": [
-    "Units/parameter identities and macOS graph-contract execution pending"
+    "Document units, persistent cross-load parameter identity and codec integration remain unfinished; new address checks need macOS execution"
   ],
   "ciRuns": [
     {
       "id": 40992003533,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40992003533",
       "commit": "11a0bd727b8ae2eabc3d6a5d3131f83c1a60a8ff",
-      "verification": "macOS graph-contract execution pending"
+      "verification": "success: downloaded both artifacts and inspected simulator-result.txt; graph snapshot assertions executed on iPad and iPhone; addresses added later are not covered by this run"
     },
     {
       "id": 40992003406,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40992003406",
       "verification": "clean checkout passed"
+    }
+  ],
+  "requirementIds": [
+    "P03-A1",
+    "P03-A2"
+  ],
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+      "sha256": "32460012d6e5d127d9bce60be12a1c5e2432265c827a47940e92292e0be1dd8b"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4"
+    },
+    {
+      "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+      "sha256": "bebfa16ae1ab9ba3c7c943cabe6a21d63ee6b551ee71f1a5681cf08921eb72ae"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "P03-T03-A01",
+      "scope": "Immutable captured graph metadata and isolation",
+      "status": "verified_simulator"
+    },
+    {
+      "id": "P03-T03-A02",
+      "scope": "Snapshot-scoped parameter addresses; no persistent identity claim",
+      "status": "implemented_local",
+      "decision": "docs/porting/ADR-0001-snapshot-parameter-addresses.md"
+    },
+    {
+      "id": "P03-T03-A03",
+      "scope": "Document units and persistent codec identity mapping",
+      "status": "not_started"
     }
   ]
 }
