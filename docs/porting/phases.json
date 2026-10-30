@@ -516,7 +516,8 @@
             "tests/Port/Documents.Contracts/PortfolioPackageAssertions.cs",
             "docs/porting/plans/P04-T03-A02-portfolio-package.md",
             "docs/porting/ADR-0008-portfolio-member-inventory.md",
-            "docs/evidence/apple/portfolio-xml-results.json"
+            "docs/evidence/apple/portfolio-xml-results.json",
+            "docs/evidence/apple/portfolio-package-results.json"
           ],
           "evidence": [
             "docs/porting/evidence/P04-T03.json"

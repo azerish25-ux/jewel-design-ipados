@@ -13,4 +13,4 @@ Owned: src/Port/Documents/LegacyPortfolioPackage.cs; shared package assertions; 
 - [ ] RED: open inventory, clone isolation, 2 paired files/history candidate, unchanged sidecars/unknown members, handle-edit commit/reopen, metadata-only replacement, foreign/stale edit guards, case/path/aggregate bounds and missing/ambiguous/GUID diagnostics.
 - [ ] GREEN immutable inventory and owner-bound archive edit handle; replacement changes only explicitly selected bytes. No directory IO, automatic CSP path migration, model regeneration, preview update or file deletion.
 - [ ] Run shared/local/independent/source checks and inspect latest pending XML Mac run; commit/push.
-- [ ] Inspect Mac iPad/iPhone package assertions, then commit/push scoped evidence. Full P04-T03 remains incomplete for real corpus, native reconciliation, history ordering, sidecar semantics and PC reopening.
+- [x] Inspect Mac iPad/iPhone package assertions, then commit/push scoped evidence. Full P04-T03 remains incomplete for real corpus, native reconciliation, history ordering, sidecar semantics and PC reopening.

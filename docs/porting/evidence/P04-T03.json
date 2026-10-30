@@ -16,7 +16,8 @@
     "tests/Port/Documents.Contracts/PortfolioPackageAssertions.cs",
     "docs/porting/plans/P04-T03-A02-portfolio-package.md",
     "docs/porting/ADR-0008-portfolio-member-inventory.md",
-    "docs/evidence/apple/portfolio-xml-results.json"
+    "docs/evidence/apple/portfolio-xml-results.json",
+    "docs/evidence/apple/portfolio-package-results.json"
   ],
   "sourceEvidence": [
     {
@@ -46,7 +47,7 @@
     {
       "id": "P04-T03-A02",
       "scope": "Immutable member inventory, filename candidate diagnostics and owner-bound archive data replacement",
-      "status": "implemented_local"
+      "status": "verified_simulator"
     }
   ],
   "checks": [
@@ -126,6 +127,13 @@
       "expectedExitCode": 0,
       "artifact": "tests/Port/Documents.Contracts/PortfolioPackageAssertions.cs",
       "actual": "PASS all-member/sidecar isolation, real CSG package edit/reopen, metadata candidates, missing/ambiguous/GUID issues, foreign/stale/path/case/aggregate guards"
+    },
+    {
+      "command": "Inspect both simulator artifacts from 41010070249",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/apple/portfolio-package-results.json",
+      "actual": "iPad/iPhone execute immutable inventory, real CSG package edit/reopen, ownership/origin and unresolved metadata assertions; synthetic inventory only"
     }
   ],
   "review": {
@@ -146,8 +154,7 @@
     }
   },
   "blockers": [
-    "Real PC portfolio corpus, folder/history/sidecar reconciliation and native load/migration acceptance remain unavailable",
-    "New package inventory/metadata-origin guard and immutable XML lookup cache need macOS verification"
+    "Real PC portfolio corpus, folder/history/sidecar reconciliation and native load/migration acceptance remain unavailable"
   ],
   "ciRuns": [
     {
@@ -172,6 +179,12 @@
       "commit": "ea38dcc0772ebcf6d2e14a586f811d3f8f9e3f20",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41008543226",
       "verification": "confirmed live parallel branch run of latest source"
+    },
+    {
+      "id": 41010070249,
+      "commit": "de9303d523206ceb38ed8dbef6b241be10cb1916",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41010070249",
+      "verification": "both downloaded correct-family artifacts inspected for package/source-contract XML and existing CSG/bridge assertions"
     }
   ]
 }
