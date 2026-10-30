@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "status": "source_observed",
+  "scope": "Five transform caller bodies and shared data dispatch; not native geometry equivalence or all transform nodes",
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSMove.cs",
+      "sha256": "2f661c42bc4a76138d34209586278f81117eda1c115f7298e3c84aa776010905"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSMirror.cs",
+      "sha256": "32dcb3045973c3d3f9faed3ac5a538c37ef50049ff599b69cd5222048ac16dd8"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDeg.cs",
+      "sha256": "303e0ca62c9a5aace18b6281e43f4c8b809acda89e859d7a5d4d98830c05d4c9"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSScaleObject.cs",
+      "sha256": "512d0b889068964541988670f11a7b0a07f6d9c6bcfa522c02633fb324a03897"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObjectXform.cs",
+      "sha256": "88a614e4e3ec2cfa28b232f3436836578940b9346e430cd8beb97d9acd0e6dd0"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
+      "sha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilMath.cs",
+      "sha256": "36e57a1539a49c419a49c78b066c105563cd26a821c4234ce170b9eeabc23fe7"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSUtilMath.cs",
+      "sha256": "9d382e01fd346db528c15f379380fce5faf8ecb9759079e4ae45c4299e5e03f0"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSDataArray.cs",
+      "sha256": "f7f0425e3e35fb0835ac161303a3cc7fa269c7f4f765938db91dd76956620b03"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas.Interfaces/ICSTransformable.cs",
+      "sha256": "5cf08fefb3e3563bb4ca82d28f2ca496e56d5cffa70a56515e3274a73da7325e"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Move",
+      "guid": "f8924313-7f66-4082-9216-c6f683138a2d",
+      "source": "recovery/canonical/cad/CSBlocks.Transforms/CSMove.cs",
+      "behavior": "Missing object -> UpdateMissing. Destination minus source translation, duplicate object, invoke shared Transform, emit duplicate; return value ignored.",
+      "edgeCases": "GetPoint initializes out to Point3d.Unset; failed conversion does not leave default origin. Return statuses ignored."
+    },
+    {
+      "name": "Mirror",
+      "guid": "486cf955-16f3-4a1b-9964-1a3fb4df426d",
+      "source": "recovery/canonical/cad/CSBlocks.Transforms/CSMirror.cs",
+      "behavior": "Flatten input; defaults duplicate=false, axes=false. Valid invertible InXform conjugates world-axis scale as F*S*inverse(F); invalid/noninvertible frame falls back to identity. Duplicate=false combines enabled signs and transforms each duplicate. Duplicate=true appends each enabled-axis reflection of accumulated outputs, then each original input; originals are not directly appended.",
+      "ordering": "For input [a,b], X then Y: [Xa,Xb,YXa,YXb,Ya,Yb]. For k enabled axes and n flattened inputs: (2^k-1)*n output items. Duplicate=true with no axes emits empty array; duplicate=false with no axes emits identity duplicates. Single result unwrapped, zero/many stay array.",
+      "orientation": "Uses cross(transformed X,transformed Y) dot transformed Z < 0 to request Flip; helper flips only ICSFlippable. Z duplicate branch omits Flip for prior accumulated items but applies it to fresh original items. Static asymmetry only; requires original PC verification."
+    },
+    {
+      "name": "RotateObjectDeg",
+      "guid": "9d1008f4-bd55-4288-a80d-7ced7a1e83b2",
+      "source": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDeg.cs",
+      "behavior": "Degrees multiply Math.PI/180; rotations constructed via OnXform around world origin or tight bounding-box center. Matrix expression Rx*Ry*Rz. Duplicate null returns base.Update without replacing output; transform return ignored.",
+      "edgeCases": "Recovered object input declared Boolean/Individual despite arbitrary data use. Missing-object message says TranslateObject. Do not silently normalize recovered declarations or assert released runtime defect. Bounds success flag ignored; invalid bounds/axis behavior needs PC oracle."
+    },
+    {
+      "name": "ScaleObject",
+      "guid": "18f44b9a-7bf1-4431-beb6-75a3682acf1f",
+      "source": "recovery/canonical/cad/CSBlocks.Transforms/CSScaleObject.cs",
+      "behavior": "Read x/y/z initialized to 1; world-XY nonuniform scale about origin, duplicate object then Transform, emit duplicate. Missing object -> UpdateMissing. No caller Flip even for negative determinant.",
+      "edgeCases": "Zero, negative, nonfinite and failed channel conversion delegated to original channel/kernel; no newly invented clamp or orientation repair."
+    },
+    {
+      "name": "TransformObjectXform",
+      "guid": "bae265de-e413-4c18-949f-b984a32f698d",
+      "source": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObjectXform.cs",
+      "behavior": "Gather nonnull NonExpandableInputChannels, flatten; identity accumulator; for each nonnull valid transform, accumulator=value*accumulator. Invalid transforms skipped. Emit CSXformData even when no valid inputs.",
+      "edgeCases": "Preserve literal NonExpandableInputChannels property usage pending expansion-base inspection; matrix multiplication/storage conventions require independent points and PC oracle, not name-based inference."
+    }
+  ],
+  "shared": {
+    "transform": "Reject invalid matrix and non-ICSTransformable. Invoke ApplyTransform but ignore its bool and return true. Callers also ignore Transform bool.",
+    "arrays": "CSDataArray.ApplyTransform visits every ICSTransformable member and returns whether any true; duplicate preserves order and replaces null members with new CSData. Flatten retains nonarray references, recursively flattens ICSArray and substitutes new CSData for null/failed flatten.",
+    "flip": "Shared Flip dispatches ICSFlippable; CSDataArray recursively dispatches member Flip. No extra orientation policy can be assumed.",
+    "rotation": "Native OnXform.Rotation copied into Rhino Transform; source alone does not validate identical backend angle/axis/bounds behavior."
+  },
+  "requiredOracleCases": [
+    "Nested/empty/null arrays and original/duplicate ownership",
+    "Noncommuting translations and rotations, matrix layout and multiplication action",
+    "Tight bounds origin vs object center; unset/invalid point and bound paths",
+    "All eight axis masks x both duplicate states with ordered tagged inputs",
+    "Invertible/noninvertible/nonfinite reference frame",
+    "Negative/nonuniform/zero scale and flip orientation on each geometry data type",
+    "Transform false return, null duplicate, exception and previous-output retention",
+    "Archive/reopen and builder-regeneration effects"
+  ],
+  "probeGap": "Current analytical native probe tests no transform caller. Do not mark any transform feature verified."
+}

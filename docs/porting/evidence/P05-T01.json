@@ -4,7 +4,9 @@
   "status": "in_progress",
   "outputs": [
     "docs/porting/kernel/boolean-caller-contracts.json",
-    "docs/porting/kernel/BOOLEAN_SEMANTICS.md"
+    "docs/porting/kernel/BOOLEAN_SEMANTICS.md",
+    "docs/porting/kernel/transform-caller-contracts.json",
+    "docs/porting/kernel/TRANSFORM_SEMANTICS.md"
   ],
   "sourceEvidence": [
     {
@@ -30,6 +32,46 @@
     {
       "path": "recovery/canonical/cad/CS/CSApplication.cs",
       "sha256": "78aff52cf0615558541659a5eb4d77b1eeff298e94c32040fdde4893929c4f35"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSMove.cs",
+      "sha256": "2f661c42bc4a76138d34209586278f81117eda1c115f7298e3c84aa776010905"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSMirror.cs",
+      "sha256": "32dcb3045973c3d3f9faed3ac5a538c37ef50049ff599b69cd5222048ac16dd8"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSRotateObjectDeg.cs",
+      "sha256": "303e0ca62c9a5aace18b6281e43f4c8b809acda89e859d7a5d4d98830c05d4c9"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSScaleObject.cs",
+      "sha256": "512d0b889068964541988670f11a7b0a07f6d9c6bcfa522c02633fb324a03897"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObjectXform.cs",
+      "sha256": "88a614e4e3ec2cfa28b232f3436836578940b9346e430cd8beb97d9acd0e6dd0"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
+      "sha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilMath.cs",
+      "sha256": "36e57a1539a49c419a49c78b066c105563cd26a821c4234ce170b9eeabc23fe7"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSUtilMath.cs",
+      "sha256": "9d382e01fd346db528c15f379380fce5faf8ecb9759079e4ae45c4299e5e03f0"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSDataArray.cs",
+      "sha256": "f7f0425e3e35fb0835ac161303a3cc7fa269c7f4f765938db91dd76956620b03"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas.Interfaces/ICSTransformable.cs",
+      "sha256": "5cf08fefb3e3563bb4ca82d28f2ca496e56d5cffa70a56515e3274a73da7325e"
     }
   ],
   "fixtures": [],
@@ -37,6 +79,11 @@
     {
       "id": "P05-T01-A01",
       "scope": "Three boolean nodes and cleanup path",
+      "status": "source_observed"
+    },
+    {
+      "id": "P05-T01-A02",
+      "scope": "Five transform caller bodies plus shared transformation, flattening and flip dispatch",
       "status": "source_observed"
     }
   ],
@@ -47,6 +94,13 @@
       "expectedExitCode": 0,
       "artifact": "docs/porting/kernel/boolean-caller-contracts.json",
       "actual": "Tolerance, fallback, cardinality and cleanup requirements recorded; original runtime not executed"
+    },
+    {
+      "command": "Read five caller bodies and shared helper implementations; verify source hashes and registered GUID anchors",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/porting/kernel/transform-caller-contracts.json",
+      "actual": "Matrix expressions, point failure behavior, output order, duplicate/flip asymmetry and dispatch return behavior recorded; no PC/native runtime claim"
     }
   ],
   "review": {
