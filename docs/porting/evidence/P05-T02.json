@@ -45,7 +45,12 @@
     "scripts/build-native-windows.cjs",
     "tests/Port/Geometry.Candidate.HostTests/Geometry.Candidate.HostTests.csproj",
     "tests/Port/Geometry.Candidate.HostTests/Program.cs",
-    "docs/evidence/native/four-span-curve-host-results.json"
+    "docs/evidence/native/four-span-curve-host-results.json",
+    "src/Port/Features.Candidate/Features.Candidate.csproj",
+    "src/Port/Features.Candidate/RingRailV1Candidate.cs",
+    "tests/Port/Geometry.Candidate.Contracts/RingRailAssertions.cs",
+    "docs/porting/plans/P05-T02-A07-ring-rail-subcomponent.md",
+    "docs/porting/ADR-0011-ring-rail-candidate.md"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -99,6 +104,11 @@
       "id": "P05-T02-A06",
       "scope": "Actual native four-span rational curve creation/inspection/evaluation through CSharp ownership adapter",
       "status": "host_curve_verified_apple_pending"
+    },
+    {
+      "id": "P05-T02-A07",
+      "scope": "Source-derived ring rail radius/ZX plan and actual native subcurve rebuild from edited stored radius",
+      "status": "local_native_verified_apple_pending"
     }
   ],
   "checks": [
@@ -157,6 +167,18 @@
       "expectedExitCode": 0,
       "artifact": "docs/evidence/native/four-span-curve-host-results.json",
       "actual": "Corrected native executable and actual managed/native contracts pass; helper reuses cached SDK. Initial DLL prefix mismatch fixed with explicit PREFIX empty."
+    },
+    {
+      "command": "dotnet build Geometry.Candidate.Contracts before Features.Candidate implementation",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED missing Features project/RingRailCandidate types before implementation"
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Actual native/CSharp generic curve/ownership and source-derived default7/ZX rail tests pass; library radius edit/save/reopen/native-rebuild/byte-identical undo pass. Stored input supplied explicitly; no full channel/graph/UI/export/PC proof."
     }
   ],
   "review": {
@@ -174,7 +196,8 @@
     "redLogSha256": "7ce7453be4e8313065e8ee0886c5635144b572c2b87dae594eae3823abd400a3",
     "managedAdapter": "Header widths/entrypoints/Cdecl matched; input SafeHandles marshal lifetime; per-context gate covers native result plus child parent-lease creation; explicit logical Dispose separate from IsClosed. Native creation cleanup and paired parent leases reviewed. Windows build proves managed compilation only; Apple real/native/disposal/trim tests pending. No full kernel/cancellation/process-memory/physical/PC claim.",
     "curves": "Initial host execution failed Unexpected four-span circle representation. Source investigation found GeomConvert.cxx untrimmed circle path forces SetPeriodic after low-level_4 conversion; trimmed-circle branch does not. Native factory now supplies full-period Geom_TrimmedCurve before explicit_4 conversion. All9-pole/rational/nonperiodic/28-sample/ownership assertions remain unchanged. Actual corrected runtime proof pending.",
-    "windowsNative": "D:-local incremental helper verified end to end. Windows-only shared test DLL plus process-lifetime NativeLibrary resolver executes existing CSharp contracts against actual native geometry. Native compiler/tool binaries are existing C: reads; source/cache/temp/output remain D:. Original CounterSketch/Rhino not loaded."
+    "windowsNative": "D:-local incremental helper verified end to end. Windows-only shared test DLL plus process-lifetime NativeLibrary resolver executes existing CSharp contracts against actual native geometry. Native compiler/tool binaries are existing C: reads; source/cache/temp/output remain D:. Original CounterSketch/Rhino not loaded.",
+    "ringRail": "Feature-layer boundary is separate from generic kernel. GUID/radius/default/ZX operations follow inspected source; output owns actual native curve and radius metadata. No placeholder geometry or intercepted original SDK. Candidate ring-data copy/user-string/export/material/Update error lifecycle and active channel evaluation remain unimplemented."
   },
   "blockers": [
     "Full CAD semantic mapping/candidate acceptance and broader recovered trim safety remain incomplete",

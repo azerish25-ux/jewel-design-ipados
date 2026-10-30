@@ -25,6 +25,7 @@ for i in $(seq 1 120); do
   grep -q '^PASS 16 original-binary golden Bernstein cases;' "$OUT/result.txt"
   grep -q '^PASS managed candidate ABI:' "$OUT/result.txt"
   grep -q 'PASS candidate native curves:' "$OUT/result.txt"
+  grep -q 'PASS ring rail candidate:' "$OUT/result.txt"
   exit 0
  fi
  sleep 1
