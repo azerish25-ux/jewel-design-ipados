@@ -271,6 +271,24 @@
       "commit": "6e96320fe05932890c9127c27d8ec85df4feb641",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41002808372",
       "verification": "success; both artifacts inspected for correct family and production codec fixture assertions on identical source commit"
+    },
+    {
+      "id": 41075741858,
+      "commit": "49cf8b33ef83c5939e3a141575a714162505382c",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41075741858",
+      "verification": "Embedded matrix-profile iPad/iPhone runtime confirmed in progress; terminal proof pending"
+    },
+    {
+      "id": 41075740585,
+      "commit": "49cf8b33ef83c5939e3a141575a714162505382c",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41075740585",
+      "verification": "Embedded matrix-profile unsigned combined native device AOT build confirmed in progress; terminal proof pending"
+    },
+    {
+      "id": 41075741873,
+      "commit": "49cf8b33ef83c5939e3a141575a714162505382c",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41075741873",
+      "verification": "Embedded matrix-profile repository/reference controls confirmed in progress; terminal proof pending"
     }
   ]
 }

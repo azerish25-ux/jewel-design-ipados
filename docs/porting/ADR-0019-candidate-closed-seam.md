@@ -1,6 +1,6 @@
 # ADR0019: copied native closed-curve seam relocation
 
-Status: local Windows native/CSharp analytical verification passed; Apple runtime/device proof pending.
+Status: bounded Windows/iPad/iPhone native/CSharp assertions and unsigned device linking verified at07d0cae; full original-PC/application parity remains open.
 
 Recovered CSOutsideRail1.Update relocates closed seams before reverse/closest/trim and after its final ray/closest selection. The [official RhinoCommon contract](https://developer.rhino3d.com/api/rhinocommon/rhino.geometry.curve/changeclosedcurveseam), available since5.0, places the start/end at the requested parameter and starts the resulting domain there. This is a documented target contract, not an original PC binary comparison.
 
@@ -13,3 +13,5 @@ Actual tests verify knot/non-knot/domain-end and repeated circle seams,65 wrappe
 Candidate restrictions remain explicit: in-domain parameters only; native closure and knot tolerances; typed exceptions instead of Rhino's Boolean failure; general near-closed, discontinuity/near-knot/tie and topology-import policies need wider fixtures/original PC comparison. Complete outside-rail caller and graph lifecycle, accurate bounds, automatic join orientation, physical-device/cancellation/process-memory and full app/PC parity remain open.
 
 Source hashes include recovered CSOutsideRail1.cs, pinned Geom_BSplineCurve.hxx/.cxx and BRepTools_GTrsfModification.cxx. See [work card](plans/P05-T02-A15-closed-seam.md) and [P05-T02 evidence](evidence/P05-T02.json).
+
+[Actual Apple reports](../evidence/apple/outside-rail-core-results.json) cover the named assertions at07d0cae. The later embedded matrix-profile codec is a distinct checkpoint.

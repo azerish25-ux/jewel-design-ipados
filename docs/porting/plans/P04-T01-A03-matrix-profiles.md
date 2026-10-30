@@ -10,7 +10,8 @@ Sources: CSGroupOfMatrixProfiles.Read/Write/Update, CS.CSUtilIO curve/double/str
 - [x] Share decoded header contract with scalars and project known group header/links without creating scalar edit handles. Scalar74/100 counts unchanged; group7 read-only geometry.
 - [x] Shared tests compare every coefficient/knot/bbox bit/name/sweep against independent oracle; exact no-op, unrelated scalar edit/reopen, synthetic1.0, unknown outer/nested, malformed/truncated/count and NaN/-0 preservation, immutable views/header projection.
 - [x] Run local document/shared/native regressions, repository/provenance/reference checks; review ownership/bounds/no legacy path resolution.
-- [ ] Push and run actual Apple simulator/AOT tests; inspect reports before platform verification.
+- [x] Push and dispatch actual Apple simulator/AOT tests. Runtime41075741858, device41075740585 and repository41075741873 at49cf8b3 confirmed running.
+- [ ] Inspect actual family/profile raw-bit/version reports and device platform/warnings before bounded platform verification.
 
 Limits: no file access through serialized C: names, no BinaryFormatter or original native execution. No claim of arbitrary curve versions, profile UI/chooser/graph/transform/sweep behavior, native knot/weight import, original-PC regeneration or physical-device parity. Known data becomes available for subsequent native construction.
 

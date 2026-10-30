@@ -1,6 +1,6 @@
 # ADR0020: native curve extrema bounds with explicit padding
 
-Status: actual Windows C ABI/CSharp analytical tests pass; Apple runtime/device proof pending.
+Status: bounded Windows/iPad/iPhone native/CSharp assertions and unsigned device linking verified at07d0cae; full original-PC/application parity remains open.
 
 Recovered CSOutsideRail1.Update falls back from numeric radius to a rail curve's accurate bounding box Max.Z. This is the absolute maximum-Z coordinate, not half the box height, distance from its center or a control-pole extent.
 
@@ -15,3 +15,5 @@ Tests compare actual circle,3D line, trimmed arc with interior maximum and shear
 Source hashes include recovered CSOutsideRail1, BndLib_Add3dCurve, GeomBndLib_Curve/BSplineCurve, spline helper and Bnd_Box at the pinned kernel commit. See [work card](plans/P05-T02-A16-curve-bounds.md) and [P05-T02 evidence](evidence/P05-T02.json).
 
 Next is recovered outside-rail geometry composition with explicit defaults, sampled minimum-distance rule, ordered transforms, cached/helper vs current application tolerance, locked split/join/seam/direction branches and literal output scale0. Numeric/curve data selection and graph/CSBlock lifecycle still need integration. Original-PC, physical-device, cancellation/process-memory and full application parity remain open.
+
+[Actual Apple reports](../evidence/apple/outside-rail-core-results.json) cover the named assertions at07d0cae. The later embedded matrix-profile codec is a distinct checkpoint.

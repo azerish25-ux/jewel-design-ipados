@@ -90,7 +90,8 @@
     "docs/evidence/audit/outside-rail-input-reference.json",
     "docs/porting/ADR-0021-outside-rail-geometry-core.md",
     "docs/porting/plans/P05-T02-A17-outside-rail-composition.md",
-    "docs/evidence/apple/native-curve-line-results.json"
+    "docs/evidence/apple/native-curve-line-results.json",
+    "docs/evidence/apple/outside-rail-core-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -365,17 +366,20 @@
     {
       "id": "P05-T02-A15",
       "scope": "Copied actual native closed NURBS seam relocation with documented domain-start behavior and exact affine trimmed-basis composition",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_native_closed_seam",
+      "appleEvidence": "docs/evidence/apple/outside-rail-core-results.json"
     },
     {
       "id": "P05-T02-A16",
       "scope": "Actual finite-domain native refined curve bounds with unpadded extrema, explicit SDK padding and managed ownership adapter",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_native_curve_bounds",
+      "appleEvidence": "docs/evidence/apple/outside-rail-core-results.json"
     },
     {
       "id": "P05-T02-A17",
       "scope": "Adapted OutsideRail_V1 native geometry branches, stored-input evidence, explicit candidate policies and uniform affine correction",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_outside_rail_geometry_core",
+      "appleEvidence": "docs/evidence/apple/outside-rail-core-results.json"
     }
   ],
   "checks": [
@@ -866,13 +870,13 @@
       "id": 41069909325,
       "commit": "07d0cae7d17153f2e9e57b2eb3a8c319fbfb3c23",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41069909325",
-      "verification": "OutsideRail composition and uniform-affine correction host and iPad/iPhone job confirmed in progress; terminal verification pending"
+      "verification": "SUCCESS: inspected iPad/iPhone actual families and native/managed OutsideRail, uniform-affine, seam and bounds assertions with hashes; outside-rail-core-results.json. Explicit input profile, not chooser graph."
     },
     {
       "id": 41069913934,
       "commit": "07d0cae7d17153f2e9e57b2eb3a8c319fbfb3c23",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41069913934",
-      "verification": "OutsideRail composition and uniform-affine correction unsigned device confirmed in progress; terminal verification pending"
+      "verification": "SUCCESS: inspected unsigned arm64/platform IOS Release executable and log52 warnings0 errors; no physical execution"
     }
   ]
 }

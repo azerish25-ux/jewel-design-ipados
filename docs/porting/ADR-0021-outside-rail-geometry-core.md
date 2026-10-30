@@ -1,6 +1,6 @@
 # ADR0021: adapted OutsideRail_V1 geometry core
 
-Status: actual Windows native/CSharp analytical and stored-input tests pass; Apple runtime/device verification pending. Complete CSBlock/chooser/graph/PC parity is not established.
+Status: bounded Windows/iPad/iPhone native/CSharp assertions and unsigned device linking verified at07d0cae; full original-PC/application parity remains open.
 
 ## Recovered algorithm
 
@@ -33,3 +33,5 @@ Native tests cover both branches, asymmetric/default/negative thickness inputs, 
 Next: decode/port actual matrix-profile/chooser input and integrate channels, activation/override, CSBlock lifecycle and output rail-data properties/export. Original-PC, arbitrary/degenerate failure cases, native batch/ordering/tolerance equivalence, physical-device/cancellation/process-memory and full UI/application parity remain open. No full feature row closes here.
 
 [Work card](plans/P05-T02-A17-outside-rail-composition.md), [task evidence](evidence/P05-T02.json), [independent input oracle](../evidence/audit/outside-rail-input-reference.json), [official wrapper](https://github.com/mcneel/rhinocommon/blob/3aebe3553b5e2c78ed4d5ae1c21f3e752a6b7f69/dotnet/opennurbs/opennurbs_curve.cs).
+
+[Actual Apple reports](../evidence/apple/outside-rail-core-results.json) cover the named assertions at07d0cae. The later embedded matrix-profile codec is a distinct checkpoint.

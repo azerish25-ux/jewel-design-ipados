@@ -11,8 +11,10 @@ Interface: CandidateContext.RelocateClosedCurveSeam(shape,t) returns an independ
 - [x] Native/managed tests: knot and non-knot circle seam, new domain[t,t+period], full wrapped point samples, reverse/tangent/trim composition, translated/affine and closed piecewise-linear corner curves, source/output ownership, open/solid/nonfinite/outside rejection.
 - [x] Run actual D: Windows native/CSharp suite plus repository/provenance checks. Record source hashes/commands/logs and review.
 - [x] Dispatch Apple native host/iPad/iPhone and unsigned device builds; preserve existing jobs. Runs41059567171/41059570457 atf657de6 confirmed live/queued.
-- [ ] Inspect actual Apple reports before bounded verification. Full OutsideRail, original-PC, arbitrary near-closed/continuity cases, physical-device/cancellation/process-memory gates stay open.
+- [x] Inspect actual Apple reports before bounded verification. Full OutsideRail, original-PC, arbitrary near-closed/continuity cases, physical-device/cancellation/process-memory gates stay open.
 
 Owned: ABI header/cpp/native contracts/probe, NativeMethods/CandidateContext.Curves, new shared seam contracts/runner, native simulator markers, plan/ADR/evidence. Accurate bounds and complete graph/caller composition remain required.
 
 Affine composition initially failed because SDK NewCurve wraps splines in an exact trimmed curve. Unwrapping its basis while retaining edge domain fixed seam/trim/reverse; actual regression suite passes. Apple markers now require direct native and managed seam reports.
+
+Bounded [Apple geometry/runtime/device evidence](../../evidence/apple/outside-rail-core-results.json) at07d0cae inspected. Wider original-PC/chooser/graph/physical/application gates remain open.

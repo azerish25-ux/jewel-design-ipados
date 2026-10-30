@@ -14,8 +14,10 @@ Analytical unlocked circle output has Z center(top-bottom)/2 and Z semiaxis radi
 - [x] Actual tests: analytical locked/unlocked/default/asymmetric cases, input reversal/seam, radius fallback/priority, sampled vs closest ellipse minimum, missing/zero/failure cleanup, current/cached tolerance distinction, real stored parameter edit/save/reopen/rebuild/undo with explicit input profile.
 - [x] Run D: native/CSharp, reference regressions, repository/source provenance checks and review; preserve all earlier runtime cases.
 - [x] Dispatch actual Apple host/iPad/iPhone and unsigned device builds, preserving existing runs. Runs41069909325/41069913934 at07d0cae confirmed running.
-- [ ] Inspect actual family/native/managed reports and device platform/warnings before bounded platform verification.
+- [x] Inspect actual family/native/managed reports and device platform/warnings before bounded platform verification.
 
 Remaining gates: original Rhino join default0/native Boolean failures/order/parameterization, arbitrary degenerate/unjoined/fallback cases, cached application provider integration, complete channels/IsOn/override/CSBlock/output-rail data/export, actual chooser profile and full original-PC/physical/cancellation/process-memory parity. No full feature row closes from this card alone.
 
 Both normal branches and representative source tolerances pass. Composition exposed and fixed uniform SetForm scale collapse; diagnostics/fallback/source-wrapper/batch-solver limits are detailed in ADR0021. Actual chooser record7 generation and full graph/PC output remain open.
+
+Bounded [Apple geometry/runtime/device evidence](../../evidence/apple/outside-rail-core-results.json) at07d0cae inspected. Wider original-PC/chooser/graph/physical/application gates remain open.
