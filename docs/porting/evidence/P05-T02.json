@@ -19,7 +19,9 @@
     "docs/porting/plans/P05-T02-A02-native-device.md",
     "docs/porting/plans/P05-T02-A03-combined-runtime.md",
     "docs/evidence/apple/native-candidate-results.json",
-    "docs/evidence/apple/native-device-initial-results.json"
+    "docs/evidence/apple/native-device-initial-results.json",
+    "docs/porting/plans/P05-T02-A04-candidate-abi.md",
+    "native/GeometryBridge/CandidateProbe/candidate_abi_contracts.cpp"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -58,6 +60,11 @@
       "id": "P05-T02-A03",
       "scope": "Recovered/production CSharp contract suite plus analytical native CAD in one iOS executable",
       "status": "ci_pending"
+    },
+    {
+      "id": "P05-T02-A04",
+      "scope": "Independent experimental handle ownership ABI over actual candidate BReps; not production T04 completion",
+      "status": "red_test_pending"
     }
   ],
   "checks": [
@@ -85,7 +92,8 @@
     "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed.",
     "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs.",
     "combinedRuntime": "Existing shared Smoke referenced rather than copied. Native report/status and all managed gated assertions must finish before final PASS file. Runner requires both PASS lines and actual family. Existing zlib diagnostic remains visibly non-gating. Local managed suite passed; Mac coexistence pending.",
-    "resultFreshness": "Clear prior result/family/started before launch. Publish combined success via same-directory pending-file rename; Mac regression pending."
+    "resultFreshness": "Clear prior result/family/started before launch. Publish combined success via same-directory pending-file rename; Mac regression pending.",
+    "ownershipAbi": "Tests written first: real masses/topology, retained/released/foreign/context identities, nonfinite/null/unsupported cases, bounded diagnostic buffer and 64 entry-disposal cycles. ABI header/implementation absent; expected compile failure is isolated on development branch before main integration."
   },
   "blockers": [
     "Full CAD operation mapping and candidate acceptance remain incomplete; device build/combined-runtime follow-ups pending",
