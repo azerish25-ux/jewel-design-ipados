@@ -27,14 +27,17 @@ public class LegacyCsg4Scalar:ILegacyCsg4Header
         ObjectIndices=Array.AsReadOnly(objects);ChannelIndices=Array.AsReadOnly(channels);CategoryIndices=Array.AsReadOnly(categories);
         UserData=Array.AsReadOnly(userData.Select(x=>new LegacyUserDataEntry(x.Type.Value,x.Key.Value,x.Value.Value)).ToArray());
     }
-    protected LegacyCsg4Scalar(LegacyCsg4Scalar source,double value)
+    protected LegacyCsg4Scalar(LegacyCsg4Scalar source,double value,int? input=null,int objectIndex=0,int channelIndex=0)
     {
         Version=source.Version;name=source.name;Flags=source.Flags;LegacyLayer=source.LegacyLayer;userData=source.userData;
-        objects=source.objects;channels=source.channels;categories=source.categories;LegacyUiInteger=source.LegacyUiInteger;
+        objects=input.HasValue?(int[])source.objects.Clone():source.objects;channels=input.HasValue?(int[])source.channels.Clone():source.channels;
+        if(input.HasValue){if((uint)input.Value>=(uint)objects.Length)throw new ArgumentOutOfRangeException(nameof(input));objects[input.Value]=objectIndex;channels[input.Value]=channelIndex;}
+        categories=source.categories;LegacyUiInteger=source.LegacyUiInteger;
         Value=value;OriginalValueOffset=source.OriginalValueOffset;
-        ObjectIndices=source.ObjectIndices;ChannelIndices=source.ChannelIndices;CategoryIndices=source.CategoryIndices;UserData=source.UserData;
+        ObjectIndices=Array.AsReadOnly(objects);ChannelIndices=Array.AsReadOnly(channels);CategoryIndices=source.CategoryIndices;UserData=source.UserData;
     }
     internal virtual LegacyCsg4Scalar WithValue(double value)=>new(this,value);
+    internal virtual LegacyCsg4Scalar WithInputLink(int input,int objectIndex,int channelIndex)=>new(this,Value,input,objectIndex,channelIndex);
     internal byte[] Encode()
     {
         using var stream=new MemoryStream();using var writer=new BinaryWriter(stream);

@@ -1,0 +1,48 @@
+{
+  "target": "tests/Port/Documents.Contracts/Recovered/LegacyValueChannels.cs",
+  "methods": 7,
+  "entries": [
+    {
+      "file": "recovery/canonical/cad/CSDatas/CSNumberData.cs",
+      "signature": "public override bool GetDouble(ref double value)",
+      "sourceSha256": "a1f54695fee3712cfc3052c11377cf8ae7c21e004a36d373f92b2349c481b7f5",
+      "bodySha256": "a6ec0e64139fb6e50cb2c7008a5480e70cee9013d48e7a40c52eb3a97cfda9fd"
+    },
+    {
+      "file": "recovery/canonical/cad/CSDatas/CSNumberData.cs",
+      "signature": "public override bool GetBoolean(ref bool value)",
+      "sourceSha256": "a1f54695fee3712cfc3052c11377cf8ae7c21e004a36d373f92b2349c481b7f5",
+      "bodySha256": "b88f97b7f51ba967d6f2edf899cc4d896bc116129d79840a218ff0e175506510"
+    },
+    {
+      "file": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+      "signature": "public double Value",
+      "sourceSha256": "a7ccbf583e3576daf067140b5af52b21941bfc316e905cfebb48402b0ece6210",
+      "bodySha256": "9314af82b873f805e8b48bf39a3aa723ae9567fde2ee1b3384bada03ae5da500"
+    },
+    {
+      "file": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+      "signature": "protected bool IsOn()",
+      "sourceSha256": "a7ccbf583e3576daf067140b5af52b21941bfc316e905cfebb48402b0ece6210",
+      "bodySha256": "d16f27156cd7e0d76a2baa29a1de57e0ef103829799e28e6bc58ff5bde8f324d"
+    },
+    {
+      "file": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+      "signature": "public override bool Update()",
+      "sourceSha256": "a7ccbf583e3576daf067140b5af52b21941bfc316e905cfebb48402b0ece6210",
+      "bodySha256": "6c0c2fbbfbfff1542648281417cc9640d61752fb66101fd9ffa921b9727b2417"
+    },
+    {
+      "file": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+      "signature": "public override CSData GetOutputChannelData(int outputChannelIndex)",
+      "sourceSha256": "a7ccbf583e3576daf067140b5af52b21941bfc316e905cfebb48402b0ece6210",
+      "bodySha256": "9c35c0af67f20cc5e2081d9462b7f1c33be72cf284d694903c0733f7cbc18f95"
+    },
+    {
+      "file": "recovery/canonical/cad/CS.CSValues/CSValueOnOff.cs",
+      "signature": "public override CSData GetOutputChannelData(int outputChannelIndex)",
+      "sourceSha256": "ee9bebfe414f04407923e75d892d13654a5854498b34fc022aabe1cee086d382",
+      "bodySha256": "9e59216743382d06210eba8b4eaa2da8b89055250928194cf731f0d198298f54"
+    }
+  ]
+}

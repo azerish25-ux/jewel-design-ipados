@@ -2,7 +2,7 @@ using JewelDesign.Geometry.Candidate;
 namespace JewelDesign.Features.Candidate;
 
 /// <summary>Adapted OutsideRail_V1 geometry body; channels, chooser evaluation and CSBlock lifecycle are separate.</summary>
-public static class OutsideRailV1Candidate
+public static partial class OutsideRailV1Candidate
 {
     public static readonly Guid TypeGuid=new("f9f6400f-67c2-4883-8c44-a91f411f2ee3");
     public static OutsideRailCandidate Build(CandidateContext context,CandidateShape? outsideCurve,double? numericRadius,

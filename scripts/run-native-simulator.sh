@@ -36,6 +36,8 @@ for i in $(seq 1 120); do
   grep -q 'PASS outside rail candidate:' "$OUT/result.txt"
   grep -q 'native-nurbs-construction=pass;' "$OUT/result.txt"
   grep -q 'PASS stored native profiles:' "$OUT/result.txt"
+  grep -q 'PASS value graph channels:28160 source differential cases;' "$OUT/result.txt"
+  grep -q 'PASS evaluated value-channel geometry:' "$OUT/result.txt"
   exit 0
  fi
  sleep 1

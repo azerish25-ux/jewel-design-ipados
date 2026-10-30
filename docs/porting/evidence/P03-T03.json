@@ -28,7 +28,19 @@
     "tests/Port/Graph.Contracts/SessionIdentityAssertions.cs",
     "docs/porting/plans/P03-T03-A05-session-identity.md",
     "docs/porting/ADR-0004-session-parameter-identity.md",
-    "docs/evidence/apple/session-identity-results.json"
+    "docs/evidence/apple/session-identity-results.json",
+    "src/Port/Domain/ScalarValueRuntime.cs",
+    "src/Port/Documents/LegacyValueGraphSession.cs",
+    "src/Port/Features.Candidate/OutsideRailV1Candidate.Channels.cs",
+    "tests/Port/Documents.Contracts/ValueGraphAssertions.cs",
+    "tests/Port/Documents.Contracts/ValueChannelOracleAssertions.cs",
+    "tests/Port/Documents.Contracts/Recovered/LegacyValueChannels.cs",
+    "tests/Port/Geometry.Candidate.Contracts/ValueGraphGeometryAssertions.cs",
+    "scripts/verify-value-channel-oracle.cjs",
+    "tests/value-channel-oracle.test.cjs",
+    "docs/evidence/audit/value-channel-source-oracle.json",
+    "docs/porting/plans/P03-T03-A06-value-channels.md",
+    "docs/porting/ADR-0024-value-channel-generations.md"
   ],
   "fixtures": [],
   "checks": [
@@ -140,6 +152,36 @@
       "expectedExitCode": 0,
       "artifact": "docs/evidence/apple/session-identity-results.json",
       "actual": "Session identity/ownership assertions execute on iPad and iPhone; adjacent 6130 undo, 909 numeric, 1172 ring and 114 material checks pass; known compression issue remains non-gating"
+    },
+    {
+      "subtaskId": "P03-T03-A06",
+      "command": "dotnet build Documents.Contracts before channel APIs",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED missing LegacyChannelValue runtime API; .local/evidence/P03-T03-A06/red.txt"
+    },
+    {
+      "subtaskId": "P03-T03-A06",
+      "command": "dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "28160 bit-exact compiled source differential cases plus stateful activation/override/latching/previous/CAM/output conversions, structural rewire/save/reopen/reversal, cycle/unknown guards and all existing document assertions pass.",
+      "artifact": ".local/evidence/P03-T03-A06/document-proof.log"
+    },
+    {
+      "subtaskId": "P03-T03-A06",
+      "command": "node scripts/build-native-windows.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Evaluated override changes actual chooser-selected profile OutsideRail, current real state save/reopen rebuild and inactive chooser/source missing-curve/zero-entry guards pass alongside all prior native/import/profile/OutsideRail assertions.",
+      "artifact": ".local/evidence/P03-T03-A06/native-proof.log"
+    },
+    {
+      "subtaskId": "P03-T03-A06",
+      "command": "node --test tests/value-channel-oracle.test.cjs tests/numeric-oracle.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "8 source provenance/tamper controls pass; all7 extracted channel method bodies exactly match canonical source."
     }
   ],
   "review": {
@@ -165,7 +207,8 @@
       "security": "No authorization use of GUIDs, external execution, credentials or hidden I/O; caller-owned mappings validated for scope/shape",
       "performance": "Linear view validation and constant-time address resolution; owner/view references retain original provenance for session lifetime",
       "limitations": "No cross-load identity matching, live mutable instance-GUID setter, codec write, applied graph commands or link remapping"
-    }
+    },
+    "valueChannels": "Reviewed source empty-vs-zero/conversion/ref semantics, exact arithmetic/CAM signed-zero and override latching distinct from setter/previous state; preflight dependency validation, no unsupported defaulting, read cycle/depth guards and serialized link count preservation. Complete scheduler/UI/CAM serialization/native producer/failure/concurrency/PC equivalence remain explicit. Native profile temporaries and binding snapshot ownership reviewed."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -256,6 +299,41 @@
       "sha256": "a7ccbf583e3576daf067140b5af52b21941bfc316e905cfebb48402b0ece6210",
       "method": "SetValue(double)",
       "normalizedMethodSha256": "dc464dfd316c2d5f60bb46e7a17da07a07aa13ea99b6d772a23d4dbba9a57b85"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+      "sha256": "a7ccbf583e3576daf067140b5af52b21941bfc316e905cfebb48402b0ece6210",
+      "scope": "P03-T03-A06 source activation/conversion/output/update/chooser field contracts; complete scheduling and callbacks not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueOnOff.cs",
+      "sha256": "ee9bebfe414f04407923e75d892d13654a5854498b34fc022aabe1cee086d382",
+      "scope": "P03-T03-A06 source activation/conversion/output/update/chooser field contracts; complete scheduling and callbacks not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueChooser.cs",
+      "sha256": "c3ddad50ff84ce50d624e1d4ab733e806caeab4a03aa77bd3b87ad55b1596fd6",
+      "scope": "P03-T03-A06 source activation/conversion/output/update/chooser field contracts; complete scheduling and callbacks not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.Parametric.Channels/CSInputChannel.cs",
+      "sha256": "1b3a8f3c40e751163d0aa493a0044d4a961be981579db831b30c841824fdf74c",
+      "scope": "P03-T03-A06 source activation/conversion/output/update/chooser field contracts; complete scheduling and callbacks not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSNumberData.cs",
+      "sha256": "a1f54695fee3712cfc3052c11377cf8ae7c21e004a36d373f92b2349c481b7f5",
+      "scope": "P03-T03-A06 source activation/conversion/output/update/chooser field contracts; complete scheduling and callbacks not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSData.cs",
+      "sha256": "3f3d2e017ff68048c1c40d3495ac95c350c8bca4e8fd5bbfaf9b92d1d50f3c00",
+      "scope": "P03-T03-A06 source activation/conversion/output/update/chooser field contracts; complete scheduling and callbacks not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4",
+      "scope": "P03-T03-A06 source activation/conversion/output/update/chooser field contracts; complete scheduling and callbacks not ported"
     }
   ],
   "subtasks": [
@@ -286,6 +364,11 @@
       "id": "P03-T03-A05",
       "scope": "Raw/effective registration GUIDs and stable session parameter handles across explicit mapped views",
       "status": "verified_simulator"
+    },
+    {
+      "id": "P03-T03-A06",
+      "scope": "Recovered value field/output/update behavior, known scalar/profile generations and evaluated native geometry input slice",
+      "status": "local_verified_apple_pending"
     }
   ]
 }

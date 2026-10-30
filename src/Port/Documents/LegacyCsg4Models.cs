@@ -24,9 +24,10 @@ public sealed class LegacyCsg4Numeric:LegacyCsg4Scalar
         int ui,double value,double min,double max,double? step,int originalValueOffset)
         :base(version,name,flags,layer,userData,objects,channels,categories,ui,value,originalValueOffset)
     {Minimum=min;Maximum=max;Step=step;}
-    private LegacyCsg4Numeric(LegacyCsg4Numeric source,double value):base(source,value)
+    private LegacyCsg4Numeric(LegacyCsg4Numeric source,double value,int? input=null,int objectIndex=0,int channelIndex=0):base(source,value,input,objectIndex,channelIndex)
     {Minimum=source.Minimum;Maximum=source.Maximum;Step=source.Step;}
     internal override LegacyCsg4Numeric WithValue(double value)=>new(this,value);
+    internal override LegacyCsg4Numeric WithInputLink(int input,int objectIndex,int channelIndex)=>new(this,Value,input,objectIndex,channelIndex);
     protected override void WriteTail(BinaryWriter writer)
     {
         writer.Write(BitConverter.DoubleToInt64Bits(Minimum));writer.Write(BitConverter.DoubleToInt64Bits(Maximum));
@@ -52,6 +53,7 @@ public sealed class LegacyCsg4Record
     {
         TypeGuid = type; Version = version; OriginalFileOffset = offset; this.originalRecord = originalRecord; Scalar = scalar;MatrixProfiles=matrixProfiles;
     }
+    internal LegacyCsg4Record WithInputLink(int input,int objectIndex,int channelIndex)=>new(TypeGuid,Version,OriginalFileOffset,originalRecord,(Scalar??throw new NotSupportedException("Scalar header required")).WithInputLink(input,objectIndex,channelIndex),MatrixProfiles);
     public byte[] CopyOriginalRecordBytes() => (byte[])originalRecord.Clone();
     internal byte[] EncodePayload() => Scalar?.Encode() ?? MatrixProfiles?.Encode() ?? originalRecord.AsSpan(8, originalRecord.Length - 12).ToArray();
     internal LegacyCsg4Record WithValue(double value) => new(TypeGuid, Version, OriginalFileOffset, originalRecord,
@@ -79,6 +81,13 @@ public sealed class LegacyCsg4Document
     }
 
     /// <summary>Store an exact decoded scalar; this does not apply OnOff/chooser UI policy or regenerate CAD.</summary>
+    public LegacyCsg4Document WithScalarInputLink(int ordinal,int input,int objectIndex,int channelIndex)
+    {
+        if((uint)ordinal>=(uint)Records.Count)throw new ArgumentOutOfRangeException(nameof(ordinal));
+        if(objectIndex>=Records.Count)throw new ArgumentOutOfRangeException(nameof(objectIndex));
+        var records=Records.ToArray();records[ordinal]=records[ordinal].WithInputLink(input,objectIndex,channelIndex);return new LegacyCsg4Document(prefix,records);
+    }
+
     public LegacyCsg4Document WithScalarValue(int ordinal,double value)
     {
         if((uint)ordinal>=(uint)Records.Count)throw new ArgumentOutOfRangeException(nameof(ordinal));
