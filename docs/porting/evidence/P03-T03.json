@@ -21,5 +21,18 @@
   },
   "blockers": [
     "Units/parameter identities and macOS graph-contract execution pending"
+  ],
+  "ciRuns": [
+    {
+      "id": 40992003533,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40992003533",
+      "commit": "11a0bd727b8ae2eabc3d6a5d3131f83c1a60a8ff",
+      "verification": "macOS graph-contract execution pending"
+    },
+    {
+      "id": 40992003406,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40992003406",
+      "verification": "clean checkout passed"
+    }
   ]
 }
