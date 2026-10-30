@@ -375,7 +375,14 @@
             "docs/evidence/apple/graph-contract-results.json",
             "docs/evidence/audit/ring-fixture-unit-facts.json",
             "docs/evidence/apple/production-ring-results.json",
-            "docs/porting/DOMAIN_HELPERS.md"
+            "docs/porting/DOMAIN_HELPERS.md",
+            "src/Port/Domain/NumericValueState.cs",
+            "tests/Port/Domain.Contracts/NumericValueAssertions.cs",
+            "tests/Port/Domain.Contracts/Recovered/LegacyNumericValue.cs",
+            "scripts/verify-numeric-oracle.cjs",
+            "tests/numeric-oracle.test.cjs",
+            "docs/porting/ADR-0002-numeric-value-plans.md",
+            "docs/porting/plans/P03-T03-A04-numeric-values.md"
           ],
           "evidence": [
             "docs/porting/evidence/P03-T03.json"

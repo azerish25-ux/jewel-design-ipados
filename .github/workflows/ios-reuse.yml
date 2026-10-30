@@ -10,6 +10,9 @@ on:
       - "scripts/run-simulator.sh"
       - "scripts/ios-device.cjs"
       - "tests/ios-device.test.cjs"
+      - "scripts/verify-production.cjs"
+      - "scripts/verify-numeric-oracle.cjs"
+      - "tests/numeric-oracle.test.cjs"
       - ".github/workflows/ios-reuse.yml"
   workflow_dispatch:
 permissions:
@@ -41,7 +44,10 @@ jobs:
         with:
           global-json-file: global.json
       - name: Verify unchanged recovered sources
-        run: node scripts/verify-sources.cjs
+        run: |
+          node scripts/verify-sources.cjs
+          node scripts/verify-production.cjs
+          node --test tests/numeric-oracle.test.cjs
       - name: Install iOS workload
         run: dotnet workload install ios --version 10.0.302.0
       - name: Record toolchain

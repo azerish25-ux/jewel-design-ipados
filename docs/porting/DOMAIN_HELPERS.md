@@ -24,3 +24,7 @@ From the repository root, with the D:-local wrapper:
     node scripts/run-local.cjs dotnet run --project tests/Console
 
 Domain.Contracts compares seven ring catalogs, exterior/fractional indices, invalid inputs and en-US/fr-FR text behavior against the hash-locked recovered-source baseline. Console and the simulator app run the same assertions. This is not an original Windows binary comparison. [Classification](classification.json) distinguishes unchanged helpers from new graph infrastructure.
+
+## Numeric edit planning
+
+JewelDesign.Domain.NumericValueState.PlanSetValue captures the recovered scalar setter decision as immutable before/prechange/after states; see [ADR 0002](ADR-0002-numeric-value-plans.md). The test-only source-verified method harness covers 909 bit-pattern cases. Live undo/graph integration is still required. This adapted file does not increase the unchanged recovered-line count.

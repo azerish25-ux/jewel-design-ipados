@@ -44,3 +44,5 @@ Original assembly-qualified names may stop resolving when assemblies are renamed
 P05 records 315 operation families, candidate SDK versions/distribution terms, real iOS builds, Windows comparisons and gaps. Missing required operations remain blocked. External kernel source is not counted as recovered or implemented code.
 
 Implemented capture-local addressing: [ADR 0001](ADR-0001-snapshot-parameter-addresses.md). Persistent identity across edits/load/save remains a separate codec/document contract.
+
+Implemented scalar parameter planning: [ADR 0002](ADR-0002-numeric-value-plans.md). Plans do not execute graph changes or stand in for undo records.

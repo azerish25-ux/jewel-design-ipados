@@ -12,3 +12,5 @@ int count=0;foreach(var material in Enum.GetValues<GemMaterial>()){Equal(Legacy:
 foreach(int invalid in new[]{int.MinValue,-1,int.MaxValue})Equal(3.52,GemCaratHelper.GetSpecificGravityForMaterial((GemMaterial)invalid),"Unknown-material fallback");
 Console.WriteLine($"PASS production domain: {count} recovered-baseline material comparisons, fixed ID/density cases and three unknown-ID fallbacks; no PC binary/geometry claim.");
 Console.WriteLine(DomainContractChecks.RingSizeAssertions.Run());
+
+Console.WriteLine(DomainContractChecks.NumericValueAssertions.Run());

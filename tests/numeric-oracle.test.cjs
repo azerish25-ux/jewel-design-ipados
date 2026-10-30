@@ -1,0 +1,12 @@
+"use strict";
+const test = require("node:test"), assert = require("node:assert/strict"), fs = require("node:fs"), path = require("node:path");
+const { verifyPair } = require("../scripts/verify-numeric-oracle.cjs");
+const root = path.resolve(__dirname, "..");
+const source = fs.readFileSync(path.join(root, "recovery/canonical/cad/CS.CSValues/CSValue.cs"));
+const harness = fs.readFileSync(path.join(root, "tests/Port/Domain.Contracts/Recovered/LegacyNumericValue.cs"), "utf8");
+test("canonical numeric method matches extracted oracle", () => assert.match(verifyPair(source, harness).methodSha256, /^[a-f0-9]{64}$/));
+test("line ending conversion preserves the method", () => assert.equal(verifyPair(source, harness.replaceAll("\r\n", "\n").replaceAll("\n", "\r\n")).methodSha256, verifyPair(source, harness).methodSha256));
+test("rejects a weakened epsilon oracle", () => assert.throws(() => verifyPair(source, harness.replace("1E-05", "1E-04")), /differs/));
+test("rejects changed canonical source even outside the method", () => assert.throws(() => verifyPair(Buffer.concat([source, Buffer.from(" ")]), harness), /source changed/));
+test("rejects missing scalar oracle", () => assert.throws(() => verifyPair(source, harness.replace("public bool SetValue", "public bool RenamedValue")), /Expected one/));
+test("rejects duplicated scalar oracle", () => assert.throws(() => verifyPair(source, harness + "\n" + harness), /Expected one/));

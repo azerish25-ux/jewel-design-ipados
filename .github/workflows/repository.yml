@@ -40,6 +40,8 @@ jobs:
         run: node scripts/verify-sources.cjs
       - name: Production source provenance
         run: node scripts/verify-production.cjs
+      - name: Numeric oracle provenance controls
+        run: node --test tests/numeric-oracle.test.cjs
       - name: Graph snapshot contracts
         run: node scripts/run-local.cjs dotnet run --project tests/Port/Graph.Tests
       - name: Production domain material contract

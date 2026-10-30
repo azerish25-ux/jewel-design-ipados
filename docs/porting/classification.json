@@ -78,6 +78,11 @@
       "path": "src/Port/Domain/Recovered/RingSizes/UniversalRingSize.cs",
       "classification": "unchanged recovered ring-size data/conversion logic",
       "source": "recovery/canonical/cad/CSRingSizes.RingSize/UniversalRingSize.cs"
+    },
+    {
+      "path": "src/Port/Domain/NumericValueState.cs",
+      "classification": "adapted scalar setter decision/state ordering; new immutable boundary without native callbacks or undo",
+      "source": "recovery/canonical/cad/CS.CSValues/CSValue.cs"
     }
   ]
 }

@@ -14,7 +14,14 @@
     "docs/evidence/apple/graph-contract-results.json",
     "docs/evidence/audit/ring-fixture-unit-facts.json",
     "docs/evidence/apple/production-ring-results.json",
-    "docs/porting/DOMAIN_HELPERS.md"
+    "docs/porting/DOMAIN_HELPERS.md",
+    "src/Port/Domain/NumericValueState.cs",
+    "tests/Port/Domain.Contracts/NumericValueAssertions.cs",
+    "tests/Port/Domain.Contracts/Recovered/LegacyNumericValue.cs",
+    "scripts/verify-numeric-oracle.cjs",
+    "tests/numeric-oracle.test.cjs",
+    "docs/porting/ADR-0002-numeric-value-plans.md",
+    "docs/porting/plans/P03-T03-A04-numeric-values.md"
   ],
   "fixtures": [],
   "checks": [
@@ -66,6 +73,38 @@
       "expectedExitCode": 0,
       "artifact": "docs/evidence/audit/ring-fixture-unit-facts.json",
       "actual": "Fixture hash/type/version verified; value/min/max agree within 1e-12; saved radius differs from display table rounding"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Domain.Tests (before numeric implementation)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Domain.Contracts/NumericValueAssertions.cs",
+      "actual": "RED CS0246: numeric state API absent",
+      "numericChild": "P03-T03-A04"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Domain.Tests",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Domain.Contracts/NumericValueAssertions.cs",
+      "actual": "PASS 909 before/prechange/after bit-pattern cases against source-verified method harness; epsilon, previous state, nonfinite/payload values and unclamped requests",
+      "numericChild": "P03-T03-A04"
+    },
+    {
+      "command": "node --test tests/numeric-oracle.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/numeric-oracle.test.cjs",
+      "actual": "Six oracle provenance controls pass, rejecting source/method changes and missing/duplicated extraction",
+      "numericChild": "P03-T03-A04"
+    },
+    {
+      "command": "dotnet run --project tests/Console",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Smoke/Checks.cs",
+      "actual": "Numeric/material/ring/graph smoke passed; known compression defect remains non-gating",
+      "numericChild": "P03-T03-A04"
     }
   ],
   "review": {
@@ -75,10 +114,19 @@
     "security": "No credentials, original runtime execution, network access or raw payload alteration",
     "performance": "Constant-time allocation/equality/resolution; one retained immutable snapshot owner per live address",
     "limitations": "Not field existence validation, graph evaluation, undo integration, codec write or PC roundtrip",
-    "ringSizes": "Ten files copied without mutation; shared tests cover seven regions, both cultures, boundary and invalid values; original partial metadata and rounding preserved"
+    "ringSizes": "Ten files copied without mutation; shared tests cover seven regions, both cultures, boundary and invalid values; original partial metadata and rounding preserved",
+    "numericValues": {
+      "correctness": "Strict original epsilon; previous timing captured; bit-exact oracle and boundary cases",
+      "readability": "Two small immutable boundary types",
+      "architecture": "No new Domain dependencies; no recovery edits; no host execution",
+      "security": "No credentials, external execution or hidden I/O",
+      "performance": "Constant-time planning; one small immutable allocation",
+      "limitations": "No live callbacks, exception ordering, graph mutation, UI transaction, undo, codec or CAD"
+    }
   },
   "blockers": [
-    "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
+    "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished",
+    "Numeric scalar state contract needs macOS simulator verification"
   ],
   "ciRuns": [
     {
@@ -138,6 +186,12 @@
     {
       "path": "recovery/canonical/cad/CSBlocks.Builders/CSGemInChannelSetUp.cs",
       "sha256": "deb7d0a00c65b1ed37e77da9d1ae0c74352f509747a868847fa4350f36027592"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+      "sha256": "a7ccbf583e3576daf067140b5af52b21941bfc316e905cfebb48402b0ece6210",
+      "method": "SetValue(double)",
+      "normalizedMethodSha256": "dc464dfd316c2d5f60bb46e7a17da07a07aa13ea99b6d772a23d4dbba9a57b85"
     }
   ],
   "subtasks": [
@@ -157,6 +211,12 @@
       "scope": "Units: unchanged seven-region ring translator subset; document/native unit mapping still open",
       "status": "verified_simulator_subset",
       "evidence": "docs/porting/UNITS_CONTRACT.md"
+    },
+    {
+      "id": "P03-T03-A04",
+      "scope": "Immutable scalar parameter state from CSValue.SetValue; not an applied edit",
+      "status": "implemented_local",
+      "plan": "docs/porting/plans/P03-T03-A04-numeric-values.md"
     }
   ]
 }
