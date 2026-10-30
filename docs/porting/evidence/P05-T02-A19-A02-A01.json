@@ -321,19 +321,20 @@
       "id": 41133649503,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41133649503",
       "scope": "native host/macOS iPad/iPhone with actual paired surface and rational/ABI/derivative gates",
-      "status": "queued"
+      "status": "ios_preflight_failed_host_still_live"
     },
     {
       "id": 41133652565,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41133652565",
       "scope": "macOS unsigned ios-arm64 AOT",
-      "status": "queued"
+      "status": "failure_native_test_compile",
+      "failure": "Apple Clang requires explicit initializer_list include in candidate_paired_abi_contracts.cpp:40; GCC supplied it transitively."
     },
     {
       "id": 41133650415,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41133650415",
       "scope": "repository bounded proofs/source integrity",
-      "status": "queued"
+      "status": "success"
     },
     {
       "id": 41133650442,
@@ -341,5 +342,11 @@
       "scope": "managed recovered iOS reuse",
       "status": "queued"
     }
-  ]
+  ],
+  "appleCompileCorrection": {
+    "file": "native/GeometryBridge/CandidateProbe/candidate_paired_abi_contracts.cpp",
+    "change": "Explicit #include <initializer_list>; no geometry or assertion change.",
+    "localVerification": "Native object rebuild/runner passes all271 contacts/384 derivative components/16 ABI guards/rational cylinder after include.",
+    "appleVerification": "Corrected-commit preflight pending; preserve live old host run."
+  }
 }
