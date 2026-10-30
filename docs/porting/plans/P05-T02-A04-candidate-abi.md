@@ -13,3 +13,5 @@ Owned: native/GeometryBridge/CandidateProbe/candidate_abi.h/.cpp/candidate_abi_c
 - [ ] Verify masses 8/4/12/0, source preservation, deep-copy survival after original release, retained/stale/foreign/context-close behavior, invalid/nonfinite inputs, unsupported version/operation, bounded error buffers and repeated lifetime entry counts.
 - [ ] Run native host and both iOS simulator cases plus unsigned device build through pinned macOS CI. Inspect actual outputs, not only compile status. No physical-device or PC proof implied.
 - [ ] Review lock order, allocation failures, counter overflow, output mutation, read/write bounds and ownership; preserve missing cancellation/leak/PC/SDK-selection gates. Commit/push checkpoints with exact evidence.
+
+RED evidence: run 41025275608 host job 123961805120 failed early at missing candidate_abi.h. Implementation added only after inspecting that log. Green implementation remains on development branch pending actual native/runtime proof. Runs 41025671193 and 41025674158 test the implementation.
