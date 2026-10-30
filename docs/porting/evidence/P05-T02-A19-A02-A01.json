@@ -314,5 +314,32 @@
       "path": "tests/Port/Geometry.Candidate.Contracts/PairedSweepAssertions.cs",
       "normalizedLfSha256": "717eda7c0a5c4d0d60d0508f0718305f821bf33d492774ad5ab6e3150ea00dad"
     }
+  ],
+  "implementationCommit": "d46ef993818885cd84368ff604856a9924476d13",
+  "ciRuns": [
+    {
+      "id": 41133649503,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41133649503",
+      "scope": "native host/macOS iPad/iPhone with actual paired surface and rational/ABI/derivative gates",
+      "status": "queued"
+    },
+    {
+      "id": 41133652565,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41133652565",
+      "scope": "macOS unsigned ios-arm64 AOT",
+      "status": "queued"
+    },
+    {
+      "id": 41133650415,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41133650415",
+      "scope": "repository bounded proofs/source integrity",
+      "status": "queued"
+    },
+    {
+      "id": 41133650442,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41133650442",
+      "scope": "managed recovered iOS reuse",
+      "status": "queued"
+    }
   ]
 }
