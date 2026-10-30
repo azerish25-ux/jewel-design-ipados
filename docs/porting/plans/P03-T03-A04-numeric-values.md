@@ -16,8 +16,8 @@ Owned files: src/Port/Domain/NumericValueState.cs; tests/Port/Domain.Contracts/N
 
 Acceptance: P03-A1 no Windows/Rhino dependencies; P03-A2 normal values, exact epsilon boundaries, prior-value preservation, out-of-range requests, signed zeros, infinities and payload NaNs. Compare double bits before/prechange/after with an unchanged original-method body in a test-only instrumented harness. Verify that body against canonical source. This is recovered-method control-flow evidence, not native PC execution or callback/undo integration. New production code is adapted, not unchanged recovered LOC.
 
-- [ ] Write shared assertions and canonical-method harness; run Domain.Tests RED for missing API.
-- [ ] Implement immutable state/plan; preserve no-op fields and change notifications even for equal-looking nonfinite values.
-- [ ] Run Domain.Tests, Graph.Tests, Console, source/body/hash and repository checks; review aliasing, dependencies and scope.
-- [ ] Commit/push implementation; inspect macOS iPad/iPhone artifacts before claiming simulator verification.
-- [ ] Commit/push evidence and remaining work. P03-T03 stays incomplete; no codec, geometry or PC roundtrip claim.
+- [x] Write shared assertions and canonical-method harness; run Domain.Tests RED for missing API.
+- [x] Implement immutable state/plan; preserve no-op fields and change notifications even for equal-looking nonfinite values.
+- [x] Run Domain.Tests, Graph.Tests, Console, source/body/hash and repository checks; review aliasing, dependencies and scope.
+- [x] Commit/push implementation; inspect macOS iPad/iPhone artifacts before claiming simulator verification.
+- [x] Commit/push evidence and remaining work. P03-T03 stays incomplete; no codec, geometry or PC roundtrip claim.

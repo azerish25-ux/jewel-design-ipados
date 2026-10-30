@@ -382,7 +382,8 @@
             "scripts/verify-numeric-oracle.cjs",
             "tests/numeric-oracle.test.cjs",
             "docs/porting/ADR-0002-numeric-value-plans.md",
-            "docs/porting/plans/P03-T03-A04-numeric-values.md"
+            "docs/porting/plans/P03-T03-A04-numeric-values.md",
+            "docs/evidence/apple/numeric-value-results.json"
           ],
           "evidence": [
             "docs/porting/evidence/P03-T03.json"

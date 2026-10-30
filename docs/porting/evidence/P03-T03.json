@@ -21,7 +21,8 @@
     "scripts/verify-numeric-oracle.cjs",
     "tests/numeric-oracle.test.cjs",
     "docs/porting/ADR-0002-numeric-value-plans.md",
-    "docs/porting/plans/P03-T03-A04-numeric-values.md"
+    "docs/porting/plans/P03-T03-A04-numeric-values.md",
+    "docs/evidence/apple/numeric-value-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -105,6 +106,13 @@
       "artifact": "tests/Smoke/Checks.cs",
       "actual": "Numeric/material/ring/graph smoke passed; known compression defect remains non-gating",
       "numericChild": "P03-T03-A04"
+    },
+    {
+      "command": "GitHub Actions run 40996610493; inspect both runtime-family.txt and simulator-result.txt artifacts",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/apple/numeric-value-results.json",
+      "actual": "iPad and iPhone executed 909 numeric cases; source-body guard and six mutation controls ran before build; no native undo/codec claim"
     }
   ],
   "review": {
@@ -125,8 +133,7 @@
     }
   },
   "blockers": [
-    "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished",
-    "Numeric scalar state contract needs macOS simulator verification"
+    "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
   ],
   "ciRuns": [
     {
@@ -156,6 +163,17 @@
       "id": 40994559209,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40994559209",
       "verification": "clean checkout integrity and bounded proofs passed for 31882a2"
+    },
+    {
+      "id": 40996610493,
+      "commit": "5d641f973880486d4256eedc48cd181b877256ad",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40996610493",
+      "verification": "success; full workflow terminal, both correct-family artifacts inspected for 909 numeric bit-pattern cases and adjacent regressions"
+    },
+    {
+      "id": 40996610543,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40996610543",
+      "verification": "clean checkout repository verification succeeded for 5d641f9"
     }
   ],
   "requirementIds": [
@@ -215,7 +233,7 @@
     {
       "id": "P03-T03-A04",
       "scope": "Immutable scalar parameter state from CSValue.SetValue; not an applied edit",
-      "status": "implemented_local",
+      "status": "verified_simulator",
       "plan": "docs/porting/plans/P03-T03-A04-numeric-values.md"
     }
   ]
