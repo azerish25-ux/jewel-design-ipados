@@ -1,5 +1,17 @@
 #include "candidate_abi.h"
 #include <BRepPrimAPI_MakeBox.hxx>
+#include <BRepBuilderAPI_MakeEdge.hxx>
+#include <BRepAdaptor_Curve.hxx>
+#include <Geom_Circle.hxx>
+#include <Geom_BSplineCurve.hxx>
+#include <GeomConvert.hxx>
+#include <Convert_ParameterisationType.hxx>
+#include <GeomAbs_CurveType.hxx>
+#include <GCPnts_AbscissaPoint.hxx>
+#include <TopoDS.hxx>
+#include <gp_Ax2.hxx>
+#include <gp_Dir.hxx>
+#include <gp_Pnt.hxx>
 #include <BRepBuilderAPI_Copy.hxx>
 #include <BRepBuilderAPI_Transform.hxx>
 #include <BRepAlgoAPI_Common.hxx>
@@ -216,6 +228,54 @@ extern "C" int32_t jd_candidate_shape_inspect(uint64_t context,uint64_t shape,do
                 if(count==std::numeric_limits<uint32_t>::max())fail(JD_CANDIDATE_LIFETIME_LIMIT,"Solid count limit");++count;
             }
             *volume=mass;*solids=count;*valid=BRepCheck_Analyzer(input).IsValid()?1u:0u;
+        });
+    },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_circle(uint64_t context,double radius,double ox,double oy,double oz,double nx,double ny,double nz,double xx,double xy,double xz,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        outputHandle(output);
+        for(double value:{radius,ox,oy,oz,nx,ny,nz,xx,xy,xz})if(!std::isfinite(value))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Circle data must be finite");
+        if(radius<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Circle radius must be positive");
+        withContext(context,[&](Context& value){
+            gp_Ax2 frame(gp_Pnt(ox,oy,oz),gp_Dir(nx,ny,nz),gp_Dir(xx,xy,xz));
+            occ::handle<Geom_Circle> circle=new Geom_Circle(frame,radius);
+            auto curve=GeomConvert::CurveToBSplineCurve(circle,Convert_TgtThetaOver2_4);
+            if(curve.IsNull()||curve->Degree()!=2||curve->NbPoles()!=9||!curve->IsRational()||curve->IsPeriodic())fail(JD_CANDIDATE_KERNEL_FAILURE,"Unexpected four-span circle representation");
+            BRepBuilderAPI_MakeEdge operation(curve);
+            if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native curve edge creation failed");
+            *output=store(value,operation.Shape());
+        });
+    },diagnostic,capacity);
+}
+extern "C" int32_t jd_candidate_curve_inspect(uint64_t context,uint64_t shape,double* first,double* last,double* length,uint32_t* degree,uint32_t* poles,uint32_t* rational,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        if(!first||!last||!length||!degree||!poles||!rational)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing curve inspection output");
+        *first=0;*last=0;*length=0;*degree=0;*poles=0;*rational=0;
+        withContext(context,[&](Context& value){
+            const auto& input=findShape(value,shape).shape;
+            if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Curve inspection requires an edge");
+            BRepAdaptor_Curve curve(TopoDS::Edge(input));
+            if(curve.GetType()!=GeomAbs_BSplineCurve)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Candidate inspection requires a B-spline curve");
+            const auto start=curve.FirstParameter(),end=curve.LastParameter(),arcLength=GCPnts_AbscissaPoint::Length(curve);
+            if(!std::isfinite(start)||!std::isfinite(end)||!std::isfinite(arcLength)||end<=start||arcLength<=0)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid native curve information");
+            *first=start;*last=end;*length=arcLength;*degree=static_cast<uint32_t>(curve.Degree());*poles=static_cast<uint32_t>(curve.NbPoles());*rational=curve.IsRational()?1u:0u;
+        });
+    },diagnostic,capacity);
+}
+extern "C" int32_t jd_candidate_curve_point(uint64_t context,uint64_t shape,double parameter,double* x,double* y,double* z,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        if(!x||!y||!z)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing curve point output");*x=0;*y=0;*z=0;
+        if(!std::isfinite(parameter))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Curve parameter must be finite");
+        withContext(context,[&](Context& value){
+            const auto& input=findShape(value,shape).shape;
+            if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Curve evaluation requires an edge");
+            BRepAdaptor_Curve curve(TopoDS::Edge(input));const auto point=curve.Value(parameter);
+            if(!std::isfinite(point.X())||!std::isfinite(point.Y())||!std::isfinite(point.Z()))fail(JD_CANDIDATE_KERNEL_FAILURE,"Nonfinite native curve point");
+            *x=point.X();*y=point.Y();*z=point.Z();
         });
     },diagnostic,capacity);
 }

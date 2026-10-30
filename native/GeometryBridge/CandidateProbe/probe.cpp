@@ -28,6 +28,7 @@
 #include <sstream>
 
 void run_candidate_abi_contracts();
+void run_candidate_curve_contracts();
 
 namespace {
 void require(bool condition,const char* message) { if(!condition)throw std::runtime_error(message); }
@@ -44,6 +45,7 @@ template<class Operation> TopoDS_Shape boolean(const TopoDS_Shape& lhs,const Top
 std::string run()
 {
     run_candidate_abi_contracts();
+    run_candidate_curve_contracts();
     const double pi=std::acos(-1.0);
     auto outer=BRepPrimAPI_MakeCylinder(10.0,3.0).Shape();
     auto inner=BRepPrimAPI_MakeCylinder(gp_Ax2(gp_Pnt(0,0,-1),gp_Dir(0,0,1)),8.0,5.0).Shape();
@@ -82,7 +84,7 @@ std::string run()
         try { BRepPrimAPI_MakeCylinder invalid(-1.0,2.0);invalid.Shape(); } catch(const Standard_Failure&) { ++invalidFailures; }
     }
     require(invalidFailures==16,"Invalid native cylinder did not fail");
-    std::ostringstream report;report<<"PASS OCCT 8.0.1 native candidate: annulus-volume="<<volume(ring)<<"; solids="<<count(ring,TopAbs_SOLID)<<"; native-triangles="<<triangles<<"; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length="<<GCPnts_AbscissaPoint::Length(adaptor)<<"; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; analytic fixtures only, no CounterSketch/PC parity claim.";return report.str();
+    std::ostringstream report;report<<"PASS OCCT 8.0.1 native candidate: annulus-volume="<<volume(ring)<<"; solids="<<count(ring,TopAbs_SOLID)<<"; native-triangles="<<triangles<<"; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length="<<GCPnts_AbscissaPoint::Length(adaptor)<<"; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; candidate-four-span-curves=pass; analytic fixtures only, no CounterSketch/PC parity claim.";return report.str();
 }
 }
 extern "C" int jd_occt_candidate_run(char* output,unsigned int capacity)

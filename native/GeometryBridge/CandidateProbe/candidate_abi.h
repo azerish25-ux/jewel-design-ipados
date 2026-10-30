@@ -34,6 +34,11 @@ int32_t jd_candidate_boolean(uint64_t context,int32_t operation,uint64_t lhs,uin
 int32_t jd_candidate_shape_retain(uint64_t context,uint64_t shape,char* diagnostic,uint32_t capacity);
 int32_t jd_candidate_shape_release(uint64_t context,uint64_t shape,char* diagnostic,uint32_t capacity);
 int32_t jd_candidate_shape_inspect(uint64_t context,uint64_t shape,double* volume,uint32_t* solids,uint32_t* valid,char* diagnostic,uint32_t capacity);
+/* Four-span clamped rational circle. Frame uses origin, normal and X direction;
+ * parameters are native B-spline parameters, not angles or arc-length fractions. */
+int32_t jd_candidate_circle(uint64_t context,double radius,double ox,double oy,double oz,double nx,double ny,double nz,double xx,double xy,double xz,uint64_t* output,char* diagnostic,uint32_t capacity);
+int32_t jd_candidate_curve_inspect(uint64_t context,uint64_t shape,double* first,double* last,double* length,uint32_t* degree,uint32_t* poles,uint32_t* rational,char* diagnostic,uint32_t capacity);
+int32_t jd_candidate_curve_point(uint64_t context,uint64_t shape,double parameter,double* x,double* y,double* z,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

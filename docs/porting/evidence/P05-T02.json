@@ -36,7 +36,12 @@
     "tests/Port/Geometry.Candidate.Contracts/Assertions.cs",
     "docs/porting/plans/P05-T02-A05-managed-candidate-adapter.md",
     "docs/evidence/apple/candidate-abi-results.json",
-    "docs/evidence/apple/managed-candidate-adapter-results.json"
+    "docs/evidence/apple/managed-candidate-adapter-results.json",
+    "native/GeometryBridge/CandidateProbe/candidate_curve_contracts.cpp",
+    "src/Port/Geometry.Candidate/CandidateCurveTypes.cs",
+    "src/Port/Geometry.Candidate/CandidateContext.Curves.cs",
+    "tests/Port/Geometry.Candidate.Contracts/CurveAssertions.cs",
+    "docs/porting/plans/P05-T02-A06-native-curves.md"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -85,6 +90,11 @@
       "id": "P05-T02-A05",
       "scope": "Real CSharp candidate methods, typed failures, SafeHandle parent leases and actual native ownership contracts",
       "status": "verified_bounded_managed_candidate_adapter"
+    },
+    {
+      "id": "P05-T02-A06",
+      "scope": "Actual native four-span rational curve creation/inspection/evaluation through CSharp ownership adapter",
+      "status": "managed_compile_verified_native_ci_pending"
     }
   ],
   "checks": [
@@ -118,6 +128,18 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "actual": "Framework-only probe: after Dispose with retained lease IsClosed=False,releases=0; last lease IsClosed=True,releases=1. Added explicit logical disposal flag under context gate."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet build tests/Port/Geometry.Candidate.Contracts --nologo -v:q (RED)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "Missing CandidatePoint3/API before curve implementation"
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet build tests/Port/Geometry.Candidate.Contracts --nologo -v:q (after implementation)",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Managed curve DTOs/wrappers/contracts compile0 warnings/0 errors; actual native runtime not yet executed"
     }
   ],
   "review": {
@@ -133,7 +155,8 @@
     "resultFreshness": "Clear prior result/family/started before launch. Publish combined success via same-directory pending-file rename; Mac regression pending.",
     "ownershipAbi": "Real OCCT box/copy/translation/booleans through versioned C IDs/status. Global unique nonreused IDs; per-context locks; lookup drops registry lock before waiting for context. Final close marks closed before erase. Retain/release overflow guarded; C++ exception categories caught; failed creation outputs zeroed and optional diagnostics bounded. GREEN runtime/platform results pending; cancellation/process-memory leak/SDK selection/PC gates open. Host/iPad/iPhone runtime passed in 41025671193; unsigned device build41025674158 passed 52 warnings/0 errors. See candidate-abi-results.json. New managed adapter not covered.",
     "redLogSha256": "7ce7453be4e8313065e8ee0886c5635144b572c2b87dae594eae3823abd400a3",
-    "managedAdapter": "Header widths/entrypoints/Cdecl matched; input SafeHandles marshal lifetime; per-context gate covers native result plus child parent-lease creation; explicit logical Dispose separate from IsClosed. Native creation cleanup and paired parent leases reviewed. Windows build proves managed compilation only; Apple real/native/disposal/trim tests pending. No full kernel/cancellation/process-memory/physical/PC claim."
+    "managedAdapter": "Header widths/entrypoints/Cdecl matched; input SafeHandles marshal lifetime; per-context gate covers native result plus child parent-lease creation; explicit logical Dispose separate from IsClosed. Native creation cleanup and paired parent leases reviewed. Windows build proves managed compilation only; Apple real/native/disposal/trim tests pending. No full kernel/cancellation/process-memory/physical/PC claim.",
+    "curves": "Inspected pinned GeomConvert, Convert_CircleToBSplineCurve, parameterization enum and inherited BRepAdaptor curve methods. Explicit_4 mode is nonperiodic with four spans, avoiding default3-span parameterization. Native BRep edges and actual evaluation only; solid queries reject. Fixed-width flattened inputs/outputs and existing context/SafeHandle gate reused. Geometry/28-sample/plane/ownership/runtime assertions pending CI; modern source is not Rhino5 PC proof."
   },
   "blockers": [
     "Full CAD semantic mapping/candidate acceptance and broader recovered trim safety remain incomplete",

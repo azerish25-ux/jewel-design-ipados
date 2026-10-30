@@ -2,7 +2,7 @@ using System.Text;
 namespace JewelDesign.Geometry.Candidate;
 
 /// <summary>Experimental native candidate adapter. It does not implement the full application kernel.</summary>
-public sealed class CandidateContext:IDisposable
+public sealed partial class CandidateContext:IDisposable
 {
     private const uint DiagnosticCapacity=256;
     private readonly object _gate=new();

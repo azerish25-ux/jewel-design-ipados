@@ -1,0 +1,44 @@
+using JewelDesign.Geometry.Candidate;
+namespace CandidateGeometryContractChecks;
+
+internal static class CurveAssertions
+{
+    private static void Check(bool condition,string message){if(!condition)throw new Exception(message);}
+    private static void Near(double value,double expected)=>Check(double.IsFinite(value)&&Math.Abs(value-expected)<1e-8,"Native circle coordinate/length mismatch");
+    private static void Point(CandidatePoint3 value,double x,double y,double z){Near(value.X,x);Near(value.Y,y);Near(value.Z,z);}
+    private static CandidateGeometryException Fails(Action action)
+    {try{action();}catch(CandidateGeometryException e){return e;}throw new Exception("Expected native curve failure");}
+    public static string Run()
+    {
+        using var context=CandidateContext.Create();
+        using(var circle=context.CreateCircle(7,CandidatePlane.WorldZX)){
+            var info=context.InspectCurve(circle);
+            Check(info.Degree==2&&info.PoleCount==9&&info.IsRational,"Four-span rational circle representation");
+            Near(info.FirstParameter,0);Near(info.LastParameter,2*Math.PI);Near(info.Length,14*Math.PI);
+            double w=1/Math.Sqrt(2);int[] c={1,0,-1,0},s={0,1,0,-1};
+            for(int quarter=0;quarter<4;quarter++)foreach(double u in new[]{0,.125,.25,.5,.75,.875,1}){
+                double b0=(1-u)*(1-u),b1=2*u*(1-u),b2=u*u,den=b0+w*b1+b2;
+                double a=7*(b0+w*b1)/den,b=7*(w*b1+b2)/den;
+                double localX=c[quarter]*a-s[quarter]*b,localY=s[quarter]*a+c[quarter]*b;
+                Point(context.PointAt(circle,(quarter+u)*Math.PI/2),localY,0,localX);
+            }
+            using var moved=context.Translate(circle,1,2,3);
+            Point(context.PointAt(moved,info.FirstParameter),1,2,10);
+            using var clone=context.Clone(circle);using var alias=context.Retain(circle);
+            circle.Dispose();Point(context.PointAt(clone,info.FirstParameter),0,0,7);Point(context.PointAt(alias,info.FirstParameter),0,0,7);
+        }
+        var frame=new CandidatePlane(new(1,2,3),new(0,0,1),new(0,1,0));
+        using(var circle=context.CreateCircle(2,frame)){
+            var info=context.InspectCurve(circle);Near(info.Length,4*Math.PI);
+            Point(context.PointAt(circle,info.FirstParameter),1,4,3);Point(context.PointAt(circle,(info.FirstParameter+info.LastParameter)/4),-1,2,3);
+            Check(Fails(()=>context.PointAt(circle,double.NaN)).Status==CandidateNativeStatus.InvalidArgument,"Nonfinite curve parameter");
+        }
+        using(var box=context.CreateBox(1,1,1))Check(Fails(()=>context.InspectCurve(box)).Status==CandidateNativeStatus.UnsupportedOperation,"Solid must not produce fake curve metadata");
+        foreach(double radius in new[]{0,-1,double.NaN,double.PositiveInfinity})
+            Check(Fails(()=>{using var rejected=context.CreateCircle(radius,CandidatePlane.WorldZX);}).Status==CandidateNativeStatus.InvalidArgument,"Invalid circle radius");
+        Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,0),new(1,0,0)));});
+        Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,1),new(0,0,1)));});
+        Check(context.DiagnosticLiveShapeCount==0,"Curve ownership retained native entries");
+        return "PASS candidate native curves: four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
+    }
+}

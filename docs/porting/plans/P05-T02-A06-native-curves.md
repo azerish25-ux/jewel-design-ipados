@@ -13,3 +13,5 @@ Proposed boundary: generic circle in a caller-supplied plane (origin,normal,Xdir
 - [ ] Run actual host/iPad/iPhone native plus managed assertions and unsigned device build in pinned macOS CI. Inspect reports/errors/trim warnings. Preserve SourceSDK/PC/control-point/domain/closed-periodic/distribution/cancellation/leak gates.
 
 Owned: candidate native header/implementation/contract tests/probe; Geometry.Candidate DTOs/methods/native imports; Geometry.Candidate.Contracts; P05-T02 evidence. Consider an explicit feature-minor/capability handshake if added symbols are consumed across mismatched binaries; static test app builds source and native module together. No final stable production ABI is claimed.
+
+Managed RED observed at missing CandidatePoint3 before implementation. Managed GREEN compiles with0 warnings/errors. Native creation uses explicit Convert_TgtThetaOver2_4; pinned converter source makes this path nonperiodic (default path is periodic). Native and CSharp contracts test9-pole rational degree2 representation,28 rational parameter samples and actual frame/transform/error/ownership behavior. Mac/native execution remains pending.

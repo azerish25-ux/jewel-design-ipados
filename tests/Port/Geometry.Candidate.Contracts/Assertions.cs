@@ -60,6 +60,7 @@ public static class Assertions
         Check(NativeMethods.ContextLiveShapesRaw(id,out count,message,256)==0&&count==1,"Retained alias lost parent/shape lifetime");
         alias.Dispose();alias.Dispose();
         Check(NativeMethods.ContextLiveShapesRaw(id,out count,message,256)==(int)CandidateNativeStatus.InvalidContext,"Last child did not release native parent");
-        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim.";
+        var curves=CurveAssertions.Run();
+        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves;
     }
 }
