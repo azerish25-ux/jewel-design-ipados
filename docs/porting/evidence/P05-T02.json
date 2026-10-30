@@ -644,7 +644,7 @@
       "id": 41051772180,
       "commit": "a069861",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051772180",
-      "verification": "Unsigned device trim-reverse adapter build dispatched; terminal result inspection pending"
+      "verification": "Workflow completed SUCCESS; trim/reverse device artifact inspection still required before bounded verification"
     },
     {
       "id": 41052693327,
@@ -681,6 +681,18 @@
       "commit": "5239e15327313dc58d12a113cd76512e52e8b8d5",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41057793178",
       "verification": "Finite native curve-line unsigned device queued; terminal verification pending"
+    },
+    {
+      "id": 41059567171,
+      "commit": "f657de6a05d642441ff1176a52bdaed177baf6d4",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41059567171",
+      "verification": "Closed seam and affine composition host confirmed in progress; iPad/iPhone queued; terminal verification pending"
+    },
+    {
+      "id": 41059570457,
+      "commit": "f657de6a05d642441ff1176a52bdaed177baf6d4",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41059570457",
+      "verification": "Closed seam and affine composition unsigned device queued; terminal verification pending"
     }
   ]
 }
