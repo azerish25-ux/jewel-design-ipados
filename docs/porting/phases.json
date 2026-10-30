@@ -329,12 +329,13 @@
         {
           "id": "P03-T01",
           "title": "Create Domain, Graph and Domain.Tests projects",
-          "status": "in_progress",
+          "status": "complete",
           "depends": [],
           "outputs": [
             "src/Port/Domain/Domain.csproj",
             "src/Port/Graph/Graph.csproj",
-            "tests/Port/Domain.Tests/Domain.Tests.csproj"
+            "tests/Port/Domain.Tests/Domain.Tests.csproj",
+            "docs/evidence/apple/production-material-results.json"
           ],
           "evidence": [
             "docs/porting/evidence/P03-T01.json"
@@ -343,22 +344,31 @@
         {
           "id": "P03-T02",
           "title": "Classify adopted methods as unchanged, adapted, generated data or replacement",
-          "status": "not_started",
+          "status": "complete",
           "depends": [
             "P03-T01"
           ],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "src/Port/Domain/provenance.json",
+            "docs/porting/classification.json"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P03-T02.json"
+          ]
         },
         {
           "id": "P03-T03",
           "title": "Define GUID/parameter identity, units, graph links and immutable snapshots",
-          "status": "not_started",
+          "status": "in_progress",
           "depends": [
             "P03-T02"
           ],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "src/Port/Graph/GraphSnapshot.cs"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P03-T03.json"
+          ]
         },
         {
           "id": "P03-T04",

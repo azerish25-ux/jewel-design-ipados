@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
   "taskId": "P03-T01",
-  "status": "in_progress",
+  "status": "complete",
   "outputs": [
     "src/Port/Domain/Domain.csproj",
     "src/Port/Graph/Graph.csproj",
-    "tests/Port/Domain.Tests/Domain.Tests.csproj"
+    "tests/Port/Domain.Tests/Domain.Tests.csproj",
+    "docs/evidence/apple/production-material-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -22,12 +23,17 @@
       "expectedExitCode": 0,
       "artifact": "tests/Smoke/Checks.cs",
       "actual": "Original 16 math goldens plus 114 production material comparisons pass; known compression incompatibility stays diagnostic"
+    },
+    {
+      "command": "macOS iPad/iPhone simulator production-domain assertions",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40989990817",
+      "actual": "Both actual device families pass all 114 production material comparisons"
     }
   ],
   "review": {
     "scope": "579 nonblank lines in two byte-identical recovered files; no CAD/PC binary parity claim. Graph boundary project only, no fake evaluator."
   },
-  "blockers": [
-    "Production-domain macOS simulator execution pending"
-  ]
+  "blockers": []
 }

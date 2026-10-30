@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P03-T03",
+  "status": "in_progress",
+  "outputs": [
+    "src/Port/Graph/GraphSnapshot.cs",
+    "tests/Port/Graph.Contracts/Assertions.cs"
+  ],
+  "fixtures": [],
+  "checks": [
+    {
+      "command": "dotnet run --project tests/Port/Graph.Tests",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "src/Port/Graph/GraphSnapshot.cs",
+      "actual": "Snapshot isolation, exact sentinel, table indices and unknown metadata contracts pass; unit/parameter identity and iOS verification remain unfinished"
+    }
+  ],
+  "review": {
+    "scope": "Recovered snapshots remain unchanged; original bytes are provenance, not regenerated serialization output"
+  },
+  "blockers": [
+    "Units/parameter identities and macOS graph-contract execution pending"
+  ]
+}

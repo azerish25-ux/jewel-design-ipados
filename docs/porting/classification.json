@@ -1,0 +1,24 @@
+{
+  "scope": "Adopted production files to date, not all recovered source",
+  "files": [
+    {
+      "path": "src/Port/Domain/Recovered/GemMaterial.cs",
+      "classification": "unchanged recovered enum/data contract",
+      "source": "recovery/canonical/cad/GV.CounterSketch.Shared/GemMaterial.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/GemCaratHelper.cs",
+      "classification": "unchanged recovered lookup/domain logic",
+      "source": "recovery/canonical/cad/GV.CounterSketch.Shared.Utilities.Helpers/GemCaratHelper.cs"
+    },
+    {
+      "path": "src/Port/Graph/GraphSnapshot.cs",
+      "classification": "new immutable boundary model based on recovered serialized field semantics; no original evaluator ported",
+      "sources": [
+        "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+        "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+        "recovery/canonical/cad/CS/CSParaGraph.cs"
+      ]
+    }
+  ]
+}

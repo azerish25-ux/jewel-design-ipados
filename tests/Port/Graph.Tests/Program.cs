@@ -1,0 +1,1 @@
+System.Console.WriteLine(GraphContractChecks.Assertions.Run());

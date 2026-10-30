@@ -1,0 +1,15 @@
+{
+  "run": 40989990817,
+  "commit": "5b2ae24b1d40dae828801203b09cdb01703eaaaf",
+  "results": [
+    {
+      "family": "ipad",
+      "result": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException"
+    },
+    {
+      "family": "iphone",
+      "result": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException"
+    }
+  ],
+  "scope": "Material-domain paths only; compression remains diagnostic failure; no geometry/PC binary claim"
+}

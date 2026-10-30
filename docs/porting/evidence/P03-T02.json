@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P03-T02",
+  "status": "complete",
+  "outputs": [
+    "src/Port/Domain/provenance.json",
+    "docs/porting/classification.json"
+  ],
+  "fixtures": [],
+  "checks": [
+    {
+      "command": "node scripts/verify-production.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "src/Port/Domain/provenance.json",
+      "actual": "Two adopted recovered files match canonical byte hashes; new graph model explicitly classified separately"
+    }
+  ],
+  "review": {
+    "scope": "Recovered snapshots remain unchanged; original bytes are provenance, not regenerated serialization output"
+  },
+  "blockers": []
+}

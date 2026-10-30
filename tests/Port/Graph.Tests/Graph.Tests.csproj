@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net10.0</TargetFramework><OutputType>Exe</OutputType><UseSharedCompilation>false</UseSharedCompilation></PropertyGroup><ItemGroup><ProjectReference Include="../Graph.Contracts/Graph.Contracts.csproj"/></ItemGroup></Project>
