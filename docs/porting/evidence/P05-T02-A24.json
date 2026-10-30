@@ -63,5 +63,32 @@
     "Join140 filtering/single-result policy",
     "Original-PC/physical-device/full1451-row acceptance"
   ],
-  "scope": "Automatic native cap-plane candidate plus source-extracted fallback comparisons; full parity still0 verified."
+  "scope": "Automatic native cap-plane candidate plus source-extracted fallback comparisons; full parity still0 verified.",
+  "implementationCommit": "f9e00ca73a85ad607554fa7d9e0a4fa19da81161",
+  "ciRuns": [
+    {
+      "id": 41146796672,
+      "scope": "native host/macOS iPad/iPhone automatic-plane candidate execution",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41146796672"
+    },
+    {
+      "id": 41146799465,
+      "scope": "macOS unsigned ios-arm64 AOT",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41146799465"
+    },
+    {
+      "id": 41146795926,
+      "scope": "repository/provenance with recovered fallback controls",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41146795926"
+    },
+    {
+      "id": 41146795927,
+      "scope": "recovered managed iOS reuse",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41146795927"
+    }
+  ]
 }
