@@ -1,0 +1,15 @@
+# ADR 0006: decoded metadata and legacy scalar file-edit bridge
+
+Status: accepted for P04-T05-A01; no full native undo or application-save parity claim.
+
+GraphNodeSnapshot.BitFlags is now nullable; null means undecoded, never zero. IsInstanceIdentityDecoded and AreInputLinksDecoded distinguish an absent legacy GUID/empty decoded link list from an opaque header. GraphIdentityScope leaves InitialIdentity null for undecoded records instead of generating a replacement GUID. Existing known-metadata constructors retain their default decoded behavior. Consumers must check these states before interpreting opaque nodes.
+
+LegacyCsg4GraphProjection captures every archive record slot with type/version/raw provenance. Only the supported numeric schemas supply decoded names, flags, links and known absent legacy GUIDs. Other records retain unknown header/link states and raw bytes. No indices are shifted and no new serialized identities are written.
+
+LegacyCsg4EditSession owns immutable file data, one stable session scope, 74 supported Value handles for the fixture and per-field NumericValueState. Handle ownership, field name and schema availability are validated before mutation. It prepares new archive data, assigns the recovered PreChange scalar state, records the target and publishes After state. Epsilon no-ops preserve previous state and acquire no undo record; the setter does not silently begin a transaction.
+
+Each numeric target captures the exact scalar file value. UndoJournal schedules nested/grouped undo/redo by reference; target restore invokes the same numeric setter plan while journal recording is inactive. This matches scalar setter decisions and previous-value timing, but not native CSObject.CreateTempObject/CSValue.SetUndo capture semantics, metadata/CAM/flag restoration, UI gesture rules, graph invalidation or CAD callbacks. Tiny input capture is deliberately an exact file-state contract; no original native-clone result is asserted. Do not bind this adapter as proof of full CounterSketch native undo.
+
+View remains the captured header/provenance view because only numeric values change; ReadValue and Document contain current values. Original record copies are provenance. ExportArchiveData writes only archive data; previews, sidecars, geometry, native load/migration side effects and final application save still need real implementation.
+
+Tests use the real library fixture: all 241 slots, unknown metadata without fabricated GUIDs, 74 handles, duplicate-label isolation, epsilon and previous state, grouped/nested/multi-target history, branch edits, unsupported/foreign/null rejection before mutation, exact exported edited hash, undo-byte identity and reopened values. The selected edit produces 26b6ef6e22f2a6d9ff131350f18b6951818824291de1b1a2ae8d000d85c07b1a, already independently verified by Node and CSharp readers. No geometry or PC application was run.

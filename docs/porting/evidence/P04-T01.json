@@ -120,7 +120,7 @@
       "id": 41002808424,
       "commit": "6e96320fe05932890c9127c27d8ec85df4feb641",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41002808424",
-      "verification": "attempt 1: iPhone passed, iPad produced no app result/empty console; failed job retried as attempt 2 and confirmed live"
+      "verification": "attempt 1 missing iPad result retained; failed-job retry attempt 2 succeeded, both families passing"
     },
     {
       "id": 41002808456,

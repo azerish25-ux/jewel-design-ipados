@@ -22,12 +22,15 @@ public sealed class GraphNodeSnapshot
     public RecordVersion Version { get; }
     public string? Identifier { get; }
     public string? StoredInstanceGuid { get; }
-    public uint BitFlags { get; }
+    public uint? BitFlags { get; }
+    public bool IsInstanceIdentityDecoded { get; }
+    public bool AreInputLinksDecoded { get; }
     public IReadOnlyList<SerializedChannelLink> InputLinks { get; }
 
     public GraphNodeSnapshot(int storedTableIndex, Guid typeGuid, RecordVersion version,
-        string? identifier, string? storedInstanceGuid, uint bitFlags,
-        ReadOnlySpan<byte> originalRecordBytes, IEnumerable<SerializedChannelLink> inputLinks)
+        string? identifier, string? storedInstanceGuid, uint? bitFlags,
+        ReadOnlySpan<byte> originalRecordBytes, IEnumerable<SerializedChannelLink> inputLinks,
+        bool isInstanceIdentityDecoded = true, bool areInputLinksDecoded = true)
     {
         ArgumentNullException.ThrowIfNull(inputLinks);
         StoredTableIndex = storedTableIndex;
@@ -36,6 +39,8 @@ public sealed class GraphNodeSnapshot
         Identifier = identifier;
         StoredInstanceGuid = storedInstanceGuid;
         BitFlags = bitFlags;
+        IsInstanceIdentityDecoded = isInstanceIdentityDecoded;
+        AreInputLinksDecoded = areInputLinksDecoded;
         originalRecord = originalRecordBytes.ToArray();
         InputLinks = Array.AsReadOnly(inputLinks.ToArray());
     }

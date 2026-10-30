@@ -19,7 +19,7 @@ public sealed class GraphIdentityScope
     public GraphNodeIdentity RegisterCapturedNode(GraphNodeSnapshot node)
     {
         ArgumentNullException.ThrowIfNull(node);
-        return new GraphNodeIdentity(this, InstanceIdentity.ResolveStored(node.StoredInstanceGuid));
+        return new GraphNodeIdentity(this, node.IsInstanceIdentityDecoded ? InstanceIdentity.ResolveStored(node.StoredInstanceGuid) : null);
     }
 
     /// <summary>Bind host-supplied node correspondence; do not match labels, GUIDs or stored indices.</summary>
@@ -36,9 +36,9 @@ public sealed class GraphNodeIdentity
 {
     private readonly GraphIdentityScope owner;
     // Registration-time identity provenance; this token is not a mutable CSObject.
-    public InstanceIdentity InitialIdentity { get; }
+    public InstanceIdentity? InitialIdentity { get; }
 
-    internal GraphNodeIdentity(GraphIdentityScope owner, InstanceIdentity identity)
+    internal GraphNodeIdentity(GraphIdentityScope owner, InstanceIdentity? identity)
     {
         this.owner = owner;
         InitialIdentity = identity;

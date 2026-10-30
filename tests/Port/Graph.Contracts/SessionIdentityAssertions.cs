@@ -29,7 +29,7 @@ public static class SessionIdentityAssertions
         var scope = new GraphIdentityScope(original);
         var initial = scope.InitialView;
         var a = initial.NodeIdentities[0]; var b = initial.NodeIdentities[1];
-        Check(!ReferenceEquals(a, b) && a.InitialIdentity.EffectiveGuid == b.InitialIdentity.EffectiveGuid, "Duplicate GUID records collapsed/repaired");
+        Check(!ReferenceEquals(a, b) && a.InitialIdentity!.EffectiveGuid == b.InitialIdentity!.EffectiveGuid, "Duplicate GUID records collapsed/repaired");
         var address = initial.AddressParameter(0, "Value");
         Check(address.Equals(a.AddressParameter("Value")), "Stable node address creation");
         Check(address.GetHashCode() == a.AddressParameter("Value").GetHashCode(), "Stable address hash");
@@ -49,7 +49,7 @@ public static class SessionIdentityAssertions
 
         var guidChanged = Node("Renamed", Guid.NewGuid().ToString());
         var guidView = scope.CreateView(new GraphSnapshot(new[] { guidChanged, originalB }), new[] { a, b });
-        Check(ReferenceEquals(guidView.ResolveNode(address), guidChanged) && a.InitialIdentity.EffectiveGuid == guid, "Explicit metadata mapping changed registration identity provenance");
+        Check(ReferenceEquals(guidView.ResolveNode(address), guidChanged) && a.InitialIdentity!.EffectiveGuid == guid, "Explicit metadata mapping changed registration identity provenance");
 
         var removed = scope.CreateView(new GraphSnapshot(new[] { originalB }), new[] { b });
         Throws<KeyNotFoundException>(() => removed.ResolveNode(address));
@@ -88,7 +88,7 @@ public static class SessionIdentityAssertions
         var legacyScope = new GraphIdentityScope(new GraphSnapshot(new[] { legacyNode }));
         var legacyIdentity = legacyScope.InitialView.NodeIdentities[0];
         var legacyView = legacyScope.CreateView(new GraphSnapshot(new[] { legacyNode }), new[] { legacyIdentity });
-        Check(ReferenceEquals(legacyIdentity.InitialIdentity, legacyView.NodeIdentities[0].InitialIdentity) && legacyIdentity.InitialIdentity.WasGenerated, "Runtime GUID regenerated between views");
+        Check(ReferenceEquals(legacyIdentity.InitialIdentity, legacyView.NodeIdentities[0].InitialIdentity) && legacyIdentity.InitialIdentity!.WasGenerated, "Runtime GUID regenerated between views");
 
         Check(!address.Equals((object?)null) && !address.Equals("Value"), "Handle null/type equality");
 

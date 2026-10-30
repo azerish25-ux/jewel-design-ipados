@@ -142,6 +142,22 @@
         "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
         "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs"
       ]
+    },
+    {
+      "path": "src/Port/Documents/LegacyCsg4GraphProjection.cs",
+      "classification": "new decoded/opaque graph projection; preserves raw record provenance",
+      "sources": [
+        "src/Port/Documents/LegacyCsg4Codec.cs",
+        "src/Port/Graph/GraphSnapshot.cs"
+      ]
+    },
+    {
+      "path": "src/Port/Documents/LegacyCsg4EditSession.cs",
+      "classification": "new scalar file-edit coordinator using recovered setter plans and adapted journal; not native snapshot capture",
+      "sources": [
+        "src/Port/Domain/NumericValueState.cs",
+        "src/Port/Graph/UndoJournal.cs"
+      ]
     }
   ]
 }

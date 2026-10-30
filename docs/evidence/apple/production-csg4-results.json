@@ -38,7 +38,7 @@
   "retry": {
     "run": 41002808424,
     "attempt": 2,
-    "status": "confirmed live; failed iPad job only retried after terminal failure"
+    "status": "success; attempt 2 completed with both families passing"
   },
   "scope": "Same production codec reads/rebuilds/edits/reopens the real embedded library fixture on both simulator families; no PC application/native geometry or complete nested checksum validation"
 }

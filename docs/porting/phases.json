@@ -518,12 +518,23 @@
         {
           "id": "P04-T05",
           "title": "Implement no-op save, one-parameter edits and explicit migration policy",
-          "status": "not_started",
+          "status": "in_progress",
           "depends": [
             "P04-T04"
           ],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "src/Port/Documents/LegacyCsg4GraphProjection.cs",
+            "src/Port/Documents/LegacyCsg4EditSession.cs",
+            "src/Port/Graph/GraphSnapshot.cs",
+            "src/Port/Graph/GraphIdentityScope.cs",
+            "tests/Port/Documents.Contracts/ProjectionAssertions.cs",
+            "tests/Port/Documents.Contracts/EditBridgeAssertions.cs",
+            "docs/porting/plans/P04-T05-A01-legacy-edit-bridge.md",
+            "docs/porting/ADR-0006-legacy-scalar-edit-bridge.md"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P04-T05.json"
+          ]
         },
         {
           "id": "P04-T06",

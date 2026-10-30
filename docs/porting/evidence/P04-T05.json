@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P04-T05",
+  "status": "in_progress",
+  "requirementIds": [],
+  "outputs": [
+    "src/Port/Documents/LegacyCsg4GraphProjection.cs",
+    "src/Port/Documents/LegacyCsg4EditSession.cs",
+    "src/Port/Graph/GraphSnapshot.cs",
+    "src/Port/Graph/GraphIdentityScope.cs",
+    "tests/Port/Documents.Contracts/ProjectionAssertions.cs",
+    "tests/Port/Documents.Contracts/EditBridgeAssertions.cs",
+    "docs/porting/plans/P04-T05-A01-legacy-edit-bridge.md",
+    "docs/porting/ADR-0006-legacy-scalar-edit-bridge.md"
+  ],
+  "fixtures": [
+    {
+      "path": "reference/fixtures/library-item-4.csg",
+      "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "P04-T05-A01.1",
+      "scope": "All-slot decoded/opaque metadata projection",
+      "status": "implemented_local"
+    },
+    {
+      "id": "P04-T05-A01.2",
+      "scope": "Handle-based scalar file transactions and rebuilt export",
+      "status": "implemented_local"
+    }
+  ],
+  "checks": [
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests (before projection/bridge implementations)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Documents.Contracts/EditBridgeAssertions.cs",
+      "actual": "RED missing LegacyCsg4GraphProjection, then missing LegacyCsg4EditSession"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/EditBridgeAssertions.cs",
+      "actual": "PASS real handle edits, exact independently verified file hash, grouped scalar undo/redo and rejected-input isolation; codec negative and structural tests remain passing"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Graph.Tests",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Graph.Contracts/SessionIdentityAssertions.cs",
+      "actual": "Existing identity/snapshot and 6130 undo scheduling steps pass with nullable metadata contracts"
+    },
+    {
+      "command": "dotnet build src/Port/Documents --nologo -v:q",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "src/Port/Documents/Documents.csproj",
+      "actual": "zero warnings, zero errors"
+    }
+  ],
+  "review": {
+    "correctness": "No invented opaque flags/GUIDs; one numeric target per record; validation before mutation; raw-value capture and setter restore explicitly scoped",
+    "readability": "Projection and coordinator are separate small modules; decoded states named explicitly",
+    "architecture": "Documents depends on portable Graph/Domain, with no cycle/native dependency; native capture/evaluation remains separate",
+    "security": "No credentials, accounts, scripts or hidden I/O; foreign handles rejected",
+    "performance": "Initial projection linear in archive size; value edits reuse header view and copy immutable record array; bounded history preserves recovered scheduling",
+    "limitations": "Not full native snapshot semantics, CAM/metadata restoration, UI gestures, graph evaluation, geometry or PC application reopening"
+  },
+  "blockers": [
+    "macOS bridge execution pending",
+    "Full P04-T05 still requires all serializer/portfolio/migration coverage and original-PC/native regeneration evidence"
+  ]
+}

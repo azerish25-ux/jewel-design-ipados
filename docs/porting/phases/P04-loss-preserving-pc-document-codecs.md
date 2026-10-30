@@ -130,3 +130,7 @@ These work-card actions are checkpoints, not a claim that a phase takes minutes.
 ## Independent P04-T01-A01
 
 [Legacy library codec plan](../plans/P04-T01-A01-legacy-csg4-codec.md) consumes the existing hash-locked library fixture and portable foundations. It can progress without a Windows oracle, while full P04 retains P02/P03 and PC/native parity gates. [ADR 0005](../ADR-0005-legacy-csg4-codec.md) specifies the supported profiles, opaque coverage and absence of regeneration.
+
+## Independent P04-T05-A01 scalar edit bridge
+
+[Bridge plan](../plans/P04-T05-A01-legacy-edit-bridge.md) consumes the proven legacy codec/identity/numeric/journal child outputs. It establishes archive-data edits, not full native capture, all-serializer migration or application save. [ADR 0006](../ADR-0006-legacy-scalar-edit-bridge.md) defines unknown metadata and the explicit scalar adapter boundary. Parent dependencies remain in force for full task completion.

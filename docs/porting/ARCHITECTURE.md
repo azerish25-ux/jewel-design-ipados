@@ -52,3 +52,5 @@ Implemented portable undo scheduling: [ADR 0003](ADR-0003-portable-undo-journal.
 Session parameter identity: [ADR 0004](ADR-0004-session-parameter-identity.md) defines raw/effective registration GUIDs and explicit identity mappings between captured views; codec persistence remains open.
 
 Production legacy library codec: [ADR 0005](ADR-0005-legacy-csg4-codec.md). The file layer rebuilds records and preserves opaque data; application save still requires graph regeneration and explicit migration/sidecar policies.
+
+Legacy scalar file-edit bridge and unknown-header contracts: [ADR 0006](ADR-0006-legacy-scalar-edit-bridge.md). Exporting archive data is separate from a regenerated application save.

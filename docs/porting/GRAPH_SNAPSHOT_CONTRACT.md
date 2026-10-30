@@ -9,3 +9,5 @@ The model captures data; it does not evaluate, validate an archive schema or reg
 - Original record bytes are opaque provenance. A writer must reconcile known-field edits, unknown regions, version policy and CRC before saving; copying original bytes after an edit would produce stale data.
 - [Snapshot-scoped parameter addresses](ADR-0001-snapshot-parameter-addresses.md) distinguish identical slots without trusting labels or raw GUIDs. Addresses cannot cross snapshots; they do not validate field existence or establish persistent codec identity.
 - Units, persistent cross-load parameter identity, graph scheduling and CAD evaluation remain incomplete work.
+
+Opaque projections use null BitFlags and explicit false identity/link decoded flags. InitialIdentity is null until identity fields are decoded; do not interpret unknown as an absent GUID or disconnected links. [ADR 0006](ADR-0006-legacy-scalar-edit-bridge.md).
