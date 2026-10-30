@@ -3,6 +3,11 @@
 #include <BRepBuilderAPI_MakeEdge.hxx>
 #include <BRepAdaptor_Curve.hxx>
 #include <Geom_Circle.hxx>
+#include <Geom_Line.hxx>
+#include <IntTools_EdgeEdge.hxx>
+#include <cstddef>
+#include <ElCLib.hxx>
+#include <vector>
 #include <GeomAPI_ProjectPointOnCurve.hxx>
 #include <BRep_Tool.hxx>
 #include <Geom_TrimmedCurve.hxx>
@@ -440,6 +445,143 @@ extern "C" int32_t jd_candidate_curve_tangent(uint64_t context,uint64_t shape,do
             const double magnitude=std::hypot(derivative.X(),derivative.Y(),derivative.Z());
             if(!std::isfinite(magnitude)||magnitude<=0)fail(JD_CANDIDATE_KERNEL_FAILURE,"Native tangent is undefined");
             *x=derivative.X()/magnitude;*y=derivative.Y()/magnitude;*z=derivative.Z()/magnitude;
+        });
+    },diagnostic,capacity);
+}
+
+namespace {
+double checkedSegmentLength(double sx,double sy,double sz,double ex,double ey,double ez)
+{
+    for(double coordinate:{sx,sy,sz,ex,ey,ez})if(!std::isfinite(coordinate))
+        fail(JD_CANDIDATE_INVALID_ARGUMENT,"Segment coordinates must be finite");
+    const double length=std::hypot(ex-sx,ey-sy,ez-sz);
+    if(!std::isfinite(length)||length<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Segment must have finite positive length");
+    return length;
+}
+jd_candidate_point3 eventPoint(const gp_Pnt& point)
+{
+    if(!std::isfinite(point.X())||!std::isfinite(point.Y())||!std::isfinite(point.Z()))
+        fail(JD_CANDIDATE_KERNEL_FAILURE,"Nonfinite native intersection point");
+    return {point.X(),point.Y(),point.Z()};
+}
+}
+extern "C" int32_t jd_candidate_line(uint64_t context,double sx,double sy,double sz,double ex,double ey,double ez,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        outputHandle(output);const double length=checkedSegmentLength(sx,sy,sz,ex,ey,ez);
+        withContext(context,[&](Context& value){
+            occ::handle<Geom_Line> line=new Geom_Line(gp_Pnt(sx,sy,sz),gp_Dir(ex-sx,ey-sy,ez-sz));
+            occ::handle<Geom_TrimmedCurve> segment=new Geom_TrimmedCurve(line,0,length);
+            auto spline=GeomConvert::CurveToBSplineCurve(segment);
+            if(spline.IsNull()||spline->Degree()!=1||spline->NbPoles()!=2)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid native linear NURBS");
+            *output=storeCurveEdge(value,spline);
+        });
+    },diagnostic,capacity);
+}
+extern "C" int32_t jd_candidate_curve_line_intersections(uint64_t context,uint64_t shape,double sx,double sy,double sz,double ex,double ey,double ez,double tolerance,jd_candidate_curve_line_event* events,uint32_t event_capacity,uint32_t* count,double* effective_fuzzy,char* diagnostic,uint32_t capacity)
+{
+    static_assert(sizeof(jd_candidate_curve_line_event)==136,"Candidate intersection layout");
+    static_assert(offsetof(jd_candidate_curve_line_event,curve_start_point)==40,"Candidate point layout");
+    return protect([&]{
+        if(!count||!effective_fuzzy)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing intersection count/tolerance output");
+        *count=0;*effective_fuzzy=0;
+        if(!events&&event_capacity)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Null intersection buffer with positive capacity");
+        checkedSegmentLength(sx,sy,sz,ex,ey,ez);
+        if(!std::isfinite(tolerance)||tolerance<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Intersection tolerance must be finite positive");
+        withContext(context,[&](Context& value){
+            const auto& shapeValue=findShape(value,shape).shape;
+            if(shapeValue.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Curve-line intersection requires an edge");
+            const auto curveEdge=TopoDS::Edge(shapeValue);
+            BRepBuilderAPI_MakeEdge segment(gp_Pnt(sx,sy,sz),gp_Pnt(ex,ey,ez));
+            if(!segment.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native segment construction failed");
+            const auto lineEdge=segment.Edge();
+            BRepAdaptor_Curve curve(curveEdge),line(lineEdge);
+            const double aFirst=curve.FirstParameter(),aLast=curve.LastParameter();
+            const double bFirst=line.FirstParameter(),bLast=line.LastParameter();
+            if(!std::isfinite(aFirst)||!std::isfinite(aLast)||!std::isfinite(bFirst)||!std::isfinite(bLast)||aLast<=aFirst||bLast<=bFirst)
+                fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid native intersection domains");
+            // Exact two-pole, non-rational linear NURBS are not approximations.
+            // The general NURBS path classified a partial straight overlap as a point.
+            // Use the kernel's analytic line/line solver and restore source parameters.
+            auto solvingEdge=curveEdge;double solverFirst=aFirst,solverLast=aLast;bool reverseLinear=false;
+            const bool linearNurbs=curve.GetType()==GeomAbs_BSplineCurve&&curve.Degree()==1&&curve.NbPoles()==2&&!curve.IsRational();
+            if(linearNurbs){
+                const auto startPoint=curve.Value(aFirst),endPoint=curve.Value(aLast);
+                reverseLinear=gp_Dir(gp_Vec(startPoint,endPoint)).Dot(line.Line().Direction())<0;
+                // Pinned line/line overlap clipping assumes aligned directions.
+                BRepBuilderAPI_MakeEdge linear(reverseLinear?endPoint:startPoint,reverseLinear?startPoint:endPoint);
+                if(!linear.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Exact linear solver edge failed");
+                solvingEdge=linear.Edge();BRepAdaptor_Curve solverCurve(solvingEdge);
+                solverFirst=solverCurve.FirstParameter();solverLast=solverCurve.LastParameter();
+                if(!std::isfinite(solverFirst)||!std::isfinite(solverLast)||solverLast<=solverFirst)
+                    fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid linear solver domain");
+            }
+            auto sourceParameter=[&](double parameter){
+                if(!linearNurbs)return parameter;
+                if(parameter==solverFirst)return reverseLinear?aLast:aFirst;
+                if(parameter==solverLast)return reverseLinear?aFirst:aLast;
+                const double offset=(parameter-solverFirst)*(aLast-aFirst)/(solverLast-solverFirst);
+                return reverseLinear?aLast-offset:aFirst+offset;
+            };
+            IntTools_EdgeEdge operation(solvingEdge,lineEdge);
+            operation.SetFuzzyValue(tolerance);operation.UseQuickCoincidenceCheck(false);operation.Perform();
+            if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native edge intersection failed");
+            *effective_fuzzy=operation.FuzzyValue();
+            std::vector<jd_candidate_curve_line_event> found;
+            auto endpointRoundoff=[&](double parameter,double first,double last){
+                const double slack=16*std::numeric_limits<double>::epsilon()*std::max({1.0,std::abs(first),std::abs(last)});
+                if(parameter<first&&first-parameter<=slack)return first;
+                if(parameter>last&&parameter-last<=slack)return last;
+                return parameter;
+            };
+            auto append=[&](uint32_t kind,double a0,double a1,double b0,double b1){
+                a0=endpointRoundoff(a0,aFirst,aLast);a1=endpointRoundoff(a1,aFirst,aLast);
+                b0=endpointRoundoff(b0,bFirst,bLast);b1=endpointRoundoff(b1,bFirst,bLast);
+                if(!std::isfinite(a0)||!std::isfinite(a1)||!std::isfinite(b0)||!std::isfinite(b1)||a0>a1||b0>b1||
+                    a0<aFirst||a1>aLast||b0<bFirst||b1>bLast)
+                    fail(JD_CANDIDATE_KERNEL_FAILURE,"Native intersection returned invalid ranges");
+                if(found.size()>=65536)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Candidate intersection event limit exceeded");
+                jd_candidate_curve_line_event event{};
+                event.kind=kind;event.curve_start=a0;event.curve_end=a1;
+                event.line_start=(b0-bFirst)/(bLast-bFirst);event.line_end=(b1-bFirst)/(bLast-bFirst);
+                event.curve_start_point=eventPoint(curve.Value(a0));event.curve_end_point=eventPoint(curve.Value(a1));
+                event.line_start_point=eventPoint(line.Value(b0));event.line_end_point=eventPoint(line.Value(b1));
+                found.push_back(event);
+            };
+            const auto& parts=operation.CommonParts();
+            for(int i=1;i<=parts.Length();i++){
+                const auto& part=parts.Value(i);
+                if(!part.Edge1().IsSame(solvingEdge)||!part.Edge2().IsSame(lineEdge))
+                    fail(JD_CANDIDATE_KERNEL_FAILURE,"Native intersection changed parameter ownership");
+                if(part.Type()==TopAbs_VERTEX){
+                    append(JD_CANDIDATE_POINT,sourceParameter(part.VertexParameter1()),sourceParameter(part.VertexParameter1()),part.VertexParameter2(),part.VertexParameter2());
+                }else if(part.Type()==TopAbs_EDGE){
+                    const auto& ranges=part.Ranges2();
+                    if(ranges.IsEmpty())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native overlap missing second range");
+                    if(linearNurbs){
+                        // The pinned solver clips only one end when B lies inside A.
+                        // For exact lines, intersect finite intervals in native line coordinates.
+                        const auto solverLine=BRepAdaptor_Curve(solvingEdge).Line();
+                        const double p0=ElCLib::Parameter(solverLine,line.Value(bFirst));
+                        const double p1=ElCLib::Parameter(solverLine,line.Value(bLast));
+                        const double begin=std::max(solverFirst,std::min(p0,p1)),end=std::min(solverLast,std::max(p0,p1));
+                        if(end<begin)fail(JD_CANDIDATE_KERNEL_FAILURE,"Native overlap has no finite common interval");
+                        const double sourceFirst=sourceParameter(begin),sourceLast=sourceParameter(end);
+                        const double lineFirst=ElCLib::Parameter(line.Line(),ElCLib::Value(begin,solverLine));
+                        const double lineLast=ElCLib::Parameter(line.Line(),ElCLib::Value(end,solverLine));
+                        append(JD_CANDIDATE_OVERLAP,std::min(sourceFirst,sourceLast),std::max(sourceFirst,sourceLast),std::min(lineFirst,lineLast),std::max(lineFirst,lineLast));
+                    }else{
+                        for(int j=1;j<=ranges.Length();j++)append(JD_CANDIDATE_OVERLAP,part.Range1().First(),part.Range1().Last(),ranges.Value(j).First(),ranges.Value(j).Last());
+                    }
+                }else fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Unknown native intersection event");
+            }
+            std::stable_sort(found.begin(),found.end(),[](const auto& a,const auto& b){
+                return a.curve_start<b.curve_start||(a.curve_start==b.curve_start&&a.line_start<b.line_start);
+            });
+            *count=static_cast<uint32_t>(found.size());
+            if(!events&&!event_capacity)return;
+            if(event_capacity<found.size())fail(JD_CANDIDATE_INVALID_ARGUMENT,"Intersection buffer too small");
+            std::copy(found.begin(),found.end(),events);
         });
     },diagnostic,capacity);
 }

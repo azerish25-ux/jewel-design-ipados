@@ -51,6 +51,20 @@ int32_t jd_candidate_curve_reverse(uint64_t context,uint64_t shape,uint64_t* out
 int32_t jd_candidate_curve_join(uint64_t context,uint64_t first,uint64_t second,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity);
 /* Unit tangent from actual native derivative; parameter must lie within edge domain. */
 int32_t jd_candidate_curve_tangent(uint64_t context,uint64_t shape,double parameter,double* x,double* y,double* z,char* diagnostic,uint32_t capacity);
+
+enum jd_candidate_curve_line_kind { JD_CANDIDATE_POINT=1, JD_CANDIDATE_OVERLAP=2 };
+typedef struct jd_candidate_point3 { double x,y,z; } jd_candidate_point3;
+typedef struct jd_candidate_curve_line_event {
+    uint32_t kind,reserved;
+    double curve_start,curve_end,line_start,line_end;
+    jd_candidate_point3 curve_start_point,curve_end_point,line_start_point,line_end_point;
+} jd_candidate_curve_line_event;
+int32_t jd_candidate_line(uint64_t context,double sx,double sy,double sz,double ex,double ey,double ez,uint64_t* output,char* diagnostic,uint32_t capacity);
+/* Two-pass counted query. Null events/zero event_capacity queries count.
+ * Short buffers receive required count, InvalidArgument, and no event writes.
+ * Ranges are independently ascending; line parameters are fractions of segment.
+ * Effective fuzzy tolerance includes the kernel minimum; edge tolerances also apply. */
+int32_t jd_candidate_curve_line_intersections(uint64_t context,uint64_t shape,double sx,double sy,double sz,double ex,double ey,double ez,double tolerance,jd_candidate_curve_line_event* events,uint32_t event_capacity,uint32_t* count,double* effective_fuzzy,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

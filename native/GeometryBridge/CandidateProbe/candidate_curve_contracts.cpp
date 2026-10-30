@@ -84,6 +84,34 @@ void run_candidate_curve_contracts()
     checkCurve(jd_candidate_curve_join(context.id,secondArc,quarter,1e-8,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Unordered native join accepted");
     ok(jd_candidate_shape_release(context.id,secondArc,error,sizeof(error)));ok(jd_candidate_shape_release(context.id,joined,error,sizeof(error)));
     ok(jd_candidate_shape_release(context.id,quarter,error,sizeof(error)));ok(jd_candidate_shape_release(context.id,reversed,error,sizeof(error)));
+
+    uint32_t eventCount=0;double eventFuzzy=0;
+    auto intersections=[&](uint64_t shape,double sx,double sy,double sz,double ex,double ey,double ez,jd_candidate_curve_line_event* events,uint32_t size){
+        return jd_candidate_curve_line_intersections(context.id,shape,sx,sy,sz,ex,ey,ez,1e-6,events,size,&eventCount,&eventFuzzy,error,sizeof(error));
+    };
+    ok(intersections(circle,-200,0,0,200,0,0,nullptr,0));checkCurve(eventCount==2,"Native diameter event count");nearCurve(eventFuzzy,1e-6);
+    jd_candidate_curve_line_event eventBuffer[2]{};eventBuffer[0].kind=99;
+    checkCurve(intersections(circle,-200,0,0,200,0,0,eventBuffer,1)==JD_CANDIDATE_INVALID_ARGUMENT&&eventCount==2&&eventBuffer[0].kind==99,"Short event buffer wrote partial data");
+    checkCurve(intersections(circle,-200,0,0,200,0,0,nullptr,1)==JD_CANDIDATE_INVALID_ARGUMENT,"Null counted event buffer accepted");
+    ok(intersections(circle,-200,0,0,200,0,0,eventBuffer,2));
+    checkCurve(eventCount==2&&eventBuffer[0].kind==JD_CANDIDATE_POINT&&eventBuffer[1].kind==JD_CANDIDATE_POINT,"Native diameter event type");
+    nearCurve(eventBuffer[0].curve_start,pi/2);nearCurve(eventBuffer[1].curve_start,3*pi/2);
+    nearCurve(eventBuffer[0].line_start,.5175);nearCurve(eventBuffer[0].curve_start_point.x,7);nearCurve(eventBuffer[0].line_start_point.x,7);
+    ok(intersections(circle,0,0,0,6,0,0,nullptr,0));checkCurve(eventCount==0,"Native finite segment extended");
+    ok(intersections(circle,-20,3,0,20,3,0,nullptr,0));checkCurve(eventCount==0,"Native skew segment projected to plane");
+    checkCurve(jd_candidate_curve_line_intersections(context.id,circle,0,0,0,100,0,0,1e-6,nullptr,0,nullptr,&eventFuzzy,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Missing event count accepted");
+    checkCurve(jd_candidate_curve_line_intersections(context.id,circle,0,0,0,100,0,0,0,nullptr,0,&eventCount,&eventFuzzy,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Invalid event tolerance accepted");
+    checkCurve(intersections(circle,0,0,0,0,0,0,nullptr,0)==JD_CANDIDATE_INVALID_ARGUMENT,"Degenerate event segment accepted");
+    checkCurve(intersections(box,0,0,0,100,0,0,nullptr,0)==JD_CANDIDATE_UNSUPPORTED_OPERATION,"Solid produced native curve events");
+    uint64_t linear=0;ok(jd_candidate_line(context.id,0,0,0,10,0,0,&linear,error,sizeof(error)));
+    ok(intersections(linear,12,0,0,3,0,0,eventBuffer,2));
+    checkCurve(eventCount==1&&eventBuffer[0].kind==JD_CANDIDATE_OVERLAP,"Native reversed overlap lost");
+    nearCurve(eventBuffer[0].curve_start,3);nearCurve(eventBuffer[0].curve_end,10);
+    nearCurve(eventBuffer[0].curve_start_point.x,3);nearCurve(eventBuffer[0].curve_end_point.x,10);
+    nearCurve(eventBuffer[0].line_start_point.x,10);nearCurve(eventBuffer[0].line_end_point.x,3);
+    ok(jd_candidate_curve_point(context.id,linear,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,0);
+    ok(jd_candidate_shape_release(context.id,linear,error,sizeof(error)));
+    rejected=99;checkCurve(jd_candidate_line(context.id,1,2,3,1,2,3,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"Degenerate native line created");
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }

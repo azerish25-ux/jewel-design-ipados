@@ -67,7 +67,13 @@
     "docs/evidence/apple/native-arc-length-results.json",
     "docs/porting/plans/P05-T02-A13-native-tangents.md",
     "docs/porting/ADR-0017-candidate-unit-tangents.md",
-    "docs/evidence/apple/native-affine-device-results.json"
+    "docs/evidence/apple/native-affine-device-results.json",
+    "src/Port/Geometry.Candidate/CandidateCurveLineTypes.cs",
+    "src/Port/Geometry.Candidate/CandidateContext.CurveLine.cs",
+    "tests/Port/Geometry.Candidate.Contracts/CurveLineAssertions.cs",
+    "docs/porting/plans/P05-T02-A14-curve-line-events.md",
+    "docs/porting/ADR-0018-candidate-curve-line-events.md",
+    "docs/evidence/apple/native-affine-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -114,6 +120,46 @@
       "path": ".local/native/occt-source/src/ModelingData/TKBRep/BRepAdaptor/BRepAdaptor_Curve.hxx",
       "sha256": "6252f25dec42c1b04615cee34c12770df48e6d243b73780e5a605dcace02a79b",
       "scope": "P05-T02-A13 tangent source and pinned derivative API; SDK source local-only"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+      "sha256": "33aa3bd1e6dddc2b5332bd1ef350d30751aebb5d93440eda00f5ba9e81d2ea1a",
+      "scope": "P05-T02-A14 recovered finite rays/locked splits and pinned native event/range API; SDK remains local-only"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilRingRail.cs",
+      "sha256": "5cd38b0e906a051e19c755017699d47589a452ef93a8fe4d75921d8142faead6",
+      "scope": "P05-T02-A14 recovered finite rays/locked splits and pinned native event/range API; SDK remains local-only"
+    },
+    {
+      "path": ".local/native/occt-source/src/ModelingAlgorithms/TKBO/IntTools/IntTools_EdgeEdge.hxx",
+      "sha256": "c1b7fb2385c87c6d834c8a8949765ac2e10bb24b8d7ea07b8d7fec6e962c936d",
+      "scope": "P05-T02-A14 recovered finite rays/locked splits and pinned native event/range API; SDK remains local-only"
+    },
+    {
+      "path": ".local/native/occt-source/src/ModelingAlgorithms/TKBO/IntTools/IntTools_EdgeEdge.lxx",
+      "sha256": "5377a2253b1999e1b1a116f1c622f34bfa84aeef2201df1c6a85327353208147",
+      "scope": "P05-T02-A14 recovered finite rays/locked splits and pinned native event/range API; SDK remains local-only"
+    },
+    {
+      "path": ".local/native/occt-source/src/ModelingAlgorithms/TKBO/IntTools/IntTools_EdgeEdge.cxx",
+      "sha256": "9c7eec8d48338d5a39825e5f2637516208533af4f6acf24b4a74f600365e6362",
+      "scope": "P05-T02-A14 recovered finite rays/locked splits and pinned native event/range API; SDK remains local-only"
+    },
+    {
+      "path": ".local/native/occt-source/src/ModelingAlgorithms/TKBO/IntTools/IntTools_CommonPrt.hxx",
+      "sha256": "9c0c74442c99efad50cfa669edc74af72f2f173e5958b7dc0c07a631930af350",
+      "scope": "P05-T02-A14 recovered finite rays/locked splits and pinned native event/range API; SDK remains local-only"
+    },
+    {
+      "path": ".local/native/occt-source/src/ModelingData/TKGeomBase/GeomConvert/GeomConvert.cxx",
+      "sha256": "9173d417304de1ec43865a08fc5d308a8b3664db14705398e715c3434ef950ab",
+      "scope": "P05-T02-A14 recovered finite rays/locked splits and pinned native event/range API; SDK remains local-only"
+    },
+    {
+      "path": ".local/native/occt-source/src/FoundationClasses/TKMath/ElCLib/ElCLib.hxx",
+      "sha256": "8c22ffa6bed2f285826bc399b42f34e67b7a27298f1adc1e47ad1655aeddd44f",
+      "scope": "P05-T02-A14 recovered finite rays/locked splits and pinned native event/range API; SDK remains local-only"
     }
   ],
   "subtasks": [
@@ -160,7 +206,7 @@
     {
       "id": "P05-T02-A09",
       "scope": "Copied actual native affine BRep transformations with fixed-layout counted coefficients",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_native_affine"
     },
     {
       "id": "P05-T02-A10",
@@ -180,6 +226,11 @@
     {
       "id": "P05-T02-A13",
       "scope": "Actual native bounded unit tangent through managed ownership adapter for recovered outside-rail direction branch",
+      "status": "local_native_verified_apple_pending"
+    },
+    {
+      "id": "P05-T02-A14",
+      "scope": "Finite native3D curve-line Point/Overlap events, exact linear NURBS construction and managed counted-event ownership bridge",
       "status": "local_native_verified_apple_pending"
     }
   ],
@@ -329,6 +380,28 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "actual": "Actual C ABI and CSharp tangent tests pass50 independent unit directions, domain endpoints, transformed derivative normalization, trim/reverse sign, source preservation, invalid/null/solid requests and all prior native/managed/ring contracts. Existing Standard_Failure.GetMessageString native deprecation warnings remain; log .local/evidence/P05-T02-A08/tangent-host-proof.log"
+    },
+    {
+      "subtaskId": "P05-T02-A14",
+      "command": "dotnet build Geometry.Candidate.Contracts before CreateLine/IntersectCurveLine",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED26 missing API/DTO errors before implementation; initial D: NuGet I/O error retried after5 seconds and excluded from product evidence; .local/evidence/P05-T02-A14/red.txt"
+    },
+    {
+      "subtaskId": "P05-T02-A14",
+      "command": "Actual overlap regression during native implementation",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "Native general NURBS path returned Point at6.499999400000117 for partial straight overlap; exact linear native representation required. Reversed analytic clipping returned A0..7 while B covered X10..3. Contained query returned A2..10/B0..16 beyond finite B0..12. Tests retained; fixed exact linear native representation/orientation/domain mapping, no curved approximation."
+    },
+    {
+      "subtaskId": "P05-T02-A14",
+      "command": "node scripts/build-native-windows.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Native C ABI and managed actual finite3D event assertions pass diameter/rays/short/skew/tangent/trim/3D crossings, point/overlap/reversed/contained/scaled/3D endpoint ranges, original parameter fidelity, fuzzy metadata, invalid inputs, short/null buffers with no partial writes and zero retained shape entries. All earlier geometry/ownership/ring contracts pass; existing native deprecated-message warnings remain.",
+      "artifact": ".local/evidence/P05-T02-A14/host-proof.log"
     }
   ],
   "review": {
@@ -352,7 +425,8 @@
     "affine": "Pinned gp_GTrsf SetValue/SetForm/IsSingular and GTransform Copy=true inspected. Matrix width/layout/count explicit; native input bounds/finiteness checked, result owned and validated, CSharp existing gated factory/SafeHandle lifetime reused. No full source caller singular/orientation/PC semantics claimed; Apple proof pending.",
     "closestPoint": "Pinned bounded GeomAPI_ProjectPointOnCurve and located BRep_Tool::Curve overload inspected. Native extrema IsDone checked; endpoints compared; no invented point after failure. Equal-candidate ordering is explicitly candidate behavior. Finite/domain/output/ownership checks reused; future open/general/degenerate/Rhino-tie/tolerance/PC tests and Apple proof remain incomplete.",
     "trimReverse": "Pinned Segment/Reverse and BRep edge creation inspected. Deep located curve copies, explicit supported interval/domain, geometry reversal, owned edges and typed errors reuse existing boundary. Open-end projection now tested. Inspection precision bug diagnosed with actual values and tightened native integration. Original caller/periodicity/seam/PC/physical policies and Apple proof remain open.",
-    "orderedJoin": "Pinned native concatenation constructor/Add flags inspected. Input curves copied and restricted; endpoint continuity checked before native append; actual validated BRep output and existing context/SafeHandle lifetime reused. Uniform-ratio native parameterization and ordered-only policy are candidate behavior, not original Rhino join/output equivalence. Apple/full outside-rail/PC/physical checks remain open."
+    "orderedJoin": "Pinned native concatenation constructor/Add flags inspected. Input curves copied and restricted; endpoint continuity checked before native append; actual validated BRep output and existing context/SafeHandle lifetime reused. Uniform-ratio native parameterization and ordered-only policy are candidate behavior, not original Rhino join/output equivalence. Apple/full outside-rail/PC/physical checks remain open.",
+    "curveLine": "Reviewed native buffer count/capacity,136-byte nested blittable layout, exception/status paths, finite/range guards, no original input mutation, exact linear mapping rather than curved approximation, immutable managed results and SafeHandle leases. Candidate source ordering/fuzzy/complexity and arbitrary imported overlaps remain explicit gates; no full parity row closed."
   },
   "blockers": [
     "Full CAD semantic mapping/candidate acceptance and broader recovered trim safety remain incomplete",
@@ -483,7 +557,7 @@
       "id": 41049833154,
       "commit": "c77a316",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41049833154",
-      "verification": "Host/iPad/iPhone affine operation runtime dispatched; terminal proof pending"
+      "verification": "SUCCESS: host/iPad/iPhone native and CSharp affine assertions passed; actual family reports/hash recorded in native-affine-results.json"
     },
     {
       "id": 41049836353,

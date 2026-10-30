@@ -26,6 +26,8 @@ for i in $(seq 1 120); do
   grep -q '^PASS managed candidate ABI:' "$OUT/result.txt"
   grep -q 'PASS candidate native curves:' "$OUT/result.txt"
   grep -q 'PASS ring rail candidate:' "$OUT/result.txt"
+  grep -q 'native-curve-line-events=pass;' "$OUT/result.txt"
+  grep -q 'PASS native finite curve-line events:' "$OUT/result.txt"
   exit 0
  fi
  sleep 1

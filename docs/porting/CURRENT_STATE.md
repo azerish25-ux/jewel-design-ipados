@@ -56,11 +56,10 @@ The RingRail candidate is verified on Windows/iPad/iPhone, with unsigned device 
 
 Normalized arc-length inversion is verified on iPad/iPhone and unsigned arm64 iOS build: [arc-length results](../evidence/apple/native-arc-length-results.json). Native and managed paths pass50 analytic samples; device build52 warnings/0 errors. Solver tolerance is not established Rhino equivalence.
 
-Later operations pass local native/CSharp tests but await Apple results:
+Later operations have local passes; Apple verification is not yet recorded in this table:
 
 | Operation | Runtime | Unsigned device |
 | --- | --- | --- |
-| Affine scale/shear/translation | [41049833154](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41049833154) | [41049836353](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41049836353) |
 | Bounded closest point | [41050888195](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41050888195) | [41050890977](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41050890977) |
 | NURBS trim/reverse | [41051769607](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051769607) | [41051772180](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051772180) |
 | Ordered pair join | [41052693327](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41052693327) | [41052697300](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41052697300) |
@@ -74,3 +73,7 @@ Next: preserve live/queued Apple jobs and inspect their reports before changing 
 P05-T02-A13 adds actual native unit tangents via pinned EvalD1 and CSharp SafeHandles. Windows C ABI/CSharp tests pass50 analytic unit directions, endpoints, trim/reverse sign, affine normalization, translation and invalid-input guards. Apple proof pending; see [ADR0017](ADR-0017-candidate-unit-tangents.md). Earlier affine unsigned device run41049836353 passed; its full artifact and runtime gates remain under review.
 
 Tangent checkpoint89ec814 dispatched [native host/iPad/iPhone41054794303](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41054794303) and [unsigned device41054797842](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41054797842). Host confirmed running; Apple queued. Affine [device artifact](../evidence/apple/native-affine-device-results.json) confirms arm64/platform IOS,52 warnings/0 errors; runtime proof remains live.
+
+Affine scale/shear/translation/source preservation is now bounded-verified on iPad/iPhone and unsigned device: [reports](../evidence/apple/native-affine-results.json). Original Rhino policy and physical-device gates remain open.
+
+P05-T02-A14 adds real finite3D curve-line point/overlap events, exact linear NURBS and immutable counted CSharp event results. Windows native/CSharp tests pass finite axis rays, diameter/tangent/trim/skew/3D cases and reversed/scaled/contained overlaps with source parameters retained; native buffer guards reject partial writes. [ADR0018](ADR-0018-candidate-curve-line-events.md) records pinned-kernel overlap corrections, explicit fuzzy metadata and ordering/coverage limits. Apple tests pending; full OutsideRail still needs accurate bounds, closed seam relocation and recovered caller/graph composition.

@@ -62,6 +62,7 @@ public static class Assertions
         Check(NativeMethods.ContextLiveShapesRaw(id,out count,message,256)==(int)CandidateNativeStatus.InvalidContext,"Last child did not release native parent");
         var curves=CurveAssertions.Run();
         var ringRail=RingRailAssertions.Run();
-        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail;
+        var curveLine=CurveLineAssertions.Run();
+        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine;
     }
 }
