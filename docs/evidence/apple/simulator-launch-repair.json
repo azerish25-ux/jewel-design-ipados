@@ -1,0 +1,46 @@
+{
+  "taskId": "P01-T06-A01",
+  "status": "local_regressions_pass_apple_pending",
+  "observedFailedRun": 41046672575,
+  "observedFailedCommit": "dae97a13bcbf7387afacda8b3e71ab94a72a4e27",
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41046672575",
+  "cause": "Background console launch and60 one-second polls expired before delayed startup. Console subsequently recorded passing checks. Old result files were also accepted without launch freshness.",
+  "red": {
+    "command": "node scripts/run-local.cjs node --test tests/simulator-launch.test.cjs",
+    "exitCode": 1,
+    "failures": [
+      "delayed fresh result missed",
+      "stale PASS incorrectly accepted"
+    ]
+  },
+  "green": {
+    "command": "node scripts/run-local.cjs node --test tests/ios-device.test.cjs tests/simulator-launch.test.cjs",
+    "exitCode": 0,
+    "passed": 9,
+    "failed": 0
+  },
+  "inputs": [
+    {
+      "path": ".local/evidence/reuse-failure-41046672575/app-console.txt",
+      "sha256": "a0556d21f869ffdd49fae8bbb2dd659b68cda1f5fc6268be5b83b6b473c1b361"
+    },
+    {
+      "path": ".local/evidence/reuse-failure-41046672575/app-system.log",
+      "sha256": "70f3a2d3c2aa5ec5342fc666b6bda2c90f8c8c3e89e43e076c09d644652bfd85"
+    },
+    {
+      "path": "scripts/run-simulator.sh",
+      "sha256": "43b61207a916afa90557f1c6a1f94576ec6ea38821fa235b11b39deff0aeba69"
+    },
+    {
+      "path": "tests/iOS/Main.cs",
+      "sha256": "8816bc24378a6bbefa9cea1107d4ae8337eed67d78871c4b04e5944adcbfb948"
+    },
+    {
+      "path": "tests/simulator-launch.test.cjs",
+      "sha256": "8d3113ef6d8ba28e597587a4d802e3910187b7a4a2422935355144f593539dd2"
+    }
+  ],
+  "scope": "Mocked simctl scheduling/file publication tests exercise real Bash harness only; not iOS execution. Real Apple rerun pending. Original assertions retained; no feature or PC parity claim.",
+  "review": "Reviewed correctness, freshness, failure propagation, bounded scheduling, architecture/security and unchanged source provenance. Terminate earlier process before clearing output to prevent stale publication race. Actual Apple rerun still required."
+}

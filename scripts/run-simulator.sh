@@ -10,10 +10,12 @@ UDID=$(node -p 'require("./artifacts/selected-device.json").udid')
 xcrun simctl boot "$UDID" || true
 xcrun simctl bootstatus "$UDID" -b
 xcrun simctl install "$UDID" "$APP"
-xcrun simctl launch --console-pty --terminate-running-process "$UDID" com.jeweldesign.reusesmoke > artifacts/app-console.txt 2>&1 &
-LAUNCH_PID=$!
 DATA=$(xcrun simctl get_app_container "$UDID" com.jeweldesign.reusesmoke data)
-for i in $(seq 1 60); do
+# Stop an earlier process before clearing its output, then require fresh evidence.
+xcrun simctl terminate "$UDID" com.jeweldesign.reusesmoke >/dev/null 2>&1 || true
+rm -f "$DATA/Documents/reuse-result.txt" "$DATA/Documents/reuse-result.txt.family" "$DATA/Documents/reuse-result.txt.started" "$DATA/Documents/reuse-result.txt.pending"
+xcrun simctl launch --terminate-running-process "$UDID" com.jeweldesign.reusesmoke | tee artifacts/app-launch.txt
+for i in $(seq 1 300); do
   if test -f "$DATA/Documents/reuse-result.txt"; then
     cp "$DATA/Documents/reuse-result.txt" artifacts/simulator-result.txt
     cat artifacts/simulator-result.txt
@@ -24,7 +26,7 @@ for i in $(seq 1 60); do
   fi
   sleep 1
 done
-cat artifacts/app-console.txt || true
+test ! -f "$DATA/Documents/reuse-result.txt.started" || cp "$DATA/Documents/reuse-result.txt.started" artifacts/app-started.txt
 find "$DATA" -maxdepth 3 -name 'reuse-result*' -print
 xcrun simctl spawn "$UDID" log show --last 4m --predicate 'eventMessage CONTAINS[c] "com.jeweldesign.reusesmoke" OR process == "iOS"' > artifacts/app-system.log || true
 mkdir -p artifacts/crash-reports

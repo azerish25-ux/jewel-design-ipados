@@ -10,6 +10,7 @@ on:
       - "scripts/run-simulator.sh"
       - "scripts/ios-device.cjs"
       - "tests/ios-device.test.cjs"
+      - "tests/simulator-launch.test.cjs"
       - "scripts/verify-production.cjs"
       - "scripts/verify-numeric-oracle.cjs"
       - "tests/numeric-oracle.test.cjs"
@@ -67,7 +68,7 @@ jobs:
         run: dotnet build tests/iOS -c Debug -r iossimulator-arm64 -p:EnableCodeSigning=true -p:CodesignKey=- -p:CodesignRequireProvisioningProfile=false -p:MtouchDebug=false -p:EnableDiagnostics=false -bl:artifacts/simulator.binlog | tee artifacts/simulator-build.txt
       - name: Run requested simulator family
         if: matrix.target != 'device'
-        timeout-minutes: 8
+        timeout-minutes: 20
         run: SIMULATOR_FAMILY=${{ matrix.target }} bash scripts/run-simulator.sh
       - name: Build unsigned device AOT app
         if: matrix.target == 'device'

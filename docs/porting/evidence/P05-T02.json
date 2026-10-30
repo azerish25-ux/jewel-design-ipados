@@ -63,7 +63,8 @@
     "docs/porting/plans/P05-T02-A11-trim-reverse.md",
     "docs/porting/ADR-0015-candidate-trim-reverse.md",
     "docs/porting/plans/P05-T02-A12-ordered-curve-join.md",
-    "docs/porting/ADR-0016-candidate-ordered-join.md"
+    "docs/porting/ADR-0016-candidate-ordered-join.md",
+    "docs/evidence/apple/native-arc-length-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -126,7 +127,7 @@
     {
       "id": "P05-T02-A08",
       "scope": "Actual native normalized arc-length parameter inversion through managed ownership adapter",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_native_arc_length"
     },
     {
       "id": "P05-T02-A09",
@@ -425,13 +426,13 @@
       "id": 41048645156,
       "commit": "4d8bb800b74bcb7c0b1f8cc8844d0a60ba033643",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41048645156",
-      "verification": "Host/iPad/iPhone normalized length mapping and existing native/managed/ring assertions dispatched and confirmed live/queued; terminal result pending"
+      "verification": "SUCCESS: host/iPad/iPhone native50-sample and CSharp normalized arc-length assertions passed; full reports/hash/family saved in native-arc-length-results.json"
     },
     {
       "id": 41048648756,
       "commit": "4d8bb800b74bcb7c0b1f8cc8844d0a60ba033643",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41048648756",
-      "verification": "Unsigned device normalized length adapter build dispatched and confirmed live/queued; terminal result pending"
+      "verification": "SUCCESS: unsigned arm64/platform IOS device build52 warnings0 errors; not physical execution"
     },
     {
       "id": 41049833154,
@@ -468,6 +469,18 @@
       "commit": "a069861",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051772180",
       "verification": "Unsigned device trim-reverse adapter build dispatched; terminal result inspection pending"
+    },
+    {
+      "id": 41052693327,
+      "commit": "d0936e4f6ca134d7b388edac844a8189cc3375e4",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41052693327",
+      "verification": "Ordered native join host/iPad/iPhone runtime dispatched; terminal evidence pending"
+    },
+    {
+      "id": 41052697300,
+      "commit": "d0936e4f6ca134d7b388edac844a8189cc3375e4",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41052697300",
+      "verification": "Ordered native join unsigned device build dispatched; terminal evidence pending"
     }
   ]
 }

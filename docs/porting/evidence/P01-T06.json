@@ -6,7 +6,10 @@
     "scripts/ios-device.cjs",
     "tests/ios-device.test.cjs",
     "scripts/run-simulator.sh",
-    "docs/evidence/apple/device-family-results.json"
+    "docs/evidence/apple/device-family-results.json",
+    "tests/simulator-launch.test.cjs",
+    "docs/evidence/apple/simulator-launch-repair.json",
+    "docs/porting/plans/P01-T06-A01-fresh-simulator-launch.md"
   ],
   "fixtures": [],
   "checks": [
@@ -38,5 +41,10 @@
       "verification": "pending"
     }
   ],
-  "nextAction": "Poll this same run; inspect all family assertions and AOT warnings before closing the task. Do not infer physical-device or full application parity."
+  "nextAction": "Observe actual iPad/iPhone run on repaired launcher. Keep prior family proof distinct from repair verification; full app/PC/physical gates remain open.",
+  "followUp": {
+    "id": "P01-T06-A01",
+    "status": "local_regressions_pass_apple_pending",
+    "evidence": "docs/evidence/apple/simulator-launch-repair.json"
+  }
 }
