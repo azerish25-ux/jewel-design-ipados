@@ -54,3 +54,5 @@ Session parameter identity: [ADR 0004](ADR-0004-session-parameter-identity.md) d
 Production legacy library codec: [ADR 0005](ADR-0005-legacy-csg4-codec.md). The file layer rebuilds records and preserves opaque data; application save still requires graph regeneration and explicit migration/sidecar policies.
 
 Legacy scalar file-edit bridge and unknown-header contracts: [ADR 0006](ADR-0006-legacy-scalar-edit-bridge.md). Exporting archive data is separate from a regenerated application save.
+
+Saved portfolio XML metadata: [ADR 0007](ADR-0007-portfolio-xml-metadata.md) preserves unknown data and keeps Windows paths inert; native loading and package reconciliation remain separate.

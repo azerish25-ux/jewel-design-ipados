@@ -498,12 +498,23 @@
         {
           "id": "P04-T03",
           "title": "Implement portfolio XML, paired GUID filenames, sidecars, previews and history",
-          "status": "not_started",
+          "status": "in_progress",
           "depends": [
             "P04-T02"
           ],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "src/Port/Documents/LegacyPortfolioXmlCodec.cs",
+            "src/Port/Documents/LegacyDesignFileKey.cs",
+            "tools/PortfolioContractGenerator/PortfolioContractGenerator.csproj",
+            "tools/PortfolioContractGenerator/Program.cs",
+            "tests/Port/Documents.Contracts/Recovered/PortfolioSchema.cs",
+            "tests/Port/Documents.Contracts/PortfolioAssertions.cs",
+            "docs/porting/plans/P04-T03-A01-portfolio-xml.md",
+            "docs/porting/ADR-0007-portfolio-xml-metadata.md"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P04-T03.json"
+          ]
         },
         {
           "id": "P04-T04",

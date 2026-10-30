@@ -13,6 +13,7 @@ on:
       - "scripts/verify-production.cjs"
       - "scripts/verify-numeric-oracle.cjs"
       - "tests/numeric-oracle.test.cjs"
+      - "tools/PortfolioContractGenerator/**"
       - ".github/workflows/ios-reuse.yml"
   workflow_dispatch:
 permissions:
@@ -48,6 +49,7 @@ jobs:
           node scripts/verify-sources.cjs
           node scripts/verify-production.cjs
           node --test tests/numeric-oracle.test.cjs
+          node scripts/run-local.cjs dotnet run --project tools/PortfolioContractGenerator -- "$GITHUB_WORKSPACE" --verify
       - name: Install iOS workload
         run: dotnet workload install ios --version 10.0.302.0
       - name: Record toolchain

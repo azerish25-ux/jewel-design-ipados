@@ -134,3 +134,7 @@ These work-card actions are checkpoints, not a claim that a phase takes minutes.
 ## Independent P04-T05-A01 scalar edit bridge
 
 [Bridge plan](../plans/P04-T05-A01-legacy-edit-bridge.md) consumes the proven legacy codec/identity/numeric/journal child outputs. It establishes archive-data edits, not full native capture, all-serializer migration or application save. [ADR 0006](../ADR-0006-legacy-scalar-edit-bridge.md) defines unknown metadata and the explicit scalar adapter boundary. Parent dependencies remain in force for full task completion.
+
+## Independent P04-T03-A01 portfolio XML metadata
+
+[XML metadata plan](../plans/P04-T03-A01-portfolio-xml.md) uses source-derived contracts and synthetic fixtures while real PC portfolios remain missing. [ADR 0007](../ADR-0007-portfolio-xml-metadata.md) separates XML preservation/filenames from native load, clone, history, sidecar and folder reconciliation. Full parent dependencies/gates remain.

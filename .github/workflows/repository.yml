@@ -42,6 +42,8 @@ jobs:
         run: node scripts/verify-production.cjs
       - name: Numeric oracle provenance controls
         run: node --test tests/numeric-oracle.test.cjs
+      - name: Verify source-derived portfolio XML contracts
+        run: node scripts/run-local.cjs dotnet run --project tools/PortfolioContractGenerator -- "$GITHUB_WORKSPACE" --verify
       - name: Graph snapshot contracts
         run: node scripts/run-local.cjs dotnet run --project tests/Port/Graph.Tests
       - name: Production domain material contract

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P04-T03",
+  "status": "in_progress",
+  "outputs": [
+    "src/Port/Documents/LegacyPortfolioXmlCodec.cs",
+    "src/Port/Documents/LegacyDesignFileKey.cs",
+    "tools/PortfolioContractGenerator/PortfolioContractGenerator.csproj",
+    "tools/PortfolioContractGenerator/Program.cs",
+    "tests/Port/Documents.Contracts/Recovered/PortfolioSchema.cs",
+    "tests/Port/Documents.Contracts/PortfolioAssertions.cs",
+    "docs/porting/plans/P04-T03-A01-portfolio-xml.md",
+    "docs/porting/ADR-0007-portfolio-xml-metadata.md"
+  ],
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+      "sha256": "2d21f760ad48997207c0c7c187dcd3b71578e2a75dce69c93246536ca810626a"
+    },
+    {
+      "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+      "sha256": "7dc2449d7b5452ff88f2c5054526dad3a4fd759909b539c9b1821ebef5a667dc"
+    },
+    {
+      "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/ProjectType.cs",
+      "sha256": "c07f94c437afacdfda0ec43245a5c5ebbb0ec0a7d3434054d6f70547e75467e3"
+    },
+    {
+      "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs",
+      "sha256": "d84268d9d1aeed43ed745d9739a227eda86dbbd66e560c1bb0629fd069d813b8"
+    }
+  ],
+  "fixtures": [],
+  "subtasks": [
+    {
+      "id": "P04-T03-A01",
+      "scope": "Bounded source-contract CSP XML metadata and paired filename rules; synthetic fixtures only",
+      "status": "implemented_local"
+    }
+  ],
+  "checks": [
+    {
+      "command": "dotnet run --project tools/PortfolioContractGenerator -- <repo> --verify",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/Recovered/PortfolioSchema.cs",
+      "actual": "16 declared Project and 27 Design XML property shapes verified against source hashes"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests (before implementation)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Documents.Contracts/PortfolioAssertions.cs",
+      "actual": "RED missing LegacyPortfolioXmlCodec and LegacyDesignFileKey"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests (nil regression)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Documents.Contracts/PortfolioAssertions.cs",
+      "actual": "Source-shaped serializer returned non-null string for xsi:nil email; codec corrected to omit null string fields"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/PortfolioAssertions.cs",
+      "actual": "XML source-shape oracle, unknown/nested/nil/path/UTF8/UTF16 and rejection cases pass; dynamic-code=True locally; prior bridge/CSG tests pass"
+    },
+    {
+      "command": "dotnet build src/Port/Documents --nologo -v:q",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "src/Port/Documents/Documents.csproj",
+      "actual": "zero warnings, zero errors"
+    }
+  ],
+  "review": {
+    "correctness": "Unknown XML retained; null string vs nullable value behavior checked independently; raw paired-stem comparison matches source",
+    "readability": "Private DOM codec and filename helper are separate; generated schema scope explicit",
+    "architecture": "No WPF/native runtime or model setter execution; XML data does not trigger path relocation or external IO",
+    "security": "DTD prohibited, resolver null, iterative depth/element limits and byte/character bounds; stored paths never followed",
+    "performance": "Bounded two-pass XML validation plus DOM; exact no-op byte clone and immutable targeted edits",
+    "limitations": "Synthetic generated-contract fixtures, no real saved PC folder or native getter/load/clone/history/sidecar behavior; physical AOT execution not proven"
+  },
+  "blockers": [
+    "macOS XML/schema execution pending",
+    "Real PC portfolio corpus, folder/history/sidecar reconciliation and native load/migration acceptance remain unavailable"
+  ]
+}
