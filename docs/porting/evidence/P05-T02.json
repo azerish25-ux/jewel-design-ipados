@@ -42,7 +42,7 @@
     {
       "id": "P05-T02-A01",
       "scope": "Pinned native analytic fixture candidate build/execution",
-      "status": "implemented_unbuilt"
+      "status": "build_fix_pending"
     }
   ],
   "checks": [],
@@ -50,10 +50,19 @@
     "scope": "Acquisition/platform experiment; no local iOS/native compiler execution asserted",
     "security": "Public source commit pinned, no original account/runtime/key use; upload text only",
     "limits": "Windows host has no active C++ compiler in PATH; actual host/iOS builds must run in CI",
-    "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim"
+    "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim",
+    "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending."
   },
   "blockers": [
     "Native candidate host/iOS compilation and runtime results pending",
     "Full kernel semantic mapping, candidate decision, native ABI and cancellation/leak/physical-device/PC evidence incomplete"
+  ],
+  "ciRuns": [
+    {
+      "id": 41012541858,
+      "commit": "083327382230230d62dd68496bf0f03142863639",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41012541858",
+      "verification": "host/iOS configured, both native builds failed at missing generated Standard_Version.hxx before any fixture ran"
+    }
   ]
 }

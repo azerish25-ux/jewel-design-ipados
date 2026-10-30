@@ -21,7 +21,13 @@ set(BUILD_ADDITIONAL_TOOLKITS "TKPrim TKBO TKMesh" CACHE STRING "" FORCE)
 foreach(dependency FREETYPE TK FREEIMAGE FFMPEG OPENVR RAPIDJSON DRACO TBB EIGEN XLIB)
   set(USE_${dependency} OFF CACHE BOOL "" FORCE)
 endforeach()
+# OCCT generates Standard_Version.hxx relative to its subproject binary directory,
+# while collecting ordinary headers under the top-level binary directory.
+include_directories("${CMAKE_CURRENT_BINARY_DIR}/occt/inc")
 add_subdirectory("${OCCT_SOURCE_DIR}" occt)
+if(NOT EXISTS "${CMAKE_CURRENT_BINARY_DIR}/occt/inc/Standard_Version.hxx")
+  message(FATAL_ERROR "Pinned OCCT generated version header is missing from its subproject binary include directory")
+endif()
 add_library(jewel_occt_candidate STATIC probe.cpp)
 target_include_directories(jewel_occt_candidate PRIVATE "${CMAKE_BINARY_DIR}/inc")
 target_link_libraries(jewel_occt_candidate PUBLIC TKBO TKMesh TKPrim TKTopAlgo TKShHealing TKGeomAlgo TKBRep TKGeomBase TKG3d TKG2d TKMath TKernel)
