@@ -10,9 +10,9 @@ Prerequisites: production codec/identity/numeric/journal child proofs passed on 
 
 Owned: GraphSnapshot/GraphIdentityScope metadata contracts; Documents graph projection and edit session; shared Documents/Graph contract tests, provenance/evidence/ADR and CI export/checker. Documents depends on the portable Graph project, which does not depend on Documents.
 
-- [ ] RED projection tests: preserve 241 slots, decoded vs unknown metadata, no invented opaque GUID, raw bytes/links retained.
-- [ ] GREEN explicit unknown-header model and record projection; run graph regressions.
-- [ ] RED edit bridge: handle selection among duplicate labels, epsilon no-op, state sequence, undo/redo/grouping/branching, foreign/unknown field/opaque rejection before mutation, rebuilt edit/reopen/reversal, exports accepted by independent readers.
-- [ ] GREEN typed scalar targets and coordinator; retain unsupported/native boundaries.
-- [ ] Run combined/local/independent checks; review unknown-data loss and undo claims; commit/push.
-- [ ] Inspect macOS iPad/iPhone results and record any CI startup failures honestly; commit/push evidence.
+- [x] RED projection tests: preserve 241 slots, decoded vs unknown metadata, no invented opaque GUID, raw bytes/links retained.
+- [x] GREEN explicit unknown-header model and record projection; run graph regressions.
+- [x] RED edit bridge: handle selection among duplicate labels, epsilon no-op, state sequence, undo/redo/grouping/branching, foreign/unknown field/opaque rejection before mutation, rebuilt edit/reopen/reversal, exports accepted by independent readers.
+- [x] GREEN typed scalar targets and coordinator; retain unsupported/native boundaries.
+- [x] Run combined/local/independent checks; review unknown-data loss and undo claims; commit/push.
+- [x] Inspect macOS iPad/iPhone results and record any CI startup failures honestly; commit/push evidence.

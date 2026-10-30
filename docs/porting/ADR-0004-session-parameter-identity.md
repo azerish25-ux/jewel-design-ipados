@@ -13,3 +13,5 @@ The host is responsible for semantic correspondence between identities and node 
 This augments ADR 0001 single-capture GraphParameterAddress; it does not change that API or promise identity across file loads. P04 needs actual legacy/current codec fixtures and explicit raw/effective persistence decisions. General units, graph editing, native target adapters and PC save/reopen remain incomplete.
 
 Shared SessionIdentityAssertions covers valid GUID formats, zero/duplicate/legacy identity, captured-object slot duplication, explicit rename/reorder/delete/restore/replacement/GUID-metadata mappings, immutable mapping isolation, exact field names and null/invalid/foreign ownership cases. Native calls, codecs and original PC execution are absent.
+
+[ADR 0006](ADR-0006-legacy-scalar-edit-bridge.md) extends opaque metadata representation: InitialIdentity can be null for an undecoded identity field, which is distinct from a decoded absent legacy GUID.

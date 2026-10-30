@@ -11,7 +11,8 @@
     "tests/Port/Documents.Contracts/ProjectionAssertions.cs",
     "tests/Port/Documents.Contracts/EditBridgeAssertions.cs",
     "docs/porting/plans/P04-T05-A01-legacy-edit-bridge.md",
-    "docs/porting/ADR-0006-legacy-scalar-edit-bridge.md"
+    "docs/porting/ADR-0006-legacy-scalar-edit-bridge.md",
+    "docs/evidence/apple/legacy-edit-session-results.json"
   ],
   "fixtures": [
     {
@@ -23,12 +24,12 @@
     {
       "id": "P04-T05-A01.1",
       "scope": "All-slot decoded/opaque metadata projection",
-      "status": "implemented_local"
+      "status": "verified_simulator"
     },
     {
       "id": "P04-T05-A01.2",
       "scope": "Handle-based scalar file transactions and rebuilt export",
-      "status": "implemented_local"
+      "status": "verified_simulator"
     }
   ],
   "checks": [
@@ -59,6 +60,13 @@
       "expectedExitCode": 0,
       "artifact": "src/Port/Documents/Documents.csproj",
       "actual": "zero warnings, zero errors"
+    },
+    {
+      "command": "Inspect iPad/iPhone artifacts from GitHub Actions 41005179926",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/apple/legacy-edit-session-results.json",
+      "actual": "Both families execute real-fixture handle edits, scalar history and structural export assertions; no native object or geometry claim"
     }
   ],
   "review": {
@@ -70,7 +78,19 @@
     "limitations": "Not full native snapshot semantics, CAM/metadata restoration, UI gestures, graph evaluation, geometry or PC application reopening"
   },
   "blockers": [
-    "macOS bridge execution pending",
     "Full P04-T05 still requires all serializer/portfolio/migration coverage and original-PC/native regeneration evidence"
+  ],
+  "ciRuns": [
+    {
+      "id": 41005179926,
+      "commit": "c632bd28c29976af5cdb1116825b8ff12bb76d69",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41005179926",
+      "verification": "both correct-family artifacts inspected: library edit session and adjacent codec/identity/undo/numeric/ring/material checks pass"
+    },
+    {
+      "id": 41005179950,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41005179950",
+      "verification": "success; clean checkout combined/codec/independent-reader checks"
+    }
   ]
 }

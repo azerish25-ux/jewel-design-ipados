@@ -530,7 +530,8 @@
             "tests/Port/Documents.Contracts/ProjectionAssertions.cs",
             "tests/Port/Documents.Contracts/EditBridgeAssertions.cs",
             "docs/porting/plans/P04-T05-A01-legacy-edit-bridge.md",
-            "docs/porting/ADR-0006-legacy-scalar-edit-bridge.md"
+            "docs/porting/ADR-0006-legacy-scalar-edit-bridge.md",
+            "docs/evidence/apple/legacy-edit-session-results.json"
           ],
           "evidence": [
             "docs/porting/evidence/P04-T05.json"

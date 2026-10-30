@@ -13,3 +13,5 @@ This is new infrastructure derived from recovered semantics, not recovered algor
 Verification: tests/Port/Graph.Contracts/ParameterAddressAssertions.cs is invoked by Graph.Tests, Console smoke, and the iPad/iPhone simulator harness. Cases include repeat lookup/hash-set equality, duplicate slots, ordinal keys, foreign captures, empty captures, invalid indices and null/blank arguments. No PC reopen, geometry regeneration or parameter-write claim is made.
 
 [ADR 0004](ADR-0004-session-parameter-identity.md) adds session handles that can survive explicitly mapped views. This single-capture address API stays scoped to its original snapshot.
+
+[ADR 0006](ADR-0006-legacy-scalar-edit-bridge.md) extends opaque metadata representation: InitialIdentity can be null for an undecoded identity field, which is distinct from a decoded absent legacy GUID.
