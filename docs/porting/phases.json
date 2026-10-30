@@ -403,7 +403,8 @@
             "tests/Port/LegacyUndoHarness/CSObject.cs",
             "tests/Port/Graph.Contracts/UndoJournalAssertions.cs",
             "docs/porting/plans/P03-T04-A01-undo-journal.md",
-            "docs/porting/ADR-0003-portable-undo-journal.md"
+            "docs/porting/ADR-0003-portable-undo-journal.md",
+            "docs/evidence/apple/undo-journal-results.json"
           ],
           "evidence": [
             "docs/porting/evidence/P03-T04.json"

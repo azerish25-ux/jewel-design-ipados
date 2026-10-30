@@ -23,7 +23,8 @@
     "tests/Port/LegacyUndoHarness/CSObject.cs",
     "tests/Port/Graph.Contracts/UndoJournalAssertions.cs",
     "docs/porting/plans/P03-T04-A01-undo-journal.md",
-    "docs/porting/ADR-0003-portable-undo-journal.md"
+    "docs/porting/ADR-0003-portable-undo-journal.md",
+    "docs/evidence/apple/undo-journal-results.json"
   ],
   "fixtures": [],
   "subtasks": [
@@ -34,7 +35,7 @@
         "P03-T01",
         "P03-T02"
       ],
-      "status": "implemented_local"
+      "status": "verified_simulator"
     }
   ],
   "checks": [
@@ -51,6 +52,37 @@
       "expectedExitCode": 0,
       "artifact": "tests/Port/Graph.Contracts/UndoJournalAssertions.cs",
       "actual": "PASS 6130 differential scheduling steps; identity, target values, capture/restore traces, buffer/UI flags, nested/empty/numbered transactions, >1000 history and failure paths"
+    },
+    {
+      "command": "dotnet build src/Port/Graph --nologo -v:q",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "src/Port/Graph/UndoJournal.cs",
+      "actual": "Production Graph builds with zero warnings and zero errors",
+      "adjacentUndoCheck": true
+    },
+    {
+      "command": "dotnet run --project tests/Console",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Smoke/Checks.cs",
+      "actual": "Combined undo 6130-step, numeric 909-case, ring 1172-case, material and graph regressions pass; existing large-input compression defect remains non-gating",
+      "adjacentUndoCheck": true
+    },
+    {
+      "command": "node tools/repository/check.cjs --record",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/porting/classification.json",
+      "actual": "Recovery/source/resource hashes, ledgers, links and credential scan pass",
+      "adjacentUndoCheck": true
+    },
+    {
+      "command": "GitHub Actions run 40998597316; inspect both simulator-result.txt and runtime-family.txt artifacts",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/apple/undo-journal-results.json",
+      "actual": "iPad and iPhone pass 6130 differential scheduler steps; known compression failure remains explicitly non-gating"
     }
   ],
   "review": {
@@ -59,10 +91,23 @@
     "architecture": "No platform dependency; native object construction remains a separate adapter",
     "security": "No original account access or credentials; undo-only local lock behavior",
     "performance": "Original bounded pruning/linear history scans retained; differential suite includes 1005 transactions",
-    "limitations": "No native CSObject snapshot/callback parity, geometry, graph invalidation or PC round trip"
+    "limitations": "No native CSObject snapshot/callback parity, geometry, graph invalidation or PC round trip",
+    "nativeSnapshotFollowup": "Static source path CUndoItem -> CreateTempObject -> SetUndo -> setter/PreChange needs native lifecycle/reentrancy observation before a full object adapter; no original runtime bug or successful native undo is asserted"
   },
   "blockers": [
-    "macOS simulator verification pending for the journal",
     "Full P03-T04 still requires P03-T03, native/parameter snapshot adapters, validation and UI gesture integration"
+  ],
+  "ciRuns": [
+    {
+      "id": 40998597316,
+      "commit": "df2cc9ed5c7dba34f9c79c823cb1431eb6d3b674",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40998597316",
+      "verification": "success; terminal full workflow; both artifacts inspected for correct runtime family, 6130 undo steps and adjacent numeric/ring/material/graph results"
+    },
+    {
+      "id": 40998597423,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40998597423",
+      "verification": "success; clean checkout integrity and bounded proofs"
+    }
   ]
 }
