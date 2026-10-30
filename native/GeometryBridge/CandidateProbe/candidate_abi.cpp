@@ -1,5 +1,6 @@
 #include "candidate_paired_sweep.hpp"
 #include <BRepAdaptor_Surface.hxx>
+#include <BRepBndLib.hxx>
 #include "candidate_abi.h"
 #include <BRepPrimAPI_MakeBox.hxx>
 #include <BRepBuilderAPI_MakeEdge.hxx>
@@ -745,6 +746,25 @@ extern "C" int32_t jd_candidate_surface_point(uint64_t context,uint64_t shape,do
   withContext(context,[&](Context& value){const auto& input=findShape(value,shape).shape;if(input.ShapeType()!=TopAbs_FACE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Surface query requires a face");
    BRepAdaptor_Surface surface(TopoDS::Face(input));if(u<surface.FirstUParameter()||u>surface.LastUParameter()||v<surface.FirstVParameter()||v>surface.LastVParameter())fail(JD_CANDIDATE_INVALID_ARGUMENT,"Surface parameter outside face domain");
    auto point=surface.Value(u,v);if(!std::isfinite(point.X())||!std::isfinite(point.Y())||!std::isfinite(point.Z()))fail(JD_CANDIDATE_KERNEL_FAILURE,"Nonfinite native surface point");*x=point.X();*y=point.Y();*z=point.Z();
+  });
+ },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_shape_bounds(uint64_t context,uint64_t shape,uint32_t accurate,double* min_x,double* min_y,double* min_z,double* max_x,double* max_y,double* max_z,double* padding,char* diagnostic,uint32_t capacity)
+{
+ return protect([&]{
+  if(!min_x||!min_y||!min_z||!max_x||!max_y||!max_z||!padding)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing shape bounds output");
+  *min_x=0;*min_y=0;*min_z=0;*max_x=0;*max_y=0;*max_z=0;*padding=0;
+  if(accurate>1)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Unknown shape bounds mode");
+  withContext(context,[&](Context& value){
+   Bnd_Box box;const auto& input=findShape(value,shape).shape;
+   // Rendering must not change the sizing box: never use cached triangulation.
+   if(accurate)BRepBndLib::AddOptimal(input,box,false,false);else BRepBndLib::Add(input,box,false);
+   if(box.IsVoid()||box.IsOpen())fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Shape has no finite native bounds");
+   double gap=box.GetGap();box.SetGap(0);double x0,y0,z0,x1,y1,z1;box.Get(x0,y0,z0,x1,y1,z1);
+   for(double x:{x0,y0,z0,x1,y1,z1,gap,x0-gap,y0-gap,z0-gap,x1+gap,y1+gap,z1+gap})if(!std::isfinite(x))fail(JD_CANDIDATE_KERNEL_FAILURE,"Nonfinite shape bounds");
+   if(gap<0||x0>x1||y0>y1||z0>z1)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid shape bounds response");
+   *min_x=x0;*min_y=y0;*min_z=z0;*max_x=x1;*max_y=y1;*max_z=z1;*padding=gap;
   });
  },diagnostic,capacity);
 }

@@ -868,9 +868,11 @@
         "docs/porting/evidence/P05-T02-A19-A01.json",
         "docs/porting/ADR-0035-explicit-sweep-preparation.md",
         "docs/porting/evidence/P05-T02-A19-A02-A01.json",
-        "docs/porting/ADR-0037-paired-native-surface.md"
+        "docs/porting/ADR-0037-paired-native-surface.md",
+        "docs/porting/evidence/P03-T03-A14.json",
+        "docs/porting/ADR-0038-owned-brep-graph.md"
       ],
-      "implementationScope": "Candidate exact1.0 input decoding/preparation plus actual native face from recovered134 inputs, edit/save/reopen. Source BRep graph output/dynamic metadata, closed/no-param/other variants and complete original-PC/native topology/continuity/physical acceptance remain open."
+      "implementationScope": "Known exact1.0 candidate graph output/typed BRep ownership and actual134 regenerated geometry, structural edit/save/reopen; complete native closed/other variants, source metadata/output topology and original-PC/physical acceptance remain open."
     },
     {
       "id": "CAD-032",

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "status": "static_source_contract_only",
+  "source": "recovery/canonical/cad/CSDatas/CSOnGeometryData.cs",
+  "normalizedLfSha256": "c1b8c7c4b5bd7ee91ee7cb8de09bfae754e432a454f2c413b852a16d61053cd7",
+  "methods": [
+    {
+      "signature": "public override Brep GetBrep()",
+      "bodySha256": "48bbf2f8608f6606c3b2493d8939ba3e795b251cbd29580de41b2e8e7c4272c9"
+    },
+    {
+      "signature": "public override Curve GetCurve()",
+      "bodySha256": "38bb19e0e9a5481fb374cf4cf6b0e8f3b0e74c92ab1271993093cde067540757"
+    },
+    {
+      "signature": "public override NurbsCurve GetNurbsCurve()",
+      "bodySha256": "080ce87d54337db48ac1488873ea5eaa93b9cdd3ec91e83ad97fd2ddcad60ae1"
+    },
+    {
+      "signature": "public override bool HasNurbsCurve()",
+      "bodySha256": "5f2fe0440b41409a481589bdc6e5b7df8f3472f63ff9bf66e54b893a110590aa"
+    },
+    {
+      "signature": "public bool GetTransform(out Rhino.Geometry.Transform value)",
+      "bodySha256": "5763dbc3dd4402924f8d24ac9a248865f36dd7adb5046c062372735ea534c542"
+    },
+    {
+      "signature": "public bool ApplyTransform(Rhino.Geometry.Transform transform)",
+      "bodySha256": "e27898040ecad04ed1fd462ad142a5fc282a51dc9f51560741b83ff0040b2219"
+    },
+    {
+      "signature": "private void ConstructorAux(GeometryBase geometry, Rhino.Geometry.Transform transform, bool applyTransform)",
+      "bodySha256": "930b868fe59adfedbce0b562461de93ff9930f7b8e814a55a4cb7cb6ea92b107"
+    },
+    {
+      "signature": "public override bool GetTightBoundingBox(ref BoundingBox boundingBox, bool doGrow, Rhino.Geometry.Transform transform)",
+      "bodySha256": "4da8bcfbba975f30892fe2ec5f87bd4144b6dbc24e9b6dd583df68408dff792a"
+    },
+    {
+      "signature": "public override bool GetTightBoundingBoxNew(ref BoundingBox boundingBox, bool doGrow, Rhino.Geometry.Transform transform)",
+      "bodySha256": "693e5060ca01dfdb24dce0fd8a9b91ace15a040ea563c8a05e5b285dbb71dc6d"
+    },
+    {
+      "signature": "private bool TryGetBoundingBox(bool doAccurate, bool doGrow, Rhino.Geometry.Transform transform, ref BoundingBox boundingBox)",
+      "bodySha256": "d6fdb92dd7e7e411439bc3980814f820922b07ea27b0861e3a2ceef65dbe257a"
+    }
+  ],
+  "callers": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSScaleObjectToSize.cs",
+      "normalizedLfSha256": "8c251fbb9eb5ed17953edc415251705f013f3034b65c1acc08361364d86f0f4e",
+      "updateBodySha256": "4eed48c4a75b612ab693f6b2c13bc27d3c568a4d49010f6f85f8b21bdc0ca1bf"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2.cs",
+      "normalizedLfSha256": "2905164a700792a3a1781ada9a1a0bf2b71f0a8d044524bb012bdb83b45bfded",
+      "updateBodySha256": "ab4f1e391d03246cfc006278a74849dc6a983f88804a3324e31b4f58d607a71f"
+    }
+  ],
+  "observations": {
+    "brepConversion": "HasBrepForm then duplicate BRep or Surface.ToBrep; Curve queries cast only Curve.",
+    "initialTransform": "Identity for Unset constructor input.",
+    "cumulativeTransform": "Postmultiply existing valid transform; geometry is transformed independently.",
+    "oldTightBrepBox": "doAccurate:false",
+    "newTightBrepBox": "doAccurate:true",
+    "scaleCaller": "Uses old data.GetTightBoundingBox.",
+    "sweepOutputs": "Non-null native results get Identifier_index output channels."
+  },
+  "scope": "Static recovered source evidence only; native box numeric/topology equivalence, material/user strings/render/export and PC/physical execution remain unverified."
+}

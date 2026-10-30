@@ -76,6 +76,8 @@ int32_t jd_candidate_nurbs(uint64_t context,uint32_t degree,uint32_t pole_count,
 int32_t jd_candidate_paired_sweep(uint64_t context,uint64_t rail1,uint64_t rail2,const uint64_t* profiles,uint32_t count,const double* parameters1,uint32_t count1,const double* parameters2,uint32_t count2,uint32_t maintain_height,uint32_t correspondence,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity);
 int32_t jd_candidate_surface_bounds(uint64_t context,uint64_t shape,double* first_u,double* last_u,double* first_v,double* last_v,char* diagnostic,uint32_t capacity);
 int32_t jd_candidate_surface_point(uint64_t context,uint64_t shape,double u,double v,double* x,double* y,double* z,char* diagnostic,uint32_t capacity);
+/* Fast conservative or accurate shape box; no triangulation dependence. */
+int32_t jd_candidate_shape_bounds(uint64_t context,uint64_t shape,uint32_t accurate,double* min_x,double* min_y,double* min_z,double* max_x,double* max_y,double* max_z,double* padding,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

@@ -141,7 +141,12 @@
     "tests/array-query-oracle.test.cjs",
     "docs/porting/ADR-0034-array-consumers.md",
     "docs/porting/plans/P03-T03-A13-A03-array-consumers.md",
-    "docs/evidence/apple/pure-array-results.json"
+    "docs/evidence/apple/pure-array-results.json",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.Sweeps.cs",
+    "src/Port/Geometry.Candidate/CandidateContext.ShapeBounds.cs",
+    "tests/Port/Geometry.Candidate.Contracts/BrepGraphAssertions.cs",
+    "docs/porting/ADR-0038-owned-brep-graph.md",
+    "docs/porting/evidence/P03-T03-A14.json"
   ],
   "fixtures": [],
   "checks": [
@@ -1169,6 +1174,13 @@
       "scope": "Represented-data array transforms/bounds/first-item/capability/arithmetic provider integration",
       "status": "local_verified_apple_pending",
       "plan": "docs/porting/plans/P03-T03-A13-A03-array-consumers.md"
+    },
+    {
+      "id": "P03-T03-A14",
+      "status": "local_verified_apple_pending",
+      "scope": "Typed owned BRep graph values, actual sweep134 candidate output, source conversions/transforms and Fast/Accurate box policy",
+      "plan": "docs/porting/plans/P03-T03-A14-owned-breps.md",
+      "evidence": "docs/porting/evidence/P03-T03-A14.json"
     }
   ]
 }

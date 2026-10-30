@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P05-T02-A19-A02-A01",
-  "status": "local_verified_candidate_surface_apple_pending",
+  "status": "verified_bounded_candidate_surface",
   "requirements": [
     "BLD-0516",
     "SER-0551",
@@ -346,13 +346,13 @@
       "id": 41134281007,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41134281007",
       "scope": "corrected native host/iPad/iPhone",
-      "status": "in_progress_host_and_apple_preflight_passed"
+      "status": "success_artifacts_inspected"
     },
     {
       "id": 41134284856,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41134284856",
       "scope": "corrected unsigned ios-arm64 AOT",
-      "status": "in_progress_apple_preflight_passed"
+      "status": "success_artifacts_inspected"
     }
   ],
   "appleCompileCorrection": {
@@ -361,5 +361,7 @@
     "localVerification": "Native object rebuild/runner passes all271 contacts/384 derivative components/16 ABI guards/rational cylinder after include.",
     "appleVerification": "Corrected commit passes native API object preflight on both macOS iOS-simulator and ios-arm64 jobs; both confirmed building kernel. Full runtime/AOT completion remains pending.",
     "commit": "e24a0c8d13bcc4caedee44e2d0eddb5a0ef77cae"
-  }
+  },
+  "appleEvidence": "docs/evidence/apple/paired-surface-results.json",
+  "graphFollowup": "docs/porting/evidence/P03-T03-A14.json"
 }

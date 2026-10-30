@@ -46,7 +46,7 @@ internal static class PairedSweepAssertions
    var d1=context.InspectSurface(editedFace);var d2=context.InspectSurface(loadedFace);
    for(int i=0;i<=8;i++){double u=i/8.0;Near(context.PointAtSurface(editedFace,d1.FirstU+(d1.LastU-d1.FirstU)*u,(d1.FirstV+d1.LastV)*.5),context.PointAtSurface(loadedFace,d2.FirstU+(d2.LastU-d2.FirstU)*u,(d2.FirstV+d2.LastV)*.5));}
    Near(context.PointAtSurface(face,U(.2),V(prepared.Parameters1[1])),point);
-   Throws<NotSupportedException>(()=>graph.Generate(134)); // Candidate geometry is not yet the full source block contract.
+   graph.Values.SetValue(129,1);Throws<NotSupportedException>(()=>graph.Generate(134)); // Closed source policy remains unsupported.
   }
   Check(context.DiagnosticLiveShapeCount==1,"Output did not survive prepared input/graph disposal");context.InspectSurface(retained);retained.Dispose();retained.Dispose();Check(context.DiagnosticLiveShapeCount==0,"Paired output cleanup leaked");
   return "PASS managed paired-rail surface:"+contacts+" actual134 rail/profile samples, native BRep/affine/retain/input isolation/edit-save-reopen/error cleanup; experimental explicit map, no original-PC/full sweep-block parity.";

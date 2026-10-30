@@ -25,6 +25,7 @@ public sealed partial class CandidateRailGraphSession
         if(data.Transform is{} matrix){transform=matrix;return matrix.IsFinite;}
         if(data.Profile.HasValue){transform=LegacyAffineTransform.Identity;return true;}
         if(data.Curve is{} reference){transform=FindCurve(reference).AppliedTransform;return transform.IsFinite;}
+        if(data.Brep is{} brep){transform=FindBrep(brep).AppliedTransform;return transform.IsFinite;}
         transform=default;return false;
     }
     private Output ConsumeTransform(int index)

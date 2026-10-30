@@ -65,12 +65,14 @@ public static class Sweep2PreparationCandidate
         }catch{foreach(var shape in owned)shape.Dispose();throw;}
     }
     public static PreparedSweep2Candidate FromNode(CandidateContext context,CandidateRailGraphSession graph,int recordIndex)
+        =>FromNodeCore(context,graph,recordIndex,true);
+    internal static PreparedSweep2Candidate FromNodeCore(CandidateContext context,CandidateRailGraphSession graph,int recordIndex,bool generateDependencies)
     {
         ArgumentNullException.ThrowIfNull(context);ArgumentNullException.ThrowIfNull(graph);
         var document=graph.Values.Document;if((uint)recordIndex>=(uint)document.Records.Count)throw new ArgumentOutOfRangeException(nameof(recordIndex));
         var record=document.Records[recordIndex];
         if(record.TypeGuid!=TypeGuid||record.Version!=new LegacyCsg4Version(1,0)||record.SimpleBlock is not{} block)throw new NotSupportedException("SimpleSweep2 exact1.0 header is not decoded.");
-        var roots=block.ObjectIndices.Take(8).Where(x=>x>=0).Distinct().ToArray();if(roots.Length>0)graph.Generate(roots);
+        var roots=block.ObjectIndices.Take(8).Where(x=>x>=0).Distinct().ToArray();if(generateDependencies&&roots.Length>0)graph.Generate(roots);
         LegacyChannelValue Read(int input)=>input>=block.ObjectIndices.Count||block.ObjectIndices[input]<0?LegacyChannelValue.Missing:graph.ReadOutput(block.ObjectIndices[input],block.ChannelIndices[input]);
         IReadOnlyList<LegacyChannelValue> Flat(LegacyChannelValue value)=>value.IsMissing?Array.Empty<LegacyChannelValue>():value.Array is null?new[]{value}:LegacyArrayData.Flatten(value).Array!;
         double[] Parameters(LegacyChannelValue value){

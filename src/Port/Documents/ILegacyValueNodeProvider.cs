@@ -10,3 +10,5 @@ public interface ILegacyValueNodeProvider
     LegacyChannelValue ReadOutput(int recordIndex,int channelIndex);
 }
 public readonly record struct LegacyCurveSelection(int ProducerRecordIndex,int OutputChannelIndex,int ItemIndex=0);
+
+public readonly record struct LegacyBrepSelection(int ProducerRecordIndex,int OutputChannelIndex,int ItemIndex=0);

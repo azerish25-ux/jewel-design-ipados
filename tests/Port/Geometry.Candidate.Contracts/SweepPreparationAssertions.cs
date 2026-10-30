@@ -87,7 +87,7 @@ internal static class SweepPreparationAssertions
             using var loadedGraph=new CandidateRailGraphSession(context,saved,settings);using var loaded=Sweep2PreparationCandidate.FromNode(context,loadedGraph,134);
             Check(changed.SourceProfileOrder.SequenceEqual(loaded.SourceProfileOrder),"Reopened sweep order changed");
             for(int i=0;i<3;i++){Near(changed.Parameters1[i],loaded.Parameters1[i]);Near(changed.Parameters2[i],loaded.Parameters2[i]);}
-            Throws<NotSupportedException>(()=>graph.Generate(134)); // No BRep implementation is silently registered.
+            graph.Values.SetValue(129,1);Throws<NotSupportedException>(()=>graph.Generate(134)); // Closed path remains explicit unsupported.
         }
         Check(context.DiagnosticLiveShapeCount==5,"Prepared ownership did not survive graph disposal or leaked graph state");
         foreach(var profile in retained.Profiles)context.InspectCurve(profile);retained.Dispose();retained.Dispose();Check(context.DiagnosticLiveShapeCount==0,"Prepared native copies did not release");

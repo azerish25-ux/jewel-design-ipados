@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "commit": "e24a0c8d13bcc4caedee44e2d0eddb5a0ef77cae",
+  "runtimeRun": 41134281007,
+  "deviceRun": 41134284856,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "29f6351f22b8b77201052f160b223555f0343359f41bfac5298e8eeff9c6cdd6",
+      "pairedNativeReport": "paired-rail-native-surface=pass; paired-contact-samples=271; paired-derivative-components=384; paired-max-residual=3.5527136788005009e-15; paired-surface-error=7.2533057211337906e-15; paired-abi-guards=16; rational-profile-cylinder=pass; original134-full-block-parity=unverified;",
+      "managedReport": "PASS managed paired-rail surface:301 actual134 rail/profile samples, native BRep/affine/retain/input isolation/edit-save-reopen/error cleanup; experimental explicit map, no original-PC/full sweep-block parity."
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "29f6351f22b8b77201052f160b223555f0343359f41bfac5298e8eeff9c6cdd6",
+      "pairedNativeReport": "paired-rail-native-surface=pass; paired-contact-samples=271; paired-derivative-components=384; paired-max-residual=3.5527136788005009e-15; paired-surface-error=7.2533057211337906e-15; paired-abi-guards=16; rational-profile-cylinder=pass; original134-full-block-parity=unverified;",
+      "managedReport": "PASS managed paired-rail surface:301 actual134 rail/profile samples, native BRep/affine/retain/input isolation/edit-save-reopen/error cleanup; experimental explicit map, no original-PC/full sweep-block parity."
+    }
+  ],
+  "scope": "Actual paired native surface constructor/301 source134 input contacts and edited saved/reopened regeneration; predates typed BRep graph registration/forwarding and new bounds policies. No original-PC/full feature/physical proof.",
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "10e3dd3a79e488589f2da2286701833bd28703f9dabdaf3e13ef39d4571c352f  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "5509c8b5157a33afc4dbe2d7dbc2f20d30fccb4d633e53b768e83d5b814eed8d",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  },
+  "kernelSourceHashes": "d915aea2b498290857940a6bee123fc4c52ded05f1ca48477b79ad8898f3beb5  .local/native/occt-source/src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.hxx\n32cbbe2081a488416cda2db9e217a5fb37fddc8c2677cb124bcd21281e64940c  .local/native/occt-source/src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.cxx\n877e020f7fc60340a2ca66c1734832eb53e68891ecdaece12cc6ed2e0f08c65d  .local/native/occt-source/src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_GuideTrihedronAC.cxx\nffe844a077c4a0b46648b22215c4f4e038baab4bfca20176785b190d3316a597  .local/native/occt-source/src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_NSections.cxx\nd84a88d95ab7fb1581ba54447e428c19c78e1af2deb8dc451deab2e79335a079  .local/native/occt-source/src/ModelingData/TKG3d/Geom/Geom_BSplineSurface.hxx\n"
+}

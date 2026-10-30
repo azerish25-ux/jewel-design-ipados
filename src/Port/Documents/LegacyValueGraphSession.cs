@@ -3,13 +3,14 @@ namespace JewelDesign.Documents;
 
 public readonly record struct LegacyProfileSelection(int GroupRecordIndex,int ProfileIndex);
 
-/// <summary>Known missing, empty, numeric, profile, curve-reference or affine channel data. Unknown producers throw rather than becoming empty.</summary>
+/// <summary>Known missing, empty, numeric, profile, curve/BRep-reference or affine channel data. Unknown producers throw rather than becoming empty.</summary>
 public sealed class LegacyChannelValue
 {
     private readonly double number;
     public bool HasNumber {get;}
     public LegacyProfileSelection? Profile {get;}
     public LegacyCurveSelection? Curve {get;}
+    public LegacyBrepSelection? Brep {get;}
     public LegacyAffineTransform? Transform {get;}
     public IReadOnlyList<LegacyChannelValue>? Array {get;}
     public bool IsMissing {get;}
@@ -20,6 +21,7 @@ public sealed class LegacyChannelValue
     private LegacyChannelValue(double value){HasNumber=true;number=value;}
     private LegacyChannelValue(LegacyProfileSelection profile){Profile=profile;}
     private LegacyChannelValue(LegacyCurveSelection curve){Curve=curve;}
+    private LegacyChannelValue(LegacyBrepSelection brep){Brep=brep;}
     private LegacyChannelValue(LegacyAffineTransform transform){Transform=transform;}
     private LegacyChannelValue(LegacyChannelValue[] items){Array=System.Array.AsReadOnly(items);}
     public static LegacyChannelValue FromArray(IEnumerable<LegacyChannelValue?> items)
@@ -30,6 +32,7 @@ public sealed class LegacyChannelValue
     }
     public static LegacyChannelValue FromTransform(LegacyAffineTransform transform)=>new(transform);
     public static LegacyChannelValue FromCurve(int record,int channel,int item=0)=>new(new LegacyCurveSelection(record,channel,item));
+    public static LegacyChannelValue FromBrep(int record,int channel,int item=0)=>new(new LegacyBrepSelection(record,channel,item));
     public static LegacyChannelValue FromNumber(double value)=>Number(value);
     internal static LegacyChannelValue Number(double value)=>new(value);
     internal static LegacyChannelValue ProfileData(int record,int profile)=>new(new LegacyProfileSelection(record,profile));

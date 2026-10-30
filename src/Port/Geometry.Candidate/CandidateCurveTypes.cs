@@ -11,7 +11,7 @@ public readonly record struct CandidateCurveInfo(double FirstParameter,double La
 
 public readonly record struct CandidateCurveProjection(double Parameter,CandidatePoint3 Point,double Distance);
 
-/// <summary>Unpadded numerical extrema estimates with the native box margin kept explicit.</summary>
+/// <summary>Axis-aligned candidate box; operation selects extrema/conservative policy. Native margin is kept explicit.</summary>
 public readonly record struct CandidateCurveBounds(CandidatePoint3 Minimum,CandidatePoint3 Maximum,double RequestedTolerance,double KernelPadding)
 {
     public CandidatePoint3 PaddedMinimum=>new(Minimum.X-KernelPadding,Minimum.Y-KernelPadding,Minimum.Z-KernelPadding);

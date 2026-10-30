@@ -54,6 +54,7 @@ for i in $(seq 1 120); do
   grep -q 'paired-derivative-components=384;' "$OUT/result.txt"
   grep -q 'paired-abi-guards=16;' "$OUT/result.txt"
   grep -q 'rational-profile-cylinder=pass;' "$OUT/result.txt"
+  grep -q 'PASS owned BRep graph:real134 typed output/name/edit-save-reopen,' "$OUT/result.txt"
   grep -q 'PASS managed paired-rail surface:301 actual134 rail/profile samples,' "$OUT/result.txt"
   grep -q 'native-sweep-feasibility=observed;' "$OUT/result.txt"
   grep -q 'tangent-plane-three-section-shell=pass;' "$OUT/result.txt"
