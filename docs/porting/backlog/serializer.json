@@ -7712,7 +7712,7 @@
       "kind": "serializer",
       "phase": "P04",
       "title": "CSBlocks.Profiles.Obsolete.CSProfilePlacer2RailXform1",
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer2RailXform1.cs",
@@ -7721,14 +7721,21 @@
       ],
       "acceptance": "Exercise this declared GUID and supported record-version branches with non-default serialized fields; PC -> iPad -> PC must retain graph identity/connections/data and remain editable. Compare computed geometry separately. Reserved expired-node GUID requires expected-error behavior, not successful geometry.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P03-T03.json",
+        "docs/porting/ADR-0029-profile-placement.md"
+      ],
       "guid": "fc789225-3f3b-41f5-9eb0-6c25d4fc54b8",
       "legacy": true,
       "details": {
         "path": "docs/evidence/audit/serialization-matrix.json",
         "id": "SER-0336"
-      }
+      },
+      "implementationScope": "Exact1.0 candidate header/native placement subset; original-PC geometry/editable PC-iOS-PC, all other versions/data/arrays and full UI/scheduler acceptance remain open."
     },
     {
       "id": "SER-0337",

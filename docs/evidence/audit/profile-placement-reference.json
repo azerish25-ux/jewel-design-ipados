@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_reader_only",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "blocks": [
+    {
+      "index": 110,
+      "guid": "fc789225-3f3b-41f5-9eb0-6c25d4fc54b8",
+      "identifier": "Profile Rail 1",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Rail 1"
+        }
+      ],
+      "objects": [
+        4,
+        13,
+        13,
+        94
+      ],
+      "channels": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 117,
+      "guid": "fc789225-3f3b-41f5-9eb0-6c25d4fc54b8",
+      "identifier": "Profile Rail 2",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Rail 2"
+        }
+      ],
+      "objects": [
+        4,
+        13,
+        13,
+        94
+      ],
+      "channels": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 124,
+      "guid": "fc789225-3f3b-41f5-9eb0-6c25d4fc54b8",
+      "identifier": "Profile Rail 3",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Rail 3"
+        }
+      ],
+      "objects": [
+        4,
+        13,
+        13,
+        95
+      ],
+      "channels": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "fullyConsumed": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer2RailXform1.cs",
+      "sha256": "5e230f30b088d5cfd76867c62bc96e0ae43b4be83d261e356d239d23595ca8d6"
+    }
+  ],
+  "scope": "Exact legacy1.0 common header only; no graph/geometry/PC execution claim."
+}

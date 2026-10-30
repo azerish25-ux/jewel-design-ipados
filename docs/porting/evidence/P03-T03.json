@@ -68,7 +68,20 @@
     "docs/evidence/audit/transform-producer-reference.json",
     "docs/porting/ADR-0028-transform-producers.md",
     "docs/porting/plans/P03-T03-A09-transform-producers.md",
-    "docs/evidence/apple/rail-outputs-device-results.json"
+    "docs/evidence/apple/rail-outputs-device-results.json",
+    "src/Port/Features.Candidate/ProfilePlacement2RailCandidate.cs",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.Placement.cs",
+    "tests/Port/Geometry.Candidate.Contracts/ProfilePlacementAssertions.cs",
+    "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyProfilePlacement.cs",
+    "scripts/verify-profile-placement-oracle.cjs",
+    "tests/profile-placement-oracle.test.cjs",
+    "tests/profile-placement-v1-reference.test.cjs",
+    "reference/file-proof/profile-placement-v1.cjs",
+    "docs/evidence/audit/profile-placement-reference.json",
+    "docs/porting/ADR-0029-profile-placement.md",
+    "docs/porting/plans/P03-T03-A10-profile-placement.md",
+    "docs/evidence/apple/rail-outputs-results.json",
+    "docs/evidence/apple/select-rail-device-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -296,6 +309,34 @@
       "expectedExitCode": 0,
       "artifact": "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
       "actual": "125 known headers/116 opaque/100 scalar handles; independent common header/reference/future/no-op/rewire/reversal and all prior document/channel suites pass."
+    },
+    {
+      "command": "dotnet run --project tests/Port/Geometry.Candidate.HostTests (RED before A10)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/ProfilePlacementAssertions.cs",
+      "actual": "RED Unsupported linked producer at record110 while generating original112/119/126 chains; baseline was staged after transient D write loss and verified failing."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/ProfilePlacementAssertions.cs",
+      "actual": "PASS4496 extracted frame/seam cases and actual native circle/ellipse/3D/finite ray/height/line-A order/reversed overlap; original3 placement/Add/scale paths and physical profile sizes; edit/save/reopen/chooser/no-hit reset/failure-cache/cycle/zero native entries; prior16093 source transform cases and native suites remain passing."
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/profile-placement-oracle.test.cjs tests/profile-placement-v1-reference.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "scripts/verify-profile-placement-oracle.cjs",
+      "actual": "7/7 exact source/frame handedness/seam/height tamper and independent header/future/bounded/mismatched-link controls pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
+      "actual": "128 known headers/113 opaque/100 scalar handles; placement independent common fields/links, no-op/rewire/future/reopen/restoration and all earlier document suites pass."
     }
   ],
   "review": {
@@ -325,7 +366,8 @@
     "valueChannels": "Reviewed source empty-vs-zero/conversion/ref semantics, exact arithmetic/CAM signed-zero and override latching distinct from setter/previous state; preflight dependency validation, no unsupported defaulting, read cycle/depth guards and serialized link count preservation. Complete scheduler/UI/CAM serialization/native producer/failure/concurrency/PC equivalence remain explicit. Native profile temporaries and binding snapshot ownership reviewed.",
     "railOutputs": "Reviewed no native dependency/handles in document channel data, explicit supported producer/dependency validation, no recursive generation, source curve vs numeric and Scale1/0 metadata, immutable output snapshots/retained readers, allocation exception cleanup and pending output disposal. Candidate native-cache commit differs from unproven original failure/dirty/parallel policies; scalar updates are not rolled back after later native errors.",
     "selectRingRail": "Reviewed exact1.0 GUID/full-body schema, disconnected-null vs inactive/invalid-empty distinction, source conditional ordering, supported-data forwarding despite UI filter, retained alias native ownership/old-generation snapshots, noncurve getter rejection, cycle/unsupported preflight and native entry cleanup. No recovered scripts/credentials/Windows execution. Full parity0/1451 remains unchanged.",
-    "transformProducers": "Reviewed data kind isolation/immutability; exact GUID/version/whole-frame read; native input alias/import lifetimes, raw extent floor/origin arithmetic, strict mirror X/Z only, Add outputs, no-argument rail-root compatibility, explicit placement/array/unsupported bounds failures, source-body/tamper controls, actual native point comparisons and file preservation. Source observation matrix constructors are stubs, not original Rhino matrix golden proof."
+    "transformProducers": "Reviewed data kind isolation/immutability; exact GUID/version/whole-frame read; native input alias/import lifetimes, raw extent floor/origin arithmetic, strict mirror X/Z only, Add outputs, no-argument rail-root compatibility, explicit placement/array/unsupported bounds failures, source-body/tamper controls, actual native point comparisons and file preservation. Source observation matrix constructors are stubs, not original Rhino matrix golden proof.",
+    "profilePlacement": "Reviewed source normalized fraction/native parameter distinction, frame handedness/Y scale, finite30-unit ray, line-A event ordering and paired reversed overlap ranges, floor.01, empty optional output reset, immutable additional channel snapshot, centralized native curve lifetime, explicit degenerate/missing/cycle failures and transactional cache policy. Observation stubs are not original native oracle; no unsupported producer/default or stored height substitute is used."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -397,7 +439,7 @@
       "id": 41089011365,
       "commit": "f3685f3431c574ea02c4998cae83e638f064b95f",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41089011365",
-      "verification": "Graph-managed rail outputs host confirmed running; iPad/iPhone queued; terminal artifact verification pending"
+      "verification": "SUCCESS: actual graph-managed rail output/native/family/ownership/conversion assertions inspected on iPad/iPhone; rail-outputs-results.json. Later selector/transform/placement not covered."
     },
     {
       "id": 41089016432,
@@ -415,7 +457,7 @@
       "id": 41091415494,
       "commit": "f580a24e5e70e6daf55c4f6f89836da94160d62c",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41091415494",
-      "verification": "Selector unsigned device queued; platform/AOT/build log/hash inspection pending. No physical execution claim."
+      "verification": "SUCCESS: actual unsigned arm64/platform IOS Release52 warnings0 errors/hash inspected in select-rail-device-results.json; selector runtime still separate."
     },
     {
       "id": 41094371196,
@@ -574,6 +616,26 @@
       "path": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
       "sha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714",
       "scope": "GetArrayCount known non-array fallback0; complete CSData conversions/arrays not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer2RailXform1.cs",
+      "sha256": "5e230f30b088d5cfd76867c62bc96e0ae43b4be83d261e356d239d23595ca8d6",
+      "scope": "P03-T03-A10 source placement Update, frame helpers, normalized-fraction seam rules and blank-before-update; native kernel/constructor/degenerate/PC equivalence not established"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilGeometry.cs",
+      "sha256": "001df9dbed85eb3a982468ffbc895666d23abf6ef1ec615836eb73dda004f08d",
+      "scope": "P03-T03-A10 source placement Update, frame helpers, normalized-fraction seam rules and blank-before-update; native kernel/constructor/degenerate/PC equivalence not established"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilMath.cs",
+      "sha256": "36e57a1539a49c419a49c78b066c105563cd26a821c4234ce170b9eeabc23fe7",
+      "scope": "P03-T03-A10 source placement Update, frame helpers, normalized-fraction seam rules and blank-before-update; native kernel/constructor/degenerate/PC equivalence not established"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4",
+      "scope": "P03-T03-A10 source placement Update, frame helpers, normalized-fraction seam rules and blank-before-update; native kernel/constructor/degenerate/PC equivalence not established"
     }
   ],
   "subtasks": [
@@ -613,7 +675,7 @@
     {
       "id": "P03-T03-A07",
       "scope": "Pure external producer/curve token boundary and owned native known-rail generation/cache",
-      "status": "local_verified_apple_pending"
+      "status": "verified_simulator_subset"
     },
     {
       "id": "P03-T03-A08",
@@ -626,6 +688,16 @@
       "scope": "Saved translation/scale producer plans, transform data and scalar Add prerequisite; ten original paths run, three scales placement-gated",
       "status": "local_verified_subset_apple_pending",
       "plan": "docs/porting/plans/P03-T03-A09-transform-producers.md"
+    },
+    {
+      "id": "P03-T03-A10",
+      "scope": "Exact two-rail placement/frame/native intersection outputs and original3 placement->Add->scale regeneration",
+      "status": "local_verified_apple_pending",
+      "plan": "docs/porting/plans/P03-T03-A10-profile-placement.md",
+      "relatedRows": [
+        "BLD-0301",
+        "SER-0336"
+      ]
     }
   ]
 }

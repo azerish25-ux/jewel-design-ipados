@@ -1,0 +1,16 @@
+{
+  "run": 41091415494,
+  "commit": "f580a24e5e70e6daf55c4f6f89836da94160d62c",
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41091415494",
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "7675d41f79dc4af3373d8bac8f72430fc38eed9c307ca8f0ef61851d3ea72d10  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "9205b6958cdc470338df023cd713d86ffa98256fb45118b190de66142bc43284",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  },
+  "scope": "Unsigned arm64 Release/AOT compile/link only. Selector runtime41091410852 remains live; no execution or physical-device claim from device artifact."
+}

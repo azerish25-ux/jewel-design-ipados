@@ -6609,7 +6609,7 @@
       "title": "CSBlocks.Profiles.Obsolete.CSProfilePlacer2RailXform1",
       "guid": "FC789225-3F3B-41f5-9EB0-6C25D4FC54B8",
       "legacy": true,
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer2RailXform1.cs",
@@ -6618,11 +6618,18 @@
       ],
       "acceptance": "Preserve GUID, channels, legacy algorithms and versions. Compare non-default edits and geometry to Windows. Pass editable PC/iOS/PC reopen.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P03-T03.json",
+        "docs/porting/ADR-0029-profile-placement.md"
+      ],
       "namespace": "CSBlocks.Profiles.Obsolete",
       "serializerId": "SER-0336",
-      "batchId": "BATCH-0031"
+      "batchId": "BATCH-0031",
+      "implementationScope": "Exact1.0 candidate header/native placement subset; original-PC geometry/editable PC-iOS-PC, all other versions/data/arrays and full UI/scheduler acceptance remain open."
     },
     {
       "id": "BLD-0302",

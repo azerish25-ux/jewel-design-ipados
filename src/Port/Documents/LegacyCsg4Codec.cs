@@ -5,6 +5,7 @@ namespace JewelDesign.Documents;
 /// <summary>Observed archive-4 CSG library envelope and numeric record schemas; not a portfolio or CAD evaluator.</summary>
 public static class LegacyCsg4Codec
 {
+    public static readonly Guid ProfilePlacement2RailTypeGuid=new("fc789225-3f3b-41f5-9eb0-6c25d4fc54b8");
     public static readonly Guid AddTypeGuid=new("8793b48f-30c7-4841-9314-157a5c7bb629");
     public static readonly Guid TranslateObjectTypeGuid=new("f9af1449-1903-4d26-92df-6febc8a61427");
     public static readonly Guid ScaleObjectToSizeTypeGuid=new("e80ed2a1-d415-4ded-b1e8-b8557ac37e9c");
@@ -73,7 +74,7 @@ public static class LegacyCsg4Codec
                 catch(NotSupportedException){/* Preserve the complete record opaque for an unsupported nested curve format. */}
             }
             LegacyCsg4SimpleBlock? block=null;
-            if((types[n]==RingRailV1TypeGuid||types[n]==OutsideRailV1TypeGuid||types[n]==SelectRingRailTypeGuid||types[n]==TranslateObjectTypeGuid||types[n]==ScaleObjectToSizeTypeGuid||types[n]==AddTypeGuid)&&version==new LegacyCsg4Version(1,0))
+            if((types[n]==RingRailV1TypeGuid||types[n]==OutsideRailV1TypeGuid||types[n]==SelectRingRailTypeGuid||types[n]==TranslateObjectTypeGuid||types[n]==ScaleObjectToSizeTypeGuid||types[n]==AddTypeGuid||types[n]==ProfilePlacement2RailTypeGuid)&&version==new LegacyCsg4Version(1,0))
                 block=LegacyCsg4SimpleBlock.Read(body,version,frame.CrcOffset);
             records[n] = new LegacyCsg4Record(types[n], version, frame.Offset, bytes.AsSpan(frame.Offset, frame.End - frame.Offset).ToArray(), scalar,profiles,block);
             g.Position = frame.End;

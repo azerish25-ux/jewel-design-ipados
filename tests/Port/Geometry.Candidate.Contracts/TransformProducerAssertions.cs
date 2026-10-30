@@ -76,8 +76,8 @@ internal static class TransformProducerAssertions
                 Apply(context,circle,matrix);
             }
             Check(LegacyCsg4Codec.Write(graph.Values.ExportCurrentDocument()).AsSpan().SequenceEqual(original),"Transform generations changed saved data");
-            // The real remaining scale chains require unported placement outputs: no stored-value substitute.
-            foreach(int index in new[]{112,119,126})Throws<NotSupportedException>(()=>graph.Generate(index));
+            // Placement now resolves the original remaining scale dependencies.
+            foreach(int index in new[]{112,119,126}){graph.Generate(index);Check(graph.ReadOutput(index,0).Transform is not null,"Original placement-dependent scale missing");}
         }
         var resolved=document;
         foreach(int index in new[]{111,118,125})resolved=resolved.WithInputLink(index,0,8,0).WithInputLink(index,1,9,0);
@@ -111,6 +111,6 @@ internal static class TransformProducerAssertions
         using(var missing=new CandidateRailGraphSession(context,document.WithInputLink(49,0,11,0),settings))Throws<NotSupportedException>(()=>missing.Generate(49));
         using(var cycle=new CandidateRailGraphSession(context,document.WithInputLink(50,0,50,0),settings))Throws<InvalidOperationException>(()=>cycle.Generate(50));
         Check(context.DiagnosticLiveShapeCount==0,"Transform generation leaked native shapes");
-        return "PASS saved transform producers:"+sourceCases+" exact-source translation/scale/scalar-add cases, saved6 translations/4 resolved original scales,3 placement-gated scales reject, all7 scale plans on explicit resolved links, native application/source preservation, override/edit/save/reopen/forwarding/cycle/cleanup; no full transform-chain/PC parity.";
+        return "PASS saved transform producers:"+sourceCases+" exact-source translation/scale/scalar-add cases, saved6 translations/all7 original scales via placement, all7 scale plans also on explicit resolved links, native application/source preservation, override/edit/save/reopen/forwarding/cycle/cleanup; no full transform-chain/PC parity.";
     }
 }

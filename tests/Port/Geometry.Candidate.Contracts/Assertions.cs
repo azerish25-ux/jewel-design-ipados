@@ -72,6 +72,7 @@ public static class Assertions
         var railGraph=RailGraphAssertions.Run();
         var selectRail=SelectRailAssertions.Run();
         var transforms=TransformProducerAssertions.Run();
-        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam+" "+bounds+" "+outsideRail+" "+storedProfiles+" "+valueGeometry+" "+railNodes+" "+railGraph+" "+selectRail+" "+transforms;
+        var placement=ProfilePlacementAssertions.Run();
+        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam+" "+bounds+" "+outsideRail+" "+storedProfiles+" "+valueGeometry+" "+railNodes+" "+railGraph+" "+selectRail+" "+transforms+" "+placement;
     }
 }
