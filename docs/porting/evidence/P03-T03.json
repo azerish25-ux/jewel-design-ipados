@@ -416,6 +416,18 @@
       "commit": "f580a24e5e70e6daf55c4f6f89836da94160d62c",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41091415494",
       "verification": "Selector unsigned device queued; platform/AOT/build log/hash inspection pending. No physical execution claim."
+    },
+    {
+      "id": 41094371196,
+      "commit": "e6b1315fcec7fbd68ddda84496642f40691603d9",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41094371196",
+      "verification": "Transform/source16093/native host/iPad/iPhone queued. Actual report/family/ownership inspection pending."
+    },
+    {
+      "id": 41094375299,
+      "commit": "e6b1315fcec7fbd68ddda84496642f40691603d9",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41094375299",
+      "verification": "Transform unsigned ARM64 device build queued. Actual platform/log/warnings/hash inspection pending; no physical execution."
     }
   ],
   "requirementIds": [
