@@ -304,6 +304,18 @@
       "commit": "8a764f74e08cedbd094e3174dfd804ad1cff9c6b",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41084119917",
       "verification": "Value-channel/source-oracle/native bridge unsigned device running confirmed live; terminal verification pending"
+    },
+    {
+      "id": 41089011365,
+      "commit": "f3685f3431c574ea02c4998cae83e638f064b95f",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41089011365",
+      "verification": "Graph-managed rail outputs host confirmed running; iPad/iPhone queued; terminal artifact verification pending"
+    },
+    {
+      "id": 41089016432,
+      "commit": "f3685f3431c574ea02c4998cae83e638f064b95f",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41089016432",
+      "verification": "Graph-managed rail outputs unsigned device queued; terminal artifact verification pending"
     }
   ],
   "requirementIds": [
