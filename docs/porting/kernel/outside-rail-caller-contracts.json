@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "status": "source_observed_not_ported",
+  "scope": "OutsideRail_V1 Update plus sampled-distance/extents/tolerance helpers; original-PC behavior and replacement-kernel equivalence untested",
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+      "sha256": "33aa3bd1e6dddc2b5332bd1ef350d30751aebb5d93440eda00f5ba9e81d2ea1a"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilGeometry.cs",
+      "sha256": "001df9dbed85eb3a982468ffbc895666d23abf6ef1ec615836eb73dda004f08d"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilRingRail.cs",
+      "sha256": "5cd38b0e906a051e19c755017699d47589a452ef93a8fe4d75921d8142faead6"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtil.cs",
+      "sha256": "c2aef5490468e8970b91b6aeefde0b0d0533aa35912ca1acefc41e9a795fa653"
+    }
+  ],
+  "node": {
+    "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3",
+    "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1"
+  },
+  "inputs": {
+    "required": "Outside curve must convert to NURBS or UpdateError(Missing Custom Rail)",
+    "defaults": {
+      "topThickness": 3,
+      "sideThickness": 2,
+      "bottomThickness": 1,
+      "lockOn": false
+    },
+    "radius": "Try double; otherwise NURBS accurate bounding-box Max.Z; missing curve -> UpdateError(Missing Ring Rail)"
+  },
+  "preparation": "Duplicate/to-NURBS/MakeDeformable. Sample50 normalized arc-length fractions i/50 excluding endpoint, using Curve.NormalizedLengthParameters at helper CSUtil.Tolerance. Take minimum sampled Euclidean origin distance, not exact closest-point distance. min==0/maxDouble or radius==0 -> error. Uniform origin scale radius/min.",
+  "extents": "Intersect curve with finite origin rays to Z+100,Z-100,X+100,X-100. Helpers use first PointA without count guards; all four helper calls evaluated with bitwise &. These are axis-intersection extents, not bounding-box extrema.",
+  "unlocked": "Three ordered transforms: stretch Z from bottom so top reaches radius+top; recompute extents; stretch Z from top so bottom reaches -radius-bottom; recompute; scale X by (radius+side)/right. The first two use a plane whose local Y is world Z. No lock-branch seam normalization is applied.",
+  "locked": "Scale X, intersect finite horizontal segment[-200,200] at Z0 using application tolerance; require exactly2 events. Seam to first ParameterA, duplicate/reverse, closest-point and trim both halves at second PointA; select top by domain-mid Z. Scale top/bottom Z separately around origin; JoinCurves and take first if nonempty. Intersect positive-Z ray; use first parameter if present, otherwise closest point to (0,0,100). Set seam; reverse if start tangent dot X<0.",
+  "tolerances": "CSBlockUtil.CSUtil.Tolerance is cached after first GetTolerance callback, fallback0.001 when no callback. Locked direct intersections use current Application.Tolerance; helper extents and normalized-length mapping use cached helper tolerance. Do not conflate the two policies.",
+  "outputs": "Convert resulting curve through legacy OnNurbs form; emit CSOutsideRingRailData. oOutsideScale always emits numeric0, not the computed scale ratios.",
+  "requiredKernelOperations": [
+    "NURBS duplication/deformability and nonuniform affine transforms",
+    "Normalized arc-length parameter mapping",
+    "Finite curve-curve intersection with event ordering and tolerances",
+    "Accurate bounds, curve domain/mid/tangent and closest point",
+    "Closed-curve seam, reversal, trim and joining with output ordering"
+  ],
+  "requiredOracleCases": [
+    "Missing/malformed curve/radius inputs and defaults",
+    "Asymmetric/noncircular curve, min sampled vs exact distance, degenerate spans",
+    "Locked/unlocked branches, first-event ordering, join null/empty/multiple outputs",
+    "Zero/near-zero denominators, seam/tangent continuity and nonfinite transforms",
+    "Cached vs current tolerance changes",
+    "Native output topology/parameterization and original-PC comparison"
+  ],
+  "limit": "Generic circle/box support cannot substitute for this algorithm. Source unchecked failure paths require original-runtime evidence before correction/emulation decisions."
+}

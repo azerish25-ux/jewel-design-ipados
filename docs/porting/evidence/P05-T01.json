@@ -15,7 +15,9 @@
     "docs/porting/kernel/ring-rail-caller-contracts.json",
     "reference/file-proof/ring-rail-v1.cjs",
     "tests/ring-rail-v1-reference.test.cjs",
-    "docs/evidence/audit/ring-rail-input-reference.json"
+    "docs/evidence/audit/ring-rail-input-reference.json",
+    "docs/porting/kernel/outside-rail-caller-contracts.json",
+    "docs/porting/kernel/OUTSIDE_RAIL_SEMANTICS.md"
   ],
   "sourceEvidence": [
     {
@@ -101,6 +103,18 @@
     {
       "path": "recovery/canonical/cad/CSBlockUtil/CSUtilRhino.cs",
       "sha256": "061cb30bd4abcdff29140ab7073078a1ad5ba079e70f941d489cbff8d7ab80e5"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+      "sha256": "33aa3bd1e6dddc2b5332bd1ef350d30751aebb5d93440eda00f5ba9e81d2ea1a"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilRingRail.cs",
+      "sha256": "5cd38b0e906a051e19c755017699d47589a452ef93a8fe4d75921d8142faead6"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtil.cs",
+      "sha256": "c2aef5490468e8970b91b6aeefde0b0d0533aa35912ca1acefc41e9a795fa653"
     }
   ],
   "fixtures": [],
@@ -129,6 +143,11 @@
       "id": "P05-T01-A05",
       "scope": "Source-correlated RingRail_V1 caller and exact fixture v1.0 header/input trace",
       "status": "source_reference_verified_not_evaluated"
+    },
+    {
+      "id": "P05-T01-A06",
+      "scope": "OutsideRail_V1 Update and sampled-distance/axis-intersection/tolerance helpers",
+      "status": "source_observed"
     }
   ],
   "checks": [
