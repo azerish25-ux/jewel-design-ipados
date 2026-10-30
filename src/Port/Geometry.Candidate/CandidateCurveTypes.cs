@@ -8,3 +8,5 @@ public readonly record struct CandidatePlane(CandidatePoint3 Origin,CandidateVec
     public static CandidatePlane WorldXY=>new(new(0,0,0),new(0,0,1),new(1,0,0));
 }
 public readonly record struct CandidateCurveInfo(double FirstParameter,double LastParameter,double Length,uint Degree,uint PoleCount,bool IsRational);
+
+public readonly record struct CandidateCurveProjection(double Parameter,CandidatePoint3 Point,double Distance);

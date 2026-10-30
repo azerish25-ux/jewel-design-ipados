@@ -3,6 +3,8 @@
 #include <BRepBuilderAPI_MakeEdge.hxx>
 #include <BRepAdaptor_Curve.hxx>
 #include <Geom_Circle.hxx>
+#include <GeomAPI_ProjectPointOnCurve.hxx>
+#include <BRep_Tool.hxx>
 #include <Geom_TrimmedCurve.hxx>
 #include <Geom_BSplineCurve.hxx>
 #include <GeomConvert.hxx>
@@ -324,6 +326,33 @@ extern "C" int32_t jd_candidate_affine(uint64_t context,uint64_t shape,const dou
             BRepBuilderAPI_GTransform operation(findShape(value,shape).shape,transform,true);
             if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native affine transformation failed");
             *output=store(value,operation.Shape());
+        });
+    },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_curve_closest(uint64_t context,uint64_t shape,double px,double py,double pz,double* parameter,double* x,double* y,double* z,double* distance,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        if(!parameter||!x||!y||!z||!distance)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing closest point output");
+        *parameter=0;*x=0;*y=0;*z=0;*distance=0;
+        if(!std::isfinite(px)||!std::isfinite(py)||!std::isfinite(pz))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Projection point must be finite");
+        withContext(context,[&](Context& value){
+            const auto& input=findShape(value,shape).shape;
+            if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Closest point requires an edge");
+            double first=0,last=0;auto curve=BRep_Tool::Curve(TopoDS::Edge(input),first,last);
+            if(curve.IsNull()||!std::isfinite(first)||!std::isfinite(last)||last<=first)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid located curve/domain");
+            const gp_Pnt query(px,py,pz);GeomAPI_ProjectPointOnCurve projection(query,curve,first,last);
+            if(!projection.Extrema().IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native curve projection did not converge");
+            double bestParameter=first;gp_Pnt best=curve->Value(first);double bestDistance=query.Distance(best);
+            auto consider=[&](double candidateParameter,const gp_Pnt& point){
+                const double candidateDistance=query.Distance(point);
+                if(!std::isfinite(candidateParameter)||!std::isfinite(point.X())||!std::isfinite(point.Y())||!std::isfinite(point.Z())||!std::isfinite(candidateDistance))fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid native projection candidate");
+                if(candidateDistance<bestDistance){bestParameter=candidateParameter;best=point;bestDistance=candidateDistance;}
+            };
+            consider(last,curve->Value(last));
+            for(int i=1;i<=projection.NbPoints();i++)consider(projection.Parameter(i),projection.Point(i));
+            if(!std::isfinite(bestDistance)||bestParameter<first||bestParameter>last)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid closest point result");
+            *parameter=bestParameter;*x=best.X();*y=best.Y();*z=best.Z();*distance=bestDistance;
         });
     },diagnostic,capacity);
 }

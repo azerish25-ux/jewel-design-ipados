@@ -39,4 +39,13 @@ public sealed partial class CandidateContext
             return parameter;
         }
     }
+    public CandidateCurveProjection ClosestPoint(CandidateShape shape,CandidatePoint3 point)
+    {
+        lock(_gate){
+            ThrowIfDisposed();Validate(shape);var diagnostic=new byte[DiagnosticCapacity];
+            Check(NativeMethods.CurveClosest(_handle,shape.Handle,point.X,point.Y,point.Z,out var parameter,out var x,out var y,out var z,out var distance,diagnostic,DiagnosticCapacity),diagnostic);
+            if(!double.IsFinite(parameter)||!double.IsFinite(x)||!double.IsFinite(y)||!double.IsFinite(z)||!double.IsFinite(distance)||distance<0)throw new InvalidOperationException("Invalid native closest point response.");
+            return new(parameter,new(x,y,z),distance);
+        }
+    }
 }

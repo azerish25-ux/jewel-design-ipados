@@ -42,8 +42,15 @@ internal static class CurveAssertions
             }
             Check(Fails(()=>{using var rejected=context.TransformAffine(circle,new(0,0,0,0,0,1,0,0,0,0,1,0));}).Status==CandidateNativeStatus.InvalidArgument,"Singular affine matrix accepted");
             Check(Fails(()=>{using var rejected=context.TransformAffine(circle,new(double.NaN,0,0,0,0,1,0,0,0,0,1,0));}).Status==CandidateNativeStatus.InvalidArgument,"Nonfinite affine matrix accepted");
+            var nearest=context.ClosestPoint(circle,new(10,3,10));double diagonal=7/Math.Sqrt(2);
+            Point(nearest.Point,diagonal,0,diagonal);
+            Near(nearest.Distance,Math.Sqrt(Math.Pow(Math.Sqrt(200)-7,2)+9));
+            var evaluated=context.PointAt(circle,nearest.Parameter);Point(evaluated,nearest.Point.X,nearest.Point.Y,nearest.Point.Z);
+            var seam=context.ClosestPoint(circle,new(0,0,7));Point(seam.Point,0,0,7);Near(seam.Distance,0);
+            Check(Fails(()=>context.ClosestPoint(circle,new(double.NaN,0,0))).Status==CandidateNativeStatus.InvalidArgument,"Nonfinite projection input");
             using var moved=context.Translate(circle,1,2,3);
             Point(context.PointAt(moved,info.FirstParameter),1,2,10);
+            var projectedMoved=context.ClosestPoint(moved,new(11,5,13));Point(projectedMoved.Point,1+diagonal,2,3+diagonal);
             using var clone=context.Clone(circle);using var alias=context.Retain(circle);
             circle.Dispose();Point(context.PointAt(clone,info.FirstParameter),0,0,7);Point(context.PointAt(alias,info.FirstParameter),0,0,7);
         }
@@ -62,6 +69,6 @@ internal static class CurveAssertions
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,0),new(1,0,0)));});
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,1),new(0,0,1)));});
         Check(context.DiagnosticLiveShapeCount==0,"Curve ownership retained native entries");
-        return "PASS candidate native curves: actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
+        return "PASS candidate native curves: actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
     }
 }

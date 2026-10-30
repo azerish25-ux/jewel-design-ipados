@@ -38,4 +38,6 @@ internal static class NativeMethods
     internal static extern int CurveLengthParameter(ContextHandle context,ShapeHandle shape,double fraction,double tolerance,out double parameter,[Out]byte[] diagnostic,uint capacity);
     [DllImport(Library,EntryPoint="jd_candidate_affine",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
     internal static extern int Affine(ContextHandle context,ShapeHandle shape,[In]double[] matrix,uint count,out ulong output,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_curve_closest",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int CurveClosest(ContextHandle context,ShapeHandle shape,double px,double py,double pz,out double parameter,out double x,out double y,out double z,out double distance,[Out]byte[] diagnostic,uint capacity);
 }

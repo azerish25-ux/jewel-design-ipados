@@ -52,6 +52,12 @@ void run_candidate_curve_contracts()
     double badMatrix[12]={1,0,0,0,0,1,0,0,0,0,1,0};badMatrix[0]=std::numeric_limits<double>::quiet_NaN();
     checkCurve(jd_candidate_affine(context.id,circle,badMatrix,12,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Nonfinite matrix");
     ok(jd_candidate_shape_release(context.id,affine,error,sizeof(error)));
+    double nearestParameter=0,nearestX=0,nearestY=0,nearestZ=0,nearestDistance=0;
+    ok(jd_candidate_curve_closest(context.id,circle,10,3,10,&nearestParameter,&nearestX,&nearestY,&nearestZ,&nearestDistance,error,sizeof(error)));
+    nearCurve(nearestX,7/std::sqrt(2.0));nearCurve(nearestY,0);nearCurve(nearestZ,7/std::sqrt(2.0));
+    nearCurve(nearestDistance,std::sqrt(std::pow(std::sqrt(200.0)-7,2)+9));
+    checkCurve(jd_candidate_curve_closest(context.id,box,10,3,10,&nearestParameter,&nearestX,&nearestY,&nearestZ,&nearestDistance,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION,"Solid produced fake closest curve point");
+    checkCurve(jd_candidate_curve_closest(context.id,circle,10,3,10,nullptr,&nearestX,&nearestY,&nearestZ,&nearestDistance,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Missing closest output accepted");
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }
