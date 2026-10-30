@@ -35,7 +35,8 @@
     "tests/Port/Geometry.Candidate.Contracts/Geometry.Candidate.Contracts.csproj",
     "tests/Port/Geometry.Candidate.Contracts/Assertions.cs",
     "docs/porting/plans/P05-T02-A05-managed-candidate-adapter.md",
-    "docs/evidence/apple/candidate-abi-results.json"
+    "docs/evidence/apple/candidate-abi-results.json",
+    "docs/evidence/apple/managed-candidate-adapter-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -83,7 +84,7 @@
     {
       "id": "P05-T02-A05",
       "scope": "Real CSharp candidate methods, typed failures, SafeHandle parent leases and actual native ownership contracts",
-      "status": "managed_build_passed_apple_runtime_pending"
+      "status": "verified_simulator_adapter_device_pending"
     }
   ],
   "checks": [
@@ -125,7 +126,7 @@
     "limits": "Windows host has no active C++ compiler in PATH; actual host/iOS builds must run in CI",
     "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim",
     "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending.",
-    "currentStatus": "Native C ABI and shared recovered/production suite passed host/iPad/iPhone and unsigned device linking. New CSharp SafeHandle adapter compiles locally and passed iPad execution step; its complete iPhone/device proofs remain pending.",
+    "currentStatus": "Native ownership ABI and actual CSharp SafeHandle adapter passed both Apple simulator families. Earlier combined native/shared recovered suite device build passed; latest adapter-specific unsigned device build still pending.",
     "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed.",
     "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs.",
     "combinedRuntime": "Combined app passed native analytical and shared recovered/production managed assertions on iPad/iPhone run41023784246, dynamic-code=False. Newer freshness/device build41024529850 passed ios-arm64/platform IOS with 52 warnings/0 errors. Broader recovered reflection/XML trim risks remain; no physical execution or all-class behavior claim.",
@@ -203,7 +204,7 @@
       "id": 41028520528,
       "commit": "fc4a6052377aae3fd640e5b7b643ef709e3b3861",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41028520528",
-      "verification": "Actual CSharp SafeHandle adapter run: host native assertions passed, iPad execution step passed; iPhone still live when observed. Full result/artifact inspection pending."
+      "verification": "Host passed and both iPad/iPhone execution steps passed actual CSharp adapter plus native/managed suites. Both family reports and hashes inspected; see managed-candidate-adapter-results.json."
     },
     {
       "id": 41028523338,
