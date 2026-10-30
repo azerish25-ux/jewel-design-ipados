@@ -5,6 +5,8 @@ namespace JewelDesign.Documents;
 /// <summary>Observed archive-4 CSG library envelope and numeric record schemas; not a portfolio or CAD evaluator.</summary>
 public static class LegacyCsg4Codec
 {
+    public static readonly Guid RingRailV1TypeGuid=new("65aa45c6-d1cd-4c45-92bb-b5a9a6a2ec47");
+    public static readonly Guid OutsideRailV1TypeGuid=new("f9f6400f-67c2-4883-8c44-a91f411f2ee3");
     public static readonly Guid MatrixProfilesTypeGuid=new("98415b72-dadb-4b9b-94a9-1e6c5865b5f2");
     public static readonly Guid RangeTypeGuid = new("56b84606-7f1d-41fb-b81f-f521d9a9577d");
     public static readonly Guid RingTypeGuid = new("dd5c2342-d89a-440e-a76e-624a1faf2b68");
@@ -66,7 +68,10 @@ public static class LegacyCsg4Codec
                 try{profiles=LegacyMatrixProfilesCodec.Read(body,version,frame.CrcOffset,limits);}
                 catch(NotSupportedException){/* Preserve the complete record opaque for an unsupported nested curve format. */}
             }
-            records[n] = new LegacyCsg4Record(types[n], version, frame.Offset, bytes.AsSpan(frame.Offset, frame.End - frame.Offset).ToArray(), scalar,profiles);
+            LegacyCsg4SimpleBlock? block=null;
+            if((types[n]==RingRailV1TypeGuid||types[n]==OutsideRailV1TypeGuid)&&version==new LegacyCsg4Version(1,0))
+                block=LegacyCsg4SimpleBlock.Read(body,version,frame.CrcOffset);
+            records[n] = new LegacyCsg4Record(types[n], version, frame.Offset, bytes.AsSpan(frame.Offset, frame.End - frame.Offset).ToArray(), scalar,profiles,block);
             g.Position = frame.End;
         }
         RequireEnd(g, graph.CrcOffset); r.Position = graph.End;

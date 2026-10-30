@@ -65,6 +65,26 @@
     {
       "url": "https://github.com/mcneel/opennurbs/blob/eb92af3ba1806b0a34a99aba0d3bda83e3d46083/opennurbs_nurbscurve.cpp",
       "scope": "Pinned modern openNURBS legacy1.0 Read/Write field corroboration; distinct from original runtime oracle"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSRingRail1.cs",
+      "sha256": "fd06635926c702a605d94a812847f7f84c6d0a7fde5db362e4f1e8d0bf74267b",
+      "scope": "P04-T01-A04 exact payload-free consumer serialization and constructor/default input contracts"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+      "sha256": "33aa3bd1e6dddc2b5332bd1ef350d30751aebb5d93440eda00f5ba9e81d2ea1a",
+      "scope": "P04-T01-A04 exact payload-free consumer serialization and constructor/default input contracts"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4",
+      "scope": "P04-T01-A04 exact payload-free consumer serialization and constructor/default input contracts"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+      "sha256": "32460012d6e5d127d9bce60be12a1c5e2432265c827a47940e92292e0be1dd8b",
+      "scope": "P04-T01-A04 exact payload-free consumer serialization and constructor/default input contracts"
     }
   ],
   "outputs": [
@@ -98,7 +118,12 @@
     "docs/evidence/audit/matrix-profile-reference.json",
     "docs/porting/plans/P04-T01-A03-matrix-profiles.md",
     "docs/porting/ADR-0022-embedded-matrix-profiles.md",
-    "docs/evidence/apple/matrix-profile-codec-results.json"
+    "docs/evidence/apple/matrix-profile-codec-results.json",
+    "src/Port/Documents/LegacyCsg4SimpleBlock.cs",
+    "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
+    "tests/Port/Geometry.Candidate.Contracts/RailNodeAssertions.cs",
+    "docs/porting/plans/P04-T01-A04-rail-bindings.md",
+    "docs/porting/ADR-0025-rail-consumer-bindings.md"
   ],
   "fixtures": [
     {
@@ -126,6 +151,11 @@
       "id": "P04-T01-A03",
       "scope": "Six immutable stored matrix-profile groups,155 raw NURBS curves and structural encoding/common header projection",
       "status": "verified_bounded_matrix_profile_codec"
+    },
+    {
+      "id": "P04-T01-A04",
+      "scope": "Exact legacy rail consumer header encoding/saved rewiring and node-bound native geometry builds",
+      "status": "local_verified_apple_pending"
     }
   ],
   "checks": [
@@ -239,6 +269,36 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "actual": "10 reference tests, independent four-output archive hashes and three scalar edit comparisons pass; all240 other records preserved in each scalar case."
+    },
+    {
+      "subtaskId": "P04-T01-A04",
+      "command": "dotnet build Documents.Contracts before SimpleBlock; native contracts before BuildFromNode",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED8 absent header/API and7 absent node-builder errors; .local/evidence/P04-T01-A04/red.txt and native-red.txt"
+    },
+    {
+      "subtaskId": "P04-T01-A04",
+      "command": "dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Independent header/links, exact no-op, consumer rewrite/save/reopen/reversal, future/count/immutability/non-scalar guards and108 known/133 opaque/100 scalar boundaries pass. Prior document/value/profile assertions pass.",
+      "artifact": ".local/evidence/P04-T01-A04/document-proof.log"
+    },
+    {
+      "subtaskId": "P04-T01-A04",
+      "command": "node scripts/build-native-windows.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Actual saved RingRail/OutsideRail records drive generation/native builds; consumer rewiring changes real output, saved state reopens/rebuilds/restores, disconnected/non-numeric defaults and zero-entry ownership pass; all earlier native/value/import geometry assertions preserved.",
+      "artifact": ".local/evidence/P04-T01-A04/native-proof.log"
+    },
+    {
+      "subtaskId": "P04-T01-A04",
+      "command": "node --test ring/outside/matrix reference and value-channel oracle controls; production archive/scalar crosschecks",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "8 independent controls pass; four-output structural archive hashes and other-record scalar preservation remain passing."
     }
   ],
   "review": {
@@ -250,7 +310,8 @@
     "limitations": "Nested preview/gem checksums opaque; no native-load side effects, portfolio, all 654 schemas, migration, PC app reopen or geometry generation",
     "appleStartup": "Same source commit passed both families in parallel control; failed main iPad lacked managed result. Exact startup cause remains unproven, no codec workaround applied.",
     "additionalScalars": "Production exact1.1 scalar profiles now implemented over shared immutable header/bit encoding; Numeric API remains bounded subset74. Additional26 plus existing74=100;141 records remain opaque. Source/independent oracle/full-body/save checks pass locally. Graph sessions still74 and UI/CAM/PC/native regeneration untouched; Apple results pending. Both iPad/iPhone shared-suite runs41034629346 passed; actual reports and hashes inspected. Parent P04 remains incomplete.",
-    "matrixProfiles": "Reviewed allocation/byte/count consistency before reads, unsupported nested schema remains wholly opaque, immutable raw geometry and exact bit encoding, common header projection without scalar handle inflation, no resolution of stored path labels, and source graph/native/PC limits. No arbitrary original native code or BinaryFormatter execution."
+    "matrixProfiles": "Reviewed allocation/byte/count consistency before reads, unsupported nested schema remains wholly opaque, immutable raw geometry and exact bit encoding, common header projection without scalar handle inflation, no resolution of stored path labels, and source graph/native/PC limits. No arbitrary original native code or BinaryFormatter execution.",
+    "railBindings": "Reviewed exact GUID/version allowlist and full-body consumption, immutable common header encoding, existing-slot edits without scalar invention or count normalization, constructor/default input padding, explicit unsupported producer/scheduler limits, native temporary ownership and saved source-bound geometry. Complete CSBlock/output/PC/UI behavior remains open."
   },
   "blockers": [
     "Full P04 still needs P02/P03, representative PC corpus/oracle, all serializers/portfolio/migration and geometry/sidecar integration"

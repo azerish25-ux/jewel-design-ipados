@@ -21,6 +21,7 @@ public static class Assertions
         var additionalScalars=AdditionalScalarAssertions.Run(document,original,outputFolder);
         var matrixProfiles=MatrixProfileAssertions.Run(document,original);
         var valueGraph=ValueGraphAssertions.Run(document,original);
+        var railBlocks=RailBlockAssertions.Run(document,original);
         ProjectionAssertions.Run(document);
         var editBridgeResult = EditBridgeAssertions.Run(document, original);
         var selected = document.Records[8];
@@ -106,7 +107,7 @@ public static class Assertions
             File.WriteAllBytes(Path.Combine(outputFolder, "edited.csg"), edited);
             File.WriteAllBytes(Path.Combine(outputFolder, "restored.csg"), restored);
         }
-        return valueGraph+"; "+matrixProfiles+"; "+additionalScalars+"; "+packageResult+"; "+portfolioResult + "; " + editBridgeResult + "; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.";
+        return railBlocks+"; "+valueGraph+"; "+matrixProfiles+"; "+additionalScalars+"; "+packageResult+"; "+portfolioResult + "; " + editBridgeResult + "; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.";
     }
 
     private static void LeafCrc(byte[] data, LegacyCsg4Record record)

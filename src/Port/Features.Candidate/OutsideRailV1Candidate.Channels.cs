@@ -5,7 +5,19 @@ namespace JewelDesign.Features.Candidate;
 
 public static partial class OutsideRailV1Candidate
 {
-    /// <summary>Generate/read a known scalar/profile input slice. Bindings are explicit until consumer headers are decoded.</summary>
+    public static OutsideRailCandidate BuildFromNode(CandidateContext context,LegacyValueGraphSession session,int recordIndex,OutsideRailCandidateSettings settings)
+    {
+        ArgumentNullException.ThrowIfNull(session);
+        if((uint)recordIndex>=(uint)session.Document.Records.Count)throw new ArgumentOutOfRangeException(nameof(recordIndex));
+        var record=session.Document.Records[recordIndex];
+        if(record.TypeGuid!=TypeGuid||record.Version!=new LegacyCsg4Version(1,0)||record.SimpleBlock is not{} block)
+            throw new NotSupportedException("OutsideRail_V1 consumer header is not decoded.");
+        var inputs=new SerializedChannelLink[6];
+        for(int i=0;i<inputs.Length;i++)inputs[i]=i<block.ObjectIndices.Count?new(block.ObjectIndices[i],block.ChannelIndices[i]):SerializedChannelLink.Disconnected;
+        return BuildFromChannels(context,session,inputs,settings);
+    }
+
+    /// <summary>Generate/read a known scalar/profile input slice. Bindings can be supplied directly or decoded from the known consumer record.</summary>
     public static OutsideRailCandidate BuildFromChannels(CandidateContext context,LegacyValueGraphSession session,
         IReadOnlyList<SerializedChannelLink> bindings,OutsideRailCandidateSettings settings)
     {

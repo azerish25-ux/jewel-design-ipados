@@ -44,20 +44,27 @@ public sealed class LegacyCsg4Record
     public LegacyCsg4Scalar? Scalar {get;}
     public LegacyCsg4Numeric? Numeric=>Scalar as LegacyCsg4Numeric;
     public LegacyCsg4MatrixProfiles? MatrixProfiles {get;}
-    public ILegacyCsg4Header? Header=>(ILegacyCsg4Header?)Scalar??MatrixProfiles;
+    public LegacyCsg4SimpleBlock? SimpleBlock {get;}
+    public ILegacyCsg4Header? Header=>(ILegacyCsg4Header?)Scalar??(ILegacyCsg4Header?)MatrixProfiles??SimpleBlock;
     public string? OpaqueReason => Header is not null ? null :
+        TypeGuid==LegacyCsg4Codec.RingRailV1TypeGuid||TypeGuid==LegacyCsg4Codec.OutsideRailV1TypeGuid?"Rail block version is not decoded":
         TypeGuid==LegacyCsg4Codec.MatrixProfilesTypeGuid?"Matrix profile version or nested NURBS format is not decoded":
         TypeGuid == LegacyCsg4Codec.RangeTypeGuid || TypeGuid == LegacyCsg4Codec.RingTypeGuid ? "Numeric record version is not decoded" : LegacyCsg4Codec.IsPlainScalarType(TypeGuid) ? "Scalar record version is not decoded" : "Record type is not decoded";
 
-    internal LegacyCsg4Record(Guid type, LegacyCsg4Version version, int offset, byte[] originalRecord, LegacyCsg4Scalar? scalar,LegacyCsg4MatrixProfiles? matrixProfiles=null)
+    internal LegacyCsg4Record(Guid type, LegacyCsg4Version version, int offset, byte[] originalRecord, LegacyCsg4Scalar? scalar,LegacyCsg4MatrixProfiles? matrixProfiles=null,LegacyCsg4SimpleBlock? block=null)
     {
-        TypeGuid = type; Version = version; OriginalFileOffset = offset; this.originalRecord = originalRecord; Scalar = scalar;MatrixProfiles=matrixProfiles;
+        TypeGuid = type; Version = version; OriginalFileOffset = offset; this.originalRecord = originalRecord; Scalar = scalar;MatrixProfiles=matrixProfiles;SimpleBlock=block;
     }
-    internal LegacyCsg4Record WithInputLink(int input,int objectIndex,int channelIndex)=>new(TypeGuid,Version,OriginalFileOffset,originalRecord,(Scalar??throw new NotSupportedException("Scalar header required")).WithInputLink(input,objectIndex,channelIndex),MatrixProfiles);
+    internal LegacyCsg4Record WithInputLink(int input,int objectIndex,int channelIndex)
+    {
+        if(Scalar is not null)return new(TypeGuid,Version,OriginalFileOffset,originalRecord,Scalar.WithInputLink(input,objectIndex,channelIndex),MatrixProfiles,SimpleBlock);
+        if(SimpleBlock is not null)return new(TypeGuid,Version,OriginalFileOffset,originalRecord,null,MatrixProfiles,SimpleBlock.WithInputLink(input,objectIndex,channelIndex));
+        throw new NotSupportedException("Record input header is not editable.");
+    }
     public byte[] CopyOriginalRecordBytes() => (byte[])originalRecord.Clone();
-    internal byte[] EncodePayload() => Scalar?.Encode() ?? MatrixProfiles?.Encode() ?? originalRecord.AsSpan(8, originalRecord.Length - 12).ToArray();
+    internal byte[] EncodePayload() => Scalar?.Encode() ?? MatrixProfiles?.Encode() ?? SimpleBlock?.Encode() ?? originalRecord.AsSpan(8, originalRecord.Length - 12).ToArray();
     internal LegacyCsg4Record WithValue(double value) => new(TypeGuid, Version, OriginalFileOffset, originalRecord,
-        (Scalar ?? throw new NotSupportedException(OpaqueReason??"Record has no stored scalar value")).WithValue(value),MatrixProfiles);
+        (Scalar ?? throw new NotSupportedException(OpaqueReason??"Record has no stored scalar value")).WithValue(value),MatrixProfiles,SimpleBlock);
 }
 
 /// <summary>Immutable library archive model; it does not contain regenerated CAD geometry.</summary>
@@ -82,6 +89,14 @@ public sealed class LegacyCsg4Document
 
     /// <summary>Store an exact decoded scalar; this does not apply OnOff/chooser UI policy or regenerate CAD.</summary>
     public LegacyCsg4Document WithScalarInputLink(int ordinal,int input,int objectIndex,int channelIndex)
+    {
+        if((uint)ordinal>=(uint)Records.Count)throw new ArgumentOutOfRangeException(nameof(ordinal));
+        if(objectIndex>=Records.Count)throw new ArgumentOutOfRangeException(nameof(objectIndex));
+        if(Records[ordinal].Scalar is null)throw new NotSupportedException("Scalar header required.");
+        return WithInputLink(ordinal,input,objectIndex,channelIndex);
+    }
+
+    public LegacyCsg4Document WithInputLink(int ordinal,int input,int objectIndex,int channelIndex)
     {
         if((uint)ordinal>=(uint)Records.Count)throw new ArgumentOutOfRangeException(nameof(ordinal));
         if(objectIndex>=Records.Count)throw new ArgumentOutOfRangeException(nameof(objectIndex));

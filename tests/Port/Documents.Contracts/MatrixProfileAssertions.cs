@@ -30,7 +30,7 @@ internal static class MatrixProfileAssertions
     {
         Check(document.MatrixProfileRecordCount==6&&document.Records.Where(x=>x.MatrixProfiles is not null).Sum(x=>x.MatrixProfiles!.Curves.Count)==155,"Matrix group/curve counts");
         Check(document.Records.Where(x=>x.MatrixProfiles is not null).Sum(x=>x.MatrixProfiles!.Curves.Sum(c=>c.ControlVertexCount))==4012,"Stored CV count");
-        Check(document.ScalarRecordCount==100&&document.Records.Count(x=>x.Header is not null)==106&&document.Records.Count(x=>x.OpaqueReason is not null)==135,"Typed header/scalar/opaque boundaries");
+        Check(document.ScalarRecordCount==100&&document.Records.Count(x=>x.Header is not null)==108&&document.Records.Count(x=>x.OpaqueReason is not null)==133,"Typed header/scalar/opaque boundaries");
         using var stream=typeof(MatrixProfileAssertions).Assembly.GetManifestResourceStream("MatrixProfileOracle")!;
         using var oracle=JsonDocument.Parse(stream);var groups=oracle.RootElement.GetProperty("groups").EnumerateArray().ToArray();
         Check(groups.Length==6,"Independent group count");
