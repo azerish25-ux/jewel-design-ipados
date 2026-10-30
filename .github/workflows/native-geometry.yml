@@ -6,6 +6,8 @@ on:
       - "native/GeometryBridge/CandidateProbe/**"
       - "tests/iOS.Native/**"
       - "tests/Smoke/**"
+      - "src/Port/Geometry.Candidate/**"
+      - "tests/Port/Geometry.Candidate.Contracts/**"
       - "scripts/run-native-simulator.sh"
       - "scripts/ios-device.cjs"
       - ".github/workflows/native-geometry.yml"

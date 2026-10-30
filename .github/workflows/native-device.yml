@@ -6,6 +6,8 @@ on:
       - "native/GeometryBridge/CandidateProbe/**"
       - "tests/iOS.Native/**"
       - "tests/Smoke/**"
+      - "src/Port/Geometry.Candidate/**"
+      - "tests/Port/Geometry.Candidate.Contracts/**"
       - ".github/workflows/native-device.yml"
   workflow_dispatch:
 permissions:

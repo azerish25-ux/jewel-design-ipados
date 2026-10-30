@@ -22,7 +22,8 @@ public class AppDelegate:UIApplicationDelegate
    if(end<0)throw new Exception("Native report missing terminator");var result=Encoding.UTF8.GetString(buffer,0,end);
    if(status!=0||!result.StartsWith("PASS OCCT ",StringComparison.Ordinal))throw new Exception("Native candidate status "+status+": "+result);
    var managedResult=ReuseSmoke.Checks.Run();
-   result+=Environment.NewLine+managedResult;
+   var adapterResult=CandidateGeometryContractChecks.Assertions.Run();
+   result+=Environment.NewLine+managedResult+Environment.NewLine+adapterResult;
    File.WriteAllText(path+".pending",result);
    File.Move(path+".pending",path,overwrite:true);
    Console.WriteLine(result);

@@ -1,0 +1,31 @@
+using System.Runtime.InteropServices;
+namespace JewelDesign.Geometry.Candidate;
+
+internal static class NativeMethods
+{
+    private const string Library="__Internal";
+    [DllImport(Library,EntryPoint="jd_candidate_abi_version",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern uint AbiVersion();
+    [DllImport(Library,EntryPoint="jd_candidate_context_create",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int ContextCreate(uint version,out ulong output,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_context_release",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int ContextReleaseRaw(ulong context,[Out]byte[]? diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_context_live_shapes",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int ContextLiveShapes(ContextHandle context,out ulong count,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_context_live_shapes",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int ContextLiveShapesRaw(ulong context,out ulong count,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_box",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int Box(ContextHandle context,double x,double y,double z,out ulong output,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_translate",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int Translate(ContextHandle context,ShapeHandle shape,double x,double y,double z,out ulong output,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_shape_clone",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int ShapeClone(ContextHandle context,ShapeHandle shape,out ulong output,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_boolean",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int Boolean(ContextHandle context,int operation,ShapeHandle lhs,ShapeHandle rhs,double fuzzy,out ulong output,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_shape_retain",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int ShapeRetain(ContextHandle context,ShapeHandle shape,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_shape_release",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int ShapeReleaseRaw(ulong context,ulong shape,[Out]byte[]? diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_shape_inspect",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int ShapeInspect(ContextHandle context,ShapeHandle shape,out double volume,out uint solids,out uint valid,[Out]byte[] diagnostic,uint capacity);
+}

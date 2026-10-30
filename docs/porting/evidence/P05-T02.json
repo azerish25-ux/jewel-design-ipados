@@ -24,7 +24,17 @@
     "native/GeometryBridge/CandidateProbe/candidate_abi_contracts.cpp",
     "native/GeometryBridge/CandidateProbe/candidate_abi.h",
     "native/GeometryBridge/CandidateProbe/candidate_abi.cpp",
-    "docs/evidence/apple/combined-native-managed-results.json"
+    "docs/evidence/apple/combined-native-managed-results.json",
+    "src/Port/Geometry.Candidate/Geometry.Candidate.csproj",
+    "src/Port/Geometry.Candidate/CandidateContext.cs",
+    "src/Port/Geometry.Candidate/CandidateShape.cs",
+    "src/Port/Geometry.Candidate/NativeHandles.cs",
+    "src/Port/Geometry.Candidate/NativeMethods.cs",
+    "src/Port/Geometry.Candidate/CandidateTypes.cs",
+    "src/Port/Geometry.Candidate/AssemblyInfo.cs",
+    "tests/Port/Geometry.Candidate.Contracts/Geometry.Candidate.Contracts.csproj",
+    "tests/Port/Geometry.Candidate.Contracts/Assertions.cs",
+    "docs/porting/plans/P05-T02-A05-managed-candidate-adapter.md"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -68,6 +78,11 @@
       "id": "P05-T02-A04",
       "scope": "Independent experimental handle ownership ABI over actual candidate BReps; not production T04 completion",
       "status": "implementation_ci_pending"
+    },
+    {
+      "id": "P05-T02-A05",
+      "scope": "Real CSharp candidate methods, typed failures, SafeHandle parent leases and actual native ownership contracts",
+      "status": "managed_build_passed_apple_runtime_pending"
     }
   ],
   "checks": [
@@ -83,6 +98,24 @@
       "expectedExitCode": 0,
       "artifact": "docs/evidence/apple/native-candidate-results.json",
       "actual": "Host and both simulator steps success; family ipad/iphone and complete native analytical report verified"
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet build tests/Port/Geometry.Candidate.Contracts --nologo -v:q (before implementation)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED missing referenced candidate project and CS0246 CandidateContext/CandidateShape before implementing library"
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet build tests/Port/Geometry.Candidate.Contracts --nologo -v:q (after implementation)",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Managed adapter/contracts build succeeds, 0 warnings/errors; no native Windows execution claimed"
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project .local/probes/safehandle-dispose/Probe.csproj",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Framework-only probe: after Dispose with retained lease IsClosed=False,releases=0; last lease IsClosed=True,releases=1. Added explicit logical disposal flag under context gate."
     }
   ],
   "review": {
@@ -97,7 +130,8 @@
     "combinedRuntime": "Combined app passed native analytical and shared recovered/production managed assertions on iPad/iPhone run41023784246, dynamic-code=False. Newer freshness/device build41024529850 passed ios-arm64/platform IOS with 52 warnings/0 errors. Broader recovered reflection/XML trim risks remain; no physical execution or all-class behavior claim.",
     "resultFreshness": "Clear prior result/family/started before launch. Publish combined success via same-directory pending-file rename; Mac regression pending.",
     "ownershipAbi": "Real OCCT box/copy/translation/booleans through versioned C IDs/status. Global unique nonreused IDs; per-context locks; lookup drops registry lock before waiting for context. Final close marks closed before erase. Retain/release overflow guarded; C++ exception categories caught; failed creation outputs zeroed and optional diagnostics bounded. GREEN runtime/platform results pending; cancellation/process-memory leak/SDK selection/PC gates open.",
-    "redLogSha256": "7ce7453be4e8313065e8ee0886c5635144b572c2b87dae594eae3823abd400a3"
+    "redLogSha256": "7ce7453be4e8313065e8ee0886c5635144b572c2b87dae594eae3823abd400a3",
+    "managedAdapter": "Header widths/entrypoints/Cdecl matched; input SafeHandles marshal lifetime; per-context gate covers native result plus child parent-lease creation; explicit logical Dispose separate from IsClosed. Native creation cleanup and paired parent leases reviewed. Windows build proves managed compilation only; Apple real/native/disposal/trim tests pending. No full kernel/cancellation/process-memory/physical/PC claim."
   },
   "blockers": [
     "Full CAD operation mapping and candidate acceptance remain incomplete; device build/combined-runtime follow-ups pending",
