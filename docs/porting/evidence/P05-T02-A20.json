@@ -98,5 +98,30 @@
     "security": "Kernel/recovery read-only; no original binaries/scripts/accounts executed; all local work/cache D:.",
     "limitations": "Periodic/discontinuous knot representations, plane fitting/orientation, native curve definition export, exact recovered rail-revolve/dome and actual cap/join graph behavior remain required."
   },
-  "scope": "Native tensor-surface import prerequisite only; no full source cap/PC/physical parity and no acceptance row closed."
+  "scope": "Native tensor-surface import prerequisite only; no full source cap/PC/physical parity and no acceptance row closed.",
+  "implementationCommit": "d6e98aad5b21ba2fd568519ee53dbd9cd0c258b5",
+  "ciRuns": [
+    {
+      "id": 41140499080,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41140499080",
+      "scope": "native host/macOS iPad/iPhone tensor surface/apex execution",
+      "status": "queued"
+    },
+    {
+      "id": 41140501585,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41140501585",
+      "scope": "macOS unsigned ios-arm64 AOT",
+      "status": "queued"
+    },
+    {
+      "id": 41140478790,
+      "scope": "repository integrity/bounded proofs",
+      "status": "in_progress"
+    },
+    {
+      "id": 41140478961,
+      "scope": "managed recovered iOS reuse",
+      "status": "in_progress"
+    }
+  ]
 }
