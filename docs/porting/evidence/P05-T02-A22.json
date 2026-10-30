@@ -65,5 +65,32 @@
     "Actual caps138/139 and join140",
     "Original PC and physical-device/full feature acceptance"
   ],
-  "scope": "Native curve export prerequisite only; no parity row closed."
+  "scope": "Native curve export prerequisite only; no parity row closed.",
+  "implementationCommit": "71265f27c30b553be66756b17dd773a103c95736",
+  "ciRuns": [
+    {
+      "id": 41145377369,
+      "scope": "native host/macOS iPad/iPhone export execution",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41145377369"
+    },
+    {
+      "id": 41145380142,
+      "scope": "macOS unsigned ios-arm64 AOT",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41145380142"
+    },
+    {
+      "id": 41145375505,
+      "scope": "repository/provenance",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41145375505"
+    },
+    {
+      "id": 41145375636,
+      "scope": "recovered managed iOS reuse",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41145375636"
+    }
+  ]
 }
