@@ -1,3 +1,6 @@
+#include <Geom_BSplineSurface.hxx>
+#include <BRepBuilderAPI_MakeFace.hxx>
+#include <NCollection_Array2.hxx>
 #include "candidate_paired_sweep.hpp"
 #include <BRepAdaptor_Surface.hxx>
 #include <BRepBndLib.hxx>
@@ -766,5 +769,25 @@ extern "C" int32_t jd_candidate_shape_bounds(uint64_t context,uint64_t shape,uin
    if(gap<0||x0>x1||y0>y1||z0>z1)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid shape bounds response");
    *min_x=x0;*min_y=y0;*min_z=z0;*max_x=x1;*max_y=y1;*max_z=z1;*padding=gap;
   });
+ },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_nurbs_surface(uint64_t context,uint32_t degree_u,uint32_t degree_v,uint32_t count_u,uint32_t count_v,uint32_t rational,const double* coordinates,uint32_t coordinate_count,const double* weights,uint32_t weight_count,const double* knots_u,uint32_t knot_count_u,const double* knots_v,uint32_t knot_count_v,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+ return protect([&]{
+  outputHandle(output);uint64_t total=static_cast<uint64_t>(count_u)*count_v;
+  if(degree_u<1||degree_v<1||count_u<=degree_u||count_v<=degree_v||total>65536||rational>1||!coordinates||!knots_u||!knots_v||coordinate_count!=total*3||static_cast<uint64_t>(knot_count_u)!=static_cast<uint64_t>(count_u)+degree_u+1||static_cast<uint64_t>(knot_count_v)!=static_cast<uint64_t>(count_v)+degree_v+1||(rational&&(!weights||weight_count!=total))||(!rational&&weight_count!=0)||!std::isfinite(tolerance)||tolerance<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Invalid tensor NURBS dimensions/counts/tolerance");
+  if(degree_u>Geom_BSplineSurface::MaxDegree()||degree_v>Geom_BSplineSurface::MaxDegree())fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Tensor NURBS degree exceeds kernel limit");
+  auto axis=[&](const double* values,uint32_t size,uint32_t count,uint32_t degree,std::vector<double>& knots,std::vector<int>& mults){
+   for(uint32_t i=0;i<size;i++){double u=values[i];if(!std::isfinite(u)||(i&&u<values[i-1]))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Tensor knots must be finite nondecreasing");if(knots.empty()||u!=knots.back()){knots.push_back(u);mults.push_back(1);}else mults.back()++;}
+   if(knots.size()<2||values[degree]>=values[count])fail(JD_CANDIDATE_INVALID_ARGUMENT,"Tensor active domain is empty");
+   for(size_t i=0;i<mults.size();i++)if(mults[i]>(i==0||i+1==mults.size()?degree+1:degree))fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Unsupported tensor knot multiplicity");
+  };
+  std::vector<double> ku,kv;std::vector<int> mu,mv;axis(knots_u,knot_count_u,count_u,degree_u,ku,mu);axis(knots_v,knot_count_v,count_v,degree_v,kv,mv);
+  NCollection_Array1<double> u(1,static_cast<int>(ku.size())),v(1,static_cast<int>(kv.size()));NCollection_Array1<int> um(1,static_cast<int>(mu.size())),vm(1,static_cast<int>(mv.size()));
+  for(size_t i=0;i<ku.size();i++){u(static_cast<int>(i)+1)=ku[i];um(static_cast<int>(i)+1)=mu[i];}for(size_t i=0;i<kv.size();i++){v(static_cast<int>(i)+1)=kv[i];vm(static_cast<int>(i)+1)=mv[i];}
+  NCollection_Array2<gp_Pnt> poles(1,static_cast<int>(count_u),1,static_cast<int>(count_v));NCollection_Array2<double> nativeWeights(1,static_cast<int>(count_u),1,static_cast<int>(count_v));
+  for(uint32_t i=0;i<count_u;i++)for(uint32_t j=0;j<count_v;j++){size_t k=static_cast<size_t>(i)*count_v+j;double x=coordinates[k*3],y=coordinates[k*3+1],z=coordinates[k*3+2],w=rational?weights[k]:1;if(!std::isfinite(x)||!std::isfinite(y)||!std::isfinite(z)||!std::isfinite(w)||w<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Nonfinite tensor pole or nonpositive weight");poles(static_cast<int>(i)+1,static_cast<int>(j)+1)=gp_Pnt(x,y,z);nativeWeights(static_cast<int>(i)+1,static_cast<int>(j)+1)=w;}
+  withContext(context,[&](Context& value){occ::handle<Geom_BSplineSurface> surface;if(rational)surface=new Geom_BSplineSurface(poles,nativeWeights,u,v,um,vm,static_cast<int>(degree_u),static_cast<int>(degree_v),false,false);else surface=new Geom_BSplineSurface(poles,u,v,um,vm,static_cast<int>(degree_u),static_cast<int>(degree_v),false,false);BRepBuilderAPI_MakeFace face(surface,tolerance);if(!face.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native tensor surface face construction failed");*output=store(value,face.Shape());});
  },diagnostic,capacity);
 }

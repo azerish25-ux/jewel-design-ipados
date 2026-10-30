@@ -78,6 +78,8 @@ int32_t jd_candidate_surface_bounds(uint64_t context,uint64_t shape,double* firs
 int32_t jd_candidate_surface_point(uint64_t context,uint64_t shape,double u,double v,double* x,double* y,double* z,char* diagnostic,uint32_t capacity);
 /* Fast conservative or accurate shape box; no triangulation dependence. */
 int32_t jd_candidate_shape_bounds(uint64_t context,uint64_t shape,uint32_t accurate,double* min_x,double* min_y,double* min_z,double* max_x,double* max_y,double* max_z,double* padding,char* diagnostic,uint32_t capacity);
+/* Explicit Euclidean U-major poles, optional weights, full nonperiodic knot vectors. */
+int32_t jd_candidate_nurbs_surface(uint64_t context,uint32_t degree_u,uint32_t degree_v,uint32_t count_u,uint32_t count_v,uint32_t rational,const double* coordinates,uint32_t coordinate_count,const double* weights,uint32_t weight_count,const double* knots_u,uint32_t knot_count_u,const double* knots_v,uint32_t knot_count_v,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

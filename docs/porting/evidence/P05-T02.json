@@ -112,7 +112,12 @@
     "src/Port/Geometry.Candidate/NativeMethods.Sweeps.cs",
     "tests/Port/Geometry.Candidate.Contracts/PairedSweepAssertions.cs",
     "docs/porting/ADR-0037-paired-native-surface.md",
-    "docs/porting/evidence/P05-T02-A19-A02-A01.json"
+    "docs/porting/evidence/P05-T02-A19-A02-A01.json",
+    "src/Port/Geometry.Candidate/CandidateNurbsSurfaceDefinition.cs",
+    "src/Port/Geometry.Candidate/CandidateContext.NurbsSurfaces.cs",
+    "tests/Port/Geometry.Candidate.Contracts/NurbsSurfaceAssertions.cs",
+    "docs/porting/ADR-0039-rational-tensor-surfaces.md",
+    "docs/porting/evidence/P05-T02-A20.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -458,6 +463,13 @@
       "scope": "Guarded paired location/surface native API from actual134 input geometry, managed ownership and edit/save/reopen",
       "status": "local_verified_apple_pending",
       "evidence": "docs/porting/evidence/P05-T02-A19-A02-A01.json"
+    },
+    {
+      "id": "P05-T02-A20",
+      "scope": "Native rational tensor surface import prerequisite for actual cap/rail-revolve geometry",
+      "status": "local_verified_apple_pending",
+      "plan": "docs/porting/plans/P05-T02-A20-nurbs-surfaces.md",
+      "evidence": "docs/porting/evidence/P05-T02-A20.json"
     }
   ],
   "checks": [

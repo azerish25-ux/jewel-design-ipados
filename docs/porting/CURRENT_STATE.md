@@ -2,7 +2,7 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P03-T03-A14 now generates actual sweep134 through the candidate graph as typed BRep output, with source channel naming, snapshots/array forwarding/affine transforms and explicit Fast/Accurate native bounds. Local native/source/document tests cover edit/save/reopen/regeneration, failed cache preservation and lifetime cleanup. [ADR0038](ADR-0038-owned-brep-graph.md). New Apple graph proof pending; full source topology/metadata/closed variants, PC/UI/physical acceptance remain open; parity0/1451.
+Latest implementation: P05-T02-A20 imports genuine rational tensor NURBS faces with immutable U-major controls/full knots. Windows1445 independent homogeneous tensor checks cover rational/nonuniform/nonclamped domains and collapsed apex, plus native ownership/errors. [ADR0039](ADR-0039-rational-tensor-surfaces.md). Next actual design nodes are dome caps138/139 then join140; their recovered algorithms/plane placement remain required. New Apple tests pending; full parity0/1451.
 
 Earlier inspected Apple native checkpoint: pure-array2bf2ee2 passed iPad/iPhone289 arithmetic pairs/33 null failures/789 flatten-copy trees plus12285 collection constructor cases, and unsigned arm64 iOS build52 warnings0 errors; [reports](../evidence/apple/pure-array-results.json). This predates native collection execution and consumers, tracked separately below.
 
@@ -173,3 +173,5 @@ Prior A03 consumer runtime41117797147 and device41117800707 succeeded and artifa
 Preparation afe45a8 and five-shell feasibility f0738d8 are now bounded-verified on actual iPad/iPhone plus unsigned arm64 iOS build52 warnings0 errors: [preparation reports](../evidence/apple/sweep-preparation-results.json), [feasibility reports](../evidence/apple/native-sweep-feasibility-results.json). They predate the new paired constructor. Next ready work is typed BRep graph ownership/conversions and source134 dynamic output policy, while its new Apple jobs run.
 
 Paired native constructor e24a0c8 is now bounded-verified on actual iPad/iPhone (301 real134 contacts and native271/384/16/cylinder gates) plus unsigned arm64 build52 warnings0 errors: [inspected reports](../evidence/apple/paired-surface-results.json). This predates typed BRep graph integration. Preserve new graph Apple runs; next is broader BRep source metadata/consumers and closed/cap/topology contracts, without changing full acceptance.
+
+Caps investigation found Rhino5/Rhino6 Point4d setter semantics differ; preserve the version-specific conversion before porting CreateDomeRC. The available RhinoCommon prerequisite is5.1.30000.16. Tensor import is explicitly Euclidean+weights and does not guess cap semantics. See A20 evidence for exact bindings and next prerequisites.
