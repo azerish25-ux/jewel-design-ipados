@@ -11,15 +11,22 @@ public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,I
 {
     private static readonly IReadOnlyDictionary<Guid,int> InputCounts=new Dictionary<Guid,int>{
         [RingRailV1Candidate.TypeGuid]=1,[OutsideRailV1Candidate.TypeGuid]=6,[LegacyCsg4Codec.SelectRingRailTypeGuid]=3,
-        [LegacyCsg4Codec.ProfilePlacement2RailTypeGuid]=4,[LegacyCsg4Codec.RotateObjectTypeGuid]=4,[LegacyCsg4Codec.AddTypeGuid]=2,[LegacyCsg4Codec.TranslateObjectTypeGuid]=4,[LegacyCsg4Codec.ScaleObjectToSizeTypeGuid]=4
+        [LegacyCsg4Codec.ProfilePlacement2RailTypeGuid]=4,[LegacyCsg4Codec.TransformObjectTypeGuid]=2,[LegacyCsg4Codec.RotateObjectTypeGuid]=4,[LegacyCsg4Codec.AddTypeGuid]=2,[LegacyCsg4Codec.TranslateObjectTypeGuid]=4,[LegacyCsg4Codec.ScaleObjectToSizeTypeGuid]=4
     };
     private sealed class Output:IDisposable
     {
         internal CandidateShape? Curve {get;}
         internal LegacyChannelValue Data {get;}
         internal CandidateRailOutputInfo? Info {get;}
+        internal CandidateProfileOutputInfo? Profile {get;}
+        internal LegacyAffineTransform AppliedTransform {get;}
         internal IReadOnlyList<LegacyChannelValue>? Additional {get;}
-        internal Output(CandidateShape? curve,CandidateRailOutputInfo? info,LegacyChannelValue data,IReadOnlyList<LegacyChannelValue>? additional=null){Curve=curve;Info=info;Data=data;Additional=additional is null?null:Array.AsReadOnly(additional.ToArray());}
+        internal Output(CandidateShape? curve,CandidateRailOutputInfo? info,LegacyChannelValue data,
+            IReadOnlyList<LegacyChannelValue>? additional=null,CandidateProfileOutputInfo? profile=null,LegacyAffineTransform? applied=null)
+        {
+            Curve=curve;Info=info;Data=data;Profile=profile;AppliedTransform=applied??LegacyAffineTransform.Identity;
+            Additional=additional is null?null:Array.AsReadOnly(additional.ToArray());
+        }
         public void Dispose()=>Curve?.Dispose();
     }
     private readonly CandidateContext context;
@@ -44,7 +51,9 @@ public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,I
     public IReadOnlyList<SerializedChannelLink> Inputs(int index)
     {
         if(!Supports(index))throw new NotSupportedException("Unsupported candidate producer.");
-        var record=Values.Document.Records[index];var block=record.SimpleBlock!;int count=InputCounts[record.TypeGuid];
+        var record=Values.Document.Records[index];
+        if(record.TypeGuid==LegacyCsg4Codec.TransformObjectTypeGuid)return ConsumerLayout(index).AllChannels;
+        var block=record.SimpleBlock!;int count=InputCounts[record.TypeGuid];
         var result=new SerializedChannelLink[count];
         for(int i=0;i<count;i++)result[i]=i<block.ObjectIndices.Count?new(block.ObjectIndices[i],block.ChannelIndices[i]):SerializedChannelLink.Disconnected;
         return Array.AsReadOnly(result);
@@ -74,7 +83,9 @@ public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,I
         Check();if(pending is null)throw new InvalidOperationException("Use the rail graph Generate method.");
         if(!Supports(index))throw new NotSupportedException("Unsupported candidate producer.");
         Output entry;
-        if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.ProfilePlacement2RailTypeGuid){
+        if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.TransformObjectTypeGuid){
+            entry=ConsumeTransform(index);
+        }else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.ProfilePlacement2RailTypeGuid){
             entry=PlacementOutput(index);
         }else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.RotateObjectTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.AddTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.TranslateObjectTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.ScaleObjectToSizeTypeGuid){
             entry=TransformOutput(index);
@@ -102,13 +113,14 @@ public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,I
         else if(second.IsMissing)selected=first;
         else selected=useSecond?second:first;
         if(selected.Curve is{} reference){
-            var info=Find(reference.ProducerRecordIndex).Info;
-            return Own(ResolveCurve(reference),info,LegacyChannelValue.FromCurve(index,0));
+            var source=Find(reference.ProducerRecordIndex);
+            var data=LegacyChannelValue.FromCurve(index,0);
+            return Own(ResolveCurve(reference),source.Info,data,source.Profile,source.AppliedTransform);
         }
         return new(null,null,selected);
     }
-    private static Output Own(CandidateShape curve,CandidateRailOutputInfo? info,LegacyChannelValue data)
-    {try{return new(curve,info,data);}catch{curve.Dispose();throw;}}
+    private static Output Own(CandidateShape curve,CandidateRailOutputInfo? info,LegacyChannelValue data,CandidateProfileOutputInfo? profile=null,LegacyAffineTransform? applied=null)
+    {try{return new(curve,info,data,profile:profile,applied:applied);}catch{curve.Dispose();throw;}}
     private Output Find(int index)
     {
         Check();if(pending is not null&&pending.TryGetValue(index,out var current))return current;

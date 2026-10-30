@@ -96,7 +96,20 @@
     "docs/porting/ADR-0030-rotation-producers.md",
     "docs/porting/plans/P03-T03-A11-rotation-producers.md",
     "docs/evidence/apple/transform-producer-results.json",
-    "docs/evidence/apple/profile-placement-results.json"
+    "docs/evidence/apple/profile-placement-results.json",
+    "src/Port/Documents/LegacyTransformInputLayout.cs",
+    "src/Port/Features.Candidate/CandidateProfileOutputInfo.cs",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.Consumer.cs",
+    "tests/Port/Geometry.Candidate.Contracts/TransformConsumerAssertions.cs",
+    "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyConsumerSockets.cs",
+    "scripts/verify-consumer-sockets-oracle.cjs",
+    "tests/consumer-sockets-oracle.test.cjs",
+    "tests/transform-consumers-v1-reference.test.cjs",
+    "reference/file-proof/transform-consumers-v1.cjs",
+    "docs/evidence/audit/transform-consumer-reference.json",
+    "docs/porting/ADR-0031-transform-consumer.md",
+    "docs/porting/plans/P03-T03-A12-transform-consumer.md",
+    "docs/evidence/apple/rotation-producer-device-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -387,6 +400,34 @@
       "expectedExitCode": 0,
       "artifact": "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
       "actual": "PASS134 known headers/107 opaque/100 scalar handles; independent six rotation common headers, future version/no-op/rewire/reopen/restoration and all earlier document suites."
+    },
+    {
+      "command": "dotnet run --project tests/Port/Geometry.Candidate.HostTests (RED before A12)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/TransformConsumerAssertions.cs",
+      "actual": "RED Unsupported linked producer record115 while requesting original115/122/127 consumer chains."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/TransformConsumerAssertions.cs",
+      "actual": "PASS12285 exact source socket/import/spare cases; original3 native profile pipelines/33 independent sequential-matrix points/name/sweep bits/capabilities; shorter127 chain, profile-vs-rail/pure matrix order, nested/selector snapshots, edit/save/reopen/readers, invalid/empty/missing/overflow/cycle/native cleanup; previous44217/4496/16093 and native suites pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/consumer-sockets-oracle.test.cjs tests/transform-consumers-v1-reference.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "scripts/verify-consumer-sockets-oracle.cjs",
+      "actual": "7/7 exact source bodies/link predicate/expansion target tamper controls and independent seven headers/runtime counts/future/bounds controls pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
+      "actual": "PASS141 known headers/100 opaque/100 scalar handles, seven independent consumer common headers/links, future/no-op/rewire/reopen/reversal and earlier codec/channel suites."
     }
   ],
   "review": {
@@ -418,7 +459,8 @@
     "selectRingRail": "Reviewed exact1.0 GUID/full-body schema, disconnected-null vs inactive/invalid-empty distinction, source conditional ordering, supported-data forwarding despite UI filter, retained alias native ownership/old-generation snapshots, noncurve getter rejection, cycle/unsupported preflight and native entry cleanup. No recovered scripts/credentials/Windows execution. Full parity0/1451 remains unchanged.",
     "transformProducers": "Reviewed data kind isolation/immutability; exact GUID/version/whole-frame read; native input alias/import lifetimes, raw extent floor/origin arithmetic, strict mirror X/Z only, Add outputs, no-argument rail-root compatibility, explicit placement/array/unsupported bounds failures, source-body/tamper controls, actual native point comparisons and file preservation. Source observation matrix constructors are stubs, not original Rhino matrix golden proof.",
     "profilePlacement": "Reviewed source normalized fraction/native parameter distinction, frame handedness/Y scale, finite30-unit ray, line-A event ordering and paired reversed overlap ranges, floor.01, empty optional output reset, immutable additional channel snapshot, centralized native curve lifetime, explicit degenerate/missing/cycle failures and transactional cache policy. Observation stubs are not original native oracle; no unsupported producer/default or stored height substitute is used.",
-    "rotation": "Reviewed XYZ product convention and affine4-term arithmetic; strict mirror and source default/degree input semantics; published epsilon/noise policy vs original-native unknowns; finite guards rather than truncating invalid projective rows; pinned acquisition/hash/notice protection, test-only source/native ABI separation, host import resolver and iOS static linkage, independent basis/native point/order comparisons, immutable cache/save/cycle/ownership; no application-time network or native substitute geometry."
+    "rotation": "Reviewed XYZ product convention and affine4-term arithmetic; strict mirror and source default/degree input semantics; published epsilon/noise policy vs original-native unknowns; finite guards rather than truncating invalid projective rows; pinned acquisition/hash/notice protection, test-only source/native ABI separation, host import resolver and iOS static linkage, independent basis/native point/order comparisons, immutable cache/save/cycle/ownership; no application-time network or native substitute geometry.",
+    "transformConsumer": "Reviewed source load replay vs unchanged stored arrays, negative-index spare dependencies, prefix transform input ordering and source-specific profile/rail/pure metadata ordering; supported transform capabilities on curve data, actual native geometry duplication and snapshot ownership; profile names/sweep bits/no path interpretation, numeric/empty/missing/invalid/overflow behavior, explicit unsupported producers/arrays and no preview/default substitute. Material/segmentation/invalid4x4/full scene side effects and PC/UI/full parity remain open."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -544,7 +586,7 @@
       "id": 41104242957,
       "commit": "ba83e0e2b656d477871eb9bfcbb699f6821a39f2",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41104242957",
-      "verification": "Rotation unsigned device build queued; actual platform/AOT/reference-source/build warnings/hash inspection pending. No physical execution."
+      "verification": "SUCCESS: inspected actual arm64/platform IOS unsigned Release52 warnings0 errors/hash and pinned published reference manifest; rotation-producer-device-results.json. Simulator still live; no physical execution."
     }
   ],
   "requirementIds": [
@@ -721,6 +763,56 @@
       "path": "recovery/canonical/cad/CSBlockUtil/CSUtilMath.cs",
       "sha256": "36e57a1539a49c419a49c78b066c105563cd26a821c4234ce170b9eeabc23fe7",
       "scope": "P03-T03-A11 source XYZ/mirror/degree/product plan and helper forwarding; published6 native comparison is separate from original Rhino5 proof"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObject.cs",
+      "sha256": "1595978ecab1c44d1647d1e56d8953098efd784e961d7cc45c9aa2a8a40db45d",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+      "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.Parametric.Channels/CSInputChannel.cs",
+      "sha256": "1b3a8f3c40e751163d0aa493a0044d4a961be981579db831b30c841824fdf74c",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSProfileData.cs",
+      "sha256": "e48301069692d00776c426803ae0e3a86b2c137a8a7015e9d6adcee7e0617ff6",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSRailData.cs",
+      "sha256": "93625e6a74feac6ee3e0b17b2faaa146abdead5f6f19f88231d8f7368ec4b20b",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSXformData.cs",
+      "sha256": "506539cd932118bc583f62b6a3a8efc6d9e95cd9cb58a8da0ade7157cb6f2afc",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSData.cs",
+      "sha256": "3f3d2e017ff68048c1c40d3495ac95c350c8bca4e8fd5bbfaf9b92d1d50f3c00",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSDataArray.cs",
+      "sha256": "f7f0425e3e35fb0835ac161303a3cc7fa269c7f4f765938db91dd76956620b03",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
+      "sha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714",
+      "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
     }
   ],
   "subtasks": [
@@ -792,6 +884,16 @@
       "relatedRows": [
         "BLD-0568",
         "SER-0603"
+      ]
+    },
+    {
+      "id": "P03-T03-A12",
+      "scope": "Known expandable TransformObject non-array pipeline, exact socket replay, owned generated profiles and metadata/capabilities",
+      "status": "local_verified_apple_pending",
+      "plan": "docs/porting/plans/P03-T03-A12-transform-consumer.md",
+      "relatedRows": [
+        "BLD-0576",
+        "SER-0611"
       ]
     }
   ]

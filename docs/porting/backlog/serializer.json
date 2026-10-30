@@ -14051,7 +14051,7 @@
       "kind": "serializer",
       "phase": "P04",
       "title": "CSBlocks.Transforms.CSTransformObject",
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObject.cs",
@@ -14060,14 +14060,21 @@
       ],
       "acceptance": "Exercise this declared GUID and supported record-version branches with non-default serialized fields; PC -> iPad -> PC must retain graph identity/connections/data and remain editable. Compare computed geometry separately. Reserved expired-node GUID requires expected-error behavior, not successful geometry.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P03-T03.json",
+        "docs/porting/ADR-0031-transform-consumer.md"
+      ],
       "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
       "legacy": false,
       "details": {
         "path": "docs/evidence/audit/serialization-matrix.json",
         "id": "SER-0611"
-      }
+      },
+      "implementationScope": "Exact1.0 known non-array profile/curve/scalar/transform candidate and source socket replay. Arrays/material/full data/all producers/versions/PC/physical/UI acceptance remains open."
     },
     {
       "id": "SER-0612",

@@ -1,0 +1,50 @@
+{
+  "run": 41104242957,
+  "commit": "ba83e0e2b656d477871eb9bfcbb699f6821a39f2",
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41104242957",
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "f1ddfd8adb88d384da41723730511247761040a5ba0ae328987b954bb1befa87  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "c3a4d256cabee22c89c0fe5469f98e698b7aeace6b67e15e527baea1f63cea67",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  },
+  "comparisonSource": {
+    "schemaVersion": 1,
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "sourceRepository": "https://github.com/mcneel/opennurbs",
+    "files": [
+      {
+        "file": "opennurbs_xform.cpp",
+        "sha256": "7b922be97b2d05c50cd5865e32826d87fc2f4926304f55f21bf9344478580258",
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_xform.cpp"
+      },
+      {
+        "file": "opennurbs_defines.h",
+        "sha256": "773d75ecf3dab2d792de490da99a175be548c394a81f11cd9a04cec5c1fe7bd6",
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_defines.h"
+      },
+      {
+        "file": "LICENSE",
+        "sha256": "de437cd429817f50999710543b9d3e743b17b35b4c96842393b9d39f7bb9b3bd",
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/LICENSE"
+      }
+    ],
+    "methods": [
+      {
+        "signature": "void ON_Xform::Rotation( \n        double angle,",
+        "sha256": "a7e6abc35e6cb602238ffb1f8983ace7110fb9cded18b855a5b9739a683875f0"
+      },
+      {
+        "signature": "void ON_Xform::Rotation(  \n        double sin_angle,",
+        "sha256": "1178a6264f5b57fb7b5dcb7bbdc3cb94d0f80dd3200872fd82d0e62f0acc9e6a"
+      }
+    ],
+    "generatedSha256": "40fdcbece9ffcf20b50c02472869a337a96235f0327fd31b5301ed1751b09560",
+    "scope": "Published openNURBS6 comparison only, not original Rhino5 binary/runtime parity. No production runtime dependency."
+  },
+  "scope": "Unsigned arm64 Release/AOT compile/link only, with actual pinned published6 comparison source manifest. Simulator41104238238 remains live; no physical/runtime/original Rhino5 claim."
+}

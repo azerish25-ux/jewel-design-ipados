@@ -12673,7 +12673,7 @@
       "title": "CSBlocks.Transforms.CSTransformObject",
       "guid": "27F4537A-6FC3-404f-9ABD-EB53B7B3D8A1",
       "legacy": false,
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObject.cs",
@@ -12682,11 +12682,18 @@
       ],
       "acceptance": "Preserve GUID, channels, legacy algorithms and versions. Compare non-default edits and geometry to Windows. Pass editable PC/iOS/PC reopen.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P03-T03.json",
+        "docs/porting/ADR-0031-transform-consumer.md"
+      ],
       "namespace": "CSBlocks.Transforms",
       "serializerId": "SER-0611",
-      "batchId": "BATCH-0067"
+      "batchId": "BATCH-0067",
+      "implementationScope": "Exact1.0 known non-array profile/curve/scalar/transform candidate and source socket replay. Arrays/material/full data/all producers/versions/PC/physical/UI acceptance remains open."
     },
     {
       "id": "BLD-0577",

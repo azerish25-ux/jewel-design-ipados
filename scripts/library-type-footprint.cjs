@@ -8,6 +8,7 @@ const {readOutsideRails}=require('../reference/file-proof/outside-rail-v1.cjs');
 const {readSelectRails}=require('../reference/file-proof/select-ring-rail-v1.cjs');
 const {readTransformProducers}=require('../reference/file-proof/transform-producers-v1.cjs');
 const {readProfilePlacements}=require('../reference/file-proof/profile-placement-v1.cjs');
+const {readTransformConsumers}=require('../reference/file-proof/transform-consumers-v1.cjs');
 const read=name=>fs.readFileSync(path.join(root,name));
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function build(){
@@ -16,6 +17,7 @@ function build(){
  const parsed=parse(bytes);
  const additional=new Set(readAdditionalScalars(bytes).extras.map(x=>x.index));
  const profileGroups=readMatrixProfiles(bytes).groups,profiles=new Set(profileGroups.map(x=>x.index));
+ const consumers=new Set(readTransformConsumers(bytes).map(x=>x.index));
  const placements=new Set(readProfilePlacements(bytes).map(x=>x.index));
  const transforms=new Set(readTransformProducers(bytes).map(x=>x.index));
  const blocks=new Set([...readRingRails(bytes),...readOutsideRails(bytes),...readSelectRails(bytes)].map(x=>x.index));
@@ -40,7 +42,7 @@ function build(){
     serializerSources:Object.fromEntries(Object.entries(row.effectiveMethods).map(([method,items])=>[method,items.map(x=>({path:x.path,line:x.line,end:x.end,declaredBy:x.type}))]))});
   }
   types.push({guid,nodeIndices:nodes.map(x=>x.index),recordVersions:[...new Set(nodes.map(x=>x.major+'.'+x.minor))].sort(),
-   numericDecoded:nodes.filter(x=>x.numeric).length,scalarDecoded:nodes.filter(x=>x.numeric||additional.has(x.index)).length,railHeadersDecoded:nodes.filter(x=>blocks.has(x.index)).length,transformHeadersDecoded:nodes.filter(x=>transforms.has(x.index)).length,placementHeadersDecoded:nodes.filter(x=>placements.has(x.index)).length,matrixProfilesDecoded:nodes.filter(x=>profiles.has(x.index)).length,opaquePayloads:nodes.filter(x=>!x.numeric&&!additional.has(x.index)&&!profiles.has(x.index)&&!blocks.has(x.index)&&!transforms.has(x.index)&&!placements.has(x.index)).length,
+   numericDecoded:nodes.filter(x=>x.numeric).length,scalarDecoded:nodes.filter(x=>x.numeric||additional.has(x.index)).length,railHeadersDecoded:nodes.filter(x=>blocks.has(x.index)).length,transformHeadersDecoded:nodes.filter(x=>transforms.has(x.index)).length,placementHeadersDecoded:nodes.filter(x=>placements.has(x.index)).length,transformConsumerHeadersDecoded:nodes.filter(x=>consumers.has(x.index)).length,matrixProfilesDecoded:nodes.filter(x=>profiles.has(x.index)).length,opaquePayloads:nodes.filter(x=>!x.numeric&&!additional.has(x.index)&&!profiles.has(x.index)&&!blocks.has(x.index)&&!transforms.has(x.index)&&!placements.has(x.index)&&!consumers.has(x.index)).length,
    registrationAmbiguous:registrations.length>1,registrations});
  }
  types.sort((a,b)=>a.nodeIndices[0]-b.nodeIndices[0]);
@@ -51,10 +53,10 @@ function build(){
  }
  return {schemaVersion:1,status:'source_inventory_only',
   scope:'Pinned library serialized type footprint, not executed graph reachability, transitive dependency closure, complete field/runtime decoding or geometry parity',
-  inputs:[fixture,matrixPath,inventoryPath,'reference/file-proof/csg-v4.cjs','reference/file-proof/scalar-v1.cjs','src/Port/Documents/LegacyCsg4Codec.cs','src/Port/Documents/LegacyCsg4Scalar.cs','src/Port/Documents/LegacyCsg4MatrixProfiles.cs','reference/file-proof/matrix-profiles-v1.cjs','src/Port/Documents/LegacyCsg4SimpleBlock.cs','reference/file-proof/ring-rail-v1.cjs','reference/file-proof/outside-rail-v1.cjs','reference/file-proof/select-ring-rail-v1.cjs','reference/file-proof/transform-producers-v1.cjs','reference/file-proof/profile-placement-v1.cjs'].map(p=>({path:p,normalization:p.endsWith('.csg')?'none':'utf8-lf',sha256:sha(p.endsWith('.csg')?read(p):Buffer.from(read(p).toString('utf8').replaceAll('\r\n','\n')))})),
+  inputs:[fixture,matrixPath,inventoryPath,'reference/file-proof/csg-v4.cjs','reference/file-proof/scalar-v1.cjs','src/Port/Documents/LegacyCsg4Codec.cs','src/Port/Documents/LegacyCsg4Scalar.cs','src/Port/Documents/LegacyCsg4MatrixProfiles.cs','reference/file-proof/matrix-profiles-v1.cjs','src/Port/Documents/LegacyCsg4SimpleBlock.cs','reference/file-proof/ring-rail-v1.cjs','reference/file-proof/outside-rail-v1.cjs','reference/file-proof/select-ring-rail-v1.cjs','reference/file-proof/transform-producers-v1.cjs','reference/file-proof/profile-placement-v1.cjs','reference/file-proof/transform-consumers-v1.cjs'].map(p=>({path:p,normalization:p.endsWith('.csg')?'none':'utf8-lf',sha256:sha(p.endsWith('.csg')?read(p):Buffer.from(read(p).toString('utf8').replaceAll('\r\n','\n')))})),
   counts:{serializedNodes:parsed.count,registrationGuids:types.length,numericDecoded:parsed.numericCount,scalarDecoded:parsed.numericCount+additional.size,
-   railBlockHeadersDecoded:blocks.size,transformProducerHeadersDecoded:transforms.size,profilePlacementHeadersDecoded:placements.size,matrixProfileGroupsDecoded:profiles.size,embeddedProfileCurves:profileGroups.reduce((n,g)=>n+g.curves.length,0),
-   opaquePayloads:parsed.count-parsed.numericCount-additional.size-profiles.size-blocks.size-transforms.size-placements.size,unknownGuids:types.filter(x=>!x.registrations.length).length,
+   railBlockHeadersDecoded:blocks.size,transformProducerHeadersDecoded:transforms.size,profilePlacementHeadersDecoded:placements.size,transformConsumerHeadersDecoded:consumers.size,matrixProfileGroupsDecoded:profiles.size,embeddedProfileCurves:profileGroups.reduce((n,g)=>n+g.curves.length,0),
+   opaquePayloads:parsed.count-parsed.numericCount-additional.size-profiles.size-blocks.size-transforms.size-placements.size-consumers.size,unknownGuids:types.filter(x=>!x.registrations.length).length,
    ambiguousGuids:types.filter(x=>x.registrationAmbiguous).length,
    legacyNodes:types.filter(x=>x.registrations.length===1&&x.registrations[0].legacy).reduce((sum,x)=>sum+x.nodeIndices.length,0),
    uniqueDirectStaticCalls:callMap.size},types,
@@ -71,7 +73,7 @@ function markdown(report){
  const c=report.counts;
  const lines=['# Available library serialized type footprint','',
   'Generated by node scripts/library-type-footprint.cjs --write. [Machine-readable report](library-type-footprint.json).',
-  '',c.serializedNodes+' serialized nodes use '+c.registrationGuids+' registration GUIDs; '+c.scalarDecoded+' scalar payloads are decoded (including '+c.numericDecoded+' bounded numeric), plus '+c.matrixProfileGroupsDecoded+' matrix-profile groups with '+c.embeddedProfileCurves+' stored curves and '+c.railBlockHeadersDecoded+' exact rail consumer headers and '+c.transformProducerHeadersDecoded+' transform/math headers and '+c.profilePlacementHeadersDecoded+' two-rail placement headers; '+c.opaquePayloads+' remain opaque. '+c.legacyNodes+' nodes map to legacy registrations. This is a serialized footprint, not an executed dependency graph or a regenerated jewelry design.','',
+  '',c.serializedNodes+' serialized nodes use '+c.registrationGuids+' registration GUIDs; '+c.scalarDecoded+' scalar payloads are decoded (including '+c.numericDecoded+' bounded numeric), plus '+c.matrixProfileGroupsDecoded+' matrix-profile groups with '+c.embeddedProfileCurves+' stored curves and '+c.railBlockHeadersDecoded+' exact rail consumer headers and '+c.transformProducerHeadersDecoded+' transform/math headers and '+c.profilePlacementHeadersDecoded+' two-rail placement headers and '+c.transformConsumerHeadersDecoded+' transform consumer headers; '+c.opaquePayloads+' remain opaque. '+c.legacyNodes+' nodes map to legacy registrations. This is a serialized footprint, not an executed dependency graph or a regenerated jewelry design.','',
   '| Registered type | Nodes | Serialized versions | Legacy | Scalar decoded | Direct static call sites |',
   '| --- | ---: | --- | --- | ---: | ---: |'];
  for(const group of report.types){

@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_reader_only",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "blocks": [
+    {
+      "index": 52,
+      "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+      "identifier": "Profile Transform 1",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Transform 1"
+        }
+      ],
+      "objects": [
+        33,
+        49,
+        51,
+        50,
+        48
+      ],
+      "channels": [
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "runtimeChannels": [
+        {
+          "objectIndex": 33,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 49,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 51,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 50,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 48,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": -1,
+          "channelIndex": -1
+        }
+      ],
+      "operationChannels": [
+        {
+          "objectIndex": 33,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 49,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 51,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 50,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 48,
+          "channelIndex": 0
+        }
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 58,
+      "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+      "identifier": "Profile Transform 2",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Transform 2"
+        }
+      ],
+      "objects": [
+        33,
+        55,
+        57,
+        56,
+        54
+      ],
+      "channels": [
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "runtimeChannels": [
+        {
+          "objectIndex": 33,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 55,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 57,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 56,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 54,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": -1,
+          "channelIndex": -1
+        }
+      ],
+      "operationChannels": [
+        {
+          "objectIndex": 33,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 55,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 57,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 56,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 54,
+          "channelIndex": 0
+        }
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 115,
+      "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+      "identifier": "Profile Transform 1",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Transform 1"
+        }
+      ],
+      "objects": [
+        92,
+        112,
+        114,
+        113,
+        110
+      ],
+      "channels": [
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "runtimeChannels": [
+        {
+          "objectIndex": 92,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 112,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 114,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 113,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 110,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": -1,
+          "channelIndex": -1
+        }
+      ],
+      "operationChannels": [
+        {
+          "objectIndex": 92,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 112,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 114,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 113,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 110,
+          "channelIndex": 0
+        }
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 122,
+      "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+      "identifier": "Profile Transform 2",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Transform 2"
+        }
+      ],
+      "objects": [
+        92,
+        119,
+        121,
+        120,
+        117
+      ],
+      "channels": [
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "runtimeChannels": [
+        {
+          "objectIndex": 92,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 119,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 121,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 120,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 117,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": -1,
+          "channelIndex": -1
+        }
+      ],
+      "operationChannels": [
+        {
+          "objectIndex": 92,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 119,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 121,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 120,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 117,
+          "channelIndex": 0
+        }
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 127,
+      "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+      "identifier": "Profile Transform 3",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Transform 3"
+        }
+      ],
+      "objects": [
+        93,
+        126,
+        124
+      ],
+      "channels": [
+        3,
+        0,
+        0
+      ],
+      "runtimeChannels": [
+        {
+          "objectIndex": 93,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 126,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 124,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": -1,
+          "channelIndex": -1
+        }
+      ],
+      "operationChannels": [
+        {
+          "objectIndex": 93,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 126,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 124,
+          "channelIndex": 0
+        }
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 215,
+      "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+      "identifier": "Profile Transform 1",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Transform 1"
+        }
+      ],
+      "objects": [
+        196,
+        212,
+        214,
+        213,
+        211
+      ],
+      "channels": [
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "runtimeChannels": [
+        {
+          "objectIndex": 196,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 212,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 214,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 213,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 211,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": -1,
+          "channelIndex": -1
+        }
+      ],
+      "operationChannels": [
+        {
+          "objectIndex": 196,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 212,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 214,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 213,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 211,
+          "channelIndex": 0
+        }
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 221,
+      "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+      "identifier": "Profile Transform 2",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Transform 2"
+        }
+      ],
+      "objects": [
+        196,
+        218,
+        220,
+        219,
+        217
+      ],
+      "channels": [
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "runtimeChannels": [
+        {
+          "objectIndex": 196,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 218,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 220,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 219,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 217,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": -1,
+          "channelIndex": -1
+        }
+      ],
+      "operationChannels": [
+        {
+          "objectIndex": 196,
+          "channelIndex": 3
+        },
+        {
+          "objectIndex": 218,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 220,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 219,
+          "channelIndex": 0
+        },
+        {
+          "objectIndex": 217,
+          "channelIndex": 0
+        }
+      ],
+      "fullyConsumed": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Transforms/CSTransformObject.cs",
+      "sha256": "1595978ecab1c44d1647d1e56d8953098efd784e961d7cc45c9aa2a8a40db45d"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+      "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa"
+    }
+  ],
+  "scope": "Exact stored1.0 headers plus independently reconstructed sockets. No native geometry or original-PC execution claim."
+}

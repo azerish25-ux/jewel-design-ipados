@@ -46,6 +46,7 @@ for i in $(seq 1 120); do
   grep -q 'PASS two-rail profile placement:4496 extracted frame/seam cases;' "$OUT/result.txt"
   grep -q 'published-rotation-reference=pass;' "$OUT/result.txt"
   grep -q 'PASS saved rotation producers:44217 recovered-wrapper/published-native cases,' "$OUT/result.txt"
+  grep -q 'PASS expandable transform consumer:12285 exact source socket cases,' "$OUT/result.txt"
   exit 0
  fi
  sleep 1

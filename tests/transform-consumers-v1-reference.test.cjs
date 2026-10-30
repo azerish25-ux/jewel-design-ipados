@@ -1,0 +1,7 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),zlib=require('node:zlib');
+const {parse}=require('../reference/file-proof/csg-v4.cjs');const {readTransformConsumers,layout}=require('../reference/file-proof/transform-consumers-v1.cjs');
+const bytes=fs.readFileSync(path.join(__dirname,'../reference/fixtures/library-item-4.csg'));
+function crc(b,n){b.writeUInt32LE(zlib.crc32(b.subarray(n.payload,n.crcOffset)),n.crcOffset);}
+test('seven exact saved consumer headers and source runtime layouts',()=>{const rows=readTransformConsumers(bytes);assert.deepEqual(rows.map(x=>x.index),[52,58,115,122,127,215,221]);assert.deepEqual(rows.find(x=>x.index===115).objects,[92,112,114,113,110]);assert.equal(rows.find(x=>x.index===127).operationChannels.length,3);assert.ok(rows.every(x=>x.fullyConsumed));});
+test('source layout reuses unlinked sockets and excludes negative-index tail',()=>{assert.deepEqual(layout([0,-1,1],[0,-5,0],3).operationChannels,[{objectIndex:0,channelIndex:0},{objectIndex:1,channelIndex:0}]);assert.equal(layout([0,1],[0,-5],3).operationChannels.length,1);});
+test('future consumers remain unknown; malformed known bounds reject',()=>{const n=parse(bytes).nodes[115],future=Buffer.from(bytes);future.writeInt32LE(99,n.payload);crc(future,n);assert.equal(readTransformConsumers(future).length,6);const bad=Buffer.from(bytes);bad.writeInt32LE(0x7fffffff,n.payload+8);crc(bad,n);assert.throws(()=>readTransformConsumers(bad),/bound/);});
