@@ -111,6 +111,18 @@
       "id": 41005179950,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41005179950",
       "verification": "success; clean checkout combined/codec/independent-reader checks"
+    },
+    {
+      "id": 41037855060,
+      "commit": "f0a62828c50410eff7e34b9d60c7e00bc995fad9",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41037855060",
+      "verification": "iPad/iPhone all100 scalar-handle runtime checks confirmed live; terminal result inspection pending"
+    },
+    {
+      "id": 41037854618,
+      "commit": "f0a62828c50410eff7e34b9d60c7e00bc995fad9",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41037854618",
+      "verification": "Repository/source/oracle/independent file checks confirmed live; terminal result inspection pending"
     }
   ]
 }
