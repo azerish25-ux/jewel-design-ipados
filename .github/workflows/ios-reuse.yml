@@ -6,6 +6,7 @@ on:
       - "src/**"
       - "tests/iOS/**"
       - "tests/Smoke/**"
+      - "tests/Port/**"
       - "scripts/run-simulator.sh"
       - "scripts/ios-device.cjs"
       - "tests/ios-device.test.cjs"

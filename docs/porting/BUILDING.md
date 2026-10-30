@@ -29,3 +29,5 @@ On a suitable Mac select the compatible SDK first (CI rewrites global.json in it
 Invalid ARM64 signatures previously killed startup before managed Main. Simulator build/execution and physical-device evidence remain separate.
 
 Do not build every archived csproj or install CounterSketch/Rhino on the host. Windows projects need external native libraries, reconstructed resources and recovery fixes. P02 owns contained reproduction; materialization only reconstructs files.
+
+The iOS workflow also watches tests/Port/** so contract-only changes run on macOS. Filter semantics: [official GitHub workflow syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onpushpull_requestpull_request_targetpathspaths-ignore). Shared Domain.Contracts runs the recovered-source ring comparisons on Console and both simulator families.

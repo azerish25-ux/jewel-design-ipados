@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "scope": "Production lift of material identifiers and density mapping only; not CAD or PC document parity",
+  "scope": "Production lift of material identifiers/density and seven ring-size region translators; not CAD or PC document parity",
   "files": [
     {
       "source": "recovery/canonical/cad/GV.CounterSketch.Shared/GemMaterial.cs",
@@ -15,6 +15,76 @@
       "disposition": "unchanged",
       "sha256": "436ad12bda91e2c023b33fde8255f1e95849abec5702c07791a280546a8a946b",
       "nonblank": 345
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/ERingSizeOption.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/ERingSizeOption.cs",
+      "disposition": "unchanged",
+      "sha256": "3fe896055421fe6d145aae7aa6b77a2a3df5b825e94d825c633995e7deaa8af3",
+      "nonblank": 11
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSize.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/RingSize.cs",
+      "disposition": "unchanged",
+      "sha256": "22897ba64325e516c8dcb2601ee931f16f5f8372539ded65c318560ba190734a",
+      "nonblank": 71
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeEur.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/RingSizeEur.cs",
+      "disposition": "unchanged",
+      "sha256": "ff5d11307656507428e14ec34efb5dbe37048a0760f08696555ad1d00047d038",
+      "nonblank": 20
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeFrance.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/RingSizeFrance.cs",
+      "disposition": "unchanged",
+      "sha256": "4aaf85b332d2ab91ffc0866fc0ceeb63ca9b16fd80a351b8dd44348b80e84892",
+      "nonblank": 33
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeGerman.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/RingSizeGerman.cs",
+      "disposition": "unchanged",
+      "sha256": "20c7fa241f2d71a856028415cdeb8f8ba6af8c841737eb2587d752436ec0823c",
+      "nonblank": 33
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeJapan.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/RingSizeJapan.cs",
+      "disposition": "unchanged",
+      "sha256": "f3036f056b44b19556e17c76fcb35c146202a4734731b780ab9c1c8a82dfec97",
+      "nonblank": 20
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeSwiss.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/RingSizeSwiss.cs",
+      "disposition": "unchanged",
+      "sha256": "3234933105b89d391a92938dd28d75a6401e3620113bb8b9dba8be82a7ba5316",
+      "nonblank": 33
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeUK.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/RingSizeUK.cs",
+      "disposition": "unchanged",
+      "sha256": "1151c89f070782caa72e91f7ebb48905869d1e83783a2c7c2cbc0fde6404e871",
+      "nonblank": 26
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeUSA.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/RingSizeUSA.cs",
+      "disposition": "unchanged",
+      "sha256": "c4169da8c34e48167fd743eb0f1bdc763dd1b8d3eb26da5c8056875dadbf3b34",
+      "nonblank": 52
+    },
+    {
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/UniversalRingSize.cs",
+      "target": "src/Port/Domain/Recovered/RingSizes/UniversalRingSize.cs",
+      "disposition": "unchanged",
+      "sha256": "ef7fe5da02e2da105ee733e6835b0827936e87b2cd623a48fc32085f974f74d7",
+      "nonblank": 18
     }
   ]
 }

@@ -11,6 +11,7 @@ var compressionReport=new List<string>();foreach(var text in new[]{"", "CounterS
 if(CadRecovered::GV.CounterSketch.Shared.Utilities.Helpers.GemCaratHelper.GetSpecificGravityForMaterial(CadRecovered::GV.CounterSketch.Shared.GemMaterial.Diamond)!=3.52)throw new Exception("Diamond density");
 int domainMaterials=0;foreach(var material in Enum.GetValues<Production::GV.CounterSketch.Shared.GemMaterial>()){var expected=CadRecovered::GV.CounterSketch.Shared.Utilities.Helpers.GemCaratHelper.GetSpecificGravityForMaterial((CadRecovered::GV.CounterSketch.Shared.GemMaterial)(int)material);var actual=Production::GV.CounterSketch.Shared.Utilities.Helpers.GemCaratHelper.GetSpecificGravityForMaterial(material);if(expected!=actual)throw new Exception("Production material mapping mismatch");domainMaterials++;}
 if(domainMaterials!=114)throw new Exception("Production material catalog count mismatch");
+var ringSizeResult=DomainContractChecks.RingSizeAssertions.Run();
 var graphContractResult=GraphContractChecks.Assertions.Run();
-return $"PASS {cases} original-binary golden Bernstein cases; vector length/cross; diamond density; production domain {domainMaterials} material comparisons; {graphContractResult}; compression probe (non-gating): {string.Join(";",compressionReport)}";}
+return $"PASS {cases} original-binary golden Bernstein cases; vector length/cross; diamond density; production domain {domainMaterials} material comparisons; {graphContractResult}; {ringSizeResult}; compression probe (non-gating): {string.Join(";",compressionReport)}";}
 }

@@ -28,6 +28,56 @@
         "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
         "recovery/canonical/cad/CS/CSParaGraph.cs"
       ]
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/ERingSizeOption.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/ERingSizeOption.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/RingSize.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSize.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/RingSizeEur.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeEur.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/RingSizeFrance.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeFrance.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/RingSizeGerman.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeGerman.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/RingSizeJapan.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeJapan.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/RingSizeSwiss.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeSwiss.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/RingSizeUK.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeUK.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/RingSizeUSA.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/RingSizeUSA.cs"
+    },
+    {
+      "path": "src/Port/Domain/Recovered/RingSizes/UniversalRingSize.cs",
+      "classification": "unchanged recovered ring-size data/conversion logic",
+      "source": "recovery/canonical/cad/CSRingSizes.RingSize/UniversalRingSize.cs"
     }
   ]
 }

@@ -364,7 +364,14 @@
             "P03-T02"
           ],
           "outputs": [
-            "src/Port/Graph/GraphSnapshot.cs"
+            "src/Port/Graph/GraphSnapshot.cs",
+            "tests/Port/Graph.Contracts/Assertions.cs",
+            "src/Port/Graph/GraphParameterAddress.cs",
+            "tests/Port/Graph.Contracts/ParameterAddressAssertions.cs",
+            "docs/porting/ADR-0001-snapshot-parameter-addresses.md",
+            "docs/porting/UNITS_CONTRACT.md",
+            "tests/Port/Domain.Contracts/RingSizeAssertions.cs",
+            "src/Port/Domain/Recovered/RingSizes"
           ],
           "evidence": [
             "docs/porting/evidence/P03-T03.json"

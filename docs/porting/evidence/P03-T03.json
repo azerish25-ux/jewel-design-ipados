@@ -7,7 +7,10 @@
     "tests/Port/Graph.Contracts/Assertions.cs",
     "src/Port/Graph/GraphParameterAddress.cs",
     "tests/Port/Graph.Contracts/ParameterAddressAssertions.cs",
-    "docs/porting/ADR-0001-snapshot-parameter-addresses.md"
+    "docs/porting/ADR-0001-snapshot-parameter-addresses.md",
+    "docs/porting/UNITS_CONTRACT.md",
+    "tests/Port/Domain.Contracts/RingSizeAssertions.cs",
+    "src/Port/Domain/Recovered/RingSizes"
   ],
   "fixtures": [],
   "checks": [
@@ -24,6 +27,34 @@
       "expectedExitCode": 1,
       "artifact": "tests/Port/Graph.Contracts/ParameterAddressAssertions.cs",
       "actual": "RED: missing GraphParameterAddress, AddressParameter and ResolveNode; normal, duplicate, foreign and invalid address cases compiled only after implementation"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Domain.Tests (before ring source adoption)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Domain.Contracts/RingSizeAssertions.cs",
+      "actual": "RED CS0246: production CSRingSizes namespace absent"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Domain.Tests",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Domain.Contracts/RingSizeAssertions.cs",
+      "actual": "PASS 114 materials plus seven ring regions / 1172 catalog-boundary cases across en-US and fr-FR; fixed examples, fractional indices and invalid input parity"
+    },
+    {
+      "command": "dotnet run --project tests/Console",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Smoke/Checks.cs",
+      "actual": "Combined material, graph/address and ring assertions passed; compression 100000-byte case remains explicitly non-gating failure"
+    },
+    {
+      "command": "node scripts/verify-production.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "src/Port/Domain/provenance.json",
+      "actual": "12 unchanged adopted files verified"
     }
   ],
   "review": {
@@ -32,10 +63,11 @@
     "architecture": "No Windows/native references and no archive identity migration decision; ADR records scope",
     "security": "No credentials, original runtime execution, network access or raw payload alteration",
     "performance": "Constant-time allocation/equality/resolution; one retained immutable snapshot owner per live address",
-    "limitations": "Not field existence validation, graph evaluation, undo integration, codec write or PC roundtrip"
+    "limitations": "Not field existence validation, graph evaluation, undo integration, codec write or PC roundtrip",
+    "ringSizes": "Ten files copied without mutation; shared tests cover seven regions, both cultures, boundary and invalid values; original partial metadata and rounding preserved"
   },
   "blockers": [
-    "Document units, persistent cross-load parameter identity and codec integration remain unfinished; new address checks need macOS execution"
+    "General document/native units, persistent cross-load identity, legacy codec integration and new ring/address macOS verification remain unfinished"
   ],
   "ciRuns": [
     {
@@ -66,6 +98,18 @@
     {
       "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
       "sha256": "bebfa16ae1ab9ba3c7c943cabe6a21d63ee6b551ee71f1a5681cf08921eb72ae"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs",
+      "sha256": "df9c4a0cbb44fe040098edcc0e3caa55fe34e18889d42953450162c93efc69d3"
+    },
+    {
+      "path": "recovery/canonical/cad/CS/CSApplication.cs",
+      "sha256": "78aff52cf0615558541659a5eb4d77b1eeff298e94c32040fdde4893929c4f35"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Builders/CSGemInChannelSetUp.cs",
+      "sha256": "deb7d0a00c65b1ed37e77da9d1ae0c74352f509747a868847fa4350f36027592"
     }
   ],
   "subtasks": [
@@ -82,8 +126,9 @@
     },
     {
       "id": "P03-T03-A03",
-      "scope": "Document units and persistent codec identity mapping",
-      "status": "not_started"
+      "scope": "Units: unchanged seven-region ring translator subset; document/native unit mapping still open",
+      "status": "implemented_local",
+      "evidence": "docs/porting/UNITS_CONTRACT.md"
     }
   ]
 }

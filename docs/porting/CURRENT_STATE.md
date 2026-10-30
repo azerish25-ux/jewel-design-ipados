@@ -20,4 +20,6 @@ The 18.3% compilation figure is not feature progress. It includes data, generate
 
 Still required: genuine local CAD, builders, editable PC/legacy codecs, touch UI, rendering, complete offline data, supported scripting and physical-device acceptance. Repository checks and smoke tests do not prove full parity.
 
-Next: P01-T05 compare original/recovered compression and add a compatibility regression; P01-T06 broaden device coverage. P02 obtains the Windows oracle and twenty-family fixtures. The startup diagnosis is proven: SIGKILL (Code Signature Invalid), CODESIGNING/Invalid Page before managed Main; valid ad-hoc signing fixed it.
+P01-T06 simulator family coverage is verified for iPad/iPhone; the unsigned device build still has no physical execution. Next: P01-T05 needs the original compression oracle. P03-T03 is implementing graph/parameter/unit contracts; see [units evidence](UNITS_CONTRACT.md) and [snapshot identity decision](ADR-0001-snapshot-parameter-addresses.md). P02 obtains the Windows oracle and twenty-family fixtures. The startup diagnosis is proven: SIGKILL (Code Signature Invalid), CODESIGNING/Invalid Page before managed Main; valid ad-hoc signing fixed it.
+
+Production Domain now adopts 12 unchanged recovered files (materials plus seven ring-size region translators). The new ring checks pass locally; their macOS execution remains pending. These helpers do not implement ring UI, native CAD or full document-unit migration.
