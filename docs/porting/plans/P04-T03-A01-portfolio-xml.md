@@ -10,8 +10,8 @@ Independent oracle: SDK Roslyn generator derives declared public read/write non-
 
 Owned: Documents portfolio XML/key modules; tools/PortfolioContractGenerator; shared Documents.Contracts fixture/oracle tests; CI and evidence.
 
-- [ ] Generate/verify source property contracts; record source hashes and scope.
-- [ ] RED actual codec API: generated schema metadata survives no-op/edit/serialize/read, nested variants and unknown XML retained; UTF8/UTF16/BOM, nil/absent and path cases; reject DTD, depth/count/size, ambiguous/complex scalar edits and foreign roots.
-- [ ] GREEN private immutable XML codec and paired filename/sidecar helper. No native getter/load/clone behavior or folder reconciliation claims.
-- [ ] Run local/independent XmlSerializer and existing CSG/graph/source checks; commit/push.
+- [x] Generate/verify source property contracts; record source hashes and scope.
+- [x] RED actual codec API: generated schema metadata survives no-op/edit/serialize/read, nested variants and unknown XML retained; UTF8/UTF16/BOM, nil/absent and path cases; reject DTD, depth/count/size, ambiguous/complex scalar edits and foreign roots.
+- [x] GREEN private immutable XML codec and paired filename/sidecar helper. No native getter/load/clone behavior or folder reconciliation claims.
+- [x] Run local/independent XmlSerializer and existing CSG/graph/source checks; commit/push.
 - [ ] Inspect iPad/iPhone assertions through macOS CI; record limitations and commit/push. Parent P04-T03 remains incomplete for real folder/corpus/history/sidecar/PC acceptance.

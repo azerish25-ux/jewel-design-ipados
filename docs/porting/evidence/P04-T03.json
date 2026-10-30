@@ -73,6 +73,20 @@
       "expectedExitCode": 0,
       "artifact": "src/Port/Documents/Documents.csproj",
       "actual": "zero warnings, zero errors"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests (output-limit regression before fix)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Documents.Contracts/PortfolioAssertions.cs",
+      "actual": "RED writer accepted a new field exceeding the same custom MaxElements limit"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests (shared preflight)",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "src/Port/Documents/LegacyPortfolioXmlCodec.cs",
+      "actual": "Edited XML now passes the same byte/character/depth/element validation before returning bytes"
     }
   ],
   "review": {
@@ -81,10 +95,24 @@
     "architecture": "No WPF/native runtime or model setter execution; XML data does not trigger path relocation or external IO",
     "security": "DTD prohibited, resolver null, iterative depth/element limits and byte/character bounds; stored paths never followed",
     "performance": "Bounded two-pass XML validation plus DOM; exact no-op byte clone and immutable targeted edits",
-    "limitations": "Synthetic generated-contract fixtures, no real saved PC folder or native getter/load/clone/history/sidecar behavior; physical AOT execution not proven"
+    "limitations": "Synthetic generated-contract fixtures, no real saved PC folder or native getter/load/clone/history/sidecar behavior; physical AOT execution not proven",
+    "outputBounds": "Shared input/output preflight prevents an edited document from exceeding its configured reopen limits"
   },
   "blockers": [
-    "macOS XML/schema execution pending",
+    "Latest XML output-limit guard needs macOS verification; earlier b40c0ad run is not evidence for this guard",
     "Real PC portfolio corpus, folder/history/sidecar reconciliation and native load/migration acceptance remain unavailable"
+  ],
+  "ciRuns": [
+    {
+      "id": 41007860928,
+      "commit": "b40c0ad6dd4a6e519121a37d1cc6f552d56b24bd",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41007860928",
+      "verification": "confirmed live; macOS XML/schema simulator execution pending"
+    },
+    {
+      "id": 41007860905,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41007860905",
+      "verification": "success; clean checkout source contract generator, XML and existing file proofs"
+    }
   ]
 }

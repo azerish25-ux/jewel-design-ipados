@@ -15,3 +15,5 @@ Shared tests deserialize edited output through XmlSerializer on the generated pr
 The [.NET 10 XmlSerializer implementation](https://github.com/dotnet/runtime/blob/v10.0.0/src/libraries/System.Private.Xml/src/System/Xml/Serialization/XmlSerializer.cs) selects reflection-only mode when dynamic code is unavailable; the platform assertion reports RuntimeFeature.IsDynamicCodeSupported rather than assuming simulator/AOT equivalence. Device/physical execution still needs its own proof.
 
 This child consumes source evidence and portable document foundations; it does not waive P02/P03 or P04 portfolio-folder/all-serializer/native geometry and PC/iOS/PC gates.
+
+Modified output is revalidated with the same configured input limits before bytes are returned; a regression covers adding metadata exactly at the element budget. Earlier simulator runs must not be treated as evidence for a later guard change.

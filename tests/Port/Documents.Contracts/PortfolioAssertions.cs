@@ -57,6 +57,10 @@ public static class PortfolioAssertions
             if(reread.Name!="New Ω"||reread.Designs.Count!=2)throw new Exception("Encoding edit not readable");
             if(encoding.GetPreamble().Length>0&&!changed.AsSpan().StartsWith(encoding.GetPreamble()))throw new Exception("Encoding/BOM lost");
         }
+        int elementBudget=XDocument.Load(new MemoryStream(baseline)).Descendants().Count();
+        var exactLimit=LegacyPortfolioXmlCodec.Read(baseline,new LegacyPortfolioXmlLimits(MaxElements:elementBudget));
+        Throws<InvalidDataException>(()=>LegacyPortfolioXmlCodec.Write(exactLimit.WithProjectText("City","Added field")));
+
         Throws<NotSupportedException>(()=>LegacyPortfolioXmlCodec.Read(Serialize(serializer,source,new UTF32Encoding(false,true))));
         var ringChanged=(Schema.Project)serializer.Deserialize(new MemoryStream(LegacyPortfolioXmlCodec.Write(document.WithDefaultRingSizeIndex(5))))!;
         if(ringChanged.DefaultRingSizeIndex!=5)throw new Exception("Typed project integer edit");

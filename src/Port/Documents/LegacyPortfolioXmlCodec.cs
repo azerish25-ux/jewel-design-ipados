@@ -16,18 +16,21 @@ public static class LegacyPortfolioXmlCodec
         limits??=new LegacyPortfolioXmlLimits();limits.Validate();
         if(input.Length>limits.MaxBytes)throw new InvalidDataException("Portfolio XML exceeds byte limit");
         var bytes=input.ToArray();
-        var settings=new XmlReaderSettings { DtdProcessing=DtdProcessing.Prohibit, XmlResolver=null, MaxCharactersInDocument=limits.MaxCharacters, IgnoreWhitespace=false, IgnoreComments=false };
-        // Check depth/count iteratively before constructing the private DOM.
-        using(var scan=XmlReader.Create(new MemoryStream(bytes),settings))
-        {
-            int elements=0;
-            while(scan.Read())
-                if(scan.Depth>limits.MaxDepth||(scan.NodeType==XmlNodeType.Element&&++elements>limits.MaxElements))
-                    throw new InvalidDataException("Portfolio XML depth/element limit exceeded");
-        }
+        Validate(bytes,limits);var settings=Settings(limits);
         XDocument tree;using(var reader=XmlReader.Create(new MemoryStream(bytes),settings))tree=XDocument.Load(reader,LoadOptions.PreserveWhitespace);
         if(tree.Root?.Name!=XName.Get("Project"))throw new NotSupportedException("Expected unqualified Project XML root");
         return new LegacyPortfolioXmlDocument(tree,bytes,DetectEncoding(bytes,tree.Declaration?.Encoding),limits,false);
+    }
+
+    private static XmlReaderSettings Settings(LegacyPortfolioXmlLimits limits)=>new(){DtdProcessing=DtdProcessing.Prohibit,XmlResolver=null,MaxCharactersInDocument=limits.MaxCharacters,IgnoreWhitespace=false,IgnoreComments=false};
+
+    internal static void Validate(byte[] bytes,LegacyPortfolioXmlLimits limits)
+    {
+        if(bytes.Length>limits.MaxBytes)throw new InvalidDataException("Portfolio XML exceeds byte limit");
+        using var scan=XmlReader.Create(new MemoryStream(bytes),Settings(limits));int elements=0;
+        while(scan.Read())
+            if(scan.Depth>limits.MaxDepth||(scan.NodeType==XmlNodeType.Element&&++elements>limits.MaxElements))
+                throw new InvalidDataException("Portfolio XML depth/element limit exceeded");
     }
 
     public static byte[] Write(LegacyPortfolioXmlDocument document)
@@ -121,6 +124,7 @@ public sealed class LegacyPortfolioXmlDocument
         if(!modified)return (byte[])original.Clone();
         using var output=new MemoryStream();
         using(var writer=XmlWriter.Create(output,new XmlWriterSettings{Encoding=encoding,Indent=false,NewLineHandling=NewLineHandling.None,OmitXmlDeclaration=tree.Declaration is null}))tree.Save(writer);
-        if(output.Length>limits.MaxBytes)throw new InvalidDataException("Edited XML exceeds byte limit");return output.ToArray();
+        if(output.Length>limits.MaxBytes)throw new InvalidDataException("Edited XML exceeds byte limit");
+        var encoded=output.ToArray();LegacyPortfolioXmlCodec.Validate(encoded,limits);return encoded;
     }
 }
