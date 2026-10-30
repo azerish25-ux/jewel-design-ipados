@@ -641,6 +641,18 @@
       "commit": "32542f3676f24e92b63c4659691bb46150aac84c",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41108932509",
       "verification": "SUCCESS: actual unsigned arm64/platform IOS52 warnings0 errors/source manifest/hash inspected; transform-consumer-device-results.json. Consumer simulator execution remains separate."
+    },
+    {
+      "id": 41112023137,
+      "commit": "2bf2ee22c54b1868349de4a5461d96c43f31ac91",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41112023137",
+      "verification": "Pure array source289 pairs/33 null failures/789 trees plus zero-fixed12285 and prior native shared suites queued; actual family/report inspection pending. Native collection execution not implemented at this checkpoint."
+    },
+    {
+      "id": 41112027142,
+      "commit": "2bf2ee22c54b1868349de4a5461d96c43f31ac91",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41112027142",
+      "verification": "Pure array unsigned ARM64 build queued; actual platform/AOT/log/hash inspection pending; no runtime/physical proof."
     }
   ],
   "requirementIds": [

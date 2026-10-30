@@ -17,8 +17,11 @@ A01 owns Documents array value/algebra/replay/header allowlist, independent read
 - [x] Generalize socket replay fixed constructor count0/1; preserve earlier source12285 and new collection constructor cases.
 - [x] Independently decode/read/write/rewire/future20 exact headers;161/80/100 counts; no runtime execution claim.
 - [x] Source-body/tamper/differential/document/native-adjacent/provenance/repository checks, review.
-- [ ] Commit/push and Apple managed runtime/AOT validation; inspect artifacts.
+- [x] Commit/push A01 at2bf2ee2; dispatch native/shared Apple41112023137 and unsigned device41112027142, both queued.
+- [ ] Inspect actual pure-array289/33/789 and zero-fixed12285/native/family/AOT artifacts.
 - [ ] A02 owned native collection execution (next).
 - [ ] A03 complete known collection-consuming behavior (required).
 
 Retain original CSUnarray1 odd trailing empty array and one-level expansion; null input throws in source. CSArray outputIndex-1 wildcard and expandable HasLink=false load quirks must not be corrected silently. Full arrays/material/data/4x4/segments/all builders/UI/PC/physical parity remain open;0/1451 verified. All local files/cache D:, wait5 seconds/retry transient D errors.
+
+A02 design questions to resolve against source before enabling producers: current LegacyCurveSelection(record,channel) addresses one native curve; introduce item addressing/owned output snapshots rather than storing upstream tokens that change after producer regeneration. Each output may contain nested arrays/multiple curve leaves; preserve profile/rail metadata and context leases, clean all partially retained leaves on failure, and keep retained old arrays alive independently. Dynamic output counts are required for Unarray; Source CSUnarray1 outputs one level of direct items and an always-empty trailing array. Source CSArray supports channel-1 all-output enumeration, but HasLink/load replay can discard wildcard tail sockets; preserve both rules. Keep A03 arithmetic output arrays/transform flatten/aggregate bounds/first-item conversion work explicit.
