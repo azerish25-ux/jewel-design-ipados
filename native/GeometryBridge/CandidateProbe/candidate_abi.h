@@ -45,6 +45,8 @@ int32_t jd_candidate_curve_length_parameter(uint64_t context,uint64_t shape,doub
 int32_t jd_candidate_affine(uint64_t context,uint64_t shape,const double* matrix,uint32_t count,uint64_t* output,char* diagnostic,uint32_t capacity);
 /* Bounded candidate closest point: endpoints plus native orthogonal candidates. */
 int32_t jd_candidate_curve_closest(uint64_t context,uint64_t shape,double px,double py,double pz,double* parameter,double* x,double* y,double* z,double* distance,char* diagnostic,uint32_t capacity);
+int32_t jd_candidate_curve_trim(uint64_t context,uint64_t shape,double first,double last,uint64_t* output,char* diagnostic,uint32_t capacity);
+int32_t jd_candidate_curve_reverse(uint64_t context,uint64_t shape,uint64_t* output,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

@@ -267,7 +267,9 @@ extern "C" int32_t jd_candidate_curve_inspect(uint64_t context,uint64_t shape,do
             if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Curve inspection requires an edge");
             BRepAdaptor_Curve curve(TopoDS::Edge(input));
             if(curve.GetType()!=GeomAbs_BSplineCurve)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Candidate inspection requires a B-spline curve");
-            const auto start=curve.FirstParameter(),end=curve.LastParameter(),arcLength=GCPnts_AbscissaPoint::Length(curve);
+            const auto start=curve.FirstParameter(),end=curve.LastParameter();
+            // Explicit candidate inspection precision; default quadrature was insufficient on a quarter arc.
+            const auto arcLength=GCPnts_AbscissaPoint::Length(curve,start,end,1e-10);
             if(!std::isfinite(start)||!std::isfinite(end)||!std::isfinite(arcLength)||end<=start||arcLength<=0)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid native curve information");
             *first=start;*last=end;*length=arcLength;*degree=static_cast<uint32_t>(curve.Degree());*poles=static_cast<uint32_t>(curve.NbPoles());*rational=curve.IsRational()?1u:0u;
         });
@@ -353,6 +355,48 @@ extern "C" int32_t jd_candidate_curve_closest(uint64_t context,uint64_t shape,do
             for(int i=1;i<=projection.NbPoints();i++)consider(projection.Parameter(i),projection.Point(i));
             if(!std::isfinite(bestDistance)||bestParameter<first||bestParameter>last)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid closest point result");
             *parameter=bestParameter;*x=best.X();*y=best.Y();*z=best.Z();*distance=bestDistance;
+        });
+    },diagnostic,capacity);
+}
+
+namespace {
+occ::handle<Geom_BSplineCurve> copiedEdgeSpline(Context& value,uint64_t shape,double& first,double& last)
+{
+    const auto& input=findShape(value,shape).shape;
+    if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Curve operation requires an edge");
+    auto curve=BRep_Tool::Curve(TopoDS::Edge(input),first,last);
+    auto spline=occ::down_cast<Geom_BSplineCurve>(curve);
+    if(spline.IsNull())fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Candidate operation requires a NURBS curve");
+    if(!std::isfinite(first)||!std::isfinite(last)||last<=first)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid edge curve domain");
+    auto copy=occ::down_cast<Geom_BSplineCurve>(spline->Copy());
+    if(copy.IsNull())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native curve copy failed");return copy;
+}
+uint64_t storeCurveEdge(Context& value,const occ::handle<Geom_BSplineCurve>& curve)
+{
+    BRepBuilderAPI_MakeEdge operation(curve);
+    if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native trimmed/reversed edge failed");
+    return store(value,operation.Shape());
+}
+}
+extern "C" int32_t jd_candidate_curve_trim(uint64_t context,uint64_t shape,double first,double last,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        outputHandle(output);
+        if(!std::isfinite(first)||!std::isfinite(last)||last<=first)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Trim interval must be finite and increasing");
+        withContext(context,[&](Context& value){
+            double domainFirst=0,domainLast=0;auto curve=copiedEdgeSpline(value,shape,domainFirst,domainLast);
+            if(first<domainFirst||last>domainLast)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Trim interval outside edge domain");
+            curve->Segment(first,last);*output=storeCurveEdge(value,curve);
+        });
+    },diagnostic,capacity);
+}
+extern "C" int32_t jd_candidate_curve_reverse(uint64_t context,uint64_t shape,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        outputHandle(output);
+        withContext(context,[&](Context& value){
+            double first=0,last=0;auto curve=copiedEdgeSpline(value,shape,first,last);
+            curve->Segment(first,last);curve->Reverse();*output=storeCurveEdge(value,curve);
         });
     },diagnostic,capacity);
 }

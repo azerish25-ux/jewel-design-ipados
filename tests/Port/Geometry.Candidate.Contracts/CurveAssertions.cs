@@ -4,7 +4,7 @@ namespace CandidateGeometryContractChecks;
 internal static class CurveAssertions
 {
     private static void Check(bool condition,string message){if(!condition)throw new Exception(message);}
-    private static void Near(double value,double expected)=>Check(double.IsFinite(value)&&Math.Abs(value-expected)<1e-8,"Native circle coordinate/length mismatch");
+    private static void Near(double value,double expected)=>Check(double.IsFinite(value)&&Math.Abs(value-expected)<1e-8,"Native coordinate/length mismatch: actual="+value.ToString("R")+", expected="+expected.ToString("R"));
     private static void Point(CandidatePoint3 value,double x,double y,double z){Near(value.X,x);Near(value.Y,y);Near(value.Z,z);}
     private static CandidateGeometryException Fails(Action action)
     {try{action();}catch(CandidateGeometryException e){return e;}throw new Exception("Expected native curve failure");}
@@ -48,6 +48,18 @@ internal static class CurveAssertions
             var evaluated=context.PointAt(circle,nearest.Parameter);Point(evaluated,nearest.Point.X,nearest.Point.Y,nearest.Point.Z);
             var seam=context.ClosestPoint(circle,new(0,0,7));Point(seam.Point,0,0,7);Near(seam.Distance,0);
             Check(Fails(()=>context.ClosestPoint(circle,new(double.NaN,0,0))).Status==CandidateNativeStatus.InvalidArgument,"Nonfinite projection input");
+            using(var quarter=context.TrimCurve(circle,0,Math.PI/2)){
+                var trimmed=context.InspectCurve(quarter);Near(trimmed.FirstParameter,0);Near(trimmed.LastParameter,Math.PI/2);Near(trimmed.Length,7*Math.PI/2);
+                Point(context.PointAt(quarter,0),0,0,7);Point(context.PointAt(quarter,Math.PI/2),7,0,0);
+                var outsideEnd=context.ClosestPoint(quarter,new(10,0,-2));Point(outsideEnd.Point,7,0,0);Near(outsideEnd.Distance,Math.Sqrt(13));
+                var outsideStart=context.ClosestPoint(quarter,new(-2,0,10));Point(outsideStart.Point,0,0,7);
+                using var reversed=context.ReverseCurve(quarter);
+                Point(context.PointAt(reversed,0),7,0,0);Point(context.PointAt(reversed,Math.PI/2),0,0,7);
+                var sample=context.PointAt(quarter,.3);var opposite=context.PointAt(reversed,Math.PI/2-.3);Point(opposite,sample.X,sample.Y,sample.Z);
+                Point(context.PointAt(quarter,0),0,0,7);
+            }
+            Check(Fails(()=>{using var rejected=context.TrimCurve(circle,1,0);}).Status==CandidateNativeStatus.InvalidArgument,"Decreasing trim interval");
+            Check(Fails(()=>{using var rejected=context.TrimCurve(circle,0,7);}).Status==CandidateNativeStatus.InvalidArgument,"Out-of-domain trim interval");
             using var moved=context.Translate(circle,1,2,3);
             Point(context.PointAt(moved,info.FirstParameter),1,2,10);
             var projectedMoved=context.ClosestPoint(moved,new(11,5,13));Point(projectedMoved.Point,1+diagonal,2,3+diagonal);
@@ -69,6 +81,6 @@ internal static class CurveAssertions
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,0),new(1,0,0)));});
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,1),new(0,0,1)));});
         Check(context.DiagnosticLiveShapeCount==0,"Curve ownership retained native entries");
-        return "PASS candidate native curves: actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
+        return "PASS candidate native curves: actual NURBS trim/reverse/open-end projection, actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
     }
 }

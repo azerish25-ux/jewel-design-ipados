@@ -48,4 +48,10 @@ public sealed partial class CandidateContext
             return new(parameter,new(x,y,z),distance);
         }
     }
+    public CandidateShape TrimCurve(CandidateShape shape,double first,double last)=>CreateShape(diagnostic=>{
+        var status=NativeMethods.CurveTrim(_handle,shape.Handle,first,last,out var id,diagnostic,DiagnosticCapacity);return(status,id);
+    },shape);
+    public CandidateShape ReverseCurve(CandidateShape shape)=>CreateShape(diagnostic=>{
+        var status=NativeMethods.CurveReverse(_handle,shape.Handle,out var id,diagnostic,DiagnosticCapacity);return(status,id);
+    },shape);
 }

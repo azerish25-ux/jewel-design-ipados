@@ -58,6 +58,14 @@ void run_candidate_curve_contracts()
     nearCurve(nearestDistance,std::sqrt(std::pow(std::sqrt(200.0)-7,2)+9));
     checkCurve(jd_candidate_curve_closest(context.id,box,10,3,10,&nearestParameter,&nearestX,&nearestY,&nearestZ,&nearestDistance,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION,"Solid produced fake closest curve point");
     checkCurve(jd_candidate_curve_closest(context.id,circle,10,3,10,nullptr,&nearestX,&nearestY,&nearestZ,&nearestDistance,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Missing closest output accepted");
+    uint64_t quarter=0,reversed=0;ok(jd_candidate_curve_trim(context.id,circle,0,pi/2,&quarter,error,sizeof(error)));
+    ok(jd_candidate_curve_inspect(context.id,quarter,&first,&last,&length,&degree,&poles,&rational,error,sizeof(error)));nearCurve(first,0);nearCurve(last,pi/2);nearCurve(length,7*pi/2);
+    ok(jd_candidate_curve_reverse(context.id,quarter,&reversed,error,sizeof(error)));
+    ok(jd_candidate_curve_point(context.id,reversed,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,7);nearCurve(y,0);nearCurve(z,0);
+    ok(jd_candidate_curve_closest(context.id,quarter,10,0,-2,&nearestParameter,&nearestX,&nearestY,&nearestZ,&nearestDistance,error,sizeof(error)));
+    nearCurve(nearestX,7);nearCurve(nearestY,0);nearCurve(nearestZ,0);nearCurve(nearestDistance,std::sqrt(13.0));
+    checkCurve(jd_candidate_curve_trim(context.id,circle,1,0,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Invalid trim interval accepted");
+    ok(jd_candidate_shape_release(context.id,quarter,error,sizeof(error)));ok(jd_candidate_shape_release(context.id,reversed,error,sizeof(error)));
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }
