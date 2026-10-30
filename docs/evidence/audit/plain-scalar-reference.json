@@ -1,0 +1,1023 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_reader_only",
+  "scope": "Strict independent inspection of three stored-double record types at version1.1. Production codec, UI OnOff/chooser behavior and PC/native regeneration are not established.",
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+      "sha256": "32460012d6e5d127d9bce60be12a1c5e2432265c827a47940e92292e0be1dd8b"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueBase.cs",
+      "sha256": "fafe18940dce04c46749dc3d747d05a1407293995ec3c80f4136ffafb2c5085a"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+      "sha256": "a7ccbf583e3576daf067140b5af52b21941bfc316e905cfebb48402b0ece6210"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueOnOff.cs",
+      "sha256": "ee9bebfe414f04407923e75d892d13654a5854498b34fc022aabe1cee086d382"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueChooser.cs",
+      "sha256": "c3ddad50ff84ce50d624e1d4ab733e806caeab4a03aa77bd3b87ad55b1596fd6"
+    }
+  ],
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "existingNumericCount": 74,
+  "extras": [
+    {
+      "index": 6,
+      "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+      "type": "CS.CSValues.CSValueChooser",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Profile Chooser",
+      "flags": 327632,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Outside Ring Rails",
+          "value": "Profile Chooser"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Chooser"
+        },
+        {
+          "type": "UI",
+          "key": "SortIndex",
+          "value": "1"
+        }
+      ],
+      "objects": [
+        -1,
+        -1,
+        7
+      ],
+      "channels": [
+        -5,
+        -5,
+        -1
+      ],
+      "categories": [
+        0
+      ],
+      "legacyUiInteger": 0,
+      "valueOffset": 128586,
+      "channelCountOffset": 128558,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 11,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Lock",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Outside Ring Rails",
+          "value": "Lock"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Lock"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 137113,
+      "channelCountOffset": 137093,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 15,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Use Outside Ring Rail",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Gems",
+          "value": "Use Outside Ring Rail"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Use Outside Ring Rail"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 138229,
+      "channelCountOffset": 138209,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 24,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Y Offset Mirror",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Gems",
+          "value": "Y Offset Mirror"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Y Offset Mirror"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 140755,
+      "channelCountOffset": 140735,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 28,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Rotation Mirror",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Gems",
+          "value": "Rotation Mirror"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Rotation Mirror"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 141731,
+      "channelCountOffset": 141711,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 33,
+      "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+      "type": "CS.CSValues.CSValueChooser",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Profile Chooser",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Profiles",
+          "value": "Profile Chooser"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Chooser"
+        }
+      ],
+      "objects": [
+        -1,
+        -1,
+        31
+      ],
+      "channels": [
+        -5,
+        -5,
+        -1
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 218527,
+      "channelCountOffset": 218503,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 46,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Mirror Rotate",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Profiles",
+          "value": "Mirror Rotate"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Mirror Rotate"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 222013,
+      "channelCountOffset": 221993,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 62,
+      "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+      "type": "CS.CSValues.CSValueChooser",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Profile Chooser",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Settings",
+          "value": "Profile Chooser"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Chooser"
+        }
+      ],
+      "objects": [
+        -1,
+        -1,
+        63
+      ],
+      "channels": [
+        -5,
+        -5,
+        -1
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 225547,
+      "channelCountOffset": 225523,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 92,
+      "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+      "type": "CS.CSValues.CSValueChooser",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Top Profile Chooser",
+      "flags": 327632,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Shanks",
+          "value": "Profile Chooser"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Chooser"
+        },
+        {
+          "type": "UI",
+          "key": "SortIndex",
+          "value": "3"
+        }
+      ],
+      "objects": [
+        -1,
+        -1,
+        90
+      ],
+      "channels": [
+        -5,
+        -5,
+        -1
+      ],
+      "categories": [
+        0
+      ],
+      "legacyUiInteger": 0,
+      "valueOffset": 252107,
+      "channelCountOffset": 252079,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 93,
+      "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+      "type": "CS.CSValues.CSValueChooser",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Bottom Profile Chooser",
+      "flags": 327632,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Shanks",
+          "value": "Profile Chooser"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Bottom Profile Chooser"
+        },
+        {
+          "type": "UI",
+          "key": "SortIndex",
+          "value": "6"
+        }
+      ],
+      "objects": [
+        -1,
+        -1,
+        90
+      ],
+      "channels": [
+        -5,
+        -5,
+        -1
+      ],
+      "categories": [
+        0
+      ],
+      "legacyUiInteger": 0,
+      "valueOffset": 252449,
+      "channelCountOffset": 252421,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 95,
+      "guid": "38455005-5ef2-43db-8fb9-60e447d75d59",
+      "type": "CS.CSValues.CSValue",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Bottom Profile Position",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Bottom Profile Position"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 253189,
+      "channelCountOffset": 253169,
+      "valueBits": "3fe0000000000000",
+      "valueNumber": 0.5,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 108,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Mirror Rotate",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Shanks",
+          "value": "Mirror Rotate"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Mirror Rotate"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 256907,
+      "channelCountOffset": 256887,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 129,
+      "guid": "38455005-5ef2-43db-8fb9-60e447d75d59",
+      "type": "CS.CSValues.CSValue",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Closed Sweep",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Closed Sweep"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 261111,
+      "channelCountOffset": 261091,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 130,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Mantain Height",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Mantain Height"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 261299,
+      "channelCountOffset": 261279,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 148,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Flip",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Gems",
+          "value": "Flip"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Flip"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 266507,
+      "channelCountOffset": 266487,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 149,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Set Gem Table on Crv",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Gems",
+          "value": "Table"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Set Gem Table on Crv"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 266763,
+      "channelCountOffset": 266743,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 151,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Mirror",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Gems",
+          "value": "Mirror"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Mirror"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 267109,
+      "channelCountOffset": 267089,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 152,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Taper",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Gems",
+          "value": "Taper"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Taper"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 267305,
+      "channelCountOffset": 267285,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 159,
+      "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+      "type": "CS.CSValues.CSValueChooser",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Profile Chooser",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Chooser"
+        }
+      ],
+      "objects": [
+        -1,
+        -1,
+        160
+      ],
+      "channels": [
+        -5,
+        -5,
+        -1
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 268917,
+      "channelCountOffset": 268893,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 169,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Enable End Controls",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Enable End Controls"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 290325,
+      "channelCountOffset": 290305,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 180,
+      "guid": "38455005-5ef2-43db-8fb9-60e447d75d59",
+      "type": "CS.CSValues.CSValue",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Mirror X",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Mirror X"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 293301,
+      "channelCountOffset": 293281,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 184,
+      "guid": "38455005-5ef2-43db-8fb9-60e447d75d59",
+      "type": "CS.CSValues.CSValue",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Mirror X",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Mirror X"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 294313,
+      "channelCountOffset": 294293,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 196,
+      "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+      "type": "CS.CSValues.CSValueChooser",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Profile Chooser",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Profiles",
+          "value": "Profile Chooser"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Chooser"
+        }
+      ],
+      "objects": [
+        -1,
+        -1,
+        194
+      ],
+      "channels": [
+        -5,
+        -5,
+        -1
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 371869,
+      "channelCountOffset": 371845,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 209,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "Mirror Rotate",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Profiles",
+          "value": "Mirror Rotate"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Mirror Rotate"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 375355,
+      "channelCountOffset": 375335,
+      "valueBits": "0000000000000000",
+      "valueNumber": 0,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 224,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "AdjustSeam",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Surfaces",
+          "value": "AdjustSeam"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "AdjustSeam"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 378721,
+      "channelCountOffset": 378701,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    },
+    {
+      "index": 228,
+      "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+      "type": "CS.CSValues.CSValueOnOff",
+      "major": 1,
+      "minor": 1,
+      "identifier": "AdjustSeam",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Spec",
+          "key": "Surfaces",
+          "value": "AdjustSeam"
+        },
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "AdjustSeam"
+        }
+      ],
+      "objects": [
+        -1,
+        -1
+      ],
+      "channels": [
+        -5,
+        -5
+      ],
+      "categories": [],
+      "legacyUiInteger": 0,
+      "valueOffset": 379935,
+      "channelCountOffset": 379915,
+      "valueBits": "3ff0000000000000",
+      "valueNumber": 1,
+      "valueKind": "finite",
+      "fullyConsumed": true
+    }
+  ]
+}

@@ -46,7 +46,11 @@
     "docs/porting/plans/P04-T01-A01-legacy-csg4-codec.md",
     "docs/porting/ADR-0005-legacy-csg4-codec.md",
     "docs/evidence/audit/production-csg4-crosscheck.json",
-    "docs/evidence/apple/production-csg4-results.json"
+    "docs/evidence/apple/production-csg4-results.json",
+    "reference/file-proof/scalar-v1.cjs",
+    "tests/scalar-v1-reference.test.cjs",
+    "docs/evidence/audit/plain-scalar-reference.json",
+    "docs/porting/plans/P04-T01-A02-additional-scalars.md"
   ],
   "fixtures": [
     {
@@ -64,6 +68,11 @@
         "P03-T01",
         "P00"
       ]
+    },
+    {
+      "id": "P04-T01-A02",
+      "scope": "Three additional scalar types, exact version1.1; independent reader/oracle before production codec extension",
+      "status": "reference_verified_production_pending"
     }
   ],
   "checks": [
@@ -101,6 +110,19 @@
       "expectedExitCode": 0,
       "artifact": "docs/evidence/apple/production-csg4-results.json",
       "actual": "Both families pass structural fixture no-op/edit/reopen/reversal and negative tests; main-run startup failure retained separately, retry pending"
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/scalar-v1-reference.test.cjs (RED)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "Observed missing scalar-v1.cjs before implementation"
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/scalar-v1-reference.test.cjs; node scripts/run-local.cjs node reference/file-proof/scalar-v1.cjs --record",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/audit/plain-scalar-reference.json",
+      "actual": "4 cases pass. All26 bodies fully consumed: 15OnOff/7Chooser/4Value at1.1; future versions skipped, CRC/bounds/link mismatch rejected, raw NaN/-zero/infinity bits preserved in reference report. Production codec still74 numeric."
     }
   ],
   "review": {
@@ -110,7 +132,8 @@
     "security": "No scripts/credential use or external requests; count/byte/frame bounds before allocation; raw text never executed",
     "performance": "CRC table and bounded linear parsing/writing; default 64MiB configurable; fixture 383069 bytes",
     "limitations": "Nested preview/gem checksums opaque; no native-load side effects, portfolio, all 654 schemas, migration, PC app reopen or geometry generation",
-    "appleStartup": "Same source commit passed both families in parallel control; failed main iPad lacked managed result. Exact startup cause remains unproven, no codec workaround applied."
+    "appleStartup": "Same source commit passed both families in parallel control; failed main iPad lacked managed result. Exact startup cause remains unproven, no codec workaround applied.",
+    "additionalScalars": "Source chain read; OnOff has no extra archive fields and Chooser only derives in-memory image override list after base.Read. Stored value is double, not bool. Reference parser does not edit/write CSG or execute runtime reader/graph/UI. Production model, edit/reopen and Apple proof pending; CAM/other versions excluded."
   },
   "blockers": [
     "Full P04 still needs P02/P03, representative PC corpus/oracle, all serializers/portfolio/migration and geometry/sidecar integration"
