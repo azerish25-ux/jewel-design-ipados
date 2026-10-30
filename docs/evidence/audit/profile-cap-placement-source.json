@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "methods": [
+    {
+      "file": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCap.cs",
+      "signature": "public override bool Update()",
+      "sourceSha256": "0ad726f0dec312bdf829235ea90a4ff608fef8d7ec1574da2a004493261e89c4",
+      "bodySha256": "11b8609af0312c72bff975fdc492c498e82af052ef1b0ddbe92cce75deabaf1f"
+    },
+    {
+      "file": "recovery/canonical/cad/CSBlockUtil/CSUtilMath.cs",
+      "signature": "public static bool AveragePlaneOfCurve(Curve curve, out Plane plane)",
+      "sourceSha256": "b72f49d043e47ee7b1cf6c90357517e446b4816737b61d42b0d976511f2499a0",
+      "bodySha256": "7fdc4ed988993cbdf8f3e491cef6209b7cb61661db88c4473f814346fd18365f"
+    }
+  ],
+  "policy": {
+    "basis": "ChangeBasis(Plane.WorldXY, plane)",
+    "centering": "Fast NURBS control-hull XY center; Z translation remains zero",
+    "inverse": "inverse(translation * basis)",
+    "domeDefault": 0.5,
+    "tensor": "RailRevolve(CreateDomeRC(height), normalizedRail, 0, zAdjust:true)",
+    "output": "Inverse-transformed surface with inverse metadata; applyTransform:false",
+    "planeSelection": "AveragePlaneOfCurve/TryGetPlane not implemented by explicit-plane constructor"
+  }
+}

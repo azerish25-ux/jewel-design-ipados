@@ -2,7 +2,9 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P05-T02-A22 exports actual native curve controls/weights/full knots as detached immutable definitions. Windows14 curve cases/462 native reimport samples include actual115/122 before and after radius edit/save/reopen; raw ABI buffer guards and ownership checks pass. Apple export tests pending. [ADR0041](ADR-0041-native-curve-export.md). Earlier dome/tensor implementation1138bee is under Apple testing. Actual caps138/139 still need plane/placement, then join140. Full parity0/1451.
+Latest implementation: P05-T02-A23 constructs recovered native profile caps after explicit plane selection. Windows18 faces/594 boundary samples, signed/flat domes, three world frames, asymmetric control-hull centering/apex/inverse metadata and failure cleanup pass. Apple cap-placement execution pending. [ADR0042](ADR-0042-explicit-plane-profile-caps.md). Automatic source plane selection/fallback, graph138/139 and join140 remain required. Full parity0/1451.
+
+The prior [dome profile checkpoint](../evidence/apple/dome-profile-runtime-results.json) passed iPad/iPhone simulator assertions and unsigned arm64 iOS build. It predates tensor/export/cap-placement work; their Apple runs remain separately tracked.
 
 Inspected Apple checkpoints: [BRep graph](../evidence/apple/brep-graph-results.json) and [rational NURBS surfaces](../evidence/apple/nurbs-surface-results.json) passed on iPad/iPhone simulators and unsigned arm64 iOS build (52 warnings,0 errors). These results predate the new dome/tensor adapter; physical-device and original-PC acceptance remain open.
 

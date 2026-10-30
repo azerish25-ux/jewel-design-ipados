@@ -55,6 +55,7 @@ for i in $(seq 1 120); do
   grep -q 'paired-abi-guards=16;' "$OUT/result.txt"
   grep -q 'rational-profile-cylinder=pass;' "$OUT/result.txt"
   grep -q 'PASS recovered Rhino5 dome:21 threshold/sign/radius profiles and693 exact-source native point comparisons; tensor-boundary=204; tensor-grid=20;' "$OUT/result.txt"
+  grep -q 'PASS explicit-plane profile caps:18 native faces and594 boundary samples,' "$OUT/result.txt"
   grep -q 'PASS native NURBS export:14 curve cases and462 native reimport samples;' "$OUT/result.txt"
   grep -q 'native-nurbs-export-buffers=pass;' "$OUT/result.txt"
   grep -q 'PASS rational NURBS surfaces:1445 independent homogeneous tensor points,' "$OUT/result.txt"

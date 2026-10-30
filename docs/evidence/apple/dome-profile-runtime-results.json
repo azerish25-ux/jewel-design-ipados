@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "commit": "b1081dd0e14104770a276573c81333b52fea3d3b",
   "runtimeRun": 41142423453,
-  "workflowStatusAtInspection": "in_progress_after_artifact_upload",
+  "workflowStatusAtInspection": "completed_success",
   "simulators": [
     {
       "family": "ipad",
@@ -29,5 +29,16 @@
       "managedReport": "PASS recovered Rhino5 dome:21 threshold/sign/radius profiles and693 exact-source native point comparisons; full cap/plane/PC parity separate."
     }
   ],
-  "scope": "Downloaded artifacts confirm dome profile assertions and actual iPad/iPhone family. Final workflow conclusion and separate unsigned device build remain pending; this commit predates rail-revolve tensor/export implementations. No physical/PC/full cap parity."
+  "scope": "Dome profile assertions confirmed on actual iPad/iPhone simulator families; unsigned arm64 iOS AOT build passed. This commit predates rail-revolve tensor/export/cap-placement implementations. No physical/PC/full cap parity.",
+  "deviceRun": 41142426231,
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "99b96a69c3e0e14abc16ef70f8e2c3fd1335f4f6b732e7245c2ec74353d69fc6  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "a8820fd7e35d75638d2fceb8f06b35c88843b910e5a709b0cb2c6adf15e3ee10",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  }
 }

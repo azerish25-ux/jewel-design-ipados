@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "sdk": {
+    "assembly": "RhinoCommon, Version=5.1.30000.16",
+    "sha256": "df4c761c2e3bd3824a0e6ab234a7be7fc95bb5045de27af3e4c3c24dfdc73867",
+    "scope": "Acquired SDK5 static decompilation; no native/original runtime execution."
+  },
+  "managedMethods": [
+    {
+      "type": "Rhino.Geometry.Curve",
+      "signature": "public bool TryGetPlane(out Plane plane)",
+      "decompiledTypeSha256": "392bd2b654d52a79cb1b915d3e423efd7a4506b26b0e0efb97db9c5c3856ffe3",
+      "bodySha256": "fae4d9a4f7c2d2d972034084abe59735ad75228b7a567303e4030d73a6f2e751"
+    },
+    {
+      "type": "Rhino.Geometry.Transform",
+      "signature": "public static Transform ChangeBasis(Plane plane0, Plane plane1)",
+      "decompiledTypeSha256": "a14a519dacab41af948608622abea33eaa0d75d309d77d36d911f87cf656b9aa",
+      "bodySha256": "ac3b1f68b659a43a6b42ce8b10bbccf91d926f2e38d4a5b7cad318a614bb5a51"
+    },
+    {
+      "type": "Rhino.Geometry.GeometryBase",
+      "signature": "public BoundingBox GetBoundingBox(bool accurate)",
+      "decompiledTypeSha256": "e2a8c6440cdd33c44bdd7136612da1bb2869820ca3ea92ee0a838b01015e9c54",
+      "bodySha256": "11abca05d1d09cd5119622e2fc677c2c603970098145d63c0498d08e946d29b4"
+    }
+  ],
+  "publishedComparison": {
+    "repository": "https://github.com/mcneel/opennurbs",
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "files": [
+      {
+        "file": "opennurbs_curve.cpp",
+        "sha256": "174972bd15dfd1f305c3551e93df04a2f0a5e5b9775a2ad62b2edbdfb9bd1020",
+        "bytes": 100337,
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_curve.cpp"
+      },
+      {
+        "file": "opennurbs_nurbscurve.cpp",
+        "sha256": "9dfe9df60d6703bc8bfe636e46b6c82095694d7aca713e471f49e0432cc6c11a",
+        "bytes": 108918,
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_nurbscurve.cpp"
+      },
+      {
+        "file": "opennurbs_plane.cpp",
+        "sha256": "a33e6973e8b36fabb65d7534dcc83b3637f23d05bce776c4ea28359b9c786748",
+        "bytes": 14115,
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_plane.cpp"
+      },
+      {
+        "file": "opennurbs_point.cpp",
+        "sha256": "4aac860b778a37de2942f0bc665c655bed8f98e51e0c94beb542752a08558eeb",
+        "bytes": 206372,
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_point.cpp"
+      }
+    ],
+    "scope": "Published6 comparison only; not private Rhino5 plane runtime proof."
+  },
+  "findings": {
+    "defaultTryGetPlaneTolerance": 1e-12,
+    "basis": "Transform.ChangeBasis calls ON_Xform_PlaneToPlane(rotation:false); world to selected plane coordinates.",
+    "fastBounds": "Standalone false path calls ON_Geometry_BoundingBox. Published ON_NurbsCurve::GetBBox bounds the control list.",
+    "planeSelection": "Published NURBS non-linear path chooses largest sampled control triangle, aligns axes to initial tangent and tests control points. Not an arbitrary fitted plane.",
+    "fallback": "Recovered AveragePlaneOfCurve samples normalized lengths .25,.33,.5,.66,.75, retains dot comparison .01..3.14 and builds plane from averaged unit cross normals."
+  },
+  "remaining": "Automatic planar/linear plane selection and recovered fallback require implementation and runtime validation; explicit-plane construction does not close this prerequisite."
+}
