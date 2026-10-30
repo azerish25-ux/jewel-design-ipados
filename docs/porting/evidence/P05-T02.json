@@ -436,6 +436,18 @@
       "commit": "a1ae9d9",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41050890977",
       "verification": "Unsigned device closest-point adapter build dispatched; terminal evidence pending"
+    },
+    {
+      "id": 41051769607,
+      "commit": "a069861",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051769607",
+      "verification": "Native/CSharp trim-reverse/open-end host/iPad/iPhone runtime dispatched; terminal result inspection pending"
+    },
+    {
+      "id": 41051772180,
+      "commit": "a069861",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051772180",
+      "verification": "Unsigned device trim-reverse adapter build dispatched; terminal result inspection pending"
     }
   ]
 }
