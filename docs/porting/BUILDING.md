@@ -39,3 +39,11 @@ The iOS workflow also watches tests/Port/** so contract-only changes run on macO
     node scripts/run-local.cjs gh workflow run native-device.yml --ref main
 
 All local downloads/logs remain under .local on D:. CI uploads text evidence only. See the official [NativeReference](https://learn.microsoft.com/en-us/dotnet/ios/building-apps/build-items#nativereference) and [EnableCodeSigning](https://learn.microsoft.com/en-us/dotnet/ios/building-apps/build-properties#enablecodesigning) contracts.
+
+## D:-local Windows native iteration
+
+An existing WinLibs GNU16.1.0/UCRT toolchain and Ninja were found without installing tools. The pinned OCCT candidate configures and its API objects compile locally; the first full native Windows build is pending at this checkpoint. The reproducible helper keeps source/build/temp/cache under the D: repository through run-local.cjs:
+
+    node scripts/build-native-windows.cjs
+
+It requires an existing g++/CMake/Ninja on PATH and the pinned .local/native/occt-source checkout. It installs nothing and reuses .local/native/windows-gnu for incremental builds. Do not launch another build/configure against that directory while its current Ninja process is live. This helper is Windows candidate validation, not Apple or original CounterSketch/Rhino execution. Mac CI remains required.
