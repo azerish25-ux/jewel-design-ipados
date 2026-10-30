@@ -10,8 +10,8 @@ Prerequisites: P03-T01/T02 and P03-T03-A01/A02/A04 are verified; undo scheduler 
 
 Owned files: src/Port/Domain/InstanceIdentity.cs; src/Port/Graph/GraphIdentityScope.cs; tests/Port/Graph.Contracts/SessionIdentityAssertions.cs; shared Graph.Contracts runner and phase/evidence/classification/ADR.
 
-- [ ] Write failing normal/boundary/failure assertions first: valid GUID formats, null/invalid/empty strings, valid zero, duplicates, two equal-looking slots, mapped rename/reorder, field-key case, deletion, foreign session, duplicate mapping, count mismatch and null inputs.
-- [ ] Implement immutable runtime identity plus scope/view/handle boundaries. IDs resolve once per registered record; unknown metadata/bytes stay in snapshots. Explicit mapping never repairs or remaps serialized links.
-- [ ] Run Graph.Tests, Domain.Tests, combined Console and integrity/provenance checks; review ownership, payload isolation and no heuristic matching.
-- [ ] Commit/push; use GitHub Actions for macOS iPad/iPhone execution and inspect both artifact results.
-- [ ] Commit/push evidence, retaining parent blockers and no PC save/reopen claim.
+- [x] Write failing normal/boundary/failure assertions first: valid GUID formats, null/invalid/empty strings, valid zero, duplicates, two equal-looking slots, mapped rename/reorder, field-key case, deletion, foreign session, duplicate mapping, count mismatch and null inputs.
+- [x] Implement immutable runtime identity plus scope/view/handle boundaries. IDs resolve once per registered record; unknown metadata/bytes stay in snapshots. Explicit mapping never repairs or remaps serialized links.
+- [x] Run Graph.Tests, Domain.Tests, combined Console and integrity/provenance checks; review ownership, payload isolation and no heuristic matching.
+- [x] Commit/push; use GitHub Actions for macOS iPad/iPhone execution and inspect both artifact results.
+- [x] Commit/push evidence, retaining parent blockers and no PC save/reopen claim.

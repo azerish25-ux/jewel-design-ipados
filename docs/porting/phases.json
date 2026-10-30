@@ -388,7 +388,8 @@
             "src/Port/Graph/GraphIdentityScope.cs",
             "tests/Port/Graph.Contracts/SessionIdentityAssertions.cs",
             "docs/porting/plans/P03-T03-A05-session-identity.md",
-            "docs/porting/ADR-0004-session-parameter-identity.md"
+            "docs/porting/ADR-0004-session-parameter-identity.md",
+            "docs/evidence/apple/session-identity-results.json"
           ],
           "evidence": [
             "docs/porting/evidence/P03-T03.json"

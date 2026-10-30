@@ -2,7 +2,7 @@
 
 Status: accepted for P03-T03-A05.
 
-InstanceIdentity.ResolveStored adapts the CSObject.Read/ReadJson GUID rule: parse with Guid.TryParse; generate with Guid.NewGuid on failure. StoredText remains byte-for-byte-equivalent text including casing/whitespace, null, empty or malformed values. Valid Guid.Empty and duplicate GUIDs remain valid. The codec must supply only text actually decoded for the correct record version; this helper does not read an archive or infer whether a string field exists. Original Write/WriteJson emits the effective InstanceGuid, so raw-text preservation is not a decision about save-time migration or no-op byte identity.
+InstanceIdentity.ResolveStored adapts the CSObject.Read/ReadJson GUID rule: parse with Guid.TryParse; generate with Guid.NewGuid on failure. StoredText retains exactly the supplied decoded string including casing/whitespace, null, empty or malformed values. Valid Guid.Empty and duplicate GUIDs remain valid. The codec must supply only text actually decoded for the correct record version; this helper does not read an archive or infer whether a string field exists. Original Write/WriteJson emits the effective InstanceGuid, so raw-text preservation is not a decision about save-time migration or no-op byte identity.
 
 GraphIdentityScope creates a distinct GraphNodeIdentity reference for each captured slot. Its InitialIdentity resolves once at registration and remains provenance; it is not the entire mutable CSObject state. GraphParameterHandle combines that reference and an exact ordinal field key. No label, table index, type GUID or instance GUID equality can collapse separate records.
 

@@ -27,7 +27,8 @@
     "src/Port/Graph/GraphIdentityScope.cs",
     "tests/Port/Graph.Contracts/SessionIdentityAssertions.cs",
     "docs/porting/plans/P03-T03-A05-session-identity.md",
-    "docs/porting/ADR-0004-session-parameter-identity.md"
+    "docs/porting/ADR-0004-session-parameter-identity.md",
+    "docs/evidence/apple/session-identity-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -132,6 +133,13 @@
       "expectedExitCode": 0,
       "artifact": "tests/Port/Graph.Contracts/SessionIdentityAssertions.cs",
       "actual": "PASS raw/effective zero/duplicate/legacy GUIDs, mapped identity lifetime and ownership; adjacent 6130 undo steps and existing snapshot checks pass"
+    },
+    {
+      "command": "GitHub Actions run 41000064780; inspect both runtime-family.txt and simulator-result.txt artifacts",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/apple/session-identity-results.json",
+      "actual": "Session identity/ownership assertions execute on iPad and iPhone; adjacent 6130 undo, 909 numeric, 1172 ring and 114 material checks pass; known compression issue remains non-gating"
     }
   ],
   "review": {
@@ -160,8 +168,7 @@
     }
   },
   "blockers": [
-    "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished",
-    "Session identity macOS execution pending; codec/live graph integration remains unfinished"
+    "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
   ],
   "ciRuns": [
     {
@@ -202,6 +209,17 @@
       "id": 40996610543,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40996610543",
       "verification": "clean checkout repository verification succeeded for 5d641f9"
+    },
+    {
+      "id": 41000064780,
+      "commit": "47ef6659926a5fc5d62e9ced828a6fab9af9a24d",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41000064780",
+      "verification": "success; terminal workflow; both correct-family artifacts inspected for session identity and adjacent undo/numeric/ring/material/graph checks"
+    },
+    {
+      "id": 41000064618,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41000064618",
+      "verification": "success; clean checkout repository and bounded proofs for 47ef665"
     }
   ],
   "requirementIds": [
@@ -267,7 +285,7 @@
     {
       "id": "P03-T03-A05",
       "scope": "Raw/effective registration GUIDs and stable session parameter handles across explicit mapped views",
-      "status": "implemented_local"
+      "status": "verified_simulator"
     }
   ]
 }
