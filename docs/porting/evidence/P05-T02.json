@@ -23,7 +23,8 @@
     "docs/porting/plans/P05-T02-A04-candidate-abi.md",
     "native/GeometryBridge/CandidateProbe/candidate_abi_contracts.cpp",
     "native/GeometryBridge/CandidateProbe/candidate_abi.h",
-    "native/GeometryBridge/CandidateProbe/candidate_abi.cpp"
+    "native/GeometryBridge/CandidateProbe/candidate_abi.cpp",
+    "docs/evidence/apple/combined-native-managed-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -61,7 +62,7 @@
     {
       "id": "P05-T02-A03",
       "scope": "Recovered/production CSharp contract suite plus analytical native CAD in one iOS executable",
-      "status": "ci_pending"
+      "status": "verified_bounded_combined_runtime"
     },
     {
       "id": "P05-T02-A04",
@@ -93,7 +94,7 @@
     "currentStatus": "Native-only candidate passed host/iPad/iPhone analytical execution and unsigned Release device compile/link/platform checks. Combined recovered/native runtime/device follow-ups remain pending. No backend selection or full geometry/PC/physical evidence.",
     "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed.",
     "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs.",
-    "combinedRuntime": "Existing shared Smoke referenced rather than copied. Native report/status and all managed gated assertions must finish before final PASS file. Runner requires both PASS lines and actual family. Existing zlib diagnostic remains visibly non-gating. Local managed suite passed; Mac coexistence pending.",
+    "combinedRuntime": "Combined app passed native analytical and shared recovered/production managed assertions on iPad/iPhone run41023784246, dynamic-code=False. Newer freshness/device build41024529850 passed ios-arm64/platform IOS with 52 warnings/0 errors. Broader recovered reflection/XML trim risks remain; no physical execution or all-class behavior claim.",
     "resultFreshness": "Clear prior result/family/started before launch. Publish combined success via same-directory pending-file rename; Mac regression pending.",
     "ownershipAbi": "Real OCCT box/copy/translation/booleans through versioned C IDs/status. Global unique nonreused IDs; per-context locks; lookup drops registry lock before waiting for context. Final close marks closed before erase. Retain/release overflow guarded; C++ exception categories caught; failed creation outputs zeroed and optional diagnostics bounded. GREEN runtime/platform results pending; cancellation/process-memory leak/SDK selection/PC gates open.",
     "redLogSha256": "7ce7453be4e8313065e8ee0886c5635144b572c2b87dae594eae3823abd400a3"
@@ -150,6 +151,18 @@
       "commit": "c724936",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41025674158",
       "verification": "unsigned native device implementation verification dispatched; inspect terminal results"
+    },
+    {
+      "id": 41023784246,
+      "commit": "4dbaf7282dd20849de69f512f6b49889c3fade03",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41023784246",
+      "verification": "Combined native and managed reports passed on actual iPad/iPhone simulator families; initial combined report publication before atomic-freshness update."
+    },
+    {
+      "id": 41024529850,
+      "commit": "94480abb0321541f81f58a31aea824d92b2b3fab",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41024529850",
+      "verification": "Combined unsigned device app build passed with 52 warnings/0 errors; arm64/platform IOS. No physical execution."
     }
   ]
 }

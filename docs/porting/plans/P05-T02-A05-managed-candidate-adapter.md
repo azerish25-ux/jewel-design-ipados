@@ -1,0 +1,27 @@
+# P05-T02-A05 managed candidate ownership adapter plan
+
+Goal: invoke the actual candidate geometry ABI from reusable CSharp methods with SafeHandle lifetimes, typed errors and same-process iOS tests. This is candidate evaluation, not production T04/T05 closure or a selected complete kernel. Consume the implemented A04 protocol; inspect current ABI/CI state before coding.
+
+Owned files: src/Port/Geometry.Candidate/Geometry.Candidate.csproj, CandidateContext.cs, NativeHandles.cs, NativeMethods.cs, CandidateTypes.cs; tests/Port/Geometry.Candidate.Contracts project and assertions; tests/iOS.Native project/Main integration; native workflow path filters; P05-T02 evidence. Do not change recovery, locked laboratory files, native masses/ownership assertions or final backend/PC gates.
+
+Public boundary: CandidateContext.Create, CreateBox, Translate, Clone, Retain, Boolean, Inspect, DiagnosticLiveShapeCount, Dispose; CandidateShape is IDisposable and exposes no persistent/native ID. Boolean operation enum matches ABI Common/Fuse/Cut; exceptions preserve native status/message. ShapeInfo holds volume/solid count/validity. Geometry is never synthesized in CSharp.
+
+Native signatures: use exact uint/ulong/int/double, explicit EntryPoint and Cdecl, [Out] byte[] diagnostic buffer of 256 bytes and optional null/0 for release. The static iOS candidate is __Internal; no Windows native loading claimed. 64-bit process required because SafeHandle stores opaque uint64 IDs in native-sized slots. C# compilation on Windows is useful but does not prove native execution.
+
+Lifetime design:
+- Internal SafeContextHandle calls context_release; internal SafeShapeHandle calls shape_release and owns a DangerousAddRef lease on its parent context handle, balanced exactly once on release. Do not introduce managed finalizers in addition to SafeHandle.
+- CandidateContext serializes methods and Dispose with one private gate. This covers native result creation plus wrapping, preventing context Dispose between returning an owned native ID and acquiring the parent SafeHandle lease. PInvoke takes input SafeHandles so the marshaler holds them through each call; a concurrent shape Dispose cannot free in-flight input. Do not expose raw pointers.
+- Logical context disposal blocks new operations, but existing shapes must still dispose safely; the parent native context is finally released only when its last child lease is released. Native shape retain makes a second wrapper for the same ID; clone makes independent native geometry ownership.
+- Factory allocation/constructor failures must release a newly created native ID rather than leaking it. Shape/context creation failure must preserve zero/native status semantics. ReleaseHandle reports native release status without throwing across finalization. Normal operations throw explicit typed failures.
+- Internal diagnostic access (InternalsVisibleTo test assembly) may capture raw context IDs and call live_shapes to prove parent lease survival after logical context Dispose and invalidation after last child Dispose. These IDs are never public/project data.
+
+Tests first:
+- Add net10.0 managed contract project referencing the not-yet-created candidate project; run Windows wrapper dotnet build and observe missing project/type RED before implementation. Do not call missing native library on Windows or invent native success.
+- Implement managed library and compile locally, then reference contract assembly from iOS.Native and call assertions after native test/self-report, before final combined atomic publication. Runner must require an additional managed adapter PASS marker.
+- Native integration cases: box volume8; translated overlap common4/fuse12/cut4/empty0; inspect source unchanged; clone survives source disposal; retain alias survives original Dispose; all live entries return to zero after disposal; foreign context and null/disposed shapes rejected; native nonfinite/negative/unsupported requests preserve typed status; repeated Dispose idempotent.
+- Prove parent lease using raw internal context count: after context Dispose with child alive native count succeeds; new managed calls throw ObjectDisposedException; after child Dispose raw context ID returns InvalidContext. Test both retained aliases and normal wrappers. No process-memory leak claim from entry counts.
+- Run complete host/iPad/iPhone native+managed suite and unsigned device build with pinned SDK/workload/Xcode in macOS CI. Inspect actual report family/status/hash; retain existing known compression diagnostic and all trim warnings, never suppress to pass.
+
+Review: verify all native entrypoint widths, input SafeHandle marshalling, balanced parent leases, factory failure cleanup, disposal interleavings, UTF8 diagnostic NUL handling and ownership checks. Keep cancellation, full geometry operations, production API selection, legacy native archive, rendering, PC oracle and physical devices incomplete.
+
+Official guidance: [native interop best practices](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/best-practices), [SafeHandle](https://learn.microsoft.com/en-us/dotnet/fundamentals/runtime-libraries/system-runtime-interopservices-safehandle) and [DangerousAddRef](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.safehandle.dangerousaddref?view=net-10.0). Explicit DllImport is already proven by the iOS static self-test; use actual Apple build/runtime results rather than assuming source-generator or AOT behavior.
