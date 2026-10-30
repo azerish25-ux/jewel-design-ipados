@@ -50,7 +50,8 @@
     "src/Port/Features.Candidate/RingRailV1Candidate.cs",
     "tests/Port/Geometry.Candidate.Contracts/RingRailAssertions.cs",
     "docs/porting/plans/P05-T02-A07-ring-rail-subcomponent.md",
-    "docs/porting/ADR-0011-ring-rail-candidate.md"
+    "docs/porting/ADR-0011-ring-rail-candidate.md",
+    "docs/evidence/apple/native-curve-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -103,7 +104,7 @@
     {
       "id": "P05-T02-A06",
       "scope": "Actual native four-span rational curve creation/inspection/evaluation through CSharp ownership adapter",
-      "status": "host_curve_verified_apple_pending"
+      "status": "verified_bounded_native_curve_adapter"
     },
     {
       "id": "P05-T02-A07",
@@ -195,7 +196,7 @@
     "ownershipAbi": "Real OCCT box/copy/translation/booleans through versioned C IDs/status. Global unique nonreused IDs; per-context locks; lookup drops registry lock before waiting for context. Final close marks closed before erase. Retain/release overflow guarded; C++ exception categories caught; failed creation outputs zeroed and optional diagnostics bounded. GREEN runtime/platform results pending; cancellation/process-memory leak/SDK selection/PC gates open. Host/iPad/iPhone runtime passed in 41025671193; unsigned device build41025674158 passed 52 warnings/0 errors. See candidate-abi-results.json. New managed adapter not covered.",
     "redLogSha256": "7ce7453be4e8313065e8ee0886c5635144b572c2b87dae594eae3823abd400a3",
     "managedAdapter": "Header widths/entrypoints/Cdecl matched; input SafeHandles marshal lifetime; per-context gate covers native result plus child parent-lease creation; explicit logical Dispose separate from IsClosed. Native creation cleanup and paired parent leases reviewed. Windows build proves managed compilation only; Apple real/native/disposal/trim tests pending. No full kernel/cancellation/process-memory/physical/PC claim.",
-    "curves": "Initial host execution failed Unexpected four-span circle representation. Source investigation found GeomConvert.cxx untrimmed circle path forces SetPeriodic after low-level_4 conversion; trimmed-circle branch does not. Native factory now supplies full-period Geom_TrimmedCurve before explicit_4 conversion. All9-pole/rational/nonperiodic/28-sample/ownership assertions remain unchanged. Actual corrected runtime proof pending.",
+    "curves": "Initial host execution failed Unexpected four-span circle representation. Source investigation found GeomConvert.cxx untrimmed circle path forces SetPeriodic after low-level_4 conversion; trimmed-circle branch does not. Native factory now supplies full-period Geom_TrimmedCurve before explicit_4 conversion. All9-pole/rational/nonperiodic/28-sample/ownership assertions remain unchanged. Actual corrected runtime proof pending. Corrected run41043301675 passed host/iPad/iPhone;41043305181 device build passed. Windows native and CSharp tests also passed. Original-PC/kernel-selection/full graph gates remain open.",
     "windowsNative": "D:-local incremental helper verified end to end. Windows-only shared test DLL plus process-lifetime NativeLibrary resolver executes existing CSharp contracts against actual native geometry. Native compiler/tool binaries are existing C: reads; source/cache/temp/output remain D:. Original CounterSketch/Rhino not loaded.",
     "ringRail": "Feature-layer boundary is separate from generic kernel. GUID/radius/default/ZX operations follow inspected source; output owns actual native curve and radius metadata. No placeholder geometry or intercepted original SDK. Candidate ring-data copy/user-string/export/material/Update error lifecycle and active channel evaluation remain unimplemented."
   },
@@ -292,13 +293,13 @@
       "id": 41043301675,
       "commit": "e54d076",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41043301675",
-      "verification": "Corrected host C++ assertions passed; Apple job still live. Source e54d076. See four-span-curve-host-results.json."
+      "verification": "Corrected host and actual iPad/iPhone native+CSharp curve contracts passed. Both family/report hashes verified in native-curve-results.json."
     },
     {
       "id": 41043305181,
       "commit": "e54d076",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41043305181",
-      "verification": "Corrected unsigned Apple device build confirmed live; terminal proof pending."
+      "verification": "Corrected unsigned device build passed arm64/platform IOS,52 warnings/0 errors. No physical execution."
     },
     {
       "id": 41046672200,
