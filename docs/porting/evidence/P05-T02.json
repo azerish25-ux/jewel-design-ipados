@@ -932,6 +932,18 @@
       "commit": "07d0cae7d17153f2e9e57b2eb3a8c319fbfb3c23",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41069913934",
       "verification": "SUCCESS: inspected unsigned arm64/platform IOS Release executable and log52 warnings0 errors; no physical execution"
+    },
+    {
+      "id": 41079138260,
+      "commit": "d1caac56fd2adeb29a46389b34f76bd2e9b6cb65",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41079138260",
+      "verification": "Exact stored NURBS import host and iPad/iPhone jobs confirmed running; terminal verification pending"
+    },
+    {
+      "id": 41079142975,
+      "commit": "d1caac56fd2adeb29a46389b34f76bd2e9b6cb65",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41079142975",
+      "verification": "Exact stored NURBS import unsigned device job confirmed running; terminal verification pending"
     }
   ]
 }

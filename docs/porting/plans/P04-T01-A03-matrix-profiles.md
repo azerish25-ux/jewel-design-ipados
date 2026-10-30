@@ -11,8 +11,10 @@ Sources: CSGroupOfMatrixProfiles.Read/Write/Update, CS.CSUtilIO curve/double/str
 - [x] Shared tests compare every coefficient/knot/bbox bit/name/sweep against independent oracle; exact no-op, unrelated scalar edit/reopen, synthetic1.0, unknown outer/nested, malformed/truncated/count and NaN/-0 preservation, immutable views/header projection.
 - [x] Run local document/shared/native regressions, repository/provenance/reference checks; review ownership/bounds/no legacy path resolution.
 - [x] Push and dispatch actual Apple simulator/AOT tests. Runtime41075741858, device41075740585 and repository41075741873 at49cf8b3 confirmed running.
-- [ ] Inspect actual family/profile raw-bit/version reports and device platform/warnings before bounded platform verification.
+- [x] Inspect actual family/profile raw-bit/version reports and device platform/warnings before bounded platform verification.
 
 Limits: no file access through serialized C: names, no BinaryFormatter or original native execution. No claim of arbitrary curve versions, profile UI/chooser/graph/transform/sweep behavior, native knot/weight import, original-PC regeneration or physical-device parity. Known data becomes available for subsequent native construction.
 
 Fixture-wide discovery expanded the work from record7 to all6 groups/155 curves/4012 controls. Actual document/native-adjacent and independent raw-bit/reference tests pass. Native geometry creation/chooser/PC execution remain separate; Apple proof pending.
+
+Bounded [Apple codec execution/AOT reports](../../evidence/apple/matrix-profile-codec-results.json) at49cf8b3 inspected. Native data construction/chooser/PC gates remain separate.

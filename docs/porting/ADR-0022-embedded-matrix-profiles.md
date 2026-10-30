@@ -1,6 +1,6 @@
 # ADR0022: embedded matrix-profile records and raw NURBS data
 
-Status: Windows shared/document/native-adjacent tests pass; Apple validation for this new codec is pending.
+Status: bounded Windows/iPad/iPhone codec assertions and unsigned device linking verified at49cf8b3. Later native geometry import is separate.
 
 CSGroupOfMatrixProfiles serializes base object/block header, direct curve array, sweep parameter arrays and (from group1.1) names. CSUtilIO writes each OnNurbsCurve directly, without an object-class wrapper. The pinned official openNURBS NurbsCurve1.0 layout corroborates the observed packed version byte, dimension/rational/order/control count, reserved integers, invalid bounding box, short knot array and homogeneous control values.
 
@@ -17,3 +17,5 @@ Shared assertions compare every knot/control/bbox bit, reserved integer, name an
 This makes genuine profile data available; it does not instantiate native curves, evaluate the chooser, apply activation/override/CSBlock behavior, regenerate a PC project or implement group editing/UI. Next is native construction from the stored short-knot/homogeneous representation with independent point evaluation, then the actual chooser/profile-to-outside-rail path.
 
 [Work card](plans/P04-T01-A03-matrix-profiles.md), [task evidence](evidence/P04-T01.json), [independent oracle](../evidence/audit/matrix-profile-reference.json), [pinned format source](https://github.com/mcneel/opennurbs/blob/eb92af3ba1806b0a34a99aba0d3bda83e3d46083/opennurbs_nurbscurve.cpp). Modern source corroboration is distinct from original CounterSketch/Rhino runtime proof. Full serializer, original-PC/physical-device/cancellation/process-memory and application parity remain open.
+
+[Actual Apple codec reports](../evidence/apple/matrix-profile-codec-results.json) preserve family/report/hash and unsigned device platform/warnings; no native profile creation claim.
