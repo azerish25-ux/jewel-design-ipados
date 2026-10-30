@@ -22,6 +22,8 @@ Recovered CounterSketch code, reproducible portability experiments and an implem
 | [docs/evidence](docs/evidence)           | Source-backed audits and measured results                         |
 | [reference](reference)                   | Independent legacy CSG file-format proof                          |
 
+See [available production domain helpers](docs/porting/DOMAIN_HELPERS.md) for the adopted material and ring-size APIs and their limits.
+
 ## What is present
 
 10,405 text/source/project/markup files, including 10,238 CSharp files across canonical/support/variants. Duplicates are not additional features. Canonical main baseline: 2,783 files / 441,299 nonblank lines. All 2,241 binary resource paths map to 744 unique objects. Remote credentials in 31 files are explicitly redacted; local originals are unchanged.

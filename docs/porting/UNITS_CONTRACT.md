@@ -22,3 +22,7 @@ The shared RingSizeAssertions suite compares every catalog index and three exter
 2. Map quantities by serializer/type plus field/channel, retaining raw numbers and versions. Do not infer units from a display label.
 3. Add codec fixtures for ring-size binary versions 1.0/1.1/current and JSON, including min/max and unknown records. Compare original PC outputs before closing compatibility rows.
 4. Integrate graph edits, undo, regeneration and UI conversion without changing rounded/unrounded behavior.
+
+## Existing library fixture
+
+The [bounded fixture observation](../evidence/audit/ring-fixture-unit-facts.json) identifies node 2 as ValueRingSize version 1.2. Its saved value 8.667196228921199 agrees with the unrounded US-size-7 conversion; bounds agree with sizes 3 and 11 within 1e-12. The table translator displays size 7 with radius 8.665 after diameter rounding. This observed difference supports preserving the raw saved number while displaying a translated size. It does not prove a PC reopen or native conversion implementation.

@@ -1,6 +1,6 @@
 # Agent operating contract
 
-Read README.md, docs/porting/START_HERE.md, CURRENT_STATE.md and the selected phase. Use only relevant skills; no automatic startup bundle. Delegate only when the user authorizes it.
+Read README.md, docs/porting/START_HERE.md, docs/porting/CURRENT_STATE.md and the selected phase. Use only relevant skills; no automatic startup bundle. Delegate only when the user authorizes it.
 
 ## Source boundaries
 

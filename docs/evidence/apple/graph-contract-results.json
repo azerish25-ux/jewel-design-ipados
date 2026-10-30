@@ -1,0 +1,18 @@
+{
+  "run": 40994182246,
+  "commit": "c276a757a41e38cd00a363a43127f513970df2cb",
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40994182246",
+  "results": [
+    {
+      "family": "ipad",
+      "result": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException",
+      "sha256": "ff7a7067ed308510e543c00a30a31b7200fb6d051ac08f8c155763ea08e4007f"
+    },
+    {
+      "family": "iphone",
+      "result": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException",
+      "sha256": "ff7a7067ed308510e543c00a30a31b7200fb6d051ac08f8c155763ea08e4007f"
+    }
+  ],
+  "scope": "Graph snapshot and scoped-address assertions executed on both simulator families; no persistent identity, codec edit, geometry or PC reopen claim"
+}

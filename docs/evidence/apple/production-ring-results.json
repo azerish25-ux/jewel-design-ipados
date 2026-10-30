@@ -1,0 +1,30 @@
+{
+  "run": 40994559283,
+  "commit": "31882a22ea89f3e5273c2bd7da4b714b7cd823f8",
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40994559283",
+  "results": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D798106A-0403-425E-8352-3E7056FA9F79"
+      },
+      "result": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.; PASS production ring sizes: seven regions, 1172 catalog/boundary cases in two cultures, radius/diameter/index/text and invalid input parity; recovered-source baseline, no PC binary/geometry claim.; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException",
+      "sha256": "ce08e0437f23d3da624db53e0c046431e6b4da11e1a260b97c4a350299488a06"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "F94FB7BA-C33C-4B3B-B505-F0FB478DB847"
+      },
+      "result": "PASS 16 original-binary golden Bernstein cases; vector length/cross; diamond density; production domain 114 material comparisons; PASS graph snapshot contracts: scoped parameter addresses, sentinel/header/order fidelity, opaque/list isolation, legacy/unknown identity and null guards; no codec or geometry claim.; PASS production ring sizes: seven regions, 1172 catalog/boundary cases in two cultures, radius/diameter/index/text and invalid input parity; recovered-source baseline, no PC binary/geometry claim.; compression probe (non-gating): 0:interchange-pass,compressed-bytes=0;34:interchange-pass,compressed-bytes=42;100000:FAIL:InvalidDataException",
+      "sha256": "ce08e0437f23d3da624db53e0c046431e6b4da11e1a260b97c4a350299488a06"
+    }
+  ],
+  "scope": "Recovered-source ring translators, material and graph/address checks on two simulator families; no PC binary, codec write, CAD regeneration or physical-device claim; compression defect remains open"
+}

@@ -10,7 +10,11 @@
     "docs/porting/ADR-0001-snapshot-parameter-addresses.md",
     "docs/porting/UNITS_CONTRACT.md",
     "tests/Port/Domain.Contracts/RingSizeAssertions.cs",
-    "src/Port/Domain/Recovered/RingSizes"
+    "src/Port/Domain/Recovered/RingSizes",
+    "docs/evidence/apple/graph-contract-results.json",
+    "docs/evidence/audit/ring-fixture-unit-facts.json",
+    "docs/evidence/apple/production-ring-results.json",
+    "docs/porting/DOMAIN_HELPERS.md"
   ],
   "fixtures": [],
   "checks": [
@@ -55,6 +59,13 @@
       "expectedExitCode": 0,
       "artifact": "src/Port/Domain/provenance.json",
       "actual": "12 unchanged adopted files verified"
+    },
+    {
+      "command": "Decode reference fixture with reference/file-proof/csg-v4.cjs and compare ValueRingSize node 2 fields with unrounded US 7/3/11 formulas",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/audit/ring-fixture-unit-facts.json",
+      "actual": "Fixture hash/type/version verified; value/min/max agree within 1e-12; saved radius differs from display table rounding"
     }
   ],
   "review": {
@@ -67,7 +78,7 @@
     "ringSizes": "Ten files copied without mutation; shared tests cover seven regions, both cultures, boundary and invalid values; original partial metadata and rounding preserved"
   },
   "blockers": [
-    "General document/native units, persistent cross-load identity, legacy codec integration and new ring/address macOS verification remain unfinished"
+    "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
   ],
   "ciRuns": [
     {
@@ -80,6 +91,23 @@
       "id": 40992003406,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40992003406",
       "verification": "clean checkout passed"
+    },
+    {
+      "id": 40994182246,
+      "commit": "c276a757a41e38cd00a363a43127f513970df2cb",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40994182246",
+      "verification": "success; both artifacts inspected for scoped parameter assertions and actual runtime family"
+    },
+    {
+      "id": 40994559283,
+      "commit": "31882a22ea89f3e5273c2bd7da4b714b7cd823f8",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40994559283",
+      "verification": "success; both artifacts inspected: correct runtime families, 1172 ring catalog/boundary cases across seven regions and two cultures, graph/address and 114 material comparisons pass"
+    },
+    {
+      "id": 40994559209,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40994559209",
+      "verification": "clean checkout integrity and bounded proofs passed for 31882a2"
     }
   ],
   "requirementIds": [
@@ -121,13 +149,13 @@
     {
       "id": "P03-T03-A02",
       "scope": "Snapshot-scoped parameter addresses; no persistent identity claim",
-      "status": "implemented_local",
+      "status": "verified_simulator",
       "decision": "docs/porting/ADR-0001-snapshot-parameter-addresses.md"
     },
     {
       "id": "P03-T03-A03",
       "scope": "Units: unchanged seven-region ring translator subset; document/native unit mapping still open",
-      "status": "implemented_local",
+      "status": "verified_simulator_subset",
       "evidence": "docs/porting/UNITS_CONTRACT.md"
     }
   ]

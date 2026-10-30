@@ -1,0 +1,24 @@
+{
+  "scope": "Decoded fixture observations and formula consistency only; no native PC execution, migration, write or regeneration",
+  "fixture": "reference/fixtures/library-item-4.csg",
+  "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "nodeIndex": 2,
+  "typeGuid": "dd5c2342-d89a-440e-a76e-624a1faf2b68",
+  "version": {
+    "major": 1,
+    "minor": 2
+  },
+  "stored": {
+    "value": 8.667196228921199,
+    "min": 7.017841722671269,
+    "max": 10.316550735171129
+  },
+  "formulaConsistency": {
+    "US7RadiusMM": 8.667196228921199,
+    "US3RadiusMM": 7.01784172267127,
+    "US11RadiusMM": 10.316550735171129,
+    "tolerance": 1e-12
+  },
+  "tableRoundedUS7RadiusMM": 8.665,
+  "warning": "Do not replace the unrounded saved radius with the table-rounded radius merely by displaying a ring size."
+}

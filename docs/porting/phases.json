@@ -371,7 +371,11 @@
             "docs/porting/ADR-0001-snapshot-parameter-addresses.md",
             "docs/porting/UNITS_CONTRACT.md",
             "tests/Port/Domain.Contracts/RingSizeAssertions.cs",
-            "src/Port/Domain/Recovered/RingSizes"
+            "src/Port/Domain/Recovered/RingSizes",
+            "docs/evidence/apple/graph-contract-results.json",
+            "docs/evidence/audit/ring-fixture-unit-facts.json",
+            "docs/evidence/apple/production-ring-results.json",
+            "docs/porting/DOMAIN_HELPERS.md"
           ],
           "evidence": [
             "docs/porting/evidence/P03-T03.json"
