@@ -70,6 +70,8 @@ int32_t jd_candidate_curve_seam(uint64_t context,uint64_t shape,double seam,uint
 /* Unpadded numerical extrema plus native box gap; not a pole/control-hull box. */
 int32_t jd_candidate_curve_bounds(uint64_t context,uint64_t shape,double tolerance,double* min_x,double* min_y,double* min_z,double* max_x,double* max_y,double* max_z,double* padding,char* diagnostic,uint32_t capacity);
 int32_t jd_candidate_curve_closed(uint64_t context,uint64_t shape,uint32_t* closed,char* diagnostic,uint32_t capacity);
+/* Standard full knot vector, Euclidean XYZ poles and optional declared rational weights. */
+int32_t jd_candidate_nurbs(uint64_t context,uint32_t degree,uint32_t pole_count,uint32_t rational,const double* coordinates,uint32_t coordinate_count,const double* weights,uint32_t weight_count,const double* full_knots,uint32_t knot_count,uint64_t* output,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

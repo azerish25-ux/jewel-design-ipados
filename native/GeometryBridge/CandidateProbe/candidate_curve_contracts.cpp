@@ -173,6 +173,21 @@ void run_candidate_curve_contracts()
     double uniformVolume=0;uint32_t uniformSolids=0,uniformValid=0;
     ok(jd_candidate_shape_inspect(context.id,uniformBox,&uniformVolume,&uniformSolids,&uniformValid,error,sizeof(error)));nearCurve(uniformVolume,8);checkCurve(uniformSolids==1&&uniformValid==1,"Uniform solid affine validity");
     ok(jd_candidate_shape_release(context.id,uniformBox,error,sizeof(error)));
+
+    const double nurbsPoints[9]={1,0,0,1,1,0,0,1,0},nurbsWeights[3]={1,1/std::sqrt(2.0),1},nurbsKnots[6]={0,0,0,1,1,1};
+    uint64_t imported=0;ok(jd_candidate_nurbs(context.id,2,3,1,nurbsPoints,9,nurbsWeights,3,nurbsKnots,6,&imported,error,sizeof(error)));
+    ok(jd_candidate_curve_point(context.id,imported,.5,&x,&y,&z,error,sizeof(error)));nearCurve(x,1/std::sqrt(2.0));nearCurve(y,1/std::sqrt(2.0));nearCurve(z,0);
+    ok(jd_candidate_shape_release(context.id,imported,error,sizeof(error)));
+    rejected=99;checkCurve(jd_candidate_nurbs(context.id,2,3,1,nurbsPoints,8,nurbsWeights,3,nurbsKnots,6,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"NURBS coordinate count");
+    rejected=99;checkCurve(jd_candidate_nurbs(context.id,2,3,1,nurbsPoints,9,nurbsWeights,2,nurbsKnots,6,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"NURBS weight count");
+    double invalidWeights[3]={1,0,1};
+    checkCurve(jd_candidate_nurbs(context.id,2,3,1,nurbsPoints,9,invalidWeights,3,nurbsKnots,6,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Zero NURBS weight");
+    invalidWeights[1]=std::numeric_limits<double>::quiet_NaN();
+    checkCurve(jd_candidate_nurbs(context.id,2,3,1,nurbsPoints,9,invalidWeights,3,nurbsKnots,6,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Nonfinite NURBS weight");
+    const double unsortedKnots[6]={0,0,1,0,1,1};
+    checkCurve(jd_candidate_nurbs(context.id,2,3,1,nurbsPoints,9,nurbsWeights,3,unsortedKnots,6,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Unsorted NURBS knots");
+    checkCurve(jd_candidate_nurbs(context.id,2,3,1,nullptr,9,nurbsWeights,3,nurbsKnots,6,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Null NURBS controls");
+    checkCurve(jd_candidate_nurbs(context.id,2,3,1,nurbsPoints,9,nurbsWeights,3,nurbsKnots,6,nullptr,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Null NURBS output");
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }

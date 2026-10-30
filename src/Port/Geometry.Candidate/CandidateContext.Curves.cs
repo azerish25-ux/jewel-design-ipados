@@ -97,4 +97,11 @@ public sealed partial class CandidateContext
             if(closed>1)throw new InvalidOperationException("Invalid native closure response.");return closed==1;
         }
     }
+    public CandidateShape CreateNurbs(CandidateNurbsDefinition definition)
+    {
+        ArgumentNullException.ThrowIfNull(definition);
+        return CreateShape(diagnostic=>{
+            var status=NativeMethods.Nurbs(_handle,definition.Degree,definition.PoleCount,definition.Weights is null?0u:1u,definition.Coordinates,checked((uint)definition.Coordinates.Length),definition.Weights,checked((uint)(definition.Weights?.Length??0)),definition.FullKnots,checked((uint)definition.FullKnots.Length),out var id,diagnostic,DiagnosticCapacity);return(status,id);
+        });
+    }
 }

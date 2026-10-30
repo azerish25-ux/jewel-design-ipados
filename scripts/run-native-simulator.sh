@@ -34,6 +34,8 @@ for i in $(seq 1 120); do
   grep -q 'PASS native curve bounds:' "$OUT/result.txt"
   grep -q 'native-uniform-affine-and-closure=pass;' "$OUT/result.txt"
   grep -q 'PASS outside rail candidate:' "$OUT/result.txt"
+  grep -q 'native-nurbs-construction=pass;' "$OUT/result.txt"
+  grep -q 'PASS stored native profiles:' "$OUT/result.txt"
   exit 0
  fi
  sleep 1

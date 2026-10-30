@@ -658,3 +658,48 @@ extern "C" int32_t jd_candidate_curve_closed(uint64_t context,uint64_t shape,uin
         });
     },diagnostic,capacity);
 }
+
+extern "C" int32_t jd_candidate_nurbs(uint64_t context,uint32_t degree,uint32_t pole_count,uint32_t rational,const double* coordinates,uint32_t coordinate_count,const double* weights,uint32_t weight_count,const double* full_knots,uint32_t knot_count,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        outputHandle(output);
+        if(degree<1||pole_count<degree+1||pole_count>65536||rational>1||!coordinates||!full_knots||
+            static_cast<uint64_t>(coordinate_count)!=static_cast<uint64_t>(pole_count)*3||
+            static_cast<uint64_t>(knot_count)!=static_cast<uint64_t>(pole_count)+degree+1||
+            (rational&&(!weights||weight_count!=pole_count))||(!rational&&weight_count!=0))
+            fail(JD_CANDIDATE_INVALID_ARGUMENT,"Invalid NURBS counts/arrays");
+        if(degree>static_cast<uint32_t>(Geom_BSplineCurve::MaxDegree()))
+            fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"NURBS degree exceeds candidate kernel limit");
+        std::vector<double> knots;std::vector<int> mults;
+        for(uint32_t i=0;i<knot_count;i++){
+            const double u=full_knots[i];
+            if(!std::isfinite(u)||(i&&u<full_knots[i-1]))fail(JD_CANDIDATE_INVALID_ARGUMENT,"NURBS knots must be finite nondecreasing");
+            if(knots.empty()||u!=knots.back()){knots.push_back(u);mults.push_back(1);}else mults.back()++;
+        }
+        if(knots.size()<2||full_knots[degree]>=full_knots[pole_count])
+            fail(JD_CANDIDATE_INVALID_ARGUMENT,"NURBS domain is empty");
+        for(size_t i=0;i<mults.size();i++){
+            const uint32_t maximum=(i==0||i+1==mults.size())?degree+1:degree;
+            if(static_cast<uint32_t>(mults[i])>maximum)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"NURBS multiplicity exceeds continuous edge representation");
+        }
+        NCollection_Array1<gp_Pnt> poles(1,static_cast<int>(pole_count));
+        NCollection_Array1<double> nativeWeights(1,static_cast<int>(pole_count));
+        for(uint32_t i=0;i<pole_count;i++){
+            const double x=coordinates[i*3],y=coordinates[i*3+1],z=coordinates[i*3+2];
+            if(!std::isfinite(x)||!std::isfinite(y)||!std::isfinite(z))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Nonfinite NURBS control point");
+            poles.SetValue(static_cast<int>(i)+1,gp_Pnt(x,y,z));
+            const double w=rational?weights[i]:1.0;
+            if(!std::isfinite(w)||w<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Candidate NURBS weights must be finite positive");
+            nativeWeights.SetValue(static_cast<int>(i)+1,w);
+        }
+        NCollection_Array1<double> nativeKnots(1,static_cast<int>(knots.size()));
+        NCollection_Array1<int> nativeMults(1,static_cast<int>(mults.size()));
+        for(size_t i=0;i<knots.size();i++){nativeKnots.SetValue(static_cast<int>(i)+1,knots[i]);nativeMults.SetValue(static_cast<int>(i)+1,mults[i]);}
+        withContext(context,[&](Context& value){
+            occ::handle<Geom_BSplineCurve> curve;
+            if(rational)curve=new Geom_BSplineCurve(poles,nativeWeights,nativeKnots,nativeMults,static_cast<int>(degree),false,false);
+            else curve=new Geom_BSplineCurve(poles,nativeKnots,nativeMults,static_cast<int>(degree),false);
+            *output=storeCurveEdge(value,curve);
+        });
+    },diagnostic,capacity);
+}
