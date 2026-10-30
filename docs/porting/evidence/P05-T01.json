@@ -6,7 +6,9 @@
     "docs/porting/kernel/boolean-caller-contracts.json",
     "docs/porting/kernel/BOOLEAN_SEMANTICS.md",
     "docs/porting/kernel/transform-caller-contracts.json",
-    "docs/porting/kernel/TRANSFORM_SEMANTICS.md"
+    "docs/porting/kernel/TRANSFORM_SEMANTICS.md",
+    "docs/porting/kernel/surface-caller-contracts.json",
+    "docs/porting/kernel/SURFACE_SEMANTICS.md"
   ],
   "sourceEvidence": [
     {
@@ -76,6 +78,22 @@
     {
       "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
       "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Surfaces/CSLoft.cs",
+      "sha256": "5ab5ec7085a3782e32b891dfa04b1fc568b8e2ac038c27952dc0147a37174266"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Surfaces/CSExtrudePlanarCurve.cs",
+      "sha256": "c731f83242f203c8aeff073a9bbe1ac2bb460622c7d28280308e0cbcbbbf574a"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilSweep.cs",
+      "sha256": "0eb51c30834e795d99bf1d52e76e92ee540d42a0b196411557471abc612398da"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilRhino.cs",
+      "sha256": "061cb30bd4abcdff29140ab7073078a1ad5ba079e70f941d489cbff8d7ab80e5"
     }
   ],
   "fixtures": [],
@@ -88,6 +106,11 @@
     {
       "id": "P05-T01-A02",
       "scope": "Five transform caller bodies plus shared transformation, flattening and flip dispatch",
+      "status": "source_observed"
+    },
+    {
+      "id": "P05-T01-A03",
+      "scope": "Loft/planar extrusion and orientation/seam/short-segment/join path; detailed scoring and sweeps still open",
       "status": "source_observed"
     }
   ],

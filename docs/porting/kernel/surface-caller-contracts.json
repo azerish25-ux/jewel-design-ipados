@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "status": "source_observed",
+  "scope": "Loft and ExtrudePlanarCurve plus loft matching/join helper bodies; sweep pipeline remains unmapped",
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Surfaces/CSLoft.cs",
+      "sha256": "5ab5ec7085a3782e32b891dfa04b1fc568b8e2ac038c27952dc0147a37174266"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Surfaces/CSExtrudePlanarCurve.cs",
+      "sha256": "c731f83242f203c8aeff073a9bbe1ac2bb460622c7d28280308e0cbcbbbf574a"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilSweep.cs",
+      "sha256": "0eb51c30834e795d99bf1d52e76e92ee540d42a0b196411557471abc612398da"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilRhino.cs",
+      "sha256": "061cb30bd4abcdff29140ab7073078a1ad5ba079e70f941d489cbff8d7ab80e5"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Loft",
+      "guid": "c436d730-1e1f-47af-a1d8-cafef28c629a",
+      "source": "recovery/canonical/cad/CSBlocks.Surfaces/CSLoft.cs",
+      "inputs": "Flatten two curve inputs, require each nonempty; use first item only from each. Convert NURBS and reject null as Missing Curve.",
+      "operation": "LoftMatchCurves([first1,first2], ltStraight, capped:false)",
+      "output": "Null loft -> UpdateError(Failed Loft); otherwise emit CSOnGeometryData converted from OnBrep; no caller capping.",
+      "matching": "Duplicate each nonnull profile. Match each later curve to prior matched duplicate with 50 normalized arc-length samples i/50 (0 through .98). Search both orientations/all 50 cyclic offsets, replace winner only on strict lower score. CalculateMatchDirectionValue body still requires detailed audit. Invoke ChangeClosedCurveSeam on curve2 using selected parameter, then Reverse if selected, ignoring returned status.",
+      "loftHelper": "Duplicate again, remove short segments at On_ZERO_TOLERANCE. RhinoSdkLoftSurface with endpoint/startpoint/tangent/closed false, simplify=0, start/end condition=3, refit=CSUtil.Tolerance. False/null/empty surfaces -> null. One surface -> BrepForm; many -> add valid surfaces as faces, JoinAllBreps at CSUtil.Tolerance.",
+      "joining": "OnBrep overload calls RhinoJoinBreps; null -> null; invalid result invokes RhinoRepairBrep but ignores repair success and returns Brep. Do not substitute IEnumerable<Brep> overload, which filters invalid/solid inputs and requires exactly one result."
+    },
+    {
+      "name": "ExtrudePlanarCurve",
+      "guid": "e83f327d-ddad-48b3-8b53-312119a285ed",
+      "source": "recovery/canonical/cad/CSBlocks.Surfaces/CSExtrudePlanarCurve.cs",
+      "inputs": "Flatten Curve|Profile input declared Array; distance default 20.0. Per item require successful nonnull NURBS conversion, IsPlanar() and TryGetPlane; skip other items.",
+      "operation": "Take two ToNurbsCurve results; translate first by plane.Normal*distance, second by plane.Normal*(-distance). CreateRuledSurface(first,second).ToBrep(). This is symmetric total extent 2*distance, not conventional one-sided extrusion.",
+      "output": "Append nonnull resulting Breps in input order; unwrap exactly one, zero/many -> CSDataArray, despite declared Individual output. No explicit caps, join, flip or UpdateError for skipped inputs.",
+      "failures": "Translation return values ignored. CreateRuledSurface result dereferenced before ToBrep null check; actual null/degenerate behavior needs original runtime. Do not silently insert error fallback."
+    }
+  ],
+  "requiredOracleCases": [
+    "One vs extra profiles; flattened nested arrays and wrong/empty/null data",
+    "Symmetric extent for default/positive/negative/zero/nonfinite distance",
+    "Non-world planarity and plane normal sign; open vs closed profile; no automatic capping",
+    "Surface seam/direction sampling and strict-tie ordering; open curve seam call failure",
+    "Short segments, invalid/multiple/empty loft surfaces and join/repair failure",
+    "Output order/cardinality and previous-output retention on missing/error/exception",
+    "Native project reopen and builder geometry regeneration"
+  ],
+  "probeGap": "Current OCCT analytical probe does not exercise these callers. Generic extrusion/loft support cannot close these semantics."
+}
