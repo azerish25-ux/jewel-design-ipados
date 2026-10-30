@@ -31,3 +31,11 @@ Invalid ARM64 signatures previously killed startup before managed Main. Simulato
 Do not build every archived csproj or install CounterSketch/Rhino on the host. Windows projects need external native libraries, reconstructed resources and recovery fixes. P02 owns contained reproduction; materialization only reconstructs files.
 
 The iOS workflow also watches tests/Port/** so contract-only changes run on macOS. Filter semantics: [official GitHub workflow syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onpushpull_requestpull_request_targetpathspaths-ignore). Shared Domain.Contracts runs the recovered-source ring comparisons on Console and both simulator families.
+
+## Native candidate device build
+
+[Device build plan](plans/P05-T02-A02-native-device.md) extends the pinned analytical experiment to an unsigned Release ios-arm64 app. The native-device.yml workflow uses iphoneos CMake and a separate .local/native/ios-device-all.a, then verifies the app executable is arm64/platform IOS with Apple lipo/vtool. Build result is pending; no physical-device execution or distribution permission is implied. Simulator and device archive selection is explicit in tests/iOS.Native/NativeGeometry.csproj.
+
+    node scripts/run-local.cjs gh workflow run native-device.yml --ref main
+
+All local downloads/logs remain under .local on D:. CI uploads text evidence only. See the official [NativeReference](https://learn.microsoft.com/en-us/dotnet/ios/building-apps/build-items#nativereference) and [EnableCodeSigning](https://learn.microsoft.com/en-us/dotnet/ios/building-apps/build-properties#enablecodesigning) contracts.

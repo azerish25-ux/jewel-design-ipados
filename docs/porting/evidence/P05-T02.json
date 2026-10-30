@@ -14,7 +14,9 @@
     "scripts/run-native-simulator.sh",
     ".github/workflows/native-geometry.yml",
     "docs/porting/plans/P05-T02-A01-native-candidate.md",
-    "docs/porting/ADR-0009-native-cad-candidate.md"
+    "docs/porting/ADR-0009-native-cad-candidate.md",
+    ".github/workflows/native-device.yml",
+    "docs/porting/plans/P05-T02-A02-native-device.md"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -43,6 +45,11 @@
       "id": "P05-T02-A01",
       "scope": "Pinned native analytic fixture candidate build/execution",
       "status": "simulator_timeout_fix_pending"
+    },
+    {
+      "id": "P05-T02-A02",
+      "scope": "Unsigned iPhoneOS arm64 native-linked Release/Mono AOT build and Mach-O platform inspection; no physical execution",
+      "status": "ci_pending"
     }
   ],
   "checks": [],
@@ -53,7 +60,8 @@
     "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim",
     "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending.",
     "currentStatus": "Native compile/link and host/iPad analytical runtime proof observed. iPhone emitted PASS and family=iphone but step timed out; increase simulator step budget to 20 minutes, rerun required.",
-    "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed."
+    "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed.",
+    "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs."
   },
   "blockers": [
     "Clean terminal iPhone simulator execution pending; captured report is insufficient while job failed",

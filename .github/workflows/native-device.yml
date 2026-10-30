@@ -1,0 +1,80 @@
+name: Native CAD device build experiment
+on:
+  push:
+    branches: [main]
+    paths:
+      - "native/GeometryBridge/CandidateProbe/**"
+      - "tests/iOS.Native/**"
+      - ".github/workflows/native-device.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  device:
+    runs-on: macos-26
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: Open-Cascade-SAS/OCCT
+          ref: b8f597c677811d1f9f4d8a97f5ae2825c0353a42
+          path: .local/native/occt-source
+          persist-credentials: false
+      - name: Pin Apple toolchain
+        run: |
+          echo '{"sdk":{"version":"10.0.302","rollForward":"disable"}}' > global.json
+          sudo xcode-select -s /Applications/Xcode_26.6.app
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+        with:
+          global-json-file: global.json
+      - name: Install iOS workload
+        run: dotnet workload install ios --version 10.0.302.0
+      - name: Record source and toolchain
+        run: |
+          mkdir -p artifacts
+          git -C .local/native/occt-source rev-parse HEAD > artifacts/native-source.txt
+          xcodebuild -version > artifacts/xcode.txt
+          dotnet --info > artifacts/dotnet.txt
+          shasum -a 256 .local/native/occt-source/LICENSE_LGPL_21.txt .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt > artifacts/native-license-hashes.txt
+      - name: Configure actual iOS device kernel
+        run: cmake -S native/GeometryBridge/CandidateProbe -B .local/native/ios-device -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0 -DOCCT_SOURCE_DIR="$PWD/.local/native/occt-source" | tee artifacts/native-configure.txt
+      - name: Compile candidate API usage before kernel build
+        run: cmake --build .local/native/ios-device --target jewel_occt_candidate_objects --parallel 2 | tee artifacts/native-probe-compile.txt
+      - name: Build native kernel and test entry
+        run: cmake --build .local/native/ios-device --target jewel_occt_candidate --parallel 3 | tee artifacts/native-build.txt
+      - name: Combine static test dependencies
+        run: |
+          libraries=()
+          while IFS= read -r -d '' library; do libraries+=("$library"); done < <(find .local/native/ios-device -name '*.a' -print0)
+          test "${#libraries[@]}" -gt 1
+          xcrun libtool -static -o .local/native/ios-device-all.a "${libraries[@]}" 2>&1 | tee artifacts/native-merge.txt
+      - name: Build unsigned native device AOT test app
+        run: dotnet build tests/iOS.Native -c Release -r ios-arm64 -p:EnableCodeSigning=false -p:BuildIpa=false -p:MtouchLink=SdkOnly -p:EnableDiagnostics=false | tee artifacts/native-app-build.txt
+      - name: Inspect actual device executable platform
+        run: |
+          APP=$(find tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64 -type d -name "*.app" | head -1)
+          test -f "$APP/Info.plist"
+          EXECUTABLE=$(/usr/libexec/PlistBuddy -c "Print :CFBundleExecutable" "$APP/Info.plist")
+          BINARY="$APP/$EXECUTABLE"
+          test -f "$BINARY"
+          xcrun lipo -archs "$BINARY" | tee artifacts/native-device-architectures.txt
+          grep -qx arm64 artifacts/native-device-architectures.txt
+          xcrun vtool -show-build "$BINARY" | tee artifacts/native-device-platform.txt
+          grep -Eq "platform[[:space:]]+IOS$" artifacts/native-device-platform.txt
+          shasum -a 256 "$BINARY" > artifacts/native-device-executable-sha256.txt
+          printf "%s\n" "BUILD ONLY: unsigned ios-arm64 native-linked Release app; no physical execution or distribution approval" > artifacts/native-device-scope.txt
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: native-candidate-device-build-evidence
+          path: artifacts/
+          retention-days: 14

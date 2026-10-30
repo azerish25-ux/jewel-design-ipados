@@ -1,1 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net10.0-ios</TargetFramework><OutputType>Exe</OutputType><SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion><ApplicationId>com.jeweldesign.nativegeometry</ApplicationId><ApplicationTitle>Native Geometry Candidate</ApplicationTitle><ApplicationVersion>1</ApplicationVersion><ApplicationDisplayVersion>1.0</ApplicationDisplayVersion><UseSharedCompilation>false</UseSharedCompilation></PropertyGroup><ItemGroup><NativeReference Include="../../.local/native/ios-sim-all.a"><Kind>Static</Kind><ForceLoad>true</ForceLoad><SmartLink>false</SmartLink><LinkerFlags>-lc++</LinkerFlags></NativeReference></ItemGroup></Project>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-ios</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
+    <ApplicationId>com.jeweldesign.nativegeometry</ApplicationId>
+    <ApplicationTitle>Native Geometry Candidate</ApplicationTitle>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <UseSharedCompilation>false</UseSharedCompilation>
+    <NativeCandidateArchive Condition="'$(RuntimeIdentifier)' == 'iossimulator-arm64'">../../.local/native/ios-sim-all.a</NativeCandidateArchive>
+    <NativeCandidateArchive Condition="'$(RuntimeIdentifier)' == 'ios-arm64'">../../.local/native/ios-device-all.a</NativeCandidateArchive>
+  </PropertyGroup>
+  <ItemGroup>
+    <NativeReference Include="$(NativeCandidateArchive)">
+      <Kind>Static</Kind>
+      <ForceLoad>true</ForceLoad>
+      <SmartLink>false</SmartLink>
+      <LinkerFlags>-lc++</LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
+  <Target Name="ValidateNativeCandidatePlatform" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(NativeCandidateArchive)' == ''" Text="Native candidate requires explicit ios-arm64 or iossimulator-arm64 RuntimeIdentifier." />
+    <Error Condition="!Exists('$(NativeCandidateArchive)')" Text="Build the matching native candidate archive before this app: $(NativeCandidateArchive)" />
+  </Target>
+</Project>
