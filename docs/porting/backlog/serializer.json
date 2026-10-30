@@ -14725,7 +14725,7 @@
       "kind": "serializer",
       "phase": "P04",
       "title": "CSBlocks.Utilities.CSArray",
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Utilities/CSArray.cs",
@@ -14734,14 +14734,20 @@
       ],
       "acceptance": "Exercise this declared GUID and supported record-version branches with non-default serialized fields; PC -> iPad -> PC must retain graph identity/connections/data and remain editable. Compare computed geometry separately. Reserved expired-node GUID requires expected-error behavior, not successful geometry.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P03-T03.json",
+        "docs/porting/ADR-0032-pure-array-semantics.md"
+      ],
       "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
       "legacy": false,
       "details": {
         "path": "docs/evidence/audit/serialization-matrix.json",
         "id": "SER-0640"
-      }
+      },
+      "implementationScope": "Exact1.0 common headers and pure collection semantics only. Native ownership/producer emission/output counts/wildcard/one-level trailing-empty semantics/full data and PC/UI acceptance remain required."
     },
     {
       "id": "SER-0641",
@@ -15047,7 +15053,7 @@
       "kind": "serializer",
       "phase": "P04",
       "title": "CSBlocks.Utilities.Obsolete.CSUnarray1",
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Utilities.Obsolete/CSUnarray1.cs",
@@ -15056,14 +15062,20 @@
       ],
       "acceptance": "Exercise this declared GUID and supported record-version branches with non-default serialized fields; PC -> iPad -> PC must retain graph identity/connections/data and remain editable. Compare computed geometry separately. Reserved expired-node GUID requires expected-error behavior, not successful geometry.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P03-T03.json",
+        "docs/porting/ADR-0032-pure-array-semantics.md"
+      ],
       "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
       "legacy": true,
       "details": {
         "path": "docs/evidence/audit/serialization-matrix.json",
         "id": "SER-0654"
-      }
+      },
+      "implementationScope": "Exact1.0 common headers and pure collection semantics only. Native ownership/producer emission/output counts/wildcard/one-level trailing-empty semantics/full data and PC/UI acceptance remain required."
     }
   ]
 }

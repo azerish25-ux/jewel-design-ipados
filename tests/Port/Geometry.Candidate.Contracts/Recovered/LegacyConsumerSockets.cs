@@ -84,7 +84,7 @@ private int _inputChannelIndexFirstExpansion=-1;
 private string ExpandableInputChannelIdentifier=>"InTransformation";
 private ChannelDataType ExpandableInputChannelDataType=>ChannelDataType.Transform;
 private ChannelArrayType ExpandableInputChannelArrayType=>ChannelArrayType.Any;
-internal CSBlockExpandableInput(){new CSInputChannel(this);CreateExpansionInputChannel();}
+internal CSBlockExpandableInput(int fixedInputCount=1){for(int i=0;i<fixedInputCount;i++)new CSInputChannel(this);CreateExpansionInputChannel();}
 public int CreateExpansionInputChannel()
 	{
 		if (_inputChannelIndexFirstExpansion < 0)
@@ -116,9 +116,9 @@ private int CreateExpansionInputChannelAux()
 		new CSInputChannel($"{ExpandableInputChannelIdentifier}_{num}", this, ExpandableInputChannelDataType, ExpandableInputChannelArrayType, ChannelFlag.NotRequired);
 		return InputChannelCount - 1;
 	}
-internal static SerializedChannelLink[] Observe(IReadOnlyList<SerializedChannelLink> links,int count,int offset){
+internal static SerializedChannelLink[] Observe(IReadOnlyList<SerializedChannelLink> links,int count,int offset,int fixedInputCount=1){
 CSApplicationHelper.Application.InImport=offset!=0;CSApplicationHelper.Application.ImportOffset=offset;
-var graph=new CSParaGraph(count);var block=new CSBlockExpandableInput();block.Replay(links.Select(x=>x.ObjectIndex).ToArray(),links.Select(x=>x.ChannelIndex).ToArray(),graph);block.CreateExpansionInputChannel();
+var graph=new CSParaGraph(count);var block=new CSBlockExpandableInput(fixedInputCount);block.Replay(links.Select(x=>x.ObjectIndex).ToArray(),links.Select(x=>x.ChannelIndex).ToArray(),graph);block.CreateExpansionInputChannel();
 return block.InputChannels.Select(x=>new SerializedChannelLink(x.OutputChannelBlock?.Index??-1,x.OutputChannelIndex)).ToArray();
 }
 }

@@ -34,13 +34,15 @@ jobs:
         run: node tools/repository/check.cjs --record
       - name: Additional scalar reference-reader controls
         run: |
-          node --test tests/scalar-v1-reference.test.cjs tests/ring-rail-v1-reference.test.cjs tests/outside-rail-v1-reference.test.cjs tests/matrix-profiles-reference.test.cjs tests/select-ring-rail-v1-reference.test.cjs tests/transform-producers-v1-reference.test.cjs tests/profile-placement-v1-reference.test.cjs tests/transform-consumers-v1-reference.test.cjs
+          node --test tests/scalar-v1-reference.test.cjs tests/ring-rail-v1-reference.test.cjs tests/outside-rail-v1-reference.test.cjs tests/matrix-profiles-reference.test.cjs tests/select-ring-rail-v1-reference.test.cjs tests/transform-producers-v1-reference.test.cjs tests/profile-placement-v1-reference.test.cjs tests/transform-consumers-v1-reference.test.cjs tests/collection-headers-v1-reference.test.cjs
           node reference/file-proof/scalar-v1.cjs --record
           git diff --exit-code -- docs/evidence/audit/plain-scalar-reference.json
           node reference/file-proof/ring-rail-v1.cjs --record
           git diff --exit-code -- docs/evidence/audit/ring-rail-input-reference.json
           node reference/file-proof/outside-rail-v1.cjs --record
           git diff --exit-code -- docs/evidence/audit/outside-rail-input-reference.json
+          node reference/file-proof/collection-headers-v1.cjs --record
+          git diff --exit-code -- docs/evidence/audit/collection-header-reference.json
           node reference/file-proof/transform-consumers-v1.cjs --record
           git diff --exit-code -- docs/evidence/audit/transform-consumer-reference.json
           node reference/file-proof/profile-placement-v1.cjs --record
@@ -64,7 +66,7 @@ jobs:
       - name: Prepare pinned published rotation comparison
         run: node scripts/prepare-rotation-reference.cjs
       - name: Numeric oracle provenance controls
-        run: node --test tests/numeric-oracle.test.cjs tests/value-channel-oracle.test.cjs tests/select-rail-oracle.test.cjs tests/transform-producer-oracle.test.cjs tests/profile-placement-oracle.test.cjs tests/rotation-oracle.test.cjs tests/rotation-reference-source.test.cjs tests/consumer-sockets-oracle.test.cjs
+        run: node --test tests/numeric-oracle.test.cjs tests/value-channel-oracle.test.cjs tests/select-rail-oracle.test.cjs tests/transform-producer-oracle.test.cjs tests/profile-placement-oracle.test.cjs tests/rotation-oracle.test.cjs tests/rotation-reference-source.test.cjs tests/consumer-sockets-oracle.test.cjs tests/array-oracle.test.cjs
       - name: Verify recovered value-channel method oracle
         run: |
           node scripts/verify-value-channel-oracle.cjs
@@ -73,6 +75,7 @@ jobs:
           node scripts/verify-profile-placement-oracle.cjs
           node scripts/verify-rotation-oracle.cjs
           node scripts/verify-consumer-sockets-oracle.cjs
+          node scripts/verify-array-oracle.cjs
       - name: Verify source-derived portfolio XML contracts
         run: node scripts/run-local.cjs dotnet run --project tools/PortfolioContractGenerator -- "$GITHUB_WORKSPACE" --verify
       - name: Graph snapshot contracts

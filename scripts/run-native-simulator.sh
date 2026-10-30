@@ -47,6 +47,8 @@ for i in $(seq 1 120); do
   grep -q 'published-rotation-reference=pass;' "$OUT/result.txt"
   grep -q 'PASS saved rotation producers:44217 recovered-wrapper/published-native cases,' "$OUT/result.txt"
   grep -q 'PASS expandable transform consumer:12285 exact source socket cases,' "$OUT/result.txt"
+  grep -q 'PASS legacy array values:289 exact-source arithmetic pairs/33 null-item failures;789 source flatten/copy trees,' "$OUT/result.txt"
+  grep -q 'PASS collection socket constructors:12285 exact-source zero-fixed-input cases;' "$OUT/result.txt"
   exit 0
  fi
  sleep 1

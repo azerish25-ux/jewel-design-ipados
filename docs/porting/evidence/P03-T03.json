@@ -109,7 +109,20 @@
     "docs/evidence/audit/transform-consumer-reference.json",
     "docs/porting/ADR-0031-transform-consumer.md",
     "docs/porting/plans/P03-T03-A12-transform-consumer.md",
-    "docs/evidence/apple/rotation-producer-device-results.json"
+    "docs/evidence/apple/rotation-producer-device-results.json",
+    "src/Port/Documents/LegacyArrayData.cs",
+    "tests/Port/Documents.Contracts/ArrayValueAssertions.cs",
+    "tests/Port/Documents.Contracts/Recovered/LegacyArrayData.cs",
+    "tests/Port/Geometry.Candidate.Contracts/CollectionSocketAssertions.cs",
+    "scripts/verify-array-oracle.cjs",
+    "tests/array-oracle.test.cjs",
+    "tests/collection-headers-v1-reference.test.cjs",
+    "reference/file-proof/collection-headers-v1.cjs",
+    "docs/evidence/audit/collection-header-reference.json",
+    "docs/porting/ADR-0032-pure-array-semantics.md",
+    "docs/porting/plans/P03-T03-A13-owned-arrays.md",
+    "docs/evidence/apple/rotation-producer-results.json",
+    "docs/evidence/apple/transform-consumer-device-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -428,6 +441,34 @@
       "expectedExitCode": 0,
       "artifact": "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
       "actual": "PASS141 known headers/100 opaque/100 scalar handles, seven independent consumer common headers/links, future/no-op/rewire/reopen/reversal and earlier codec/channel suites."
+    },
+    {
+      "command": "dotnet run --project tests/Port/Documents.Tests (RED before A13-A01)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Documents.Contracts/ArrayValueAssertions.cs",
+      "actual": "RED CS0117 LegacyChannelValue.FromArray is missing."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/ArrayValueAssertions.cs",
+      "actual": "PASS289 exact-source arithmetic pairs/33 expected null failures and789 source flatten/copy trees; bit/kind/immutable/missing/empty/nested/carry/cartesian and explicit bounds;161 headers/80 opaque/100 scalars and all earlier document suites."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/CollectionSocketAssertions.cs",
+      "actual": "PASS12285 zero-fixed-input constructor cases alongside old12285 transform sockets, native explicit collection61/116 rejection/no allocation, scalar helper array guard and all prior native/source44217/4496/16093/consumer suites."
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/array-oracle.test.cjs tests/collection-headers-v1-reference.test.cjs tests/consumer-sockets-oracle.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "scripts/verify-array-oracle.cjs",
+      "actual": "11/11 exact source arithmetic/copy/flatten/link/slot tamper and independent20 header/future/bounds controls."
     }
   ],
   "review": {
@@ -460,7 +501,8 @@
     "transformProducers": "Reviewed data kind isolation/immutability; exact GUID/version/whole-frame read; native input alias/import lifetimes, raw extent floor/origin arithmetic, strict mirror X/Z only, Add outputs, no-argument rail-root compatibility, explicit placement/array/unsupported bounds failures, source-body/tamper controls, actual native point comparisons and file preservation. Source observation matrix constructors are stubs, not original Rhino matrix golden proof.",
     "profilePlacement": "Reviewed source normalized fraction/native parameter distinction, frame handedness/Y scale, finite30-unit ray, line-A event ordering and paired reversed overlap ranges, floor.01, empty optional output reset, immutable additional channel snapshot, centralized native curve lifetime, explicit degenerate/missing/cycle failures and transactional cache policy. Observation stubs are not original native oracle; no unsupported producer/default or stored height substitute is used.",
     "rotation": "Reviewed XYZ product convention and affine4-term arithmetic; strict mirror and source default/degree input semantics; published epsilon/noise policy vs original-native unknowns; finite guards rather than truncating invalid projective rows; pinned acquisition/hash/notice protection, test-only source/native ABI separation, host import resolver and iOS static linkage, independent basis/native point/order comparisons, immutable cache/save/cycle/ownership; no application-time network or native substitute geometry.",
-    "transformConsumer": "Reviewed source load replay vs unchanged stored arrays, negative-index spare dependencies, prefix transform input ordering and source-specific profile/rail/pure metadata ordering; supported transform capabilities on curve data, actual native geometry duplication and snapshot ownership; profile names/sweep bits/no path interpretation, numeric/empty/missing/invalid/overflow behavior, explicit unsupported producers/arrays and no preview/default substitute. Material/segmentation/invalid4x4/full scene side effects and PC/UI/full parity remain open."
+    "transformConsumer": "Reviewed source load replay vs unchanged stored arrays, negative-index spare dependencies, prefix transform input ordering and source-specific profile/rail/pure metadata ordering; supported transform capabilities on curve data, actual native geometry duplication and snapshot ownership; profile names/sweep bits/no path interpretation, numeric/empty/missing/invalid/overflow behavior, explicit unsupported producers/arrays and no preview/default substitute. Material/segmentation/invalid4x4/full scene side effects and PC/UI/full parity remain open.",
+    "pureArrays": "Reviewed immutable child snapshots vs explicit native reference non-ownership, distinct null/empty/nested semantics, ref-latching arithmetic and Cartesian order, empty-array scalar fallback/null failure, factory/traversal/cartesian bounds without truncation, source body drift protection, exact1.0 common headers/future bytes and fixed constructor cases. Native collection emission remains blocked explicitly until owned per-item snapshots; full parent scope retained."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -580,7 +622,7 @@
       "id": 41104238238,
       "commit": "ba83e0e2b656d477871eb9bfcbb699f6821a39f2",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41104238238",
-      "verification": "Rotation native host/iPad/iPhone queued; actual source44217/published reference pin/family/native application/ownership report inspection pending."
+      "verification": "SUCCESS: actual source44217/published native/reference pin/family/native affine/save/ownership reports inspected on iPad/iPhone; rotation-producer-results.json. Not original Rhino5 proof."
     },
     {
       "id": 41104242957,
@@ -598,7 +640,7 @@
       "id": 41108932509,
       "commit": "32542f3676f24e92b63c4659691bb46150aac84c",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41108932509",
-      "verification": "Consumer unsigned ARM64 build queued; actual source pin/platform/AOT/warnings/hash inspection pending; no physical execution."
+      "verification": "SUCCESS: actual unsigned arm64/platform IOS52 warnings0 errors/source manifest/hash inspected; transform-consumer-device-results.json. Consumer simulator execution remains separate."
     }
   ],
   "requirementIds": [
@@ -825,6 +867,41 @@
       "path": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
       "sha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714",
       "scope": "P03-T03-A12 load socket replay, non-array consumer composition/duplicate/capabilities and profile/rail metadata transform order; full array/material/scheduler/PC behavior not ported"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSDataArray.cs",
+      "sha256": "f7f0425e3e35fb0835ac161303a3cc7fa269c7f4f765938db91dd76956620b03",
+      "scope": "P03-T03-A13-A01 pure array/copy/flatten/arithmetic and exact common headers/zero-fixed constructor; native ownership/producer execution still required"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSNumberData.cs",
+      "sha256": "a1f54695fee3712cfc3052c11377cf8ae7c21e004a36d373f92b2349c481b7f5",
+      "scope": "P03-T03-A13-A01 pure array/copy/flatten/arithmetic and exact common headers/zero-fixed constructor; native ownership/producer execution still required"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Maths/CSAdd.cs",
+      "sha256": "e939e06e0c315b4c6cba790187b896e865131fcf5a9bc131857bf5eef77abfc0",
+      "scope": "P03-T03-A13-A01 pure array/copy/flatten/arithmetic and exact common headers/zero-fixed constructor; native ownership/producer execution still required"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
+      "sha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714",
+      "scope": "P03-T03-A13-A01 pure array/copy/flatten/arithmetic and exact common headers/zero-fixed constructor; native ownership/producer execution still required"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Utilities/CSArray.cs",
+      "sha256": "757402a379d77af792cf915e735b04b871c282b8911889b1bedacdcc2f699d0f",
+      "scope": "P03-T03-A13-A01 pure array/copy/flatten/arithmetic and exact common headers/zero-fixed constructor; native ownership/producer execution still required"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Utilities.Obsolete/CSUnarray1.cs",
+      "sha256": "699228bf6b3982fc7adcaa7e77e37247df7449b4a6945acde5fe188476f854ed",
+      "scope": "P03-T03-A13-A01 pure array/copy/flatten/arithmetic and exact common headers/zero-fixed constructor; native ownership/producer execution still required"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+      "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa",
+      "scope": "P03-T03-A13-A01 pure array/copy/flatten/arithmetic and exact common headers/zero-fixed constructor; native ownership/producer execution still required"
     }
   ],
   "subtasks": [
@@ -891,7 +968,7 @@
     {
       "id": "P03-T03-A11",
       "scope": "Six saved rotation producers, finite affine products and pinned published-native numeric comparison",
-      "status": "local_verified_apple_pending",
+      "status": "verified_simulator_subset",
       "plan": "docs/porting/plans/P03-T03-A11-rotation-producers.md",
       "relatedRows": [
         "BLD-0568",
@@ -907,6 +984,18 @@
         "BLD-0576",
         "SER-0611"
       ]
+    },
+    {
+      "id": "P03-T03-A13",
+      "scope": "Owned nested collection data and exact Array/Unarray execution/consumer integration",
+      "status": "in_progress",
+      "plan": "docs/porting/plans/P03-T03-A13-owned-arrays.md"
+    },
+    {
+      "id": "P03-T03-A13-A01",
+      "scope": "Immutable pure array semantics, source arithmetic/flatten/copy, zero-fixed sockets and20 exact headers",
+      "status": "local_verified_apple_pending",
+      "plan": "docs/porting/plans/P03-T03-A13-owned-arrays.md"
     }
   ]
 }

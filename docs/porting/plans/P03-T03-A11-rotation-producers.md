@@ -15,6 +15,6 @@ Owned: affine DTO/product, rotation plan and known graph/header dispatch; indepe
 - [x] Execute all six saved nodes, real native affine curve application/source preservation, edit/save/reopen, dependency/forwarding/failure/cycle/cleanup; retain previous suites.
 - [x] Verify source/document/native/repository/provenance and review source/version/runtime distinctions.
 - [x] Commit/push ba83e0e; dispatch native host/iPad/iPhone41104238238 and unsigned device41104242957, both queued.
-- [ ] Inspect actual source44217/published reference/native/family/AOT artifacts before bounded verification.
+- [x] Inspect actual source44217/published reference/native/family/AOT artifacts before bounded verification. Native iPad/iPhone and unsigned arm64/platform IOS52 warnings0 errors/source pin inspected in rotation-producer-results.json; not original Rhino5/full parity.
 
 Still required: original Rhino5 matrix/runtime comparison, complete nonfinite/Unset/error behavior, expandable input reconstruction, profile metadata/sweep/transform cloning, full transform consumer/arrays/all other builders/UI/PC/physical parity. No full parity row closes. All local writes/cache in D:; wait5 seconds and retry transient D errors.

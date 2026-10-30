@@ -11,6 +11,7 @@ public sealed class LegacyChannelValue
     public LegacyProfileSelection? Profile {get;}
     public LegacyCurveSelection? Curve {get;}
     public LegacyAffineTransform? Transform {get;}
+    public IReadOnlyList<LegacyChannelValue>? Array {get;}
     public bool IsMissing {get;}
     public static LegacyChannelValue Missing {get;}=new(true);
     public static LegacyChannelValue Empty {get;}=new();
@@ -20,6 +21,13 @@ public sealed class LegacyChannelValue
     private LegacyChannelValue(LegacyProfileSelection profile){Profile=profile;}
     private LegacyChannelValue(LegacyCurveSelection curve){Curve=curve;}
     private LegacyChannelValue(LegacyAffineTransform transform){Transform=transform;}
+    private LegacyChannelValue(LegacyChannelValue[] items){Array=System.Array.AsReadOnly(items);}
+    public static LegacyChannelValue FromArray(IEnumerable<LegacyChannelValue?> items)
+    {
+        ArgumentNullException.ThrowIfNull(items);var copy=new List<LegacyChannelValue>();
+        foreach(var item in items){if(copy.Count>=LegacyArrayData.MaximumItems)throw new NotSupportedException("Array data exceeds explicit candidate item limit.");copy.Add(item??Missing);}
+        return new(copy.ToArray());
+    }
     public static LegacyChannelValue FromTransform(LegacyAffineTransform transform)=>new(transform);
     public static LegacyChannelValue FromCurve(int record,int channel)=>new(new LegacyCurveSelection(record,channel));
     public static LegacyChannelValue FromNumber(double value)=>Number(value);

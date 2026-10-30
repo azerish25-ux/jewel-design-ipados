@@ -6,7 +6,7 @@ namespace JewelDesign.Features.Candidate;
 public static class TransformProducerCandidate
 {
     public static double AddScalars(LegacyChannelValue first,LegacyChannelValue second)
-    {double x=0,y=0;first.GetDouble(ref x);second.GetDouble(ref y);return x+y;}
+    {if(first.Array is not null||second.Array is not null)throw new NotSupportedException("Use LegacyArrayArithmetic.Add to preserve source array semantics.");double x=0,y=0;first.GetDouble(ref x);second.GetDouble(ref y);return x+y;}
     public static LegacyAffineTransform Translation(LegacyChannelValue x,LegacyChannelValue y,LegacyChannelValue z,LegacyChannelValue mirror)
     {
         double dx=0,dy=0,dz=0,m=0;x.GetDouble(ref dx);y.GetDouble(ref dy);z.GetDouble(ref dz);mirror.GetDouble(ref m);

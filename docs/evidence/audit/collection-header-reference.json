@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_reader_only",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "blocks": [
+    {
+      "index": 53,
+      "type": "CSUnarray1",
+      "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+      "identifier": "2 Profile on a Gem (Profile 1)",
+      "flags": 65501,
+      "legacyLayer": 19,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "2 Profile on a Gem (Profile 1)"
+        }
+      ],
+      "objects": [
+        52,
+        48
+      ],
+      "channels": [
+        0,
+        1
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 59,
+      "type": "CSUnarray1",
+      "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+      "identifier": "2 Profile on a Gem (Profile 2)",
+      "flags": 65501,
+      "legacyLayer": 19,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "2 Profile on a Gem (Profile 2)"
+        }
+      ],
+      "objects": [
+        58,
+        54
+      ],
+      "channels": [
+        0,
+        1
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 61,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Under Bezel Gems",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Under Bezel Gems"
+        }
+      ],
+      "objects": [
+        29
+      ],
+      "channels": [
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 81,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Under Bezel Surfaces",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Under Bezel Surfaces"
+        }
+      ],
+      "objects": [
+        77,
+        73,
+        75,
+        79,
+        80
+      ],
+      "channels": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 116,
+      "type": "CSUnarray1",
+      "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+      "identifier": "Tapered Band on 2 Ring Rails (Profile 1)",
+      "flags": 65501,
+      "legacyLayer": 19,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Tapered Band on 2 Ring Rails (Profile 1)"
+        }
+      ],
+      "objects": [
+        115,
+        110,
+        110
+      ],
+      "channels": [
+        0,
+        1,
+        2
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 123,
+      "type": "CSUnarray1",
+      "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+      "identifier": "Tapered Band on 2 Ring Rails (Profile 2)",
+      "flags": 65501,
+      "legacyLayer": 19,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Tapered Band on 2 Ring Rails (Profile 2)"
+        }
+      ],
+      "objects": [
+        122,
+        117,
+        117
+      ],
+      "channels": [
+        0,
+        1,
+        2
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 128,
+      "type": "CSUnarray1",
+      "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+      "identifier": "Tapered Band on 2 Ring Rails (Base Profile)",
+      "flags": 65501,
+      "legacyLayer": 19,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Tapered Band on 2 Ring Rails (Base Profile)"
+        }
+      ],
+      "objects": [
+        127,
+        124,
+        124
+      ],
+      "channels": [
+        0,
+        1,
+        2
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 131,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Array Profiles",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Array Profiles"
+        }
+      ],
+      "objects": [
+        115,
+        127,
+        122
+      ],
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 132,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Array Params",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Array Params"
+        }
+      ],
+      "objects": [
+        110,
+        124,
+        117
+      ],
+      "channels": [
+        1,
+        1,
+        1
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 133,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Array Params",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Array Params"
+        }
+      ],
+      "objects": [
+        110,
+        124,
+        117
+      ],
+      "channels": [
+        2,
+        2,
+        2
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 157,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Bezel Gems",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Bezel Gems"
+        }
+      ],
+      "objects": [
+        155
+      ],
+      "channels": [
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 179,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Objects",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Objects"
+        }
+      ],
+      "objects": [
+        155
+      ],
+      "channels": [
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 183,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Objects",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Objects"
+        }
+      ],
+      "objects": [
+        177
+      ],
+      "channels": [
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 187,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Cutters",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Cutters"
+        }
+      ],
+      "objects": [
+        177,
+        185
+      ],
+      "channels": [
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 190,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Surfaces",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Surfaces"
+        }
+      ],
+      "objects": [
+        82
+      ],
+      "channels": [
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 216,
+      "type": "CSUnarray1",
+      "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+      "identifier": "2 Profile on a Gem (Profile 1)",
+      "flags": 65501,
+      "legacyLayer": 19,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "2 Profile on a Gem (Profile 1)"
+        }
+      ],
+      "objects": [
+        215,
+        211
+      ],
+      "channels": [
+        0,
+        1
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 222,
+      "type": "CSUnarray1",
+      "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+      "identifier": "2 Profile on a Gem (Profile 2)",
+      "flags": 65501,
+      "legacyLayer": 19,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "2 Profile on a Gem (Profile 2)"
+        }
+      ],
+      "objects": [
+        221,
+        217
+      ],
+      "channels": [
+        0,
+        1
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 232,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Objects",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Objects"
+        }
+      ],
+      "objects": [
+        226
+      ],
+      "channels": [
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 235,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Objects",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Objects"
+        }
+      ],
+      "objects": [
+        230
+      ],
+      "channels": [
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 238,
+      "type": "CSArray",
+      "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+      "identifier": "Surfaces",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Surfaces"
+        }
+      ],
+      "objects": [
+        233,
+        236
+      ],
+      "channels": [
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Utilities/CSArray.cs",
+      "sha256": "757402a379d77af792cf915e735b04b871c282b8911889b1bedacdcc2f699d0f"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Utilities.Obsolete/CSUnarray1.cs",
+      "sha256": "699228bf6b3982fc7adcaa7e77e37247df7449b4a6945acde5fe188476f854ed"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+      "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa"
+    }
+  ],
+  "scope": "Exact known1.0 common headers only; native array/unarray execution and ownership remain separate."
+}
