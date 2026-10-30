@@ -35,7 +35,7 @@
     "facts": "Modern official World_zx has origin0, local X=world Z, local Y=world X, normal=world Y. Circle NURBS is rational quadratic with9 poles and4 quarter spans over0..2pi.",
     "limit": "Modern official source corroborates a proposed test oracle, not original Rhino5 binary/parameterization proof."
   },
-  "candidateHazard": "Pinned OCCT default Convert_TgtThetaOver2 selects3 spans for a full circle. Explicit Convert_TgtThetaOver2_4 is available. Equal geometric locus alone does not prove compatible curve parameters; test actual domain/poles/weights/parameter samples before use.",
+  "candidateHazard": "Pinned OCCT default Convert_TgtThetaOver2 selects3 spans. Explicit_4 low-level conversion is nonperiodic, but the high-level untrimmed GeomConvert circle path calls SetPeriodic afterward. Use the full-period trimmed-circle path and retain actual9-pole/nonperiodic/parameter assertions. Equal locus alone is insufficient; original-PC comparison remains required.",
   "requiredCases": [
     "ZX and translated/rotated frames, seam direction",
     "Default/missing radius7, positive/zero/negative/nonfinite source error behavior",

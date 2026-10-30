@@ -3,6 +3,7 @@
 #include <BRepBuilderAPI_MakeEdge.hxx>
 #include <BRepAdaptor_Curve.hxx>
 #include <Geom_Circle.hxx>
+#include <Geom_TrimmedCurve.hxx>
 #include <Geom_BSplineCurve.hxx>
 #include <GeomConvert.hxx>
 #include <Convert_ParameterisationType.hxx>
@@ -241,7 +242,10 @@ extern "C" int32_t jd_candidate_circle(uint64_t context,double radius,double ox,
         withContext(context,[&](Context& value){
             gp_Ax2 frame(gp_Pnt(ox,oy,oz),gp_Dir(nx,ny,nz),gp_Dir(xx,xy,xz));
             occ::handle<Geom_Circle> circle=new Geom_Circle(frame,radius);
-            auto curve=GeomConvert::CurveToBSplineCurve(circle,Convert_TgtThetaOver2_4);
+            // The untrimmed GeomConvert circle path forces SetPeriodic afterward.
+            // Its trimmed path preserves the converter's clamped four-span form.
+            occ::handle<Geom_TrimmedCurve> fullPeriod=new Geom_TrimmedCurve(circle,0,2*std::acos(-1.0));
+            auto curve=GeomConvert::CurveToBSplineCurve(fullPeriod,Convert_TgtThetaOver2_4);
             if(curve.IsNull()||curve->Degree()!=2||curve->NbPoles()!=9||!curve->IsRational()||curve->IsPeriodic())fail(JD_CANDIDATE_KERNEL_FAILURE,"Unexpected four-span circle representation");
             BRepBuilderAPI_MakeEdge operation(curve);
             if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native curve edge creation failed");

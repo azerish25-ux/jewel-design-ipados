@@ -94,7 +94,7 @@
     {
       "id": "P05-T02-A06",
       "scope": "Actual native four-span rational curve creation/inspection/evaluation through CSharp ownership adapter",
-      "status": "managed_compile_verified_native_ci_pending"
+      "status": "representation_fix_ci_pending"
     }
   ],
   "checks": [
@@ -156,7 +156,7 @@
     "ownershipAbi": "Real OCCT box/copy/translation/booleans through versioned C IDs/status. Global unique nonreused IDs; per-context locks; lookup drops registry lock before waiting for context. Final close marks closed before erase. Retain/release overflow guarded; C++ exception categories caught; failed creation outputs zeroed and optional diagnostics bounded. GREEN runtime/platform results pending; cancellation/process-memory leak/SDK selection/PC gates open. Host/iPad/iPhone runtime passed in 41025671193; unsigned device build41025674158 passed 52 warnings/0 errors. See candidate-abi-results.json. New managed adapter not covered.",
     "redLogSha256": "7ce7453be4e8313065e8ee0886c5635144b572c2b87dae594eae3823abd400a3",
     "managedAdapter": "Header widths/entrypoints/Cdecl matched; input SafeHandles marshal lifetime; per-context gate covers native result plus child parent-lease creation; explicit logical Dispose separate from IsClosed. Native creation cleanup and paired parent leases reviewed. Windows build proves managed compilation only; Apple real/native/disposal/trim tests pending. No full kernel/cancellation/process-memory/physical/PC claim.",
-    "curves": "Inspected pinned GeomConvert, Convert_CircleToBSplineCurve, parameterization enum and inherited BRepAdaptor curve methods. Explicit_4 mode is nonperiodic with four spans, avoiding default3-span parameterization. Native BRep edges and actual evaluation only; solid queries reject. Fixed-width flattened inputs/outputs and existing context/SafeHandle gate reused. Geometry/28-sample/plane/ownership/runtime assertions pending CI; modern source is not Rhino5 PC proof."
+    "curves": "Initial host execution failed Unexpected four-span circle representation. Source investigation found GeomConvert.cxx untrimmed circle path forces SetPeriodic after low-level_4 conversion; trimmed-circle branch does not. Native factory now supplies full-period Geom_TrimmedCurve before explicit_4 conversion. All9-pole/rational/nonperiodic/28-sample/ownership assertions remain unchanged. Actual corrected runtime proof pending."
   },
   "blockers": [
     "Full CAD semantic mapping/candidate acceptance and broader recovered trim safety remain incomplete",
@@ -239,7 +239,7 @@
       "id": 41041204408,
       "commit": "ed015049cdcc1f9dacbc508c060711de4af10bd0",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41041204408",
-      "verification": "Native host plus iPad/iPhone curve contracts dispatched and confirmed live/queued. Host early API compile passed; full native/runtime results pending."
+      "verification": "Host compiled/linked then failed actual native assertions: Curve ABI: Unexpected four-span circle representation. Apple builds still live at investigation. Full-period trimmed-path fix needs a new run."
     },
     {
       "id": 41041207911,
