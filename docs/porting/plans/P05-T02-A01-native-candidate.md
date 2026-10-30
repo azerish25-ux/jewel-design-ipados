@@ -11,8 +11,10 @@ Fixture assertions: true cylinder cut annulus with analytic volume and solid val
 Owned: native/GeometryBridge/CandidateProbe CMake/CPP/header; tests/iOS.Native; scripts/native candidate simulator runner; .github/workflows/native-geometry.yml; candidate pin/source requirement subset/evidence/ADR. Keep candidate self-test entry separate from a production operation ABI with handles.
 
 - [x] Record exact source pin, build flags, native licenses and recovered requirement subset; write analytic fixture tests against documented API.
-- [ ] Build/run host and compile/run simulator experiment in GitHub Actions; inspect actual outputs and failures before changing code.
-- [ ] Verify iPad/iPhone runtime families and native case results; preserve build/source logs and bounded results.
-- [ ] Commit/push all authored progress; keep full P05-T01/T02/T03 and native ABI/cancellation/PC/native archive requirements incomplete.
+- [x] Build/run host and compile/run simulator experiment in GitHub Actions; inspect actual outputs and failures before changing code.
+- [x] Verify iPad/iPhone runtime families and native case results; preserve build/source logs and bounded results.
+- [x] Commit/push all authored progress; keep full P05-T01/T02/T03 and native ABI/cancellation/PC/native archive requirements incomplete.
 
 Attempt 3 (41014361843): host and iPad native analytical assertions passed. iPhone artifact contains PASS and family=iphone, but the 10-minute step timed out after >7 minutes of first-boot migration. Increase only the simulator step budget to 20 minutes; keep all native assertions and family checks unchanged. Require a terminal successful rerun before closing this bounded experiment. This is infrastructure timeout evidence, not a geometry parity result.
+
+Clean run 41021318486 at 9be645e passed host, iPad and iPhone native analytical assertions. Reports/family/hash evidence: docs/evidence/apple/native-candidate-results.json. This closes only the bounded A01 experiment, with all full backend/geometry/PC/physical/distribution gates still open.

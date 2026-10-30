@@ -17,7 +17,8 @@
     "docs/porting/ADR-0009-native-cad-candidate.md",
     ".github/workflows/native-device.yml",
     "docs/porting/plans/P05-T02-A02-native-device.md",
-    "docs/porting/plans/P05-T02-A03-combined-runtime.md"
+    "docs/porting/plans/P05-T02-A03-combined-runtime.md",
+    "docs/evidence/apple/native-candidate-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -45,7 +46,7 @@
     {
       "id": "P05-T02-A01",
       "scope": "Pinned native analytic fixture candidate build/execution",
-      "status": "simulator_timeout_fix_pending"
+      "status": "verified_bounded_experiment"
     },
     {
       "id": "P05-T02-A02",
@@ -64,6 +65,13 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "actual": "Managed assertions passed with explicit known zlib diagnostic; 1414 lab and 12 unchanged Domain source hashes verified. This does not run the combined iOS/native app."
+    },
+    {
+      "command": "gh run view/download 41021318486; inspect native host and both family reports and SHA256",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/apple/native-candidate-results.json",
+      "actual": "Host and both simulator steps success; family ipad/iphone and complete native analytical report verified"
     }
   ],
   "review": {
@@ -72,13 +80,13 @@
     "limits": "Windows host has no active C++ compiler in PATH; actual host/iOS builds must run in CI",
     "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim",
     "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending.",
-    "currentStatus": "Native compile/link and host/iPad analytical runtime proof observed. iPhone emitted PASS and family=iphone but step timed out; increase simulator step budget to 20 minutes, rerun required.",
+    "currentStatus": "Pinned OCCT compiled/linked and analytical native cases passed host/iPad/iPhone. Candidate only; device build, combined managed/native runtime, full semantics and backend decision pending.",
     "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed.",
     "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs.",
     "combinedRuntime": "Existing shared Smoke referenced rather than copied. Native report/status and all managed gated assertions must finish before final PASS file. Runner requires both PASS lines and actual family. Existing zlib diagnostic remains visibly non-gating. Local managed suite passed; Mac coexistence pending."
   },
   "blockers": [
-    "Clean terminal iPhone simulator execution pending; captured report is insufficient while job failed",
+    "Full CAD operation mapping and candidate acceptance remain incomplete; device build/combined-runtime follow-ups pending",
     "Full kernel semantic mapping, candidate decision, native ABI and cancellation/leak/physical-device/PC evidence incomplete"
   ],
   "ciRuns": [
@@ -99,6 +107,12 @@
       "commit": "6a097b2416a83a740d9b2bdb0696f81e8023c332",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41014361843",
       "verification": "host and iPad steps passed; iPhone report and actual family were captured but step timed out at 10 minutes after over 7 minutes of first-boot migration. Overall failure, not a verified successful iPhone job."
+    },
+    {
+      "id": 41021318486,
+      "commit": "9be645e1f633b2200ef190046457568920e44bfc",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41021318486",
+      "verification": "Host analytical execution and iPad/iPhone simulator execution steps all passed. Actual family/report hashes verified in native-candidate-results.json. Newer device and combined-runtime experiments remain pending."
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+  "run": 41021318486,
+  "commit": "9be645e1f633b2200ef190046457568920e44bfc",
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41021318486",
+  "kernelCommit": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+  "host": {
+    "report": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; analytic fixtures only, no CounterSketch/PC parity claim.\n",
+    "sha256": "bb42006839d86f2f05c10c9ef9b307f1121091c008be5812a766022bf8c4a0f3"
+  },
+  "results": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "report": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; analytic fixtures only, no CounterSketch/PC parity claim.",
+      "sha256": "b6a59ccb7ae672d085c760f5f926caa3ac88f05c1c62180764c40898a6e16e61"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "report": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; analytic fixtures only, no CounterSketch/PC parity claim.",
+      "sha256": "b6a59ccb7ae672d085c760f5f926caa3ac88f05c1c62180764c40898a6e16e61"
+    }
+  ],
+  "scope": "Native analytical booleans/NURBS/triangulation/lifetime/exception fixtures only. Both simulator family steps passed after increasing first-boot budget. Not combined recovered runtime (added later), no CounterSketch builder/project parity, full kernel coverage, device execution, cancellation/leak or distribution approval."
+}
