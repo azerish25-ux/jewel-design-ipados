@@ -351,6 +351,18 @@
       "commit": "49cf8b33ef83c5939e3a141575a714162505382c",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41075741873",
       "verification": "SUCCESS: repository/reference/provenance checks green; source decoder is still not native geometry creation"
+    },
+    {
+      "id": 41086518672,
+      "commit": "e90440ab27573a6d0b31e41b7466c1a72861a5d0",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41086518672",
+      "verification": "Saved rail consumer bindings host confirmed running; iPad/iPhone queued; terminal artifact verification pending"
+    },
+    {
+      "id": 41086522718,
+      "commit": "e90440ab27573a6d0b31e41b7466c1a72861a5d0",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41086522718",
+      "verification": "Saved rail consumer bindings unsigned device queued; terminal artifact verification pending"
     }
   ]
 }
