@@ -10,7 +10,8 @@
     "tests/Port/Documents.Contracts/Recovered/PortfolioSchema.cs",
     "tests/Port/Documents.Contracts/PortfolioAssertions.cs",
     "docs/porting/plans/P04-T03-A01-portfolio-xml.md",
-    "docs/porting/ADR-0007-portfolio-xml-metadata.md"
+    "docs/porting/ADR-0007-portfolio-xml-metadata.md",
+    "docs/evidence/apple/portfolio-xml-initial-iphone.json"
   ],
   "sourceEvidence": [
     {
@@ -107,12 +108,24 @@
       "id": 41007860928,
       "commit": "b40c0ad6dd4a6e519121a37d1cc6f552d56b24bd",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41007860928",
-      "verification": "confirmed live; macOS XML/schema simulator execution pending"
+      "verification": "initial iPhone artifact inspected: portfolio XML passes with dynamic-code=False; initial iPad still live when last observed; this commit predates the output-limit guard"
     },
     {
       "id": 41007860905,
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41007860905",
       "verification": "success; clean checkout source contract generator, XML and existing file proofs"
+    },
+    {
+      "id": 41008543499,
+      "commit": "ea38dcc0772ebcf6d2e14a586f811d3f8f9e3f20",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41008543499",
+      "verification": "confirmed queued; latest XML output-limit regression included"
+    },
+    {
+      "id": 41008543226,
+      "commit": "ea38dcc0772ebcf6d2e14a586f811d3f8f9e3f20",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41008543226",
+      "verification": "confirmed live parallel branch run of latest source"
     }
   ]
 }

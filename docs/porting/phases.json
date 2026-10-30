@@ -510,7 +510,8 @@
             "tests/Port/Documents.Contracts/Recovered/PortfolioSchema.cs",
             "tests/Port/Documents.Contracts/PortfolioAssertions.cs",
             "docs/porting/plans/P04-T03-A01-portfolio-xml.md",
-            "docs/porting/ADR-0007-portfolio-xml-metadata.md"
+            "docs/porting/ADR-0007-portfolio-xml-metadata.md",
+            "docs/evidence/apple/portfolio-xml-initial-iphone.json"
           ],
           "evidence": [
             "docs/porting/evidence/P04-T03.json"
