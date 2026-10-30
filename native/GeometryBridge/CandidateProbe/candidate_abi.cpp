@@ -283,3 +283,25 @@ extern "C" int32_t jd_candidate_curve_point(uint64_t context,uint64_t shape,doub
         });
     },diagnostic,capacity);
 }
+
+extern "C" int32_t jd_candidate_curve_length_parameter(uint64_t context,uint64_t shape,double fraction,double tolerance,double* parameter,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        if(!parameter)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing curve parameter output");*parameter=0;
+        if(!std::isfinite(fraction)||fraction<0||fraction>1||!std::isfinite(tolerance)||tolerance<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Length fraction/tolerance outside supported bounds");
+        withContext(context,[&](Context& value){
+            const auto& input=findShape(value,shape).shape;
+            if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Length mapping requires an edge");
+            BRepAdaptor_Curve curve(TopoDS::Edge(input));const double first=curve.FirstParameter(),last=curve.LastParameter();
+            if(!std::isfinite(first)||!std::isfinite(last)||last<=first)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid curve domain");
+            if(fraction==0){*parameter=first;return;}if(fraction==1){*parameter=last;return;}
+            const double length=GCPnts_AbscissaPoint::Length(curve,tolerance);
+            if(!std::isfinite(length)||length<=0)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid integrated curve length");
+            GCPnts_AbscissaPoint solver(tolerance,curve,length*fraction,first);
+            if(!solver.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Curve length parameter did not converge");
+            const double result=solver.Parameter();
+            if(!std::isfinite(result)||result<first||result>last)fail(JD_CANDIDATE_KERNEL_FAILURE,"Length solver returned invalid parameter");
+            *parameter=result;
+        });
+    },diagnostic,capacity);
+}

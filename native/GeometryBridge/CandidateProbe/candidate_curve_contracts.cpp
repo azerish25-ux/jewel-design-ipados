@@ -25,6 +25,17 @@ void run_candidate_curve_contracts()
         double x=0,y=0,z=0;ok(jd_candidate_curve_point(context.id,circle,(quarter+u)*pi/2,&x,&y,&z,error,sizeof(error)));
         nearCurve(x,s[quarter]*a+c[quarter]*b);nearCurve(y,0);nearCurve(z,c[quarter]*a-s[quarter]*b);
     }
+    double previous=-1;
+    for(int i=0;i<50;i++){
+        const double fraction=i/50.0;double parameter=0,x=0,y=0,z=0;
+        ok(jd_candidate_curve_length_parameter(context.id,circle,fraction,1e-9,&parameter,error,sizeof(error)));
+        checkCurve(parameter>=previous,"Native length parameters not monotone");previous=parameter;
+        ok(jd_candidate_curve_point(context.id,circle,parameter,&x,&y,&z,error,sizeof(error)));
+        nearCurve(x,7*std::sin(2*pi*fraction));nearCurve(y,0);nearCurve(z,7*std::cos(2*pi*fraction));
+    }
+    double parameter=0;ok(jd_candidate_curve_length_parameter(context.id,circle,0,1e-9,&parameter,error,sizeof(error)));nearCurve(parameter,0);
+    ok(jd_candidate_curve_length_parameter(context.id,circle,1,1e-9,&parameter,error,sizeof(error)));nearCurve(parameter,2*pi);
+    checkCurve(jd_candidate_curve_length_parameter(context.id,circle,-.1,1e-9,&parameter,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Invalid length fraction accepted");
     uint64_t moved=0;ok(jd_candidate_translate(context.id,circle,1,2,3,&moved,error,sizeof(error)));
     double x=0,y=0,z=0;ok(jd_candidate_curve_point(context.id,moved,first,&x,&y,&z,error,sizeof(error)));nearCurve(x,1);nearCurve(y,2);nearCurve(z,10);
     uint64_t box=0;ok(jd_candidate_box(context.id,1,1,1,&box,error,sizeof(error)));

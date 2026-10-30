@@ -29,4 +29,14 @@ public sealed partial class CandidateContext
             return new(x,y,z);
         }
     }
+    /// <summary>Map native integrated arc length; tolerance equivalence with Rhino is not established.</summary>
+    public double ParameterAtNormalizedLength(CandidateShape shape,double fraction,double absoluteTolerance)
+    {
+        lock(_gate){
+            ThrowIfDisposed();Validate(shape);var diagnostic=new byte[DiagnosticCapacity];
+            Check(NativeMethods.CurveLengthParameter(_handle,shape.Handle,fraction,absoluteTolerance,out var parameter,diagnostic,DiagnosticCapacity),diagnostic);
+            if(!double.IsFinite(parameter))throw new InvalidOperationException("Invalid native length parameter response.");
+            return parameter;
+        }
+    }
 }

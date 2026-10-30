@@ -34,4 +34,6 @@ internal static class NativeMethods
     internal static extern int CurveInspect(ContextHandle context,ShapeHandle shape,out double first,out double last,out double length,out uint degree,out uint poles,out uint rational,[Out]byte[] diagnostic,uint capacity);
     [DllImport(Library,EntryPoint="jd_candidate_curve_point",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
     internal static extern int CurvePoint(ContextHandle context,ShapeHandle shape,double parameter,out double x,out double y,out double z,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_curve_length_parameter",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int CurveLengthParameter(ContextHandle context,ShapeHandle shape,double fraction,double tolerance,out double parameter,[Out]byte[] diagnostic,uint capacity);
 }

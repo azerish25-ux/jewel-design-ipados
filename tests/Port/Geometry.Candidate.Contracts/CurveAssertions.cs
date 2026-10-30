@@ -22,6 +22,17 @@ internal static class CurveAssertions
                 double localX=c[quarter]*a-s[quarter]*b,localY=s[quarter]*a+c[quarter]*b;
                 Point(context.PointAt(circle,(quarter+u)*Math.PI/2),localY,0,localX);
             }
+            double previous=-1;
+            for(int i=0;i<50;i++){
+                double fraction=i/50.0,parameter=context.ParameterAtNormalizedLength(circle,fraction,1e-9);
+                Check(parameter>=previous,"Arc-length parameters are not monotone");previous=parameter;
+                Point(context.PointAt(circle,parameter),7*Math.Sin(2*Math.PI*fraction),0,7*Math.Cos(2*Math.PI*fraction));
+            }
+            Near(context.ParameterAtNormalizedLength(circle,0,1e-9),info.FirstParameter);
+            Near(context.ParameterAtNormalizedLength(circle,1,1e-9),info.LastParameter);
+            Check(Math.Abs(context.ParameterAtNormalizedLength(circle,.0625,1e-9)-Math.PI/8)>1e-4,"Arc-length mapper used naive parameter scaling");
+            foreach(double bad in new[]{-.1,1.1,double.NaN,double.PositiveInfinity})Check(Fails(()=>context.ParameterAtNormalizedLength(circle,bad,1e-9)).Status==CandidateNativeStatus.InvalidArgument,"Invalid length fraction");
+            Check(Fails(()=>context.ParameterAtNormalizedLength(circle,.5,0)).Status==CandidateNativeStatus.InvalidArgument,"Invalid length tolerance");
             using var moved=context.Translate(circle,1,2,3);
             Point(context.PointAt(moved,info.FirstParameter),1,2,10);
             using var clone=context.Clone(circle);using var alias=context.Retain(circle);
@@ -39,6 +50,6 @@ internal static class CurveAssertions
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,0),new(1,0,0)));});
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,1),new(0,0,1)));});
         Check(context.DiagnosticLiveShapeCount==0,"Curve ownership retained native entries");
-        return "PASS candidate native curves: four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
+        return "PASS candidate native curves: normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
     }
 }
