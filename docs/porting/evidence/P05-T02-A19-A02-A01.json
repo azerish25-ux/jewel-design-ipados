@@ -341,12 +341,25 @@
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41133650442",
       "scope": "managed recovered iOS reuse",
       "status": "queued"
+    },
+    {
+      "id": 41134281007,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41134281007",
+      "scope": "corrected native host/iPad/iPhone",
+      "status": "in_progress_host_and_apple_preflight_passed"
+    },
+    {
+      "id": 41134284856,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41134284856",
+      "scope": "corrected unsigned ios-arm64 AOT",
+      "status": "in_progress_apple_preflight_passed"
     }
   ],
   "appleCompileCorrection": {
     "file": "native/GeometryBridge/CandidateProbe/candidate_paired_abi_contracts.cpp",
     "change": "Explicit #include <initializer_list>; no geometry or assertion change.",
     "localVerification": "Native object rebuild/runner passes all271 contacts/384 derivative components/16 ABI guards/rational cylinder after include.",
-    "appleVerification": "Corrected-commit preflight pending; preserve live old host run."
+    "appleVerification": "Corrected commit passes native API object preflight on both macOS iOS-simulator and ios-arm64 jobs; both confirmed building kernel. Full runtime/AOT completion remains pending.",
+    "commit": "e24a0c8d13bcc4caedee44e2d0eddb5a0ef77cae"
   }
 }
