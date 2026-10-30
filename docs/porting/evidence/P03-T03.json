@@ -693,6 +693,18 @@
       "commit": "2bf2ee22c54b1868349de4a5461d96c43f31ac91",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41112027142",
       "verification": "SUCCESS: actual unsigned arm64/platform IOS52 warnings0 errors/hash inspected; pure-array-device-results.json. Runtime/owned arrays still separate."
+    },
+    {
+      "id": 41115161610,
+      "commit": "67ffd14fec882b9303cff1e9c29cca207003b2bc",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41115161610",
+      "verification": "Owned collection host/iPad/iPhone queued; actual18 source output/nested native lifetime/metadata/partial retain cleanup/family reports pending."
+    },
+    {
+      "id": 41115165223,
+      "commit": "67ffd14fec882b9303cff1e9c29cca207003b2bc",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41115165223",
+      "verification": "Owned collection unsigned ARM64 build queued; actual platform/AOT/warnings/hash inspection pending; no physical execution."
     }
   ],
   "requirementIds": [

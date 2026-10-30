@@ -13,6 +13,7 @@ Design: extend graph-local curve references with an item address; each output ow
 - [x] Guard unadapted array-consuming transform/bounds/curve/arithmetic paths until A03 rather than silently approximating them.
 - [x] Exact source Array/Unarray observation cases; real original3 profile collections, retained old nested snapshots across regeneration/disposal, save/reopen, failure/cycle/zero native entries and earlier regressions.
 - [x] Review/source/provenance/repository checks.
-- [ ] Commit/push and Apple native runtime/AOT; inspect actual reports.
+- [x] Commit/push67ffd14; dispatch native host/iPad/iPhone41115161610 and unsigned device41115165223, both queued.
+- [ ] Inspect actual source18/native ownership/metadata/nested lifetime/family/AOT reports.
 
 A03 remains required: native array duplicate/application, transform-input recursive flatten, aggregate bounds and source first-item conversions, source CSAdd array output provider. Full arrays/material/segmentation/4x4/all producers/PC/UI/physical acceptance remains open. All local files/cache D:; wait5 seconds/retry transient D errors.
