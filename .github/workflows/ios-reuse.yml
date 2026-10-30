@@ -1,7 +1,13 @@
 name: Recovered CSharp iOS reuse
 on:
   push:
-    branches: ['codex/dotnet-ios-reuse']
+    branches: [main, codex/dotnet-ios-reuse]
+    paths:
+      - "src/**"
+      - "tests/iOS/**"
+      - "tests/Smoke/**"
+      - "scripts/run-simulator.sh"
+      - ".github/workflows/ios-reuse.yml"
   workflow_dispatch:
 permissions:
   contents: read
@@ -18,8 +24,8 @@ jobs:
       run:
         shell: bash
     env:
-      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
-      DOTNET_GENERATE_ASPNET_CERTIFICATE: 'false'
+      DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: "false"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:

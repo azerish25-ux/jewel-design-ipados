@@ -1,1 +1,16 @@
-const cp=require('child_process'),p=require('path');const r=p.resolve(__dirname,'..'),l=p.join(r,'.local');const env={...process.env,TEMP:p.join(l,'temp'),TMP:p.join(l,'temp'),DOTNET_ROOT:p.join(l,'dotnet'),DOTNET_CLI_HOME:p.join(l,'dotnet-home'),NUGET_PACKAGES:p.join(l,'nuget'),NUGET_HTTP_CACHE_PATH:p.join(l,'nuget-http'),NUGET_PLUGINS_CACHE_PATH:p.join(l,'nuget-plugins'),GH_CONFIG_DIR:p.join(l,'gh'),DOTNET_GENERATE_ASPNET_CERTIFICATE:'false',DOTNET_MULTILEVEL_LOOKUP:'0',DOTNET_SKIP_FIRST_TIME_EXPERIENCE:'1',DOTNET_CLI_TELEMETRY_OPTOUT:'1',DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE:'true',DOTNET_CLI_USE_MSBUILD_SERVER:'0',MSBUILDDISABLENODEREUSE:'1'};const [cmd,...args]=process.argv.slice(2);const res=cp.spawnSync(cmd==='dotnet'?p.join(l,'dotnet','dotnet.exe'):cmd,args,{cwd:r,env,stdio:'inherit'});if(res.error)throw res.error;process.exitCode=res.status??1;
+const cp = require("child_process");
+const { root, env, dotnetPath } = require("./local-env.cjs");
+const [command, ...args] = process.argv.slice(2);
+if (!command)
+    throw Error("Usage: node scripts/run-local.cjs <command> [arguments]");
+if (command === "dotnet" && !dotnetPath)
+    throw Error(
+        "Install the SDK inside .local/dotnet using scripts/bootstrap-dotnet.cjs; global Windows fallback is disabled",
+    );
+const result = cp.spawnSync(command === "dotnet" ? dotnetPath : command, args, {
+    cwd: root,
+    env,
+    stdio: "inherit",
+});
+if (result.error) throw result.error;
+process.exitCode = result.status ?? 1;

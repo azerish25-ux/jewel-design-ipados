@@ -1,0 +1,14 @@
+[
+  {
+    "path": "countersketch/Main/CounterSketch Studio.exe",
+    "expected": "228daa515e2e0a95d554bd45f484521689791aef8d84f7dd093ed3bc88fd3430",
+    "actual": "228daa515e2e0a95d554bd45f484521689791aef8d84f7dd093ed3bc88fd3430",
+    "unchanged": true
+  },
+  {
+    "path": "countersketch/Main/CounterSketchInstaller_8.1.19323.1002.exe",
+    "expected": "053eebece6adadb13ce44070e3fa71fa4b911c8c80fb0f798bd4198023b4d6dc",
+    "actual": "053eebece6adadb13ce44070e3fa71fa4b911c8c80fb0f798bd4198023b4d6dc",
+    "unchanged": true
+  }
+]

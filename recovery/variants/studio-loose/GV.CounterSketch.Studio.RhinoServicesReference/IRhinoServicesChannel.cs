@@ -1,0 +1,11 @@
+using System;
+using System.CodeDom.Compiler;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+
+namespace GV.CounterSketch.Studio.RhinoServicesReference;
+
+[GeneratedCode("System.ServiceModel", "4.0.0.0")]
+public interface IRhinoServicesChannel : IExtensibleObject<IContextChannel>, IClientChannel, IContextChannel, IChannel, ICommunicationObject, IDisposable, IRhinoServices
+{
+}

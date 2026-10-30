@@ -1,0 +1,1362 @@
+{
+  "scope": "Source-backed compatibility requirements and acceptance tests, not proof of working interchange. Data-preserving iPad behavior may deliberately fail closed where the recovered reader loses or ignores data.",
+  "rows": [
+    {
+      "id": "PC-001",
+      "category": "Scope",
+      "feature": "Versioned compatibility claim",
+      "observed": "Supported scope is the recovered 8.1.19323.1002 reader/writer and its explicit legacy branches; this does not establish future-version compatibility.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/properties/AssemblyInfo.cs",
+          "line": 153,
+          "symbol": "AssemblyVersion("
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 775,
+          "symbol": "private bool Read(string filePath"
+        }
+      ],
+      "acceptanceTest": "Label import/export compatibility by actual PC version and fixture; reject unsupported future structures without overwriting the input.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-002",
+      "category": "Portfolio",
+      "feature": "Complete project bundle",
+      "observed": "A portfolio is a directory with a named .csp XML and sibling .csg designs/assets, not a single neutral CAD model.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 101,
+          "symbol": "public string ProjectInfoFilePath"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 376,
+          "symbol": "Directory.GetFiles(Path, \"*.csg\")"
+        }
+      ],
+      "acceptanceTest": "Import/export an entire PC portfolio directory/archive; every referenced design and required sibling asset must survive.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-003",
+      "category": "Portfolio",
+      "feature": "CSP XML metadata",
+      "observed": "SaveProjectData uses XmlSerializer(Project); deserialization restores customer/contact/address/comments/default ring size and design list.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 426,
+          "symbol": "public bool SaveProjectData()"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 458,
+          "symbol": "private bool DeserializeProjectInfo()"
+        }
+      ],
+      "acceptanceTest": "PC -> iPad -> PC preserves all persisted metadata including non-ASCII text, empty fields and default ring size; compare actual XML semantics.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-004",
+      "category": "Portfolio",
+      "feature": "Base and variant filename identities",
+      "observed": "Project population parses <BaseDesignInstance>_<DesignInstance>.csg; equal GUIDs mark a base design.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 383,
+          "symbol": "fileNameWithoutExtension.Split"
+        }
+      ],
+      "acceptanceTest": "Import multiple base designs and variants with colliding friendly names; maintain both GUIDs and parent/history membership after round trip.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-005",
+      "category": "Portfolio",
+      "feature": "Design-specific metadata",
+      "observed": "Design has serialized properties and computed/XmlIgnore preview/history/path properties; not every visible field is part of XML.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 135,
+          "symbol": "public Guid BaseDesignInstance"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 168,
+          "symbol": "public string CSUserDesignName"
+        }
+      ],
+      "acceptanceTest": "Compare each persisted Design property while allowing intentional recomputation of XmlIgnore values; retain component and iteration identifiers.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-006",
+      "category": "Portfolio",
+      "feature": "Relative paths and Windows path reconciliation",
+      "observed": "Project population splits Windows paths and reconstructs relative design locations under CSProjectPath.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 407,
+          "symbol": "item.Path.Split('\\\\')"
+        }
+      ],
+      "acceptanceTest": "Move between Windows drive letters and iPad sandbox locations, then return to a different PC root; no dangling absolute path, separator or filename-case references.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-007",
+      "category": "Portfolio",
+      "feature": "Portfolio copy semantics",
+      "observed": "CopyProject clones XML, copies sibling files, remaps design paths and clears customer fields intentionally.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs",
+          "line": 488,
+          "symbol": "public static Project CopyProject"
+        }
+      ],
+      "acceptanceTest": "Copy on each platform and compare exactly which identifiers/history/files persist and which customer fields intentionally reset.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-008",
+      "category": "Portfolio",
+      "feature": "Portfolio rename semantics",
+      "observed": "RenameProject moves the directory, removes the old named .csp and saves metadata at the new location.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs",
+          "line": 759,
+          "symbol": "public static bool RenameProject"
+        }
+      ],
+      "acceptanceTest": "Rename a populated portfolio, reopen it and return it to PC; design, preview and history links must remain valid.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-009",
+      "category": "Portfolio",
+      "feature": "Missing CSP recovery",
+      "observed": "PopulateProjectDesignsCollection discovers .csg files, reconciles XML and recreates metadata when deserialization is unavailable.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 403,
+          "symbol": "Recreating missing CSP"
+        }
+      ],
+      "acceptanceTest": "Import a directory with valid designs but missing/damaged .csp into a copy; report recovered vs unavailable metadata without overwriting the original.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-010",
+      "category": "Portfolio",
+      "feature": "Missing design reconciliation",
+      "observed": "Project population removes design records whose files are absent and saves the collection.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 421,
+          "symbol": "list.RemoveAll"
+        }
+      ],
+      "acceptanceTest": "Present absent sibling designs as explicit losses before committing an import; preserve original bundle and document the Windows reconciliation difference.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-011",
+      "category": "Portfolio",
+      "feature": "Preview and favorite image sidecars",
+      "observed": "Design computes base SPI, favorite and favorite-orientation PNG filenames from GUID-derived names.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 46,
+          "symbol": "public string BaseDesignImagePath"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 76,
+          "symbol": "public string FavoriteImagePath"
+        }
+      ],
+      "acceptanceTest": "Transfer a project with all sidecar orientations/favorites; compare thumbnails, favorite flags and regeneration behavior after PC reopen.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-012",
+      "category": "Portfolio",
+      "feature": "Iteration-selection reset behavior",
+      "observed": "Project deserialization sets SelectedIterationId to null while restoring the rest of each design record.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 486,
+          "symbol": "d.SelectedIterationId = null"
+        }
+      ],
+      "acceptanceTest": "Distinguish saved design options from transient selected iteration; reproduce expected default selection without deleting stored alternatives.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-013",
+      "category": "Portfolio",
+      "feature": "Dirty save/cancel workflows",
+      "observed": "ContinueAfterSaveDesignPrompt and portfolio prompts distinguish accepted, cancelled and discarded edits.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs",
+          "line": 395,
+          "symbol": "public static bool ContinueAfterSaveDesignPrompt"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs",
+          "line": 426,
+          "symbol": "public static bool ContinueAfterSaveNewPortfolioPrompt"
+        }
+      ],
+      "acceptanceTest": "For every close/new/open/rename path test Save, Discard and Cancel; PC-compatible files must contain the intended committed design.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-014",
+      "category": "Backup",
+      "feature": "CSB nested backup packaging",
+      "observed": "BackupHelper builds CSCommonAppDataContent.zip and an outer .csb with distinct project/data zip payloads.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/BackupHelper.cs",
+          "line": 20,
+          "symbol": "AppDataBackupFileName"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/BackupHelper.cs",
+          "line": 196,
+          "symbol": "CS_{1}_Backup_"
+        }
+      ],
+      "acceptanceTest": "Inspect and restore representative PC .csb backups into an isolated destination; retain project files, catalogs, settings and app-state distinctions.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-015",
+      "category": "Backup",
+      "feature": "Restore extension and database handling",
+      "observed": "Restore paths distinguish .s3db/.csgl/.zbin and project data during restoration.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/BackupHelper.cs",
+          "line": 352,
+          "symbol": "case \".s3db\":"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/BackupHelper.cs",
+          "line": 357,
+          "symbol": "case \".zbin\":"
+        }
+      ],
+      "acceptanceTest": "Verify schema migration and overwrite decisions independently for app DB, catalog DB, library packs and projects; no silent cross-version replacement.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-016",
+      "category": "Container",
+      "feature": "CSG custom OpenNURBS archive",
+      "observed": "Binary CSG Write emits 3dm properties/settings, custom UUID and custom tables/graph. It is distinct from ordinary 3DM geometry export.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 472,
+          "symbol": "onBinaryFile.Write3dmStartSection"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 508,
+          "symbol": "WriteCSFileInformation(onBinaryFile)"
+        }
+      ],
+      "acceptanceTest": "Open/edit/save a real CSG on iPad and reopen it in PC with its construction graph; a geometry-only 3DM/STL conversion is a failure.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-017",
+      "category": "Container",
+      "feature": "Four custom container UUIDs",
+      "observed": "CSDocument.Read accepts A31784F3, DD8ECCF8, 847D0609 and B237EE6C envelope UUIDs; two routes include an old display-group table.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 816,
+          "symbol": "A31784F3-23DF"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 820,
+          "symbol": "DD8ECCF8-9380"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 851,
+          "symbol": "new CSDisplayGroupTable().Read"
+        }
+      ],
+      "acceptanceTest": "Maintain one fixture per accepted container UUID and legacy table layout; test rejection of unrecognized markers without file mutation.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-018",
+      "category": "Container",
+      "feature": "Archive length widths and old headers",
+      "observed": "The available CSG sample is archive header 4, while a bundled ordinary 3DM prop is header 50; record/chunk width handling must be version-aware.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 110,
+          "symbol": "Read3dmStartSection(ref version"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 472,
+          "symbol": "onBinaryFile.Write3dmStartSection"
+        }
+      ],
+      "acceptanceTest": "Verify 32/64-bit chunk-length representations, nested boundaries, end marks and CRC rules with independent archive fixtures; current byte probe is not a full decoder.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-019",
+      "category": "Container",
+      "feature": "File build and provenance records",
+      "observed": "ReadCSFileInformation reads build date/revision and designer GUID chain; the current designer may be appended and revision metadata may change.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 258,
+          "symbol": "public bool ReadCSFileInformation"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 533,
+          "symbol": "public bool WriteCSFileInformation"
+        }
+      ],
+      "acceptanceTest": "Preserve provenance semantics and document intentional editor/revision changes; use semantic rather than unconditional byte-identical comparisons.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-020",
+      "category": "Container",
+      "feature": "UTF-16, numeric and binary primitive layout",
+      "observed": "Archive readers use typed strings, UUIDs, integers, bytes and doubles; class-specific readers specify ordering.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSUtilIO.cs",
+          "line": 127,
+          "symbol": "public static bool ReadArray(ref Guid[]"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 895,
+          "symbol": "public virtual bool Read(ref OnBinaryArchive"
+        }
+      ],
+      "acceptanceTest": "Golden-byte tests cover non-ASCII strings, empty values, UUID endian layout, numeric precision, array lengths, booleans and geometry blobs.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-021",
+      "category": "Container",
+      "feature": "JSON and GZip alternative document paths",
+      "observed": "CSDocument public Read/Write has .json/.gz branches. Their existence does not prove user-visible import UI or equivalence for every derived node.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 229,
+          "symbol": "if (text != \".json\" && text != \".gz\")"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 246,
+          "symbol": "using GZipStream gZipStream"
+        }
+      ],
+      "acceptanceTest": "Round trip each exposed/supported route, large UTF-8/GZip files and truncated streams; do not advertise it as a lossless CSG replacement before field coverage passes.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-022",
+      "category": "Container",
+      "feature": "JSON root sections",
+      "observed": "Writer/reader handle FileInformation, DocumentIterations, MaterialGroups, ImportedObjects, DocumentUserData, GemTable, CategoryTable and Graph; preview read behavior differs.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.JSonDoc/JSonDocumentWriter.cs",
+          "line": 33,
+          "symbol": "outObj.Add(\"PreviewBitmap\""
+        },
+        {
+          "path": "recovery/canonical/cad/CS.JSonDoc/JSonDocumentReader.cs",
+          "line": 12,
+          "symbol": "public static bool ReadCSFile"
+        }
+      ],
+      "acceptanceTest": "Compare every root section after round trip; preserve or explicitly regenerate preview data and validate all graph-reader failures.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-023",
+      "category": "Container",
+      "feature": "JSON read-result propagation",
+      "observed": "Public CSDocument.Read invokes JSonDocumentReader then returns true without propagating its graph result; unknown JSON types can fail lower down.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 251,
+          "symbol": "JSonDocumentReader.ReadCSFile"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 328,
+          "symbol": "Unable to find type:"
+        }
+      ],
+      "acceptanceTest": "A failed/unknown JSON graph must not be reported as a successful editable import or silently saved over its source; record this deliberate fail-closed deviation.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-024",
+      "category": "Library",
+      "feature": "CSGL five-record container",
+      "observed": "CSGLLibrary reads five compression/range descriptors and supports Deflate and LZMA; entry 4 is exported as a CSG design.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/DesignLibrary/CSGLLibrary.cs",
+          "line": 195,
+          "symbol": "private static byte[] GetByteArray"
+        },
+        {
+          "path": "recovery/canonical/desktop/DesignLibrary/CSGLLibrary.cs",
+          "line": 149,
+          "symbol": "GetByteArray(text, 4)"
+        }
+      ],
+      "acceptanceTest": "Decode bounded .csgl fixtures with both compression modes, verify all declared lengths and graph payloads, then load/edit the extracted CSG.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-025",
+      "category": "Library",
+      "feature": "ZBin and generated catalog database",
+      "observed": "LibraryPacker reconstructs SQLite metadata from ZBin; file packs and metadata catalog are distinct data requirements.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/DesignLibrary/LibraryPacker.cs",
+          "line": 12,
+          "symbol": "public static void CreateSqLiteDBFromZBinFile"
+        },
+        {
+          "path": "recovery/canonical/desktop/DesignLibrary/LibraryPacker.cs",
+          "line": 89,
+          "symbol": "public static void GetDesignsFromZBinFile"
+        }
+      ],
+      "acceptanceTest": "Import compatible metadata and all referenced design versions; verify IDs/filter metadata/thumbnail links rather than inferring catalog completeness from pack presence.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-026",
+      "category": "Library",
+      "feature": "Account-specific catalog selection",
+      "observed": "CSLibraryHelper requests GetMyLibraryZBin(GetKeyId()) when the local manifest is absent.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/CSLibraryHelper.cs",
+          "line": 115,
+          "symbol": "GetMyLibraryZBin"
+        }
+      ],
+      "acceptanceTest": "Provision an actual supported offline catalog before first use; no fabricated key IDs or mandatory online fetch; verify the selected catalog matches its PC source.",
+      "offlineDisposition": "Needs local data provisioning; the original first-time service dependency cannot execute offline.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-027",
+      "category": "Graph",
+      "feature": "Declared type GUID catalog",
+      "observed": "RegisterCSBlocks scans nonabstract CSObject descendants with CSBlockAttribute; the static matrix contains 654 unique declared GUIDs.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSApplication.cs",
+          "line": 491,
+          "symbol": "BlockList.Add(new CSBlockDescription"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Parametric/CSBlockDescription.cs",
+          "line": 25,
+          "symbol": "public CSObject GetNew("
+        }
+      ],
+      "acceptanceTest": "Map every declared GUID to an on-device factory and acceptance case; reconcile source catalog against actual runtime registration before claiming full type coverage.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-028",
+      "category": "Graph",
+      "feature": "Legacy node algorithm retention",
+      "observed": "Legacy namespaces and Obsolete attributes identify old nodes that remain independently registered; one current builder is not automatically an equivalent substitute.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSApplication.cs",
+          "line": 494,
+          "symbol": "Registering Blocks Complete"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 443,
+          "symbol": "BlockDescriptionSearch(list, guid)"
+        }
+      ],
+      "acceptanceTest": "Cover all 272 declared legacy/obsolete node types in fixture coverage, including their historical algorithms, parameters and outputs; no GUID substitution without comparison.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-029",
+      "category": "Graph",
+      "feature": "Node record version dispatch",
+      "observed": "CSObject uses 2.4 record versions; CSValue switches between 3.0/5.0 based on CAM and reads older branches.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 1071,
+          "symbol": "protected virtual void MajorMinorVersion"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "line": 275,
+          "symbol": "protected override void MajorMinorVersion"
+        }
+      ],
+      "acceptanceTest": "For each of 654 types record effective inherited/overridden readers and test supported old/current versions, non-default fields and unsupported versions.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-030",
+      "category": "Graph",
+      "feature": "Two-pass node allocation and links",
+      "observed": "Graph reads a type GUID array, allocates node instances, then reads per-node payloads using the complete graph.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 484,
+          "symbol": "public bool ReadGraphItems(OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Parametric/CSBlockDescription.cs",
+          "line": 28,
+          "symbol": "BlockClass.GetConstructor"
+        }
+      ],
+      "acceptanceTest": "Reconstruct references only after all supported nodes exist; verify forward references, connection ordering and dependency evaluation against PC.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-031",
+      "category": "Graph",
+      "feature": "Instance GUIDs and old-ID regeneration",
+      "observed": "CSObject reads InstanceGuid for major >=2 and generates a new GUID when absent/invalid.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 939,
+          "symbol": "if (major >= 2)"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 943,
+          "symbol": "if (!Guid.TryParse(str"
+        }
+      ],
+      "acceptanceTest": "Preserve existing valid IDs and explicitly match old-format migration semantics; do not require byte-identical provenance after intentional GUID generation.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-032",
+      "category": "Graph",
+      "feature": "Channel ordering and expandable inputs",
+      "observed": "CSBlock reads object/channel index arrays and grows expansion/old group inputs when serialized counts exceed constructor inputs.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 437,
+          "symbol": "public override bool ReadJson"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 392,
+          "symbol": "CreateExpansionInputChannel()"
+        }
+      ],
+      "acceptanceTest": "Exercise multi-input, unconnected, expandable and legacy-group nodes; compare link endpoints, order and missing-input diagnostics.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-033",
+      "category": "Graph",
+      "feature": "Static input/output links",
+      "observed": "Static connection information is persisted in SuperView/StaticInputData and StaticOutputData with graph indices.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 579,
+          "symbol": "public void SetStaticUserData()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 407,
+          "symbol": "base.UserData.FindValue(\"SuperView\", \"StaticInputData\")"
+        }
+      ],
+      "acceptanceTest": "After reorder/import/partial export, verify static endpoints, socket flags and output indices still reference the intended nodes.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-034",
+      "category": "Graph",
+      "feature": "Parent and import-offset remapping",
+      "observed": "Parent data and imported graph links are remapped through Application.ImportOffset and category/import-group identifiers.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 927,
+          "symbol": "CSApplicationHelper.Application.ImportOffset > 0"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 377,
+          "symbol": "num += CSApplicationHelper.Application.ImportOffset"
+        }
+      ],
+      "acceptanceTest": "Import the same part twice into a populated document and retain distinct parent/group/connection identities without collisions.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-035",
+      "category": "Graph",
+      "feature": "Unknown binary node fallback",
+      "observed": "Binary graph reader tries a zero-GUID fallback for a missing type; CSNullBlock reports Block No Longer Supported. The source branch also attempts external developer telemetry.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 518,
+          "symbol": "Expired Block loaded with Guid"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks/CSNullBlock.cs",
+          "line": 23,
+          "symbol": "Block No Longer Supported"
+        }
+      ],
+      "acceptanceTest": "Detect unsupported types before destructive save; retain the original bytes or refuse editable round trip. Do not silently replace a foreign GUID or emit external telemetry offline.",
+      "offlineDisposition": "Exact unsupported-node recovery is unresolved; native telemetry cannot be preserved in a fully offline app.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-036",
+      "category": "Graph",
+      "feature": "Unknown JSON types and partial graph state",
+      "observed": "ReadGraphItemsJson returns false on missing type; public document path may ignore the result.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 427,
+          "symbol": "public bool ReadGraphItemsJson"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 251,
+          "symbol": "JSonDocumentReader.ReadCSFile"
+        }
+      ],
+      "acceptanceTest": "Test unknown GUID, bad version, missing payload and partial allocation; import must expose incomplete editability and must not overwrite the source.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-037",
+      "category": "Graph",
+      "feature": "Arbitrary user-data triples",
+      "observed": "CSUserData stores ordered Type/Key/Value records and supports XML-serialized values inside them.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.Parametric/CSUserData.cs",
+          "line": 210,
+          "symbol": "public bool Read(ref OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Parametric/CSUserData.cs",
+          "line": 89,
+          "symbol": "public bool AddSerializedObject"
+        }
+      ],
+      "acceptanceTest": "Retain unknown keys, Unicode values and embedded XML, including keys not currently interpreted by the iPad UI.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-038",
+      "category": "Graph",
+      "feature": "Numeric, choice and CAM value semantics",
+      "observed": "CSValue supports delta vs absolute CAM values, notes and older record branches; other value/handle types have independent contracts.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "line": 295,
+          "symbol": "public override bool Read(ref OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "line": 414,
+          "symbol": "archive.WriteBool(_absoluteCAM)"
+        }
+      ],
+      "acceptanceTest": "Round trip non-default typed values and CAM notes across supported versions; distinguish displayed/real/manufacturing values and test source rounding/units.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-039",
+      "category": "Graph",
+      "feature": "Imported/freehand group serialization",
+      "observed": "ImportedCSGParts is XML-serialized into ImportedObjects/Freehand user data for binary save and JSON for the alternate route.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 984,
+          "symbol": "public void WriteImportedObjectData()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 979,
+          "symbol": "public JArray WriteImportedObjectJson()"
+        }
+      ],
+      "acceptanceTest": "Round trip identifiers, part groups, ownership, linked imported nodes and categories through repeated import/duplicate/delete operations.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-040",
+      "category": "Graph",
+      "feature": "Category table and import identifiers",
+      "observed": "CSUICategoryTable embeds [IMPORTGUID] markers and constructs category indexes used by controls and imported parts.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSUICategoryTable.cs",
+          "line": 126,
+          "symbol": "public bool Read(ref OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSUICategoryTable.cs",
+          "line": 139,
+          "symbol": "[IMPORTGUID]"
+        }
+      ],
+      "acceptanceTest": "Verify category labels/order, index remapping, imported IDs and parameter-panel membership after PC reopen.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-041",
+      "category": "Graph",
+      "feature": "Iterations and typed option graphs",
+      "observed": "GCIterations persists XML in user data and uses JSON TypeNameHandling.Auto for option objects.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.Iteration/GCIterations.cs",
+          "line": 246,
+          "symbol": "public bool WriteToUserData"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Iteration/GCIterations.cs",
+          "line": 260,
+          "symbol": "jsonSerializer.TypeNameHandling = TypeNameHandling.Auto"
+        }
+      ],
+      "acceptanceTest": "Preserve option subclasses, namespaces/type discriminators, GUID references, alternatives and selected outputs without requiring CLR type activation on iPad.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-042",
+      "category": "Geometry",
+      "feature": "Embedded Rhino geometry and JSON asymmetry",
+      "observed": "CSRhinoObjectsFromBoundingBox binary read/write stores native 3dm objects; it has no own JSON overrides, unlike its binary payload methods.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSRhinoObjectsFromBoundingBox.cs",
+          "line": 88,
+          "symbol": "public override bool Read("
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSRhinoObjectsFromBoundingBox.cs",
+          "line": 174,
+          "symbol": "public override bool Write("
+        }
+      ],
+      "acceptanceTest": "Load a fixture containing embedded objects, save through every proposed interchange route and compare editable/source geometry. Inherited base JSON alone is not accepted as lossless.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-043",
+      "category": "Geometry",
+      "feature": "RMA/RhinoCommon interop conversion",
+      "observed": "CSConvert bridges legacy OnCurve/OnBrep/OnMesh/OnSurface and RhinoCommon types and transforms.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CSCompatibility/CSConvert.cs",
+          "line": 230,
+          "symbol": "public static Brep Convert(this OnBrep"
+        },
+        {
+          "path": "recovery/canonical/cad/CSCompatibility/CSConvert.cs",
+          "line": 142,
+          "symbol": "public static Transform Convert(this OnXform"
+        }
+      ],
+      "acceptanceTest": "Compare orientation, knot vectors, trims, periodicity, ownership and precision through the proposed on-device kernel and back to PC.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-044",
+      "category": "Geometry",
+      "feature": "Gem definition table and reload semantics",
+      "observed": "CSGemInstanceDefinitionTable has version 1.0 records and references gem shapes/sizes; reloading warns that exclusions may be removed when table versions change.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSGemInstanceDefinitionTable.cs",
+          "line": 151,
+          "symbol": "public bool Read(ref OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 328,
+          "symbol": "public void ReloadGems()"
+        }
+      ],
+      "acceptanceTest": "Preserve embedded/source gem definitions and exclusions; distinguish opening unchanged from explicit library reload and compare geometry after both.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-045",
+      "category": "Geometry",
+      "feature": "Font reconciliation and text geometry",
+      "observed": "PostProcessFile checks missing/unrecognized fonts and warns that a saved design may change when fonts cannot be restored.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 564,
+          "symbol": "private static void CheckFontSourceErrors()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 663,
+          "symbol": "private bool PostProcessFile("
+        }
+      ],
+      "acceptanceTest": "Transfer text/engraving cases with available and missing fonts; preserve source font identifiers and report substitutions before producing changed manufacturing geometry.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-046",
+      "category": "Materials",
+      "feature": "Layer-to-material migration",
+      "observed": "CSObject maps old LayerNumber values to material classifications and falls back to UseOriginal when values are unknown.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 900,
+          "symbol": "if (major <= 2 && minor <= 3)"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 907,
+          "symbol": "GetMaterialClassifictionByLayer"
+        }
+      ],
+      "acceptanceTest": "Cover old/new material classification values, mixed primary/secondary metals and unknown enums; compare displayed and exported assignments.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-047",
+      "category": "Materials",
+      "feature": "Material groups and overrides",
+      "observed": "Binary save serializes material groups into document user data; load restores them before imported-object processing.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 518,
+          "symbol": "MaterialGroupHelper.SaveMaterialGroups"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 865,
+          "symbol": "MaterialGroupHelper.LoadMaterialGroups"
+        }
+      ],
+      "acceptanceTest": "Preserve group membership, gem/metal classification and per-object overrides; render and export the same assignments after round trip.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-048",
+      "category": "Display",
+      "feature": "Saved display component visibility",
+      "observed": "CSDocument writes CurrentComponents and FreehandComponentsVisible to document user data.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 514,
+          "symbol": "\"CurrentComponents\""
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 515,
+          "symbol": "\"FreehandComponentsVisible\""
+        }
+      ],
+      "acceptanceTest": "Reopen with matching center/side/accent/freehand visibility and distinguish display-only settings from objects excluded in manufacturing export.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-049",
+      "category": "Save",
+      "feature": "Active/selected subset serialization",
+      "observed": "WriteGraphItems filters Deleted nodes or selected nodes, while graph/category indices and user/static data are prepared for the output.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 910,
+          "symbol": "public bool WriteGraphItems("
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 509,
+          "symbol": "Graph.SetIndexesOfGraphItems(activeOnly: true, selection)"
+        }
+      ],
+      "acceptanceTest": "Save full design, active-only and selected-part subsets with external dependencies; prove all retained references are valid or explicitly warn about missing dependencies.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-050",
+      "category": "Save",
+      "feature": "Write-time graph cleanup and mutation",
+      "observed": "Save removes deleted graph entries, cleans iterations, sets/removes category indexes and resets graph indexes afterward.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 521,
+          "symbol": "Graph.RemoveDeleted()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 156,
+          "symbol": "Graph.CategoryTable.RemoveIndexes()"
+        }
+      ],
+      "acceptanceTest": "Compare pre/post-save graph behavior, identifiers and undo state; failure/cancellation must not leave temporary indices or partial files.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-051",
+      "category": "Save",
+      "feature": "Read-file-values versus full replacement",
+      "observed": "ReadFileValues reads a temporary document then applies SetFileValue by graph position and optionally records undo.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 296,
+          "symbol": "public void ReadFileValues("
+        }
+      ],
+      "acceptanceTest": "Use matched and mismatched graph structures to verify value-only loading does not masquerade as complete import; preserve documented behavior and warn on incompatibility.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-052",
+      "category": "Undo",
+      "feature": "Transaction and edit history semantics",
+      "observed": "CSUndoTable maintains runtime undo/redo transactions and per-object snapshots; portfolio history files are a separate persistence mechanism.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSUndoTable.cs",
+          "line": 205,
+          "symbol": "public bool UndoLast("
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 59,
+          "symbol": "public ObservableCollection<Design> DesignHistories"
+        }
+      ],
+      "acceptanceTest": "Test edit/undo/redo within a session and variant-history persistence after reopen separately; do not claim that all undo history is serialized into CSG without evidence.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-053",
+      "category": "Scripting",
+      "feature": "Stored CSharp source and typed outputs",
+      "observed": "CSScript serializes source/configuration, compiles it through CSharpCodeProvider and invokes ScriptClass methods/ref outputs.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 90,
+          "symbol": "public override bool Read("
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 749,
+          "symbol": "new CSharpCodeProvider"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 858,
+          "symbol": "CompileAssemblyFromSource"
+        }
+      ],
+      "acceptanceTest": "Round trip source and configuration without execution, then test each supported script API/output on device. An iPad-compatible interpreter/compiler model and geometry API mapping are unresolved.",
+      "offlineDisposition": "Arbitrary PC .NET/Windows scripts cannot be promised on iPad; preserve data and declare the supported execution subset.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-054",
+      "category": "Scripting",
+      "feature": "External CLR and Windows assumptions",
+      "observed": "The recovered script builder imports System.IO and uses CLR compilation/reflection; project scripts can rely on APIs unavailable on iPad.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 837,
+          "symbol": "using System.IO;"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 870,
+          "symbol": "CreateInstance"
+        }
+      ],
+      "acceptanceTest": "Use fixtures with filesystem/reflection/external references and verify safe, explicit unsupported results; a preserved script string is not execution parity.",
+      "offlineDisposition": "Platform contradiction for unrestricted Windows-specific scripts; no silent replacement by a formula-only node.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-055",
+      "category": "Export",
+      "feature": "Editable project versus STL/3DM geometry",
+      "observed": "RhinoServices exposes separate STL and 3DM exports, distinct from custom CSG DocumentWrite.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 1954,
+          "symbol": "public bool ExportDesignAsSTL"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 1987,
+          "symbol": "public bool ExportDesignAs3DM"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 650,
+          "symbol": "public void DocumentWrite("
+        }
+      ],
+      "acceptanceTest": "Test editable PC project round trip separately from geometry-only manufacturing export; retained topology alone does not pass graph compatibility.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-056",
+      "category": "Export",
+      "feature": "Manufacturing selection and mesh repair",
+      "observed": "STL export includes selected center/side/accent options and optional repair through native helpers.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 1954,
+          "symbol": "public bool ExportDesignAsSTL"
+        }
+      ],
+      "acceptanceTest": "Validate component inclusion, unit scale, watertightness, normals, repair-induced changes and source mesh tolerances against PC output.",
+      "offlineDisposition": "Requires equivalent local geometry/repair implementation; Windows DLL reuse is not an iPad solution.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-057",
+      "category": "Compatibility acceptance",
+      "feature": "Semantic PC -> iPad -> PC fixture suite",
+      "observed": "Reader/writer migrate IDs and revision data; complete parity needs graph and behavioral comparisons, not only file hashes.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 113,
+          "symbol": "_fileProperties.m_RevisionHistory.NewRevision()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 910,
+          "symbol": "public bool WriteGraphItems("
+        }
+      ],
+      "acceptanceTest": "For every supported PC version/format/GUID/version branch: open unchanged, edit one parameter, save, PC reopen/recompute/export; compare graph data, identities, dimensions, volume, materials, categories, options and output geometry.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    },
+    {
+      "id": "PC-058",
+      "category": "Compatibility acceptance",
+      "feature": "Unsupported and corrupt projects",
+      "observed": "Graph and document readers expose failure paths and partial processing; error propagation is not uniform.",
+      "evidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 262,
+          "symbol": "Read Graph Items Version Number"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 128,
+          "symbol": "Invalid File Format"
+        }
+      ],
+      "acceptanceTest": "Test truncation, bad CRC/lengths/counts, unknown UUID/GUID, unavailable fonts/assets, malformed XML/JSON and interrupted save on copies; never imply complete editability after data loss.",
+      "offlineDisposition": "Reimplement locally; no remote dependency needed for this data contract.",
+      "confidence": "Source-body observation; acceptance is a required future test",
+      "verification": "Not PC/iPad round-trip verified",
+      "score": 0,
+      "scope": "CounterSketch assembly version 8.1.19323.1002; other releases need independent fixtures"
+    }
+  ]
+}

@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CounterSketchLibraryDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CounterSketchLibraryDataEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Attributes" EntityType="CounterSketchLibraryDataModel.Attribute" />
+    <EntitySet Name="AttributeLevels" EntityType="CounterSketchLibraryDataModel.AttributeLevel" />
+    <EntitySet Name="AttributeTypes" EntityType="CounterSketchLibraryDataModel.AttributeType" />
+    <EntitySet Name="Components" EntityType="CounterSketchLibraryDataModel.Component" />
+    <EntitySet Name="DesignAttributes" EntityType="CounterSketchLibraryDataModel.DesignAttribute" />
+    <EntitySet Name="DesignComponents" EntityType="CounterSketchLibraryDataModel.DesignComponent" />
+    <EntitySet Name="DesignGems" EntityType="CounterSketchLibraryDataModel.DesignGem" />
+    <EntitySet Name="DesignGemTables" EntityType="CounterSketchLibraryDataModel.DesignGemTable" />
+    <EntitySet Name="DesignGroups" EntityType="CounterSketchLibraryDataModel.DesignGroup" />
+    <EntitySet Name="DesignGroupDesigns" EntityType="CounterSketchLibraryDataModel.DesignGroupDesign" />
+    <EntitySet Name="Designs" EntityType="CounterSketchLibraryDataModel.Design" />
+    <EntitySet Name="GemTableShapeSizes" EntityType="CounterSketchLibraryDataModel.GemTableShapeSize" />
+    <AssociationSet Name="FK_Attribute_0_0" Association="CounterSketchLibraryDataModel.FK_Attribute_0_0">
+      <End Role="AttributeType" EntitySet="AttributeTypes" />
+      <End Role="Attribute" EntitySet="Attributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignAttributes_0_0" Association="CounterSketchLibraryDataModel.FK_DesignAttributes_0_0">
+      <End Role="Attribute" EntitySet="Attributes" />
+      <End Role="DesignAttribute" EntitySet="DesignAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeType_0_0" Association="CounterSketchLibraryDataModel.FK_AttributeType_0_0">
+      <End Role="AttributeLevel" EntitySet="AttributeLevels" />
+      <End Role="AttributeType" EntitySet="AttributeTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignAttributes_1_0" Association="CounterSketchLibraryDataModel.FK_DesignAttributes_1_0">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="DesignAttribute" EntitySet="DesignAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignComponents_0_0" Association="CounterSketchLibraryDataModel.FK_DesignComponents_0_0">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="DesignComponent" EntitySet="DesignComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGems_0_0" Association="CounterSketchLibraryDataModel.FK_DesignGems_0_0">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="DesignGem" EntitySet="DesignGems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignAttributes_2_0" Association="CounterSketchLibraryDataModel.FK_DesignAttributes_2_0">
+      <End Role="Design" EntitySet="Designs" />
+      <End Role="DesignAttribute" EntitySet="DesignAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignComponents_1_0" Association="CounterSketchLibraryDataModel.FK_DesignComponents_1_0">
+      <End Role="Design" EntitySet="Designs" />
+      <End Role="DesignComponent" EntitySet="DesignComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGems_1_0" Association="CounterSketchLibraryDataModel.FK_DesignGems_1_0">
+      <End Role="Design" EntitySet="Designs" />
+      <End Role="DesignGem" EntitySet="DesignGems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGemTables_0_0" Association="CounterSketchLibraryDataModel.FK_DesignGemTables_0_0">
+      <End Role="GemTableShapeSize" EntitySet="GemTableShapeSizes" />
+      <End Role="DesignGemTable" EntitySet="DesignGemTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGemTables_1_0" Association="CounterSketchLibraryDataModel.FK_DesignGemTables_1_0">
+      <End Role="Design" EntitySet="Designs" />
+      <End Role="DesignGemTable" EntitySet="DesignGemTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGroupDesigns_1_0" Association="CounterSketchLibraryDataModel.FK_DesignGroupDesigns_1_0">
+      <End Role="DesignGroup" EntitySet="DesignGroups" />
+      <End Role="DesignGroupDesign" EntitySet="DesignGroupDesigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGroupDesigns_0_0" Association="CounterSketchLibraryDataModel.FK_DesignGroupDesigns_0_0">
+      <End Role="Design" EntitySet="Designs" />
+      <End Role="DesignGroupDesign" EntitySet="DesignGroupDesigns" />
+    </AssociationSet>
+    <EntitySet Name="DesignSearches" EntityType="CounterSketchLibraryDataModel.DesignSearch" />
+    <AssociationSet Name="FK_DesignSearch_0_0" Association="CounterSketchLibraryDataModel.FK_DesignSearch_0_0">
+      <End Role="Design" EntitySet="Designs" />
+      <End Role="DesignSearch" EntitySet="DesignSearches" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Attribute">
+    <Key>
+      <PropertyRef Name="AttributeId" />
+    </Key>
+    <Property Name="AttributeId" Type="Int64" Nullable="false" />
+    <Property Name="AttributeTypeId" Type="Int64" Nullable="false" />
+    <Property Name="AttributeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttributeCSOrder" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="AttributeType" Relationship="CounterSketchLibraryDataModel.FK_Attribute_0_0" FromRole="Attribute" ToRole="AttributeType" />
+    <NavigationProperty Name="DesignAttributes" Relationship="CounterSketchLibraryDataModel.FK_DesignAttributes_0_0" FromRole="Attribute" ToRole="DesignAttribute" />
+  </EntityType>
+  <EntityType Name="AttributeLevel">
+    <Key>
+      <PropertyRef Name="AttributeLevelId" />
+    </Key>
+    <Property Name="AttributeLevelId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AttributeTypes" Relationship="CounterSketchLibraryDataModel.FK_AttributeType_0_0" FromRole="AttributeLevel" ToRole="AttributeType" />
+  </EntityType>
+  <EntityType Name="AttributeType">
+    <Key>
+      <PropertyRef Name="AttributeTypeId" />
+    </Key>
+    <Property Name="AttributeTypeId" Type="Int64" Nullable="false" />
+    <Property Name="AttributeType1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AttributeCSName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AttributeCSOrder" Type="Int64" />
+    <Property Name="AttributeCSDisplayType" Type="Int64" />
+    <Property Name="AttributeLevelId" Type="Int64" />
+    <NavigationProperty Name="Attributes" Relationship="CounterSketchLibraryDataModel.FK_Attribute_0_0" FromRole="AttributeType" ToRole="Attribute" />
+    <NavigationProperty Name="AttributeLevel" Relationship="CounterSketchLibraryDataModel.FK_AttributeType_0_0" FromRole="AttributeType" ToRole="AttributeLevel" />
+  </EntityType>
+  <EntityType Name="Component">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="ComponentId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DesignAttributes" Relationship="CounterSketchLibraryDataModel.FK_DesignAttributes_1_0" FromRole="Component" ToRole="DesignAttribute" />
+    <NavigationProperty Name="DesignComponents" Relationship="CounterSketchLibraryDataModel.FK_DesignComponents_0_0" FromRole="Component" ToRole="DesignComponent" />
+    <NavigationProperty Name="DesignGems" Relationship="CounterSketchLibraryDataModel.FK_DesignGems_0_0" FromRole="Component" ToRole="DesignGem" />
+  </EntityType>
+  <EntityType Name="DesignAttribute">
+    <Key>
+      <PropertyRef Name="DesignAttributeId" />
+    </Key>
+    <Property Name="DesignAttributeId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesignId" Type="Int64" Nullable="false" />
+    <Property Name="ComponentId" Type="Int64" />
+    <Property Name="AttributeId" Type="Int64" />
+    <Property Name="AttributeValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Attribute" Relationship="CounterSketchLibraryDataModel.FK_DesignAttributes_0_0" FromRole="DesignAttribute" ToRole="Attribute" />
+    <NavigationProperty Name="Component" Relationship="CounterSketchLibraryDataModel.FK_DesignAttributes_1_0" FromRole="DesignAttribute" ToRole="Component" />
+    <NavigationProperty Name="Design" Relationship="CounterSketchLibraryDataModel.FK_DesignAttributes_2_0" FromRole="DesignAttribute" ToRole="Design" />
+  </EntityType>
+  <EntityType Name="DesignComponent">
+    <Key>
+      <PropertyRef Name="DesignComponentId" />
+    </Key>
+    <Property Name="DesignComponentId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesignId" Type="Int64" Nullable="false" />
+    <Property Name="ComponentId" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Component" Relationship="CounterSketchLibraryDataModel.FK_DesignComponents_0_0" FromRole="DesignComponent" ToRole="Component" />
+    <NavigationProperty Name="Design" Relationship="CounterSketchLibraryDataModel.FK_DesignComponents_1_0" FromRole="DesignComponent" ToRole="Design" />
+  </EntityType>
+  <EntityType Name="DesignGem">
+    <Key>
+      <PropertyRef Name="DesignGemId" />
+    </Key>
+    <Property Name="DesignGemId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesignId" Type="Int64" Nullable="false" />
+    <Property Name="ComponentId" Type="Int64" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Shape" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GemX" Type="Double" />
+    <Property Name="GemXMax" Type="Double" />
+    <Property Name="GemXMin" Type="Double" />
+    <Property Name="GemY" Type="Double" />
+    <Property Name="GemYMax" Type="Double" />
+    <Property Name="GemYMin" Type="Double" />
+    <Property Name="GemZ" Type="Double" />
+    <Property Name="FFactor" Type="Double" />
+    <Property Name="GemW" Type="Double" />
+    <Property Name="GemWMax" Type="Double" />
+    <Property Name="GemWMin" Type="Double" />
+    <Property Name="Mounting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MountingVolume" Type="Double" />
+    <Property Name="Flags" Type="Int64" />
+    <Property Name="GemPlacement" Type="Int64" />
+    <NavigationProperty Name="Component" Relationship="CounterSketchLibraryDataModel.FK_DesignGems_0_0" FromRole="DesignGem" ToRole="Component" />
+    <NavigationProperty Name="Design" Relationship="CounterSketchLibraryDataModel.FK_DesignGems_1_0" FromRole="DesignGem" ToRole="Design" />
+  </EntityType>
+  <EntityType Name="DesignGemTable">
+    <Key>
+      <PropertyRef Name="DesignGemTableId" />
+    </Key>
+    <Property Name="DesignGemTableId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesignId" Type="Int64" Nullable="false" />
+    <Property Name="GemPlacementId" Type="Int64" Nullable="false" />
+    <Property Name="GemTableShapeSizeId" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="GemTableShapeSize" Relationship="CounterSketchLibraryDataModel.FK_DesignGemTables_0_0" FromRole="DesignGemTable" ToRole="GemTableShapeSize" />
+    <NavigationProperty Name="Design" Relationship="CounterSketchLibraryDataModel.FK_DesignGemTables_1_0" FromRole="DesignGemTable" ToRole="Design" />
+  </EntityType>
+  <EntityType Name="DesignGroup">
+    <Key>
+      <PropertyRef Name="DesignGroupId" />
+    </Key>
+    <Property Name="DesignGroupId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rank" Type="Int64" />
+    <NavigationProperty Name="DesignGroupDesigns" Relationship="CounterSketchLibraryDataModel.FK_DesignGroupDesigns_1_0" FromRole="DesignGroup" ToRole="DesignGroupDesign" />
+  </EntityType>
+  <EntityType Name="DesignGroupDesign">
+    <Key>
+      <PropertyRef Name="DesignGroupDesignId" />
+    </Key>
+    <Property Name="DesignGroupDesignId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesignGroupId" Type="Int64" />
+    <Property Name="DesignId" Type="Int64" />
+    <Property Name="Rank" Type="Int64" />
+    <NavigationProperty Name="DesignGroup" Relationship="CounterSketchLibraryDataModel.FK_DesignGroupDesigns_1_0" FromRole="DesignGroupDesign" ToRole="DesignGroup" />
+    <NavigationProperty Name="Design" Relationship="CounterSketchLibraryDataModel.FK_DesignGroupDesigns_0_0" FromRole="DesignGroupDesign" ToRole="Design" />
+  </EntityType>
+  <EntityType Name="Design">
+    <Key>
+      <PropertyRef Name="DesignId" />
+    </Key>
+    <Property Name="DesignId" Type="Int64" Nullable="false" />
+    <Property Name="Version" Type="Int64" Nullable="false" />
+    <Property Name="DesignVersionId" Type="Int64" Nullable="false" />
+    <Property Name="StullerNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SeriesNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Designer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DesignTypeId" Type="Int64" />
+    <Property Name="CreationDate" Type="DateTime" />
+    <Property Name="LastUpdateDate" Type="DateTime" />
+    <Property Name="FirstReleaseLibraryId" Type="Int64" />
+    <NavigationProperty Name="DesignAttributes" Relationship="CounterSketchLibraryDataModel.FK_DesignAttributes_2_0" FromRole="Design" ToRole="DesignAttribute" />
+    <NavigationProperty Name="DesignComponents" Relationship="CounterSketchLibraryDataModel.FK_DesignComponents_1_0" FromRole="Design" ToRole="DesignComponent" />
+    <NavigationProperty Name="DesignGems" Relationship="CounterSketchLibraryDataModel.FK_DesignGems_1_0" FromRole="Design" ToRole="DesignGem" />
+    <NavigationProperty Name="DesignGemTables" Relationship="CounterSketchLibraryDataModel.FK_DesignGemTables_1_0" FromRole="Design" ToRole="DesignGemTable" />
+    <NavigationProperty Name="DesignGroupDesigns" Relationship="CounterSketchLibraryDataModel.FK_DesignGroupDesigns_0_0" FromRole="Design" ToRole="DesignGroupDesign" />
+    <NavigationProperty Name="DesignSearch" Relationship="CounterSketchLibraryDataModel.FK_DesignSearch_0_0" FromRole="Design" ToRole="DesignSearch" />
+    <Property Name="CSGLFound" Type="Int64" />
+  </EntityType>
+  <EntityType Name="GemTableShapeSize">
+    <Key>
+      <PropertyRef Name="GemTableShapeSizeId" />
+    </Key>
+    <Property Name="GemTableShapeSizeId" Type="Int64" Nullable="false" />
+    <Property Name="GemTableTypeId" Type="Int64" Nullable="false" />
+    <Property Name="GemTableShapeId" Type="Int64" Nullable="false" />
+    <Property Name="Carat" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Width" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Height" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <Property Name="Depth" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
+    <NavigationProperty Name="DesignGemTables" Relationship="CounterSketchLibraryDataModel.FK_DesignGemTables_0_0" FromRole="GemTableShapeSize" ToRole="DesignGemTable" />
+  </EntityType>
+  <Association Name="FK_Attribute_0_0">
+    <End Type="CounterSketchLibraryDataModel.AttributeType" Role="AttributeType" Multiplicity="1" />
+    <End Type="CounterSketchLibraryDataModel.Attribute" Role="Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeType">
+        <PropertyRef Name="AttributeTypeId" />
+      </Principal>
+      <Dependent Role="Attribute">
+        <PropertyRef Name="AttributeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignAttributes_0_0">
+    <End Type="CounterSketchLibraryDataModel.Attribute" Role="Attribute" Multiplicity="0..1" />
+    <End Type="CounterSketchLibraryDataModel.DesignAttribute" Role="DesignAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attribute">
+        <PropertyRef Name="AttributeId" />
+      </Principal>
+      <Dependent Role="DesignAttribute">
+        <PropertyRef Name="AttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeType_0_0">
+    <End Type="CounterSketchLibraryDataModel.AttributeLevel" Role="AttributeLevel" Multiplicity="0..1" />
+    <End Type="CounterSketchLibraryDataModel.AttributeType" Role="AttributeType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeLevel">
+        <PropertyRef Name="AttributeLevelId" />
+      </Principal>
+      <Dependent Role="AttributeType">
+        <PropertyRef Name="AttributeLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignAttributes_1_0">
+    <End Type="CounterSketchLibraryDataModel.Component" Role="Component" Multiplicity="0..1" />
+    <End Type="CounterSketchLibraryDataModel.DesignAttribute" Role="DesignAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="DesignAttribute">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignComponents_0_0">
+    <End Type="CounterSketchLibraryDataModel.Component" Role="Component" Multiplicity="1" />
+    <End Type="CounterSketchLibraryDataModel.DesignComponent" Role="DesignComponent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="DesignComponent">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGems_0_0">
+    <End Type="CounterSketchLibraryDataModel.Component" Role="Component" Multiplicity="0..1" />
+    <End Type="CounterSketchLibraryDataModel.DesignGem" Role="DesignGem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="DesignGem">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignAttributes_2_0">
+    <End Type="CounterSketchLibraryDataModel.Design" Role="Design" Multiplicity="1" />
+    <End Type="CounterSketchLibraryDataModel.DesignAttribute" Role="DesignAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Design">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignAttribute">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignComponents_1_0">
+    <End Type="CounterSketchLibraryDataModel.Design" Role="Design" Multiplicity="1" />
+    <End Type="CounterSketchLibraryDataModel.DesignComponent" Role="DesignComponent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Design">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignComponent">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGems_1_0">
+    <End Type="CounterSketchLibraryDataModel.Design" Role="Design" Multiplicity="1" />
+    <End Type="CounterSketchLibraryDataModel.DesignGem" Role="DesignGem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Design">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignGem">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGemTables_0_0">
+    <End Type="CounterSketchLibraryDataModel.GemTableShapeSize" Role="GemTableShapeSize" Multiplicity="1" />
+    <End Type="CounterSketchLibraryDataModel.DesignGemTable" Role="DesignGemTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GemTableShapeSize">
+        <PropertyRef Name="GemTableShapeSizeId" />
+      </Principal>
+      <Dependent Role="DesignGemTable">
+        <PropertyRef Name="GemTableShapeSizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGemTables_1_0">
+    <End Type="CounterSketchLibraryDataModel.Design" Role="Design" Multiplicity="1" />
+    <End Type="CounterSketchLibraryDataModel.DesignGemTable" Role="DesignGemTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Design">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignGemTable">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGroupDesigns_1_0">
+    <End Type="CounterSketchLibraryDataModel.DesignGroup" Role="DesignGroup" Multiplicity="0..1" />
+    <End Type="CounterSketchLibraryDataModel.DesignGroupDesign" Role="DesignGroupDesign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DesignGroup">
+        <PropertyRef Name="DesignGroupId" />
+      </Principal>
+      <Dependent Role="DesignGroupDesign">
+        <PropertyRef Name="DesignGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGroupDesigns_0_0">
+    <End Type="CounterSketchLibraryDataModel.Design" Role="Design" Multiplicity="0..1" />
+    <End Type="CounterSketchLibraryDataModel.DesignGroupDesign" Role="DesignGroupDesign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Design">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignGroupDesign">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DesignSearch">
+    <Key>
+      <PropertyRef Name="DesignId" />
+    </Key>
+    <Property Name="DesignId" Type="Int64" Nullable="false" />
+    <Property Name="SPINumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SeriesNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateDate" Type="DateTime" />
+    <Property Name="PrimaryDesignComponentId" Type="Int64" />
+    <Property Name="ComponentId" Type="Int64" />
+    <Property Name="DefaultStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultStyleElement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SecondaryStyleElement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryDesignComponentCenterGemSetting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsIncludedWithBaseDesigns" Type="Int64" />
+    <Property Name="Is3CDesign" Type="Int64" />
+    <Property Name="Designer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IsBaseDesign" Type="Int64" />
+    <Property Name="IsVariantDesign" Type="Int64" />
+    <Property Name="IsFreeHandPart" Type="Int64" />
+    <Property Name="IsStaticFreeHandPart" Type="Int64" />
+    <Property Name="IsFreeHandPartWithGem" Type="Int64" />
+    <Property Name="IsNewDesign" Type="Int64" />
+    <Property Name="StullerBaseNo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DefaultSettingTypeOrder" Type="Int64" />
+    <Property Name="DefaultStyleElementOrder" Type="Int64" />
+    <Property Name="DefaultStyleOrder" Type="Int64" />
+    <Property Name="SecondaryStyleElementOrder" Type="Int64" />
+    <Property Name="CenterGemMinLength" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="CenterGemMaxLength" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="CenterGemMinWidth" Type="Decimal" Precision="53" Scale="0" />
+    <Property Name="CenterGemMaxWidth" Type="Decimal" Precision="53" Scale="0" />
+    <NavigationProperty Name="Design" Relationship="CounterSketchLibraryDataModel.FK_DesignSearch_0_0" FromRole="DesignSearch" ToRole="Design" />
+    <Property Name="Version" Type="Int64" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DesignSearch_0_0">
+    <End Type="CounterSketchLibraryDataModel.Design" Role="Design" Multiplicity="1" />
+    <End Type="CounterSketchLibraryDataModel.DesignSearch" Role="DesignSearch" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Design">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignSearch">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,1975 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="DetailBeadRotate" xml:space="preserve"><value>Detail : Bead Rotate</value></data>
+  <data name="CurvedGemRow" xml:space="preserve"><value>Curved Gem Row</value></data>
+  <data name="BookmanFontEUppercase" xml:space="preserve"><value>Bookman Font E Uppercase</value></data>
+  <data name="MatchingBand02" xml:space="preserve"><value>Matching Band 02</value></data>
+  <data name="MatchingBand01" xml:space="preserve"><value>Matching Band 01</value></data>
+  <data name="Flat075" xml:space="preserve"><value>Flat 075</value></data>
+  <data name="FlatCCurve01" xml:space="preserve"><value>Flat C Curve 01</value></data>
+  <data name="Bezel01" xml:space="preserve"><value>Bezel 01</value></data>
+  <data name="Bezel03" xml:space="preserve"><value>Bezel 03</value></data>
+  <data name="Bezel02" xml:space="preserve"><value>Bezel 02</value></data>
+  <data name="SettingHeadPosition" xml:space="preserve"><value>Setting : Head Position</value></data>
+  <data name="ShankTopBendShape" xml:space="preserve"><value>Shank : Top Bend Shape</value></data>
+  <data name="Primitive" xml:space="preserve"><value>Primitive</value></data>
+  <data name="Star032" xml:space="preserve"><value>Star 032</value></data>
+  <data name="Star033" xml:space="preserve"><value>Star 033</value></data>
+  <data name="TopDesign" xml:space="preserve"><value>Top Design</value></data>
+  <data name="SettingProngProfileWidth" xml:space="preserve"><value>Setting : Prong Profile - Width %</value></data>
+  <data name="SettingProngProfileShape" xml:space="preserve"><value>Setting : Prong Profile Shape</value></data>
+  <data name="GemsShortRowTopPosition" xml:space="preserve"><value>Gems : Short Row Top Position</value></data>
+  <data name="GemGemHeadHeight" xml:space="preserve"><value>Gem : Gem &amp; Head Height</value></data>
+  <data name="SettingHalfBezelNotchLength" xml:space="preserve"><value>Setting : Half Bezel Notch Length %</value></data>
+  <data name="SettingBezelThicknessTop" xml:space="preserve"><value>Setting : Bezel Thickness Top %</value></data>
+  <data name="SettingUpperGallery" xml:space="preserve"><value>Setting Upper Gallery</value></data>
+  <data name="ConvexMarquise" xml:space="preserve"><value>Convex Marquise</value></data>
+  <data name="ShankSideMilgrainOnOff" xml:space="preserve"><value>Shank : Side Milgrain - On Off</value></data>
+  <data name="Butterfly04Roundback" xml:space="preserve"><value>Butterfly 04 Roundback</value></data>
+  <data name="SingleMarqiseShape" xml:space="preserve"><value>Single Marqise Shape</value></data>
+  <data name="ShankSideProflileShape" xml:space="preserve"><value>Shank : Side Proflile Shape</value></data>
+  <data name="LeafWithGrooveAndPerspective" xml:space="preserve"><value>Leaf With Groove And Perspective</value></data>
+  <data name="Setting2OverallDiameter" xml:space="preserve"><value>Setting 2 : Overall Diameter %</value></data>
+  <data name="ShankRailCurveTopDown" xml:space="preserve"><value>Shank : Rail Curve - Top Down</value></data>
+  <data name="DomedThreeLeafDesign" xml:space="preserve"><value>Domed Three Leaf Design</value></data>
+  <data name="DetailDesignAOnOff" xml:space="preserve"><value>Detail : Design A On Off</value></data>
+  <data name="ShankBridgeTopProfileLocationSpan" xml:space="preserve"><value>Shank : Bridge Top - Profile Location / Span</value></data>
+  <data name="Pyramid074" xml:space="preserve"><value>Pyramid 074</value></data>
+  <data name="DetailInnerDesignMoveLeftRight" xml:space="preserve"><value>Detail : Inner Design Move Left/Right</value></data>
+  <data name="Setting2EndProfileWidth" xml:space="preserve"><value>Setting 2 : End Profile Width %</value></data>
+  <data name="DualDomeBail" xml:space="preserve"><value>Dual Dome Bail</value></data>
+  <data name="BookmanFontNUppercase" xml:space="preserve"><value>Bookman Font N Uppercase</value></data>
+  <data name="HaloInsideHeight" xml:space="preserve"><value>Halo : Inside Height</value></data>
+  <data name="HaloInsideWidth" xml:space="preserve"><value>Halo : Inside Width</value></data>
+  <data name="ShankDesignBlendIntoBottomHalfOfShank" xml:space="preserve"><value>Shank : Design Blend Into Bottom Half Of Shank</value></data>
+  <data name="DetailOuterDesignOnOff" xml:space="preserve"><value>Detail : Outer Design On/Off</value></data>
+  <data name="ShankShankOnOff" xml:space="preserve"><value>Shank : Shank On Off</value></data>
+  <data name="ShankProfileXOffset" xml:space="preserve"><value>Shank : Profile - X Offset</value></data>
+  <data name="JumpRing" xml:space="preserve"><value>Jump Ring</value></data>
+  <data name="Scroll01" xml:space="preserve"><value>Scroll 01</value></data>
+  <data name="Scroll02" xml:space="preserve"><value>Scroll 02</value></data>
+  <data name="Scroll03" xml:space="preserve"><value>Scroll 03</value></data>
+  <data name="Scroll04" xml:space="preserve"><value>Scroll 04</value></data>
+  <data name="Scroll06" xml:space="preserve"><value>Scroll 06</value></data>
+  <data name="Scrolls1" xml:space="preserve"><value>Scrolls</value></data>
+  <data name="ChannelEndLengthWithProngs" xml:space="preserve"><value>Channel : End Length - With Prongs</value></data>
+  <data name="BookmanFontRLowercase" xml:space="preserve"><value>Bookman Font R Lowercase</value></data>
+  <data name="RondellHoleDiameter" xml:space="preserve"><value>Rondell : Hole Diameter</value></data>
+  <data name="ShankSideViewTaperShape" xml:space="preserve"><value>Shank : Side View Taper Shape</value></data>
+  <data name="BookmanFontRUppercase" xml:space="preserve"><value>Bookman Font R Uppercase</value></data>
+  <data name="DetailOverallHeight" xml:space="preserve"><value>Detail : Overall Height %</value></data>
+  <data name="GemGemCount" xml:space="preserve"><value>Gem: Gem Count</value></data>
+  <data name="UpperShankOnOff" xml:space="preserve"><value>Upper Shank On Off</value></data>
+  <data name="SettingBarAngle" xml:space="preserve"><value>Setting : Bar Angle</value></data>
+  <data name="ConcavePear" xml:space="preserve"><value>Concave Pear</value></data>
+  <data name="ConcaveCalf" xml:space="preserve"><value>Concave Calf</value></data>
+  <data name="ConcaveOval" xml:space="preserve"><value>Concave Oval</value></data>
+  <data name="GemGemOnOff" xml:space="preserve"><value>Gem : Gem On Off</value></data>
+  <data name="GemsEnableMiddleDiameter" xml:space="preserve"><value>Gems : Enable Middle Diameter</value></data>
+  <data name="YOffset" xml:space="preserve"><value>Y Offset</value></data>
+  <data name="GemGemTaper" xml:space="preserve"><value>Gem : Gem Taper</value></data>
+  <data name="SettingBaseDrop" xml:space="preserve"><value>Setting : Base Drop %</value></data>
+  <data name="CollarOutsideWidth" xml:space="preserve"><value>Collar : Outside Width</value></data>
+  <data name="Surfaces" xml:space="preserve"><value>Surfaces</value></data>
+  <data name="CollarOutsideShape" xml:space="preserve"><value>Collar : Outside Shape</value></data>
+  <data name="HaloBendAmount" xml:space="preserve"><value>Halo : Bend Amount</value></data>
+  <data name="SettingBarShape" xml:space="preserve"><value>Setting : Bar Shape</value></data>
+  <data name="DetailObjectStartingPosition" xml:space="preserve"><value>Detail : Object Starting Position</value></data>
+  <data name="SettingBarWidth" xml:space="preserve"><value>Setting : Bar Width %</value></data>
+  <data name="GemGemShape" xml:space="preserve"><value>Gem : Gem Shape</value></data>
+  <data name="HalfMoon" xml:space="preserve"><value>Half Moon</value></data>
+  <data name="SettingHeadAngleThroughFinger" xml:space="preserve"><value>Setting : Head Angle - Through Finger %</value></data>
+  <data name="FrameDesign02" xml:space="preserve"><value>Frame Design 02</value></data>
+  <data name="FrameDesign04" xml:space="preserve"><value>Frame Design 04</value></data>
+  <data name="Spacing" xml:space="preserve"><value>Spacing</value></data>
+  <data name="MonogramEMiddle" xml:space="preserve"><value>Monogram E Middle</value></data>
+  <data name="MonogramRMiddle" xml:space="preserve"><value>Monogram R Middle</value></data>
+  <data name="ShankBendableOpen01" xml:space="preserve"><value>Shank Bendable Open 01</value></data>
+  <data name="GemsAngleOnShank" xml:space="preserve"><value>Gems : Angle On Shank</value></data>
+  <data name="Elements" xml:space="preserve"><value>Elements</value></data>
+  <data name="HaloProfilePosition" xml:space="preserve"><value>Halo : Profile Position</value></data>
+  <data name="ShankSideProfileShape" xml:space="preserve"><value>Shank : Side Profile Shape</value></data>
+  <data name="VolleyballFlat" xml:space="preserve"><value>Volleyball Flat</value></data>
+  <data name="Wings01" xml:space="preserve"><value>Wings 01</value></data>
+  <data name="Wings02" xml:space="preserve"><value>Wings 02</value></data>
+  <data name="ConvexHeart" xml:space="preserve"><value>Convex Heart</value></data>
+  <data name="ShankSideProfileTwist" xml:space="preserve"><value>Shank : Side Profile - Twist</value></data>
+  <data name="PawOnBase" xml:space="preserve"><value>Paw on Base</value></data>
+  <data name="DomedCenterFourPetals" xml:space="preserve"><value>Domed Center Four Petals</value></data>
+  <data name="ShankSideProfileWidth" xml:space="preserve"><value>Shank : Side Profile Width</value></data>
+  <data name="SettingBar2OnOff" xml:space="preserve"><value>Setting : Bar 2 On/Off</value></data>
+  <data name="MacaroniRopeSegment" xml:space="preserve"><value>Macaroni Rope Segment</value></data>
+  <data name="SettingOffsetProngBlend" xml:space="preserve"><value>Setting : Offset Prong - Blend</value></data>
+  <data name="BowlingBallFlat" xml:space="preserve"><value>Bowling Ball Flat</value></data>
+  <data name="ShankMilgrainPosition" xml:space="preserve"><value>Shank : Milgrain Position</value></data>
+  <data name="SettingOffsetProngAngle" xml:space="preserve"><value>Setting : Offset Prong - Angle</value></data>
+  <data name="ArialFontQuotation" xml:space="preserve"><value>Arial Font Quotation</value></data>
+  <data name="OpenEternityBand" xml:space="preserve"><value>Open Eternity Band</value></data>
+  <data name="Amount1A" xml:space="preserve"><value>Amount 1A</value></data>
+  <data name="BookmanFontComma" xml:space="preserve"><value>Bookman Font Comma</value></data>
+  <data name="ConvexRound" xml:space="preserve"><value>Convex Round</value></data>
+  <data name="PoliceBadge" xml:space="preserve"><value>Police Badge</value></data>
+  <data name="BookmanFontJLowercase" xml:space="preserve"><value>Bookman Font J Lowercase</value></data>
+  <data name="HaloInsideLength" xml:space="preserve"><value>Halo : Inside Length</value></data>
+  <data name="ArialFontILowercase" xml:space="preserve"><value>Arial Font I Lowercase</value></data>
+  <data name="ShankScalable" xml:space="preserve"><value>Shank Scalable</value></data>
+  <data name="BeadLength" xml:space="preserve"><value>Bead Length</value></data>
+  <data name="Soccerball" xml:space="preserve"><value>Soccerball</value></data>
+  <data name="BailBottomProfileHeight" xml:space="preserve"><value>Bail : Bottom Profile Height</value></data>
+  <data name="GemGemSpan" xml:space="preserve"><value>Gem : Gem Span</value></data>
+  <data name="ShankDesignShape" xml:space="preserve"><value>Shank : Design Shape</value></data>
+  <data name="TopWidth" xml:space="preserve"><value>Top Width</value></data>
+  <data name="ShankDesignWidth" xml:space="preserve"><value>Shank : Design Width</value></data>
+  <data name="GemsLongRowGemShape" xml:space="preserve"><value>Gems : Long Row Gem Shape</value></data>
+  <data name="ShankBandTaperOrPinch" xml:space="preserve"><value>Shank: Band Taper Or Pinch</value></data>
+  <data name="ShankStretch" xml:space="preserve"><value>Shank : Stretch</value></data>
+  <data name="SettingCenterGalleryRailDiameter" xml:space="preserve"><value>Setting : Center Gallery Rail Diameter %</value></data>
+  <data name="DetailBottomLeftDesignOnOff" xml:space="preserve"><value>Detail : Bottom Left Design On/Off</value></data>
+  <data name="DetailOverallLength" xml:space="preserve"><value>Detail : Overall Length</value></data>
+  <data name="ClusterGemAngle" xml:space="preserve"><value>Cluster Gem Angle</value></data>
+  <data name="Setting1MoveFrontToBack" xml:space="preserve"><value>Setting 1 : Move Front To Back</value></data>
+  <data name="GemsLongRowGemOnOff" xml:space="preserve"><value>Gems : Long Row Gem On Off</value></data>
+  <data name="TopProfile2Position" xml:space="preserve"><value>Top Profile 2 Position</value></data>
+  <data name="FrameDesign03OnBase" xml:space="preserve"><value>Frame Design 03 on Base</value></data>
+  <data name="EndProfileHeight" xml:space="preserve"><value>End Profile Height</value></data>
+  <data name="DetailMiddleLeftDesignOnOff" xml:space="preserve"><value>Detail : Middle Left Design On/Off</value></data>
+  <data name="SettingUpperGalleryRailEnableUpperGalleryRail" xml:space="preserve"><value>Setting : Upper Gallery Rail - Enable Upper Gallery Rail</value></data>
+  <data name="EternityBand" xml:space="preserve"><value>Eternity Band</value></data>
+  <data name="SettingBar1OnOff" xml:space="preserve"><value>Setting : Bar 1 On/Off</value></data>
+  <data name="DetailDesignLength" xml:space="preserve"><value>Detail : Design Length</value></data>
+  <data name="Heraldry" xml:space="preserve"><value>Heraldry</value></data>
+  <data name="OpenDomed" xml:space="preserve"><value>Open - Domed</value></data>
+  <data name="ShankProfilePositionStart" xml:space="preserve"><value>Shank : Profile Position Start</value></data>
+  <data name="Animal" xml:space="preserve"><value>Animal</value></data>
+  <data name="BeadOutsideProfileChooser" xml:space="preserve"><value>Bead: Outside Profile Chooser</value></data>
+  <data name="Amount" xml:space="preserve"><value>Amount</value></data>
+  <data name="SettingTopCapTilt" xml:space="preserve"><value>Setting : Top Cap Tilt</value></data>
+  <data name="ArialFontQUppercase" xml:space="preserve"><value>Arial Font Q Uppercase</value></data>
+  <data name="SettingSideGalleryRailHeight" xml:space="preserve"><value>Setting : Side Gallery Rail Height %</value></data>
+  <data name="ChiseledSpiral01" xml:space="preserve"><value>Chiseled Spiral 01</value></data>
+  <data name="DetailBottomDesignMoveFrontToBack" xml:space="preserve"><value>Detail : Bottom Design Move Front To Back</value></data>
+  <data name="ArialFontQLowercase" xml:space="preserve"><value>Arial Font Q Lowercase</value></data>
+  <data name="Swirl179541" xml:space="preserve"><value>Swirl 17954-1</value></data>
+  <data name="Swirl179542" xml:space="preserve"><value>Swirl 17954-2</value></data>
+  <data name="Swirl179543" xml:space="preserve"><value>Swirl 17954-3</value></data>
+  <data name="Swirl179544" xml:space="preserve"><value>Swirl 17954-4</value></data>
+  <data name="ShankProfilePositionEnd" xml:space="preserve"><value>Shank : Profile Position End</value></data>
+  <data name="BowlingPinFlat" xml:space="preserve"><value>Bowling Pin Flat</value></data>
+  <data name="DetailTopLeftDesignOnOff" xml:space="preserve"><value>Detail : Top Left Design On/Off</value></data>
+  <data name="ArialFontComma" xml:space="preserve"><value>Arial Font Comma</value></data>
+  <data name="Finger" xml:space="preserve"><value>Finger</value></data>
+  <data name="SettingGalleryRailMoveUpDown" xml:space="preserve"><value>Setting : Gallery Rail Move Up/Down</value></data>
+  <data name="StylizedLeafDesign" xml:space="preserve"><value>Stylized Leaf Design</value></data>
+  <data name="Floral" xml:space="preserve"><value>Floral</value></data>
+  <data name="Flag01" xml:space="preserve"><value>Flag 01</value></data>
+  <data name="Flag02" xml:space="preserve"><value>Flag 02</value></data>
+  <data name="Flat08" xml:space="preserve"><value>Flat 08</value></data>
+  <data name="Flat09" xml:space="preserve"><value>Flat 09</value></data>
+  <data name="Flat06" xml:space="preserve"><value>Flat 06</value></data>
+  <data name="Two004317Pt6Ct" xml:space="preserve"><value>20043 17pt-6ct</value></data>
+  <data name="ArialFontMUppercase" xml:space="preserve"><value>Arial Font M Uppercase</value></data>
+  <data name="DetailTopProfilePosition" xml:space="preserve"><value>Detail : Top Profile Position</value></data>
+  <data name="ArialFontXLowercase" xml:space="preserve"><value>Arial Font X Lowercase</value></data>
+  <data name="Setting3Position" xml:space="preserve"><value>Setting 3 : Position</value></data>
+  <data name="DetailBarThickness" xml:space="preserve"><value>Detail : Bar Thickness %</value></data>
+  <data name="MonogramYMiddle" xml:space="preserve"><value>Monogram Y Middle</value></data>
+  <data name="CollarDomeThickness" xml:space="preserve"><value>Collar : Dome Thickness</value></data>
+  <data name="EndDiameter1" xml:space="preserve"><value>End Diameter 1</value></data>
+  <data name="EndDiameter2" xml:space="preserve"><value>End Diameter 2</value></data>
+  <data name="DomedElement028" xml:space="preserve"><value>Domed Element 028</value></data>
+  <data name="DomedElement029" xml:space="preserve"><value>Domed Element 029</value></data>
+  <data name="DomedElement027" xml:space="preserve"><value>Domed Element 027</value></data>
+  <data name="FlowingLeafWithGroove" xml:space="preserve"><value>Flowing Leaf With Groove</value></data>
+  <data name="FreeformShank01" xml:space="preserve"><value>Freeform Shank 01</value></data>
+  <data name="FreeformShank02" xml:space="preserve"><value>Freeform Shank 02</value></data>
+  <data name="SettingProngShape" xml:space="preserve"><value>Setting : Prong - Shape</value></data>
+  <data name="SettingProngStyle" xml:space="preserve"><value>Setting : Prong - Style</value></data>
+  <data name="Design" xml:space="preserve"><value>Design</value></data>
+  <data name="Cable125Mm" xml:space="preserve"><value>Cable 1.25mm</value></data>
+  <data name="SettingProngNudge" xml:space="preserve"><value>Setting : Prong Nudge</value></data>
+  <data name="SettingProngOnOff" xml:space="preserve"><value>Setting : Prong On Off</value></data>
+  <data name="Dragon" xml:space="preserve"><value>Dragon</value></data>
+  <data name="BookmanFontXLowercase" xml:space="preserve"><value>Bookman Font X Lowercase</value></data>
+  <data name="BookmanFontXUppercase" xml:space="preserve"><value>Bookman Font X Uppercase</value></data>
+  <data name="SettingProngsSize" xml:space="preserve"><value>Setting : Prongs - Size</value></data>
+  <data name="SettingHeadOverallHeight" xml:space="preserve"><value>Setting : Head - Overall Height</value></data>
+  <data name="GemsTaperOnOff" xml:space="preserve"><value>Gems : Taper  - On Off</value></data>
+  <data name="SettingProng1RotateAroundHead" xml:space="preserve"><value>Setting : Prong 1 Rotate Around Head</value></data>
+  <data name="Moon02" xml:space="preserve"><value>Moon 02</value></data>
+  <data name="Moon01" xml:space="preserve"><value>Moon 01</value></data>
+  <data name="ShankBottomSolidShankShape" xml:space="preserve"><value>Shank : Bottom Solid Shank Shape</value></data>
+  <data name="Side2ProfileWidth" xml:space="preserve"><value>Side 2 Profile Width</value></data>
+  <data name="DetailBottomProfilePosition" xml:space="preserve"><value>Detail : Bottom Profile Position</value></data>
+  <data name="UpperShank" xml:space="preserve"><value>Upper Shank</value></data>
+  <data name="CollarOutsideHeight" xml:space="preserve"><value>Collar : Outside Height</value></data>
+  <data name="ArialFontFUppercase" xml:space="preserve"><value>Arial Font F Uppercase</value></data>
+  <data name="ShankTopProfileSpan" xml:space="preserve"><value>Shank : Top Profile Span</value></data>
+  <data name="ShankTopProfileRoll" xml:space="preserve"><value>Shank : Top Profile Roll</value></data>
+  <data name="ShankTopProfileTilt" xml:space="preserve"><value>Shank : Top Profile Tilt</value></data>
+  <data name="BeadCutoutOnOff" xml:space="preserve"><value>Bead Cutout: On Off</value></data>
+  <data name="SettingHalfBezelNotchWidth" xml:space="preserve"><value>Setting : Half Bezel Notch Width %</value></data>
+  <data name="Bezel1" xml:space="preserve"><value>Bezel</value></data>
+  <data name="GroovedWing02" xml:space="preserve"><value>Grooved Wing 02</value></data>
+  <data name="BeadCutoutDepth" xml:space="preserve"><value>Bead Cutout : Depth</value></data>
+  <data name="Setting2EndPosition" xml:space="preserve"><value>Setting 2 : End Position</value></data>
+  <data name="Scrolls" xml:space="preserve"><value>Scrolls</value></data>
+  <data name="Band01" xml:space="preserve"><value>Band 01</value></data>
+  <data name="Band02" xml:space="preserve"><value>Band 02</value></data>
+  <data name="RoundedTrinityKnot" xml:space="preserve"><value>Rounded Trinity Knot</value></data>
+  <data name="PointOnFirstProfile" xml:space="preserve"><value>Point On First Profile</value></data>
+  <data name="BeadCutoutWidth" xml:space="preserve"><value>Bead Cutout : Width</value></data>
+  <data name="UpperGalleryThickness" xml:space="preserve"><value>Upper Gallery Thickness</value></data>
+  <data name="GroovedOrganicCurve08" xml:space="preserve"><value>Grooved Organic Curve 08</value></data>
+  <data name="GroovedOrganicCurve07" xml:space="preserve"><value>Grooved Organic Curve 07</value></data>
+  <data name="GroovedOrganicCurve06" xml:space="preserve"><value>Grooved Organic Curve 06</value></data>
+  <data name="GroovedOrganicCurve05" xml:space="preserve"><value>Grooved Organic Curve 05</value></data>
+  <data name="GroovedOrganicCurve04" xml:space="preserve"><value>Grooved Organic Curve 04</value></data>
+  <data name="GroovedOrganicCurve03" xml:space="preserve"><value>Grooved Organic Curve 03</value></data>
+  <data name="GroovedOrganicCurve02" xml:space="preserve"><value>Grooved Organic Curve 02</value></data>
+  <data name="GroovedOrganicCurve01" xml:space="preserve"><value>Grooved Organic Curve 01</value></data>
+  <data name="DetailCenterDesignOnOff" xml:space="preserve"><value>Detail : Center Design On/Off</value></data>
+  <data name="GemsGemTaper" xml:space="preserve"><value>Gems : Gem Taper</value></data>
+  <data name="Bypass" xml:space="preserve"><value>Bypass</value></data>
+  <data name="ShankBottomProfileChooser" xml:space="preserve"><value>Shank : Bottom Profile Chooser</value></data>
+  <data name="GemsGemShape" xml:space="preserve"><value>Gems : Gem Shape</value></data>
+  <data name="ShankProfileTopLocation" xml:space="preserve"><value>Shank : Profile - Top - Location</value></data>
+  <data name="ShankProfilesAdvanced" xml:space="preserve"><value>Shank Profiles Advanced</value></data>
+  <data name="DetailDesignRotate" xml:space="preserve"><value>Detail : Design Rotate</value></data>
+  <data name="TopSetting" xml:space="preserve"><value>Top Setting</value></data>
+  <data name="Original" xml:space="preserve"><value>Original</value></data>
+  <data name="BandBandMirrorOnOff" xml:space="preserve"><value>Band : Band Mirror On Off</value></data>
+  <data name="GemsEvenNumberOfGems" xml:space="preserve"><value>Gems : Even Number Of Gems</value></data>
+  <data name="ProfileHeightOffset" xml:space="preserve"><value>Profile Height Offset</value></data>
+  <data name="LionHead" xml:space="preserve"><value>Lion Head</value></data>
+  <data name="Collar" xml:space="preserve"><value>Collar</value></data>
+  <data name="GemsGemDepth" xml:space="preserve"><value>Gems : Gem Depth</value></data>
+  <data name="GemsGemCount" xml:space="preserve"><value>Gems: Gem Count</value></data>
+  <data name="GemsGemOnOff" xml:space="preserve"><value>Gems : Gem On Off</value></data>
+  <data name="Chain1" xml:space="preserve"><value>Chain</value></data>
+  <data name="ShankProflileShape" xml:space="preserve"><value>Shank : Proflile Shape</value></data>
+  <data name="Curves" xml:space="preserve"><value>Curves</value></data>
+  <data name="Cutout" xml:space="preserve"><value>Cutout</value></data>
+  <data name="AccentGemsGemSpacing" xml:space="preserve"><value>Accent Gems : Gem Spacing</value></data>
+  <data name="DetailBaseProfileHeight" xml:space="preserve"><value>Detail : Base Profile Height</value></data>
+  <data name="GemGemRowStartSize" xml:space="preserve"><value>Gem : Gem Row Start Size</value></data>
+  <data name="ShankTopThickness" xml:space="preserve"><value>Shank : Top - Thickness</value></data>
+  <data name="SettingChannelWidth" xml:space="preserve"><value>Setting : Channel Width</value></data>
+  <data name="Banner01" xml:space="preserve"><value>Banner 01</value></data>
+  <data name="Banner03" xml:space="preserve"><value>Banner 03</value></data>
+  <data name="Banner02" xml:space="preserve"><value>Banner 02</value></data>
+  <data name="Banner05" xml:space="preserve"><value>Banner 05</value></data>
+  <data name="Banner04" xml:space="preserve"><value>Banner 04</value></data>
+  <data name="RondellRondellWallThickness" xml:space="preserve"><value>Rondell : Rondell - Wall Thickness</value></data>
+  <data name="ChannelScallopCutterDepth" xml:space="preserve"><value>Channel : Scallop Cutter Depth</value></data>
+  <data name="ComponentForLeafDesign" xml:space="preserve"><value>Component For Leaf Design</value></data>
+  <data name="Setting" xml:space="preserve"><value>Setting</value></data>
+  <data name="SettingHeadAngleY" xml:space="preserve"><value>Setting : Head - Angle Y</value></data>
+  <data name="ShankOutsideRingShape" xml:space="preserve"><value>Shank : Outside Ring - Shape</value></data>
+  <data name="CCurve" xml:space="preserve"><value>C Curve</value></data>
+  <data name="StartPoint" xml:space="preserve"><value>Start Point</value></data>
+  <data name="SettingChannelDepth" xml:space="preserve"><value>Setting : Channel - Depth</value></data>
+  <data name="DetailBendAmount" xml:space="preserve"><value>Detail : Bend Amount</value></data>
+  <data name="ChannelScallopCutterShape" xml:space="preserve"><value>Channel : Scallop Cutter Shape</value></data>
+  <data name="BasketweaveChain" xml:space="preserve"><value>Basketweave Chain</value></data>
+  <data name="ChannelScallopCutterWidth" xml:space="preserve"><value>Channel : Scallop Cutter Width</value></data>
+  <data name="Bulldog" xml:space="preserve"><value>Bulldog</value></data>
+  <data name="Basketball" xml:space="preserve"><value>Basketball</value></data>
+  <data name="FootballFlat" xml:space="preserve"><value>Football Flat</value></data>
+  <data name="SettingProngBaseBend" xml:space="preserve"><value>Setting : Prong - Base Bend</value></data>
+  <data name="BookmanFontFUppercase" xml:space="preserve"><value>Bookman Font F Uppercase</value></data>
+  <data name="GemShapeMilgrain" xml:space="preserve"><value>Gem Shape Milgrain</value></data>
+  <data name="Volleyball" xml:space="preserve"><value>Volleyball</value></data>
+  <data name="ShankBridgeSideHeight" xml:space="preserve"><value>Shank : Bridge Side Height</value></data>
+  <data name="SettingProngProfileSize" xml:space="preserve"><value>Setting : Prong Profile - Size %</value></data>
+  <data name="SettingBottomBarHeight" xml:space="preserve"><value>Setting : Bottom Bar Height %</value></data>
+  <data name="LeafWithRaisedCenterSectionBothSides" xml:space="preserve"><value>Leaf With Raised Center Section Both Sides</value></data>
+  <data name="ArialFontBLowercase" xml:space="preserve"><value>Arial Font B Lowercase</value></data>
+  <data name="StylizedOakLeaf" xml:space="preserve"><value>Stylized Oak Leaf</value></data>
+  <data name="SplitShankOnOff" xml:space="preserve"><value>Split Shank On/Off</value></data>
+  <data name="LeafWithGrooveBothSides" xml:space="preserve"><value>Leaf With Groove Both Sides</value></data>
+  <data name="Setting1PositionOnRingRail" xml:space="preserve"><value>Setting 1 : Position On Ring Rail</value></data>
+  <data name="ConcaveHalfMoon" xml:space="preserve"><value>Concave Half Moon</value></data>
+  <data name="Bypass01" xml:space="preserve"><value>Bypass 01</value></data>
+  <data name="ProfileChooser" xml:space="preserve"><value>Profile Chooser</value></data>
+  <data name="BookmanFontWLowercase" xml:space="preserve"><value>Bookman Font W Lowercase</value></data>
+  <data name="WireCurved" xml:space="preserve"><value>Wire Curved</value></data>
+  <data name="ShankScrollSplitOnOff" xml:space="preserve"><value>Shank : Scroll Split On / Off</value></data>
+  <data name="BasketballFlatback" xml:space="preserve"><value>Basketball Flatback</value></data>
+  <data name="FourSingleBraidInfinity" xml:space="preserve"><value>Four Single Braid Infinity</value></data>
+  <data name="ShankRails04" xml:space="preserve"><value>Shank Rails 04</value></data>
+  <data name="ShankRails03" xml:space="preserve"><value>Shank Rails 03</value></data>
+  <data name="ShankRails02" xml:space="preserve"><value>Shank Rails 02</value></data>
+  <data name="ShankRails01" xml:space="preserve"><value>Shank Rails 01</value></data>
+  <data name="DetailProfilePosition" xml:space="preserve"><value>Detail : Profile Position</value></data>
+  <data name="VolleyballFlatback" xml:space="preserve"><value>Volleyball Flatback</value></data>
+  <data name="DetailObjectChooser" xml:space="preserve"><value>Detail : Object Chooser</value></data>
+  <data name="ConvexSquareCushion" xml:space="preserve"><value>Convex Square Cushion</value></data>
+  <data name="ChannelEndShapeProng" xml:space="preserve"><value>Channel : End Shape Prong</value></data>
+  <data name="Caduceus" xml:space="preserve"><value>Caduceus</value></data>
+  <data name="DetailCenterDesignLength" xml:space="preserve"><value>Detail : Center Design Length %</value></data>
+  <data name="WingShoeOnBase" xml:space="preserve"><value>Wing Shoe on Base</value></data>
+  <data name="SignetBand01" xml:space="preserve"><value>Signet Band 01</value></data>
+  <data name="BookmanFontKUppercase" xml:space="preserve"><value>Bookman Font K Uppercase</value></data>
+  <data name="Offset" xml:space="preserve"><value>Offset</value></data>
+  <data name="GemGemSpacing" xml:space="preserve"><value>Gem : Gem Spacing</value></data>
+  <data name="DesignBlendAmount" xml:space="preserve"><value>Design Blend Amount</value></data>
+  <data name="CollarWithGems01" xml:space="preserve"><value>Collar With Gems 01</value></data>
+  <data name="SettingProngsVerticalLocation" xml:space="preserve"><value>Setting : Prongs - Vertical Location</value></data>
+  <data name="DetailEndProfileShape" xml:space="preserve"><value>Detail : End Profile Shape</value></data>
+  <data name="StylizedGeometricSolid" xml:space="preserve"><value>Stylized Geometric Solid</value></data>
+  <data name="DetailEndProfileWidth" xml:space="preserve"><value>Detail : End Profile Width</value></data>
+  <data name="MonogramAMiddle" xml:space="preserve"><value>Monogram A Middle</value></data>
+  <data name="SettingTopGalleryRail" xml:space="preserve"><value>Setting - Top Gallery Rail</value></data>
+  <data name="DetailBottomDesignMoveLeftToRight" xml:space="preserve"><value>Detail : Bottom Design Move Left To Right</value></data>
+  <data name="DetailRotateObject" xml:space="preserve"><value>Detail : Rotate Object</value></data>
+  <data name="DetailRotate" xml:space="preserve"><value>Detail : Rotate</value></data>
+  <data name="CathedralCrossoverShank02" xml:space="preserve"><value>Cathedral Crossover Shank 02</value></data>
+  <data name="CathedralCrossoverShank01" xml:space="preserve"><value>Cathedral Crossover Shank 01</value></data>
+  <data name="Ladder" xml:space="preserve"><value>Ladder</value></data>
+  <data name="SettingFingerRailBend" xml:space="preserve"><value>Setting : Finger Rail - Bend</value></data>
+  <data name="Length" xml:space="preserve"><value>Length</value></data>
+  <data name="MonogramZRight" xml:space="preserve"><value>Monogram Z Right</value></data>
+  <data name="SingleLeafWithVeins" xml:space="preserve"><value>Single Leaf With Veins</value></data>
+  <data name="HerringboneChain" xml:space="preserve"><value>Herringbone Chain</value></data>
+  <data name="DetailRightOnOff" xml:space="preserve"><value>Detail : Right On/Off</value></data>
+  <data name="SettingCenterGalleryRailMoveUpDown" xml:space="preserve"><value>Setting : Center Gallery Rail Move Up Down</value></data>
+  <data name="DetailBottomDesignThickness" xml:space="preserve"><value>Detail : Bottom Design Thickness</value></data>
+  <data name="DetailBottomProfileShape" xml:space="preserve"><value>Detail : Bottom Profile Shape</value></data>
+  <data name="ShankRailCurveBlendAmount" xml:space="preserve"><value>Shank : Rail Curve - Blend Amount</value></data>
+  <data name="DetailBottomProfileWidth" xml:space="preserve"><value>Detail : Bottom Profile Width %</value></data>
+  <data name="SettingThroughFingerDiameter" xml:space="preserve"><value>Setting : Through Finger Diameter</value></data>
+  <data name="MonogramYRight" xml:space="preserve"><value>Monogram Y Right</value></data>
+  <data name="BookmanFontOLowercase" xml:space="preserve"><value>Bookman Font O Lowercase</value></data>
+  <data name="BookmanFontWUppercase" xml:space="preserve"><value>Bookman Font W Uppercase</value></data>
+  <data name="CircleWeaveKnot" xml:space="preserve"><value>Circle Weave Knot</value></data>
+  <data name="RaisedCenterBail" xml:space="preserve"><value>Raised Center Bail</value></data>
+  <data name="DoubleAccentGem01" xml:space="preserve"><value>Double Accent Gem 01</value></data>
+  <data name="BookmanFontFLowercase" xml:space="preserve"><value>Bookman Font F Lowercase</value></data>
+  <data name="BowlingPinFlatback" xml:space="preserve"><value>Bowling Pin Flatback</value></data>
+  <data name="DaisyPointedLeavesWithRoundedEdge" xml:space="preserve"><value>Daisy Pointed Leaves With Rounded Edge</value></data>
+  <data name="Setting2ProfileHeight" xml:space="preserve"><value>Setting 2 : Profile Height %</value></data>
+  <data name="GemShapeWire" xml:space="preserve"><value>Gem Shape Wire</value></data>
+  <data name="GemShapeRope" xml:space="preserve"><value>Gem Shape Rope</value></data>
+  <data name="Profiles" xml:space="preserve"><value>Profiles</value></data>
+  <data name="HaloCurved" xml:space="preserve"><value>Halo Curved</value></data>
+  <data name="DetailMoveLeftToRight" xml:space="preserve"><value>Detail : Move Left To Right</value></data>
+  <data name="DomeThickness" xml:space="preserve"><value>Dome Thickness</value></data>
+  <data name="SettingGalleryRailOnOff" xml:space="preserve"><value>Setting : Gallery Rail On/Off</value></data>
+  <data name="ShankTopProfileMoveFrontToBack" xml:space="preserve"><value>Shank : Top Profile - Move Front To Back</value></data>
+  <data name="SettingProngTopProfileTilt" xml:space="preserve"><value>Setting : Prong Top Profile Tilt</value></data>
+  <data name="GemOnly" xml:space="preserve"><value>Gem Only</value></data>
+  <data name="GemSize" xml:space="preserve"><value>Gem Size</value></data>
+  <data name="GemSide" xml:space="preserve"><value>Gem - Side</value></data>
+  <data name="GemsEnd" xml:space="preserve"><value>Gems : End</value></data>
+  <data name="BandBraidStyle" xml:space="preserve"><value>Band : Braid Style</value></data>
+  <data name="FlatLoops05" xml:space="preserve"><value>Flat Loops 05</value></data>
+  <data name="FlatLoops04" xml:space="preserve"><value>Flat Loops 04</value></data>
+  <data name="FlatLoops07" xml:space="preserve"><value>Flat Loops 07</value></data>
+  <data name="FlatLoops06" xml:space="preserve"><value>Flat Loops 06</value></data>
+  <data name="FlatLoops01" xml:space="preserve"><value>Flat Loops 01</value></data>
+  <data name="FlatLoops03" xml:space="preserve"><value>Flat  Loops 03</value></data>
+  <data name="FlatLoops02" xml:space="preserve"><value>Flat Loops 02</value></data>
+  <data name="DetailLeftHalfOnOff" xml:space="preserve"><value>Detail : Left Half On/Off</value></data>
+  <data name="ShankTopProfileMoveBackToFront" xml:space="preserve"><value>Shank: Top Profile Move Back To Front</value></data>
+  <data name="ShankTopProfileHeight" xml:space="preserve"><value>Shank: Top Profile - Height</value></data>
+  <data name="TeddyBear" xml:space="preserve"><value>Teddy Bear</value></data>
+  <data name="ShankSideProfileDistanceFromBand" xml:space="preserve"><value>Shank : Side Profile - Distance From Band</value></data>
+  <data name="ArialFontYUppercase" xml:space="preserve"><value>Arial Font Y Uppercase</value></data>
+  <data name="OffsetInsetOffset" xml:space="preserve"><value>Offset : Inset Offset</value></data>
+  <data name="SettingGalleryRailShape" xml:space="preserve"><value>Setting : Gallery Rail Shape</value></data>
+  <data name="Height" xml:space="preserve"><value>Height</value></data>
+  <data name="Head01" xml:space="preserve"><value>Head 01</value></data>
+  <data name="Head03" xml:space="preserve"><value>Head 03</value></data>
+  <data name="Head02" xml:space="preserve"><value>Head 02</value></data>
+  <data name="GemsPosition" xml:space="preserve"><value>Gems : Position</value></data>
+  <data name="ShankSideProfileRoll" xml:space="preserve"><value>Shank : Side Profile - Roll</value></data>
+  <data name="MonogramVRight" xml:space="preserve"><value>Monogram V Right</value></data>
+  <data name="DetailTopProfileHeight" xml:space="preserve"><value>Detail : Top Profile Height</value></data>
+  <data name="BottomProfileWidth" xml:space="preserve"><value>Bottom Profile Width</value></data>
+  <data name="WeaveOverlap" xml:space="preserve"><value>Weave Overlap</value></data>
+  <data name="Military" xml:space="preserve"><value>Military</value></data>
+  <data name="ShankProfileAHeight" xml:space="preserve"><value>Shank : Profile A - Height</value></data>
+  <data name="Milgrain" xml:space="preserve"><value>Milgrain</value></data>
+  <data name="BlendAmount" xml:space="preserve"><value>Blend Amount</value></data>
+  <data name="DetailScrollOnOff" xml:space="preserve"><value>Detail : Scroll - On/Off</value></data>
+  <data name="ConcaveTrillian" xml:space="preserve"><value>Concave Trillian</value></data>
+  <data name="StraightWireSimple" xml:space="preserve"><value>Straight Wire Simple</value></data>
+  <data name="GolfTee" xml:space="preserve"><value>Golf Tee</value></data>
+  <data name="ConcaveRound" xml:space="preserve"><value>Concave Round</value></data>
+  <data name="StarFish" xml:space="preserve"><value>Star Fish</value></data>
+  <data name="MonogramURight" xml:space="preserve"><value>Monogram U Right</value></data>
+  <data name="ShankTopProfileOpenOrClosed" xml:space="preserve"><value>Shank: Top Profile Open Or Closed</value></data>
+  <data name="GemsEndDiameter" xml:space="preserve"><value>Gems : End Diameter</value></data>
+  <data name="GemsShortRowSize" xml:space="preserve"><value>Gems : Short Row Size</value></data>
+  <data name="BookmanFontLUppercase" xml:space="preserve"><value>Bookman Font L Uppercase</value></data>
+  <data name="SideGemHeight" xml:space="preserve"><value>Side Gem : Height</value></data>
+  <data name="ScrollSCS02602" xml:space="preserve"><value>Scroll SCS02602</value></data>
+  <data name="MonogramLMiddle" xml:space="preserve"><value>Monogram L Middle</value></data>
+  <data name="One897Head" xml:space="preserve"><value>1897 Head</value></data>
+  <data name="ConcaveHeart" xml:space="preserve"><value>Concave Heart</value></data>
+  <data name="ArialFontGLowercase" xml:space="preserve"><value>Arial Font G Lowercase</value></data>
+  <data name="SingleBraidInfinity" xml:space="preserve"><value>Single Braid Infinity</value></data>
+  <data name="GemsRotationWhenPullToRailIsEnabled" xml:space="preserve"><value>Gems : Rotation (When Pull To Rail Is Enabled)</value></data>
+  <data name="MonogramXRight" xml:space="preserve"><value>Monogram X Right</value></data>
+  <data name="ArialFontRUppercase" xml:space="preserve"><value>Arial Font R Uppercase</value></data>
+  <data name="TopProfile1Position" xml:space="preserve"><value>Top Profile 1 Position</value></data>
+  <data name="MonogramUMiddle" xml:space="preserve"><value>Monogram U Middle</value></data>
+  <data name="BailsChain" xml:space="preserve"><value>Bails &amp; Chain</value></data>
+  <data name="LeavesOnVineDesign" xml:space="preserve"><value>Leaves on Vine Design</value></data>
+  <data name="MiddleProfileWidth" xml:space="preserve"><value>Middle Profile Width</value></data>
+  <data name="BaseballFlat" xml:space="preserve"><value>Baseball Flat</value></data>
+  <data name="GolfClub" xml:space="preserve"><value>Golf Club</value></data>
+  <data name="GolfBall" xml:space="preserve"><value>Golf Ball</value></data>
+  <data name="ScrollsSize" xml:space="preserve"><value>Scrolls : Size</value></data>
+  <data name="DetailInnerDesignOnOff" xml:space="preserve"><value>Detail : Inner Design On/Off</value></data>
+  <data name="BookmanFontPUppercase" xml:space="preserve"><value>Bookman Font P Uppercase</value></data>
+  <data name="USAFFillet" xml:space="preserve"><value>USAF Fillet</value></data>
+  <data name="DetailMiddleProfileHeight" xml:space="preserve"><value>Detail : Middle Profile Height</value></data>
+  <data name="ArialFontNLowercase" xml:space="preserve"><value>Arial Font N Lowercase</value></data>
+  <data name="Baseball" xml:space="preserve"><value>Baseball</value></data>
+  <data name="SettingsProngsOnOff" xml:space="preserve"><value>Settings: Prongs On Off</value></data>
+  <data name="MonogramWRight" xml:space="preserve"><value>Monogram W Right</value></data>
+  <data name="ArialFontNUppercase" xml:space="preserve"><value>Arial Font N Uppercase</value></data>
+  <data name="SettingGalleryRails" xml:space="preserve"><value>Setting - Gallery Rails</value></data>
+  <data name="DetailHolePossition" xml:space="preserve"><value>Detail: Hole Possition</value></data>
+  <data name="SettingGalleryRailDiameter" xml:space="preserve"><value>Setting : Gallery Rail Diameter</value></data>
+  <data name="GirdleSpacing" xml:space="preserve"><value>Girdle Spacing</value></data>
+  <data name="Profile1Height" xml:space="preserve"><value>Profile 1 Height</value></data>
+  <data name="ShankTopAngleUpAndDown" xml:space="preserve"><value>Shank : Top Angle Up And Down</value></data>
+  <data name="ScrollProfileShape" xml:space="preserve"><value>Scroll : Profile Shape</value></data>
+  <data name="EndProfileWidth" xml:space="preserve"><value>End Profile Width</value></data>
+  <data name="Ellipsoid" xml:space="preserve"><value>Ellipsoid</value></data>
+  <data name="BookmanFontTLowercase" xml:space="preserve"><value>Bookman Font T Lowercase</value></data>
+  <data name="SettingLowerRailBendWhenPullToRailIsOn" xml:space="preserve"><value>Setting : Lower Rail - Bend % (When Pull To Rail Is On)</value></data>
+  <data name="MonogramRRight" xml:space="preserve"><value>Monogram R Right</value></data>
+  <data name="SignetTopLength" xml:space="preserve"><value>Signet : Top Length</value></data>
+  <data name="BendShank04" xml:space="preserve"><value>Bend Shank 04</value></data>
+  <data name="BendShank03" xml:space="preserve"><value>Bend Shank 03</value></data>
+  <data name="BendShank02" xml:space="preserve"><value>Bend Shank 02</value></data>
+  <data name="BendShank01" xml:space="preserve"><value>Bend Shank 01</value></data>
+  <data name="VienedMapleLeaf" xml:space="preserve"><value>Viened Maple Leaf</value></data>
+  <data name="FootballFlatback" xml:space="preserve"><value>Football Flatback</value></data>
+  <data name="ProfilePosition" xml:space="preserve"><value>Profile Position</value></data>
+  <data name="DetailTopRightDesignOnOff" xml:space="preserve"><value>Detail : Top Right Design On/Off</value></data>
+  <data name="LowerShankLocation" xml:space="preserve"><value>Lower Shank Location</value></data>
+  <data name="CenterGemOnOff" xml:space="preserve"><value>Center Gem On Off</value></data>
+  <data name="BottomDesign" xml:space="preserve"><value>Bottom Design</value></data>
+  <data name="SettingTrellis" xml:space="preserve"><value>Setting - Trellis</value></data>
+  <data name="CenterGemShape" xml:space="preserve"><value>Center Gem : Shape</value></data>
+  <data name="Butterfly05SwallowtailFlatback" xml:space="preserve"><value>Butterfly 05 Swallowtail Flatback</value></data>
+  <data name="SettingProngsEndOverlap" xml:space="preserve"><value>Setting : Prongs - End - Overlap</value></data>
+  <data name="MonogramQRight" xml:space="preserve"><value>Monogram Q Right</value></data>
+  <data name="SwirlDiameterFromGem" xml:space="preserve"><value>Swirl Diameter From Gem</value></data>
+  <data name="ThisOrThat" xml:space="preserve"><value>This Or That</value></data>
+  <data name="DetailSize" xml:space="preserve"><value>Detail : Size</value></data>
+  <data name="DetailFlip" xml:space="preserve"><value>Detail : Flip</value></data>
+  <data name="DetailMove" xml:space="preserve"><value>Detail : Move</value></data>
+  <data name="DetailBottomProfileHeight" xml:space="preserve"><value>Detail : Bottom Profile Height</value></data>
+  <data name="ShankSideBend" xml:space="preserve"><value>Shank : Side Bend</value></data>
+  <data name="ChiseledWing02" xml:space="preserve"><value>Chiseled Wing 02</value></data>
+  <data name="ChiseledWing01" xml:space="preserve"><value>Chiseled Wing 01</value></data>
+  <data name="SettingSetting2MoveFrontToBack" xml:space="preserve"><value>Setting : Setting 2 Move Front To Back</value></data>
+  <data name="DetailRightProfileHeight" xml:space="preserve"><value>Detail : Right Profile Height</value></data>
+  <data name="ArialFontVLowercase" xml:space="preserve"><value>Arial Font V Lowercase</value></data>
+  <data name="ShankBridgeProfileWidth" xml:space="preserve"><value>Shank : Bridge Profile Width</value></data>
+  <data name="MonogramTRight" xml:space="preserve"><value>Monogram T Right</value></data>
+  <data name="Repeat" xml:space="preserve"><value>Repeat</value></data>
+  <data name="BottomBarOnOff" xml:space="preserve"><value>Bottom Bar - On/Off</value></data>
+  <data name="HollowingBottomWidth" xml:space="preserve"><value>Hollowing Bottom Width</value></data>
+  <data name="DomedLoops05" xml:space="preserve"><value>Domed Loops 05</value></data>
+  <data name="DomedLoops04" xml:space="preserve"><value>Domed Loops 04</value></data>
+  <data name="DomedLoops01" xml:space="preserve"><value>Domed Loops 01</value></data>
+  <data name="DomedLoops03" xml:space="preserve"><value>Domed Loops 03</value></data>
+  <data name="DomedLoops02" xml:space="preserve"><value>Domed Loops 02</value></data>
+  <data name="ShankBridgeProfileShape" xml:space="preserve"><value>Shank : Bridge Profile Shape</value></data>
+  <data name="SettingSetting2Position" xml:space="preserve"><value>Setting : Setting 2 Position</value></data>
+  <data name="GemCluster01" xml:space="preserve"><value>Gem Cluster 01</value></data>
+  <data name="TorusBraid" xml:space="preserve"><value>Torus Braid</value></data>
+  <data name="ArialFontCUppercase" xml:space="preserve"><value>Arial Font C Uppercase</value></data>
+  <data name="Griffin" xml:space="preserve"><value>Griffin</value></data>
+  <data name="HollowingBottomDepth" xml:space="preserve"><value>Hollowing Bottom Depth</value></data>
+  <data name="DetailBeadSize" xml:space="preserve"><value>Detail : Bead Size</value></data>
+  <data name="BandMilgrainCurveTopPosition" xml:space="preserve"><value>Band: Milgrain Curve Top Position</value></data>
+  <data name="DetailBeadDome" xml:space="preserve"><value>Detail : Bead Dome</value></data>
+  <data name="MapleDomedRoundedEdges" xml:space="preserve"><value>Maple Domed Rounded Edges</value></data>
+  <data name="BasketballFlat" xml:space="preserve"><value>Basketball Flat</value></data>
+  <data name="Grooved" xml:space="preserve"><value>Grooved</value></data>
+  <data name="BookmanFontCLowercase" xml:space="preserve"><value>Bookman Font C Lowercase</value></data>
+  <data name="Star01" xml:space="preserve"><value>Star 01</value></data>
+  <data name="Star03" xml:space="preserve"><value>Star 03</value></data>
+  <data name="Star02" xml:space="preserve"><value>Star 02</value></data>
+  <data name="Star04" xml:space="preserve"><value>Star 04</value></data>
+  <data name="TennisRacket" xml:space="preserve"><value>Tennis Racket</value></data>
+  <data name="ShankSpread" xml:space="preserve"><value>Shank : Spread</value></data>
+  <data name="Square" xml:space="preserve"><value>Square</value></data>
+  <data name="SettingBarPosition" xml:space="preserve"><value>Setting : Bar Position</value></data>
+  <data name="SnakeChain" xml:space="preserve"><value>Snake Chain</value></data>
+  <data name="Symbol" xml:space="preserve"><value>Symbol</value></data>
+  <data name="BookmanFontLLowercase" xml:space="preserve"><value>Bookman Font L Lowercase</value></data>
+  <data name="DoubleLoopWeaveKnot" xml:space="preserve"><value>Double Loop Weave Knot</value></data>
+  <data name="Scroll" xml:space="preserve"><value>Scroll</value></data>
+  <data name="GemsStartSize" xml:space="preserve"><value>Gems : Start Size</value></data>
+  <data name="ShankEndAProfilePosition" xml:space="preserve"><value>Shank : End A Profile Position</value></data>
+  <data name="ScaleY" xml:space="preserve"><value>Scale Y</value></data>
+  <data name="ScaleX" xml:space="preserve"><value>Scale X</value></data>
+  <data name="ScaleZ" xml:space="preserve"><value>Scale Z</value></data>
+  <data name="DetailLeftEndProfileSize2" xml:space="preserve"><value>Detail : Left End Profile Size 2</value></data>
+  <data name="DetailLeftEndProfileSize1" xml:space="preserve"><value>Detail : Left End Profile Size 1</value></data>
+  <data name="GemsSettings" xml:space="preserve"><value>Gems &amp; Settings</value></data>
+  <data name="ShankTopProfileMoveUpDown" xml:space="preserve"><value>Shank : Top Profile - Move Up &amp; Down</value></data>
+  <data name="ShankRadius" xml:space="preserve"><value>Shank : Radius</value></data>
+  <data name="MonogramSRight" xml:space="preserve"><value>Monogram S Right</value></data>
+  <data name="SettingSideGemProngSize" xml:space="preserve"><value>Setting : Side Gem Prong Size %</value></data>
+  <data name="MonogramNRight" xml:space="preserve"><value>Monogram N Right</value></data>
+  <data name="WireStraight2" xml:space="preserve"><value>Wire Straight 2</value></data>
+  <data name="WireStraight3" xml:space="preserve"><value>Wire Straight 3</value></data>
+  <data name="WireStraight1" xml:space="preserve"><value>Wire Straight 1</value></data>
+  <data name="WireStraight4" xml:space="preserve"><value>Wire Straight 4</value></data>
+  <data name="SettingProng2RotateAroundHead" xml:space="preserve"><value>Setting : Prong 2 Rotate Around Head</value></data>
+  <data name="Setting1OverallDiameter" xml:space="preserve"><value>Setting 1 : Overall Diameter %</value></data>
+  <data name="Signet" xml:space="preserve"><value>Signet</value></data>
+  <data name="CenterGemRotation" xml:space="preserve"><value>Center Gem : Rotation</value></data>
+  <data name="Shanks" xml:space="preserve"><value>Shanks</value></data>
+  <data name="Shank1" xml:space="preserve"><value>Shank</value></data>
+  <data name="Shapes" xml:space="preserve"><value>Shapes</value></data>
+  <data name="BezelCutterVerticalPosition" xml:space="preserve"><value>Bezel : Cutter - Vertical Position</value></data>
+  <data name="UpperRailGems1OnOff" xml:space="preserve"><value>Upper Rail Gems 1 On Off</value></data>
+  <data name="SettingBarThickness" xml:space="preserve"><value>Setting : Bar Thickness</value></data>
+  <data name="People" xml:space="preserve"><value>People</value></data>
+  <data name="MonogramMRight" xml:space="preserve"><value>Monogram M Right</value></data>
+  <data name="DetailRightHalfOnOff" xml:space="preserve"><value>Detail : Right Half On/Off</value></data>
+  <data name="ShankShoulderBlendAmount" xml:space="preserve"><value>Shank : Shoulder Blend Amount</value></data>
+  <data name="SCS02161StraightBandWithGems" xml:space="preserve"><value>SCS02161 Straight Band With Gems</value></data>
+  <data name="BandBottomThickness" xml:space="preserve"><value>Band: Bottom Thickness</value></data>
+  <data name="SettingBarHeight" xml:space="preserve"><value>Setting : Bar Height %</value></data>
+  <data name="ShankProfileBridgeHeight" xml:space="preserve"><value>Shank : Profile - Bridge - Height</value></data>
+  <data name="Position" xml:space="preserve"><value>Position</value></data>
+  <data name="SettingProngsLength" xml:space="preserve"><value>Setting : Prongs - Length</value></data>
+  <data name="ScrollMoveUpDown" xml:space="preserve"><value>Scroll : Move Up/Down</value></data>
+  <data name="BookmanFontCUppercase" xml:space="preserve"><value>Bookman Font C Uppercase</value></data>
+  <data name="ConvexCushion" xml:space="preserve"><value>Convex Cushion</value></data>
+  <data name="Thickness" xml:space="preserve"><value>Thickness</value></data>
+  <data name="ClusterBlendAmount" xml:space="preserve"><value>Cluster Blend Amount</value></data>
+  <data name="ConcaveOctogon" xml:space="preserve"><value>Concave Octogon</value></data>
+  <data name="ShankShankDesignShape" xml:space="preserve"><value>Shank : Shank Design Shape</value></data>
+  <data name="DetailBottomDesignLength" xml:space="preserve"><value>Detail : Bottom Design Length %</value></data>
+  <data name="HalfConcaveHalfDomedTopAndFlatBottom" xml:space="preserve"><value>Half Concave Half Domed Top And Flat Bottom</value></data>
+  <data name="ShankBendStart" xml:space="preserve"><value>Shank : Bend Start</value></data>
+  <data name="ShankScroll1ProfileShape" xml:space="preserve"><value>Shank : Scroll 1 - Profile - Shape</value></data>
+  <data name="SettingSide" xml:space="preserve"><value>Setting - Side</value></data>
+  <data name="SettingBars" xml:space="preserve"><value>Setting - Bars</value></data>
+  <data name="BeadConcave" xml:space="preserve"><value>Bead Concave</value></data>
+  <data name="ShankBridgeHeight" xml:space="preserve"><value>Shank : Bridge Height</value></data>
+  <data name="ProfileWidth" xml:space="preserve"><value>Profile Width</value></data>
+  <data name="MonogramPRight" xml:space="preserve"><value>Monogram P Right</value></data>
+  <data name="DetailLength" xml:space="preserve"><value>Detail : Length %</value></data>
+  <data name="ProfileShape" xml:space="preserve"><value>Profile Shape</value></data>
+  <data name="ShankSideViewTaperAmount" xml:space="preserve"><value>Shank : Side View Taper Amount</value></data>
+  <data name="MonogramORight" xml:space="preserve"><value>Monogram O Right</value></data>
+  <data name="GemsEndPosition" xml:space="preserve"><value>Gems : End Position</value></data>
+  <data name="UpperRailGems2OnOff" xml:space="preserve"><value>Upper Rail Gems 2 On Off</value></data>
+  <data name="SettingsSide2" xml:space="preserve"><value>Settings Side 2</value></data>
+  <data name="BridgeOnOff" xml:space="preserve"><value>Bridge On Off</value></data>
+  <data name="DetailEndSpacing" xml:space="preserve"><value>Detail : End Spacing</value></data>
+  <data name="BeadBeadCutoutDepth" xml:space="preserve"><value>Bead : Bead Cutout Depth</value></data>
+  <data name="SettingUpperGalleryRailHeight" xml:space="preserve"><value>Setting : Upper Gallery Rail - Height %</value></data>
+  <data name="MonogramJRight" xml:space="preserve"><value>Monogram J Right</value></data>
+  <data name="DoubleBraidInfinity" xml:space="preserve"><value>Double Braid Infinity</value></data>
+  <data name="SettingCutterPosition" xml:space="preserve"><value>Setting : Cutter Position</value></data>
+  <data name="GemGirdleThickness" xml:space="preserve"><value>Gem : Girdle Thickness</value></data>
+  <data name="BowlingBall" xml:space="preserve"><value>Bowling Ball</value></data>
+  <data name="BeadBeadCutoutWidth" xml:space="preserve"><value>Bead : Bead Cutout Width</value></data>
+  <data name="Identifier" xml:space="preserve"><value>Identifier</value></data>
+  <data name="ArialFontDLowercase" xml:space="preserve"><value>Arial Font D Lowercase</value></data>
+  <data name="ArialFontDUppercase" xml:space="preserve"><value>Arial Font D Uppercase</value></data>
+  <data name="ShankTopProfileMirrorRotate" xml:space="preserve"><value>Shank : Top Profile Mirror Rotate</value></data>
+  <data name="ShankCurvedEndProfileWidth" xml:space="preserve"><value>Shank : Curved End Profile Width</value></data>
+  <data name="FlatSpiral01" xml:space="preserve"><value>Flat Spiral 01</value></data>
+  <data name="BailGemsOff" xml:space="preserve"><value>Bail Gems Off</value></data>
+  <data name="BandMilgrainCurveBottomPosition" xml:space="preserve"><value>Band: Milgrain Curve Bottom Position</value></data>
+  <data name="TennisballFlatback" xml:space="preserve"><value>Tennisball Flatback</value></data>
+  <data name="MonogramIRight" xml:space="preserve"><value>Monogram I Right</value></data>
+  <data name="SettingProngDiameter" xml:space="preserve"><value>Setting : Prong Diameter</value></data>
+  <data name="BookmanFontQLowercase" xml:space="preserve"><value>Bookman Font Q Lowercase</value></data>
+  <data name="GroovedCCurve01" xml:space="preserve"><value>Grooved C Curve 01</value></data>
+  <data name="BandMilgrainStart" xml:space="preserve"><value>Band: Milgrain Start</value></data>
+  <data name="CollarCutterOnOff" xml:space="preserve"><value>Collar : Cutter On Off</value></data>
+  <data name="DesignMoveUpDown" xml:space="preserve"><value>Design Move Up/Down</value></data>
+  <data name="SideGems" xml:space="preserve"><value>Side Gems</value></data>
+  <data name="DetailBarWidth" xml:space="preserve"><value>Detail : Bar Width</value></data>
+  <data name="MonogramLRight" xml:space="preserve"><value>Monogram L Right</value></data>
+  <data name="BandMilgrainOnOff" xml:space="preserve"><value>Band: Milgrain On Off</value></data>
+  <data name="DetailBarShape" xml:space="preserve"><value>Detail : Bar Shape</value></data>
+  <data name="ArmyWithText1" xml:space="preserve"><value>Army With Text 1</value></data>
+  <data name="ArmyWithText2" xml:space="preserve"><value>Army With Text 2</value></data>
+  <data name="GemsRotation" xml:space="preserve"><value>Gems : Rotation</value></data>
+  <data name="SettingProngsOverlap" xml:space="preserve"><value>Setting : Prongs - Overlap</value></data>
+  <data name="BaseballFlatback" xml:space="preserve"><value>Baseball Flatback</value></data>
+  <data name="ConvexRadiant" xml:space="preserve"><value>Convex Radiant</value></data>
+  <data name="DetailHeight" xml:space="preserve"><value>Detail : Height %</value></data>
+  <data name="SettingHeadLocation" xml:space="preserve"><value>Setting - Head Location</value></data>
+  <data name="SettingProngsVerticalLocationInside" xml:space="preserve"><value>Setting : Prongs - Vertical Location Inside</value></data>
+  <data name="SettingUpperGalleryRailOnOff" xml:space="preserve"><value>Setting : Upper Gallery Rail - On Off</value></data>
+  <data name="SCurve01" xml:space="preserve"><value>S Curve 01</value></data>
+  <data name="SCurve03" xml:space="preserve"><value>S Curve 03</value></data>
+  <data name="SCurve02" xml:space="preserve"><value>S Curve 02</value></data>
+  <data name="SCurve04" xml:space="preserve"><value>S Curve 04</value></data>
+  <data name="CrossoverShank02" xml:space="preserve"><value>Crossover Shank 02</value></data>
+  <data name="CrossoverShank01" xml:space="preserve"><value>Crossover Shank 01</value></data>
+  <data name="MonogramKRight" xml:space="preserve"><value>Monogram K Right</value></data>
+  <data name="SettingHeadAngleSide" xml:space="preserve"><value>Setting : Head Angle - Side %</value></data>
+  <data name="DetailObjectThickness" xml:space="preserve"><value>Detail : Object Thickness %</value></data>
+  <data name="SCS02574Band" xml:space="preserve"><value>SCS02574 Band</value></data>
+  <data name="ShankProfileSideShape" xml:space="preserve"><value>Shank : Profile - Side - Shape</value></data>
+  <data name="ShankSideProfileHeight" xml:space="preserve"><value>Shank : Side Profile Height</value></data>
+  <data name="MonogramOMiddle" xml:space="preserve"><value>Monogram O Middle</value></data>
+  <data name="ShankDesignSideProfileShape" xml:space="preserve"><value>Shank : Design Side Profile Shape</value></data>
+  <data name="ShankProfileSideWidth" xml:space="preserve"><value>Shank : Profile - Side - Width</value></data>
+  <data name="WheatRight" xml:space="preserve"><value>Wheat Right</value></data>
+  <data name="RampantLion" xml:space="preserve"><value>Rampant Lion</value></data>
+  <data name="SettingTopBarTilt" xml:space="preserve"><value>Setting : Top Bar Tilt</value></data>
+  <data name="TopProfileWidth" xml:space="preserve"><value>Top Profile Width</value></data>
+  <data name="Three1125100Pt" xml:space="preserve"><value>311 25-100pt</value></data>
+  <data name="Three11225Pt" xml:space="preserve"><value>311 2-25pt</value></data>
+  <data name="ConcaveSquare" xml:space="preserve"><value>Concave Square</value></data>
+  <data name="CollarGems" xml:space="preserve"><value>Collar Gems</value></data>
+  <data name="SettingUpperGalleryRailWidth" xml:space="preserve"><value>Setting : Upper Gallery Rail - Width %</value></data>
+  <data name="BookmanFlat" xml:space="preserve"><value>Bookman - Flat</value></data>
+  <data name="SettingUpperGalleryRailShape" xml:space="preserve"><value>Setting : Upper Gallery Rail - Shape</value></data>
+  <data name="DetailMiddleRightDesignOnOff" xml:space="preserve"><value>Detail : Middle Right Design On/Off</value></data>
+  <data name="ThreeProngRoundHead" xml:space="preserve"><value>3 Prong Round Head</value></data>
+  <data name="ShankBridgeProfileChooser" xml:space="preserve"><value>Shank : Bridge - Profile Chooser</value></data>
+  <data name="GemsLongRow" xml:space="preserve"><value>Gems Long Row</value></data>
+  <data name="RondellOutsideProfileChooser" xml:space="preserve"><value>Rondell : Outside Profile Chooser</value></data>
+  <data name="QuadShank" xml:space="preserve"><value>Quad Shank</value></data>
+  <data name="FlatElement067" xml:space="preserve"><value>Flat Element 067</value></data>
+  <data name="FlatElement068" xml:space="preserve"><value>Flat Element 068</value></data>
+  <data name="FlatElement069" xml:space="preserve"><value>Flat Element 069</value></data>
+  <data name="MonogramFRight" xml:space="preserve"><value>Monogram F Right</value></data>
+  <data name="XCount" xml:space="preserve"><value>X Count</value></data>
+  <data name="Collar1" xml:space="preserve"><value>Collar</value></data>
+  <data name="BookmanFontILowercase" xml:space="preserve"><value>Bookman Font I Lowercase</value></data>
+  <data name="BookmanFontDUppercase" xml:space="preserve"><value>Bookman Font D Uppercase</value></data>
+  <data name="ShankTopBendAmount" xml:space="preserve"><value>Shank : Top Bend Amount</value></data>
+  <data name="HalfBezel" xml:space="preserve"><value>Half Bezel</value></data>
+  <data name="BeadDiameter" xml:space="preserve"><value>Bead Diameter</value></data>
+  <data name="OuterLeaves" xml:space="preserve"><value>Outer Leaves</value></data>
+  <data name="GemThickness" xml:space="preserve"><value>Gem : Thickness</value></data>
+  <data name="SettingProngEndMove" xml:space="preserve"><value>Setting : Prong End Move</value></data>
+  <data name="ArialFontZUppercase" xml:space="preserve"><value>Arial Font Z Uppercase</value></data>
+  <data name="ConcaveSquareEmerald" xml:space="preserve"><value>Concave Square Emerald</value></data>
+  <data name="MonogramHMiddle" xml:space="preserve"><value>Monogram H Middle</value></data>
+  <data name="StraightRope" xml:space="preserve"><value>Straight Rope</value></data>
+  <data name="StraightWire" xml:space="preserve"><value>Straight Wire</value></data>
+  <data name="DetailOuterDesignCurveAmount" xml:space="preserve"><value>Detail : Outer Design Curve Amount</value></data>
+  <data name="GemsStartDiameter" xml:space="preserve"><value>Gems : Start Diameter</value></data>
+  <data name="FiligreeDoubleLoop" xml:space="preserve"><value>Filigree Double Loop</value></data>
+  <data name="MonogramERight" xml:space="preserve"><value>Monogram E Right</value></data>
+  <data name="GemGemStartPosition" xml:space="preserve"><value>Gem : Gem Start Position</value></data>
+  <data name="MonogramQMiddle" xml:space="preserve"><value>Monogram Q Middle</value></data>
+  <data name="BeadScaleUniformNonuniform" xml:space="preserve"><value>Bead: Scale - Uniform / Nonuniform</value></data>
+  <data name="ShankSideProfileMirrorRotate" xml:space="preserve"><value>Shank : Side Profile Mirror Rotate</value></data>
+  <data name="GolfTeeFlat" xml:space="preserve"><value>Golf Tee Flat</value></data>
+  <data name="SettingVProngAngle" xml:space="preserve"><value>Setting : V Prong - Angle</value></data>
+  <data name="DogTag03" xml:space="preserve"><value>Dog Tag 03</value></data>
+  <data name="DogTag02" xml:space="preserve"><value>Dog Tag 02</value></data>
+  <data name="DogTag01" xml:space="preserve"><value>Dog Tag 01</value></data>
+  <data name="BailBottomProfileWidth" xml:space="preserve"><value>Bail : Bottom Profile Width</value></data>
+  <data name="TopGems" xml:space="preserve"><value>Top Gems</value></data>
+  <data name="SettingVProngBlend" xml:space="preserve"><value>Setting : V Prong - Blend</value></data>
+  <data name="ShankShankSideWidth" xml:space="preserve"><value>Shank : Shank Side Width</value></data>
+  <data name="BailBottomProfileShape" xml:space="preserve"><value>Bail : Bottom Profile Shape</value></data>
+  <data name="MonogramHRight" xml:space="preserve"><value>Monogram H Right</value></data>
+  <data name="ArialFontKLowercase" xml:space="preserve"><value>Arial Font K Lowercase</value></data>
+  <data name="LowerRailGems1OnOff" xml:space="preserve"><value>Lower Rail Gems 1 On Off</value></data>
+  <data name="FiligreeCrossover" xml:space="preserve"><value>Filigree Crossover</value></data>
+  <data name="ShankLength" xml:space="preserve"><value>Shank : Length</value></data>
+  <data name="TopProfileHeight" xml:space="preserve"><value>Top Profile Height</value></data>
+  <data name="BookmanFontIUppercase" xml:space="preserve"><value>Bookman Font I Uppercase</value></data>
+  <data name="CenterGemHeight" xml:space="preserve"><value>Center Gem : Height</value></data>
+  <data name="ShankEndMilgrainPosition" xml:space="preserve"><value>Shank : End Milgrain - Position</value></data>
+  <data name="SettingProngProfileHeight" xml:space="preserve"><value>Setting : Prong Profile - Height %</value></data>
+  <data name="SettingLowerGalleryRailOffset" xml:space="preserve"><value>Setting : Lower Gallery Rail - Offset %</value></data>
+  <data name="ProfilePositionStart" xml:space="preserve"><value>Profile Position Start</value></data>
+  <data name="ShankTopProfilePositionArroundTheRing" xml:space="preserve"><value>Shank: Top Profile Position Arround The Ring</value></data>
+  <data name="Setting2MoveFrontToBack" xml:space="preserve"><value>Setting 2 : Move Front To Back</value></data>
+  <data name="DaisyPointedLeavesWithFlatEdge" xml:space="preserve"><value>Daisy Pointed Leaves With Flat Edge</value></data>
+  <data name="ArialFontWUppercase" xml:space="preserve"><value>Arial Font W Uppercase</value></data>
+  <data name="LowerRailGems2OnOff" xml:space="preserve"><value>Lower Rail Gems 2 On Off</value></data>
+  <data name="ShankBridgeTopSpan" xml:space="preserve"><value>Shank : Bridge Top - Span</value></data>
+  <data name="SettingTopBarOnOff" xml:space="preserve"><value>Setting : Top Bar - On/Off</value></data>
+  <data name="MonogramGRight" xml:space="preserve"><value>Monogram G Right</value></data>
+  <data name="ShankShortTopProfileOffset" xml:space="preserve"><value>Shank : Short Top Profile Offset</value></data>
+  <data name="Butterfly04Flatback" xml:space="preserve"><value>Butterfly 04 Flatback</value></data>
+  <data name="GroovedElement081" xml:space="preserve"><value>Grooved Element 081</value></data>
+  <data name="GroovedElement080" xml:space="preserve"><value>Grooved Element 080</value></data>
+  <data name="GroovedElement082" xml:space="preserve"><value>Grooved Element 082</value></data>
+  <data name="SCS02574BandOpen" xml:space="preserve"><value>SCS02574 Band Open</value></data>
+  <data name="DetailRightCenterProfileSize" xml:space="preserve"><value>Detail : Right Center Profile Size</value></data>
+  <data name="ShankSideProfileMoveBackToFront" xml:space="preserve"><value>Shank : Side Profile Move Back To Front</value></data>
+  <data name="DetailBottomDesign" xml:space="preserve"><value>Detail : Bottom Design</value></data>
+  <data name="DetailEndBProfileHeight" xml:space="preserve"><value>Detail : End B Profile Height</value></data>
+  <data name="ConvexSquareEmerald" xml:space="preserve"><value>Convex Square Emerald</value></data>
+  <data name="ShankScroll4ProfileShape" xml:space="preserve"><value>Shank : Scroll 4 - Profile - Shape</value></data>
+  <data name="SettingTopBarWidth" xml:space="preserve"><value>Setting : Top Bar Width %</value></data>
+  <data name="ProngsOnOff" xml:space="preserve"><value>Prongs On Off</value></data>
+  <data name="UpperGalleryRailFullHalf" xml:space="preserve"><value>Upper Gallery Rail - Full / Half</value></data>
+  <data name="SettingScallopCutterWidth" xml:space="preserve"><value>Setting : Scallop Cutter Width</value></data>
+  <data name="ShankInsetOnOff" xml:space="preserve"><value>Shank : Inset On Off</value></data>
+  <data name="MonogramBRight" xml:space="preserve"><value>Monogram B Right</value></data>
+  <data name="DetailEndCapLength" xml:space="preserve"><value>Detail : End Cap Length</value></data>
+  <data name="SettingSetting1MoveFrontToBack" xml:space="preserve"><value>Setting : Setting 1 Move Front To Back</value></data>
+  <data name="MidProfileWidth" xml:space="preserve"><value>Mid Profile Width</value></data>
+  <data name="SettingScallopCutterDepth" xml:space="preserve"><value>Setting : Scallop Cutter Depth</value></data>
+  <data name="TripleDomeBail" xml:space="preserve"><value>Triple Dome Bail</value></data>
+  <data name="AccentGemsNumberOfRows" xml:space="preserve"><value>Accent Gems : Number Of Rows</value></data>
+  <data name="BookmanFontUUppercase" xml:space="preserve"><value>Bookman Font U Uppercase</value></data>
+  <data name="ShankInsetDepth" xml:space="preserve"><value>Shank : Inset Depth</value></data>
+  <data name="ScaleLength" xml:space="preserve"><value>Scale Length</value></data>
+  <data name="ArialFontSLowercase" xml:space="preserve"><value>Arial Font S Lowercase</value></data>
+  <data name="USMCEmblem" xml:space="preserve"><value>USMC Emblem</value></data>
+  <data name="ArialFontKUppercase" xml:space="preserve"><value>Arial Font K Uppercase</value></data>
+  <data name="ShankTopProfileChooser" xml:space="preserve"><value>Shank : Top Profile Chooser</value></data>
+  <data name="MonogramARight" xml:space="preserve"><value>Monogram A Right</value></data>
+  <data name="ChiseledSingleCurve01" xml:space="preserve"><value>Chiseled Single Curve 01</value></data>
+  <data name="ChiseledSingleCurve03" xml:space="preserve"><value>Chiseled Single Curve 03</value></data>
+  <data name="ChiseledSingleCurve02" xml:space="preserve"><value>Chiseled Single Curve 02</value></data>
+  <data name="ChiseledSingleCurve05" xml:space="preserve"><value>Chiseled Single Curve 05</value></data>
+  <data name="ChiseledSingleCurve04" xml:space="preserve"><value>Chiseled Single Curve 04</value></data>
+  <data name="VerticalPosition" xml:space="preserve"><value>Vertical Position</value></data>
+  <data name="LoopShort17994" xml:space="preserve"><value>Loop Short 17994</value></data>
+  <data name="ShankEndCapDome" xml:space="preserve"><value>Shank : End Cap Dome</value></data>
+  <data name="ShankTopShapeEdit" xml:space="preserve"><value>Shank : Top Shape Edit</value></data>
+  <data name="MilgrainBorder" xml:space="preserve"><value>Milgrain Border</value></data>
+  <data name="MonogramDRight" xml:space="preserve"><value>Monogram D Right</value></data>
+  <data name="TaperAmountMiddleY" xml:space="preserve"><value>Taper Amount Middle Y</value></data>
+  <data name="BailGemsOn" xml:space="preserve"><value>Bail Gems On</value></data>
+  <data name="SwirlShank" xml:space="preserve"><value>Swirl Shank</value></data>
+  <data name="HaloShape" xml:space="preserve"><value>Halo : Shape</value></data>
+  <data name="ArialFontZLowercase" xml:space="preserve"><value>Arial Font Z Lowercase</value></data>
+  <data name="ShankTopProfilePositionAroundTheRing" xml:space="preserve"><value>Shank : Top Profile Position Around The Ring</value></data>
+  <data name="CollarTopWidth" xml:space="preserve"><value>Collar : Top Width</value></data>
+  <data name="DetailLeftOnOff" xml:space="preserve"><value>Detail : Left On/Off</value></data>
+  <data name="CenterGemGemDefinition" xml:space="preserve"><value>Center Gem : Gem Definition</value></data>
+  <data name="TopProfilePosition" xml:space="preserve"><value>Top Profile Position</value></data>
+  <data name="SwirlCount" xml:space="preserve"><value>Swirl Count</value></data>
+  <data name="LeafWithGrooveTwistAndFlatBottom" xml:space="preserve"><value>Leaf With Groove Twist And Flat Bottom</value></data>
+  <data name="Panther" xml:space="preserve"><value>Panther</value></data>
+  <data name="GemHeight" xml:space="preserve"><value>Gem : Height</value></data>
+  <data name="StylizedTulip" xml:space="preserve"><value>Stylized Tulip</value></data>
+  <data name="TripleBraidInfinity" xml:space="preserve"><value>Triple Braid Infinity</value></data>
+  <data name="DetailBeadSizeWidth" xml:space="preserve"><value>Detail : Bead Size % / Width</value></data>
+  <data name="MonogramCRight" xml:space="preserve"><value>Monogram C Right</value></data>
+  <data name="GemsGemDefinition" xml:space="preserve"><value>Gems : Gem Definition</value></data>
+  <data name="TrojanHelmet" xml:space="preserve"><value>Trojan Helmet</value></data>
+  <data name="SideGemSpacing" xml:space="preserve"><value>Side Gem : Spacing</value></data>
+  <data name="DetailOverallDesignScale" xml:space="preserve"><value>Detail : Overall Design Scale</value></data>
+  <data name="DetailOverallDesignWidth" xml:space="preserve"><value>Detail : Overall Design Width %</value></data>
+  <data name="BookmanFontZLowercase" xml:space="preserve"><value>Bookman Font Z Lowercase</value></data>
+  <data name="Cluster" xml:space="preserve"><value>Cluster</value></data>
+  <data name="SoccerballFlatback" xml:space="preserve"><value>Soccerball Flatback</value></data>
+  <data name="ShieldMantling01" xml:space="preserve"><value>Shield Mantling 01</value></data>
+  <data name="ShieldMantling02" xml:space="preserve"><value>Shield Mantling 02</value></data>
+  <data name="ShankTopProfile2Width" xml:space="preserve"><value>Shank : Top Profile 2 Width</value></data>
+  <data name="Side2ProfileChooser" xml:space="preserve"><value>Side 2 Profile Chooser</value></data>
+  <data name="ShankBridge" xml:space="preserve"><value>Shank - Bridge</value></data>
+  <data name="GemCenter" xml:space="preserve"><value>Gem - Center</value></data>
+  <data name="GemShapeDoubleMacaroni" xml:space="preserve"><value>Gem Shape Double Macaroni</value></data>
+  <data name="BottomDesignA" xml:space="preserve"><value>Bottom Design A</value></data>
+  <data name="BottomDesignB" xml:space="preserve"><value>Bottom Design B</value></data>
+  <data name="GemShapeWireOpen" xml:space="preserve"><value>Gem Shape Wire Open</value></data>
+  <data name="SettingSetting1Position" xml:space="preserve"><value>Setting : Setting 1 Position</value></data>
+  <data name="OuterDesign" xml:space="preserve"><value>Outer Design</value></data>
+  <data name="SettingBendTopDown" xml:space="preserve"><value>Setting : Bend (Top Down)</value></data>
+  <data name="ConcaveRectangle" xml:space="preserve"><value>Concave Rectangle</value></data>
+  <data name="GemBottomWidth" xml:space="preserve"><value>Gem : Bottom Width</value></data>
+  <data name="BaseballBat" xml:space="preserve"><value>Baseball Bat</value></data>
+  <data name="EndAngle" xml:space="preserve"><value>End Angle</value></data>
+  <data name="SettingUpperGalleryRailThickness" xml:space="preserve"><value>Setting : Upper Gallery Rail Thickness</value></data>
+  <data name="ArialFontPUppercase" xml:space="preserve"><value>Arial Font P Uppercase</value></data>
+  <data name="EndPoint" xml:space="preserve"><value>End Point</value></data>
+  <data name="WheatLeft" xml:space="preserve"><value>Wheat Left</value></data>
+  <data name="DetailMiddleProfilePosition" xml:space="preserve"><value>Detail : Middle Profile Position</value></data>
+  <data name="SettingLowerGalleryRailDiameter" xml:space="preserve"><value>Setting : Lower Gallery Rail Diameter</value></data>
+  <data name="TriLeavesCylinder" xml:space="preserve"><value>Tri Leaves Cylinder</value></data>
+  <data name="SettingTopBarHeight" xml:space="preserve"><value>Setting : Top Bar Height %</value></data>
+  <data name="Three11250500Pt" xml:space="preserve"><value>311 250-500pt</value></data>
+  <data name="GemShapeMacaroni" xml:space="preserve"><value>Gem Shape Macaroni</value></data>
+  <data name="DesignLength" xml:space="preserve"><value>Design Length</value></data>
+  <data name="OpenGrooved" xml:space="preserve"><value>Open - Grooved</value></data>
+  <data name="SettingHalfBezelNotchVerticalPosition" xml:space="preserve"><value>Setting : Half Bezel - Notch Vertical Position</value></data>
+  <data name="BaseballBatFlat" xml:space="preserve"><value>Baseball Bat Flat</value></data>
+  <data name="ArialFontLUppercase" xml:space="preserve"><value>Arial Font L Uppercase</value></data>
+  <data name="GemLength" xml:space="preserve"><value>Gem : Length</value></data>
+  <data name="ShankProfileTopMoveFrontToBack" xml:space="preserve"><value>Shank : Profile - Top - Move Front To Back</value></data>
+  <data name="AnchorChain" xml:space="preserve"><value>Anchor Chain</value></data>
+  <data name="ArialFontALowercase" xml:space="preserve"><value>Arial Font A Lowercase</value></data>
+  <data name="JumpRingOpen01" xml:space="preserve"><value>Jump Ring Open 01</value></data>
+  <data name="SettingBezelBottomBend" xml:space="preserve"><value>Setting : Bezel Bottom Bend</value></data>
+  <data name="CenterCemHeadOnOff" xml:space="preserve"><value>Center Cem &amp; Head On Off</value></data>
+  <data name="ShankDesignSpanAmount" xml:space="preserve"><value>Shank : Design Span Amount</value></data>
+  <data name="ShankPinchBlendAmount" xml:space="preserve"><value>Shank : Pinch Blend Amount</value></data>
+  <data name="ScrollMoveFrontBack" xml:space="preserve"><value>Scroll : Move Front/Back</value></data>
+  <data name="ChiseledCCurve01" xml:space="preserve"><value>Chiseled C Curve 01</value></data>
+  <data name="Symbolic" xml:space="preserve"><value>Symbolic</value></data>
+  <data name="ShankBridgeTopWidth" xml:space="preserve"><value>Shank : Bridge Top Width</value></data>
+  <data name="FootballHelmet" xml:space="preserve"><value>Football Helmet</value></data>
+  <data name="SettingSideGalleryRailMoveUpDown" xml:space="preserve"><value>Setting : Side Gallery Rail Move Up Down</value></data>
+  <data name="BeadCutoutProfileChooser" xml:space="preserve"><value>Bead Cutout : Profile Chooser</value></data>
+  <data name="UpperGalleryRailOnOff" xml:space="preserve"><value>Upper Gallery Rail On Off</value></data>
+  <data name="ArialFontHLowercase" xml:space="preserve"><value>Arial Font H Lowercase</value></data>
+  <data name="FlatScroll04" xml:space="preserve"><value>Flat Scroll 04</value></data>
+  <data name="FlatScroll03" xml:space="preserve"><value>Flat Scroll 03</value></data>
+  <data name="FlatScroll02" xml:space="preserve"><value>Flat Scroll 02</value></data>
+  <data name="FlatScroll01" xml:space="preserve"><value>Flat Scroll 01</value></data>
+  <data name="FingerSize" xml:space="preserve"><value>Finger Size</value></data>
+  <data name="GemsGemHeight" xml:space="preserve"><value>Gems : Gem Height</value></data>
+  <data name="MonogramNMiddle" xml:space="preserve"><value>Monogram N Middle</value></data>
+  <data name="CathedralMicroShank" xml:space="preserve"><value>Cathedral Micro Shank</value></data>
+  <data name="ShankPinchProfileHeight" xml:space="preserve"><value>Shank : Pinch Profile Height</value></data>
+  <data name="DomedCCurve01" xml:space="preserve"><value>Domed C Curve 01</value></data>
+  <data name="SetttingProngSize" xml:space="preserve"><value>Settting : Prong Size</value></data>
+  <data name="SettingLowerGalleryRailOnOff" xml:space="preserve"><value>Setting : Lower Gallery Rail On/Off</value></data>
+  <data name="Butterfly02Roundback" xml:space="preserve"><value>Butterfly 02 Roundback</value></data>
+  <data name="ChannelEndLength" xml:space="preserve"><value>Channel : End Length</value></data>
+  <data name="SettingSetting3Position" xml:space="preserve"><value>Setting : Setting 3 Position</value></data>
+  <data name="ShankEndMilgrainOnOff" xml:space="preserve"><value>Shank : End Milgrain - On Off</value></data>
+  <data name="DetailBottomLeftProfileSize" xml:space="preserve"><value>Detail : Bottom Left Profile Size</value></data>
+  <data name="SettingCutterHeight" xml:space="preserve"><value>Setting : Cutter Height</value></data>
+  <data name="DetailPosition" xml:space="preserve"><value>Detail : Position</value></data>
+  <data name="ShankBridgeTopProfileChooser" xml:space="preserve"><value>Shank : Bridge Top - Profile Chooser</value></data>
+  <data name="SettingLowerGalleryRailHeight" xml:space="preserve"><value>Setting : Lower Gallery Rail - Height %</value></data>
+  <data name="ShankTopCurveDiameter" xml:space="preserve"><value>Shank : Top Curve Diameter %</value></data>
+  <data name="BookmanFont9" xml:space="preserve"><value>Bookman Font 9</value></data>
+  <data name="BookmanFont8" xml:space="preserve"><value>Bookman Font 8</value></data>
+  <data name="BookmanFont5" xml:space="preserve"><value>Bookman Font 5</value></data>
+  <data name="BookmanFont4" xml:space="preserve"><value>Bookman Font 4</value></data>
+  <data name="BookmanFont7" xml:space="preserve"><value>Bookman Font 7</value></data>
+  <data name="BookmanFont6" xml:space="preserve"><value>Bookman Font 6</value></data>
+  <data name="BookmanFont1" xml:space="preserve"><value>Bookman Font 1</value></data>
+  <data name="BookmanFont0" xml:space="preserve"><value>Bookman Font 0</value></data>
+  <data name="BookmanFont3" xml:space="preserve"><value>Bookman Font 3</value></data>
+  <data name="BookmanFont2" xml:space="preserve"><value>Bookman Font 2</value></data>
+  <data name="QuadMirror" xml:space="preserve"><value>Quad Mirror</value></data>
+  <data name="ArialFontAUppercase" xml:space="preserve"><value>Arial Font A Uppercase</value></data>
+  <data name="SettingLowerGalleryRailWidth" xml:space="preserve"><value>Setting : Lower Gallery Rail - Width %</value></data>
+  <data name="FrameDesign01OnBase" xml:space="preserve"><value>Frame Design 01 on Base</value></data>
+  <data name="Cross03" xml:space="preserve"><value>Cross 03</value></data>
+  <data name="Cross02" xml:space="preserve"><value>Cross 02</value></data>
+  <data name="Cross01" xml:space="preserve"><value>Cross 01</value></data>
+  <data name="Cross07" xml:space="preserve"><value>Cross 07</value></data>
+  <data name="Cross06" xml:space="preserve"><value>Cross 06</value></data>
+  <data name="Cross05" xml:space="preserve"><value>Cross 05</value></data>
+  <data name="Cross04" xml:space="preserve"><value>Cross 04</value></data>
+  <data name="MonogramKMiddle" xml:space="preserve"><value>Monogram K Middle</value></data>
+  <data name="GemAccent" xml:space="preserve"><value>Gem - Accent</value></data>
+  <data name="Cushion" xml:space="preserve"><value>Cushion</value></data>
+  <data name="DetailRightProfilePosition" xml:space="preserve"><value>Detail : Right Profile Position</value></data>
+  <data name="SettingLowerGalleryRailShape" xml:space="preserve"><value>Setting : Lower Gallery Rail - Shape</value></data>
+  <data name="Profile2Height" xml:space="preserve"><value>Profile 2 Height</value></data>
+  <data name="DesignHeight" xml:space="preserve"><value>Design Height</value></data>
+  <data name="FiligreeTripleLoop" xml:space="preserve"><value>Filigree Triple Loop</value></data>
+  <data name="RopeBead" xml:space="preserve"><value>Rope &amp; Bead</value></data>
+  <data name="ProfilePositionEndIfHaloOpen" xml:space="preserve"><value>Profile Position End (If Halo Open)</value></data>
+  <data name="RondellGemsOn" xml:space="preserve"><value>Rondell Gems On</value></data>
+  <data name="WireRope" xml:space="preserve"><value>Wire &amp; Rope</value></data>
+  <data name="ShankCutAmount" xml:space="preserve"><value>Shank : Cut Amount</value></data>
+  <data name="FourBraidInfinity" xml:space="preserve"><value>Four Braid Infinity</value></data>
+  <data name="Butterfly06" xml:space="preserve"><value>Butterfly 06</value></data>
+  <data name="Butterfly07" xml:space="preserve"><value>Butterfly 07</value></data>
+  <data name="Butterfly01" xml:space="preserve"><value>Butterfly 01</value></data>
+  <data name="Butterfly08" xml:space="preserve"><value>Butterfly 08</value></data>
+  <data name="Cube073" xml:space="preserve"><value>Cube 073</value></data>
+  <data name="DoubleMarqiseShape" xml:space="preserve"><value>Double Marqise Shape</value></data>
+  <data name="DomedOrganicCurve13" xml:space="preserve"><value>Domed Organic Curve 13</value></data>
+  <data name="DomedOrganicCurve12" xml:space="preserve"><value>Domed Organic Curve 12</value></data>
+  <data name="DomedOrganicCurve11" xml:space="preserve"><value>Domed Organic Curve 11</value></data>
+  <data name="DomedOrganicCurve10" xml:space="preserve"><value>Domed Organic Curve 10</value></data>
+  <data name="DomedOrganicCurve15" xml:space="preserve"><value>Domed Organic Curve 15</value></data>
+  <data name="DomedOrganicCurve14" xml:space="preserve"><value>Domed Organic Curve 14</value></data>
+  <data name="DomedOrganicCurve08" xml:space="preserve"><value>Domed Organic Curve 08</value></data>
+  <data name="DomedOrganicCurve09" xml:space="preserve"><value>Domed Organic Curve 09</value></data>
+  <data name="DomedOrganicCurve02" xml:space="preserve"><value>Domed Organic Curve 02</value></data>
+  <data name="DomedOrganicCurve03" xml:space="preserve"><value>Domed Organic Curve 03</value></data>
+  <data name="DomedOrganicCurve01" xml:space="preserve"><value>Domed Organic Curve 01</value></data>
+  <data name="DomedOrganicCurve06" xml:space="preserve"><value>Domed Organic Curve 06</value></data>
+  <data name="DomedOrganicCurve07" xml:space="preserve"><value>Domed Organic Curve 07</value></data>
+  <data name="DomedOrganicCurve04" xml:space="preserve"><value>Domed Organic Curve 04</value></data>
+  <data name="DomedOrganicCurve05" xml:space="preserve"><value>Domed Organic Curve 05</value></data>
+  <data name="GemsShortRowBottomPosition" xml:space="preserve"><value>Gems : Short Row Bottom Position</value></data>
+  <data name="Pinched" xml:space="preserve"><value>Pinched</value></data>
+  <data name="TriLeavesRectangle" xml:space="preserve"><value>Tri Leaves Rectangle</value></data>
+  <data name="FourLeafClover" xml:space="preserve"><value>Four Leaf Clover</value></data>
+  <data name="MaintainHeight" xml:space="preserve"><value>Maintain Height</value></data>
+  <data name="RibbedWing01" xml:space="preserve"><value>Ribbed Wing 01</value></data>
+  <data name="RibbedWing02" xml:space="preserve"><value>Ribbed Wing 02</value></data>
+  <data name="TrefoilBraid" xml:space="preserve"><value>Trefoil Braid</value></data>
+  <data name="ThinDomeBail" xml:space="preserve"><value>Thin Dome Bail</value></data>
+  <data name="PassantLion" xml:space="preserve"><value>Passant Lion</value></data>
+  <data name="ArialFontPLowercase" xml:space="preserve"><value>Arial Font P Lowercase</value></data>
+  <data name="AccentGemsRowSpacing" xml:space="preserve"><value>Accent Gems : Row Spacing</value></data>
+  <data name="XOffset" xml:space="preserve"><value>X Offset</value></data>
+  <data name="GemsOrientationMethod" xml:space="preserve"><value>Gems : Orientation Method</value></data>
+  <data name="SeveralLeavesWithLongStem" xml:space="preserve"><value>Several Leaves With Long Stem</value></data>
+  <data name="ShankSideProfilePossitionArroundTheRing" xml:space="preserve"><value>Shank: Side Profile Possition Arround The Ring</value></data>
+  <data name="BookmanFontELowercase" xml:space="preserve"><value>Bookman Font E Lowercase</value></data>
+  <data name="MonogramDMiddle" xml:space="preserve"><value>Monogram D Middle</value></data>
+  <data name="TopProfile2Chooser" xml:space="preserve"><value>Top Profile 2 Chooser</value></data>
+  <data name="ShankPinchProfilePosition" xml:space="preserve"><value>Shank : Pinch Profile Position</value></data>
+  <data name="BookmanFontAUppercase" xml:space="preserve"><value>Bookman Font A Uppercase</value></data>
+  <data name="ShankYOverlap" xml:space="preserve"><value>Shank : Y Overlap</value></data>
+  <data name="HaloOpenWithGems04" xml:space="preserve"><value>Halo Open with Gems 04</value></data>
+  <data name="HaloOpenWithGems01" xml:space="preserve"><value>Halo Open with Gems 01</value></data>
+  <data name="HaloOpenWithGems03" xml:space="preserve"><value>Halo Open with Gems 03</value></data>
+  <data name="HaloOpenWithGems02" xml:space="preserve"><value>Halo Open with Gems 02</value></data>
+  <data name="Spiral01" xml:space="preserve"><value>Spiral 01</value></data>
+  <data name="V" xml:space="preserve"><value>V</value></data>
+  <data name="ShankOuterScrollOnOff" xml:space="preserve"><value>Shank : Outer Scroll - On / Off</value></data>
+  <data name="ProfileHeights" xml:space="preserve"><value>Profile Heights</value></data>
+  <data name="ShankBottomThickness" xml:space="preserve"><value>Shank : Bottom - Thickness</value></data>
+  <data name="DetailWireShape" xml:space="preserve"><value>Detail : Wire Shape</value></data>
+  <data name="BeadRibbed01" xml:space="preserve"><value>Bead Ribbed 01</value></data>
+  <data name="BeadRibbed02" xml:space="preserve"><value>Bead Ribbed 02</value></data>
+  <data name="Poolball08" xml:space="preserve"><value>Poolball 08</value></data>
+  <data name="Poolball09" xml:space="preserve"><value>Poolball 09</value></data>
+  <data name="Poolball02" xml:space="preserve"><value>Poolball 02</value></data>
+  <data name="Poolball03" xml:space="preserve"><value>Poolball 03</value></data>
+  <data name="Poolball01" xml:space="preserve"><value>Poolball 01</value></data>
+  <data name="Poolball06" xml:space="preserve"><value>Poolball 06</value></data>
+  <data name="Poolball07" xml:space="preserve"><value>Poolball 07</value></data>
+  <data name="Poolball04" xml:space="preserve"><value>Poolball 04</value></data>
+  <data name="Poolball05" xml:space="preserve"><value>Poolball 05</value></data>
+  <data name="Poolball13" xml:space="preserve"><value>Poolball 13</value></data>
+  <data name="Poolball12" xml:space="preserve"><value>Poolball 12</value></data>
+  <data name="Poolball11" xml:space="preserve"><value>Poolball 11</value></data>
+  <data name="Poolball10" xml:space="preserve"><value>Poolball 10</value></data>
+  <data name="Poolball15" xml:space="preserve"><value>Poolball 15</value></data>
+  <data name="Poolball14" xml:space="preserve"><value>Poolball 14</value></data>
+  <data name="HaloInnerWidth" xml:space="preserve"><value>Halo : Inner Width</value></data>
+  <data name="RightHand" xml:space="preserve"><value>Right Hand</value></data>
+  <data name="DesignProfileHeight" xml:space="preserve"><value>Design : Profile Height</value></data>
+  <data name="BeadHeightFromTopOfChainHole" xml:space="preserve"><value>Bead Height (From Top Of Chain Hole)</value></data>
+  <data name="Emerald" xml:space="preserve"><value>Emerald</value></data>
+  <data name="GemEndPosition" xml:space="preserve"><value>Gem : End Position</value></data>
+  <data name="ConcaveSquareCushion" xml:space="preserve"><value>Concave Square Cushion</value></data>
+  <data name="DetailProfileWidth" xml:space="preserve"><value>Detail : Profile Width</value></data>
+  <data name="Football" xml:space="preserve"><value>Football</value></data>
+  <data name="DetailProfileShape" xml:space="preserve"><value>Detail : Profile Shape</value></data>
+  <data name="InnerDesign" xml:space="preserve"><value>Inner Design</value></data>
+  <data name="HeadWithScrolls01" xml:space="preserve"><value>Head with Scrolls 01</value></data>
+  <data name="HeadWithScrolls02" xml:space="preserve"><value>Head with Scrolls 02</value></data>
+  <data name="ChannelEndLengthProngs" xml:space="preserve"><value>Channel : End Length Prongs</value></data>
+  <data name="ConvexEmerald" xml:space="preserve"><value>Convex Emerald</value></data>
+  <data name="ScrollsProfileShape" xml:space="preserve"><value>Scrolls : Profile - Shape</value></data>
+  <data name="BookmanFontJUppercase" xml:space="preserve"><value>Bookman Font J Uppercase</value></data>
+  <data name="DetailLeftProfilePosition" xml:space="preserve"><value>Detail : Left Profile Position</value></data>
+  <data name="FlatSCurve06" xml:space="preserve"><value>Flat S Curve 06</value></data>
+  <data name="FlatSCurve04" xml:space="preserve"><value>Flat S Curve 04</value></data>
+  <data name="FlatSCurve05" xml:space="preserve"><value>Flat S Curve 05</value></data>
+  <data name="FlatSCurve02" xml:space="preserve"><value>Flat S Curve 02</value></data>
+  <data name="FlatSCurve03" xml:space="preserve"><value>Flat S Curve 03</value></data>
+  <data name="FlatSCurve01" xml:space="preserve"><value>Flat S Curve 01</value></data>
+  <data name="BailLength" xml:space="preserve"><value>Bail : Length %</value></data>
+  <data name="GemsAccentGemSize" xml:space="preserve"><value>Gems : Accent Gem Size</value></data>
+  <data name="Trillian" xml:space="preserve"><value>Trillian</value></data>
+  <data name="Setting1TallProfileHeight" xml:space="preserve"><value>Setting 1 : Tall Profile Height %</value></data>
+  <data name="SettingUpperGalleryRailMoveUpDown" xml:space="preserve"><value>Setting : Upper Gallery Rail Move Up/Down</value></data>
+  <data name="Octopus" xml:space="preserve"><value>Octopus</value></data>
+  <data name="Octogon" xml:space="preserve"><value>Octogon</value></data>
+  <data name="GemsEnableEndDiameter" xml:space="preserve"><value>Gems : Enable End Diameter</value></data>
+  <data name="RingRails" xml:space="preserve"><value>Ring Rails</value></data>
+  <data name="ShankBottomBlendAmount" xml:space="preserve"><value>Shank : Bottom Blend Amount</value></data>
+  <data name="ShankTopWidth" xml:space="preserve"><value>Shank : Top Width</value></data>
+  <data name="FancyChain115Mm" xml:space="preserve"><value>Fancy Chain 1 1.5mm</value></data>
+  <data name="OmegaChain" xml:space="preserve"><value>Omega Chain</value></data>
+  <data name="ArialFontMLowercase" xml:space="preserve"><value>Arial Font M Lowercase</value></data>
+  <data name="DetailBottomDesignRotate" xml:space="preserve"><value>Detail : Bottom Design Rotate</value></data>
+  <data name="DetailJumpRingShape" xml:space="preserve"><value>Detail : Jump Ring Shape</value></data>
+  <data name="ShankTopCurveScaleLeftRight" xml:space="preserve"><value>Shank : Top Curve Scale Left/Right</value></data>
+  <data name="SettingChannelEndShape" xml:space="preserve"><value>Setting : Channel - End Shape</value></data>
+  <data name="Side1ProfileWidth" xml:space="preserve"><value>Side 1 Profile Width</value></data>
+  <data name="GemsPlacement" xml:space="preserve"><value>Gems : Placement</value></data>
+  <data name="DesignFlip" xml:space="preserve"><value>Design : Flip</value></data>
+  <data name="MapleDomedSharpEdges" xml:space="preserve"><value>Maple Domed Sharp Edges</value></data>
+  <data name="BookmanFontVUppercase" xml:space="preserve"><value>Bookman Font V Uppercase</value></data>
+  <data name="TriLeaves" xml:space="preserve"><value>Tri Leaves</value></data>
+  <data name="ShankProfileTopLocationSpan" xml:space="preserve"><value>Shank: Profile - Top - Location / Span</value></data>
+  <data name="DetailUpperMilgrainOnOff" xml:space="preserve"><value>Detail : Upper Milgrain On Off</value></data>
+  <data name="CathedralSplitShank" xml:space="preserve"><value>Cathedral Split Shank</value></data>
+  <data name="TennisballFlat" xml:space="preserve"><value>Tennisball Flat</value></data>
+  <data name="SettingLongRowProngSize" xml:space="preserve"><value>Setting : Long Row Prong Size</value></data>
+  <data name="SwirlMoveUpDown" xml:space="preserve"><value>Swirl Move Up/Down</value></data>
+  <data name="DetailOverallDesignLength" xml:space="preserve"><value>Detail : Overall Design Length %</value></data>
+  <data name="BailTopProfileShape" xml:space="preserve"><value>Bail : Top Profile Shape</value></data>
+  <data name="ShankSideProfilePositionAroundTheRing" xml:space="preserve"><value>Shank : Side Profile Position Around The Ring</value></data>
+  <data name="BailTopProfileWidth" xml:space="preserve"><value>Bail : Top Profile Width</value></data>
+  <data name="SettingBezelBend" xml:space="preserve"><value>Setting : Bezel  Bend</value></data>
+  <data name="ShankBottomWidth" xml:space="preserve"><value>Shank : Bottom Width</value></data>
+  <data name="Gem" xml:space="preserve"><value>Gem</value></data>
+  <data name="Bar" xml:space="preserve"><value>Bar</value></data>
+  <data name="Cat" xml:space="preserve"><value>Cat</value></data>
+  <data name="Tip" xml:space="preserve"><value>Tip</value></data>
+  <data name="Paw" xml:space="preserve"><value>Paw</value></data>
+  <data name="SideMilgrain" xml:space="preserve"><value>Side Milgrain</value></data>
+  <data name="ShankBottomShape" xml:space="preserve"><value>Shank : Bottom Shape</value></data>
+  <data name="MonogramXMiddle" xml:space="preserve"><value>Monogram X Middle</value></data>
+  <data name="BailChainOpeningDepth" xml:space="preserve"><value>Bail : Chain Opening Depth %</value></data>
+  <data name="TopGalleryRail" xml:space="preserve"><value>Top Gallery Rail</value></data>
+  <data name="Angle" xml:space="preserve"><value>Angle</value></data>
+  <data name="Arial" xml:space="preserve"><value>Arial</value></data>
+  <data name="SideSetting" xml:space="preserve"><value>Side Setting</value></data>
+  <data name="Domed" xml:space="preserve"><value>Domed</value></data>
+  <data name="Bead1" xml:space="preserve"><value>Bead</value></data>
+  <data name="Bezel" xml:space="preserve"><value>Bezel</value></data>
+  <data name="Count" xml:space="preserve"><value>Count</value></data>
+  <data name="Chain" xml:space="preserve"><value>Chain</value></data>
+  <data name="OnOff" xml:space="preserve"><value>On Off</value></data>
+  <data name="Other" xml:space="preserve"><value>Other</value></data>
+  <data name="MonogramZLeft" xml:space="preserve"><value>Monogram Z Left</value></data>
+  <data name="MonogramYLeft" xml:space="preserve"><value>Monogram Y Left</value></data>
+  <data name="ShankBottomOnOff" xml:space="preserve"><value>Shank : Bottom On/Off</value></data>
+  <data name="MonogramVLeft" xml:space="preserve"><value>Monogram V Left</value></data>
+  <data name="Horse" xml:space="preserve"><value>Horse</value></data>
+  <data name="Heads" xml:space="preserve"><value>Heads</value></data>
+  <data name="Heart" xml:space="preserve"><value>Heart</value></data>
+  <data name="Halo1" xml:space="preserve"><value>Halo</value></data>
+  <data name="GemSpacing" xml:space="preserve"><value>Gem : Spacing</value></data>
+  <data name="MonogramULeft" xml:space="preserve"><value>Monogram U Left</value></data>
+  <data name="BeadBeadWallThickness" xml:space="preserve"><value>Bead : Bead - Wall Thickness</value></data>
+  <data name="MonogramXLeft" xml:space="preserve"><value>Monogram X Left</value></data>
+  <data name="MonogramWLeft" xml:space="preserve"><value>Monogram W Left</value></data>
+  <data name="MonogramRLeft" xml:space="preserve"><value>Monogram R Left</value></data>
+  <data name="Wings" xml:space="preserve"><value>Wings</value></data>
+  <data name="Width" xml:space="preserve"><value>Width</value></data>
+  <data name="Trout" xml:space="preserve"><value>Trout</value></data>
+  <data name="Twist" xml:space="preserve"><value>Twist</value></data>
+  <data name="Text1" xml:space="preserve"><value>Text</value></data>
+  <data name="MonogramQLeft" xml:space="preserve"><value>Monogram Q Left</value></data>
+  <data name="MonogramTLeft" xml:space="preserve"><value>Monogram T Left</value></data>
+  <data name="MonogramSLeft" xml:space="preserve"><value>Monogram S Left</value></data>
+  <data name="ShankTopProfilePosition" xml:space="preserve"><value>Shank : Top Profile Position</value></data>
+  <data name="Round" xml:space="preserve"><value>Round</value></data>
+  <data name="Sport" xml:space="preserve"><value>Sport</value></data>
+  <data name="Snail" xml:space="preserve"><value>Snail</value></data>
+  <data name="Skull" xml:space="preserve"><value>Skull</value></data>
+  <data name="Shark" xml:space="preserve"><value>Shark</value></data>
+  <data name="Shank" xml:space="preserve"><value>Shank</value></data>
+  <data name="Peace" xml:space="preserve"><value>Peace</value></data>
+  <data name="MonogramNLeft" xml:space="preserve"><value>Monogram N Left</value></data>
+  <data name="SettingScrollOverlap" xml:space="preserve"><value>Setting : Scroll Overlap %</value></data>
+  <data name="MonogramMLeft" xml:space="preserve"><value>Monogram M Left</value></data>
+  <data name="MonogramPLeft" xml:space="preserve"><value>Monogram P Left</value></data>
+  <data name="MonogramOLeft" xml:space="preserve"><value>Monogram O Left</value></data>
+  <data name="MonogramJLeft" xml:space="preserve"><value>Monogram J Left</value></data>
+  <data name="MonogramILeft" xml:space="preserve"><value>Monogram I Left</value></data>
+  <data name="MonogramLLeft" xml:space="preserve"><value>Monogram L Left</value></data>
+  <data name="BlendStart" xml:space="preserve"><value>Blend Start</value></data>
+  <data name="MonogramKLeft" xml:space="preserve"><value>Monogram K Left</value></data>
+  <data name="MonogramFLeft" xml:space="preserve"><value>Monogram F Left</value></data>
+  <data name="MonogramELeft" xml:space="preserve"><value>Monogram E Left</value></data>
+  <data name="MonogramHLeft" xml:space="preserve"><value>Monogram H Left</value></data>
+  <data name="MonogramGLeft" xml:space="preserve"><value>Monogram G Left</value></data>
+  <data name="MonogramBLeft" xml:space="preserve"><value>Monogram B Left</value></data>
+  <data name="ShankShortSideProfilePosition" xml:space="preserve"><value>Shank : Short Side Profile Position</value></data>
+  <data name="MonogramALeft" xml:space="preserve"><value>Monogram A Left</value></data>
+  <data name="BookmanFontVLowercase" xml:space="preserve"><value>Bookman Font V Lowercase</value></data>
+  <data name="TranslateZInsetDepth" xml:space="preserve"><value>Translate Z : Inset Depth</value></data>
+  <data name="MonogramDLeft" xml:space="preserve"><value>Monogram D Left</value></data>
+  <data name="MonogramCLeft" xml:space="preserve"><value>Monogram C Left</value></data>
+  <data name="ArialFontULowercase" xml:space="preserve"><value>Arial Font U Lowercase</value></data>
+  <data name="ArialFontXUppercase" xml:space="preserve"><value>Arial Font X Uppercase</value></data>
+  <data name="FourSeparateLeaves" xml:space="preserve"><value>Four Separate Leaves</value></data>
+  <data name="SettingBottomCapTilt" xml:space="preserve"><value>Setting : Bottom Cap Tilt</value></data>
+  <data name="SettingPatternShape" xml:space="preserve"><value>Setting : Pattern Shape</value></data>
+  <data name="SettingAutoVProngProfileProngSwitch" xml:space="preserve"><value>Setting : Auto V-Prong/Profile Prong Switch</value></data>
+  <data name="SixProngScrollHead" xml:space="preserve"><value>6 Prong Scroll Head</value></data>
+  <data name="MillgrainOnOff" xml:space="preserve"><value>Millgrain: On Off</value></data>
+  <data name="CylinderFillet" xml:space="preserve"><value>Cylinder Fillet</value></data>
+  <data name="BridgeMirrorOnOff" xml:space="preserve"><value>Bridge Mirror On Off</value></data>
+  <data name="ShankPinchProfileWidth" xml:space="preserve"><value>Shank : Pinch Profile Width</value></data>
+  <data name="ShankMilgrainSize" xml:space="preserve"><value>Shank : Milgrain - Size</value></data>
+  <data name="ConcaveRadiant" xml:space="preserve"><value>Concave Radiant</value></data>
+  <data name="ShankPatternEndPosition" xml:space="preserve"><value>Shank : Pattern End Position</value></data>
+  <data name="SettingBottomBarThickness" xml:space="preserve"><value>Setting : Bottom Bar Thickness</value></data>
+  <data name="FlatDoubleCurve01" xml:space="preserve"><value>Flat Double Curve 01</value></data>
+  <data name="FlatDoubleCurve02" xml:space="preserve"><value>Flat Double Curve 02</value></data>
+  <data name="GemsCenterGemOnOff" xml:space="preserve"><value>Gems : Center Gem On/Off</value></data>
+  <data name="GemShapeRope1" xml:space="preserve"><value>Gem Shape Rope</value></data>
+  <data name="GemsTiltWhenPullToRailIsEnabled" xml:space="preserve"><value>Gems : Tilt (When Pull To Rail Is Enabled)</value></data>
+  <data name="MilgrainOuterMilgrainOnOff" xml:space="preserve"><value>Milgrain : Outer Milgrain On Off</value></data>
+  <data name="ShankSideThickness" xml:space="preserve"><value>Shank : Side - Thickness</value></data>
+  <data name="SettingBezelProfileChooser" xml:space="preserve"><value>Setting: Bezel - Profile Chooser</value></data>
+  <data name="Duck003" xml:space="preserve"><value>Duck 003</value></data>
+  <data name="LeavesWithBerries" xml:space="preserve"><value>Leaves With Berries</value></data>
+  <data name="ArialFontUUppercase" xml:space="preserve"><value>Arial Font U Uppercase</value></data>
+  <data name="BaseDesign" xml:space="preserve"><value>Base Design</value></data>
+  <data name="AccentGemsSize" xml:space="preserve"><value>Accent Gems : Size</value></data>
+  <data name="XBoxAdd" xml:space="preserve"><value>X Box Add</value></data>
+  <data name="WingShoe" xml:space="preserve"><value>Wing Shoe</value></data>
+  <data name="SettingBaseDropIfBendIsDisabled" xml:space="preserve"><value>Setting : Base Drop (If Bend Is Disabled)</value></data>
+  <data name="Setting1EndPosition" xml:space="preserve"><value>Setting 1 : End Position</value></data>
+  <data name="ThreeStoneTrellisHead01" xml:space="preserve"><value>3 Stone Trellis Head 01</value></data>
+  <data name="SettingCutterWidth" xml:space="preserve"><value>Setting : Cutter Width</value></data>
+  <data name="BookmanFontNLowercase" xml:space="preserve"><value>Bookman Font N Lowercase</value></data>
+  <data name="HeadsFishtailSetting01" xml:space="preserve"><value>Heads Fishtail Setting 01</value></data>
+  <data name="Star031OnBase" xml:space="preserve"><value>Star 031 on Base</value></data>
+  <data name="SettingCutterDepth" xml:space="preserve"><value>Setting : Cutter Depth</value></data>
+  <data name="LowerShank" xml:space="preserve"><value>Lower Shank</value></data>
+  <data name="ShankShoulderTopOffsetZ" xml:space="preserve"><value>Shank : Shoulder Top Offset Z</value></data>
+  <data name="ShankShoulderTopOffsetX" xml:space="preserve"><value>Shank : Shoulder Top Offset X</value></data>
+  <data name="MonogramJMiddle" xml:space="preserve"><value>Monogram J Middle</value></data>
+  <data name="DetailSpacing" xml:space="preserve"><value>Detail : Spacing</value></data>
+  <data name="TwoWireBail" xml:space="preserve"><value>Two Wire Bail</value></data>
+  <data name="ShortGemRow" xml:space="preserve"><value>Short Gem Row</value></data>
+  <data name="ShankBridgeProfileHeight" xml:space="preserve"><value>Shank : Bridge Profile Height</value></data>
+  <data name="BailBottomOpening" xml:space="preserve"><value>Bail : Bottom Opening</value></data>
+  <data name="GemsShortRowGemOnOff" xml:space="preserve"><value>Gems : Short Row Gem On Off</value></data>
+  <data name="SpartanHelmet" xml:space="preserve"><value>Spartan Helmet</value></data>
+  <data name="ArialFontIUppercase" xml:space="preserve"><value>Arial Font I Uppercase</value></data>
+  <data name="SettingUpperGalleryRailLocation" xml:space="preserve"><value>Setting : Upper Gallery Rail - Location</value></data>
+  <data name="EnablePullToRail" xml:space="preserve"><value>Enable Pull To Rail</value></data>
+  <data name="SettingShortRowProngEndSpread" xml:space="preserve"><value>Setting : Short Row Prong End Spread</value></data>
+  <data name="Rectangle" xml:space="preserve"><value>Rectangle</value></data>
+  <data name="Curb15Mm" xml:space="preserve"><value>Curb 1.5mm</value></data>
+  <data name="ShankBridgeTopProfileWidth" xml:space="preserve"><value>Shank : Bridge Top - Profile Width</value></data>
+  <data name="DetailOverallScale" xml:space="preserve"><value>Detail : Overall Scale %</value></data>
+  <data name="DetailOverallWidth" xml:space="preserve"><value>Detail : Overall Width %</value></data>
+  <data name="GemsShortRowGemShape" xml:space="preserve"><value>Gems : Short Row Gem Shape</value></data>
+  <data name="ConvexOctogon" xml:space="preserve"><value>Convex Octogon</value></data>
+  <data name="DomedSpiral02" xml:space="preserve"><value>Domed Spiral 02</value></data>
+  <data name="DomedSpiral01" xml:space="preserve"><value>Domed Spiral 01</value></data>
+  <data name="GroovedBow01" xml:space="preserve"><value>Grooved Bow 01</value></data>
+  <data name="ClosedDomed" xml:space="preserve"><value>Closed - Domed</value></data>
+  <data name="SettingOrientationMethod" xml:space="preserve"><value>Setting : Orientation Method</value></data>
+  <data name="MonogramGMiddle" xml:space="preserve"><value>Monogram G Middle</value></data>
+  <data name="ShankTopProfileMoveSideToSide" xml:space="preserve"><value>Shank : Top Profile - Move Side To Side</value></data>
+  <data name="DetailWidth" xml:space="preserve"><value>Detail : Width %</value></data>
+  <data name="LeftHand" xml:space="preserve"><value>Left Hand</value></data>
+  <data name="DetailInsideWidth" xml:space="preserve"><value>Detail : Inside Width</value></data>
+  <data name="DetailShape" xml:space="preserve"><value>Detail : Shape</value></data>
+  <data name="SettingBottomBarOnOff" xml:space="preserve"><value>Setting : Bottom Bar - On/Off</value></data>
+  <data name="GemsRollForNonRoundShapes" xml:space="preserve"><value>Gems : Roll (For Non-Round Shapes)</value></data>
+  <data name="Setting2EndProfileHeight" xml:space="preserve"><value>Setting 2 : End Profile Height %</value></data>
+  <data name="DetailCount" xml:space="preserve"><value>Detail : Count</value></data>
+  <data name="DetailOnOff" xml:space="preserve"><value>Detail : On Off</value></data>
+  <data name="Sphere076" xml:space="preserve"><value>Sphere 076</value></data>
+  <data name="SettingBottomBarWidth" xml:space="preserve"><value>Setting : Bottom Bar Width %</value></data>
+  <data name="ConcaveTopAndFlatBottom" xml:space="preserve"><value>Concave Top And Flat Bottom</value></data>
+  <data name="ShankProfileBridgeWidth" xml:space="preserve"><value>Shank : Profile - Bridge - Width</value></data>
+  <data name="SettingProngsVerticalPossitionInside" xml:space="preserve"><value>Setting : Prongs - Vertical Possition Inside</value></data>
+  <data name="GemsLongRowSize" xml:space="preserve"><value>Gems : Long Row Size</value></data>
+  <data name="ArialFontBUppercase" xml:space="preserve"><value>Arial Font B Uppercase</value></data>
+  <data name="SettingProngLength" xml:space="preserve"><value>Setting : Prong Length</value></data>
+  <data name="SettingSideGalleryRailDiameter" xml:space="preserve"><value>Setting : Side Gallery Rail Diameter %</value></data>
+  <data name="ArialFontFLowercase" xml:space="preserve"><value>Arial Font F Lowercase</value></data>
+  <data name="ShankProfileShape" xml:space="preserve"><value>Shank : Profile - Shape</value></data>
+  <data name="ShankProfileWidth" xml:space="preserve"><value>Shank : Profile Width</value></data>
+  <data name="Setting1EndProfileWidth" xml:space="preserve"><value>Setting 1 : End Profile Width %</value></data>
+  <data name="MusicNote" xml:space="preserve"><value>Music Note</value></data>
+  <data name="ShankPatternScale" xml:space="preserve"><value>Shank : Pattern Scale</value></data>
+  <data name="ShankPatternShape" xml:space="preserve"><value>Shank : Pattern Shape</value></data>
+  <data name="SquareCushion" xml:space="preserve"><value>Square Cushion</value></data>
+  <data name="GirdleThickness" xml:space="preserve"><value>Girdle Thickness</value></data>
+  <data name="BookmanFontSLowercase" xml:space="preserve"><value>Bookman Font S Lowercase</value></data>
+  <data name="Shamrock" xml:space="preserve"><value>Shamrock</value></data>
+  <data name="ShankDesignTopWidth" xml:space="preserve"><value>Shank : Design Top Width</value></data>
+  <data name="USAFFlat" xml:space="preserve"><value>USAF Flat</value></data>
+  <data name="BookmanFontPeriod" xml:space="preserve"><value>Bookman Font Period</value></data>
+  <data name="SettingProngs" xml:space="preserve"><value>Setting - Prongs</value></data>
+  <data name="SettingSetting3MoveFrontToBack" xml:space="preserve"><value>Setting : Setting 3 Move Front To Back</value></data>
+  <data name="ShankScroll4OnOff" xml:space="preserve"><value>Shank : Scroll - 4 On / Off</value></data>
+  <data name="ShankSettingEndProfileShape" xml:space="preserve"><value>Shank : Setting End Profile Shape</value></data>
+  <data name="DetailBottomRightDesignOnOff" xml:space="preserve"><value>Detail : Bottom Right Design On/Off</value></data>
+  <data name="SettingLongRowProngEndSpread" xml:space="preserve"><value>Setting : Long Row Prong End Spread</value></data>
+  <data name="DesignTwist" xml:space="preserve"><value>Design Twist</value></data>
+  <data name="SettingProngEnableOffsetProngs" xml:space="preserve"><value>Setting : Prong - Enable Offset Prongs</value></data>
+  <data name="CenterGemSize" xml:space="preserve"><value>Center Gem : Size</value></data>
+  <data name="BookmanFontBUppercase" xml:space="preserve"><value>Bookman Font B Uppercase</value></data>
+  <data name="ShankWidth" xml:space="preserve"><value>Shank : Width</value></data>
+  <data name="CH522WheatChain" xml:space="preserve"><value>CH522 Wheat Chain</value></data>
+  <data name="BottomWidth" xml:space="preserve"><value>Bottom Width</value></data>
+  <data name="ShankTopCurveScaleFrontBack" xml:space="preserve"><value>Shank : Top Curve Scale Front/Back</value></data>
+  <data name="CenterDesign" xml:space="preserve"><value>Center Design</value></data>
+  <data name="DesignCount" xml:space="preserve"><value>Design Count</value></data>
+  <data name="BottomPiece" xml:space="preserve"><value>Bottom Piece</value></data>
+  <data name="SettingProngsOrChannelSet" xml:space="preserve"><value>Setting: Prongs Or Channel Set</value></data>
+  <data name="MiddleProfileHeight" xml:space="preserve"><value>Middle Profile Height</value></data>
+  <data name="FullDaisy" xml:space="preserve"><value>Full Daisy</value></data>
+  <data name="ShankBraid" xml:space="preserve"><value>Shank - Braid</value></data>
+  <data name="ShankBlend" xml:space="preserve"><value>Shank : Blend</value></data>
+  <data name="ShankBendY" xml:space="preserve"><value>Shank : Bend Y</value></data>
+  <data name="ShankBendX" xml:space="preserve"><value>Shank : Bend X</value></data>
+  <data name="ShankScroll3OnOff" xml:space="preserve"><value>Shank : Scroll - 3 On / Off</value></data>
+  <data name="ShankTopProfile2Height" xml:space="preserve"><value>Shank : Top Profile 2 Height %</value></data>
+  <data name="ShankAngle" xml:space="preserve"><value>Shank : Angle</value></data>
+  <data name="SecondLeafSet" xml:space="preserve"><value>Second Leaf Set</value></data>
+  <data name="Setting2" xml:space="preserve"><value>Setting 2</value></data>
+  <data name="Setting1" xml:space="preserve"><value>Setting 1</value></data>
+  <data name="WeaveSection" xml:space="preserve"><value>Weave Section</value></data>
+  <data name="Butterfly05Roundback" xml:space="preserve"><value>Butterfly 05 Roundback</value></data>
+  <data name="ConcaveMarquise" xml:space="preserve"><value>Concave Marquise</value></data>
+  <data name="ShankRailCurveThroughFinger" xml:space="preserve"><value>Shank : Rail Curve - Through Finger</value></data>
+  <data name="GroovedSingleCurve02" xml:space="preserve"><value>Grooved Single Curve 02</value></data>
+  <data name="GroovedSingleCurve03" xml:space="preserve"><value>Grooved Single Curve 03</value></data>
+  <data name="GroovedSingleCurve01" xml:space="preserve"><value>Grooved Single Curve 01</value></data>
+  <data name="GroovedSingleCurve04" xml:space="preserve"><value>Grooved Single Curve 04</value></data>
+  <data name="SettingCenterGalleryRailHeight" xml:space="preserve"><value>Setting : Center Gallery Rail Height %</value></data>
+  <data name="CenterGem" xml:space="preserve"><value>Center Gem</value></data>
+  <data name="BookmanFontKLowercase" xml:space="preserve"><value>Bookman Font K Lowercase</value></data>
+  <data name="SimpleLeaf" xml:space="preserve"><value>Simple Leaf</value></data>
+  <data name="ShankRailCurveEndARoll" xml:space="preserve"><value>Shank : Rail Curve - End A Roll</value></data>
+  <data name="ShankRailCurveEndBRoll" xml:space="preserve"><value>Shank : Rail Curve - End B Roll</value></data>
+  <data name="StylizedIrisFlower" xml:space="preserve"><value>Stylized Iris Flower</value></data>
+  <data name="ShankShoulderTopMeanCurveAmount" xml:space="preserve"><value>Shank : Shoulder Top Mean Curve Amount</value></data>
+  <data name="SettingProngsVerticalLocationOutside" xml:space="preserve"><value>Setting : Prongs - Vertical Location Outside</value></data>
+  <data name="BraidInfinity" xml:space="preserve"><value>Braid Infinity</value></data>
+  <data name="PointOnProfile" xml:space="preserve"><value>Point On Profile</value></data>
+  <data name="DetailInnerDesignCurveAmount" xml:space="preserve"><value>Detail : Inner Design Curve Amount</value></data>
+  <data name="ShankSideSolidShankThickness" xml:space="preserve"><value>Shank : Side Solid Shank Thickness</value></data>
+  <data name="ThreeLeavesWithLongStem" xml:space="preserve"><value>Three Leaves With Long Stem</value></data>
+  <data name="StarOfDavid" xml:space="preserve"><value>Star of David</value></data>
+  <data name="DetailMiddleProfileShape" xml:space="preserve"><value>Detail : Middle Profile Shape</value></data>
+  <data name="ConvexOval" xml:space="preserve"><value>Convex Oval</value></data>
+  <data name="ConvexCalf" xml:space="preserve"><value>Convex Calf</value></data>
+  <data name="ConvexPear" xml:space="preserve"><value>Convex Pear</value></data>
+  <data name="DetailMiddleProfileWidth" xml:space="preserve"><value>Detail : Middle Profile Width</value></data>
+  <data name="Cable15Mm" xml:space="preserve"><value>Cable 1.5mm</value></data>
+  <data name="BookmanFontBLowercase" xml:space="preserve"><value>Bookman Font B Lowercase</value></data>
+  <data name="SettingChannelEndLength" xml:space="preserve"><value>Setting : Channel - End Length</value></data>
+  <data name="GemsHeight" xml:space="preserve"><value>Gems : Height %</value></data>
+  <data name="BookmanFontOUppercase" xml:space="preserve"><value>Bookman Font O Uppercase</value></data>
+  <data name="SettingProngEndSpread" xml:space="preserve"><value>Setting : Prong End Spread</value></data>
+  <data name="SettingGalleryRailOffset" xml:space="preserve"><value>Setting : Gallery Rail Offset</value></data>
+  <data name="SquareRadiant" xml:space="preserve"><value>Square Radiant</value></data>
+  <data name="StraightMilgrain" xml:space="preserve"><value>Straight Milgrain</value></data>
+  <data name="ConvexHalfMoon" xml:space="preserve"><value>Convex Half Moon</value></data>
+  <data name="BarSetHead" xml:space="preserve"><value>Bar Set Head</value></data>
+  <data name="ArmyAviationWings" xml:space="preserve"><value>Army Aviation Wings</value></data>
+  <data name="TriMarquiseShape" xml:space="preserve"><value>Tri Marquise Shape</value></data>
+  <data name="ArmyEagle" xml:space="preserve"><value>Army Eagle</value></data>
+  <data name="LowerGalleryOnOff" xml:space="preserve"><value>Lower Gallery On/Off</value></data>
+  <data name="ScrollCenterOpening" xml:space="preserve"><value>Scroll : Center - Opening</value></data>
+  <data name="SettingProngsOnOff" xml:space="preserve"><value>Setting : Prongs On Off</value></data>
+  <data name="ArmyStar2" xml:space="preserve"><value>Army Star 2</value></data>
+  <data name="ArmyStar1" xml:space="preserve"><value>Army Star 1</value></data>
+  <data name="DetailRightEndProfileSize1" xml:space="preserve"><value>Detail : Right End Profile Size 1</value></data>
+  <data name="DetailRightEndProfileSize2" xml:space="preserve"><value>Detail : Right End Profile Size 2</value></data>
+  <data name="DesignProfileTwist" xml:space="preserve"><value>Design : Profile Twist</value></data>
+  <data name="DesignProfileShape" xml:space="preserve"><value>Design : Profile Shape</value></data>
+  <data name="ArmyText2" xml:space="preserve"><value>Army Text 2</value></data>
+  <data name="ArmyText1" xml:space="preserve"><value>Army Text 1</value></data>
+  <data name="DomedCenterSixPetals" xml:space="preserve"><value>Domed Center Six Petals</value></data>
+  <data name="MonogramTMiddle" xml:space="preserve"><value>Monogram T Middle</value></data>
+  <data name="SettingBezelThicknessBottom" xml:space="preserve"><value>Setting : Bezel Thickness Bottom %</value></data>
+  <data name="GemsLongRowTopPosition" xml:space="preserve"><value>Gems : Long Row Top Position</value></data>
+  <data name="SettingLowerGalleryRailLocation" xml:space="preserve"><value>Setting : Lower Gallery Rail - Location</value></data>
+  <data name="BookmanFontSUppercase" xml:space="preserve"><value>Bookman Font S Uppercase</value></data>
+  <data name="TaperedBarSetHead" xml:space="preserve"><value>Tapered Bar Set Head</value></data>
+  <data name="Flat05OnBase" xml:space="preserve"><value>Flat 05 on Base</value></data>
+  <data name="OverallDesign" xml:space="preserve"><value>Overall Design</value></data>
+  <data name="SettingTopBarThickness" xml:space="preserve"><value>Setting : Top Bar Thickness</value></data>
+  <data name="StraightDoubleMacaroni" xml:space="preserve"><value>Straight Double Macaroni</value></data>
+  <data name="DetailInnerDesignRotate" xml:space="preserve"><value>Detail : Inner Design Rotate</value></data>
+  <data name="PinchedShank6" xml:space="preserve"><value>Pinched Shank 6</value></data>
+  <data name="PinchedShank5" xml:space="preserve"><value>Pinched Shank 5</value></data>
+  <data name="PinchedShank4" xml:space="preserve"><value>Pinched Shank 4</value></data>
+  <data name="PinchedShank3" xml:space="preserve"><value>Pinched Shank 3</value></data>
+  <data name="PinchedShank2" xml:space="preserve"><value>Pinched Shank 2</value></data>
+  <data name="PinchedShank1" xml:space="preserve"><value>Pinched Shank 1</value></data>
+  <data name="USAFWithText" xml:space="preserve"><value>USAF With Text</value></data>
+  <data name="ShankEndProfileMoveFrontBack" xml:space="preserve"><value>Shank : End Profile Move Front/Back</value></data>
+  <data name="DetailCenterOnOff" xml:space="preserve"><value>Detail : Center On/Off</value></data>
+  <data name="SettingProngsLengthInside" xml:space="preserve"><value>Setting : Prongs - Length Inside</value></data>
+  <data name="SettingBezelBottomFlatOrBend" xml:space="preserve"><value>Setting : Bezel Bottom Flat Or Bend</value></data>
+  <data name="BottomRailBendOnOff" xml:space="preserve"><value>Bottom Rail Bend On/Off</value></data>
+  <data name="CladdaghHandsAndHeart" xml:space="preserve"><value>Claddagh Hands and Heart</value></data>
+  <data name="ShankScroll2OnOff" xml:space="preserve"><value>Shank : Scroll - 2 On / Off</value></data>
+  <data name="SixBraidInfinity" xml:space="preserve"><value>Six Braid Infinity</value></data>
+  <data name="UpperGalleryOnOff" xml:space="preserve"><value>Upper Gallery On/Off</value></data>
+  <data name="OpenMicroBand" xml:space="preserve"><value>Open Micro Band</value></data>
+  <data name="TopProfileMoveBackToFront" xml:space="preserve"><value>Top Profile Move Back To Front</value></data>
+  <data name="RopeBead1" xml:space="preserve"><value>Rope/Bead</value></data>
+  <data name="RopeChain" xml:space="preserve"><value>Rope Chain</value></data>
+  <data name="GemEndSize" xml:space="preserve"><value>Gem : End Size</value></data>
+  <data name="SettingTopBarPosition" xml:space="preserve"><value>Setting : Top Bar Position</value></data>
+  <data name="ProfileChooserTiedToTopProfileShape" xml:space="preserve"><value>Profile Chooser : (Tied To Top Profile Shape)</value></data>
+  <data name="SettingBendThroughFinger" xml:space="preserve"><value>Setting : Bend (Through Finger)</value></data>
+  <data name="ArialFontYLowercase" xml:space="preserve"><value>Arial Font Y Lowercase</value></data>
+  <data name="SettingPosition" xml:space="preserve"><value>Setting : Position</value></data>
+  <data name="FiveBraidInfinity" xml:space="preserve"><value>Five Braid Infinity</value></data>
+  <data name="LowerGalleryRailOnOff" xml:space="preserve"><value>Lower Gallery Rail On Off</value></data>
+  <data name="SideGemGemDefinition" xml:space="preserve"><value>Side Gem : Gem Definition</value></data>
+  <data name="DomedWing01" xml:space="preserve"><value>Domed Wing 01</value></data>
+  <data name="DomedWing02" xml:space="preserve"><value>Domed Wing 02</value></data>
+  <data name="BeadOuterShape" xml:space="preserve"><value>Bead : Outer Shape</value></data>
+  <data name="ShankScroll1OnOff" xml:space="preserve"><value>Shank : Scroll - 1 On / Off</value></data>
+  <data name="ClosedGrooved" xml:space="preserve"><value>Closed - Grooved</value></data>
+  <data name="GemsLongRowBottomPosition" xml:space="preserve"><value>Gems : Long Row Bottom Position</value></data>
+  <data name="RondellGemsOff" xml:space="preserve"><value>Rondell Gems Off</value></data>
+  <data name="Butterfly02Flatback" xml:space="preserve"><value>Butterfly 02 Flatback</value></data>
+  <data name="SingleLeafWithShortStem" xml:space="preserve"><value>Single Leaf With Short Stem</value></data>
+  <data name="EndProfileChooser" xml:space="preserve"><value>End Profile Chooser</value></data>
+  <data name="Profile4Height" xml:space="preserve"><value>Profile 4 Height</value></data>
+  <data name="ShankSideOverallWidth" xml:space="preserve"><value>Shank : Side Overall Width</value></data>
+  <data name="ShankCrossbarProfileShape" xml:space="preserve"><value>Shank : Crossbar - Profile - Shape</value></data>
+  <data name="DetailLeftProfileHeight" xml:space="preserve"><value>Detail : Left Profile Height</value></data>
+  <data name="Marquise" xml:space="preserve"><value>Marquise</value></data>
+  <data name="TopProfile1Width" xml:space="preserve"><value>Top Profile 1 Width</value></data>
+  <data name="BookmanFontYLowercase" xml:space="preserve"><value>Bookman Font Y Lowercase</value></data>
+  <data name="ChannelEndLengthProng" xml:space="preserve"><value>Channel : End Length Prong</value></data>
+  <data name="SettingProng3RotateAroundHead" xml:space="preserve"><value>Setting : Prong 3 Rotate Around Head</value></data>
+  <data name="SettingGalleryRailHeight" xml:space="preserve"><value>Setting : Gallery Rail Height %</value></data>
+  <data name="CollarRailHeight" xml:space="preserve"><value>Collar : Rail Height %</value></data>
+  <data name="ShankDesignSideWidth" xml:space="preserve"><value>Shank : Design Side Width</value></data>
+  <data name="ShankSideShape" xml:space="preserve"><value>Shank : Side Shape</value></data>
+  <data name="ShankSideWidth" xml:space="preserve"><value>Shank : Side Width</value></data>
+  <data name="Bezel04WithCutout" xml:space="preserve"><value>Bezel 04 With Cutout</value></data>
+  <data name="DoubleCCurve" xml:space="preserve"><value>Double C Curve</value></data>
+  <data name="HeartOpen09" xml:space="preserve"><value>Heart Open 09</value></data>
+  <data name="HeartOpen08" xml:space="preserve"><value>Heart Open 08</value></data>
+  <data name="HeartOpen03" xml:space="preserve"><value>Heart Open 03</value></data>
+  <data name="HeartOpen02" xml:space="preserve"><value>Heart Open 02</value></data>
+  <data name="HeartOpen01" xml:space="preserve"><value>Heart Open 01</value></data>
+  <data name="HeartOpen07" xml:space="preserve"><value>Heart Open 07</value></data>
+  <data name="HeartOpen06" xml:space="preserve"><value>Heart Open 06</value></data>
+  <data name="HeartOpen05" xml:space="preserve"><value>Heart Open 05</value></data>
+  <data name="HeartOpen04" xml:space="preserve"><value>Heart Open 04</value></data>
+  <data name="Element083" xml:space="preserve"><value>Element 083</value></data>
+  <data name="Element087" xml:space="preserve"><value>Element 087</value></data>
+  <data name="Element086" xml:space="preserve"><value>Element 086</value></data>
+  <data name="Element085" xml:space="preserve"><value>Element 085</value></data>
+  <data name="Element084" xml:space="preserve"><value>Element 084</value></data>
+  <data name="Element089" xml:space="preserve"><value>Element 089</value></data>
+  <data name="Element088" xml:space="preserve"><value>Element 088</value></data>
+  <data name="Element090" xml:space="preserve"><value>Element 090</value></data>
+  <data name="Element091" xml:space="preserve"><value>Element 091</value></data>
+  <data name="Element021" xml:space="preserve"><value>Element 021</value></data>
+  <data name="Element020" xml:space="preserve"><value>Element 020</value></data>
+  <data name="Element023" xml:space="preserve"><value>Element 023</value></data>
+  <data name="Element022" xml:space="preserve"><value>Element 022</value></data>
+  <data name="Element025" xml:space="preserve"><value>Element 025</value></data>
+  <data name="Element024" xml:space="preserve"><value>Element 024</value></data>
+  <data name="Element026" xml:space="preserve"><value>Element 026</value></data>
+  <data name="Element038" xml:space="preserve"><value>Element 038</value></data>
+  <data name="Element039" xml:space="preserve"><value>Element 039</value></data>
+  <data name="Element030" xml:space="preserve"><value>Element 030</value></data>
+  <data name="Element031" xml:space="preserve"><value>Element 031</value></data>
+  <data name="Element032" xml:space="preserve"><value>Element 032</value></data>
+  <data name="Element033" xml:space="preserve"><value>Element 033</value></data>
+  <data name="Element034" xml:space="preserve"><value>Element 034</value></data>
+  <data name="Element035" xml:space="preserve"><value>Element 035</value></data>
+  <data name="Element036" xml:space="preserve"><value>Element 036</value></data>
+  <data name="Element037" xml:space="preserve"><value>Element 037</value></data>
+  <data name="Element009" xml:space="preserve"><value>Element 009</value></data>
+  <data name="Element008" xml:space="preserve"><value>Element 008</value></data>
+  <data name="Element007" xml:space="preserve"><value>Element 007</value></data>
+  <data name="Element006" xml:space="preserve"><value>Element 006</value></data>
+  <data name="Element005" xml:space="preserve"><value>Element 005</value></data>
+  <data name="Element004" xml:space="preserve"><value>Element 004</value></data>
+  <data name="Element018" xml:space="preserve"><value>Element 018</value></data>
+  <data name="Element019" xml:space="preserve"><value>Element 019</value></data>
+  <data name="Element012" xml:space="preserve"><value>Element 012</value></data>
+  <data name="Element013" xml:space="preserve"><value>Element 013</value></data>
+  <data name="Element010" xml:space="preserve"><value>Element 010</value></data>
+  <data name="Element011" xml:space="preserve"><value>Element 011</value></data>
+  <data name="Element016" xml:space="preserve"><value>Element 016</value></data>
+  <data name="Element017" xml:space="preserve"><value>Element 017</value></data>
+  <data name="Element014" xml:space="preserve"><value>Element 014</value></data>
+  <data name="Element015" xml:space="preserve"><value>Element 015</value></data>
+  <data name="Element065" xml:space="preserve"><value>Element 065</value></data>
+  <data name="Element064" xml:space="preserve"><value>Element 064</value></data>
+  <data name="Element066" xml:space="preserve"><value>Element 066</value></data>
+  <data name="Element061" xml:space="preserve"><value>Element 061</value></data>
+  <data name="Element060" xml:space="preserve"><value>Element 060</value></data>
+  <data name="Element063" xml:space="preserve"><value>Element 063</value></data>
+  <data name="Element062" xml:space="preserve"><value>Element 062</value></data>
+  <data name="Element078" xml:space="preserve"><value>Element 078</value></data>
+  <data name="Element079" xml:space="preserve"><value>Element 079</value></data>
+  <data name="Element074" xml:space="preserve"><value>Element 074</value></data>
+  <data name="Element075" xml:space="preserve"><value>Element 075</value></data>
+  <data name="Element076" xml:space="preserve"><value>Element 076</value></data>
+  <data name="Element077" xml:space="preserve"><value>Element 077</value></data>
+  <data name="Element070" xml:space="preserve"><value>Element 070</value></data>
+  <data name="Element071" xml:space="preserve"><value>Element 071</value></data>
+  <data name="Element072" xml:space="preserve"><value>Element 072</value></data>
+  <data name="Element073" xml:space="preserve"><value>Element 073</value></data>
+  <data name="Element049" xml:space="preserve"><value>Element 049</value></data>
+  <data name="Element048" xml:space="preserve"><value>Element 048</value></data>
+  <data name="Element047" xml:space="preserve"><value>Element 047</value></data>
+  <data name="Element046" xml:space="preserve"><value>Element 046</value></data>
+  <data name="Element045" xml:space="preserve"><value>Element 045</value></data>
+  <data name="Element044" xml:space="preserve"><value>Element 044</value></data>
+  <data name="Element043" xml:space="preserve"><value>Element 043</value></data>
+  <data name="Element042" xml:space="preserve"><value>Element 042</value></data>
+  <data name="Element041" xml:space="preserve"><value>Element 041</value></data>
+  <data name="Element040" xml:space="preserve"><value>Element 040</value></data>
+  <data name="Element058" xml:space="preserve"><value>Element 058</value></data>
+  <data name="Element059" xml:space="preserve"><value>Element 059</value></data>
+  <data name="Element056" xml:space="preserve"><value>Element 056</value></data>
+  <data name="Element057" xml:space="preserve"><value>Element 057</value></data>
+  <data name="Element054" xml:space="preserve"><value>Element 054</value></data>
+  <data name="Element055" xml:space="preserve"><value>Element 055</value></data>
+  <data name="Element052" xml:space="preserve"><value>Element 052</value></data>
+  <data name="Element053" xml:space="preserve"><value>Element 053</value></data>
+  <data name="Element050" xml:space="preserve"><value>Element 050</value></data>
+  <data name="Element051" xml:space="preserve"><value>Element 051</value></data>
+  <data name="Element101" xml:space="preserve"><value>Element 101</value></data>
+  <data name="BookmanFontHUppercase" xml:space="preserve"><value>Bookman Font H Uppercase</value></data>
+  <data name="BookmanFontPLowercase" xml:space="preserve"><value>Bookman Font P Lowercase</value></data>
+  <data name="SettingSideGalleryRailWidth" xml:space="preserve"><value>Setting : Side Gallery Rail Width %</value></data>
+  <data name="ChiseledElement002" xml:space="preserve"><value>Chiseled Element 002</value></data>
+  <data name="ChiseledElement003" xml:space="preserve"><value>Chiseled Element 003</value></data>
+  <data name="ChiseledElement001" xml:space="preserve"><value>Chiseled Element 001</value></data>
+  <data name="SettingsDistanceFromRail" xml:space="preserve"><value>Settings : Distance From Rail</value></data>
+  <data name="TwoLeavesOnVineDesign" xml:space="preserve"><value>Two Leaves on Vine Design</value></data>
+  <data name="MonogramFMiddle" xml:space="preserve"><value>Monogram F Middle</value></data>
+  <data name="Setting2PositionOnRingRail" xml:space="preserve"><value>Setting 2 : Position On Ring Rail</value></data>
+  <data name="ArialFontVUppercase" xml:space="preserve"><value>Arial Font V Uppercase</value></data>
+  <data name="ShankSideSolidShankShape" xml:space="preserve"><value>Shank : Side Solid Shank Shape</value></data>
+  <data name="ShankBendableClosed01" xml:space="preserve"><value>Shank Bendable Closed 01</value></data>
+  <data name="Hibiscus" xml:space="preserve"><value>Hibiscus</value></data>
+  <data name="SettingProngSize" xml:space="preserve"><value>Setting : Prong - Size</value></data>
+  <data name="SettingProngBend" xml:space="preserve"><value>Setting : Prong - Bend</value></data>
+  <data name="SettingProngDome" xml:space="preserve"><value>Setting : Prong Dome %</value></data>
+  <data name="ShankProfileMoveFrontToBack" xml:space="preserve"><value>Shank : Profile Move Front To Back</value></data>
+  <data name="ShankScrollsEndWidth" xml:space="preserve"><value>Shank : Scrolls - End Width</value></data>
+  <data name="Setting1EndProfileHeight" xml:space="preserve"><value>Setting 1 : End Profile Height %</value></data>
+  <data name="SettingCenter" xml:space="preserve"><value>Setting - Center</value></data>
+  <data name="ChannelDepth" xml:space="preserve"><value>Channel : Depth</value></data>
+  <data name="MonogramCMiddle" xml:space="preserve"><value>Monogram C Middle</value></data>
+  <data name="DetailBaseProfileShape" xml:space="preserve"><value>Detail : Base Profile Shape</value></data>
+  <data name="GemOnOff" xml:space="preserve"><value>Gem On Off</value></data>
+  <data name="Swirl5373" xml:space="preserve"><value>Swirl 5373</value></data>
+  <data name="Swirl5168" xml:space="preserve"><value>Swirl 5168</value></data>
+  <data name="Swirl5673" xml:space="preserve"><value>Swirl 5673</value></data>
+  <data name="DetailBaseProfileWidth" xml:space="preserve"><value>Detail : Base Profile Width</value></data>
+  <data name="ShankScrollsBaseWidth" xml:space="preserve"><value>Shank : Scrolls - Base Width</value></data>
+  <data name="ChannelWidth" xml:space="preserve"><value>Channel : Width</value></data>
+  <data name="CenterLeaf" xml:space="preserve"><value>Center Leaf</value></data>
+  <data name="SwirlHead" xml:space="preserve"><value>Swirl Head</value></data>
+  <data name="GemCurve" xml:space="preserve"><value>Gem Curve</value></data>
+  <data name="BookmanFontTUppercase" xml:space="preserve"><value>Bookman Font T Uppercase</value></data>
+  <data name="ShankXOverlap" xml:space="preserve"><value>Shank : X Overlap</value></data>
+  <data name="PoolballBlank" xml:space="preserve"><value>Poolball Blank</value></data>
+  <data name="GemShape" xml:space="preserve"><value>Gem Shape</value></data>
+  <data name="GemRow01" xml:space="preserve"><value>Gem Row 01</value></data>
+  <data name="GemRow02" xml:space="preserve"><value>Gem Row 02</value></data>
+  <data name="ShankRingRailHeight" xml:space="preserve"><value>Shank : Ring Rail Height</value></data>
+  <data name="HaloProfileWidthAndGemSize" xml:space="preserve"><value>Halo : Profile Width (And Gem Size)</value></data>
+  <data name="ArialFontJUppercase" xml:space="preserve"><value>Arial Font J Uppercase</value></data>
+  <data name="CutoutOnOff" xml:space="preserve"><value>Cutout On Off</value></data>
+  <data name="MultiLeafDesign" xml:space="preserve"><value>Multi Leaf Design</value></data>
+  <data name="YinYang" xml:space="preserve"><value>Yin Yang</value></data>
+  <data name="DetailLowerMilgrainOnOff" xml:space="preserve"><value>Detail : Lower Milgrain On Off</value></data>
+  <data name="CathedralShank" xml:space="preserve"><value>Cathedral Shank</value></data>
+  <data name="BallCenterEightPetals" xml:space="preserve"><value>Ball Center Eight Petals</value></data>
+  <data name="ShankEndBProfilePosition" xml:space="preserve"><value>Shank : End B Profile Position</value></data>
+  <data name="BookmanFontHLowercase" xml:space="preserve"><value>Bookman Font H Lowercase</value></data>
+  <data name="ShankCrossbarOnOff" xml:space="preserve"><value>Shank : Crossbar On / Off</value></data>
+  <data name="SettingTopScrollFlip" xml:space="preserve"><value>Setting : Top Scroll Flip</value></data>
+  <data name="ArialFont1" xml:space="preserve"><value>Arial Font 1</value></data>
+  <data name="ArialFont0" xml:space="preserve"><value>Arial Font 0</value></data>
+  <data name="ArialFont3" xml:space="preserve"><value>Arial Font 3</value></data>
+  <data name="ArialFont2" xml:space="preserve"><value>Arial Font 2</value></data>
+  <data name="ArialFont5" xml:space="preserve"><value>Arial Font 5</value></data>
+  <data name="ArialFont4" xml:space="preserve"><value>Arial Font 4</value></data>
+  <data name="ArialFont7" xml:space="preserve"><value>Arial Font 7</value></data>
+  <data name="ArialFont6" xml:space="preserve"><value>Arial Font 6</value></data>
+  <data name="ArialFont9" xml:space="preserve"><value>Arial Font 9</value></data>
+  <data name="ArialFont8" xml:space="preserve"><value>Arial Font 8</value></data>
+  <data name="GemsTilt" xml:space="preserve"><value>Gems : Tilt</value></data>
+  <data name="GemsRoll" xml:space="preserve"><value>Gems : Roll</value></data>
+  <data name="GemsSize" xml:space="preserve"><value>Gems : Size</value></data>
+  <data name="GemsShow" xml:space="preserve"><value>Gems : Show</value></data>
+  <data name="HockeyPuck" xml:space="preserve"><value>Hockey Puck</value></data>
+  <data name="ArialFontCLowercase" xml:space="preserve"><value>Arial Font C Lowercase</value></data>
+  <data name="SettingGalleryRailProfileShape" xml:space="preserve"><value>Setting : Gallery Rail Profile Shape</value></data>
+  <data name="LeafWithGrooveFlatBottom" xml:space="preserve"><value>Leaf With Groove Flat Bottom</value></data>
+  <data name="OrganicCurve01" xml:space="preserve"><value>Organic Curve 01</value></data>
+  <data name="OrganicCurve03" xml:space="preserve"><value>Organic Curve 03</value></data>
+  <data name="OrganicCurve02" xml:space="preserve"><value>Organic Curve 02</value></data>
+  <data name="BookmanFontYUppercase" xml:space="preserve"><value>Bookman Font Y Uppercase</value></data>
+  <data name="FiligreeQuadLoop" xml:space="preserve"><value>Filigree Quad Loop</value></data>
+  <data name="DetailBendOnOff" xml:space="preserve"><value>Detail : Bend On/Off</value></data>
+  <data name="BowlingBallFlatback" xml:space="preserve"><value>Bowling Ball Flatback</value></data>
+  <data name="SettingHeadAngle" xml:space="preserve"><value>Setting : Head - Angle</value></data>
+  <data name="SettingBottomBarPosition" xml:space="preserve"><value>Setting : Bottom Bar Position</value></data>
+  <data name="Side1ProfileChooser" xml:space="preserve"><value>Side 1 Profile Chooser</value></data>
+  <data name="GemGemRowEndSize" xml:space="preserve"><value>Gem : Gem Row End Size</value></data>
+  <data name="Prong3OnOff" xml:space="preserve"><value>Prong 3 On Off</value></data>
+  <data name="ShankTopProfileMoveUpAndDown" xml:space="preserve"><value>Shank : Top Profile - Move Up And Down</value></data>
+  <data name="ArialFontGUppercase" xml:space="preserve"><value>Arial Font G Uppercase</value></data>
+  <data name="ArialFontJLowercase" xml:space="preserve"><value>Arial Font J Lowercase</value></data>
+  <data name="DomedCenterFivePetals" xml:space="preserve"><value>Domed Center Five Petals</value></data>
+  <data name="Filigree" xml:space="preserve"><value>Filigree</value></data>
+  <data name="ShankScroll3ProfileShape" xml:space="preserve"><value>Shank : Scroll 3 - Profile - Shape</value></data>
+  <data name="WhichObject" xml:space="preserve"><value>Which Object</value></data>
+  <data name="SettingProngBottomStyle" xml:space="preserve"><value>Setting : Prong - Bottom Style</value></data>
+  <data name="WhichObjectNeedToDrawMoreScrolls" xml:space="preserve"><value>Which Object (Need To Draw More Scrolls)</value></data>
+  <data name="TopProfile2Width" xml:space="preserve"><value>Top Profile 2 Width</value></data>
+  <data name="DetailTopLeftProfileSize" xml:space="preserve"><value>Detail : Top Left Profile Size</value></data>
+  <data name="ShankSideProfilePositionArroundTheRing" xml:space="preserve"><value>Shank : Side Profile Position Arround The Ring</value></data>
+  <data name="ShankScroll2ProfileShape" xml:space="preserve"><value>Shank : Scroll 2 - Profile - Shape</value></data>
+  <data name="CylinderDomed" xml:space="preserve"><value>Cylinder Domed</value></data>
+  <data name="BeadRounded" xml:space="preserve"><value>Bead Rounded</value></data>
+  <data name="GemStartSize" xml:space="preserve"><value>Gem : Start Size</value></data>
+  <data name="CenterGemDefinition" xml:space="preserve"><value>Center Gem Definition</value></data>
+  <data name="MapleWithVeins" xml:space="preserve"><value>Maple With Veins</value></data>
+  <data name="DetailOuterDesignRotate" xml:space="preserve"><value>Detail : Outer Design Rotate</value></data>
+  <data name="DetailBeadSpacing" xml:space="preserve"><value>Detail : Bead Spacing</value></data>
+  <data name="MicroBand" xml:space="preserve"><value>Micro Band</value></data>
+  <data name="MonogramMMiddle" xml:space="preserve"><value>Monogram M Middle</value></data>
+  <data name="MonogramZMiddle" xml:space="preserve"><value>Monogram Z Middle</value></data>
+  <data name="Three11100250Pt" xml:space="preserve"><value>311 100-250pt</value></data>
+  <data name="Prong1OnOff" xml:space="preserve"><value>Prong 1 On Off</value></data>
+  <data name="SettingShortRowProngSize" xml:space="preserve"><value>Setting : Short Row Prong Size</value></data>
+  <data name="GemWithUnderBezel" xml:space="preserve"><value>Gem With Under Bezel</value></data>
+  <data name="ShankBridgeSideWidth" xml:space="preserve"><value>Shank : Bridge Side Width</value></data>
+  <data name="BookmanFontQuotation" xml:space="preserve"><value>Bookman Font Quotation</value></data>
+  <data name="MapleLeaf" xml:space="preserve"><value>Maple Leaf</value></data>
+  <data name="ShankBridgeSideShape" xml:space="preserve"><value>Shank : Bridge Side Shape</value></data>
+  <data name="ConcaveEmerald" xml:space="preserve"><value>Concave Emerald</value></data>
+  <data name="Prong4OnOff" xml:space="preserve"><value>Prong 4 On Off</value></data>
+  <data name="Square077" xml:space="preserve"><value>Square 077</value></data>
+  <data name="TopThickness" xml:space="preserve"><value>Top Thickness</value></data>
+  <data name="ArialFontRLowercase" xml:space="preserve"><value>Arial Font R Lowercase</value></data>
+  <data name="DetailRightProfileWidth" xml:space="preserve"><value>Detail : Right Profile Width %</value></data>
+  <data name="DetailMiddleProfileChooser" xml:space="preserve"><value>Detail : Middle Profile Chooser</value></data>
+  <data name="SettingCutterBottomAngle" xml:space="preserve"><value>Setting : Cutter Bottom Angle</value></data>
+  <data name="DetailRightProfileShape" xml:space="preserve"><value>Detail : Right Profile Shape</value></data>
+  <data name="SettingBezelBottomRoundedOrFlat" xml:space="preserve"><value>Setting: Bezel Bottom - Rounded Or Flat</value></data>
+  <data name="LoopLong17993" xml:space="preserve"><value>Loop Long 17993</value></data>
+  <data name="TopBarOnOff" xml:space="preserve"><value>Top Bar - On/Off</value></data>
+  <data name="MonogramWMiddle" xml:space="preserve"><value>Monogram W Middle</value></data>
+  <data name="BottomRailDiameter" xml:space="preserve"><value>Bottom Rail Diameter %</value></data>
+  <data name="BowlingPin" xml:space="preserve"><value>Bowling Pin</value></data>
+  <data name="SettingBottomGalleryRail" xml:space="preserve"><value>Setting - Bottom Gallery Rail</value></data>
+  <data name="BookmanFontGUppercase" xml:space="preserve"><value>Bookman Font G Uppercase</value></data>
+  <data name="AsymmetricalBand" xml:space="preserve"><value>Asymmetrical Band</value></data>
+  <data name="DetailOuterDesignLength" xml:space="preserve"><value>Detail : Outer Design Length %</value></data>
+  <data name="BookmanFontGLowercase" xml:space="preserve"><value>Bookman Font G Lowercase</value></data>
+  <data name="Monogram" xml:space="preserve"><value>Monogram</value></data>
+  <data name="ChiseledDoubleCurve02" xml:space="preserve"><value>Chiseled Double Curve 02</value></data>
+  <data name="ChiseledDoubleCurve01" xml:space="preserve"><value>Chiseled Double Curve 01</value></data>
+  <data name="ShankScrollProfileWidth" xml:space="preserve"><value>Shank : Scroll Profile - Width</value></data>
+  <data name="ShankProfileTopShape" xml:space="preserve"><value>Shank : Profile - Top - Shape</value></data>
+  <data name="ProfileHeight" xml:space="preserve"><value>Profile Height</value></data>
+  <data name="ShankBraidStyle" xml:space="preserve"><value>Shank : Braid Style</value></data>
+  <data name="SettingLowerGalleryRailEnableLowerGalleryRail" xml:space="preserve"><value>Setting : Lower Gallery Rail - Enable Lower Gallery Rail</value></data>
+  <data name="SettingGalleryRailPosition" xml:space="preserve"><value>Setting : Gallery Rail Position</value></data>
+  <data name="ShankProfileTopWidth" xml:space="preserve"><value>Shank : Profile - Top - Width</value></data>
+  <data name="Chiseled" xml:space="preserve"><value>Chiseled</value></data>
+  <data name="SwirlBlendAmount" xml:space="preserve"><value>Swirl Blend Amount</value></data>
+  <data name="BezelCutterShape" xml:space="preserve"><value>Bezel : Cutter - Shape</value></data>
+  <data name="DetailOuterDesignMoveFrontBack" xml:space="preserve"><value>Detail : Outer Design Move Front/Back</value></data>
+  <data name="TwoNdMarineDivisionCrest" xml:space="preserve"><value>2nd Marine Division Crest</value></data>
+  <data name="MirrorCurvedWire" xml:space="preserve"><value>Mirror (Curved Wire)</value></data>
+  <data name="GroovedSCurve03" xml:space="preserve"><value>Grooved S Curve 03</value></data>
+  <data name="GroovedSCurve02" xml:space="preserve"><value>Grooved S Curve 02</value></data>
+  <data name="GroovedSCurve01" xml:space="preserve"><value>Grooved S Curve 01</value></data>
+  <data name="GroovedSCurve05" xml:space="preserve"><value>Grooved S Curve 05</value></data>
+  <data name="GroovedSCurve04" xml:space="preserve"><value>Grooved S Curve 04</value></data>
+  <data name="QuadDomeBail" xml:space="preserve"><value>Quad Dome Bail</value></data>
+  <data name="Profile3Height" xml:space="preserve"><value>Profile 3 Height</value></data>
+  <data name="Prong2OnOff" xml:space="preserve"><value>Prong 2 On Off</value></data>
+  <data name="Remount" xml:space="preserve"><value>Remount</value></data>
+  <data name="WaveBand01" xml:space="preserve"><value>Wave Band 01</value></data>
+  <data name="WaveBand02" xml:space="preserve"><value>Wave Band 02</value></data>
+  <data name="MonogramPMiddle" xml:space="preserve"><value>Monogram P Middle</value></data>
+  <data name="SettingProngOverlap" xml:space="preserve"><value>Setting : Prong Overlap</value></data>
+  <data name="ProngGemsOnOff" xml:space="preserve"><value>Prong Gems On Off</value></data>
+  <data name="ObjectsOnCurve" xml:space="preserve"><value>Objects on Curve</value></data>
+  <data name="Setting1ProfileHeight" xml:space="preserve"><value>Setting 1 : Profile Height %</value></data>
+  <data name="Tennisball" xml:space="preserve"><value>Tennisball</value></data>
+  <data name="SettingBarTaperAmount" xml:space="preserve"><value>Setting : Bar Taper Amount</value></data>
+  <data name="DetailInnerDesignLength" xml:space="preserve"><value>Detail : Inner Design Length %</value></data>
+  <data name="MoveFrontToBack" xml:space="preserve"><value>Move Front To Back</value></data>
+  <data name="USAFChamfered" xml:space="preserve"><value>USAF Chamfered</value></data>
+  <data name="QuadShankWGems" xml:space="preserve"><value>Quad Shank w Gems</value></data>
+  <data name="CollarRailWidth" xml:space="preserve"><value>Collar : Rail Width %</value></data>
+  <data name="JumpRing01" xml:space="preserve"><value>Jump Ring 01</value></data>
+  <data name="CollarRailShape" xml:space="preserve"><value>Collar : Rail Shape</value></data>
+  <data name="ShankQuadMirror" xml:space="preserve"><value>Shank : Quad Mirror</value></data>
+  <data name="SettingProngsDepthInside" xml:space="preserve"><value>Setting : Prongs - Depth Inside</value></data>
+  <data name="ScrollSize" xml:space="preserve"><value>Scroll : Size</value></data>
+  <data name="ScaleYLock" xml:space="preserve"><value>Scale Y Lock</value></data>
+  <data name="SettingProngMoveUpDown" xml:space="preserve"><value>Setting : Prong Move Up/Down</value></data>
+  <data name="ShankBottomProfileMoveBackToFront" xml:space="preserve"><value>Shank : Bottom Profile Move Back To Front</value></data>
+  <data name="ScaleWidth" xml:space="preserve"><value>Scale Width</value></data>
+  <data name="Placement" xml:space="preserve"><value>Placement</value></data>
+  <data name="ShankSideProfileChooser" xml:space="preserve"><value>Shank : Side Profile Chooser</value></data>
+  <data name="FlatFleurDeLis" xml:space="preserve"><value>Flat Fleur De Lis</value></data>
+  <data name="ShankFlipWhenQuadMirrorIsOff" xml:space="preserve"><value>Shank : Flip (When Quad Mirror Is Off)</value></data>
+  <data name="EndMilgrain" xml:space="preserve"><value>End Milgrain</value></data>
+  <data name="DetailTopCenterDesignOnOff" xml:space="preserve"><value>Detail : Top Center Design On/Off</value></data>
+  <data name="ConvexRectangle" xml:space="preserve"><value>Convex Rectangle</value></data>
+  <data name="ShankBottomProfileHeight" xml:space="preserve"><value>Shank : Bottom Profile Height</value></data>
+  <data name="DomedSingleCurve05" xml:space="preserve"><value>Domed Single Curve 05</value></data>
+  <data name="DomedSingleCurve04" xml:space="preserve"><value>Domed Single Curve 04</value></data>
+  <data name="DomedSingleCurve03" xml:space="preserve"><value>Domed Single Curve 03</value></data>
+  <data name="DomedSingleCurve02" xml:space="preserve"><value>Domed Single Curve 02</value></data>
+  <data name="DomedSingleCurve01" xml:space="preserve"><value>Domed Single Curve 01</value></data>
+  <data name="SideThickness" xml:space="preserve"><value>Side Thickness</value></data>
+  <data name="ShankInsetDiameter" xml:space="preserve"><value>Shank : Inset Diameter %</value></data>
+  <data name="SettingEndProfileHeight" xml:space="preserve"><value>Setting : End Profile Height</value></data>
+  <data name="HeadsSpanTaper" xml:space="preserve"><value>Heads Span Taper</value></data>
+  <data name="ArialFontOLowercase" xml:space="preserve"><value>Arial Font O Lowercase</value></data>
+  <data name="BottomGalleryRail" xml:space="preserve"><value>Bottom Gallery Rail</value></data>
+  <data name="Radiant" xml:space="preserve"><value>Radiant</value></data>
+  <data name="DetailObjectHeight" xml:space="preserve"><value>Detail : Object Height %</value></data>
+  <data name="ConvexSquare" xml:space="preserve"><value>Convex Square</value></data>
+  <data name="HaloInnerLength" xml:space="preserve"><value>Halo : Inner Length</value></data>
+  <data name="SimpleLeafWithRaisedSection" xml:space="preserve"><value>Simple Leaf With Raised Section</value></data>
+  <data name="BeadFlatTop" xml:space="preserve"><value>Bead Flat Top</value></data>
+  <data name="Cluster1" xml:space="preserve"><value>Cluster</value></data>
+  <data name="CurveChooser" xml:space="preserve"><value>Curve Chooser</value></data>
+  <data name="BandProngsOnOff" xml:space="preserve"><value>Band: Prongs On Off</value></data>
+  <data name="BailTopProfileHeight" xml:space="preserve"><value>Bail : Top Profile Height</value></data>
+  <data name="DetailEndProfileHeight" xml:space="preserve"><value>Detail : End Profile Height</value></data>
+  <data name="MilgrainInnerMilgrainOnOff" xml:space="preserve"><value>Milgrain : Inner Milgrain On Off</value></data>
+  <data name="UpperGalleryPlacement" xml:space="preserve"><value>Upper Gallery Placement</value></data>
+  <data name="SettingCenterGemProngSize" xml:space="preserve"><value>Setting : Center Gem Prong Size %</value></data>
+  <data name="BookmanFontULowercase" xml:space="preserve"><value>Bookman Font U Lowercase</value></data>
+  <data name="BeadHoleDiameter" xml:space="preserve"><value>Bead : Hole Diameter</value></data>
+  <data name="SettingHeight" xml:space="preserve"><value>Setting : Height</value></data>
+  <data name="DetailDesignWidth" xml:space="preserve"><value>Detail : Design Width</value></data>
+  <data name="HeadWithGems" xml:space="preserve"><value>Head with Gems</value></data>
+  <data name="DetailEndBProfileShape" xml:space="preserve"><value>Detail : End B Profile Shape</value></data>
+  <data name="BeadBeadHeigth" xml:space="preserve"><value>Bead : Bead - Heigth</value></data>
+  <data name="DetailTopRightProfileSize" xml:space="preserve"><value>Detail : Top Right Profile Size</value></data>
+  <data name="DetailEndBProfileWidth" xml:space="preserve"><value>Detail : End B Profile Width</value></data>
+  <data name="RingRailGuide" xml:space="preserve"><value>Ring Rail Guide</value></data>
+  <data name="MonogramBMiddle" xml:space="preserve"><value>Monogram B Middle</value></data>
+  <data name="DetailLeftEndProfileSize" xml:space="preserve"><value>Detail : Left End Profile Size</value></data>
+  <data name="SettingLongRowProngNudge" xml:space="preserve"><value>Setting : Long Row Prong Nudge</value></data>
+  <data name="RopeOrBead" xml:space="preserve"><value>Rope Or Bead</value></data>
+  <data name="BookmanFontApostrophe" xml:space="preserve"><value>Bookman Font Apostrophe</value></data>
+  <data name="DetailBeadSizeLength" xml:space="preserve"><value>Detail: Bead Size - Length</value></data>
+  <data name="DesignOverlap" xml:space="preserve"><value>Design : Overlap</value></data>
+  <data name="DesignOverall" xml:space="preserve"><value>Design Overall</value></data>
+  <data name="Flower030" xml:space="preserve"><value>Flower 030</value></data>
+  <data name="ConcaveFaceBail" xml:space="preserve"><value>Concave Face Bail</value></data>
+  <data name="BailShape" xml:space="preserve"><value>Bail : Shape</value></data>
+  <data name="ShankBridgeTopHeight" xml:space="preserve"><value>Shank : Bridge Top Height</value></data>
+  <data name="TwoLeafDesign" xml:space="preserve"><value>Two Leaf Design</value></data>
+  <data name="FireBadge" xml:space="preserve"><value>Fire Badge</value></data>
+  <data name="ShankProfileBottomWidth" xml:space="preserve"><value>Shank : Profile - Bottom - Width</value></data>
+  <data name="SoccerballFlat" xml:space="preserve"><value>Soccerball Flat</value></data>
+  <data name="ArialFontWLowercase" xml:space="preserve"><value>Arial Font W Lowercase</value></data>
+  <data name="ShankProfileBottomShape" xml:space="preserve"><value>Shank : Profile - Bottom - Shape</value></data>
+  <data name="ConcaveSquareRadiant" xml:space="preserve"><value>Concave Square Radiant</value></data>
+  <data name="ShankBridgeBottomProfileWidth" xml:space="preserve"><value>Shank: Bridge Bottom - Profile Width</value></data>
+  <data name="ShankProfileBShape" xml:space="preserve"><value>Shank : Profile B - Shape</value></data>
+  <data name="ShankBottomProfileWidth" xml:space="preserve"><value>Shank - Bottom Profile Width</value></data>
+  <data name="ShankDesignSideHeight" xml:space="preserve"><value>Shank : Design Side Height</value></data>
+  <data name="PoolballRack" xml:space="preserve"><value>Poolball Rack</value></data>
+  <data name="CutterPosition" xml:space="preserve"><value>Cutter Position</value></data>
+  <data name="ShankProfileBWidth" xml:space="preserve"><value>Shank : Profile B - Width</value></data>
+  <data name="ShankBottomProfileShape" xml:space="preserve"><value>Shank : Bottom Profile Shape</value></data>
+  <data name="ShankBottomSolidShankThickness" xml:space="preserve"><value>Shank : Bottom Solid Shank Thickness</value></data>
+  <data name="ShankLowerShankMoveFrontBack" xml:space="preserve"><value>Shank : Lower Shank Move Front/Back</value></data>
+  <data name="CylinderFilletLarge" xml:space="preserve"><value>Cylinder Fillet Large</value></data>
+  <data name="BookmanFontMUppercase" xml:space="preserve"><value>Bookman Font M Uppercase</value></data>
+  <data name="DetailBarHeight" xml:space="preserve"><value>Detail : Bar Height</value></data>
+  <data name="TrebleClef" xml:space="preserve"><value>Treble Clef</value></data>
+  <data name="SettingProngsEndSpread" xml:space="preserve"><value>Setting : Prongs - End - Spread</value></data>
+  <data name="BookmanFontMLowercase" xml:space="preserve"><value>Bookman Font M Lowercase</value></data>
+  <data name="Setting2TallProfileHeight" xml:space="preserve"><value>Setting 2 : Tall Profile Height %</value></data>
+  <data name="WingsSingle02" xml:space="preserve"><value>Wings Single 02</value></data>
+  <data name="WingsSingle01" xml:space="preserve"><value>Wings Single 01</value></data>
+  <data name="HeartShapedWide" xml:space="preserve"><value>Heart Shaped Wide</value></data>
+  <data name="ArialFontSUppercase" xml:space="preserve"><value>Arial Font S Uppercase</value></data>
+  <data name="ShankProfileAShape" xml:space="preserve"><value>Shank : Profile A - Shape</value></data>
+  <data name="ShankBridgeTopProfileHeight" xml:space="preserve"><value>Shank : Bridge Top - Profile Height</value></data>
+  <data name="ShankDesignSpan" xml:space="preserve"><value>Shank : Design Span</value></data>
+  <data name="SettingLowerGallery" xml:space="preserve"><value>Setting Lower Gallery</value></data>
+  <data name="ShankProfileAWidth" xml:space="preserve"><value>Shank : Profile A - Width</value></data>
+  <data name="KnightsHelmet01" xml:space="preserve"><value>Knights Helmet 01</value></data>
+  <data name="KnightsHelmet02" xml:space="preserve"><value>Knights Helmet 02</value></data>
+  <data name="ShankTopProfileShape" xml:space="preserve"><value>Shank : Top Profile Shape</value></data>
+  <data name="GroovedDoubleCurve01" xml:space="preserve"><value>Grooved Double Curve 01</value></data>
+  <data name="GroovedDoubleCurve02" xml:space="preserve"><value>Grooved Double Curve 02</value></data>
+  <data name="SettingIndividualProngs" xml:space="preserve"><value>Setting Individual Prongs</value></data>
+  <data name="ShankTopProfileWidth" xml:space="preserve"><value>Shank : Top Profile - Width</value></data>
+  <data name="SettingGalleryRailBend" xml:space="preserve"><value>Setting : Gallery Rail Bend</value></data>
+  <data name="ZOffset" xml:space="preserve"><value>Z Offset</value></data>
+  <data name="FlipDesign" xml:space="preserve"><value>Flip Design</value></data>
+  <data name="BookmanFontQUppercase" xml:space="preserve"><value>Bookman Font Q Uppercase</value></data>
+  <data name="BookmanFontDLowercase" xml:space="preserve"><value>Bookman Font D Lowercase</value></data>
+  <data name="ProfileSize" xml:space="preserve"><value>Profile Size %</value></data>
+  <data name="HeartShapeDomed" xml:space="preserve"><value>Heart Shape Domed</value></data>
+  <data name="ShankBridgeHeightSide" xml:space="preserve"><value>Shank : Bridge Height Side</value></data>
+  <data name="SettingGalleryRailThickness" xml:space="preserve"><value>Setting : Gallery Rail Thickness</value></data>
+  <data name="DoubleMacaroniRopeSegment" xml:space="preserve"><value>Double Macaroni Rope Segment</value></data>
+  <data name="BasePiece" xml:space="preserve"><value>Base Piece</value></data>
+  <data name="GolfTeeFlatback" xml:space="preserve"><value>Golf Tee Flatback</value></data>
+  <data name="ArialFontOUppercase" xml:space="preserve"><value>Arial Font O Uppercase</value></data>
+  <data name="StartDiameter2" xml:space="preserve"><value>Start Diameter 2</value></data>
+  <data name="StartDiameter1" xml:space="preserve"><value>Start Diameter 1</value></data>
+  <data name="SettingLowerGalleryRailBend" xml:space="preserve"><value>Setting : Lower Gallery Rail - Bend</value></data>
+  <data name="GemDefinition" xml:space="preserve"><value>Gem Definition</value></data>
+  <data name="HeartShapeWithCrease" xml:space="preserve"><value>Heart Shape With Crease</value></data>
+  <data name="BottomDesignOffset" xml:space="preserve"><value>Bottom Design Offset</value></data>
+  <data name="CylinderFillet1Side" xml:space="preserve"><value>Cylinder Fillet 1 Side</value></data>
+  <data name="Setting2Position" xml:space="preserve"><value>Setting 2 : Position</value></data>
+  <data name="Rolo2Mm" xml:space="preserve"><value>Rolo 2mm</value></data>
+  <data name="AtomOnBase" xml:space="preserve"><value>Atom on Base</value></data>
+  <data name="GemsShortRow" xml:space="preserve"><value>Gems Short Row</value></data>
+  <data name="ShankShortTopProfileWidth" xml:space="preserve"><value>Shank : Short Top Profile Width</value></data>
+  <data name="DetailInsideLength" xml:space="preserve"><value>Detail : Inside Length</value></data>
+  <data name="SettingBottomBarTilt" xml:space="preserve"><value>Setting : Bottom Bar Tilt</value></data>
+  <data name="GemsSide2" xml:space="preserve"><value>Gems Side 2</value></data>
+  <data name="GemsSide1" xml:space="preserve"><value>Gems Side 1</value></data>
+  <data name="GemsStart" xml:space="preserve"><value>Gems : Start</value></data>
+  <data name="PointOnSecondProfile" xml:space="preserve"><value>Point On Second Profile</value></data>
+  <data name="SettingShortRowProngNudge" xml:space="preserve"><value>Setting : Short Row Prong Nudge</value></data>
+  <data name="WeaveSingle" xml:space="preserve"><value>Weave Single</value></data>
+  <data name="GemsOnOff" xml:space="preserve"><value>Gems : On Off</value></data>
+  <data name="SettingHalfBezelCutoutOnOff" xml:space="preserve"><value>Setting: Half Bezel Cutout On Off</value></data>
+  <data name="ShankDesignTopProfileShape" xml:space="preserve"><value>Shank : Design Top Profile Shape</value></data>
+  <data name="DetailEndProfilePosition" xml:space="preserve"><value>Detail : End Profile Position</value></data>
+  <data name="BandMirrorOnOff" xml:space="preserve"><value>Band: Mirror On Off</value></data>
+  <data name="FireAxe" xml:space="preserve"><value>Fire Axe</value></data>
+  <data name="BookmanFontZUppercase" xml:space="preserve"><value>Bookman Font Z Uppercase</value></data>
+  <data name="BeadChain" xml:space="preserve"><value>Bead Chain</value></data>
+  <data name="MonogramIMiddle" xml:space="preserve"><value>Monogram I Middle</value></data>
+  <data name="Ringrailsize" xml:space="preserve"><value>Ringrailsize</value></data>
+  <data name="GemsSpacing" xml:space="preserve"><value>Gems : Spacing</value></data>
+  <data name="DetailSpheresOnOff" xml:space="preserve"><value>Detail : Spheres On/Off</value></data>
+  <data name="MonogramVMiddle" xml:space="preserve"><value>Monogram V Middle</value></data>
+  <data name="MultipleShankSplitRing" xml:space="preserve"><value>Multiple Shank Split Ring</value></data>
+  <data name="ChannelEndShapeWithProngs" xml:space="preserve"><value>Channel : End  Shape - With Prongs</value></data>
+  <data name="ShankBridgeOnOff" xml:space="preserve"><value>Shank Bridge: On Off</value></data>
+  <data name="BottomThickness" xml:space="preserve"><value>Bottom Thickness</value></data>
+  <data name="BoxChain" xml:space="preserve"><value>Box Chain</value></data>
+  <data name="ShankBridgeWidth" xml:space="preserve"><value>Shank : Bridge Width</value></data>
+  <data name="ArialFontELowercase" xml:space="preserve"><value>Arial Font E Lowercase</value></data>
+  <data name="ShankBridgeShape" xml:space="preserve"><value>Shank : Bridge Shape</value></data>
+  <data name="HaloSizeCenterGemSize" xml:space="preserve"><value>Halo : Size (Center Gem Size)</value></data>
+  <data name="ArialFontApostrophe" xml:space="preserve"><value>Arial Font Apostrophe</value></data>
+  <data name="ChiseledFleurDeLis" xml:space="preserve"><value>Chiseled Fleur De Lis</value></data>
+  <data name="ChannelEndAngle" xml:space="preserve"><value>Channel : End Angle</value></data>
+  <data name="DomedDoubleCurve01" xml:space="preserve"><value>Domed Double Curve 01</value></data>
+  <data name="DomedDoubleCurve02" xml:space="preserve"><value>Domed Double Curve 02</value></data>
+  <data name="DomedDoubleCurve03" xml:space="preserve"><value>Domed Double Curve 03</value></data>
+  <data name="DomedScroll03" xml:space="preserve"><value>Domed Scroll 03</value></data>
+  <data name="DomedScroll02" xml:space="preserve"><value>Domed Scroll 02</value></data>
+  <data name="DomedScroll01" xml:space="preserve"><value>Domed Scroll 01</value></data>
+  <data name="ShankProfileChooser" xml:space="preserve"><value>Shank : Profile Chooser</value></data>
+  <data name="SettingEndProfileWidth" xml:space="preserve"><value>Setting : End Profile Width</value></data>
+  <data name="MonogramSMiddle" xml:space="preserve"><value>Monogram S Middle</value></data>
+  <data name="TriLeavesRoundEnd" xml:space="preserve"><value>Tri Leaves Round End</value></data>
+  <data name="ShankMilgrainEnd" xml:space="preserve"><value>Shank : Milgrain - End</value></data>
+  <data name="LeafWithRaisedCenterSectionFlatBottom" xml:space="preserve"><value>Leaf With Raised Center Section Flat Bottom</value></data>
+  <data name="SettingSide1" xml:space="preserve"><value>Setting Side 1</value></data>
+  <data name="SettingStyle" xml:space="preserve"><value>Setting : Style</value></data>
+  <data name="ChannelEndShape" xml:space="preserve"><value>Channel : End Shape</value></data>
+  <data name="FlatWing01" xml:space="preserve"><value>Flat Wing 01</value></data>
+  <data name="FlatWing02" xml:space="preserve"><value>Flat Wing 02</value></data>
+  <data name="ShankScrollsMiddleWidth" xml:space="preserve"><value>Shank : Scrolls- Middle Width</value></data>
+  <data name="ArialFontTUppercase" xml:space="preserve"><value>Arial Font T Uppercase</value></data>
+  <data name="OutsideRingRails" xml:space="preserve"><value>Outside Ring Rails</value></data>
+  <data name="DetailRightEndProfileSize" xml:space="preserve"><value>Detail : Right End Profile Size</value></data>
+  <data name="ArialFontLLowercase" xml:space="preserve"><value>Arial Font L Lowercase</value></data>
+  <data name="SettingProng4RotateAroundHead" xml:space="preserve"><value>Setting : Prong 4 Rotate Around Head</value></data>
+  <data name="DetailLeftProfileWidth" xml:space="preserve"><value>Detail : Left Profile Width %</value></data>
+  <data name="JumpRing1" xml:space="preserve"><value>Jump Ring</value></data>
+  <data name="SettingBezelAngle" xml:space="preserve"><value>Setting : Bezel Angle %</value></data>
+  <data name="DetailLeftProfileShape" xml:space="preserve"><value>Detail : Left Profile Shape</value></data>
+  <data name="Shoulder09" xml:space="preserve"><value>Shoulder 09</value></data>
+  <data name="Shoulder08" xml:space="preserve"><value>Shoulder 08</value></data>
+  <data name="Shoulder03" xml:space="preserve"><value>Shoulder 03</value></data>
+  <data name="Shoulder02" xml:space="preserve"><value>Shoulder 02</value></data>
+  <data name="Shoulder01" xml:space="preserve"><value>Shoulder 01</value></data>
+  <data name="Shoulder07" xml:space="preserve"><value>Shoulder 07</value></data>
+  <data name="Shoulder06" xml:space="preserve"><value>Shoulder 06</value></data>
+  <data name="Shoulder05" xml:space="preserve"><value>Shoulder 05</value></data>
+  <data name="Shoulder04" xml:space="preserve"><value>Shoulder 04</value></data>
+  <data name="Shoulder18" xml:space="preserve"><value>Shoulder 18</value></data>
+  <data name="Shoulder10" xml:space="preserve"><value>Shoulder 10</value></data>
+  <data name="Shoulder16" xml:space="preserve"><value>Shoulder 16</value></data>
+  <data name="Shoulder17" xml:space="preserve"><value>Shoulder 17</value></data>
+  <data name="Shoulder14" xml:space="preserve"><value>Shoulder 14</value></data>
+  <data name="Shoulder15" xml:space="preserve"><value>Shoulder 15</value></data>
+  <data name="BandMilgrainSpacing" xml:space="preserve"><value>Band: Milgrain Spacing</value></data>
+  <data name="FlatSingleCurve05" xml:space="preserve"><value>Flat Single Curve 05</value></data>
+  <data name="FlatSingleCurve04" xml:space="preserve"><value>Flat Single Curve 04</value></data>
+  <data name="FlatSingleCurve03" xml:space="preserve"><value>Flat Single Curve 03</value></data>
+  <data name="FlatSingleCurve02" xml:space="preserve"><value>Flat Single Curve 02</value></data>
+  <data name="FlatSingleCurve01" xml:space="preserve"><value>Flat Single Curve 01</value></data>
+  <data name="BookmanChiseled" xml:space="preserve"><value>Bookman - Chiseled</value></data>
+  <data name="ConvexSquareRadiant" xml:space="preserve"><value>Convex Square Radiant</value></data>
+  <data name="DetailBeadTwist" xml:space="preserve"><value>Detail : Bead Twist</value></data>
+  <data name="ConcaveCushion" xml:space="preserve"><value>Concave Cushion</value></data>
+  <data name="GemsDiameter" xml:space="preserve"><value>Gems : Diameter</value></data>
+  <data name="FivePartLeaf" xml:space="preserve"><value>Five Part Leaf</value></data>
+  <data name="GemTopWidth" xml:space="preserve"><value>Gem : Top Width</value></data>
+  <data name="ShankDesignTopHeight" xml:space="preserve"><value>Shank : Design Top Height</value></data>
+  <data name="GemsMiddleDiameter" xml:space="preserve"><value>Gems : Middle Diameter</value></data>
+  <data name="HaloProfileWidth" xml:space="preserve"><value>Halo : Profile Width</value></data>
+  <data name="Setting1ProfileWidth" xml:space="preserve"><value>Setting 1 : Profile Width %</value></data>
+  <data name="HaloProfileShape" xml:space="preserve"><value>Halo : Profile Shape</value></data>
+  <data name="GemShapeMilgrain1" xml:space="preserve"><value>Gem Shape Milgrain</value></data>
+  <data name="ProfileZOffset" xml:space="preserve"><value>Profile Z Offset</value></data>
+  <data name="TranslateZ" xml:space="preserve"><value>Translate Z</value></data>
+  <data name="TranslateY" xml:space="preserve"><value>Translate Y</value></data>
+  <data name="TranslateX" xml:space="preserve"><value>Translate X</value></data>
+  <data name="Transforms" xml:space="preserve"><value>Transforms</value></data>
+  <data name="SharpTrinityKnot" xml:space="preserve"><value>Sharp Trinity Knot</value></data>
+  <data name="ShankFlipIfQuadMirrorIsOff" xml:space="preserve"><value>Shank : Flip (If Quad Mirror Is Off)</value></data>
+  <data name="DomedSCurve06" xml:space="preserve"><value>Domed S Curve 06</value></data>
+  <data name="DomedSCurve04" xml:space="preserve"><value>Domed S Curve 04</value></data>
+  <data name="DomedSCurve05" xml:space="preserve"><value>Domed S Curve 05</value></data>
+  <data name="DomedSCurve02" xml:space="preserve"><value>Domed S Curve 02</value></data>
+  <data name="DomedSCurve03" xml:space="preserve"><value>Domed S Curve 03</value></data>
+  <data name="DomedSCurve01" xml:space="preserve"><value>Domed S Curve 01</value></data>
+  <data name="ScrollProfileSize" xml:space="preserve"><value>Scroll : Profile Size</value></data>
+  <data name="DetailProfileHeight" xml:space="preserve"><value>Detail : Profile Height</value></data>
+  <data name="ArialFontHUppercase" xml:space="preserve"><value>Arial Font H Uppercase</value></data>
+  <data name="BandMilgrainSize" xml:space="preserve"><value>Band: Milgrain Size</value></data>
+  <data name="HollowingTopWidth" xml:space="preserve"><value>Hollowing Top Width</value></data>
+  <data name="DesignRotateDownCenterGem" xml:space="preserve"><value>Design Rotate Down Center Gem</value></data>
+  <data name="AddValue" xml:space="preserve"><value>Add Value</value></data>
+  <data name="ShankShoulderStyle" xml:space="preserve"><value>Shank : Shoulder Style</value></data>
+  <data name="CurvedWire" xml:space="preserve"><value>Curved Wire</value></data>
+  <data name="DetailRopeBeadingOnOff" xml:space="preserve"><value>Detail : Rope/Beading On Off</value></data>
+  <data name="Flat07OnBase" xml:space="preserve"><value>Flat 07 on Base</value></data>
+  <data name="ShankBridgeTopProfileMoveFrontToBack" xml:space="preserve"><value>Shank : Bridge Top - Profile Move Front To Back</value></data>
+  <data name="HollowingTopDepth" xml:space="preserve"><value>Hollowing Top Depth</value></data>
+  <data name="SignetTopWidth" xml:space="preserve"><value>Signet : Top Width</value></data>
+  <data name="SignetTopShape" xml:space="preserve"><value>Signet : Top Shape</value></data>
+  <data name="BottomProfileChooser" xml:space="preserve"><value>Bottom Profile Chooser</value></data>
+  <data name="ShankFingerSize" xml:space="preserve"><value>Shank : Finger Size</value></data>
+  <data name="ShankProfileHeight" xml:space="preserve"><value>Shank : Profile Height</value></data>
+  <data name="ArialFontTLowercase" xml:space="preserve"><value>Arial Font T Lowercase</value></data>
+  <data name="WaveRepeat" xml:space="preserve"><value>Wave Repeat</value></data>
+  <data name="ShankSpan" xml:space="preserve"><value>Shank : Span</value></data>
+  <data name="DetailLeftCenterProfileSize" xml:space="preserve"><value>Detail : Left Center Profile Size</value></data>
+  <data name="ArialFontPeriod" xml:space="preserve"><value>Arial Font Period</value></data>
+  <data name="CylinderBead" xml:space="preserve"><value>Cylinder Bead</value></data>
+  <data name="ShankMilgrainSpacing" xml:space="preserve"><value>Shank : Milgrain - Spacing</value></data>
+  <data name="BookmanFontALowercase" xml:space="preserve"><value>Bookman Font A Lowercase</value></data>
+  <data name="HaloProfileHeight" xml:space="preserve"><value>Halo : Profile Height</value></data>
+  <data name="HaloOpening" xml:space="preserve"><value>Halo : Opening</value></data>
+  <data name="GemsStartPosition" xml:space="preserve"><value>Gems : Start Position</value></data>
+  <data name="ShankBridgeSpan" xml:space="preserve"><value>Shank - Bridge Span</value></data>
+  <data name="ArialFontEUppercase" xml:space="preserve"><value>Arial Font E Uppercase</value></data>
+  <data name="Heart08" xml:space="preserve"><value>Heart 08</value></data>
+  <data name="Heart07" xml:space="preserve"><value>Heart 07</value></data>
+  <data name="Heart06" xml:space="preserve"><value>Heart 06</value></data>
+  <data name="Heart05" xml:space="preserve"><value>Heart 05</value></data>
+  <data name="Heart04" xml:space="preserve"><value>Heart 04</value></data>
+  <data name="Heart03" xml:space="preserve"><value>Heart 03</value></data>
+  <data name="Heart02" xml:space="preserve"><value>Heart 02</value></data>
+  <data name="Heart01" xml:space="preserve"><value>Heart 01</value></data>
+  <data name="UpperGalleryHeight" xml:space="preserve"><value>Upper Gallery Height</value></data>
+  <data name="ChiseledSCurve01" xml:space="preserve"><value>Chiseled S Curve 01</value></data>
+  <data name="ChiseledSCurve02" xml:space="preserve"><value>Chiseled S Curve 02</value></data>
+  <data name="ChiseledSCurve03" xml:space="preserve"><value>Chiseled S Curve 03</value></data>
+  <data name="ChiseledSCurve04" xml:space="preserve"><value>Chiseled S Curve 04</value></data>
+  <data name="ChiseledSCurve05" xml:space="preserve"><value>Chiseled S Curve 05</value></data>
+  <data name="DetailTopProfileWidth" xml:space="preserve"><value>Detail : Top Profile Width %</value></data>
+  <data name="DetailTopProfileShape" xml:space="preserve"><value>Detail : Top Profile Shape</value></data>
+  <data name="NavyText" xml:space="preserve"><value>Navy Text</value></data>
+  <data name="ShankScrollMiddleProfileWidth" xml:space="preserve"><value>Shank : Scroll - Middle Profile - Width</value></data>
+  <data name="ScrollMoveLeftRight" xml:space="preserve"><value>Scroll : Move Left/Right</value></data>
+  <data name="ShankBandBow" xml:space="preserve"><value>Shank : Band Bow</value></data>
+  <data name="CutterBottomFlatOrRound" xml:space="preserve"><value>Cutter Bottom Flat Or Round</value></data>
+  <data name="FingerSizeWidth" xml:space="preserve"><value>Finger Size : Width</value></data>
+  <data name="ShankSideViewAngleAmount" xml:space="preserve"><value>Shank : Side View Angle Amount</value></data>
+  <data name="DetailBottomRightProfileSize" xml:space="preserve"><value>Detail : Bottom Right Profile Size</value></data>
+  <data name="BeadCutout" xml:space="preserve"><value>Bead Cutout</value></data>
+  <data name="DetailEndAProfileHeight" xml:space="preserve"><value>Detail : End A Profile Height</value></data>
+  <data name="DetailBottomDesignOnOff" xml:space="preserve"><value>Detail : Bottom Design On/Off</value></data>
+  <data name="SettingSetting3Diameter" xml:space="preserve"><value>Setting : Setting 3 Diameter %</value></data>
+  <data name="GalleryRailOnOff" xml:space="preserve"><value>Gallery Rail On/Off</value></data>
+  <data name="Setting2ProfileWidth" xml:space="preserve"><value>Setting 2 : Profile Width %</value></data>
+  <data name="TopProfile1Chooser" xml:space="preserve"><value>Top Profile 1 Chooser</value></data>
+  <data name="ShankTopAngleSideToSide" xml:space="preserve"><value>Shank : Top Angle Side To Side</value></data>
+  <data name="SettingBezelCutterRotate" xml:space="preserve"><value>Setting: Bezel Cutter - Rotate</value></data>
+  <data name="ArtisticSymmetricalWithDesigns" xml:space="preserve"><value>Artistic Symmetrical With Designs</value></data>
+  <data name="Atom" xml:space="preserve"><value>Atom</value></data>
+  <data name="Fish" xml:space="preserve"><value>Fish</value></data>
+  <data name="Frog" xml:space="preserve"><value>Frog</value></data>
+  <data name="Flip" xml:space="preserve"><value>Flip</value></data>
+  <data name="Flat" xml:space="preserve"><value>Flat</value></data>
+  <data name="Gem1" xml:space="preserve"><value>Gem</value></data>
+  <data name="Gems" xml:space="preserve"><value>Gems</value></data>
+  <data name="Misc" xml:space="preserve"><value>Misc</value></data>
+  <data name="Bead" xml:space="preserve"><value>Bead</value></data>
+  <data name="Bail" xml:space="preserve"><value>Bail</value></data>
+  <data name="Bar1" xml:space="preserve"><value>Bar</value></data>
+  <data name="Boot" xml:space="preserve"><value>Boot</value></data>
+  <data name="Calf" xml:space="preserve"><value>Calf</value></data>
+  <data name="Caps" xml:space="preserve"><value>Caps</value></data>
+  <data name="Oval" xml:space="preserve"><value>Oval</value></data>
+  <data name="Knot" xml:space="preserve"><value>Knot</value></data>
+  <data name="Halo" xml:space="preserve"><value>Halo</value></data>
+  <data name="Wire" xml:space="preserve"><value>Wire</value></data>
+  <data name="Text" xml:space="preserve"><value>Text</value></data>
+  <data name="Tilt" xml:space="preserve"><value>Tilt</value></data>
+  <data name="Rope" xml:space="preserve"><value>Rope</value></data>
+  <data name="Roll" xml:space="preserve"><value>Roll</value></data>
+  <data name="Spec" xml:space="preserve"><value>Spec</value></data>
+  <data name="Span" xml:space="preserve"><value>Span</value></data>
+  <data name="Size" xml:space="preserve"><value>Size</value></data>
+  <data name="Pear" xml:space="preserve"><value>Pear</value></data>
+  <data name="ZPos" xml:space="preserve"><value>Z Pos</value></data>
+  <data name="ShankTopProfileMoveLeftRight" xml:space="preserve"><value>Shank : Top Profile Move Left/Right</value></data>
+  <data name="GemsGemsOnOff" xml:space="preserve"><value>Gems : Gems On Off</value></data>
+  <data name="DetailBottomDesignWidth" xml:space="preserve"><value>Detail : Bottom Design Width %</value></data>
+  <data name="BottomProfileHeight" xml:space="preserve"><value>Bottom Profile Height</value></data>
+  <data name="ShankProfileBHeight" xml:space="preserve"><value>Shank : Profile B - Height</value></data>
+  <data name="SettingCenterGalleryRailWidth" xml:space="preserve"><value>Setting : Center Gallery Rail Width %</value></data>
+  <data name="GemsPositionOnHalo" xml:space="preserve"><value>Gems : Position On Halo</value></data>
+  <data name="ShankSideProfilePosition" xml:space="preserve"><value>Shank : Side Profile Position</value></data>
+  <data name="HaloClosedWithGems03" xml:space="preserve"><value>Halo Closed with Gems 03</value></data>
+  <data name="HaloClosedWithGems02" xml:space="preserve"><value>Halo Closed with Gems 02</value></data>
+  <data name="HaloClosedWithGems01" xml:space="preserve"><value>Halo Closed with Gems 01</value></data>
+  <data name="HaloClosedWithGems05" xml:space="preserve"><value>Halo Closed with Gems 05</value></data>
+  <data name="HaloClosedWithGems04" xml:space="preserve"><value>Halo Closed with Gems 04</value></data>
+  <data name="ProfileWidths" xml:space="preserve"><value>Profile Widths</value></data>
+  <data name="ScaleXYTheseCanBeSeparated" xml:space="preserve"><value>Scale X &amp; Y - These Can Be Separated</value></data>
+  <data name="ConvexTrillian" xml:space="preserve"><value>Convex Trillian</value></data>
+  <data name="DetailEndAProfileShape" xml:space="preserve"><value>Detail : End A Profile Shape</value></data>
+  <data name="RaisedLeaf" xml:space="preserve"><value>Raised Leaf</value></data>
+  <data name="DetailEndAProfileWidth" xml:space="preserve"><value>Detail : End A Profile Width</value></data>
+  <data name="Scroll001" xml:space="preserve"><value>Scroll 001</value></data>
+  <data name="Scroll002" xml:space="preserve"><value>Scroll 002</value></data>
+  <data name="Scroll003" xml:space="preserve"><value>Scroll 003</value></data>
+  <data name="Scroll004" xml:space="preserve"><value>Scroll 004</value></data>
+  <data name="Scroll005" xml:space="preserve"><value>Scroll 005</value></data>
+  <data name="BaseballBatFlatback" xml:space="preserve"><value>Baseball Bat Flatback</value></data>
+  <data name="StraightMacaroni" xml:space="preserve"><value>Straight Macaroni</value></data>
+  <data name="Loop17956" xml:space="preserve"><value>Loop 17956</value></data>
+  <data name="SquareEmerald" xml:space="preserve"><value>Square Emerald</value></data>
+  <data name="CollarWithoutGems02" xml:space="preserve"><value>Collar Without Gems 02</value></data>
+  <data name="FlatThreeLeafDesign" xml:space="preserve"><value>Flat Three Leaf Design</value></data>
+  </root>

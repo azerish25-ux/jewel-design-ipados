@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Controls:CSUIControl x:Class="GV.CounterSketch.Studio.Controls.CSValueRangeControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="CSValueRangeUserControl" MinHeight="70" Background="#00FFFFFF">
+  <DockPanel>
+    <Popup Name="popupSubMenu" AllowsTransparency="True" HorizontalOffset="-19" Placement="Right" PopupAnimation="None" VerticalOffset="-22" PlacementTarget="{Binding ElementName=btnSubMenu}" MouseLeave="PopupSubMenuMouseLeave">
+      <Border Margin="0" Padding="20,20,0,0" Background="#02000000" BorderThickness="0">
+        <Border Background="#b5b5b5" BorderBrush="#595959" BorderThickness="1">
+          <StackPanel Name="stackSubMenuActions" Margin="10,4">
+            <Border>
+              <StackPanel Margin="0">
+                <Button Name="btnExpandControl" HorizontalContentAlignment="Center" Content="Expand Control Range" Cursor="Hand" Style="{StaticResource CSSubMenuActionButton}" Background="{x:Null}" Click="BtnExpandControlClick" />
+                <Button Name="btnResetControl" HorizontalContentAlignment="Center" Content="Reset Control To Default" Cursor="Hand" Style="{StaticResource CSSubMenuActionButton}" Background="{x:Null}" Click="BtnResetControlClick" />
+                <Border Background="#FFFFFFFF">
+                  <DockPanel Margin="4">
+                    <ContentControl Content="{StaticResource Icon_Warning}" />
+                    <TextBlock MaxWidth="200" Margin="4,0" DockPanel.Dock="Right" FontSize="10" TextWrapping="Wrap" Text="{Binding WarningMessage, ElementName=CSValueRangeUserControl}" />
+                  </DockPanel>
+                </Border>
+              </StackPanel>
+            </Border>
+          </StackPanel>
+        </Border>
+      </Border>
+    </Popup>
+    <DockPanel>
+      <Border Height="1" VerticalAlignment="Top" Background="#FFC6BEB6" DockPanel.Dock="Top" />
+      <Grid Name="gridDisplayImage">
+        <Rectangle Name="rectImage" Width="50" Height="70" Stretch="Fill" StrokeLineJoin="Round" StrokeThickness="0" />
+      </Grid>
+      <Border Name="borderSubMenu" Margin="0" Background="#02000000" DockPanel.Dock="Right" />
+      <Grid Margin="0" DockPanel.Dock="Top">
+        <DockPanel VerticalAlignment="Top">
+          <TextBlock Name="txtTitle" Margin="0,2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Foreground="#FF32302E" Text="{Binding DisplayTitle, ElementName=CSValueRangeUserControl}" />
+          <Button Name="btnSubMenu" Width="12" Height="13" Margin="2,2,1,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Center" Cursor="Hand" DockPanel.Dock="Right" Style="{DynamicResource CSSubMenuButton}" Click="BtnSubMenuClick">
+            <Border Margin="-1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FAB97C" Visibility="{Binding HasWarningMessage, ElementName=CSValueRangeUserControl, Converter={StaticResource BooleanToVisibilityConverter}}">
+              <Canvas Margin="2,2,2,2" HorizontalAlignment="Stretch">
+                <Path Name="pathTop" Canvas.Top="2" Width="10" Height="1" VerticalAlignment="Center" Data="F1 M281.617,609.938 L273.596,609.938" Stretch="Fill" Stroke="#FFFFFFFF" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" />
+                <Path Name="pathMiddle" Canvas.Top="5" Width="10" Height="1" VerticalAlignment="Center" Data="F1 M281.617,612.959 L273.596,612.959" Stretch="Fill" Stroke="#FFFFFFFF" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" />
+                <Path Name="pathBottom" Canvas.Top="8" Width="10" Height="1" VerticalAlignment="Center" Data="F1 M281.617,615.98 L273.596,615.98" Stretch="Fill" Stroke="#FFFFFFFF" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" />
+              </Canvas>
+            </Border>
+          </Button>
+          <Line HorizontalAlignment="Right" VerticalAlignment="Top" DockPanel.Dock="Right" Stroke="#FFC6BEB6" Y2="15" />
+          <TextBlock Margin="0,2,10,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" DockPanel.Dock="Right" Foreground="#FF32302E" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Value, Converter={StaticResource DoubleFormatConverter}, ElementName=slider, StringFormat={}{0:#.00#}}" />
+        </DockPanel>
+        <DockPanel Margin="0,19,4,0">
+          <telerik:RadSlider xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" Name="slider" Height="22" MinWidth="95" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch" BorderThickness="0" IsSnapToTickEnabled="True" ThumbStyle="{DynamicResource RadThumbStyle}" TickPlacement="None" TrackStyle="{DynamicResource RadSliderTrackStyle}" Foreground="{Binding ControlColorBrush, ElementName=CSValueRangeUserControl}" LargeChange="{Binding StepValue, Converter={StaticResource DoubleFormatConverter}, ElementName=CSValueRangeUserControl, Mode=TwoWay}" Maximum="{Binding MaxValue, Converter={StaticResource DoubleFormatConverter}, ElementName=CSValueRangeUserControl, Mode=TwoWay}" Minimum="{Binding MinValue, Converter={StaticResource DoubleFormatConverter}, ElementName=CSValueRangeUserControl, Mode=TwoWay}" SmallChange="{Binding StepValue, Converter={StaticResource DoubleFormatConverter}, ElementName=CSValueRangeUserControl, Mode=TwoWay}" TickFrequency="{Binding StepValue, Converter={StaticResource DoubleFormatConverter}, ElementName=CSValueRangeUserControl, Mode=TwoWay}" Value="{Binding Value, Converter={StaticResource DoubleFormatConverter}, ElementName=CSValueRangeUserControl, Mode=TwoWay}" PreviewKeyDown="SliderPreviewKeyDown" PreviewKeyUp="SliderPreviewKeyUp" ValueChanged="SliderValueChanged" />
+        </DockPanel>
+      </Grid>
+    </DockPanel>
+  </DockPanel>
+</Controls:CSUIControl>

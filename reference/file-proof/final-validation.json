@@ -1,0 +1,37 @@
+{
+  "sourceUnchanged": true,
+  "editedHashMatches": true,
+  "reversedHashMatchesOriginal": true,
+  "independentStatus": "PASS for bounded file-format proof only",
+  "readerRuns": [
+    {
+      "case": "source",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "case": "unchanged",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "case": "edited",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "case": "restored",
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "case": "bad-crc",
+      "expected": 1,
+      "actual": 1
+    }
+  ],
+  "reportBytes": 4396,
+  "changedByteCount": 10,
+  "otherRecordsPreserved": 240,
+  "otherNumericParametersPreserved": 73
+}

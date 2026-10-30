@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.View.StudioMaterialSelectionView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:behaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:command="http://www.galasoft.ch/mvvmlight" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:converters="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:localization="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" DataContext="{Binding Source={StaticResource Locator}, Path=StudioMaterialSelectionVM}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplateNotVirtualized">
+        <StackPanel IsItemsHost="True" />
+      </ItemsPanelTemplate>
+      <DataTemplate x:Key="DataTemplateTileSearchFilterItemPaged">
+        <Grid>
+          <Grid Name="grid" Height="Auto" Margin="0,0,0,0" Background="#dddddd" Focusable="True" Visibility="{Binding IsMaterialSelectorAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+              <RowDefinition />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <i:Interaction.Behaviors>
+              <ei:DataStateBehavior FalseState="AlignLeft" TrueState="AlignRight" Value="true" Binding="{Binding IsControlRightAligned, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:StudioMaterialSelectionView}}}" />
+            </i:Interaction.Behaviors>
+            <Button Name="button" Grid.Row="1" Grid.RowSpan="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Style="{DynamicResource ButtonStyleClear}">
+              <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                  <command:EventToCommand Command="{Binding DataContext.CommandCloseAllOtherMaterialGroupOptions, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:StudioMaterialSelectionView}}}" CommandParameter="{Binding}" />
+                </i:EventTrigger>
+              </i:Interaction.Triggers>
+              <DockPanel Name="dockPanel" Margin="0,0,0,0" Cursor="Hand">
+                <Border Margin="0,0,0,2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Top">
+                  <TextBlock HorizontalAlignment="Center" FontFamily="Helvetica Neue LT Std" TextWrapping="Wrap" Text="{Binding SelectorBannerTitle, FallbackValue=Title}" />
+                </Border>
+                <Border Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Bottom">
+                  <StackPanel Name="stackPanel" HorizontalAlignment="Center" Orientation="Vertical">
+                    <Grid MaxWidth="80" Visibility="{Binding MaterialOptionSelectorVM.IsCenterGemMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                      <StackPanel Orientation="Horizontal" DataContext="{Binding StoneTrayVM, Mode=Default, Source={StaticResource Locator}}" Visibility="{Binding IsStoneAssigned, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Margin="5,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" FontSize="12" Foreground="#FF65615D" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding StoneChosen.StoneType, FallbackValue=[Name is very very long]}" />
+                        <TextBlock Margin="5,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" FontSize="12" Foreground="#FF65615D" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding StoneChosen.ColorDescription, FallbackValue=[Name is very very long]}" />
+                      </StackPanel>
+                      <Grid Visibility="{Binding StoneTrayVM.IsStoneAssigned, ConverterParameter=True, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" FontSize="12" Foreground="#FF65615D" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding MaterialOptionSelectorVM.SelectedMaterialOptionItem.PrimaryText, FallbackValue=[Name is very very long]}" />
+                      </Grid>
+                    </Grid>
+                    <Grid MaxWidth="80" Visibility="{Binding MaterialOptionSelectorVM.IsCenterGemMode, ConverterParameter=True, Converter={StaticResource BooleanToVisibilityConverter}}">
+                      <TextBlock Name="textBlock1" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" FontSize="12" Foreground="#FF65615D" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding MaterialOptionSelectorVM.SelectedMaterialOptionItem.PrimaryText, FallbackValue=[Name is very very long]}" />
+                    </Grid>
+                  </StackPanel>
+                </Border>
+                <Border Height="Auto" DockPanel.Dock="Top">
+                  <DockPanel>
+                    <Grid Name="grid2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Top">
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                      </Grid.RowDefinitions>
+                      <Image Name="image" Width="80" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform" Source="{Binding MaterialOptionSelectorVM.SelectedMaterialOptionItem.Image}" />
+                      <Grid MaxWidth="80" Visibility="{Binding MaterialOptionSelectorVM.IsCenterGemMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Grid DataContext="{Binding StoneTrayVM, Mode=Default, Source={StaticResource Locator}}" Visibility="{Binding IsStoneAssigned, Converter={StaticResource BooleanToVisibilityConverter}}">
+                          <Image Stretch="UniformToFill" Source="{Binding StoneChosenImagePath, Converter={StaticResource ImagePathToBitmapImageConverter}}" />
+                          <Button Width="25" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Panel.ZIndex="1" Style="{DynamicResource ButtonStyleClear}" Template="{DynamicResource ButtonStyleDeleteItem}" ToolTip="{x:Static localization:Strings.UnassignStone}" Command="{Binding ClearAssignedStoneCommand}" Visibility="{Binding IsStoneAssigned, Converter={StaticResource BooleanToVisibilityConverter}}" Click="UnAssignButton_OnClick" />
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </DockPanel>
+                </Border>
+              </DockPanel>
+            </Button>
+            <Grid Name="grid1" Row="1" RowSpan="1" Width="0" HorizontalAlignment="Left" Focusable="True">
+              <Popup Name="popup" VerticalAlignment="Top" AllowsTransparency="True" Focusable="True" HorizontalOffset="-20" Placement="Right" PopupAnimation="Slide" StaysOpen="False" VerticalOffset="18" DataContext="{Binding MaterialOptionSelectorVM}" PlacementTarget="{Binding ElementName=dockPanel, Mode=OneWay}">
+                <Popup.IsOpen>
+                  <MultiBinding FallbackValue="True" Mode="OneWay" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource MaterialViewTagToValidConverter}">
+                    <Binding Mode="OneWay" Path="Tag" RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type view:StudioMaterialSelectionView}}" />
+                    <Binding Mode="TwoWay" Path="IsPopupOpen" UpdateSourceTrigger="PropertyChanged" />
+                    <Binding Mode="OneWay" Path="MainVM.SectionPageNumber" Source="{StaticResource Locator}" />
+                  </MultiBinding>
+                </Popup.IsOpen>
+                <view:ItemChooserView Width="340" IsFilterPicker="False" IsGemPicker="{Binding IsMetalMaterialSelection, Converter={StaticResource BooleanInverseConverter}}" IsMetalPicker="{Binding IsMetalMaterialSelection}" IsOpen="{Binding IsPopupOpen, Mode=TwoWay}" ItemsSource="{Binding AvailableMaterialOptions, Mode=OneWay}" SelectedItem="{Binding SelectedMaterialOptionItem, Mode=TwoWay}">
+                  <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                      <command:EventToCommand PassEventArgsToCommand="True" Command="{Binding Path=TileSearchMainVM.ActiveSearchResultViewModel.CommandUpdateResultsWithSelectedFilterCriteria, Source={StaticResource Locator}}" />
+                    </i:EventTrigger>
+                  </i:Interaction.Triggers>
+                </view:ItemChooserView>
+              </Popup>
+            </Grid>
+            <Grid Row="0" Margin="0,20,0,0" Visibility="{Binding MainVM.IsSearchModeActive, Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}">
+              <Grid Visibility="{Binding MaterialOptionSelectorVM.IsCenterGemMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <DockPanel Width="Auto" Margin="5,5,5,10" HorizontalAlignment="Stretch" VerticalAlignment="Top" Cursor="Hand" Dock="Top" DataContext="{Binding MainVM, Mode=Default, Source={StaticResource Locator}}">
+                  <Button Height="20" Margin="0,0,0,10" Padding="0" HorizontalContentAlignment="Stretch" DockPanel.Dock="Top" Foreground="#FF454341" Style="{DynamicResource ButtonStyleClear}" Command="{Binding CommandShopForDiamond}" DataContext="{Binding MainVM, Mode=Default, Source={StaticResource Locator}}">
+                    <Grid Background="#FFFFFFFF">
+                      <Border Height="20" BorderThickness="1">
+                        <Border.BorderBrush>
+                          <SolidColorBrush Color="{DynamicResource ToolHeaderBackgroundColor}" />
+                        </Border.BorderBrush>
+                      </Border>
+                      <DockPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <ContentControl Margin="5,0,0,0">
+                          <wpf:ImageAwesome FrameworkElement.Width="15" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" xmlns:wpf="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" wpf:ImageAwesome.Icon="ShoppingCart" />
+                        </ContentControl>
+                        <TextBlock Margin="8,0" Text="{x:Static localization:UntranslatedStrings.Diamond}" />
+                      </DockPanel>
+                    </Grid>
+                  </Button>
+                  <Button Height="20" Margin="0,0,0,10" Padding="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" DockPanel.Dock="Top" Foreground="#FF454341" Style="{DynamicResource ButtonStyleClear}" Command="{Binding CommandShopForGemstone}" DataContext="{Binding MainVM, Mode=Default, Source={StaticResource Locator}}">
+                    <Grid Background="#FFFFFFFF">
+                      <Border Height="20" BorderThickness="1">
+                        <Border.BorderBrush>
+                          <SolidColorBrush Color="{DynamicResource ToolHeaderBackgroundColor}" />
+                        </Border.BorderBrush>
+                      </Border>
+                      <DockPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <ContentControl Margin="5,0,0,0">
+                          <ImageAwesome FrameworkElement.Width="15" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p27:ImageAwesome.Icon="ShoppingCart" xmlns:p27="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                        </ContentControl>
+                        <TextBlock Margin="8,0" Text="{x:Static localization:Strings.Gemstone}" />
+                      </DockPanel>
+                    </Grid>
+                  </Button>
+                  <controls:StoneTray Height="20" Margin="0" HorizontalAlignment="Stretch" DockPanel.Dock="Top" Foreground="#FF454341" ShowStoneText="True" ShowStoneTrayGraphic="True" />
+                </DockPanel>
+              </Grid>
+            </Grid>
+          </Grid>
+          <i:Interaction.Behaviors>
+            <ei:DataStateBehavior FalseState="AlignLeft" TrueState="AlignRight" Value="true" Binding="{Binding IsControlRightAligned, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:StudioMaterialSelectionView}}}" />
+          </i:Interaction.Behaviors>
+          <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ItemAlignmentStates">
+              <VisualState x:Name="AlignLeft" />
+              <VisualState x:Name="AlignRight">
+                <Storyboard>
+                  <ObjectAnimationUsingKeyFrames Storyboard.TargetName="image" Storyboard.TargetProperty="(DockPanel.Dock)">
+                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Dock.Right}" />
+                  </ObjectAnimationUsingKeyFrames>
+                  <ObjectAnimationUsingKeyFrames Storyboard.TargetName="grid2" Storyboard.TargetProperty="(DockPanel.Dock)">
+                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Dock.Right}" />
+                  </ObjectAnimationUsingKeyFrames>
+                  <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="button" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                    <EasingThicknessKeyFrame KeyTime="0" Value="10,0,20,0" />
+                  </ThicknessAnimationUsingKeyFrames>
+                </Storyboard>
+              </VisualState>
+            </VisualStateGroup>
+          </VisualStateManager.VisualStateGroups>
+        </Grid>
+      </DataTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <DockPanel Margin="0" Background="#dddddd">
+      <Viewbox MaxHeight="800" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <ItemsControl Margin="0,0,0,0" HorizontalContentAlignment="Stretch" Background="#dddddd" BorderThickness="0" DockPanel.Dock="Top" Focusable="False" ItemTemplate="{StaticResource DataTemplateTileSearchFilterItemPaged}" ItemsPanel="{DynamicResource ItemsPanelTemplateNotVirtualized}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderBrush="{x:Null}" ItemsSource="{Binding MaterialGroupOptions}" />
+      </Viewbox>
+    </DockPanel>
+  </Grid>
+</UserControl>

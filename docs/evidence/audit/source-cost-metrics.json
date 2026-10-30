@@ -1,0 +1,351 @@
+{
+  "scope": "Physical/nonblank/source syntax metrics. Category assignment is a disclosed path-based heuristic, not ownership verification or a count of iPad LOC. Statement counts include statement nodes in method/accessor bodies, not normalized complexity. Exact duplicate files preserve literal contents, normalize only CRLF and outer whitespace.",
+  "groups": {
+    "desktop:desktop-domain-data-and-platform": {
+      "files": 270,
+      "physicalLines": 38820,
+      "nonblankLines": 34853,
+      "syntaxStatementNodes": 11862,
+      "declaredMethods": 1389
+    },
+    "desktop:merged-helper-or-interop-source": {
+      "files": 36,
+      "physicalLines": 7201,
+      "nonblankLines": 6525,
+      "syntaxStatementNodes": 3108,
+      "declaredMethods": 190
+    },
+    "desktop:hardcoded-design-lookup-data": {
+      "files": 1,
+      "physicalLines": 23722,
+      "nonblankLines": 23714,
+      "syntaxStatementNodes": 23695,
+      "declaredMethods": 1
+    },
+    "desktop:annotations-and-assembly-metadata": {
+      "files": 140,
+      "physicalLines": 2084,
+      "nonblankLines": 1549,
+      "syntaxStatementNodes": 69,
+      "declaredMethods": 0
+    },
+    "desktop:desktop-ui-and-interaction": {
+      "files": 290,
+      "physicalLines": 56783,
+      "nonblankLines": 50656,
+      "syntaxStatementNodes": 18459,
+      "declaredMethods": 1793
+    },
+    "desktop:service-contracts-proxies-and-dtos": {
+      "files": 492,
+      "physicalLines": 38277,
+      "nonblankLines": 31170,
+      "syntaxStatementNodes": 7133,
+      "declaredMethods": 3503
+    },
+    "cad:cad-platform-render-print-and-shared": {
+      "files": 118,
+      "physicalLines": 18587,
+      "nonblankLines": 16699,
+      "syntaxStatementNodes": 5635,
+      "declaredMethods": 878
+    },
+    "cad:service-contracts-proxies-and-dtos": {
+      "files": 312,
+      "physicalLines": 12641,
+      "nonblankLines": 10268,
+      "syntaxStatementNodes": 1990,
+      "declaredMethods": 670
+    },
+    "cad:graph-values-document-and-undo": {
+      "files": 228,
+      "physicalLines": 51889,
+      "nonblankLines": 47329,
+      "syntaxStatementNodes": 21333,
+      "declaredMethods": 2157
+    },
+    "cad:annotations-and-assembly-metadata": {
+      "files": 102,
+      "physicalLines": 1401,
+      "nonblankLines": 1015,
+      "syntaxStatementNodes": 50,
+      "declaredMethods": 0
+    },
+    "cad:geometry-materials-and-low-level-utilities": {
+      "files": 128,
+      "physicalLines": 24002,
+      "nonblankLines": 22391,
+      "syntaxStatementNodes": 11260,
+      "declaredMethods": 693
+    },
+    "cad:jewelry-builders-and-builder-helpers": {
+      "files": 665,
+      "physicalLines": 209138,
+      "nonblankLines": 195114,
+      "syntaxStatementNodes": 110518,
+      "declaredMethods": 2010
+    },
+    "cad:merged-helper-or-interop-source": {
+      "files": 1,
+      "physicalLines": 20,
+      "nonblankLines": 16,
+      "syntaxStatementNodes": 0,
+      "declaredMethods": 2
+    }
+  },
+  "exactDuplicateFiles": [
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/ComponentsEnum.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/ComponentsEnum.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/CSMetalHelper.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/CSMetalHelper.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/EnumExtensions.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/EnumExtensions.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/FileSystemHelper.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/FileSystemHelper.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/Font.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/Font.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/GemActions.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/GemActions.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/GemMaterial.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/GemMaterial.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/HeadStyle.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/HeadStyle.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/LogHelper.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/LogHelper.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/MetalMaterial.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/MetalMaterial.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/SIZE.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/SIZE.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/ValueListItem.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/ValueListItem.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared/WindowExtensions.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared/WindowExtensions.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcActionAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcActionAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcActionSelectorAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcActionSelectorAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcAreaAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcAreaAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcControllerAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcControllerAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcDisplayTemplateAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcDisplayTemplateAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcEditorTemplateAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcEditorTemplateAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcMasterAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcMasterAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcModelTypeAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcModelTypeAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcPartialViewAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcPartialViewAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcSupressViewErrorAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcSupressViewErrorAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcTemplateAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcTemplateAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/AspMvcViewAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/AspMvcViewAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/BaseTypeRequiredAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/BaseTypeRequiredAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/CanBeNullAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/CanBeNullAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/CannotApplyEqualityOperatorAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/CannotApplyEqualityOperatorAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/ContractAnnotationAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/ContractAnnotationAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/HtmlAttributeValueAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/HtmlAttributeValueAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/HtmlElementAttributesAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/HtmlElementAttributesAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/ImplicitUseKindFlags.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/ImplicitUseKindFlags.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/ImplicitUseTargetFlags.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/ImplicitUseTargetFlags.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/InstantHandleAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/InstantHandleAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/InvokerParameterNameAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/InvokerParameterNameAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/LocalizationRequiredAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/LocalizationRequiredAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/MeansImplicitUseAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/MeansImplicitUseAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/NotifyPropertyChangedInvocatorAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/NotifyPropertyChangedInvocatorAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/NotNullAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/NotNullAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/PathReferenceAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/PathReferenceAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/PublicAPIAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/PublicAPIAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/PureAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/PureAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/RazorSectionAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/RazorSectionAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/StringFormatMethodAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/StringFormatMethodAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Annotations/UsedImplicitlyAttribute.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Annotations/UsedImplicitlyAttribute.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.DataAccess/DataAccess.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.DataAccess/DataAccess.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Model/UIControlStackLocation.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Model/UIControlStackLocation.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Model/UIControlStatus.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Model/UIControlStatus.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Model/UIControlType.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Model/UIControlType.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Model.Objects/CustomDesignRenderTypeEnum.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Model.Objects/CustomDesignRenderTypeEnum.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Pricing.Enums/StudioCurrency.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Pricing.Enums/StudioCurrency.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Pricing.Enums/StudioGemColorQuality.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Pricing.Enums/StudioGemColorQuality.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Pricing.Enums/StudioGemShape.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Pricing.Enums/StudioGemShape.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Pricing.Enums/StudioGemType.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Pricing.Enums/StudioGemType.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Pricing.Enums/StudioMetalQuality.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Pricing.Enums/StudioMetalQuality.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Pricing.Enums/StudioSetType.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Pricing.Enums/StudioSetType.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Utilities/ServiceHostExtensions.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Utilities/ServiceHostExtensions.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Utilities.Helpers/EnumHelper.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Utilities.Helpers/EnumHelper.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Utilities.Helpers/FileFormatHelper.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Utilities.Helpers/FileFormatHelper.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Utilities.Helpers/HeadStyleHelper.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Utilities.Helpers/HeadStyleHelper.cs"
+    ],
+    [
+      "recovery/canonical/desktop/GV.CounterSketch.Shared.Utilities.Helpers/UISliderIconHelper.cs",
+      "recovery/canonical/cad/GV.CounterSketch.Shared.Utilities.Helpers/UISliderIconHelper.cs"
+    ],
+    [
+      "recovery/canonical/desktop/SmartAssembly.Attributes/PoweredByAttribute.cs",
+      "recovery/canonical/cad/SmartAssembly.Attributes/PoweredByAttribute.cs"
+    ]
+  ],
+  "totals": {
+    "files": 2783,
+    "physicalLines": 484565,
+    "nonblankLines": 441299
+  }
+}

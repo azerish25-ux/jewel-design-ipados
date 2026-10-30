@@ -1,0 +1,1128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.View.PortfolioManagerView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:command="http://www.galasoft.ch/mvvmlight" xmlns:converters="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:cvrt="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:gvCounterSketchStudioUtilitiesBehaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:localization="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:objects="clr-namespace:GV.CounterSketch.Studio.Model.Objects" xmlns:scrollableListBox="clr-namespace:GV.CounterSketch.Studio.UserControls.ScrollableListBox" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" Title="{x:Static localization:Strings.DesignManager}" BorderBrush="#FFCBC4C0" FontSize="10pt" Foreground="{DynamicResource BaseBackground}" ResizeMode="CanResizeWithGrip" Style="{DynamicResource WindowStyleModal}" DataContext="{Binding Mode=Default, Path=PortfolioManagerVM, Source={StaticResource Locator}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CounterSketch Studio;component/ResourceDictionaries/Converters.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF" />
+      <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3" />
+      <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF" />
+      <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9" />
+      <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+          <Setter.Value>
+            <ControlTemplate />
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <DataTemplate x:Key="DesignHistoryRowDataTemplate" DataType="objects:Design">
+        <Grid Margin="0,0,0,5" Background="{x:Null}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210" />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+          <Grid Row="1" Width="Auto">
+            <StackPanel Name="SPI_Image_Grid" Width="Auto" Height="Auto" Margin="0,12,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+              <Grid Width="146" Height="146" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top" ZIndex="0">
+                <Rectangle Stroke="{DynamicResource LinesLightBrush}" />
+                <Image Margin="1" Source="{Binding BaseDesignImagePath, Mode=OneWay, Converter={converters:ImagePathToBitmapImageConverter}}">
+                  <i:Interaction.Behaviors>
+                    <gvCounterSketchStudioUtilitiesBehaviors:UIElementBehaviorMouseDoubleClickCommand CommandParameter="{Binding Mode=OneWay}" DoubleClickCommand="{Binding DataContext.CommandOpenDesign, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" />
+                  </i:Interaction.Behaviors>
+                </Image>
+                <ToggleButton Width="Auto" Margin="4,0,0,4" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Foreground="#FFFFFF00" Template="{DynamicResource CS4ToggleButtonFavorite}" Background="{x:Null}" BorderBrush="{x:Null}" IsChecked="{Binding IsFavorite}" />
+                <Button Name="deleteButton" Width="15" Height="15" Margin="0,2,2,0.5" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" ScrollViewer.CanContentScroll="True" Template="{DynamicResource ButtonStyleDeleteItem}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                  <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                      <ic:GoToStateAction StateName="Delete_" />
+                    </i:EventTrigger>
+                  </i:Interaction.Triggers>
+                </Button>
+                <Border Name="border1" Width="Auto" VerticalAlignment="Stretch" Visibility="Hidden">
+                  <Border Name="border" Background="#CAFFFFFF" CornerRadius="0" Visibility="Visible">
+                    <Grid Name="gridConfirmDelete">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                      </Grid.ColumnDefinitions>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                      </Grid.RowDefinitions>
+                      <TextBlock Name="textBlock" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18.667" Foreground="{DynamicResource BrushTextPrimary}" Text="{x:Static localization:Strings.Delete}" TextWrapping="Wrap" />
+                      <Button Name="buttonConfirmDelete" Grid.Row="2" Grid.Column="0" Width="60" Height="30" Margin="5,2" VerticalAlignment="Stretch" Content="{x:Static localization:Strings.Yes}" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="18.667" Opacity="1" Style="{DynamicResource CSButton}">
+                        <i:Interaction.Triggers>
+                          <i:EventTrigger EventName="Click">
+                            <command:EventToCommand Command="{Binding DataContext.CommandDeleteDesignFromPortfolio, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" CommandParameter="{Binding Mode=OneWay}" />
+                          </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Control.Foreground>
+                          <SolidColorBrush Color="{DynamicResource TextPrimaryColor}" />
+                        </Control.Foreground>
+                      </Button>
+                      <Button Name="buttonCancelDelete" Grid.Row="2" Grid.Column="1" Width="60" Height="30" Margin="5,2" VerticalAlignment="Stretch" Content="{x:Static localization:Strings.No}" FontSize="18.667" Opacity="1" Style="{DynamicResource CSButton}">
+                        <Control.Foreground>
+                          <SolidColorBrush Color="{DynamicResource TextPrimaryColor}" />
+                        </Control.Foreground>
+                        <i:Interaction.Triggers>
+                          <i:EventTrigger EventName="PreviewMouseUp">
+                            <ic:GoToStateAction StateName="Base" UseTransitions="False" />
+                          </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                      </Button>
+                    </Grid>
+                  </Border>
+                </Border>
+              </Grid>
+              <TextBlock Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="{DynamicResource BaseBackground}" TextTrimming="CharacterEllipsis" Text="{Binding SPINumber}" Visibility="{Binding Mode=OneWay, Path=PortfolioManagerVM.SPINumberVisibility, Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}" />
+            </StackPanel>
+            <Border Width="2" Height="Auto" Margin="0,8" HorizontalAlignment="Right" VerticalAlignment="Stretch" BorderBrush="{DynamicResource TextBoxAndFrameBackground}" BorderThickness="0,0,2,0" />
+          </Grid>
+          <ListBox Name="DesignHistoryListBox" Grid.Row="1" Grid.Column="1" Width="Auto" Height="Auto" Margin="20,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" BorderThickness="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" ItemContainerStyle="{DynamicResource DesignHistorySubItemListBoxItemStyle}" ItemTemplate="{DynamicResource DesignHistoryItemDataTemplate}" ItemsPanel="{DynamicResource ItemsPanelTemplateDesignHistory}" ScrollViewer.HorizontalScrollBarVisibility="Visible" Style="{DynamicResource DesignHistoriesListBox}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" ItemsSource="{Binding DesignHistories}">
+            <i:Interaction.Behaviors>
+              <gvCounterSketchStudioUtilitiesBehaviors:UIElementBehaviorRedirectMouseWheelToParentScrollViewer />
+            </i:Interaction.Behaviors>
+          </ListBox>
+          <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ConfirmationStates">
+              <VisualState x:Name="Base" />
+              <VisualState x:Name="Delete_">
+                <Storyboard>
+                  <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border1" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                  </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+              </VisualState>
+            </VisualStateGroup>
+          </VisualStateManager.VisualStateGroups>
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="DesignHistoryItemDataTemplate" DataType="objects:Design">
+        <Grid Name="borderMain" Margin="0,0,25,0">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeave">
+              <ic:GoToStateAction StateName="Base" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+          <Grid Margin="0,10,0,0" Background="{x:Null}">
+            <Grid Name="theImageGrid" Width="180" Height="158" Margin="0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="85*" />
+                <RowDefinition Height="19*" />
+              </Grid.RowDefinitions>
+              <Grid Row="0" Background="#FFFFFFFF">
+                <Border Name="ImageBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="{DynamicResource WindowFrameBackground}" BorderThickness="1" ClipToBounds="True" CornerRadius="0" Cursor="Hand">
+                  <Grid>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="{Binding Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}">
+                      <TextBlock.Foreground>
+                        <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+                      </TextBlock.Foreground>
+                    </TextBlock>
+                    <Image Name="imgLoadJob" Width="Auto" Height="Auto" Margin="0" VerticalAlignment="Stretch" SnapsToDevicePixels="True" Stretch="Uniform" Source="{Binding FavoriteImagePath, Mode=OneWay, Converter={converters:ImagePathToBitmapImageConverter}}">
+                      <i:Interaction.Behaviors>
+                        <gvCounterSketchStudioUtilitiesBehaviors:UIElementBehaviorMouseDoubleClickCommand CommandParameter="{Binding Mode=OneWay}" DoubleClickCommand="{Binding DataContext.CommandOpenDesign, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" />
+                      </i:Interaction.Behaviors>
+                    </Image>
+                  </Grid>
+                </Border>
+              </Grid>
+              <TextBox Name="textUserDesignName" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CaretBrush="{DynamicResource HighlightAndAccent}" Cursor="IBeam" Foreground="{DynamicResource BaseBackground}" TextWrapping="NoWrap" ToolTip="{x:Static localization:Strings.ClickHereToRenameDesign}" Background="{x:Null}" BorderBrush="{x:Null}" Text="{Binding CSUserDesignName, StringFormat={}{0:d}, Mode=TwoWay}">
+                <i:Interaction.Behaviors>
+                  <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorLoseFocusOnEnterKeyUp />
+                  <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorSelectAllTextWhenFocused />
+                </i:Interaction.Behaviors>
+                <FrameworkElement.Style>
+                  <Style TargetType="{x:Type TextBox}" BasedOn="{x:Null}">
+                    <Setter Property="Padding" Value="1" />
+                    <Setter Property="UIElement.AllowDrop" Value="True" />
+                    <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+                    <Setter Property="Template">
+                      <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                          <Border Width="Auto" Height="Auto" BorderThickness="1" CornerRadius="4" BorderBrush="{x:Null}">
+                            <Border Background="#02000000" CornerRadius="1">
+                              <ScrollViewer Name="PART_ContentHost" Height="Auto" Background="#02000000" Foreground="#FFFFFFFF" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" TextBlock.Foreground="#FFFFFFFF" />
+                            </Border>
+                          </Border>
+                          <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                              <Setter Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Property="Foreground" />
+                            </Trigger>
+                          </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                      </Setter.Value>
+                    </Setter>
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+                  </Style>
+                </FrameworkElement.Style>
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding DataContext.CommandUpdateDesignUserLabel, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" CommandParameter="{Binding Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+            </Grid>
+            <Button Name="btnSubMenu" Width="12" Height="13" Margin="0,2,2,0" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Center" Cursor="Hand" Style="{DynamicResource CSSubMenuButton}" Template="{DynamicResource CS4ButtonPrimary}">
+              <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                  <ic:GoToStateAction StateName="ConfirmDelete" />
+                </i:EventTrigger>
+              </i:Interaction.Triggers>
+              <Control.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                  <GradientStop Offset="0" Color="#FFF3F3F3" />
+                  <GradientStop Offset="0.5" Color="#FFEBEBEB" />
+                  <GradientStop Offset="0.5" Color="#FFDDDDDD" />
+                  <GradientStop Offset="1" Color="White" />
+                </LinearGradientBrush>
+              </Control.Background>
+              <Path Width="8.255" Height="8.255" Data="M2616.74,-700.671 L2623.5,-707.425 M2616.74,-707.424 L2623.5,-700.67" Stretch="Fill" Stroke="#FF454341" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeThickness="1.5" />
+            </Button>
+            <Border Name="borderConfirmDelete" Background="#CAFFFFFF" BorderThickness="0" CornerRadius="0" Visibility="Collapsed" BorderBrush="{x:Null}">
+              <Grid Name="grid" Opacity="1">
+                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Orientation="Vertical">
+                  <TextBlock Name="textBlock" Margin="0,0,0,10" HorizontalAlignment="Center" FontSize="26.667" Foreground="{DynamicResource TextBoxAndFrameBackground}" Text="{x:Static localization:Strings.Delete}" TextWrapping="Wrap" />
+                  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                    <Button Name="buttonConfirmDelete" Width="50" Height="20" Margin="5,0" VerticalAlignment="Stretch" Content="{x:Static localization:Strings.Yes}" FontSize="10.667" Style="{DynamicResource CSButton}">
+                      <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                          <command:EventToCommand Command="{Binding DataContext.CommandDeleteDesignFromPortfolio, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" CommandParameter="{Binding Mode=OneWay}" />
+                        </i:EventTrigger>
+                      </i:Interaction.Triggers>
+                      <Control.Foreground>
+                        <SolidColorBrush Color="{DynamicResource TextPrimaryColor}" />
+                      </Control.Foreground>
+                    </Button>
+                    <Button Name="buttonCancelDelete" Width="50" Height="20" Margin="5,0" VerticalAlignment="Stretch" Content="{x:Static localization:Strings.No}" FontSize="10.667" Style="{DynamicResource CSButton}">
+                      <Control.Foreground>
+                        <SolidColorBrush Color="{DynamicResource TextPrimaryColor}" />
+                      </Control.Foreground>
+                      <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                          <ic:GoToStateAction StateName="Base" />
+                        </i:EventTrigger>
+                      </i:Interaction.Triggers>
+                    </Button>
+                  </StackPanel>
+                </StackPanel>
+              </Grid>
+            </Border>
+            <ToggleButton Width="Auto" Margin="2,0,0,32" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FFFFFF00" Template="{DynamicResource CS4ToggleButtonFavorite}" Background="{x:Null}" BorderBrush="{x:Null}" IsChecked="{Binding IsFavorite}" />
+          </Grid>
+          <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ActionStates">
+              <VisualState x:Name="Base" />
+              <VisualState x:Name="ConfirmDelete">
+                <Storyboard>
+                  <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="borderConfirmDelete" Storyboard.TargetProperty="(UIElement.Visibility)" Duration="00:00:00.0010000">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}" />
+                  </ObjectAnimationUsingKeyFrames>
+                  <DoubleAnimationUsingKeyFrames Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(TextElement.FontSize)">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="24" />
+                  </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+              </VisualState>
+            </VisualStateGroup>
+          </VisualStateManager.VisualStateGroups>
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="SpiDataTemplate" DataType="objects:Design">
+        <Grid>
+          <Image Width="Auto" Cursor="Hand" Source="{Binding BaseDesignImagePath, Mode=OneWay, Converter={converters:ImagePathToBitmapImageConverter}}" />
+          <ToggleButton Width="Auto" Margin="2,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FFFFFF00" Template="{DynamicResource CS4ToggleButtonFavorite}" Background="{x:Null}" BorderBrush="{x:Null}" IsChecked="{Binding IsFavorite}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="FavoritesDataTemplate" DataType="objects:Design">
+        <Grid>
+          <Image Width="Auto" Cursor="Hand" Source="{Binding Mode=OneWay, Converter={converters:DesignToFavoriteImageConverter}}" />
+          <ToggleButton Width="Auto" Margin="2,0,0,2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="#FFFFFF00" Template="{DynamicResource CS4ToggleButtonFavorite}" Background="{x:Null}" BorderBrush="{x:Null}" IsChecked="{Binding IsFavorite}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="DataTemplatePortfolioCollection">
+        <Grid>
+          <TextBlock Width="150" Padding="4" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" TextWrapping="Wrap" Text="{Binding Name}" />
+        </Grid>
+      </DataTemplate>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplateWrapPanel">
+        <WrapPanel Name="WrapPanelScaled" IsItemsHost="True" ItemHeight="{Binding ItemWidth, ElementName=WrapPanelScaled}" ItemWidth="{Binding DesignImageWidth, ConverterParameter=+50.0, Converter={converters:ArithmeticConverter}}" />
+      </ItemsPanelTemplate>
+      <ItemsPanelTemplate x:Key="DesignHistoriesItemsPanelTemplate">
+        <StackPanel Name="WrapPanel" HorizontalAlignment="Stretch" IsItemsHost="True" />
+      </ItemsPanelTemplate>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplateDesignHistory">
+        <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" />
+      </ItemsPanelTemplate>
+      <Style x:Key="DesignHistoriesListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="4,1" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FrameworkElement.FocusVisualStyle">
+          <Setter.Value>
+            <Style>
+              <Setter Property="Control.Template">
+                <Setter.Value>
+                  <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeDashArray="1 2" StrokeThickness="1" />
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Border Name="Bd" Padding="0" Background="{TemplateBinding Control.Background}" SnapsToDevicePixels="True">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="Selector.IsSelected" Value="False" />
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+            <Setter Property="Background" Value="#FFEBEBEB" />
+          </Trigger>
+          <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+            <Setter Property="Background" Value="#FFFFFFFF" />
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style x:Key="ListBoxItemStyleFavorites" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="4,1" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FrameworkElement.FocusVisualStyle">
+          <Setter.Value>
+            <Style>
+              <Setter Property="Control.Template">
+                <Setter.Value>
+                  <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeDashArray="1 2" StrokeThickness="1" />
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Border Name="Bd" Margin="20" Background="{TemplateBinding Control.Background}" BorderThickness="2" SnapsToDevicePixels="True">
+                <Grid Width="Auto" Height="Auto" VerticalAlignment="Stretch">
+                  <i:Interaction.Behaviors>
+                    <gvCounterSketchStudioUtilitiesBehaviors:UIElementBehaviorMouseDoubleClickCommand CommandParameter="{Binding Mode=OneWay}" DoubleClickCommand="{Binding Path=PortfolioManagerVM.CommandOpenDesign, Source={StaticResource Locator}}" />
+                  </i:Interaction.Behaviors>
+                  <Border BorderThickness="1">
+                    <Border.BorderBrush>
+                      <SolidColorBrush Color="{DynamicResource WindowFrameBackgroundColor}" />
+                    </Border.BorderBrush>
+                    <ContentPresenter />
+                  </Border>
+                  <Button Name="deleteButton" Width="15" Height="15" Margin="2,2,2,0" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" ScrollViewer.CanContentScroll="True" Template="{DynamicResource ButtonStyleDeleteItem}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                    <i:Interaction.Triggers>
+                      <i:EventTrigger EventName="Click">
+                        <ic:GoToStateAction StateName="ConfirmDeleteState" />
+                      </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                  </Button>
+                  <Border Name="border1" Width="Auto" VerticalAlignment="Stretch" Visibility="Hidden">
+                    <Border Name="border" Background="#CAFFFFFF" CornerRadius="0" Visibility="Visible">
+                      <Grid Name="gridConfirmDelete">
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="*" />
+                          <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="1*" />
+                          <RowDefinition Height="1*" />
+                          <RowDefinition Height="1*" />
+                          <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Name="textBlock" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18.667" Foreground="{DynamicResource BrushTextPrimary}" Text="{x:Static localization:Strings.Delete}" TextWrapping="Wrap" />
+                        <Button Name="buttonConfirmDelete" Grid.Row="2" Grid.Column="0" Width="80" Height="40" Margin="5,2" VerticalAlignment="Stretch" Content="{x:Static localization:Strings.Yes}" FontSize="18.667" Opacity="1" Style="{DynamicResource CSButton}">
+                          <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                              <command:EventToCommand Command="{Binding DataContext.CommandDeleteDesignFromPortfolio, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" CommandParameter="{Binding Mode=OneWay}" />
+                            </i:EventTrigger>
+                          </i:Interaction.Triggers>
+                          <Control.Foreground>
+                            <SolidColorBrush Color="{DynamicResource TextPrimaryColor}" />
+                          </Control.Foreground>
+                        </Button>
+                        <Button Name="buttonCancelDelete" Grid.Row="2" Grid.Column="1" Width="80" Height="40" Margin="5,2" VerticalAlignment="Stretch" Content="{x:Static localization:Strings.No}" FontSize="18.667" Opacity="1" Style="{DynamicResource CSButton}">
+                          <Control.Foreground>
+                            <SolidColorBrush Color="{DynamicResource TextPrimaryColor}" />
+                          </Control.Foreground>
+                          <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PreviewMouseUp">
+                              <ic:GoToStateAction StateName="Default" UseTransitions="False" />
+                            </i:EventTrigger>
+                          </i:Interaction.Triggers>
+                        </Button>
+                      </Grid>
+                    </Border>
+                  </Border>
+                  <StackPanel Width="Auto" Margin="0,0,0,-35" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Vertical">
+                    <TextBox Background="#00FFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Foreground="#FF808080" IsReadOnly="True" MaxLines="1" Text="{Binding SPINumber}" Visibility="{Binding Mode=OneWay, Path=PortfolioManagerVM.SPINumberVisibility, Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}" />
+                    <TextBox Height="Auto" HorizontalAlignment="Center" Background="#00FFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Foreground="#FF808080" IsReadOnly="True" MaxLines="1" TextWrapping="NoWrap" Text="{Binding SeriesNumber}" Visibility="{Binding Path=PortfolioManagerVM.SPINumberVisibility, Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}" />
+                  </StackPanel>
+                </Grid>
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver" />
+                    <VisualState x:Name="Disabled" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Unselected" />
+                    <VisualState x:Name="Selected" />
+                    <VisualState x:Name="SelectedUnfocused" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="ConfirmationStates">
+                    <VisualState x:Name="ConfirmDeleteState">
+                      <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border1" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <Int32AnimationUsingKeyFrames Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(Grid.Row)">
+                          <EasingInt32KeyFrame KeyTime="0" Value="1" />
+                        </Int32AnimationUsingKeyFrames>
+                        <Int32AnimationUsingKeyFrames Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(Grid.RowSpan)">
+                          <EasingInt32KeyFrame KeyTime="0" Value="1" />
+                        </Int32AnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Default" />
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="PortfolioListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="4,1" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <DockPanel Width="Auto" Height="Auto">
+                <StackPanel Name="stackPanel" Height="Auto" Margin="5,0" DockPanel.Dock="Right" Orientation="Horizontal" Visibility="Collapsed">
+                  <Button Width="15" Margin="2" Template="{DynamicResource PortfolioActionButton}" ToolTip="{x:Static localization:Strings.RenameThisPortfolio}" Visibility="Collapsed" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <i:Interaction.Triggers>
+                      <i:EventTrigger EventName="Click">
+                        <command:EventToCommand Command="{Binding DataContext.CommandShowRenamePortfolioDialog, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" />
+                      </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Border Width="10" Height="Auto" Margin="0" Background="#00000000">
+                      <Viewbox Height="9">
+                        <Canvas Width="8.73853" Height="9.00012">
+                          <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left">
+                            <UIElement.RenderTransform>
+                              <TransformGroup>
+                                <MatrixTransform Matrix="1.33333,0,0,1.33333,-0.761434,-1.36654" />
+                              </TransformGroup>
+                            </UIElement.RenderTransform>
+                            <Run FontSize="7" Foreground="#FFCCC6C1" Text="R" />
+                          </TextBlock>
+                          <Viewbox Canvas.Left="4.73889" Canvas.Top="0" Width="3.99963" Height="9.00012">
+                            <Canvas Width="3.99963" Height="9.00012">
+                              <Path Canvas.Left="0" Canvas.Top="0" Width="2" Height="1" Data="F1 M1.5,0.5 L0.5,0.5" Stretch="Fill" Stroke="#FF898684" StrokeLineJoin="Round" />
+                              <Path Canvas.Left="0" Canvas.Top="7.99976" Width="2" Height="1" Data="F1 M1.5,8.49976 L0.5,8.49976" Stretch="Fill" Stroke="#FF898684" StrokeLineJoin="Round" />
+                              <Path Canvas.Left="1.49951" Canvas.Top="0.00012207" Width="1" Height="8.99988" Data="F1 M1.99951,0.500122 L1.99951,8.5" Stretch="Fill" Stroke="#FF898684" StrokeLineJoin="Round" />
+                              <Path Canvas.Left="1.99963" Canvas.Top="0.000244141" Width="2" Height="1" Data="F1 M3.49963,0.500244 L2.49963,0.500244" Stretch="Fill" Stroke="#FF898684" StrokeLineJoin="Round" />
+                              <Path Canvas.Left="1.99963" Canvas.Top="8.00012" Width="2" Height="1" Data="F1 M3.49963,8.50012 L2.49963,8.50012" Stretch="Fill" Stroke="#FF898684" StrokeLineJoin="Round" />
+                            </Canvas>
+                          </Viewbox>
+                        </Canvas>
+                      </Viewbox>
+                    </Border>
+                  </Button>
+                  <Button Template="{DynamicResource PortfolioActionButton}" ToolTip="{x:Static localization:Strings.DuplicateThisPortfolio}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <i:Interaction.Triggers>
+                      <i:EventTrigger EventName="Click">
+                        <command:EventToCommand Command="{Binding DataContext.CommandShowDuplicatePortfolioDialog, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" />
+                      </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Border Width="10" Height="Auto" Margin="0" Background="#00000000">
+                      <Viewbox>
+                        <Canvas Width="10.6251" Height="10.2588">
+                          <Rectangle Canvas.Left="0" Canvas.Top="3.66382" Width="6.59509" Height="6.59497" Fill="#FFCCC6C1" Stretch="Fill" />
+                          <Path Canvas.Left="4.03015" Canvas.Top="0" Width="6.59497" Height="6.59485" Data="F1 M4.03015,0 L10.6251,0 L10.6251,6.59485 L7.32776,6.59485 L7.32776,2.93115 L4.03015,2.93115 L4.03015,0" Fill="#FF898684" Stretch="Fill" />
+                        </Canvas>
+                      </Viewbox>
+                    </Border>
+                  </Button>
+                  <Button Template="{DynamicResource PortfolioActionButton}" ToolTip="{x:Static localization:Strings.DeletePortfolioAndDesigns}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <i:Interaction.Triggers>
+                      <i:EventTrigger EventName="Click">
+                        <command:EventToCommand Command="{Binding DataContext.CommandShowDeletePortfolioDialog, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" />
+                      </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Border Width="10" Height="Auto" Padding="0,8" Background="#00000000">
+                      <Viewbox Stretch="Fill">
+                        <Path Width="9.949" Height="10" Data="M1975.38,-719.005 L1972.05,-722.36 L1968.81,-719.104 L1967.21,-720.706 L1970.45,-723.96 L1967.08,-727.346 L1968.73,-729.005 L1972.1,-725.62 L1975.34,-728.873 L1976.93,-727.271 L1973.7,-724.019 L1977.03,-720.665 L1975.38,-719.005" Fill="#FF898684" Stretch="Fill" />
+                      </Viewbox>
+                    </Border>
+                  </Button>
+                </StackPanel>
+                <Border Name="Bd" Padding="{TemplateBinding Control.Padding}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True" ToolTip="{x:Static localization:Strings.DoubleClickToRename}">
+                  <i:Interaction.Behaviors>
+                    <gvCounterSketchStudioUtilitiesBehaviors:UIElementBehaviorMouseDoubleClickCommand CommandParameter="{Binding Mode=OneWay}" DoubleClickCommand="{Binding Path=PortfolioManagerVM.CommandShowRenamePortfolioDialog, Source={StaticResource Locator}}" />
+                  </i:Interaction.Behaviors>
+                  <ContentPresenter HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                </Border>
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Unselected" />
+                    <VisualState x:Name="Selected">
+                      <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="(Border.BorderBrush)">
+                          <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource HighlightAndAccent}" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="(Panel.Background)">
+                          <DiscreteObjectKeyFrame KeyTime="0">
+                            <ObjectKeyFrame.Value>
+                              <LinearGradientBrush StartPoint="1.00038,0.998987" EndPoint="0.000375366,-0.00101929">
+                                <GradientStop Offset="0" Color="{DynamicResource HighlightAndAccentColor}" />
+                                <GradientStop Offset="1" Color="Transparent" />
+                              </LinearGradientBrush>
+                            </ObjectKeyFrame.Value>
+                          </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="stackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                        </ObjectAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="SelectedUnfocused">
+                      <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="(Border.BorderBrush)">
+                          <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource HighlightAndAccent}" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="(Panel.Background)">
+                          <DiscreteObjectKeyFrame KeyTime="0">
+                            <ObjectKeyFrame.Value>
+                              <LinearGradientBrush StartPoint="1.00038,0.998987" EndPoint="0.000375366,-0.00101929">
+                                <GradientStop Offset="0" Color="{DynamicResource HighlightAndAccentColor}" />
+                                <GradientStop Offset="1" Color="Transparent" />
+                              </LinearGradientBrush>
+                            </ObjectKeyFrame.Value>
+                          </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="stackPanel" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                        </ObjectAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+              </DockPanel>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="DesignHistorySubItemListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="4,1" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FrameworkElement.FocusVisualStyle">
+          <Setter.Value>
+            <Style>
+              <Setter Property="Control.Template">
+                <Setter.Value>
+                  <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeDashArray="1 2" StrokeThickness="1" />
+                  </ControlTemplate>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Border Name="Bd" SnapsToDevicePixels="True">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+              </Border>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="DesignHistoriesListBox" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <Border Name="Bd" Padding="1" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False" Template="{DynamicResource CSScrollViewer}">
+                  <i:Interaction.Behaviors>
+                    <gvCounterSketchStudioUtilitiesBehaviors:ScrollViewerBehaviorBringLastItemIntoView />
+                  </i:Interaction.Behaviors>
+                  <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                </ScrollViewer>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Bd" Property="Border.Background" Value="{StaticResource ListBox.Disabled.Background}" />
+                  <Setter TargetName="Bd" Property="Border.BorderBrush" Value="{StaticResource ListBox.Disabled.Border}" />
+                </Trigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.IsGrouping" Value="True" />
+                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="False" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                </MultiTrigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="DesignHistoryListBox" TargetType="{x:Type scrollableListBox:ScrollableListBox}">
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="BorderBrush" Value="#FFABADB3" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type scrollableListBox:ScrollableListBox}">
+              <Border Name="Bd" Padding="1" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                  <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                </ScrollViewer>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Bd" Property="Border.Background" Value="#FFFFFFFF" />
+                  <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#FFD9D9D9" />
+                </Trigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.IsGrouping" Value="True" />
+                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="False" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                </MultiTrigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Name="Grid" Margin="10,0" Background="#FFFFFFFF">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="33" />
+      <RowDefinition Height="1" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="245" />
+      <ColumnDefinition Width="1" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <DockPanel Margin="0,0,10,0" VerticalAlignment="Center" LastChildFill="False">
+      <TextBlock VerticalAlignment="Bottom" Text="{x:Static localization:Strings.PORTFOLIOS}" TextWrapping="Wrap" />
+      <Button Background="#FFFFFFFF" Content="{x:Static localization:Strings.New}" DockPanel.Dock="Right" Template="{StaticResource CS4ButtonRounded}">
+        <i:Interaction.Triggers>
+          <i:EventTrigger EventName="Click">
+            <ic:GoToStateAction StateName="AddPortfolio" />
+            <command:EventToCommand Command="{Binding DataContext.CommandShowCreatePortfolio, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type view:PortfolioManagerView}}}" CommandParameter="{Binding}" />
+          </i:EventTrigger>
+        </i:Interaction.Triggers>
+      </Button>
+    </DockPanel>
+    <Border Grid.RowSpan="3" Grid.Column="1" Width="1" HorizontalAlignment="Left">
+      <Border.Background>
+        <SolidColorBrush Color="{DynamicResource ToolHeaderBackgroundColor}" />
+      </Border.Background>
+    </Border>
+    <DockPanel Name="Controls" Grid.Column="2" Grid.ColumnSpan="2" Margin="10,1,10,0" LastChildFill="False">
+      <TextBlock Margin="0,0,5,0" VerticalAlignment="Center" Text="{x:Static localization:Strings.View}" TextWrapping="Wrap" />
+      <ComboBox VerticalAlignment="Center" SelectedIndex="0" Style="{DynamicResource CSComboBoxStyleBasic}" ItemsSource="{Binding FavoritesShowOptions}" SelectedItem="{Binding SelectedManagerMode}" />
+      <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" DockPanel.Dock="Right" Text="{x:Static localization:Strings.ShowDesignNumbers}" />
+      <CheckBox Margin="0" VerticalAlignment="Center" DockPanel.Dock="Right" IsChecked="{Binding SPINumberVisibility}" />
+      <Separator Name="Separator" Margin="10,4" Background="{DynamicResource WindowFrameBackground}" DockPanel.Dock="Right" Style="{DynamicResource VerticalSeparatorStyle}" Visibility="Collapsed" />
+      <telerik:RadSlider xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" Name="RadSlider" Width="114" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand" DockPanel.Dock="Right" LargeChange="10" Maximum="400" Minimum="100" SmallChange="10" ThumbStyle="{DynamicResource RadThumbStyle}" TrackStyle="{DynamicResource RadSliderTrackStyle}" Visibility="Collapsed" Value="{Binding DesignImageWidth, Mode=TwoWay}" />
+    </DockPanel>
+    <Border Grid.Row="1" Grid.Column="2" Height="1" Margin="10,0,0,0">
+      <Border.Background>
+        <SolidColorBrush Color="{DynamicResource BaseBackgroundColor}" />
+      </Border.Background>
+    </Border>
+    <Grid Row="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="250" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <DockPanel Margin="0">
+        <Grid Margin="0,5,10,5" VerticalAlignment="Top" Background="#FFFFFFFF" DockPanel.Dock="Top">
+          <TextBlock MinWidth="50" Margin="5,2" Foreground="#FFB0C4DE" Text="{x:Static localization:Strings.SearchPortfolio}" Visibility="{Binding ElementName=portfolioSearch, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+          <TextBox Name="portfolioSearch" MinWidth="50" Background="#00FFFFFF" TextChanged="PortfolioSearch_OnTextChanged" />
+        </Grid>
+        <Border Margin="0,0,10,0" BorderThickness="1" Visibility="Visible">
+          <Border.BorderBrush>
+            <SolidColorBrush Color="{DynamicResource ToolHeaderBackgroundColor}" />
+          </Border.BorderBrush>
+          <ListBox Name="Portfolios" BorderThickness="0" IsSynchronizedWithCurrentItem="True" ItemContainerStyle="{DynamicResource PortfolioListBoxItemStyle}" ItemTemplate="{DynamicResource DataTemplatePortfolioCollection}" SelectedIndex="0" ItemsSource="{Binding ProjectCollection}" SelectedItem="{Binding SelectedPortfolio}">
+            <i:Interaction.Behaviors>
+              <gvCounterSketchStudioUtilitiesBehaviors:ListBoxBehaviorScrollSelectedItemIntoView />
+            </i:Interaction.Behaviors>
+          </ListBox>
+        </Border>
+      </DockPanel>
+      <DockPanel Name="DockPanelAddPortfolio" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFFFFFF" LastChildFill="False" Visibility="Collapsed">
+        <StackPanel DockPanel.Dock="Top">
+          <TextBlock HorizontalAlignment="Center" FontSize="16" Text="{x:Static localization:Strings.CreateNewPortfolioPrompt}" TextAlignment="Right" TextWrapping="Wrap">
+            <TextBlock.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </TextBlock.Foreground>
+          </TextBlock>
+        </StackPanel>
+        <TextBox Name="TextNewProjectName" Width="180" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Background="#00000000" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Top" FontSize="16" Style="{DynamicResource CS4TextBoxStyle}" Tag="{x:Static localization:Strings.NewPortfolioName}" BorderBrush="{x:Null}" Text="{Binding UserCreatedPortfolioName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+          <i:Interaction.Behaviors>
+            <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorLimitInputToOnlyValidPathCharacters />
+            <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorClickTargetButtonOnEnterKeyUp TargetButton="{Binding ElementName=ButtonPortfolioCreate, Mode=OneWay}" />
+          </i:Interaction.Behaviors>
+        </TextBox>
+        <StackPanel Margin="0,5,0,0" HorizontalAlignment="Center" DockPanel.Dock="Top" Orientation="Horizontal">
+          <Button Name="ButtonPortfolioCreate" Height="20" Margin="0,0,20,0" Padding="5,1" VerticalAlignment="Top" BorderThickness="0" Content="{x:Static localization:Strings.Create}" FontSize="13.333" Template="{DynamicResource CS4ButtonRounded}">
+            <Control.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </Control.Foreground>
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <ic:GoToStateAction StateName="Default" />
+                <command:EventToCommand Command="{Binding CommandCreateNewProject, Mode=Default}" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+          <Button Name="ButtonPortfolioCreateCancel" Height="20" Padding="5,1" VerticalAlignment="Top" Content="{x:Static localization:Strings.Cancel_lowercase}" FontSize="13.333" Template="{DynamicResource CS4ButtonRounded}">
+            <Control.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </Control.Foreground>
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <ic:GoToStateAction StateName="Default" />
+                <ic:ChangePropertyAction PropertyName="Text" TargetName="TextNewProjectName" Value="" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+        </StackPanel>
+      </DockPanel>
+      <DockPanel Name="DockPanelDeletePortfolio" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFFFFFF" LastChildFill="False" Visibility="Collapsed">
+        <StackPanel DockPanel.Dock="Top">
+          <TextBlock Name="TextBlock" FontSize="16" Text="{x:Static localization:Strings.DeletecurrentPortfolio}" TextAlignment="Right" TextWrapping="Wrap">
+            <TextBlock.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </TextBlock.Foreground>
+          </TextBlock>
+          <TextBlock HorizontalAlignment="Center" FontStyle="Italic" Text="{x:Static localization:Strings.AllDesignsandHistorywillbelost}" TextAlignment="Right" TextWrapping="Wrap">
+            <TextBlock.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </TextBlock.Foreground>
+          </TextBlock>
+        </StackPanel>
+        <StackPanel Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Top" Orientation="Horizontal">
+          <Button Name="ButtonDeletePortfolio" Padding="5,1" VerticalAlignment="Center" Content="{x:Static localization:Strings.Delete}" FontSize="13.333" Template="{DynamicResource CS4ButtonRounded}">
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <command:EventToCommand Command="{Binding CommandDeleteSelectedProject}" CommandParameter="{Binding Mode=OneWay}" />
+                <ic:GoToStateAction StateName="Base" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+          <Button Name="ButtonCancelDeletePortfolio" Margin="20,0,0,0" Padding="5,1" VerticalAlignment="Center" Content="{x:Static localization:Strings.Cancel_lowercase}" FontSize="13.333" Template="{DynamicResource CS4ButtonRounded}">
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <ic:GoToStateAction StateName="Default" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+        </StackPanel>
+      </DockPanel>
+      <DockPanel Name="DockPanelCopyPortfolio" Margin="1,0,11,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFFFFFF" LastChildFill="False" Visibility="Collapsed">
+        <StackPanel DockPanel.Dock="Top">
+          <TextBlock FontSize="16" Text="{x:Static localization:Strings.CreateaCopyofthisPortfolio}" TextAlignment="Right" TextWrapping="Wrap">
+            <TextBlock.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </TextBlock.Foreground>
+          </TextBlock>
+        </StackPanel>
+        <TextBox Name="TextNewProjectName1" Width="180" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Top" FontSize="16" Style="{DynamicResource CS4TextBoxStyle}" Tag="{x:Static localization:Strings.NewPortfolioName}" BorderBrush="{x:Null}" Text="{Binding UserCreatedPortfolioName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+          <i:Interaction.Behaviors>
+            <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorClickTargetButtonOnEnterKeyUp TargetButton="{Binding ElementName=ButtonPortfolioCreate1, Mode=OneWay}" />
+          </i:Interaction.Behaviors>
+        </TextBox>
+        <StackPanel Height="20" Margin="0,5,0,0" HorizontalAlignment="Center" DockPanel.Dock="Top" Orientation="Horizontal">
+          <Button Name="ButtonPortfolioCreate1" Height="20" Padding="5,1" VerticalAlignment="Top" BorderThickness="0" Content="{x:Static localization:Strings.Create}" FontSize="13.333" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandSelectedProjectSaveAs, Mode=OneWay}">
+            <Control.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </Control.Foreground>
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <ic:GoToStateAction StateName="Base" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+          <Button Name="ButtonPortfolioCreateCancel1" Height="20" Margin="20,0,0,0" Padding="5,1" VerticalAlignment="Top" Content="{x:Static localization:Strings.Cancel_lowercase}" FontSize="13.333" Template="{DynamicResource CS4ButtonRounded}">
+            <Control.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </Control.Foreground>
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <ic:GoToStateAction StateName="Default" />
+                <ic:ChangePropertyAction PropertyName="Text" TargetName="TextNewProjectName1" Value="" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+        </StackPanel>
+      </DockPanel>
+      <DockPanel Name="DockPanelRenamePortfolio" Margin="1,0,11,0" VerticalAlignment="Center" Background="#FFFFFFFF" LastChildFill="False" Visibility="Collapsed">
+        <StackPanel DockPanel.Dock="Top">
+          <TextBlock HorizontalAlignment="Center" FontSize="16" Text="{x:Static localization:Strings.RenamecurrentPortfolio}" TextAlignment="Center" TextWrapping="NoWrap">
+            <TextBlock.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </TextBlock.Foreground>
+          </TextBlock>
+        </StackPanel>
+        <TextBox Name="TextNewProjectName2" Width="180" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Background="#00000000" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Top" FontSize="16" Style="{DynamicResource CS4TextBoxStyle}" Tag="{x:Static localization:Strings.NewPortfolioName}" BorderBrush="{x:Null}" Text="{Binding UserCreatedPortfolioName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+          <i:Interaction.Behaviors>
+            <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorClickTargetButtonOnEnterKeyUp TargetButton="{Binding ElementName=ButtonPortfolioRename, Mode=OneWay}" />
+          </i:Interaction.Behaviors>
+        </TextBox>
+        <StackPanel Margin="0,5,0,0" HorizontalAlignment="Center" DockPanel.Dock="Top" Orientation="Horizontal">
+          <Button Name="ButtonPortfolioRename" Height="20" Margin="0,0,20,0" Padding="5,1" VerticalAlignment="Top" BorderThickness="0" Content="{x:Static localization:Strings.Rename}" FontSize="13.333" Template="{DynamicResource CS4ButtonRounded}">
+            <Control.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </Control.Foreground>
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <ic:GoToStateAction StateName="Base" />
+                <command:EventToCommand Command="{Binding CommandRenameSelectedProject, Mode=Default}" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+          <Button Name="ButtonPortfolioRenameCancel" Height="20" Padding="5,1" VerticalAlignment="Top" Content="{x:Static localization:Strings.Cancel_lowercase}" FontSize="13.333" Template="{DynamicResource CS4ButtonRounded}">
+            <Control.Foreground>
+              <SolidColorBrush Color="{DynamicResource TextSecondaryColor}" />
+            </Control.Foreground>
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <ic:GoToStateAction StateName="Default" />
+                <ic:ChangePropertyAction PropertyName="Text" TargetName="TextNewProjectName" Value="" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+        </StackPanel>
+      </DockPanel>
+      <DockPanel Grid.Row="2" Margin="0,10,0,0">
+        <TextBlock DockPanel.Dock="Top" Text="{x:Static localization:Strings.CUSTOMERINFORMATION}" TextWrapping="Wrap" />
+        <Border Height="1" VerticalAlignment="Top" DockPanel.Dock="Top">
+          <Border.Background>
+            <SolidColorBrush Color="{DynamicResource ToolHeaderBackgroundColor}" />
+          </Border.Background>
+        </Border>
+        <ScrollViewer Margin="0,10,0,0" VerticalContentAlignment="Stretch" DockPanel.Dock="Top">
+          <DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False" Visibility="Collapsed">
+              <TextBox Width="137" Height="18" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding Name}" />
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.Title}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="137" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding FirstName}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.FirstName}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="137" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding LastName}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.LastName}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" Visibility="Collapsed">
+              <TextBlock Margin="0,0,11,0" VerticalAlignment="Center" Text="{x:Static localization:Strings.MiddleInitial}" TextWrapping="Wrap" />
+              <TextBox Width="35" Height="18" Margin="0,0,10,0" CaretBrush="{DynamicResource HighlightAndAccent}" TextWrapping="Wrap" />
+              <TextBlock Margin="0,1,10,0" VerticalAlignment="Center" Text="{x:Static localization:Strings.Suffix}" TextWrapping="Wrap" />
+              <TextBox Height="18" CaretBrush="{DynamicResource HighlightAndAccent}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="153" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding Address1}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.Address}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="153" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding Address2}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.Address}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="153" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding City}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.City}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="125" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding State}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.StateRegion}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="125" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding Zip}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.PostalCode}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="153" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding Country}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.Country}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="153" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding PhoneNumber}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.Phone1}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False" Visibility="Collapsed">
+              <TextBox Width="153" Height="18" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" />
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.Phone}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBox Width="153" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Right" TextWrapping="Wrap" Text="{Binding Email}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+              <TextBlock VerticalAlignment="Center" Text="{x:Static localization:Strings.Email}" TextWrapping="Wrap" />
+            </DockPanel>
+            <DockPanel Margin="0,0,0,10" Dock="Top" LastChildFill="False">
+              <TextBlock Margin="0,0,0,5" VerticalAlignment="Top" DockPanel.Dock="Top" Text="{x:Static localization:Strings.CustomerComments}" TextWrapping="Wrap" />
+              <TextBox Height="120" VerticalAlignment="Top" CaretBrush="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Top" TextWrapping="Wrap" Text="{Binding Comments}">
+                <i:Interaction.Triggers>
+                  <i:EventTrigger EventName="LostFocus">
+                    <command:EventToCommand Command="{Binding CommandSaveUserInfo, Mode=OneWay}" />
+                  </i:EventTrigger>
+                </i:Interaction.Triggers>
+              </TextBox>
+            </DockPanel>
+          </DockPanel>
+        </ScrollViewer>
+      </DockPanel>
+    </Grid>
+    <scrollableListBox:ScrollableListBox x:Name="ListBoxSpi" Grid.Row="2" Grid.Column="2" Margin="15,10" BorderThickness="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" ItemContainerStyle="{StaticResource ListBoxItemStyleFavorites}" ItemTemplate="{DynamicResource SpiDataTemplate}" ItemsPanel="{DynamicResource ItemsPanelTemplateWrapPanel}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{Binding Designs}">
+      <i:Interaction.Behaviors>
+        <gvCounterSketchStudioUtilitiesBehaviors:ListBoxBehaviorScrollSelectedItemIntoViewWhenVisible />
+      </i:Interaction.Behaviors>
+    </scrollableListBox:ScrollableListBox>
+    <Grid Name="ListBoxDesignHistoryHeaders" Row="2" Column="2" Height="18" Margin="15,10,15,0" VerticalAlignment="Top" Background="{DynamicResource TextBoxAndFrameBackground}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="208" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{x:Static localization:Strings.BaseDesign}" TextWrapping="Wrap" />
+      <Border Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2" Width="2" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Stretch" BorderBrush="{DynamicResource WindowFrameBackground}" BorderThickness="2,0,0,0" />
+      <TextBlock Grid.Column="1" HorizontalAlignment="Center" Foreground="#FFFFFFFF" Text="{x:Static localization:Strings.DesignSaveHistory}" TextWrapping="Wrap" />
+    </Grid>
+    <scrollableListBox:ScrollableListBox x:Name="ListBoxDesignHistory" Grid.Row="2" Grid.Column="2" Margin="15,28,15,10" HorizontalContentAlignment="Stretch" AlternationCount="2" BorderThickness="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" ItemContainerStyle="{DynamicResource DesignHistoriesListBoxItemStyle}" ItemTemplate="{DynamicResource DesignHistoryRowDataTemplate}" ItemsPanel="{DynamicResource DesignHistoriesItemsPanelTemplate}" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedIndex="-1" Style="{DynamicResource DesignHistoryListBox}" ItemsSource="{Binding Designs}">
+      <i:Interaction.Behaviors>
+        <gvCounterSketchStudioUtilitiesBehaviors:ListBoxBehaviorScrollSelectedItemIntoViewWhenVisible />
+      </i:Interaction.Behaviors>
+      <FrameworkElement.Resources>
+        <ResourceDictionary>
+          <Style x:Key="{x:Type ListBoxItem}" TargetType="{x:Type ListBoxItem}" />
+        </ResourceDictionary>
+      </FrameworkElement.Resources>
+    </scrollableListBox:ScrollableListBox>
+    <scrollableListBox:ScrollableListBox x:Name="ListBoxFavorites" Grid.Row="2" Grid.Column="2" Margin="15,10" BorderThickness="0" ItemContainerStyle="{StaticResource ListBoxItemStyleFavorites}" ItemTemplate="{DynamicResource FavoritesDataTemplate}" ItemsPanel="{DynamicResource ItemsPanelTemplateWrapPanel}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Visibility="Collapsed" ItemsSource="{Binding Designs}">
+      <i:Interaction.Behaviors>
+        <gvCounterSketchStudioUtilitiesBehaviors:ListBoxBehaviorScrollSelectedItemIntoViewWhenVisible />
+      </i:Interaction.Behaviors>
+    </scrollableListBox:ScrollableListBox>
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="VisualStateGroup">
+        <VisualState x:Name="SPIView">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ListBoxSpi" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ListBoxDesignHistory" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Separator" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RadSlider" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ListBoxDesignHistoryHeaders" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="DesignHistoryView">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ListBoxDesignHistory" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="FavoritesView">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ListBoxFavorites" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ListBoxDesignHistory" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Separator" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RadSlider" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ListBoxDesignHistoryHeaders" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+      </VisualStateGroup>
+      <VisualStateGroup x:Name="PortfolioInfoStateGroup">
+        <VisualState x:Name="Default" />
+        <VisualState x:Name="AddPortfolio">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DockPanelAddPortfolio" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Portfolios" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DockPanelAddPortfolio" Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="DeletePortfolio">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Portfolios" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DockPanelDeletePortfolio" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextBlock" Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Center}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DockPanelDeletePortfolio" Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Stretch}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="DockPanelDeletePortfolio" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+              <EasingThicknessKeyFrame KeyTime="0" Value="1,0,11,0" />
+            </ThicknessAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="RenamePortfolio">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Portfolios" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DockPanelRenamePortfolio" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="CopyPortfolio">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Portfolios" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DockPanelCopyPortfolio" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+  </Grid>
+</Window>

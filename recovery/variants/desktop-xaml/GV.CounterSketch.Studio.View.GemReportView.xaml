@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.View.GemReportView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="clr-namespace:GV.CounterSketch.Studio.ViewModel" xmlns:vw="clr-namespace:GV.CounterSketch.Studio.View" DataContext="{Binding Path=ViewModelName, Source={StaticResource Locator}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="{DataTemplateKey {x:Type vm:GemReportViewModel}}" DataType="{x:Type vm:GemReportViewModel}">
+        <vw:GemReportView />
+      </DataTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid />
+</UserControl>

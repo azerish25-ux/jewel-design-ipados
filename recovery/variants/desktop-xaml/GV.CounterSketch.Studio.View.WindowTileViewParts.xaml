@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.View.WindowTileViewParts" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:local="clr-namespace:GV.CounterSketch.Studio.View" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Title="Part Toolbox" Width="1530" Height="796" MinWidth="1200" MinHeight="700" WindowStartupLocation="CenterOwner">
+  <Grid>
+    <local:TileViewParts />
+    <Border Name="WaitMessageBorder" Background="#7F000000" Visibility="{Binding Source={StaticResource Locator}, Path=TileViewPartsVM.IsBusySearching, Converter={StaticResource BooleanToVisibilityConverter}, UpdateSourceTrigger=PropertyChanged}">
+      <Border Height="100" MinWidth="220" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFFFFFF" CornerRadius="5">
+        <TextBlock Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Text="{x:Static l:Strings.UpdatingSearchResults}" TextAlignment="Center" />
+      </Border>
+    </Border>
+  </Grid>
+</Window>

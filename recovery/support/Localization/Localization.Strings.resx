@@ -1,0 +1,1128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="UpdatingSearchResults" xml:space="preserve"><value>Updating Search Results</value></data>
+  <data name="ShanksBands" xml:space="preserve"><value>Shanks Bands</value></data>
+  <data name="SpinPauseDesign" xml:space="preserve"><value>Spin / Pause Design</value></data>
+  <data name="HasGems" xml:space="preserve"><value>Has Gems</value></data>
+  <data name="TileDescriptionFamily" xml:space="preserve"><value>Meaningful and customizable family jewelry, perfect for expressing that family bond.</value></data>
+  <data name="SearchForProducts" xml:space="preserve"><value>search for products...</value></data>
+  <data name="CantSaveAsProjectAlreadyExists" xml:space="preserve"><value>Cannot perform 'SaveAs' - Project already Exists!</value></data>
+  <data name="CustomCatalog" xml:space="preserve"><value>Custom Catalog</value></data>
+  <data name="CurveEditorRebuild" xml:space="preserve"><value>Rebuild</value></data>
+  <data name="EnableWhatsNewInThisVersionButton" xml:space="preserve"><value>Enable "What's New in this Version" button.</value></data>
+  <data name="CreateBackup" xml:space="preserve"><value>Create Backup</value></data>
+  <data name="ShowNewDesignsFirst" xml:space="preserve"><value>Show New Designs First</value></data>
+  <data name="DisplayModelNumberBelowEachResult" xml:space="preserve"><value>Display model number below each result</value></data>
+  <data name="ShowHideGridLines" xml:space="preserve"><value>Show / Hide Grid Lines</value></data>
+  <data name="PurchaseDesignExportConfirmation" xml:space="preserve"><value>Are you sure you want to purchase this file export? Your account will be charged for this purchase and will begin to export immediately.</value></data>
+  <data name="Weights" xml:space="preserve"><value>Weights</value></data>
+  <data name="CounterPart" xml:space="preserve"><value>Counterpart</value></data>
+  <data name="SemiFinishedCastingNoGems" xml:space="preserve"><value>Semi-Finished Casting (No Gems)</value></data>
+  <data name="Religious" xml:space="preserve"><value>Religious</value></data>
+  <data name="DesignTotalCaratWeight" xml:space="preserve"><value>Design total carat weight: </value></data>
+  <data name="ResubmitFileToCAM" xml:space="preserve"><value>Resubmit File To CAM</value></data>
+  <data name="CreateaCopyofthisPortfolio" xml:space="preserve"><value>Create a Copy of this Portfolio</value></data>
+  <data name="Working" xml:space="preserve"><value>Working ...</value></data>
+  <data name="PendantAccented" xml:space="preserve"><value>Pendant Accented</value></data>
+  <data name="Assigned_Stone_Not_Supported" xml:space="preserve"><value>The assigned Stone is not supported by the current design.</value></data>
+  <data name="Brightness" xml:space="preserve"><value>Brightness</value></data>
+  <data name="QuestionLiveChat" xml:space="preserve"><value>Question? Live Chat</value></data>
+  <data name="AnyGemAnyColor" xml:space="preserve"><value>Any Gem, Any Color</value></data>
+  <data name="NoUserSuppliedStones" xml:space="preserve"><value>No User Supplied Stones</value></data>
+  <data name="Specify_Output_Directory_Before_Export" xml:space="preserve"><value>Please specify the output directory before clicking Export.</value></data>
+  <data name="ModernDescription" xml:space="preserve"><value>Creative experimentation combined with functionality in its purest form; Modern designs adventurous and pioneering spirit blazes ahead on the design trail.</value></data>
+  <data name="DuplicateSelected" xml:space="preserve"><value>Duplicate Selected </value></data>
+  <data name="ImportPart" xml:space="preserve"><value>Import Part</value></data>
+  <data name="Granulation" xml:space="preserve"><value>Granulation</value></data>
+  <data name="NoAdditionalNotes" xml:space="preserve"><value>No Additional Notes</value></data>
+  <data name="HalfMoon" xml:space="preserve"><value>Half Moon</value></data>
+  <data name="CurrencySettings" xml:space="preserve"><value>Currency Settings</value></data>
+  <data name="CenterGemControlIndex" xml:space="preserve"><value>Center Gem Control Index</value></data>
+  <data name="Projet_Material_Loaded_Warning" xml:space="preserve"><value>Please make sure material is loaded and locked down, and there is new clean platform in machine and locked down. Continue?</value></data>
+  <data name="UpdateModeDownloadExplanation" xml:space="preserve"><value>You have selected DOWNLOAD ONLY updates.  Updates will be downloaded by the application in the background.  When a new update is available it ask if you want to install it the next time you start CounterSketch.</value></data>
+  <data name="Elements" xml:space="preserve"><value>Elements</value></data>
+  <data name="Debug_Report_Sent" xml:space="preserve"><value>Debug Report Sent</value></data>
+  <data name="DeletecurrentPortfolio" xml:space="preserve"><value>Delete current Portfolio</value></data>
+  <data name="Invalid_Serial_Code_detected" xml:space="preserve"><value>Invalid Serial Code detected</value></data>
+  <data name="DevelopmentTeam" xml:space="preserve"><value>Gemvision Team</value></data>
+  <data name="Export" xml:space="preserve"><value>Export</value></data>
+  <data name="Congratulations" xml:space="preserve"><value>Congratulations</value></data>
+  <data name="FiveStoneDescription" xml:space="preserve"><value>Five stone rings create a sparkling design that offers a huge variety of beautiful aesthetics due to the creative possibilities the five individual stones open up.</value></data>
+  <data name="European" xml:space="preserve"><value>European</value></data>
+  <data name="PrimarySecondaryMetalsSwitch" xml:space="preserve"><value>Switch primary and secondary metals</value></data>
+  <data name="AddDesignstoPortfolio" xml:space="preserve"><value>Add Marked Designs to Portfolio</value></data>
+  <data name="YourVersion" xml:space="preserve"><value>Your Version</value></data>
+  <data name="PrimaryMetal" xml:space="preserve"><value>Primary Metal</value></data>
+  <data name="TileDescriptionThreeStone" xml:space="preserve"><value>Representing the past, present, and future of your relationship, you won’t find a more timeless and versatile design than this.</value></data>
+  <data name="Explore the entire collection of customizable rings available in a range of materials and customized to your individual style and price." xml:space="preserve"><value>Explore the entire collection of customizable rings available in a range of materials and customized to your individual style and price.</value></data>
+  <data name="Baguette" xml:space="preserve"><value>Baguette</value></data>
+  <data name="SubmitQuickDebugReport" xml:space="preserve"><value>Submit Quick Debug Report</value></data>
+  <data name="LengthWidthRatio" xml:space="preserve"><value>Length/Width Ratio</value></data>
+  <data name="Begin_Update_Checks" xml:space="preserve"><value>Begin Update Checks</value></data>
+  <data name="HideEverAndEverTile" xml:space="preserve"><value>Hide Ever&amp;Ever Tile</value></data>
+  <data name="DuplicateThisPortfolio" xml:space="preserve"><value>Duplicate this Portfolio.</value></data>
+  <data name="Extracting_Image" xml:space="preserve"><value>Extracting Image</value></data>
+  <data name="HaloDescription" xml:space="preserve"><value>Halo designs feature a border of diamonds encircling the center stone, to emphasize its brilliant sparkle and increase the appearance of its size.</value></data>
+  <data name="NoItemsAvailable" xml:space="preserve"><value>No Items Available</value></data>
+  <data name="QEGemsNotInStockExplanation" xml:space="preserve"><value>Some gems are not currently in stock at Stuller. Please check stuller.com for availability.</value></data>
+  <data name="ENVIRONMENT" xml:space="preserve"><value>ENVIRONMENT</value></data>
+  <data name="Accent" xml:space="preserve"><value>Accent</value></data>
+  <data name="FINISH" xml:space="preserve"><value>FINISH</value></data>
+  <data name="Assign" xml:space="preserve"><value>Assign</value></data>
+  <data name="Cathedral" xml:space="preserve"><value>Cathedral</value></data>
+  <data name="Duplicate" xml:space="preserve"><value>Duplicate</value></data>
+  <data name="Email_address_invalid" xml:space="preserve"><value>Email address invalid</value></data>
+  <data name="ContemporaryDescription" xml:space="preserve"><value>High-polish surfaces and clean, sleek lines complement any outfit; Contemporary style is always in-sync with the times.</value></data>
+  <data name="MiscellaneousOptions" xml:space="preserve"><value>Miscellaneous Options</value></data>
+  <data name="ComfortFit" xml:space="preserve"><value>Comfort-Fit</value></data>
+  <data name="SupportPhone_Zales" xml:space="preserve"><value>866-772-8899</value></data>
+  <data name="Family" xml:space="preserve"><value>Family</value></data>
+  <data name="NailColor" xml:space="preserve"><value>Nail Color</value></data>
+  <data name="ImageTheme" xml:space="preserve"><value>Image Theme</value></data>
+  <data name="Finger" xml:space="preserve"><value>Finger</value></data>
+  <data name="ResetLayout" xml:space="preserve"><value>Reset Layout</value></data>
+  <data name="ClickheretoOrderaChainBelow" xml:space="preserve"><value>Click here to Order a Chain Below</value></data>
+  <data name="NatureDescription" xml:space="preserve"><value>These designs pull inspiration from nature: butterflies, insects, animals, stars &amp; moons, &amp; floral motifs.</value></data>
+  <data name="ClickToAdjustBaseBackground" xml:space="preserve"><value>Click to Adjust Base Background</value></data>
+  <data name="ResultsOf" xml:space="preserve"><value>results of</value></data>
+  <data name="BookAndDigitalImages" xml:space="preserve"><value>Book and Digital Images</value></data>
+  <data name="ClickToRelargeImage" xml:space="preserve"><value>Click To Enlarge Image</value></data>
+  <data name="Floral" xml:space="preserve"><value>Floral</value></data>
+  <data name="ArtNouveauDescription" xml:space="preserve"><value>Organic, smoothly-curving lines and subtle transitions throughout the form; Art Nouveau existed for a brief moment but left a lasting impact on jewelry design.</value></data>
+  <data name="Fluted" xml:space="preserve"><value>Fluted</value></data>
+  <data name="SaveAsDefault" xml:space="preserve"><value>Save As Default</value></data>
+  <data name="AAExplanation" xml:space="preserve"><value>Nice medium quality that will still have nice color saturation, eye clean to slightly included on some stones. For customers that want nice but don't want to pay the AAA price.</value></data>
+  <data name="DiamondFashion" xml:space="preserve"><value>Diamond Fashion</value></data>
+  <data name="TrillionDescription" xml:space="preserve"><value>Originally introduced as a side stone, the trillion cut is also placed front-and-center, creating angular styles that reflect a more modern sensibility. The mystical triangular shape allows the wearer to suggest an aura of beauty and intrigue.</value></data>
+  <data name="EstimatedStoneValue" xml:space="preserve"><value>Estimated Stone Value</value></data>
+  <data name="BaguetteDescription" xml:space="preserve"><value>The simple grace of the baguette adds classic sparkle to any jewelry design. Set vertically or horizontally, these stones are ideal for both men and women.</value></data>
+  <data name="Gender" xml:space="preserve"><value>Gender</value></data>
+  <data name="RemoveAssignedStoneToEdit" xml:space="preserve"><value>Remove Assigned Stone to edit.</value></data>
+  <data name="Girdle" xml:space="preserve"><value>Girdle</value></data>
+  <data name="Saturation" xml:space="preserve"><value>Saturation</value></data>
+  <data name="SelectDesiredCurrency" xml:space="preserve"><value>Select Desired Currency</value></data>
+  <data name="Perspective" xml:space="preserve"><value>Perspective</value></data>
+  <data name="PendantAccentedDescription" xml:space="preserve"><value>Accented Pendants consists of a larger solitaire stone accented with one or two smaller stones.</value></data>
+  <data name="Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Design" xml:space="preserve"><value>Design</value></data>
+  <data name="NewParts" xml:space="preserve"><value>New Parts</value></data>
+  <data name="AddDesignstoCollection" xml:space="preserve"><value>Add Marked Designs to Collection</value></data>
+  <data name="Trellis" xml:space="preserve"><value>Trellis</value></data>
+  <data name="ProngDescription" xml:space="preserve"><value>A Prong setting is designed to emphasize the stone and is the most popular setting type. Four-prong settings show off more of the stone, but six prongs are more secure.</value></data>
+  <data name="RadiantDescription" xml:space="preserve"><value>Radiant cuts combine the sophisticated shape and elegance of emerald cut diamonds with the brilliance of round cut diamonds. This cut varies in degrees of shape from rectangular to square, with blocked corners like those of an emerald.</value></data>
+  <data name="EnterYourCredentialsAndSerialCode" xml:space="preserve"><value>Enter your Credentials and Serial Code below</value></data>
+  <data name="MustSelectFreehandPrompt" xml:space="preserve"><value>You must select at least one Freehand Part to perform this action.</value></data>
+  <data name="FindyourStyle" xml:space="preserve"><value>Find Your Style</value></data>
+  <data name="AccentStones" xml:space="preserve"><value>Accent Stones</value></data>
+  <data name="IAcceptTheAgreement" xml:space="preserve"><value>I Accept The Agreement</value></data>
+  <data name="DiamondShopperClarityTerm" xml:space="preserve"><value>Clarity is measured by the existence or absence of visible flaws. Tiny surface blemishes or internal inclusions, even those seen only under magnification, can alter the brilliance of the diamond and thus affect its value. Clarity levels begin with flawless (FL, IF), followed by very, very slight (VVS1, VVS2), very slight (VS1, VS2), slightly included (SI1, SI2), and included (I1, I2, and I3).</value></data>
+  <data name="DisplayStullerRedboxLogoforSerializedDiamonds" xml:space="preserve"><value>Display Stuller Redbox Logo for Serialized Diamonds</value></data>
+  <data name="RenderResolution" xml:space="preserve"><value>Render Resolution</value></data>
+  <data name="Modern" xml:space="preserve"><value>Modern</value></data>
+  <data name="Manual" xml:space="preserve"><value>Manual</value></data>
+  <data name="Metals" xml:space="preserve"><value>Metals</value></data>
+  <data name="LaunchTroubleshooter" xml:space="preserve"><value>Launch Troubleshooter</value></data>
+  <data name="Select_Backup_Save_Folder" xml:space="preserve"><value>Select Backup Save Folder</value></data>
+  <data name="BridgeAccentDescription" xml:space="preserve"><value>Smaller stones set at the base of the head, or on the “bridge” of the ring. Typically in a bezel setting, these accents add an extra sparkle when viewing the ring from the front-side.</value></data>
+  <data name="ClearKeywords" xml:space="preserve"><value>Clear Keywords</value></data>
+  <data name="ExportDesign" xml:space="preserve"><value>Export Design</value></data>
+  <data name="HelpForum" xml:space="preserve"><value>Help Forum</value></data>
+  <data name="Scrolls" xml:space="preserve"><value>Scrolls</value></data>
+  <data name="Backup" xml:space="preserve"><value>Backup</value></data>
+  <data name="BarSet" xml:space="preserve"><value>Bar Set</value></data>
+  <data name="ThroughFinger" xml:space="preserve"><value>Through Finger</value></data>
+  <data name="Budget" xml:space="preserve"><value>Budget</value></data>
+  <data name="Rhino_Out_Of_Date" xml:space="preserve"><value>Your Rhino 5 is out of date.  Please install Rhino 5 SR12 or later, then restart CounterSketch.</value></data>
+  <data name="Browse" xml:space="preserve"><value>Browse</value></data>
+  <data name="Bridal" xml:space="preserve"><value>Bridal</value></data>
+  <data name="Scallop" xml:space="preserve"><value>Scallop</value></data>
+  <data name="ShowcaseTileURL" xml:space="preserve"><value>Specify Showcase URL for tile</value></data>
+  <data name="Bypass" xml:space="preserve"><value>Bypass</value></data>
+  <data name="GlobalRotation" xml:space="preserve"><value>Toggle Between Global And Local Rotate</value></data>
+  <data name="Center" xml:space="preserve"><value>Center</value></data>
+  <data name="YourDesignLibraryHasBeenUpdatedToVersion" xml:space="preserve"><value>Your Design Library has been updated to version</value></data>
+  <data name="SettingsClusterTopPlates" xml:space="preserve"><value>Settings Cluster Top Plates</value></data>
+  <data name="Circle" xml:space="preserve"><value>Circle</value></data>
+  <data name="Create" xml:space="preserve"><value>Create</value></data>
+  <data name="DisplayKeywords" xml:space="preserve"><value>Display Keywords</value></data>
+  <data name="ALibraryUpdateIsDownloading" xml:space="preserve"><value>but a library update is downloading:</value></data>
+  <data name="Validating_License" xml:space="preserve"><value>Validating License</value></data>
+  <data name="ShowHideViewportControlHandles" xml:space="preserve"><value>Show / Hide Viewport Control Handles</value></data>
+  <data name="Advanced" xml:space="preserve"><value>Advanced</value></data>
+  <data name="Connecting_To_Rhino" xml:space="preserve"><value>Connecting to Rhino.</value></data>
+  <data name="CANCEL" xml:space="preserve"><value>CANCEL</value></data>
+  <data name="Cabochon" xml:space="preserve"><value>Cabochon</value></data>
+  <data name="SearchResults" xml:space="preserve"><value>Search Results</value></data>
+  <data name="CallSupport" xml:space="preserve"><value>Call Technical Support toll free at: </value></data>
+  <data name="StoneOptions" xml:space="preserve"><value>Stone Options</value></data>
+  <data name="PrincessDescription" xml:space="preserve"><value>A modern interpretation of a cushion and emerald shape, this square cut is becoming one of the shapes most desired by jewelry connoisseurs. Princess stones offer a bold, new, dimensional look that is both distinctive and darling.</value></data>
+  <data name="Import" xml:space="preserve"><value>Import</value></data>
+  <data name="CalfDescription" xml:space="preserve"><value>A calf-cut gem is a rarer shape. Typically used in a side setting, it resembles a triangle with the corners clipped – somewhat like a calf’s head. These gems are more commonly step-cut because brilliant cut calfs look like trillions with broken tips.</value></data>
+  <data name="ClearMarked" xml:space="preserve"><value>Clear Marked</value></data>
+  <data name="SelectRingSizeRegion" xml:space="preserve"><value>Select Ring Size Region</value></data>
+  <data name="PROPSSECONDARYMATERIAL" xml:space="preserve"><value>PROPS - SECONDARY MATERIAL</value></data>
+  <data name="IsDefault" xml:space="preserve"><value>Is Default</value></data>
+  <data name="DETAILS" xml:space="preserve"><value>DETAILS</value></data>
+  <data name="ErrorSendingQuote" xml:space="preserve"><value>Error Sending Quote</value></data>
+  <data name="Checking_for_Library_Updates" xml:space="preserve"><value>Checking for Library Updates</value></data>
+  <data name="KeepPartsWindowOpen" xml:space="preserve"><value>Keep Parts Window Open</value></data>
+  <data name="RenderOptions" xml:space="preserve"><value>Render Options</value></data>
+  <data name="Nature" xml:space="preserve"><value>Nature</value></data>
+  <data name="Allrightsreserved" xml:space="preserve"><value>All rights reserved</value></data>
+  <data name="ReferenceNoIsRequired" xml:space="preserve"><value>Reference # is required.</value></data>
+  <data name="QualityNote" xml:space="preserve"><value>Some gemstones and all colored diamonds have been treated or enhanced by heating (generally), diffusion (sapphire), filling surface imperfections (sapphire), oiling or waxing (emerald) or irradiation (blue topaz and colored diamonds). Additionally, emeralds and opals require special care in cleaning.</value></data>
+  <data name="PartDeletionMessage" xml:space="preserve"><value>Please confirm that you would like to remove this part. </value></data>
+  <data name="RingSize" xml:space="preserve"><value>Ring Size</value></data>
+  <data name="Portfolio" xml:space="preserve"><value>Portfolio</value></data>
+  <data name="ClickHereToRenameDesign" xml:space="preserve"><value>Click to rename this design.</value></data>
+  <data name="ThemePickerText" xml:space="preserve"><value>This option will allow you to customize the look and feel of CounterSketch.  Use a custom theme to design the User Interface to match your store(s) particular style.</value></data>
+  <data name="PORTFOLIOS" xml:space="preserve"><value>PORTFOLIOS</value></data>
+  <data name="FailedToSerializeProjectCorrectly" xml:space="preserve"><value>Failed to Serialize Project Correctly, if you continue to receive this error contact support for assistance</value></data>
+  <data name="SearchPortfolio" xml:space="preserve"><value>Search Portfolios</value></data>
+  <data name="EnteredNameAlreadyExists" xml:space="preserve"><value>Entered name already exists</value></data>
+  <data name="PendantHaloDescription" xml:space="preserve"><value>Halo designs feature a border of diamonds encircling the center stone, to emphasize its brilliant sparkle and increase the appearance of its size.</value></data>
+  <data name="must_have_a_value" xml:space="preserve"><value>must have a value</value></data>
+  <data name="PreparingDesign" xml:space="preserve"><value>Preparing Design</value></data>
+  <data name="KeywordSearch" xml:space="preserve"><value>Keyword Search</value></data>
+  <data name="BackupInterval" xml:space="preserve"><value>How often should an Auto Save be created (in seconds)?</value></data>
+  <data name="YourPartsLibrarywasupdatedtoVersion" xml:space="preserve"><value>Your Parts Library was updated to Version</value></data>
+  <data name="MilgrainDescription" xml:space="preserve"><value>Milgrain decoration are strings of tiny bead shapes coined right at the edges of a jewel. Milgrain can usually be found surrounding set stones or on the edges of a ring. This detail is commonly present in antique style jewelry.</value></data>
+  <data name="CurveEditorMirrorSweepPoints" xml:space="preserve"><value>Mirror Sweep Points</value></data>
+  <data name="Update" xml:space="preserve"><value>Update</value></data>
+  <data name="PrivateLabelCollection" xml:space="preserve"><value>Private Label Collection</value></data>
+  <data name="Projet_Sending_Model_To_Printer" xml:space="preserve"><value>Sending Model to Printer</value></data>
+  <data name="StretchImage" xml:space="preserve"><value>Stretch Image</value></data>
+  <data name="SecondaryDefault" xml:space="preserve"><value>Secondary Default</value></data>
+  <data name="ShoppingOnlyAvailableForDiamonds" xml:space="preserve"><value>Shopping only available for Diamonds.</value></data>
+  <data name="Diamond_Markup" xml:space="preserve"><value>Diamond Markup</value></data>
+  <data name="DesignEmptyOpenBuild" xml:space="preserve"><value>The design is empty, please Open or Build a design and try again!</value></data>
+  <data name="Bracelet" xml:space="preserve"><value>Bracelet</value></data>
+  <data name="CalculatingPricing" xml:space="preserve"><value>Calculating Pricing</value></data>
+  <data name="HalfMoonDescription" xml:space="preserve"><value>Inspired by the mystery of lunar phases, a half-moon stone is an ideal accent stone. They offer a distinctive alternative for those who seek a unique expression of their personal style.</value></data>
+  <data name="CollarsBeads" xml:space="preserve"><value>Collars &amp; Beads</value></data>
+  <data name="PostalCode" xml:space="preserve"><value>Postal Code</value></data>
+  <data name="NewLibraryFilesFound" xml:space="preserve"><value>New Library Files Found.</value></data>
+  <data name="BackgroundColor" xml:space="preserve"><value>Background color</value></data>
+  <data name="CenterGemSizeCount" xml:space="preserve"><value>Center Gem Size Count</value></data>
+  <data name="YourLibraryHasBeenUpdated" xml:space="preserve"><value>Your Library has been updated</value></data>
+  <data name="SelectTheLocationToExportTo" xml:space="preserve"><value>Select the location to export to</value></data>
+  <data name="NextDesign" xml:space="preserve"><value>Next Design</value></data>
+  <data name="ClickToRename" xml:space="preserve"><value>Click To Rename</value></data>
+  <data name="UseLegacyUpdateServer" xml:space="preserve"><value>Use Legacy Update Server</value></data>
+  <data name="FinishedSetAsSpecified" xml:space="preserve"><value>Finished &amp; Set (As Specified)</value></data>
+  <data name="DiamondCertificateTerm" xml:space="preserve"><value>A diamond certificate is issued by an accredited, independent gemological laboratory. In addition to the stone's carat weight and measurements, the certificate includes grades for the cut, color and clarity.</value></data>
+  <data name="HEIGHT" xml:space="preserve"><value>HEIGHT</value></data>
+  <data name="ThreeDPrinting" xml:space="preserve"><value>3D Printing</value></data>
+  <data name="Flourescence" xml:space="preserve"><value>Flourescence</value></data>
+  <data name="GemName" xml:space="preserve"><value>Gem Name</value></data>
+  <data name="GemSize" xml:space="preserve"><value>Gem Size</value></data>
+  <data name="SerializedDiamond" xml:space="preserve"><value>Serialized Diamond</value></data>
+  <data name="TileDescriptionWeddingBands" xml:space="preserve"><value>Symbolize your enduring commitment with custom designed wedding bands.</value></data>
+  <data name="RecoveryFileLocation" xml:space="preserve"><value>Recovery File Location</value></data>
+  <data name="Problem_Preventing_Startup" xml:space="preserve"><value>A problem is preventing starting up.  Please resolve the issue using the Troubleshooter or Contact Support for assistance.</value></data>
+  <data name="ArtNouveau" xml:space="preserve"><value>Art Nouveau</value></data>
+  <data name="OpenLogFile" xml:space="preserve"><value>Open Log File</value></data>
+  <data name="FamilyJewelry" xml:space="preserve"><value>Family Jewelry</value></data>
+  <data name="CARATWEIGHT" xml:space="preserve"><value>CARAT WEIGHT</value></data>
+  <data name="Princess" xml:space="preserve"><value>Princess</value></data>
+  <data name="PatternDescription" xml:space="preserve"><value>Rings featuring a repeating pattern in the design; either down the sides of the ring or across the entire band.</value></data>
+  <data name="TileCustomPicture" xml:space="preserve"><value>Add custom image to tile</value></data>
+  <data name="PendantFreeformDescription" xml:space="preserve"><value>Swirling, scrolling, asymmetrical, and organic are words that describe the freeform pendants in this design element.</value></data>
+  <data name="SupportHours_2" xml:space="preserve"><value>Available Mon - Fri, 8:00am - 5:00pm CST</value></data>
+  <data name="SupportHours_1" xml:space="preserve"><value>countersketch@gemvision.com</value></data>
+  <data name="Reference" xml:space="preserve"><value>Reference</value></data>
+  <data name="Project_Powered_On_Warning" xml:space="preserve"><value>Make sure that the Projet 1200 is powered on, and connected.</value></data>
+  <data name="BackupDescription" xml:space="preserve"><value>Creating a Backup will save all current projects into a single archived backup file. The backup file will be placed in the Backup Directory Location selected below.</value></data>
+  <data name="Milgrain" xml:space="preserve"><value>Milgrain</value></data>
+  <data name="CurveEditorSmoothLines" xml:space="preserve"><value>Smooth Lines</value></data>
+  <data name="ToGetPricingFixErrorsIn" xml:space="preserve"><value>To get pricing, fix errors in </value></data>
+  <data name="OutOfStock" xml:space="preserve"><value>Out of Stock</value></data>
+  <data name="ToggleLargeStoneSettingPrice" xml:space="preserve"><value>Toggle Large Stone And Setting Price</value></data>
+  <data name="ViewportBackground" xml:space="preserve"><value>Viewport Background</value></data>
+  <data name="DoubleClickToReset" xml:space="preserve"><value>Double-Click to Reset</value></data>
+  <data name="ExportSTL3DM" xml:space="preserve"><value>Export STL/3DM</value></data>
+  <data name="ScrollSwirl" xml:space="preserve"><value>Scroll &amp; Swirl</value></data>
+  <data name="Calculating" xml:space="preserve"><value>Calculating</value></data>
+  <data name="NoResults" xml:space="preserve"><value>No Results</value></data>
+  <data name="Quality" xml:space="preserve"><value>Quality</value></data>
+  <data name="Updating_Gem_Database" xml:space="preserve"><value>Updating Gem Database</value></data>
+  <data name="Precaching_Render_Images" xml:space="preserve"><value>Precaching Render Images</value></data>
+  <data name="NotEnoughFreeSpaceOnSelectedDriveForBackup" xml:space="preserve"><value>Not enough free space on selected drive for backup. Please delete unwanted files or choose another drive.</value></data>
+  <data name="PartsList" xml:space="preserve"><value>Parts List</value></data>
+  <data name="Laserengravequalitymarkandmylogo" xml:space="preserve"><value>Laser engrave quality mark and my logo.</value></data>
+  <data name="Stackable" xml:space="preserve"><value>Stackable</value></data>
+  <data name="ImportDesign" xml:space="preserve"><value>Import Design</value></data>
+  <data name="Projet_Time_Estimate" xml:space="preserve"><value>Printing. Job should take about</value></data>
+  <data name="DefaultPortfolioSaveDirectory" xml:space="preserve"><value>Default Portfolio Save Directory</value></data>
+  <data name="ResetTheme" xml:space="preserve"><value>Reset Theme</value></data>
+  <data name="PendantSolitaire" xml:space="preserve"><value>Pendant Solitaire</value></data>
+  <data name="AdditionalDesignNotes" xml:space="preserve"><value>Additional Design Notes?</value></data>
+  <data name="FillColor" xml:space="preserve"><value>Fill Color</value></data>
+  <data name="Checking_for_Application_Updates" xml:space="preserve"><value>Checking for Application Updates</value></data>
+  <data name="WordTo" xml:space="preserve"><value>to</value></data>
+  <data name="ShanksEternityAnniversary" xml:space="preserve"><value>Shanks Eternity &amp; Anniversary</value></data>
+  <data name="ReturnToResults" xml:space="preserve"><value>Return to Results</value></data>
+  <data name="UserPortfolioLocation" xml:space="preserve"><value>Target Location</value></data>
+  <data name="AExplanation" xml:space="preserve"><value>Lower quality with lower color saturation and more eye visible inclusions on some stones. For customer on a budget but still wants a genuine stone.  Used a lot in repair work.</value></data>
+  <data name="WEIGHT" xml:space="preserve"><value>WEIGHT</value></data>
+  <data name="SerialCode" xml:space="preserve"><value>Serial Code</value></data>
+  <data name="Themes" xml:space="preserve"><value>Themes</value></data>
+  <data name="BackingUp" xml:space="preserve"><value>Backing Up</value></data>
+  <data name="SideDetailDescription" xml:space="preserve"><value>Collar accents, side gem clusters, fluted shanks, and small accent gems all highlight the main stone in designs with this Design Element.</value></data>
+  <data name="ViewBookExample" xml:space="preserve"><value>View Book Example</value></data>
+  <data name="SingleMetalCastingCount" xml:space="preserve"><value>Single Metal Casting Count</value></data>
+  <data name="SideDefault" xml:space="preserve"><value>Side Default</value></data>
+  <data name="NewSession" xml:space="preserve"><value>New Session</value></data>
+  <data name="BackupLog" xml:space="preserve"><value>Backup Log</value></data>
+  <data name="Showing" xml:space="preserve"><value>Showing</value></data>
+  <data name="ShopForStone" xml:space="preserve"><value>Shop for Stone</value></data>
+  <data name="ShowAll" xml:space="preserve"><value>Show All</value></data>
+  <data name="Backup_Customer_Portfolios" xml:space="preserve"><value>Customer Portfolios:</value></data>
+  <data name="CabochonDescription" xml:space="preserve"><value>Rings designed to feature this polished  - but not faceted – gemstone.</value></data>
+  <data name="RingSizeSettings" xml:space="preserve"><value>Ring Size Settings</value></data>
+  <data name="UpdateLaterExplanation" xml:space="preserve"><value>Clicking LATER will delay the update until the next restart of CounterSketch.</value></data>
+  <data name="PendantGeometricDescription" xml:space="preserve"><value>Calculated designs that resemble shapes we are all familiar with; triangles, squares, rectangles, etc.</value></data>
+  <data name="RestoreWarning" xml:space="preserve"><value>WARNING: Restoring from a previous backup point can potentially DELETE projects that were created after the date of the restored backup. Please use caution and only use Recovery when absolutely necessary. Please be advised, the Restore process may take a long time depending on the size of the portfolios.</value></data>
+  <data name="SUMMARY" xml:space="preserve"><value>SUMMARY</value></data>
+  <data name="ReligiousJewelry" xml:space="preserve"><value>Religious Jewelry</value></data>
+  <data name="InstallationInfo" xml:space="preserve"><value>Installation Info</value></data>
+  <data name="Region" xml:space="preserve"><value>Region</value></data>
+  <data name="Remove" xml:space="preserve"><value>Remove</value></data>
+  <data name="Render" xml:space="preserve"><value>Render</value></data>
+  <data name="Rename" xml:space="preserve"><value>Rename</value></data>
+  <data name="IsNotInStock" xml:space="preserve"><value>is not in stock</value></data>
+  <data name="NoSearchFilterApplied" xml:space="preserve"><value>No search filter applied. This option shows all available options in this collection.</value></data>
+  <data name="YouMustAcknowledgeEngagementRing" xml:space="preserve"><value>You must Acknowledge Engagement Ring Statement.</value></data>
+  <data name="SideCluster" xml:space="preserve"><value>Side Cluster</value></data>
+  <data name="ToEditThisDesignSaveAndReOpen" xml:space="preserve"><value>To edit this Design save, and re-open.</value></data>
+  <data name="NoFreehandParts" xml:space="preserve"><value>No Freehand Parts</value></data>
+  <data name="DiamondShopperColorTerm" xml:space="preserve"><value>When diamonds are formed with traces of other minerals, rare and beautiful colors can result. These &amp;quot;fancy&amp;quot; colors range from blue and brilliant yellow to red, brown, pale green, pink, and violet. Because of their rarity, colored diamonds are highly desirable and typically more valuable.</value></data>
+  <data name="ExportUserPart" xml:space="preserve"><value>Export to User Parts</value></data>
+  <data name="SplitDescription" xml:space="preserve"><value>Split shank engagement rings feature a cleaved band that separates into multiple strands as it reaches the crown. The individual strands are often encrusted with pave set diamonds to further enhance the appearance of the design.</value></data>
+  <data name="RegionSettings" xml:space="preserve"><value>Region Settings</value></data>
+  <data name="ThreeStone" xml:space="preserve"><value>Three Stone</value></data>
+  <data name="Suffix" xml:space="preserve"><value>Suffix</value></data>
+  <data name="Origination" xml:space="preserve"><value>Origination</value></data>
+  <data name="Status" xml:space="preserve"><value>Status</value></data>
+  <data name="PendantGeometric" xml:space="preserve"><value>Pendant Geometric</value></data>
+  <data name="Sports" xml:space="preserve"><value>Sports</value></data>
+  <data name="Spiral" xml:space="preserve"><value>Spiral</value></data>
+  <data name="FinalOrder" xml:space="preserve"><value>Final Order</value></data>
+  <data name="Projet_Sending_multiple_models_to_Print" xml:space="preserve"><value>Sending Multiple Models to Printer</value></data>
+  <data name="Scroll" xml:space="preserve"><value>Scroll</value></data>
+  <data name="LatestVersion" xml:space="preserve"><value>Latest Version</value></data>
+  <data name="MatchingBandWarning" xml:space="preserve"><value>To ensure the engagement ring and band are a perfect match, the engagement ring must be sent in. If the engagement ring is not sent in, we cannot guarantee a match.</value></data>
+  <data name="Series" xml:space="preserve"><value>Series</value></data>
+  <data name="Search" xml:space="preserve"><value>Search</value></data>
+  <data name="TileDescriptionFashion" xml:space="preserve"><value>From celebrating life moments to expressing your style, we have a wide selection to help you choose the perfect fashion piece.</value></data>
+  <data name="Source" xml:space="preserve"><value>Source</value></data>
+  <data name="TileURL" xml:space="preserve"><value>Specify URL for tile</value></data>
+  <data name="OutputOptions" xml:space="preserve"><value>Output Options</value></data>
+  <data name="SharedProngDescription" xml:space="preserve"><value>Two stones share one prong. This low amount of metal to hold the stones in place allows for maximum light to reach each one, increasing the brilliance and sparkle.</value></data>
+  <data name="Simple" xml:space="preserve"><value>Simple</value></data>
+  <data name="Signet" xml:space="preserve"><value>Signet</value></data>
+  <data name="Unassign" xml:space="preserve"><value>Unassign</value></data>
+  <data name="Shanks" xml:space="preserve"><value>Shanks</value></data>
+  <data name="Shapes" xml:space="preserve"><value>Shapes</value></data>
+  <data name="ExportSearchResultImages" xml:space="preserve"><value>Export Search Result Images</value></data>
+  <data name="HideAdvancedStackControls" xml:space="preserve"><value>Hide Advanced Stack Controls</value></data>
+  <data name="TotalCaratWeight" xml:space="preserve"><value>Total Carat Weight</value></data>
+  <data name="Petite" xml:space="preserve"><value>Petite</value></data>
+  <data name="SignetDescription" xml:space="preserve"><value>A signet style ring is a band with a large area on top to highlight an engraving or a design. Today’s signets can also highlight a single stone.</value></data>
+  <data name="PearDescription" xml:space="preserve"><value>The pear cut has enhanced the charms of many famous style-setters. The evocative tear-drop outline communicates the wear’s willingness to embrace life and live it to the fullest.</value></data>
+  <data name="Accented" xml:space="preserve"><value>Accented</value></data>
+  <data name="DiamondCertificate" xml:space="preserve"><value>Diamond Certificate</value></data>
+  <data name="BarSetDescription" xml:space="preserve"><value>Stones are actually placed in the channel with supporting bars on either side of each stone. This style creates a beautiful display of uniformity in presentation. Since there is no additional metal between the stones, more light is allowed to pass through to the diamond.</value></data>
+  <data name="AllParts" xml:space="preserve"><value>All Parts</value></data>
+  <data name="Polish" xml:space="preserve"><value>Polish</value></data>
+  <data name="NarrowSearch" xml:space="preserve"><value>Narrow Search</value></data>
+  <data name="Phone1" xml:space="preserve"><value>Phone 1</value></data>
+  <data name="Phone2" xml:space="preserve"><value>Phone 2</value></data>
+  <data name="Components" xml:space="preserve"><value>Components</value></data>
+  <data name="RenameThisPortfolio" xml:space="preserve"><value>Rename this Portfolio.</value></data>
+  <data name="PendantCluster" xml:space="preserve"><value>Pendant Cluster</value></data>
+  <data name="SettingsHalosTrims" xml:space="preserve"><value>Settings Halos &amp; Trims</value></data>
+  <data name="Value_must_be_greater_than_100_percent" xml:space="preserve"><value>Value must be greater or equal to 100%</value></data>
+  <data name="ViewImages" xml:space="preserve"><value>View Images</value></data>
+  <data name="EmailSupport" xml:space="preserve"><value>Email support at: </value></data>
+  <data name="PendantSolitairDescription" xml:space="preserve"><value>A Solitaire design highlights the elegant simplicity of a single stone.</value></data>
+  <data name="TileDescriptionPackageKits" xml:space="preserve"><value>These collections represent what may be viewable and on-hand as a sample in the case.</value></data>
+  <data name="Statistics" xml:space="preserve"><value>Statistics</value></data>
+  <data name="Mounting_Markup" xml:space="preserve"><value>Mounting Markup</value></data>
+  <data name="CreateGroup" xml:space="preserve"><value>Create Group</value></data>
+  <data name="StaticPart" xml:space="preserve"><value>Static Part</value></data>
+  <data name="Preview" xml:space="preserve"><value>Preview</value></data>
+  <data name="PleasewaitwhileweextractthePartLibrary" xml:space="preserve"><value>Please wait while we extract the Part Library</value></data>
+  <data name="Ungroup" xml:space="preserve"><value>Ungroup</value></data>
+  <data name="SideChannel" xml:space="preserve"><value>Side Channel</value></data>
+  <data name="BridgeAccent" xml:space="preserve"><value>Bridge Accent</value></data>
+  <data name="Primary" xml:space="preserve"><value>Primary</value></data>
+  <data name="AddCustomEngraving" xml:space="preserve"><value>Add custom engraving</value></data>
+  <data name="Transmitting_Debug_Report" xml:space="preserve"><value>Transmitting Debug Report</value></data>
+  <data name="ThreeCDesigns" xml:space="preserve"><value>3C Designs</value></data>
+  <data name="SliderCount" xml:space="preserve"><value>Slider Count</value></data>
+  <data name="BezelDescription" xml:space="preserve"><value>Bezel settings are one of the oldest types of setting. Because bezel settings are more secure, they are a good choice for active people.</value></data>
+  <data name="OrderOptions" xml:space="preserve"><value>Order Options</value></data>
+  <data name="UploadingDesingFilePleaseWait" xml:space="preserve"><value>Uploading Design File, Please Wait.</value></data>
+  <data name="TileDescriptionThreeCDesigns" xml:space="preserve"><value>Create one-of-a-kind jewelry with these popular and flexible styles featuring full Choose/Change/Create possibilities.</value></data>
+  <data name="HideNEWRibbonsInSearchResults" xml:space="preserve"><value>Hide NEW Ribbons in Search Results</value></data>
+  <data name="WireRopeKnots" xml:space="preserve"><value>Wire Rope Knots</value></data>
+  <data name="IsNoLongerAvailablePleaseAssignAnotherDiamond" xml:space="preserve"><value>is no longer available.  Please assign another Diamond</value></data>
+  <data name="Unregister" xml:space="preserve"><value>Unregister</value></data>
+  <data name="ScrollSwirlDescription" xml:space="preserve"><value>This Design Element includes filigree work, scrolling details, and spiraling features on all the designs.</value></data>
+  <data name="SecondaryMetal" xml:space="preserve"><value>Secondary Metal</value></data>
+  <data name="Wiring_Events" xml:space="preserve"><value>Wiring Events</value></data>
+  <data name="FindYourStone" xml:space="preserve"><value>Find Your Diamond</value></data>
+  <data name="Problem_Finding_Rhino" xml:space="preserve"><value>There was a problem finding your Rhino 5 installation.  Please install Rhino 5 before running CounterSketch.</value></data>
+  <data name="CannotPerformRename" xml:space="preserve"><value>Cannot perform 'Rename'</value></data>
+  <data name="PendantJourneyDescription" xml:space="preserve"><value>Journey pendants celebrate a journey that you are just beginning, in the middle of, or have completed, and symbolizes how love grows over time.</value></data>
+  <data name="StoneTray" xml:space="preserve"><value>Stone Tray</value></data>
+  <data name="Copyright" xml:space="preserve"><value>Copyright</value></data>
+  <data name="LocalUpdateCache" xml:space="preserve"><value>Local Update Cache</value></data>
+  <data name="SupportHours_Zales_1" xml:space="preserve"><value>Available Mon - Sat, 7:00am - 12:00am CST</value></data>
+  <data name="SupportHours_Zales_2" xml:space="preserve"><value>Sunday, 8:30am - 8:30pm CST</value></data>
+  <data name="ExtendProngsWarning" xml:space="preserve"><value>Note: Not all prongs can be extended.</value></data>
+  <data name="SideView" xml:space="preserve"><value>Side View</value></data>
+  <data name="AsymmetricalDescription" xml:space="preserve"><value>An asymmetrical design is simply a style that isn’t the same on both sides. A lot of people are drawn to wearing more asymmetrical styles because they want to make a statement.</value></data>
+  <data name="GlobalRotationToggle" xml:space="preserve"><value>Global Rotation Toggle</value></data>
+  <data name="LayoutTwo" xml:space="preserve"><value>Layout 2</value></data>
+  <data name="LayoutOne" xml:space="preserve"><value>Layout 1</value></data>
+  <data name="TileDescriptionEngagement" xml:space="preserve"><value>From timeless solitaires, side stones, pave diamonds, or three stones, explore our wide range of styles and options for the perfect engagement ring.</value></data>
+  <data name="LargeTile" xml:space="preserve"><value>Large Tile</value></data>
+  <data name="TheMerchandisingSolution" xml:space="preserve"><value>The Merchandising Solution</value></data>
+  <data name="MissingQuotePhoneAddress" xml:space="preserve"><value>Missing quote phone address - Update Account Info</value></data>
+  <data name="MixMatch" xml:space="preserve"><value>Mix &amp; Match</value></data>
+  <data name="ThreeDM" xml:space="preserve"><value>3DM</value></data>
+  <data name="OpenDataFolder" xml:space="preserve"><value>Open Data Folder</value></data>
+  <data name="LightDarkTheme" xml:space="preserve"><value>Light/Dark Theme</value></data>
+  <data name="LayoutThree" xml:space="preserve"><value>Layout 3</value></data>
+  <data name="SideDetailAccentGem" xml:space="preserve"><value>Side Detail: Accent Gem</value></data>
+  <data name="SerializedDiamondShopping" xml:space="preserve"><value>Serialized Diamond (separate multiples with a comma)</value></data>
+  <data name="PerspectiveView" xml:space="preserve"><value>Perspective View</value></data>
+  <data name="CenterDefault" xml:space="preserve"><value>Center Default</value></data>
+  <data name="UnassignStone" xml:space="preserve"><value>Unassign Stone</value></data>
+  <data name="ReleaseNotes" xml:space="preserve"><value>Release Notes</value></data>
+  <data name="Journey" xml:space="preserve"><value>Journey</value></data>
+  <data name="Compare" xml:space="preserve"><value>Compare</value></data>
+  <data name="HalfBezel" xml:space="preserve"><value>Half Bezel</value></data>
+  <data name="MiddleInitial" xml:space="preserve"><value>Middle Initial</value></data>
+  <data name="Key_Profile_Error_Missing_Backup" xml:space="preserve"><value>Key Profile Error, Backup Key Profile is also Missing. Contact Support for Assistance.</value></data>
+  <data name="ConfirmUnderstandintOfStatement" xml:space="preserve"><value>Yes, I understand this statement</value></data>
+  <data name="MountingSubmissionForm" xml:space="preserve"><value>Mounting Submission Form</value></data>
+  <data name="EuropeanDescription" xml:space="preserve"><value>A sophisticated style with superb attention to detail; Modern European is minimalistic with clean lines and highly-refined design elements.</value></data>
+  <data name="UPDATED" xml:space="preserve"><value>UPDATED</value></data>
+  <data name="Shopping_for_serialized" xml:space="preserve"><value>Shopping for serialized</value></data>
+  <data name="Country" xml:space="preserve"><value>Country</value></data>
+  <data name="DiamondShopperClarity" xml:space="preserve"><value>Studies have been conducted to find the optimum proportions of a stone's cut so that it has the greatest amount of sparkle. If its cut falls within these parameters, it is considered an ideal cut. Stones with fine proportions, symmetry and polish optimize their interaction with light; they have increased brilliance, dispersion, and scintillation.</value></data>
+  <data name="Decorative" xml:space="preserve"><value>Decorative</value></data>
+  <data name="Password" xml:space="preserve"><value>Password</value></data>
+  <data name="DESIGN_OPTIONS" xml:space="preserve"><value>DESIGN OPTIONS</value></data>
+  <data name="TopDown" xml:space="preserve"><value>Top Down</value></data>
+  <data name="TopView" xml:space="preserve"><value>Top View</value></data>
+  <data name="ClickToExportCurrentCustomColorTheme" xml:space="preserve"><value>Click to Export Current Custom Color Theme</value></data>
+  <data name="InvalidFinishSpecifiedwhenallgemsareNoStoneSupplieduseFinished" xml:space="preserve"><value>Invalid Finish Specified when all gems are No Stone(s) Supplied, use Finished Casting (no gems) instead</value></data>
+  <data name="UpdateModelManualExplanation" xml:space="preserve"><value>You have selected MANUAL updates.  Updates will not be downloaded by the application.  In order to obtain the newest version you need to click the Update All button.  The newest version will be downloaded and it will be available to install the next time you start CounterSketch.</value></data>
+  <data name="Infinity" xml:space="preserve"><value>Infinity</value></data>
+  <data name="OrganicDescription" xml:space="preserve"><value>Emphasizing beauty and harmony, Organic Design Elements feature free-flowing curves and expressive forms: these designs include freeform curves, curvilinear style, and amorphous features.</value></data>
+  <data name="PegHead" xml:space="preserve"><value>Peg Head</value></data>
+  <data name="SideChannelDescription" xml:space="preserve"><value>A channel-set ring arranges gems in a line that is inlaid into the ring's band with a small metal lip on each edge to keep the stones in place. Because the gems are fully set into the ring, their fragile girdles are protected from chips, and the setting is generally sturdier more exposed designs.</value></data>
+  <data name="Categories_NEW" xml:space="preserve"><value>NEW</value></data>
+  <data name="Pendant" xml:space="preserve"><value>Pendant</value></data>
+  <data name="GetPricing" xml:space="preserve"><value>Get Pricing</value></data>
+  <data name="Collection" xml:space="preserve"><value>Collection</value></data>
+  <data name="PROPORTIONS" xml:space="preserve"><value>PROPORTIONS</value></data>
+  <data name="DecorativeCluster" xml:space="preserve"><value>Decorative Cluster</value></data>
+  <data name="TileDescriptionAllRingDesigns" xml:space="preserve"><value>Explore the entire collection of customizable rings available in a range of materials and customized to your individual style and price.</value></data>
+  <data name="Categories_SHOP" xml:space="preserve"><value>SHOP</value></data>
+  <data name="ShowHidePart" xml:space="preserve"><value>Show/Hide Part</value></data>
+  <data name="RenamecurrentPortfolio" xml:space="preserve"><value>Rename current Portfolio</value></data>
+  <data name="Unassigned" xml:space="preserve"><value>Unassigned</value></data>
+  <data name="ClassicDescription" xml:space="preserve"><value>Timeless, traditional and always tasteful, Classic style remains in fashion no matter what the times may bring.</value></data>
+  <data name="DesignBy" xml:space="preserve"><value>Design By</value></data>
+  <data name="CSStandardPackage" xml:space="preserve"><value>CS Standard Package</value></data>
+  <data name="UKOriginalCSSampleKit" xml:space="preserve"><value>UK Original CS Sample Kit</value></data>
+  <data name="GemsLessThan4mm" xml:space="preserve"><value>Gems Less Than 4mm</value></data>
+  <data name="Pattern" xml:space="preserve"><value>Pattern</value></data>
+  <data name="SETTING" xml:space="preserve"><value>SETTING</value></data>
+  <data name="ClearingOldDesigns" xml:space="preserve"><value>Clearing Old Designs</value></data>
+  <data name="SemiFinished" xml:space="preserve"><value>Semi-Finished</value></data>
+  <data name="DesignLibrary" xml:space="preserve"><value>Design Library</value></data>
+  <data name="SymbolicDescription" xml:space="preserve"><value>This Design Element consists of rings with designs that have a symbolic meaning: religious symbols, Claddagh designs, angles, etc.</value></data>
+  <data name="ThroughFingerView" xml:space="preserve"><value>Through Finger View</value></data>
+  <data name="AsymetricalDescription" xml:space="preserve"><value>An asymmetrical design is simply a style that isn’t the same on both sides. A lot of people are drawn to wearing more asymmetrical styles because they want to make a statement.</value></data>
+  <data name="OrderSummary_Requires24HourQuote" xml:space="preserve"><value>This Order requires 24 hours to obtain an accurate price.</value></data>
+  <data name="Classic" xml:space="preserve"><value>Classic</value></data>
+  <data name="SideStones" xml:space="preserve"><value>Side Stones</value></data>
+  <data name="ProjectAlreadyExists" xml:space="preserve"><value>Project already Exists</value></data>
+  <data name="Disabling_Trouble_Plugins" xml:space="preserve"><value>Disabling Trouble Plug-ins</value></data>
+  <data name="Projet_ErrorInstallingUSBDrivers" xml:space="preserve"><value>Error installing Projet 1200 USB Drivers</value></data>
+  <data name="ModelNumber" xml:space="preserve"><value>Model Number</value></data>
+  <data name="TwentyFourHour" xml:space="preserve"><value>24 Hour</value></data>
+  <data name="NoResultsFound" xml:space="preserve"><value>No Results Found</value></data>
+  <data name="Pendants" xml:space="preserve"><value>Pendants</value></data>
+  <data name="PlaceFinalOrderExplanation" xml:space="preserve"><value>Clicking Place Final Order will place the order at the price displayed</value></data>
+  <data name="CenterShape" xml:space="preserve"><value>Center Shape</value></data>
+  <data name="NewDesigns" xml:space="preserve"><value>New Designs</value></data>
+  <data name="Cluster" xml:space="preserve"><value>Cluster</value></data>
+  <data name="DoubleClickToRename" xml:space="preserve"><value>Double-Click to Rename this Portfolio.</value></data>
+  <data name="DeletePortfolioAndDesigns" xml:space="preserve"><value>Delete this Portfolio and it's designs.</value></data>
+  <data name="Cancel_lowercase" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Key_Profile_Error_Contact_Support" xml:space="preserve"><value>Key Profile Error. Contact Support for Assistance.</value></data>
+  <data name="UpdateAll" xml:space="preserve"><value>Check for updates</value></data>
+  <data name="TransitionTime" xml:space="preserve"><value>Transition Time (seconds)</value></data>
+  <data name="Merging_Rhino" xml:space="preserve"><value>Merging Rhino</value></data>
+  <data name="BrightCutDescription" xml:space="preserve"><value>Bright Cut is a decorative setting that is used to enhance the size and beauty of the stone.</value></data>
+  <data name="SendingRingToStuller" xml:space="preserve"><value>Yes, I am sending this ring to Stuller, Inc.</value></data>
+  <data name="Listening_for_Arguments" xml:space="preserve"><value>Listening for Arguments</value></data>
+  <data name="AdjustTileSize" xml:space="preserve"><value>Adjust Tile Size</value></data>
+  <data name="Purchase_Stone_s" xml:space="preserve"><value>Purchase Stone(s)</value></data>
+  <data name="DesignSaveHistory" xml:space="preserve"><value>Design Save History</value></data>
+  <data name="SharedProng" xml:space="preserve"><value>Shared Prong</value></data>
+  <data name="Default" xml:space="preserve"><value>Default</value></data>
+  <data name="MeleeQuality" xml:space="preserve"><value>Melee Quality</value></data>
+  <data name="HalfBezelDescription" xml:space="preserve"><value>Solid bezels offer a more traditional look, whereas half bezels are split into 2 sections and give a more modern appearance.</value></data>
+  <data name="TwoStoneDescription" xml:space="preserve"><value>The romance and flowing asymmetry of two-stone rings have won the hearts of bridal customers everywhere. This selection includes bestsellers in three popular categories so you have many ways to achieve the look you want. The customizable 3C® styles offer multiple stone shapes and metal qualities. Two-stone rings hold great appeal as engagements rings, anniversary gifts and right-hand rings.</value></data>
+  <data name="DisplayDesignerName" xml:space="preserve"><value>Display Designer Name</value></data>
+  <data name="PaveDescription" xml:space="preserve"><value>Like a metal honeycomb, small gemstones are placed very close together in tiny holes of the frame. All you see are diamonds since no metal is visible to the eye. This setting reflects quality, elegance, and brilliance.</value></data>
+  <data name="PreviousDesign" xml:space="preserve"><value>Previous Design</value></data>
+  <data name="RepairMesh" xml:space="preserve"><value>Repair Mesh</value></data>
+  <data name="DisplayOptions" xml:space="preserve"><value>Display Options</value></data>
+  <data name="Engraved" xml:space="preserve"><value>Engraved</value></data>
+  <data name="UpdateSettings" xml:space="preserve"><value>Update Settings</value></data>
+  <data name="SoftwareActivationPrompt" xml:space="preserve"><value>User Credentials required for Activation.  Please enter your credentials and Serial Code below to Activate the software.</value></data>
+  <data name="AllDesignsandHistorywillbelost" xml:space="preserve"><value>(All Designs and History will be lost.)</value></data>
+  <data name="TotalPrice" xml:space="preserve"><value>Total Price</value></data>
+  <data name="NewPortfolioName" xml:space="preserve"><value>New Portfolio Name ...</value></data>
+  <data name="EverEverBridalCollection" xml:space="preserve"><value>Ever &amp; Ever Bridal Collection</value></data>
+  <data name="OriginalCSSampleKit" xml:space="preserve"><value>Original CS Sample Kit</value></data>
+  <data name="Eternity" xml:space="preserve"><value>Eternity</value></data>
+  <data name="Channel" xml:space="preserve"><value>Channel</value></data>
+  <data name="Symbolic" xml:space="preserve"><value>Symbolic</value></data>
+  <data name="Training" xml:space="preserve"><value>Training</value></data>
+  <data name="DiamondShopperTerm" xml:space="preserve"><value>The term "cut" has two references. One is to the stone's shape. As the name suggests, shape (round, princess; radiant, etc.) describes a stone's form, primarily as viewed from above. All stone shapes have different attributes, but, overall, the beauty of the individual shapes is a matter of personal taste. The top-selling cut shape is round. All other cut shapes like emerald, oval, pear, heart, princess and marquise are considered fancy cuts or shapes.</value></data>
+  <data name="PleaseWait" xml:space="preserve"><value>Please Wait</value></data>
+  <data name="Connect_To_Printer" xml:space="preserve"><value>Connect to Printer...</value></data>
+  <data name="Building_the_UI" xml:space="preserve"><value>Building the UI</value></data>
+  <data name="ShowDesignNumbers" xml:space="preserve"><value>Show Design Numbers</value></data>
+  <data name="Symmetry" xml:space="preserve"><value>Symmetry</value></data>
+  <data name="DefaultPortfolioLocation" xml:space="preserve"><value>Default Location</value></data>
+  <data name="ExportsThisMonth" xml:space="preserve"><value>Exports this Month</value></data>
+  <data name="ShanksRemounts" xml:space="preserve"><value>Shanks Remounts</value></data>
+  <data name="CreateCustomTheme" xml:space="preserve"><value>Create Custom Theme</value></data>
+  <data name="DesignElement" xml:space="preserve"><value>Design Element</value></data>
+  <data name="InvalidCharacterInName" xml:space="preserve"><value>Invalid character in name</value></data>
+  <data name="Projet_MakeSureThatProjectIsOn" xml:space="preserve"><value>Make sure that the Projet 1200 is powered on, and connected.</value></data>
+  <data name="VintageDescription" xml:space="preserve"><value>Inspired by designs of the past and nostalgic in spirit; Vintage style designs are feminine, delicate and ornate in character.</value></data>
+  <data name="AfterOpeningDesignExpandFirstItem" xml:space="preserve"><value>After opening design, expand the first set of controls</value></data>
+  <data name="ClarityGrade" xml:space="preserve"><value>Clarity Grade</value></data>
+  <data name="WasSentSuccessfully" xml:space="preserve"><value>was sent successfully.</value></data>
+  <data name="PrintToProjet1200" xml:space="preserve"><value>Print to Projet 1200</value></data>
+  <data name="is_not_supported_at_this_time" xml:space="preserve"><value>is not supported at this time.</value></data>
+  <data name="AddADuplicateOfBand1ToOrder" xml:space="preserve"><value>Add a Duplicate of Band 1 to Order</value></data>
+  <data name="YourBITSServiceIsNotRunning" xml:space="preserve"><value>Your BITS Service may not be enabled.  Please make certain that the Background Intelligent Transfer service is not disabled, and that it is running.  You may contact CounterSketch Support if you need assistance enabling the service.  CounterSketch cannot run without this service enabled.</value></data>
+  <data name="FashionBands" xml:space="preserve"><value>Fashion Bands</value></data>
+  <data name="GypsyDescription" xml:space="preserve"><value>Stones are sunk into holes so they are flush with the ring's surface. This setting is great in Men’s designs or if you desire a more modern look.</value></data>
+  <data name="PartsUpdated" xml:space="preserve"><value>Parts Updated</value></data>
+  <data name="Display" xml:space="preserve"><value>Display</value></data>
+  <data name="Cushion" xml:space="preserve"><value>Cushion</value></data>
+  <data name="DisplayModelNumberInDesignTooltips" xml:space="preserve"><value>Display model number in design tooltips</value></data>
+  <data name="ScallopDescription" xml:space="preserve"><value>Two stones share one prong in this setting, but underneath each stone the metal appears to be “scooped-out” or scalloped; adding a more feminine feel to the design.</value></data>
+  <data name="PlaceFinalOrder" xml:space="preserve"><value>Place Final Order</value></data>
+  <data name="Pinched" xml:space="preserve"><value>Pinched</value></data>
+  <data name="ColorTheme" xml:space="preserve"><value>Color Theme</value></data>
+  <data name="Pierced" xml:space="preserve"><value>Pierced</value></data>
+  <data name="HideNewAndUpdatedBadges" xml:space="preserve"><value>Hide NEW and UPDATED Badges</value></data>
+  <data name="ExportTo" xml:space="preserve"><value>Export To</value></data>
+  <data name="CenterGemControlGuid" xml:space="preserve"><value>Center Gem Control Guid</value></data>
+  <data name="ColorGrade" xml:space="preserve"><value>Color Grade</value></data>
+  <data name="WeddingBand2" xml:space="preserve"><value>Wedding Band 2</value></data>
+  <data name="WeddingBand1" xml:space="preserve"><value>Wedding Band 1</value></data>
+  <data name="WeddingBands" xml:space="preserve"><value>Wedding Bands</value></data>
+  <data name="TileDescriptionPendants" xml:space="preserve"><value>From the perfect sparkling solitaire, to extravagant spiraling designs, we have a pendant to suit every taste and price range.</value></data>
+  <data name="Thedesignhasalreadybeenorderedpleasesaveandreopentoestimateagain" xml:space="preserve"><value>The design has already been ordered, please save and re-open to estimate again!</value></data>
+  <data name="ButterfliesInsects" xml:space="preserve"><value>Butterflies/Insects</value></data>
+  <data name="ThisComputerIsUnregistered" xml:space="preserve"><value>This computer has been unregistered.</value></data>
+  <data name="PendantCircle" xml:space="preserve"><value>Pendant Circle</value></data>
+  <data name="SaveNewPortfolioPrompt" xml:space="preserve"><value>Save {New Portfolio} before continuing?</value></data>
+  <data name="UpdateModeAutomaticExplanation" xml:space="preserve"><value>Click here to check for updates.</value></data>
+  <data name="SelectedDesiredLanguage" xml:space="preserve"><value>Select Desired Language</value></data>
+  <data name="NoStoneSuppliedNote" xml:space="preserve"><value>No stone supplied, I will set myself.</value></data>
+  <data name="DecorativeSetting" xml:space="preserve"><value>Decorative Setting</value></data>
+  <data name="SettingsDecorations" xml:space="preserve"><value>Settings Decorations</value></data>
+  <data name="Asymmetrical" xml:space="preserve"><value>Asymmetrical</value></data>
+  <data name="to" xml:space="preserve"><value>to</value></data>
+  <data name="MI" xml:space="preserve"><value>MI</value></data>
+  <data name="No" xml:space="preserve"><value>No</value></data>
+  <data name="Of" xml:space="preserve"><value>of</value></data>
+  <data name="OK" xml:space="preserve"><value>OK</value></data>
+  <data name="PendantHalo" xml:space="preserve"><value>Pendant Halo</value></data>
+  <data name="LargeStonesSource" xml:space="preserve"><value>Large Stones Source</value></data>
+  <data name="Disclaimer" xml:space="preserve"><value>* Disclaimer &amp;amp; Limitation of Liability Regarding Diamond Laboratory Grading Reports. View Disclaimer</value></data>
+  <data name="Emerald" xml:space="preserve"><value>Emerald</value></data>
+  <data name="SearchResultsOptions" xml:space="preserve"><value>Search Results Options</value></data>
+  <data name="Packages" xml:space="preserve"><value>Packages</value></data>
+  <data name="Diamond_must_be_assigned_to_Estimate" xml:space="preserve"><value>Diamond must be assigned to Estimate or Order.</value></data>
+  <data name="AddCustomTile" xml:space="preserve"><value>Add Custom Tile</value></data>
+  <data name="CAMMode_TurningOffManufactureSettings" xml:space="preserve"><value>Turning Off Manufacture Settings</value></data>
+  <data name="SaveModifiedDesignsToCurrentPortfolio" xml:space="preserve"><value>Do you want to save the current design to the selected portfolio?</value></data>
+  <data name="NoExtendedSliderRanges" xml:space="preserve"><value>No Extended Slider Ranges</value></data>
+  <data name="RenderGroundPlaneOnAlphaChannel" xml:space="preserve"><value>Render Ground Plane on Alpha Channel</value></data>
+  <data name="Contemporary" xml:space="preserve"><value>Contemporary</value></data>
+  <data name="QuoteRequired" xml:space="preserve"><value>Quote Required</value></data>
+  <data name="ManualSizedStones" xml:space="preserve"><value>No Manual Sized Stones</value></data>
+  <data name="Projet_Cancel_Job" xml:space="preserve"><value>Are you sure you want to cancel this print job?</value></data>
+  <data name="Element" xml:space="preserve"><value>Element</value></data>
+  <data name="OpenSubmissionForm" xml:space="preserve"><value>Open Submission Form</value></data>
+  <data name="Missing_Drive_Letter" xml:space="preserve"><value>Missing Drive Letter</value></data>
+  <data name="FontSize" xml:space="preserve"><value>FontSize</value></data>
+  <data name="Backup_UNC_Path_Not_Allowed" xml:space="preserve"><value>UNC paths are not allowed for backup destinations. If you would like to save to a network drive please map to a drive letter first and try again.</value></data>
+  <data name="Trillion" xml:space="preserve"><value>Trillion</value></data>
+  <data name="Window_is_Loaded" xml:space="preserve"><value>Window is Loaded</value></data>
+  <data name="Projet_Printer" xml:space="preserve"><value>Projet Printer</value></data>
+  <data name="ClickToAdjustAccent" xml:space="preserve"><value>Click to Adjust Accent</value></data>
+  <data name="CathedralDescription" xml:space="preserve"><value>A cathedral set ring mimics the grace and elegance of the arches seen in church cathedrals by introducing its own arches to frame the focal point of the ring - the central diamond or gemstone - with beauty and honor.</value></data>
+  <data name="Preparing_Design_Library" xml:space="preserve"><value>Preparing Design Library</value></data>
+  <data name="PhoneInvalid" xml:space="preserve"><value>Phone Invalid</value></data>
+  <data name="Please_select_a_Center_Gem" xml:space="preserve"><value>Please select a Center Gem Shape prior to filtering by Size.</value></data>
+  <data name="Freeform" xml:space="preserve"><value>Freeform</value></data>
+  <data name="Freehand" xml:space="preserve"><value>Freehand</value></data>
+  <data name="PortfolioInformation" xml:space="preserve"><value>Change the location that portfolios will be stored. Use the default location button to open the original portfolio save location. Use the target location button to open to the new specified location. NOTE: You will have to copy all portfolio data from the original location to the new location manually, otherwise old data not appear after selecting a new save location </value></data>
+  <data name="OvalDescription" xml:space="preserve"><value>Warm and embracing, a oval-cut suggests open-mindedness and generosity of spirit. Featured as a solitaire or paired together in a three-stone design, ovals offer the wearer a gift to be treasured for generations.</value></data>
+  <data name="DesignTeam" xml:space="preserve"><value>Design Team</value></data>
+  <data name="CUSTOMERINFORMATION" xml:space="preserve"><value>CUSTOMER INFORMATION</value></data>
+  <data name="SkinTone" xml:space="preserve"><value>Skin Tone</value></data>
+  <data name="CurveEditorMirrorCurve" xml:space="preserve"><value>Mirror Curve</value></data>
+  <data name="Select_Center_Shape" xml:space="preserve"><value>Select Center Shape</value></data>
+  <data name="ClawProngs" xml:space="preserve"><value>Claw Prongs</value></data>
+  <data name="OrderHistory" xml:space="preserve"><value>Order History</value></data>
+  <data name="Glamorous" xml:space="preserve"><value>Glamorous</value></data>
+  <data name="ShowSide" xml:space="preserve"><value>Show Side</value></data>
+  <data name="Men" xml:space="preserve"><value>Men</value></data>
+  <data name="CUT" xml:space="preserve"><value>CUT</value></data>
+  <data name="NOW" xml:space="preserve"><value>NOW</value></data>
+  <data name="New" xml:space="preserve"><value>New</value></data>
+  <data name="Key" xml:space="preserve"><value>Key</value></data>
+  <data name="QTY" xml:space="preserve"><value>QTY</value></data>
+  <data name="The" xml:space="preserve"><value>The</value></data>
+  <data name="Red" xml:space="preserve"><value>Red</value></data>
+  <data name="STL" xml:space="preserve"><value>STL</value></data>
+  <data name="SPI" xml:space="preserve"><value>SPI</value></data>
+  <data name="Yes" xml:space="preserve"><value>Yes</value></data>
+  <data name="StudioFlex" xml:space="preserve"><value>Studio Flex</value></data>
+  <data name="Email" xml:space="preserve"><value>Email</value></data>
+  <data name="Error" xml:space="preserve"><value>Error</value></data>
+  <data name="DesignPreviouslyOrdered" xml:space="preserve"><value>DESIGN PREVIOUSLY ORDERED</value></data>
+  <data name="About" xml:space="preserve"><value>About</value></data>
+  <data name="Apply" xml:space="preserve"><value>Apply</value></data>
+  <data name="SideSetting" xml:space="preserve"><value>Side Setting</value></data>
+  <data name="PendantDecorative" xml:space="preserve"><value>Pendant Decorative</value></data>
+  <data name="Gypsy" xml:space="preserve"><value>Gypsy</value></data>
+  <data name="Depth" xml:space="preserve"><value>Depth</value></data>
+  <data name="Model" xml:space="preserve"><value>Model</value></data>
+  <data name="Metal" xml:space="preserve"><value>Metal</value></data>
+  <data name="Bezel" xml:space="preserve"><value>Bezel</value></data>
+  <data name="Bands" xml:space="preserve"><value>Bands</value></data>
+  <data name="Band1" xml:space="preserve"><value>Band 1</value></data>
+  <data name="Band2" xml:space="preserve"><value>Band 2</value></data>
+  <data name="Bails" xml:space="preserve"><value>Bails</value></data>
+  <data name="Count" xml:space="preserve"><value>Count</value></data>
+  <data name="Close" xml:space="preserve"><value>Close</value></data>
+  <data name="Clear" xml:space="preserve"><value>Clear</value></data>
+  <data name="Chain" xml:space="preserve"><value>Chain</value></data>
+  <data name="Cross" xml:space="preserve"><value>Cross</value></data>
+  <data name="Culet" xml:space="preserve"><value>Culet</value></data>
+  <data name="TroubleshootingExplanation" xml:space="preserve"><value>If you are having troubles running CounterSketch or using some of its features, you can launch the CounterSketch Troubleshooter by clicking the button below.</value></data>
+  <data name="CARAT" xml:space="preserve"><value>CARAT</value></data>
+  <data name="COLOR" xml:space="preserve"><value>COLOR</value></data>
+  <data name="CreateNewPortfolioPrompt" xml:space="preserve"><value>Create a new Portfolio?</value></data>
+  <data name="RENDERPROPS" xml:space="preserve"><value>RENDER PROPS</value></data>
+  <data name="Items" xml:space="preserve"><value>Items</value></data>
+  <data name="Notes" xml:space="preserve"><value>Notes</value></data>
+  <data name="Converting_to_new_Library_This_will_take_some_time" xml:space="preserve"><value>Converting to new Library. (This will take some time.)</value></data>
+  <data name="LATER" xml:space="preserve"><value>LATER</value></data>
+  <data name="Order" xml:space="preserve"><value>Order</value></data>
+  <data name="Other" xml:space="preserve"><value>Other</value></data>
+  <data name="Login" xml:space="preserve"><value>Login</value></data>
+  <data name="Heart" xml:space="preserve"><value>Heart</value></data>
+  <data name="Weave" xml:space="preserve"><value>Weave</value></data>
+  <data name="Women" xml:space="preserve"><value>Women</value></data>
+  <data name="Twist" xml:space="preserve"><value>Twist</value></data>
+  <data name="Table" xml:space="preserve"><value>Table</value></data>
+  <data name="Teens" xml:space="preserve"><value>Teens</value></data>
+  <data name="Title" xml:space="preserve"><value>Title</value></data>
+  <data name="WIDTH" xml:space="preserve"><value>WIDTH</value></data>
+  <data name="Theme" xml:space="preserve"><value>Theme</value></data>
+  <data name="NameCannotBeBlank" xml:space="preserve"><value>Name cannot be blank</value></data>
+  <data name="ShowCounterSketchLog" xml:space="preserve"><value>Show CounterSketch Log</value></data>
+  <data name="Reset" xml:space="preserve"><value>Reset</value></data>
+  <data name="Ready" xml:space="preserve"><value>Ready!</value></data>
+  <data name="Round" xml:space="preserve"><value>Round</value></data>
+  <data name="State" xml:space="preserve"><value>State</value></data>
+  <data name="Stone" xml:space="preserve"><value>Stone</value></data>
+  <data name="Style" xml:space="preserve"><value>Style</value></data>
+  <data name="Split" xml:space="preserve"><value>Split</value></data>
+  <data name="Sport" xml:space="preserve"><value>Sport</value></data>
+  <data name="PRICE" xml:space="preserve"><value>PRICE</value></data>
+  <data name="Shank" xml:space="preserve"><value>Shank</value></data>
+  <data name="Prong" xml:space="preserve"><value>Prong</value></data>
+  <data name="Plate" xml:space="preserve"><value>Plate</value></data>
+  <data name="Phone" xml:space="preserve"><value>Phone</value></data>
+  <data name="SHAPE" xml:space="preserve"><value>SHAPE</value></data>
+  <data name="LookBookExplanation" xml:space="preserve"><value>You've taken the time to get to know your customer and design a ring she will love.  Set your store apart from others by delivering More Than a Ring.  This look book details the journey of your customer's ring from the CAD Design to the wax mold to the raw casting to the finished piece.  The book has a place for a photo of the newly engaged couple and a holder for your business card.  Give the gift that tells the story of how a couple's engagement mirrors the journey of their love with this beautiful keepsake.</value></data>
+  <data name="OtherOptions" xml:space="preserve"><value>Other Options</value></data>
+  <data name="XAndO" xml:space="preserve"><value>X And O</value></data>
+  <data name="SculpturalDescription" xml:space="preserve"><value>Bold and geometric describe the rings in this Design Element group.</value></data>
+  <data name="PendantJourney" xml:space="preserve"><value>Pendant Journey</value></data>
+  <data name="NoStoneSuppliedIWillSetMyself" xml:space="preserve"><value>No Stone Supplied, Will Set Myself</value></data>
+  <data name="HideQuickEstimateButton" xml:space="preserve"><value>Hide Quick Estimate Button</value></data>
+  <data name="Sending_Statistics" xml:space="preserve"><value>Sending Statistics</value></data>
+  <data name="DecorativeSettingBridgeAccent" xml:space="preserve"><value>Decorative Setting: Bridge Accent</value></data>
+  <data name="Key_Profile_Error_No_Internet_Missing_Backup" xml:space="preserve"><value>No Internet Available, and Backup Key Profile is Missing. Contact Support for Assistance.</value></data>
+  <data name="PortfolioSettings" xml:space="preserve"><value>Portfolio Settings</value></data>
+  <data name="ShankswithBridge" xml:space="preserve"><value>Shanks with Bridge</value></data>
+  <data name="Username" xml:space="preserve"><value>Username</value></data>
+  <data name="LastName" xml:space="preserve"><value>Last Name</value></data>
+  <data name="RepeatingElement" xml:space="preserve"><value>Repeating Element</value></data>
+  <data name="Address" xml:space="preserve"><value>Address</value></data>
+  <data name="AddAGem" xml:space="preserve"><value>Add A Gem</value></data>
+  <data name="AddText" xml:space="preserve"><value>Add Text</value></data>
+  <data name="ClickToRefreshAvailableThemes" xml:space="preserve"><value>Click to Refresh Available Themes</value></data>
+  <data name="Continue" xml:space="preserve"><value>Continue</value></data>
+  <data name="UnableToCloseBecauseBackupRunning" xml:space="preserve"><value>There is a Backup currently active. Cannot close CounterSketch at this time.</value></data>
+  <data name="BaseDesign" xml:space="preserve"><value>Base Design</value></data>
+  <data name="PackagesKits" xml:space="preserve"><value>Packages Kits</value></data>
+  <data name="SqCushion" xml:space="preserve"><value>Sq. Cushion</value></data>
+  <data name="SideDetail" xml:space="preserve"><value>Side Detail</value></data>
+  <data name="EnterYourStullerCredentialsAndSerialCode" xml:space="preserve"><value>Enter your Stuller.com credentials and Serial Code below</value></data>
+  <data name="NARROWYOURCHOICES" xml:space="preserve"><value>NARROW YOUR CHOICES</value></data>
+  <data name="CenterSetting" xml:space="preserve"><value>Center Setting</value></data>
+  <data name="CurveProfileEditor" xml:space="preserve"><value>Profile Editor</value></data>
+  <data name="ExportingPleaseWait" xml:space="preserve"><value>Exporting please wait</value></data>
+  <data name="DiamondShopperCut" xml:space="preserve"><value>While cut does include shape, in terms of the 4 Cs, it refers to the proportions of the cut. The cut grade is an objective measure of a stone's light performance, or the amount of sparkle it has. A stone's overall proportions, as well as the size and position of its facets, make up the cut. The consistency and balance of these can greatly affect how the stone captures light and reflects it back to the eye. When a stone is cut with the proper proportions, light enters the stone and is returned through the top. If it is too shallow, light will escape from the bottom of the stone. If it is cut too deep, light will escape out the sides.</value></data>
+  <data name="ApplicationUpdateMode" xml:space="preserve"><value>Application Updates</value></data>
+  <data name="CalculatedMetalVolume" xml:space="preserve"><value>Calculated Metal Volume</value></data>
+  <data name="ClickToAdjustTextBoxBackground" xml:space="preserve"><value>Click to Adjust TextBox Background</value></data>
+  <data name="DesignDetailOptions" xml:space="preserve"><value>Design Detail Options</value></data>
+  <data name="PendantFreeform" xml:space="preserve"><value>Pendant Freeform</value></data>
+  <data name="SerialCodeIncorrectFormat" xml:space="preserve"><value>Serial Code Incorrect Format</value></data>
+  <data name="ReopenLastPortfolioUsed" xml:space="preserve"><value>Reopen Last Portfolio Used</value></data>
+  <data name="Favorite" xml:space="preserve"><value>Favorite</value></data>
+  <data name="Disabled" xml:space="preserve"><value>Disabled</value></data>
+  <data name="Projet_Preparing_Model_To_Print" xml:space="preserve"><value>Preparing Model to Print</value></data>
+  <data name="ClickHereToReloadPartsToolbox" xml:space="preserve"><value>Click here to Reload Parts Toolbox.</value></data>
+  <data name="SearchKeywords" xml:space="preserve"><value>Search Keywords</value></data>
+  <data name="ScheduledShipDate" xml:space="preserve"><value>Scheduled Ship Date</value></data>
+  <data name="OpenDesignWithGemShape" xml:space="preserve"><value>Open Design With This Center Gem Shape</value></data>
+  <data name="DesignHistory" xml:space="preserve"><value>Design History</value></data>
+  <data name="ClickToSetPathForImage" xml:space="preserve"><value>Click to Set Path for Image</value></data>
+  <data name="BridalSets" xml:space="preserve"><value>Bridal Sets</value></data>
+  <data name="DisplayPackages" xml:space="preserve"><value>Display Packages</value></data>
+  <data name="SIMILARSTYLES" xml:space="preserve"><value>SIMILAR STYLES</value></data>
+  <data name="DisplaySeries" xml:space="preserve"><value>Display Series</value></data>
+  <data name="Customer" xml:space="preserve"><value>Customer</value></data>
+  <data name="PortfolioName" xml:space="preserve"><value>Portfolio Name</value></data>
+  <data name="SmallTile" xml:space="preserve"><value>Small Tile</value></data>
+  <data name="MetalCount" xml:space="preserve"><value>Metal Count</value></data>
+  <data name="TileDescriptionGemstone" xml:space="preserve"><value>Craving color? Every design in this collection is available in multiple gemstone colors and material combinations.</value></data>
+  <data name="Engagement" xml:space="preserve"><value>Engagement</value></data>
+  <data name="SupportExplanation" xml:space="preserve"><value>If you were instructed by support, please describe the problem you are having and click Submit Debug Report below.</value></data>
+  <data name="PendantHeart" xml:space="preserve"><value>Pendant Heart</value></data>
+  <data name="KnotDescription" xml:space="preserve"><value>From designs featuring Celtic knots to designs twisted into love knot rings, see what is available in the currently selected collection.</value></data>
+  <data name="StateRegion" xml:space="preserve"><value>State / Region</value></data>
+  <data name="Animals" xml:space="preserve"><value>Animals</value></data>
+  <data name="Metal Name" xml:space="preserve"><value>Metal Name</value></data>
+  <data name="DiamondCertificateTerm2" xml:space="preserve"><value>The reason it is important to have a stone evaluated by an Independent Gemological Laboratory is that they often contain minute, invisible to the naked eye inclusions or imperfections. These can have a major influence on the price.</value></data>
+  <data name="ThreeStoneDescription" xml:space="preserve"><value>Three Stone designs highlight the center diamond with a pair of side stones, often with a complementary diamond cut and placement.</value></data>
+  <data name="RequestQuote" xml:space="preserve"><value>Request Quote</value></data>
+  <data name="EmeraldDescription" xml:space="preserve"><value>The clean balanced lines of the emerald cut speak of timeless sophistication and grace. Bold yet quietly assured, emerald-cut is a favorite choice, conveying a message of unmatched style and enduring elegance.</value></data>
+  <data name="ShanksMens" xml:space="preserve"><value>Shanks Men's</value></data>
+  <data name="QuoteRequiredExplanation" xml:space="preserve"><value>Click Request Quote and your job will be carefully reviewed to ensure accurate pricing and you will receive your final quote in 1-3 business days.</value></data>
+  <data name="Testing_Connectivity" xml:space="preserve"><value>Testing Connectivity</value></data>
+  <data name="LookBookBriefDescription" xml:space="preserve"><value>This look book details the journey of your design through the creation process.</value></data>
+  <data name="BrightCut" xml:space="preserve"><value>Bright-Cut</value></data>
+  <data name="SpeedUpUpdatesExplanation" xml:space="preserve"><value>To speed up the update process you can specify a folder containing pre-downloaded updates which will be checked first for an update.</value></data>
+  <data name="MarquiseDescription" xml:space="preserve"><value>Bold and distinctive, marquises recall the glamour of Hollywood’s golden era, when fashion expressed a woman’s desire to feel feminine. Those who wear them send a clear message of chick style and sporty sophistication.</value></data>
+  <data name="TheDesignisemptypleaseOpenorBuildadesignandtryagain" xml:space="preserve"><value>The design is empty, please Open or Build a design and try again!</value></data>
+  <data name="Backup_File_Size" xml:space="preserve"><value>Backup File Size:</value></data>
+  <data name="ClickToAdjustWindowFrameBackground" xml:space="preserve"><value>Click to adjust Window Frame Background</value></data>
+  <data name="DesignTryOn" xml:space="preserve"><value>Design Try On</value></data>
+  <data name="HideFreehandMode" xml:space="preserve"><value>Hide Freehand Mode</value></data>
+  <data name="Allowed" xml:space="preserve"><value>Allowed</value></data>
+  <data name="Purchase" xml:space="preserve"><value>Purchase</value></data>
+  <data name="AnniversaryRing" xml:space="preserve"><value>Anniversary Ring</value></data>
+  <data name="ViewportBackgroundColor" xml:space="preserve"><value>Viewport Background Color</value></data>
+  <data name="ToggleRenderPreview" xml:space="preserve"><value>Toggle Render Preview</value></data>
+  <data name="SubmitDebugReport" xml:space="preserve"><value>Submit Debug Report</value></data>
+  <data name="PromiseRings" xml:space="preserve"><value>Promise Rings</value></data>
+  <data name="Settings" xml:space="preserve"><value>Settings</value></data>
+  <data name="PortfolioHasBeenRenamed" xml:space="preserve"><value>Portfolio has been renamed</value></data>
+  <data name="Secondary" xml:space="preserve"><value>Secondary</value></data>
+  <data name="Gemstone_Markup" xml:space="preserve"><value>Gemstone Markup</value></data>
+  <data name="AsscherDescription" xml:space="preserve"><value>The Asscher cut is very similar to an emerald cut, only in a square shape. This cut draws the eye inward towards the center of the stone, meaning that it is more important than ever to consider quality when considering an Asscher.</value></data>
+  <data name="GROUNDPLANE" xml:space="preserve"><value>GROUND PLANE</value></data>
+  <data name="CenterGem" xml:space="preserve"><value>Center Gem</value></data>
+  <data name="LanguageSettings" xml:space="preserve"><value>Language Settings</value></data>
+  <data name="CalculatingMetalWeight" xml:space="preserve"><value>Calculating Metal Weight</value></data>
+  <data name="SideGemSizeMessage" xml:space="preserve"><value>Side Gem Size Message</value></data>
+  <data name="TAKETHEQUIZ" xml:space="preserve"><value>TAKE THE QUIZ</value></data>
+  <data name="MensBand" xml:space="preserve"><value>Men's Band</value></data>
+  <data name="Prototype" xml:space="preserve"><value>Prototype</value></data>
+  <data name="PendantRoundDescription" xml:space="preserve"><value>The circle – a symbol of eternity – is the inspiration behind these round pendant designs.</value></data>
+  <data name="No_More_Exports_Available" xml:space="preserve"><value>No more exports available.  Contact Support for assistance.</value></data>
+  <data name="UnsavedChangedPrompt" xml:space="preserve"><value>You have unsaved changes on the customize screen.  Would you like to save the modified design into the current portfolio before continuing?</value></data>
+  <data name="Claddagh" xml:space="preserve"><value>Claddagh</value></data>
+  <data name="Favorites" xml:space="preserve"><value>Favorites</value></data>
+  <data name="User_Defined_Markup" xml:space="preserve"><value>User Defined Markup</value></data>
+  <data name="Version" xml:space="preserve"><value>Version</value></data>
+  <data name="format_must_be" xml:space="preserve"><value>format must be</value></data>
+  <data name="UseTheImportButtonToAddDesigns" xml:space="preserve"><value>Use the Import Button to Add Designs</value></data>
+  <data name="LARGESTONES" xml:space="preserve"><value>LARGE STONES</value></data>
+  <data name="SearchStones" xml:space="preserve"><value>Search Stones</value></data>
+  <data name="ClickToEnlargeImage" xml:space="preserve"><value>Click to enlarge image</value></data>
+  <data name="Organic" xml:space="preserve"><value>Organic</value></data>
+  <data name="Featurediteration" xml:space="preserve"><value>Featurediteration</value></data>
+  <data name="BackToStart" xml:space="preserve"><value>Back to Start</value></data>
+  <data name="FashionBand" xml:space="preserve"><value>Fashion Band</value></data>
+  <data name="FirstName" xml:space="preserve"><value>First Name</value></data>
+  <data name="SettingsHaloCluster" xml:space="preserve"><value>Settings Halo Cluster</value></data>
+  <data name="SaveRendersToFolder" xml:space="preserve"><value>Save Renders to Folder</value></data>
+  <data name="OrderContainsErrors" xml:space="preserve"><value>ORDER CONTAINS ERRORS</value></data>
+  <data name="ClickToAdjustColorsAsAGroup" xml:space="preserve"><value>Click to Adjust Colors as a Group</value></data>
+  <data name="Automatic" xml:space="preserve"><value>Automatic</value></data>
+  <data name="ENGAGEMENTRING" xml:space="preserve"><value>ENGAGEMENT RING</value></data>
+  <data name="LargeGemsNOTIncludedInEstimate" xml:space="preserve"><value>Large Gems NOT Included in Estimate</value></data>
+  <data name="WeaveDescription" xml:space="preserve"><value>The under-over crossing of metal to form a braid or basket weave in the design. A trellis setting is a popular design featuring this Design Element.</value></data>
+  <data name="StoneReport" xml:space="preserve"><value>Stone Report</value></data>
+  <data name="MatchingBand" xml:space="preserve"><value>Matching Band</value></data>
+  <data name="MeasureDistanceExplanation" xml:space="preserve"><value>Measure Distance - Click once on the design to start measuring, and a second time to stop.</value></data>
+  <data name="CLARITY" xml:space="preserve"><value>CLARITY</value></data>
+  <data name="CutGrade" xml:space="preserve"><value>Cut Grade</value></data>
+  <data name="TimedBackup" xml:space="preserve"><value>Auto Save</value></data>
+  <data name="GlamorousDescription" xml:space="preserve"><value>Dazzling gems and bold designs describe the Glamorous style best. Indulge in their decadence and make a statement with these exciting jewelry designs.</value></data>
+  <data name="Categories_SEARCH" xml:space="preserve"><value>SEARCH</value></data>
+  <data name="Backup_Total_Free_Space" xml:space="preserve"><value>Total Free Space on Drive:</value></data>
+  <data name="HALLMARK" xml:space="preserve"><value>HALLMARK</value></data>
+  <data name="SupportPhone" xml:space="preserve"><value>888.357.6272</value></data>
+  <data name="EnableCenterStroneQuarterCaratRounding" xml:space="preserve"><value>Enable Center Stone Quarter Carat Rounding</value></data>
+  <data name="HideShow" xml:space="preserve"><value>Hide / Show</value></data>
+  <data name="CSPackage3" xml:space="preserve"><value>CS Package 3</value></data>
+  <data name="CSPackage2" xml:space="preserve"><value>CS Package 2</value></data>
+  <data name="CSPackage1" xml:space="preserve"><value>CS Package 1</value></data>
+  <data name="Setting_Theme" xml:space="preserve"><value>Setting Theme</value></data>
+  <data name="WideTile" xml:space="preserve"><value>Wide Tile</value></data>
+  <data name="PlusStoneTray" xml:space="preserve"><value>+ Stone Tray</value></data>
+  <data name="TooltipChangeCurrency" xml:space="preserve"><value>Click here to change your Currency settings.</value></data>
+  <data name="Marquise" xml:space="preserve"><value>Marquise</value></data>
+  <data name="Vintage" xml:space="preserve"><value>Vintage</value></data>
+  <data name="DisplayComponents" xml:space="preserve"><value>Display Components</value></data>
+  <data name="CustomerComments" xml:space="preserve"><value>Customer Comments</value></data>
+  <data name="Rhino_64_Bit_Required" xml:space="preserve"><value>Rhino 5 64-bit Must Be Installed before running CounterSketch.</value></data>
+  <data name="RenderPropsOnAlphaChannel" xml:space="preserve"><value>Render Props on Alpha Channel</value></data>
+  <data name="ExtendProngs" xml:space="preserve"><value>Extend Prongs</value></data>
+  <data name="TileDescriptionAnniversary" xml:space="preserve"><value>Explore this extensive selection of exquisite Anniversary ring designs to celebrate those most beloved milestones.</value></data>
+  <data name="MediumTile" xml:space="preserve"><value>Medium Tile</value></data>
+  <data name="PrototypeKitDownloaded" xml:space="preserve"><value>Prototype Kit Download Complete, Reset Portfolios Now?</value></data>
+  <data name="Options" xml:space="preserve"><value>Options</value></data>
+  <data name="Asscher" xml:space="preserve"><value>Asscher</value></data>
+  <data name="Library" xml:space="preserve"><value>Library</value></data>
+  <data name="TwoByLondon" xml:space="preserve"><value>Two By London</value></data>
+  <data name="NoWaxMemo" xml:space="preserve"><value>No resin sample.</value></data>
+  <data name="ViewportControlsToggle" xml:space="preserve"><value>Viewport Controls Toggle</value></data>
+  <data name="ArtDeco" xml:space="preserve"><value>Art Deco</value></data>
+  <data name="No_Stone_s_Supplied" xml:space="preserve"><value>No Stone(s) Supplied</value></data>
+  <data name="Nothing_to_View_Export_First" xml:space="preserve"><value>Nothing to view, please EXPORT images first.</value></data>
+  <data name="ThereIsAlreadyABackupInProgress" xml:space="preserve"><value>There is already a backup in progress. You cannot start a new one at this time</value></data>
+  <data name="Troubleshooting" xml:space="preserve"><value>Troubleshooting</value></data>
+  <data name="LaserengravequalitymarkStullertrademarkandmylogo" xml:space="preserve"><value>Laser engrave quality mark, Stuller trademark and my logo.</value></data>
+  <data name="BackupExplanation" xml:space="preserve"><value>Backup Explanation</value></data>
+  <data name="RingSizeDefault" xml:space="preserve"><value>Ring Size Default</value></data>
+  <data name="CenterSize" xml:space="preserve"><value>Center Size</value></data>
+  <data name="SqCushionDescription" xml:space="preserve"><value>Square Cushion cut, also referred to as 'pillow cut', were the most popular shape over a century ago. An antique style of cut, with deep cut, large facets; cushions bring out the sparkle and brilliance of a stone.</value></data>
+  <data name="LaserengravequalitymarkandStullertrademark" xml:space="preserve"><value>Laser engrave quality mark and Stuller trademark.</value></data>
+  <data name="DesignManager" xml:space="preserve"><value>Design Manager</value></data>
+  <data name="Pendant3StoneDescription" xml:space="preserve"><value>Three Stone pendant designs highlight the past, present, and future of your relationship.</value></data>
+  <data name="FindyourSetting" xml:space="preserve"><value>Find Your Setting</value></data>
+  <data name="RoundCluster" xml:space="preserve"><value>Round Cluster</value></data>
+  <data name="BackupSettings" xml:space="preserve"><value>Backup Settings</value></data>
+  <data name="GlobalRotationName" xml:space="preserve"><value>Global Rotation</value></data>
+  <data name="PRINT3DSAMPLE" xml:space="preserve"><value>PRINT 3D SAMPLE</value></data>
+  <data name="ClickToAdjustToolHeaderBackground" xml:space="preserve"><value>Click to Adjust Tool Header Background</value></data>
+  <data name="Gemstone" xml:space="preserve"><value>Gemstone</value></data>
+  <data name="DoYouWantToUnregister" xml:space="preserve"><value>Do you wish to unregister this computer from your current license key? Clicking YES will unregister this machine and close CounterSketch. You may then start CounterSketch on a different machine.  You will need to have your license key, Stuller.com login, and password to register the new computer.</value></data>
+  <data name="AnyGemAnyColorExplanation" xml:space="preserve"><value>Select a stone on the model to modify its material</value></data>
+  <data name="SupportDiagnostics" xml:space="preserve"><value>Support Diagnostics</value></data>
+  <data name="PleaseNarrowSearchFilters" xml:space="preserve"><value>Please narrow your search filters to reduce search results.</value></data>
+  <data name="ClickToResetTheme" xml:space="preserve"><value>Click to Reset Theme</value></data>
+  <data name="Remaining" xml:space="preserve"><value>Remaining</value></data>
+  <data name="YouHaveIndicatedThatStonesWillBeSentIn" xml:space="preserve"><value>You have indicated that stones will be sent in. Please print, fill out, and send in the form below for all stones being sent to Stuller.</value></data>
+  <data name="Key_Profile_Error" xml:space="preserve"><value>Key Profile Error</value></data>
+  <data name="SettingFinish" xml:space="preserve"><value>Setting Finish</value></data>
+  <data name="Projet_Searching" xml:space="preserve"><value>Searching for Projet</value></data>
+  <data name="CurveEditorNote" xml:space="preserve"><value>NOTE: Each BLUE grid square is 1mm x 1mm</value></data>
+  <data name="Filigree" xml:space="preserve"><value>Filigree</value></data>
+  <data name="PleaseAdjustYourFiltersAndTryAgain" xml:space="preserve"><value>Please adjust your filters and try again</value></data>
+  <data name="RingSizeMin" xml:space="preserve"><value>Ring Size Min</value></data>
+  <data name="RingSizeMax" xml:space="preserve"><value>Ring Size Max</value></data>
+  <data name="EuroShank" xml:space="preserve"><value>Euro Shank</value></data>
+  <data name="Thisisamatchingbandtoapreviousengagementring" xml:space="preserve"><value>This is a matching band to a previous engagement ring.</value></data>
+  <data name="Categories_START" xml:space="preserve"><value>START</value></data>
+  <data name="TileDescriptionBridalSets" xml:space="preserve"><value>Take the mystery out of finding a match for your engagement ring with a perfectly designed band just for you ring.</value></data>
+  <data name="CenterGemSizeMessage" xml:space="preserve"><value>Center Gem Size Message </value></data>
+  <data name="Invalid_Format" xml:space="preserve"><value>Invalid Format</value></data>
+  <data name="LanguageChangeRestartPrmpt" xml:space="preserve"><value>Changing Languages Requires a Restart of CounterSketch. Would you like to restart now?</value></data>
+  <data name="AccentGemsIncludedInEstimate" xml:space="preserve"><value>Accent Gems Included in Estimate</value></data>
+  <data name="EnteryourCredentialsbelow" xml:space="preserve"><value>Enter your Credentials below</value></data>
+  <data name="DisclaimerInStock" xml:space="preserve"><value>In the rare event that the diamond you have selected to buy becomes unavailable, we will attempt to substitute the diamond with one that is equal to the quality of the originally selected stone. In this instance, your serial number will differ from the one noted on this page. If we are unable to make a substitution, regrettably your order will be cancelled in order to give you the opportunity to select a different diamond and replace your order. We apologize for any inconvenience this may cause.</value></data>
+  <data name="Projet_Overwrite_this_saved_Job" xml:space="preserve"><value>Overwrite this saved Job?</value></data>
+  <data name="PleasePrintFillOutAndSendThisForm" xml:space="preserve"><value>Please print, fill out, and send in the form below for all stones being sent to Stuller.</value></data>
+  <data name="Downloading_Updated_Design_Database" xml:space="preserve"><value>Downloading Updated Design Database</value></data>
+  <data name="Failed_To_Export_Design" xml:space="preserve"><value>Failed to export design.  Please check the log or contact support for assistance.</value></data>
+  <data name="Please_specify_the_folder_to_Export" xml:space="preserve"><value>Please specify the folder to export to first.</value></data>
+  <data name="Invalid_IP_Format" xml:space="preserve"><value>Invalid IP Format!</value></data>
+  <data name="UKCSKit1" xml:space="preserve"><value>UK CS Kit 1</value></data>
+  <data name="UKCSKit3" xml:space="preserve"><value>UK CS Kit 3</value></data>
+  <data name="UKCSKit2" xml:space="preserve"><value>UK CS Kit 2</value></data>
+  <data name="PinPoint" xml:space="preserve"><value>Pin Point</value></data>
+  <data name="Items_not_in_stock_error" xml:space="preserve"><value>Items not in stock at this quality and size. Please select another Quality.</value></data>
+  <data name="Preferences" xml:space="preserve"><value>Preferences</value></data>
+  <data name="PROPSPRIMARYMATERIAL" xml:space="preserve"><value>PROPS - PRIMARY MATERIAL</value></data>
+  <data name="CompatibleGraphicFiles" xml:space="preserve"><value>Compatible Graphic Files</value></data>
+  <data name="LimitedToThirteenCharacters" xml:space="preserve"><value>Limited to 13 Characters</value></data>
+  <data name="TileDescriptionPromiseRings" xml:space="preserve"><value>When you are ready to promise your love to someone, do so with the perfect customized promise ring.</value></data>
+  <data name="Children" xml:space="preserve"><value>Children</value></data>
+  <data name="Restart" xml:space="preserve"><value>Restart?</value></data>
+  <data name="Restore" xml:space="preserve"><value>Restore</value></data>
+  <data name="Layered" xml:space="preserve"><value>Layered</value></data>
+  <data name="LayFlat" xml:space="preserve"><value>Lay Flat</value></data>
+  <data name="EditDesignTiles" xml:space="preserve"><value>Edit Design Tiles</value></data>
+  <data name="YesSendAWaxMemo" xml:space="preserve"><value>Yes, send a resin sample.</value></data>
+  <data name="QuickEstimating" xml:space="preserve"><value>Quick Estimating</value></data>
+  <data name="MarkAll" xml:space="preserve"><value>Mark All</value></data>
+  <data name="ANewCounterSketchApplicationDBCreated" xml:space="preserve"><value>A new CounterSketch Application DB has been created</value></data>
+  <data name="SimpleDescription" xml:space="preserve"><value>A Simple design highlights the elegant simplicity of its setting, typically no side stones or ornamentation.</value></data>
+  <data name="Opening_Main_Window" xml:space="preserve"><value>Opening Main Window</value></data>
+  <data name="IsNotAssignedADiamond" xml:space="preserve"><value>is not assigned a Diamond</value></data>
+  <data name="BeadSetDescription" xml:space="preserve"><value>Small diamonds are placed in a tight row and share double prongs. This method represents an antique setting style while still allowing the diamonds to sparkle brightly.</value></data>
+  <data name="DisableMultiCoreGeneration" xml:space="preserve"><value>Disable Multi-Core Generation</value></data>
+  <data name="OpenDesignFile" xml:space="preserve"><value>Open Design File</value></data>
+  <data name="NewPortfolio" xml:space="preserve"><value>New Portfolio</value></data>
+  <data name="Amorphous" xml:space="preserve"><value>Amorphous</value></data>
+  <data name="AddCustomImageTile" xml:space="preserve"><value>Add Custom Image Tile</value></data>
+  <data name="ThreeDPrinterOptions" xml:space="preserve"><value>3D Printer Options</value></data>
+  <data name="UnsavedPortfolioPrompt" xml:space="preserve"><value>You have designs saved into a temporary portfolio, would you like to keep this portfolio?</value></data>
+  <data name="Missing_BillShip_To_Account_Number" xml:space="preserve"><value>Missing Bill/ship to account number - Update Account Info</value></data>
+  <data name="Iterationcount" xml:space="preserve"><value>Iteration count</value></data>
+  <data name="CenterStones" xml:space="preserve"><value>Center Stones</value></data>
+  <data name="Fashion" xml:space="preserve"><value>Fashion</value></data>
+  <data name="MissingQuoteEmailAddress" xml:space="preserve"><value>Missing quote email address - Update Account Info</value></data>
+  <data name="EditPartTiles" xml:space="preserve"><value>Edit Part Tiles</value></data>
+  <data name="invalid" xml:space="preserve"><value>invalid</value></data>
+  <data name="TileDescriptionSolitaires" xml:space="preserve"><value>Simple, classic, and elegant; you can’t go wrong with one of our solitaire settings, customized just for you. </value></data>
+  <data name="SoftwareActivation" xml:space="preserve"><value>Software Activation</value></data>
+  <data name="CuratedCollection" xml:space="preserve"><value>Curated Collection</value></data>
+  <data name="Radiant" xml:space="preserve"><value>Radiant</value></data>
+  <data name="CustomHighlightAccentColor" xml:space="preserve"><value>Custom Highlight Color</value></data>
+  <data name="ADDITIONALBAND" xml:space="preserve"><value>ADDITIONAL BAND</value></data>
+  <data name="Use_My_Stone_s" xml:space="preserve"><value>Use My Stone(s)</value></data>
+  <data name="Clusters" xml:space="preserve"><value>Clusters</value></data>
+  <data name="Anniversary" xml:space="preserve"><value>Anniversary</value></data>
+  <data name="EnterANewName" xml:space="preserve"><value>Enter a new name.</value></data>
+  <data name="DesignOptions" xml:space="preserve"><value>Design Options</value></data>
+  <data name="FashionBandsDescription" xml:space="preserve"><value>These rings stand alone on your hand.  Symbolizing independence, a fashion band ring is perfect as a right-hand ring and a great way to express your personality.</value></data>
+  <data name="MORETHANARING" xml:space="preserve"><value>MORE THAN A RING</value></data>
+  <data name="EnterYourStullerCredentials" xml:space="preserve"><value>Enter your Stuller.com credentials below</value></data>
+  <data name="RemoteAssistance" xml:space="preserve"><value>Remote Assistance</value></data>
+  <data name="NewPartsAdded" xml:space="preserve"><value>New Parts Added</value></data>
+  <data name="RingRailGuide" xml:space="preserve"><value>Ring Rail Guide</value></data>
+  <data name="TileDescriptionMens" xml:space="preserve"><value>From simple to bold, classic to contemporary, our broad collection of Men’s bands has the perfect one for you.</value></data>
+  <data name="ActualMetalVolume" xml:space="preserve"><value>Actual Metal Volume</value></data>
+  <data name="DesignNotesExplanation" xml:space="preserve"><value>Any additional design requests or comments written in the notes field will delay the quote process. A CAM Services representative will verify your changes and your estimate will be delivered within 1-3 business days.</value></data>
+  <data name="IsPartsListMultiSelect" xml:space="preserve"><value>Multiple Selection Mode</value></data>
+  <data name="ImportDesigns" xml:space="preserve"><value>Import Designs</value></data>
+  <data name="Downloading_Missing_Design_Files" xml:space="preserve"><value>Downloading Missing Design Files</value></data>
+  <data name="AAAExplanation" xml:space="preserve"><value>Higher quality stones with excellent color saturation and eye clean clarity. For customers that want only the best.</value></data>
+  <data name="SearchMountings" xml:space="preserve"><value>Search Mountings</value></data>
+  <data name="BridalPrototypeKit5Ft" xml:space="preserve"><value>Bridal Prototype Kit 5 Ft</value></data>
+  <data name="BridalPrototypeKit4Ft" xml:space="preserve"><value>Bridal Prototype Kit 4 Ft</value></data>
+  <data name="BridalPrototypeKit1Ft" xml:space="preserve"><value>Bridal Prototype Kit 1 Ft</value></data>
+  <data name="BridalPrototypeKit3Ft" xml:space="preserve"><value>Bridal Prototype Kit 3 Ft</value></data>
+  <data name="UserParts" xml:space="preserve"><value>User Parts</value></data>
+  <data name="WeCouldNotEstablishSecureConnectionToServers" xml:space="preserve"><value>We could not establish a secure connection to the servers. Please check that your DATE and TIME are set correctly, and restart this application.</value></data>
+  <data name="AsymmetricalMultiCenter" xml:space="preserve"><value>Asymmetrical: Multi Center</value></data>
+  <data name="DESIGNDETAILS" xml:space="preserve"><value>DESIGN DETAILS</value></data>
+  <data name="UserGuide" xml:space="preserve"><value>User Guide</value></data>
+  <data name="Mounting" xml:space="preserve"><value>Mounting</value></data>
+  <data name="RawCasting" xml:space="preserve"><value>Raw Casting</value></data>
+  <data name="CSBridalCollection1" xml:space="preserve"><value>CS Bridal Collection 1</value></data>
+  <data name="SettingsMultiStone" xml:space="preserve"><value>Settings Multi Stone</value></data>
+  <data name="Solitaire" xml:space="preserve"><value>Solitaire</value></data>
+  <data name="CUSTOMIZE" xml:space="preserve"><value>CUSTOMIZE</value></data>
+  <data name="IncludeWithBaseDesigns" xml:space="preserve"><value>Include With Base Designs</value></data>
+  <data name="ClickToAdjustViewportBackground" xml:space="preserve"><value>Click to Adjust Viewport Background</value></data>
+  <data name="Curvilinear" xml:space="preserve"><value>Curvilinear</value></data>
+  <data name="Sculptural" xml:space="preserve"><value>Sculptural</value></data>
+  <data name="AccentDefault" xml:space="preserve"><value>Accent Default</value></data>
+  <data name="EnableSamplePrintingViaProjet1200" xml:space="preserve"><value>Enable Sample Printing via Projet 1200</value></data>
+  <data name="FlipDesign" xml:space="preserve"><value>Flip Design</value></data>
+  <data name="Solitaires" xml:space="preserve"><value>Solitaires</value></data>
+  <data name="ViewportGraphic" xml:space="preserve"><value>Viewport Graphic</value></data>
+  <data name="Checking_for_Catalog_Updates" xml:space="preserve"><value>Checking for Catalog Updates</value></data>
+  <data name="ChannelDescription" xml:space="preserve"><value>In a channel setting a continuous row of stones is placed into a metal channel, with no metal separating the individual stones. Channel-set stones are often used for side stones in a setting or in a continuous row around the entire band, called an eternity ring.</value></data>
+  <data name="SideShape" xml:space="preserve"><value>Side Shape</value></data>
+  <data name="AccountInfo" xml:space="preserve"><value>Account Info</value></data>
+  <data name="MeleeSource" xml:space="preserve"><value>Melee Source</value></data>
+  <data name="ClickToImportACustomTheme" xml:space="preserve"><value>Click to Import a Custom Theme</value></data>
+  <data name="PortfolioSaveDirectory" xml:space="preserve"><value>Portfolio Save Directory</value></data>
+  <data name="USB_Key_bypassing_security" xml:space="preserve"><value>USB Key bypassing security</value></data>
+  <data name="Noqualitymarkortrademark" xml:space="preserve"><value>No quality mark or trademark.</value></data>
+  <data name="SideGemSizeCount" xml:space="preserve"><value>Side Gem Size Count</value></data>
+  <data name="Projet_1200_USB_Support" xml:space="preserve"><value>Projet 1200 USB Support</value></data>
+  <data name="Finding" xml:space="preserve"><value>Finding</value></data>
+  <data name="AllRingDesigns" xml:space="preserve"><value>All Ring Designs</value></data>
+  <data name="Finishing" xml:space="preserve"><value>Finishing</value></data>
+  <data name="BudgetTerm" xml:space="preserve"><value>Selecting a budget for buying jewelry is deceptively easy; simply evaluate your finances before starting the shopping process to determine the amount that can be comfortably spent. Many allow substantial purchases like wedding bands to cloud their judgment, which creates regret. Having an established budget in mind before your first shopping trip will prevent anxiety and make the entire experience more enjoyable.</value></data>
+  <data name="StonesInTray" xml:space="preserve"><value>Stones in Tray</value></data>
+  <data name="SideDetailCollar" xml:space="preserve"><value>Side Detail: Collar</value></data>
+  <data name="PendantHeartDescription" xml:space="preserve"><value>The heart is the universal symbol of love and devotion and featured in these designs.</value></data>
+  <data name="ArtDecoDescription" xml:space="preserve"><value>Bold, geometric, simplistic and stylized; Deco style fuses East with West and form with color in a synthesis of pure art and lasting luxury.</value></data>
+  <data name="DecorativeSettingDescription" xml:space="preserve"><value>This group consists of rings that have stones down the prongs, filigree work on the head, or a complex setting style – All adding the extra touch of style to the designs.</value></data>
+  <data name="WhenSupplyingLargeStonesYouMustSpecifyTheEstimatedValue" xml:space="preserve"><value>When supplying Large stones you must specify the estimated value</value></data>
+  <data name="Preparing_Part_Library" xml:space="preserve"><value>Preparing Part Library</value></data>
+  <data name="RepeatingElements" xml:space="preserve"><value>Repeating Elements</value></data>
+  <data name="MaterialOptions" xml:space="preserve"><value>Material Options</value></data>
+  <data name="Project_Enable_USB_Support_Prompt" xml:space="preserve"><value>Would you like to enable USB support for the Projet 1200? If you choose to install this feature the application will need to be restarted prior to printing via USB.</value></data>
+  <data name="AddingNewDesigns" xml:space="preserve"><value>Adding New Designs</value></data>
+  <data name="SettingsSingleStone" xml:space="preserve"><value>Settings Single Stone</value></data>
+  <data name="Groupnames" xml:space="preserve"><value>Groupnames</value></data>
+  <data name="BackupDirectoryLocation" xml:space="preserve"><value>Backup Directory Location</value></data>
+  <data name="ShowAccent" xml:space="preserve"><value>Show Accent</value></data>
+  <data name="PendantClusterDescription" xml:space="preserve"><value>A cluster setting is designed to present multiple stones in a figural design, such as a flower or butterfly. Clusters may also use small stones to create the illusion of a larger gem without the expense of a single stone of higher carat weight.</value></data>
+  <data name="FinishedCastingNoGems" xml:space="preserve"><value>Finished Casting (No Gems)</value></data>
+  <data name="Processing_Library_Colon" xml:space="preserve"><value>Processing Library:</value></data>
+  <data name="Processing_Library_Files" xml:space="preserve"><value>Processing Library Files</value></data>
+  <data name="ClickToUnlockIndividualColorAdjustment" xml:space="preserve"><value>Click to Unlock Individual Color Adjustment</value></data>
+  <data name="PreviousSeriesNumber" xml:space="preserve"><value>Previous Series Number</value></data>
+  <data name="BandsDescription" xml:space="preserve"><value>Designs based on a classic band style; includes stackable designs, eternity rings, and general bands within the current selected collection.</value></data>
+  <data name="CushionDescription" xml:space="preserve"><value>Cushion cut, also referred to as 'pillow cut', were the most popular shape over a century ago. An antique style of cut, with deep cut, large facets; cushions bring out the sparkle and brilliance of a stone.</value></data>
+  <data name="QuickEstimate" xml:space="preserve"><value>Quick Estimate</value></data>
+  <data name="Geometric" xml:space="preserve"><value>Geometric</value></data>
+  <data name="Address2" xml:space="preserve"><value>Address 2</value></data>
+  <data name="Address1" xml:space="preserve"><value>Address 1</value></data>
+  <data name="WhatsNew" xml:space="preserve"><value>What's New!</value></data>
+  <data name="ShowCenter" xml:space="preserve"><value>Show Center</value></data>
+  <data name="AddFreehandParts" xml:space="preserve"><value>Add Freehand Parts</value></data>
+  <data name="PrimaryDefault" xml:space="preserve"><value>Primary Default</value></data>
+  <data name="ClustersDescription" xml:space="preserve"><value>A cluster setting is designed to present multiple stones in a figural design, such as a flower or butterfly. Clusters may also use many small stones to create the illusion of a larger gem without the expense of a single stone of higher carat weight.</value></data>
+  <data name="Design_Canvas_No_Visible_Items_To_Print" xml:space="preserve"><value>The design canvas does not contain any visible items to print.</value></data>
+  <data name="RoundDescription" xml:space="preserve"><value>The epitome of style, round cut gems are timeless and the most desired of all diamond shapes.  Revered as a symbol of life, mystery and power; the circle shape perfectly captures the magical spirit of this legendary stone.</value></data>
+  <data name="NoPortfolioCanStoreDesign" xml:space="preserve"><value>No portfolio is available to store this design.</value></data>
+  <data name="EditQuickEstimateLayout" xml:space="preserve"><value>Edit Quick Estimate Layout</value></data>
+  <data name="EulaExplanation" xml:space="preserve"><value>Please read the following agreement. You must accept the terms of the agreement to use this software.</value></data>
+  <data name="LicenseAgreement" xml:space="preserve"><value>License Agreement</value></data>
+  <data name="NoPortfolioAvaliabeToSave" xml:space="preserve"><value>No portfolio is available to store this design.</value></data>
+  <data name="YourSerialCodeHasBeenAssigned" xml:space="preserve"><value>Your serial code has been assigned to this computer. Please verify and enter all required information on the 'Account' screen.</value></data>
+  <data name="CAMStandards" xml:space="preserve"><value>CAM Standards</value></data>
+  <data name="AddRingRailGuide" xml:space="preserve"><value>Add Ring Rail Guide</value></data>
+  <data name="ENGRAVING" xml:space="preserve"><value>ENGRAVING</value></data>
+  <data name="CustomSize" xml:space="preserve"><value>Custom Size</value></data>
+  <data name="MultiSplit" xml:space="preserve"><value>Multi Split</value></data>
+  <data name="TileDescriptionFreehand" xml:space="preserve"><value>Build from scratch or alter an existing design using a library of jewelry findings and beautiful design elements within Freehand Mode.</value></data>
+  <data name="MultiProng" xml:space="preserve"><value>Multi Prong</value></data>
+  <data name="EnableTimedBackup" xml:space="preserve"><value>Enable Auto Save</value></data>
+  <data name="MeleeGroupsAreNotAllInStockAtThatQuality" xml:space="preserve"><value>melee groups are not all in stock at that quality.</value></data>
+  <data name="Pendant3Stone" xml:space="preserve"><value>Pendant 3 Stone</value></data>
+  <data name="DiamondShopperCarat" xml:space="preserve"><value>Carat refers to a diamond's weight. One carat, the traditional unit of measurement for diamonds, is approximately 0.2 grams. You may also hear the weight of a diamond referred to in points. One carat is equivalent to 100 points, so a 75-point diamond is equal to 0.75 carats. Because they are rarer, larger diamonds have greater value per carat, so the price of a diamond rises exponentially to its size.</value></data>
+  <data name="DiamondShopperColor" xml:space="preserve"><value>One factor that determines the value of a diamond is its color. With the exception of fancy-colored diamonds, the most valuable diamonds are those with the least color. Although many people think of gem quality diamonds as colorless, completely colorless diamonds are very rare. The diamond color scale ranges from D (colorless) to Z (light yellow or brown). A diamond's color is determined by a manual process of comparing the diamond to a master set. Each letter grade represents a range of color and is a measurement of how noticeable a color is.</value></data>
+  <data name="MetalFashion" xml:space="preserve"><value>Metal Fashion</value></data>
+  <data name="DigitalImagesOnly" xml:space="preserve"><value>Digital Images Only</value></data>
+  <data name="CAMMode_PreparingDesignforManufacture" xml:space="preserve"><value>Preparing Design for Manufacture</value></data>
+  <data name="Measurementsmm" xml:space="preserve"><value>Measurements (mm)</value></data>
+  <data name="Starting_Rhino" xml:space="preserve"><value>Starting Rhino</value></data>
+  <data name="WaxMemo" xml:space="preserve"><value>RESIN SAMPLE</value></data>
+  <data name="NeedALogin" xml:space="preserve"><value>Need a Login</value></data>
+  <data name="HeartDescription" xml:space="preserve"><value>If there is a single universal symbol for love, it has to be the heart. Well-proportioned, heart-shaped stones are a shimmering complement to any wardrobe – and a timeless way to express the ageless message: I love you.</value></data>
+  <data name="IDoNotAcceptTheAgreement" xml:space="preserve"><value>I Do Not Accept The Agreement</value></data>
+  <data name="MountingOnly" xml:space="preserve"><value>Mounting Only</value></data>
+  <data name="AllResults" xml:space="preserve"><value>All Results</value></data>
+  <data name="ExactPricingEligibility" xml:space="preserve"><value>EXACT PRICING ELIGIBILITY</value></data>
+  <data name="ClawProngsDescription" xml:space="preserve"><value>A claw prong setting, sometimes called a claw setting, holds gemstones in place with three or more small, finger-like extensions of metal that wrap up and over the edge of the stone, securing it in place.</value></data>
+  <data name="TwoStone" xml:space="preserve"><value>Two Stone</value></data>
+  <data name="Edit" xml:space="preserve"><value>Edit</value></data>
+  <data name="Exit" xml:space="preserve"><value>Exit</value></data>
+  <data name="File" xml:space="preserve"><value>File</value></data>
+  <data name="Font" xml:space="preserve"><value>Font</value></data>
+  <data name="From" xml:space="preserve"><value>from</value></data>
+  <data name="Gems" xml:space="preserve"><value>Gems</value></data>
+  <data name="Date" xml:space="preserve"><value>Date</value></data>
+  <data name="Done" xml:space="preserve"><value>Done</value></data>
+  <data name="Misc" xml:space="preserve"><value>Misc</value></data>
+  <data name="Mode" xml:space="preserve"><value>Mode</value></data>
+  <data name="Mens" xml:space="preserve"><value>Men's</value></data>
+  <data name="Bead" xml:space="preserve"><value>Bead</value></data>
+  <data name="Back" xml:space="preserve"><value>Back</value></data>
+  <data name="Band" xml:space="preserve"><value>Band</value></data>
+  <data name="Bail" xml:space="preserve"><value>Bail</value></data>
+  <data name="Bold" xml:space="preserve"><value>Bold</value></data>
+  <data name="Calf" xml:space="preserve"><value>Calf</value></data>
+  <data name="City" xml:space="preserve"><value>City</value></data>
+  <data name="None" xml:space="preserve"><value>None</value></data>
+  <data name="Name" xml:space="preserve"><value>Name</value></data>
+  <data name="Oval" xml:space="preserve"><value>Oval</value></data>
+  <data name="Used" xml:space="preserve"><value>Used</value></data>
+  <data name="Undo" xml:space="preserve"><value>Undo</value></data>
+  <data name="Knot" xml:space="preserve"><value>Knot</value></data>
+  <data name="Hide" xml:space="preserve"><value>Hide</value></data>
+  <data name="Help" xml:space="preserve"><value>Help</value></data>
+  <data name="Halo" xml:space="preserve"><value>Halo</value></data>
+  <data name="View" xml:space="preserve"><value>View</value></data>
+  <data name="TYPE" xml:space="preserve"><value>TYPE</value></data>
+  <data name="Wire" xml:space="preserve"><value>Wire</value></data>
+  <data name="Tray" xml:space="preserve"><value>Tray</value></data>
+  <data name="Text" xml:space="preserve"><value>Text</value></data>
+  <data name="Redo" xml:space="preserve"><value>Redo</value></data>
+  <data name="Rope" xml:space="preserve"><value>Rope</value></data>
+  <data name="Ring" xml:space="preserve"><value>Ring</value></data>
+  <data name="Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Size" xml:space="preserve"><value>Size</value></data>
+  <data name="Side" xml:space="preserve"><value>Side</value></data>
+  <data name="Shop" xml:space="preserve"><value>Shop</value></data>
+  <data name="Pear" xml:space="preserve"><value>Pear</value></data>
+  <data name="Pave" xml:space="preserve"><value>Pave'</value></data>
+  <data name="Path" xml:space="preserve"><value>Path</value></data>
+  <data name="Page" xml:space="preserve"><value>Page</value></data>
+  <data name="Please_Wait" xml:space="preserve"><value>Please Wait</value></data>
+  <data name="ProjetInstructions" xml:space="preserve"><value>Projet Instructions</value></data>
+  <data name="FiveStone" xml:space="preserve"><value>Five Stone</value></data>
+  <data name="Consultant" xml:space="preserve"><value>Consultant</value></data>
+  <data name="UnableToReparentRhino" xml:space="preserve"><value>Unabled to Reparent Rhino Window, Close all Rhino Processes and try CS again.</value></data>
+  <data name="TheDesignCannotBeEstimatedWithoutAnyMetal" xml:space="preserve"><value>The design cannot be estimated without any metal.</value></data>
+  <data name="BeadSet" xml:space="preserve"><value>Bead Set</value></data>
+  <data name="Materials" xml:space="preserve"><value>Materials</value></data>
+  </root>

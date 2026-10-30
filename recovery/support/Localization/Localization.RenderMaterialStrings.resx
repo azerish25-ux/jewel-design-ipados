@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="Novasuede" xml:space="preserve"><value>Novasuede</value></data>
+  <data name="Studio2" xml:space="preserve"><value>Studio 2</value></data>
+  <data name="LeatheretteMarron" xml:space="preserve"><value>Leatherette Marron</value></data>
+  <data name="WhiteTo" xml:space="preserve"><value>White To</value></data>
+  <data name="LightBox" xml:space="preserve"><value>Light Box</value></data>
+  <data name="LeatheretteBordeaux" xml:space="preserve"><value>Leatherette Bordeaux</value></data>
+  <data name="Fabric" xml:space="preserve"><value>Fabric</value></data>
+  <data name="LightTent" xml:space="preserve"><value>Light Tent</value></data>
+  <data name="System6" xml:space="preserve"><value>System 6</value></data>
+  <data name="Marble" xml:space="preserve"><value>Marble</value></data>
+  <data name="Bamboo" xml:space="preserve"><value>Bamboo</value></data>
+  <data name="Buffed" xml:space="preserve"><value>Buffed</value></data>
+  <data name="Canvas" xml:space="preserve"><value>Canvas</value></data>
+  <data name="Cherry" xml:space="preserve"><value>Cherry</value></data>
+  <data name="Crayon" xml:space="preserve"><value>Crayon</value></data>
+  <data name="FingerCloth" xml:space="preserve"><value>Finger Cloth</value></data>
+  <data name="Twisted" xml:space="preserve"><value>Twisted</value></data>
+  <data name="Nickel" xml:space="preserve"><value>Nickel</value></data>
+  <data name="RingTray" xml:space="preserve"><value>Ring Tray</value></data>
+  <data name="BoxStudio" xml:space="preserve"><value>Box Studio</value></data>
+  <data name="BlackReflective" xml:space="preserve"><value>Black Reflective</value></data>
+  <data name="TanFelt" xml:space="preserve"><value>Tan Felt</value></data>
+  <data name="SilkBlue" xml:space="preserve"><value>Silk Blue</value></data>
+  <data name="SilkBone" xml:space="preserve"><value>Silk Bone</value></data>
+  <data name="Granite" xml:space="preserve"><value>Granite</value></data>
+  <data name="Studio" xml:space="preserve"><value>Studio</value></data>
+  <data name="WinterRedel" xml:space="preserve"><value>Winter Redel</value></data>
+  <data name="RedFabric" xml:space="preserve"><value>Red Fabric</value></data>
+  <data name="Pedestal" xml:space="preserve"><value>Pedestal</value></data>
+  <data name="SilkSerpentine" xml:space="preserve"><value>Silk Serpentine</value></data>
+  <data name="BlueFabric" xml:space="preserve"><value>Blue Fabric</value></data>
+  <data name="Plastic" xml:space="preserve"><value>Plastic</value></data>
+  <data name="EliteOnyx" xml:space="preserve"><value>Elite Onyx</value></data>
+  <data name="Red" xml:space="preserve"><value>Red</value></data>
+  <data name="Elite" xml:space="preserve"><value>Elite</value></data>
+  <data name="Block" xml:space="preserve"><value>Block</value></data>
+  <data name="Black" xml:space="preserve"><value>Black</value></data>
+  <data name="Olive" xml:space="preserve"><value>Olive</value></data>
+  <data name="Light" xml:space="preserve"><value>Light</value></data>
+  <data name="Latte" xml:space="preserve"><value>Latte</value></data>
+  <data name="White" xml:space="preserve"><value>White</value></data>
+  <data name="RedTo" xml:space="preserve"><value>Red To</value></data>
+  <data name="Stand" xml:space="preserve"><value>Stand</value></data>
+  <data name="Straw" xml:space="preserve"><value>Straw</value></data>
+  <data name="BluePlastic" xml:space="preserve"><value>Blue Plastic</value></data>
+  <data name="Butterum" xml:space="preserve"><value>Butterum</value></data>
+  <data name="Driftwood" xml:space="preserve"><value>Driftwood</value></data>
+  <data name="Reflective" xml:space="preserve"><value>Reflective</value></data>
+  <data name="Veined1" xml:space="preserve"><value>Veined 1</value></data>
+  <data name="Veined2" xml:space="preserve"><value>Veined 2</value></data>
+  <data name="Platinum" xml:space="preserve"><value>Platinum</value></data>
+  <data name="WhiteBlur" xml:space="preserve"><value>White Blur</value></data>
+  <data name="WhiteFelt" xml:space="preserve"><value>White Felt</value></data>
+  <data name="BlackPlastic" xml:space="preserve"><value>Black Plastic</value></data>
+  <data name="BronzeTera" xml:space="preserve"><value>Bronze Tera</value></data>
+  <data name="Mandrel" xml:space="preserve"><value>Mandrel</value></data>
+  <data name="Graphite" xml:space="preserve"><value>Graphite</value></data>
+  <data name="EarthWash" xml:space="preserve"><value>Earth Wash</value></data>
+  <data name="WhiteMatte" xml:space="preserve"><value>White Matte</value></data>
+  <data name="BlurStudio" xml:space="preserve"><value>Blur Studio</value></data>
+  <data name="RingBox" xml:space="preserve"><value>Ring Box</value></data>
+  <data name="EliteLatte" xml:space="preserve"><value>Elite Latte</value></data>
+  <data name="EliteCream" xml:space="preserve"><value>Elite Cream</value></data>
+  <data name="RedPlastic" xml:space="preserve"><value>Red Plastic</value></data>
+  <data name="Periwinkle" xml:space="preserve"><value>Periwinkle</value></data>
+  <data name="Blur" xml:space="preserve"><value>Blur</value></data>
+  <data name="Blue" xml:space="preserve"><value>Blue</value></data>
+  <data name="None" xml:space="preserve"><value>None</value></data>
+  <data name="Onyx" xml:space="preserve"><value>Onyx</value></data>
+  <data name="Wood" xml:space="preserve"><value>Wood</value></data>
+  <data name="Ring" xml:space="preserve"><value>Ring</value></data>
+  <data name="Silk" xml:space="preserve"><value>Silk</value></data>
+  </root>

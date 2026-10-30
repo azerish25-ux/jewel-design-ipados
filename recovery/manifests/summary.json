@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "source": "All files below analysis/decompiled; bin/obj excluded",
+  "sourceTextFiles": 10405,
+  "csharpFiles": 10238,
+  "redactedTextFiles": 31,
+  "resourceMappings": 2241,
+  "uniqueResourceObjects": 744,
+  "excludedOpaqueResources": 0,
+  "textBytes": 129171468,
+  "resourceBytes": 191043673,
+  "completeSourceExport": true
+}

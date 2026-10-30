@@ -1,0 +1,375 @@
+using System.Collections.Generic;
+using CS.CSDataUtilities;
+using CS.CSObjects.CSBlocks;
+using CS.Parametric;
+using CS.Parametric.Channels;
+using CSBlockUtil;
+using CSBlocks.UDT;
+using CSCompatibility;
+using CSDatas;
+using CSDatas.Interfaces;
+using Rhino.Geometry;
+
+namespace CSBlocks.Settings.Heads.CSHeadBuilderV1;
+
+[CSBlock("HeadFinish", "{FB9E9D46-0CE0-4A5E-ACE8-DBE9F331F5EB}")]
+public sealed class CSHeadFinish : CSBlock
+{
+	public readonly CSInputChannel InGems;
+
+	public readonly CSInputChannel InHeadProngObjects;
+
+	public readonly CSInputChannel InHeadProngCurves;
+
+	public readonly CSInputChannel InHeadRail1Objects;
+
+	public readonly CSInputChannel InHeadRail1Curves;
+
+	public readonly CSInputChannel InHeadRail2Objects;
+
+	public readonly CSInputChannel InHeadRail2Curves;
+
+	public readonly CSInputChannel InHeadRail3Objects;
+
+	public readonly CSInputChannel InHeadRail3Curves;
+
+	public readonly CSInputChannel InFastMulti;
+
+	public readonly CSInputChannel InDIY;
+
+	public readonly CSInputChannel InPullToBaseObject;
+
+	public readonly CSInputChannel InBaseObject;
+
+	public readonly CSOutputChannel OutHeads;
+
+	public readonly CSOutputChannel OutProngDomes;
+
+	public readonly CSOutputChannel OutConstructionCurves;
+
+	public CSHeadFinish(string identifier)
+		: base(identifier)
+	{
+		InGems = new CSInputChannel(this, ChannelDataType.Gem, ChannelArrayType.Array);
+		InHeadProngObjects = new CSInputChannel(this, ChannelDataType.Any, ChannelArrayType.Array);
+		InHeadProngCurves = new CSInputChannel(this, ChannelDataType.Curve, ChannelArrayType.Array);
+		InHeadRail1Objects = new CSInputChannel(this, ChannelDataType.Any, ChannelArrayType.Array);
+		InHeadRail1Curves = new CSInputChannel(this, ChannelDataType.Curve, ChannelArrayType.Array);
+		InHeadRail2Objects = new CSInputChannel(this, ChannelDataType.Any, ChannelArrayType.Array);
+		InHeadRail2Curves = new CSInputChannel(this, ChannelDataType.Curve, ChannelArrayType.Array);
+		InHeadRail3Objects = new CSInputChannel(this, ChannelDataType.Any, ChannelArrayType.Array);
+		InHeadRail3Curves = new CSInputChannel(this, ChannelDataType.Curve, ChannelArrayType.Array);
+		InFastMulti = new CSInputChannel(this, ChannelDataType.Boolean, ChannelArrayType.Individual, defaultValue: false);
+		InDIY = new CSInputChannel(this, ChannelDataType.Boolean, ChannelArrayType.Individual, defaultValue: false);
+		InPullToBaseObject = new CSInputChannel(this, ChannelDataType.Boolean, ChannelArrayType.Individual, defaultValue: false);
+		InBaseObject = new CSInputChannel(this, ChannelDataType.Any, ChannelArrayType.Array);
+		OutHeads = new CSOutputChannel(this, ChannelDataType.Brep, ChannelArrayType.Array);
+		OutProngDomes = new CSOutputChannel(this, ChannelDataType.Surface, ChannelArrayType.Array);
+		OutConstructionCurves = new CSOutputChannel(this, ChannelDataType.Curve, ChannelArrayType.Array);
+		SetChannelIdentifiers(autoCheckInputs: true);
+	}
+
+	public override bool Update()
+	{
+		//IL_038d: Unknown result type (might be due to invalid IL or missing references)
+		//IL_038f: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0391: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01d0: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01d2: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01d4: Unknown result type (might be due to invalid IL or missing references)
+		bool boolean = InFastMulti.Boolean;
+		bool boolean2 = InDIY.Boolean;
+		List<CSGemData> gemList = InGems.GemList;
+		CSDataArray flattenArray = InBaseObject.GetFlattenArray();
+		bool boolean3 = InPullToBaseObject.Boolean;
+		CSDataArray cSDataArray = new CSDataArray();
+		CSDataArray prongs = InHeadProngObjects.Data as CSDataArray;
+		CSDataArray baseRails = InHeadRail1Objects.Data as CSDataArray;
+		CSDataArray cSDataArray2 = InHeadRail2Objects.Data as CSDataArray;
+		CSDataArray cSDataArray3 = InHeadRail3Objects.Data as CSDataArray;
+		CSDataArray prongCurves = InHeadProngCurves.Data as CSDataArray;
+		CSDataArray baseRailCurves = InHeadRail1Curves.Data as CSDataArray;
+		CSDataArray data = InHeadRail2Curves.Data as CSDataArray;
+		CSDataArray data2 = InHeadRail3Curves.Data as CSDataArray;
+		if (boolean3)
+		{
+			prongs = prongs.Duplicate() as CSDataArray;
+			baseRails = baseRails.Duplicate() as CSDataArray;
+			prongCurves = prongCurves.Duplicate() as CSDataArray;
+			baseRailCurves = baseRailCurves.Duplicate() as CSDataArray;
+			PullToBase(flattenArray, gemList, ref prongs, ref baseRails, ref prongCurves, ref baseRailCurves);
+		}
+		CSGemData cSGemData = gemList[0];
+		if (cSGemData == null)
+		{
+			return false;
+		}
+		cSGemData.GetGemXformRC(out var xDown, out var _);
+		for (int i = 0; i < gemList.Count; i++)
+		{
+			CSGemData cSGemData2 = gemList[i];
+			if (cSGemData2 == null)
+			{
+				return UpdateMissing("Invalid Gem");
+			}
+			CSDataArray cSDataArray4;
+			if (boolean)
+			{
+				cSDataArray4 = new CSDataArray();
+				if (prongs != null)
+				{
+					cSDataArray4.Append(prongs.GetFlattenArray().Duplicate());
+				}
+				if (baseRails != null)
+				{
+					cSDataArray4.Append(baseRails.GetFlattenArray().Duplicate());
+				}
+				if (cSDataArray2 != null)
+				{
+					cSDataArray4.Append(cSDataArray2.GetFlattenArray().Duplicate());
+				}
+				if (cSDataArray3 != null)
+				{
+					cSDataArray4.Append(cSDataArray3.GetFlattenArray().Duplicate());
+				}
+				cSGemData2.GetGemXformRC(out var _, out var xUp2);
+				cSDataArray4.ApplyTransform(xUp2 * xDown);
+			}
+			else
+			{
+				cSDataArray4 = new CSDataArray();
+				if (prongs != null)
+				{
+					cSDataArray4.Append(prongs.GetArrayItem(i));
+				}
+				if (baseRails != null && baseRails.GetArrayItem(i) is CSDataArray cSDataArray5 && cSDataArray5.GetArrayCount() == 1 && cSDataArray5.GetArrayItem(0) is CSOnGeometryData data3)
+				{
+					cSDataArray4.Append(data3);
+				}
+				if (cSDataArray2 != null && cSDataArray2.GetArrayItem(i) is CSDataArray cSDataArray6 && cSDataArray6.GetArrayCount() == 1 && cSDataArray6.GetArrayItem(0) is CSOnGeometryData data4)
+				{
+					cSDataArray4.Append(data4);
+				}
+				if (cSDataArray3 != null && cSDataArray3.GetArrayItem(i) is CSDataArray cSDataArray7 && cSDataArray7.GetArrayCount() == 1 && cSDataArray7.GetArrayItem(0) is CSOnGeometryData data5)
+				{
+					cSDataArray4.Append(data5);
+				}
+			}
+			cSDataArray.Append(cSDataArray4);
+		}
+		if (!boolean2)
+		{
+			OutHeads.SetData(cSDataArray.GetFlattenArray());
+			OutProngDomes.SetData(null);
+			OutConstructionCurves.SetData(null);
+			return base.Update();
+		}
+		OutHeads.SetData(null);
+		OutProngDomes.SetData(cSDataArray);
+		CSDataArray cSDataArray8 = new CSDataArray();
+		cSDataArray8.Append(prongCurves);
+		cSDataArray8.Append(baseRailCurves);
+		cSDataArray8.Append(data);
+		cSDataArray8.Append(data2);
+		CSDataArray cSDataArray9 = new CSDataArray();
+		if (boolean)
+		{
+			for (int j = 0; j < gemList.Count; j++)
+			{
+				CSGemData cSGemData3 = gemList[j];
+				if (cSGemData3 == null)
+				{
+					return UpdateMissing("Invalid Gem");
+				}
+				CSData data6 = cSDataArray8.Duplicate();
+				cSGemData3.GetGemXformRC(out var _, out var xUp3);
+				CSDataHelper.Transform(data6, xUp3 * xDown);
+				cSDataArray9.Append(data6);
+			}
+		}
+		else
+		{
+			cSDataArray9 = cSDataArray8;
+		}
+		OutConstructionCurves.SetData(cSDataArray9);
+		return base.Update();
+	}
+
+	private void PullToBase(CSDataArray baseObject, List<CSGemData> gems, ref CSDataArray prongs, ref CSDataArray baseRails, ref CSDataArray prongCurves, ref CSDataArray baseRailCurves)
+	{
+		//IL_0085: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0093: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00bb: Unknown result type (might be due to invalid IL or missing references)
+		//IL_00c9: Unknown result type (might be due to invalid IL or missing references)
+		//IL_013a: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01be: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01c3: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01eb: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01f8: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0166: Unknown result type (might be due to invalid IL or missing references)
+		//IL_016b: Unknown result type (might be due to invalid IL or missing references)
+		//IL_016f: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0178: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0184: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01b7: Unknown result type (might be due to invalid IL or missing references)
+		//IL_01bc: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0222: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0225: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0227: Unknown result type (might be due to invalid IL or missing references)
+		//IL_0217: Unknown result type (might be due to invalid IL or missing references)
+		if (baseObject.GetArrayCount() < 1)
+		{
+			return;
+		}
+		Brep val = null;
+		double num = double.NaN;
+		CSData cSData = baseObject.GetArrayItem(0);
+		if (cSData is CSRingRailData cSRingRailData)
+		{
+			num = cSRingRailData.Radius;
+			cSData = null;
+		}
+		if (cSData != null)
+		{
+			if (cSData is ICSCurve iCSCurve)
+			{
+				Curve curve = iCSCurve.GetCurve();
+				if (curve != null)
+				{
+					Curve val2 = curve.DuplicateCurve();
+					Curve val3 = curve.DuplicateCurve();
+					((GeometryBase)val2).Translate(new Vector3d(0.0, 1.0, 0.0) * -50.0);
+					((GeometryBase)val3).Translate(new Vector3d(0.0, 1.0, 0.0) * 50.0);
+					val = ((Surface)NurbsSurface.CreateRuledSurface(val2, val3)).ToBrep();
+				}
+			}
+			if (val == null && cSData is ICSBrep iCSBrep)
+			{
+				val = iCSBrep.GetBrep();
+			}
+			if (val == null && cSData is ICSSurface iCSSurface)
+			{
+				Surface surface = iCSSurface.GetSurface();
+				if (surface != null)
+				{
+					val = surface.ToBrep();
+				}
+			}
+		}
+		if (double.IsNaN(num) && val == null)
+		{
+			return;
+		}
+		Transform val4 = default(Transform);
+		Point3d val5 = default(Point3d);
+		for (int i = 0; i < gems.Count; i++)
+		{
+			CSBlockUtil.CSUtilMath.GetUnscaledXform(gems[i].Xform, out var xUp);
+			if (!((Transform)(ref xUp)).TryGetInverse(ref val4))
+			{
+				break;
+			}
+			double angle = double.NaN;
+			if (!double.IsNaN(num))
+			{
+				Point3d origin = Point3d.Origin;
+				((Point3d)(ref origin)).Transform(xUp);
+				((Point3d)(ref val5))._002Ector(Vector3d.ZAxis);
+				((Point3d)(ref val5)).Transform(xUp);
+				angle = CSBlockUtil.CSUtilMath.AngleOfPointD(((Point3d)(ref val5)).X - ((Point3d)(ref origin)).X, ((Point3d)(ref val5)).Z - ((Point3d)(ref origin)).Z);
+				val4 = PullToRailMorph.TopCenterXformFromAngle(angle).Convert();
+			}
+			BoundingBox boundingBox = BoundingBox.Unset;
+			CSDataArray cSDataArray = (CSDataArray)prongs.GetArrayItem(i);
+			CSDataArray cSDataArray2 = (CSDataArray)baseRails.GetArrayItem(i);
+			cSDataArray.GetTightBoundingBox(ref boundingBox, doGrow: true, val4);
+			cSDataArray2.GetTightBoundingBox(ref boundingBox, doGrow: true, val4);
+			CSPullToBaseBrep cSPullToBaseBrep = null;
+			SpaceMorph val6;
+			if (!double.IsNaN(num))
+			{
+				val6 = (SpaceMorph)(object)new CSPullToRailCenterMorph(angle, num, 1.0, boundingBox);
+			}
+			else
+			{
+				cSPullToBaseBrep = new CSPullToBaseBrep(boundingBox, val, xUp, val4);
+				val6 = (SpaceMorph)(object)cSPullToBaseBrep;
+			}
+			val6.Tolerance = 0.05;
+			val6.PreserveStructure = true;
+			for (int j = 0; j < cSDataArray.GetArrayCount(); j++)
+			{
+				CSData arrayItem = cSDataArray.GetArrayItem(j);
+				if (arrayItem == null)
+				{
+					continue;
+				}
+				CSOnGeometryData cSOnGeometryData = arrayItem as CSOnGeometryData;
+				Brep brep = cSOnGeometryData.GetBrep();
+				List<Brep> list = new List<Brep>();
+				for (int k = 0; k < brep.Faces.Count; k++)
+				{
+					Brep val7 = ((Surface)brep.Faces[k]).ToBrep();
+					val6.Morph((GeometryBase)(object)val7);
+					list.Add(val7);
+				}
+				Brep[] array = Brep.JoinBreps((IEnumerable<Brep>)list, 0.05);
+				Brep val8 = null;
+				if (array.Length != 0)
+				{
+					val8 = array[0];
+					if (!val8.IsSolid)
+					{
+						Brep[] array2 = Brep.JoinBreps((IEnumerable<Brep>)list, 0.001);
+						if (array2.Length != 0)
+						{
+							Brep val9 = array2[0];
+							if (val9.IsSolid)
+							{
+								val8 = val9;
+							}
+						}
+					}
+				}
+				cSOnGeometryData = new CSOnGeometryData((GeometryBase)(object)val8);
+				cSDataArray.Array[j] = cSOnGeometryData;
+			}
+			for (int l = 0; l < cSDataArray2.GetArrayCount(); l++)
+			{
+				CSData arrayItem2 = cSDataArray2.GetArrayItem(l);
+				if (arrayItem2 != null)
+				{
+					if (cSPullToBaseBrep != null)
+					{
+						cSPullToBaseBrep.Count = 0;
+					}
+					arrayItem2.Morph(val6);
+				}
+			}
+			for (int m = 0; m < prongCurves.GetArrayCount(); m++)
+			{
+				CSData arrayItem3 = prongCurves.GetArrayItem(m);
+				if (arrayItem3 != null)
+				{
+					if (cSPullToBaseBrep != null)
+					{
+						cSPullToBaseBrep.Count = 0;
+					}
+					arrayItem3.Morph(val6);
+				}
+			}
+			for (int n = 0; n < baseRailCurves.GetArrayCount(); n++)
+			{
+				CSData arrayItem4 = baseRailCurves.GetArrayItem(n);
+				if (arrayItem4 != null)
+				{
+					if (cSPullToBaseBrep != null)
+					{
+						cSPullToBaseBrep.Count = 0;
+					}
+					arrayItem4.Morph(val6);
+				}
+			}
+		}
+	}
+}

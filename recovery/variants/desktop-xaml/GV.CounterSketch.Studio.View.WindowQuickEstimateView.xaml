@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.View.WindowQuickEstimateView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:custom="http://www.galasoft.ch/mvvmlight" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" Title="{x:Static l:Strings.QuickEstimate}" MinWidth="800" FontFamily="Helvetica Neue LT Std" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" DataContext="{Binding Mode=Default, Path=QuickEstimateVM, Source={StaticResource Locator}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type DataGridCell}">
+              <ContentPresenter Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Unselected" />
+                    <VisualState x:Name="Selected" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Unfocused" />
+                    <VisualState x:Name="Focused" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="CurrentStates">
+                    <VisualState x:Name="Regular" />
+                    <VisualState x:Name="Current" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="InteractionStates">
+                    <VisualState x:Name="Display" />
+                    <VisualState x:Name="Editing" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="ValidationStates">
+                    <VisualState x:Name="Valid" />
+                    <VisualState x:Name="InvalidFocused" />
+                    <VisualState x:Name="InvalidUnfocused" />
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+              </ContentPresenter>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+          <Trigger Property="DataGridCell.IsSelected" Value="True">
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="#FF000000" />
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Name="RootGrid">
+    <StackPanel VerticalAlignment="Top" Orientation="Vertical">
+      <Border Name="Header" Margin="5" VerticalAlignment="Bottom">
+        <DockPanel Background="#FF4E8499" LastChildFill="False">
+          <Grid Margin="5,0,0,0">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="9*" />
+              <ColumnDefinition Width="41*" />
+              <ColumnDefinition Width="156*" />
+              <ColumnDefinition Width="54*" />
+              <ColumnDefinition Width="167*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" Margin="0,7,5,7" FontSize="13.333" Foreground="#FFFFFFFF" Text="Design:" TextWrapping="Wrap" />
+            <TextBlock Grid.Column="2" Margin="5,7,52,7" FontSize="13.333" Foreground="#FFFFFFFF" TextWrapping="Wrap" Text="{Binding DesignName}" />
+            <TextBlock Grid.Column="3" Margin="20,7,2,7" FontSize="13.333" Foreground="#FFFFFFFF" Text="{x:Static l:Strings.Date}" TextWrapping="Wrap" />
+            <TextBlock Grid.Column="4" Margin="1,7,40,7" FontSize="13.333" Foreground="#FFFFFFFF" TextWrapping="Wrap" Text="{Binding EstimateDateTime}" />
+          </Grid>
+          <Button Name="SaveEdit" Width="75" Margin="3,0" Content="{x:Static l:Strings.Save}" DockPanel.Dock="Right" Command="{Binding CommandHideEditMode}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}" />
+          <Button Name="button" Width="30" Height="30" Margin="3,0" Background="#00FFFFFF" DockPanel.Dock="Right" Style="{DynamicResource ButtonStyleClear}" Command="{Binding CommandPrintQuickEstimate}" CommandParameter="{Binding ElementName=RootGrid}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=True}">
+            <Viewbox Name="CSButtonPrint_Default" Width="17.675" Height="17">
+              <Canvas Width="17.675" Height="17">
+                <Path Canvas.Left="-3.8147e-006" Canvas.Top="3.88086" Width="17.675" Height="9.68073" Data="M15.2443,3.88086 L15.1722,3.88086 C15.1917,3.94659 15.2066,4.01318 15.2156,4.08252 L15.2257,4.08252 L15.2273,4.11249 L15.2241,4.18707 L15.2204,4.26794 C15.1544,5.17743 14.513,5.89136 13.7313,5.89136 L3.94363,5.89136 C3.16117,5.89136 2.52094,5.17743 2.45493,4.26794 L2.45129,4.18707 L2.44845,4.11249 L2.44923,4.08252 L2.45976,4.08252 C2.4687,4.01318 2.48287,3.94659 2.50312,3.88086 L2.43063,3.88086 C1.09342,3.88086 -3.8147E-06,5.05231 -3.8147E-06,6.48401 L-3.8147E-06,10.9587 C-3.8147E-06,12.3906 1.09342,13.5616 2.43063,13.5616 L15.2443,13.5616 C16.5807,13.5616 17.675,12.3906 17.675,10.9587 L17.675,6.48401 C17.675,5.05231 16.5807,3.88086 15.2443,3.88086 M1.93776,6.26257 L1.56561,6.26257 C1.37325,6.26257 1.21696,6.05505 1.21696,5.79919 C1.21696,5.54218 1.37325,5.33527 1.56561,5.33527 L1.93776,5.33527 C2.13014,5.33527 2.28606,5.54218 2.28606,5.79919 C2.28606,6.05505 2.13014,6.26257 1.93776,6.26257 M15.4006,12.7397 C15.4006,13.1146 15.2447,13.4201 15.054,13.4201 L2.62097,13.4201 C2.42941,13.4201 2.27469,13.1146 2.27469,12.7397 L2.27469,10.3602 C2.27469,9.98499 2.42941,9.68024 2.62097,9.68024 L15.054,9.68024 C15.2447,9.68024 15.4006,9.98499 15.4006,10.3602 L15.4006,12.7397 M16.3211,6.26257 L15.8599,6.26257 C15.6197,6.26257 15.4265,6.05505 15.4265,5.79919 C15.4265,5.54218 15.6197,5.33527 15.8599,5.33527 L16.3211,5.33527 C16.5605,5.33527 16.7548,5.54218 16.7548,5.79919 C16.7548,6.05505 16.5605,6.26257 16.3211,6.26257" Fill="#FFFFFFFF" Stretch="Fill" />
+                <Path Canvas.Left="3.47805" Canvas.Top="0" Width="10.7867" Height="4.08972" Data="F1 M14.2647,3.75024 L14.261,3.74835 L14.261,0 L3.47916,0 L3.47916,3.72571 L3.47805,3.72626 L3.47805,4.08972 L3.47916,4.08972 L14.261,4.08972 L14.2647,4.08972 L14.2647,3.75024" Fill="#FFFFFFFF" Stretch="Fill" />
+                <Path Canvas.Left="3.41189" Canvas.Top="11.0806" Width="10.8498" Height="5.91937" Data="F1 M14.2616,16.5087 L14.2579,16.5059 L14.2579,11.0806 L3.413,11.0806 L3.413,16.4732 L3.41189,16.4739 L3.41189,17 L3.413,17 L14.2579,17 L14.2616,17 L14.2616,16.5087" Fill="#FFFFFFFF" Stretch="Fill" />
+              </Canvas>
+            </Viewbox>
+          </Button>
+          <CheckBox Name="CheckBoxIncludeScreenshotWhilePrinting" VerticalAlignment="Center" Content="Include Screenshot with Print" DockPanel.Dock="Right" FontSize="13.333" Foreground="#FFFFFFFF" Style="{DynamicResource CS4CheckBoxStyle}" IsChecked="{Binding IncludeScreenshotWhenPrinting, Mode=TwoWay}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}" />
+          <Button Name="ToggleEdit" Width="30" Height="30" Margin="3,0" Background="#00FFFFFF" Cursor="Hand" DockPanel.Dock="Right" Style="{DynamicResource ButtonStyleClear}" ToolTip="Edit Quick Estimate Layout" Command="{Binding CommandShowEditMode}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=True}">
+            <Viewbox Width="20" Margin="2">
+              <Canvas Width="25.0944" Height="24.7437">
+                <Path Canvas.Left="4.21175" Canvas.Top="4.00024" Width="16" Height="16" Data="F1 M12.2117,4.00024 C16.63,4.00024 20.2117,7.58203 20.2117,12.0002 C20.2117,16.4185 16.63,20.0002 12.2117,20.0002 C7.79346,20.0002 4.21175,16.4185 4.21175,12.0002 C4.21175,7.58203 7.79353,4.00024 12.2117,4.00024" Fill="#FF4E8499" Stretch="Fill" />
+                <Viewbox Canvas.Left="0" Canvas.Top="0" Width="25.0944" Height="24.7437">
+                  <Canvas Width="25.0944" Height="24.7437">
+                    <Path Canvas.Left="0.0395121" Canvas.Top="0" Width="25.0151" Height="24.6803" Data="F1 M25.047,11.6185 L24.6152,9.16724 C24.5676,8.89868 24.312,8.71948 24.0425,8.76709 L22.3709,9.06201 C21.9651,7.84644 21.343,6.72974 20.5455,5.7616 L21.63,4.47009 C21.8055,4.26013 21.7783,3.94922 21.5689,3.77441 L19.6629,2.17419 C19.4543,1.99927 19.1425,2.02661 18.9672,2.23584 L17.9194,3.48425 C16.8447,2.83105 15.6406,2.37097 14.3564,2.14478 L14.3564,0.494385 C14.3564,0.22168 14.1353,0 13.8626,0 L11.374,0 C11.1013,0 10.8801,0.22168 10.8801,0.494385 L10.8801,2.11938 C9.59403,2.32764 8.38788,2.77283 7.30656,3.40869 L6.2291,2.12439 C6.05382,1.91602 5.74199,1.88843 5.53323,2.06372 L3.62717,3.66309 C3.41821,3.83813 3.39078,4.1499 3.56606,4.35876 L4.64716,5.64685 C3.83896,6.59912 3.20078,7.69971 2.77782,8.90186 L1.05107,8.59766 C0.782608,8.55005 0.526451,8.72949 0.479256,8.99805 L0.0470123,11.449 C1.52588E-05,11.7172 0.178726,11.9731 0.447388,12.0208 L2.19047,12.3401 C2.19047,13.615 2.42181,14.8347 2.84277,15.9619 L1.24551,16.884 C1.00891,17.0204 0.92804,17.3228 1.06458,17.559 L2.30867,19.7139 C2.44501,19.9497 2.74716,20.031 2.98355,19.8945 L4.58928,18.9675 C5.36965,19.9037 6.3132,20.6978 7.37474,21.3113 L6.72083,23.1073 C6.62724,23.3636 6.75956,23.647 7.01591,23.7405 L9.35402,24.5913 C9.61057,24.6848 9.89377,24.553 9.98695,24.2966 L10.6346,22.5179 C11.2548,22.6332 11.8934,22.6968 12.5469,22.6968 C13.1306,22.6968 13.7026,22.6464 14.2597,22.5532 L14.9153,24.3549 C15.0085,24.6113 15.292,24.7437 15.5482,24.6504 L17.8867,23.7996 C18.1435,23.7059 18.2752,23.4227 18.1816,23.1665 L17.5436,21.4126 C18.6209,20.8176 19.5806,20.0352 20.3799,19.1111 L21.9949,20.0433 C22.2309,20.1799 22.5332,20.099 22.6694,19.8628 L23.9137,17.7083 C24.0498,17.4719 23.9691,17.1694 23.7327,17.0336 L22.1817,16.1376 C22.6272,15.0083 22.8798,13.7821 22.8995,12.4983 L24.6468,12.1897 C24.9151,12.1428 25.0944,11.8867 25.047,11.6185 M12.5469,18.252 C9.28201,18.252 6.63491,15.6055 6.63491,12.3401 C6.63491,9.07556 9.28201,6.42859 12.5469,6.42859 C15.8124,6.42859 18.4589,9.07556 18.4589,12.3401 C18.4589,15.6055 15.8124,18.252 12.5469,18.252" Fill="#FFFFFFFF" Stretch="Fill" />
+                  </Canvas>
+                </Viewbox>
+              </Canvas>
+            </Viewbox>
+          </Button>
+        </DockPanel>
+      </Border>
+      <Border Name="MetalsList" Margin="5,0,5,5" Background="{DynamicResource TextBoxAndFrameBackground}">
+        <DataGrid Name="dataGrid" Margin="5" AlternationCount="2" AutoGenerateColumns="False" Background="{DynamicResource TextBoxAndFrameBackground}" BorderThickness="0" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" CellStyle="{DynamicResource DataGridCellStyle}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyleInfo}" EnableRowVirtualization="False" FontFamily="Helvetica Neue LT Std" FontSize="13.333" Foreground="#FF000000" GridLinesVisibility="Vertical" HorizontalScrollBarVisibility="Disabled" IsReadOnly="True" MinColumnWidth="100" MinRowHeight="25" RowDetailsVisibilityMode="Collapsed" RowHeaderStyle="{DynamicResource DataGridRowHeaderStyle}" RowHeaderWidth="175" RowStyle="{DynamicResource DataGridRowStyle}" SelectionMode="Single" SelectionUnit="Cell" SelectiveScrollingGrid.SelectiveScrollingOrientation="None" Style="{DynamicResource DataGridStyle}" VerticalGridLinesBrush="#FF000000" VerticalScrollBarVisibility="Disabled" BorderBrush="{x:Null}" HorizontalGridLinesBrush="{x:Null}" ItemsSource="{Binding FilteredQuickEstimateItems}">
+          <FrameworkElement.Resources>
+            <ResourceDictionary>
+              <BooleanToVisibilityConverter x:Key="bool2VisibilityConverter" />
+              <Style x:Key="RowHeaderGripperStyle" TargetType="{x:Type Thumb}">
+                <Setter Property="Height" Value="8" />
+                <Setter Property="Background" Value="#00FFFFFF" />
+                <Setter Property="FrameworkElement.Cursor" Value="SizeNS" />
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                      <Border Padding="{TemplateBinding Control.Padding}" Background="{TemplateBinding Control.Background}" />
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+              <Style x:Key="DataGridRowHeaderStyle" TargetType="{x:Type DataGridRowHeader}">
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridRowHeader}">
+                      <Grid Margin="0">
+                        <themes:DataGridHeaderBorder Border.Padding="{TemplateBinding Control.Padding}" Border.Background="{TemplateBinding Control.Background}" Border.BorderBrush="{TemplateBinding Control.BorderBrush}" Border.BorderThickness="{TemplateBinding Control.BorderThickness}" themes:DataGridHeaderBorder.IsHovered="{TemplateBinding UIElement.IsMouseOver}" themes:DataGridHeaderBorder.IsPressed="{TemplateBinding ButtonBase.IsPressed}" themes:DataGridHeaderBorder.IsSelected="{TemplateBinding DataGridRowHeader.IsRowSelected}" themes:DataGridHeaderBorder.Orientation="Horizontal" themes:DataGridHeaderBorder.SeparatorBrush="{TemplateBinding DataGridRowHeader.SeparatorBrush}" themes:DataGridHeaderBorder.SeparatorVisibility="{TemplateBinding DataGridRowHeader.SeparatorVisibility}">
+                          <StackPanel Margin="0,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                            <CheckBox Background="#FFFFFFFF" Style="{DynamicResource CS4CheckBoxStyle}" IsChecked="{Binding IsMetalRowEnabled, FallbackValue=true, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding QuickEstimateVM.IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}" />
+                            <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" Text="{Binding MetalName}" />
+                            <Control SnapsToDevicePixels="False" Template="{Binding ValidationErrorTemplate, RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}}" Visibility="{Binding (Validation.HasError), Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}}" />
+                          </StackPanel>
+                        </themes:DataGridHeaderBorder>
+                        <Thumb Name="PART_TopHeaderGripper" VerticalAlignment="Top" Style="{StaticResource RowHeaderGripperStyle}" />
+                        <Thumb Name="PART_BottomHeaderGripper" VerticalAlignment="Bottom" Style="{StaticResource RowHeaderGripperStyle}" />
+                      </Grid>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                <Setter Property="Background" Value="{DynamicResource TextBoxAndFrameBackground}" />
+                <Setter Property="Foreground" Value="#FF000000" />
+                <Setter Property="HorizontalContentAlignment" Value="Right" />
+                <Setter Property="MinWidth" Value="50" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="Width" Value="50" />
+              </Style>
+              <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
+                <Setter Property="Width" Value="8" />
+                <Setter Property="Background" Value="#00FFFFFF" />
+                <Setter Property="FrameworkElement.Cursor" Value="SizeWE" />
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                      <Border Padding="{TemplateBinding Control.Padding}" Background="{TemplateBinding Control.Background}" />
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+              <Style x:Key="DataGridColumnHeaderStyleInfo" TargetType="{x:Type DataGridColumnHeader}">
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                      <Grid>
+                        <themes:DataGridHeaderBorder Border.Padding="{TemplateBinding Control.Padding}" Border.Background="{TemplateBinding Control.Background}" Border.BorderBrush="{TemplateBinding Control.BorderBrush}" Border.BorderThickness="{TemplateBinding Control.BorderThickness}" themes:DataGridHeaderBorder.IsClickable="{TemplateBinding DataGridColumnHeader.CanUserSort}" themes:DataGridHeaderBorder.IsHovered="{TemplateBinding UIElement.IsMouseOver}" themes:DataGridHeaderBorder.IsPressed="{TemplateBinding ButtonBase.IsPressed}" themes:DataGridHeaderBorder.SeparatorBrush="{TemplateBinding DataGridColumnHeader.SeparatorBrush}" themes:DataGridHeaderBorder.SeparatorVisibility="{TemplateBinding DataGridColumnHeader.SeparatorVisibility}" themes:DataGridHeaderBorder.SortDirection="{TemplateBinding DataGridColumnHeader.SortDirection}">
+                          <DockPanel>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                          </DockPanel>
+                        </themes:DataGridHeaderBorder>
+                        <Thumb Name="PART_LeftHeaderGripper" HorizontalAlignment="Left" Style="{StaticResource ColumnHeaderGripperStyle}" />
+                        <Thumb Name="PART_RightHeaderGripper" HorizontalAlignment="Right" Style="{StaticResource ColumnHeaderGripperStyle}" />
+                      </Grid>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="#FF000000" />
+                <Setter Property="Background" Value="{DynamicResource TextBoxAndFrameBackground}" />
+                <Setter Property="MinWidth" Value="50" />
+              </Style>
+              <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                      <Grid>
+                        <Rectangle Name="Border" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" SnapsToDevicePixels="True" />
+                        <Polygon Name="Arrow" Margin="8,8,3,3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Fill="#FF000000" Opacity="0.15" Points="0,10 10,10 10,0" Stretch="Uniform" />
+                      </Grid>
+                      <ControlTemplate.Triggers>
+                        <Trigger Property="UIElement.IsMouseOver" Value="True">
+                          <Setter TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" Property="Shape.Stroke" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                          <Setter TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" Property="Shape.Fill" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                          <Setter TargetName="Arrow" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                      </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+              <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
+                <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                <Setter Property="BorderBrush" Value="#FF688CAF" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="DataGrid.RowDetailsVisibilityMode" Value="VisibleWhenSelected" />
+                <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+                <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+                <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGrid}">
+                      <Border Padding="{TemplateBinding Control.Padding}" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                        <ScrollViewer Name="DG_ScrollViewer" Focusable="False">
+                          <Control.Template>
+                            <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                              <Grid>
+                                <Grid.ColumnDefinitions>
+                                  <ColumnDefinition Width="Auto" />
+                                  <ColumnDefinition Width="*" />
+                                  <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                  <RowDefinition Height="Auto" />
+                                  <RowDefinition Height="*" />
+                                  <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Button Command="{x:Static DataGrid.SelectAllCommand}" Focusable="False" Visibility="Hidden" Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Style="{DynamicResource {ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}}" />
+                                <DataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Grid.Column="1" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                <ScrollContentPresenter Name="PART_ScrollContentPresenter" Grid.Row="1" Grid.ColumnSpan="2" CanContentScroll="{TemplateBinding ScrollViewer.CanContentScroll}" />
+                                <ScrollBar Name="PART_VerticalScrollBar" Grid.Row="1" Grid.Column="2" Maximum="{TemplateBinding ScrollViewer.ScrollableHeight}" Orientation="Vertical" ViewportSize="{TemplateBinding ScrollViewer.ViewportHeight}" Visibility="{TemplateBinding ScrollViewer.ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                                <Grid Row="2" Column="1">
+                                  <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{Binding NonFrozenColumnsViewportHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                    <ColumnDefinition Width="*" />
+                                  </Grid.ColumnDefinitions>
+                                  <ScrollBar Name="PART_HorizontalScrollBar" Grid.Column="1" Maximum="{TemplateBinding ScrollViewer.ScrollableWidth}" Orientation="Horizontal" ViewportSize="{TemplateBinding ScrollViewer.ViewportWidth}" Visibility="{TemplateBinding ScrollViewer.ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </Grid>
+                              </Grid>
+                            </ControlTemplate>
+                          </Control.Template>
+                          <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                        </ScrollViewer>
+                      </Border>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                  <Trigger Property="ItemsControl.IsGrouping" Value="True">
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                  </Trigger>
+                </Style.Triggers>
+              </Style>
+              <Style x:Key="DataGridRowStyle" TargetType="{x:Type DataGridRow}">
+                <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+                <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+                <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+                <Setter Property="DataGridRow.ValidationErrorTemplate">
+                  <Setter.Value>
+                    <ControlTemplate>
+                      <TextBlock Margin="2,0,0,0" VerticalAlignment="Center" Foreground="#FFFF0000" Text="!" />
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridRow}">
+                      <Border Name="DGR_Border" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                        <SelectiveScrollingGrid>
+                          <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                          </Grid.ColumnDefinitions>
+                          <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                          </Grid.RowDefinitions>
+                          <DataGridCellsPresenter Grid.Column="1" ItemsPanel="{TemplateBinding DataGridRow.ItemsPanel}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                          <DataGridDetailsPresenter Grid.Row="1" Grid.Column="1" Visibility="{TemplateBinding DataGridRow.DetailsVisibility}" SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen, ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical}, Converter={x:Static DataGrid.RowDetailsScrollingConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                          <DataGridRowHeader Grid.RowSpan="2" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Row}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                        </SelectiveScrollingGrid>
+                      </Border>
+                      <ControlTemplate.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                          <Setter TargetName="DGR_Border" Property="Border.Background" Value="#FFA9A9A9" />
+                        </Trigger>
+                      </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </ResourceDictionary>
+          </FrameworkElement.Resources>
+          <DataGrid.Columns>
+            <DataGridTextColumn MinWidth="140" FontFamily="Helvetica Neue LT Std" FontSize="11.667" Foreground="#FF000000" HeaderStyle="{StaticResource DataGridColumnHeaderStyleInfo}" Binding="{Binding Weight, Mode=Default}" Visibility="{Binding QuickEstimateVM.IsColumn1Visible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed, Source={StaticResource Locator}}">
+              <DataGridBoundColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="HorizontalAlignment" Value="Center" />
+                  <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+              <DataGridColumn.Header>
+                <DataGridColumnHeader HorizontalAlignment="Center">
+                  <DockPanel LastChildFill="True">
+                    <CheckBox HorizontalAlignment="Center" DockPanel.Dock="Bottom" Style="{DynamicResource CS4CheckBoxStyle}" IsChecked="{Binding IsColumn1VisibleChecked, FallbackValue=true, Mode=OneWay}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                      <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnVisibile}" CommandParameter="{Binding ColumnName1}" />
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="Unchecked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnCollapsed}" CommandParameter="{Binding ColumnName1}" />
+                        </i:EventTrigger>
+                      </i:Interaction.Triggers>
+                    </CheckBox>
+                    <TextBlock DockPanel.Dock="Top" Text="{Binding ColumnName1}" />
+                  </DockPanel>
+                </DataGridColumnHeader>
+              </DataGridColumn.Header>
+            </DataGridTextColumn>
+            <DataGridTextColumn MinWidth="90" FontFamily="Helvetica Neue LT Std" Foreground="#FF000000" Binding="{Binding PriceWithGemLevel0String, FallbackValue=-}" Visibility="{Binding QuickEstimateVM.IsColumn2Visible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed, Source={StaticResource Locator}}">
+              <DataGridBoundColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="HorizontalAlignment" Value="Center" />
+                  <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+              <DataGridColumn.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                  <Style.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsOutOfStockLevel0}">
+                      <TriggerBase.EnterActions>
+                        <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0" />
+                          </Storyboard>
+                        </BeginStoryboard>
+                      </TriggerBase.EnterActions>
+                    </DataTrigger>
+                    <DataTrigger Value="false" Binding="{Binding IsOutOfStockLevel0}">
+                      <TriggerBase.EnterActions>
+                        <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0" />
+                          </Storyboard>
+                        </BeginStoryboard>
+                      </TriggerBase.EnterActions>
+                    </DataTrigger>
+                  </Style.Triggers>
+                </Style>
+              </DataGridColumn.CellStyle>
+              <DataGridColumn.Header>
+                <DataGridColumnHeader HorizontalAlignment="Center">
+                  <DockPanel LastChildFill="True">
+                    <CheckBox HorizontalAlignment="Center" DockPanel.Dock="Bottom" Style="{DynamicResource CS4CheckBoxStyle}" IsChecked="{Binding IsColumn2VisibleChecked, FallbackValue=true, Mode=OneWay}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                      <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnVisibile}" CommandParameter="{Binding ColumnName2}" />
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="Unchecked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnCollapsed}" CommandParameter="{Binding ColumnName2}" />
+                        </i:EventTrigger>
+                      </i:Interaction.Triggers>
+                    </CheckBox>
+                    <TextBlock DockPanel.Dock="Top" Text="{Binding ColumnName2}" />
+                  </DockPanel>
+                </DataGridColumnHeader>
+              </DataGridColumn.Header>
+            </DataGridTextColumn>
+            <DataGridTextColumn MinWidth="90" FontFamily="Helvetica Neue LT Std" Foreground="#FF000000" Binding="{Binding PriceWithGemLevel1String, FallbackValue=-}" Visibility="{Binding QuickEstimateVM.IsColumn3Visible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed, Source={StaticResource Locator}}">
+              <DataGridBoundColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="HorizontalAlignment" Value="Center" />
+                  <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+              <DataGridColumn.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                  <Style.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsOutOfStockLevel1}">
+                      <TriggerBase.EnterActions>
+                        <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0" />
+                          </Storyboard>
+                        </BeginStoryboard>
+                      </TriggerBase.EnterActions>
+                    </DataTrigger>
+                    <DataTrigger Value="false" Binding="{Binding IsOutOfStockLevel1}">
+                      <TriggerBase.EnterActions>
+                        <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0" />
+                          </Storyboard>
+                        </BeginStoryboard>
+                      </TriggerBase.EnterActions>
+                    </DataTrigger>
+                  </Style.Triggers>
+                </Style>
+              </DataGridColumn.CellStyle>
+              <DataGridColumn.Header>
+                <DataGridColumnHeader HorizontalAlignment="Center">
+                  <DockPanel LastChildFill="True">
+                    <CheckBox HorizontalAlignment="Center" DockPanel.Dock="Bottom" Style="{DynamicResource CS4CheckBoxStyle}" IsChecked="{Binding IsColumn3VisibleChecked, FallbackValue=true, Mode=OneWay}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                      <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnVisibile}" CommandParameter="{Binding ColumnName3}" />
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="Unchecked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnCollapsed}" CommandParameter="{Binding ColumnName3}" />
+                        </i:EventTrigger>
+                      </i:Interaction.Triggers>
+                    </CheckBox>
+                    <TextBlock DockPanel.Dock="Top" Text="{Binding ColumnName3}" />
+                  </DockPanel>
+                </DataGridColumnHeader>
+              </DataGridColumn.Header>
+            </DataGridTextColumn>
+            <DataGridTextColumn MinWidth="90" FontFamily="Helvetica Neue LT Std" Foreground="#FF000000" Binding="{Binding PriceWithGemLevel2String, FallbackValue=-}" Visibility="{Binding QuickEstimateVM.IsColumn4Visible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed, Source={StaticResource Locator}}">
+              <DataGridBoundColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="HorizontalAlignment" Value="Center" />
+                  <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+              <DataGridColumn.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                  <Style.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsOutOfStockLevel2}">
+                      <TriggerBase.EnterActions>
+                        <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0" />
+                          </Storyboard>
+                        </BeginStoryboard>
+                      </TriggerBase.EnterActions>
+                    </DataTrigger>
+                    <DataTrigger Value="false" Binding="{Binding IsOutOfStockLevel2}">
+                      <TriggerBase.EnterActions>
+                        <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0" />
+                          </Storyboard>
+                        </BeginStoryboard>
+                      </TriggerBase.EnterActions>
+                    </DataTrigger>
+                  </Style.Triggers>
+                </Style>
+              </DataGridColumn.CellStyle>
+              <DataGridColumn.Header>
+                <DataGridColumnHeader HorizontalAlignment="Center">
+                  <DockPanel LastChildFill="True">
+                    <CheckBox HorizontalAlignment="Center" DockPanel.Dock="Bottom" Style="{DynamicResource CS4CheckBoxStyle}" IsChecked="{Binding IsColumn4VisibleChecked, FallbackValue=true, Mode=OneWay}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                      <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnVisibile}" CommandParameter="{Binding ColumnName4}" />
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="Unchecked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnCollapsed}" CommandParameter="{Binding ColumnName4}" />
+                        </i:EventTrigger>
+                      </i:Interaction.Triggers>
+                    </CheckBox>
+                    <TextBlock DockPanel.Dock="Top" Text="{Binding ColumnName4}" />
+                  </DockPanel>
+                </DataGridColumnHeader>
+              </DataGridColumn.Header>
+            </DataGridTextColumn>
+            <DataGridTextColumn MinWidth="90" FontFamily="Helvetica Neue LT Std" Foreground="#FF000000" Binding="{Binding PriceWithGemLevel3String, FallbackValue=-}" Visibility="{Binding QuickEstimateVM.IsColumn5Visible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed, Source={StaticResource Locator}}">
+              <DataGridBoundColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="HorizontalAlignment" Value="Center" />
+                  <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+              <DataGridColumn.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                  <Style.Triggers>
+                    <DataTrigger Value="true" Binding="{Binding IsOutOfStockLevel3}">
+                      <TriggerBase.EnterActions>
+                        <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0" />
+                          </Storyboard>
+                        </BeginStoryboard>
+                      </TriggerBase.EnterActions>
+                    </DataTrigger>
+                    <DataTrigger Value="false" Binding="{Binding IsOutOfStockLevel3}">
+                      <TriggerBase.EnterActions>
+                        <BeginStoryboard>
+                          <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0" />
+                          </Storyboard>
+                        </BeginStoryboard>
+                      </TriggerBase.EnterActions>
+                    </DataTrigger>
+                  </Style.Triggers>
+                </Style>
+              </DataGridColumn.CellStyle>
+              <DataGridColumn.Header>
+                <DataGridColumnHeader HorizontalAlignment="Center">
+                  <DockPanel LastChildFill="True">
+                    <CheckBox HorizontalAlignment="Center" DockPanel.Dock="Bottom" Style="{DynamicResource CS4CheckBoxStyle}" IsChecked="{Binding IsColumn5VisibleChecked, FallbackValue=true, Mode=OneWay}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                      <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnVisibile}" CommandParameter="{Binding ColumnName5}" />
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="Unchecked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnCollapsed}" CommandParameter="{Binding ColumnName5}" />
+                        </i:EventTrigger>
+                      </i:Interaction.Triggers>
+                    </CheckBox>
+                    <TextBlock DockPanel.Dock="Top" Text="{Binding ColumnName5}" />
+                  </DockPanel>
+                </DataGridColumnHeader>
+              </DataGridColumn.Header>
+            </DataGridTextColumn>
+            <DataGridTextColumn MinWidth="90" FontFamily="Helvetica Neue LT Std" Foreground="#FF000000" Binding="{Binding PriceMountingOnlyString, FallbackValue=-}" Visibility="{Binding QuickEstimateVM.IsColumn6Visible, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed, Source={StaticResource Locator}}">
+              <DataGridBoundColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="HorizontalAlignment" Value="Center" />
+                  <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+              <DataGridColumn.Header>
+                <DataGridColumnHeader HorizontalAlignment="Center">
+                  <DockPanel LastChildFill="True">
+                    <CheckBox HorizontalAlignment="Center" DockPanel.Dock="Bottom" Style="{DynamicResource CS4CheckBoxStyle}" IsChecked="{Binding IsColumn6VisibleChecked, FallbackValue=true, Mode=OneWay}" Visibility="{Binding IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                      <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnVisibile}" CommandParameter="{Binding ColumnName6}" />
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="Unchecked">
+                          <custom:EventToCommand Command="{Binding CommandSetQEColumnCollapsed}" CommandParameter="{Binding ColumnName6}" />
+                        </i:EventTrigger>
+                      </i:Interaction.Triggers>
+                    </CheckBox>
+                    <TextBlock DockPanel.Dock="Top" Text="{Binding ColumnName6}" />
+                  </DockPanel>
+                </DataGridColumnHeader>
+              </DataGridColumn.Header>
+            </DataGridTextColumn>
+          </DataGrid.Columns>
+        </DataGrid>
+      </Border>
+      <Border Name="GemCounts" Margin="5,0,5,5" Background="{DynamicResource TextBoxAndFrameBackground}">
+        <Grid Name="GridGemSummary">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="0.489*" />
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+          </Grid.RowDefinitions>
+          <StackPanel>
+            <Border BorderThickness="1">
+              <TextBlock Margin="0,2,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13.333" Text="{x:Static l:Strings.AccentGemsIncludedInEstimate}" TextWrapping="Wrap" />
+            </Border>
+            <Grid Margin="2">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+              </Grid.RowDefinitions>
+              <Border Grid.Column="1" Background="#FFFFFFFF" BorderThickness="1">
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                  <TextBlock Name="TextBlock2" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding Source={x:Static l:Strings.WEIGHT}, Converter={StaticResource StringToTitleCaseConverter}}" />
+                  <TextBlock Name="textBlock3" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding GemsIncludedInEstimateWeight, Mode=Default}" />
+                </StackPanel>
+              </Border>
+              <Border Background="#FFFFFFFF" BorderThickness="1">
+                <StackPanel Margin="0" HorizontalAlignment="Center" Orientation="Horizontal">
+                  <TextBlock Name="TextBlock4" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF000000" Text="{x:Static l:Strings.Count}" TextWrapping="Wrap" />
+                  <TextBlock Name="TextBlock5" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding GemsIncludedInEstimate, Mode=Default}" />
+                </StackPanel>
+              </Border>
+            </Grid>
+          </StackPanel>
+          <StackPanel Grid.Column="2" Grid.ColumnSpan="2">
+            <Border BorderThickness="1">
+              <TextBlock Margin="0,2,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13.333" Text="{x:Static l:Strings.LargeGemsNOTIncludedInEstimate}" TextWrapping="Wrap" />
+            </Border>
+            <Grid Margin="2">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <Border Grid.Column="1" Height="25" Background="#FFFFFFFF" BorderThickness="1">
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                  <TextBlock Name="TextBlock6" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding Source={x:Static l:Strings.WEIGHT}, Converter={StaticResource StringToTitleCaseConverter}}" />
+                  <TextBlock Name="TextBlock7" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding GemsNotIncludedInEstimateWeight, Mode=Default}" />
+                </StackPanel>
+              </Border>
+              <Border Height="25" Background="#FFFFFFFF" BorderThickness="1">
+                <StackPanel Margin="0" HorizontalAlignment="Center" Orientation="Horizontal">
+                  <TextBlock Name="TextBlock8" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="#FF000000" Text="{x:Static l:Strings.Count}" TextWrapping="Wrap" />
+                  <TextBlock Name="TextBlock9" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding GemsNotIncludedInEstimate, Mode=Default}" />
+                </StackPanel>
+              </Border>
+            </Grid>
+          </StackPanel>
+        </Grid>
+      </Border>
+      <Border Name="MissingGemsList" Margin="5,2,5,5" Background="#FFCBCBCB" Visibility="Collapsed">
+        <ScrollViewer Name="ScrollViewer" Padding="5,0" VerticalScrollBarVisibility="Auto">
+          <StackPanel Margin="2,0">
+            <TextBlock Margin="0,10,0,0" Cursor="None" FontSize="13.333" Text="{x:Static l:Strings.OutOfStock}" TextWrapping="Wrap" />
+            <StackPanel Margin="0,10,0,0" Visibility="{Binding MissingGemDetailsGVSVisibile, Converter={StaticResource BooleanToVisibilityConverter}}">
+              <Border BorderBrush="#FF000000" BorderThickness="0,0,0,1">
+                <TextBlock Margin="0,2,0,0" Text="VS G-H :" TextWrapping="Wrap" />
+              </Border>
+              <Border>
+                <TextBlock Margin="10,2,0,0" TextWrapping="Wrap" Text="{Binding MissingGemDetailsGVS}" />
+              </Border>
+            </StackPanel>
+            <StackPanel Name="SpGhsi1" Margin="0,10,0,0" Visibility="{Binding MissingGemDetailsGHSI1Visibile, Converter={StaticResource BooleanToVisibilityConverter}}">
+              <Border BorderBrush="#FF000000" BorderThickness="0,0,0,1">
+                <TextBlock Margin="0,2,0,0" Cursor="None" Text="SI1 G-H :" TextWrapping="Wrap" />
+              </Border>
+              <Border>
+                <TextBlock Name="TbGhsi1" Margin="10,2,0,0" TextWrapping="Wrap" Text="{Binding MissingGemDetailsGHSI1}" />
+              </Border>
+            </StackPanel>
+            <StackPanel Name="SpGhsi23" Margin="0,10,0,0" Visibility="{Binding MissingGemDetailsGHSI23Visibile, Converter={StaticResource BooleanToVisibilityConverter}}">
+              <Border BorderBrush="#FF000000" BorderThickness="0,0,0,1">
+                <TextBlock Margin="0,2,0,0" Text="SI2-SI3 G-H :" TextWrapping="Wrap" />
+              </Border>
+              <Border>
+                <TextBlock Name="TbGhsi23" Margin="10,2,0,0" TextWrapping="Wrap" Text="{Binding MissingGemDetailsGHSI23}" />
+              </Border>
+            </StackPanel>
+            <StackPanel Name="SpIji1" Margin="0,10,0,0" Visibility="{Binding MissingGemDetailsIJI1Visibile, Converter={StaticResource BooleanToVisibilityConverter}}">
+              <Border BorderBrush="#FF000000" BorderThickness="0,0,0,1">
+                <TextBlock Margin="0,2,0,0" Text="I1 I-J :" TextWrapping="Wrap" />
+              </Border>
+              <Border>
+                <TextBlock Name="TbIji1" Margin="10,2,0,0" TextWrapping="Wrap" Text="{Binding MissingGemDetailsIJI1}" />
+              </Border>
+            </StackPanel>
+          </StackPanel>
+        </ScrollViewer>
+      </Border>
+      <Border Name="MissingGemsActions" Margin="5,0,5,5" Background="#FFFFFFFF" BorderThickness="1" Visibility="Collapsed">
+        <DockPanel VerticalAlignment="Center" LastChildFill="False">
+          <TextBlock Margin="10,3,10,0" VerticalAlignment="Center" FontSize="13.333" Foreground="#FFCD0000" TextWrapping="Wrap">
+            <Run Text="{x:Static l:Strings.QEGemsNotInStockExplanation}" />
+          </TextBlock>
+          <Button Name="ButtonClose" Width="95" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Content="{x:Static l:Strings.Close}" DockPanel.Dock="Right" Visibility="Collapsed">
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <ei:GoToStateAction StateName="MissingGems" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+          <Button Name="ButtonView" Width="95" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Content="{x:Static l:Strings.View}" DockPanel.Dock="Right">
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="Click">
+                <ei:GoToStateAction StateName="MissingGemsDisplayed" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+          </Button>
+        </DockPanel>
+      </Border>
+      <Border Visibility="{Binding ShowScreenCapture, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Image Name="ImageCapture" MaxWidth="500" MaxHeight="400" Stretch="UniformToFill" Source="{Binding ScreenCaptureImage}" />
+      </Border>
+    </StackPanel>
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="VisualStateGroup">
+        <VisualState x:Name="Default" />
+        <VisualState x:Name="MissingGems">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MissingGemsActions" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="MissingGemsDisplayed">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MissingGemsActions" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MissingGemsList" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonClose" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonView" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+  </Grid>
+</Window>

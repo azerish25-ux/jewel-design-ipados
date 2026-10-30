@@ -25,3 +25,17 @@ Extract pure domain logic from Rhino/WPF dependencies; replace Windows calls wit
 ## Reproduction
 
 Use scripts/run-local.cjs for local dotnet/gh commands to route configuration, caches, SDK and temp files into ignored .local on D:. ReuseAudit takes original source directory, local output directory and .NET reference assembly directory. It removes complete files with compiler errors until a closed error-free assembly emits. Full diagnostics remain local because they can contain original literals. Manifests store paths, counts and SHA256 of UTF-8 source decoded without BOM.
+
+## Apple build evidence (2026-10-29)
+
+[Device job](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40953692111/job/123728156674): unsigned Release ios-arm64 Mono AOT build succeeded, 47 warnings, zero errors, elapsed 9m17s. Toolchain: .NET SDK 10.0.302, workload set 10.0.302.0, iOS SDK 26.5.10301, Xcode 26.6, macOS ARM64. Framework trimming uses SdkOnly; the recovered application libraries are retained. Windows uses SDK 10.0.403 for the static audit. This is compilation, not physical-device execution or signing.
+
+Exported compilation set: 1,414 unchanged source files / 83,929 nonblank lines (80,829 main-source lines plus 3,100 geometry-helper lines). Two credential-containing copies totaling 110 lines are intentionally omitted. The initial local BCL count includes those copies; do not confuse it with the exported count.
+
+Warnings include COM interop, reflection metadata, XML serialization/DataSet/DataTable trimming and resource-related risks. Build success does not validate those paths or make Windows native calls available. Test assemblies use experimental names desktop/cad/geometry; original assembly identity and project deserialization compatibility have not been reconstructed.
+
+Adding portable Newtonsoft.Json 13.0.4 locally increases the main whole-file compilation set only to 1,397 files / 81,125 nonblank lines (+6 files / +186 lines). This extra profile has not been tested on iOS or uploaded as source. Exact-content deduplication of the BCL main compilation set yields 1,334 unique files / 77,625 nonblank lines.
+
+Signed standalone iPad simulator run 40969820121 now passes the selected math/vector/density assertions. The native pre-Main failure was CODESIGNING/Invalid Page; valid ad-hoc signing fixed it. This establishes only the executed paths, not every retained method or full feature parity. The macOS golden/math/domain checks pass, with compression incompatibility reported as a non-gating probe.
+
+All 2,783 original main recovered-source hashes were rechecked: zero changed. Local SDK, packages, GitHub configuration, temporary files and downloaded CI evidence reside under D:. No global SDK or workload installation was used.

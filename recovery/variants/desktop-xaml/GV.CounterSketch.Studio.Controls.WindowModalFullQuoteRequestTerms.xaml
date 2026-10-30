@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.Controls.WindowModalFullQuoteRequestTerms" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:GV_CounterSketch_Utilities_Behaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" x:Name="Window" Title="Full Quote" Width="650" WindowStyle="None" ResizeMode="NoResize" SizeToContent="Height" WindowStartupLocation="CenterScreen" AllowsTransparency="True" ShowInTaskbar="False" Style="{DynamicResource CS4WindowStyleModal}" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls" Background="{x:Null}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CounterSketch Studio;component/ResourceDictionaries/Converters.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <i:Interaction.Behaviors>
+    <GV_CounterSketch_Utilities_Behaviors:WindowBehaviorRequestFocusWhenMouseEnters />
+  </i:Interaction.Behaviors>
+  <StackPanel Margin="10">
+    <ScrollViewer Height="300" VerticalScrollBarVisibility="Auto">
+      <StackPanel>
+        <TextBlock Text="TERMS AND CONDITIONS" TextWrapping="Wrap" TextDecorations="Underline" LineHeight="16" Padding="5,0,0,0" />
+        <TextBlock TextWrapping="Wrap" LineHeight="16" Text="By submitting this Request for Price QUOTE you are not placing an order. Upon receipt of your Request for Price QUOTE, the Stuller CAM Services team will review your job and contact you with your price QUOTE and additional information. Once you approve the price QUOTE, you are placing a non-returnable order to have the item created and billed to your Stuller account." Margin="0,15,0,0" Padding="5,0,0,0" />
+        <TextBlock Margin="0,15,0,0" TextWrapping="Wrap" LineHeight="16" Text="Price QUOTE will utilize available data collected from the software. However, the price QUOTE is a preliminary estimate only and may not include material or labor costs not currently or correctly defined in the job." Padding="5,0,0,0" />
+        <TextBlock Margin="0,15,0,0" TextWrapping="Wrap" LineHeight="16" Text="As with all Stuller products, metals will be priced at the current market value on the day of shipment." Padding="5,0,0,0" />
+        <TextBlock Margin="0,15,0,0" TextWrapping="Wrap" LineHeight="16" Text="By submitting this Request for Price QUOTE you are accepting these Terms and Conditions as well as the Stuller Studio Terms of Service." Padding="5,0,0,0" />
+        <TextBlock Margin="0,15,0,0" TextWrapping="Wrap" LineHeight="16" Text="As specified in the software license agreement, Stuller is the exclusive provider of Counter Sketch Studio end-product fulfillment services. Any attempt successful or otherwise to create CounterSketch Studio related jewelry outside of this agreement is subject to severe penalties." Padding="5,0,0,0" />
+        <TextBlock Margin="0,15,0,0" TextWrapping="Wrap" LineHeight="16" Text="Request for Price QUOTE feature you must agree to these Terms and Conditions." Padding="5,0,0,0" />
+        <TextBlock Text="WAIVER OF LIABILITY" TextWrapping="Wrap" Margin="0,30,0,0" TextDecorations="Underline" LineHeight="16" Padding="5,0,0,0" />
+        <TextBlock Margin="0,15,0,20" TextWrapping="Wrap" Text="Stuller, Inc. assumes no responsibility for breakage with respect to the removing or setting of any of our client's stones, precious or semi-precious, from their jewelry or jewelry purchased from Stuller, Inc.  Stuller, Inc. will exercise reasonable care in the handling of any stones owned by our clients and sent to us for removing or setting.  However, the nature of the product and the physical condition of stones preclude any responsibility on our part for damages resulting from breakage.  This signed waiver must accompany your stones in order for Stuller, Inc to proceed with your request." LineHeight="16" Padding="5,0,0,0" />
+        <Path Fill="#FF000000" Stretch="Fill" Stroke="#FF000000" StrokeThickness="2" Height="1" Data="M8,227.5 L509.80101,227.5" Margin="0,5" />
+        <TextBlock Margin="0,15,0,20" TextWrapping="Wrap" Text="Stuller, Inc. agrees to take all reasonable precautions and to exercise due care in handling our client's stones.  Client acknowledges that even with care, breakage may occur.  Therefore, the undersigned client releases Stuller, Inc. from any and all liability for damages resulting from breakage of the enclosed stone(s)." Padding="5,0,0,0" />
+      </StackPanel>
+    </ScrollViewer>
+    <DockPanel Margin="0,5,0,0">
+      <TextBlock Text="Assign Quote to User: " TextWrapping="Wrap" Foreground="#FF000000" Margin="5,0,0,0" VerticalAlignment="Center" />
+      <ComboBox Name="cboUsers" DisplayMemberPath="Username" Style="{DynamicResource CSComboBoxStyleBasic}" Margin="10,0,0,0" Width="200" Foreground="#FF000000" ItemsSource="{Binding Users, ElementName=Window}" SelectionChanged="CboUsersSelectionChanged" />
+      <CheckBox Name="checkAgree" Content="I Agree to Terms &amp; Conditions" Style="{DynamicResource CS4CheckBoxStyle}" HorizontalAlignment="Right" Margin="0,0,80,0" DockPanel.Dock="Right" Foreground="#FF000000" VerticalContentAlignment="Center" />
+    </DockPanel>
+    <Grid Name="gridSubmit" Margin="0,10,0,0" Height="42.46" Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=checkAgree, Mode=Default}">
+      <Path Fill="#FF000000" Stretch="Fill" Stroke="#FF000000" Data="M8,199 L551.94209,199" Margin="0,2,0,0" VerticalAlignment="Top" StrokeThickness="0.75" />
+      <DockPanel Margin="0,20.5,0,0">
+        <Button Name="btnCancel" Style="{DynamicResource CSButton}" Width="75" Content="Cancel" DockPanel.Dock="Right" Margin="5,0,0,0" Template="{DynamicResource CS4ButtonRounded}" Click="ButtonCancelClick" />
+        <Button Name="buttonRequestQuote" Style="{DynamicResource CSButton}" Width="75" Content="Submit" DockPanel.Dock="Right" Template="{DynamicResource CS4ButtonRounded}" Click="ButtonRequestQuoteClick" />
+        <DockPanel Name="EmailPhoneDetails" Margin="3,0,0,0">
+          <TextBlock TextWrapping="Wrap" Text="Quote Email:" Margin="0,3,10,0" Foreground="#FF000000" HorizontalAlignment="Left" />
+          <TextBox Name="textQuoteEmail" TextWrapping="Wrap" Background="#FFFFFFFF" Foreground="#FF000000" Style="{DynamicResource CSTextBox}" FocusVisualStyle="{DynamicResource CSTextFocusControlStyle}" Width="200" Margin="0,0,20,0" HorizontalAlignment="Left">
+            <Control.BorderBrush>
+              <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                <GradientStop Color="#FFABADB3" Offset="0.05" />
+                <GradientStop Color="#FFE2E3EA" Offset="0.07" />
+                <GradientStop Color="Black" Offset="1" />
+              </LinearGradientBrush>
+            </Control.BorderBrush>
+          </TextBox>
+          <TextBlock TextWrapping="Wrap" Text="Phone:" Margin="0,3,10,0" Foreground="#FF000000" HorizontalAlignment="Left" />
+          <TextBox Name="textPhone" TextWrapping="Wrap" Background="#FFFFFFFF" Foreground="#FF000000" Style="{DynamicResource CSTextBox}" FocusVisualStyle="{DynamicResource CSTextFocusControlStyle}" Width="100" HorizontalAlignment="Left">
+            <Control.BorderBrush>
+              <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                <GradientStop Color="#FFABADB3" Offset="0.05" />
+                <GradientStop Color="#FFE2E3EA" Offset="0.07" />
+                <GradientStop Color="Black" Offset="1" />
+              </LinearGradientBrush>
+            </Control.BorderBrush>
+          </TextBox>
+        </DockPanel>
+      </DockPanel>
+    </Grid>
+  </StackPanel>
+</Window>

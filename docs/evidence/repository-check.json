@@ -1,0 +1,29 @@
+{
+  "recovery": {
+    "sourceTextFiles": 10405,
+    "csharpFiles": 10238,
+    "uniqueResources": 744,
+    "resourceMappings": 2241,
+    "uniqueFilesVerified": 11149
+  },
+  "planning": {
+    "phases": 16,
+    "tasks": 96,
+    "requirementRows": 1451,
+    "verifiedRequirements": 0
+  },
+  "contracts": {
+    "builderBatches": 71,
+    "buildersAssigned": 619,
+    "serializerCrossReferences": 619,
+    "completedTaskRecordsChecked": 4,
+    "fixtureHashVerified": true
+  },
+  "navigation": {
+    "localLinksChecked": 1807
+  },
+  "security": {
+    "textFilesScanned": 11966,
+    "noCredentialFindings": true
+  }
+}

@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>GemvisionApplicationManager</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net452</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="gv_abr_generic_icon.ico" />
+    <None Remove="gv_abr_generic.png" />
+    <None Remove="gv_generic.png" />
+    <None Remove="gv_generic.ico" />
+    <None Remove="notifyiconresources.baml" />
+    <None Remove="mainwindow.baml" />
+    <None Remove="favicon-diamond.ico" />
+    <None Remove="app.baml" />
+    <EmbeddedResource Include="gv_abr_generic_icon.ico" LogicalName="gv_abr_generic_icon.ico" />
+    <EmbeddedResource Include="gv_abr_generic.png" LogicalName="gv_abr_generic.png" />
+    <EmbeddedResource Include="gv_generic.png" LogicalName="gv_generic.png" />
+    <EmbeddedResource Include="gv_generic.ico" LogicalName="gv_generic.ico" />
+    <EmbeddedResource Include="notifyiconresources.baml" LogicalName="notifyiconresources.baml" />
+    <EmbeddedResource Include="mainwindow.baml" LogicalName="mainwindow.baml" />
+    <EmbeddedResource Include="favicon-diamond.ico" LogicalName="favicon-diamond.ico" />
+    <EmbeddedResource Include="app.baml" LogicalName="app.baml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification">
+      <HintPath>..\..\..\extracted\installer\pf64\CounterSketch Studio\GemvisionApplicationManager\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="SharedTypes">
+      <HintPath>..\..\..\extracted\installer\pf64\CounterSketch Studio\GemvisionApplicationManager\SharedTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\extracted\installer\pf64\CounterSketch Studio\GemvisionApplicationManager\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

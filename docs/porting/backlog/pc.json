@@ -1,0 +1,1305 @@
+{
+  "schemaVersion": 1,
+  "kind": "pc",
+  "rows": [
+    {
+      "id": "PC-001",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Versioned compatibility claim",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/properties/AssemblyInfo.cs",
+          "line": 153,
+          "symbol": "AssemblyVersion("
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 775,
+          "symbol": "private bool Read(string filePath"
+        }
+      ],
+      "acceptance": "Label import/export compatibility by actual PC version and fixture; reject unsupported future structures without overwriting the input.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-002",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Complete project bundle",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 101,
+          "symbol": "public string ProjectInfoFilePath"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 376,
+          "symbol": "Directory.GetFiles(Path, \"*.csg\")"
+        }
+      ],
+      "acceptance": "Import/export an entire PC portfolio directory/archive; every referenced design and required sibling asset must survive.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-003",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "CSP XML metadata",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 426,
+          "symbol": "public bool SaveProjectData()"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 458,
+          "symbol": "private bool DeserializeProjectInfo()"
+        }
+      ],
+      "acceptance": "PC -> iPad -> PC preserves all persisted metadata including non-ASCII text, empty fields and default ring size; compare actual XML semantics.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-004",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Base and variant filename identities",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 383,
+          "symbol": "fileNameWithoutExtension.Split"
+        }
+      ],
+      "acceptance": "Import multiple base designs and variants with colliding friendly names; maintain both GUIDs and parent/history membership after round trip.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-005",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Design-specific metadata",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 135,
+          "symbol": "public Guid BaseDesignInstance"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 168,
+          "symbol": "public string CSUserDesignName"
+        }
+      ],
+      "acceptance": "Compare each persisted Design property while allowing intentional recomputation of XmlIgnore values; retain component and iteration identifiers.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-006",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Relative paths and Windows path reconciliation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 407,
+          "symbol": "item.Path.Split('\\\\')"
+        }
+      ],
+      "acceptance": "Move between Windows drive letters and iPad sandbox locations, then return to a different PC root; no dangling absolute path, separator or filename-case references.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-007",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Portfolio copy semantics",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs",
+          "line": 488,
+          "symbol": "public static Project CopyProject"
+        }
+      ],
+      "acceptance": "Copy on each platform and compare exactly which identifiers/history/files persist and which customer fields intentionally reset.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-008",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Portfolio rename semantics",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs",
+          "line": 759,
+          "symbol": "public static bool RenameProject"
+        }
+      ],
+      "acceptance": "Rename a populated portfolio, reopen it and return it to PC; design, preview and history links must remain valid.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-009",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Missing CSP recovery",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 403,
+          "symbol": "Recreating missing CSP"
+        }
+      ],
+      "acceptance": "Import a directory with valid designs but missing/damaged .csp into a copy; report recovered vs unavailable metadata without overwriting the original.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-010",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Missing design reconciliation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 421,
+          "symbol": "list.RemoveAll"
+        }
+      ],
+      "acceptance": "Present absent sibling designs as explicit losses before committing an import; preserve original bundle and document the Windows reconciliation difference.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-011",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Preview and favorite image sidecars",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 46,
+          "symbol": "public string BaseDesignImagePath"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 76,
+          "symbol": "public string FavoriteImagePath"
+        }
+      ],
+      "acceptance": "Transfer a project with all sidecar orientations/favorites; compare thumbnails, favorite flags and regeneration behavior after PC reopen.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-012",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Iteration-selection reset behavior",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs",
+          "line": 486,
+          "symbol": "d.SelectedIterationId = null"
+        }
+      ],
+      "acceptance": "Distinguish saved design options from transient selected iteration; reproduce expected default selection without deleting stored alternatives.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-013",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Dirty save/cancel workflows",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs",
+          "line": 395,
+          "symbol": "public static bool ContinueAfterSaveDesignPrompt"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/ProjectManagementHelper.cs",
+          "line": 426,
+          "symbol": "public static bool ContinueAfterSaveNewPortfolioPrompt"
+        }
+      ],
+      "acceptance": "For every close/new/open/rename path test Save, Discard and Cancel; PC-compatible files must contain the intended committed design.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-014",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "CSB nested backup packaging",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/BackupHelper.cs",
+          "line": 20,
+          "symbol": "AppDataBackupFileName"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/BackupHelper.cs",
+          "line": 196,
+          "symbol": "CS_{1}_Backup_"
+        }
+      ],
+      "acceptance": "Inspect and restore representative PC .csb backups into an isolated destination; retain project files, catalogs, settings and app-state distinctions.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-015",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Restore extension and database handling",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/BackupHelper.cs",
+          "line": 352,
+          "symbol": "case \".s3db\":"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/BackupHelper.cs",
+          "line": 357,
+          "symbol": "case \".zbin\":"
+        }
+      ],
+      "acceptance": "Verify schema migration and overwrite decisions independently for app DB, catalog DB, library packs and projects; no silent cross-version replacement.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-016",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "CSG custom OpenNURBS archive",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 472,
+          "symbol": "onBinaryFile.Write3dmStartSection"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 508,
+          "symbol": "WriteCSFileInformation(onBinaryFile)"
+        }
+      ],
+      "acceptance": "Open/edit/save a real CSG on iPad and reopen it in PC with its construction graph; a geometry-only 3DM/STL conversion is a failure.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-017",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Four custom container UUIDs",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 816,
+          "symbol": "A31784F3-23DF"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 820,
+          "symbol": "DD8ECCF8-9380"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 851,
+          "symbol": "new CSDisplayGroupTable().Read"
+        }
+      ],
+      "acceptance": "Maintain one fixture per accepted container UUID and legacy table layout; test rejection of unrecognized markers without file mutation.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-018",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Archive length widths and old headers",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 110,
+          "symbol": "Read3dmStartSection(ref version"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 472,
+          "symbol": "onBinaryFile.Write3dmStartSection"
+        }
+      ],
+      "acceptance": "Verify 32/64-bit chunk-length representations, nested boundaries, end marks and CRC rules with independent archive fixtures; current byte probe is not a full decoder.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-019",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "File build and provenance records",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 258,
+          "symbol": "public bool ReadCSFileInformation"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 533,
+          "symbol": "public bool WriteCSFileInformation"
+        }
+      ],
+      "acceptance": "Preserve provenance semantics and document intentional editor/revision changes; use semantic rather than unconditional byte-identical comparisons.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-020",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "UTF-16, numeric and binary primitive layout",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSUtilIO.cs",
+          "line": 127,
+          "symbol": "public static bool ReadArray(ref Guid[]"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 895,
+          "symbol": "public virtual bool Read(ref OnBinaryArchive"
+        }
+      ],
+      "acceptance": "Golden-byte tests cover non-ASCII strings, empty values, UUID endian layout, numeric precision, array lengths, booleans and geometry blobs.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-021",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "JSON and GZip alternative document paths",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 229,
+          "symbol": "if (text != \".json\" && text != \".gz\")"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 246,
+          "symbol": "using GZipStream gZipStream"
+        }
+      ],
+      "acceptance": "Round trip each exposed/supported route, large UTF-8/GZip files and truncated streams; do not advertise it as a lossless CSG replacement before field coverage passes.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-022",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "JSON root sections",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.JSonDoc/JSonDocumentWriter.cs",
+          "line": 33,
+          "symbol": "outObj.Add(\"PreviewBitmap\""
+        },
+        {
+          "path": "recovery/canonical/cad/CS.JSonDoc/JSonDocumentReader.cs",
+          "line": 12,
+          "symbol": "public static bool ReadCSFile"
+        }
+      ],
+      "acceptance": "Compare every root section after round trip; preserve or explicitly regenerate preview data and validate all graph-reader failures.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-023",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "JSON read-result propagation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 251,
+          "symbol": "JSonDocumentReader.ReadCSFile"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 328,
+          "symbol": "Unable to find type:"
+        }
+      ],
+      "acceptance": "A failed/unknown JSON graph must not be reported as a successful editable import or silently saved over its source; record this deliberate fail-closed deviation.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-024",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "CSGL five-record container",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/DesignLibrary/CSGLLibrary.cs",
+          "line": 195,
+          "symbol": "private static byte[] GetByteArray"
+        },
+        {
+          "path": "recovery/canonical/desktop/DesignLibrary/CSGLLibrary.cs",
+          "line": 149,
+          "symbol": "GetByteArray(text, 4)"
+        }
+      ],
+      "acceptance": "Decode bounded .csgl fixtures with both compression modes, verify all declared lengths and graph payloads, then load/edit the extracted CSG.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-025",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "ZBin and generated catalog database",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/DesignLibrary/LibraryPacker.cs",
+          "line": 12,
+          "symbol": "public static void CreateSqLiteDBFromZBinFile"
+        },
+        {
+          "path": "recovery/canonical/desktop/DesignLibrary/LibraryPacker.cs",
+          "line": 89,
+          "symbol": "public static void GetDesignsFromZBinFile"
+        }
+      ],
+      "acceptance": "Import compatible metadata and all referenced design versions; verify IDs/filter metadata/thumbnail links rather than inferring catalog completeness from pack presence.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-026",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Account-specific catalog selection",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Utilities.Helpers/CSLibraryHelper.cs",
+          "line": 115,
+          "symbol": "GetMyLibraryZBin"
+        }
+      ],
+      "acceptance": "Provision an actual supported offline catalog before first use; no fabricated key IDs or mandatory online fetch; verify the selected catalog matches its PC source.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-027",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Declared type GUID catalog",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSApplication.cs",
+          "line": 491,
+          "symbol": "BlockList.Add(new CSBlockDescription"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Parametric/CSBlockDescription.cs",
+          "line": 25,
+          "symbol": "public CSObject GetNew("
+        }
+      ],
+      "acceptance": "Map every declared GUID to an on-device factory and acceptance case; reconcile source catalog against actual runtime registration before claiming full type coverage.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-028",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Legacy node algorithm retention",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSApplication.cs",
+          "line": 494,
+          "symbol": "Registering Blocks Complete"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 443,
+          "symbol": "BlockDescriptionSearch(list, guid)"
+        }
+      ],
+      "acceptance": "Cover all 272 declared legacy/obsolete node types in fixture coverage, including their historical algorithms, parameters and outputs; no GUID substitution without comparison.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-029",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Node record version dispatch",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 1071,
+          "symbol": "protected virtual void MajorMinorVersion"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "line": 275,
+          "symbol": "protected override void MajorMinorVersion"
+        }
+      ],
+      "acceptance": "For each of 654 types record effective inherited/overridden readers and test supported old/current versions, non-default fields and unsupported versions.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-030",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Two-pass node allocation and links",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 484,
+          "symbol": "public bool ReadGraphItems(OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Parametric/CSBlockDescription.cs",
+          "line": 28,
+          "symbol": "BlockClass.GetConstructor"
+        }
+      ],
+      "acceptance": "Reconstruct references only after all supported nodes exist; verify forward references, connection ordering and dependency evaluation against PC.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-031",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Instance GUIDs and old-ID regeneration",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 939,
+          "symbol": "if (major >= 2)"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 943,
+          "symbol": "if (!Guid.TryParse(str"
+        }
+      ],
+      "acceptance": "Preserve existing valid IDs and explicitly match old-format migration semantics; do not require byte-identical provenance after intentional GUID generation.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-032",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Channel ordering and expandable inputs",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 437,
+          "symbol": "public override bool ReadJson"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 392,
+          "symbol": "CreateExpansionInputChannel()"
+        }
+      ],
+      "acceptance": "Exercise multi-input, unconnected, expandable and legacy-group nodes; compare link endpoints, order and missing-input diagnostics.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-033",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Static input/output links",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 579,
+          "symbol": "public void SetStaticUserData()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 407,
+          "symbol": "base.UserData.FindValue(\"SuperView\", \"StaticInputData\")"
+        }
+      ],
+      "acceptance": "After reorder/import/partial export, verify static endpoints, socket flags and output indices still reference the intended nodes.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-034",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Parent and import-offset remapping",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 927,
+          "symbol": "CSApplicationHelper.Application.ImportOffset > 0"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+          "line": 377,
+          "symbol": "num += CSApplicationHelper.Application.ImportOffset"
+        }
+      ],
+      "acceptance": "Import the same part twice into a populated document and retain distinct parent/group/connection identities without collisions.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-035",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Unknown binary node fallback",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 518,
+          "symbol": "Expired Block loaded with Guid"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks/CSNullBlock.cs",
+          "line": 23,
+          "symbol": "Block No Longer Supported"
+        }
+      ],
+      "acceptance": "Detect unsupported types before destructive save; retain the original bytes or refuse editable round trip. Do not silently replace a foreign GUID or emit external telemetry offline.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-036",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Unknown JSON types and partial graph state",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 427,
+          "symbol": "public bool ReadGraphItemsJson"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 251,
+          "symbol": "JSonDocumentReader.ReadCSFile"
+        }
+      ],
+      "acceptance": "Test unknown GUID, bad version, missing payload and partial allocation; import must expose incomplete editability and must not overwrite the source.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-037",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Arbitrary user-data triples",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.Parametric/CSUserData.cs",
+          "line": 210,
+          "symbol": "public bool Read(ref OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Parametric/CSUserData.cs",
+          "line": 89,
+          "symbol": "public bool AddSerializedObject"
+        }
+      ],
+      "acceptance": "Retain unknown keys, Unicode values and embedded XML, including keys not currently interpreted by the iPad UI.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-038",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Numeric, choice and CAM value semantics",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "line": 295,
+          "symbol": "public override bool Read(ref OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "line": 414,
+          "symbol": "archive.WriteBool(_absoluteCAM)"
+        }
+      ],
+      "acceptance": "Round trip non-default typed values and CAM notes across supported versions; distinguish displayed/real/manufacturing values and test source rounding/units.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-039",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Imported/freehand group serialization",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 984,
+          "symbol": "public void WriteImportedObjectData()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 979,
+          "symbol": "public JArray WriteImportedObjectJson()"
+        }
+      ],
+      "acceptance": "Round trip identifiers, part groups, ownership, linked imported nodes and categories through repeated import/duplicate/delete operations.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-040",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Category table and import identifiers",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSUICategoryTable.cs",
+          "line": 126,
+          "symbol": "public bool Read(ref OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSUICategoryTable.cs",
+          "line": 139,
+          "symbol": "[IMPORTGUID]"
+        }
+      ],
+      "acceptance": "Verify category labels/order, index remapping, imported IDs and parameter-panel membership after PC reopen.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-041",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Iterations and typed option graphs",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.Iteration/GCIterations.cs",
+          "line": 246,
+          "symbol": "public bool WriteToUserData"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Iteration/GCIterations.cs",
+          "line": 260,
+          "symbol": "jsonSerializer.TypeNameHandling = TypeNameHandling.Auto"
+        }
+      ],
+      "acceptance": "Preserve option subclasses, namespaces/type discriminators, GUID references, alternatives and selected outputs without requiring CLR type activation on iPad.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-042",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Embedded Rhino geometry and JSON asymmetry",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSRhinoObjectsFromBoundingBox.cs",
+          "line": 88,
+          "symbol": "public override bool Read("
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSRhinoObjectsFromBoundingBox.cs",
+          "line": 174,
+          "symbol": "public override bool Write("
+        }
+      ],
+      "acceptance": "Load a fixture containing embedded objects, save through every proposed interchange route and compare editable/source geometry. Inherited base JSON alone is not accepted as lossless.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-043",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "RMA/RhinoCommon interop conversion",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSCompatibility/CSConvert.cs",
+          "line": 230,
+          "symbol": "public static Brep Convert(this OnBrep"
+        },
+        {
+          "path": "recovery/canonical/cad/CSCompatibility/CSConvert.cs",
+          "line": 142,
+          "symbol": "public static Transform Convert(this OnXform"
+        }
+      ],
+      "acceptance": "Compare orientation, knot vectors, trims, periodicity, ownership and precision through the proposed on-device kernel and back to PC.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-044",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Gem definition table and reload semantics",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSGemInstanceDefinitionTable.cs",
+          "line": 151,
+          "symbol": "public bool Read(ref OnBinaryArchive"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 328,
+          "symbol": "public void ReloadGems()"
+        }
+      ],
+      "acceptance": "Preserve embedded/source gem definitions and exclusions; distinguish opening unchanged from explicit library reload and compare geometry after both.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-045",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Font reconciliation and text geometry",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 564,
+          "symbol": "private static void CheckFontSourceErrors()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 663,
+          "symbol": "private bool PostProcessFile("
+        }
+      ],
+      "acceptance": "Transfer text/engraving cases with available and missing fonts; preserve source font identifiers and report substitutions before producing changed manufacturing geometry.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-046",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Layer-to-material migration",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 900,
+          "symbol": "if (major <= 2 && minor <= 3)"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+          "line": 907,
+          "symbol": "GetMaterialClassifictionByLayer"
+        }
+      ],
+      "acceptance": "Cover old/new material classification values, mixed primary/secondary metals and unknown enums; compare displayed and exported assignments.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-047",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Material groups and overrides",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 518,
+          "symbol": "MaterialGroupHelper.SaveMaterialGroups"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 865,
+          "symbol": "MaterialGroupHelper.LoadMaterialGroups"
+        }
+      ],
+      "acceptance": "Preserve group membership, gem/metal classification and per-object overrides; render and export the same assignments after round trip.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-048",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Saved display component visibility",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 514,
+          "symbol": "\"CurrentComponents\""
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 515,
+          "symbol": "\"FreehandComponentsVisible\""
+        }
+      ],
+      "acceptance": "Reopen with matching center/side/accent/freehand visibility and distinguish display-only settings from objects excluded in manufacturing export.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-049",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Active/selected subset serialization",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 910,
+          "symbol": "public bool WriteGraphItems("
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 509,
+          "symbol": "Graph.SetIndexesOfGraphItems(activeOnly: true, selection)"
+        }
+      ],
+      "acceptance": "Save full design, active-only and selected-part subsets with external dependencies; prove all retained references are valid or explicitly warn about missing dependencies.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-050",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Write-time graph cleanup and mutation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 521,
+          "symbol": "Graph.RemoveDeleted()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 156,
+          "symbol": "Graph.CategoryTable.RemoveIndexes()"
+        }
+      ],
+      "acceptance": "Compare pre/post-save graph behavior, identifiers and undo state; failure/cancellation must not leave temporary indices or partial files.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-051",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Read-file-values versus full replacement",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 296,
+          "symbol": "public void ReadFileValues("
+        }
+      ],
+      "acceptance": "Use matched and mismatched graph structures to verify value-only loading does not masquerade as complete import; preserve documented behavior and warn on incompatibility.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-052",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Transaction and edit history semantics",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSUndoTable.cs",
+          "line": 205,
+          "symbol": "public bool UndoLast("
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Design.cs",
+          "line": 59,
+          "symbol": "public ObservableCollection<Design> DesignHistories"
+        }
+      ],
+      "acceptance": "Test edit/undo/redo within a session and variant-history persistence after reopen separately; do not claim that all undo history is serialized into CSG without evidence.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-053",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Stored CSharp source and typed outputs",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 90,
+          "symbol": "public override bool Read("
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 749,
+          "symbol": "new CSharpCodeProvider"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 858,
+          "symbol": "CompileAssemblyFromSource"
+        }
+      ],
+      "acceptance": "Round trip source and configuration without execution, then test each supported script API/output on device. An iPad-compatible interpreter/compiler model and geometry API mapping are unresolved.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-054",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "External CLR and Windows assumptions",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 837,
+          "symbol": "using System.IO;"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 870,
+          "symbol": "CreateInstance"
+        }
+      ],
+      "acceptance": "Use fixtures with filesystem/reflection/external references and verify safe, explicit unsupported results; a preserved script string is not execution parity.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-055",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Editable project versus STL/3DM geometry",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 1954,
+          "symbol": "public bool ExportDesignAsSTL"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 1987,
+          "symbol": "public bool ExportDesignAs3DM"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 650,
+          "symbol": "public void DocumentWrite("
+        }
+      ],
+      "acceptance": "Test editable PC project round trip separately from geometry-only manufacturing export; retained topology alone does not pass graph compatibility.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-056",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Manufacturing selection and mesh repair",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 1954,
+          "symbol": "public bool ExportDesignAsSTL"
+        }
+      ],
+      "acceptance": "Validate component inclusion, unit scale, watertightness, normals, repair-induced changes and source mesh tolerances against PC output.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-057",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Semantic PC -> iPad -> PC fixture suite",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 113,
+          "symbol": "_fileProperties.m_RevisionHistory.NewRevision()"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 910,
+          "symbol": "public bool WriteGraphItems("
+        }
+      ],
+      "acceptance": "For every supported PC version/format/GUID/version branch: open unchanged, edit one parameter, save, PC reopen/recompute/export; compare graph data, identities, dimensions, volume, materials, categories, options and output geometry.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "PC-058",
+      "kind": "pc",
+      "phase": "P04",
+      "title": "Unsupported and corrupt projects",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 262,
+          "symbol": "Read Graph Items Version Number"
+        },
+        {
+          "path": "recovery/canonical/cad/CS/CSDocument.cs",
+          "line": 128,
+          "symbol": "Invalid File Format"
+        }
+      ],
+      "acceptance": "Test truncation, bad CRC/lengths/counts, unknown UUID/GUID, unavailable fonts/assets, malformed XML/JSON and interrupted save on copies; never imply complete editability after data loss.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    }
+  ]
+}

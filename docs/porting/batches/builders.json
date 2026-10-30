@@ -1,0 +1,1762 @@
+{
+  "schemaVersion": 1,
+  "maxBatchSize": 20,
+  "totalBuilders": 619,
+  "batches": [
+    {
+      "id": "BATCH-0001",
+      "namespace": "CSBlocks",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0001"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0002",
+      "namespace": "CSBlocks.Bails",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0002",
+        "BLD-0003",
+        "BLD-0004",
+        "BLD-0005",
+        "BLD-0006",
+        "BLD-0007"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0003",
+      "namespace": "CSBlocks.Bails.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0008",
+        "BLD-0009",
+        "BLD-0010",
+        "BLD-0011"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0004",
+      "namespace": "CSBlocks.Builders",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0012",
+        "BLD-0013",
+        "BLD-0014",
+        "BLD-0015"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0005",
+      "namespace": "CSBlocks.Builders.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0016",
+        "BLD-0017",
+        "BLD-0018",
+        "BLD-0019"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0006",
+      "namespace": "CSBlocks.Caps",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0020",
+        "BLD-0021",
+        "BLD-0022",
+        "BLD-0023"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0007",
+      "namespace": "CSBlocks.Collars",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0024"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0008",
+      "namespace": "CSBlocks.Collars.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0025"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0009",
+      "namespace": "CSBlocks.Core",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0026",
+        "BLD-0027",
+        "BLD-0028",
+        "BLD-0029",
+        "BLD-0030",
+        "BLD-0031",
+        "BLD-0032",
+        "BLD-0033",
+        "BLD-0034",
+        "BLD-0035",
+        "BLD-0036",
+        "BLD-0037",
+        "BLD-0038",
+        "BLD-0039",
+        "BLD-0040",
+        "BLD-0041",
+        "BLD-0042",
+        "BLD-0043",
+        "BLD-0044",
+        "BLD-0045"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0010",
+      "namespace": "CSBlocks.Core",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0046",
+        "BLD-0047",
+        "BLD-0048",
+        "BLD-0049",
+        "BLD-0050",
+        "BLD-0051",
+        "BLD-0052",
+        "BLD-0053",
+        "BLD-0054",
+        "BLD-0055",
+        "BLD-0056",
+        "BLD-0057",
+        "BLD-0058",
+        "BLD-0059",
+        "BLD-0060",
+        "BLD-0061",
+        "BLD-0062",
+        "BLD-0063",
+        "BLD-0064",
+        "BLD-0065"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0011",
+      "namespace": "CSBlocks.Core.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0066",
+        "BLD-0067",
+        "BLD-0068",
+        "BLD-0069",
+        "BLD-0070",
+        "BLD-0071",
+        "BLD-0072",
+        "BLD-0073"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0012",
+      "namespace": "CSBlocks.Curves",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0074",
+        "BLD-0075",
+        "BLD-0076",
+        "BLD-0077",
+        "BLD-0078",
+        "BLD-0079",
+        "BLD-0080",
+        "BLD-0081",
+        "BLD-0082",
+        "BLD-0083",
+        "BLD-0084",
+        "BLD-0085",
+        "BLD-0086",
+        "BLD-0087",
+        "BLD-0088",
+        "BLD-0089",
+        "BLD-0090",
+        "BLD-0091",
+        "BLD-0092",
+        "BLD-0093"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0013",
+      "namespace": "CSBlocks.Curves",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0094",
+        "BLD-0095",
+        "BLD-0096",
+        "BLD-0097",
+        "BLD-0098",
+        "BLD-0099",
+        "BLD-0100",
+        "BLD-0101",
+        "BLD-0102",
+        "BLD-0103",
+        "BLD-0104",
+        "BLD-0105",
+        "BLD-0106",
+        "BLD-0107",
+        "BLD-0108",
+        "BLD-0109",
+        "BLD-0110",
+        "BLD-0111",
+        "BLD-0112",
+        "BLD-0113"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0014",
+      "namespace": "CSBlocks.Curves",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0114"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0015",
+      "namespace": "CSBlocks.Curves.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0115",
+        "BLD-0116",
+        "BLD-0117",
+        "BLD-0118",
+        "BLD-0119",
+        "BLD-0120",
+        "BLD-0121",
+        "BLD-0122",
+        "BLD-0123",
+        "BLD-0124",
+        "BLD-0125"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0016",
+      "namespace": "CSBlocks.Cutters",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0126",
+        "BLD-0127",
+        "BLD-0128",
+        "BLD-0129",
+        "BLD-0130",
+        "BLD-0131",
+        "BLD-0132",
+        "BLD-0133",
+        "BLD-0134",
+        "BLD-0135",
+        "BLD-0136",
+        "BLD-0137",
+        "BLD-0138",
+        "BLD-0139",
+        "BLD-0140"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0017",
+      "namespace": "CSBlocks.Cutters.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0141",
+        "BLD-0142",
+        "BLD-0143",
+        "BLD-0144",
+        "BLD-0145",
+        "BLD-0146",
+        "BLD-0147",
+        "BLD-0148",
+        "BLD-0149"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0018",
+      "namespace": "CSBlocks.GemClusters",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0150",
+        "BLD-0151",
+        "BLD-0152",
+        "BLD-0153"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0019",
+      "namespace": "CSBlocks.GemClusters.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0154",
+        "BLD-0155",
+        "BLD-0156",
+        "BLD-0157",
+        "BLD-0158",
+        "BLD-0159",
+        "BLD-0160",
+        "BLD-0161",
+        "BLD-0162",
+        "BLD-0163",
+        "BLD-0164",
+        "BLD-0165",
+        "BLD-0166",
+        "BLD-0167",
+        "BLD-0168",
+        "BLD-0169",
+        "BLD-0170",
+        "BLD-0171",
+        "BLD-0172",
+        "BLD-0173"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0020",
+      "namespace": "CSBlocks.GemClusters.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0174",
+        "BLD-0175",
+        "BLD-0176",
+        "BLD-0177",
+        "BLD-0178",
+        "BLD-0179",
+        "BLD-0180",
+        "BLD-0181",
+        "BLD-0182",
+        "BLD-0183",
+        "BLD-0184"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0021",
+      "namespace": "CSBlocks.Gems",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0185",
+        "BLD-0186",
+        "BLD-0187",
+        "BLD-0188",
+        "BLD-0189",
+        "BLD-0190",
+        "BLD-0191",
+        "BLD-0192",
+        "BLD-0193",
+        "BLD-0194",
+        "BLD-0195",
+        "BLD-0196",
+        "BLD-0197",
+        "BLD-0198",
+        "BLD-0199",
+        "BLD-0200",
+        "BLD-0201",
+        "BLD-0202",
+        "BLD-0203",
+        "BLD-0204"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0022",
+      "namespace": "CSBlocks.Gems",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0205",
+        "BLD-0206"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0023",
+      "namespace": "CSBlocks.Gems.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0207",
+        "BLD-0208",
+        "BLD-0209",
+        "BLD-0210",
+        "BLD-0211",
+        "BLD-0212",
+        "BLD-0213",
+        "BLD-0214",
+        "BLD-0215",
+        "BLD-0216",
+        "BLD-0217",
+        "BLD-0218",
+        "BLD-0219",
+        "BLD-0220",
+        "BLD-0221",
+        "BLD-0222",
+        "BLD-0223",
+        "BLD-0224",
+        "BLD-0225",
+        "BLD-0226"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0024",
+      "namespace": "CSBlocks.Gems.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0227",
+        "BLD-0228",
+        "BLD-0229",
+        "BLD-0230",
+        "BLD-0231",
+        "BLD-0232",
+        "BLD-0233",
+        "BLD-0234",
+        "BLD-0235",
+        "BLD-0236"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0025",
+      "namespace": "CSBlocks.Linked",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0237",
+        "BLD-0238",
+        "BLD-0239",
+        "BLD-0240",
+        "BLD-0241",
+        "BLD-0242",
+        "BLD-0243",
+        "BLD-0244"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0026",
+      "namespace": "CSBlocks.Linked.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0245",
+        "BLD-0246",
+        "BLD-0247",
+        "BLD-0248",
+        "BLD-0249",
+        "BLD-0250",
+        "BLD-0251",
+        "BLD-0252",
+        "BLD-0253",
+        "BLD-0254"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0027",
+      "namespace": "CSBlocks.Maths",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0255",
+        "BLD-0256",
+        "BLD-0257",
+        "BLD-0258",
+        "BLD-0259",
+        "BLD-0260",
+        "BLD-0261",
+        "BLD-0262",
+        "BLD-0263",
+        "BLD-0264",
+        "BLD-0265",
+        "BLD-0266",
+        "BLD-0267",
+        "BLD-0268",
+        "BLD-0269",
+        "BLD-0270",
+        "BLD-0271",
+        "BLD-0272",
+        "BLD-0273",
+        "BLD-0274"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0028",
+      "namespace": "CSBlocks.Maths",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0275",
+        "BLD-0276",
+        "BLD-0277",
+        "BLD-0278",
+        "BLD-0279",
+        "BLD-0280"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0029",
+      "namespace": "CSBlocks.Points",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0281",
+        "BLD-0282",
+        "BLD-0283",
+        "BLD-0284",
+        "BLD-0285"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0030",
+      "namespace": "CSBlocks.Profiles",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0286",
+        "BLD-0287",
+        "BLD-0288",
+        "BLD-0289",
+        "BLD-0290",
+        "BLD-0291",
+        "BLD-0292",
+        "BLD-0293",
+        "BLD-0294",
+        "BLD-0295",
+        "BLD-0296",
+        "BLD-0297",
+        "BLD-0298"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0031",
+      "namespace": "CSBlocks.Profiles.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0299",
+        "BLD-0300",
+        "BLD-0301",
+        "BLD-0302",
+        "BLD-0303",
+        "BLD-0304",
+        "BLD-0305"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0032",
+      "namespace": "CSBlocks.Rails",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0306",
+        "BLD-0307",
+        "BLD-0308",
+        "BLD-0309",
+        "BLD-0310",
+        "BLD-0311",
+        "BLD-0312",
+        "BLD-0313",
+        "BLD-0314",
+        "BLD-0315",
+        "BLD-0316",
+        "BLD-0317"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0033",
+      "namespace": "CSBlocks.Rails.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0318",
+        "BLD-0319",
+        "BLD-0320",
+        "BLD-0321",
+        "BLD-0322"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0034",
+      "namespace": "CSBlocks.Settings",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0323",
+        "BLD-0324",
+        "BLD-0325",
+        "BLD-0326",
+        "BLD-0327",
+        "BLD-0328",
+        "BLD-0329",
+        "BLD-0330",
+        "BLD-0331",
+        "BLD-0332",
+        "BLD-0333",
+        "BLD-0334",
+        "BLD-0335",
+        "BLD-0336",
+        "BLD-0337",
+        "BLD-0338"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0035",
+      "namespace": "CSBlocks.Settings.Bezels",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0339",
+        "BLD-0340",
+        "BLD-0341"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0036",
+      "namespace": "CSBlocks.Settings.FrenchHalo",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0342",
+        "BLD-0343",
+        "BLD-0344"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0037",
+      "namespace": "CSBlocks.Settings.FrenchHalo.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0345"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0038",
+      "namespace": "CSBlocks.Settings.Heads.CSHeadBuilderV1",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0346",
+        "BLD-0347",
+        "BLD-0348",
+        "BLD-0349",
+        "BLD-0350"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0039",
+      "namespace": "CSBlocks.Settings.Heads.CSHeadBuilderV1.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0351",
+        "BLD-0352",
+        "BLD-0353",
+        "BLD-0354",
+        "BLD-0355",
+        "BLD-0356",
+        "BLD-0357",
+        "BLD-0358",
+        "BLD-0359",
+        "BLD-0360",
+        "BLD-0361",
+        "BLD-0362",
+        "BLD-0363",
+        "BLD-0364",
+        "BLD-0365",
+        "BLD-0366",
+        "BLD-0367",
+        "BLD-0368",
+        "BLD-0369",
+        "BLD-0370"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0040",
+      "namespace": "CSBlocks.Settings.Heads.CSHeadBuilderV1.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0371",
+        "BLD-0372",
+        "BLD-0373",
+        "BLD-0374",
+        "BLD-0375",
+        "BLD-0376",
+        "BLD-0377",
+        "BLD-0378",
+        "BLD-0379",
+        "BLD-0380",
+        "BLD-0381",
+        "BLD-0382",
+        "BLD-0383",
+        "BLD-0384",
+        "BLD-0385"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0041",
+      "namespace": "CSBlocks.Settings.Heads.CSHeadBuilderV2",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0386"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0042",
+      "namespace": "CSBlocks.Settings.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0387",
+        "BLD-0388",
+        "BLD-0389",
+        "BLD-0390",
+        "BLD-0391",
+        "BLD-0392",
+        "BLD-0393",
+        "BLD-0394",
+        "BLD-0395",
+        "BLD-0396",
+        "BLD-0397",
+        "BLD-0398",
+        "BLD-0399",
+        "BLD-0400",
+        "BLD-0401",
+        "BLD-0402",
+        "BLD-0403",
+        "BLD-0404",
+        "BLD-0405",
+        "BLD-0406"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0043",
+      "namespace": "CSBlocks.Settings.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0407",
+        "BLD-0408",
+        "BLD-0409"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0044",
+      "namespace": "CSBlocks.Settings.Obsolete.Bezels",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0410",
+        "BLD-0411",
+        "BLD-0412",
+        "BLD-0413",
+        "BLD-0414",
+        "BLD-0415",
+        "BLD-0416",
+        "BLD-0417",
+        "BLD-0418",
+        "BLD-0419",
+        "BLD-0420",
+        "BLD-0421",
+        "BLD-0422",
+        "BLD-0423",
+        "BLD-0424",
+        "BLD-0425",
+        "BLD-0426",
+        "BLD-0427",
+        "BLD-0428"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0045",
+      "namespace": "CSBlocks.Shank",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0429",
+        "BLD-0430"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0046",
+      "namespace": "CSBlocks.Shank.French",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0431",
+        "BLD-0432"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0047",
+      "namespace": "CSBlocks.Shank.French.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0433"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0048",
+      "namespace": "CSBlocks.Shank.Helpers",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0434"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0049",
+      "namespace": "CSBlocks.Shank.Matching",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0435",
+        "BLD-0436"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0050",
+      "namespace": "CSBlocks.Shank.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0437",
+        "BLD-0438",
+        "BLD-0439",
+        "BLD-0440",
+        "BLD-0441",
+        "BLD-0442",
+        "BLD-0443",
+        "BLD-0444",
+        "BLD-0445",
+        "BLD-0446",
+        "BLD-0447",
+        "BLD-0448",
+        "BLD-0449",
+        "BLD-0450",
+        "BLD-0451",
+        "BLD-0452",
+        "BLD-0453",
+        "BLD-0454",
+        "BLD-0455",
+        "BLD-0456"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0051",
+      "namespace": "CSBlocks.Shank.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0457"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0052",
+      "namespace": "CSBlocks.Shank.ShankV1",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0458",
+        "BLD-0459",
+        "BLD-0460",
+        "BLD-0461"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0053",
+      "namespace": "CSBlocks.SMI",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0462",
+        "BLD-0463",
+        "BLD-0464",
+        "BLD-0465",
+        "BLD-0466",
+        "BLD-0467",
+        "BLD-0468",
+        "BLD-0469",
+        "BLD-0470",
+        "BLD-0471",
+        "BLD-0472",
+        "BLD-0473",
+        "BLD-0474",
+        "BLD-0475",
+        "BLD-0476",
+        "BLD-0477",
+        "BLD-0478",
+        "BLD-0479",
+        "BLD-0480",
+        "BLD-0481"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0054",
+      "namespace": "CSBlocks.SMI",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0482",
+        "BLD-0483",
+        "BLD-0484"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0055",
+      "namespace": "CSBlocks.SMI.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0485",
+        "BLD-0486",
+        "BLD-0487"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0056",
+      "namespace": "CSBlocks.Solids",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0488",
+        "BLD-0489",
+        "BLD-0490",
+        "BLD-0491",
+        "BLD-0492",
+        "BLD-0493",
+        "BLD-0494",
+        "BLD-0495",
+        "BLD-0496"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0057",
+      "namespace": "CSBlocks.Solids.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0497",
+        "BLD-0498",
+        "BLD-0499",
+        "BLD-0500"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0058",
+      "namespace": "CSBlocks.Surfaces",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0501",
+        "BLD-0502",
+        "BLD-0503",
+        "BLD-0504",
+        "BLD-0505",
+        "BLD-0506",
+        "BLD-0507",
+        "BLD-0508",
+        "BLD-0509"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0059",
+      "namespace": "CSBlocks.Surfaces.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0510",
+        "BLD-0511",
+        "BLD-0512"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0060",
+      "namespace": "CSBlocks.Sweeps",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0513",
+        "BLD-0514",
+        "BLD-0515",
+        "BLD-0516",
+        "BLD-0517",
+        "BLD-0518",
+        "BLD-0519",
+        "BLD-0520",
+        "BLD-0521",
+        "BLD-0522",
+        "BLD-0523",
+        "BLD-0524"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0061",
+      "namespace": "CSBlocks.Sweeps.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0525",
+        "BLD-0526"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0062",
+      "namespace": "CSBlocks.Tests",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0527",
+        "BLD-0528"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0063",
+      "namespace": "CSBlocks.Tests.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0529",
+        "BLD-0530"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0064",
+      "namespace": "CSBlocks.Tools",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0531",
+        "BLD-0532",
+        "BLD-0533",
+        "BLD-0534",
+        "BLD-0535",
+        "BLD-0536",
+        "BLD-0537",
+        "BLD-0538"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0065",
+      "namespace": "CSBlocks.Tools.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0539",
+        "BLD-0540",
+        "BLD-0541",
+        "BLD-0542",
+        "BLD-0543",
+        "BLD-0544"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0066",
+      "namespace": "CSBlocks.Transforms",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0545",
+        "BLD-0546",
+        "BLD-0547",
+        "BLD-0548",
+        "BLD-0549",
+        "BLD-0550",
+        "BLD-0551",
+        "BLD-0552",
+        "BLD-0553",
+        "BLD-0554",
+        "BLD-0555",
+        "BLD-0556",
+        "BLD-0557",
+        "BLD-0558",
+        "BLD-0559",
+        "BLD-0560",
+        "BLD-0561",
+        "BLD-0562",
+        "BLD-0563",
+        "BLD-0564"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0067",
+      "namespace": "CSBlocks.Transforms",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0565",
+        "BLD-0566",
+        "BLD-0567",
+        "BLD-0568",
+        "BLD-0569",
+        "BLD-0570",
+        "BLD-0571",
+        "BLD-0572",
+        "BLD-0573",
+        "BLD-0574",
+        "BLD-0575",
+        "BLD-0576",
+        "BLD-0577",
+        "BLD-0578",
+        "BLD-0579",
+        "BLD-0580",
+        "BLD-0581",
+        "BLD-0582"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0068",
+      "namespace": "CSBlocks.Transforms.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0583",
+        "BLD-0584",
+        "BLD-0585",
+        "BLD-0586",
+        "BLD-0587",
+        "BLD-0588",
+        "BLD-0589",
+        "BLD-0590",
+        "BLD-0591",
+        "BLD-0592",
+        "BLD-0593",
+        "BLD-0594"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0069",
+      "namespace": "CSBlocks.UDT",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0595",
+        "BLD-0596",
+        "BLD-0597",
+        "BLD-0598",
+        "BLD-0599",
+        "BLD-0600",
+        "BLD-0601",
+        "BLD-0602",
+        "BLD-0603",
+        "BLD-0604"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0070",
+      "namespace": "CSBlocks.Utilities",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0605",
+        "BLD-0606",
+        "BLD-0607",
+        "BLD-0608",
+        "BLD-0609",
+        "BLD-0610",
+        "BLD-0611",
+        "BLD-0612",
+        "BLD-0613",
+        "BLD-0614",
+        "BLD-0615",
+        "BLD-0616",
+        "BLD-0617"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    },
+    {
+      "id": "BATCH-0071",
+      "namespace": "CSBlocks.Utilities.Obsolete",
+      "requires": [
+        "P06"
+      ],
+      "status": "not_started",
+      "builderIds": [
+        "BLD-0618",
+        "BLD-0619"
+      ],
+      "acceptance": [
+        "Preserve GUID/version and legacy dispatch",
+        "Run non-default, boundary and failure fixtures against Windows",
+        "Verify real geometry and editable PC/iOS/PC interchange",
+        "Review every row; factories or mock outputs are insufficient"
+      ]
+    }
+  ]
+}

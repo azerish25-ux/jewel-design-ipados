@@ -1,0 +1,29 @@
+using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.Diagnostics;
+
+namespace CounterSketchServer.CounterSketchServices;
+
+[GeneratedCode("System.Web.Services", "4.6.1586.0")]
+[DebuggerStepThrough]
+[DesignerCategory("code")]
+public class CSG_GetDesignAttributeValueByDesignIdAndAttributeIdCompletedEventArgs : AsyncCompletedEventArgs
+{
+	private object[] results;
+
+	public string Result
+	{
+		get
+		{
+			RaiseExceptionIfNecessary();
+			return (string)results[0];
+		}
+	}
+
+	internal CSG_GetDesignAttributeValueByDesignIdAndAttributeIdCompletedEventArgs(object[] results, Exception exception, bool cancelled, object userState)
+		: base(exception, cancelled, userState)
+	{
+		this.results = results;
+	}
+}

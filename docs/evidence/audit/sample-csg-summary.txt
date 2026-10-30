@@ -1,0 +1,144 @@
+{
+  "file": "analysis/runtime-data/library-sample/item-4.csg",
+  "scope": "Bounded byte-level directory parse against recovered readers. No native geometry evaluation, full node field decoding, CRC validation, or application round trip.",
+  "header": "3D Geometry File Format        4",
+  "envelope": [
+    {
+      "offset": 32,
+      "code": "0x1",
+      "length": 101,
+      "payload": 40,
+      "end": 141
+    },
+    {
+      "offset": 141,
+      "code": "0x10000014",
+      "length": 65258,
+      "payload": 149,
+      "end": 65407
+    },
+    {
+      "offset": 65407,
+      "code": "0x10000015",
+      "length": 1170,
+      "payload": 65415,
+      "end": 66585
+    }
+  ],
+  "containerGuid": "b237ee6c-ac7e-4725-86ee-54bccda34fea",
+  "fileInfoVersion": {
+    "major": 1,
+    "minor": 0
+  },
+  "build": {
+    "year": 2012,
+    "month": 7,
+    "day": 23,
+    "revision": 0
+  },
+  "provenanceGuids": 22,
+  "userData": [
+    {
+      "type": "DesignInfo",
+      "key": "RealMetalVolume",
+      "valueCharacters": 6
+    },
+    {
+      "type": "DesignInfo",
+      "key": "MetalVolume",
+      "valueCharacters": 6
+    },
+    {
+      "type": "DesignInfo",
+      "key": "MetalVolume1",
+      "valueCharacters": 6
+    },
+    {
+      "type": "DesignInfo",
+      "key": "RealMetalVolume1",
+      "valueCharacters": 6
+    },
+    {
+      "type": "DesignInfo",
+      "key": "StullerIDNo",
+      "valueCharacters": 11
+    },
+    {
+      "type": "DesignInfo",
+      "key": "DesignName",
+      "valueCharacters": 12
+    },
+    {
+      "type": "DesignInfo",
+      "key": "FileName",
+      "valueCharacters": 19
+    },
+    {
+      "type": "DesignInfo",
+      "key": "ArtistName",
+      "valueCharacters": 31
+    },
+    {
+      "type": "DesignInfo",
+      "key": "FileNumber",
+      "valueCharacters": 1
+    },
+    {
+      "type": "Display",
+      "key": "CurrentComponents",
+      "valueCharacters": 10
+    },
+    {
+      "type": "Materials",
+      "key": "Metal1",
+      "valueCharacters": 14
+    },
+    {
+      "type": "Materials",
+      "key": "Metal2",
+      "valueCharacters": 14
+    },
+    {
+      "type": "Materials",
+      "key": "GemCenter",
+      "valueCharacters": 11
+    },
+    {
+      "type": "Materials",
+      "key": "GemSide",
+      "valueCharacters": 11
+    },
+    {
+      "type": "Materials",
+      "key": "GemOther",
+      "valueCharacters": 11
+    }
+  ],
+  "gemTable": {
+    "offset": 68243,
+    "code": "0x40008000",
+    "length": 54583,
+    "payload": 68251,
+    "end": 122834,
+    "major": 1,
+    "minor": 0,
+    "records": 2
+  },
+  "categoryTable": {
+    "offset": 122834,
+    "code": "0x40008000",
+    "length": 104,
+    "payload": 122842,
+    "end": 122946,
+    "major": 1,
+    "minor": 0,
+    "records": 4
+  },
+  "graph": {
+    "count": 241,
+    "knownTypes": 241,
+    "legacyNodes": 33,
+    "unparsedTailBytes": 4
+  },
+  "parsedDirectory": true
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.Controls.SelectedItemsImageControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Background="#FFFFFFFF" ClipToBounds="True">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplateImages">
+        <UniformGrid VerticalAlignment="Stretch" IsItemsHost="True" Columns="{Binding NumberOfColumns, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SelectedItemsImageControl}}}" Rows="{Binding NumberOfRows, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SelectedItemsImageControl}}}" />
+      </ItemsPanelTemplate>
+      <DataTemplate x:Key="DataTemplateImage">
+        <Grid>
+          <Image Source="{Binding Converter={StaticResource ImagePathToBitmapImageConverter}}" />
+        </Grid>
+      </DataTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <ItemsControl Margin="2" ItemTemplate="{DynamicResource DataTemplateImage}" ItemsPanel="{DynamicResource ItemsPanelTemplateImages}" ItemsSource="{Binding ItemsSource, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SelectedItemsImageControl}}}" />
+</UserControl>

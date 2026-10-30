@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "taskId": "PXX-TXX",
+  "status": "not_started",
+  "requirementIds": [],
+  "sourceEvidence": [],
+  "outputs": [],
+  "fixtures": [],
+  "checks": [],
+  "reuse": {
+    "unchangedLines": null,
+    "adaptedLines": null,
+    "newLines": null,
+    "measurementMethod": null
+  },
+  "review": null,
+  "blockers": []
+}

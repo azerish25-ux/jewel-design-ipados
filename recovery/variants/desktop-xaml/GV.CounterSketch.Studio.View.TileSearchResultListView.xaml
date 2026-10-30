@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.View.TileSearchResultListView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:behaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:command="http://www.galasoft.ch/mvvmlight" xmlns:converters="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:counterSketchLibrary="clr-namespace:GV.CounterSketch.Studio.Model.Entities.CounterSketchLibrary" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:extensions="clr-namespace:GV.CounterSketch.Studio.Utilities.Extensions" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:gestures="clr-namespace:GV.CounterSketch.Studio.Utilities.Gestures" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:scrollableListBox="clr-namespace:GV.CounterSketch.Studio.UserControls.ScrollableListBox" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:userControls="clr-namespace:GV.CounterSketch.Studio.UserControls" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" Background="#FFFFFFFF">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplate">
+        <WrapPanel Name="VirtualizingWrapPanel" IsItemsHost="True" Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource TemplatedParent}}" ItemHeight="{Binding ItemWidth, ElementName=VirtualizingWrapPanel, UpdateSourceTrigger=PropertyChanged}" ItemWidth="{Binding DesignImageWidth}" />
+      </ItemsPanelTemplate>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplateSingle">
+        <StackPanel Name="VirtualizingWrapPanel" IsItemsHost="True" Orientation="Horizontal" Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource TemplatedParent}}" />
+      </ItemsPanelTemplate>
+      <DataTemplate x:Key="DataTemplateSearchResults" DataType="counterSketchLibrary:DesignSearch">
+        <Grid Background="#FFFFFFFF">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+          </Grid.RowDefinitions>
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseEnter">
+              <ei:ChangePropertyAction PropertyName="IsMouseOverCheckBox" Value="true" TargetObject="{Binding}" />
+            </i:EventTrigger>
+            <i:EventTrigger EventName="MouseLeave">
+              <ei:ChangePropertyAction PropertyName="IsMouseOverCheckBox" Value="false" TargetObject="{Binding}" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+          <Grid Row="0">
+            <UIElement.InputBindings>
+              <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding TileSearchMainVM.ActiveSearchResultViewModel.CommandOpenDesignFromDesignSearch, Source={StaticResource Locator}}" CommandParameter="{Binding}" />
+              <MouseBinding MouseAction="LeftClick" Command="{Binding TileSearchMainVM.ActiveSearchResultViewModel.CommandSelectDesignSearch, Source={StaticResource Locator}}" CommandParameter="{Binding}" />
+            </UIElement.InputBindings>
+            <Image Margin="0" Cursor="Hand" Source="{Binding DesignImageSource, Converter={StaticResource NullObjectToDoNothingConverter}}" ToolTip="{Binding SPINumber}" ToolTipService.IsEnabled="{Binding Path=TileSearchMainVM.ActiveSearchResultViewModel.ShowSPIToolTipNumber, Source={StaticResource Locator}}" />
+            <Border Name="NewDesignRibbon" Height="60" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="{Binding ShowNewRibbons, Mode=OneWay, Converter={StaticResource BooleanToVisibilityConverter}}">
+              <Grid Width="42" Height="60" Visibility="{Binding IsNewDesign, Mode=OneWay, Converter={StaticResource IntegerToVisibilityConverter}}">
+                <Viewbox Width="42" Height="60" Margin="-10,-12,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                  <Canvas Width="28" Height="30">
+                    <Path Canvas.Left="0" Canvas.Top="18.4766" Width="4.10388" Height="19.0698" Data="F1 M0,18.4766 L4.10388,18.4766 L4.10388,37.5464 L0,31.5379 L0,18.4766" Fill="#FF000000" Stretch="Fill" />
+                    <Path Canvas.Left="0.0167236" Canvas.Top="0" Width="25.7672" Height="31.4376" Data="F1 M0.0167236,31.4376 L25.7839,6.81366 L20.9043,4.9668 L19.307,0 L0.0331421,18.4478 L0.0167236,31.4376" Fill="{DynamicResource HighlightAndAccent}" Stretch="Fill" />
+                    <Viewbox Canvas.Left="3.70068" Canvas.Top="5.39081" Width="15.2839" Height="16.2305">
+                      <Canvas Width="15.2839" Height="16.2305">
+                        <Path Canvas.Left="0" Canvas.Top="9.45203" Width="6.75623" Height="6.77844" Data="F1 M3.60809,16.2305 L4.02112,15.8328 L1.06244,12.7599 L6.41833,13.5247 L6.75623,13.1993 L3.14807,9.45203 L2.73511,9.84967 L5.62671,12.8529 L0.396912,12.1011 L0,12.4832 L3.60809,16.2305" Fill="#FFFFFFFF" Stretch="Fill" />
+                        <Path Canvas.Left="4.23206" Canvas.Top="5.79675" Width="6.34729" Height="6.35901" Data="F1 M7.84021,12.1558 L10.5793,9.51831 L10.2244,9.14954 L7.90747,11.3804 L6.61005,10.0328 L8.65887,8.0603 L8.30389,7.69153 L6.25507,9.66418 L5.0094,8.37042 L7.2995,6.16541 L6.94446,5.79675 L4.23206,8.40833 L7.84021,12.1558" Fill="#FFFFFFFF" Stretch="Fill" />
+                        <Path Canvas.Left="7.50525" Canvas.Top="-0.00012207" Width="7.77869" Height="7.76685" Data="F1 M12.5058,7.76672 L12.8597,7.4259 L10.9546,3.37555 L14.9246,5.43781 L15.2839,5.09186 L12.965,-0.00012207 L12.5199,0.428467 L14.4938,4.62531 L10.4175,2.45276 L10.0688,2.78839 L12.0857,6.94397 L7.96649,4.81262 L7.50525,5.25671 L12.5058,7.76672" Fill="#FFFFFFFF" Stretch="Fill" />
+                      </Canvas>
+                    </Viewbox>
+                  </Canvas>
+                </Viewbox>
+              </Grid>
+            </Border>
+          </Grid>
+          <Grid Row="1" Margin="10,0" HorizontalAlignment="Stretch" Background="#FFFFFFFF" Cursor="Hand">
+            <i:Interaction.Triggers>
+              <i:EventTrigger EventName="MouseEnter">
+                <ei:ChangePropertyAction PropertyName="IsMouseOverCheckBox" Value="true" TargetObject="{Binding}" />
+              </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <CheckBox Name="CheckBoxMark" Width="26" Height="26" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="{Binding IsMarked}" Visibility="{Binding IsMouseOverCheckBox, Converter={StaticResource BooleanToVisibilityHiddenConverter}}" />
+            <Grid Margin="30,0,0,0" HorizontalAlignment="Center">
+              <Viewbox>
+                <StackPanel Orientation="Vertical">
+                  <TextBox Background="#00FFFFFF" BorderThickness="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="14" Foreground="#FF808080" IsReadOnly="True" MaxLines="1" TextWrapping="NoWrap" Text="{Binding SPINumber}" Visibility="{Binding Path=TileSearchMainVM.ActiveSearchResultViewModel.SPINumberVisibility, Source={StaticResource Locator}}" />
+                  <TextBox Height="Auto" HorizontalAlignment="Center" Background="#00FFFFFF" BorderThickness="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="12" Foreground="#FF808080" IsReadOnly="True" MaxLines="1" TextWrapping="NoWrap" Text="{Binding SeriesNumber}" Visibility="{Binding Path=TileSearchMainVM.ActiveSearchResultViewModel.SPINumberVisibility, Source={StaticResource Locator}}" />
+                </StackPanel>
+              </Viewbox>
+            </Grid>
+          </Grid>
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="DataTemplateSessionPicks" DataType="counterSketchLibrary:DesignSearch">
+        <Grid Name="GridDesign" Width="150" Margin="0,0,20,0" Background="#FFFFFFFF">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+          </Grid.RowDefinitions>
+          <Grid Row="0">
+            <UIElement.InputBindings>
+              <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding TileSearchMainVM.ActiveSearchResultViewModel.CommandOpenDesignFromDesignSearch, Source={StaticResource Locator}}" CommandParameter="{Binding}" />
+              <MouseBinding MouseAction="LeftClick" Command="{Binding TileSearchMainVM.ActiveSearchResultViewModel.CommandSelectDesignSearch, Source={StaticResource Locator}}" CommandParameter="{Binding}" />
+            </UIElement.InputBindings>
+            <Image Margin="0" Cursor="Hand" Stretch="Uniform" Source="{Binding DesignImageSource, Converter={StaticResource NullObjectToDoNothingConverter}}" ToolTip="{Binding SPINumber}" ToolTipService.IsEnabled="{Binding Path=TileSearchMainVM.ActiveSearchResultViewModel.ShowSPIToolTipNumber, Source={StaticResource Locator}}" />
+            <Button Grid.Column="2" Grid.ColumnSpan="2" Width="25" Height="25" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFFF6A6A" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.Close}" Command="{Binding TileSearchMainVM.ActiveSearchResultViewModel.CommandRemoveFromSessionPicks, Source={StaticResource Locator}}" CommandParameter="{Binding}" Visibility="{Binding ElementName=GridDesign, Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}">
+              <wpf:ImageAwesome FrameworkElement.Width="20" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" ImageAwesome.Foreground="#FFFFFFFF" xmlns:wpf="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" wpf:ImageAwesome.Icon="Close" />
+            </Button>
+          </Grid>
+          <Grid Row="1" Margin="10,0" HorizontalAlignment="Stretch" Background="#FFFFFFFF" Cursor="Hand">
+            <Grid Margin="0,0,0,0" HorizontalAlignment="Center">
+              <Viewbox>
+                <StackPanel Orientation="Vertical">
+                  <TextBox Background="#00FFFFFF" BorderThickness="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="14" Foreground="#FF808080" IsReadOnly="True" MaxLines="1" TextWrapping="NoWrap" Text="{Binding SPINumber}" Visibility="{Binding Path=TileSearchMainVM.ActiveSearchResultViewModel.SPINumberVisibility, Source={StaticResource Locator}}" />
+                  <TextBox Height="Auto" HorizontalAlignment="Center" Background="#00FFFFFF" BorderThickness="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="12" Foreground="#FF808080" IsReadOnly="True" MaxLines="1" TextWrapping="NoWrap" Text="{Binding SeriesNumber}" Visibility="{Binding Path=TileSearchMainVM.ActiveSearchResultViewModel.SPINumberVisibility, Source={StaticResource Locator}}" />
+                </StackPanel>
+              </Viewbox>
+            </Grid>
+          </Grid>
+        </Grid>
+      </DataTemplate>
+      <Style x:Key="ListBoxItemStyleSearchResults" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="ListBoxItem.IsSelected" Value="{Binding IsSelected}" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Margin" Value="10,0" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Grid>
+                <Border Name="Bd" Margin="0" Padding="0" BorderBrush="{DynamicResource HighlightAndAccent}" BorderThickness="1" CornerRadius="0" SnapsToDevicePixels="True" Visibility="Hidden" />
+                <Rectangle Height="Auto" Margin="12,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FFFFFFFF" Stroke="#FF000000" StrokeThickness="0" Visibility="Collapsed" />
+                <ContentPresenter Margin="1" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Unselected" />
+                    <VisualState x:Name="Selected">
+                      <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                        </ObjectAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="SelectedUnfocused">
+                      <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                        </ObjectAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="ListBoxStyleSearchResults" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ListBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalOnly" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="True" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <Border Name="Bd" Padding="0" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Property="Border.Background" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="ListBoxStyleSessionPicks" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ListBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="ScrollViewer.PanningMode" Value="HorizontalOnly" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="True" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <Border Name="Bd" Padding="0" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Property="Border.Background" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Margin="10,0,0,0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Name="SessionPicksRow" Height="{Binding SessionPicksRowHeight, Mode=TwoWay}" />
+    </Grid.RowDefinitions>
+    <StackPanel Grid.Row="0" Width="Auto" Margin="0,0,20,0" HorizontalAlignment="Right" Orientation="Horizontal">
+      <Grid Height="16" Margin="10,0,10,0" Visibility="{Binding IsShowingChainResults, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <DockPanel>
+          <ImageAwesome FrameworkElement.Margin="0" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p23:ImageAwesome.Foreground="#FF808080" p23:ImageAwesome.Icon="Chain" xmlns:p23="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+          <TextBlock Margin="5,0,5,0" Foreground="#FF808080" TextOptions.TextFormattingMode="Display">
+            <Hyperlink extensions:HyperlinkExtensions.IsExternal="True" NavigateUri="http://www.stuller.com/browse/jewelry/chain-and-cord" ToolTip="ClickheretoOrderaChainBelow">
+              <Run Text="{x:Static l:Strings.ClickheretoOrderaChainBelow}" />
+            </Hyperlink>
+          </TextBlock>
+        </DockPanel>
+      </Grid>
+      <CheckBox Name="CheckBoxNewFirst" Margin="0,0,10,0" VerticalAlignment="Center" Content="{x:Static l:Strings.ShowNewDesignsFirst}" Foreground="#FF808080" Command="{Binding CommandTriggerSearchRefresh}" IsChecked="{Binding ShowNewDesignsFirst}" Visibility="{Binding ShowNewDesignsFirstOption, Converter={StaticResource BooleanToVisibilityConverter}}" />
+      <telerik:RadSlider Name="RadSlider" Margin="0,5,10,5" VerticalAlignment="Center" Cursor="Hand" LargeChange="10" Maximum="500" SmallChange="10" ThumbStyle="{DynamicResource RadThumbStyle}" TrackStyle="{DynamicResource RadSliderTrackStyle}" Minimum="{Binding MinimumSearchResultSize}" Value="{Binding DesignImageWidth, Mode=TwoWay}" DragCompleted="RadSlider_OnDragCompleted" />
+      <Button Name="BtnExportImages" Height="16" Margin="10,0,0,0" BorderThickness="0" Style="{StaticResource ButtonStyleClear}" ToolTip="{x:Static l:Strings.ExportSearchResultImages}" Command="{Binding MainVM.CommandExportSearchImages, Mode=OneWay, Source={StaticResource Locator}}" Visibility="{Binding IsShowingPartSearchResults, ConverterParameter=True, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <DockPanel>
+          <ImageAwesome FrameworkElement.Margin="0" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p23:ImageAwesome.Foreground="#FF65615D" p23:ImageAwesome.Icon="FileImageOutline" xmlns:p23="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+        </DockPanel>
+      </Button>
+    </StackPanel>
+    <view:FilterResultsView x:Name="FilterResultsView" Grid.Row="1" Margin="0,0,0,0" DataContext="{Binding TileSearchMainVM.ActiveSearchResultViewModel, Source={StaticResource Locator}}" />
+    <Border Name="VirtualWrapPanelSizer" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+    <ScrollViewer Grid.Row="2" Focusable="False" HorizontalScrollBarVisibility="Disabled" IsDeferredScrollingEnabled="False" PanningMode="VerticalOnly" PanningRatio="1.5" VerticalScrollBarVisibility="Auto" Visibility="{Binding ResultsVisibility}">
+      <i:Interaction.Behaviors>
+        <behaviors:ScrollViewerBehaviorBringFirstItemIntoView />
+      </i:Interaction.Behaviors>
+      <StackPanel>
+        <ListBox Name="SearchResultsList" Margin="0,4,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFFFFFFF" DockPanel.Dock="Top" Focusable="False" IsHitTestVisible="True" ItemContainerStyle="{DynamicResource ListBoxItemStyleSearchResults}" ItemTemplate="{DynamicResource DataTemplateSearchResults}" ItemsPanel="{DynamicResource ItemsPanelTemplate}" SelectionMode="Single" Style="{StaticResource ListBoxStyleSearchResults}" BorderBrush="{x:Null}" ItemsSource="{Binding CurrentPageDesigns, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedDesignSearch, Mode=OneWay}">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="SelectionChanged">
+              <command:EventToCommand Command="{Binding CommandSelectedDesignSearchChanged, Mode=OneWay}" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+        </ListBox>
+        <view:SearchResultsPagerControl Grid.Row="2" Margin="0,60,48,20" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+      </StackPanel>
+    </ScrollViewer>
+    <DockPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding ResultsVisibility, Mode=OneWay, Converter={converters:InvertVisibilityConverter}}">
+      <TextBlock Margin="0,0,0,10" HorizontalAlignment="Center" DockPanel.Dock="Top" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="16" Foreground="#FF808080" Text="{x:Static l:Strings.NoResultsFound}" TextWrapping="Wrap" />
+      <TextBlock HorizontalAlignment="Center" DockPanel.Dock="Top" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="16" Foreground="#FF808080" Text="{x:Static l:Strings.ALibraryUpdateIsDownloading}" TextWrapping="Wrap" Visibility="{Binding UpdateInfoVM.IsLibraryUpdateInProgress, Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}" />
+      <Border Margin="20" Padding="10" Background="#FFFFFFFF" BorderBrush="#FF000000" BorderThickness="1" CornerRadius="3" DockPanel.Dock="Top" DataContext="{Binding UpdateInfoVM, Source={StaticResource Locator}}" Visibility="{Binding IsLibraryUpdateInProgress, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Grid>
+          <StackPanel Name="UpdateStatuses">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" FontSize="13.333" Foreground="#FF000000" Text="Design Library: " TextWrapping="Wrap" />
+              <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" FontSize="13.333" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding LibraryUpdateName}" />
+            </StackPanel>
+            <ProgressBar Height="10" Margin="0,5,0,10" Visibility="{Binding IsLibraryUpdateInProgress, Converter={StaticResource BooleanToVisibilityConverter}}" Value="{Binding LibraryUpdatePercentage}" />
+          </StackPanel>
+        </Grid>
+      </Border>
+    </DockPanel>
+    <Border Grid.Row="3" Grid.RowSpan="1" Margin="10,0,10,0" VerticalAlignment="Stretch" Background="#FFFFFFFF" Visibility="{Binding HasDesignsMarked, Converter={StaticResource BooleanToVisibilityConverter}}">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#dddddd" BorderBrush="#dddddd" BorderThickness="1,1,1,0" ToolTip="{Binding SessionPickDesignCount}">
+          <Grid>
+            <DockPanel>
+              <TextBlock Margin="10,0" VerticalAlignment="Center" FontSize="14" Foreground="#FF808080" Text="Session Picks" />
+              <DockPanel Margin="0,5,0,5" HorizontalAlignment="Center" Visibility="{Binding IsSessionPicksOpen, Converter={StaticResource BooleanToVisibilityHiddenConverter}}">
+                <Button BorderThickness="0" Style="{StaticResource ButtonStyleClear}" ToolTip="{x:Static l:Strings.AddDesignstoPortfolio}" Command="{Binding CommandAddMarkedDesignsToActiveProject}" Visibility="{Binding IsShowingPartSearchResults, ConverterParameter=True, Converter={StaticResource BooleanToVisibilityConverter}}">
+                  <Border Height="38" Background="{DynamicResource HighlightAndAccent}" CornerRadius="8">
+                    <DockPanel VerticalAlignment="Center">
+                      <ImageAwesome FrameworkElement.Height="14" FrameworkElement.Margin="10,0,0,0" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p29:ImageAwesome.Foreground="#FFFFFFFF" p29:ImageAwesome.Icon="PlusSquare" xmlns:p29="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                      <TextBlock Margin="10,0" Foreground="#FFFFFFFF" Text="{Binding Converter={StaticResource StringToUpperCaseConverter}, Source={x:Static l:Strings.AddDesignstoPortfolio}}" />
+                    </DockPanel>
+                  </Border>
+                </Button>
+                <Button Margin="10,0,0,0" BorderThickness="0" Style="{StaticResource ButtonStyleClear}" ToolTip="{x:Static l:Strings.ClearMarked}" Command="{Binding CommandClearMarkedDesigns}" Visibility="{Binding IsShowingPartSearchResults, ConverterParameter=True, Converter={StaticResource BooleanToVisibilityConverter}}">
+                  <Border Height="38" Background="#00FFFFFF" BorderBrush="#FFA9A9A9" BorderThickness="1" CornerRadius="8">
+                    <DockPanel VerticalAlignment="Center">
+                      <TextBlock Margin="10,0" FontSize="14" Foreground="#FF000000" Text="{Binding Converter={StaticResource StringToUpperCaseConverter}, Source={x:Static l:UntranslatedStrings.ClearAll}}" />
+                    </DockPanel>
+                  </Border>
+                </Button>
+              </DockPanel>
+            </DockPanel>
+            <Border Margin="180,-33,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#00FFFFFF">
+              <Grid>
+                <Canvas Name="add__to__session__picks" Width="26" Height="26" Clip="F1 M0,0 L26,0 L26,32 L0,32 L0,0" UseLayoutRounding="False">
+                  <Canvas Name="Layer_1" Left="0" Top="0" Width="26" Height="32">
+                    <Path Name="Path" Canvas.Left="5.37732" Canvas.Top="15.0293" Width="16.5464" Height="16.9707" Data="F1 M5.37732,23.5147 L13.6505,32 L21.9237,23.5147 L13.6505,15.0293 L5.37732,23.5147" Fill="#FFFF6A6A" Stretch="Fill" />
+                    <Path Name="Path_0" Canvas.Left="0" Canvas.Top="0.181067" Width="26" Height="26.6667" Data="F1 M23.426,26.8477 L2.574,26.8477 C1.1531,26.8477 0,25.6651 0,24.2077 L0,2.82107 C0,1.36373 1.1531,0.181067 2.574,0.181067 L23.426,0.181067 C24.8469,0.181067 26,1.36373 26,2.82107 L26,24.2077 C26,25.6651 24.8469,26.8477 23.426,26.8477" Fill="#FFFF6A6A" Stretch="Fill" />
+                  </Canvas>
+                </Canvas>
+                <TextBlock Margin="0,6,0,0" HorizontalAlignment="Center" Foreground="#FFFFFFFF" Text="{Binding SessionPickDesignCount}" />
+              </Grid>
+            </Border>
+          </Grid>
+        </Border>
+        <Border Grid.Row="1" BorderBrush="#dddddd" BorderThickness="1" />
+        <DockPanel Grid.Row="1">
+          <Button Width="50" Height="50" Margin="10,0" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#a3a3a3" DockPanel.Dock="Left" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.PreviousDesign}" Command="{Binding CommandPreviousSessionDesign}" CommandParameter="{Binding ElementName=SessionPicksScrollViewer}">
+            <ImageAwesome FrameworkElement.Width="15" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p24:ImageAwesome.Foreground="#FFFFFFFF" p24:ImageAwesome.Icon="ArrowLeft" xmlns:p24="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+          </Button>
+          <Button Width="50" Height="50" Margin="10,0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#a3a3a3" DockPanel.Dock="Right" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.NextDesign}" Command="{Binding CommandNextSessionDesign}" CommandParameter="{Binding ElementName=SessionPicksScrollViewer}">
+            <ImageAwesome FrameworkElement.Width="15" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p24:ImageAwesome.Foreground="#FFFFFFFF" p24:ImageAwesome.Icon="ArrowRight" xmlns:p24="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+          </Button>
+          <ScrollViewer Name="SessionPicksScrollViewer" Margin="20,0" VerticalAlignment="Center" CanContentScroll="True" DockPanel.Dock="Top" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+            <ListBox HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="#FFFFFFFF" Focusable="False" IsHitTestVisible="True" ItemContainerStyle="{DynamicResource ListBoxItemStyleSearchResults}" ItemTemplate="{DynamicResource DataTemplateSessionPicks}" ItemsPanel="{DynamicResource ItemsPanelTemplateSingle}" SelectionMode="Single" BorderBrush="{x:Null}" ItemsSource="{Binding SessionPickDesigns, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedDesignSearch, Mode=OneWay}">
+              <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                  <command:EventToCommand Command="{Binding CommandSelectedDesignSearchChanged, Mode=OneWay}" />
+                </i:EventTrigger>
+              </i:Interaction.Triggers>
+              <Control.Template>
+                <ControlTemplate>
+                  <StackPanel Margin="2" IsItemsHost="True" Orientation="Horizontal" />
+                </ControlTemplate>
+              </Control.Template>
+            </ListBox>
+          </ScrollViewer>
+        </DockPanel>
+        <Grid Margin="0,-26,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonUp">
+              <command:EventToCommand Command="{Binding CommandToggleSessionPicks, Mode=OneWay}" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+          <Border Padding="40,10" HorizontalAlignment="Center" Background="#FFDDDDDD" CornerRadius="5,5,0,0" Cursor="Hand">
+            <StackPanel Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFdddddd" FlowDirection="LeftToRight" Orientation="Horizontal">
+              <Border Width="7" Height="7" Margin="0,0,2,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFA3A3A3" BorderBrush="#FFFFFFFF" CornerRadius="10" />
+              <Border Width="7" Height="7" Margin="0,0,2,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFA3A3A3" BorderBrush="#FFFFFFFF" CornerRadius="10" />
+              <Border Width="7" Height="7" Margin="0,0,2,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFA3A3A3" BorderBrush="#FFFFFFFF" CornerRadius="10" />
+              <Border Width="7" Height="7" Margin="0,0,2,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFA3A3A3" BorderBrush="#FFFFFFFF" CornerRadius="10" />
+              <Border Width="7" Height="7" Margin="0,0,2,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFA3A3A3" BorderBrush="#FFFFFFFF" CornerRadius="10" />
+            </StackPanel>
+          </Border>
+        </Grid>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

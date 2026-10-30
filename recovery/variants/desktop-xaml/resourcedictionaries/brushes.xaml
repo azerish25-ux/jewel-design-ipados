@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+  <SolidColorBrush x:Key="LinesDarkBrush" Color="#FF6E6B69" />
+  <SolidColorBrush x:Key="LinesLightBrush" Color="#FFCCC6C1" />
+  <DrawingBrush x:Key="CSButtonImport_Default" Stretch="Uniform" Viewbox="0,0,19.4498,18.689" ViewboxUnits="Absolute">
+    <DrawingBrush.Drawing>
+      <DrawingGroup>
+        <DrawingGroup>
+          <DrawingGroup.Transform>
+            <MatrixTransform Matrix="1,0,0,1,2.13466,0.75" />
+          </DrawingGroup.Transform>
+          <GeometryDrawing Geometry="M5.7012573,0.25 C5.1315598,0.25 4.6648218,0.71679999 4.6648218,1.28613 L4.6648218,4.8105499 C4.6648218,5.3789099 4.2002238,5.8456999 3.6311363,5.8456999 L0.79697879,5.8456999 C0.22850128,5.8456999 0.078661939,6.1874999 0.46348025,6.6064499 L6.6037733,13.2671 C6.9886016,13.6855 7.6198888,13.6855 8.0054071,13.2671 L14.14448,6.6064499 C14.530479,6.1874999 14.380679,5.8456999 13.810982,5.8456999 L10.977994,5.8456999 C10.409397,5.8456999 9.9431986,5.3789099 9.9431986,4.8105499 L9.9431986,1.28613 C9.9431986,0.71679999 9.4769007,0.25 8.9085032,0.25 L5.7012573,0.25">
+            <GeometryDrawing.Brush>
+              <LinearGradientBrush StartPoint="0.729003,1.07839" EndPoint="1.99478,1.07839">
+                <Brush.RelativeTransform>
+                  <TransformGroup>
+                    <SkewTransform AngleX="2.6491" AngleY="0" CenterX="0.729003" CenterY="1.07839" />
+                    <RotateTransform Angle="243.98" CenterX="0.729003" CenterY="1.07839" />
+                  </TransformGroup>
+                </Brush.RelativeTransform>
+                <GradientStop Offset="0.0075188" Color="#C0626262" />
+                <GradientStop Offset="0.653846" Color="#C0FFFFFF" />
+                <GradientStop Offset="1" Color="#C0FFFFFF" />
+              </LinearGradientBrush>
+            </GeometryDrawing.Brush>
+            <GeometryDrawing.Pen>
+              <Pen Brush="#C0000000" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="2.75" StartLineCap="Flat" Thickness="0.5" />
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+        </DrawingGroup>
+        <DrawingGroup>
+          <DrawingGroup.Transform>
+            <MatrixTransform Matrix="1,0,0,1,0,12.3604" />
+          </DrawingGroup.Transform>
+          <GeometryDrawing Brush="#C0B1B1B1" Geometry="M4.4847999,6.0786108 C2.14636,6.0786108 0.25,2.5927042 0.25,0.25289981 L1.72302,0.25289981 C1.72479,1.7788027 2.9603299,3.012205 4.4847999,3.016105 L14.9648,3.015605 C16.4895,3.011705 17.7241,1.7783027 17.7259,0.2518998 L19.1998,0.2499998 C19.1998,2.5908042 17.3051,6.0781108 14.9648,6.0781108 L4.4847999,6.0786108">
+            <GeometryDrawing.Pen>
+              <Pen Brush="#C0000000" DashCap="Flat" EndLineCap="Round" LineJoin="Round" MiterLimit="10" StartLineCap="Round" Thickness="0.5" />
+            </GeometryDrawing.Pen>
+          </GeometryDrawing>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingBrush.Drawing>
+  </DrawingBrush>
+  <DrawingBrush x:Key="CSButtonImport_MouseOver" Stretch="Uniform" Viewbox="0,0,24.000680371005,22.878" ViewboxUnits="Absolute">
+    <DrawingBrush.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Transform>
+          <MatrixTransform Matrix="0.999982516259878,0,0,0.999982516259878,0,0" />
+        </DrawingGroup.Transform>
+        <DrawingGroup>
+          <DrawingGroup>
+            <DrawingGroup.Transform>
+              <MatrixTransform Matrix="1,0,0,1,2.64731,0.75" />
+            </DrawingGroup.Transform>
+            <GeometryDrawing Geometry="M7.0105904,0.25 C6.3040409,0.25 5.7251913,0.82909912 5.7251913,1.535158 L5.7251913,5.9062414 C5.7251913,6.6113203 5.1490817,7.1904194 4.4432722,7.1904194 L0.92831474,7.1904194 C0.22330525,7.1904194 0.037505379,7.6142488 0.51480504,8.133778 L8.1298896,16.393975 C8.6071892,16.913075 9.3900887,16.913075 9.8680883,16.393975 L17.481683,8.133778 C17.960382,7.6142488 17.774683,7.1904194 17.068183,7.1904194 L13.554686,7.1904194 C12.849486,7.1904194 12.271387,6.6113203 12.271387,5.9062414 L12.271387,1.535158 C12.271387,0.82909912 11.693087,0.25 10.987988,0.25 L7.0105904,0.25">
+              <GeometryDrawing.Brush>
+                <LinearGradientBrush StartPoint="0.729002,1.07837" EndPoint="1.99474,1.07837">
+                  <Brush.RelativeTransform>
+                    <TransformGroup>
+                      <SkewTransform AngleX="2.64725" AngleY="0" CenterX="0.729002" CenterY="1.07837" />
+                      <RotateTransform Angle="243.979" CenterX="0.729002" CenterY="1.07837" />
+                    </TransformGroup>
+                  </Brush.RelativeTransform>
+                  <GradientStop Offset="0.0075188" Color="#FF626262" />
+                  <GradientStop Offset="0.653846" Color="White" />
+                  <GradientStop Offset="1" Color="White" />
+                </LinearGradientBrush>
+              </GeometryDrawing.Brush>
+              <GeometryDrawing.Pen>
+                <Pen Brush="#FF000000" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="2.75" StartLineCap="Flat" Thickness="0.5" />
+              </GeometryDrawing.Pen>
+            </GeometryDrawing>
+          </DrawingGroup>
+          <DrawingGroup>
+            <DrawingGroup.Transform>
+              <MatrixTransform Matrix="1,0,0,1,0,15.1504" />
+            </DrawingGroup.Transform>
+            <GeometryDrawing Brush="#FFB1B1B1" Geometry="M5.5018899,7.4780292 C2.6017499,7.4780292 0.25,3.1553116 0.25,0.25239985 L2.07672,0.25239985 C2.07892,2.1455075 3.6111499,3.6753138 5.5018899,3.6802138 L18.4991,3.6797138 C20.3899,3.6743137 21.9209,2.1450075 21.9232,0.25189985 L23.751099,0.24999984 C23.751099,3.1528116 21.4014,7.4775292 18.499,7.4775292 L5.5018899,7.4780292">
+              <GeometryDrawing.Pen>
+                <Pen Brush="#FF000000" DashCap="Flat" EndLineCap="Round" LineJoin="Round" MiterLimit="10" StartLineCap="Round" Thickness="0.5" />
+              </GeometryDrawing.Pen>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingBrush.Drawing>
+  </DrawingBrush>
+  <DrawingBrush x:Key="CSButtonImport_MouseDown" Stretch="Uniform" Viewbox="0,0,24.0007803692566,22.878" ViewboxUnits="Absolute">
+    <DrawingBrush.Drawing>
+      <DrawingGroup>
+        <DrawingGroup.Transform>
+          <MatrixTransform Matrix="0.999982516259878,0,0,0.999982516259878,0,0" />
+        </DrawingGroup.Transform>
+        <DrawingGroup>
+          <DrawingGroup>
+            <DrawingGroup.Transform>
+              <MatrixTransform Matrix="1,0,0,1,2.64742,0.75" />
+            </DrawingGroup.Transform>
+            <GeometryDrawing Brush="#FFFFFF00" Geometry="M7.0105346,0.25 C6.3039946,0.25 5.7251345,0.82909824 5.7251345,1.5351561 L5.7251345,5.9057428 C5.7251345,6.6113107 5.1490844,7.1899189 4.4432743,7.1899189 L0.92825395,7.1899189 C0.22330387,7.1899189 0.037513848,7.6137476 0.5148039,8.133276 L8.1298748,16.393551 C8.6071748,16.912549 9.3900749,16.912549 9.868075,16.393551 L17.481776,8.133276 C17.960276,7.6137476 17.774776,7.1899189 17.068176,7.1899189 L13.554675,7.1899189 C12.849475,7.1899189 12.271375,6.6113107 12.271375,5.9057428 L12.271375,1.5351561 C12.271375,0.82909824 11.693075,0.25 10.987975,0.25 L7.0105346,0.25">
+              <GeometryDrawing.Pen>
+                <Pen Brush="#FF000000" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="2.75" StartLineCap="Flat" Thickness="0.5" />
+              </GeometryDrawing.Pen>
+            </GeometryDrawing>
+          </DrawingGroup>
+          <DrawingGroup>
+            <DrawingGroup.Transform>
+              <MatrixTransform Matrix="1,0,0,1,0,15.1504" />
+            </DrawingGroup.Transform>
+            <GeometryDrawing Brush="#FFFFFF00" Geometry="M5.5018901,7.4780292 C2.60175,7.4780292 0.25,3.1553116 0.25,0.25239985 L2.07678,0.25239985 C2.07898,2.1455075 3.61121,3.6748137 5.5018901,3.6797138 L18.4991,3.6792138 C20.39,3.6743137 21.921,2.1450075 21.9232,0.25189985 L23.7512,0.24999984 C23.7512,3.1528116 21.4014,7.4775292 18.499,7.4775292 L5.5018901,7.4780292">
+              <GeometryDrawing.Pen>
+                <Pen Brush="#FF000000" DashCap="Flat" EndLineCap="Round" LineJoin="Round" MiterLimit="10" StartLineCap="Round" Thickness="0.5" />
+              </GeometryDrawing.Pen>
+            </GeometryDrawing>
+          </DrawingGroup>
+        </DrawingGroup>
+      </DrawingGroup>
+    </DrawingBrush.Drawing>
+  </DrawingBrush>
+  <LinearGradientBrush x:Key="csHighlightGradientBrush" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0.00" Color="#FFFFD5FC" />
+    <GradientStop Offset="0.48" Color="#FF8C2384" />
+    <GradientStop Offset="0.509" Color="#FF7E1A75" />
+    <GradientStop Offset="0.845" Color="#FF8C2F85" />
+    <GradientStop Offset="1.00" Color="#FFFFD9FC" />
+    <GradientStop Offset="0.664" Color="#FF841E7C" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HoverShineBrush" StartPoint="0.5,0.042" EndPoint="0.5,0.971">
+    <GradientStop Offset="0" Color="#4CFFFFFF" />
+    <GradientStop Offset="1" Color="#26FFFFFF" />
+    <GradientStop Offset="0.467" Color="#26FFFFFF" />
+    <GradientStop Offset="0.475" Color="#00FFFFFF" />
+    <GradientStop Offset="0.856" Color="#00FFFFFF" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="BackgroundSectionGradient" PresentationOptions:Freeze="true" StartPoint="0.523234,-0.00238618" EndPoint="0.523234,1.00005">
+    <GradientStop Color="#00000000" />
+    <GradientStop Offset="1" Color="#26000000" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="BackgroundGradientOriginal" PresentationOptions:Freeze="true" StartPoint="0.217838,0.00184187" EndPoint="0.217838,0.99845">
+    <GradientStop Offset="0.00343643" Color="#FF727272" />
+    <GradientStop Offset="0.102326" Color="#FF909090" />
+    <GradientStop Offset="0.408935" Color="#FFAEAEAE" />
+    <GradientStop Offset="0.706977" Color="#FF767676" />
+    <GradientStop Offset="1" Color="#FF3E3E3E" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="ScrollThumbBackgroundPressGradient" PresentationOptions:Freeze="true" StartPoint="0.00877446,0.524596" EndPoint="0.830445,0.524596">
+    <GradientStop Offset="0.121622" Color="#FFDE99CA" />
+    <GradientStop Offset="0.338877" Color="#FFAA4C9D" />
+    <GradientStop Offset="0.763514" Color="#FF760071" />
+    <GradientStop Offset="1" Color="#FF7D0078" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="CatalogStepHeaderGradient" PresentationOptions:Freeze="true" StartPoint="-0.199999,0.5" EndPoint="1.75228,0.5">
+    <GradientStop Offset="0.00350877" Color="#FF7F187F" />
+    <GradientStop Offset="0.428571" Color="#FF7F187F" />
+    <GradientStop Offset="0.716817" Color="#FF510C52" />
+    <GradientStop Offset="1" Color="#FF230025" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="CatalogStepHeaderDisabledGradient" PresentationOptions:Freeze="true" StartPoint="-0.0246909,0.5" EndPoint="1.02469,0.5">
+    <GradientStop Offset="0" Color="#FF333332" />
+    <GradientStop Offset="0.00300598" Color="#FF313233" />
+    <GradientStop Offset="0.55093" Color="#FF3E3E3F" />
+    <GradientStop Offset="1" Color="#FF4B4B4B" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="TryOnHandsGradient" PresentationOptions:Freeze="true" StartPoint="0.5,0.963507" EndPoint="0.5,0.0445319">
+    <GradientStop Offset="0" Color="#FFB8B8B8" />
+    <GradientStop Offset="0.370755" Color="#FF8C8C8C" />
+    <GradientStop Offset="1" Color="#FF616161" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HeaderPrimaryGradient" StartPoint="0.44008,-0.00116243" EndPoint="0.44008,1.0162">
+    <GradientStop Offset="0" Color="#FFCCCCCB" />
+    <GradientStop Offset="0.00300598" Color="#FFCCCCCB" />
+    <GradientStop Offset="0.306889" Color="#FFB2B2B2" />
+    <GradientStop Offset="0.631866" Color="#FF999999" />
+    <GradientStop Offset="1" Color="#FF808081" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="InventoryTreeItemSelectedGradient" StartPoint="0.8493,0.984343" EndPoint="0.8493,0.00255342">
+    <GradientStop Offset="0.0075188" Color="Yellow" />
+    <GradientStop Offset="0.105263" Color="#FFFFFFB7" />
+    <GradientStop Offset="0.454887" Color="#FFFFFF5B" />
+    <GradientStop Offset="0.477444" Color="Yellow" />
+    <GradientStop Offset="0.526316" Color="#FFFFFF8C" />
+    <GradientStop Offset="0.913534" Color="#FFFFFFBB" />
+    <GradientStop Offset="0.981203" Color="Yellow" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="BrushTransparentGlossDark" StartPoint="0.500012,-0.000127658" EndPoint="0.500012,1.25878">
+    <GradientStop Offset="0" Color="#BFFFFFFF" />
+    <GradientStop Offset="0.5" Color="#3FFFFFFF" />
+    <GradientStop Offset="0.25" Color="#7FEBEBEB" />
+    <GradientStop Offset="1" Color="Transparent" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalScrollBarBackground" StartPoint="0,0" EndPoint="1,0">
+    <GradientStop Offset="0" Color="#E1E1E1" />
+    <GradientStop Offset="0.20" Color="#EDEDED" />
+    <GradientStop Offset="0.80" Color="#EDEDED" />
+    <GradientStop Offset="1" Color="#E3E3E3" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalScrollBarBackground" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0" Color="#E1E1E1" />
+    <GradientStop Offset="0.20" Color="#EDEDED" />
+    <GradientStop Offset="0.80" Color="#EDEDED" />
+    <GradientStop Offset="1" Color="#E3E3E3" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="ButtonNormalBackground" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0" Color="#F3F3F3" />
+    <GradientStop Offset="0.5" Color="#EBEBEB" />
+    <GradientStop Offset="0.5" Color="#DDDDDD" />
+    <GradientStop Offset="1" Color="#CDCDCD" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="TextBoxBorder" MappingMode="Absolute" StartPoint="0,0" EndPoint="0,20">
+    <GradientStop Offset="0.05" Color="#ABADB3" />
+    <GradientStop Offset="0.07" Color="#E2E3EA" />
+    <GradientStop Offset="1" Color="#E3E9EF" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="LightToDarkToMediumBrush" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0.03" Color="#FFdcaccf" />
+    <GradientStop Offset="0.45" Color="#FF8b2783" />
+    <GradientStop Offset=".54" Color="#FF65205f" />
+    <GradientStop Offset=".89" Color="#FF8b2783" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalSliderThumbHoverBackgroundInverted" StartPoint="0,1" EndPoint="0,0">
+    <GradientStop Offset="0" Color="white" />
+    <GradientStop Offset="0.5" Color="#B8E2F9" />
+    <GradientStop Offset="1" Color="#B0DFF8" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalSliderThumbPressedBackgroundInverted" StartPoint="0,1" EndPoint="0,0">
+    <GradientStop Offset="0.25" Color="#B8E4FA" />
+    <GradientStop Offset="0.5" Color="#5EB4E3" />
+    <GradientStop Offset="1" Color="#4C8BB4" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalSliderThumbNormalBackgroundInverted" StartPoint="0,1" EndPoint="0,0">
+    <GradientStop Offset="0" Color="White" />
+    <GradientStop Offset="0.4" Color="#F0EFEF" />
+    <GradientStop Offset=".8" Color="#D6D5D5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalSliderThumbHoverBackground" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0" Color="white" />
+    <GradientStop Offset="0.5" Color="#B8E2F9" />
+    <GradientStop Offset="1" Color="#B0DFF8" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalSliderThumbPressedBackground" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0.25" Color="#B8E4FA" />
+    <GradientStop Offset="0.5" Color="#5EB4E3" />
+    <GradientStop Offset="1" Color="#4C8BB4" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalSliderThumbNormalBackground" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0" Color="White" />
+    <GradientStop Offset="0.4" Color="#F0EFEF" />
+    <GradientStop Offset=".8" Color="#D6D5D5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="HorizontalSliderTrackNormalBorder" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0.1" Color="#FFAEB1AF" />
+    <GradientStop Offset=".9" Color="White" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalSliderThumbHoverBackground" StartPoint="0,0" EndPoint="1,0">
+    <GradientStop Offset="0" Color="white" />
+    <GradientStop Offset="0.5" Color="#B8E2F9" />
+    <GradientStop Offset="1" Color="#B0DFF8" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalSliderThumbPressedBackground" StartPoint="0,0" EndPoint="1,0">
+    <GradientStop Offset="0.25" Color="#B8E4FA" />
+    <GradientStop Offset="0.5" Color="#5EB4E3" />
+    <GradientStop Offset="1" Color="#4C8BB4" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalSliderThumbNormalBackground" StartPoint="0,0" EndPoint="1,0">
+    <GradientStop Offset="0" Color="White" />
+    <GradientStop Offset="0.4" Color="#F0EFEF" />
+    <GradientStop Offset=".8" Color="#D6D5D5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalSliderThumbHoverBackgroundInverted" StartPoint="1,0" EndPoint="0,0">
+    <GradientStop Offset="0" Color="white" />
+    <GradientStop Offset="0.5" Color="#B8E2F9" />
+    <GradientStop Offset="1" Color="#B0DFF8" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalSliderThumbPressedBackgroundInverted" StartPoint="1,0" EndPoint="0,0">
+    <GradientStop Offset="0.25" Color="#B8E4FA" />
+    <GradientStop Offset="0.5" Color="#5EB4E3" />
+    <GradientStop Offset="1" Color="#4C8BB4" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalSliderThumbNormalBackgroundInverted" StartPoint="1,0" EndPoint="0,0">
+    <GradientStop Offset="0" Color="White" />
+    <GradientStop Offset="0.4" Color="#F0EFEF" />
+    <GradientStop Offset=".8" Color="#D6D5D5" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="VerticalSliderTrackNormalBorder" StartPoint="0,0" EndPoint="1,0">
+    <GradientStop Offset="0.1" Color="#FFAEB1AF" />
+    <GradientStop Offset=".9" Color="White" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="CollapsedBarGradientBrush" StartPoint="0,0" EndPoint="0,1">
+    <GradientStop Offset="0.00" Color="#ffa5a5a5" />
+    <GradientStop Offset="0.48" Color="#ff303030" />
+    <GradientStop Offset="0.51" Color="#ff232323" />
+    <GradientStop Offset="0.51" Color="#ff161616" />
+    <GradientStop Offset="0.76" Color="#ff1f1f1f" />
+    <GradientStop Offset="0.96" Color="#ff282828" />
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="BrushTextPrimary" Color="#FF8C8C8C" />
+  <SolidColorBrush x:Key="NormalBrush" Color="{DynamicResource MainColor}" />
+  <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#FF787878" />
+  <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+  <SolidColorBrush x:Key="NormalBorderBrush" Color="#FF333333" />
+  <SolidColorBrush x:Key="TextDarkBrush" Color="#FF323232" />
+  <SolidColorBrush x:Key="ScrollBarDisabledBackground" Color="#F4F4F4" />
+  <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070" />
+  <SolidColorBrush x:Key="ListBorder" Color="#828790" />
+  <SolidColorBrush x:Key="CheckBoxFillNormal" Color="#F4F4F4" />
+  <SolidColorBrush x:Key="CheckBoxStroke" Color="#8E8F8F" />
+  <SolidColorBrush x:Key="HorizontalSliderThumbHoverBorder" Color="#3C7FB1" />
+  <SolidColorBrush x:Key="HorizontalSliderThumbPressedBorder" Color="#2C628B" />
+  <SolidColorBrush x:Key="HorizontalSliderTrackNormalBackground" Color="#FFE7EAEA" />
+  <SolidColorBrush x:Key="HitTestBackground" Color="#00000000" />
+  <SolidColorBrush x:Key="StandardBorderBrush" Color="DarkGray" />
+  <SolidColorBrush x:Key="StandardBrush" Color="#FF808080" />
+  <SolidColorBrush x:Key="PressedBrush" Color="#FFADADAD" />
+  <SolidColorBrush x:Key="HoverBrush" Color="#FF858585" />
+  <SolidColorBrush x:Key="GlyphBrush" Color="#333333" />
+  <VisualBrush x:Key="spiralBrush" Stretch="None" TileMode="Tile" Viewport="0,0,24,32" ViewportUnits="Absolute">
+    <VisualBrush.Visual>
+      <Canvas>
+        <Canvas>
+          <Path Data="F1 M9.833,32.334 L0.167,32.334 L0.167,20.002 L9.833,20.002 L9.833,32.334" Fill="#ff221e1f" />
+          <Path Data="F1 M9.167,26.002 L1.167,26.002 L1.167,21.002 L9.167,21.002 L9.167,26.002" Fill="#ff8d8f91" />
+          <Path Data="F1 M1.958,12.251 C2.073,9.947 2.109,7.389 2.166,5.462 L2.166,5.462 C2.568,8.249 2.835,12.243 2.831,16.002 L2.831,16.002 C2.833,19.455 2.612,22.586 2.267,24.805 L2.267,24.805 C2.095,25.91 1.886,26.795 1.688,27.326 L1.688,27.326 C1.598,27.576 1.502,27.749 1.466,27.798 L1.466,27.798 C1.46,27.804 1.461,27.805 1.461,27.805 L1.616,27.923 L1.514,27.765 L1.858,28.293 L1.858,27.668 L1.858,27.668 L1.858,29.668 L1.858,29.668 C2.463,29.658 2.84,29.295 3.052,29.018 L3.052,29.018 C3.756,28.016 4.053,26.459 4.372,24.186 L4.372,24.186 C4.661,21.939 4.831,19.1 4.833,16.002 L4.833,16.002 C4.831,12.461 4.61,8.766 4.246,5.917 L4.246,5.917 C4.063,4.49 3.848,3.282 3.587,2.368 L3.587,2.368 C3.454,1.909 3.319,1.526 3.122,1.178 L3.122,1.178 C2.93,0.875 2.646,0.385 1.858,0.334 L1.858,0.334 C1.124,0.359 0.793,0.894 0.675,1.162 L0.675,1.162 C0.25,2.172 0.241,3.584 0.161,5.56 L0.161,5.56 C0.109,7.494 0.111,10.068 0,12.251 L1.958,12.251" Fill="#ff221e1f" />
+          <Path Data="F1 M4.375,12.293 C4.493,10.073 4.491,7.371 4.702,5.349 L4.702,5.349 C4.938,3.295 5.124,1.768 5.646,0.773 L5.646,0.773 C5.804,0.51 6.099,0.038 6.832,0 L6.832,0 C7.651,0.051 7.946,0.605 8.11,0.921 L8.11,0.921 C8.287,1.285 8.395,1.681 8.496,2.157 L8.496,2.157 C8.691,3.101 8.824,4.346 8.926,5.81 L8.926,5.81 C9.126,8.729 9.183,12.492 9.185,16.001 L9.185,16.001 C9.183,19.1 9.008,21.943 8.711,24.188 L8.711,24.188 C8.382,26.463 8.074,28.024 7.35,29.027 L7.35,29.027 C7.131,29.31 6.748,29.659 6.153,29.668 L6.153,29.668 L6.153,27.668 L6.153,27.668 L6.153,28.275 L5.825,27.757 L5.92,27.906 L5.776,27.793 C5.776,27.794 5.775,27.793 5.78,27.789 L5.78,27.789 C5.814,27.744 5.914,27.574 6.008,27.318 L6.008,27.318 C6.211,26.785 6.426,25.905 6.603,24.799 L6.603,24.799 C6.958,22.584 7.184,19.453 7.184,16.001 L7.184,16.001 C7.186,11.89 7.101,7.405 6.813,4.509 L6.813,4.509 C6.803,4.587 6.793,4.666 6.783,4.746 L6.783,4.746 C6.53,6.829 6.339,9.774 6.208,12.293 L4.375,12.293" Fill="#ff221e1f" />
+          <Path Data="F1 M2.188,1.938 L2.188,1.937 L2.188,1.938 L2.188,1.938 M3.333,13.765 C3.127,5.893 2.337,3.148 1.891,2.342 L1.891,2.342 C1.797,2.165 1.741,2.096 1.713,2.07 L1.713,2.07 C1.495,2.016 1.333,1.818 1.333,1.583 L1.333,1.583 C1.331,1.508 1.356,1.354 1.48,1.23 L1.48,1.23 C1.604,1.106 1.756,1.083 1.834,1.085 L1.834,1.085 C2.246,1.11 2.758,1.434 3.215,3.009 L3.215,3.009 C3.687,4.62 4.167,7.689 4.333,13.737 L4.333,13.737 C4.341,14.014 4.122,14.244 3.847,14.251 L3.847,14.251 C3.843,14.251 3.839,14.251 3.835,14.251 L3.835,14.251 C3.564,14.251 3.341,14.037 3.333,13.765 L3.333,13.765" Fill="#ffbdbfc1" />
+          <Path Data="F1 M7.792,13.01 C7.653,3.992 6.771,1.84 6.541,1.581 L6.541,1.581 C6.369,1.502 6.25,1.327 6.25,1.125 L6.25,1.125 C6.25,0.85 6.473,0.626 6.749,0.626 L6.749,0.626 C6.949,0.622 7.2,0.764 7.372,1.027 L7.372,1.027 C7.556,1.296 7.739,1.715 7.929,2.493 L7.929,2.493 C8.302,4.043 8.687,7.034 8.792,12.993 L8.792,12.993 C8.796,13.269 8.575,13.497 8.299,13.5 L8.299,13.5 C8.297,13.5 8.294,13.5 8.291,13.5 L8.291,13.5 C8.019,13.5 7.796,13.283 7.792,13.01 L7.792,13.01" Fill="#ffbdbfc1" />
+        </Canvas>
+      </Canvas>
+    </VisualBrush.Visual>
+  </VisualBrush>
+  <Geometry x:Key="SliderThumbOuterBorderGeometry">M -5,-9.5 A 1 1 0 0 1 -4,-10.5 L 4,-10.5 A 1 1 0 0 1 5,-9.5 L 5,9.5 A 1 1 0 0 1 4,10.5 L -4,10.5 A 1 1 0 0 1 -5,9.5 Z</Geometry>
+  <Geometry x:Key="SliderThumbMiddleBorderGeometry">M -4,-9.5 L 4,-9.5 L 4,9.5 L -4,9.5 Z</Geometry>
+  <Geometry x:Key="SliderPointedThumbOuterBorderGeometry">M 4.5,-7.5 A 1 1 0 0 0 3.5,-8.5 L -3.5,-8.5 A 1 1 0 0 0 -4.5,-7.5 L -4.5,4.5 L -0.5,8.5 L 0.5,8.5 L 4.5,4.5 Z</Geometry>
+  <Geometry x:Key="SliderPointedThumbMiddleBorderGeometry">M 3.5,-7.5 L -3.5,-7.5 L -3.5,4.5 L 0,8 L 3.5,4.5 Z</Geometry>
+  <Geometry x:Key="SliderThumbDisabledGeometry">M -5,-10.5 L 5,-10.5 L 5,10.5 L -5,10.5 Z</Geometry>
+  <Geometry x:Key="SliderPointedThumbDisabledGeometry">M 4.5,-8.5 L -4.5,-8.5 L -4.5,4.5 L -0.5,8.5 L 0.5,8.5 L 4.5,4.5 Z</Geometry>
+  <Geometry x:Key="DownArrowGeometry">M 0 0 L 3.5 4 L 7 0 Z</Geometry>
+  <LinearGradientBrush x:Key="CS4BrushListboxItemGradient" StartPoint="1.00038,0.998987" EndPoint="0.000376018,-0.00101562">
+    <GradientStop Offset="0" Color="#FFCCC6C1" />
+    <GradientStop Offset="1" Color="#00FFFFFF" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="CS4ListBoxItemMouseDownBrush" StartPoint="1.00038,0.998984" EndPoint="0.000375977,-0.00102051">
+    <GradientStop Offset="0" Color="{DynamicResource HighlightAndAccentColor}" />
+    <GradientStop Offset="1" Color="#00FFFFFF" />
+  </LinearGradientBrush>
+</ResourceDictionary>

@@ -1,0 +1,120 @@
+# P03 — Portable domain and graph contracts
+
+> For agentic workers: read [AGENT_PLAYBOOK](../AGENT_PLAYBOOK.md) and root AGENTS.md. Execute one task and its verification at a time. Delegation requires user authorization.
+
+**Goal:** Extract existing algorithms and graph state into portable CSharp projects with explicit platform boundaries.
+
+**Architecture:** Reuse CSharp logic through real graph, document and geometry boundaries. Recovered snapshots are read-only references.
+
+**Tech stack:** C#/.NET iOS/UIKit; a real native CAD backend and Metal where needed. Backend selection is gated by P05.
+
+**Dependencies:** P00.
+
+**Owned/planned paths:** `src/Port/Domain/`, `src/Port/Graph/`, `src/Port/Contracts/`, `tests/Port/Domain.Tests/`. Paths not yet present are explicit future deliverables.
+
+## Global constraints
+
+- All CAD/rendering works offline on iPad/iPhone; no Windows server.
+- Windows tools write only inside the D: repository, including auth, temp and caches.
+- Preserve GUIDs, versions, unknown payloads and input files. Edit copies.
+- Distinguish static observation, compilation, simulator, physical device and PC round trip.
+- No embedded credential use, activation bypass, fake geometry or silent feature omission.
+
+## Source entry points
+
+- [Recovery map](../../../recovery/README.md)
+- [Current evidence](../CURRENT_STATE.md)
+
+## Interfaces and handoffs
+
+Consume [architecture contracts](../ARCHITECTURE.md). Public boundary changes require an ADR and regression case in the same task. Use [the evidence template](../templates/task-evidence.json) to record exact changed paths, fixture hashes, commands, expected/actual results and downstream contracts. A chat summary is not an artifact.
+
+### P03-T01 — Create Domain, Graph and Domain.Tests projects
+
+**Files:** use the owned paths above. Create `docs/porting/evidence/P03-T01.json` and the focused test or analysis artifact named in that record. Never edit recovery/ to make a port test pass.
+
+**Consumes:** P00. **Produces:** a reviewed implementation or analysis artifact for this task with its exact verification command.
+
+- [ ] Read matching source bodies and run `node scripts/porting.cjs backlog P03 10`. Record fields, defaults, error paths and dependencies under the selected requirement IDs.
+- [ ] Define normal, boundary and failure cases from the mandatory acceptance contract below. Add the failing test first and run it. Acquisition/analysis tasks instead validate the currently missing or incorrect artifact fields; do not invent a meaningless unit test.
+- [ ] Implement **create domain, graph and domain.tests projects**. Preserve reusable algorithms. Split into stable child task IDs before coding if multiple independently reviewable changes are needed. Missing prerequisites produce a blocker, never a fake pass.
+- [ ] Run focused platform/codec/kernel tests, adjacent regressions and `node tools/repository/check.cjs`. Record fixture SHA256, exit codes, assertions, output paths and warnings. The repository checker alone never proves parity.
+- [ ] Review source mutation, credential leakage, lost fields, swallowed errors and placeholder actions. Update matching backlog rows and commit with `P03-T01: <concrete result>`. One task passing does not complete its phase.
+
+### P03-T02 — Classify adopted methods as unchanged, adapted, generated data or replacement
+
+**Files:** use the owned paths above. Create `docs/porting/evidence/P03-T02.json` and the focused test or analysis artifact named in that record. Never edit recovery/ to make a port test pass.
+
+**Consumes:** P03-T01. **Produces:** a reviewed implementation or analysis artifact for this task with its exact verification command.
+
+- [ ] Read matching source bodies and run `node scripts/porting.cjs backlog P03 10`. Record fields, defaults, error paths and dependencies under the selected requirement IDs.
+- [ ] Define normal, boundary and failure cases from the mandatory acceptance contract below. Add the failing test first and run it. Acquisition/analysis tasks instead validate the currently missing or incorrect artifact fields; do not invent a meaningless unit test.
+- [ ] Implement **classify adopted methods as unchanged, adapted, generated data or replacement**. Preserve reusable algorithms. Split into stable child task IDs before coding if multiple independently reviewable changes are needed. Missing prerequisites produce a blocker, never a fake pass.
+- [ ] Run focused platform/codec/kernel tests, adjacent regressions and `node tools/repository/check.cjs`. Record fixture SHA256, exit codes, assertions, output paths and warnings. The repository checker alone never proves parity.
+- [ ] Review source mutation, credential leakage, lost fields, swallowed errors and placeholder actions. Update matching backlog rows and commit with `P03-T02: <concrete result>`. One task passing does not complete its phase.
+
+### P03-T03 — Define GUID/parameter identity, units, graph links and immutable snapshots
+
+**Files:** use the owned paths above. Create `docs/porting/evidence/P03-T03.json` and the focused test or analysis artifact named in that record. Never edit recovery/ to make a port test pass.
+
+**Consumes:** P03-T02. **Produces:** a reviewed implementation or analysis artifact for this task with its exact verification command.
+
+- [ ] Read matching source bodies and run `node scripts/porting.cjs backlog P03 10`. Record fields, defaults, error paths and dependencies under the selected requirement IDs.
+- [ ] Define normal, boundary and failure cases from the mandatory acceptance contract below. Add the failing test first and run it. Acquisition/analysis tasks instead validate the currently missing or incorrect artifact fields; do not invent a meaningless unit test.
+- [ ] Implement **define guid/parameter identity, units, graph links and immutable snapshots**. Preserve reusable algorithms. Split into stable child task IDs before coding if multiple independently reviewable changes are needed. Missing prerequisites produce a blocker, never a fake pass.
+- [ ] Run focused platform/codec/kernel tests, adjacent regressions and `node tools/repository/check.cjs`. Record fixture SHA256, exit codes, assertions, output paths and warnings. The repository checker alone never proves parity.
+- [ ] Review source mutation, credential leakage, lost fields, swallowed errors and placeholder actions. Update matching backlog rows and commit with `P03-T03: <concrete result>`. One task passing does not complete its phase.
+
+### P03-T04 — Port validation, numerical/material helpers and undoable parameter changes
+
+**Files:** use the owned paths above. Create `docs/porting/evidence/P03-T04.json` and the focused test or analysis artifact named in that record. Never edit recovery/ to make a port test pass.
+
+**Consumes:** P03-T03. **Produces:** a reviewed implementation or analysis artifact for this task with its exact verification command.
+
+- [ ] Read matching source bodies and run `node scripts/porting.cjs backlog P03 10`. Record fields, defaults, error paths and dependencies under the selected requirement IDs.
+- [ ] Define normal, boundary and failure cases from the mandatory acceptance contract below. Add the failing test first and run it. Acquisition/analysis tasks instead validate the currently missing or incorrect artifact fields; do not invent a meaningless unit test.
+- [ ] Implement **port validation, numerical/material helpers and undoable parameter changes**. Preserve reusable algorithms. Split into stable child task IDs before coding if multiple independently reviewable changes are needed. Missing prerequisites produce a blocker, never a fake pass.
+- [ ] Run focused platform/codec/kernel tests, adjacent regressions and `node tools/repository/check.cjs`. Record fixture SHA256, exit codes, assertions, output paths and warnings. The repository checker alone never proves parity.
+- [ ] Review source mutation, credential leakage, lost fields, swallowed errors and placeholder actions. Update matching backlog rows and commit with `P03-T04: <concrete result>`. One task passing does not complete its phase.
+
+### P03-T05 — Replace Windows/COM/native/service assumptions with typed real boundaries
+
+**Files:** use the owned paths above. Create `docs/porting/evidence/P03-T05.json` and the focused test or analysis artifact named in that record. Never edit recovery/ to make a port test pass.
+
+**Consumes:** P03-T04. **Produces:** a reviewed implementation or analysis artifact for this task with its exact verification command.
+
+- [ ] Read matching source bodies and run `node scripts/porting.cjs backlog P03 10`. Record fields, defaults, error paths and dependencies under the selected requirement IDs.
+- [ ] Define normal, boundary and failure cases from the mandatory acceptance contract below. Add the failing test first and run it. Acquisition/analysis tasks instead validate the currently missing or incorrect artifact fields; do not invent a meaningless unit test.
+- [ ] Implement **replace windows/com/native/service assumptions with typed real boundaries**. Preserve reusable algorithms. Split into stable child task IDs before coding if multiple independently reviewable changes are needed. Missing prerequisites produce a blocker, never a fake pass.
+- [ ] Run focused platform/codec/kernel tests, adjacent regressions and `node tools/repository/check.cjs`. Record fixture SHA256, exit codes, assertions, output paths and warnings. The repository checker alone never proves parity.
+- [ ] Review source mutation, credential leakage, lost fields, swallowed errors and placeholder actions. Update matching backlog rows and commit with `P03-T05: <concrete result>`. One task passing does not complete its phase.
+
+### P03-T06 — Run differential edge-case tests and record retained/changed/new code
+
+**Files:** use the owned paths above. Create `docs/porting/evidence/P03-T06.json` and the focused test or analysis artifact named in that record. Never edit recovery/ to make a port test pass.
+
+**Consumes:** P03-T05. **Produces:** a reviewed implementation or analysis artifact for this task with its exact verification command.
+
+- [ ] Read matching source bodies and run `node scripts/porting.cjs backlog P03 10`. Record fields, defaults, error paths and dependencies under the selected requirement IDs.
+- [ ] Define normal, boundary and failure cases from the mandatory acceptance contract below. Add the failing test first and run it. Acquisition/analysis tasks instead validate the currently missing or incorrect artifact fields; do not invent a meaningless unit test.
+- [ ] Implement **run differential edge-case tests and record retained/changed/new code**. Preserve reusable algorithms. Split into stable child task IDs before coding if multiple independently reviewable changes are needed. Missing prerequisites produce a blocker, never a fake pass.
+- [ ] Run focused platform/codec/kernel tests, adjacent regressions and `node tools/repository/check.cjs`. Record fixture SHA256, exit codes, assertions, output paths and warnings. The repository checker alone never proves parity.
+- [ ] Review source mutation, credential leakage, lost fields, swallowed errors and placeholder actions. Update matching backlog rows and commit with `P03-T06: <concrete result>`. One task passing does not complete its phase.
+
+## Mandatory acceptance cases
+
+- **P03-A1:** Portable projects reference no Rhino or Windows UI DLL
+- **P03-A2:** Default, non-default, boundary and invalid inputs have explicit cases
+- **P03-A3:** Serialized type identity survives namespace/assembly changes through tested mappings
+- **P03-A4:** Windows native declarations compiling successfully do not count as functioning reuse
+
+## Completion gate
+
+- [ ] All six task records link real committed outputs.
+- [ ] Every acceptance case has a reproducible result. Required blockers keep the phase incomplete.
+- [ ] Platform/physical device and PC reference comparisons exist wherever required.
+- [ ] Feature/type rows include fixture IDs, commands, evidence and review.
+- [ ] Update phases.json after review; run `node scripts/porting.cjs check`.
+- [ ] Handoff exact paths, commands and remaining risks.
+
+These work-card actions are checkpoints, not a claim that a phase takes minutes.

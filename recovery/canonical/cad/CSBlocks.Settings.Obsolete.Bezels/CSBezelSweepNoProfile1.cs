@@ -1,0 +1,116 @@
+using System;
+using CS;
+using CS.CSDataUtilities;
+using CS.CSObjects.CSBlocks;
+using CS.Parametric;
+using CS.Parametric.Channels;
+using CSBlockUtil;
+using CSCompatibility;
+using CSDatas;
+using RMA.OpenNURBS;
+using Rhino.Geometry;
+
+namespace CSBlocks.Settings.Obsolete.Bezels;
+
+[Obsolete]
+[CSBlock("BezelSweepNoProfile_V1", "{10E55353-06CA-4fec-80AC-7C10C17D8A3D}")]
+public sealed class CSBezelSweepNoProfile1 : CSBlock
+{
+	public readonly CSInputChannel InRail1;
+
+	public readonly CSInputChannel InRail2;
+
+	public readonly CSOutputChannel OutBrep;
+
+	public CSBezelSweepNoProfile1(string identifier)
+		: base(identifier)
+	{
+		InRail1 = new CSInputChannel(this, ChannelDataType.Curve, ChannelArrayType.Individual);
+		InRail2 = new CSInputChannel(this, ChannelDataType.Curve, ChannelArrayType.Individual);
+		OutBrep = new CSOutputChannel(this, ChannelDataType.Brep, ChannelArrayType.Array | ChannelArrayType.Individual);
+		SetChannelIdentifiers();
+	}
+
+	public override bool Update()
+	{
+		CSDataArray flattenArray = InRail1.GetFlattenArray();
+		CSDataArray flattenArray2 = InRail2.GetFlattenArray();
+		if (flattenArray.GetArrayCount() != flattenArray2.GetArrayCount())
+		{
+			return UpdateError("Rail count mismatch");
+		}
+		CSDataArray cSDataArray = new CSDataArray();
+		for (int i = 0; i < flattenArray.GetArrayCount(); i++)
+		{
+			CSData arrayItem = flattenArray.GetArrayItem(i);
+			CSDataHelper.GetTransformNoArray(arrayItem, out var value);
+			if (!value.IsValid)
+			{
+				value = Transform.Identity;
+			}
+			CSData arrayItem2 = flattenArray2.GetArrayItem(i);
+			CSDataHelper.GetTransformNoArray(arrayItem2, out var value2);
+			if (!value2.IsValid)
+			{
+				value2 = Transform.Identity;
+			}
+			OnNurbsCurve onNurbsCurve = arrayItem.GetNurbsCurve().Convert();
+			if (onNurbsCurve == null)
+			{
+				cSDataArray.Append(new CSData());
+				continue;
+			}
+			OnNurbsCurve onNurbsCurve2 = arrayItem2.GetNurbsCurve().Convert();
+			if (onNurbsCurve2 == null)
+			{
+				cSDataArray.Append(new CSData());
+				continue;
+			}
+			On3dPoint on3dPoint = onNurbsCurve.PointAtStart();
+			On3dPoint arg = onNurbsCurve2.PointAtStart();
+			if (on3dPoint.DistanceTo(arg) < CSApplicationHelper.Application.Tolerance)
+			{
+				cSDataArray.Append(new CSData());
+				continue;
+			}
+			OnBrep srf = null;
+			if (BezelSweepNoProfile(onNurbsCurve, onNurbsCurve2, ref srf))
+			{
+				cSDataArray.Append(CSBlockUtil.CSUtilMath.MatrixCompare(value, value2) ? new CSOnGeometryData(srf.Convert(), value, applyTransform: false) : new CSOnGeometryData(srf.Convert()));
+			}
+			else
+			{
+				cSDataArray.Append(new CSData());
+			}
+		}
+		OutBrep.SetData((cSDataArray.GetArrayCount() == 1) ? cSDataArray.GetArrayItem(0) : cSDataArray);
+		return base.Update();
+	}
+
+	private static bool BezelSweepNoProfile(IOnCurve rail1, IOnCurve rail2, ref OnBrep srf)
+	{
+		if (rail1 == null || rail2 == null)
+		{
+			return false;
+		}
+		if (!CSUtilSweep.Sweep2NoProfile(rail1, rail2, out var breps))
+		{
+			CS.CSUtil.PrintLine("Failed Sweep2NoProfile");
+			return false;
+		}
+		if (breps == null)
+		{
+			return false;
+		}
+		if (breps.Length < 1)
+		{
+			return false;
+		}
+		if (!breps[0].IsValid())
+		{
+			return false;
+		}
+		srf = breps[0];
+		return true;
+	}
+}

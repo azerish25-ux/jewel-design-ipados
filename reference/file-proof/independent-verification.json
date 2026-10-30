@@ -1,0 +1,64 @@
+{
+  "status": "PASS for bounded file-format proof only",
+  "build": {
+    "label": "build",
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "log": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\independent\\build.log"
+  },
+  "runs": [
+    {
+      "label": "source",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "log": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\independent\\source.log"
+    },
+    {
+      "label": "unchanged",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "log": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\independent\\unchanged.log"
+    },
+    {
+      "label": "edited",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "log": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\independent\\edited.log"
+    },
+    {
+      "label": "restored",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "log": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\independent\\restored.log"
+    },
+    {
+      "label": "bad-crc",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "log": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\independent\\bad-crc.log"
+    }
+  ],
+  "crossLanguage": {
+    "beforeAndAfterNodeRecords": 241,
+    "perFileNumericRecords": 74,
+    "decodedNumericFieldsAndLinkArraysMatch": true
+  },
+  "sourceAndControls": {
+    "sourceCopyOriginalHash": true,
+    "unchangedSaveOriginalHash": true,
+    "editedExpectedHash": true,
+    "restoredOriginalHash": true,
+    "negativeCrcRejectedByIndependentReader": true
+  },
+  "selected": {
+    "graphIndex": 8,
+    "name": "Top Thickness",
+    "before": 4.38,
+    "savedAndReread": 4.48,
+    "restoredAndReread": 4.38
+  },
+  "nativeCounterSketchReopen": "NOT RUN: original native application writes outside D are not contained",
+  "geometryRegeneration": "NOT RUN",
+  "ipadRoundTrip": "NOT RUN",
+  "scope": "Independent managed reader plus Node editor; neither loads any CounterSketch/Rhino assembly."
+}

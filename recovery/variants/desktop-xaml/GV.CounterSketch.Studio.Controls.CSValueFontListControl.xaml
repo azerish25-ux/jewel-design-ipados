@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<controls:CSUIControl x:Class="GV.CounterSketch.Studio.Controls.CSValueFontListControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:PagedListBox="clr-namespace:GV.CounterSketch.Studio.UserControls.PagedListBox" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:gvCounterSketchUtilitiesBehaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:model="clr-namespace:GV.CounterSketch.Shared.Model;assembly=CounterSketch Studio" xmlns:objects2="clr-namespace:GV.CounterSketch.Studio.Model.Objects" x:Name="TheValueListControl" MinHeight="35" Background="#00FFFFFF">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CounterSketch Studio;component/ResourceDictionaries/Converters.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <DataTemplate x:Key="DataTemplateTextItem">
+        <Grid Margin="2">
+          <TextBlock FontSize="16" Foreground="{DynamicResource BaseBackground}" FontFamily="{Binding Mode=Default, Converter={StaticResource FontNameToPackLocationConverter}}" Text="{Binding}" />
+        </Grid>
+      </DataTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel>
+    <Border Height="1" VerticalAlignment="Top" Background="#FFC6BEB6" DockPanel.Dock="Top" />
+    <Grid Name="GridDisplayImage" Width="55" Height="70">
+      <Rectangle Name="RectImage" Width="50" Height="70" Margin="0,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Fill" StrokeLineJoin="Round" StrokeThickness="0.5" />
+    </Grid>
+    <Popup Name="PopupSubMenu" Margin="0" AllowsTransparency="True" HorizontalOffset="-19" Placement="Right" PopupAnimation="None" VerticalOffset="-22" PlacementTarget="{Binding ElementName=BtnSubMenu}" MouseLeave="PopupSubMenuMouseLeave">
+      <Border Padding="20,20,0,0" Background="#02000000" BorderThickness="0">
+        <Border Background="{DynamicResource WindowFrameBackground}" BorderBrush="#FF65615D" BorderThickness="1">
+          <StackPanel Name="StackSubMenuActions" Margin="10,4">
+            <Border>
+              <StackPanel Margin="0">
+                <Button Name="BtnResetControl" HorizontalContentAlignment="Center" Content="Reset Control To Default" Cursor="Hand" Foreground="#FFCCCCCC" Style="{DynamicResource CSSubMenuActionButton}" Background="{x:Null}" Click="BtnResetControlClick" />
+              </StackPanel>
+            </Border>
+          </StackPanel>
+        </Border>
+      </Border>
+    </Popup>
+    <Grid Height="80">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="18" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <DockPanel Background="#02000000">
+        <TextBlock Name="TxtTitle" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Foreground="#FF32302E" Text="{Binding DisplayTitle, ElementName=TheValueListControl}" />
+        <Border Name="BorderSubMenu" Margin="0" Background="#02000000" DockPanel.Dock="Right">
+          <Button Name="BtnSubMenu" Width="12" Height="13" Margin="0,2,1,0" VerticalAlignment="Top" Cursor="Hand" Style="{DynamicResource CSSubMenuButton}" Click="BtnSubMenuClick">
+            <Control.Background>
+              <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Offset="0" Color="#FFF3F3F3" />
+                <GradientStop Offset="0.5" Color="#FFEBEBEB" />
+                <GradientStop Offset="0.5" Color="#FFDDDDDD" />
+                <GradientStop Offset="1" Color="White" />
+              </LinearGradientBrush>
+            </Control.Background>
+          </Button>
+        </Border>
+        <Line Margin="0,0,2,0" HorizontalAlignment="Right" VerticalAlignment="Top" Stroke="#FFC6BEB6" Y2="15" />
+      </DockPanel>
+      <StackPanel Grid.Row="1" Margin="0,0,4,0" VerticalAlignment="Center" Orientation="Vertical">
+        <ComboBox Name="CboItems" Height="30" Margin="0" HorizontalAlignment="Stretch" Background="#FF454341" BorderBrush="#FF7D7B7A" Foreground="#FF232221" IsSynchronizedWithCurrentItem="True" ItemTemplate="{DynamicResource DataTemplateTextItem}" SelectedIndex="1" Style="{DynamicResource ComboBoxStyleFont}" ItemsSource="{Binding ListItemStrings, ElementName=TheValueListControl}" SelectionChanged="CboItems_SelectionChanged" />
+      </StackPanel>
+    </Grid>
+  </DockPanel>
+</controls:CSUIControl>

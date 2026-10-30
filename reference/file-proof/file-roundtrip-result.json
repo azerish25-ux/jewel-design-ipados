@@ -1,0 +1,120 @@
+{
+  "scope": "Limited legacy CSG file-format proof using copy-preserving edit. Not a CounterSketch UI save, recovered modern serializer save, geometry regeneration or PC/iPad/PC acceptance.",
+  "source": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\runtime-data\\library-sample\\item-4.csg",
+  "sourceSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "sourceUnchanged": true,
+  "selected": {
+    "index": 8,
+    "typeGuid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+    "identifier": "Top Thickness",
+    "matchingDisplayLabels": 2,
+    "selection": "Exact fixture hash plus graph index 8 and type GUID; display label alone is ambiguous",
+    "recordVersion": "1.1",
+    "before": 4.38,
+    "after": 4.48,
+    "range": [
+      3,
+      6
+    ],
+    "step": 0.01,
+    "valueOffset": 136223,
+    "crcOffset": 136255
+  },
+  "files": {
+    "sourceCopy": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\cases\\00-source-copy.csg",
+    "unchanged": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\cases\\01-unchanged-save.csg",
+    "edited": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\cases\\02-top-thickness-4.48.csg",
+    "restored": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\cases\\03-restored-4.38.csg",
+    "badCrc": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\negative-controls\\bad-leaf-crc.csg"
+  },
+  "snapshots": {
+    "before": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\snapshots\\before.json",
+    "after": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\snapshots\\after.json",
+    "restored": "D:\\MAIN SOFTWARE\\jewerly software\\analysis\\pc-roundtrip\\snapshots\\restored.json"
+  },
+  "fileBytes": 383069,
+  "editSha256": "26b6ef6e22f2a6d9ff131350f18b6951818824291de1b1a2ae8d000d85c07b1a",
+  "unchangedSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "restoredSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "changedByteCount": 10,
+  "changedByteOffsets": [
+    136223,
+    136224,
+    136225,
+    136226,
+    136227,
+    136228,
+    136255,
+    136256,
+    136257,
+    136258
+  ],
+  "allowedChanges": [
+    {
+      "kind": "stored double",
+      "offset": 136223,
+      "bytes": 8
+    },
+    {
+      "kind": "leaf CRC32",
+      "offset": 136255,
+      "bytes": 4
+    }
+  ],
+  "preserved": {
+    "otherNodeRecords": 240,
+    "numericParametersOtherThanEdited": 73,
+    "totalGraphRecords": 241,
+    "opaqueAndMetadataRegions": 9,
+    "typeGuidDirectory": true,
+    "provenance": true,
+    "documentUserData": true,
+    "categories": true,
+    "selectedRecordOtherFields": true
+  },
+  "integrity": {
+    "fileInfo": true,
+    "categories": true,
+    "graphDirectoryScoped": true,
+    "leafNodes": 241,
+    "nestedGemAndPreviewSubchunks": "Preserved opaque; their nested CRCs not independently walked."
+  },
+  "controls": {
+    "unchangedByteIdentical": true,
+    "reverseEditByteIdentical": true,
+    "badCrcRejected": true,
+    "badCrcError": "CRC mismatch at 135761",
+    "truncationRejected": true,
+    "unsupportedNumericVersionRejected": true
+  },
+  "notVerified": [
+    "Opening or resaving in CounterSketch/Rhino itself",
+    "Geometry regeneration, metal volume updates or manufacturing output",
+    "Preview/render refresh (the old preview bytes are deliberately retained)",
+    "All nested gem/preview chunk CRCs or opaque geometry semantics",
+    "Full portfolio CSP/history/sidecars or other archive/record versions",
+    "iPad implementation or PC -> iPad -> PC round trip"
+  ],
+  "codeReferences": [
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+      "line": 895
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "line": 342
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueBase.cs",
+      "line": 93
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+      "line": 295
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueRange.cs",
+      "line": 142
+    }
+  ]
+}

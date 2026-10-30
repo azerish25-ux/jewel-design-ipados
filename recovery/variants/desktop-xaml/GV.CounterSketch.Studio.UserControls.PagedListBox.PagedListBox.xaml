@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Custom:SurfaceListBox x:Class="GV.CounterSketch.Studio.UserControls.PagedListBox.PagedListBox" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Custom="clr-namespace:Microsoft.Surface.Presentation.Controls;assembly=Microsoft.Surface.Presentation" xmlns:PagedListBox="clr-namespace:GV.CounterSketch.Studio.UserControls.PagedListBox" xmlns:Primitives="clr-namespace:Microsoft.Surface.Presentation.Controls.Primitives;assembly=Microsoft.Surface.Presentation" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:cvrt="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Background="#00000000" Focusable="False" IsManipulationEnabled="True" IsTextSearchCaseSensitive="True" ItemContainerStyle="{DynamicResource ListBoxItemStylePage}" ItemTemplate="{DynamicResource PagedListBoxDataTemplate}" ItemsPanel="{DynamicResource ItemsPanelTemplatePaging}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Template="{DynamicResource SurfaceListBoxTemplate}">
+  <FrameworkElement.Resources>
+    <x:StaticExtension x:Key="empty" Member="System:String.Empty" />
+    <Style x:Key="SurfaceCheckBoxStyleIsFavorite" TargetType="{x:Type Custom:SurfaceCheckBox}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Custom:SurfaceCheckBox}">
+            <Grid Background="#00000000">
+              <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform">
+                <Path Name="path" Width="14.44" Height="13.821" Data="F1 M1445.02,978.894 L1447.17,983.279 L1451.99,983.982 L1448.51,987.396 L1449.33,992.215 L1445.02,989.94 L1440.71,992.215 L1441.54,987.396 L1438.05,983.982 L1442.87,983.279 L1445.02,978.894" Fill="#C0F0E6DD" Stretch="Fill" Stroke="{DynamicResource BrushPageItemBorderSelected}" StrokeMiterLimit="2.75" StrokeThickness="0.5" />
+              </Viewbox>
+              <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CheckStates">
+                  <VisualState x:Name="Checked">
+                    <Storyboard>
+                      <ColorAnimationUsingKeyFrames Storyboard.TargetName="path" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                        <EasingColorKeyFrame KeyTime="0" Value="#FFFFD801" />
+                      </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </VisualState>
+                  <VisualState x:Name="Unchecked" />
+                  <VisualState x:Name="Indeterminate" />
+                </VisualStateGroup>
+              </VisualStateManager.VisualStateGroups>
+            </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <ControlTemplate x:Key="ScrollViewerControlTemplatePaging" TargetType="{x:Type Custom:SurfaceScrollViewer}">
+      <Grid Name="Grid" Background="{TemplateBinding Control.Background}">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Rectangle Name="Corner" Grid.Row="1" Grid.Column="1" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+        <ScrollContentPresenter Name="PART_ScrollContentPresenter" Grid.Row="0" Grid.Column="0" Margin="{TemplateBinding Control.Padding}" CanContentScroll="{TemplateBinding ScrollViewer.CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" Content="{TemplateBinding ContentControl.Content}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" />
+        <ScrollBar Name="PART_VerticalScrollBar" Grid.Row="0" Grid.Column="1" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Maximum="{TemplateBinding ScrollViewer.ScrollableHeight}" Minimum="0" ViewportSize="{TemplateBinding ScrollViewer.ViewportHeight}" Visibility="{TemplateBinding ScrollViewer.ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+        <ScrollBar Name="PART_HorizontalScrollBar" Grid.Row="1" Grid.Column="0" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Maximum="{TemplateBinding ScrollViewer.ScrollableWidth}" Minimum="0" Orientation="Horizontal" ViewportSize="{TemplateBinding ScrollViewer.ViewportWidth}" Visibility="Collapsed" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+      </Grid>
+    </ControlTemplate>
+    <Style x:Key="ButtonFocusVisual">
+      <Setter Property="Control.Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <Rectangle Margin="2" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeDashArray="1 2" StrokeThickness="1" />
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <LinearGradientBrush x:Key="ButtonNormalBackground" StartPoint="0,0" EndPoint="0,1">
+      <GradientStop Offset="0" Color="#F3F3F3" />
+      <GradientStop Offset="0.5" Color="#EBEBEB" />
+      <GradientStop Offset="0.5" Color="#DDDDDD" />
+      <GradientStop Offset="1" Color="#CDCDCD" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070" />
+    <Style x:Key="BaseButtonStyle" TargetType="{x:Type ButtonBase}">
+      <Setter Property="FrameworkElement.FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
+      <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}" />
+      <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="Padding" Value="1" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ButtonBase}">
+            <Grid Name="grid" Width="Auto" Background="#02000000">
+              <Viewbox Width="4.52" Height="19.279" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill">
+                <Path Width="4.52" Height="19.279" Data="F1 M-361.507,288.077 L-365.028,297.39 L-361.507,306.356" Stretch="Fill" Stroke="#FF898684" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" />
+              </Viewbox>
+              <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="ValidationStates" />
+              </VisualStateManager.VisualStateGroups>
+            </Grid>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="grid" Property="Visibility" Value="Collapsed" />
+              </Trigger>
+              <Trigger Property="ButtonBase.ClickMode" Value="Release" />
+              <Trigger Property="UIElement.IsKeyboardFocused" Value="True" />
+              <Trigger Property="ToggleButton.IsChecked" Value="true" />
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="RepeatButtonStylePage" BasedOn="{StaticResource BaseButtonStyle}" TargetType="{x:Type Primitives:SurfaceRepeatButton}">
+      <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False" />
+    </Style>
+    <ControlTemplate x:Key="SurfaceListBoxTemplate" TargetType="{x:Type Custom:SurfaceListBox}">
+      <DockPanel Background="{TemplateBinding Control.Background}" IsManipulationEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <ListBox Name="listBoxPageIndicator" Width="Auto" Height="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" IsTextSearchEnabled="False" ItemContainerStyle="{DynamicResource ListBoxItemStylePageIndicator}" ItemTemplate="{DynamicResource DataTemplatePageIndicator}" ItemsPanel="{DynamicResource ItemsPanelTemplatePageIndicator}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Style="{DynamicResource ListBoxStylePageIndicator}" />
+        <DockPanel Name="gridItemPresenter" Width="Auto" Dock="Top" IsManipulationEnabled="False">
+          <Primitives:SurfaceRepeatButton Name="pageLeftButton" Width="Auto" Height="Auto" MinWidth="20" MinHeight="40" Margin="0,0,5,0" Cursor="Hand" Focusable="False" IsManipulationEnabled="True" IsTabStop="False" Style="{DynamicResource RepeatButtonStylePage}" Command="{Binding PageCollectionLeft, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type PagedListBox:PagedListBox}}}" CommandParameter="{Binding ElementName=pagingScrollViewer}" />
+          <Primitives:SurfaceRepeatButton Name="pageRightButton" Width="Auto" Height="Auto" MinWidth="20" MinHeight="40" Margin="5,0,0,0" Cursor="Hand" DockPanel.Dock="Right" Focusable="False" IsManipulationEnabled="True" IsTabStop="False" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource RepeatButtonStylePage}" Command="{Binding PageCollectionRight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type PagedListBox:PagedListBox}}}" CommandParameter="{Binding ElementName=pagingScrollViewer}">
+            <UIElement.RenderTransform>
+              <TransformGroup>
+                <ScaleTransform />
+                <SkewTransform />
+                <RotateTransform Angle="180" />
+                <TranslateTransform />
+              </TransformGroup>
+            </UIElement.RenderTransform>
+          </Primitives:SurfaceRepeatButton>
+          <Grid Width="Auto" Height="Auto">
+            <Custom:SurfaceScrollViewer Name="pagingScrollViewer" Width="Auto" Height="Auto" Focusable="False" Foreground="{TemplateBinding Control.Foreground}" IsTabStop="False" PanningMode="HorizontalOnly" VerticalScrollBarVisibility="Disabled" Template="{DynamicResource ScrollViewerControlTemplatePaging}" Background="{x:Null}">
+              <ItemsPresenter />
+            </Custom:SurfaceScrollViewer>
+            <TextBlock Name="textBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontStyle="Italic" Foreground="#FF787878" Text="{x:Static l:Strings.NoItemsAvailable}" TextWrapping="Wrap" Visibility="{Binding IsResultSetEmptyVisibility, RelativeSource={RelativeSource TemplatedParent}}" />
+          </Grid>
+        </DockPanel>
+        <VisualStateManager.VisualStateGroups>
+          <VisualStateGroup x:Name="ValidationStates" />
+        </VisualStateManager.VisualStateGroups>
+      </DockPanel>
+    </ControlTemplate>
+    <LinearGradientBrush x:Key="BrushPageItemBorderUnselected" StartPoint="0.507733,0.99279" EndPoint="0.507733,0.438094">
+      <GradientStop Offset="0" Color="#FFDCDCDC" />
+      <GradientStop Offset="1" Color="#FFFFFFFF" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="BrushPageItemBorderSelected" Color="#FF32302E" />
+    <Style x:Key="ListBoxItemStylePage" TargetType="{x:Type ListBoxItem}">
+      <Setter Property="Background" Value="#00FFFFFF" />
+      <Setter Property="Padding" Value="2,0,0,0" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListBoxItem}">
+            <Viewbox Name="viewbox" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Cursor="Hand" RenderTransformOrigin="0.5,0" Stretch="Uniform">
+              <i:Interaction.Triggers>
+                <ei:DataTrigger Value="False" Binding="{Binding IsSelected, RelativeSource={RelativeSource TemplatedParent}}">
+                  <ei:GoToStateAction StateName="DefaultDeleteState" />
+                </ei:DataTrigger>
+                <i:EventTrigger EventName="MouseEnter">
+                  <ei:ChangePropertyAction PropertyName="MousedOverItem" TargetObject="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type PagedListBox:PagedListBox}}}" Value="{Binding}" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MouseLeave">
+                  <ei:ChangePropertyAction PropertyName="MousedOverItem" TargetObject="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type PagedListBox:PagedListBox}}}" Value="{Binding Path=SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type PagedListBox:PagedListBox}}}" />
+                </i:EventTrigger>
+              </i:Interaction.Triggers>
+              <DockPanel Width="100" Height="Auto" HorizontalAlignment="Stretch" UseLayoutRounding="True">
+                <TextBlock Name="textBlockSecondary" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" DockPanel.Dock="Bottom" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="12" Foreground="{DynamicResource BrushTextPrimary}" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding SecondaryText, FallbackValue=Binding Failed}" Visibility="{Binding SecondaryText, Converter={cvrt:StringIsNullOrEmptyToVisibilityConverter}}">
+                  <UIElement.RenderTransform>
+                    <TransformGroup>
+                      <ScaleTransform />
+                      <SkewTransform />
+                      <RotateTransform />
+                      <TranslateTransform />
+                    </TransformGroup>
+                  </UIElement.RenderTransform>
+                </TextBlock>
+                <TextBlock Name="textBlockPrimary" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" DockPanel.Dock="Bottom" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="12" Foreground="{DynamicResource BrushTextPrimary}" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding PrimaryText, FallbackValue=Binding Failed}" Visibility="{Binding PrimaryText, Converter={cvrt:StringIsNullOrEmptyToVisibilityConverter}}">
+                  <UIElement.RenderTransform>
+                    <TransformGroup>
+                      <ScaleTransform />
+                      <SkewTransform />
+                      <RotateTransform />
+                      <TranslateTransform />
+                    </TransformGroup>
+                  </UIElement.RenderTransform>
+                </TextBlock>
+                <Grid Width="Auto" Height="Auto" Margin="0,0,0,5" DockPanel.Dock="Top">
+                  <Border Name="borderSelected" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Width="Auto" MinWidth="50" MinHeight="50" Margin="0" BorderBrush="{DynamicResource HighlightAndAccent}" BorderThickness="1" SnapsToDevicePixels="True" Visibility="Hidden" Height="{Binding ActualWidth, ElementName=borderSelected}" />
+                  <Grid Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000">
+                    <ContentPresenter Name="contentPresenter" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Width="Auto" Height="Auto" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                      <FrameworkElement.LayoutTransform>
+                        <TransformGroup>
+                          <ScaleTransform />
+                          <SkewTransform />
+                          <RotateTransform />
+                          <TranslateTransform />
+                        </TransformGroup>
+                      </FrameworkElement.LayoutTransform>
+                    </ContentPresenter>
+                  </Grid>
+                  <Grid Name="gridModifiers" Row="0" RowSpan="1" Column="0" ColumnSpan="1" Margin="5" Visibility="{Binding IsFieldModificationEnabled, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type PagedListBox:PagedListBox}}}">
+                    <Grid.RowDefinitions>
+                      <RowDefinition Height="1*" />
+                      <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="1*" />
+                      <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid RowSpan="2" ColumnSpan="2">
+                      <Custom:SurfaceCheckBox Grid.Row="0" Width="Auto" Height="Auto" MinWidth="20" MinHeight="20" Margin="0" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="SurfaceCheckBox" Cursor="Hand" Style="{DynamicResource SurfaceCheckBoxStyleIsFavorite}" ToolTip="{x:Static l:Strings.Favorite}" IsChecked="{Binding IsFavorite}" />
+                      <Viewbox Grid.Row="0" Grid.Column="0" Width="Auto" Height="Auto" MinWidth="20" MinHeight="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Stretch="Uniform" Visibility="{Binding IsReadOnly, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Path Width="7.667" Height="10.519" Data="M1414.95,984.806 L1414.68,984.806 L1414.68,983.586 C1414.68,982.152 1413.52,980.991 1412.08,980.99 C1410.65,980.991 1409.49,982.152 1409.49,983.586 L1409.49,984.806 L1409.21,984.806 C1408.68,984.806 1408.25,985.238 1408.25,985.771 L1408.25,990.544 C1408.25,991.077 1408.68,991.509 1409.21,991.509 L1414.95,991.509 C1415.49,991.509 1415.92,991.077 1415.92,990.544 L1415.92,985.771 C1415.92,985.238 1415.49,984.806 1414.95,984.806 M1410.43,983.586 C1410.43,983.128 1410.61,982.717 1410.91,982.416 C1411.21,982.116 1411.63,981.931 1412.08,981.931 C1412.54,981.931 1412.95,982.116 1413.25,982.416 C1413.55,982.717 1413.74,983.128 1413.74,983.586 L1413.74,984.806 L1410.43,984.806 L1410.43,983.586 M1412.74,989.818 L1411.43,989.818 L1411.66,988.221 C1411.37,988.068 1411.17,987.763 1411.17,987.411 C1411.17,986.906 1411.58,986.497 1412.08,986.497 C1412.59,986.497 1413,986.906 1413,987.411 C1413,987.763 1412.8,988.068 1412.51,988.221 L1412.74,989.818" Fill="#FF65615D" Stretch="Fill" ToolTip="Read Only" />
+                      </Viewbox>
+                      <Custom:SurfaceButton Name="deleteSurfaceButton" Grid.Column="0" Width="Auto" Height="Auto" MinWidth="15" MinHeight="15" Margin="0,0,2,0" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Top" Content="SurfaceButton" Cursor="Hand" Style="{DynamicResource SurfaceButtonStyleDelete}" ToolTip="Delete" Visibility="Hidden">
+                        <i:Interaction.Triggers>
+                          <i:EventTrigger EventName="Click">
+                            <ei:GoToStateAction StateName="ConfirmDeletion" />
+                          </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                      </Custom:SurfaceButton>
+                    </Grid>
+                    <Border Name="border" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="-3" Background="#E5FFFFFF" CornerRadius="9" Visibility="Hidden">
+                      <Grid Name="gridConfirmDelete">
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="1*" />
+                          <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                          <RowDefinition Height="2*" />
+                          <RowDefinition Height="1*" />
+                          <RowDefinition Height="1*" />
+                          <RowDefinition Height="2*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource BrushTextPrimary}" Text="Delete?" TextWrapping="Wrap" />
+                        <Custom:SurfaceButton Name="surfaceButton" Grid.Row="2" Grid.ColumnSpan="1" MinWidth="0" MinHeight="0" Margin="5" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Yes" Cursor="Hand" Command="{Binding RemoveItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type PagedListBox:PagedListBox}}}" CommandParameter="{Binding}" />
+                        <Custom:SurfaceButton Name="surfaceButton1" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" MinWidth="0" MinHeight="0" Margin="5" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Content="No" Cursor="Hand">
+                          <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                              <ei:GoToStateAction StateName="DefaultDeleteState" />
+                            </i:EventTrigger>
+                          </i:Interaction.Triggers>
+                        </Custom:SurfaceButton>
+                      </Grid>
+                    </Border>
+                  </Grid>
+                </Grid>
+              </DockPanel>
+              <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SelectionStates">
+                  <VisualState x:Name="Selected">
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="borderSelected" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="deleteSurfaceButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </VisualState>
+                  <VisualState x:Name="SelectedUnfocused">
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="borderSelected" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="deleteSurfaceButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </VisualState>
+                  <VisualState x:Name="Unselected" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CommonStates">
+                  <VisualState x:Name="Normal" />
+                  <VisualState x:Name="MouseOver" />
+                  <VisualState x:Name="Disabled" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="DeleteStates">
+                  <VisualState x:Name="DefaultDeleteState" />
+                  <VisualState x:Name="ConfirmDeletion">
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates" />
+                <VisualStateGroup x:Name="ValidationStates" />
+              </VisualStateManager.VisualStateGroups>
+            </Viewbox>
+            <ControlTemplate.Triggers>
+              <MultiTrigger>
+                <MultiTrigger.Conditions>
+                  <Condition Property="UIElement.IsVisible" Value="True" />
+                  <Condition Property="UIElement.IsMouseOver" Value="True" />
+                  <Condition Property="Selector.IsSelected" Value="False" />
+                </MultiTrigger.Conditions>
+              </MultiTrigger>
+              <Trigger Property="Selector.IsSelected" Value="True" />
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <SolidColorBrush x:Key="ListBorder" Color="#828790" />
+    <Style x:Key="ListBoxStylePageIndicator" TargetType="{x:Type ListBox}">
+      <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+      <Setter Property="BorderBrush" Value="{StaticResource ListBorder}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+      <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+      <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+      <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListBox}">
+            <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+              <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </ScrollViewer>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsEnabled" Value="False" />
+              <Trigger Property="ItemsControl.IsGrouping" Value="True">
+                <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <ItemsPanelTemplate x:Key="ItemsPanelTemplatePageIndicator">
+      <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" />
+    </ItemsPanelTemplate>
+    <DataTemplate x:Key="DataTemplatePageIndicator">
+      <Grid Background="#FFFFFFFF" IsHitTestVisible="False" />
+    </DataTemplate>
+    <Style x:Key="ListBoxItemStylePageIndicator" TargetType="{x:Type ListBoxItem}">
+      <Setter Property="Background" Value="#00FFFFFF" />
+      <Setter Property="Padding" Value="2,0,0,0" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListBoxItem}">
+            <Grid Width="Auto" Background="#FFFFFFFF">
+              <Button Background="#FFFFFFFF" Cursor="Hand" Style="{DynamicResource ButtonStyleBlank}" Command="{Binding GoToSelectedPage, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type PagedListBox:PagedListBox}}}" CommandParameter="{Binding}">
+                <Grid Margin="5,0" Background="#FFFFFFFF">
+                  <Path Name="pathSelected" Width="6.384" Height="6.384" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F1 M594.805,836.277 C596.567,836.277 597.996,837.706 597.996,839.469 C597.996,841.232 596.567,842.661 594.805,842.661 C593.042,842.661 591.613,841.232 591.613,839.469 C591.613,837.706 593.042,836.277 594.805,836.277" Fill="{DynamicResource BrushTextPrimary}" Stretch="Fill" Visibility="Hidden" />
+                  <Path Name="pathUnselected" Width="7.384" Height="7.384" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F1 M617.204,836.277 C618.966,836.277 620.395,837.706 620.395,839.469 C620.395,841.232 618.966,842.661 617.204,842.661 C615.441,842.661 614.012,841.232 614.012,839.469 C614.012,837.706 615.441,836.277 617.204,836.277" Fill="#FFFFFFFF" Stretch="Fill" Stroke="{DynamicResource BrushTextPrimary}" StrokeMiterLimit="2.75" />
+                </Grid>
+              </Button>
+              <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SelectionStates">
+                  <VisualState x:Name="Unselected" />
+                  <VisualState x:Name="Selected">
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pathSelected" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pathUnselected" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </VisualState>
+                  <VisualState x:Name="SelectedUnfocused">
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pathSelected" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                      </ObjectAnimationUsingKeyFrames>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pathUnselected" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CommonStates">
+                  <VisualState x:Name="Normal" />
+                  <VisualState x:Name="MouseOver" />
+                  <VisualState x:Name="Disabled" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                  <VisualState x:Name="Unfocused" />
+                  <VisualState x:Name="Focused" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ValidationStates">
+                  <VisualState x:Name="Valid" />
+                  <VisualState x:Name="InvalidFocused" />
+                  <VisualState x:Name="InvalidUnfocused" />
+                </VisualStateGroup>
+              </VisualStateManager.VisualStateGroups>
+            </Grid>
+            <ControlTemplate.Triggers>
+              <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                <Setter Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Property="Foreground" />
+              </Trigger>
+              <MultiTrigger>
+                <MultiTrigger.Conditions>
+                  <Condition Property="ListBoxItem.IsSelected" Value="True" />
+                  <Condition Property="Selector.IsSelectionActive" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" Property="Foreground" />
+              </MultiTrigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Property="Foreground" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <ItemsPanelTemplate x:Key="ItemsPanelTemplatePaging">
+      <StackPanel IsItemsHost="True" Orientation="Horizontal" />
+    </ItemsPanelTemplate>
+    <Style x:Key="SurfaceButtonStyleDelete" TargetType="{x:Type Custom:SurfaceButton}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Custom:SurfaceButton}">
+            <Grid Background="#00000000">
+              <Viewbox Name="viewbox" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Stretch="Uniform">
+                <UIElement.RenderTransform>
+                  <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                  </TransformGroup>
+                </UIElement.RenderTransform>
+                <Path Name="path" Width="8.972" Height="9.019" Data="F1 M1123.62,927.01 L1120.61,923.984 L1117.69,926.92 L1116.25,925.476 L1119.17,922.541 L1116.14,919.488 L1117.62,917.991 L1120.66,921.044 L1123.58,918.11 L1125.02,919.555 L1122.1,922.488 L1125.11,925.512 L1123.62,927.01" Fill="#FF65615D" Stretch="Fill" />
+              </Viewbox>
+              <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                  <VisualState x:Name="Normal" />
+                  <VisualState x:Name="MouseOver">
+                    <Storyboard>
+                      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="viewbox" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.2" />
+                      </DoubleAnimationUsingKeyFrames>
+                      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="viewbox" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                        <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.2" />
+                      </DoubleAnimationUsingKeyFrames>
+                      <ColorAnimationUsingKeyFrames Storyboard.TargetName="path" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                        <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF640000">
+                          <EasingColorKeyFrame.EasingFunction>
+                            <QuinticEase EasingMode="EaseOut" />
+                          </EasingColorKeyFrame.EasingFunction>
+                        </EasingColorKeyFrame>
+                      </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </VisualState>
+                  <VisualState x:Name="Pressed">
+                    <Storyboard>
+                      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="viewbox" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                        <DiscreteDoubleKeyFrame KeyTime="0" Value="1.2" />
+                      </DoubleAnimationUsingKeyFrames>
+                      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="viewbox" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                        <DiscreteDoubleKeyFrame KeyTime="0" Value="1.2" />
+                      </DoubleAnimationUsingKeyFrames>
+                      <ColorAnimationUsingKeyFrames Storyboard.TargetName="path" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                        <DiscreteColorKeyFrame KeyTime="0" Value="#FF640000" />
+                      </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </VisualState>
+                  <VisualState x:Name="Disabled" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                  <VisualState x:Name="Unfocused" />
+                  <VisualState x:Name="Focused" />
+                </VisualStateGroup>
+              </VisualStateManager.VisualStateGroups>
+            </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style x:Key="ButtonFocusVisual2">
+      <Setter Property="Control.Template">
+        <Setter.Value>
+          <ControlTemplate />
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </FrameworkElement.Resources>
+</Custom:SurfaceListBox>

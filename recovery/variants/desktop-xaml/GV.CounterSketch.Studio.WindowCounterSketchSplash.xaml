@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.WindowCounterSketchSplash" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:localization="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="MainWindow" IsHitTestVisible="True" ResizeMode="NoResize" AllowsTransparency="True" ShowInTaskbar="False" SnapsToDevicePixels="False" Topmost="True" WindowStartupLocation="CenterOwner" WindowState="Maximized" WindowStyle="None" xmlns:studio="clr-namespace:GV.CounterSketch.Studio" Background="{x:Null}" MouseDown="Grid_MouseDown">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ResourceDictionaries/Colors.xaml" />
+        <ResourceDictionary Source="ResourceDictionaries/Brushes.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <Viewbox x:Key="GVLogo" Name="Gemvision_AStullerCompany_BLACK" Width="105" UseLayoutRounding="False">
+        <Canvas Width="324" Height="97.3333" Clip="F1 M0,0 L324,0 L324,97.3333 L0,97.3333 L0,0" UseLayoutRounding="False">
+          <Canvas Name="Layer_1" Left="0" Top="0" Width="324" Height="97.3333">
+            <Path Name="Path" Canvas.Left="151.153" Canvas.Top="24.326" Width="34.2893" Height="30.3733" Data="F1 M151.153,24.326 L163.258,24.326 L168.602,43.554 L173.859,24.326 L185.442,24.326 L175.125,54.6993 L161.638,54.6993 L151.153,24.326" Fill="#3d6db5" Stretch="Fill" />
+            <Path Name="Path_0" Canvas.Left="187.121" Canvas.Top="11.8533" Width="11.9787" Height="42.8467" Data="F1 M187.121,11.8533 L199.1,11.8533 L199.1,20.416 L187.121,20.416 M187.121,24.3267 L199.1,24.3267 L199.1,54.7 L187.121,54.7 L187.121,24.3267" Fill="#3d6db5" Stretch="Fill" />
+            <Canvas Name="Group" Left="0" Top="-0.584" Width="324.369" Height="97.9173">
+              <Canvas Name="Clip" Width="324" Height="97.3333" Clip="F1 M0,0 L324.369,0 L324.369,97.9173 L0,97.9173 L0,0">
+                <Path Name="Path_1" Canvas.Left="200.93" Canvas.Top="24.0863" Width="31.5427" Height="32.145" Data="F1 M220.377,33.6047 C220.073,31.6287 218.805,30.646 216.566,30.646 C214.438,30.7513 213.385,31.47 213.385,32.7873 C213.265,33.7873 214.574,34.6153 217.322,35.2673 C218.59,35.542 220.169,35.898 222.063,36.3447 C223.951,36.7927 225.547,37.2713 226.833,37.7887 C228.129,38.306 229.301,39.0713 230.338,40.078 C231.383,41.078 232.025,42.318 232.25,43.7833 C232.757,46.446 232.398,48.7087 231.182,50.5567 C229.963,52.41 228.045,53.8113 225.434,54.7767 C222.795,55.7487 219.729,56.2313 216.209,56.2313 C206.605,56.07 201.517,52.5927 200.93,45.7767 L212.342,45.7767 C212.531,48.2433 214.015,49.4753 216.794,49.4753 C219.154,49.4753 220.377,48.6553 220.497,46.9993 C220.497,46.0273 219.823,45.2847 218.481,44.7353 C217.819,44.4327 216.318,44.058 213.987,43.6073 C211.647,43.1713 209.651,42.646 207.991,42.0433 C206.33,41.4553 204.931,40.526 203.773,39.2713 C202.614,38.0247 201.965,36.3127 201.859,34.154 C201.779,31.4487 202.895,29.0953 205.217,27.0953 C207.53,25.0913 211.31,24.0873 216.566,24.0873 C221.701,24.0513 225.403,24.946 227.675,26.7847 C229.958,28.6167 231.189,30.8993 231.383,33.6047 L220.377,33.6047" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_2" Canvas.Left="234.408" Canvas.Top="12.4373" Width="11.9787" Height="42.8467" Data="F1 M234.408,12.4373 L246.387,12.4373 L246.387,21 L234.408,21 M234.408,24.9107 L246.387,24.9107 L246.387,55.284 L234.408,55.284 L234.408,24.9107" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_3" Canvas.Left="248.349" Canvas.Top="24.0652" Width="34.5347" Height="32.1588" Data="F1 M265.563,24.076 C267.609,24.0093 269.671,24.252 271.731,24.8013 C273.803,25.3653 275.665,26.2533 277.316,27.468 C278.989,28.6867 280.332,30.3107 281.351,32.332 C282.371,34.3573 282.883,36.796 282.883,39.6587 C282.921,43.4373 282.149,46.5667 280.572,49.0427 C278.989,51.508 276.916,53.304 274.337,54.4213 C271.776,55.548 268.924,56.1427 265.807,56.224 C262.66,56.224 259.78,55.6573 257.131,54.512 C254.481,53.368 252.359,51.6133 250.759,49.2187 C249.149,46.824 248.349,43.864 248.349,40.356 C248.349,36.7667 249.121,33.724 250.692,31.2267 C252.259,28.7467 254.348,26.9293 256.955,25.792 C259.557,24.6507 262.428,24.076 265.563,24.076 M265.92,32.1453 C263.889,32.188 262.46,32.992 261.604,34.5693 C260.759,36.144 260.368,37.8733 260.437,39.7747 C260.437,45.28 262.153,48.0347 265.563,48.0347 C269.121,48.0347 270.915,45.28 270.915,39.7747 C270.915,38.764 270.752,37.6587 270.435,36.4533 C270.136,35.2387 269.617,34.22 268.877,33.3893 C268.143,32.5613 267.155,32.1453 265.92,32.1453" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_4" Canvas.Left="284.58" Canvas.Top="24.09" Width="33.0253" Height="31.1933" Data="F1 M284.58,24.91 L295.517,24.91 L295.517,29.7647 C298.186,25.978 301.621,24.09 305.837,24.09 C309.321,24.09 312.157,25.0967 314.326,27.102 C316.524,29.1127 317.605,32.406 317.605,37.002 L317.605,55.2833 L305.516,55.2833 L305.516,39.1647 C305.516,35.3393 304.114,33.494 301.329,33.6033 C299.736,33.6033 298.55,34.054 297.746,34.9353 C296.957,35.822 296.562,37.4393 296.562,39.7887 L296.562,55.2833 L284.58,55.2833 L284.58,24.91" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_5" Canvas.Left="2.14573" Canvas.Top="2.00201" Width="51.6" Height="54.9149" Data="F1 M29.0004,26.0767 L46.7631,30.7407 L46.7631,49.2887 C46.7631,50.5633 46.5071,51.406 45.9884,51.818 C44.0857,53.2407 40.5391,53.9553 35.3831,53.9553 C26.4511,53.7433 20.0924,51.0313 16.2964,45.798 C12.5017,40.5887 10.6071,34.5687 10.6071,27.538 C10.6071,24.266 11.1751,21.11 12.3057,18.0487 C13.4431,14.9887 14.9364,12.682 16.8031,10.902 C18.9697,8.814 21.5617,7.32466 24.5737,6.41801 C27.5911,5.53401 30.2537,5.09 33.2457,5.09 C44.3364,5.09 48.1724,8.62067 48.1724,14.3233 L48.1724,17.7527 L53.7231,5.53401 C47.4857,3.48468 41.2377,2.00201 34.9924,2.00201 C28.5884,2.00201 23.1644,3.17401 18.0257,5.52734 C12.8857,7.874 8.92707,11.086 6.1404,15.3753 C3.47773,19.61 2.14573,24.1393 2.14573,28.982 C2.19907,39.1193 5.42173,46.2353 11.8191,50.5673 C18.2111,54.9033 25.4737,57.006 33.6004,56.914 C35.6577,56.914 37.8351,56.7167 40.1284,56.3433 C42.4204,55.9633 44.7417,55.47 47.0844,54.8647 C49.4337,54.2513 51.5231,53.638 53.7457,53.0287 L53.7457,32.734 L53.7457,25.0407 L29.0004,26.0767" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_6" Canvas.Left="57.5981" Canvas.Top="24.3034" Width="32.4373" Height="32.2262" Data="F1 M90.0355,37.4776 L90.0355,37.4736 L90.0355,37.4669 C90.0355,33.9976 88.8341,30.2843 86.4168,27.8963 C84.0048,25.5149 80.3621,24.3216 75.4875,24.3216 C73.8368,24.2163 71.9155,24.5683 69.7115,25.3709 C67.5035,26.1709 65.6008,27.0723 64.0155,28.0483 C61.8781,29.5563 60.2688,31.2816 59.1928,33.2256 C58.1301,35.1669 57.5981,37.8749 57.5981,41.3443 C57.5981,44.6949 58.3875,47.5056 59.9648,49.7989 C61.5435,52.0949 63.6741,53.7856 66.3728,54.8843 C69.0488,55.9869 72.0928,56.5296 75.4875,56.5296 C77.8941,56.5296 80.4261,56.0963 83.0675,55.2123 C85.7168,54.3323 87.2901,53.5776 87.7981,52.9336 L89.3475,50.5976 L88.2741,49.9709 C84.2541,52.0563 81.1061,53.0989 78.8021,53.0989 C74.6275,53.0989 71.2581,51.9789 68.6688,49.7523 C66.2875,47.7029 64.9995,43.9549 64.8008,40.1016 L90.0355,40.1016 M66.9355,30.0003 C68.4741,27.7203 71.1755,26.5509 75.0221,26.5056 C77.4848,26.4523 79.4635,27.4109 80.9541,29.3683 C82.4341,31.3349 83.2048,34.0256 83.2541,37.4669 L64.9768,37.4669 L64.9355,37.4669 C64.7275,34.7683 65.3861,32.2749 66.9355,30.0003" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_7" Canvas.Left="88.8831" Canvas.Top="24.4421" Width="65.948" Height="30.8413" Data="F1 M149.386,52.5995 L149.386,34.9981 C149.386,32.5181 148.858,30.5115 147.815,28.9861 C146.766,27.4635 145.403,26.3221 143.711,25.5701 C142.038,24.8221 140.299,24.4421 138.51,24.4421 C135.395,24.4421 133.091,25.0195 131.623,26.1568 L125.783,30.5115 C123.618,26.4741 120.094,24.4421 115.206,24.4421 C112.06,24.4421 109.803,24.9635 108.404,26.0061 L103.128,30.2755 L103.128,25.6048 L88.8831,26.6195 L96.6991,30.1581 L96.6991,52.5995 L90.4617,55.2835 L97.5804,55.2835 L97.8297,55.2835 L101.994,55.2835 L102.236,55.2835 L109.366,55.2835 L103.128,52.6021 L103.128,34.6248 C103.128,33.1248 104.182,31.7221 106.272,30.4368 C108.364,29.1448 110.552,28.4995 112.828,28.4995 C115.111,28.4995 116.851,29.2675 118.076,30.7928 C119.284,32.3115 119.894,34.3115 119.894,36.7915 L119.894,52.5995 L113.648,55.2835 L120.771,55.2835 L121.027,55.2835 L125.188,55.2835 L125.434,55.2835 L132.556,55.2835 L126.318,52.5995 L126.318,34.6248 C126.318,33.8048 126.772,32.8955 127.664,31.9061 C128.562,30.9275 129.724,30.1168 131.158,29.4688 C132.58,28.8208 134.114,28.4995 135.754,28.4995 C138.1,28.4995 139.898,29.2715 141.119,30.8208 C142.348,32.3741 142.966,34.3648 142.966,36.7915 L142.966,50.9475 L142.966,55.2835 L143.022,55.2835 L147.65,55.2835 L147.931,55.2835 L154.831,55.2835 L149.386,52.5995" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_8" Canvas.Left="3.6324" Canvas.Top="78.0713" Width="17.4133" Height="18.396" Data="F1 M15.4964,89.3233 L12.2777,81.75 L9.05907,89.3233 M11.5417,78.0713 L13.1364,78.0713 L21.0457,96.4673 L18.5324,96.4673 L16.3244,91.3167 L8.23107,91.3167 L6.02307,96.4673 L3.6324,96.4673 L11.5417,78.0713" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_9" Canvas.Left="34.8792" Canvas.Top="77.6727" Width="12.296" Height="19.1933" Data="F1 M34.8792,94.6273 L35.4312,92.358 C36.5352,93.554 38.3752,94.8727 41.0125,94.8727 C43.1885,94.8727 44.8752,93.646 44.8752,91.654 C44.8752,89.7833 43.9552,88.7407 40.5219,87.822 C37.0565,86.902 35.4019,85.0313 35.4019,82.4553 C35.4019,79.85 37.5485,77.6727 41.3192,77.6727 C43.4339,77.6727 45.3032,78.47 46.3165,79.298 L45.7645,81.2913 C44.5379,80.402 42.8219,79.666 41.3192,79.666 C39.0192,79.666 37.7005,80.738 37.7005,82.4553 C37.7005,83.774 38.5285,84.878 41.4099,85.6447 C45.3659,86.686 47.1752,88.4033 47.1752,91.4393 C47.1752,95.026 44.1712,96.866 41.0125,96.866 C38.0072,96.866 35.8925,95.67 34.8792,94.6273" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_10" Canvas.Left="51.1324" Canvas.Top="78.0708" Width="15.5147" Height="18.396" Data="F1 M57.6631,80.1255 L51.1324,80.1255 L51.1324,78.0708 L66.6471,78.0708 L66.6471,80.1255 L60.1164,80.1255 L60.1164,96.4668 L57.6631,96.4668 L57.6631,80.1255" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_11" Canvas.Left="71.5251" Canvas.Top="78.0717" Width="15.9427" Height="18.9173" Data="F1 M71.5251,87.9744 L71.5251,78.0717 L74.0397,78.0717 L74.0397,88.0051 C74.0397,92.7571 76.1864,94.8424 79.5584,94.8424 C82.9317,94.8424 85.0771,92.7571 85.0771,88.0051 L85.0771,78.0717 L87.4677,78.0717 L87.4677,87.9744 C87.4677,94.1984 84.2491,96.9891 79.4971,96.9891 C74.7437,96.9891 71.5251,94.1984 71.5251,87.9744" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_12" Canvas.Left="94.0343" Canvas.Top="78.0715" Width="11.1293" Height="18.396" Data="F1 M94.0343,78.0715 L96.4876,78.0715 L96.4876,94.4128 L105.164,94.4128 L105.164,96.4675 L94.0343,96.4675 L94.0343,78.0715" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_13" Canvas.Left="110.042" Canvas.Top="78.0715" Width="11.1293" Height="18.396" Data="F1 M110.042,78.0715 L112.495,78.0715 L112.495,94.4128 L121.171,94.4128 L121.171,96.4675 L110.042,96.4675 L110.042,78.0715" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_14" Canvas.Left="126.049" Canvas.Top="78.0715" Width="11.1307" Height="18.396" Data="F1 M126.049,78.0715 L137.179,78.0715 L137.179,80.1261 L128.502,80.1261 L128.502,85.7368 L135.646,85.7368 L135.646,87.7901 L128.502,87.7901 L128.502,94.4128 L137.179,94.4128 L137.179,96.4675 L126.049,96.4675 L126.049,78.0715" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_15" Canvas.Left="143.16" Canvas.Top="78.0717" Width="14.3493" Height="18.6107" Data="F1 M149.232,86.8091 C151.991,86.8091 152.819,85.1531 152.819,83.4677 C152.819,81.7811 151.991,80.1251 149.232,80.1251 L145.613,80.1251 L145.613,86.8091 M150.704,93.2477 L148.281,88.8637 L145.613,88.8637 L145.613,96.4677 L143.16,96.4677 L143.16,78.0717 L149.232,78.0717 C153.432,78.0717 155.241,80.4931 155.241,83.4677 C155.241,86.2264 153.679,88.3117 150.796,88.7104 L153.003,92.4504 C154.107,94.3211 155.088,94.8731 156.468,94.8731 C156.805,94.8731 157.143,94.8424 157.509,94.7504 L157.509,96.4677 C156.927,96.6197 156.376,96.6824 155.824,96.6824 C153.739,96.6824 152.023,95.6397 150.704,93.2477" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_16" Canvas.Left="171.528" Canvas.Top="77.6733" Width="16.1573" Height="19.192" Data="F1 M171.528,87.2693 C171.528,81.3213 176.004,77.6733 181.309,77.6733 C183.638,77.6733 186.153,78.4387 187.685,79.604 L187.685,82.1493 C186.182,80.8 184.16,79.7267 181.309,79.7267 C177.077,79.7267 174.072,82.6707 174.072,87.2693 C174.072,91.8373 177.077,94.812 181.309,94.812 C184.16,94.812 186.182,93.7387 187.685,92.3893 L187.685,94.9347 C186.153,96.1 183.638,96.8653 181.309,96.8653 C176.004,96.8653 171.528,93.2173 171.528,87.2693" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_17" Canvas.Left="192.626" Canvas.Top="77.5493" Width="19.5293" Height="19.44" Data="F1 M209.611,87.2693 C209.611,82.7933 206.606,79.604 202.406,79.604 C198.175,79.604 195.17,82.7933 195.17,87.2693 C195.17,91.7147 198.175,94.9347 202.406,94.9347 C206.606,94.9347 209.611,91.7147 209.611,87.2693 M192.626,87.2693 C192.626,81.628 196.764,77.5493 202.406,77.5493 C208.018,77.5493 212.155,81.628 212.155,87.2693 C212.155,92.9107 208.018,96.9893 202.406,96.9893 C196.764,96.9893 192.626,92.9107 192.626,87.2693" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_18" Canvas.Left="217.832" Canvas.Top="78.0715" Width="18.888" Height="18.396" Data="F1 M217.832,78.0715 L220.226,78.0715 L227.338,93.3395 L234.451,78.0715 L236.72,78.0715 L236.72,96.4675 L234.359,96.4675 L234.359,83.9275 C234.359,83.4675 234.42,82.4248 234.42,82.3941 C234.359,82.4861 233.96,83.4981 233.776,83.9275 L228.043,96.4675 L226.387,96.4675 L220.654,83.9275 C220.439,83.4981 220.04,82.4861 220.01,82.3941 C220.01,82.4248 220.072,83.4675 220.072,83.9275 L220.072,96.4675 L217.832,96.4675 L217.832,78.0715" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_19" Canvas.Left="243.286" Canvas.Top="78.0717" Width="12.08" Height="18.396" Data="F1 M249.358,87.1157 C252.116,87.1157 252.944,85.3077 252.944,83.6211 C252.944,81.9344 252.116,80.1251 249.358,80.1251 L245.74,80.1251 L245.74,87.1157 M243.286,78.0717 L249.358,78.0717 C253.558,78.0717 255.366,80.6464 255.366,83.6211 C255.366,86.5944 253.558,89.1704 249.358,89.1704 L245.74,89.1704 L245.74,96.4677 L243.286,96.4677 L243.286,78.0717" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_20" Canvas.Left="258.559" Canvas.Top="78.0713" Width="17.4147" Height="18.396" Data="F1 M270.425,89.3233 L267.205,81.75 L263.986,89.3233 M266.47,78.0713 L268.063,78.0713 L275.974,96.4673 L273.459,96.4673 L271.253,91.3167 L263.158,91.3167 L260.951,96.4673 L258.559,96.4673 L266.47,78.0713" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_21" Canvas.Left="280.761" Canvas.Top="78.0715" Width="14.5947" Height="18.396" Data="F1 M280.761,78.0715 L282.171,78.0715 L293.117,91.7768 L293.117,78.0715 L295.355,78.0715 L295.355,96.4675 L293.945,96.4675 L282.999,82.7621 L282.999,96.4675 L280.761,96.4675 L280.761,78.0715" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_22" Canvas.Left="299.959" Canvas.Top="78.0719" Width="16.8627" Height="18.396" Data="F1 M307.163,89.1092 L299.959,78.0719 L302.627,78.0719 L308.452,87.1159 L314.278,78.0719 L316.822,78.0719 L309.616,89.1092 L309.616,96.4679 L307.163,96.4679 L307.163,89.1092" Fill="#3d6db5" Stretch="Fill" />
+                <Path Name="Path_23" Canvas.Left="317.835" Canvas.Top="19.433" Width="5.5625" Height="5.54166" Data="F1 M320.605,24.9746 C322.147,24.9746 323.397,23.7246 323.397,22.2038 C323.397,20.6621 322.147,19.433 320.605,19.433 C319.085,19.433 317.835,20.6621 317.835,22.2038 C317.835,23.7246 319.085,24.9746 320.605,24.9746 M320.605,24.5996 C319.272,24.5996 318.189,23.5371 318.189,22.2038 C318.189,20.8705 319.272,19.7871 320.605,19.7871 C321.939,19.7871 323.022,20.8705 323.022,22.2038 C323.022,23.5371 321.939,24.5996 320.605,24.5996 M322.251,23.8496 L322.251,23.4121 C322.168,23.4538 322.105,23.4538 322.022,23.4538 C321.814,23.4538 321.647,23.3705 321.46,23.0788 L321.126,22.4746 C321.647,22.3705 321.876,21.9538 321.876,21.4955 C321.876,20.9746 321.543,20.4746 320.772,20.4746 L319.439,20.4746 L319.439,23.8705 L320.105,23.8705 L320.105,22.5371 L320.46,22.5371 L320.876,23.2871 C321.105,23.7038 321.439,23.9121 321.835,23.9121 C321.98,23.9121 322.105,23.8913 322.251,23.8496 M321.21,21.4955 C321.21,21.808 321.043,22.0371 320.668,22.0371 L320.105,22.0371 L320.105,20.9746 L320.668,20.9746 C321.043,20.9746 321.21,21.2038 321.21,21.4955" Fill="#3d6db5" Stretch="Fill" />
+              </Canvas>
+            </Canvas>
+          </Canvas>
+        </Canvas>
+      </Viewbox>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Name="Splash" Width="580" HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="True">
+    <i:Interaction.Behaviors>
+      <ei:MouseDragElementBehavior />
+    </i:Interaction.Behaviors>
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="False">
+      <Image Name="Background_Image" RenderOptions.BitmapScalingMode="HighQuality" Source="/CounterSketch Studio;component/Images/CounterSketch Splash.jpg" Stretch="Uniform" />
+      <ContentControl Name="GVLOGO" Margin="0,0,40,60" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Right" Content="{StaticResource GVLogo}" />
+      <StackPanel Name="Copyright" Margin="0,0,40,20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal">
+        <TextBlock FontFamily="/EmbeddedFonts;Component/Fonts/#Montserrat-Regular" FontSize="12" Foreground="#FF8097af" Text="©2019" TextWrapping="Wrap" />
+        <TextBlock Margin="6,0,0,0" FontFamily="/EmbeddedFonts;Component/Fonts/#Montserrat-Regular" FontSize="12" Foreground="#FF8097af" Text="Gemvision, LLC" TextWrapping="Wrap" />
+      </StackPanel>
+      <StackPanel Margin="40,0,0,20" HorizontalAlignment="Left" VerticalAlignment="Bottom" ZIndex="1" Orientation="Horizontal">
+        <TextBlock FontFamily="/EmbeddedFonts;Component/Fonts/#Montserrat-Regular" Foreground="#FF8097af" TextAlignment="Right" TextWrapping="Wrap" Text="{Binding Version, ElementName=MainWindow, FallbackValue=Version 9.99.9999.9, Mode=OneWay}" />
+        <TextBlock Margin="6,-1,6,0" FontFamily="/EmbeddedFonts;Component/Fonts/#Montserrat-Regular" Foreground="#FF8097af" Text="|" TextAlignment="Center" />
+        <TextBlock FontFamily="/EmbeddedFonts;Component/Fonts/#Montserrat-Regular" Foreground="#FF8097af" Text="{Binding KeyId, ElementName=MainWindow, FallbackValue=0, Mode=OneWay}" />
+      </StackPanel>
+      <StackPanel Name="Progress_Bar" Margin="40,0,40,40" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" SnapsToDevicePixels="True">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Margin="0,0,0,0" VerticalAlignment="Bottom" FontFamily="/EmbeddedFonts;Component/Fonts/#Montserrat-SemiBold" FontSize="14" FontWeight="SemiBold" Foreground="#3d6db5" Text="CounterSketch" />
+          <TextBlock Margin="0,0,0,6" VerticalAlignment="Bottom" FontFamily="/EmbeddedFonts;Component/Fonts/#Montserrat-SemiBold" FontSize="10" FontWeight="SemiBold" Foreground="#3d6db5" Text="®" />
+          <TextBlock Margin="0,0,0,0" VerticalAlignment="Bottom" FontFamily="/EmbeddedFonts;Component/Fonts/#Montserrat-SemiBold" FontSize="14" FontWeight="SemiBold" Foreground="#3d6db5" Text=" 2019" />
+        </StackPanel>
+        <TextBlock Name="Notification_Message" Margin="0,0,0,10" VerticalAlignment="Bottom" FontFamily="/EmbeddedFonts;Component/Fonts/#Montserrat-MediumItalic" FontSize="10" FontStyle="Italic" Foreground="#3d6db5" Text="{Binding NotificationMessage, ElementName=MainWindow, FallbackValue=Reticulating Spines and Generating Lynx..., Mode=Default}" />
+        <Border VerticalAlignment="Bottom" Background="#FFFFFFFF" BorderBrush="#FF737577" BorderThickness="0" SnapsToDevicePixels="True">
+          <FrameworkElement.Resources>
+            <ResourceDictionary>
+              <Style x:Key="{x:Type ProgressBar}" TargetType="{x:Type ProgressBar}">
+                <Setter Property="Template">
+                  <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                      <Border Name="BorderBackground">
+                        <Grid>
+                          <Border Name="PART_Track" Margin="0" BorderThickness="0" CornerRadius="3" />
+                          <Border Name="PART_Indicator" Margin="0" HorizontalAlignment="Left" Background="#3d6db5" BorderThickness="0" ClipToBounds="True">
+                            <Border Name="DiagonalDecorator" Width="5000">
+                              <Border.Background>
+                                <DrawingBrush Stretch="None" TileMode="Tile" Viewbox="0,1,1,0" Viewport="0,0,36,34" ViewportUnits="Absolute">
+                                  <Brush.RelativeTransform>
+                                    <TranslateTransform X="0" Y="0" />
+                                  </Brush.RelativeTransform>
+                                  <DrawingBrush.Drawing>
+                                    <GeometryDrawing Brush="#1f4f91" Geometry="M0,0 L18,0 L36,34 L18,34" />
+                                  </DrawingBrush.Drawing>
+                                </DrawingBrush>
+                              </Border.Background>
+                              <FrameworkElement.Triggers>
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                  <BeginStoryboard>
+                                    <Storyboard>
+                                      <DoubleAnimation RepeatBehavior="Forever" Storyboard.TargetProperty="(Border.Background).(Brush.RelativeTransform).(TranslateTransform.X)" From="0" To=".36" Duration="0:0:18" />
+                                    </Storyboard>
+                                  </BeginStoryboard>
+                                </EventTrigger>
+                              </FrameworkElement.Triggers>
+                            </Border>
+                          </Border>
+                          <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                              <VisualState x:Name="Determinate" />
+                              <VisualState x:Name="Indeterminate" />
+                            </VisualStateGroup>
+                          </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                      </Border>
+                    </ControlTemplate>
+                  </Setter.Value>
+                </Setter>
+              </Style>
+            </ResourceDictionary>
+          </FrameworkElement.Resources>
+          <ProgressBar Name="ProgressBar" Height="8" Panel.ZIndex="1" IsHitTestVisible="False" IsTabStop="False" SmallChange="1" SnapsToDevicePixels="True" Value="50" Background="{x:Null}" BorderBrush="{x:Null}" />
+        </Border>
+      </StackPanel>
+      <ListBox Name="DebugParametersList" Width="580" Height="292" Margin="0,187,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed" ItemsSource="{Binding Path=StartupParameters, RelativeSource={RelativeSource AncestorType=Window, AncestorLevel=1, Mode=FindAncestor}}" />
+    </Grid>
+  </Grid>
+</Window>

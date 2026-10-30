@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.View.MaterialOptionSelectorView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Behaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:Custom="http://schemas.microsoft.com/surface/2008" xmlns:Custom1="http://www.galasoft.ch/mvvmlight" xmlns:Enums="clr-namespace:GV.CounterSketch.Studio.Model.Objects.Enums" xmlns:GV_CounterSketch_Studio_UserControls_PagedListBox="clr-namespace:GV.CounterSketch.Studio.UserControls.PagedListBox" xmlns:GV_CounterSketch_Studio_Utilities_Converters="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:GV_CounterSketch_Studio_ViewModel="clr-namespace:GV.CounterSketch.Studio.ViewModel" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:local="clr-namespace:GV.CounterSketch.Studio.View" xmlns:localization="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Width="550" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CounterSketch Studio;component/ResourceDictionaries/Converters.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <GV_CounterSketch_Studio_Utilities_Converters:GemColorTypeEnumToDescriptionConverter x:Key="GemColorTypeEnumToDescriptionConverter" />
+      <ObjectDataProvider x:Key="GemColorTypeValues" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
+        <ObjectDataProvider.MethodParameters>
+          <x:TypeExtension TypeName="Enums:GemColorType" />
+        </ObjectDataProvider.MethodParameters>
+      </ObjectDataProvider>
+      <DataTemplate x:Key="DataTemplateGemColorType">
+        <Border Background="{Binding Mode=OneWay, Converter={GV_CounterSketch_Studio_Utilities_Converters:ColorStringToBrushConverter}}" />
+      </DataTemplate>
+      <Style x:Key="ControlBaseStyle" TargetType="{x:Type Control}">
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="False" />
+        <Setter Property="FontFamily" Value="/CounterSketch Studio;component/Fonts/#Helvetica Neue LT Std" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="Padding" Value="6,2,10,10" />
+        <Setter Property="MinHeight" Value="38" />
+        <Setter Property="MinWidth" Value="38" />
+        <Setter Property="Margin" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="BorderThickness" Value="2" />
+      </Style>
+      <SolidColorBrush x:Key="ControlHitAreaBrush" Color="#00FFFFFF" />
+      <Style x:Key="SurfaceListBoxItemStyleGemColorType" BasedOn="{StaticResource ControlBaseStyle}" TargetType="{x:Type Custom:SurfaceListBoxItem}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static Custom:SurfaceColors.ListBoxItemBackgroundBrushKey}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static Custom:SurfaceColors.ListBoxItemForegroundBrushKey}}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceListBoxItem}">
+              <FrameworkTemplate.Resources>
+                <ResourceDictionary>
+                  <Storyboard x:Key="Press" />
+                  <Storyboard x:Key="Release" />
+                </ResourceDictionary>
+              </FrameworkTemplate.Resources>
+              <Grid Name="Grid" Width="45" Height="20" Margin="0.5,0" VerticalAlignment="Top" Background="#00FFFFFF" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                <Border Name="border" Height="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="{Binding Mode=OneWay, Converter={GV_CounterSketch_Studio_Utilities_Converters:ColorStringToBrushConverter}}" />
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver" />
+                    <VisualState x:Name="Disabled" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Unselected" />
+                    <VisualState x:Name="Selected">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                          <EasingDoubleKeyFrame KeyTime="0" Value="16" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="SelectedUnfocused">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Grid" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                          <EasingDoubleKeyFrame KeyTime="0" Value="16" />
+                        </DoubleAnimationUsingKeyFrames>
+                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="Grid" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                          <EasingThicknessKeyFrame KeyTime="0" Value="1,0" />
+                        </ThicknessAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                          <EasingDoubleKeyFrame KeyTime="0" Value="16" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="ListBoxItem.IsSelected" Value="True" />
+                <Trigger Property="Custom:SurfaceListBoxItem.IsPressed" Value="True">
+                  <TriggerBase.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource Press}" />
+                  </TriggerBase.EnterActions>
+                  <TriggerBase.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource Release}" />
+                  </TriggerBase.ExitActions>
+                  <Setter Value="{DynamicResource {x:Static Custom:SurfaceColors.ListBoxItemForegroundPressedBrushKey}}" Property="Foreground" />
+                </Trigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="False" />
+                    <Condition Property="ListBoxItem.IsSelected" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter Value="{DynamicResource {x:Static Custom:SurfaceColors.ListBoxItemForegroundDisabledBrushKey}}" Property="Foreground" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="False" />
+                    <Condition Property="ListBoxItem.IsSelected" Value="False" />
+                  </MultiTrigger.Conditions>
+                  <Setter Value="{DynamicResource {x:Static Custom:SurfaceColors.ListBoxItemForegroundDisabledBrushKey}}" Property="Foreground" />
+                </MultiTrigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplateGemColorType">
+        <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" />
+      </ItemsPanelTemplate>
+      <Style x:Key="SurfaceHitAreaBaseStyle" TargetType="{x:Type Control}">
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="False" />
+        <Setter Property="Background" Value="{StaticResource ControlHitAreaBrush}" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="MinWidth" Value="40" />
+        <Setter Property="MinHeight" Value="40" />
+      </Style>
+      <Style x:Key="SurfaceVertScrollBarRepeatButton" TargetType="{x:Type Custom:SurfaceRepeatButton}">
+        <Setter Property="RepeatButton.Interval" Value="150" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="Background" Value="{StaticResource ControlHitAreaBrush}" />
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceRepeatButton}">
+              <Grid Width="40" Background="{TemplateBinding Control.Background}">
+                <Rectangle Name="Line" MinWidth="2" HorizontalAlignment="Center" Fill="{DynamicResource {x:Static Custom:SurfaceColors.TrackBackgroundBrushKey}}" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Line" Value="{DynamicResource {x:Static Custom:SurfaceColors.ThumbDisabledBrushKey}}" Property="Shape.Fill" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="SurfaceScrollBarThumbStyle" BasedOn="{StaticResource SurfaceHitAreaBaseStyle}" TargetType="{x:Type Custom:SurfaceThumb}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceThumb}">
+              <FrameworkTemplate.Resources>
+                <ResourceDictionary>
+                  <Storyboard x:Key="Touch">
+                    <DoubleAnimation Storyboard.TargetName="Thumb" Storyboard.TargetProperty="Width" To="16" Duration="0:0:0.05" />
+                    <ThicknessAnimation Storyboard.TargetName="Thumb" Storyboard.TargetProperty="Margin" To="-1,0,-1,0" Duration="0:0:0.05" />
+                  </Storyboard>
+                  <Storyboard x:Key="Release">
+                    <DoubleAnimation Storyboard.TargetName="Thumb" Storyboard.TargetProperty="Width" To="14" Duration="0:0:0.1" />
+                    <ThicknessAnimation Storyboard.TargetName="Thumb" Storyboard.TargetProperty="Margin" To="0,0,0,0" Duration="0:0:0.1" />
+                  </Storyboard>
+                </ResourceDictionary>
+              </FrameworkTemplate.Resources>
+              <Grid Name="Grid" Background="{TemplateBinding Control.Background}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                <Rectangle Name="Thumb" Width="14" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="{DynamicResource {x:Static Custom:SurfaceColors.ThumbEnabledBrushKey}}" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="Custom:TouchExtensions.AreAnyInputDevicesCapturedWithin" Value="True">
+                  <TriggerBase.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource Touch}" />
+                  </TriggerBase.EnterActions>
+                  <TriggerBase.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource Release}" />
+                  </TriggerBase.ExitActions>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Thumb" Value="{DynamicResource {x:Static Custom:SurfaceColors.ThumbDisabledBrushKey}}" Property="Shape.Fill" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="SurfaceHorzScrollBarRepeatButton" TargetType="{x:Type Custom:SurfaceRepeatButton}">
+        <Setter Property="RepeatButton.Interval" Value="150" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="Background" Value="{StaticResource ControlHitAreaBrush}" />
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="True" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceRepeatButton}">
+              <Grid Height="40" Background="{TemplateBinding Control.Background}">
+                <Rectangle Name="Line" MinHeight="2" VerticalAlignment="Center" Fill="{DynamicResource {x:Static Custom:SurfaceColors.TrackBackgroundBrushKey}}" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Line" Value="{DynamicResource {x:Static Custom:SurfaceColors.ThumbDisabledBrushKey}}" Property="Shape.Fill" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="SurfaceScrollBarHorizThumbStyle" BasedOn="{StaticResource SurfaceHitAreaBaseStyle}" TargetType="{x:Type Custom:SurfaceThumb}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceThumb}">
+              <FrameworkTemplate.Resources>
+                <ResourceDictionary>
+                  <Storyboard x:Key="Touch">
+                    <DoubleAnimation Storyboard.TargetName="Thumb" Storyboard.TargetProperty="Height" To="16" Duration="0:0:0.05" />
+                    <ThicknessAnimation Storyboard.TargetName="Thumb" Storyboard.TargetProperty="Margin" To="0,-1,0,-1" Duration="0:0:0.05" />
+                  </Storyboard>
+                  <Storyboard x:Key="Release">
+                    <DoubleAnimation Storyboard.TargetName="Thumb" Storyboard.TargetProperty="Height" To="14" Duration="0:0:0.1" />
+                    <ThicknessAnimation Storyboard.TargetName="Thumb" Storyboard.TargetProperty="Margin" To="0,0,0,0" Duration="0:0:0.1" />
+                  </Storyboard>
+                </ResourceDictionary>
+              </FrameworkTemplate.Resources>
+              <Grid Name="Grid" Background="{TemplateBinding Control.Background}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                <Rectangle Name="Thumb" Width="Auto" Height="14" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="{DynamicResource {x:Static Custom:SurfaceColors.ThumbEnabledBrushKey}}" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="Custom:TouchExtensions.AreAnyInputDevicesCapturedWithin" Value="True">
+                  <TriggerBase.EnterActions>
+                    <BeginStoryboard Storyboard="{StaticResource Touch}" />
+                  </TriggerBase.EnterActions>
+                  <TriggerBase.ExitActions>
+                    <BeginStoryboard Storyboard="{StaticResource Release}" />
+                  </TriggerBase.ExitActions>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Thumb" Value="{DynamicResource {x:Static Custom:SurfaceColors.ThumbDisabledBrushKey}}" Property="Shape.Fill" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="SurfaceScrollBarStyle" TargetType="{x:Type Custom:SurfaceScrollBar}" BasedOn="{StaticResource ResourceKey=SurfaceHitAreaBaseStyle}">
+        <Style.Resources>
+          <ResourceDictionary>
+            <System:Double x:Key="{x:Static SystemParameters.VerticalScrollBarButtonHeightKey}">38</System:Double>
+            <System:Double x:Key="{x:Static SystemParameters.HorizontalScrollBarButtonWidthKey}">38</System:Double>
+          </ResourceDictionary>
+        </Style.Resources>
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="Width" Value="38" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceScrollBar}">
+              <Grid Name="GridRoot" Background="{TemplateBinding Control.Background}">
+                <Border Name="Track" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                  <Track Name="PART_Track" IsDirectionReversed="True">
+                    <Track.IncreaseRepeatButton>
+                      <Custom:SurfaceRepeatButton Name="IncreaseRepeat" HorizontalAlignment="Center" Background="{TemplateBinding Control.Background}" Command="ScrollBar.PageDownCommand" Style="{StaticResource SurfaceVertScrollBarRepeatButton}" />
+                    </Track.IncreaseRepeatButton>
+                    <Track.DecreaseRepeatButton>
+                      <Custom:SurfaceRepeatButton Name="DecreaseRepeat" HorizontalAlignment="Center" Background="{TemplateBinding Control.Background}" Command="ScrollBar.PageUpCommand" Style="{StaticResource SurfaceVertScrollBarRepeatButton}" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                      <Custom:SurfaceThumb Name="Thumb" HorizontalAlignment="Center" Background="{TemplateBinding Control.Background}" Style="{StaticResource SurfaceScrollBarThumbStyle}" />
+                    </Track.Thumb>
+                  </Track>
+                </Border>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="PART_Track" Property="IsEnabled" Value="False" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+          <Trigger Property="ScrollBar.Orientation" Value="Horizontal">
+            <Setter Property="Width" Value="Auto" />
+            <Setter Property="Height" Value="38" />
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Custom:SurfaceScrollBar}">
+                  <Grid Name="GridRoot" Background="{TemplateBinding Control.Background}">
+                    <Border Name="Track" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                      <Track Name="PART_Track">
+                        <Track.DecreaseRepeatButton>
+                          <Custom:SurfaceRepeatButton Name="DecreaseRepeat" VerticalAlignment="Center" Background="{TemplateBinding Control.Background}" Command="ScrollBar.PageLeftCommand" Style="{StaticResource SurfaceHorzScrollBarRepeatButton}" />
+                        </Track.DecreaseRepeatButton>
+                        <Track.IncreaseRepeatButton>
+                          <Custom:SurfaceRepeatButton Name="IncreaseRepeat" VerticalAlignment="Center" Background="{TemplateBinding Control.Background}" Command="ScrollBar.PageRightCommand" Style="{StaticResource SurfaceHorzScrollBarRepeatButton}" />
+                        </Track.IncreaseRepeatButton>
+                        <Track.Thumb>
+                          <Custom:SurfaceThumb Name="Thumb" VerticalAlignment="Center" Background="{TemplateBinding Control.Background}" Style="{StaticResource SurfaceScrollBarHorizThumbStyle}" />
+                        </Track.Thumb>
+                      </Track>
+                    </Border>
+                  </Grid>
+                  <ControlTemplate.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                      <Setter TargetName="IncreaseRepeat" Property="UIElement.Opacity" Value="0.33" />
+                      <Setter TargetName="DecreaseRepeat" Property="UIElement.Opacity" Value="0.33" />
+                      <Setter TargetName="PART_Track" Property="IsEnabled" Value="False" />
+                    </Trigger>
+                  </ControlTemplate.Triggers>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <Style x:Key="SurfaceScrollViewerStyle" TargetType="{x:Type Custom:SurfaceScrollViewer}">
+        <Setter Property="Custom:SurfaceScrollViewer.Elasticity" Value="0.4,0.4" />
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceScrollViewer}">
+              <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{TemplateBinding Control.Background}">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Border Name="PART_ElasticBorder" Background="{TemplateBinding Control.Background}">
+                  <ScrollContentPresenter Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="-1,-1,-1,-1" CanContentScroll="{TemplateBinding ScrollViewer.CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" Content="{TemplateBinding ContentControl.Content}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
+                </Border>
+                <Custom:SurfaceScrollBar Name="PART_HorizontalScrollBar" Grid.Row="1" Grid.Column="0" Height="Auto" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AutomationProperties.AutomationId="HorizontalScrollBar" LargeChange="1" Maximum="{TemplateBinding ScrollViewer.ScrollableWidth}" Minimum="0" Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ViewportSize="{TemplateBinding ScrollViewer.ViewportWidth}" Visibility="{TemplateBinding ScrollViewer.ComputedHorizontalScrollBarVisibility}" Style="{StaticResource SurfaceScrollBarStyle}" Foreground="{x:Null}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                <Custom:SurfaceScrollBar Name="PART_VerticalScrollBar" Grid.Row="0" Grid.Column="1" Width="Auto" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" AutomationProperties.AutomationId="VerticalScrollBar" IsEnabled="True" LargeChange="1" Maximum="{TemplateBinding ScrollViewer.ScrollableHeight}" Minimum="0" Orientation="Vertical" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ViewportSize="{TemplateBinding ScrollViewer.ViewportHeight}" Visibility="{TemplateBinding ScrollViewer.ComputedVerticalScrollBarVisibility}" Style="{StaticResource SurfaceScrollBarStyle}" Foreground="{x:Null}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="PART_HorizontalScrollBar" Property="IsEnabled" Value="False" />
+                  <Setter TargetName="PART_VerticalScrollBar" Property="IsEnabled" Value="False" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="SurfaceListBoxScrollViewerStyle" BasedOn="{StaticResource SurfaceScrollViewerStyle}" TargetType="{x:Type Custom:SurfaceScrollViewer}">
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceScrollViewer}">
+              <Grid Margin="{TemplateBinding Control.BorderThickness}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Border Name="PART_ElasticBorder" Background="{TemplateBinding Control.Background}" BorderBrush="#00FFFFFF" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                  <ScrollContentPresenter Grid.RowSpan="1" Grid.ColumnSpan="1" Margin="{TemplateBinding Control.Padding}" CanContentScroll="{TemplateBinding ScrollViewer.CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" Content="{TemplateBinding ContentControl.Content}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                </Border>
+                <Custom:SurfaceScrollBar Name="PART_HorizontalScrollBar" Grid.Row="1" Height="Auto" AutomationProperties.AutomationId="HorizontalScrollBar" Background="{TemplateBinding Control.Background}" ClipToBounds="True" LargeChange="1" Maximum="{TemplateBinding ScrollViewer.ScrollableWidth}" Minimum="0" Orientation="Horizontal" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" ViewportSize="{TemplateBinding ScrollViewer.ViewportWidth}" Visibility="{TemplateBinding ScrollViewer.ComputedHorizontalScrollBarVisibility}" Style="{StaticResource SurfaceScrollBarStyle}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                <Custom:SurfaceScrollBar Name="PART_VerticalScrollBar" Grid.Row="0" Grid.Column="1" Width="Auto" AutomationProperties.AutomationId="VerticalScrollBar" Background="{TemplateBinding Control.Background}" ClipToBounds="True" LargeChange="1" Maximum="{TemplateBinding ScrollViewer.ScrollableHeight}" Minimum="0" Orientation="Vertical" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" ViewportSize="{TemplateBinding ScrollViewer.ViewportHeight}" Visibility="{TemplateBinding ScrollViewer.ComputedVerticalScrollBarVisibility}" Style="{StaticResource SurfaceScrollBarStyle}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                <Border Name="Container" Grid.Row="1" Grid.Column="1" Background="{TemplateBinding Control.Background}" BorderBrush="#00FFFFFF" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="PART_HorizontalScrollBar" Property="IsEnabled" Value="False" />
+                  <Setter TargetName="PART_VerticalScrollBar" Property="IsEnabled" Value="False" />
+                  <Setter TargetName="PART_ElasticBorder" Value="{DynamicResource {x:Static Custom:SurfaceColors.ControlBorderDisabledBrushKey}}" Property="Border.BorderBrush" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="SurfaceListBoxStyleGemColorType" BasedOn="{StaticResource ControlBaseStyle}" TargetType="{x:Type Custom:SurfaceListBox}">
+        <Setter Property="Background" Value="{StaticResource ControlHitAreaBrush}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+        <Setter Property="Custom:SurfaceScrollViewer.Elasticity" Value="0,0.4" />
+        <Setter Property="MinHeight" Value="80" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static Custom:SurfaceColors.ButtonForegroundBrushKey}}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {x:Static Custom:SurfaceColors.ListBoxBorderBrushKey}}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceListBox}">
+              <Grid SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                <Custom:SurfaceScrollViewer Name="scrollViewer" Width="Auto" Height="Auto" MinWidth="{TemplateBinding FrameworkElement.MinWidth}" MinHeight="{TemplateBinding FrameworkElement.MinHeight}" Elasticity="{TemplateBinding Custom:SurfaceScrollViewer.Elasticity}" Focusable="False" HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" Style="{StaticResource SurfaceListBoxScrollViewerStyle}">
+                  <ItemsPresenter MinWidth="{TemplateBinding FrameworkElement.MinWidth}" MinHeight="{TemplateBinding FrameworkElement.MinHeight}" ClipToBounds="False" />
+                </Custom:SurfaceScrollViewer>
+                <Border Name="Border" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" />
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="ItemsControl.IsGrouping" Value="True">
+                  <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <ControlTemplate x:Key="MaterialOptionSelectorPagedListBoxControlTemplate" TargetType="{x:Type Custom:SurfaceListBox}">
+        <DockPanel MinHeight="150" Background="{TemplateBinding Control.Background}" IsManipulationEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" Stylus.IsFlicksEnabled="False">
+          <ListBox Name="listBoxPageIndicator" Width="Auto" Height="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" IsTextSearchEnabled="False" ItemContainerStyle="{DynamicResource ListBoxItemStylePageIndicator}" ItemTemplate="{DynamicResource DataTemplatePageIndicator}" ItemsPanel="{DynamicResource ItemsPanelTemplatePageIndicator}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Style="{DynamicResource ListBoxStylePageIndicator}" />
+          <DockPanel Name="gridItemPresenter" Width="Auto" Dock="Top" IsManipulationEnabled="False">
+            <Custom:SurfaceRepeatButton Name="pageLeftButton" Width="Auto" Height="Auto" MinWidth="20" MinHeight="40" Margin="0,0,5,0" Cursor="Hand" Focusable="False" IsManipulationEnabled="True" IsTabStop="False" Style="{DynamicResource RepeatButtonStylePage}" Command="{Binding PageCollectionLeft, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type GV_CounterSketch_Studio_UserControls_PagedListBox:PagedListBox}}}" CommandParameter="{Binding ElementName=pagingScrollViewer}" />
+            <Custom:SurfaceRepeatButton Name="pageRightButton" Width="Auto" Height="Auto" MinWidth="20" MinHeight="40" Margin="5,0,0,0" Cursor="Hand" DockPanel.Dock="Right" Focusable="False" IsManipulationEnabled="True" IsTabStop="False" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource RepeatButtonStylePage}" Command="{Binding PageCollectionRight, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type GV_CounterSketch_Studio_UserControls_PagedListBox:PagedListBox}}}" CommandParameter="{Binding ElementName=pagingScrollViewer}">
+              <UIElement.RenderTransform>
+                <TransformGroup>
+                  <ScaleTransform />
+                  <SkewTransform />
+                  <RotateTransform Angle="180" />
+                  <TranslateTransform />
+                </TransformGroup>
+              </UIElement.RenderTransform>
+            </Custom:SurfaceRepeatButton>
+            <Grid Width="Auto" Height="Auto">
+              <Custom:SurfaceScrollViewer Name="pagingScrollViewer" Width="Auto" Height="130" Focusable="False" IsTabStop="False" PanningMode="HorizontalOnly" Template="{DynamicResource ScrollViewerControlTemplatePaging}" VerticalScrollBarVisibility="Disabled" Background="{x:Null}">
+                <ItemsPresenter Height="130" />
+              </Custom:SurfaceScrollViewer>
+              <TextBlock Name="textBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontStyle="Italic" Foreground="#FF787878" Text="{x:Static localization:Strings.NoItemsAvailable}" TextWrapping="Wrap" Visibility="{Binding IsResultSetEmptyVisibility, RelativeSource={RelativeSource TemplatedParent}}">
+                <Run Text="{x:Static localization:Strings.NoItemsAvailable}" />
+              </TextBlock>
+            </Grid>
+          </DockPanel>
+          <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ValidationStates" />
+          </VisualStateManager.VisualStateGroups>
+        </DockPanel>
+      </ControlTemplate>
+      <Style x:Key="PagedListBoxItemStyleMaterialOptionItem" TargetType="{x:Type Custom:SurfaceListBoxItem}">
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="Padding" Value="2,0,0,0" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Custom:SurfaceListBoxItem}">
+              <Viewbox Name="viewbox" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Cursor="Hand" RenderTransformOrigin="0.5,0" Stretch="Uniform">
+                <DockPanel Width="100" Height="Auto" HorizontalAlignment="Stretch" Background="#01000000" UseLayoutRounding="True">
+                  <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseEnter">
+                      <ei:ChangePropertyAction PropertyName="MousedOverItem" TargetObject="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GV_CounterSketch_Studio_UserControls_PagedListBox:PagedListBox}}}" Value="{Binding}" />
+                    </i:EventTrigger>
+                  </i:Interaction.Triggers>
+                  <TextBlock Name="textBlockSecondary" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" DockPanel.Dock="Bottom" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="12" Foreground="{DynamicResource BrushTextPrimary}" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextOptions.TextHintingMode="Animated" TextTrimming="CharacterEllipsis" Background="{x:Null}" Text="{Binding SecondaryText, FallbackValue=Binding Failed}" Visibility="{Binding SecondaryText, Converter={GV_CounterSketch_Studio_Utilities_Converters:StringIsNullOrEmptyToVisibilityConverter}}" />
+                  <TextBlock Name="textBlockPrimary" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" DockPanel.Dock="Bottom" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="12" Foreground="{DynamicResource BrushTextPrimary}" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextOptions.TextHintingMode="Animated" TextTrimming="CharacterEllipsis" Background="{x:Null}" Text="{Binding PrimaryText, FallbackValue=Binding Failed}" Visibility="{Binding PrimaryText, Converter={GV_CounterSketch_Studio_Utilities_Converters:StringIsNullOrEmptyToVisibilityConverter}}" />
+                  <Grid Width="Auto" Height="Auto" Margin="0,0,0,5" DockPanel.Dock="Top">
+                    <Border Name="borderSelected" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Width="Auto" MinWidth="50" MinHeight="50" Margin="0" BorderBrush="{DynamicResource HighlightAndAccent}" BorderThickness="2" CornerRadius="0" SnapsToDevicePixels="True" Visibility="Hidden" Height="{Binding ActualWidth, ElementName=borderSelected}" />
+                    <Grid Name="grid" Width="Auto" Height="Auto" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{x:Null}">
+                      <ContentPresenter Name="contentPresenter" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                        <UIElement.RenderTransform>
+                          <TransformGroup>
+                            <ScaleTransform />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                          </TransformGroup>
+                        </UIElement.RenderTransform>
+                      </ContentPresenter>
+                    </Grid>
+                    <Grid Name="gridModifiers" Row="0" RowSpan="1" Column="0" ColumnSpan="1" Margin="5" Visibility="{Binding IsFieldModificationEnabled, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type GV_CounterSketch_Studio_UserControls_PagedListBox:PagedListBox}}}">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                      </Grid.ColumnDefinitions>
+                      <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                      </Grid.RowDefinitions>
+                      <Grid RowSpan="2" ColumnSpan="2">
+                        <Custom:SurfaceCheckBox Grid.Row="0" Width="Auto" Height="Auto" MinWidth="20" MinHeight="20" Margin="0" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="SurfaceCheckBox" Cursor="Hand" Style="{DynamicResource SurfaceCheckBoxStyleIsFavorite}" ToolTip="{x:Static localization:Strings.Favorite}" IsChecked="{Binding IsFavorite}" />
+                        <Viewbox Grid.Row="0" Grid.Column="0" Width="Auto" Height="Auto" MinWidth="20" MinHeight="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Stretch="Uniform" Visibility="{Binding IsReadOnly, Converter={StaticResource BooleanToVisibilityConverter}}">
+                          <Path Width="7.667" Height="10.519" Data="M1414.95,984.806 L1414.68,984.806 L1414.68,983.586 C1414.68,982.152 1413.52,980.991 1412.08,980.99 C1410.65,980.991 1409.49,982.152 1409.49,983.586 L1409.49,984.806 L1409.21,984.806 C1408.68,984.806 1408.25,985.238 1408.25,985.771 L1408.25,990.544 C1408.25,991.077 1408.68,991.509 1409.21,991.509 L1414.95,991.509 C1415.49,991.509 1415.92,991.077 1415.92,990.544 L1415.92,985.771 C1415.92,985.238 1415.49,984.806 1414.95,984.806 M1410.43,983.586 C1410.43,983.128 1410.61,982.717 1410.91,982.416 C1411.21,982.116 1411.63,981.931 1412.08,981.931 C1412.54,981.931 1412.95,982.116 1413.25,982.416 C1413.55,982.717 1413.74,983.128 1413.74,983.586 L1413.74,984.806 L1410.43,984.806 L1410.43,983.586 M1412.74,989.818 L1411.43,989.818 L1411.66,988.221 C1411.37,988.068 1411.17,987.763 1411.17,987.411 C1411.17,986.906 1411.58,986.497 1412.08,986.497 C1412.59,986.497 1413,986.906 1413,987.411 C1413,987.763 1412.8,988.068 1412.51,988.221 L1412.74,989.818" Fill="#FF65615D" Stretch="Fill" ToolTip="Read Only" />
+                        </Viewbox>
+                        <Custom:SurfaceButton Name="deleteSurfaceButton" Grid.Column="0" Width="Auto" Height="Auto" MinWidth="15" MinHeight="15" Margin="0,0,2,0" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Top" Content="SurfaceButton" Cursor="Hand" Style="{DynamicResource SurfaceButtonStyleDelete}" ToolTip="Delete" Visibility="Hidden" />
+                      </Grid>
+                      <Border Name="border" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="-3" Background="#E5FFFFFF" CornerRadius="9" Visibility="Hidden">
+                        <Grid Name="gridConfirmDelete">
+                          <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                          </Grid.ColumnDefinitions>
+                          <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2*" />
+                          </Grid.RowDefinitions>
+                          <TextBlock Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource BrushTextPrimary}" Text="{x:Static localization:Strings.Delete}" TextWrapping="Wrap">
+                            <Run Text="{x:Static localization:Strings.Delete}" />
+                          </TextBlock>
+                          <Custom:SurfaceButton Name="surfaceButton" Grid.Row="2" Grid.ColumnSpan="1" MinWidth="0" MinHeight="0" Margin="5" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Static localization:Strings.Yes}" Cursor="Hand" Command="{Binding RemoveItem, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type GV_CounterSketch_Studio_UserControls_PagedListBox:PagedListBox}}}" CommandParameter="{Binding}" />
+                          <Custom:SurfaceButton Name="surfaceButton1" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" MinWidth="0" MinHeight="0" Margin="5" Padding="5" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Static localization:Strings.No}" Cursor="Hand" />
+                        </Grid>
+                      </Border>
+                    </Grid>
+                  </Grid>
+                </DockPanel>
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Selected">
+                      <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="borderSelected" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0">
+                            <ObjectKeyFrame.Value>
+                              <Visibility>Visible</Visibility>
+                            </ObjectKeyFrame.Value>
+                          </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="deleteSurfaceButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0">
+                            <ObjectKeyFrame.Value>
+                              <Visibility>Visible</Visibility>
+                            </ObjectKeyFrame.Value>
+                          </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                          <EasingThicknessKeyFrame KeyTime="0" Value="5" />
+                        </ThicknessAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="SelectedUnfocused">
+                      <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="borderSelected" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0">
+                            <ObjectKeyFrame.Value>
+                              <Visibility>Visible</Visibility>
+                            </ObjectKeyFrame.Value>
+                          </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="deleteSurfaceButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0">
+                            <ObjectKeyFrame.Value>
+                              <Visibility>Visible</Visibility>
+                            </ObjectKeyFrame.Value>
+                          </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="grid" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                          <EasingThicknessKeyFrame KeyTime="0" Value="5" />
+                        </ThicknessAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unselected" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver" />
+                    <VisualState x:Name="Disabled" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="DeleteStates">
+                    <VisualState x:Name="DefaultDeleteState" />
+                    <VisualState x:Name="ConfirmDeletion">
+                      <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(UIElement.Visibility)">
+                          <DiscreteObjectKeyFrame KeyTime="0">
+                            <ObjectKeyFrame.Value>
+                              <Visibility>Visible</Visibility>
+                            </ObjectKeyFrame.Value>
+                          </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="FocusStates" />
+                  <VisualStateGroup x:Name="ValidationStates" />
+                </VisualStateManager.VisualStateGroups>
+              </Viewbox>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="ListBoxItemStyleGemColorGroup" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="4,1" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Grid Name="Grid" Width="45" Height="Auto" Margin="1,0" VerticalAlignment="Stretch" Background="#00FFFFFF" Cursor="Hand" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}">
+                <Border Name="border" Height="8" Margin="0,15,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="{Binding Mode=OneWay, Converter={GV_CounterSketch_Studio_Utilities_Converters:ColorStringToBrushConverter}}" />
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver" />
+                    <VisualState x:Name="Disabled" />
+                  </VisualStateGroup>
+                  <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Unselected" />
+                    <VisualState x:Name="Selected">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                          <EasingDoubleKeyFrame KeyTime="0" Value="16" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="SelectedUnfocused">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                          <EasingDoubleKeyFrame KeyTime="0" Value="16" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="UIElement.IsMouseOver" Value="True" />
+                  </MultiTrigger.Conditions>
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="Selector.IsSelectionActive" Value="False" />
+                    <Condition Property="ListBoxItem.IsSelected" Value="True" />
+                  </MultiTrigger.Conditions>
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="Selector.IsSelectionActive" Value="True" />
+                    <Condition Property="ListBoxItem.IsSelected" Value="True" />
+                  </MultiTrigger.Conditions>
+                </MultiTrigger>
+                <Trigger Property="IsEnabled" Value="False" />
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplateMaterialOptions">
+        <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" />
+      </ItemsPanelTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Border BorderBrush="#FFC6BEB6" BorderThickness="1">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="45" />
+        <RowDefinition Height="150" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <GV_CounterSketch_Studio_UserControls_PagedListBox:PagedListBox x:Name="pagedListBox" Grid.Row="1" Margin="3,0" Cursor="Hand" FontFamily="Helvetica Neue LT Std" ItemContainerStyle="{DynamicResource PagedListBoxItemStyleMaterialOptionItem}" ItemTemplate="{DynamicResource PagedListBoxItemImageDirectTemplate}" ItemsPanel="{DynamicResource ItemsPanelTemplateMaterialOptions}" PagingIndicatorVisibility="Hidden" Template="{DynamicResource MaterialOptionSelectorPagedListBoxControlTemplate}" FirstVisibleItem="{Binding FirstVisibleItem, Mode=OneWayToSource}" ItemsSource="{Binding AvailableMaterialOptions}" ScrollToItem="{Binding ScrollToColorItem, Mode=TwoWay}" SelectedItem="{Binding SelectedMaterialOptionItem}" />
+      <ListBox Height="40" MinHeight="15" Margin="13.5,2.5" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Bottom" Cursor="Hand" Focusable="False" FontFamily="Helvetica Neue LT Std" ItemContainerStyle="{DynamicResource ListBoxItemStyleGemColorGroup}" ItemTemplate="{DynamicResource DataTemplateGemColorType}" ItemsPanel="{DynamicResource ItemsPanelTemplateGemColorType}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="{x:Null}" BorderBrush="{x:Null}" ItemsSource="{Binding Converter={StaticResource GemColorTypeEnumToDescriptionConverter}, Mode=OneWay, Source={StaticResource GemColorTypeValues}}" SelectedItem="{Binding SelectedGemColorType, Converter={StaticResource GemColorTypeEnumToDescriptionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding IsMetalMaterialSelection, ConverterParameter=true, Converter={StaticResource BooleanToVisibilityConverter}}" />
+      <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" LastChildFill="False">
+        <TextBlock Margin="5,5,5,0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="14.667" Foreground="{DynamicResource BrushTextPrimary}" IsHitTestVisible="False" TextWrapping="Wrap" Text="{Binding ControlTitle}" />
+      </DockPanel>
+      <Path Grid.Row="1" Height="0.5" Margin="10,0" VerticalAlignment="Bottom" Data="F1 M-61.6561,281.372 L-465.694,281.372" IsHitTestVisible="False" Stretch="Fill" Stroke="#80000000" StrokeLineJoin="Round" StrokeThickness="0.5" />
+      <TextBlock Grid.Row="2" Height="52" Margin="10" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="10.667" FontStyle="Italic" Foreground="#FF65615D" IsHitTestVisible="False" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding MousedOverItem.Description, ElementName=pagedListBox}" />
+      <Button Grid.Row="2" Width="75" Height="20" Margin="0,0,10,5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="{x:Static localization:Strings.Done}" Template="{DynamicResource CS4ButtonRoundedHighlight}" Visibility="Collapsed" Click="ButtonBase_OnClick" />
+    </Grid>
+  </Border>
+</UserControl>

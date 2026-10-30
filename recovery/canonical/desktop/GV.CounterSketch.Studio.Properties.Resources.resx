@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="CSApplicationVersion15_16" xml:space="preserve"><value>/*
+ * This script will update the CS Application DB from version 15 to 16 (CS 5.1)
+ */
+
+ -- Add Contact Name Fields for Consultants
+ ALTER TABLE Quote ADD COLUMN [ContactFirstname] VARCHAR(50) NULL;
+ ALTER TABLE Quote ADD COLUMN [ContactLastname] VARCHAR(50) NULL; 
+ 
+-- Set Version to 16
+DELETE FROM [Version];
+INSERT INTO [Version] ([DBVersion]) VALUES (16);</value></data>
+  <data name="CSApplicationVersionX_15" xml:space="preserve"><value>/*
+ * This script will update the CS Application DB from any version to 15 (CS 5.0)
+ */
+
+
+
+-- Set Version to 15
+DELETE FROM [Version];
+INSERT INTO [Version] ([DBVersion]) VALUES (15);</value></data>
+  <data name="CSApplicationDatabaseSQL" xml:space="preserve"><value>/* This script will recreate the entire CounterSketch Application Database */
+
+CREATE TABLE [Version] (
+    [DBVersion] integer
+);
+
+INSERT INTO [Version]
+([DBVersion]) VALUES (16);
+
+CREATE TABLE [main].[User] (
+    [UserId] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+    [Username] varchar(50) NOT NULL,
+    [Password] varchar(50) NOT NULL,
+    [FirstName] varchar(50) NOT NULL,
+    [LastName] varchar(50) NOT NULL,
+    [EMail] varchar(50),
+    [Phone] varchar(50),
+    [IsAdmin] integer NOT NULL,
+    [ActiveFlag] integer NOT NULL DEFAULT 1
+);
+
+CREATE TABLE [ApplicationEvents] (
+                    [ApplicationEventId] varchar(50) PRIMARY KEY NOT NULL,
+                    [EventType] varchar(50) NOT NULL,
+                    [EventMessage] varchar(2000) NOT NULL,
+                    [EventDateTime] datetime NOT NULL,
+                    [Transmitted] bit NOT NULL
+                );
+
+CREATE TABLE [Quote] (
+    [QuoteId] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+    [UserId] integer NOT NULL,
+    [ContactEMail] varchar(250) NOT NULL,
+    [ContactPhone] varchar(50) NOT NULL,
+    [ContactFirstname] VARCHAR(50)  NULL,
+    [ContactLastname] VARCHAR(50)  NULL,
+	[Notes] varchar(8000),
+    [QuotedDesignPath] varchar(255),
+    [DateSubmitted] datetime NOT NULL,
+    [CAMRequestId] integer,
+    [ReferenceNumber] varchar(100),
+    [OrderNumber] varchar(50),
+    [QuoteStatus] varchar(250),
+    [CustomerFirstName] varchar(250),
+    [CustomerLastName] varchar(250),
+    [CustomerAddress1] varchar(250),
+    [CustomerAddress2] varchar(250),
+    [CustomerCity] varchar(250),
+    [CustomerState] varchar(250),
+    [CustomerZip] varchar(36),
+    [CustomerPhone] varchar(36),
+    [CustomerNotes] varchar(2000)
+);
+
+CREATE TABLE [UserDesignAttributeAssignment] (
+    [UserDesignAttributeAssignmentId] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+    [DesignId] integer NOT NULL,
+    [UserId] integer NOT NULL DEFAULT 0,
+    [IsHidden] integer NOT NULL DEFAULT false
+);
+CREATE UNIQUE INDEX [IX_DesignId_UserId] ON [UserDesignAttributeAssignment] ([DesignId], [UserId]);
+
+CREATE TABLE [CatalogOrder] (
+    [CatalogOrderId] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+    [CoverImageIndex] integer,
+    [CreateDate] datetime,
+    [OrderDate] datetime,
+    [OrderNumber] integer,
+    [OrderStatus] varchar(50),
+    [PathToPDF] varchar(150),
+    [PathToSampleCover] varchar(150),
+    [ShipDate] datetime,
+    [ShipToAddress1] varchar(150),
+    [ShipToAddress2] varchar(150),
+    [ShipToCity] varchar(150),
+    [ShipToCountry] varchar(150),
+    [ShipToName] varchar(150),
+    [ShipToState] varchar(150),
+    [ShipToZip] varchar(150),
+    [ThemeTitle] varchar(150),
+    [TotalCost] numeric(18),
+    [TrackingNumber] varchar(150),
+    [StoreName] varchar(150),
+    [StoreNameFont] varchar(150),
+    [StoreNameFontSize] varchar(50),
+    [StoreNameFontStyle] varchar(50),
+    [TitleText] varchar(150),
+    [TitleFont] varchar(150),
+    [TitleFontSize] varchar(50),
+    [TitleFontStyle] varchar(50),
+    [SubTitleText] varchar(150),
+    [SubTitleFont] varchar(150),
+    [SubTitleFontSize] varchar(50),
+    [SubTitleFontStyle] varchar(50),
+    [BackCoverText] varchar(1000),
+    [BackCoverFont] varchar(150),
+    [BackCoverFontSize] varchar(50),
+    [BackCoverFontStyle] varchar(50),
+    [DescriptionText] varchar(2000),
+    [DescriptionFont] varchar(150),
+    [DescriptionFontSize] varchar(50),
+    [DescriptionFontStyle] varchar(50),
+    [InsideHeaderText] varchar(2000),
+    [InsideHeaderFont] varchar(150),
+    [InsideHeaderFontSize] varchar(50),
+    [InsideHeaderFontStyle] varchar(50),
+    [StoreLogo] varchar(500),
+    [OpeningPhoto] varchar(500)
+);
+
+/* Force the ID Column to start at 10000 to avoid conflicts with old versions of CS */
+INSERT INTO CatalogOrder ([CoverImageIndex]) VALUES (0);
+UPDATE SQLITE_SEQUENCE SET seq = 999 WHERE name = 'CatalogOrder';
+DELETE FROM CatalogOrder;
+</value></data>
+  </root>

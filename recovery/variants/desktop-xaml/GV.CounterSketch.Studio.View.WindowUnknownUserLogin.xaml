@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.View.WindowUnknownUserLogin" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:WPFConverters="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" Title="{x:Static l:Strings.SoftwareActivation}" Width="400" Icon="/CounterSketch Studio;component/Images/Activation.ico" ResizeMode="NoResize" SizeToContent="Height" WindowStartupLocation="CenterScreen" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View">
+  <DockPanel>
+    <controls:CSLoginControl x:Name="CsLoginControl" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" ActionButtonName="{x:Static l:Strings.Continue}" DockPanel.Dock="Bottom" LoginControlMode="SerialCodeMode" ShowCancel="False" ShowNeedLogin="False" />
+    <TextBlock Margin="10" HorizontalAlignment="Center" FontFamily="Helvetica Neue LT Std" DockPanel.Dock="Top" Text="{x:Static l:Strings.SoftwareActivationPrompt}" TextWrapping="Wrap" />
+  </DockPanel>
+</Window>

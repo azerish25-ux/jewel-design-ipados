@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P01-T04",
+  "status": "complete",
+  "requirementIds": [],
+  "sourceEvidence": [
+    "tests/iOS/Main.cs",
+    "tests/Smoke/Checks.cs",
+    ".github/workflows/ios-reuse.yml"
+  ],
+  "outputs": [
+    "docs/evidence/apple/apple-results.json",
+    "docs/evidence/apple/ipad-result.txt"
+  ],
+  "fixtures": [
+    {
+      "path": "tests/golden-original.txt",
+      "description": "Original-binary math golden cases"
+    }
+  ],
+  "checks": [
+    {
+      "command": "GitHub Actions iOS simulator",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40969820121",
+      "expected": "Valid signed ARM64 startup and selected recovered assertions",
+      "actual": "PASS 16 math goldens, vector/cross and diamond-density checks; compression remains a diagnostic incompatibility"
+    }
+  ],
+  "review": {
+    "result": "Native signature failure diagnosed from crash report; corrected signing verified by actual simulator execution; no whole-app claim"
+  },
+  "blockers": []
+}

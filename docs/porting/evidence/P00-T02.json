@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P00-T02",
+  "status": "complete",
+  "requirementIds": [],
+  "sourceEvidence": [
+    "recovery/manifests/summary.json"
+  ],
+  "outputs": [
+    "docs/evidence/repository-check.json",
+    "docs/evidence/repository-review.json"
+  ],
+  "fixtures": [
+    {
+      "path": "reference/fixtures/library-item-4.csg",
+      "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd"
+    }
+  ],
+  "checks": [
+    {
+      "command": "node tools/repository/check.cjs --record",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/repository-check.json",
+      "expected": "Source/resource hash, secret, navigation and ledger checks pass",
+      "actual": "11149 objects verified; no secret-pattern findings; complete builder/serializer mappings validated"
+    }
+  ],
+  "review": {
+    "artifact": "docs/evidence/repository-review.json",
+    "result": "Snapshot publication review only"
+  },
+  "blockers": []
+}

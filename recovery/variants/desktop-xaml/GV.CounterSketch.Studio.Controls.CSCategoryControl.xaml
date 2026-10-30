@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.Controls.CSCategoryControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:converter="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:xp="clr-namespace:System.Windows.Controls.Theming;assembly=System.Windows.Controls.Theming.ExpressionDark" x:Name="theCSCategoryControl" Margin="2,5,2,0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Foreground="#FF32302E" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="10" />
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel Margin="0" Background="#00FFFFFF">
+    <TextBlock DockPanel.Dock="Top" Text="{Binding ImportGroupName, ElementName=theCSCategoryControl, FallbackValue=Title}" Visibility="{Binding ImportGroupName, Converter={StaticResource StringIsNullOrEmptyToVisibilityConverter}, ElementName=theCSCategoryControl, Mode=OneWay}" />
+    <Grid Height="35" Margin="0,5,0,0" DockPanel.Dock="Top">
+      <Grid MinWidth="100" Margin="10,0,0,0" Background="#a3a3a3" MouseLeftButtonDown="TxtTitleMouseDown">
+        <TextBlock Name="txtTitle" Margin="0,0,0,5" Padding="5,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13.333" FontWeight="Medium" Foreground="#FFFFFFFF" ScrollViewer.VerticalScrollBarVisibility="Disabled" Text="{Binding Title, ElementName=theCSCategoryControl, FallbackValue=Title, Mode=OneWay}" ToolTip="{Binding Title, ElementName=theCSCategoryControl, Mode=OneWay}" />
+      </Grid>
+    </Grid>
+    <Border Name="borderControls" Margin="10,0,0,0" Background="#FFFFFFFF" DockPanel.Dock="Bottom">
+      <ListBox Name="lstControls" HorizontalContentAlignment="Stretch" ItemContainerStyle="{DynamicResource ListBoxItemStyleNoSelection}">
+        <FrameworkElement.Style>
+          <Style TargetType="{x:Type ListBox}">
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                  <StackPanel Margin="5,0,5,0" IsItemsHost="True" />
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </FrameworkElement.Style>
+      </ListBox>
+    </Border>
+  </DockPanel>
+</UserControl>

@@ -1,0 +1,35 @@
+{
+  "scope": "Recovered-source snapshot and agent handoff; not application parity approval",
+  "reviewer": "Codex self-review",
+  "correctness": [
+    "11149 unique recovery objects verified by byte SHA256",
+    "1451 requirement/type rows validated",
+    "619 builders assigned exactly once to 71 batches",
+    "All 619 builders cross-reference serializer GUIDs",
+    "SourceAudit and RecoveryMetadata rebuild with zero errors/warnings",
+    "Limited Node/CSharp file proof reproduced including negative CRC control"
+  ],
+  "readability": [
+    "Canonical/support/variants/resources separated",
+    "Owned utilities and plans formatted; original snapshots unchanged",
+    "Bounded source/asset/card navigation avoids whole-corpus context loading"
+  ],
+  "architecture": [
+    "Read-only recovered snapshots separate from production boundaries",
+    "16 dependency-aware phases and 96 task cards",
+    "Explicit offline/PC/version/native ownership contracts"
+  ],
+  "security": [
+    "31 recovered files have explicit credential removals",
+    "Eight scanner regression cases pass",
+    "No pattern findings in exported text",
+    "Local caches/auth/SDKs excluded from Git",
+    "CI contents permission read-only"
+  ],
+  "limitations": [
+    "Compression interoperability defect remains open",
+    "No actual PC application reopen/regeneration proof",
+    "Real CAD/renderer/catalog/script and physical-device acceptance remain incomplete"
+  ],
+  "result": "Ready for repository publication; no full application release claim"
+}

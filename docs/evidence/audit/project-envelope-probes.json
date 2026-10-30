@@ -1,0 +1,99 @@
+[
+  {
+    "file": "analysis/runtime-data/library-sample/item-4.csg",
+    "size": 383069,
+    "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+    "header": "3D Geometry File Format        4",
+    "archiveVersion": 4,
+    "chunkLengthBytes": 4,
+    "topLevel": [
+      {
+        "offset": 32,
+        "typeCode": "0x1",
+        "short": false,
+        "value": 101
+      },
+      {
+        "offset": 141,
+        "typeCode": "0x10000014",
+        "short": false,
+        "value": 65258
+      },
+      {
+        "offset": 65407,
+        "typeCode": "0x10000015",
+        "short": false,
+        "value": 1170
+      }
+    ],
+    "stop": "custom CounterSketch UUID follows ordinary properties/settings chunks",
+    "customGuidOccurrences": [
+      {
+        "id": "B237EE6C-AC7E-4725-86EE-54BCCDA34FEA",
+        "offset": 66585
+      }
+    ],
+    "scope": "Header/range observations only. No native archive reader, full chunk decode, CRC verification or application round trip."
+  },
+  {
+    "file": "analysis/extracted/installer/pf64/CounterSketch Studio/Library/Props/ringfinger.3dm",
+    "size": 478213,
+    "sha256": "6fbbb859732a49328175e1f4bf24369f4c10aa6d9fba353cc63609636f726d28",
+    "header": "3D Geometry File Format       50",
+    "archiveVersion": 50,
+    "chunkLengthBytes": 8,
+    "topLevel": [
+      {
+        "offset": 32,
+        "typeCode": "0x1",
+        "short": false,
+        "value": 344
+      },
+      {
+        "offset": 388,
+        "typeCode": "0x10000014",
+        "short": false,
+        "value": 60462
+      },
+      {
+        "offset": 60862,
+        "typeCode": "0x10000015",
+        "short": false,
+        "value": 12871
+      },
+      {
+        "offset": 73745,
+        "typeCode": "0x10000016",
+        "short": false,
+        "value": 12
+      },
+      {
+        "offset": 73769,
+        "typeCode": "0x10000025",
+        "short": false,
+        "value": 1792
+      },
+      {
+        "offset": 75573,
+        "typeCode": "0x10000010",
+        "short": false,
+        "value": 1799
+      },
+      {
+        "offset": 77384,
+        "typeCode": "0x10000023",
+        "short": false,
+        "value": 12
+      },
+      {
+        "offset": 77408,
+        "typeCode": "0x10000011",
+        "short": false,
+        "value": 506
+      }
+    ],
+    "stop": "bounded at 8 top-level records",
+    "customGuidOccurrences": [],
+    "scope": "Header/range observations only. No native archive reader, full chunk decode, CRC verification or application round trip."
+  }
+]

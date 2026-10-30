@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.View.SearchResultsPagerControlMini" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:GV.CounterSketch.Studio.View" xmlns:localization="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" DataContext="{Binding TileSearchMainVM.ActiveSearchResultViewModel, Source={StaticResource Locator}}">
+  <Grid>
+    <StackPanel Margin="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#FFFFFFFF" DockPanel.Dock="Bottom" Orientation="Horizontal">
+      <Button Margin="0,0,10,0" BorderThickness="0" Style="{StaticResource ButtonStyleClear}" Command="{Binding CommandGotoPreviousPage}" Visibility="{Binding ShowPreviousPageButton, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Border MinWidth="80" Padding="10,4" Background="#FFABABAB">
+          <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{Binding Source={x:Static localization:UntranslatedStrings.Previous}, Converter={StaticResource StringToUpperCaseConverter}}" />
+        </Border>
+      </Button>
+      <Button Margin="10,0,0,0" BorderThickness="0" Foreground="#FFFFFFFF" Style="{StaticResource ButtonStyleClear}" Command="{Binding CommandGotoNextPage}" Visibility="{Binding ShowNextPageButton, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Border MinWidth="80" Padding="10,4" Background="#FFABABAB">
+          <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{Binding Source={x:Static localization:UntranslatedStrings.Next}, Converter={StaticResource StringToUpperCaseConverter}}" />
+        </Border>
+      </Button>
+    </StackPanel>
+  </Grid>
+</UserControl>

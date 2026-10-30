@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Controls:CSUIControl x:Class="GV.CounterSketch.Studio.Controls.CSValueChooserControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:Custom="clr-namespace:Microsoft.Surface.Presentation.Controls;assembly=Microsoft.Surface.Presentation" xmlns:GV_CounterSketch_Utilities_Behaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:Model="clr-namespace:GV.CounterSketch.Shared.Model;assembly=CounterSketch Studio" xmlns:PagedListBox="clr-namespace:GV.CounterSketch.Studio.UserControls.PagedListBox" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="csValueChooserControl" MinHeight="60" Background="#00FFFFFF">
+  <DockPanel Margin="0,4" Background="#02000000">
+    <Popup Name="popupSubMenu" AllowsTransparency="True" HorizontalOffset="-19" Placement="Right" PopupAnimation="None" VerticalOffset="-22" PlacementTarget="{Binding ElementName=btnSubMenu}" MouseLeave="PopupSubMenuMouseLeave">
+      <Border Padding="20,20,0,0" Background="#02000000">
+        <Border Background="{DynamicResource WindowFrameBackground}" BorderBrush="#FF65615D" BorderThickness="1">
+          <StackPanel Name="stackSubMenuActions" Margin="10,4">
+            <Border>
+              <StackPanel>
+                <Button Name="btnResetControl" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Reset Control To Default" Cursor="Hand" Foreground="#FFCCCCCC" Style="{DynamicResource CSSubMenuActionButton}" Background="{x:Null}" Click="BtnResetControlClick" />
+                <Button Name="btnAdvancedProfileEditCopy" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Edit Current Profile" Cursor="Hand" Foreground="#FFCCCCCC" Style="{DynamicResource CSSubMenuActionButton}" Background="{x:Null}" Click="BtnAdvancedProfileEditCopyClick" />
+              </StackPanel>
+            </Border>
+          </StackPanel>
+        </Border>
+      </Border>
+    </Popup>
+    <Grid Margin="0,0,0,0" DockPanel.Dock="Top">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="18" />
+        <RowDefinition />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Border Height="1" VerticalAlignment="Top" Background="#FFC6BEB6" />
+      <DockPanel Margin="0">
+        <TextBlock Name="txtTitle" Margin="2" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="10" DockPanel.Dock="Left" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Foreground="#FF32302E" Text="{Binding DisplayTitle, ElementName=csValueChooserControl, FallbackValue=ControlTitle}" />
+        <Border Name="borderSubMenu" Margin="0" HorizontalAlignment="Right" Background="#02000000" DockPanel.Dock="Right">
+          <Button Name="btnSubMenu" Width="12" Height="13" Margin="0,2,1,0" VerticalAlignment="Top" Cursor="Hand" Style="{DynamicResource CSSubMenuButton}" Click="BtnSubMenuClick" />
+        </Border>
+        <Line Margin="0,0,2,0" HorizontalAlignment="Right" VerticalAlignment="Top" DockPanel.Dock="Right" Stroke="#FFC6BEB6" Y2="15" />
+      </DockPanel>
+      <DockPanel Grid.Row="1" Margin="0,2">
+        <PagedListBox:PagedListBox x:Name="pagedListBox" SelectionChanged="Selector_OnSelectionChanged" Margin="5,0,0,0" VerticalContentAlignment="Center" IsScrollToHomeOnResetEnabled="False" ItemContainerStyle="{DynamicResource SurfaceListBoxItemStyleChooser}" ItemTemplate="{DynamicResource PagedListBoxDataTemplate}" PagingIndicatorVisibility="Collapsed" ScrollViewer.CanContentScroll="True" Template="{DynamicResource ListBoxControlTemplateChooser}" ItemsSource="{Binding Profiles, ElementName=csValueChooserControl}" SelectedIndex="{Binding SelectedDataItemIndex, ElementName=csValueChooserControl, Mode=TwoWay}">
+          <FrameworkElement.Resources>
+            <ResourceDictionary />
+          </FrameworkElement.Resources>
+          <i:Interaction.Behaviors>
+            <GV_CounterSketch_Utilities_Behaviors:UIElementBehaviorRedirectMouseWheelEventToParent />
+          </i:Interaction.Behaviors>
+        </PagedListBox:PagedListBox>
+      </DockPanel>
+    </Grid>
+  </DockPanel>
+</Controls:CSUIControl>

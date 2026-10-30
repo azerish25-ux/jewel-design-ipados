@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Controls:CSUIControl x:Class="GV.CounterSketch.Studio.Controls.CSValueGemSizeControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:Custom="http://www.galasoft.ch/mvvmlight" xmlns:GV_CounterSketch_Utilities_Behaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:Model="clr-namespace:GV.CounterSketch.Shared.Model;assembly=CounterSketch Studio" xmlns:PagedListBox="clr-namespace:GV.CounterSketch.Studio.UserControls.PagedListBox" xmlns:ViewModel="clr-namespace:GV.CounterSketch.Studio.ViewModel" xmlns:cvrt="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="CSValueGemSizeUserControl" Background="#00FFFFFF">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ControlTemplate x:Key="ButtonBaseControlTemplateGemSize" TargetType="{x:Type ButtonBase}">
+        <Grid Name="border" Width="Auto" Height="Auto" Background="{TemplateBinding Control.Background}" SnapsToDevicePixels="True">
+          <ContentPresenter Name="contentPresenter" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Focusable="False" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+        </Grid>
+      </ControlTemplate>
+      <DataTemplate x:Key="DataTemplateGemSliderTicks">
+        <DockPanel Width="Auto" Height="Auto" HorizontalAlignment="Center">
+          <TextBlock Width="Auto" Height="0" VerticalAlignment="Top" DockPanel.Dock="Top" TextWrapping="Wrap" Text="{Binding}">
+            <FrameworkElement.LayoutTransform>
+              <TransformGroup>
+                <ScaleTransform />
+                <SkewTransform />
+                <RotateTransform Angle="-90" />
+                <TranslateTransform />
+              </TransformGroup>
+            </FrameworkElement.LayoutTransform>
+          </TextBlock>
+          <Rectangle Width="1" Height="10" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Fill="#FF000000" ToolTip="{Binding}" />
+        </DockPanel>
+      </DataTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Margin="0,4">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="18" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <DockPanel>
+        <TextBlock Name="txtTitle" HorizontalAlignment="Left" VerticalAlignment="Center" DockPanel.Dock="Left" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Foreground="#FF32302E" Text="{Binding DisplayTitle, ElementName=CSValueGemSizeUserControl}" />
+        <Border Name="borderSubMenu" Margin="0,3,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#02000000" DockPanel.Dock="Right">
+          <Button Name="btnSubMenu" Width="12" Height="13" Margin="0,0,1,0" VerticalAlignment="Top" Cursor="Hand" Style="{DynamicResource CSSubMenuButton}" Click="BtnSubMenuClick" />
+        </Border>
+        <Line Margin="0,0,2,0" HorizontalAlignment="Right" VerticalAlignment="Top" DockPanel.Dock="Right" Stroke="#FFC6BEB6" Y2="15" />
+        <TextBlock Margin="0,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Center" DockPanel.Dock="Right" FontSize="10.667" Foreground="#FF000000" Text="ct" TextWrapping="Wrap" />
+        <TextBlock Name="txtCarat" MinWidth="40" Margin="0,0,5,0" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#00000000" DockPanel.Dock="Right" Focusable="False" FontSize="10.667" Foreground="#FF000000" TextAlignment="Right" Text="{Binding GemCarat, ElementName=CSValueGemSizeUserControl, StringFormat={}{0:#.###}}" LostFocus="TxtPercentageLostFocus" />
+      </DockPanel>
+      <DockPanel Grid.Row="1" Margin="0,0,5,0">
+        <StackPanel HorizontalAlignment="Stretch" DockPanel.Dock="Top">
+          <DockPanel Height="60" Margin="0" Background="#02000000">
+            <Grid Margin="5,0">
+              <telerik:RadSlider xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" Name="sldSize" VerticalAlignment="Center" IsSnapToTickEnabled="True" LargeChange="1" Minimum="0" SmallChange="1" ThumbStyle="{DynamicResource RadThumbStyle}" TickFrequency="1" TickPlacement="TopLeft" ToolTip="{x:Static l:Strings.GemSize}" TrackStyle="{DynamicResource RadSliderTrackStyle}" Foreground="{Binding ControlColorBrush, ElementName=CSValueGemSizeUserControl}" Maximum="{Binding GemTableItemCount, ElementName=CSValueGemSizeUserControl, Mode=TwoWay}" Value="{Binding GemTableIndex, ElementName=CSValueGemSizeUserControl}" PreviewMouseLeftButtonUp="SldSizeMouseLeftButtonUp" ValueChanged="SldSizeValueChanged" />
+              <Button Name="tglCustomGem" Height="45" VerticalAlignment="Center" Background="#FFFFFFFF" BorderThickness="0" Cursor="Hand" Foreground="#FF898684" Opacity="0.75" Template="{DynamicResource ButtonBaseControlTemplateGemSize}" BorderBrush="{x:Null}" Click="DisableCustomGemClick">
+                <Grid>
+                  <Viewbox Width="342.702" Height="3.383" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill">
+                    <Path Width="342.702" Height="3.383" Data="F1 M-366.316,373.105 L-26.9971,373.105 C-26.3389,373.105 -25.8054,373.638 -25.8054,374.296 L-25.8054,374.296 C-25.8054,374.955 -26.3389,375.488 -26.9971,375.488 L-366.316,375.488 C-366.974,375.488 -367.508,374.955 -367.508,374.296 L-367.508,374.296 C-367.508,373.638 -366.974,373.105 -366.316,373.105" Fill="#FF65615D" Stretch="Fill" Stroke="#FFFFFFFF" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" />
+                  </Viewbox>
+                  <StackPanel HorizontalAlignment="Center" Background="#FFFFFFFF" Orientation="Vertical">
+                    <TextBlock Margin="5,0" HorizontalAlignment="Center" FontSize="14.667" Text="Manual Sizing" TextWrapping="Wrap" Visibility="{Binding IsManualStoneSizingEnabled, ElementName=CSValueGemSizeUserControl, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <TextBlock Margin="5,0" HorizontalAlignment="Center" FontSize="14.667" Text="Stone Assigned" TextWrapping="Wrap" Visibility="{Binding IsStoneAssignedEnabled, ElementName=CSValueGemSizeUserControl, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <TextBlock Margin="5,0" HorizontalAlignment="Center" FontSize="10.667" Text="click here to disable" TextWrapping="Wrap" />
+                  </StackPanel>
+                </Grid>
+              </Button>
+            </Grid>
+          </DockPanel>
+          <Grid Height="22">
+            <Grid Name="gridDimensions" VerticalAlignment="Bottom" IsEnabled="{Binding ElementName=CSValueGemSizeUserControl, Path=IsManualStoneSizingEnabled}" IsHitTestVisible="{Binding ElementName=CSValueGemSizeUserControl, Path=IsManualStoneSizingEnabled}">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.25*" />
+              </Grid.ColumnDefinitions>
+              <Border Width="75" Margin="5,0" Background="#FF1A1A1A" BorderBrush="#FFCCC6C1" BorderThickness="1" CornerRadius="0.5">
+                <DockPanel>
+                  <Grid Margin="0" HorizontalAlignment="Left">
+                    <Path Name="path" Width="20" Height="20" Margin="0" HorizontalAlignment="Left" Data="F1 M42.6012,1272.01 L64.597,1272.01 L64.597,1259.25 L64.597,1248.32 L42.6012,1248.32 L42.6012,1272.01" Fill="#FFBED8FF" Stretch="Fill" Stroke="#FFCCC6C1" StrokeLineJoin="Round" StrokeThickness="0.5" />
+                    <TextBlock Name="textBlock" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14.667" FontWeight="Bold" Foreground="#FF1853AB" RenderTransformOrigin="0.5,0.5" TextAlignment="Center">
+                      <Run Text="H" />
+                    </TextBlock>
+                  </Grid>
+                  <TextBox Name="txtHeight" MinWidth="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoWordSelection="True" Background="#FFFFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontSize="13.333" Foreground="#FF000000" MinLines="1" TextAlignment="Center" BorderBrush="{x:Null}" Text="{Binding GemHeight, ElementName=CSValueGemSizeUserControl, StringFormat={}{0:#.00#}}" LostFocus="TxtHeightLostFocus">
+                    <i:Interaction.Behaviors>
+                      <GV_CounterSketch_Utilities_Behaviors:TextBoxBehaviorSelectAllTextWhenFocused />
+                      <GV_CounterSketch_Utilities_Behaviors:TextBoxBehaviorLoseFocusOnEnterKeyUp FocusTargetElement="{Binding ElementName=btnSubMenu, Mode=OneWay}" />
+                    </i:Interaction.Behaviors>
+                  </TextBox>
+                </DockPanel>
+              </Border>
+              <Border Grid.Column="1" Width="75" Margin="5,0" Background="#FF1A1A1A" BorderBrush="#FFCCC6C1" BorderThickness="1" CornerRadius="0.5">
+                <DockPanel>
+                  <Grid Margin="0" HorizontalAlignment="Left">
+                    <Path Name="path1" Width="20" Height="20" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F1 M42.6012,1272.01 L64.597,1272.01 L64.597,1259.25 L64.597,1248.32 L42.6012,1248.32 L42.6012,1272.01" Fill="#FFBED8FF" Stretch="Fill" Stroke="#FFCCC6C1" StrokeLineJoin="Round" StrokeThickness="0.5" />
+                    <TextBlock Name="textBlockWidth" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14.667" FontWeight="Bold" Foreground="#FF1853AB" RenderTransformOrigin="0.5,0.5" Text="W" TextAlignment="Center" />
+                  </Grid>
+                  <TextBox Name="txtWidth" MinWidth="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoWordSelection="True" Background="#FFFFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontSize="13.333" Foreground="#FF000000" MinLines="1" TextAlignment="Center" BorderBrush="{x:Null}" Text="{Binding GemWidth, ElementName=CSValueGemSizeUserControl, StringFormat={}{0:#.00#}}" LostFocus="TxtWidthLostFocus">
+                    <i:Interaction.Behaviors>
+                      <GV_CounterSketch_Utilities_Behaviors:TextBoxBehaviorSelectAllTextWhenFocused />
+                      <GV_CounterSketch_Utilities_Behaviors:TextBoxBehaviorLoseFocusOnEnterKeyUp FocusTargetElement="{Binding ElementName=btnSubMenu, Mode=OneWay}" />
+                    </i:Interaction.Behaviors>
+                  </TextBox>
+                </DockPanel>
+              </Border>
+              <Border Grid.Column="2" Width="75" Margin="5,0" Background="#FF1A1A1A" BorderBrush="#FFCCC6C1" BorderThickness="1" CornerRadius="0.5">
+                <DockPanel>
+                  <Grid Margin="0" HorizontalAlignment="Left">
+                    <Path Name="path2" Width="20" Height="20" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F1 M42.6012,1272.01 L64.597,1272.01 L64.597,1259.25 L64.597,1248.32 L42.6012,1248.32 L42.6012,1272.01" Fill="#FFBED8FF" Stretch="Fill" Stroke="#FFCCC6C1" StrokeLineJoin="Round" StrokeThickness="0.5" />
+                    <TextBlock Name="textBlock1" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14.667" FontWeight="Bold" Foreground="#FF1853AB" RenderTransformOrigin="0.5,0.5" Text="D" TextAlignment="Center" />
+                  </Grid>
+                  <TextBox Name="txtDepth" MinWidth="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoWordSelection="True" Background="#FFFFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontSize="13.333" Foreground="#FF000000" MinLines="1" TextAlignment="Center" BorderBrush="{x:Null}" Text="{Binding GemDepth, ElementName=CSValueGemSizeUserControl, StringFormat={}{0:#.00#}}" LostFocus="TxtDepthLostFocus">
+                    <i:Interaction.Behaviors>
+                      <GV_CounterSketch_Utilities_Behaviors:TextBoxBehaviorSelectAllTextWhenFocused />
+                      <GV_CounterSketch_Utilities_Behaviors:TextBoxBehaviorLoseFocusOnEnterKeyUp FocusTargetElement="{Binding ElementName=btnSubMenu, Mode=OneWay}" />
+                    </i:Interaction.Behaviors>
+                  </TextBox>
+                </DockPanel>
+              </Border>
+              <Border Grid.Column="3" Width="75" Margin="5,0" Background="#FF1A1A1A" BorderBrush="#FFCCC6C1" BorderThickness="1" CornerRadius="0.5">
+                <DockPanel>
+                  <Grid Margin="0" HorizontalAlignment="Left">
+                    <Path Name="path3" Width="20" Height="20" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F1 M42.6012,1272.01 L64.597,1272.01 L64.597,1259.25 L64.597,1248.32 L42.6012,1248.32 L42.6012,1272.01" Fill="#FFBED8FF" Stretch="Fill" Stroke="#FFCCC6C1" StrokeLineJoin="Round" StrokeThickness="0.5" />
+                    <TextBlock Name="textBlock3" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14.667" FontWeight="Bold" Foreground="#FF1853AB" RenderTransformOrigin="0.5,0.5" Text="%" TextAlignment="Center" />
+                  </Grid>
+                  <TextBox Name="txtPercentage" MinWidth="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoWordSelection="True" Background="#FFFFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontSize="13.333" Foreground="#FF000000" MinLines="1" TextAlignment="Center" BorderBrush="{x:Null}" Text="{Binding GemPercentage, ElementName=CSValueGemSizeUserControl, StringFormat={}{0:#.##}}" LostFocus="TxtPercentageLostFocus">
+                    <i:Interaction.Behaviors>
+                      <GV_CounterSketch_Utilities_Behaviors:TextBoxBehaviorSelectAllTextWhenFocused />
+                      <GV_CounterSketch_Utilities_Behaviors:TextBoxBehaviorLoseFocusOnEnterKeyUp FocusTargetElement="{Binding ElementName=btnSubMenu, Mode=OneWay}" />
+                    </i:Interaction.Behaviors>
+                  </TextBox>
+                </DockPanel>
+              </Border>
+            </Grid>
+          </Grid>
+        </StackPanel>
+        <UniformGrid Margin="6,6,0,0" HorizontalAlignment="Stretch" Columns="2" DockPanel.Dock="Bottom" Visibility="{Binding StoneAssignmentVisibility, ElementName=CSValueGemSizeUserControl}" DataContext="{Binding Mode=Default, Path=TileSearchMainVM, Source={StaticResource Locator}}">
+          <Button Height="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Cursor="Hand" Background="{x:Null}" Command="{Binding CommandShowStoneShopper}">
+            <Grid Margin="5,0" HorizontalAlignment="Center">
+              <Viewbox HorizontalAlignment="Left">
+                <Canvas Width="19.046" Height="16.5">
+                  <Path Canvas.Left="11.6177" Canvas.Top="12.0001" Width="4.74752" Height="4.12494" Data="F1 M13.9914,12.1251 C12.7495,12.1251 11.7427,12.9925 11.7427,14.0625 C11.7427,15.1326 12.7495,16 13.9914,16 C15.2333,16 16.2402,15.1326 16.2402,14.0625 C16.2402,12.9925 15.2333,12.1251 13.9914,12.1251" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF656565" StrokeMiterLimit="2.75" StrokeThickness="0.25" />
+                  <Path Canvas.Left="5.9958" Canvas.Top="12.0001" Width="4.74747" Height="4.12494" Data="F1 M8.36951,12.1251 C7.12767,12.1251 6.1208,12.9925 6.1208,14.0625 C6.1208,15.1326 7.12767,16 8.36951,16 C9.6114,16 10.6183,15.1326 10.6183,14.0625 C10.6183,12.9925 9.6114,12.1251 8.36951,12.1251" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF656565" StrokeMiterLimit="2.75" StrokeThickness="0.25" />
+                  <Path Canvas.Left="0.374998" Canvas.Top="0.375" Width="18.2397" Height="10.9063" Data="F1 M18.2792,3.80835 C18.0651,3.55524 17.7269,3.40625 17.3646,3.40625 L5.80675,3.40625 L4.93819,1.1618 C4.78557,0.766357 4.35625,0.5 3.87204,0.5 L1.62433,0.5 C1.00286,0.5 0.499998,0.932861 0.499998,1.46881 C0.499998,2.0047 1.00286,2.4375 1.62433,2.4375 L3.06166,2.4375 L6.17784,10.4941 C6.3316,10.8894 6.76092,11.1563 7.24514,11.1563 L15.1158,11.1563 C15.6023,11.1563 16.0294,10.8894 16.1831,10.4941 L18.4319,4.68109 C18.546,4.38593 18.4889,4.06146 18.2792,3.80835" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF656565" StrokeMiterLimit="2.75" StrokeThickness="0.25" />
+                </Canvas>
+              </Viewbox>
+              <TextBlock Margin="25,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" FontFamily="HelveticaNeueLT Std" TextAlignment="Center">
+                <Run Text="{x:Static l:Strings.ShopForStone}" />
+              </TextBlock>
+            </Grid>
+          </Button>
+          <Controls:StoneTray Padding="5,0" Foreground="#FF454341" ShowStoneText="True" ShowStoneTrayGraphic="True" />
+        </UniformGrid>
+      </DockPanel>
+      <Border Height="1" VerticalAlignment="Top" Background="#FFC6BEB6" />
+    </Grid>
+    <Popup Name="popupSubMenu" VerticalAlignment="Top" AllowsTransparency="True" HorizontalOffset="-19" Placement="Right" PopupAnimation="None" VerticalOffset="-23" PlacementTarget="{Binding ElementName=btnSubMenu}" MouseLeave="PopupSubMenuMouseLeave">
+      <Border Padding="20,20,0,0" Background="#02000000">
+        <Border Background="{DynamicResource WindowFrameBackground}" BorderBrush="#FF65615D" BorderThickness="1">
+          <StackPanel Name="stackSubMenuActions" Margin="10,4">
+            <Border>
+              <DockPanel>
+                <Button Name="btnResetControl" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Reset Control To Default" Foreground="#FFCCCCCC" Style="{DynamicResource CSSubMenuActionButton}" Background="{x:Null}" Click="BtnResetControlClick" />
+              </DockPanel>
+            </Border>
+          </StackPanel>
+        </Border>
+      </Border>
+    </Popup>
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="CustomGemSizeStates">
+        <VisualState x:Name="CustomGemSizeState" />
+        <VisualState x:Name="AutomaticGemSizeState">
+          <Storyboard>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="path" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="#FFCCC6C1" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="path1" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="#FFCCC6C1" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="path2" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="#FFCCC6C1" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="path3" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="#FFCCC6C1" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="White" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="textBlockWidth" Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="White" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="textBlock1" Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="White" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="textBlock3" Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="White" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="txtHeight" Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="#FFCCC6C1" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="txtWidth" Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="#FFCCC6C1" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="txtDepth" Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="#FFCCC6C1" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="txtPercentage" Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
+              <EasingColorKeyFrame KeyTime="0" Value="#FFCCC6C1" />
+            </ColorAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="tglCustomGem" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="tglCustomGem" Storyboard.TargetProperty="(UIElement.Opacity)">
+              <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="tglCustomGem" Storyboard.TargetProperty="(UIElement.IsHitTestVisible)">
+              <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="tglCustomGem" Storyboard.TargetProperty="(UIElement.Focusable)">
+              <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="tglCustomGem" Storyboard.TargetProperty="(KeyboardNavigation.IsTabStop)">
+              <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
+            </BooleanAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+  </Grid>
+</Controls:CSUIControl>

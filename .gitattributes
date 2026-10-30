@@ -1,2 +1,9 @@
-src/Recovered/**/*.cs -text
+* text=auto
+recovery/** -text -whitespace
+src/Recovered/**/*.cs -text -whitespace
+reference/fixtures/*.csg -text
 *.sh text eol=lf
+*.cjs text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf

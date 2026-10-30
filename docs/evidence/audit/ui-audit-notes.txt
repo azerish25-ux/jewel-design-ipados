@@ -1,0 +1,63 @@
+UI/workflow audit: static baseline only. No target execution or downloads.
+
+{
+  "baselineCsFiles": 1229,
+  "viewModelFiles": 56,
+  "relayCommandDeclarations": 318,
+  "relayCommandDeclarationsWithAssignments": 274,
+  "relayCommandDeclarationsWithLocalTargetBody": 274,
+  "sourceSurfaces": 160,
+  "recoveredXamlFiles": 113,
+  "xamlCommandBindings": 384,
+  "publicRelayCommandDeclarations": 317,
+  "dormantCommandDeclarations": 44,
+  "featureRows": 68,
+  "xamlsWithCommandBindings": 49,
+  "bindingsWithBaselineCommandNameMatch": 323,
+  "customControlCommandProperties": 7,
+  "bindingsToCustomControlCommands": 15,
+  "frameworkCommandBindings": 38,
+  "unresolvedApplicationCommandBindings": 6,
+  "uniqueXamlCommandNames": 212,
+  "sourceSurfacesCitedByFeatures": 23,
+  "unmappedDeclarations": 0
+}
+
+ui-features.json contains grouped checklist rows and direct method/declaration evidence. ui-surfaces.json contains ALL 318 RelayCommand declarations (317 public and one private backing field), assignments/target bodies, command-to-feature mapping, 160 source surface/control/input files with handler bodies, all 113 supplemental recovered XAML filenames and 384 actual command attributes/bindings with name mappings. Boolean PassEventArgsToCommand and xmlns:Command attributes are excluded.
+
+Critical: 3DM/STL export relies on online quota/purchase accounting; quote/quick estimate uses internet and Stuller APIs. Offline parity requires authorized local substitutes/versioned price data or deferred online actions.
+
+Critical: PrintQuote, SaveSortedImportGroups, and DesignImageSummary.workerThread_DoWork are empty. Declared legacy commands without assignments are not counted as working functionality.
+
+Critical: preserve editable CSG graph/UIControl/import group/material/project data. Rendering, STL or generic 3DM geometry alone does not prove editable project parity.
+
+Manual behavioral review covers grouped user entrypoints and controls cited in features. Uncited infrastructure surfaces remain raw inventoried evidence; their presence is not a runtime test. The source-surface list includes view/control/input infrastructure and generated glue, not 160 independent user features.
+
+Markup is supplemental desktop-xaml, potentially another installed build. Name-matched commands still require DataContext, profile/feature gate and runtime checks. XAML-only unmatched commands and baseline-uninitialized declarations stay explicit gaps.
+
+Round-trip fixtures needed: catalog design with all UIControl types; mixed-metal/stone design; text/profile curves; grouped freehand and personal CSG/3DM parts; try-on/render state; customer portfolio and order history; backup/restore and lifecycle recovery.
+
+No statement here proves that all features execute successfully or that a fully offline iPad implementation already exists.
+
+EVENT / INPUT COVERAGE EXTENSION
+{
+  "xamlFiles": 113,
+  "xamlsWithEventAttributes": 46,
+  "xamlEventAttributesAndSetters": 169,
+  "xamlEventsWithExactAstHandlerMatch": 169,
+  "xamlEventTriggers": 190,
+  "eventTriggersWithNestedCommands": 113,
+  "xamlInputBindings": 9,
+  "baselineInputSurfaceAndViewModelFiles": 216,
+  "sourceEventSubscriptions": 331,
+  "sourceEventUnsubscriptions": 64,
+  "sourceHookupsWithExactAstHandlerMatch": 378,
+  "routedAddHandlerCalls": 5,
+  "routedRemoveHandlerCalls": 3,
+  "uniqueRetainedHandlerBodies": 333,
+  "allEventHookRecords": 771,
+  "recordsWithFeatureIds": 604,
+  "recordsWithExplicitGaps": 189,
+  "uniqueRetainedHandlerAndContainingBodies": 504
+}
+Full event attributes/setters, EventTriggers, input bindings, source +=/-= and routed handlers are in ui-event-inventory.json. Exact x:Class/AST matches and inline/delegate/missing-baseline gaps are distinguished. Representative method bodies inspected are listed in that artifact. Static hookup coverage does not prove runtime dispatch, touch fidelity, hidden third-party behavior, or complete dynamic registration.

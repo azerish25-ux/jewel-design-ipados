@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.Controls.WindowMoreThanARingPreview" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:WPFMitsuControls="clr-namespace:WPFMitsuControls;assembly=WPFMitsuControls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="theWindow" Title="More Than A Ring Preview" Width="1200" Height="620" Style="{DynamicResource WindowStyleModal}" Background="#FF414141" Foreground="#FFFFFFFF" AllowsTransparency="True" ResizeMode="NoResize" SizeToContent="Manual" SnapsToDevicePixels="True" WindowStartupLocation="CenterOwner" WindowStyle="None" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="DataTemplateLeft">
+        <Grid>
+          <Image Source="{Binding ImagePath, Converter={StaticResource ImagePathToBitmapImageConverter}}" />
+        </Grid>
+      </DataTemplate>
+      <DataTemplate x:Key="DataTemplateRight">
+        <Grid>
+          <Image Source="{Binding ImagePath, Converter={StaticResource ImagePathToBitmapImageConverter}}" />
+        </Grid>
+      </DataTemplate>
+      <Style x:Key="ButtonStyleBookPage" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{DynamicResource ButtonFocusVisual}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonNormalBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonNormalBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+              <Grid Width="Auto" Background="#00000000">
+                <ContentPresenter Name="contentPresenter" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Opacity="0.245" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <EasingDoubleKeyFrame KeyTime="0" Value="0.755" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                      <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
+                          <EasingDoubleKeyFrame KeyTime="0" Value="1" />
+                        </DoubleAnimationUsingKeyFrames>
+                      </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled" />
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+              </Grid>
+              <ControlTemplate.Triggers>
+                <Trigger Property="UIElement.IsKeyboardFocused" Value="True" />
+                <Trigger Property="ToggleButton.IsChecked" Value="true" />
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter Property="Foreground" Value="#ADADAD" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Background="#FF313031">
+    <Grid Name="grid" Width="1166" Height="440" Margin="0,15,0,0" VerticalAlignment="Top">
+      <Button Name="btnNext" Width="30" Height="80" Margin="0,0,-1,0" HorizontalAlignment="Right" VerticalAlignment="Center" Panel.ZIndex="5" Style="{DynamicResource ButtonStyleBookPage}" Click="btnNext_Click">
+        <Grid Name="Next">
+          <Rectangle Width="25" Fill="#FF000000" RadiusX="5" RadiusY="5" />
+          <Path Width="10" Height="40" Margin="0,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#FFFFFFFF" Stroke="#FFFFFFFF" StrokeThickness="3" Data="M1.584,30.455993 L10.564,1.5000001 M10.648,59.179993 L1.5,29.776" RenderTransformOrigin="0.499999994308414,0.263315735274252" Stretch="Fill">
+            <UIElement.RenderTransform>
+              <TransformGroup>
+                <ScaleTransform ScaleX="-1" ScaleY="-1" />
+                <SkewTransform AngleX="0" AngleY="0" />
+                <RotateTransform Angle="0" />
+                <TranslateTransform />
+              </TransformGroup>
+            </UIElement.RenderTransform>
+          </Path>
+        </Grid>
+      </Button>
+      <Button Name="btnPrevious" Width="30" Height="80" Margin="-1,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="5" Style="{DynamicResource ButtonStyleBookPage}" Opacity="0" Click="btnPrevious_Click">
+        <Grid Name="Previous">
+          <Rectangle Width="25" Fill="#FF000000" RadiusX="5" RadiusY="5" />
+          <Path Width="10" Height="40" Margin="0,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="#FFFFFFFF" Stroke="#FFFFFFFF" StrokeThickness="3" Data="M1.584,30.455993 L10.564,1.5000001 M10.648,59.179993 L1.5,29.776" RenderTransformOrigin="0.499999994308414,0.263315735274252" Stretch="Fill">
+            <UIElement.RenderTransform>
+              <TransformGroup>
+                <ScaleTransform ScaleY="-1" />
+                <SkewTransform />
+                <RotateTransform />
+                <TranslateTransform />
+              </TransformGroup>
+            </UIElement.RenderTransform>
+          </Path>
+        </Grid>
+      </Button>
+      <WPFMitsuControls:Book Name="book" Width="1166" Height="440" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFFFFFFF" Foreground="#FF000000" AlternateDataTemplate="{StaticResource DataTemplateRight}" CurrentPage="LeftSheet" CurrentPageIndex="1" IsManipulationEnabled="True" ItemTemplate="{StaticResource DataTemplateLeft}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemsSource="{Binding MainVM.LookBookPages, Source={StaticResource Locator}}" />
+    </Grid>
+    <StackPanel Margin="20,0,20,20" VerticalAlignment="Bottom" Orientation="Vertical">
+      <TextBlock FontSize="18.667" FontWeight="Bold" TextWrapping="Wrap" Text="{Binding Source={x:Static l:Strings.MORETHANARING}, Converter={StaticResource StringToTitleCaseConverter}}" />
+      <TextBlock FontSize="16" Text="{x:Static l:Strings.LookBookExplanation}" TextWrapping="Wrap" />
+    </StackPanel>
+  </Grid>
+</Window>

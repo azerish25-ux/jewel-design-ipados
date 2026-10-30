@@ -1,0 +1,2576 @@
+{
+  "file": "analysis/runtime-data/library-sample/item-4.csg",
+  "scope": "Bounded byte-level directory parse against recovered readers. No native geometry evaluation, full node field decoding, CRC validation, or application round trip.",
+  "header": "3D Geometry File Format        4",
+  "envelope": [
+    {
+      "offset": 32,
+      "code": "0x1",
+      "length": 101,
+      "payload": 40,
+      "end": 141
+    },
+    {
+      "offset": 141,
+      "code": "0x10000014",
+      "length": 65258,
+      "payload": 149,
+      "end": 65407
+    },
+    {
+      "offset": 65407,
+      "code": "0x10000015",
+      "length": 1170,
+      "payload": 65415,
+      "end": 66585
+    }
+  ],
+  "containerGuid": "b237ee6c-ac7e-4725-86ee-54bccda34fea",
+  "fileInfoVersion": {
+    "major": 1,
+    "minor": 0
+  },
+  "build": {
+    "year": 2012,
+    "month": 7,
+    "day": 23,
+    "revision": 0
+  },
+  "provenanceGuids": 22,
+  "userData": [
+    {
+      "type": "DesignInfo",
+      "key": "RealMetalVolume",
+      "valueCharacters": 6,
+      "valueSha256": "13a95196ab4517e9eb79036288285cad884684a54b9bd3ad451095be7a8cccdf"
+    },
+    {
+      "type": "DesignInfo",
+      "key": "MetalVolume",
+      "valueCharacters": 6,
+      "valueSha256": "df87a9ac8b2c710b6b567b7580119382a671977c7e9e49c757c23c1d4eadd49c"
+    },
+    {
+      "type": "DesignInfo",
+      "key": "MetalVolume1",
+      "valueCharacters": 6,
+      "valueSha256": "49fee7d5ee09a91fadc2cada66ee43148fc5cbf582905cf4179e1fc767cdfc61"
+    },
+    {
+      "type": "DesignInfo",
+      "key": "RealMetalVolume1",
+      "valueCharacters": 6,
+      "valueSha256": "13a95196ab4517e9eb79036288285cad884684a54b9bd3ad451095be7a8cccdf"
+    },
+    {
+      "type": "DesignInfo",
+      "key": "StullerIDNo",
+      "valueCharacters": 11,
+      "valueSha256": "89099051d0e45df14a71572cef05cc6a03d90345272db051fd8545d27c3b9190"
+    },
+    {
+      "type": "DesignInfo",
+      "key": "DesignName",
+      "valueCharacters": 12,
+      "valueSha256": "1e47fbe9fe25585999834cbc1cb263e323a1160df559604e7b4b7235f4dbe244"
+    },
+    {
+      "type": "DesignInfo",
+      "key": "FileName",
+      "valueCharacters": 19,
+      "valueSha256": "cd4f53721cda055edd73dfaa166075fd5cd19b2dc36df2e60e073dba31182b09"
+    },
+    {
+      "type": "DesignInfo",
+      "key": "ArtistName",
+      "valueCharacters": 31,
+      "valueSha256": "1824bacf14da222480d09cc2d00d59b1a758086b53b124158775738564f799e9"
+    },
+    {
+      "type": "DesignInfo",
+      "key": "FileNumber",
+      "valueCharacters": 1,
+      "valueSha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "type": "Display",
+      "key": "CurrentComponents",
+      "valueCharacters": 10,
+      "valueSha256": "dbc81a3f362f5f1f650db0dbea9d945fd79da09f763d20edc69e0718d5b63549"
+    },
+    {
+      "type": "Materials",
+      "key": "Metal1",
+      "valueCharacters": 14,
+      "valueSha256": "ace8db87d4007cfb943dd258cd662d79dc807c756d91000cd94919e9dff06337"
+    },
+    {
+      "type": "Materials",
+      "key": "Metal2",
+      "valueCharacters": 14,
+      "valueSha256": "ace8db87d4007cfb943dd258cd662d79dc807c756d91000cd94919e9dff06337"
+    },
+    {
+      "type": "Materials",
+      "key": "GemCenter",
+      "valueCharacters": 11,
+      "valueSha256": "e0112dd45e012b13ffb5862271f26801bc170748933592c45c4320935d64deae"
+    },
+    {
+      "type": "Materials",
+      "key": "GemSide",
+      "valueCharacters": 11,
+      "valueSha256": "e0112dd45e012b13ffb5862271f26801bc170748933592c45c4320935d64deae"
+    },
+    {
+      "type": "Materials",
+      "key": "GemOther",
+      "valueCharacters": 11,
+      "valueSha256": "e0112dd45e012b13ffb5862271f26801bc170748933592c45c4320935d64deae"
+    }
+  ],
+  "gemTable": {
+    "offset": 68243,
+    "code": "0x40008000",
+    "length": 54583,
+    "payload": 68251,
+    "end": 122834,
+    "major": 1,
+    "minor": 0,
+    "records": 2
+  },
+  "categoryTable": {
+    "offset": 122834,
+    "code": "0x40008000",
+    "length": 104,
+    "payload": 122842,
+    "end": 122946,
+    "major": 1,
+    "minor": 0,
+    "records": 4
+  },
+  "graph": {
+    "offset": 122946,
+    "code": "0x40008000",
+    "length": 260103,
+    "payload": 122954,
+    "end": 383057,
+    "major": 1,
+    "minor": 0,
+    "count": 241,
+    "parsedNodes": [
+      {
+        "index": 0,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 126822,
+        "bytes": 606,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 1,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 127436,
+        "bytes": 124,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 2,
+        "guid": "dd5c2342-d89a-440e-a76e-624a1faf2b68",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 127568,
+        "bytes": 256,
+        "type": "CS.CSValues.CSValueRingSize",
+        "legacy": false
+      },
+      {
+        "index": 3,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 127832,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 4,
+        "guid": "65aa45c6-d1cd-4c45-92bb-b5a9a6a2ec47",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 127956,
+        "bytes": 132,
+        "type": "CSBlocks.Rails.Obsolete.CSRingRail1",
+        "legacy": true
+      },
+      {
+        "index": 5,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 128096,
+        "bytes": 156,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 6,
+        "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 128260,
+        "bytes": 330,
+        "type": "CS.CSValues.CSValueChooser",
+        "legacy": false
+      },
+      {
+        "index": 7,
+        "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 128598,
+        "bytes": 7155,
+        "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+        "legacy": false
+      },
+      {
+        "index": 8,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 135761,
+        "bytes": 490,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 9,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 136259,
+        "bytes": 310,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 10,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 136577,
+        "bytes": 322,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 11,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 136907,
+        "bytes": 210,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 12,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 137125,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 13,
+        "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 137249,
+        "bytes": 200,
+        "type": "CSBlocks.Rails.Obsolete.CSOutsideRail1",
+        "legacy": true
+      },
+      {
+        "index": 14,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 137457,
+        "bytes": 484,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 15,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 137949,
+        "bytes": 284,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 16,
+        "guid": "e10a6966-719f-4ba9-9efe-b7ad0378b5f3",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 138241,
+        "bytes": 180,
+        "type": "CSBlocks.Rails.CSSelectRingRail",
+        "legacy": false
+      },
+      {
+        "index": 17,
+        "guid": "adb397e0-30f0-49f4-adfc-94a2fc9109b6",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 138429,
+        "bytes": 222,
+        "type": "CSBlocks.Core.Obsolete.CSGroupOfGems1",
+        "legacy": true
+      },
+      {
+        "index": 18,
+        "guid": "29ba96a4-2b1b-4dfa-b0d9-8b635d2ede90",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 138659,
+        "bytes": 368,
+        "type": "CS.CSValues.CSValueGem",
+        "legacy": false
+      },
+      {
+        "index": 19,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 139035,
+        "bytes": 246,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 20,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 139289,
+        "bytes": 228,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 21,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 139525,
+        "bytes": 240,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 22,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 139773,
+        "bytes": 476,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 23,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 140257,
+        "bytes": 246,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 24,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 140511,
+        "bytes": 248,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 25,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 140767,
+        "bytes": 222,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 26,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 140997,
+        "bytes": 228,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 27,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 141233,
+        "bytes": 246,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 28,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 141487,
+        "bytes": 248,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 29,
+        "guid": "71a62ba3-7474-43f6-b69e-c33f76e240dc",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 141743,
+        "bytes": 260,
+        "type": "CSBlocks.Gems.Obsolete.CSGemPlacer2",
+        "legacy": true
+      },
+      {
+        "index": 30,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 142011,
+        "bytes": 544,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 31,
+        "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 142563,
+        "bytes": 75572,
+        "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+        "legacy": false
+      },
+      {
+        "index": 32,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 218143,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 33,
+        "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 218267,
+        "bytes": 264,
+        "type": "CS.CSValues.CSValueChooser",
+        "legacy": false
+      },
+      {
+        "index": 34,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 218539,
+        "bytes": 302,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 35,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 218849,
+        "bytes": 458,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 36,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 219315,
+        "bytes": 290,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 37,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 219613,
+        "bytes": 350,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 38,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 219971,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 39,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 220095,
+        "bytes": 164,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 40,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 220267,
+        "bytes": 254,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 41,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 220529,
+        "bytes": 254,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 42,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 220791,
+        "bytes": 254,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 43,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 221053,
+        "bytes": 230,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 44,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 221291,
+        "bytes": 236,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 45,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 221535,
+        "bytes": 230,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 46,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 221773,
+        "bytes": 244,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 47,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 222025,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 48,
+        "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 222149,
+        "bytes": 172,
+        "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+        "legacy": true
+      },
+      {
+        "index": 49,
+        "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 222329,
+        "bytes": 180,
+        "type": "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+        "legacy": false
+      },
+      {
+        "index": 50,
+        "guid": "f9af1449-1903-4d26-92df-6febc8a61427",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 222517,
+        "bytes": 200,
+        "type": "CSBlocks.Transforms.CSTranslateObjectXform",
+        "legacy": false
+      },
+      {
+        "index": 51,
+        "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 222725,
+        "bytes": 188,
+        "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+        "legacy": false
+      },
+      {
+        "index": 52,
+        "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 222921,
+        "bytes": 208,
+        "type": "CSBlocks.Transforms.CSTransformObject",
+        "legacy": false
+      },
+      {
+        "index": 53,
+        "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 223137,
+        "bytes": 228,
+        "type": "CSBlocks.Utilities.Obsolete.CSUnarray1",
+        "legacy": true
+      },
+      {
+        "index": 54,
+        "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 223373,
+        "bytes": 172,
+        "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+        "legacy": true
+      },
+      {
+        "index": 55,
+        "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 223553,
+        "bytes": 188,
+        "type": "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+        "legacy": false
+      },
+      {
+        "index": 56,
+        "guid": "f9af1449-1903-4d26-92df-6febc8a61427",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 223749,
+        "bytes": 200,
+        "type": "CSBlocks.Transforms.CSTranslateObjectXform",
+        "legacy": false
+      },
+      {
+        "index": 57,
+        "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 223957,
+        "bytes": 188,
+        "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+        "legacy": false
+      },
+      {
+        "index": 58,
+        "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 224153,
+        "bytes": 208,
+        "type": "CSBlocks.Transforms.CSTransformObject",
+        "legacy": false
+      },
+      {
+        "index": 59,
+        "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 224369,
+        "bytes": 228,
+        "type": "CSBlocks.Utilities.Obsolete.CSUnarray1",
+        "legacy": true
+      },
+      {
+        "index": 60,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 224605,
+        "bytes": 502,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 61,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 225115,
+        "bytes": 164,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 62,
+        "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 225287,
+        "bytes": 264,
+        "type": "CS.CSValues.CSValueChooser",
+        "legacy": false
+      },
+      {
+        "index": 63,
+        "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 225559,
+        "bytes": 14666,
+        "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+        "legacy": false
+      },
+      {
+        "index": 64,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 240233,
+        "bytes": 290,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 65,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 240531,
+        "bytes": 260,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 66,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 240799,
+        "bytes": 236,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 67,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 241043,
+        "bytes": 242,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 68,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 241293,
+        "bytes": 284,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 69,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 241585,
+        "bytes": 302,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 70,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 241895,
+        "bytes": 266,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 71,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 242169,
+        "bytes": 272,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 72,
+        "guid": "dd1e8b0b-c53f-42c5-adbc-d53c516b62af",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 242449,
+        "bytes": 220,
+        "type": "CSBlocks.Settings.Obsolete.Bezels.CSUnderBezelRailTopOuter1",
+        "legacy": true
+      },
+      {
+        "index": 73,
+        "guid": "79a34a3e-d655-478a-8740-9ddcd3bcc9ba",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 242677,
+        "bytes": 232,
+        "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelSurfaceOutside1",
+        "legacy": true
+      },
+      {
+        "index": 74,
+        "guid": "c9cc249e-0ccd-498c-93b0-96480fb6b232",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 242917,
+        "bytes": 224,
+        "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelRailBottomInner1",
+        "legacy": true
+      },
+      {
+        "index": 75,
+        "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 243149,
+        "bytes": 228,
+        "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+        "legacy": false
+      },
+      {
+        "index": 76,
+        "guid": "a4353b42-35a7-423f-ae34-c3b1b25adec4",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 243385,
+        "bytes": 212,
+        "type": "CSBlocks.Settings.Obsolete.Bezels.CSUnderBezelRailTopInner1",
+        "legacy": true
+      },
+      {
+        "index": 77,
+        "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 243605,
+        "bytes": 192,
+        "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+        "legacy": false
+      },
+      {
+        "index": 78,
+        "guid": "9daf23c3-6347-4674-a7f4-328bd7126363",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 243805,
+        "bytes": 200,
+        "type": "CSBlocks.Settings.Obsolete.Bezels.CSBezelRailSeat1",
+        "legacy": true
+      },
+      {
+        "index": 79,
+        "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 244013,
+        "bytes": 220,
+        "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+        "legacy": false
+      },
+      {
+        "index": 80,
+        "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 244241,
+        "bytes": 228,
+        "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+        "legacy": false
+      },
+      {
+        "index": 81,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 244477,
+        "bytes": 212,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 82,
+        "guid": "31141403-9292-4819-8b70-b767f836d440",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 244697,
+        "bytes": 144,
+        "type": "CSBlocks.Solids.Obsolete.CSJoinSurface1",
+        "legacy": true
+      },
+      {
+        "index": 83,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 244849,
+        "bytes": 552,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 84,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 245409,
+        "bytes": 282,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 85,
+        "guid": "666100f2-c854-4a48-bca8-fbf6d94eed85",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 245699,
+        "bytes": 152,
+        "type": "CSBlocks.Caps.CSProfileCapNorth",
+        "legacy": false
+      },
+      {
+        "index": 86,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 245859,
+        "bytes": 552,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 87,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 246419,
+        "bytes": 282,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 88,
+        "guid": "666100f2-c854-4a48-bca8-fbf6d94eed85",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 246709,
+        "bytes": 152,
+        "type": "CSBlocks.Caps.CSProfileCapNorth",
+        "legacy": false
+      },
+      {
+        "index": 89,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 246869,
+        "bytes": 682,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 90,
+        "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 247559,
+        "bytes": 4106,
+        "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+        "legacy": false
+      },
+      {
+        "index": 91,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 251673,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 92,
+        "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 251797,
+        "bytes": 314,
+        "type": "CS.CSValues.CSValueChooser",
+        "legacy": false
+      },
+      {
+        "index": 93,
+        "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 252119,
+        "bytes": 334,
+        "type": "CS.CSValues.CSValueChooser",
+        "legacy": false
+      },
+      {
+        "index": 94,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 252461,
+        "bytes": 508,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 95,
+        "guid": "38455005-5ef2-43db-8fb9-60e447d75d59",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 252977,
+        "bytes": 216,
+        "type": "CS.CSValues.CSValue",
+        "legacy": false
+      },
+      {
+        "index": 96,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 253201,
+        "bytes": 474,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 97,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 253683,
+        "bytes": 328,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 98,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 254019,
+        "bytes": 482,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 99,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 254509,
+        "bytes": 376,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 100,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 254893,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 101,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 255017,
+        "bytes": 164,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 102,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 255189,
+        "bytes": 250,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 103,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 255447,
+        "bytes": 250,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 104,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 255705,
+        "bytes": 250,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 105,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 255963,
+        "bytes": 226,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 106,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 256197,
+        "bytes": 232,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 107,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 256437,
+        "bytes": 226,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 108,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 256671,
+        "bytes": 240,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 109,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 256919,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 110,
+        "guid": "fc789225-3f3b-41f5-9eb0-6c25d4fc54b8",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 257043,
+        "bytes": 180,
+        "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer2RailXform1",
+        "legacy": true
+      },
+      {
+        "index": 111,
+        "guid": "8793b48f-30c7-4841-9314-157a5c7bb629",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 257231,
+        "bytes": 148,
+        "type": "CSBlocks.Maths.CSAdd",
+        "legacy": false
+      },
+      {
+        "index": 112,
+        "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 257387,
+        "bytes": 180,
+        "type": "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+        "legacy": false
+      },
+      {
+        "index": 113,
+        "guid": "f9af1449-1903-4d26-92df-6febc8a61427",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 257575,
+        "bytes": 200,
+        "type": "CSBlocks.Transforms.CSTranslateObjectXform",
+        "legacy": false
+      },
+      {
+        "index": 114,
+        "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 257783,
+        "bytes": 188,
+        "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+        "legacy": false
+      },
+      {
+        "index": 115,
+        "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 257979,
+        "bytes": 208,
+        "type": "CSBlocks.Transforms.CSTransformObject",
+        "legacy": false
+      },
+      {
+        "index": 116,
+        "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 258195,
+        "bytes": 276,
+        "type": "CSBlocks.Utilities.Obsolete.CSUnarray1",
+        "legacy": true
+      },
+      {
+        "index": 117,
+        "guid": "fc789225-3f3b-41f5-9eb0-6c25d4fc54b8",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 258479,
+        "bytes": 180,
+        "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer2RailXform1",
+        "legacy": true
+      },
+      {
+        "index": 118,
+        "guid": "8793b48f-30c7-4841-9314-157a5c7bb629",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 258667,
+        "bytes": 148,
+        "type": "CSBlocks.Maths.CSAdd",
+        "legacy": false
+      },
+      {
+        "index": 119,
+        "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 258823,
+        "bytes": 180,
+        "type": "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+        "legacy": false
+      },
+      {
+        "index": 120,
+        "guid": "f9af1449-1903-4d26-92df-6febc8a61427",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 259011,
+        "bytes": 200,
+        "type": "CSBlocks.Transforms.CSTranslateObjectXform",
+        "legacy": false
+      },
+      {
+        "index": 121,
+        "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 259219,
+        "bytes": 188,
+        "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+        "legacy": false
+      },
+      {
+        "index": 122,
+        "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 259415,
+        "bytes": 208,
+        "type": "CSBlocks.Transforms.CSTransformObject",
+        "legacy": false
+      },
+      {
+        "index": 123,
+        "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 259631,
+        "bytes": 276,
+        "type": "CSBlocks.Utilities.Obsolete.CSUnarray1",
+        "legacy": true
+      },
+      {
+        "index": 124,
+        "guid": "fc789225-3f3b-41f5-9eb0-6c25d4fc54b8",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 259915,
+        "bytes": 180,
+        "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer2RailXform1",
+        "legacy": true
+      },
+      {
+        "index": 125,
+        "guid": "8793b48f-30c7-4841-9314-157a5c7bb629",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 260103,
+        "bytes": 148,
+        "type": "CSBlocks.Maths.CSAdd",
+        "legacy": false
+      },
+      {
+        "index": 126,
+        "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 260259,
+        "bytes": 180,
+        "type": "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+        "legacy": false
+      },
+      {
+        "index": 127,
+        "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 260447,
+        "bytes": 192,
+        "type": "CSBlocks.Transforms.CSTransformObject",
+        "legacy": false
+      },
+      {
+        "index": 128,
+        "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 260647,
+        "bytes": 288,
+        "type": "CSBlocks.Utilities.Obsolete.CSUnarray1",
+        "legacy": true
+      },
+      {
+        "index": 129,
+        "guid": "38455005-5ef2-43db-8fb9-60e447d75d59",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 260943,
+        "bytes": 172,
+        "type": "CS.CSValues.CSValue",
+        "legacy": false
+      },
+      {
+        "index": 130,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 261123,
+        "bytes": 180,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 131,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 261311,
+        "bytes": 172,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 132,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 261491,
+        "bytes": 164,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 133,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 261663,
+        "bytes": 164,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 134,
+        "guid": "f19ea1ff-57e7-4922-9ff7-87535b49c1c6",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 261835,
+        "bytes": 348,
+        "type": "CSBlocks.Sweeps.CSSimpleSweep2",
+        "legacy": false
+      },
+      {
+        "index": 135,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 262191,
+        "bytes": 120,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 136,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 262319,
+        "bytes": 282,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 137,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 262609,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 138,
+        "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 262733,
+        "bytes": 180,
+        "type": "CSBlocks.Caps.CSProfileCap",
+        "legacy": false
+      },
+      {
+        "index": 139,
+        "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 262921,
+        "bytes": 180,
+        "type": "CSBlocks.Caps.CSProfileCap",
+        "legacy": false
+      },
+      {
+        "index": 140,
+        "guid": "ce5be8f9-4162-4438-99e4-a2606573f739",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 263109,
+        "bytes": 296,
+        "type": "CSBlocks.Solids.Obsolete.CSJoinBrep1",
+        "legacy": true
+      },
+      {
+        "index": 141,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 263413,
+        "bytes": 468,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 142,
+        "guid": "adb397e0-30f0-49f4-adfc-94a2fc9109b6",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 263889,
+        "bytes": 222,
+        "type": "CSBlocks.Core.Obsolete.CSGroupOfGems1",
+        "legacy": true
+      },
+      {
+        "index": 143,
+        "guid": "29ba96a4-2b1b-4dfa-b0d9-8b635d2ede90",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 264119,
+        "bytes": 366,
+        "type": "CS.CSValues.CSValueGem",
+        "legacy": false
+      },
+      {
+        "index": 144,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 264493,
+        "bytes": 456,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 145,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 264957,
+        "bytes": 448,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 146,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 265413,
+        "bytes": 430,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 147,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 265851,
+        "bytes": 470,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 148,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 266329,
+        "bytes": 182,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 149,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 266519,
+        "bytes": 248,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 150,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 266775,
+        "bytes": 136,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 151,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 266919,
+        "bytes": 194,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 152,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 267121,
+        "bytes": 188,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 153,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 267317,
+        "bytes": 246,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 154,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 267571,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 155,
+        "guid": "75c4e7c9-b17a-45af-9b5a-fcbd39e8eee0",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 267695,
+        "bytes": 240,
+        "type": "CSBlocks.Gems.Obsolete.CSGemOnCrv1",
+        "legacy": true
+      },
+      {
+        "index": 156,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 267943,
+        "bytes": 490,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 157,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 268441,
+        "bytes": 140,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 158,
+        "guid": "0b55db1b-e05c-470f-87c1-723e9c81a30a",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 268589,
+        "bytes": 132,
+        "type": "CSBlocks.Gems.Obsolete.CSSortGems1",
+        "legacy": true
+      },
+      {
+        "index": 159,
+        "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 268729,
+        "bytes": 192,
+        "type": "CS.CSValues.CSValueChooser",
+        "legacy": false
+      },
+      {
+        "index": 160,
+        "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 268929,
+        "bytes": 19088,
+        "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+        "legacy": false
+      },
+      {
+        "index": 161,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 288025,
+        "bytes": 270,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 162,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 288303,
+        "bytes": 276,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 163,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 288587,
+        "bytes": 266,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 164,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 288861,
+        "bytes": 234,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 165,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 289103,
+        "bytes": 282,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 166,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 289393,
+        "bytes": 252,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 167,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 289653,
+        "bytes": 324,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 168,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 289985,
+        "bytes": 136,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 169,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 290129,
+        "bytes": 200,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 170,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 290337,
+        "bytes": 294,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 171,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 290639,
+        "bytes": 300,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 172,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 290947,
+        "bytes": 286,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 173,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 291241,
+        "bytes": 258,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 174,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 291507,
+        "bytes": 282,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 175,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 291797,
+        "bytes": 252,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 176,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 292057,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 177,
+        "guid": "5fde6939-bfe2-421d-bb00-6720ca131f6b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 292181,
+        "bytes": 284,
+        "type": "CSBlocks.Cutters.Obsolete.CSChannelFromGems1",
+        "legacy": true
+      },
+      {
+        "index": 178,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 292473,
+        "bytes": 532,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 179,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 293013,
+        "bytes": 128,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 180,
+        "guid": "38455005-5ef2-43db-8fb9-60e447d75d59",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 293149,
+        "bytes": 156,
+        "type": "CS.CSValues.CSValue",
+        "legacy": false
+      },
+      {
+        "index": 181,
+        "guid": "20208fc4-d012-4524-a54d-41d657d6c5dd",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 293313,
+        "bytes": 164,
+        "type": "CSBlocks.Transforms.Obsolete.CSMirror1",
+        "legacy": true
+      },
+      {
+        "index": 182,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 293485,
+        "bytes": 532,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 183,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 294025,
+        "bytes": 128,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 184,
+        "guid": "38455005-5ef2-43db-8fb9-60e447d75d59",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 294161,
+        "bytes": 156,
+        "type": "CS.CSValues.CSValue",
+        "legacy": false
+      },
+      {
+        "index": 185,
+        "guid": "20208fc4-d012-4524-a54d-41d657d6c5dd",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 294325,
+        "bytes": 164,
+        "type": "CSBlocks.Transforms.Obsolete.CSMirror1",
+        "legacy": true
+      },
+      {
+        "index": 186,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 294497,
+        "bytes": 466,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 187,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 294971,
+        "bytes": 136,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 188,
+        "guid": "d8022cc9-8ac7-4416-9195-551f462e4150",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 295115,
+        "bytes": 144,
+        "type": "CSBlocks.Solids.CSBooleanDifference",
+        "legacy": false
+      },
+      {
+        "index": 189,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 295267,
+        "bytes": 494,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 190,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 295769,
+        "bytes": 132,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 191,
+        "guid": "7fcb7f8b-ae18-45ba-9214-71ab069103af",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 295909,
+        "bytes": 176,
+        "type": "CSBlocks.Core.Obsolete.CSBoundingBox2",
+        "legacy": true
+      },
+      {
+        "index": 192,
+        "guid": "ab0b1915-63d5-447e-aa30-ab28e9422c1e",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 296093,
+        "bytes": 172,
+        "type": "CSBlocks.UDT.CSPullToRail",
+        "legacy": false
+      },
+      {
+        "index": 193,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 296273,
+        "bytes": 544,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 194,
+        "guid": "98415b72-dadb-4b9b-94a9-1e6c5865b5f2",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 296825,
+        "bytes": 74652,
+        "type": "CSBlocks.Core.CSGroupOfMatrixProfiles",
+        "legacy": false
+      },
+      {
+        "index": 195,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 371485,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 196,
+        "guid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 371609,
+        "bytes": 264,
+        "type": "CS.CSValues.CSValueChooser",
+        "legacy": false
+      },
+      {
+        "index": 197,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 371881,
+        "bytes": 302,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 198,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 372191,
+        "bytes": 458,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 199,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 372657,
+        "bytes": 290,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 200,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 372955,
+        "bytes": 350,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 201,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 373313,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 202,
+        "guid": "5d44163e-7e07-442b-ba86-375a93c41d1e",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 373437,
+        "bytes": 164,
+        "type": "CS.CSObjects.CSTreeObjects.CSBlockGroupStart",
+        "legacy": false
+      },
+      {
+        "index": 203,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 373609,
+        "bytes": 254,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 204,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 373871,
+        "bytes": 254,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 205,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 374133,
+        "bytes": 254,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 206,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 374395,
+        "bytes": 230,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 207,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 374633,
+        "bytes": 236,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 208,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 374877,
+        "bytes": 230,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 209,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 375115,
+        "bytes": 244,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 210,
+        "guid": "d6ccae41-b1bc-424a-ba96-0e52487b46cb",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 375367,
+        "bytes": 116,
+        "type": "CS.CSObjects.CSBlockGroupEnd",
+        "legacy": false
+      },
+      {
+        "index": 211,
+        "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 375491,
+        "bytes": 172,
+        "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+        "legacy": true
+      },
+      {
+        "index": 212,
+        "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 375671,
+        "bytes": 180,
+        "type": "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+        "legacy": false
+      },
+      {
+        "index": 213,
+        "guid": "f9af1449-1903-4d26-92df-6febc8a61427",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 375859,
+        "bytes": 200,
+        "type": "CSBlocks.Transforms.CSTranslateObjectXform",
+        "legacy": false
+      },
+      {
+        "index": 214,
+        "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 376067,
+        "bytes": 188,
+        "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+        "legacy": false
+      },
+      {
+        "index": 215,
+        "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 376263,
+        "bytes": 208,
+        "type": "CSBlocks.Transforms.CSTransformObject",
+        "legacy": false
+      },
+      {
+        "index": 216,
+        "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 376479,
+        "bytes": 228,
+        "type": "CSBlocks.Utilities.Obsolete.CSUnarray1",
+        "legacy": true
+      },
+      {
+        "index": 217,
+        "guid": "0d140d70-56c1-4ca5-8bc2-2233b555b06c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 376715,
+        "bytes": 172,
+        "type": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1",
+        "legacy": true
+      },
+      {
+        "index": 218,
+        "guid": "e80ed2a1-d415-4ded-b1e8-b8557ac37e9c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 376895,
+        "bytes": 188,
+        "type": "CSBlocks.Transforms.CSScaleObjectToSizeXform",
+        "legacy": false
+      },
+      {
+        "index": 219,
+        "guid": "f9af1449-1903-4d26-92df-6febc8a61427",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 377091,
+        "bytes": 200,
+        "type": "CSBlocks.Transforms.CSTranslateObjectXform",
+        "legacy": false
+      },
+      {
+        "index": 220,
+        "guid": "8c04b2e7-408f-40cd-920f-803c3a395275",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 377299,
+        "bytes": 188,
+        "type": "CSBlocks.Transforms.CSRotateObjectDegXform",
+        "legacy": false
+      },
+      {
+        "index": 221,
+        "guid": "27f4537a-6fc3-404f-9abd-eb53b7b3d8a1",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 377495,
+        "bytes": 208,
+        "type": "CSBlocks.Transforms.CSTransformObject",
+        "legacy": false
+      },
+      {
+        "index": 222,
+        "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 377711,
+        "bytes": 228,
+        "type": "CSBlocks.Utilities.Obsolete.CSUnarray1",
+        "legacy": true
+      },
+      {
+        "index": 223,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 377947,
+        "bytes": 544,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 224,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 378499,
+        "bytes": 226,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 225,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 378733,
+        "bytes": 216,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 226,
+        "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 378957,
+        "bytes": 196,
+        "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+        "legacy": false
+      },
+      {
+        "index": 227,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 379161,
+        "bytes": 544,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 228,
+        "guid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 379713,
+        "bytes": 226,
+        "type": "CS.CSValues.CSValueOnOff",
+        "legacy": false
+      },
+      {
+        "index": 229,
+        "guid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+        "recordMajor": 1,
+        "recordMinor": 1,
+        "offset": 379947,
+        "bytes": 216,
+        "type": "CS.CSValues.CSValueRange",
+        "legacy": false
+      },
+      {
+        "index": 230,
+        "guid": "c6ac4503-ff5c-4712-86b0-ca7779da392e",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 380171,
+        "bytes": 196,
+        "type": "CSBlocks.Sweeps.CSSimpleSweep2NoProfiles",
+        "legacy": false
+      },
+      {
+        "index": 231,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 380375,
+        "bytes": 516,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 232,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 380899,
+        "bytes": 128,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 233,
+        "guid": "bed891fd-e917-4968-b3d1-418d293e0e92",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 381035,
+        "bytes": 164,
+        "type": "CSBlocks.Solids.CSCapPlanarHoles",
+        "legacy": false
+      },
+      {
+        "index": 234,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 381207,
+        "bytes": 516,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 235,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 381731,
+        "bytes": 128,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 236,
+        "guid": "bed891fd-e917-4968-b3d1-418d293e0e92",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 381867,
+        "bytes": 164,
+        "type": "CSBlocks.Solids.CSCapPlanarHoles",
+        "legacy": false
+      },
+      {
+        "index": 237,
+        "guid": "cd89b4ce-7079-450b-ab45-bc3e4ec221c1",
+        "recordMajor": 1,
+        "recordMinor": 2,
+        "offset": 382039,
+        "bytes": 494,
+        "type": "CS.CSObjects.CSTreeObjects.CSPatchWireStart",
+        "legacy": false
+      },
+      {
+        "index": 238,
+        "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 382541,
+        "bytes": 140,
+        "type": "CSBlocks.Utilities.CSArray",
+        "legacy": false
+      },
+      {
+        "index": 239,
+        "guid": "7fcb7f8b-ae18-45ba-9214-71ab069103af",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 382689,
+        "bytes": 176,
+        "type": "CSBlocks.Core.Obsolete.CSBoundingBox2",
+        "legacy": true
+      },
+      {
+        "index": 240,
+        "guid": "ab0b1915-63d5-447e-aa30-ab28e9422c1e",
+        "recordMajor": 1,
+        "recordMinor": 0,
+        "offset": 382873,
+        "bytes": 172,
+        "type": "CSBlocks.UDT.CSPullToRail",
+        "legacy": false
+      }
+    ],
+    "unparsedTailBytes": 4
+  },
+  "parsedDirectory": true
+}

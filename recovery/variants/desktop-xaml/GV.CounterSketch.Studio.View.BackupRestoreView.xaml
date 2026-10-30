@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.View.BackupRestoreView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:localization="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="BackupRestore" Foreground="{DynamicResource BaseBackground}" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" DataContext="{Binding Mode=Default, Path=BackupRestoreVM, Source={StaticResource Locator}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <Style x:Key="ListBoxItemStyleOptions" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Padding" Value="2,0,0,0" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Border Name="Bd" Padding="{TemplateBinding Control.Padding}" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                <ContentPresenter Margin="0,0,5,0" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Property="Foreground" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Name="LayoutRoot" Margin="0" VerticalAlignment="Top">
+    <StackPanel Margin="5,0" Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+      <TextBlock Margin="0" HorizontalAlignment="Left" FontSize="16" Text="{x:Static localization:Strings.PortfolioSaveDirectory}" TextWrapping="Wrap" />
+      <Border Margin="10" BorderBrush="{DynamicResource BaseBackground}" BorderThickness="1">
+        <StackPanel Margin="0,5,0,0">
+          <TextBlock Margin="10,0,10,10" Text="{x:Static localization:Strings.PortfolioInformation}" TextWrapping="Wrap" />
+          <ListBoxItem MinHeight="30" Margin="0" Padding="5,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Style="{DynamicResource ListBoxItemStyleOptions}">
+            <StackPanel Margin="0,5">
+              <DockPanel Margin="0,2">
+                <TextBlock Margin="0,0,10,0" VerticalAlignment="Center" Text="{x:Static localization:Strings.DefaultPortfolioSaveDirectory}" TextWrapping="Wrap" />
+                <TextBox Name="txtRecoveryFile1" Width="300" Height="18.96" Margin="0,0,10,0" CaretBrush="{DynamicResource HighlightAndAccent}" IsHitTestVisible="False" Style="{DynamicResource CS4TextBoxStyle}" TextWrapping="NoWrap" Text="{Binding PortfolioSavePath}" />
+                <Button Name="btnResetRecoveryFileDirectory1" Height="20" Margin="0,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{x:Static localization:Strings.Reset}" Style="{DynamicResource CSButton}" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandResetPortfolioPathToDefault, Mode=OneWay}" />
+                <Button Name="btnRecoveryLocation1" Height="20" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{x:Static localization:Strings.Browse}" Style="{DynamicResource CSButton}" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandSelectPortfolioSaveLocation, Mode=OneWay}" />
+              </DockPanel>
+            </StackPanel>
+          </ListBoxItem>
+          <DockPanel Height="25" Margin="0" LastChildFill="False">
+            <Button Name="btnRestoreBackup1" Margin="0,0,5,5" HorizontalAlignment="Right" Content="{x:Static localization:Strings.UserPortfolioLocation}" DockPanel.Dock="Right" Style="{DynamicResource CSButton}" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandOpenUserPortfolioFolderLocation, Mode=OneWay}" />
+            <Button Margin="0,0,5,5" Content="{x:Static localization:Strings.DefaultPortfolioLocation}" DockPanel.Dock="Right" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandOpenDefaultPortfolioFolderLocation}" />
+          </DockPanel>
+        </StackPanel>
+      </Border>
+      <TextBlock Margin="0" HorizontalAlignment="Left" FontSize="16" Text="{x:Static localization:Strings.Backup}" TextWrapping="Wrap" />
+      <Border Margin="10" BorderBrush="{DynamicResource BaseBackground}" BorderThickness="1">
+        <StackPanel Margin="0,5,0,0" Orientation="Vertical">
+          <TextBlock Margin="10,0,10,10" Text="{x:Static localization:Strings.BackupDescription}" TextWrapping="Wrap" />
+          <StackPanel>
+            <ListBoxItem MinHeight="30" Margin="0" Padding="5,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Style="{DynamicResource ListBoxItemStyleOptions}">
+              <StackPanel Margin="0,5">
+                <DockPanel Margin="0,2">
+                  <TextBlock Margin="0,0,10,0" VerticalAlignment="Center" Text="{x:Static localization:Strings.BackupDirectoryLocation}" TextWrapping="Wrap" />
+                  <TextBox Name="txtBackupDirectory" Width="300" Height="18.96" Margin="0,0,10,0" CaretBrush="{DynamicResource HighlightAndAccent}" IsHitTestVisible="False" IsReadOnly="True" Style="{DynamicResource CS4TextBoxStyle}" TextWrapping="NoWrap" Text="{Binding BackupDirectory}" />
+                  <Button Name="btnResetBackupDirectory" Width="55" Height="20" Margin="0,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{x:Static localization:Strings.Reset}" Style="{DynamicResource CSButton}" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandResetBackupDirectory, Mode=OneWay}" />
+                  <Button Name="btnBrowseBackupDirectory" Width="50" Height="20" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{x:Static localization:Strings.Browse}" Style="{DynamicResource CSButton}" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandBrowseBackupDirectory, Mode=OneWay}" />
+                  <Button Name="btnCreateBackup" Width="90" Height="20" Margin="0" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="{x:Static localization:Strings.CreateBackup}" Style="{DynamicResource CSButton}" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandCreateBackup, Mode=OneWay}" />
+                </DockPanel>
+              </StackPanel>
+            </ListBoxItem>
+            <Grid Height="100" Margin="10,0,10,10">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+              </Grid.ColumnDefinitions>
+              <DockPanel Margin="0,0,10,0">
+                <TextBlock Margin="0,0,0,2" VerticalAlignment="Top" DockPanel.Dock="Top" FontWeight="Bold" Text="{x:Static localization:Strings.Statistics}" TextWrapping="Wrap" />
+                <Border BorderBrush="{DynamicResource BaseBackground}" BorderThickness="1" DockPanel.Dock="Top">
+                  <TextBlock Name="txtStatistics" Height="82.04" Padding="5" TextWrapping="Wrap" Text="{Binding BackupStatistics}" />
+                </Border>
+              </DockPanel>
+              <DockPanel Grid.Column="1" Margin="10,0,0,0">
+                <TextBlock Margin="0,0,0,2" VerticalAlignment="Top" DockPanel.Dock="Top" Text="{x:Static localization:Strings.BackupLog}" TextWrapping="Wrap" />
+                <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
+                  <Border BorderBrush="{DynamicResource BaseBackground}" BorderThickness="1">
+                    <TextBlock Name="txtBackupLog" Width="320" Height="82.04" Padding="5" TextWrapping="Wrap" Text="{Binding BackupLog}" />
+                  </Border>
+                </ScrollViewer>
+              </DockPanel>
+            </Grid>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+      <TextBlock Margin="0" HorizontalAlignment="Left" FontSize="16" Text="{x:Static localization:Strings.Restore}" TextWrapping="Wrap" />
+      <Border Margin="10" BorderBrush="{DynamicResource BaseBackground}" BorderThickness="1">
+        <StackPanel Margin="0,5,0,0">
+          <TextBlock Margin="10,0,10,10" Text="{x:Static localization:Strings.RestoreWarning}" TextWrapping="Wrap" />
+          <ListBoxItem MinHeight="30" Margin="10,0,10,10" Padding="5,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Style="{DynamicResource ListBoxItemStyleOptions}">
+            <StackPanel Margin="0,5">
+              <DockPanel Margin="0,2">
+                <TextBlock Margin="0,0,10,0" VerticalAlignment="Center" Text="{x:Static localization:Strings.RecoveryFileLocation}" TextWrapping="Wrap" />
+                <TextBox Name="txtRecoveryFile" Width="300" Height="18.96" Margin="0,0,10,0" CaretBrush="{DynamicResource HighlightAndAccent}" IsHitTestVisible="False" IsReadOnly="True" Style="{DynamicResource CS4TextBoxStyle}" TextWrapping="NoWrap" Text="{Binding RecoveryFileName}" />
+                <Button Name="btnResetRecoveryFileDirectory" Width="55" Height="20" Margin="0,0,10,0" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{x:Static localization:Strings.Reset}" Style="{DynamicResource CSButton}" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandResetRecoveryFileDirectory, Mode=OneWay}" />
+                <Button Name="btnRecoveryLocation" Width="50" Height="20" Padding="1" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{x:Static localization:Strings.Browse}" Style="{DynamicResource CSButton}" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandBrowseRecoveryLocation, Mode=OneWay}" />
+                <Button Name="btnRestoreBackup" Width="90" Height="20" Margin="0" HorizontalAlignment="Right" Content="{x:Static localization:Strings.Restore}" Style="{DynamicResource CSButton}" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandRestoreBackup, Mode=OneWay}" />
+              </DockPanel>
+            </StackPanel>
+          </ListBoxItem>
+        </StackPanel>
+      </Border>
+    </StackPanel>
+  </Grid>
+</UserControl>

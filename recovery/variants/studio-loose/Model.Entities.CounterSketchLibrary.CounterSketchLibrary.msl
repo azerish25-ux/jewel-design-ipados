@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CounterSketchLibraryDataModelStoreContainer" CdmEntityContainer="CounterSketchLibraryDataEntities1">
+    <EntitySetMapping Name="Attributes">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.Attribute">
+        <MappingFragment StoreEntitySet="Attribute">
+          <ScalarProperty Name="AttributeCSOrder" ColumnName="AttributeCSOrder" />
+          <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+          <ScalarProperty Name="AttributeTypeId" ColumnName="AttributeTypeId" />
+          <ScalarProperty Name="AttributeId" ColumnName="AttributeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttributeLevels">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.AttributeLevel">
+        <MappingFragment StoreEntitySet="AttributeLevel">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AttributeLevelId" ColumnName="AttributeLevelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttributeTypes">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.AttributeType">
+        <MappingFragment StoreEntitySet="AttributeType">
+          <ScalarProperty Name="AttributeLevelId" ColumnName="AttributeLevelId" />
+          <ScalarProperty Name="AttributeCSDisplayType" ColumnName="AttributeCSDisplayType" />
+          <ScalarProperty Name="AttributeCSOrder" ColumnName="AttributeCSOrder" />
+          <ScalarProperty Name="AttributeCSName" ColumnName="AttributeCSName" />
+          <ScalarProperty Name="AttributeType1" ColumnName="AttributeType" />
+          <ScalarProperty Name="AttributeTypeId" ColumnName="AttributeTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Components">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.Component">
+        <MappingFragment StoreEntitySet="Component">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DesignAttributes">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.DesignAttribute">
+        <MappingFragment StoreEntitySet="DesignAttributes">
+          <ScalarProperty Name="AttributeValue" ColumnName="AttributeValue" />
+          <ScalarProperty Name="AttributeId" ColumnName="AttributeId" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="DesignId" ColumnName="DesignId" />
+          <ScalarProperty Name="DesignAttributeId" ColumnName="DesignAttributeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DesignComponents">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.DesignComponent">
+        <MappingFragment StoreEntitySet="DesignComponents">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="DesignId" ColumnName="DesignId" />
+          <ScalarProperty Name="DesignComponentId" ColumnName="DesignComponentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DesignGems">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.DesignGem">
+        <MappingFragment StoreEntitySet="DesignGems">
+          <ScalarProperty Name="GemPlacement" ColumnName="GemPlacement" />
+          <ScalarProperty Name="Flags" ColumnName="Flags" />
+          <ScalarProperty Name="MountingVolume" ColumnName="MountingVolume" />
+          <ScalarProperty Name="Mounting" ColumnName="Mounting" />
+          <ScalarProperty Name="GemWMin" ColumnName="GemWMin" />
+          <ScalarProperty Name="GemWMax" ColumnName="GemWMax" />
+          <ScalarProperty Name="GemW" ColumnName="GemW" />
+          <ScalarProperty Name="FFactor" ColumnName="FFactor" />
+          <ScalarProperty Name="GemZ" ColumnName="GemZ" />
+          <ScalarProperty Name="GemYMin" ColumnName="GemYMin" />
+          <ScalarProperty Name="GemYMax" ColumnName="GemYMax" />
+          <ScalarProperty Name="GemY" ColumnName="GemY" />
+          <ScalarProperty Name="GemXMin" ColumnName="GemXMin" />
+          <ScalarProperty Name="GemXMax" ColumnName="GemXMax" />
+          <ScalarProperty Name="GemX" ColumnName="GemX" />
+          <ScalarProperty Name="Shape" ColumnName="Shape" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="DesignId" ColumnName="DesignId" />
+          <ScalarProperty Name="DesignGemId" ColumnName="DesignGemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DesignGemTables">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.DesignGemTable">
+        <MappingFragment StoreEntitySet="DesignGemTables">
+          <ScalarProperty Name="GemTableShapeSizeId" ColumnName="GemTableShapeSizeId" />
+          <ScalarProperty Name="GemPlacementId" ColumnName="GemPlacementId" />
+          <ScalarProperty Name="DesignId" ColumnName="DesignId" />
+          <ScalarProperty Name="DesignGemTableId" ColumnName="DesignGemTableId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DesignGroups">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.DesignGroup">
+        <MappingFragment StoreEntitySet="DesignGroup">
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DesignGroupId" ColumnName="DesignGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DesignGroupDesigns">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.DesignGroupDesign">
+        <MappingFragment StoreEntitySet="DesignGroupDesigns">
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="DesignId" ColumnName="DesignId" />
+          <ScalarProperty Name="DesignGroupId" ColumnName="DesignGroupId" />
+          <ScalarProperty Name="DesignGroupDesignId" ColumnName="DesignGroupDesignId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Designs">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.Design">
+        <MappingFragment StoreEntitySet="Designs">
+          <ScalarProperty Name="CSGLFound" ColumnName="CSGLFound" />
+          <ScalarProperty Name="FirstReleaseLibraryId" ColumnName="FirstReleaseLibraryId" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="DesignTypeId" ColumnName="DesignTypeId" />
+          <ScalarProperty Name="Designer" ColumnName="Designer" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SeriesNumber" ColumnName="SeriesNumber" />
+          <ScalarProperty Name="StullerNo" ColumnName="StullerNo" />
+          <ScalarProperty Name="DesignVersionId" ColumnName="DesignVersionId" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="DesignId" ColumnName="DesignId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GemTableShapeSizes">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.GemTableShapeSize">
+        <MappingFragment StoreEntitySet="GemTableShapeSize">
+          <ScalarProperty Name="Depth" ColumnName="Depth" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Carat" ColumnName="Carat" />
+          <ScalarProperty Name="GemTableShapeId" ColumnName="GemTableShapeId" />
+          <ScalarProperty Name="GemTableTypeId" ColumnName="GemTableTypeId" />
+          <ScalarProperty Name="GemTableShapeSizeId" ColumnName="GemTableShapeSizeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DesignSearches">
+      <EntityTypeMapping TypeName="CounterSketchLibraryDataModel.DesignSearch">
+        <MappingFragment StoreEntitySet="DesignSearch">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="CenterGemMaxWidth" ColumnName="CenterGemMaxWidth" />
+          <ScalarProperty Name="CenterGemMinWidth" ColumnName="CenterGemMinWidth" />
+          <ScalarProperty Name="CenterGemMaxLength" ColumnName="CenterGemMaxLength" />
+          <ScalarProperty Name="CenterGemMinLength" ColumnName="CenterGemMinLength" />
+          <ScalarProperty Name="SecondaryStyleElementOrder" ColumnName="SecondaryStyleElementOrder" />
+          <ScalarProperty Name="DefaultStyleOrder" ColumnName="DefaultStyleOrder" />
+          <ScalarProperty Name="DefaultStyleElementOrder" ColumnName="DefaultStyleElementOrder" />
+          <ScalarProperty Name="DefaultSettingTypeOrder" ColumnName="DefaultSettingTypeOrder" />
+          <ScalarProperty Name="StullerBaseNo" ColumnName="StullerBaseNo" />
+          <ScalarProperty Name="IsNewDesign" ColumnName="IsNewDesign" />
+          <ScalarProperty Name="IsVariantDesign" ColumnName="IsVariantDesign" />
+          <ScalarProperty Name="IsFreeHandPart" ColumnName="IsFreeHandPart" />
+          <ScalarProperty Name="IsStaticFreeHandPart" ColumnName="IsStaticFreeHandPart" />
+          <ScalarProperty Name="IsFreeHandPartWithGem" ColumnName="IsFreeHandPartWithGem" />
+          <ScalarProperty Name="IsBaseDesign" ColumnName="IsBaseDesign" />
+          <ScalarProperty Name="Designer" ColumnName="Designer" />
+          <ScalarProperty Name="Is3CDesign" ColumnName="Is3CDesign" />
+          <ScalarProperty Name="IsIncludedWithBaseDesigns" ColumnName="IsIncludedWithBaseDesigns" />
+          <ScalarProperty Name="PrimaryDesignComponentCenterGemSetting" ColumnName="PrimaryDesignComponentCenterGemSetting" />
+          <ScalarProperty Name="SecondaryStyleElement" ColumnName="SecondaryStyleElement" />
+          <ScalarProperty Name="DefaultStyleElement" ColumnName="DefaultStyleElement" />
+          <ScalarProperty Name="DefaultStyle" ColumnName="DefaultStyle" />
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="PrimaryDesignComponentId" ColumnName="PrimaryDesignComponentId" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="SeriesNumber" ColumnName="SeriesNumber" />
+          <ScalarProperty Name="SPINumber" ColumnName="SPINumber" />
+          <ScalarProperty Name="DesignId" ColumnName="DesignId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

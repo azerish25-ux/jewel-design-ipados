@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.View.WindowDesignNotes" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Title="{x:Static l:Strings.AdditionalDesignNotes}" Width="800" Height="600" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="10pt" ResizeMode="NoResize" Style="{DynamicResource WindowStyleNonModalCS4}" WindowStartupLocation="CenterOwner" WindowStyle="None" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" DataContext="{Binding Mode=Default, Path=OrderSummaryVM, Source={StaticResource Locator}}">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="40" />
+    </Grid.RowDefinitions>
+    <Button Grid.Row="1" Width="80" Height="20" Margin="0,0,100,0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static l:Strings.Clear}" Template="{DynamicResource CS4ButtonRoundedHighlight}" Command="{Binding CommandClearDesignNotes}" />
+    <Button Grid.Row="1" Width="80" Height="20" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static l:Strings.OK}" Template="{DynamicResource CS4ButtonRoundedHighlight}" Command="{Binding CommandCloseDesignNotesWindow, Mode=OneWay}" />
+    <DockPanel>
+      <TextBlock Margin="10" DockPanel.Dock="Top" FontSize="16" Foreground="#FFFF0000" Text="{x:Static l:Strings.DesignNotesExplanation}" TextWrapping="Wrap" />
+      <TextBlock Margin="10" DockPanel.Dock="Top" Text="{x:Static l:Strings.Notes}" TextWrapping="Wrap" />
+      <TextBlock Margin="10" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Foreground="#FFFF0000" TextWrapping="Wrap" Text="{Binding NotesToCustomer}" />
+      <TextBox Margin="10,0,10,10" AcceptsReturn="True" DockPanel.Dock="Top" TextWrapping="Wrap" Text="{Binding AdditionalDesignNotes}" />
+    </DockPanel>
+  </Grid>
+</Window>

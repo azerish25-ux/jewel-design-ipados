@@ -1,0 +1,13 @@
+{
+  "jsonFiles": 16,
+  "evidenceReferencesChecked": 62017,
+  "baselineSourcesHashed": 2783,
+  "baselineHashMismatches": 0,
+  "requirementIdsChecked": 832,
+  "groupedRequirements": 178,
+  "serializerGuidRows": 654,
+  "reportsChecked": 7,
+  "originalInputsUnchanged": true,
+  "errors": [],
+  "scope": "Artifact/source integrity and bounded sample directory checks only; no PC/iPad application round trips."
+}

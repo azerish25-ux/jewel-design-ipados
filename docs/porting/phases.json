@@ -1,0 +1,1379 @@
+{
+  "schemaVersion": 1,
+  "phases": [
+    {
+      "id": "P00",
+      "title": "Recovery integrity and agent handoff",
+      "depends": [],
+      "paths": [
+        "recovery/",
+        "tools/repository/",
+        "docs/porting/"
+      ],
+      "goal": "Preserve and index the entire recovery, sanitize remote credentials and publish a reproducible agent handoff.",
+      "status": "in_progress",
+      "blockers": [],
+      "plan": "docs/porting/phases/P00-recovery-integrity-and-agent-handoff.md",
+      "acceptance": [
+        "Every original recovery file is mapped; duplicates have one resource object",
+        "No raw service token, webhook or connection password is exported",
+        "Repository checks pass on a clean checkout"
+      ],
+      "tasks": [
+        {
+          "id": "P00-T01",
+          "title": "Verify full source and resource coverage",
+          "status": "complete",
+          "depends": [],
+          "outputs": [
+            "docs/evidence/repository-check.json",
+            "docs/evidence/repository-review.json"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P00-T01.json"
+          ]
+        },
+        {
+          "id": "P00-T02",
+          "title": "Review credential redactions and unchanged source hashes",
+          "status": "complete",
+          "depends": [
+            "P00-T01"
+          ],
+          "outputs": [
+            "docs/evidence/repository-check.json",
+            "docs/evidence/repository-review.json"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P00-T02.json"
+          ]
+        },
+        {
+          "id": "P00-T03",
+          "title": "Provide canonical-versus-variant and resource maps",
+          "status": "complete",
+          "depends": [
+            "P00-T02"
+          ],
+          "outputs": [
+            "docs/evidence/repository-check.json",
+            "docs/evidence/repository-review.json"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P00-T03.json"
+          ]
+        },
+        {
+          "id": "P00-T04",
+          "title": "Create phase/task/feature dependency ledgers",
+          "status": "complete",
+          "depends": [
+            "P00-T03"
+          ],
+          "outputs": [
+            "docs/evidence/repository-check.json",
+            "docs/evidence/repository-review.json"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P00-T04.json"
+          ]
+        },
+        {
+          "id": "P00-T05",
+          "title": "Run integrity, security and navigation checks",
+          "status": "complete",
+          "depends": [
+            "P00-T04"
+          ],
+          "outputs": [
+            "docs/evidence/repository-check.json",
+            "docs/evidence/repository-review.json"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P00-T05.json"
+          ]
+        },
+        {
+          "id": "P00-T06",
+          "title": "Publish to main without force and verify remote state",
+          "status": "not_started",
+          "depends": [
+            "P00-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "title": "Apple runtime and differential test laboratory",
+      "depends": [
+        "P00"
+      ],
+      "paths": [
+        "tests/iOS/",
+        "tests/Smoke/",
+        "scripts/run-simulator.sh",
+        ".github/workflows/ios-reuse.yml"
+      ],
+      "goal": "Run recovered CSharp checks on standalone iPad/iPhone simulators and retain honest device AOT evidence.",
+      "status": "in_progress",
+      "blockers": [],
+      "plan": "docs/porting/phases/P01-apple-runtime-and-differential-test-laboratory.md",
+      "acceptance": [
+        "A nonzero build exit or missing result file fails CI",
+        "The required assertion count and input hash are checked",
+        "AOT compilation is not physical-device execution",
+        "100000-byte compression failure remains visible until original-versus-recovery comparison resolves it"
+      ],
+      "tasks": [
+        {
+          "id": "P01-T01",
+          "title": "Reproduce native startup and distinguish signature failure from managed failure",
+          "status": "complete",
+          "depends": [],
+          "outputs": [
+            "docs/evidence/apple/apple-results.json"
+          ],
+          "evidence": [
+            "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40969820121"
+          ]
+        },
+        {
+          "id": "P01-T02",
+          "title": "Validate ad-hoc signatures for the app and nested native libraries",
+          "status": "complete",
+          "depends": [
+            "P01-T01"
+          ],
+          "outputs": [
+            "docs/evidence/apple/apple-results.json"
+          ],
+          "evidence": [
+            "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40969820121"
+          ]
+        },
+        {
+          "id": "P01-T03",
+          "title": "Capture native startup, managed Main and FinishedLaunching markers",
+          "status": "complete",
+          "depends": [
+            "P01-T02"
+          ],
+          "outputs": [
+            "docs/evidence/apple/apple-results.json"
+          ],
+          "evidence": [
+            "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40969820121"
+          ]
+        },
+        {
+          "id": "P01-T04",
+          "title": "Run original-binary math goldens and vector/material checks on iOS",
+          "status": "complete",
+          "depends": [
+            "P01-T03"
+          ],
+          "outputs": [
+            "docs/evidence/apple/apple-results.json"
+          ],
+          "evidence": [
+            "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40969820121"
+          ]
+        },
+        {
+          "id": "P01-T05",
+          "title": "Turn compression mismatches into explicit differential compatibility failures",
+          "status": "blocked",
+          "depends": [
+            "P01-T04"
+          ],
+          "outputs": [],
+          "evidence": [],
+          "blockers": [
+            "Original-binary compression comparison needs the contained Windows reference (B-001)"
+          ]
+        },
+        {
+          "id": "P01-T06",
+          "title": "Add iPad/iPhone device profiles and collect unsigned Release AOT warnings",
+          "status": "not_started",
+          "depends": [
+            "P01-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "Contained Windows oracle and fixture corpus",
+      "depends": [
+        "P00"
+      ],
+      "paths": [
+        "reference/fixtures/",
+        "tests/Fixtures/",
+        "docs/evidence/reference/"
+      ],
+      "goal": "Establish authoritative Windows behavior in a D:-contained environment and obtain representative PC projects.",
+      "status": "blocked",
+      "blockers": [
+        "No D:-contained Windows reference VM/image or complete licensed runtime/account/catalog supplied"
+      ],
+      "plan": "docs/porting/phases/P02-contained-windows-oracle-and-fixture-corpus.md",
+      "acceptance": [
+        "No VM/image/license/account is assumed available",
+        "The public item-4 library fixture is not a PC portfolio oracle",
+        "Do not use embedded credentials or execute vendor-account requests",
+        "Each oracle records PC build, input hash, edit steps and expected outputs"
+      ],
+      "tasks": [
+        {
+          "id": "P02-T01",
+          "title": "Inventory missing runtime, licensing, catalog state and user-created projects",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P02-T02",
+          "title": "Prepare a contained Windows reference VM with its disk, profile and tools on D:",
+          "status": "not_started",
+          "depends": [
+            "P02-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P02-T03",
+          "title": "Hash the original installers and distinguish altered loose-executable behavior",
+          "status": "not_started",
+          "depends": [
+            "P02-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P02-T04",
+          "title": "Acquire the twenty planned fixture families with provenance and version labels",
+          "status": "not_started",
+          "depends": [
+            "P02-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P02-T05",
+          "title": "Capture Windows open-edit-regenerate-save-reopen results and UI images",
+          "status": "not_started",
+          "depends": [
+            "P02-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P02-T06",
+          "title": "Publish oracle fields, geometry outputs, tolerances and failure cases",
+          "status": "not_started",
+          "depends": [
+            "P02-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "Portable domain and graph contracts",
+      "depends": [
+        "P00"
+      ],
+      "paths": [
+        "src/Port/Domain/",
+        "src/Port/Graph/",
+        "src/Port/Contracts/",
+        "tests/Port/Domain.Tests/"
+      ],
+      "goal": "Extract existing algorithms and graph state into portable CSharp projects with explicit platform boundaries.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P03-portable-domain-and-graph-contracts.md",
+      "acceptance": [
+        "Portable projects reference no Rhino or Windows UI DLL",
+        "Default, non-default, boundary and invalid inputs have explicit cases",
+        "Serialized type identity survives namespace/assembly changes through tested mappings",
+        "Windows native declarations compiling successfully do not count as functioning reuse"
+      ],
+      "tasks": [
+        {
+          "id": "P03-T01",
+          "title": "Create Domain, Graph and Domain.Tests projects",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P03-T02",
+          "title": "Classify adopted methods as unchanged, adapted, generated data or replacement",
+          "status": "not_started",
+          "depends": [
+            "P03-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P03-T03",
+          "title": "Define GUID/parameter identity, units, graph links and immutable snapshots",
+          "status": "not_started",
+          "depends": [
+            "P03-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P03-T04",
+          "title": "Port validation, numerical/material helpers and undoable parameter changes",
+          "status": "not_started",
+          "depends": [
+            "P03-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P03-T05",
+          "title": "Replace Windows/COM/native/service assumptions with typed real boundaries",
+          "status": "not_started",
+          "depends": [
+            "P03-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P03-T06",
+          "title": "Run differential edge-case tests and record retained/changed/new code",
+          "status": "not_started",
+          "depends": [
+            "P03-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "Loss-preserving PC document codecs",
+      "depends": [
+        "P02",
+        "P03"
+      ],
+      "paths": [
+        "src/Port/Documents/",
+        "tests/Port/Documents.Tests/",
+        "reference/file-proof/"
+      ],
+      "goal": "Read and write portfolios, CSG graphs and legacy records while retaining unknown data and editable identities.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P04-loss-preserving-pc-document-codecs.md",
+      "acceptance": [
+        "Item-4 edit 4.38 to 4.48 preserves 240 other records and 73 other numbers",
+        "No-op preservation, unknown nodes, corrupt CRC, truncation and duplicate labels are tested",
+        "Cached volume/preview retention is not geometry regeneration",
+        "Unsupported future records never cause silent data removal or overwrite"
+      ],
+      "tasks": [
+        {
+          "id": "P04-T01",
+          "title": "Create Documents and Documents.Tests with an independent fixture reader",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P04-T02",
+          "title": "Implement bounded envelopes, chunk tables, CRC and record version handling",
+          "status": "not_started",
+          "depends": [
+            "P04-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P04-T03",
+          "title": "Implement portfolio XML, paired GUID filenames, sidecars, previews and history",
+          "status": "not_started",
+          "depends": [
+            "P04-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P04-T04",
+          "title": "Map all 654 serializer identities and inherited reader/writer/version behavior",
+          "status": "not_started",
+          "depends": [
+            "P04-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P04-T05",
+          "title": "Implement no-op save, one-parameter edits and explicit migration policy",
+          "status": "not_started",
+          "depends": [
+            "P04-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P04-T06",
+          "title": "Verify edited PC-to-iOS-to-PC reopening and fail-closed future formats",
+          "status": "not_started",
+          "depends": [
+            "P04-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "Offline CAD backend and native bridge",
+      "depends": [
+        "P02",
+        "P03"
+      ],
+      "paths": [
+        "native/GeometryBridge/",
+        "src/Port/Geometry/",
+        "tests/Port/Geometry.Tests/",
+        "docs/decisions/"
+      ],
+      "goal": "Prove a real on-device geometry backend against the recovered operation requirements.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P05-offline-cad-backend-and-native-bridge.md",
+      "acceptance": [
+        "Missing operations remain blocked; dummy meshes and success-returning stubs cannot pass",
+        "No network geometry compute is permitted",
+        "Independent CAD SDK source is not claimed as recovered code",
+        "Repeated failure, cancellation and handle disposal do not leak memory"
+      ],
+      "tasks": [
+        {
+          "id": "P05-T01",
+          "title": "Map all 315 kernel/wrapper call families to required semantics",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P05-T02",
+          "title": "Evaluate iOS-capable kernels using actual sweeps, trims, booleans, meshing and archive fixtures",
+          "status": "not_started",
+          "depends": [
+            "P05-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P05-T03",
+          "title": "Record the backend decision with distribution/license prerequisites and gaps",
+          "status": "not_started",
+          "depends": [
+            "P05-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P05-T04",
+          "title": "Implement a versioned C ABI with opaque handles, ownership and typed errors",
+          "status": "not_started",
+          "depends": [
+            "P05-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P05-T05",
+          "title": "Implement CSharp adapters for representative curve/surface/solid/mesh operations",
+          "status": "not_started",
+          "depends": [
+            "P05-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P05-T06",
+          "title": "Compare PC/iOS topology, units, orientation, tolerances, cancellation and memory",
+          "status": "not_started",
+          "depends": [
+            "P05-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "One complete jewelry vertical slice",
+      "depends": [
+        "P04",
+        "P05"
+      ],
+      "paths": [
+        "src/Port/Features/VerticalSlice/",
+        "src/Port/Platform.iOS/",
+        "tests/Port/VerticalSlice.Tests/"
+      ],
+      "goal": "Open a real design, edit it, regenerate locally, save it and reopen it editably on PC.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P06-one-complete-jewelry-vertical-slice.md",
+      "acceptance": [
+        "A byte patch, screenshot or cached mesh is not this milestone",
+        "Graph, geometry, measurements, previews and manufacturing exports are checked separately",
+        "The edited design survives offline force-quit/relaunch",
+        "Use this measured slice to revise estimates; do not reuse withdrawn LOC guesses"
+      ],
+      "tasks": [
+        {
+          "id": "P06-T01",
+          "title": "Select a representative builder and a Windows oracle fixture",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P06-T02",
+          "title": "Map original parameters, call graph, validation and legacy serializer dependencies",
+          "status": "not_started",
+          "depends": [
+            "P06-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P06-T03",
+          "title": "Adapt the recovered algorithm to real graph/document/geometry contracts",
+          "status": "not_started",
+          "depends": [
+            "P06-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P06-T04",
+          "title": "Build a minimal touch editor with a named parameter and regenerated viewport",
+          "status": "not_started",
+          "depends": [
+            "P06-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P06-T05",
+          "title": "Implement actual save/reopen, undo/redo and atomic failure rollback",
+          "status": "not_started",
+          "depends": [
+            "P06-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P06-T06",
+          "title": "Compare Windows and iOS outputs and record measured adaptation effort",
+          "status": "not_started",
+          "depends": [
+            "P06-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "All builders and legacy graph behavior",
+      "depends": [
+        "P06"
+      ],
+      "paths": [
+        "src/Port/Features/Builders/",
+        "src/Port/Graph/",
+        "tests/Port/Builders.Tests/"
+      ],
+      "goal": "Port every declared builder identity and legacy behavior in bounded auditable batches.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P07-all-builders-and-legacy-graph-behavior.md",
+      "acceptance": [
+        "Every builder is verified or explicitly blocked",
+        "Do not silently replace old algorithms with their newest variants",
+        "A class declaration or constructor registration is insufficient",
+        "Reserved/expired nodes preserve expected error behavior"
+      ],
+      "tasks": [
+        {
+          "id": "P07-T01",
+          "title": "Partition all 619 builder rows by namespace, dependency family and legacy status",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P07-T02",
+          "title": "Map a bounded batch of input/output channels and original algorithms",
+          "status": "not_started",
+          "depends": [
+            "P07-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P07-T03",
+          "title": "Port current and legacy implementations with stable GUID/version dispatch",
+          "status": "not_started",
+          "depends": [
+            "P07-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P07-T04",
+          "title": "Test limits, non-defaults, invalid geometry and parameter combinations",
+          "status": "not_started",
+          "depends": [
+            "P07-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P07-T05",
+          "title": "Test mixed legacy/current graphs, ordering, invalidation and cancellation",
+          "status": "not_started",
+          "depends": [
+            "P07-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P07-T06",
+          "title": "Attach fixtures, Windows comparisons, iOS results and review to each builder row",
+          "status": "not_started",
+          "depends": [
+            "P07-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "Viewport materials rendering and try-on",
+      "depends": [
+        "P05",
+        "P06"
+      ],
+      "paths": [
+        "src/Port/Rendering/",
+        "native/Rendering/",
+        "tests/Port/Rendering.Tests/"
+      ],
+      "goal": "Implement offline interactive and final rendering with objective visual comparisons.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P08-viewport-materials-rendering-and-try-on.md",
+      "acceptance": [
+        "Fixed camera/light/material scenes have reference images and thresholds",
+        "A generic shiny material is not gemstone parity",
+        "Missing original resources remain explicit gaps",
+        "No rendering server or mandatory online asset fetch is used"
+      ],
+      "tasks": [
+        {
+          "id": "P08-T01",
+          "title": "Map camera, selection, display modes, materials, lights and try-on behavior",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P08-T02",
+          "title": "Implement geometry upload, picking, navigation and frame synchronization",
+          "status": "not_started",
+          "depends": [
+            "P08-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P08-T03",
+          "title": "Implement gemstone/metal mapping, lighting, environments and backgrounds",
+          "status": "not_started",
+          "depends": [
+            "P08-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P08-T04",
+          "title": "Map deduplicated resources to semantic assets and supported mobile formats",
+          "status": "not_started",
+          "depends": [
+            "P08-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P08-T05",
+          "title": "Implement local final rendering, image export and try-on calibration",
+          "status": "not_started",
+          "depends": [
+            "P08-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P08-T06",
+          "title": "Benchmark fixed scenes, selection, memory and thermal behavior on real devices",
+          "status": "not_started",
+          "depends": [
+            "P08-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "Complete native touch interface",
+      "depends": [
+        "P06",
+        "P08"
+      ],
+      "paths": [
+        "src/Port/Platform.iOS/",
+        "tests/UITests/",
+        "docs/evidence/ui/"
+      ],
+      "goal": "Recreate every recovered UI workflow and state transition for iPad and iPhone.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P09-complete-native-touch-interface.md",
+      "acceptance": [
+        "Every command/event maps to a test or an explicit original-source gap",
+        "No static placeholder panel or empty action satisfies a workflow",
+        "Core flows work offline with state restoration and actionable errors",
+        "Functionality survives compact layouts; literal desktop pixels/mouse behavior are not presumed"
+      ],
+      "tasks": [
+        {
+          "id": "P09-T01",
+          "title": "Map 68 UI groups, 317 public commands, 113 XAML files and 771 hookups",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P09-T02",
+          "title": "Implement native navigation, selection, property editing and catalog surfaces in CSharp/UIKit",
+          "status": "not_started",
+          "depends": [
+            "P09-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P09-T03",
+          "title": "Implement customize/freehand, dialogs, validation, orders and saved designs",
+          "status": "not_started",
+          "depends": [
+            "P09-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P09-T04",
+          "title": "Resolve dormant commands, empty handlers and ambiguous bindings with reference evidence",
+          "status": "not_started",
+          "depends": [
+            "P09-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P09-T05",
+          "title": "Implement undo/redo, gestures, appropriate Pencil/keyboard support, accessibility and localization",
+          "status": "not_started",
+          "depends": [
+            "P09-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P09-T06",
+          "title": "Run interaction and screenshot cases across device sizes and orientations",
+          "status": "not_started",
+          "depends": [
+            "P09-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "Catalog pricing projects quotes and reports",
+      "depends": [
+        "P03",
+        "P09"
+      ],
+      "paths": [
+        "src/Port/Features/Catalog/",
+        "src/Port/Features/Commerce/",
+        "tests/Port/Catalog.Tests/"
+      ],
+      "goal": "Implement local data and commerce workflows while accounting explicitly for server-only capabilities.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P10-catalog-pricing-projects-quotes-and-reports.md",
+      "acceptance": [
+        "No complete account-specific catalog is assumed recovered",
+        "Offline substitutions are not silently labeled identical live services",
+        "No embedded credential, fake activation or entitlement bypass is used",
+        "Quote outputs are checked against versioned expected financial results"
+      ],
+      "tasks": [
+        {
+          "id": "P10-T01",
+          "title": "Map schemas, profiles, catalog/component relationships and asset references",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P10-T02",
+          "title": "Implement local ingestion, indexing, filters, categories and component availability",
+          "status": "not_started",
+          "depends": [
+            "P10-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P10-T03",
+          "title": "Implement project/customer administration, portfolios, quotes and reports",
+          "status": "not_started",
+          "depends": [
+            "P10-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P10-T04",
+          "title": "Implement reproducible price snapshots, options, units, rounding and currency",
+          "status": "not_started",
+          "depends": [
+            "P10-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P10-T05",
+          "title": "Record live supplier/account/service actions as explicit scope decisions",
+          "status": "not_started",
+          "depends": [
+            "P10-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P10-T06",
+          "title": "Compare offline, stale/missing data, migration and report output to PC fixtures",
+          "status": "not_started",
+          "depends": [
+            "P10-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "Stored scripts and AOT-safe execution",
+      "depends": [
+        "P04",
+        "P05"
+      ],
+      "paths": [
+        "src/Port/Scripting/",
+        "tests/Port/Scripting.Tests/",
+        "docs/decisions/"
+      ],
+      "goal": "Preserve supported stored-script behavior with an offline iOS-compatible execution strategy.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P11-stored-scripts-and-aot-safe-execution.md",
+      "acceptance": [
+        "Do not assume CodeDom/csc.exe or arbitrary Windows dependencies run on iOS",
+        "Never execute recovered scripts on the Windows host during setup",
+        "Unsupported scripts retain their original data and fail explicitly",
+        "Script failures cannot silently delete nodes or corrupt saved designs"
+      ],
+      "tasks": [
+        {
+          "id": "P11-T01",
+          "title": "Inventory CSScript source/configuration, arguments, ref/out outputs and geometry calls",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P11-T02",
+          "title": "Define supported script APIs and precise unsupported Windows/native operations",
+          "status": "not_started",
+          "depends": [
+            "P11-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P11-T03",
+          "title": "Evaluate precompiled factories or a bounded interpreter against actual scripts",
+          "status": "not_started",
+          "depends": [
+            "P11-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P11-T04",
+          "title": "Implement typed binding, explicit registries and AOT/trim metadata preservation",
+          "status": "not_started",
+          "depends": [
+            "P11-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P11-T05",
+          "title": "Implement execution budgets, cancellation, errors and transactional rollback",
+          "status": "not_started",
+          "depends": [
+            "P11-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P11-T06",
+          "title": "Round-trip script source/configuration and compare supported outputs",
+          "status": "not_started",
+          "depends": [
+            "P11-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "Manufacturing export and hardware contracts",
+      "depends": [
+        "P05",
+        "P07"
+      ],
+      "paths": [
+        "src/Port/Export/",
+        "tests/Port/Export.Tests/",
+        "docs/evidence/export/"
+      ],
+      "goal": "Produce correct document/manufacturing outputs and explicit mobile hardware integration contracts.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P12-manufacturing-export-and-hardware-contracts.md",
+      "acceptance": [
+        "STL/3DM export does not substitute for editable CounterSketch projects",
+        "Selected-only and full-document exports have separate cases",
+        "Disconnected hardware and unsupported formats fail precisely",
+        "Unavailable Windows plugins are never claimed working"
+      ],
+      "tasks": [
+        {
+          "id": "P12-T01",
+          "title": "Map import/export, mesh, support-generation and printer entry points",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P12-T02",
+          "title": "Implement object inclusion, units, transforms, normals and orientation policies",
+          "status": "not_started",
+          "depends": [
+            "P12-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P12-T03",
+          "title": "Implement required real CAD/mesh/image formats and metadata mapping",
+          "status": "not_started",
+          "depends": [
+            "P12-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P12-T04",
+          "title": "Implement required support-generation and mesh-repair behavior",
+          "status": "not_started",
+          "depends": [
+            "P12-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P12-T05",
+          "title": "Record tested mobile equivalents or blockers for Windows/COM/native plugin paths",
+          "status": "not_started",
+          "depends": [
+            "P12-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P12-T06",
+          "title": "Independently reopen exports and verify dimensions, topology and watertightness",
+          "status": "not_started",
+          "depends": [
+            "P12-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "Lifecycle persistence performance and packaging",
+      "depends": [
+        "P09",
+        "P10",
+        "P11"
+      ],
+      "paths": [
+        "src/Port/Platform.iOS/",
+        "tests/Port/Lifecycle.Tests/",
+        "benchmarks/"
+      ],
+      "goal": "Make the complete offline app reliable under mobile lifecycle and resource constraints.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P13-lifecycle-persistence-performance-and-packaging.md",
+      "acceptance": [
+        "Force-quit during save preserves the last valid document",
+        "Physical performance is measured, not inferred from compile success",
+        "Offline startup requires no catalog/cache fetch",
+        "Local Windows caches/tools remain confined to D:"
+      ],
+      "tasks": [
+        {
+          "id": "P13-T01",
+          "title": "Implement atomic save, autosave, history, crash recovery and storage limits",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P13-T02",
+          "title": "Integrate Files import/export and app-local libraries without mandatory cloud services",
+          "status": "not_started",
+          "depends": [
+            "P13-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P13-T03",
+          "title": "Implement suspend/resume, rotation, cancellation and state restoration",
+          "status": "not_started",
+          "depends": [
+            "P13-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P13-T04",
+          "title": "Benchmark large graphs, repeated edits, undo, meshes, render memory and thermal load",
+          "status": "not_started",
+          "depends": [
+            "P13-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P13-T05",
+          "title": "Resolve AOT/trim warnings using real resource/reflection/serialization cases",
+          "status": "not_started",
+          "depends": [
+            "P13-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P13-T06",
+          "title": "Create reproducible signed-device and simulator build/distribution instructions",
+          "status": "not_started",
+          "depends": [
+            "P13-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "Full interoperability and feature acceptance",
+      "depends": [
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12",
+        "P13"
+      ],
+      "paths": [
+        "tests/Interop/",
+        "docs/porting/backlog/",
+        "docs/evidence/parity/"
+      ],
+      "goal": "Close every required feature/type row with reproducible PC/iOS/PC evidence.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P14-full-interoperability-and-feature-acceptance.md",
+      "acceptance": [
+        "654 serializer rows and 619 builder rows overlap; they are not independent feature counts",
+        "No row is verified solely by a class declaration or build",
+        "Offline adaptations and unavailable services remain visibly distinct from parity",
+        "A reviewer can reproduce each accepted row from its fixture and command"
+      ],
+      "tasks": [
+        {
+          "id": "P14-T01",
+          "title": "Run the twenty-family corpus across supported PC versions and record branches",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P14-T02",
+          "title": "Exercise no-op and edited interchanges with histories, scripts and sidecars",
+          "status": "not_started",
+          "depends": [
+            "P14-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P14-T03",
+          "title": "Compare graph identity, parameters, geometry, units, materials, previews and exports separately",
+          "status": "not_started",
+          "depends": [
+            "P14-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P14-T04",
+          "title": "Exercise corrupt data, unknown nodes, unsupported versions and mixed legacy graphs",
+          "status": "not_started",
+          "depends": [
+            "P14-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P14-T05",
+          "title": "Audit all UI/CAD/PC/serializer/builder rows for stale or missing evidence",
+          "status": "not_started",
+          "depends": [
+            "P14-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P14-T06",
+          "title": "Publish the supported-version matrix and unresolved blockers",
+          "status": "not_started",
+          "depends": [
+            "P14-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P15",
+      "title": "Physical-device release and parity sign-off",
+      "depends": [
+        "P14"
+      ],
+      "paths": [
+        "docs/release/",
+        "tests/DeviceAcceptance/",
+        ".github/workflows/"
+      ],
+      "goal": "Release only when the recorded functional, visual, compatibility and offline scope is supported by evidence.",
+      "status": "not_started",
+      "blockers": [],
+      "plan": "docs/porting/phases/P15-physical-device-release-and-parity-sign-off.md",
+      "acceptance": [
+        "Signing/distribution accounts are real external prerequisites",
+        "No full parity claim while a required row is blocked or static-only",
+        "Supported scope excludes untested future PC versions and unavailable live services",
+        "Release artifacts are tested independently of development builds"
+      ],
+      "tasks": [
+        {
+          "id": "P15-T01",
+          "title": "Freeze PC versions, hardware matrix, fixture hashes and the feature contract",
+          "status": "not_started",
+          "depends": [],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P15-T02",
+          "title": "Run all supported workflows on physical iPad and iPhone without network access",
+          "status": "not_started",
+          "depends": [
+            "P15-T01"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P15-T03",
+          "title": "Verify accessibility, localization, upgrades, startup, storage and recovery",
+          "status": "not_started",
+          "depends": [
+            "P15-T02"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P15-T04",
+          "title": "Resolve or withhold claims for missing catalog/script/render/hardware capabilities",
+          "status": "not_started",
+          "depends": [
+            "P15-T03"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P15-T05",
+          "title": "Perform fresh code/security/dependency review and signed distribution validation",
+          "status": "not_started",
+          "depends": [
+            "P15-T04"
+          ],
+          "outputs": [],
+          "evidence": []
+        },
+        {
+          "id": "P15-T06",
+          "title": "Publish exact release evidence, known limits and reproducible build instructions",
+          "status": "not_started",
+          "depends": [
+            "P15-T05"
+          ],
+          "outputs": [],
+          "evidence": []
+        }
+      ]
+    }
+  ]
+}

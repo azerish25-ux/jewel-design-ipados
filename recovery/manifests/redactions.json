@@ -1,0 +1,272 @@
+[
+  {
+    "origin": "analysis/decompiled/desktop-xaml/DesignLibrary/LibraryDBBuilder.cs",
+    "name": "connection-password",
+    "line": 11
+  },
+  {
+    "origin": "analysis/decompiled/desktop-xaml/DesignLibrary/LibraryDBBuilder.cs",
+    "name": "credential-pattern",
+    "line": 39
+  },
+  {
+    "origin": "analysis/decompiled/desktop-xaml/GV.CounterSketch.Shared/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 9
+  },
+  {
+    "origin": "analysis/decompiled/desktop-xaml/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 5
+  },
+  {
+    "origin": "analysis/decompiled/desktop-xaml/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 8
+  },
+  {
+    "origin": "analysis/decompiled/desktop-xaml/GV.CounterSketch.Studio.Utilities.Helpers/BitsHelper.cs",
+    "name": "embedded-credential",
+    "line": 20
+  },
+  {
+    "origin": "analysis/decompiled/desktop-xaml/GV.CounterSketch.Studio.Utilities.Helpers/BitsHelper.cs",
+    "name": "embedded-credential",
+    "line": 208
+  },
+  {
+    "origin": "analysis/decompiled/desktop-xaml/GV.CounterSketch.Studio.Utilities.Helpers/BitsHelper.cs",
+    "name": "embedded-credential",
+    "line": 233
+  },
+  {
+    "origin": "analysis/decompiled/desktop-xaml/GV.CounterSketch.Studio.Web_Services/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 10
+  },
+  {
+    "origin": "analysis/decompiled/installer-studio/DesignLibrary/LibraryDBBuilder.cs",
+    "name": "connection-password",
+    "line": 11
+  },
+  {
+    "origin": "analysis/decompiled/installer-studio/DesignLibrary/LibraryDBBuilder.cs",
+    "name": "credential-pattern",
+    "line": 39
+  },
+  {
+    "origin": "analysis/decompiled/installer-studio/GV.CounterSketch.Shared/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 9
+  },
+  {
+    "origin": "analysis/decompiled/installer-studio/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 5
+  },
+  {
+    "origin": "analysis/decompiled/installer-studio/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 8
+  },
+  {
+    "origin": "analysis/decompiled/installer-studio/GV.CounterSketch.Studio.Utilities.Helpers/BitsHelper.cs",
+    "name": "embedded-credential",
+    "line": 20
+  },
+  {
+    "origin": "analysis/decompiled/installer-studio/GV.CounterSketch.Studio.Utilities.Helpers/BitsHelper.cs",
+    "name": "embedded-credential",
+    "line": 208
+  },
+  {
+    "origin": "analysis/decompiled/installer-studio/GV.CounterSketch.Studio.Utilities.Helpers/BitsHelper.cs",
+    "name": "embedded-credential",
+    "line": 233
+  },
+  {
+    "origin": "analysis/decompiled/installer-studio/GV.CounterSketch.Studio.Web_Services/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 10
+  },
+  {
+    "origin": "analysis/decompiled/server/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "embedded-credential",
+    "line": 12
+  },
+  {
+    "origin": "analysis/decompiled/server/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "credential-pattern",
+    "line": 14
+  },
+  {
+    "origin": "analysis/decompiled/server/GV.CounterSketch.Shared/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 9
+  },
+  {
+    "origin": "analysis/decompiled/server/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 5
+  },
+  {
+    "origin": "analysis/decompiled/server/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 8
+  },
+  {
+    "origin": "analysis/decompiled/server-complete-refs/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "embedded-credential",
+    "line": 12
+  },
+  {
+    "origin": "analysis/decompiled/server-complete-refs/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "credential-pattern",
+    "line": 14
+  },
+  {
+    "origin": "analysis/decompiled/server-complete-refs/GV.CounterSketch.Shared/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 9
+  },
+  {
+    "origin": "analysis/decompiled/server-complete-refs/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 5
+  },
+  {
+    "origin": "analysis/decompiled/server-complete-refs/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 8
+  },
+  {
+    "origin": "analysis/decompiled/server-modern/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "embedded-credential",
+    "line": 12
+  },
+  {
+    "origin": "analysis/decompiled/server-modern/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "credential-pattern",
+    "line": 14
+  },
+  {
+    "origin": "analysis/decompiled/server-modern/GV.CounterSketch.Shared/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 9
+  },
+  {
+    "origin": "analysis/decompiled/server-modern/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 5
+  },
+  {
+    "origin": "analysis/decompiled/server-modern/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 8
+  },
+  {
+    "origin": "analysis/decompiled/server-rhino5/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "embedded-credential",
+    "line": 12
+  },
+  {
+    "origin": "analysis/decompiled/server-rhino5/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "credential-pattern",
+    "line": 14
+  },
+  {
+    "origin": "analysis/decompiled/server-rhino5/GV.CounterSketch.Shared/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 9
+  },
+  {
+    "origin": "analysis/decompiled/server-rhino5/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 5
+  },
+  {
+    "origin": "analysis/decompiled/server-rhino5/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 8
+  },
+  {
+    "origin": "analysis/decompiled/studio/DesignLibrary/LibraryDBBuilder.cs",
+    "name": "connection-password",
+    "line": 11
+  },
+  {
+    "origin": "analysis/decompiled/studio/DesignLibrary/LibraryDBBuilder.cs",
+    "name": "credential-pattern",
+    "line": 39
+  },
+  {
+    "origin": "analysis/decompiled/studio/GV.CounterSketch.Shared/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 9
+  },
+  {
+    "origin": "analysis/decompiled/studio/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 5
+  },
+  {
+    "origin": "analysis/decompiled/studio/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 8
+  },
+  {
+    "origin": "analysis/decompiled/studio/GV.CounterSketch.Studio.Utilities.Helpers/BitsHelper.cs",
+    "name": "embedded-credential",
+    "line": 20
+  },
+  {
+    "origin": "analysis/decompiled/studio/GV.CounterSketch.Studio.Utilities.Helpers/BitsHelper.cs",
+    "name": "embedded-credential",
+    "line": 222
+  },
+  {
+    "origin": "analysis/decompiled/studio/GV.CounterSketch.Studio.Utilities.Helpers/BitsHelper.cs",
+    "name": "embedded-credential",
+    "line": 253
+  },
+  {
+    "origin": "analysis/decompiled/studio/GV.CounterSketch.Studio.Web_Services/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 10
+  },
+  {
+    "origin": "analysis/decompiled/support/DesignLibrary/DesignLibrary/LibraryDBBuilder.cs",
+    "name": "connection-password",
+    "line": 11
+  },
+  {
+    "origin": "analysis/decompiled/support/DesignLibrary/DesignLibrary/LibraryDBBuilder.cs",
+    "name": "credential-pattern",
+    "line": 39
+  },
+  {
+    "origin": "analysis/decompiled/support/GemvisionCommon/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "embedded-credential",
+    "line": 12
+  },
+  {
+    "origin": "analysis/decompiled/support/GemvisionCommon/GemvisionCommon.Utilities.Slack/SlackClient.cs",
+    "name": "credential-pattern",
+    "line": 14
+  },
+  {
+    "origin": "analysis/decompiled/support/SharedTypes/GV.CounterSketch.Shared/StullerFileService.cs",
+    "name": "embedded-credential",
+    "line": 9
+  },
+  {
+    "origin": "analysis/decompiled/support/SharedTypes/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 5
+  },
+  {
+    "origin": "analysis/decompiled/support/SharedTypes/GV.CounterSketch.Shared.DataAccess/CSGDataAccess.cs",
+    "name": "connection-password",
+    "line": 8
+  }
+]

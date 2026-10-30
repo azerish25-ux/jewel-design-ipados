@@ -1,0 +1,44 @@
+[
+  {
+    "component": "desktop",
+    "bclFiles": 753,
+    "bclNonblank": 50586,
+    "bclPlusJsonFiles": 756,
+    "bclPlusJsonNonblank": 50707,
+    "added": [
+      {
+        "path": "DesignLibrary/Payload.cs",
+        "nonblank": 11
+      },
+      {
+        "path": "DesignLibrary/SlackClient.cs",
+        "nonblank": 34
+      },
+      {
+        "path": "GV.CounterSketch.Studio.Utilities/SerializeHelper.cs",
+        "nonblank": 76
+      }
+    ]
+  },
+  {
+    "component": "cad",
+    "bclFiles": 638,
+    "bclNonblank": 30353,
+    "bclPlusJsonFiles": 641,
+    "bclPlusJsonNonblank": 30418,
+    "added": [
+      {
+        "path": "CS.CSValues/ScriptIO.cs",
+        "nonblank": 22
+      },
+      {
+        "path": "GemvisionCommon.Utilities.Slack/Payload.cs",
+        "nonblank": 11
+      },
+      {
+        "path": "GemvisionCommon.Utilities.Slack/SlackClient.cs",
+        "nonblank": 32
+      }
+    ]
+  }
+]

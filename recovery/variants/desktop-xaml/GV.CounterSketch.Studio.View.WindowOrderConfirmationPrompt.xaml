@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.View.WindowOrderConfirmationPrompt" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:gvCounterSketchStudioUtilitiesBehaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Title="Get Pricing" MaxWidth="780" MaxHeight="740" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="10pt" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Style="{DynamicResource WindowStyleNonModalCS4}" WindowStartupLocation="CenterOwner" WindowStyle="None" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" DataContext="{Binding Mode=Default, Path=OrderSummaryVM, Source={StaticResource Locator}}">
+  <Grid Name="Root" ShowGridLines="False">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="142*" />
+      <ColumnDefinition Width="245*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="39.403" />
+    </Grid.RowDefinitions>
+    <Border Width="242" Height="392" Margin="0,20,0,10" Background="#FFBEBEBE" />
+    <StackPanel Name="RealPricingEligibilityResultsPanel" Width="242" Height="392" Margin="10" IsHitTestVisible="False">
+      <Border Height="50" Margin="0" HorizontalAlignment="Stretch" Background="#FF828282">
+        <TextBlock VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" FontSize="14.533" Foreground="#FFFFFFFF" Text="{x:Static l:Strings.ExactPricingEligibility}" TextAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" />
+      </Border>
+      <DockPanel Name="DockExtendedSliderRanges" Margin="15,10,15,0">
+        <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="" UseLayoutRounding="True" IsChecked="{Binding QuoteRequired_ExpandedSliders, Converter={StaticResource BooleanInverseConverter}, Mode=OneWay}" />
+        <TextBlock Name="Expanded_Slider_Ranges" HorizontalAlignment="Left" VerticalAlignment="Center" DockPanel.Dock="Right" FontSize="14.667" Text="{x:Static l:Strings.NoExtendedSliderRanges}" />
+      </DockPanel>
+      <DockPanel Margin="15,2">
+        <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="" UseLayoutRounding="True" IsChecked="{Binding QuoteRequired_Notes, Converter={StaticResource BooleanInverseConverter}, Mode=OneWay}" />
+        <TextBlock Name="Notes_On_Order" HorizontalAlignment="Left" VerticalAlignment="Center" DockPanel.Dock="Right" FontSize="14.667" Text="{x:Static l:Strings.NoAdditionalNotes}" />
+      </DockPanel>
+      <DockPanel Name="DockFreehand" Margin="15,0" Visibility="{Binding IsFreehandQuoteExempt, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true, FallbackValue=Collapsed}">
+        <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="" UseLayoutRounding="True" IsChecked="{Binding QuoteRequired_Freehand, Converter={StaticResource BooleanInverseConverter}, Mode=OneWay}" />
+        <TextBlock Name="Freehand_Parts_Used" HorizontalAlignment="Left" VerticalAlignment="Center" DockPanel.Dock="Right" FontSize="14.667" Text="{x:Static l:Strings.NoFreehandParts}" />
+      </DockPanel>
+      <DockPanel Name="DockUserSuppliedStones" Margin="15,2">
+        <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="" UseLayoutRounding="True" IsChecked="{Binding QuoteRequired_UserSuppliedStones, Converter={StaticResource BooleanInverseConverter}, Mode=OneWay}" />
+        <TextBlock Name="User_Supplied_Stones" HorizontalAlignment="Left" VerticalAlignment="Center" DockPanel.Dock="Right" FontSize="14.667" Text="{x:Static l:Strings.NoUserSuppliedStones}" />
+      </DockPanel>
+      <DockPanel Name="DockUserManualSizeStones" Margin="15,2,15,10">
+        <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="" UseLayoutRounding="True" IsChecked="{Binding QuoteRequiredManualSizing, Converter={StaticResource BooleanInverseConverter}, Mode=OneWay}" />
+        <TextBlock Name="Manual_Sized_Stones" HorizontalAlignment="Left" VerticalAlignment="Center" DockPanel.Dock="Right" FontSize="14.667" Text="{x:Static l:Strings.ManualSizedStones}" />
+      </DockPanel>
+      <Viewbox Margin="19,0" Stretch="None">
+        <Grid Width="204" Height="303">
+          <Viewbox Name="QuoteRequired" Margin="0,0,0,151" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Visible">
+            <Viewbox Width="172.789" Height="128.613">
+              <Canvas Width="172.789" Height="128.613">
+                <StackPanel MaxWidth="173">
+                  <TextBlock Margin="0,5" HorizontalAlignment="Center" FontFamily="HelveticaNeueLT Std" FontSize="11" FontWeight="Bold" Foreground="#FF464646" Text="{x:Static l:Strings.QuoteRequired}" />
+                  <TextBlock Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="HelveticaNeueLT Std Lt" FontSize="11" Foreground="#FF464646" Text="{x:Static l:Strings.QuoteRequiredExplanation}" TextAlignment="Center" TextWrapping="Wrap" />
+                </StackPanel>
+                <Rectangle Canvas.Left="0" Canvas.Top="3.05176e-005" Width="172.789" Height="128.613" Panel.ZIndex="-1" Fill="#FFD2D2D2" Stretch="Fill" />
+              </Canvas>
+            </Viewbox>
+          </Viewbox>
+          <Viewbox Name="FinalPrice" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Canvas Width="172.789" Height="128.613">
+              <StackPanel Width="99" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="HelveticaNeueLT Std" FontSize="8.3878" FontWeight="Bold" Foreground="#FF464646" RenderTransformOrigin="0,0" Text="{x:Static l:Strings.Congratulations}" TextAlignment="Center">
+                  <UIElement.RenderTransform>
+                    <TransformGroup>
+                      <ScaleTransform ScaleX="1.33333" ScaleY="1.33333" />
+                      <SkewTransform />
+                      <RotateTransform />
+                      <TranslateTransform X="23.6696" Y="64.9816" />
+                    </TransformGroup>
+                  </UIElement.RenderTransform>
+                </TextBlock>
+                <TextBlock MaxWidth="172" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="HelveticaNeueLT Std Lt" FontSize="8.3878" Foreground="#FF464646" RenderTransformOrigin="0,0" Text="{x:Static l:Strings.PlaceFinalOrderExplanation}" TextAlignment="Center" TextWrapping="Wrap">
+                  <UIElement.RenderTransform>
+                    <TransformGroup>
+                      <ScaleTransform ScaleX="1.333" ScaleY="1.333" />
+                      <SkewTransform />
+                      <RotateTransform />
+                      <TranslateTransform X="23.6696" Y="64.9816" />
+                    </TransformGroup>
+                  </UIElement.RenderTransform>
+                </TextBlock>
+              </StackPanel>
+              <Rectangle Canvas.Left="0" Canvas.Top="0" Width="172.789" Height="128.613" Panel.ZIndex="-1" Fill="#FFD2D2D2" Stretch="Fill" />
+              <Viewbox Canvas.Left="35" Canvas.Top="17" Width="97.023" Height="37.633">
+                <Canvas Width="97.0232" Height="37.6328">
+                  <Path Canvas.Left="0" Canvas.Top="0" Width="97.0232" Height="37.6328" Data="F1 M97.0232,4.70416 C97.0232,4.70416 97.0232,0 92.3191,0 C87.6149,0 18.8165,0 18.8165,0 L0,18.8165 L18.8165,37.6328 L92.3191,37.6328 C92.3191,37.6328 97.0232,37.6328 97.0232,32.9288 C97.0232,28.2247 97.0232,4.70416 97.0232,4.70416" Fill="#FF4E8499" Stretch="Fill" />
+                  <Path Canvas.Left="6.41385" Canvas.Top="11.0239" Width="14.2391" Height="11.2278" Data="F1 M12.3454,22.2516 L6.41385,16.4491 L8.39484,14.424 L12.2016,18.1476 L18.5348,11.0239 L20.653,12.9069 L12.3454,22.2516" Fill="#FF58595B" Stretch="Fill" />
+                  <Path Canvas.Left="7.90495" Canvas.Top="13.6427" Width="10.3474" Height="10.3474" Data="F1 M18.2524,18.8165 C18.2524,21.6738 15.9361,23.9902 13.0787,23.9902 C10.2213,23.9902 7.90495,21.6738 7.90495,18.8165 C7.90495,15.9591 10.2213,13.6427 13.0787,13.6427 C15.9361,13.6427 18.2524,15.9591 18.2524,18.8165" Fill="#FFFFFFFF" Stretch="Fill" />
+                  <Viewbox Canvas.Left="22.9337" Canvas.Top="7.12082" Width="58.7456" Height="23.0685">
+                    <Canvas Width="58.7456" Height="23.0685">
+                      <Path Canvas.Left="0" Canvas.Top="0.374725" Width="9.30383" Height="22.3191" Data="F1 M0,0.374725 L9.07355,0.374725 L9.07355,2.06253 L1.64047,2.06253 L1.64047,10.1906 L8.58606,10.1906 L8.58606,11.8784 L1.64047,11.8784 L1.64047,21.0059 L9.30383,21.0059 L9.30383,22.6938 L0,22.6938 L0,0.374725" Fill="#FFCCCCCC" Stretch="Fill" />
+                      <Path Canvas.Left="10.0461" Canvas.Top="0.374725" Width="11.894" Height="22.3191" Data="F1 M15.9416,13.0975 L11.6865,22.6938 L10.0461,22.6938 L15.0703,11.3158 L10.3792,0.374725 L12.1226,0.374725 L16.0184,9.44016 L19.9665,0.374725 L21.6069,0.374725 L16.8904,11.3158 L21.9401,22.6938 L20.1967,22.6938 L15.9416,13.0975" Fill="#FFCCCCCC" Stretch="Fill" />
+                      <Path Canvas.Left="21.8878" Canvas.Top="0.374725" Width="12.8673" Height="22.3191" Data="F1 M27.2959,0.374725 L29.3471,0.374725 L34.7551,22.6938 L33.0126,22.6938 L31.5256,16.1923 L25.1173,16.1923 L23.6303,22.6938 L21.8878,22.6938 L27.2959,0.374725 M31.1672,14.5037 L28.3476,1.93759 L28.2962,1.93759 L25.4766,14.5037 L31.1672,14.5037" Fill="#FFCCCCCC" Stretch="Fill" />
+                      <Path Canvas.Left="35.7546" Canvas.Top="0" Width="11.2775" Height="23.0685" Data="F1 M47.0321,15.1291 C46.8018,20.2245 44.8796,23.0685 41.5988,23.0685 C37.8565,23.0685 35.7546,19.5369 35.7546,11.5347 C35.7546,3.53238 37.8565,0 41.5988,0 C45.3148,0 46.8533,3.2196 46.8533,6.87701 L45.2128,6.87701 C45.2128,3.8443 43.957,1.68777 41.5988,1.68777 C38.9841,1.68777 37.3951,4.31381 37.3951,11.5347 C37.3951,18.7555 38.9841,21.3807 41.5988,21.3807 C43.9054,21.3807 45.2128,18.9743 45.3916,15.1291 L47.0321,15.1291" Fill="#FFCCCCCC" Stretch="Fill" />
+                      <Path Canvas.Left="47.6723" Canvas.Top="0.374725" Width="11.0734" Height="22.3191" Data="F1 M52.3886,2.06253 L47.6723,2.06253 L47.6723,0.374725 L58.7456,0.374725 L58.7456,2.06253 L54.0292,2.06253 L54.0292,22.6938 L52.3886,22.6938 L52.3886,2.06253" Fill="#FFCCCCCC" Stretch="Fill" />
+                    </Canvas>
+                  </Viewbox>
+                  <Viewbox Canvas.Left="84.1837" Canvas.Top="7.42291" Width="7.28943" Height="22.3802">
+                    <Canvas Width="7.28943" Height="22.3802">
+                      <Path Canvas.Left="0" Canvas.Top="4.82092" Width="7.28943" Height="4.61768" Data="F1 M2.5052,6.29483 C1.48367,6.29483 1.04193,6.50143 1.04193,7.13995 C1.04193,7.85693 1.75887,8.0235 3.74316,8.0235 C5.86539,8.0235 6.24835,7.72867 6.24835,7.12036 C6.24835,6.60922 5.98293,6.23602 4.46985,6.23602 L4.46985,4.82092 C5.98293,4.82092 7.28943,5.19409 7.28943,7.05096 C7.28943,9.17322 5.77716,9.4386 3.64511,9.4386 C1.51308,9.4386 0,9.17322 0,7.05096 C0,5.02756 1.48367,4.8797 2.5052,4.8797 L2.5052,6.29483" Fill="#FFFFFFFF" Stretch="Fill" />
+                      <Path Canvas.Left="0.137955" Canvas.Top="0" Width="7.01428" Height="4.01746" Data="F1 M0.137955,0.0979919 L1.29669,0.0979919 L1.29669,2.60318 L2.94777,2.60318 L2.94777,0.244873 L4.10641,0.244873 L4.10641,2.60318 L5.99271,2.60318 L5.99271,0 L7.15224,0 L7.15224,4.01746 L0.137955,4.01746 L0.137955,0.0979919" Fill="#FFFFFFFF" Stretch="Fill" />
+                      <Rectangle Canvas.Left="0.137955" Canvas.Top="10.3409" Width="7.01428" Height="1.41431" Fill="#FFFFFFFF" Stretch="Fill" />
+                      <Path Canvas.Left="0.137955" Canvas.Top="12.5293" Width="7.01428" Height="4.75482" Data="F1 M0.137955,17.2841 L0.137955,14.6711 C0.137955,13.5116 0.747208,12.8044 1.94504,12.8044 C2.87837,12.8044 3.50708,13.1776 3.67445,13.9738 L3.69411,13.9738 C3.82149,13.011 4.35225,12.8633 5.83594,12.8436 C6.57253,12.8338 6.95551,12.7946 7.09344,12.5293 L7.15224,12.5293 L7.15224,14.062 C6.95551,14.1999 6.69093,14.2293 6.41574,14.2391 L5.06918,14.2784 C4.51965,14.2979 4.18573,14.5437 4.18573,15.1137 L4.18573,15.8698 L7.15224,15.8698 L7.15224,17.2841 L0.137955,17.2841 M3.20253,15.8698 L3.20253,15.2802 C3.20253,14.6024 2.90771,14.2195 2.15158,14.2195 C1.50333,14.2195 1.17915,14.5633 1.17915,15.2018 L1.17915,15.8698 L3.20253,15.8698" Fill="#FFFFFFFF" Stretch="Fill" />
+                      <Path Canvas.Left="0.137955" Canvas.Top="17.9789" Width="7.01428" Height="4.40128" Data="F1 M0.137955,22.3802 L0.137955,19.9052 C0.137955,18.4705 1.1889,17.9789 2.23982,17.9789 C3.69411,17.9789 4.35225,18.8731 4.35225,20.2098 L4.35225,20.9659 L7.15224,20.9659 L7.15224,22.3802 L0.137955,22.3802 M3.31119,20.9659 L3.31119,20.3371 C3.31119,19.777 2.97723,19.394 2.25948,19.394 C1.57187,19.394 1.17915,19.6692 1.17915,20.3764 L1.17915,20.9659 L3.31119,20.9659" Fill="#FFFFFFFF" Stretch="Fill" />
+                    </Canvas>
+                  </Viewbox>
+                </Canvas>
+              </Viewbox>
+            </Canvas>
+          </Viewbox>
+        </Grid>
+      </Viewbox>
+    </StackPanel>
+    <DockPanel Grid.Row="0" Grid.Column="1" Width="450" Margin="0,20,20,10" HorizontalAlignment="Right">
+      <Grid Name="Pricing_Details" VerticalAlignment="Bottom" DockPanel.Dock="Bottom">
+        <Border Background="#FFBEBEBE" />
+        <Grid Margin="10">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="23*" />
+            <RowDefinition Height="6*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{Binding IsUsingStullerShowcaseMarkups, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}">
+            <TextBlock Name="LargeStonesCost" Height="24" MinWidth="60" Margin="0,5,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{DynamicResource TextDarkBrush}" TextAlignment="Center" Text="{Binding QuotedLargeStonesPriceString}" TextDecorations="{x:Null}" />
+            <TextBlock Name="SettingCost" Height="24" MinWidth="60" Margin="0,5,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{DynamicResource TextDarkBrush}" TextAlignment="Center" Text="{Binding QuotedSettingPriceMarkedUpString}" TextDecorations="{x:Null}" />
+          </StackPanel>
+          <StackPanel Grid.Column="0" MinWidth="60" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Visibility="{Binding IsUsingStullerShowcaseMarkups, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}">
+            <TextBlock Foreground="{DynamicResource TextDarkBrush}" Text="{x:Static l:Strings.DesignTotalCaratWeight}" TextAlignment="Center" TextWrapping="NoWrap" />
+            <TextBlock Name="CaratWeightTotal" Foreground="{DynamicResource TextDarkBrush}" TextAlignment="Center" TextWrapping="NoWrap" Text="{Binding TotalCaratWeight, StringFormat={}{0:#0.00} CTW.}" />
+          </StackPanel>
+          <TextBlock Name="TotalCost" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Height="24" MinWidth="60" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="18.667" Foreground="{DynamicResource TextDarkBrush}" TextAlignment="Center" Text="{Binding QuotedPriceString}" TextDecorations="{x:Null}" />
+        </Grid>
+      </Grid>
+      <Border Name="Design_Details" Margin="5" BorderBrush="#FF363636" DockPanel.Dock="Top">
+        <Grid Height="273">
+          <StackPanel Height="96" VerticalAlignment="Top" ZIndex="2" Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Background="#7FFFFFFF" FontSize="16" Text="{x:Static l:Strings.Model}" TextAlignment="Right" />
+            <TextBlock Margin="0,5,0,0" VerticalAlignment="Center" Panel.ZIndex="2" FontSize="16" Text="{Binding ModelNumber}" />
+            <TextBlock Margin="0,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#7FFFFFFF" FontSize="16" Text="{x:Static l:Strings.Size}" TextAlignment="Right" />
+            <TextBlock Margin="0,5,0,0" VerticalAlignment="Center" FontSize="16" Text="{Binding SelectedRingSize}" />
+          </StackPanel>
+          <Viewbox Margin="-10">
+            <Image Name="CSS3_About_Screen_Images_Image_png" Source="{Binding DesignPreviewImage, Converter={StaticResource NullObjectToDoNothingConverter}}" />
+          </Viewbox>
+        </Grid>
+      </Border>
+    </DockPanel>
+    <Border Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,0" BorderBrush="#FFBEBEBE" BorderThickness="0,0" />
+    <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="10" VerticalAlignment="Center" Orientation="Vertical">
+      <DockPanel Name="BuyerInfo" Margin="14,0">
+        <StackPanel Name="BuyerContactFields" Orientation="Horizontal">
+          <TextBlock Margin="0,0,4,0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="#FF000000" Text="{x:Static l:Strings.Consultant}" TextWrapping="NoWrap" />
+          <Grid Name="GridFirstname" Width="100" Margin="4,0,0,0" VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="#FFCB0303" Opacity="0.7" Text="{x:Static l:Strings.FirstName}" Visibility="{Binding IsBuyerFirstnamePopulated, ConverterParameter=True, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}" />
+            <TextBox VerticalAlignment="Center" TabIndex="1" Background="{x:Null}" Text="{Binding BuyerFirstname, UpdateSourceTrigger=PropertyChanged}">
+              <i:Interaction.Behaviors>
+                <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorLoseFocusOnEnterKeyUp />
+                <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorSelectAllTextWhenFocused />
+              </i:Interaction.Behaviors>
+            </TextBox>
+          </Grid>
+          <Grid Name="GridLastname" Width="160" Margin="4,0,0,0" VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="#FFCB0303" Opacity="0.7" Text="{x:Static l:Strings.LastName}" Visibility="{Binding IsBuyerLastnamePopulated, ConverterParameter=True, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}" />
+            <TextBox VerticalAlignment="Center" TabIndex="2" Background="{x:Null}" Text="{Binding BuyerLastname, UpdateSourceTrigger=PropertyChanged}">
+              <i:Interaction.Behaviors>
+                <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorLoseFocusOnEnterKeyUp />
+                <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorSelectAllTextWhenFocused />
+              </i:Interaction.Behaviors>
+            </TextBox>
+          </Grid>
+          <Grid Name="GridEmail" Width="200" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="#FFCB0303" Opacity="0.7" Text="{x:Static l:Strings.Email}" Visibility="{Binding IsBuyerEMailPopulated, ConverterParameter=True, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}" />
+            <TextBox VerticalAlignment="Center" TabIndex="3" Background="{x:Null}" Text="{Binding BuyerEMail, UpdateSourceTrigger=PropertyChanged}">
+              <i:Interaction.Behaviors>
+                <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorLoseFocusOnEnterKeyUp />
+                <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorSelectAllTextWhenFocused />
+              </i:Interaction.Behaviors>
+            </TextBox>
+          </Grid>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+          <TextBlock Margin="0,0,4,0" VerticalAlignment="Center" Foreground="#FF000000" Text="{x:Static l:Strings.Reference}" TextWrapping="NoWrap" />
+          <Grid HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="#FFCB0303" Opacity="0.7" Text="{x:Static l:Strings.Reference}" Visibility="{Binding IsCustomerReferenceNumberPopulated, ConverterParameter=True, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}" />
+            <TextBox Width="80" HorizontalAlignment="Left" VerticalAlignment="Center" TabIndex="4" Background="{x:Null}" Text="{Binding CustomerReferenceNumber, UpdateSourceTrigger=PropertyChanged}">
+              <i:Interaction.Behaviors>
+                <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorSelectAllTextWhenFocused />
+                <gvCounterSketchStudioUtilitiesBehaviors:TextBoxBehaviorLoseFocusOnEnterKeyUp />
+              </i:Interaction.Behaviors>
+            </TextBox>
+          </Grid>
+        </StackPanel>
+      </DockPanel>
+      <DockPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="14,10,14,0">
+        <StackPanel Orientation="Horizontal">
+          <DockPanel Margin="0,0,0,5">
+            <TextBlock Text="Send SMS Notifications:" TextWrapping="Wrap" />
+            <TextBox Name="txtMobilePhone" Margin="10,0" CaretBrush="{DynamicResource HighlightAndAccent}" FontSize="13.333" Style="{DynamicResource CS4TextBoxStyle}" Tag="xxx-xxx-xxxx" Text="{Binding QuotePhone}" />
+            <CheckBox IsChecked="{Binding SendSMSNotifications}" />
+          </DockPanel>
+        </StackPanel>
+      </DockPanel>
+    </StackPanel>
+    <DockPanel Name="ActionPanel" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,10,0" VerticalAlignment="Top">
+      <Viewbox Name="Viewbox" Height="22" Margin="10,9,0,9" HorizontalAlignment="Right" VerticalAlignment="Center" DockPanel.Dock="Right">
+        <Canvas Width="97.0232" Height="37.6328">
+          <Path Canvas.Left="0" Canvas.Top="0" Width="97.0232" Height="37.6328" Data="F1 M97.0232,4.70416 C97.0232,4.70416 97.0232,0 92.3191,0 C87.6149,0 18.8165,0 18.8165,0 L0,18.8165 L18.8165,37.6328 L92.3191,37.6328 C92.3191,37.6328 97.0232,37.6328 97.0232,32.9288 C97.0232,28.2247 97.0232,4.70416 97.0232,4.70416" Fill="#FF4E8499" Stretch="Fill" />
+          <Path Canvas.Left="6.41385" Canvas.Top="11.0239" Width="14.2391" Height="11.2278" Data="F1 M12.3454,22.2516 L6.41385,16.4491 L8.39484,14.424 L12.2016,18.1476 L18.5348,11.0239 L20.653,12.9069 L12.3454,22.2516" Fill="#FF58595B" Stretch="Fill" />
+          <Path Canvas.Left="7.90495" Canvas.Top="13.6427" Width="10.3474" Height="10.3474" Data="F1 M18.2524,18.8165 C18.2524,21.6738 15.9361,23.9902 13.0787,23.9902 C10.2213,23.9902 7.90495,21.6738 7.90495,18.8165 C7.90495,15.9591 10.2213,13.6427 13.0787,13.6427 C15.9361,13.6427 18.2524,15.9591 18.2524,18.8165" Fill="#FFFFFFFF" Stretch="Fill" />
+          <Viewbox Canvas.Left="22.9337" Canvas.Top="7.12082" Width="58.7456" Height="23.0685">
+            <Canvas Width="58.7456" Height="23.0685">
+              <Path Canvas.Left="0" Canvas.Top="0.374725" Width="9.30383" Height="22.3191" Data="F1 M0,0.374725 L9.07355,0.374725 L9.07355,2.06253 L1.64047,2.06253 L1.64047,10.1906 L8.58606,10.1906 L8.58606,11.8784 L1.64047,11.8784 L1.64047,21.0059 L9.30383,21.0059 L9.30383,22.6938 L0,22.6938 L0,0.374725" Fill="#FFCCCCCC" Stretch="Fill" />
+              <Path Canvas.Left="10.0461" Canvas.Top="0.374725" Width="11.894" Height="22.3191" Data="F1 M15.9416,13.0975 L11.6865,22.6938 L10.0461,22.6938 L15.0703,11.3158 L10.3792,0.374725 L12.1226,0.374725 L16.0184,9.44016 L19.9665,0.374725 L21.6069,0.374725 L16.8904,11.3158 L21.9401,22.6938 L20.1967,22.6938 L15.9416,13.0975" Fill="#FFCCCCCC" Stretch="Fill" />
+              <Path Canvas.Left="21.8878" Canvas.Top="0.374725" Width="12.8673" Height="22.3191" Data="F1 M27.2959,0.374725 L29.3471,0.374725 L34.7551,22.6938 L33.0126,22.6938 L31.5256,16.1923 L25.1173,16.1923 L23.6303,22.6938 L21.8878,22.6938 L27.2959,0.374725 M31.1672,14.5037 L28.3476,1.93759 L28.2962,1.93759 L25.4766,14.5037 L31.1672,14.5037" Fill="#FFCCCCCC" Stretch="Fill" />
+              <Path Canvas.Left="35.7546" Canvas.Top="0" Width="11.2775" Height="23.0685" Data="F1 M47.0321,15.1291 C46.8018,20.2245 44.8796,23.0685 41.5988,23.0685 C37.8565,23.0685 35.7546,19.5369 35.7546,11.5347 C35.7546,3.53238 37.8565,0 41.5988,0 C45.3148,0 46.8533,3.2196 46.8533,6.87701 L45.2128,6.87701 C45.2128,3.8443 43.957,1.68777 41.5988,1.68777 C38.9841,1.68777 37.3951,4.31381 37.3951,11.5347 C37.3951,18.7555 38.9841,21.3807 41.5988,21.3807 C43.9054,21.3807 45.2128,18.9743 45.3916,15.1291 L47.0321,15.1291" Fill="#FFCCCCCC" Stretch="Fill" />
+              <Path Canvas.Left="47.6723" Canvas.Top="0.374725" Width="11.0734" Height="22.3191" Data="F1 M52.3886,2.06253 L47.6723,2.06253 L47.6723,0.374725 L58.7456,0.374725 L58.7456,2.06253 L54.0292,2.06253 L54.0292,22.6938 L52.3886,22.6938 L52.3886,2.06253" Fill="#FFCCCCCC" Stretch="Fill" />
+            </Canvas>
+          </Viewbox>
+          <Viewbox Canvas.Left="84.1837" Canvas.Top="7.42291" Width="7.28943" Height="22.3802">
+            <Canvas Width="7.28943" Height="22.3802">
+              <Path Canvas.Left="0" Canvas.Top="4.82092" Width="7.28943" Height="4.61768" Data="F1 M2.5052,6.29483 C1.48367,6.29483 1.04193,6.50143 1.04193,7.13995 C1.04193,7.85693 1.75887,8.0235 3.74316,8.0235 C5.86539,8.0235 6.24835,7.72867 6.24835,7.12036 C6.24835,6.60922 5.98293,6.23602 4.46985,6.23602 L4.46985,4.82092 C5.98293,4.82092 7.28943,5.19409 7.28943,7.05096 C7.28943,9.17322 5.77716,9.4386 3.64511,9.4386 C1.51308,9.4386 0,9.17322 0,7.05096 C0,5.02756 1.48367,4.8797 2.5052,4.8797 L2.5052,6.29483" Fill="#FFFFFFFF" Stretch="Fill" />
+              <Path Canvas.Left="0.137955" Canvas.Top="0" Width="7.01428" Height="4.01746" Data="F1 M0.137955,0.0979919 L1.29669,0.0979919 L1.29669,2.60318 L2.94777,2.60318 L2.94777,0.244873 L4.10641,0.244873 L4.10641,2.60318 L5.99271,2.60318 L5.99271,0 L7.15224,0 L7.15224,4.01746 L0.137955,4.01746 L0.137955,0.0979919" Fill="#FFFFFFFF" Stretch="Fill" />
+              <Rectangle Canvas.Left="0.137955" Canvas.Top="10.3409" Width="7.01428" Height="1.41431" Fill="#FFFFFFFF" Stretch="Fill" />
+              <Path Canvas.Left="0.137955" Canvas.Top="12.5293" Width="7.01428" Height="4.75482" Data="F1 M0.137955,17.2841 L0.137955,14.6711 C0.137955,13.5116 0.747208,12.8044 1.94504,12.8044 C2.87837,12.8044 3.50708,13.1776 3.67445,13.9738 L3.69411,13.9738 C3.82149,13.011 4.35225,12.8633 5.83594,12.8436 C6.57253,12.8338 6.95551,12.7946 7.09344,12.5293 L7.15224,12.5293 L7.15224,14.062 C6.95551,14.1999 6.69093,14.2293 6.41574,14.2391 L5.06918,14.2784 C4.51965,14.2979 4.18573,14.5437 4.18573,15.1137 L4.18573,15.8698 L7.15224,15.8698 L7.15224,17.2841 L0.137955,17.2841 M3.20253,15.8698 L3.20253,15.2802 C3.20253,14.6024 2.90771,14.2195 2.15158,14.2195 C1.50333,14.2195 1.17915,14.5633 1.17915,15.2018 L1.17915,15.8698 L3.20253,15.8698" Fill="#FFFFFFFF" Stretch="Fill" />
+              <Path Canvas.Left="0.137955" Canvas.Top="17.9789" Width="7.01428" Height="4.40128" Data="F1 M0.137955,22.3802 L0.137955,19.9052 C0.137955,18.4705 1.1889,17.9789 2.23982,17.9789 C3.69411,17.9789 4.35225,18.8731 4.35225,20.2098 L4.35225,20.9659 L7.15224,20.9659 L7.15224,22.3802 L0.137955,22.3802 M3.31119,20.9659 L3.31119,20.3371 C3.31119,19.777 2.97723,19.394 2.25948,19.394 C1.57187,19.394 1.17915,19.6692 1.17915,20.3764 L1.17915,20.9659 L3.31119,20.9659" Fill="#FFFFFFFF" Stretch="Fill" />
+            </Canvas>
+          </Viewbox>
+        </Canvas>
+      </Viewbox>
+      <Button Height="22" MinWidth="90" Margin="10,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Background="{DynamicResource WindowFrameBackground}" Content="{x:Static l:Strings.Cancel_lowercase}" DockPanel.Dock="Right" Foreground="#FF000000" TabIndex="6" BorderBrush="{x:Null}" Click="Cancel_Click" />
+      <DockPanel Margin="0" HorizontalAlignment="Right" VerticalAlignment="Center" IsEnabled="{Binding IsBuyerAndReferencePopulated, Mode=OneWay}">
+        <Button Height="22" MinWidth="90" Margin="10,0,0,0" VerticalAlignment="Center" Background="#FF04BA04" DockPanel.Dock="Right" Foreground="#FF000000" TabIndex="5" BorderBrush="{x:Null}" IsEnabled="{Binding Requires24HourQuote, ConverterParameter=True, Converter={StaticResource BooleanInverseConverter}}" Click="Order_Click">
+          <TextBlock Name="textBlock" Margin="10,0" Foreground="#FF000000" Text="{x:Static l:Strings.PlaceFinalOrder}" />
+        </Button>
+        <Button Height="22" MinWidth="90" Margin="10,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Background="#FF04BA04" DockPanel.Dock="Right" Foreground="#FF000000" TabIndex="5" BorderBrush="{x:Null}" IsEnabled="{Binding Requires24HourQuote}" Click="Order_Click">
+          <TextBlock Name="textBlock1" Margin="10,0" Foreground="#FF000000" Text="{x:Static l:Strings.RequestQuote}" />
+        </Button>
+      </DockPanel>
+    </DockPanel>
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="RealPricingEligibility">
+        <VisualState x:Name="Default" />
+        <VisualState x:Name="TwentyFourHourQuoteRequired">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FinalPrice" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Viewbox" Storyboard.TargetProperty="(UIElement.Visibility)">
+              <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+        <VisualState x:Name="RealPricingEligible" />
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+  </Grid>
+</Window>

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "simulator": {
+    "run": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40969820121",
+    "status": "passed for selected assertions only",
+    "deviceFamily": "iPad simulator",
+    "goldenBernsteinCases": 16,
+    "otherAssertions": [
+      "vector length",
+      "vector cross product",
+      "diamond density"
+    ],
+    "compressionProbe": {
+      "gating": false,
+      "repetitive100000Bytes": "FAIL InvalidDataException",
+      "emptyInput": "Zero bytes, not a complete zlib frame"
+    }
+  },
+  "deviceBuild": {
+    "run": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/40953692111/job/123728156674",
+    "rid": "ios-arm64",
+    "configuration": "Release / Mono AOT",
+    "signed": false,
+    "frameworkLinking": "SdkOnly",
+    "errors": 0,
+    "warnings": 47,
+    "elapsed": "00:09:17.31",
+    "physicalExecution": false
+  },
+  "toolchain": {
+    "sdk": "10.0.302",
+    "workloadSet": "10.0.302.0",
+    "iosSdk": "26.5.10301",
+    "xcode": "26.6",
+    "runner": "macos-26 ARM64"
+  },
+  "startupDiagnosis": {
+    "signal": "SIGKILL (Code Signature Invalid)",
+    "namespace": "CODESIGNING",
+    "indicator": "Invalid Page",
+    "stage": "Before managed Main",
+    "correction": "Valid simulator ad-hoc signing"
+  },
+  "pcApplicationRoundTrip": false,
+  "fullFeatureParity": false
+}

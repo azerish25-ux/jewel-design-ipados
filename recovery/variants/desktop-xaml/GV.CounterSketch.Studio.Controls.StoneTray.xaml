@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.Controls.StoneTray" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="userControl" DataContext="{Binding Path=StoneTrayVM, Source={StaticResource Locator}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="StoneTrayDataTemplate">
+        <Grid Height="48" Margin="0,0,0,0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Image Width="48" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="UniformToFill" Source="{Binding Images[0].ThumbnailUrl}" />
+          <Border Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Height="Auto" Margin="4,0" Padding="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding StoneType, Converter={StaticResource StringToTitleCaseConverter}}" />
+          </Border>
+          <Border Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Height="Auto" Margin="4,0" Padding="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Shape, Converter={StaticResource StringToTitleCaseConverter}}" />
+          </Border>
+          <Border Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Height="Auto" Margin="4,0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding CaratWeight}" />
+          </Border>
+          <Border Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Height="Auto" Margin="4,0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Make, Converter={StaticResource StringToTitleCaseConverter}}" />
+          </Border>
+          <Border Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Height="Auto" Margin="4,0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Color}" />
+          </Border>
+          <Border Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Height="Auto" Margin="4,0" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Clarity}" />
+          </Border>
+          <Border Grid.Column="7" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock Height="Auto" Margin="8,0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding ShowcasePrice.Value, Converter={StaticResource ValueToCultureCurrencyConverter}}" />
+          </Border>
+        </Grid>
+      </DataTemplate>
+      <ControlTemplate x:Key="OpenStoneTrayButton" TargetType="{x:Type ButtonBase}">
+        <Border Name="border" Background="#FFFFFFFF" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+          <DockPanel Width="Auto" Height="Auto" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <Path Width="8" Height="5" Margin="0,2,0,0" VerticalAlignment="Center" Data="F1 M1498.71,328.798 L1494.74,333.791 L1490.71,328.791 L1498.71,328.798" DockPanel.Dock="Right" Fill="#FF000000" Stretch="Fill" />
+            <ContentPresenter Name="contentPresenter" HorizontalAlignment="Stretch" VerticalAlignment="Center" Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Focusable="False" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" TextElement.Foreground="#FFFF0000" />
+          </DockPanel>
+        </Border>
+        <ControlTemplate.Triggers>
+          <Trigger Property="UIElement.IsMouseOver" Value="True">
+            <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="#FFFFFFFF" />
+            <Setter TargetName="border" Value="{DynamicResource HighlightAndAccent}" Property="Border.Background" />
+          </Trigger>
+          <Trigger Property="ButtonBase.IsPressed" Value="True">
+            <Setter TargetName="border" Property="Border.Background" Value="#FFC4E5F6" />
+            <Setter TargetName="border" Property="Border.BorderBrush" Value="#FF2C628B" />
+          </Trigger>
+          <Trigger Property="ToggleButton.IsChecked" Value="True">
+            <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="#FFFFFFFF" />
+            <Setter TargetName="border" Property="Border.BorderBrush" Value="#FF245A83" />
+            <Setter TargetName="border" Value="{DynamicResource HighlightAndAccent}" Property="Border.Background" />
+          </Trigger>
+          <Trigger Property="UIElement.IsEnabled" Value="False">
+            <Setter TargetName="border" Property="Border.Background" Value="#FFF4F4F4" />
+            <Setter TargetName="border" Property="Border.BorderBrush" Value="#FFADB2B5" />
+            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="#FF838383" />
+          </Trigger>
+        </ControlTemplate.Triggers>
+      </ControlTemplate>
+      <Style x:Key="StoneTrayListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="4,1" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <StackPanel Name="ItemRow" Height="Auto" Orientation="Vertical">
+                <Grid>
+                  <DockPanel Width="Auto" Height="Auto" Margin="0">
+                    <DockPanel Width="Auto" Height="Auto" Margin="10,0,0,0" VerticalAlignment="Stretch" Dock="Right" LastChildFill="False">
+                      <Button MinWidth="60" Margin="6" Content="{x:Static l:Strings.Assign}" Command="{Binding DataContext.AssignStoneCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:StoneTray}}}" CommandParameter="{Binding}">
+                        <UIElement.Visibility>
+                          <MultiBinding ConverterParameter="true" Converter="{StaticResource StoneTrayAssignedToVisibilityConverter}">
+                            <Binding Path="DataContext.IsStoneAssigned" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" />
+                            <Binding />
+                          </MultiBinding>
+                        </UIElement.Visibility>
+                      </Button>
+                      <Button MinWidth="60" Margin="6" Content="{x:Static l:Strings.Clear}" Command="{Binding DataContext.ClearAssignedStoneCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:StoneTray}}}">
+                        <UIElement.Visibility>
+                          <MultiBinding Converter="{StaticResource StoneTrayAssignedToVisibilityConverter}">
+                            <Binding Path="DataContext.IsStoneAssigned" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" />
+                            <Binding />
+                          </MultiBinding>
+                        </UIElement.Visibility>
+                      </Button>
+                      <Button MinWidth="60" Margin="6" Content="{x:Static l:Strings.Search}" Command="{Binding DataContext.AssignStoneSearchCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:StoneTray}}}" CommandParameter="{Binding}">
+                        <UIElement.Visibility>
+                          <MultiBinding ConverterParameter="true" Converter="{StaticResource StoneTrayAssignedToVisibilityConverter}">
+                            <Binding Path="DataContext.IsStoneAssigned" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" />
+                            <Binding />
+                          </MultiBinding>
+                        </UIElement.Visibility>
+                      </Button>
+                      <Button Width="20" Content="X" Template="{DynamicResource CS4CancelButton}" Command="{Binding DataContext.DeleteStoneCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:StoneTray}}}" CommandParameter="{Binding}" />
+                    </DockPanel>
+                    <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                  </DockPanel>
+                  <Border Height="Auto" Margin="3,6,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <UIElement.Visibility>
+                      <MultiBinding Converter="{StaticResource StoneTrayAssignedToVisibilityConverter}">
+                        <Binding Path="DataContext.IsStoneAssigned" RelativeSource="{RelativeSource AncestorType={x:Type UserControl}}" />
+                        <Binding />
+                      </MultiBinding>
+                    </UIElement.Visibility>
+                    <Ellipse Width="8" Height="8" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="{DynamicResource HighlightAndAccent}" Stroke="{DynamicResource HighlightAndAccent}" />
+                  </Border>
+                </Grid>
+              </StackPanel>
+              <ControlTemplate.Triggers>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="UIElement.IsMouseOver" Value="True" />
+                  </MultiTrigger.Conditions>
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="Selector.IsSelectionActive" Value="False" />
+                    <Condition Property="ListBoxItem.IsSelected" Value="True" />
+                  </MultiTrigger.Conditions>
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="Selector.IsSelectionActive" Value="True" />
+                    <Condition Property="ListBoxItem.IsSelected" Value="True" />
+                  </MultiTrigger.Conditions>
+                </MultiTrigger>
+                <Trigger Property="IsEnabled" Value="False" />
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                  <Setter TargetName="ItemRow" Property="Panel.Background" Value="#FFFFFFFF" />
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                  <Setter TargetName="ItemRow" Property="Panel.Background" Value="#E8ECF2" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <SolidColorBrush x:Key="ListBox.Static.Background" Color="#FFFFFFFF" />
+      <SolidColorBrush x:Key="ListBox.Static.Border" Color="#FFABADB3" />
+      <SolidColorBrush x:Key="ListBox.Disabled.Background" Color="#FFFFFFFF" />
+      <SolidColorBrush x:Key="ListBox.Disabled.Border" Color="#FFD9D9D9" />
+      <Style x:Key="StoneTrayListBoxStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <Border Name="Bd" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False">
+                  <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                </ScrollViewer>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Bd" Property="Border.Background" Value="{StaticResource ListBox.Disabled.Background}" />
+                  <Setter TargetName="Bd" Property="Border.BorderBrush" Value="{StaticResource ListBox.Disabled.Border}" />
+                </Trigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="ItemsControl.IsGrouping" Value="True" />
+                    <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="False" />
+                  </MultiTrigger.Conditions>
+                  <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                </MultiTrigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <ToggleButton Name="_stoneTrayToggle" Padding="2,1" Background="#FFFFFFFF" Foreground="#FF454341" Template="{DynamicResource OpenStoneTrayButton}" Click="ToggleButton_Click">
+      <StackPanel Orientation="Horizontal">
+        <ContentControl xmlns:fa="http://schemas.fontawesome.io/icons/" Margin="5,0,0,0">
+          <wpf:ImageAwesome FrameworkElement.Width="15" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" xmlns:wpf="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" wpf:ImageAwesome.Icon="Inbox" />
+        </ContentControl>
+        <TextBlock Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" Text="{x:Static l:Strings.Stone}" FontWeight="{Binding FontWeight, ElementName=userControl}" Foreground="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}" />
+        <TextBlock Margin="3,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" Text="{x:Static l:Strings.Tray}" FontWeight="{Binding FontWeight, ElementName=userControl}" Foreground="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ToggleButton}}" />
+      </StackPanel>
+    </ToggleButton>
+    <Popup Name="_stoneTrayPopup" Placement="Top" StaysOpen="False" Closed="_stoneTrayPopup_OnClosed">
+      <Border Margin="0" BorderBrush="{DynamicResource HighlightAndAccent}" BorderThickness="4">
+        <DockPanel>
+          <Border Margin="0" VerticalAlignment="Top" Background="{DynamicResource HighlightAndAccent}" DockPanel.Dock="Top">
+            <Grid Margin="0,5,0,5" Background="{DynamicResource HighlightAndAccent}">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Border Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Controls:Spinner Width="18" Height="18" Margin="10,-2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" UseHighlightColor="False" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" />
+              </Border>
+              <Border Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Margin="5,0" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{x:Static l:Strings.TYPE}" TextWrapping="Wrap" />
+              </Border>
+              <Border Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Margin="5,0" Padding="0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{x:Static l:Strings.SHAPE}" TextWrapping="Wrap" />
+              </Border>
+              <Border Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{x:Static l:Strings.CARAT}" TextWrapping="Wrap" />
+              </Border>
+              <Border Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{x:Static l:Strings.CUT}" TextWrapping="Wrap" />
+              </Border>
+              <Border Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{x:Static l:Strings.COLOR}" TextWrapping="Wrap" />
+              </Border>
+              <Border Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{x:Static l:Strings.CLARITY}" TextWrapping="Wrap" />
+              </Border>
+              <Border Grid.Column="7" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBlock Margin="5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFFFFFFF" Text="{x:Static l:Strings.PRICE}" TextWrapping="Wrap" />
+              </Border>
+            </Grid>
+          </Border>
+          <ListBox MaxHeight="300" HorizontalContentAlignment="Stretch" AlternationCount="2" BorderThickness="0" ItemContainerStyle="{DynamicResource StoneTrayListBoxItemStyle}" ItemTemplate="{DynamicResource StoneTrayDataTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Style="{DynamicResource StoneTrayListBoxStyle}" ItemsSource="{Binding StoneResults}" />
+          <Border Height="24" Background="#FFFFFFFF" Visibility="{Binding StonesInTrayCount, Converter={StaticResource IntegerGreaterThanZeroToVisibilityConverter}, ConverterParameter=True, UpdateSourceTrigger=PropertyChanged}">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Your Tray is Empty, Add a Diamond or Gemstone." />
+          </Border>
+        </DockPanel>
+      </Border>
+    </Popup>
+  </Grid>
+</UserControl>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:cvrt="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:model="clr-namespace:GV.CounterSketch.Shared.Model;assembly=CounterSketch Studio">
+  <DataTemplate x:Key="DataItemPolygonTemplate">
+    <Grid Background="#00FFFFFF" Cursor="Hand">
+      <Viewbox Name="thisItem" Margin="2" Stretch="Uniform" Visibility="{Binding ItemVisibility}">
+        <Polygon HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{DynamicResource WindowFrameBackground}" StrokeLineJoin="Round" StrokeThickness="1" Points="{Binding PolyPointCollection, Converter={StaticResource PointToPolyPointConverter}}" Stroke="{Binding ProfilePolyLineColor, Converter={StaticResource ColorToBrushConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:CSValueChooserControl}}}" />
+      </Viewbox>
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="DataItemPolylineTemplate">
+    <Grid Background="#00FFFFFF" Cursor="Hand">
+      <Viewbox Name="thisItem" Margin="2" Stretch="Uniform" Visibility="{Binding ItemVisibility}">
+        <Polyline HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{DynamicResource WindowFrameBackground}" StrokeLineJoin="Round" StrokeThickness="1" Points="{Binding PolyPointCollection, Converter={StaticResource PointToPolyPointConverter}}" />
+      </Viewbox>
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="DataItemImageTemplate">
+    <Viewbox Name="thisItem" Margin="2" Stretch="Uniform" Visibility="{Binding ItemVisibility}">
+      <Image Name="theImage" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Source="{Binding BitmapSourceByteArrayInfo.ItemImageSource}" />
+    </Viewbox>
+  </DataTemplate>
+  <DataTemplate x:Key="DataItemVectorImageTemplate">
+    <Viewbox Name="thisItem" Margin="2" Stretch="Uniform" Visibility="{Binding ItemVisibility}">
+      <FrameworkElement.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" />
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" />
+      </FrameworkElement.Triggers>
+      <Image Stretch="Uniform" Source="{Binding VectorResourceName, Converter={cvrt:GemShapeNameToVectorGraphicConverter}}">
+        <FrameworkElement.LayoutTransform>
+          <RotateTransform Angle="{Binding VectorResourceName, Converter={cvrt:GemShapeNameToRotationConverter}}" />
+        </FrameworkElement.LayoutTransform>
+      </Image>
+    </Viewbox>
+  </DataTemplate>
+  <DataTemplate x:Key="PagedListBoxItemDefaultTemplate">
+    <Grid>
+      <Image HorizontalAlignment="Stretch" Stretch="Uniform" Source="{Binding ImagePath}" />
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="PagedListBoxItemImageDirectTemplate">
+    <Grid>
+      <Image HorizontalAlignment="Stretch" Stretch="Uniform" Source="{Binding Image}" />
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="PagedListBoxDataTemplate">
+    <ContentControl HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Content="{Binding}">
+      <FrameworkElement.Style>
+        <Style TargetType="{x:Type ContentControl}">
+          <Setter Property="ContentTemplate" Value="{DynamicResource PagedListBoxItemDefaultTemplate}" />
+          <Style.Triggers>
+            <DataTrigger Value="Polygon" Binding="{Binding DisplayStyle}">
+              <Setter Property="ContentTemplate" Value="{StaticResource DataItemPolygonTemplate}" />
+            </DataTrigger>
+            <DataTrigger Value="Polyline" Binding="{Binding DisplayStyle}">
+              <Setter Property="ContentTemplate" Value="{StaticResource DataItemPolylineTemplate}" />
+            </DataTrigger>
+            <DataTrigger Value="VectorImage" Binding="{Binding DisplayStyle}">
+              <Setter Property="ContentTemplate" Value="{StaticResource DataItemVectorImageTemplate}" />
+            </DataTrigger>
+            <DataTrigger Value="BitmapImage" Binding="{Binding DisplayStyle}">
+              <Setter Property="ContentTemplate" Value="{StaticResource DataItemImageTemplate}" />
+            </DataTrigger>
+            <DataTrigger Value="Default" Binding="{Binding DisplayStyle}">
+              <Setter Property="ContentTemplate" Value="{StaticResource PagedListBoxItemDefaultTemplate}" />
+            </DataTrigger>
+          </Style.Triggers>
+        </Style>
+      </FrameworkElement.Style>
+    </ContentControl>
+  </DataTemplate>
+</ResourceDictionary>

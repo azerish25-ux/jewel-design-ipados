@@ -1,0 +1,55 @@
+COUNTERSKETCH CAD STATIC PARITY AUDIT
+
+Baseline: recovery/canonical/cad. Originals unchanged; no target execution and no downloads.
+
+{
+  "sourceFiles": 949,
+  "types": 1034,
+  "builderTypes": 723,
+  "builderRegisteredBlocks": 619,
+  "legacyBuilderTypes": 305,
+  "legacyBuilderRegisteredBlocks": 257,
+  "valueAndHandleTypes": 57,
+  "legacyValueAndHandleTypes": 17,
+  "registeredBlockTypes": 654,
+  "commandTypes": 3,
+  "roslynReconciledTypes": 1034,
+  "groupedCapabilities": 52,
+  "declaredBuilderAcceptanceRows": 619,
+  "bodyInspectedBuilderDeclarations": 75,
+  "bodyInspectedLegacyBuilderDeclarations": 25,
+  "bodyEvidenceSourceFiles": 93,
+  "kernelStaticCallFamilies": 315,
+  "allRuntimeParityValidated": 0,
+  "legacyDeclarationCoverage": "100% of 257 legacy CSBlocks attribute declarations; not 100% behavioral or runtime coverage",
+  "legacyRegisteredInObsoleteNamespaces": 254,
+  "additionalObsoleteAttributedBuilders": 3,
+  "legacyRepresentativeBodyPercent": 9.73,
+  "registeredBuilderRepresentativeBodyPercent": 12.12,
+  "legacyObsoleteNamespaces": 25,
+  "legacyObsoleteNamespacesWithRepresentativeBody": 25,
+  "builderClassDeclarations": 687,
+  "builderNamespaces": 60
+}
+
+619 is the CSBlocks [CSBlock] declaration count (619 attribute occurrences cross-checked), not an actual running registry count or a user-feature count.
+
+Every declared builder has a scoreable GUID/legacy entry with fixture acceptance tests in cad-features.json. Score zero means no iPad parity runtime evidence, not absent source.
+
+CSBlock GUIDs, own read/write/version declarations, namespaces, values/handles, commands, source hashes and kernel static-call families are in cad-type-inventory.json.
+
+Body-based groups describe inspected branches and outputs. Uninspected variants remain explicit inventory-only coverage and are not claimed equivalent.
+
+Critical blockers: stored C# CodeDom scripts; Rhino/RMA native kernel semantics; dynamic native Netfabb repair; V-Ray plugin and assets; Geomagic printer SDK/device; many independently versioned obsolete algorithms; embedded/external geometry assets; JSON custom-geometry serialization asymmetry.
+
+Source-level behaviors worth preserving in golden tests: center-distance gem filtering, first-result planar boolean, unchanged-input failed solid boolean, concurrent bezel bottom thickness reading top thickness, centroid first-item double count/empty list, STL face count versus skipped NaN triangles.
+
+No public documentation or SDK/platform availability was verified; statements about iPad are requirements/risks derived from observed PC dependencies, not current vendor support claims.
+
+All 1,034 CAD-scope type names/base flags/own method-version ownership are reconciled to parent-produced Roslyn source-types.json/source-members.json. Static kernel-call attribution and input-channel extraction remain lexical.
+
+Legacy detail: 254 registered types in .Obsolete namespaces plus 3 [Obsolete]-attributed current-namespace builders = 257. Representative bodies cover all 25 .Obsolete builder namespaces, 25/257 legacy builder declarations (9.73%); complete legacy behavioral parity is not claimed.
+
+Legacy observations include explicit old/new differences: backwards-compatible linked orientation helper, old baguette shape name, independent old bezel bottom thickness, old collar endpoint flattening, old extrusion low-depth fallback and extra empty Unarray output.
+
+Only writes performed by this worker: cad-audit.cjs, cad-type-inventory.json, cad-features.json, cad-audit-notes.txt under docs/evidence/audit.

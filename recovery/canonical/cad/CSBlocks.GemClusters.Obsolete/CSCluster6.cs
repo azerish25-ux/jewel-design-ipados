@@ -1,0 +1,1116 @@
+using System;
+using System.Collections.Generic;
+using CS.CSDataUtilities;
+using CS.CSObjects.CSBlocks;
+using CS.Parametric;
+using CS.Parametric.Channels;
+using CSBlockDataUtils.CSGemOffsetCurves;
+using CSBlockUtil;
+using CSCompatibility;
+using CSDatas;
+using CSGemInstance.GemTableData;
+using GV.CounterSketch.Shared;
+using RMA.OpenNURBS;
+using Rhino;
+using Rhino.Geometry;
+using Rhino.Runtime;
+
+namespace CSBlocks.GemClusters.Obsolete;
+
+[Obsolete]
+[CSBlock("Cluster_V6", "{2A2EF475-969A-4517-8253-576CA24FB3E7}")]
+public sealed class CSCluster6 : CSBlock
+{
+	public readonly CSInputChannel InCenterGem;
+
+	public readonly CSInputChannel InCenterGemShapeOverrideEnabled;
+
+	public readonly CSInputChannel InCenterGemShapeOverride;
+
+	public readonly CSInputChannel InCenterGemSpacing;
+
+	public readonly CSInputChannel InGemDefinition;
+
+	public readonly CSInputChannel InSpacing;
+
+	public readonly CSInputChannel InAngle;
+
+	public readonly CSInputChannel InRotation;
+
+	public readonly CSInputChannel InPlacement;
+
+	public readonly CSInputChannel InFixPosition;
+
+	public readonly CSInputChannel InStyle;
+
+	public readonly CSInputChannel InEven;
+
+	public readonly CSInputChannel InProfileWidth;
+
+	public readonly CSInputChannel InChannelWallThicknessInner;
+
+	public readonly CSInputChannel InChannelWallThicknessOuter;
+
+	public readonly CSInputChannel InChannelSpacing;
+
+	public readonly CSInputChannel InShowChannel;
+
+	public readonly CSInputChannel InGemHeightOffset;
+
+	public readonly CSInputChannel InXYScaleToGem;
+
+	public readonly CSInputChannel InCenterGemShapeOverrideMode;
+
+	public readonly CSInputChannel InFixedGemSpacing;
+
+	public readonly CSInputChannel InRailX;
+
+	public readonly CSInputChannel InRailZ;
+
+	public readonly CSInputChannel InGemSpacingTolerance;
+
+	public readonly CSOutputChannel OutGem;
+
+	public readonly CSOutputChannel OutGemSizeZ;
+
+	public readonly CSOutputChannel OutChannelFix;
+
+	public CSCluster6(string identifier)
+		: base(identifier)
+	{
+		InCenterGem = new CSInputChannel(this, ChannelDataType.Gem, ChannelArrayType.Array | ChannelArrayType.Individual);
+		InCenterGemShapeOverrideEnabled = new CSInputChannel(this, ChannelDataType.Boolean, ChannelArrayType.Individual);
+		InCenterGemShapeOverride = new CSInputChannel(this, ChannelDataType.Gem, ChannelArrayType.Individual);
+		InCenterGemSpacing = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InGemDefinition = new CSInputChannel(this, ChannelDataType.Gem, ChannelArrayType.Individual);
+		InSpacing = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InAngle = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InRotation = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InPlacement = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InFixPosition = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InStyle = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InEven = new CSInputChannel(this, ChannelDataType.Boolean, ChannelArrayType.Individual);
+		InProfileWidth = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InChannelWallThicknessInner = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InChannelWallThicknessOuter = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InChannelSpacing = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InShowChannel = new CSInputChannel(this, ChannelDataType.Boolean, ChannelArrayType.Individual);
+		InGemHeightOffset = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InXYScaleToGem = new CSInputChannel(this, ChannelDataType.Boolean, ChannelArrayType.Individual);
+		InCenterGemShapeOverrideMode = new CSInputChannel(this, ChannelDataType.Integer, ChannelArrayType.Individual);
+		InFixedGemSpacing = new CSInputChannel(this, ChannelDataType.Boolean, ChannelArrayType.Individual);
+		InRailX = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InRailZ = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		InGemSpacingTolerance = new CSInputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		OutGem = new CSOutputChannel(this, ChannelDataType.Gem, ChannelArrayType.Array);
+		OutGemSizeZ = new CSOutputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		OutChannelFix = new CSOutputChannel(this, ChannelDataType.Double, ChannelArrayType.Individual);
+		SetChannelIdentifiers();
+	}
+
+	public override bool Update()
+	{
+		bool value = true;
+		InShowChannel.GetBoolean(ref value);
+		CSDataArray flattenArray = InCenterGem.GetFlattenArray();
+		if (flattenArray.GetArrayCount() <= 0)
+		{
+			return UpdateMissing("CenterGem");
+		}
+		if (!(flattenArray.GetArrayItem(0) is CSGemData centerGem))
+		{
+			return UpdateMissing("CenterGem");
+		}
+		CSGemData centerGemShapeOverride = InCenterGemShapeOverride.Data as CSGemData;
+		if (!(InGemDefinition.Data is CSGemData cSGemData))
+		{
+			return UpdateMissing("Gem Definition");
+		}
+		double value2 = 0.5;
+		InCenterGemSpacing.GetDouble(ref value2);
+		double value3 = 0.0;
+		InSpacing.GetDouble(ref value3);
+		double value4 = 0.0;
+		InAngle.GetDouble(ref value4);
+		value4 = CSBlockUtil.CSUtilMath.ToRadians(value4);
+		double value5 = 0.0;
+		InRotation.GetDouble(ref value5);
+		value5 = CSBlockUtil.CSUtilMath.ToRadians(value5);
+		double value6 = 0.0;
+		InPlacement.GetDouble(ref value6);
+		double value7 = 0.0;
+		InFixPosition.GetDouble(ref value7);
+		double value8 = 0.0;
+		InProfileWidth.GetDouble(ref value8);
+		double value9 = 0.0;
+		InChannelWallThicknessInner.GetDouble(ref value9);
+		double value10 = 0.0;
+		InChannelWallThicknessOuter.GetDouble(ref value10);
+		double value11 = 0.0;
+		InChannelSpacing.GetDouble(ref value11);
+		int value12 = 0;
+		InStyle.GetInteger(ref value12);
+		bool value13 = false;
+		InCenterGemShapeOverrideEnabled.GetBoolean(ref value13);
+		bool value14 = false;
+		InEven.GetBoolean(ref value14);
+		double value15 = 0.0;
+		InGemHeightOffset.GetDouble(ref value15);
+		bool value16 = false;
+		InXYScaleToGem.GetBoolean(ref value16);
+		ValueListItem whichItem = ValueListItem.GemClusterCenterShapeOverrideModeDimensionSmallest;
+		InCenterGemShapeOverrideMode.GetValueListItem(ref whichItem);
+		bool value17 = false;
+		InFixedGemSpacing.GetBoolean(ref value17);
+		double value18 = 0.0;
+		InGemSpacingTolerance.GetDouble(ref value18);
+		CSDataArray flattenArray2 = InRailX.GetFlattenArray();
+		double value19 = 0.0;
+		if (flattenArray2.GetArrayCount() >= 1)
+		{
+			flattenArray2.GetArrayItem(0).GetDouble(ref value19);
+		}
+		value2 += value19;
+		CSDataArray flattenArray3 = InRailZ.GetFlattenArray();
+		double value20 = 0.0;
+		if (flattenArray3.GetArrayCount() >= 1)
+		{
+			flattenArray3.GetArrayItem(0).GetDouble(ref value20);
+		}
+		value6 += value20;
+		if (!value)
+		{
+			OutGemSizeZ.SetData(null);
+			OutGem.SetData(null);
+			return base.Update();
+		}
+		if (!ClusterGem(centerGem, value13, centerGemShapeOverride, value2, cSGemData, value3, value4, value5, value6, value7, value12, value14, value8, value9, value10, value11, value15, value16, whichItem, value17, value18, out var outputGems, out var gemSpacingFix, out var outError))
+		{
+			return UpdateError(outError);
+		}
+		OutGem.SetData(outputGems);
+		OutGemSizeZ.SetData(new CSNumberData(cSGemData.GemZSize));
+		OutChannelFix.SetData(new CSNumberData(gemSpacingFix));
+		return base.Update();
+	}
+
+	private static bool ClusterGem(CSGemData centerGem, bool centerGemShapeOverrideEnabled, CSGemData centerGemShapeOverride, double centerGemSpacing, CSGemData gemDefinition, double spacing, double angle, double rotation, double placement, double fixPosition, int style, bool isEven, double profileWidth, double channelWallThicknessInner, double channelWallThicknessOuter, double channelSpacing, double gemHeightOffset, bool doScaleToGemXY, ValueListItem centerGemShapeOverrideMode, bool fixedGemSpacing, double tolerance, out CSDataArray outputGems, out double gemSpacingFix, out string outError)
+	{
+		outputGems = new CSDataArray();
+		gemSpacingFix = 0.0;
+		OnXform onXform = new OnXform();
+		onXform.Rotation(rotation, OnUtil.On_zaxis, OnUtil.On_origin);
+		double num = profileWidth - (channelWallThicknessInner + channelWallThicknessOuter);
+		double num2 = num - channelSpacing * 2.0;
+		double bestGemSizeX = -1.23432101234321E+308;
+		double num3 = -1.23432101234321E+308;
+		if (num == 0.0)
+		{
+			bestGemSizeX = gemDefinition.GemXSize;
+			num3 = gemDefinition.GemYSize;
+		}
+		else
+		{
+			GemSize gemSize = null;
+			double num4 = -1.23432101234321E+308;
+			foreach (GemSize size in gemDefinition.Sizes)
+			{
+				double num5 = size.X / gemDefinition.GemXSize;
+				double num6 = size.Y / gemDefinition.GemYSize;
+				double z_scale_factor = (num5 + num6) / 2.0;
+				OnXform onXform2 = new OnXform();
+				onXform2.Scale(num5, num6, z_scale_factor);
+				OnNurbsCurve onNurbsCurve = gemDefinition.GetNurbsCurve().Convert();
+				onNurbsCurve.Transform(onXform * onXform2);
+				OnBoundingBox tight_bbox = new OnBoundingBox();
+				if (!onNurbsCurve.GetTightBoundingBox(ref tight_bbox))
+				{
+					outError = "gem Curve bounding Box failed";
+					return false;
+				}
+				double num7 = Math.Abs(tight_bbox.Max().x) + Math.Abs(tight_bbox.Min().x);
+				double num8 = Math.Abs(tight_bbox.Max().y) + Math.Abs(tight_bbox.Min().y);
+				double num9 = Math.Abs(num2 - num8);
+				if (!RhinoMath.IsValidDouble(num4) || num9 < num4)
+				{
+					gemSize = size;
+					bestGemSizeX = num7;
+					num3 = num8;
+					num4 = num9;
+				}
+			}
+			gemDefinition.ScaleToSize(gemSize.X, gemSize.Y);
+		}
+		double dx = gemDefinition.GemXSize / 2.0 - gemDefinition.GemXMax;
+		double dy = gemDefinition.GemYSize / 2.0 - gemDefinition.GemYMax;
+		OnXform onXform3 = new OnXform();
+		onXform3.Translation(dx, dy, 0.0);
+		OnXform onXform4 = new OnXform();
+		onXform4.Translation(0.0, 0.0, 0.0 - Math.Abs(gemDefinition.GemZMax));
+		OnXform onXform5 = new OnXform();
+		onXform5.Rotation(angle, OnUtil.On_xaxis, OnUtil.On_origin);
+		Transform identity = Transform.Identity;
+		OnXform onXform6 = new OnXform();
+		onXform6.Translation(0.0, 0.0, placement);
+		OnXform xTransformLocal = onXform6 * onXform5 * onXform4 * onXform3 * onXform * (OnXform)Interop.ToOnXform(identity);
+		string gemShape;
+		if (centerGemShapeOverrideEnabled)
+		{
+			if (centerGemShapeOverride == null)
+			{
+				centerGemShapeOverride = new CSGemData(centerGem);
+			}
+			else
+			{
+				double scaleFactorX;
+				switch (centerGemShapeOverrideMode)
+				{
+				case ValueListItem.GemClusterCenterShapeOverrideModeDimensionX:
+					scaleFactorX = centerGem.GemXSize / centerGemShapeOverride.GemXSize;
+					break;
+				case ValueListItem.GemClusterCenterShapeOverrideModeDimensionY:
+					scaleFactorX = centerGem.GemYSize / centerGemShapeOverride.GemYSize;
+					break;
+				case ValueListItem.GemClusterCenterShapeOverrideModeDimensionLargest:
+					scaleFactorX = ((!(centerGem.GemXSize > centerGem.GemYSize)) ? (centerGem.GemYSize / centerGemShapeOverride.GemYSize) : (centerGem.GemXSize / centerGemShapeOverride.GemXSize));
+					break;
+				case ValueListItem.GemClusterCenterShapeOverrideModeDimensionSmallest:
+					scaleFactorX = ((!(centerGem.GemXSize < centerGem.GemYSize)) ? (centerGem.GemYSize / centerGemShapeOverride.GemYSize) : (centerGem.GemXSize / centerGemShapeOverride.GemXSize));
+					break;
+				default:
+					outError = "Invalid Gem Cluster Center Shape Override Mode";
+					return false;
+				}
+				centerGemShapeOverride.Scale(scaleFactorX);
+				if (!CSBlockUtil.CSUtilMath.GetUnscaledXform(centerGem.Xform, out var xUp))
+				{
+					xUp = Transform.Identity;
+				}
+				centerGemShapeOverride.ApplyTransform(xUp);
+			}
+			gemShape = centerGemShapeOverride.GemShape;
+		}
+		else
+		{
+			centerGemShapeOverride = new CSGemData(centerGem);
+			gemShape = centerGem.GemShape;
+		}
+		double offsetRailZ;
+		double num10;
+		if (num == 0.0)
+		{
+			num10 = centerGemSpacing + num3 / 2.0 - gemHeightOffset * Math.Sin(angle);
+			offsetRailZ = 0.0 + gemHeightOffset * Math.Cos(angle);
+		}
+		else
+		{
+			num10 = centerGemSpacing + (channelWallThicknessInner + num / 2.0) * Math.Cos(angle) - gemHeightOffset * Math.Sin(angle);
+			offsetRailZ = (channelWallThicknessInner + num / 2.0) * Math.Sin(angle) + gemHeightOffset * Math.Cos(angle);
+		}
+		CSGemData offsetControlShape = (doScaleToGemXY ? centerGem : centerGemShapeOverride);
+		if (!fixedGemSpacing)
+		{
+			if (!GetGemLayout(gemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, num10, offsetRailZ, xTransformLocal, fixPosition, isEven, style, out outputGems, out outError))
+			{
+				return false;
+			}
+			gemSpacingFix = 0.0;
+		}
+		else
+		{
+			double num11 = num10;
+			CSDataArray cSDataArray = null;
+			double num12 = -1.0;
+			num10 -= 0.1;
+			bool flag = false;
+			bool flag2 = true;
+			if (!GetGemLayout(gemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, num10, offsetRailZ, xTransformLocal, fixPosition, isEven, style, out outputGems, out outError))
+			{
+				return false;
+			}
+			num12 = GetSpacing(outputGems);
+			num10 += 0.1;
+			while (true)
+			{
+				if (!GetGemLayout(gemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, num10, offsetRailZ, xTransformLocal, fixPosition, isEven, style, out outputGems, out outError))
+				{
+					return false;
+				}
+				double spacing2 = GetSpacing(outputGems);
+				if (flag2 && spacing2 - spacing < tolerance)
+				{
+					cSDataArray = outputGems;
+					flag = true;
+					break;
+				}
+				flag2 = false;
+				if (spacing2 < num12)
+				{
+					cSDataArray = outputGems;
+					num10 -= 0.01;
+					num12 = spacing2;
+					break;
+				}
+				num10 += 0.1;
+				num12 = spacing2;
+			}
+			if (!flag)
+			{
+				while (true)
+				{
+					if (!GetGemLayout(gemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, num10, offsetRailZ, xTransformLocal, fixPosition, isEven, style, out outputGems, out outError))
+					{
+						return false;
+					}
+					double spacing3 = GetSpacing(outputGems);
+					if (spacing3 > num12)
+					{
+						break;
+					}
+					cSDataArray = outputGems;
+					num10 -= 0.01;
+					num12 = spacing3;
+				}
+			}
+			outputGems = cSDataArray;
+			gemSpacingFix = num10 - num11;
+		}
+		outError = "";
+		return true;
+	}
+
+	private static double CosAng(On3dVector v0, On3dVector v1)
+	{
+		v0.Unitize();
+		v1.Unitize();
+		return v0.x * v1.x + v0.y * v1.y;
+	}
+
+	private static bool GetGemLayout(string centerGemShape, CSGemData offsetControlShape, CSGemData gemDefinition, double bestGemSizeX, double spacing, double offsetRailX, double offsetRailZ, IOnXform xTransformLocal, double fixPosition, bool isEven, int style, out CSDataArray outputGems, out string outError)
+	{
+		outputGems = new CSDataArray();
+		switch (centerGemShape)
+		{
+		case "Cushion":
+		case "Cushion Rotated 90":
+		case "Oval":
+		case "Oval Rotated 90":
+		case "Round":
+			if (!PlaceGemsRound(centerGemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, offsetRailX, offsetRailZ, xTransformLocal, fixPosition, isEven, ref outputGems))
+			{
+				outError = "PlaceGemsRound failed";
+				return false;
+			}
+			break;
+		case "Cushion Square":
+		case "Princess":
+		case "Baguette Straight":
+			if (!PlaceGemsSquare(centerGemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, offsetRailX, offsetRailZ, xTransformLocal, style, ref outputGems))
+			{
+				outError = "PlaceGemsSquare failed";
+				return false;
+			}
+			break;
+		case "Cushion Square Rotated 45":
+		case "Princess Rotated 45":
+			if (!PlaceGemsSquareRotated(centerGemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, offsetRailX, offsetRailZ, xTransformLocal, style, ref outputGems))
+			{
+				outError = "PlaceGemsSquareRotated failed";
+				return false;
+			}
+			break;
+		case "Emerald":
+		case "Emerald Rotated 90":
+		case "Emerald Square":
+		case "Emerald Square Rotated 45":
+		case "Octagon":
+		case "Radiant":
+		case "Radiant Square":
+			if (!PlaceGemsEmerald(centerGemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, offsetRailX, offsetRailZ, xTransformLocal, ref outputGems))
+			{
+				outError = "PlaceGemsEmerald failed";
+				return false;
+			}
+			break;
+		case "Heart":
+			if (!PlaceGemsHeart(centerGemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, offsetRailX, offsetRailZ, xTransformLocal, ref outputGems))
+			{
+				outError = "PlaceGemsHeart failed";
+				return false;
+			}
+			break;
+		case "Marquise":
+			if (!PlaceGemsMarquise(centerGemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, offsetRailX, offsetRailZ, xTransformLocal, ref outputGems))
+			{
+				outError = "PlaceGemsMarquise failed";
+				return false;
+			}
+			break;
+		case "Pear":
+			if (!PlaceGemsPear(centerGemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, offsetRailX, offsetRailZ, xTransformLocal, ref outputGems))
+			{
+				outError = "PlaceGemsPear failed";
+				return false;
+			}
+			break;
+		case "Marquise Rotated 90":
+			if (!PlaceGemsMarquiseRotated(centerGemShape, offsetControlShape, gemDefinition, bestGemSizeX, spacing, offsetRailX, offsetRailZ, xTransformLocal, ref outputGems))
+			{
+				outError = "PlaceGemsMarquiseRotated failed";
+				return false;
+			}
+			break;
+		default:
+			outError = "Unknown gem space for cluster " + centerGemShape;
+			return false;
+		}
+		outError = "";
+		return true;
+	}
+
+	private static double GetSide(double cosAng, double a, double c)
+	{
+		double num = 1.0;
+		double num2 = -2.0 * a * cosAng;
+		double num3 = 0.0 - c * c + a * a;
+		return (0.0 - num2 + Math.Sqrt(num2 * num2 - 4.0 * num * num3)) / (2.0 * num);
+	}
+
+	private static double GetSpacing(CSDataArray gemarray)
+	{
+		CSGemData obj = gemarray.GetArrayItem(0) as CSGemData;
+		CSGemData data = gemarray.GetArrayItem(1) as CSGemData;
+		On3dPoint value = new On3dPoint(OnUtil.On_origin);
+		CSDataHelper.GetPoint(obj, ref value);
+		On3dPoint value2 = new On3dPoint(OnUtil.On_origin);
+		CSDataHelper.GetPoint(data, ref value2);
+		double num = obj.GemXSize / 2.0;
+		double num2 = obj.GemYSize / 2.0;
+		return (value - value2).Length() - num - num2;
+	}
+
+	private static double GetUnnormalizedParam(int gemCurrentIndex, int gemCount, int style)
+	{
+		if (style == 0)
+		{
+			return (double)gemCurrentIndex / (double)gemCount;
+		}
+		double num = 1.0 / (2.0 * Math.Sqrt(2.0) + (double)(2 * (gemCount - 1)));
+		return num * Math.Sqrt(2.0) + num * 2.0 * (double)gemCurrentIndex;
+	}
+
+	private static bool PlaceGemCorner(IOnCurve curveLhs, IOnCurve curveRhs, CSGemData centerGem, CSData gemDefinition, IOnXform xTransformLocal, CSDataArray outputGems)
+	{
+		On3dPoint on3dPoint = curveLhs.PointAtEnd();
+		On3dPoint on3dPoint2 = curveRhs.PointAtStart();
+		if (on3dPoint.DistanceTo(on3dPoint2) > 0.001)
+		{
+			return false;
+		}
+		OnLineCurve onLineCurve = new OnLineCurve(on3dPoint, on3dPoint2);
+		On3dPoint destination = onLineCurve.PointAt(onLineCurve.Domain().Mid());
+		On3dVector on3dVector = curveLhs.TangentAt(curveLhs.Domain().Max());
+		On3dVector on3dVector2 = curveRhs.TangentAt(curveRhs.Domain().Min());
+		On3dVector destination2 = on3dVector + on3dVector2;
+		OnXform xform = CSBlockUtil.CSUtilMath.Orient3Point(OnUtil.On_origin, OnUtil.On_xaxis, OnUtil.On_zaxis, destination, destination2, centerGem.Up.Convert());
+		CSData data = gemDefinition.Duplicate();
+		CSDataHelper.Transform(data, xform.Convert() * xTransformLocal.Convert());
+		outputGems.Append(data);
+		return true;
+	}
+
+	private static bool PlaceGemCorners(IList<IOnCurve> curves, CSGemData centerGem, CSData gemDefinition, IOnXform xTransformLocal, CSDataArray outputGems)
+	{
+		for (int i = 0; i < curves.Count; i++)
+		{
+			int num = i;
+			int num2 = num + 1;
+			if (num2 >= curves.Count)
+			{
+				num2 -= curves.Count;
+			}
+			if (!PlaceGemCorner(curves[num], curves[num2], centerGem, gemDefinition, xTransformLocal, outputGems))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private static bool PlaceGemsCurveSide(IOnCurve curve, CSGemData centerGem, CSGemData gemDefinition, double gemDefinitionSizeX, double spacing, int style, IOnXform xTransformLocal, CSDataArray outputGems)
+	{
+		double length = 0.0;
+		if (!curve.GetLength(ref length))
+		{
+			return false;
+		}
+		int num = (int)(length / (gemDefinitionSizeX + spacing));
+		if (length < (double)num * gemDefinitionSizeX + (double)Math.Max(num - 1, 0) * spacing)
+		{
+			num--;
+		}
+		double[] array = new double[num];
+		double[] t = new double[num];
+		for (int i = 0; i < num; i++)
+		{
+			array[i] = GetUnnormalizedParam(i, num, style);
+		}
+		curve.GetNormalizedArcLengthPoints(array, ref t);
+		for (int j = ((style == 0) ? 1 : 0); j < num; j++)
+		{
+			OnXform xform = CSBlockUtil.CSUtilMath.Orient3Point(OnUtil.On_origin, OnUtil.On_xaxis, gemDefinition.Up.Convert(), curve.PointAt(t[j]), curve.TangentAt(t[j]), centerGem.Up.Convert());
+			CSData data = gemDefinition.Duplicate();
+			CSDataHelper.Transform(data, xform.Convert() * xTransformLocal.Convert());
+			outputGems.Append(data);
+		}
+		return true;
+	}
+
+	private static bool PlaceGemsEmerald(string centerGemShape, CSGemData centerGem, CSGemData gemDefinition, double gemDefinitionSizeX, double spacing, double offsetRailX, double offsetRailZ, IOnXform xTransformLocal, ref CSDataArray outputGems)
+	{
+		OnCurve[] array = GemOffsetCurveV2.GemOffsetCurvesOld(centerGemShape, centerGem, offsetRailX, doTransformUp: true);
+		if (array.Length != 9)
+		{
+			return false;
+		}
+		OnCurve[] array2 = array;
+		for (int i = 0; i < array2.Length; i++)
+		{
+			array2[i].Translate(new On3dVector(centerGem.Normal.Convert()) * offsetRailZ);
+		}
+		OnCurve onCurve = array[0];
+		OnCurve onCurve2 = array[1];
+		OnCurve onCurve3 = array[2];
+		OnCurve onCurve4 = onCurve3.Duplicate();
+		onCurve4.Trim(new OnInterval(onCurve4.Domain().Min(), onCurve3.Domain().Mid()));
+		double cosAng = CosAng(onCurve.PointAtStart() - onCurve.PointAtEnd(), onCurve2.PointAtEnd() - onCurve2.PointAtStart());
+		double cosAng2 = CosAng(onCurve2.PointAtStart() - onCurve2.PointAtEnd(), onCurve4.PointAtEnd() - onCurve4.PointAtStart());
+		double length = 0.0;
+		onCurve.GetLength(ref length);
+		double length2 = 0.0;
+		onCurve2.GetLength(ref length2);
+		double length3 = 0.0;
+		onCurve4.GetLength(ref length3);
+		double num = 0.0;
+		bool flag = true;
+		int num2 = -1;
+		double num3;
+		double num4;
+		int num5;
+		double side;
+		int num6;
+		double side2;
+		int num7;
+		double num8;
+		do
+		{
+			num3 = gemDefinitionSizeX + spacing + num;
+			num4 = 0.0;
+			num5 = (int)((length - num4) / num3);
+			double a = length - (num4 + num3 * (double)num5);
+			side = GetSide(cosAng, a, num3);
+			num6 = (int)((length2 - side) / num3);
+			double a2 = length2 - (side + num3 * (double)num6);
+			side2 = GetSide(cosAng2, a2, num3);
+			num7 = (int)((length3 - side2) / num3);
+			num8 = length3 - (side2 + num3 * (double)num7);
+			if (flag)
+			{
+				num2 = ((num8 > num3 / 2.0) ? 1 : 0);
+				if (num2 == 1)
+				{
+					num8 -= num3 / 2.0;
+				}
+				int num9 = num5 + num6 + num7 + 3 - 1;
+				num += num8 / (double)num9 * 0.9;
+				flag = false;
+				continue;
+			}
+			double num10 = num8 / num3;
+			if (num10 < 0.25)
+			{
+				int num11 = num5 + num6 + num7 + 3 - 1;
+				num += num8 / (double)num11 * 0.9;
+			}
+			else if (num10 < 0.75)
+			{
+				num8 -= num3 / 2.0;
+				int num12 = num5 + num6 + num7 + 3 - 1;
+				num += num8 / (double)num12 * 0.9;
+			}
+			else
+			{
+				num8 -= num3;
+				num7++;
+				int num13 = num5 + num6 + num7 + 3 - 1;
+				num += num8 / (double)num13 * 0.9;
+			}
+		}
+		while (num8 > 0.01);
+		double num14 = length3 + num3 * (1.0 - (double)num2 / 2.0);
+		int num15 = num7 - 1 + num2;
+		for (int j = 0; j <= num5; j++)
+		{
+			PlaceGemsEmeraldSide(array, 0, gemDefinitionSizeX, num4 + (double)j * num3, centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int k = 0; k <= num6; k++)
+		{
+			PlaceGemsEmeraldSide(array, 1, gemDefinitionSizeX, side + (double)k * num3, centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int l = 0; l <= num7; l++)
+		{
+			PlaceGemsEmeraldSide(array, 2, gemDefinitionSizeX, side2 + (double)l * num3, centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int m = 0; m <= num15; m++)
+		{
+			PlaceGemsEmeraldSide(array, 2, gemDefinitionSizeX, num14 + (double)m * num3, centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int num16 = num6; num16 >= 0; num16--)
+		{
+			PlaceGemsEmeraldSide(array, 3, gemDefinitionSizeX, length2 - (side + (double)num16 * num3), centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int num17 = num5; num17 >= 0; num17--)
+		{
+			PlaceGemsEmeraldSide(array, 4, gemDefinitionSizeX, length - (num4 + (double)num17 * num3), centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int n = 1; n <= num5; n++)
+		{
+			PlaceGemsEmeraldSide(array, 4, gemDefinitionSizeX, length + (num4 + (double)n * num3), centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int num18 = 0; num18 <= num6; num18++)
+		{
+			PlaceGemsEmeraldSide(array, 5, gemDefinitionSizeX, side + (double)num18 * num3, centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int num19 = num15; num19 >= 0; num19--)
+		{
+			PlaceGemsEmeraldSide(array, 6, gemDefinitionSizeX, length3 * 2.0 - (num14 + (double)num19 * num3), centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int num20 = num7; num20 >= 0; num20--)
+		{
+			PlaceGemsEmeraldSide(array, 6, gemDefinitionSizeX, length3 * 2.0 - (side2 + (double)num20 * num3), centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int num21 = num6; num21 >= 0; num21--)
+		{
+			PlaceGemsEmeraldSide(array, 7, gemDefinitionSizeX, length2 - (side + (double)num21 * num3), centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		for (int num22 = num5; num22 >= 1; num22--)
+		{
+			PlaceGemsEmeraldSide(array, 8, gemDefinitionSizeX, length - (num4 + (double)num22 * num3), centerGem, gemDefinition, xTransformLocal, ref outputGems);
+		}
+		return true;
+	}
+
+	private static void PlaceGemsEmeraldSide(IList<OnCurve> curves, int crvIndex, double sizeX, double distance, CSGemData centerGem, CSGemData gemDefinition, IOnXform xOrientLocal, ref CSDataArray outputGems)
+	{
+		On3dPoint on3dPoint = curves[crvIndex].PointAtStart();
+		On3dVector on3dVector = curves[crvIndex].PointAtEnd() - on3dPoint;
+		on3dVector.Unitize();
+		On3dVector destination = new On3dVector(on3dVector);
+		double num = sizeX / 2.0;
+		if (distance < num)
+		{
+			int num2 = crvIndex - 1;
+			if (num2 == -1)
+			{
+				num2 = curves.Count - 1;
+			}
+			On3dVector on3dVector2 = curves[num2].PointAtEnd() - curves[num2].PointAtStart();
+			on3dVector2.Unitize();
+			double num3 = distance;
+			if (num3 < 0.0)
+			{
+				num3 = 0.0;
+			}
+			double num4 = num3 / num;
+			double num5 = 1.0 - num4;
+			destination = on3dVector * num4 + on3dVector2 * num5;
+		}
+		else
+		{
+			double length = 0.0;
+			curves[crvIndex].GetLength(ref length);
+			if (length - distance < num)
+			{
+				int index = (crvIndex + 1) % curves.Count;
+				On3dVector on3dVector3 = curves[index].PointAtEnd() - curves[index].PointAtStart();
+				on3dVector3.Unitize();
+				double num6 = length - distance;
+				if (num6 < 0.0)
+				{
+					num6 = 0.0;
+				}
+				double num7 = num6 / num;
+				double num8 = 1.0 - num7;
+				destination = on3dVector * num7 + on3dVector3 * num8;
+			}
+		}
+		on3dPoint += (IOn3dVector)(on3dVector * distance);
+		OnXform xform = CSBlockUtil.CSUtilMath.Orient3Point(OnUtil.On_origin, new On3dVector(1.0, 0.0, 0.0), gemDefinition.Normal.Convert(), on3dPoint, destination, centerGem.Normal.Convert());
+		CSData data = gemDefinition.Duplicate();
+		CSDataHelper.Transform(data, xform.Convert() * xOrientLocal.Convert());
+		outputGems.Append(data);
+	}
+
+	private static bool PlaceGemsHeart(string centerGemShape, CSGemData centerGem, CSGemData gemDefinition, double gemDefinitionSizeX, double spacing, double offsetRailX, double offsetRailZ, IOnXform xTransformLocal, ref CSDataArray outputGems)
+	{
+		IOnCurve[] array = GemOffsetCurveV2.GemOffsetCurvesOld(centerGemShape, centerGem, offsetRailX, doTransformUp: true);
+		IOnCurve[] array2 = array;
+		if (array2.Length != 6)
+		{
+			return false;
+		}
+		array = array2;
+		for (int i = 0; i < array.Length; i++)
+		{
+			((OnCurve)array[i]).Translate(new On3dVector(centerGem.Normal.Convert()) * offsetRailZ);
+		}
+		if (!CSUtilCurves.MergeCurves(new IOnCurve[3]
+		{
+			array2[0],
+			array2[1],
+			array2[2]
+		}, out OnCurve mergedCrv, 0.01))
+		{
+			return false;
+		}
+		if (!CSUtilCurves.MergeCurves(new IOnCurve[3]
+		{
+			array2[3],
+			array2[4],
+			array2[5]
+		}, out OnCurve mergedCrv2, 0.01))
+		{
+			return false;
+		}
+		CSDataArray cSDataArray = new CSDataArray();
+		if (!PlaceGemCorners(new OnCurve[2] { mergedCrv2, mergedCrv }, centerGem, gemDefinition, xTransformLocal, cSDataArray))
+		{
+			return false;
+		}
+		outputGems.Append(cSDataArray.GetArrayItem(0));
+		if (!PlaceGemsCurveSide(mergedCrv, centerGem, gemDefinition, gemDefinitionSizeX, spacing, 0, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		outputGems.Append(cSDataArray.GetArrayItem(1));
+		if (!PlaceGemsCurveSide(mergedCrv2, centerGem, gemDefinition, gemDefinitionSizeX, spacing, 0, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		return true;
+	}
+
+	private static bool PlaceGemsMarquise(string centerGemShape, CSGemData centerGem, CSGemData gemDefinition, double gemDefinitionSizeX, double spacing, double offsetRailX, double offsetRailZ, IOnXform xTransformLocal, ref CSDataArray outputGems)
+	{
+		IOnCurve[] array = GemOffsetCurveV2.GemOffsetCurvesOld(centerGemShape, centerGem, offsetRailX, doTransformUp: true);
+		IOnCurve[] array2 = array;
+		if (array2.Length != 2)
+		{
+			return false;
+		}
+		array = array2;
+		for (int i = 0; i < array.Length; i++)
+		{
+			((OnCurve)array[i]).Translate(new On3dVector(centerGem.Normal.Convert()) * offsetRailZ);
+		}
+		IOnCurve onCurve = array2[0];
+		IOnCurve onCurve2 = array2[1];
+		CSDataArray cSDataArray = new CSDataArray();
+		if (!PlaceGemCorners(new IOnCurve[2] { onCurve2, onCurve }, centerGem, gemDefinition, xTransformLocal, cSDataArray))
+		{
+			return false;
+		}
+		outputGems.Append(cSDataArray.GetArrayItem(0));
+		if (!PlaceGemsCurveSide(onCurve, centerGem, gemDefinition, gemDefinitionSizeX, spacing, 0, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		outputGems.Append(cSDataArray.GetArrayItem(1));
+		if (!PlaceGemsCurveSide(onCurve2, centerGem, gemDefinition, gemDefinitionSizeX, spacing, 0, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		return true;
+	}
+
+	private static bool PlaceGemsMarquiseRotated(string centerGemShape, CSGemData centerGem, CSGemData gemDefinition, double gemDefinitionSizeX, double spacing, double offsetRailX, double offsetRailZ, IOnXform xTransformLocal, ref CSDataArray outputGems)
+	{
+		IOnCurve[] array = GemOffsetCurveV2.GemOffsetCurvesOld(centerGemShape, centerGem, offsetRailX, doTransformUp: true);
+		IOnCurve[] array2 = array;
+		if (array2.Length != 4)
+		{
+			return false;
+		}
+		array = array2;
+		for (int i = 0; i < array.Length; i++)
+		{
+			((OnCurve)array[i]).Translate(new On3dVector(centerGem.Normal.Convert()) * offsetRailZ);
+		}
+		IOnCurve onCurve = array2[0];
+		IOnCurve onCurve2 = array2[1];
+		IOnCurve onCurve3 = array2[2];
+		IOnCurve onCurve4 = array2[3];
+		IOnCurve[] inputCrvs = new IOnCurve[2] { onCurve4, onCurve };
+		IOnCurve[] inputCrvs2 = new IOnCurve[2] { onCurve2, onCurve3 };
+		if (!CSUtilCurves.MergeCurves(inputCrvs, out OnCurve mergedCrv, 0.01))
+		{
+			return false;
+		}
+		if (!CSUtilCurves.MergeCurves(inputCrvs2, out OnCurve mergedCrv2, 0.01))
+		{
+			return false;
+		}
+		CSDataArray cSDataArray = new CSDataArray();
+		if (!PlaceGemCorners(new OnCurve[2] { mergedCrv, mergedCrv2 }, centerGem, gemDefinition, xTransformLocal, cSDataArray))
+		{
+			return false;
+		}
+		CSDataArray cSDataArray2 = new CSDataArray();
+		if (!PlaceGemsCurveSide(mergedCrv, centerGem, gemDefinition, gemDefinitionSizeX, spacing, 0, xTransformLocal, cSDataArray2))
+		{
+			return false;
+		}
+		int num = cSDataArray2.GetArrayCount() / 2;
+		for (int j = num; j < cSDataArray2.GetArrayCount(); j++)
+		{
+			outputGems.Append(cSDataArray2.GetArrayItem(j));
+		}
+		outputGems.Append(cSDataArray.GetArrayItem(0));
+		if (!PlaceGemsCurveSide(mergedCrv2, centerGem, gemDefinition, gemDefinitionSizeX, spacing, 0, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		outputGems.Append(cSDataArray.GetArrayItem(1));
+		for (int k = 0; k < num; k++)
+		{
+			outputGems.Append(cSDataArray2.GetArrayItem(k));
+		}
+		return true;
+	}
+
+	private static bool PlaceGemsPear(string centerGemShape, CSGemData centerGem, CSGemData gemDefinition, double gemDefinitionSizeX, double spacing, double offsetRailX, double offsetRailZ, IOnXform xTransformLocal, ref CSDataArray outputGems)
+	{
+		IOnCurve[] array = GemOffsetCurveV2.GemOffsetCurvesOld(centerGemShape, centerGem, offsetRailX, doTransformUp: true);
+		IOnCurve[] array2 = array;
+		if (array2.Length != 4)
+		{
+			return false;
+		}
+		array = array2;
+		for (int i = 0; i < array.Length; i++)
+		{
+			((OnCurve)array[i]).Translate(new On3dVector(centerGem.Normal.Convert()) * offsetRailZ);
+		}
+		if (!CSUtilCurves.MergeCurves(new IOnCurve[2]
+		{
+			array2[0],
+			array2[1]
+		}, out OnCurve mergedCrv, 0.01))
+		{
+			return false;
+		}
+		if (!CSUtilCurves.MergeCurves(new IOnCurve[2]
+		{
+			array2[2],
+			array2[3]
+		}, out OnCurve mergedCrv2, 0.01))
+		{
+			return false;
+		}
+		CSDataArray cSDataArray = new CSDataArray();
+		if (!PlaceGemCorners(new OnCurve[2] { mergedCrv2, mergedCrv }, centerGem, gemDefinition, xTransformLocal, cSDataArray))
+		{
+			return false;
+		}
+		outputGems.Append(cSDataArray.GetArrayItem(0));
+		if (!PlaceGemsCurveSide(mergedCrv, centerGem, gemDefinition, gemDefinitionSizeX, spacing, 0, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		outputGems.Append(cSDataArray.GetArrayItem(1));
+		if (!PlaceGemsCurveSide(mergedCrv2, centerGem, gemDefinition, gemDefinitionSizeX, spacing, 0, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		return true;
+	}
+
+	private static bool PlaceGemsRound(string centerGemShape, CSGemData centerGem, CSGemData gemDefinition, double gemDefinitionSizeX, double spacing, double offsetRailX, double offsetRailZ, IOnXform xTransformLocal, double fixPosition, bool isEven, ref CSDataArray outputGems)
+	{
+		if (!GemOffsetCurveV2.GemOffset(centerGemShape, centerGem, offsetRailX, out OnCurve curve, true, out string _, 0.0, 0.0, 0.0))
+		{
+			return false;
+		}
+		curve.Translate(new On3dVector(centerGem.Normal.Convert()) * offsetRailZ);
+		double length = 0.0;
+		if (!curve.GetLength(ref length))
+		{
+			return false;
+		}
+		int num = (int)(length / (gemDefinitionSizeX + spacing));
+		if (isEven && num % 2 == 1)
+		{
+			num--;
+		}
+		double[] array = new double[num];
+		double[] t = new double[num];
+		double num2 = 1.0 / (double)num;
+		double num3 = fixPosition % num2;
+		for (int i = 0; i < num; i++)
+		{
+			array[i] = num3;
+			num3 += num2;
+			if (num3 > 1.0)
+			{
+				num3 -= 1.0;
+			}
+		}
+		Array.Sort(array);
+		curve.GetNormalizedArcLengthPoints(array, ref t);
+		for (int j = 0; j < num; j++)
+		{
+			OnXform xform = CSBlockUtil.CSUtilMath.Orient3Point(OnUtil.On_origin, OnUtil.On_xaxis, gemDefinition.Up.Convert(), curve.PointAt(t[j]), curve.TangentAt(t[j]), centerGem.Up.Convert());
+			CSData data = gemDefinition.Duplicate();
+			CSDataHelper.Transform(data, xform.Convert() * xTransformLocal.Convert());
+			outputGems.Append(data);
+		}
+		return true;
+	}
+
+	private static bool PlaceGemsSquare(string centerGemShape, CSGemData centerGem, CSGemData gemDefinition, double gemDefinitionSizeX, double spacing, double offsetRailX, double offsetRailZ, IOnXform xTransformLocal, int style, ref CSDataArray outputGems)
+	{
+		OnCurve[] array = GemOffsetCurveV2.GemOffsetCurvesOld(centerGemShape, centerGem, offsetRailX, doTransformUp: true);
+		if (array.Length != 5)
+		{
+			return false;
+		}
+		OnCurve[] array2 = array;
+		for (int i = 0; i < array2.Length; i++)
+		{
+			array2[i].Translate(new On3dVector(centerGem.Normal.Convert()) * offsetRailZ);
+		}
+		IOnCurve onCurve = array[0];
+		IOnCurve onCurve2 = array[1];
+		IOnCurve onCurve3 = array[2];
+		IOnCurve onCurve4 = array[3];
+		IOnCurve onCurve5 = array[4];
+		if (!CSUtilCurves.MergeCurves(new IOnCurve[2] { onCurve, onCurve5 }, out OnCurve mergedCrv, 0.01))
+		{
+			return false;
+		}
+		CSDataArray cSDataArray = null;
+		if (style == 0)
+		{
+			cSDataArray = new CSDataArray();
+			if (!PlaceGemCorners(new IOnCurve[4] { mergedCrv, onCurve2, onCurve3, onCurve4 }, centerGem, gemDefinition, xTransformLocal, cSDataArray))
+			{
+				return false;
+			}
+		}
+		CSDataArray cSDataArray2 = new CSDataArray();
+		if (!PlaceGemsCurveSide(mergedCrv, centerGem, gemDefinition, gemDefinitionSizeX, spacing, style, xTransformLocal, cSDataArray2))
+		{
+			return false;
+		}
+		int num = cSDataArray2.GetArrayCount() / 2;
+		for (int j = num; j < cSDataArray2.GetArrayCount(); j++)
+		{
+			outputGems.Append(cSDataArray2.GetArrayItem(j));
+		}
+		if (style == 0)
+		{
+			outputGems.Append(cSDataArray.GetArrayItem(0));
+		}
+		if (!PlaceGemsCurveSide(onCurve2, centerGem, gemDefinition, gemDefinitionSizeX, spacing, style, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		if (style == 0)
+		{
+			outputGems.Append(cSDataArray.GetArrayItem(1));
+		}
+		if (!PlaceGemsCurveSide(onCurve3, centerGem, gemDefinition, gemDefinitionSizeX, spacing, style, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		if (style == 0)
+		{
+			outputGems.Append(cSDataArray.GetArrayItem(2));
+		}
+		if (!PlaceGemsCurveSide(onCurve4, centerGem, gemDefinition, gemDefinitionSizeX, spacing, style, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		if (style == 0)
+		{
+			outputGems.Append(cSDataArray.GetArrayItem(3));
+		}
+		for (int k = 0; k < num; k++)
+		{
+			outputGems.Append(cSDataArray2.GetArrayItem(k));
+		}
+		return true;
+	}
+
+	private static bool PlaceGemsSquareRotated(string centerGemShape, CSGemData centerGem, CSGemData gemDefinition, double gemDefinitionSizeX, double spacing, double offsetRailX, double offsetRailZ, IOnXform xTransformLocal, int style, ref CSDataArray outputGems)
+	{
+		OnCurve[] array = GemOffsetCurveV2.GemOffsetCurvesOld(centerGemShape, centerGem, offsetRailX, doTransformUp: true);
+		if (array.Length != 4)
+		{
+			return false;
+		}
+		OnCurve[] array2 = array;
+		for (int i = 0; i < array2.Length; i++)
+		{
+			array2[i].Translate(new On3dVector(centerGem.Normal.Convert()) * offsetRailZ);
+		}
+		CSDataArray cSDataArray = null;
+		if (style == 0)
+		{
+			cSDataArray = new CSDataArray();
+			if (!PlaceGemCorners(new OnCurve[4]
+			{
+				array[0],
+				array[1],
+				array[2],
+				array[3]
+			}, centerGem, gemDefinition, xTransformLocal, cSDataArray))
+			{
+				return false;
+			}
+		}
+		if (!PlaceGemsCurveSide(array[0], centerGem, gemDefinition, gemDefinitionSizeX, spacing, style, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		if (style == 0)
+		{
+			outputGems.Append(cSDataArray.GetArrayItem(0));
+		}
+		if (!PlaceGemsCurveSide(array[1], centerGem, gemDefinition, gemDefinitionSizeX, spacing, style, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		if (style == 0)
+		{
+			outputGems.Append(cSDataArray.GetArrayItem(1));
+		}
+		if (!PlaceGemsCurveSide(array[2], centerGem, gemDefinition, gemDefinitionSizeX, spacing, style, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		if (style == 0)
+		{
+			outputGems.Append(cSDataArray.GetArrayItem(2));
+		}
+		if (!PlaceGemsCurveSide(array[3], centerGem, gemDefinition, gemDefinitionSizeX, spacing, style, xTransformLocal, outputGems))
+		{
+			return false;
+		}
+		if (style == 0)
+		{
+			outputGems.Append(cSDataArray.GetArrayItem(3));
+		}
+		return true;
+	}
+}

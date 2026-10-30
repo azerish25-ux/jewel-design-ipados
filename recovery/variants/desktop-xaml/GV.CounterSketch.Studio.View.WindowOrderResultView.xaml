@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.View.WindowOrderResultView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Title="{x:Static l:Strings.Order}" MinWidth="400" MinHeight="100" AllowsTransparency="True" FontFamily="Helvetica Neue LT Std" FontSize="10pt" ResizeMode="NoResize" ShowInTaskbar="True" SizeToContent="WidthAndHeight" SnapsToDevicePixels="True" Style="{DynamicResource WindowStyleModalCS4}" WindowStartupLocation="CenterScreen" WindowStyle="None" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" DataContext="{Binding Path=WindowOrderResultVM, Source={StaticResource Locator}}">
+  <Grid TextBlock.FontFamily="Helvetica Neue LT Std">
+    <StackPanel VerticalAlignment="Top" Orientation="Vertical">
+      <StackPanel Margin="15" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" TextWrapping="Wrap">
+          <Run Text="{x:Static l:Strings.Order}" /> <Run FontWeight="Bold" Text="#" /></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" FontSize="20" FontWeight="Bold" TextAlignment="Right" Text="{Binding QuoteId, FallbackValue=99999}" />
+        <TextBlock Padding="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" Text="{x:Static l:Strings.WasSentSuccessfully}" TextWrapping="Wrap" />
+      </StackPanel>
+      <TextBlock MinWidth="320" Margin="15" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Helvetica Neue LT Std" FontWeight="Bold" TextWrapping="Wrap" Text="{Binding OrderConfirmationPromptMessage}" Visibility="{Binding OrderConfirmationPromptMessage, Converter={StaticResource StringIsNullOrEmptyToVisibilityConverter}}" />
+      <StackPanel Margin="15" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical" Visibility="{Binding ShowSubmissionForm, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <TextBlock Width="320" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Helvetica Neue LT Std" Text="{x:Static l:Strings.YouHaveIndicatedThatStonesWillBeSentIn}" TextWrapping="Wrap" />
+        <Button Margin="0,20,0,0" Padding="4,2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Static l:Strings.OpenSubmissionForm}" FontFamily="Helvetica Neue LT Std" Template="{DynamicResource CS4ButtonRounded}" Command="{Binding CommandOpenSubmissionForm}" />
+      </StackPanel>
+      <Button Width="75" Margin="15" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static l:Strings.OK}" FontFamily="Helvetica Neue LT Std" IsCancel="True" Template="{DynamicResource CS4ButtonRounded}" />
+    </StackPanel>
+  </Grid>
+</Window>

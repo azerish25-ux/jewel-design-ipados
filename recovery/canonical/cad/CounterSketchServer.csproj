@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>CounterSketchServer</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net452</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="resourcedictionaries\designstackslidericons.baml" />
+    <None Remove="app_cs.baml" />
+    <None Remove="app_countersketchserver.baml" />
+    <None Remove="app.baml" />
+    <EmbeddedResource Include="resourcedictionaries\designstackslidericons.baml" LogicalName="resourcedictionaries/designstackslidericons.baml" />
+    <EmbeddedResource Include="app_cs.baml" LogicalName="app_cs.baml" />
+    <EmbeddedResource Include="app_countersketchserver.baml" LogicalName="app_countersketchserver.baml" />
+    <EmbeddedResource Include="app.baml" LogicalName="app.baml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="RhinoCommon">
+      <HintPath>analysis/runtime-prerequisites/rhino5/System/RhinoCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino_DotNet">
+      <HintPath>analysis/runtime-prerequisites/rhino5/System/Rhino_DotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Geomagic.Print.Headless">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CounterSketchServer/Geomagic.Print.Headless.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CounterSketchServer/System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.RhinoScript4">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CounterSketchServer/Interop.RhinoScript4.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Core" />
+    <Reference Include="GemvisionGeometry">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CounterSketchServer/GemvisionGeometry.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Data" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CounterSketchServer/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CounterSketchServer/GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="UtilitiesLib">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CounterSketchServer/UtilitiesLib.dll</HintPath>
+    </Reference>
+    <Reference Include="BootstrapperRestricted">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CounterSketchServer/BootstrapperRestricted.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

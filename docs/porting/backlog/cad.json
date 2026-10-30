@@ -1,0 +1,1405 @@
+{
+  "schemaVersion": 1,
+  "kind": "cad",
+  "rows": [
+    {
+      "id": "CAD-001",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Declared block catalog and old algorithm dispatch",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSApplication.cs",
+          "line": 415,
+          "symbol": "CSApplication.RegisterCSBlocks"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Parametric/CSBlockDescription.cs",
+          "line": 25,
+          "symbol": "CSBlockDescription.GetNew"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-002",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Unsupported-node fallback is an error node",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS/CSParaGraph.cs",
+          "line": 521,
+          "symbol": "CSParaGraph.ReadGraphItems"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks/CSNullBlock.cs",
+          "line": 23,
+          "symbol": "CSNullBlock.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-003",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Numeric values, overrides and manufacturing CAM compensation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "line": 277,
+          "symbol": "CSValue.MajorMinorVersion"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "line": 371,
+          "symbol": "CSValue.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSValue.cs",
+          "line": 400,
+          "symbol": "CSValue.Write"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-004",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Stored C# scripts with typed graph inputs and ref outputs",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 90,
+          "symbol": "CSScript.Read"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 158,
+          "symbol": "CSScript.ReadJson"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 652,
+          "symbol": "CSScript.Write"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 698,
+          "symbol": "CSScript.WriteJson"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 749,
+          "symbol": "CSScript.BuildAndCompileScript"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 756,
+          "symbol": "CSScript.BuildAndCompileScript"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 795,
+          "symbol": "CSScript.BuildAndCompileScript"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 837,
+          "symbol": "CSScript.BuildAndCompileScript"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 858,
+          "symbol": "CSScript.BuildAndCompileScript"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 870,
+          "symbol": "CSScript.BuildAndCompileScript"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 500,
+          "symbol": "CSScript.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues/CSScript.cs",
+          "line": 523,
+          "symbol": "CSScript.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-005",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Freehand object manipulation and common-center mode",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.CSValues.CSValueHandle/CSValueXFormObject.cs",
+          "line": 3003,
+          "symbol": "CSValueXFormObject transform application"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues.CSValueHandle/CSValueXFormObject.cs",
+          "line": 2486,
+          "symbol": "CSValueXFormObject transform application"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.CSValues.CSValueHandle.Obsolete/CSValueXFormObject1.cs",
+          "line": 648,
+          "symbol": "CS.CSValues.CSValueHandle.Obsolete.CSValueXFormObject1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-006",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Ring rail and ring size geometry",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Rails/CSRingRail.cs",
+          "line": 25,
+          "symbol": "CSRingRail.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Rails/CSRingRailCustom.cs",
+          "line": 69,
+          "symbol": "CSRingRailCustom.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+          "line": 81,
+          "symbol": "CSBlocks.Rails.Obsolete.CSOutsideRail1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-007",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Gem size selection and unconstrained resizing",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Gems/CSResizeGem.cs",
+          "line": 55,
+          "symbol": "CSResizeGem.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-008",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Gem rows on curves with count, taper, placement and orientation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Gems/CSGemOnCrvCount.cs",
+          "line": 110,
+          "symbol": "CSGemOnCrvCount.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Gems/CSGemOnCrvCount.cs",
+          "line": 174,
+          "symbol": "CSGemOnCrvCount.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-009",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Custom tapered baguette and emerald gem definitions",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Gems/CSCustomBaguette.cs",
+          "line": 43,
+          "symbol": "CSCustomBaguette.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Gems.Obsolete/CSCustomBaguette1.cs",
+          "line": 45,
+          "symbol": "CSBlocks.Gems.Obsolete.CSCustomBaguette1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-010",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Gem duplicate filtering and collision interpretation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Gems/CSGemRemoveIntersecting.cs",
+          "line": 51,
+          "symbol": "CSGemRemoveIntersecting.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-011",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Cluster and halo distribution around center geometry",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.GemClusters/CSCluster.cs",
+          "line": 167,
+          "symbol": "CSCluster.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.GemClusters/CSCluster.cs",
+          "line": 200,
+          "symbol": "CSCluster.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.GemClusters/CSCluster.cs",
+          "line": 239,
+          "symbol": "CSCluster.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-012",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Legacy cluster algorithms remain distinct project dependencies",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.GemClusters.Obsolete/CSClusterRound1.cs",
+          "line": 129,
+          "symbol": "CSClusterRound1.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.GemClusters.Obsolete/CSClusterRound1.cs",
+          "line": 143,
+          "symbol": "CSClusterRound1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-013",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Head builder V2: prongs, V-prongs, bezel, domes, gallery rails and between-prong surfaces",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Heads.CSHeadBuilderV2/CSHeadBuilder.cs",
+          "line": 313,
+          "symbol": "CSHeadBuilder.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Heads.CSHeadBuilderV2/CSHeadBuilder.cs",
+          "line": 344,
+          "symbol": "CSHeadBuilder.Update bezel branch"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Heads.CSHeadBuilderV2/CSHeadBuilder.cs",
+          "line": 592,
+          "symbol": "CSHeadBuilder.PullToBase"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Heads.CSHeadBuilderV2/CSHeadBuilder.cs",
+          "line": 679,
+          "symbol": "CSHeadBuilder.PullToBase"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-014",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Head builder V1 and older head generation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Heads.CSHeadBuilderV1/CSHeadProngs.cs",
+          "line": 109,
+          "symbol": "CSHeadProngs.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Heads.CSHeadBuilderV1.Obsolete/CSHeadProngs1.cs",
+          "line": 132,
+          "symbol": "CSHeadProngs1.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Heads.CSHeadBuilderV1.Obsolete/CSHeadProngs1.cs",
+          "line": 152,
+          "symbol": "CSHeadProngs1.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Tools.Obsolete/CSHeadProngPoints1.cs",
+          "line": 82,
+          "symbol": "CSBlocks.Tools.Obsolete.CSHeadProngPoints1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-015",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Per-gem bezels and synchronous/parallel generation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Bezels/CSBezel.cs",
+          "line": 75,
+          "symbol": "CSBezel.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Bezels/CSBezel.cs",
+          "line": 109,
+          "symbol": "CSBezel.UpdateConcurrent"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Bezels/CSBezel.cs",
+          "line": 124,
+          "symbol": "CSBezel.UpdateConcurrent"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete.Bezels/CSBezel1.cs",
+          "line": 118,
+          "symbol": "CSBlocks.Settings.Obsolete.Bezels.CSBezel1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-016",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Bar settings and normalized prong profiles",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings/CSBarSet.cs",
+          "line": 74,
+          "symbol": "CSBarSet.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings/CSBarSet.cs",
+          "line": 126,
+          "symbol": "CSBarSet.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.Obsolete/CSBarSet1.cs",
+          "line": 147,
+          "symbol": "CSBlocks.Settings.Obsolete.CSBarSet1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-017",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Shank builder with gem-dependent channels, side construction and closed loops",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank/CSShankNew.cs",
+          "line": 246,
+          "symbol": "CSShankNew.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank/CSShankNew.cs",
+          "line": 432,
+          "symbol": "CSShankNew.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank/CSShankNew.cs",
+          "line": 451,
+          "symbol": "CSShankNew.BuildChannel"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank/CSShankNew.cs",
+          "line": 613,
+          "symbol": "CSShankNew.BuildChannel"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-018",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Matching bands and versioned ultimate shanks",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank.Matching/CSMatchingShank.cs",
+          "line": 319,
+          "symbol": "CSMatchingShank.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank.Obsolete/CSUltimateShank1.cs",
+          "line": 188,
+          "symbol": "CSUltimateShank1.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank.Obsolete/CSUltimateShank1.cs",
+          "line": 213,
+          "symbol": "CSUltimateShank1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-019",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "French shank mesh/BRep part deformation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank.French/CSFrenchShank.cs",
+          "line": 91,
+          "symbol": "CSFrenchShank.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank.French/CSFrenchShank.cs",
+          "line": 273,
+          "symbol": "CSFrenchShank.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank.French/CSFrenchShank.cs",
+          "line": 339,
+          "symbol": "CSFrenchShank.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Shank.French.Obsolete/CSFrenchShank1.cs",
+          "line": 104,
+          "symbol": "CSBlocks.Shank.French.Obsolete.CSFrenchShank1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-020",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "French halo display and production tooling",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.FrenchHalo/CSFrenchHaloSet.cs",
+          "line": 77,
+          "symbol": "CSFrenchHaloSet.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.FrenchHalo/CSFrenchHaloSet.cs",
+          "line": 193,
+          "symbol": "CSFrenchHaloSet.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.FrenchHalo/CSFrenchHaloProduction.cs",
+          "line": 128,
+          "symbol": "CSFrenchHaloProduction.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Settings.FrenchHalo.Obsolete/CSFrenchHaloSet1.cs",
+          "line": 104,
+          "symbol": "CSBlocks.Settings.FrenchHalo.Obsolete.CSFrenchHaloSet1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-021",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Linked gem/profile/collar sequences",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Linked/CSLinkedGemRowOnRingRail.cs",
+          "line": 59,
+          "symbol": "CSLinkedGemRowOnRingRail.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Linked/CSLinkedGemRowOnRingRail.cs",
+          "line": 136,
+          "symbol": "CSLinkedGemRowOnRingRail.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Linked.Obsolete/CSLinkedGemOnRingRail1.cs",
+          "line": 108,
+          "symbol": "CSBlocks.Linked.Obsolete.CSLinkedGemOnRingRail1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-022",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Gem/prong channel builder mode and width loopback",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Builders/CSGemInChannelSetUp.cs",
+          "line": 107,
+          "symbol": "CSGemInChannelSetUp.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Builders/CSGemInChannelSetUp.cs",
+          "line": 180,
+          "symbol": "CSGemInChannelSetUp.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Builders.Obsolete/CSGemInChannelSetUp1.cs",
+          "line": 72,
+          "symbol": "CSBlocks.Builders.Obsolete.CSGemInChannelSetUp1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-023",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Gem seat/cutter solids",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Cutters/CSGemCutter.cs",
+          "line": 50,
+          "symbol": "CSGemCutter.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Cutters/CSGemCutter.cs",
+          "line": 107,
+          "symbol": "CSGemCutter.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Cutters.Obsolete/CSBezelCutter1.cs",
+          "line": 75,
+          "symbol": "CSBlocks.Cutters.Obsolete.CSBezelCutter1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-024",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Micro-pave metal surface and gem-radius interpolation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Surfaces/CSMicroPave.cs",
+          "line": 59,
+          "symbol": "CSMicroPave.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Surfaces/CSMicroPave.cs",
+          "line": 113,
+          "symbol": "CSMicroPave.CalculateCurves"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-025",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Milgrain point spacing",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSMilgrainPoints.cs",
+          "line": 70,
+          "symbol": "CSMilgrainPoints.GeneratePointsFromCurve"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-026",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Profile placement on one/two ring rails",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Profiles/CSProfilePlacer2RailXform.cs",
+          "line": 48,
+          "symbol": "CSProfilePlacer2RailXform.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Profiles/CSProfilePlacer2RailXform.cs",
+          "line": 108,
+          "symbol": "CSProfilePlacer2RailXform.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Profiles.Obsolete/CSProfilePlacer1RailXform1.cs",
+          "line": 57,
+          "symbol": "CSBlocks.Profiles.Obsolete.CSProfilePlacer1RailXform1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-027",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Dome end caps and collar trimming",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCapRing.cs",
+          "line": 64,
+          "symbol": "CSProfileCapRing.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Collars/CSSweepCollarRail.cs",
+          "line": 76,
+          "symbol": "CSSweepCollarRail.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Collars/CSSweepCollarRail.cs",
+          "line": 99,
+          "symbol": "CSSweepCollarRail.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Collars.Obsolete/CSSweepCollarRail1.cs",
+          "line": 107,
+          "symbol": "CSBlocks.Collars.Obsolete.CSSweepCollarRail1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-028",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Bail rails and opening measurement",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Bails/CSBailRail.cs",
+          "line": 110,
+          "symbol": "CSBailRail.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Bails/CSBailRail.cs",
+          "line": 136,
+          "symbol": "CSBailRail.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Bails.Obsolete/CSBailRail1.cs",
+          "line": 100,
+          "symbol": "CSBlocks.Bails.Obsolete.CSBailRail1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-029",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Curve offsets with local plane conventions",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Curves/CSCurveOffset.cs",
+          "line": 71,
+          "symbol": "CSCurveOffset.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Curves/CSCurveOffset.cs",
+          "line": 73,
+          "symbol": "CSCurveOffset.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Curves.Obsolete/CSBlendCurves1.cs",
+          "line": 103,
+          "symbol": "CSBlocks.Curves.Obsolete.CSBlendCurves1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-030",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Planar curve boolean with first-result selection",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Curves/CSCurveBoolean.cs",
+          "line": 56,
+          "symbol": "CSCurveBoolean.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Curves/CSCurveBoolean.cs",
+          "line": 62,
+          "symbol": "CSCurveBoolean.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-031",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "One-, two- and four-rail sweeps with parameters and seam handling",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2.cs",
+          "line": 124,
+          "symbol": "CSSimpleSweep2.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps/CSSimpleSweep2.cs",
+          "line": 135,
+          "symbol": "CSSimpleSweep2.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlockUtil/CSUtilSweepRC.cs",
+          "line": 130,
+          "symbol": "CSUtilSweepRC.Sweep4Profile.SetupFromRails"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlockUtil/CSUtilSweepRC.cs",
+          "line": 171,
+          "symbol": "CSUtilSweepRC.Sweep4Profile.Split"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Sweeps.Obsolete/CSMeshPipe1.cs",
+          "line": 59,
+          "symbol": "CSBlocks.Sweeps.Obsolete.CSMeshPipe1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-032",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Loft and matched profile direction",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Surfaces/CSLoft.cs",
+          "line": 43,
+          "symbol": "CSLoft.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-033",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Advanced network surfaces with independent edge continuity",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Surfaces/CSNetworkSurfaceAdvanced.cs",
+          "line": 92,
+          "symbol": "CSNetworkSurfaceAdvanced.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-034",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Surface offset and standard extrusion/sphere/planar surfaces",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Surfaces/CSSurfaceOffset.cs",
+          "line": 42,
+          "symbol": "CSSurfaceOffset.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Surfaces.Obsolete/CSExtrudePlanarCurve1.cs",
+          "line": 42,
+          "symbol": "CSBlocks.Surfaces.Obsolete.CSExtrudePlanarCurve1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-035",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "BRep booleans, join, split and capping semantics",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+          "line": 40,
+          "symbol": "CSBooleanDifference.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanUnion.cs",
+          "line": 28,
+          "symbol": "CSBooleanUnion.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSBooleanDifferenceFast1.cs",
+          "line": 99,
+          "symbol": "CSBlocks.Solids.Obsolete.CSBooleanDifferenceFast1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-036",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Rigid transforms, object-local transforms, mirrors and polar arrays",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSMirror.cs",
+          "line": 40,
+          "symbol": "CSMirror.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSMirror.cs",
+          "line": 67,
+          "symbol": "CSMirror.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Transforms/CSPolarArray.cs",
+          "line": 92,
+          "symbol": "CSPolarArray.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Transforms.Obsolete/CSCenterObjectOnObjectTransform1.cs",
+          "line": 81,
+          "symbol": "CSBlocks.Transforms.Obsolete.CSCenterObjectOnObjectTransform1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-037",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Flow along surface morph",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.UDT/CSFlowAlongSurface.cs",
+          "line": 175,
+          "symbol": "CSFlowAlongSurface.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.UDT/CSFlowAlongSurface.cs",
+          "line": 250,
+          "symbol": "CSFlowAlongSurface.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-038",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Curved XY taper, ring pull and grouped deformation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.UDT/CSCurvedTaperXY.cs",
+          "line": 112,
+          "symbol": "CSCurvedTaperXY.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.UDT/CSPullToRail.cs",
+          "line": 84,
+          "symbol": "CSPullToRail.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-039",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Dimensional measurement: curve length and directional surface distance",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Curves/CSCurveLength.cs",
+          "line": 37,
+          "symbol": "CSCurveLength.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSDistanceFromSurface.cs",
+          "line": 69,
+          "symbol": "CSDistanceFromSurface.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-040",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Volume centroid and approximate union volume",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Bails/CSVolumeCentroid.cs",
+          "line": 77,
+          "symbol": "CSVolumeCentroid.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Helpers/MeshRepairHelper.cs",
+          "line": 737,
+          "symbol": "MeshRepairHelper.GetVolumeViaOctTree"
+        },
+        {
+          "path": "recovery/canonical/cad/OctTree/OctTree.cs",
+          "line": 222,
+          "symbol": "OctTree.GetVolume"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-041",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Text, font outlines and solid lettering",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Tools/CSTextObjects.cs",
+          "line": 67,
+          "symbol": "CSTextObjects.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Tools/CSTextObjects.cs",
+          "line": 100,
+          "symbol": "CSTextObjects.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-042",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Captured Rhino geometry and file-backed part groups",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSRhinoObjectsFromBoundingBox.cs",
+          "line": 88,
+          "symbol": "CSRhinoObjectsFromBoundingBox.Read"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSRhinoObjectsFromBoundingBox.cs",
+          "line": 144,
+          "symbol": "CSRhinoObjectsFromBoundingBox.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSRhinoObjectsFromBoundingBox.cs",
+          "line": 177,
+          "symbol": "CSRhinoObjectsFromBoundingBox.Write"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGroupOfRhinoObjectsFilePath.cs",
+          "line": 194,
+          "symbol": "CSGroupOfRhinoObjectsFilePath.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core.Obsolete/CSBoundingBox2.cs",
+          "line": 118,
+          "symbol": "CSBlocks.Core.Obsolete.CSBoundingBox2.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-043",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "SMI manufacturing profile tools and textual output",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.SMI/CSSMICutterComfortFit.cs",
+          "line": 50,
+          "symbol": "CSSMICutterComfortFit.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.SMI/CSSMIOutput.cs",
+          "line": 27,
+          "symbol": "CSSMIOutput.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.SMI.Obsolete/CSSMICutterBand1.cs",
+          "line": 86,
+          "symbol": "CSBlocks.SMI.Obsolete.CSSMICutterBand1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-044",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Graph arithmetic, nonlinear controls and branching/array shape",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Maths/CSNonlinear.cs",
+          "line": 43,
+          "symbol": "CSNonlinear.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Utilities/CSIfElse.cs",
+          "line": 37,
+          "symbol": "CSIfElse.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Utilities.Obsolete/CSUnarray1.cs",
+          "line": 47,
+          "symbol": "CSBlocks.Utilities.Obsolete.CSUnarray1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-045",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Display mesh preprocessing is distinct from manufacturing mesh",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Core/CSGenerateMesh.cs",
+          "line": 34,
+          "symbol": "CSGenerateMesh.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-046",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Manufacturing mesh repair and native union",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Helpers/MeshRepairHelper.cs",
+          "line": 210,
+          "symbol": "MeshRepairHelper.RepairMesh"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Helpers/MeshRepairHelper.cs",
+          "line": 631,
+          "symbol": "MeshRepairHelper.NetfabbRepairMesh"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Helpers/NetfabbHelper.cs",
+          "line": 34,
+          "symbol": "NetfabbHelper static initializer"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Helpers/NetfabbHelper.cs",
+          "line": 98,
+          "symbol": "NetfabbHelper.NetfabbBuildMesh"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-047",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Binary STL writer and optional repair export",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 1954,
+          "symbol": "RhinoServices.ExportDesignAsSTL"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Travis/MeshRepair.cs",
+          "line": 173,
+          "symbol": "MeshRepair.CreateSTLFromRhinoObjects"
+        },
+        {
+          "path": "recovery/canonical/cad/CS.Utilities.Helpers/MeshRepairHelper.cs",
+          "line": 278,
+          "symbol": "MeshRepairHelper.SaveStlBinary"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-048",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "3DM export retaining user data and original BRep geometry",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 1987,
+          "symbol": "RhinoServices.ExportDesignAs3DM"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 2014,
+          "symbol": "RhinoServices.ExportDesignAs3DM"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+          "line": 2016,
+          "symbol": "RhinoServices.ExportDesignAs3DM"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-049",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Photoreal rendering with material, environment and prop libraries",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Utilities.Helpers/RenderHelper.cs",
+          "line": 38,
+          "symbol": "RenderHelper.GenerateCustomRender"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Utilities.Helpers/RenderHelper.cs",
+          "line": 47,
+          "symbol": "RenderHelper.GenerateCustomRender"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Utilities.Helpers/RenderHelper.cs",
+          "line": 55,
+          "symbol": "RenderHelper.GenerateCustomRender"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Utilities.Helpers/RenderHelper.cs",
+          "line": 132,
+          "symbol": "RenderHelper.GenerateCustomRender"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-050",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Printer connection, support generation, job packing and controls",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Utilities.Helpers/ProjetHelper.cs",
+          "line": 462,
+          "symbol": "ProjetHelper.ConnectToPrinter"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Utilities.Helpers/ProjetHelper.cs",
+          "line": 483,
+          "symbol": "ProjetHelper.CSCreateSupportsForCSItem"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Utilities.Helpers/ProjetHelper.cs",
+          "line": 671,
+          "symbol": "ProjetHelper.PrintCSModel"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Utilities.Helpers/ProjetHelper.cs",
+          "line": 681,
+          "symbol": "ProjetHelper.PrintMultipleJobs"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-051",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "CAD commands: parallel-processing toggle and VR service start/stop",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Commands/CSToggleBlockParallelProcessing.cs",
+          "line": 21,
+          "symbol": "CSToggleBlockParallelProcessing.RunCommand"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Commands/CSVRStartCommand.cs",
+          "line": 19,
+          "symbol": "CSVRStartCommand.RunCommand"
+        },
+        {
+          "path": "recovery/canonical/cad/CounterSketchServer.Commands/CSVRStopCommand.cs",
+          "line": 19,
+          "symbol": "CSVRStopCommand.RunCommand"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "CAD-052",
+      "kind": "cad",
+      "phase": "P07",
+      "title": "Legacy surface punching around gem rails",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Tests.Obsolete/CSSurfacePunch1.cs",
+          "line": 61,
+          "symbol": "CSSurfacePunch1.Update"
+        },
+        {
+          "path": "recovery/canonical/cad/CSBlocks.Tests.Obsolete/CSSurfacePunch1.cs",
+          "line": 144,
+          "symbol": "CSSurfacePunch1.Update"
+        }
+      ],
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    }
+  ]
+}

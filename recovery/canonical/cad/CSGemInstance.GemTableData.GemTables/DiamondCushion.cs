@@ -1,0 +1,52 @@
+using System.Collections.Generic;
+
+namespace CSGemInstance.GemTableData.GemTables;
+
+[CSGem]
+public sealed class DiamondCushion : IGemTable
+{
+	public int CurrentVersion { get; } = 1;
+
+	public GemTableLayer Layer => GemTableLayer.Gem01;
+
+	public GemTableShape Shape => GemTableShape.Cushion;
+
+	public GemTableType Type => GemTableType.Diamond;
+
+	public double FudgeFactor => 0.002955;
+
+	public double RotationAngle => 0.0;
+
+	public List<GemSize> SizeTable(int version = 0)
+	{
+		return new List<GemSize>
+		{
+			new GemSizePercent(4.0, 2.0, 60.0),
+			new GemSizePercent(4.5, 2.5, 60.0),
+			new GemSizePercent(5.0, 3.0, 60.0),
+			new GemSizePercent(5.3, 3.3, 60.0),
+			new GemSizePercent(5.8, 3.8, 60.0),
+			new GemSizePercent(6.0, 4.0, 60.0),
+			new GemSizePercent(6.1, 4.1, 60.0),
+			new GemSizePercent(6.2, 4.2, 60.0),
+			new GemSizePercent(6.5, 4.5, 60.0),
+			new GemSizePercent(6.6, 4.6, 60.0),
+			new GemSizePercent(6.9, 4.9, 60.0),
+			new GemSizePercent(7.0, 5.0, 60.0),
+			new GemSizePercent(7.2, 5.2, 60.0),
+			new GemSizePercent(7.5, 5.5, 60.0),
+			new GemSizePercent(8.0, 6.0, 60.0, iteration: true),
+			new GemSizePercent(8.25, 6.25, 60.0),
+			new GemSizePercent(8.5, 6.5, 60.0),
+			new GemSizePercent(9.0, 7.0, 60.0, iteration: true),
+			new GemSizePercent(10.0, 8.0, 60.0, iteration: true),
+			new GemSizePercent(10.0, 8.5, 60.0),
+			new GemSizePercent(11.0, 9.0, 60.0),
+			new GemSizePercent(11.0, 9.5, 60.0),
+			new GemSizePercent(12.0, 10.0, 60.0, iteration: true),
+			new GemSizePercent(14.0, 10.0, 60.0, iteration: true),
+			new GemSizePercent(25.0, 10.0, 60.0, iteration: true),
+			new GemSizePercent(30.0, 10.0, 60.0, iteration: true)
+		};
+	}
+}

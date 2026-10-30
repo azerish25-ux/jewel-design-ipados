@@ -1,0 +1,148 @@
+{
+  "families": [
+    {
+      "id": "FIX-001",
+      "family": "Portfolio bundles",
+      "requiredCases": "CSP XML, multiple base/variant CSGs, favorites, sidecars, Unicode metadata and relocated paths.",
+      "availability": "No edited PC portfolio supplied."
+    },
+    {
+      "id": "FIX-002",
+      "family": "Binary containers",
+      "requiredCases": "All four envelope UUIDs; archive length widths, old/current record versions and provenance.",
+      "availability": "One library-derived archive-4/B237 sample directory observed."
+    },
+    {
+      "id": "FIX-003",
+      "family": "GUID coverage",
+      "requiredCases": "All 654 declared GUIDs and supported version branches, including 272 legacy/obsolete types. Reserved null node is an expected-error case.",
+      "availability": "43 distinct GUIDs observed in one byte directory only."
+    },
+    {
+      "id": "FIX-004",
+      "family": "CAM and typed values",
+      "requiredCases": "Delta/absolute CAM, notes, defaults, numeric/boolean/string/choice/gem/font controls and overrides.",
+      "availability": "Source indexed; semantics untested."
+    },
+    {
+      "id": "FIX-005",
+      "family": "Graph links/grouping",
+      "requiredCases": "Forward/static/expandable links, parents/import offsets, duplicate parts, old groups and selected subsets.",
+      "availability": "No runtime comparison."
+    },
+    {
+      "id": "FIX-006",
+      "family": "Iterations/variants",
+      "requiredCases": "Typed options, alternative selections, history, GUID collisions, cleanup and value-only loading.",
+      "availability": "No application round trip."
+    },
+    {
+      "id": "FIX-007",
+      "family": "Embedded geometry",
+      "requiredCases": "Native Rhino objects, trims, curves, meshes and binary fields lacking derived JSON serializers.",
+      "availability": "Payload semantics unverified."
+    },
+    {
+      "id": "FIX-008",
+      "family": "Fonts/engraving",
+      "requiredCases": "Available/missing fonts, old enum IDs, text geometry and substitutions.",
+      "availability": "Reference fixtures missing."
+    },
+    {
+      "id": "FIX-009",
+      "family": "Materials/display",
+      "requiredCases": "Old layer migration, groups/overrides, metals/gems, visibility and imported parts.",
+      "availability": "Runtime renderer unverified."
+    },
+    {
+      "id": "FIX-010",
+      "family": "Jewelry extremes",
+      "requiredCases": "Heads, shanks, halos, pave, channels, clusters, sweeps, morphs, near-tolerance booleans and degenerate inputs.",
+      "availability": "Representative bodies reviewed; kernel fixture corpus missing."
+    },
+    {
+      "id": "FIX-011",
+      "family": "Stored scripts",
+      "requiredCases": "Source/configuration/ref outputs, compiler errors, supported APIs and external Windows/filesystem dependencies.",
+      "availability": "No representative project scripts supplied."
+    },
+    {
+      "id": "FIX-012",
+      "family": "Catalog packs",
+      "requiredCases": "CSGL compression, real ZBin/profile selection, gem exclusions, missing packs and old/new catalogs.",
+      "availability": "One pack decoded; full selected catalog absent."
+    },
+    {
+      "id": "FIX-013",
+      "family": "JSON/GZip",
+      "requiredCases": "Root/derived fields, typed options, unknown GUIDs, large data, truncation and read-result propagation.",
+      "availability": "No lossless neutral-format parity established."
+    },
+    {
+      "id": "FIX-014",
+      "family": "Backups/state",
+      "requiredCases": "Nested CSB ZIPs, local schemas, settings and versioned recovery/overwrite decisions.",
+      "availability": "No representative PC backup supplied."
+    },
+    {
+      "id": "FIX-015",
+      "family": "Malformed/unsupported",
+      "requiredCases": "Bad UUID/type/version/count/CRC/strings, absent siblings and interrupted saves.",
+      "availability": "Bounds checked in one directory probe only."
+    },
+    {
+      "id": "FIX-016",
+      "family": "Manufacturing",
+      "requiredCases": "STL/3DM component inclusion, dimensions, units, normals, manifoldness, repair and downstream acceptance.",
+      "availability": "No PC/iPad output comparison."
+    },
+    {
+      "id": "FIX-017",
+      "family": "UI states/input",
+      "requiredCases": "Wired commands, dialogs, visibility/disabled states, mouse/key/Pencil equivalents and dynamic/third-party gaps.",
+      "availability": "Static inventory only."
+    },
+    {
+      "id": "FIX-018",
+      "family": "Remote business",
+      "requiredCases": "Allowed/denied quote/export/order states, offline failures and stale pricing.",
+      "availability": "Offline equivalents require explicit decisions."
+    },
+    {
+      "id": "FIX-019",
+      "family": "Render/printer",
+      "requiredCases": "Material/render and try-on references, native printer output and supported mobile hardware.",
+      "availability": "Replacements and reference outputs unresolved."
+    },
+    {
+      "id": "FIX-020",
+      "family": "Reliability/device",
+      "requiredCases": "Complex scenes, low storage, crashes, undo/reopen, cancellation, memory and thermal pressure, offline cold start.",
+      "availability": "Requires physical-device implementation."
+    }
+  ],
+  "levels": [
+    "L0: Source linked and original bytes retained.",
+    "L1: Container/directory parsed; not editable compatibility.",
+    "L2: All fields/links decoded and preserved with reference assertions.",
+    "L3: iPad edit/recompute compared to reference.",
+    "L4: iPad-saved project reopens and remains editable in target PC build.",
+    "L5: Manufacturing/render/device acceptance passes."
+  ],
+  "protocol": [
+    "Hash originals and work on copies.",
+    "Record PC build, plugins, catalog/gem/font versions, units and tolerances.",
+    "Capture node/instance IDs, links, values, options, categories, metadata and geometry.",
+    "PC -> iPad unchanged save -> PC reopen; compare semantic data, with intentional revision/provenance changes recorded.",
+    "Edit one known parameter on iPad, recompute/save, reopen and recompute on PC.",
+    "Compare geometry, volume, materials and exports independently; topology representation differences need an explicit contract.",
+    "Exercise undo/redo and historical branches.",
+    "Preserve unknown bytes or fail closed before destructive save. A successful preview is not an editable round trip."
+  ],
+  "toleranceEvidence": {
+    "path": "recovery/canonical/cad/CS/CSApplication.cs",
+    "line": 336,
+    "observed": "Initialization sets 1-degree angle tolerance and Tolerance=0.001; capture units/later settings from actual reference. Do not assume a universal mm or volume threshold."
+  },
+  "currentStatus": "L0 indexing and a bounded subset of L1 on one library design only; no L2-L5 pass."
+}

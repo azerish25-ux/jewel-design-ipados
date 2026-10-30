@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CounterSketchLibraryDataModel.Store" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Attribute">
+    <Key>
+      <PropertyRef Name="AttributeId" />
+    </Key>
+    <Property Name="AttributeId" Type="integer" Nullable="false" />
+    <Property Name="AttributeTypeId" Type="integer" Nullable="false" />
+    <Property Name="AttributeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AttributeCSOrder" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AttributeLevel">
+    <Key>
+      <PropertyRef Name="AttributeLevelId" />
+    </Key>
+    <Property Name="AttributeLevelId" Type="integer" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AttributeType">
+    <Key>
+      <PropertyRef Name="AttributeTypeId" />
+    </Key>
+    <Property Name="AttributeTypeId" Type="integer" Nullable="false" />
+    <Property Name="AttributeType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AttributeCSName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AttributeCSOrder" Type="integer" />
+    <Property Name="AttributeCSDisplayType" Type="integer" />
+    <Property Name="AttributeLevelId" Type="integer" />
+  </EntityType>
+  <EntityType Name="Component">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="ComponentId" Type="integer" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DesignAttributes">
+    <Key>
+      <PropertyRef Name="DesignAttributeId" />
+    </Key>
+    <Property Name="DesignAttributeId" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesignId" Type="integer" Nullable="false" />
+    <Property Name="ComponentId" Type="integer" />
+    <Property Name="AttributeId" Type="integer" />
+    <Property Name="AttributeValue" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DesignComponents">
+    <Key>
+      <PropertyRef Name="DesignComponentId" />
+    </Key>
+    <Property Name="DesignComponentId" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesignId" Type="integer" Nullable="false" />
+    <Property Name="ComponentId" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DesignGems">
+    <Key>
+      <PropertyRef Name="DesignGemId" />
+    </Key>
+    <Property Name="DesignGemId" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesignId" Type="integer" Nullable="false" />
+    <Property Name="ComponentId" Type="integer" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Shape" Type="nvarchar" MaxLength="50" />
+    <Property Name="GemX" Type="real" />
+    <Property Name="GemXMax" Type="real" />
+    <Property Name="GemXMin" Type="real" />
+    <Property Name="GemY" Type="real" />
+    <Property Name="GemYMax" Type="real" />
+    <Property Name="GemYMin" Type="real" />
+    <Property Name="GemZ" Type="real" />
+    <Property Name="FFactor" Type="real" />
+    <Property Name="GemW" Type="real" />
+    <Property Name="GemWMax" Type="real" />
+    <Property Name="GemWMin" Type="real" />
+    <Property Name="Mounting" Type="nvarchar" MaxLength="50" />
+    <Property Name="MountingVolume" Type="real" />
+    <Property Name="Flags" Type="integer" />
+    <Property Name="GemPlacement" Type="integer" />
+  </EntityType>
+  <EntityType Name="DesignGemTables">
+    <Key>
+      <PropertyRef Name="DesignGemTableId" />
+    </Key>
+    <Property Name="DesignGemTableId" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesignId" Type="integer" Nullable="false" />
+    <Property Name="GemPlacementId" Type="integer" Nullable="false" />
+    <Property Name="GemTableShapeSizeId" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DesignGroup">
+    <Key>
+      <PropertyRef Name="DesignGroupId" />
+    </Key>
+    <Property Name="DesignGroupId" Type="integer" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Rank" Type="integer" />
+  </EntityType>
+  <EntityType Name="DesignGroupDesigns">
+    <Key>
+      <PropertyRef Name="DesignGroupDesignId" />
+    </Key>
+    <Property Name="DesignGroupDesignId" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesignGroupId" Type="integer" />
+    <Property Name="DesignId" Type="integer" />
+    <Property Name="Rank" Type="integer" />
+  </EntityType>
+  <EntityType Name="Designs">
+    <Key>
+      <PropertyRef Name="DesignId" />
+    </Key>
+    <Property Name="DesignId" Type="integer" Nullable="false" />
+    <Property Name="Version" Type="integer" Nullable="false" />
+    <Property Name="DesignVersionId" Type="integer" Nullable="false" />
+    <Property Name="StullerNo" Type="varchar" MaxLength="30" />
+    <Property Name="SeriesNumber" Type="varchar" MaxLength="30" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="Designer" Type="varchar" MaxLength="50" />
+    <Property Name="DesignTypeId" Type="integer" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="FirstReleaseLibraryId" Type="integer" />
+    <Property Name="CSGLFound" Type="integer" />
+  </EntityType>
+  <EntityType Name="DesignSearch">
+    <Key>
+      <PropertyRef Name="DesignId" />
+    </Key>
+    <Property Name="DesignId" Type="integer" Nullable="false" />
+    <Property Name="Version" Type="integer" Nullable="false" />
+    <Property Name="SPINumber" Type="varchar" MaxLength="255" />
+    <Property Name="SeriesNumber" Type="varchar" MaxLength="50" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="PrimaryDesignComponentId" Type="integer" />
+    <Property Name="ComponentId" Type="integer" />
+    <Property Name="DefaultStyle" Type="nvarchar" MaxLength="50" />
+    <Property Name="DefaultStyleElement" Type="nvarchar" MaxLength="50" />
+    <Property Name="SecondaryStyleElement" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrimaryDesignComponentCenterGemSetting" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsIncludedWithBaseDesigns" Type="integer" />
+    <Property Name="Is3CDesign" Type="integer" />
+    <Property Name="Designer" Type="varchar" MaxLength="255" />
+    <Property Name="IsBaseDesign" Type="integer" />
+    <Property Name="IsVariantDesign" Type="integer" />
+    <Property Name="IsFreeHandPart" Type="integer" />
+    <Property Name="IsStaticFreeHandPart" Type="integer" />
+    <Property Name="IsFreeHandPartWithGem" Type="integer" />
+    <Property Name="IsNewDesign" Type="integer" />
+    <Property Name="StullerBaseNo" Type="varchar" MaxLength="255" />
+    <Property Name="DefaultSettingTypeOrder" Type="integer" />
+    <Property Name="DefaultStyleElementOrder" Type="integer" />
+    <Property Name="DefaultStyleOrder" Type="integer" />
+    <Property Name="SecondaryStyleElementOrder" Type="integer" />
+    <Property Name="CenterGemMinLength" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="CenterGemMaxLength" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="CenterGemMinWidth" Type="decimal" Precision="53" Scale="0" />
+    <Property Name="CenterGemMaxWidth" Type="decimal" Precision="53" Scale="0" />
+  </EntityType>
+  <EntityType Name="GemTableShapeSize">
+    <Key>
+      <PropertyRef Name="GemTableShapeSizeId" />
+    </Key>
+    <Property Name="GemTableShapeSizeId" Type="integer" Nullable="false" />
+    <Property Name="GemTableTypeId" Type="integer" Nullable="false" />
+    <Property Name="GemTableShapeId" Type="integer" Nullable="false" />
+    <Property Name="Carat" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Width" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Height" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Depth" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Attribute_0_0">
+    <End Role="AttributeType" Type="Self.AttributeType" Multiplicity="1" />
+    <End Role="Attribute" Type="Self.Attribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeType">
+        <PropertyRef Name="AttributeTypeId" />
+      </Principal>
+      <Dependent Role="Attribute">
+        <PropertyRef Name="AttributeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeType_0_0">
+    <End Role="AttributeLevel" Type="Self.AttributeLevel" Multiplicity="0..1" />
+    <End Role="AttributeType" Type="Self.AttributeType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeLevel">
+        <PropertyRef Name="AttributeLevelId" />
+      </Principal>
+      <Dependent Role="AttributeType">
+        <PropertyRef Name="AttributeLevelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignAttributes_0_0">
+    <End Role="Attribute" Type="Self.Attribute" Multiplicity="0..1" />
+    <End Role="DesignAttributes" Type="Self.DesignAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attribute">
+        <PropertyRef Name="AttributeId" />
+      </Principal>
+      <Dependent Role="DesignAttributes">
+        <PropertyRef Name="AttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignAttributes_1_0">
+    <End Role="Component" Type="Self.Component" Multiplicity="0..1" />
+    <End Role="DesignAttributes" Type="Self.DesignAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="DesignAttributes">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignAttributes_2_0">
+    <End Role="Designs" Type="Self.Designs" Multiplicity="1" />
+    <End Role="DesignAttributes" Type="Self.DesignAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designs">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignAttributes">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignComponents_0_0">
+    <End Role="Component" Type="Self.Component" Multiplicity="1" />
+    <End Role="DesignComponents" Type="Self.DesignComponents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="DesignComponents">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignComponents_1_0">
+    <End Role="Designs" Type="Self.Designs" Multiplicity="1" />
+    <End Role="DesignComponents" Type="Self.DesignComponents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designs">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignComponents">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGems_0_0">
+    <End Role="Component" Type="Self.Component" Multiplicity="0..1" />
+    <End Role="DesignGems" Type="Self.DesignGems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="DesignGems">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGems_1_0">
+    <End Role="Designs" Type="Self.Designs" Multiplicity="1" />
+    <End Role="DesignGems" Type="Self.DesignGems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designs">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignGems">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGemTables_0_0">
+    <End Role="GemTableShapeSize" Type="Self.GemTableShapeSize" Multiplicity="1" />
+    <End Role="DesignGemTables" Type="Self.DesignGemTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GemTableShapeSize">
+        <PropertyRef Name="GemTableShapeSizeId" />
+      </Principal>
+      <Dependent Role="DesignGemTables">
+        <PropertyRef Name="GemTableShapeSizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGemTables_1_0">
+    <End Role="Designs" Type="Self.Designs" Multiplicity="1" />
+    <End Role="DesignGemTables" Type="Self.DesignGemTables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designs">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignGemTables">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGroupDesigns_0_0">
+    <End Role="Designs" Type="Self.Designs" Multiplicity="0..1" />
+    <End Role="DesignGroupDesigns" Type="Self.DesignGroupDesigns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Designs">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignGroupDesigns">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignGroupDesigns_1_0">
+    <End Role="DesignGroup" Type="Self.DesignGroup" Multiplicity="0..1" />
+    <End Role="DesignGroupDesigns" Type="Self.DesignGroupDesigns" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DesignGroup">
+        <PropertyRef Name="DesignGroupId" />
+      </Principal>
+      <Dependent Role="DesignGroupDesigns">
+        <PropertyRef Name="DesignGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DesignSearch_0_0">
+    <End Role="Designs" Type="Self.Designs" Multiplicity="1" />
+    <End Role="DesignSearch" Type="Self.DesignSearch" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Designs">
+        <PropertyRef Name="DesignId" />
+      </Principal>
+      <Dependent Role="DesignSearch">
+        <PropertyRef Name="DesignId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CounterSketchLibraryDataModelStoreContainer">
+    <EntitySet Name="Attribute" EntityType="Self.Attribute" store:Type="Tables" />
+    <EntitySet Name="AttributeLevel" EntityType="Self.AttributeLevel" store:Type="Tables" />
+    <EntitySet Name="AttributeType" EntityType="Self.AttributeType" store:Type="Tables" />
+    <EntitySet Name="Component" EntityType="Self.Component" store:Type="Tables" />
+    <EntitySet Name="DesignAttributes" EntityType="Self.DesignAttributes" store:Type="Tables" />
+    <EntitySet Name="DesignComponents" EntityType="Self.DesignComponents" store:Type="Tables" />
+    <EntitySet Name="DesignGems" EntityType="Self.DesignGems" store:Type="Tables" />
+    <EntitySet Name="DesignGemTables" EntityType="Self.DesignGemTables" store:Type="Tables" />
+    <EntitySet Name="DesignGroup" EntityType="Self.DesignGroup" store:Type="Tables" />
+    <EntitySet Name="DesignGroupDesigns" EntityType="Self.DesignGroupDesigns" store:Type="Tables" />
+    <EntitySet Name="Designs" EntityType="Self.Designs" store:Type="Tables" />
+    <EntitySet Name="DesignSearch" EntityType="Self.DesignSearch" store:Type="Tables" />
+    <EntitySet Name="GemTableShapeSize" EntityType="Self.GemTableShapeSize" store:Type="Tables" />
+    <AssociationSet Name="FK_Attribute_0_0" Association="Self.FK_Attribute_0_0">
+      <End Role="AttributeType" EntitySet="AttributeType" />
+      <End Role="Attribute" EntitySet="Attribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeType_0_0" Association="Self.FK_AttributeType_0_0">
+      <End Role="AttributeLevel" EntitySet="AttributeLevel" />
+      <End Role="AttributeType" EntitySet="AttributeType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignAttributes_0_0" Association="Self.FK_DesignAttributes_0_0">
+      <End Role="Attribute" EntitySet="Attribute" />
+      <End Role="DesignAttributes" EntitySet="DesignAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignAttributes_1_0" Association="Self.FK_DesignAttributes_1_0">
+      <End Role="Component" EntitySet="Component" />
+      <End Role="DesignAttributes" EntitySet="DesignAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignAttributes_2_0" Association="Self.FK_DesignAttributes_2_0">
+      <End Role="Designs" EntitySet="Designs" />
+      <End Role="DesignAttributes" EntitySet="DesignAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignComponents_0_0" Association="Self.FK_DesignComponents_0_0">
+      <End Role="Component" EntitySet="Component" />
+      <End Role="DesignComponents" EntitySet="DesignComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignComponents_1_0" Association="Self.FK_DesignComponents_1_0">
+      <End Role="Designs" EntitySet="Designs" />
+      <End Role="DesignComponents" EntitySet="DesignComponents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGems_0_0" Association="Self.FK_DesignGems_0_0">
+      <End Role="Component" EntitySet="Component" />
+      <End Role="DesignGems" EntitySet="DesignGems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGems_1_0" Association="Self.FK_DesignGems_1_0">
+      <End Role="Designs" EntitySet="Designs" />
+      <End Role="DesignGems" EntitySet="DesignGems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGemTables_0_0" Association="Self.FK_DesignGemTables_0_0">
+      <End Role="GemTableShapeSize" EntitySet="GemTableShapeSize" />
+      <End Role="DesignGemTables" EntitySet="DesignGemTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGemTables_1_0" Association="Self.FK_DesignGemTables_1_0">
+      <End Role="Designs" EntitySet="Designs" />
+      <End Role="DesignGemTables" EntitySet="DesignGemTables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGroupDesigns_0_0" Association="Self.FK_DesignGroupDesigns_0_0">
+      <End Role="Designs" EntitySet="Designs" />
+      <End Role="DesignGroupDesigns" EntitySet="DesignGroupDesigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignGroupDesigns_1_0" Association="Self.FK_DesignGroupDesigns_1_0">
+      <End Role="DesignGroup" EntitySet="DesignGroup" />
+      <End Role="DesignGroupDesigns" EntitySet="DesignGroupDesigns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DesignSearch_0_0" Association="Self.FK_DesignSearch_0_0">
+      <End Role="Designs" EntitySet="Designs" />
+      <End Role="DesignSearch" EntitySet="DesignSearch" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

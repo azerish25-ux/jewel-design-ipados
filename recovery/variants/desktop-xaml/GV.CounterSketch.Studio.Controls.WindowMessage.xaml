@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.Controls.WindowMessage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:gvCounterSketchUtilitiesBehaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="TheWindow" MinWidth="400" MinHeight="100" MaxWidth="600" HorizontalAlignment="Left" VerticalAlignment="Top" AllowsTransparency="True" Background="#FFFFFFFF" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Foreground="#FF000000" ResizeMode="NoResize" SizeToContent="WidthAndHeight" SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen" WindowStyle="None" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls">
+  <FrameworkElement.Style>
+    <Style TargetType="{x:Type Window}">
+      <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" />
+      <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Window}">
+            <Border BorderThickness="{TemplateBinding Control.BorderThickness}">
+              <AdornerDecorator>
+                <Grid Width="Auto" Height="Auto">
+                  <Border Background="#FFA1A1A1" BorderBrush="#FF323232" BorderThickness="1" CornerRadius="0">
+                    <DockPanel Margin="5,0,5,5">
+                      <Border Width="Auto" Height="Auto" DockPanel.Dock="Top">
+                        <i:Interaction.Behaviors>
+                          <gvCounterSketchUtilitiesBehaviors:UIElementBehaviorDragParentWindow />
+                        </i:Interaction.Behaviors>
+                        <DockPanel VerticalAlignment="Center">
+                          <Button Name="buttonCancel" Margin="2" Content="" DockPanel.Dock="Right" IsCancel="True" IsDefault="False">
+                            <FrameworkElement.Style>
+                              <Style TargetType="{x:Type Button}">
+                                <Setter Property="FrameworkElement.FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}" />
+                                <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}" />
+                                <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}" />
+                                <Setter Property="BorderThickness" Value="1" />
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="VerticalContentAlignment" Value="Center" />
+                                <Setter Property="Padding" Value="1" />
+                                <Setter Property="Template">
+                                  <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                      <Grid Name="__" Width="45" Height="19" Background="#00000000" Opacity="1">
+                                        <Viewbox Name="CSButtonClose_Default" Width="11" Height="11" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+                                          <Canvas Width="8.25488" Height="8.25488">
+                                            <Path Canvas.Top="0" Width="8.25452" Height="8.25488" Data="F1 M0.750366,7.50488 L7.50488,0.75" Stretch="Fill" Stroke="#FF000000" StrokeEndLineCap="Square" StrokeLineJoin="Round" StrokeStartLineCap="Square" StrokeThickness="1" />
+                                            <Path Canvas.Left="0" Canvas.Top="0" Width="8.25464" Height="8.25488" Data="F1 M0.75,0.75 L7.50464,7.50488" Stretch="Fill" Stroke="#FF000000" StrokeEndLineCap="Square" StrokeLineJoin="Round" StrokeStartLineCap="Square" StrokeThickness="1" />
+                                          </Canvas>
+                                        </Viewbox>
+                                        <Viewbox Name="CSButtonClose_MouseOver" Width="11" Height="11" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+                                          <Canvas Width="8.25488" Height="8.25488">
+                                            <Path Canvas.Top="0" Width="8.25452" Height="8.25488" Data="F1 M0.750366,7.50488 L7.50488,0.75" Stretch="Fill" Stroke="#FFFFFFFF" StrokeEndLineCap="Square" StrokeLineJoin="Round" StrokeStartLineCap="Square" StrokeThickness="1" />
+                                            <Path Canvas.Left="0" Canvas.Top="0" Width="8.25464" Height="8.25488" Data="F1 M0.75,0.75 L7.50464,7.50488" Stretch="Fill" Stroke="#FFFFFFFF" StrokeEndLineCap="Square" StrokeLineJoin="Round" StrokeStartLineCap="Square" StrokeThickness="1" />
+                                          </Canvas>
+                                        </Viewbox>
+                                        <Viewbox Name="CSButtonClose_MouseDown" Width="11" Height="11" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+                                          <Canvas Width="8.25488" Height="8.25488">
+                                            <Path Canvas.Top="0" Width="8.25452" Height="8.25488" Data="F1 M0.750366,7.50488 L7.50488,0.75" Stretch="Fill" Stroke="#FFFFFFFF" StrokeEndLineCap="Square" StrokeLineJoin="Round" StrokeStartLineCap="Square" StrokeThickness="1" />
+                                            <Path Canvas.Left="0" Canvas.Top="0" Width="8.25464" Height="8.25488" Data="F1 M0.75,0.75 L7.50464,7.50488" Stretch="Fill" Stroke="#FFFFFFFF" StrokeEndLineCap="Square" StrokeLineJoin="Round" StrokeStartLineCap="Square" StrokeThickness="1" />
+                                          </Canvas>
+                                        </Viewbox>
+                                        <VisualStateManager.VisualStateGroups>
+                                          <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal" />
+                                            <VisualState x:Name="MouseOver">
+                                              <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="__" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                                                  <EasingColorKeyFrame KeyTime="0" Value="#FFE04343" />
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CSButtonClose_MouseOver" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                  <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CSButtonClose_Default" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                  <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                              </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                              <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="__" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+                                                  <EasingColorKeyFrame KeyTime="0" Value="#FFC64F4F" />
+                                                </ColorAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CSButtonClose_MouseDown" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                  <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CSButtonClose_Default" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                  <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                              </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Disabled" />
+                                          </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                      </Grid>
+                                    </ControlTemplate>
+                                  </Setter.Value>
+                                </Setter>
+                              </Style>
+                            </FrameworkElement.Style>
+                            <i:Interaction.Behaviors>
+                              <gvCounterSketchUtilitiesBehaviors:ButtonBehaviorHideParentNonModalWindow />
+                            </i:Interaction.Behaviors>
+                          </Button>
+                          <TextBlock Margin="0,2,5,2" VerticalAlignment="Center" FontFamily="Helvetica Neue LT Std" FontSize="13.333" Foreground="#FFFFFFFF" Text="{TemplateBinding Window.Title}" TextWrapping="Wrap" />
+                        </DockPanel>
+                      </Border>
+                      <Border Width="Auto" Background="#FFFFFFFF" BorderBrush="#FF000000" BorderThickness="0.5,1,0.5,0.5" DockPanel.Dock="Top">
+                        <Grid>
+                          <Rectangle Height="22" VerticalAlignment="Top" Stretch="Fill" Fill="{x:Null}" />
+                          <Border BorderBrush="#FFBCBEC0" BorderThickness="0,1,0,0" />
+                          <ContentPresenter />
+                        </Grid>
+                      </Border>
+                    </DockPanel>
+                  </Border>
+                </Grid>
+              </AdornerDecorator>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+      <Style.Triggers>
+        <Trigger Property="Window.ResizeMode" Value="CanResizeWithGrip">
+          <Setter Property="Template" Value="{DynamicResource WindowTemplateKey}" />
+        </Trigger>
+      </Style.Triggers>
+    </Style>
+  </FrameworkElement.Style>
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <SolidColorBrush x:Key="BaseBackground" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FF3d6db5</SolidColorBrush>
+      <Color x:Key="BaseBackgroundColor" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FF3d6db5</Color>
+      <SolidColorBrush x:Key="ToolHeaderBackground" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FF737373</SolidColorBrush>
+      <Color x:Key="ToolHeaderBackgroundColor" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FF737373</Color>
+      <SolidColorBrush x:Key="TextBoxAndFrameBackground" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFCBCBCB</SolidColorBrush>
+      <Color x:Key="TextBoxAndFrameBackgroundColor" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFCBCBCB</Color>
+      <SolidColorBrush x:Key="WindowFrameBackground" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA1A1A1</SolidColorBrush>
+      <Color x:Key="WindowFrameBackgroundColor" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA1A1A1</Color>
+      <SolidColorBrush x:Key="HighlightAndAccent" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FF4E8499</SolidColorBrush>
+      <Color x:Key="HighlightAndAccentColor" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FF4E8499</Color>
+      <LinearGradientBrush x:Key="BackgroundGradient" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" StartPoint="0.217838,0" EndPoint="0.217838,1">
+        <GradientBrush.GradientStops>
+          <GradientStop Offset="0" Color="#FF6E6B69" />
+          <GradientStop Offset="0.1" Color="sc#1, 0.3798769, 0.355869383, 0.337269843" />
+          <GradientStop Offset="0.4" Color="#FFCCC6C1" />
+          <GradientStop Offset="0.7" Color="sc#1, 0.426992834, 0.401554525, 0.382008225" />
+          <GradientStop Offset="1" Color="#FF898684" />
+        </GradientBrush.GradientStops>
+      </LinearGradientBrush>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <i:Interaction.Behaviors>
+    <gvCounterSketchUtilitiesBehaviors:WindowBehaviorRequestFocusWhenMouseEnters />
+  </i:Interaction.Behaviors>
+  <StackPanel Name="StackPanel" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <DockPanel Name="MessageHeader" Margin="0,0,5,0" HorizontalAlignment="Left" Opacity="0.75">
+      <TextBlock Name="TxtQuestion" Height="17" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF000000" OpacityMask="#FF000000" TextWrapping="Wrap" Text="{Binding Question, ElementName=TheWindow, Mode=Default}" />
+    </DockPanel>
+    <StackPanel Name="MessageContent" Margin="5">
+      <ScrollViewer Name="MessageScroller" MaxHeight="200" Margin="0" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" Template="{DynamicResource CSScrollViewer}" VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="0" Orientation="Vertical">
+          <TextBlock Name="TxtMessage" HorizontalAlignment="Left" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding Message, ElementName=TheWindow, Mode=Default}" />
+          <TextBox Name="TxtAnswer" MinHeight="25" CaretBrush="{DynamicResource HighlightAndAccent}" Foreground="#FF000000" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Visibility="Collapsed" Text="{Binding Answer, ElementName=TheWindow, Mode=TwoWay, UpdateSourceTrigger=Explicit}" KeyUp="TxtAnswer_OnKeyUp" />
+        </StackPanel>
+      </ScrollViewer>
+    </StackPanel>
+    <StackPanel Name="ActionButtons" Height="30" Margin="0,5,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+      <Button Name="BtnOk" Height="25" MinWidth="100" Margin="0,0,25,0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static l:Strings.OK}" Click="BtnOKClick">
+        <Control.Template>
+          <ControlTemplate TargetType="{x:Type ButtonBase}">
+            <Border Name="border" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" CornerRadius="3" SnapsToDevicePixels="True">
+              <ContentPresenter Name="contentPresenter" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Focusable="False" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="Button.IsDefaulted" Value="True">
+                <Setter TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Property="Border.BorderBrush" />
+              </Trigger>
+              <Trigger Property="UIElement.IsMouseOver" Value="True" />
+              <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter TargetName="border" Property="Border.BorderBrush">
+                  <Setter.Value>
+                    <SolidColorBrush Color="{DynamicResource HighlightAndAccentColor}" />
+                  </Setter.Value>
+                </Setter>
+              </Trigger>
+              <Trigger Property="UIElement.IsEnabled" Value="False">
+                <Setter TargetName="border" Property="Border.Background" Value="#FFF4F4F4" />
+                <Setter TargetName="border" Property="Border.BorderBrush" Value="#FFADB2B5" />
+                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="#FF838383" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Control.Template>
+        <FrameworkElement.Style>
+          <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                  <Grid Name="grid" Width="Auto" Height="Auto" Cursor="Hand">
+                    <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill">
+                      <Path Name="CSButtonStandardGray_Default" Width="64.796" Height="18.954" Data="F1 M827.878,4348.57 C826.252,4350.24 825.352,4352.08 825.352,4354.01 L825.352,4354.01 C825.352,4355.95 826.256,4357.79 827.893,4359.47 L827.893,4359.47 C832.775,4364.49 882.296,4364.47 887.157,4359.42 L887.157,4359.42 C888.762,4357.76 889.648,4355.93 889.648,4354.01 L889.648,4354.01 C889.648,4352.04 888.709,4350.16 887.015,4348.46 L887.015,4348.46 C884.567,4346 871.195,4344.77 857.744,4344.77 L857.744,4344.77 C844.082,4344.77 830.337,4346.04 827.878,4348.57" Fill="{DynamicResource ToolHeaderBackground}" SnapsToDevicePixels="False" Stretch="Fill" Stroke="#FF000000" StrokeLineJoin="Round" StrokeThickness="0.5" />
+                    </Viewbox>
+                    <ContentPresenter Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" RenderTransformOrigin="1.572,1.504" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" TextBlock.Foreground="#FFFFFFFF" />
+                    <VisualStateManager.VisualStateGroups>
+                      <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="MouseOver" />
+                        <VisualState x:Name="Pressed" />
+                        <VisualState x:Name="Disabled" />
+                      </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                  </Grid>
+                  <ControlTemplate.Triggers>
+                    <Trigger Property="UIElement.IsFocused" Value="True">
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="Shape.Stroke" Value="#FFFFFFFF" />
+                    </Trigger>
+                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                      <Setter TargetName="CSButtonStandardGray_Default" Value="{DynamicResource TextBoxAndFrameBackground}" Property="Shape.Fill" />
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="Shape.Fill">
+                        <Setter.Value>
+                          <SolidColorBrush Color="{DynamicResource BackgroundSecondaryColor}" />
+                        </Setter.Value>
+                      </Setter>
+                      <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="#FFFFFFFF" />
+                      <Setter TargetName="grid" Property="FrameworkElement.Cursor" Value="Hand" />
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="UIElement.SnapsToDevicePixels" Value="False" />
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="Shape.Stroke" Value="#FF000000" />
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                      <Setter TargetName="grid" Property="UIElement.Opacity" Value="0.5" />
+                      <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="#FF000000" />
+                    </Trigger>
+                  </ControlTemplate.Triggers>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Name="BtnNotOk" Height="25" MinWidth="100" Margin="0,0,25,0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static l:Strings.No}" Click="BtnNotOKClick">
+        <Control.Template>
+          <ControlTemplate TargetType="{x:Type ButtonBase}">
+            <Border Name="border" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" CornerRadius="3" SnapsToDevicePixels="True">
+              <ContentPresenter Name="contentPresenter" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Focusable="False" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="Button.IsDefaulted" Value="True">
+                <Setter TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Property="Border.BorderBrush" />
+              </Trigger>
+              <Trigger Property="UIElement.IsMouseOver" Value="True" />
+              <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter TargetName="border" Property="Border.BorderBrush">
+                  <Setter.Value>
+                    <SolidColorBrush Color="{DynamicResource HighlightAndAccentColor}" />
+                  </Setter.Value>
+                </Setter>
+              </Trigger>
+              <Trigger Property="UIElement.IsEnabled" Value="False">
+                <Setter TargetName="border" Property="Border.Background" Value="#FFF4F4F4" />
+                <Setter TargetName="border" Property="Border.BorderBrush" Value="#FFADB2B5" />
+                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="#FF838383" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Control.Template>
+        <FrameworkElement.Style>
+          <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                  <Grid Name="grid" Width="Auto" Height="Auto" Cursor="Hand">
+                    <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill">
+                      <Path Name="CSButtonStandardGray_Default" Width="64.796" Height="18.954" Data="F1 M827.878,4348.57 C826.252,4350.24 825.352,4352.08 825.352,4354.01 L825.352,4354.01 C825.352,4355.95 826.256,4357.79 827.893,4359.47 L827.893,4359.47 C832.775,4364.49 882.296,4364.47 887.157,4359.42 L887.157,4359.42 C888.762,4357.76 889.648,4355.93 889.648,4354.01 L889.648,4354.01 C889.648,4352.04 888.709,4350.16 887.015,4348.46 L887.015,4348.46 C884.567,4346 871.195,4344.77 857.744,4344.77 L857.744,4344.77 C844.082,4344.77 830.337,4346.04 827.878,4348.57" Fill="{DynamicResource ToolHeaderBackground}" SnapsToDevicePixels="False" Stretch="Fill" Stroke="#FF000000" StrokeLineJoin="Round" StrokeThickness="0.5" />
+                    </Viewbox>
+                    <ContentPresenter Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" RenderTransformOrigin="1.572,1.504" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" TextBlock.Foreground="#FFFFFFFF" />
+                    <VisualStateManager.VisualStateGroups>
+                      <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="MouseOver" />
+                        <VisualState x:Name="Pressed" />
+                        <VisualState x:Name="Disabled" />
+                      </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                  </Grid>
+                  <ControlTemplate.Triggers>
+                    <Trigger Property="UIElement.IsFocused" Value="True">
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="Shape.Stroke" Value="#FFFFFFFF" />
+                    </Trigger>
+                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                      <Setter TargetName="CSButtonStandardGray_Default" Value="{DynamicResource TextBoxAndFrameBackground}" Property="Shape.Fill" />
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="Shape.Fill">
+                        <Setter.Value>
+                          <SolidColorBrush Color="{DynamicResource BackgroundSecondaryColor}" />
+                        </Setter.Value>
+                      </Setter>
+                      <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="#FFFFFFFF" />
+                      <Setter TargetName="grid" Property="FrameworkElement.Cursor" Value="Hand" />
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="UIElement.SnapsToDevicePixels" Value="False" />
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="Shape.Stroke" Value="#FF000000" />
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                      <Setter TargetName="grid" Property="UIElement.Opacity" Value="0.5" />
+                      <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="#FF000000" />
+                    </Trigger>
+                  </ControlTemplate.Triggers>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </FrameworkElement.Style>
+      </Button>
+      <Button Name="BtnCancel" Height="25" MinWidth="100" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static l:Strings.CANCEL}" Click="ButtonCancelClick">
+        <Control.Template>
+          <ControlTemplate TargetType="{x:Type ButtonBase}">
+            <Border Name="border" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="1" CornerRadius="3" SnapsToDevicePixels="True">
+              <ContentPresenter Name="contentPresenter" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{TemplateBinding ContentControl.Content}" ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Focusable="False" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="Button.IsDefaulted" Value="True">
+                <Setter TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Property="Border.BorderBrush" />
+              </Trigger>
+              <Trigger Property="UIElement.IsMouseOver" Value="True" />
+              <Trigger Property="ButtonBase.IsPressed" Value="True">
+                <Setter TargetName="border" Property="Border.BorderBrush">
+                  <Setter.Value>
+                    <SolidColorBrush Color="{DynamicResource HighlightAndAccentColor}" />
+                  </Setter.Value>
+                </Setter>
+              </Trigger>
+              <Trigger Property="UIElement.IsEnabled" Value="False">
+                <Setter TargetName="border" Property="Border.Background" Value="#FFF4F4F4" />
+                <Setter TargetName="border" Property="Border.BorderBrush" Value="#FFADB2B5" />
+                <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="#FF838383" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Control.Template>
+        <FrameworkElement.Style>
+          <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+              <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                  <Grid Name="grid" Width="Auto" Height="Auto" Cursor="Hand">
+                    <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill">
+                      <Path Name="CSButtonStandardGray_Default" Width="64.796" Height="18.954" Data="F1 M827.878,4348.57 C826.252,4350.24 825.352,4352.08 825.352,4354.01 L825.352,4354.01 C825.352,4355.95 826.256,4357.79 827.893,4359.47 L827.893,4359.47 C832.775,4364.49 882.296,4364.47 887.157,4359.42 L887.157,4359.42 C888.762,4357.76 889.648,4355.93 889.648,4354.01 L889.648,4354.01 C889.648,4352.04 888.709,4350.16 887.015,4348.46 L887.015,4348.46 C884.567,4346 871.195,4344.77 857.744,4344.77 L857.744,4344.77 C844.082,4344.77 830.337,4346.04 827.878,4348.57" Fill="{DynamicResource ToolHeaderBackground}" SnapsToDevicePixels="False" Stretch="Fill" Stroke="#FF000000" StrokeLineJoin="Round" StrokeThickness="0.5" />
+                    </Viewbox>
+                    <ContentPresenter Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" RenderTransformOrigin="1.572,1.504" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" TextBlock.Foreground="#FFFFFFFF" />
+                    <VisualStateManager.VisualStateGroups>
+                      <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="MouseOver" />
+                        <VisualState x:Name="Pressed" />
+                        <VisualState x:Name="Disabled" />
+                      </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                  </Grid>
+                  <ControlTemplate.Triggers>
+                    <Trigger Property="UIElement.IsFocused" Value="True">
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="Shape.Stroke" Value="#FFFFFFFF" />
+                    </Trigger>
+                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                      <Setter TargetName="CSButtonStandardGray_Default" Value="{DynamicResource TextBoxAndFrameBackground}" Property="Shape.Fill" />
+                    </Trigger>
+                    <Trigger Property="IsPressed" Value="True">
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="Shape.Fill">
+                        <Setter.Value>
+                          <SolidColorBrush Color="{DynamicResource BackgroundSecondaryColor}" />
+                        </Setter.Value>
+                      </Setter>
+                      <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="#FFFFFFFF" />
+                      <Setter TargetName="grid" Property="FrameworkElement.Cursor" Value="Hand" />
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="UIElement.SnapsToDevicePixels" Value="False" />
+                      <Setter TargetName="CSButtonStandardGray_Default" Property="Shape.Stroke" Value="#FF000000" />
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                      <Setter TargetName="grid" Property="UIElement.Opacity" Value="0.5" />
+                      <Setter TargetName="contentPresenter" Property="TextBlock.Foreground" Value="#FF000000" />
+                    </Trigger>
+                  </ControlTemplate.Triggers>
+                </ControlTemplate>
+              </Setter.Value>
+            </Setter>
+          </Style>
+        </FrameworkElement.Style>
+      </Button>
+    </StackPanel>
+  </StackPanel>
+</Window>

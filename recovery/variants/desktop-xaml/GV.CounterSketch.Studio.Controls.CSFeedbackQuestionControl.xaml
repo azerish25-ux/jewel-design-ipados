@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.Controls.CSFeedbackQuestionControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="CSFeedbackQuestionUserControl" Foreground="#FFFFFFFF" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CounterSketch Studio;component/ResourceDictionaries/Converters.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Border BorderThickness="0,0.5" BorderBrush="#FF2F2F2F">
+    <DockPanel Name="LayoutRoot" Margin="5">
+      <TextBlock Name="txtQuestion" Text="Question" TextWrapping="Wrap" Foreground="#FFF9FFFF" FontSize="13.333" Width="225" />
+      <Border BorderThickness="1" Margin="5,0,0,0">
+        <StackPanel Margin="0,0,5,0">
+          <Border Name="borderMultipleChoice" Margin="0" Visibility="{Binding IsMultipleChoiceQuestion, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=CSFeedbackQuestionUserControl, Mode=Default}">
+            <ComboBox Name="cmboAnswer" Style="{DynamicResource ComboBoxStylePrimary}" FontSize="13.333" Foreground="#FFFFFFFF" />
+          </Border>
+          <Border Name="borderYesNo" BorderThickness="1" Margin="0" Visibility="{Binding IsYesNoQuestion, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=CSFeedbackQuestionUserControl, Mode=Default}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+              <RadioButton Name="radioYes" Content="Yes" Style="{DynamicResource CSRadioButton}" GroupName="YesNoQuestion" FontSize="13.333" Margin="10,0" />
+              <RadioButton Name="radioNo" Content="No" Style="{DynamicResource CSRadioButton}" GroupName="YesNoQuestion" FontSize="13.333" Margin="10,0" />
+            </StackPanel>
+          </Border>
+          <Border Name="borderFreeForm" BorderThickness="1" Margin="0" Visibility="{Binding IsFreeFormQuestion, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=CSFeedbackQuestionUserControl, Mode=Default}">
+            <TextBox Name="txtFreeform" TextWrapping="Wrap" Style="{DynamicResource CSTextBox}" Foreground="#FFFDFFFF" FontSize="13.333" Height="50" Background="#FF303030" />
+          </Border>
+        </StackPanel>
+      </Border>
+    </DockPanel>
+  </Border>
+</UserControl>

@@ -1,0 +1,4380 @@
+{
+  "schemaVersion": 1,
+  "kind": "ui",
+  "rows": [
+    {
+      "id": "UI-001",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Home, search, customize, freehand and order navigation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BreadCrumbViewModel.cs",
+          "line": 52,
+          "symbol": "BreadCrumbViewModel.CommandNavigateToHome"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BreadCrumbViewModel.cs",
+          "line": 367,
+          "symbol": "BreadCrumbViewModel.NavigateToHome"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BreadCrumbViewModel.cs",
+          "line": 54,
+          "symbol": "BreadCrumbViewModel.CommandNavigateToSearch"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BreadCrumbViewModel.cs",
+          "line": 389,
+          "symbol": "BreadCrumbViewModel.NavigateToSearch"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BreadCrumbViewModel.cs",
+          "line": 56,
+          "symbol": "BreadCrumbViewModel.CommandNavigateToCustomize"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BreadCrumbViewModel.cs",
+          "line": 356,
+          "symbol": "BreadCrumbViewModel.NavigateToCustomize"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BreadCrumbViewModel.cs",
+          "line": 58,
+          "symbol": "BreadCrumbViewModel.CommandNavigateToOrder"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BreadCrumbViewModel.cs",
+          "line": 378,
+          "symbol": "BreadCrumbViewModel.NavigateToOrder"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 364,
+          "symbol": "MainViewModel.CommandSetCustomizeModeActive"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1329,
+          "symbol": "MainViewModel.SetCustomizeModeActive"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 366,
+          "symbol": "MainViewModel.CommandSetFreehandModeActive"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1336,
+          "symbol": "MainViewModel.SetFreehandModeActive"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1341,
+          "symbol": "MainViewModel.SetFreehandModeActive"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 368,
+          "symbol": "MainViewModel.CommandSetOrderModeActive"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1363,
+          "symbol": "MainViewModel.SetOrderModeActive"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 382,
+          "symbol": "MainViewModel.CommandSetSearchModeActive"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1386,
+          "symbol": "MainViewModel.SetSearchModeActive"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise home, search, customize, freehand and order navigation on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-002",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Category, keyword, SPI and collection/package search",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 70,
+          "symbol": "TileSearchMainViewModel.CommandChooseFeaturedModelBySPI"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 330,
+          "symbol": "TileSearchMainViewModel.ChooseFeaturedModelBySPI"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 72,
+          "symbol": "TileSearchMainViewModel.CommandClearSearchKeyword"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 336,
+          "symbol": "TileSearchMainViewModel.ClearSearchKeyword"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 74,
+          "symbol": "TileSearchMainViewModel.CommandPopulateSearchFromKeyword"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 373,
+          "symbol": "TileSearchMainViewModel.PopulateSearchFromKeyword"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 76,
+          "symbol": "TileSearchMainViewModel.CommandPopulateSearchResults"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 242,
+          "symbol": "TileSearchMainViewModel.PopulateSearchResults"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 78,
+          "symbol": "TileSearchMainViewModel.CommandPopulateSearchResultsFromEverAndEver"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 391,
+          "symbol": "TileSearchMainViewModel.PopulateSearchResultsFromEverAndEver"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 80,
+          "symbol": "TileSearchMainViewModel.CommandPopulateSearchResultsFromPackageKit"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 406,
+          "symbol": "TileSearchMainViewModel.PopulateSearchResultsFromPackageKit"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 84,
+          "symbol": "TileSearchMainViewModel.CommandTransitionToTileSearchCategoryState"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 318,
+          "symbol": "TileSearchMainViewModel.TransitionToTileSearchCategoryState"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 788,
+          "symbol": "TileSearchResultViewModelBase.CommandGotoPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 304,
+          "symbol": "MainViewModel.CommandOpenSearchKeywordWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1919,
+          "symbol": "MainViewModel.OpenSearchKeyword"
+        }
+      ],
+      "acceptance": "Bundle a known library; search the same keywords, SPI and packages offline, clear the keyword, and verify exact item identities and prior-category restoration.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-003",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Result filters and search refresh",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 420,
+          "symbol": "TileSearchResultViewModelBase.CommandGemSearchFilterSizeChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1204,
+          "symbol": "TileSearchResultViewModelBase.GemSearchFilterSizeChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 432,
+          "symbol": "TileSearchResultViewModelBase.CommandResetResults"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3942,
+          "symbol": "TileSearchResultViewModelBase.ResetResults"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 434,
+          "symbol": "TileSearchResultViewModelBase.CommandResetSearchActiveSearchFilters"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3949,
+          "symbol": "TileSearchResultViewModelBase.ResetSearchActiveSearchFilters"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 436,
+          "symbol": "TileSearchResultViewModelBase.CommandSelectedDesignSearchChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3988,
+          "symbol": "TileSearchResultViewModelBase.SelectedDesignSearchChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 438,
+          "symbol": "TileSearchResultViewModelBase.CommandSelectedVariantSearchChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3993,
+          "symbol": "TileSearchResultViewModelBase.SelectedVariantSearchChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 442,
+          "symbol": "TileSearchResultViewModelBase.CommandUpdateResultsWithSelectedFilterCriteria"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 4054,
+          "symbol": "TileSearchResultViewModelBase.UpdateResultsWithSelectedFilterCriteria"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 444,
+          "symbol": "TileSearchResultViewModelBase.CommandUpdateSearchFromFilter"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 4067,
+          "symbol": "TileSearchResultViewModelBase.UpdateSearchFromFilter"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1008,
+          "symbol": "TileSearchResultViewModelBase.CommandTriggerSearchRefresh"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 4048,
+          "symbol": "TileSearchResultViewModelBase.TriggerSearchRefresh"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise result filters and search refresh on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-004",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Result paging, image size and view history",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 126,
+          "symbol": "TileSearchResultViewModelBase._commandGotoPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1356,
+          "symbol": "TileSearchResultViewModelBase.GotoPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 344,
+          "symbol": "TileSearchResultViewModelBase.CommandGotoFirstPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3642,
+          "symbol": "TileSearchResultViewModelBase.GotoFirstPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 346,
+          "symbol": "TileSearchResultViewModelBase.CommandGotoPreviousPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3665,
+          "symbol": "TileSearchResultViewModelBase.GotoPreviousPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 350,
+          "symbol": "TileSearchResultViewModelBase.CommandGotoNextPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3654,
+          "symbol": "TileSearchResultViewModelBase.GotoNextPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 352,
+          "symbol": "TileSearchResultViewModelBase.CommandGotoLastPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3648,
+          "symbol": "TileSearchResultViewModelBase.GotoLastPage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 515,
+          "symbol": "TileSearchResultViewModelBase.CommandUpdateSearchResultImageSizes"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1551,
+          "symbol": "TileSearchResultViewModelBase.UpdateSearchResultImageSizes"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1068,
+          "symbol": "TileSearchResultViewModelBase.CommandNavigateBackToTiles"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1362,
+          "symbol": "TileSearchResultViewModelBase.NavigateBackToTiles"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1070,
+          "symbol": "TileSearchResultViewModelBase.CommandNavigateForwardToResults"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1372,
+          "symbol": "TileSearchResultViewModelBase.NavigateForwardToResults"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise result paging, image size and view history on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-005",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Design details, alternate images, shape and variant opening",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 416,
+          "symbol": "TileSearchResultViewModelBase.CommandOpenDesignWithSelectedShape"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3785,
+          "symbol": "TileSearchResultViewModelBase.OpenDesignWithSelectedShape"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 418,
+          "symbol": "TileSearchResultViewModelBase.CommandCloseDesignInfo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1198,
+          "symbol": "TileSearchResultViewModelBase.CloseDesignInfo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 422,
+          "symbol": "TileSearchResultViewModelBase.CommandNextDesignInfo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3711,
+          "symbol": "TileSearchResultViewModelBase.MoveToNextDesignInfo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 424,
+          "symbol": "TileSearchResultViewModelBase.CommandPreviousDesignInfo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3722,
+          "symbol": "TileSearchResultViewModelBase.MoveToPreviousDesignInfo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 426,
+          "symbol": "TileSearchResultViewModelBase.CommandOpenDesignFromDesignIteration"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3733,
+          "symbol": "TileSearchResultViewModelBase.OpenDesignFromDesignIteration"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 428,
+          "symbol": "TileSearchResultViewModelBase.CommandOpenDesignFromDesignSearch"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3749,
+          "symbol": "TileSearchResultViewModelBase.OpenDesignFromDesignSearch"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 430,
+          "symbol": "TileSearchResultViewModelBase.CommandSelectDesignSearch"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3983,
+          "symbol": "TileSearchResultViewModelBase.SelectDesignSearch"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 440,
+          "symbol": "TileSearchResultViewModelBase.CommandSwitchDesignDetailImage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1442,
+          "symbol": "TileSearchResultViewModelBase.SwitchDesignDetailImage"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise design details, alternate images, shape and variant opening on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-006",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Session picks, marked designs and adding to portfolio/collection",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 185,
+          "symbol": "TileSearchResultViewModelBase.CommandToggleSessionPicks"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1170,
+          "symbol": "TileSearchResultViewModelBase.ToggleSessionPicks"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 348,
+          "symbol": "TileSearchResultViewModelBase.CommandRemoveFromSessionPicks"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 3936,
+          "symbol": "TileSearchResultViewModelBase.RemoveFromSessionPicks"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 406,
+          "symbol": "TileSearchResultViewModelBase.CommandPreviousSessionDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1180,
+          "symbol": "TileSearchResultViewModelBase.PreviousSessionDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 408,
+          "symbol": "TileSearchResultViewModelBase.CommandNextSessionDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1175,
+          "symbol": "TileSearchResultViewModelBase.NextSessionDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 410,
+          "symbol": "TileSearchResultViewModelBase.CommandAddMarkedDesignsToActiveProject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1863,
+          "symbol": "TileSearchResultViewModelBase.AddMarkedDesignsToActiveProject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 412,
+          "symbol": "TileSearchResultViewModelBase.CommandAddMarkedDesignsToCollection"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1877,
+          "symbol": "TileSearchResultViewModelBase.AddMarkedDesignsToCollection"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 414,
+          "symbol": "TileSearchResultViewModelBase.CommandClearMarkedDesigns"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1882,
+          "symbol": "TileSearchResultViewModelBase.ClearMarkedDesigns"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1012,
+          "symbol": "TileSearchResultViewModelBase.CommandAddDesignFromDesignDetailsToActiveProject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchResultViewModelBase.cs",
+          "line": 1855,
+          "symbol": "TileSearchResultViewModelBase.AddDesignFromDesignDetailsToActiveProject"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise session picks, marked designs and adding to portfolio/collection on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-007",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Editable tile layout and custom launches",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 276,
+          "symbol": "MainViewModel.CommandEditTileLayoutDesigns"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1517,
+          "symbol": "MainViewModel.EditTileLayoutDesigns"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 278,
+          "symbol": "MainViewModel.CommandEditTileLayoutParts"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1523,
+          "symbol": "MainViewModel.EditTileLayoutParts"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 84,
+          "symbol": "TileSearchMainViewModel.CommandTransitionToTileSearchCategoryState"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 318,
+          "symbol": "TileSearchMainViewModel.TransitionToTileSearchCategoryState"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 184,
+          "symbol": "TileViewViewModelBase.CommandAddCustomTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 361,
+          "symbol": "TileViewViewModelBase.AddCustomTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 186,
+          "symbol": "TileViewViewModelBase.CommandSetTileSizeMedium"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 660,
+          "symbol": "TileViewViewModelBase.SetTileSizeMedium"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 188,
+          "symbol": "TileViewViewModelBase.CommandSetTileSizeLarge"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 652,
+          "symbol": "TileViewViewModelBase.SetTileSizeLarge"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 190,
+          "symbol": "TileViewViewModelBase.CommandSetTileSizeSmall"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 668,
+          "symbol": "TileViewViewModelBase.SetTileSizeSmall"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 192,
+          "symbol": "TileViewViewModelBase.CommandSetTileSizeWide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 676,
+          "symbol": "TileViewViewModelBase.SetTileSizeWide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 202,
+          "symbol": "TileViewViewModelBase.CommandSelectTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 622,
+          "symbol": "TileViewViewModelBase.SelectTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 232,
+          "symbol": "TileViewViewModelBase.CommandEditTileImage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 401,
+          "symbol": "TileViewViewModelBase.EditTileImage"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 234,
+          "symbol": "TileViewViewModelBase.CommandEditTileURL"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 414,
+          "symbol": "TileViewViewModelBase.EditTileURL"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 236,
+          "symbol": "TileViewViewModelBase.CommandRemoveTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 550,
+          "symbol": "TileViewViewModelBase.RemoveTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 238,
+          "symbol": "TileViewViewModelBase.CommandAddTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 374,
+          "symbol": "TileViewViewModelBase.AddTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 279,
+          "symbol": "TileViewViewModelBase.CommandSetShowcaseTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 627,
+          "symbol": "TileViewViewModelBase.SetShowcaseTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 684,
+          "symbol": "TileViewViewModelBase.WireupTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 194,
+          "symbol": "TileViewViewModelBase.CommandResetLayout"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 570,
+          "symbol": "TileViewViewModelBase.ResetLayout"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 198,
+          "symbol": "TileViewViewModelBase.CommandSaveLayout"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 581,
+          "symbol": "TileViewViewModelBase.SaveLayout"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 586,
+          "symbol": "TileViewViewModelBase.SaveLayout"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 200,
+          "symbol": "TileViewViewModelBase.CommandCancelLayout"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 389,
+          "symbol": "TileViewViewModelBase.CancelLayout"
+        }
+      ],
+      "acceptance": "Customize tile order, sizes, images and commands; save/restart offline and verify searches and local launch actions; external URLs clearly require connectivity.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-008",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Style quiz and guided browsing",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 332,
+          "symbol": "MainViewModel.CommandOpenStyleQuizWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2281,
+          "symbol": "MainViewModel.OpenStyleQuizWindow"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise style quiz and guided browsing on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-009",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Design stack, featured iterations and component visibility",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 58,
+          "symbol": "DesignStackViewModel.CommandResetUIControl"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 271,
+          "symbol": "DesignStackViewModel.ResetUIControl"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 60,
+          "symbol": "DesignStackViewModel.CommandSelectedFeaturedIterationChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 735,
+          "symbol": "DesignStackViewModel.SelectedFeaturedIterationChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 62,
+          "symbol": "DesignStackViewModel.CommandUpdateDesignStackCategoryFromComponents"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 435,
+          "symbol": "DesignStackViewModel.UpdateDesignStackCategoryFromComponents"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 64,
+          "symbol": "DesignStackViewModel.CommandUpdateVisibleDisplayComponents"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 778,
+          "symbol": "DesignStackViewModel.UpdateVisibleDisplayComponents"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 341,
+          "symbol": "DesignStackViewModel.PopulateDesignStackUIControls"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignStackViewModel.cs",
+          "line": 709,
+          "symbol": "DesignStackViewModel.ProcessUIControlNotificationMessage"
+        }
+      ],
+      "acceptance": "For every bundled control type and representative iteration, change/reset values and toggle components; save and reopen the editable document on PC.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-010",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Open and close ordering from customization",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizeViewModel.cs",
+          "line": 148,
+          "symbol": "CustomizeViewModel.CommandOpenOrder"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizeViewModel.cs",
+          "line": 244,
+          "symbol": "CustomizeViewModel.OpenOrder"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizeViewModel.cs",
+          "line": 150,
+          "symbol": "CustomizeViewModel.CommandCloseOrder"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizeViewModel.cs",
+          "line": 233,
+          "symbol": "CustomizeViewModel.CloseOrder"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise open and close ordering from customization on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-011",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Parts toolbox, gem, text and ring-rail guide",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 96,
+          "symbol": "CustomizePartsListViewModel.CommandAddRingRailGuide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 282,
+          "symbol": "CustomizePartsListViewModel.AddRingRailGuide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 198,
+          "symbol": "CustomizePartsListViewModel.CommandAddPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 265,
+          "symbol": "CustomizePartsListViewModel.AddPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 277,
+          "symbol": "CustomizePartsListViewModel.AddPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 212,
+          "symbol": "CustomizePartsListViewModel.CommandClosePartToolbox"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 292,
+          "symbol": "CustomizePartsListViewModel.ClosePartToolbox"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 85,
+          "symbol": "FreehandStackViewModel.CommandOpenPartsToolBoxWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 423,
+          "symbol": "FreehandStackViewModel.OpenPartsToolBoxWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewPartsViewModel.cs",
+          "line": 83,
+          "symbol": "TileViewPartsViewModel.CommandAddRingRailGuide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewPartsViewModel.cs",
+          "line": 191,
+          "symbol": "TileViewPartsViewModel.AddRingRailGuid"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewPartsViewModel.cs",
+          "line": 85,
+          "symbol": "TileViewPartsViewModel.CommandAddAGem"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewPartsViewModel.cs",
+          "line": 186,
+          "symbol": "TileViewPartsViewModel.AddAGem"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewPartsViewModel.cs",
+          "line": 87,
+          "symbol": "TileViewPartsViewModel.CommandAddText"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewPartsViewModel.cs",
+          "line": 196,
+          "symbol": "TileViewPartsViewModel.AddText"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 287,
+          "symbol": "CustomizePartsListViewModel.AddTextTool"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 260,
+          "symbol": "CustomizePartsListViewModel.AddAGem"
+        }
+      ],
+      "acceptance": "Offline add each built-in part/text/gem and catalog part; verify font fallback and that editable parametric controls survive desktop reopening.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-012",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Select, multi-select, highlight and show/hide parts",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 152,
+          "symbol": "CustomizePartsListViewModel.CommandToggleMultiSelectForPartsList"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 748,
+          "symbol": "CustomizePartsListViewModel.ToggleMultiSelectForPartsList"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 180,
+          "symbol": "CustomizePartsListViewModel.CommandShowHideSubMenu"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 714,
+          "symbol": "CustomizePartsListViewModel.ShowhideSubMenu"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 186,
+          "symbol": "CustomizePartsListViewModel.CommandTogglePartVisibility"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 753,
+          "symbol": "CustomizePartsListViewModel.TogglePartVisibility"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 192,
+          "symbol": "CustomizePartsListViewModel.CommandSelectedImportGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 609,
+          "symbol": "CustomizePartsListViewModel.SelectedImportGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 194,
+          "symbol": "CustomizePartsListViewModel.CommandSetDesignStackVisible"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 659,
+          "symbol": "CustomizePartsListViewModel.SetDesignStackVisible"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 196,
+          "symbol": "CustomizePartsListViewModel.CommandSetFreehandStackVisible"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 669,
+          "symbol": "CustomizePartsListViewModel.SetFreehandStackVisible"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 204,
+          "symbol": "CustomizePartsListViewModel.CommandExportSelectedImportGroupsToPath"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 492,
+          "symbol": "CustomizePartsListViewModel.ExportSelectedImportGroupsToPath"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 206,
+          "symbol": "CustomizePartsListViewModel.CommandExportSelectedImportGroupsToUserParts"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 517,
+          "symbol": "CustomizePartsListViewModel.ExportSelectedImportGroupsToUserParts"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 216,
+          "symbol": "CustomizePartsListViewModel.CommandHighlightImportGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 525,
+          "symbol": "CustomizePartsListViewModel.HighlightImportGroup"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise select, multi-select, highlight and show/hide parts on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-013",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Group, ungroup, duplicate, rename, delete and reset parts",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 182,
+          "symbol": "CustomizePartsListViewModel.CommandResetPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 604,
+          "symbol": "CustomizePartsListViewModel.ResetPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 184,
+          "symbol": "CustomizePartsListViewModel.CommandDeletePart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 425,
+          "symbol": "CustomizePartsListViewModel.DeleteGroupOrPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 188,
+          "symbol": "CustomizePartsListViewModel.CommandDuplicateImportGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 461,
+          "symbol": "CustomizePartsListViewModel.DuplicateSelected"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 200,
+          "symbol": "CustomizePartsListViewModel.CommandAddPartToGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 386,
+          "symbol": "CustomizePartsListViewModel.AddToPartGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 202,
+          "symbol": "CustomizePartsListViewModel.CommandShowRenamePrompt"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 719,
+          "symbol": "CustomizePartsListViewModel.ShowRenamePrompt"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 218,
+          "symbol": "CustomizePartsListViewModel.CommandRenameImportGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 584,
+          "symbol": "CustomizePartsListViewModel.RenameImportGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 220,
+          "symbol": "CustomizePartsListViewModel.CommandBreakPartGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 395,
+          "symbol": "CustomizePartsListViewModel.BreakPartGroup"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise group, ungroup, duplicate, rename, delete and reset parts on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-014",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Part primary/secondary metal and common center",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 190,
+          "symbol": "CustomizePartsListViewModel.CommandTogglePrimarySecondaryMetal"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 761,
+          "symbol": "CustomizePartsListViewModel.TogglePrimarySecondaryMetal"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 214,
+          "symbol": "CustomizePartsListViewModel.CommandToggleCommonCenterPoint"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 736,
+          "symbol": "CustomizePartsListViewModel.ToggleCommonCenterPoint"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 270,
+          "symbol": "MainViewModel.CommandToggleFreehandCommonCenterMode"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2161,
+          "symbol": "MainViewModel.ToggleFreehandCommonCenterMode"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise part primary/secondary metal and common center on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-015",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Export selected parts and reusable personal parts library",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 204,
+          "symbol": "CustomizePartsListViewModel.CommandExportSelectedImportGroupsToPath"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 492,
+          "symbol": "CustomizePartsListViewModel.ExportSelectedImportGroupsToPath"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 206,
+          "symbol": "CustomizePartsListViewModel.CommandExportSelectedImportGroupsToUserParts"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 517,
+          "symbol": "CustomizePartsListViewModel.ExportSelectedImportGroupsToUserParts"
+        }
+      ],
+      "acceptance": "Export a grouped parametric part to CSG, import on iPad and PC, modify it and verify group hierarchy, metadata and controls remain editable.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-016",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Personal CSG/3DM parts import, thumbnails and deletion",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UserPartsViewModel.cs",
+          "line": 30,
+          "symbol": "UserPartsViewModel.CommandAddSelectedPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UserPartsViewModel.cs",
+          "line": 61,
+          "symbol": "UserPartsViewModel.AddSelectedPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UserPartsViewModel.cs",
+          "line": 32,
+          "symbol": "UserPartsViewModel.CommandDeleteUserPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UserPartsViewModel.cs",
+          "line": 146,
+          "symbol": "UserPartsViewModel.DeleteUserPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UserPartsViewModel.cs",
+          "line": 34,
+          "symbol": "UserPartsViewModel.CommandImportPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UserPartsViewModel.cs",
+          "line": 83,
+          "symbol": "UserPartsViewModel.ImportPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UserPartsViewModel.cs",
+          "line": 164,
+          "symbol": "UserPartsViewModel.ImportPart"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise personal csg/3dm parts import, thumbnails and deletion on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-017",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Freehand transform controls, flip and mirror",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 75,
+          "symbol": "FreehandStackViewModel.CommandResetUIControl"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 222,
+          "symbol": "FreehandStackViewModel.ResetUIControl"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 95,
+          "symbol": "FreehandStackViewModel.CommandUpdateVisibleDisplayComponents"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 483,
+          "symbol": "FreehandStackViewModel.UpdateVisibleDisplayComponents"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 169,
+          "symbol": "FreehandStackViewModel.CommandFlipChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 459,
+          "symbol": "FreehandStackViewModel.UpdateGraphPartFlip"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 171,
+          "symbol": "FreehandStackViewModel.CommandMirrorChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 471,
+          "symbol": "FreehandStackViewModel.UpdateGraphPartMirror"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 289,
+          "symbol": "FreehandStackViewModel.UpdateFreehandStackControls"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueXFormObjectControl.cs",
+          "line": 163,
+          "symbol": "CSValueXFormObjectControl.MirrorSelector_OnSelectionChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueXFormObjectControl.cs",
+          "line": 142,
+          "symbol": "CSValueXFormObjectControl.FlipSelector_OnSelectionChanged"
+        }
+      ],
+      "acceptance": "Select one and multiple grouped parts; apply each flip/mirror mode, undo and redo, then round-trip the editable project to PC.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-018",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Legacy save sorted import groups is a no-op",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 83,
+          "symbol": "FreehandStackViewModel.CommandSaveSortedImportGroups"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 441,
+          "symbol": "FreehandStackViewModel.SaveSortedImportGroups"
+        }
+      ],
+      "acceptance": "Verify whether dragging/reordering is saved elsewhere; do not claim this empty target provides persistence.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-019",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Material selectors, color families and Any Gem Any Color",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 63,
+          "symbol": "MaterialOptionSelectorViewModel.CommandApplyAnyGemAnyColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 285,
+          "symbol": "MaterialOptionSelectorViewModel.ApplyAnyGemAnyColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 65,
+          "symbol": "MaterialOptionSelectorViewModel.CommandClearAllAnyGemAnyColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 297,
+          "symbol": "MaterialOptionSelectorViewModel.ClearAllAnyGemAnyColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 67,
+          "symbol": "MaterialOptionSelectorViewModel.CommandCloseAnyGemAnyColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 303,
+          "symbol": "MaterialOptionSelectorViewModel.CloseAnyGemAnyColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 69,
+          "symbol": "MaterialOptionSelectorViewModel.CommandGemColorTypeClicked"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 308,
+          "symbol": "MaterialOptionSelectorViewModel.GemColorTypeClicked"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StudioMaterialSelectionViewModel.cs",
+          "line": 23,
+          "symbol": "StudioMaterialSelectionViewModel.CommandCloseAllOtherMaterialGroupOptions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StudioMaterialSelectionViewModel.cs",
+          "line": 438,
+          "symbol": "StudioMaterialSelectionViewModel.CloseAllOtherMaterialGroupOptions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 274,
+          "symbol": "MaterialOptionSelectorViewModel.RaiseMaterialOptionSelectionChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 298,
+          "symbol": "MainViewModel.CommandOpenAnyGemAnyColorMaterialSelection"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1740,
+          "symbol": "MainViewModel.OpenAnyGemAnyColorMaterialSelection"
+        }
+      ],
+      "acceptance": "Assign every metal/gem classification and color family offline, assign per-gem overrides, clear overrides and verify serialized group membership and render appearance.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-020",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Stone tray assignment, removal and design search",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 37,
+          "symbol": "StoneTrayViewModel.AssignStoneSearchCommand"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 362,
+          "symbol": "StoneTrayViewModel.AssignStoneSearch"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 39,
+          "symbol": "StoneTrayViewModel.AssignStoneCommand"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 315,
+          "symbol": "StoneTrayViewModel.AssignStone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 41,
+          "symbol": "StoneTrayViewModel.ClearAssignedStoneCommand"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 250,
+          "symbol": "StoneTrayViewModel.ClearAssignedStone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 43,
+          "symbol": "StoneTrayViewModel.DeleteStoneCommand"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 265,
+          "symbol": "StoneTrayViewModel.DeleteStone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 280,
+          "symbol": "StoneTrayViewModel.OpenStoneTray"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 221,
+          "symbol": "StoneTrayViewModel.AddStonesToTray"
+        }
+      ],
+      "acceptance": "With locally cached stones and no network, assign/unassign/delete stones and search compatible designs; clearly identify cached stock/prices and preserve assignments on PC.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-021",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Stone and diamond/gem shopping",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 209,
+          "symbol": "GemReportViewModel.CommandShopForDiamond"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 1015,
+          "symbol": "GemReportViewModel.ShopForDiamond"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 212,
+          "symbol": "GemReportViewModel.CommandShopForGemstone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 1020,
+          "symbol": "GemReportViewModel.ShopForGemstone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 221,
+          "symbol": "GemReportViewModel.CommandOpenStullerSite"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 871,
+          "symbol": "GemReportViewModel.OpenStullerSite"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 953,
+          "symbol": "MainViewModel.CommandShopForDiamond"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2345,
+          "symbol": "MainViewModel.ShopForDiamond"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 955,
+          "symbol": "MainViewModel.CommandShopForGemstone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2350,
+          "symbol": "MainViewModel.ShopForGemstone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 223,
+          "symbol": "TileSearchMainViewModel.CommandShowStoneShopper"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 420,
+          "symbol": "TileSearchMainViewModel.ShowStoneShopper"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise stone and diamond/gem shopping on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-022",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Gem report grouping, sources, quantities and highlighting",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 185,
+          "symbol": "GemReportViewModel.CommandUpdateSourceMeleeGems"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 1091,
+          "symbol": "GemReportViewModel.UpdateSourceMeleeGems"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 188,
+          "symbol": "GemReportViewModel.CommandGemGroupSetSourceNoStone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 630,
+          "symbol": "GemReportViewModel.GemGroupSetSourceNoStone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 191,
+          "symbol": "GemReportViewModel.CommandGemGroupSetSourceProvided"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 637,
+          "symbol": "GemReportViewModel.GemGroupSetSourceProvided"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 194,
+          "symbol": "GemReportViewModel.CommandGemGroupSetSourceStuller"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 644,
+          "symbol": "GemReportViewModel.GemGroupSetSourceStuller"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 197,
+          "symbol": "GemReportViewModel.CommandGemSetSourceNoStone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 651,
+          "symbol": "GemReportViewModel.GemSetSourceNoStone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 200,
+          "symbol": "GemReportViewModel.CommandGemSetSourceProvided"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 657,
+          "symbol": "GemReportViewModel.GemSetSourceProvided"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 203,
+          "symbol": "GemReportViewModel.CommandGemSetSourceStuller"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 663,
+          "symbol": "GemReportViewModel.GemSetSourceStuller"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 206,
+          "symbol": "GemReportViewModel.CommandHighlightCancel"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 669,
+          "symbol": "GemReportViewModel.HighlightCancel"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 215,
+          "symbol": "GemReportViewModel.CommandHighlightGem"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 677,
+          "symbol": "GemReportViewModel.HighlightGem"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 218,
+          "symbol": "GemReportViewModel.CommandHighlightGemGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 685,
+          "symbol": "GemReportViewModel.HighlightGemGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 227,
+          "symbol": "GemReportViewModel.CommandUpdateGemGroups"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 480,
+          "symbol": "GemReportViewModel.UpdateGemGroupsFromGems"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 230,
+          "symbol": "GemReportViewModel.CommandUpdateGemsFromGemGroups"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 485,
+          "symbol": "GemReportViewModel.UpdateGemsFromGemGroups"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 529,
+          "symbol": "GemReportViewModel.CreateGemGroups"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 449,
+          "symbol": "GemReportViewModel.UpdateFromUserData"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 398,
+          "symbol": "MainViewModel.CommandViewGemInfo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2234,
+          "symbol": "MainViewModel.ViewGemInfo"
+        }
+      ],
+      "acceptance": "Compare report quantities, dimensions, carat totals, quality and source choices for mixed center/side/melee designs before and after PC round-trip.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-023",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Customer portfolios create, rename, duplicate, delete and choose",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 86,
+          "symbol": "PortfolioManagerViewModel.CommandCreateNewProject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 483,
+          "symbol": "PortfolioManagerViewModel.CreateNewProject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 90,
+          "symbol": "PortfolioManagerViewModel.CommandDeleteSelectedProject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 508,
+          "symbol": "PortfolioManagerViewModel.DeleteSelectedProject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 94,
+          "symbol": "PortfolioManagerViewModel.CommandRenameSelectedProject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 567,
+          "symbol": "PortfolioManagerViewModel.RenameSelectedProject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 100,
+          "symbol": "PortfolioManagerViewModel.CommandSelectedProjectSaveAs"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 595,
+          "symbol": "PortfolioManagerViewModel.SelectedProjectSaveAs"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 102,
+          "symbol": "PortfolioManagerViewModel.CommandShowCreatePortfolio"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 603,
+          "symbol": "PortfolioManagerViewModel.ShowCreatePortfolio"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 104,
+          "symbol": "PortfolioManagerViewModel.CommandShowDeletePortfolioDialog"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 608,
+          "symbol": "PortfolioManagerViewModel.ShowDeletePortfolioDialog"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 106,
+          "symbol": "PortfolioManagerViewModel.CommandShowDuplicatePortfolioDialog"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 613,
+          "symbol": "PortfolioManagerViewModel.ShowDuplicatePortfolioDialog"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 108,
+          "symbol": "PortfolioManagerViewModel.CommandShowRenamePortfolioDialog"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 618,
+          "symbol": "PortfolioManagerViewModel.ShowRenamePortfolioDialog"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 220,
+          "symbol": "PortfolioManagerViewModel.CommandEnableProjectRename"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 636,
+          "symbol": "PortfolioManagerViewModel.EnableProjectRename"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 318,
+          "symbol": "MainViewModel.CommandOpenPortfolioManager"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1814,
+          "symbol": "MainViewModel.OpenPortfolioManager"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise customer portfolios create, rename, duplicate, delete and choose on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-024",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Portfolio design reopen, delete, label and customer detail save",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 88,
+          "symbol": "PortfolioManagerViewModel.CommandDeleteDesignFromPortfolio"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 503,
+          "symbol": "PortfolioManagerViewModel.DeleteDesignFromPortfolio"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 92,
+          "symbol": "PortfolioManagerViewModel.CommandOpenDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 534,
+          "symbol": "PortfolioManagerViewModel.OpenDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 96,
+          "symbol": "PortfolioManagerViewModel.CommandSaveProjectData"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 573,
+          "symbol": "PortfolioManagerViewModel.SaveProjectData"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 98,
+          "symbol": "PortfolioManagerViewModel.CommandSaveUserInfo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 578,
+          "symbol": "PortfolioManagerViewModel.SaveUserInfo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 100,
+          "symbol": "PortfolioManagerViewModel.CommandSelectedProjectSaveAs"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 595,
+          "symbol": "PortfolioManagerViewModel.SelectedProjectSaveAs"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 110,
+          "symbol": "PortfolioManagerViewModel.CommandUpdateDesignUserLabel"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PortfolioManagerViewModel.cs",
+          "line": 623,
+          "symbol": "PortfolioManagerViewModel.UpdateDesignUserLabel"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise portfolio design reopen, delete, label and customer detail save on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-025",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Save current design and quick portfolio",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 209,
+          "symbol": "MainViewModel.CommandCreateQuickPortfolio"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1464,
+          "symbol": "MainViewModel.CreateQuickPortfolio"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 292,
+          "symbol": "MainViewModel.CommandImportDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1581,
+          "symbol": "MainViewModel.ImportDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 356,
+          "symbol": "MainViewModel.CommandSaveCurrentDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1320,
+          "symbol": "MainViewModel.SaveCurrentDesign"
+        }
+      ],
+      "acceptance": "Create a project, save design and freehand changes, kill/restart app offline, then open the exact files on the PC and continue parameter editing.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-026",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "New session, undo, redo and order reset",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 296,
+          "symbol": "MainViewModel.CommandNewSessionClick"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1709,
+          "symbol": "MainViewModel.NewSessionClick"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 352,
+          "symbol": "MainViewModel.CommandRedo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1263,
+          "symbol": "MainViewModel.Redo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 354,
+          "symbol": "MainViewModel.CommandResetOrderInformation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1312,
+          "symbol": "MainViewModel.ResetOrderInformation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 388,
+          "symbol": "MainViewModel.CommandUndo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1404,
+          "symbol": "MainViewModel.Undo"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise new session, undo, redo and order reset on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-027",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Backup create/restore, recovery path and portfolio locations",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 25,
+          "symbol": "BackupRestoreViewModel.CommandResetRecoveryFileDirectory"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 206,
+          "symbol": "BackupRestoreViewModel.ResetRecoveryFileDirectory"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 27,
+          "symbol": "BackupRestoreViewModel.CommandResetPortfolioPathToDefault"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 201,
+          "symbol": "BackupRestoreViewModel.ResetPortfolioPathToDefault"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 29,
+          "symbol": "BackupRestoreViewModel.CommandResetBackupDirectory"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 194,
+          "symbol": "BackupRestoreViewModel.ResetBackupDirectory"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 31,
+          "symbol": "BackupRestoreViewModel.CommandRestoreBackup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 225,
+          "symbol": "BackupRestoreViewModel.RestoreBackup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 33,
+          "symbol": "BackupRestoreViewModel.CommandBrowseRecoveryLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 211,
+          "symbol": "BackupRestoreViewModel.ResetRecoveryLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 35,
+          "symbol": "BackupRestoreViewModel.CommandCreateBackup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 149,
+          "symbol": "BackupRestoreViewModel.CreateBackup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 37,
+          "symbol": "BackupRestoreViewModel.CommandBrowseBackupDirectory"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 140,
+          "symbol": "BackupRestoreViewModel.BrowseBackupDirectory"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 39,
+          "symbol": "BackupRestoreViewModel.CommandSelectPortfolioSaveLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 231,
+          "symbol": "BackupRestoreViewModel.SelectPortfolioLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 41,
+          "symbol": "BackupRestoreViewModel.CommandOpenDefaultPortfolioFolderLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 168,
+          "symbol": "BackupRestoreViewModel.OpenDefaultPortfolioFolderLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 111,
+          "symbol": "BackupRestoreViewModel.CommandOpenUserPortfolioFolderLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 181,
+          "symbol": "BackupRestoreViewModel.OpenUserPortfolioFolderLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 350,
+          "symbol": "MainViewModel.CommandQuickBackup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1996,
+          "symbol": "MainViewModel.QuickBackup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/BackupRestoreViewModel.cs",
+          "line": 133,
+          "symbol": "BackupRestoreViewModel.UpdateBackupStatistics"
+        }
+      ],
+      "acceptance": "Create CSB backup with projects and personal parts, restore to a clean offline installation and verify editable PC project content and metadata.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-028",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Quote notes, attachments and preview",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 694,
+          "symbol": "OrderSummaryViewModel.CommandCloseDesignNotesWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2771,
+          "symbol": "OrderSummaryViewModel.CloseDesignNotesWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 697,
+          "symbol": "OrderSummaryViewModel.CommandOpenDesignNotesWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2886,
+          "symbol": "OrderSummaryViewModel.OpenDesignNotesWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 700,
+          "symbol": "OrderSummaryViewModel.CommandOpenMoreThanARingPreview"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2896,
+          "symbol": "OrderSummaryViewModel.OpenMoreThanARingPreview"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 1786,
+          "symbol": "OrderSummaryViewModel.CommandAttachFile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2210,
+          "symbol": "OrderSummaryViewModel.AttachFile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 1789,
+          "symbol": "OrderSummaryViewModel.CommandClearFiles"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2219,
+          "symbol": "OrderSummaryViewModel.ClearFiles"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 1792,
+          "symbol": "OrderSummaryViewModel.CommandClearDesignNotes"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2224,
+          "symbol": "OrderSummaryViewModel.ClearDesignNotes"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise quote notes, attachments and preview on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-029",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Quote request, stone validation and service pricing",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 712,
+          "symbol": "OrderSummaryViewModel.CommandQuoteSubmit"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 3138,
+          "symbol": "OrderSummaryViewModel.SendQuote"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 3707,
+          "symbol": "OrderSummaryViewModel.ValidateStoneAssignments"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2779,
+          "symbol": "OrderSummaryViewModel.DoVolumeCalculation"
+        }
+      ],
+      "acceptance": "Offline compute an explicitly local estimate from versioned price tables; queue a quote request with stable idempotency and review stale price/stock before online submission.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-030",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Order submission confirmation and supporting CAD/report files",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2918,
+          "symbol": "OrderSummaryViewModel.SendOrder"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2641,
+          "symbol": "OrderSummaryViewModel.AddDesignDoc"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2668,
+          "symbol": "OrderSummaryViewModel.AddSupportingDocs"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.View/WindowOrderConfirmationPrompt.cs",
+          "line": 107,
+          "symbol": "WindowOrderConfirmationPrompt.Order_Click"
+        }
+      ],
+      "acceptance": "Prepare complete order offline with editable CAD and supporting files; on reconnection review totals and explicitly submit once, recording returned order identifiers.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-031",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Quote print command is empty in baseline",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 706,
+          "symbol": "OrderSummaryViewModel.CommandPrintQuote"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2328,
+          "symbol": "OrderSummaryViewModel.PrintQuote"
+        }
+      ],
+      "acceptance": "Check desktop print pathways and fixture output; treat this specific command as no-op until runtime or another source route establishes behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-032",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Quote/order history, saved design reopen, pricing and resubmit",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 316,
+          "symbol": "MainViewModel.CommandOpenQuoteHistory"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1871,
+          "symbol": "MainViewModel.OpenQuoteHistory"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 25,
+          "symbol": "WindowOrderHistoryViewModel.CommandResubmitDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 210,
+          "symbol": "WindowOrderHistoryViewModel.ResubmitDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 27,
+          "symbol": "WindowOrderHistoryViewModel.CommandReorder"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 91,
+          "symbol": "WindowOrderHistoryViewModel.Reorder"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 29,
+          "symbol": "WindowOrderHistoryViewModel.CommandCloseWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 77,
+          "symbol": "WindowOrderHistoryViewModel.CloseWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 31,
+          "symbol": "WindowOrderHistoryViewModel.CommandOpenDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 96,
+          "symbol": "WindowOrderHistoryViewModel.OpenDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 35,
+          "symbol": "WindowOrderHistoryViewModel.CommandViewPricing"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderHistoryViewModel.cs",
+          "line": 241,
+          "symbol": "WindowOrderHistoryViewModel.ViewPricing"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderResultViewModel.cs",
+          "line": 18,
+          "symbol": "WindowOrderResultViewModel.CommandOpenSubmissionForm"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowOrderResultViewModel.cs",
+          "line": 71,
+          "symbol": "WindowOrderResultViewModel.OpenSubmissionForm"
+        }
+      ],
+      "acceptance": "Browse cached history and reopen editable design offline; defer reorder/resubmit and never present a queued submission as accepted.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-033",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Quick estimate display, edit rows/columns and print",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 165,
+          "symbol": "QuickEstimateViewModel.CommandPrintQuickEstimate"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 707,
+          "symbol": "QuickEstimateViewModel.PrintQuickEstimate"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 167,
+          "symbol": "QuickEstimateViewModel.CommandShowEditMode"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 649,
+          "symbol": "QuickEstimateViewModel.ShowEditMode"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 169,
+          "symbol": "QuickEstimateViewModel.CommandHideEditMode"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 633,
+          "symbol": "QuickEstimateViewModel.HideEditMode"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 282,
+          "symbol": "QuickEstimateViewModel.CommandSetQEColumnVisibile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 724,
+          "symbol": "QuickEstimateViewModel.SetQEColumnVisibile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 284,
+          "symbol": "QuickEstimateViewModel.CommandSetQEColumnCollapsed"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 719,
+          "symbol": "QuickEstimateViewModel.SetQEColumnCollapsed"
+        }
+      ],
+      "acceptance": "Supply a saved estimate matrix offline; configure rows/columns, print/export with screenshot and missing-gem details; restart to verify persisted exclusions.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-034",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Quick estimate generation and weights",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 302,
+          "symbol": "MainViewModel.CommandOpenQuickEstimateWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1856,
+          "symbol": "MainViewModel.OpenQuickEstimateWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 3373,
+          "symbol": "OrderSummaryViewModel.SendQuickEstimateShowcaseMarkups"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 3679,
+          "symbol": "OrderSummaryViewModel.UpdateWeightsFromVolumes"
+        }
+      ],
+      "acceptance": "Use versioned offline labor/metal/gem tables to calculate estimates and label date/currency; compare with saved desktop fixtures across primary/secondary metals.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-035",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Design 3DM/STL export with stone subsets and mesh repair",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 286,
+          "symbol": "MainViewModel.CommandExportDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1545,
+          "symbol": "MainViewModel.ExportDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 709,
+          "symbol": "OrderSummaryViewModel.CommandExportSTL3DM"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 2804,
+          "symbol": "OrderSummaryViewModel.ExportSTL3DM"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportDesignViewModel.cs",
+          "line": 84,
+          "symbol": "WindowExportDesignViewModel.CommandBrowse"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportDesignViewModel.cs",
+          "line": 282,
+          "symbol": "WindowExportDesignViewModel.Browse"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportDesignViewModel.cs",
+          "line": 86,
+          "symbol": "WindowExportDesignViewModel.CommandExportDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportDesignViewModel.cs",
+          "line": 297,
+          "symbol": "WindowExportDesignViewModel.ExportDesign"
+        }
+      ],
+      "acceptance": "Export selected stone subsets to STL/3DM offline using authorized local entitlement; verify geometry. Separately round-trip CSG editable state because mesh/3DM output alone does not prove parametric parity.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-036",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Batch search-result image export",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 284,
+          "symbol": "MainViewModel.CommandExportSearchImages"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1568,
+          "symbol": "MainViewModel.ExportSearchImages"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportSearchResultsViewModel.cs",
+          "line": 45,
+          "symbol": "WindowExportSearchResultsViewModel.CommandView"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportSearchResultsViewModel.cs",
+          "line": 201,
+          "symbol": "WindowExportSearchResultsViewModel.View"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportSearchResultsViewModel.cs",
+          "line": 47,
+          "symbol": "WindowExportSearchResultsViewModel.CommandExport"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportSearchResultsViewModel.cs",
+          "line": 165,
+          "symbol": "WindowExportSearchResultsViewModel.Export"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportSearchResultsViewModel.cs",
+          "line": 49,
+          "symbol": "WindowExportSearchResultsViewModel.CommandPickFolder"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowExportSearchResultsViewModel.cs",
+          "line": 194,
+          "symbol": "WindowExportSearchResultsViewModel.PickFolder"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise batch search-result image export on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-037",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Render dialog, still render and settings",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 378,
+          "symbol": "MainViewModel.CommandGenerateRender"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1576,
+          "symbol": "MainViewModel.GenerateRender"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 380,
+          "symbol": "MainViewModel.CommandOpenRenderDialogue"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1887,
+          "symbol": "MainViewModel.OpenRenderDialogue"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 56,
+          "symbol": "WindowRenderOptionsViewModel.CommandRender"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 971,
+          "symbol": "WindowRenderOptionsViewModel.RenderAndClose"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 62,
+          "symbol": "WindowRenderOptionsViewModel.CommandSetRenderSaveLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 1027,
+          "symbol": "WindowRenderOptionsViewModel.SetRenderSaveLocation"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 982,
+          "symbol": "WindowRenderOptionsViewModel.UpdateRenderPreviewSquareInViewport"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 938,
+          "symbol": "WindowRenderOptionsViewModel.ReadRenderOptionsFromCSOptions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 58,
+          "symbol": "WindowRenderOptionsViewModel.CommandSaveDefaults"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 1011,
+          "symbol": "WindowRenderOptionsViewModel.SaveDefaults"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 60,
+          "symbol": "WindowRenderOptionsViewModel.CommandResetOptions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowRenderOptionsViewModel.cs",
+          "line": 977,
+          "symbol": "WindowRenderOptionsViewModel.Reset"
+        }
+      ],
+      "acceptance": "Offline render catalog and freehand designs at every resolution, lay-flat and try-on, with/without props and alpha; compare image framing and export dimensions.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-038",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Hand try-on, gender, skin, nail polish and finger placement",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 266,
+          "symbol": "MainViewModel.CommandDesignTryOn"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1491,
+          "symbol": "MainViewModel.DesignTryOn"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 310,
+          "symbol": "MainViewModel.CommandOpenDesignTryOnWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1806,
+          "symbol": "MainViewModel.OpenDesignTryOnWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 231,
+          "symbol": "WindowDesignTryOnViewModel.CommandCloseWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 501,
+          "symbol": "WindowDesignTryOnViewModel.CloseWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 233,
+          "symbol": "WindowDesignTryOnViewModel.CommandRemoveHand"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 731,
+          "symbol": "WindowDesignTryOnViewModel.RemoveHand"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 235,
+          "symbol": "WindowDesignTryOnViewModel.CommandUpdateHandGender"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 736,
+          "symbol": "WindowDesignTryOnViewModel.UpdateHandGender"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 237,
+          "symbol": "WindowDesignTryOnViewModel.CommandUpdateHandObjects"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 742,
+          "symbol": "WindowDesignTryOnViewModel.UpdateHandObjects"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 243,
+          "symbol": "WindowDesignTryOnViewModel.CommandUpdateSelectedRing"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 768,
+          "symbol": "WindowDesignTryOnViewModel.UpdateSelectedRing"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 241,
+          "symbol": "WindowDesignTryOnViewModel.CommandUpdateRhinoViewportObjects"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 753,
+          "symbol": "WindowDesignTryOnViewModel.UpdateRhinoViewportObjects"
+        }
+      ],
+      "acceptance": "For each supported finger/gender, switch hand side, flip and offset ring, skin/polish and render; verify document geometry is unchanged and presentation state is reproducible.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-039",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Camera presets, spin, grid and control highlight",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 268,
+          "symbol": "MainViewModel.CommandDisableRhinoViewportGridlines"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1505,
+          "symbol": "MainViewModel.DisableRhinoViewportGridlines"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 272,
+          "symbol": "MainViewModel.CommandDisableStackHighlight"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1511,
+          "symbol": "MainViewModel.DisableStackHighlight"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 280,
+          "symbol": "MainViewModel.CommandEnableRhinoViewportGridlines"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1531,
+          "symbol": "MainViewModel.EnableRhinoViewportGridlines"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 282,
+          "symbol": "MainViewModel.CommandEnableStackHighlight"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1539,
+          "symbol": "MainViewModel.EnableStackHighlight"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 370,
+          "symbol": "MainViewModel.CommandSetRhinoCameraViewFront"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2047,
+          "symbol": "MainViewModel.SetRhinoCameraViewFront"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 372,
+          "symbol": "MainViewModel.CommandSetRhinoCameraViewPerspective"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2053,
+          "symbol": "MainViewModel.SetRhinoCameraViewPerspective"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 374,
+          "symbol": "MainViewModel.CommandSetRhinoCameraViewSide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2059,
+          "symbol": "MainViewModel.SetRhinoCameraViewSide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 376,
+          "symbol": "MainViewModel.CommandSetRhinoCameraViewTop"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2065,
+          "symbol": "MainViewModel.SetRhinoCameraViewTop"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 384,
+          "symbol": "MainViewModel.CommandSpinDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2146,
+          "symbol": "MainViewModel.SpinDesign"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 386,
+          "symbol": "MainViewModel.CommandSpinDesignStop"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2154,
+          "symbol": "MainViewModel.SpinDesignStop"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 412,
+          "symbol": "MainViewModel.CommandPerformDistanceMeasurement"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1991,
+          "symbol": "MainViewModel.PerformDistanceMeasurement"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise camera presets, spin, grid and control highlight on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-040",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Previous/next main section",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 825,
+          "symbol": "MainViewModel.CommandMoveForward"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1701,
+          "symbol": "MainViewModel.MoveForward"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 829,
+          "symbol": "MainViewModel.CommandMoveBackward"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1693,
+          "symbol": "MainViewModel.MoveBackward"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise previous/next main section on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-041",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Theme colors, custom logo and viewport background",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 35,
+          "symbol": "ThemePickerViewModel.CommandLoadCustomLogo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 253,
+          "symbol": "ThemePickerViewModel.LoadCustomLogo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 37,
+          "symbol": "ThemePickerViewModel.CommandSetViewPortBackground"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 311,
+          "symbol": "ThemePickerViewModel.SetViewPortBackground"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 39,
+          "symbol": "ThemePickerViewModel.CommandResetCustomLogo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 268,
+          "symbol": "ThemePickerViewModel.ResetCustomLogo"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 41,
+          "symbol": "ThemePickerViewModel.CommandResetThemes"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 284,
+          "symbol": "ThemePickerViewModel.ResetThemes"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 43,
+          "symbol": "ThemePickerViewModel.CommandResetViewPortBackgroundColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 293,
+          "symbol": "ThemePickerViewModel.ResetViewPortBackgroundColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 45,
+          "symbol": "ThemePickerViewModel.CommandResetViewPortGraphic"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 303,
+          "symbol": "ThemePickerViewModel.ResetViewPortGraphic"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 47,
+          "symbol": "ThemePickerViewModel.CommandSetViewPortBackgroundColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 346,
+          "symbol": "ThemePickerViewModel.SetViewPortBackgroundColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 49,
+          "symbol": "ThemePickerViewModel.CommandApplyCustomColorTheme"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 224,
+          "symbol": "ThemePickerViewModel.ApplyCustomColorTheme"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 51,
+          "symbol": "ThemePickerViewModel.CommandResetHightlightAccentColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 275,
+          "symbol": "ThemePickerViewModel.ResetHightlightAccentColor"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 161,
+          "symbol": "ThemePickerViewModel.CommandViewportBitmapStretchedChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ThemePickerViewModel.cs",
+          "line": 248,
+          "symbol": "ThemePickerViewModel.ViewportBitmapStretchedChanged"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise theme colors, custom logo and viewport background on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-042",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Order screen section/source/finishing visibility",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PreferenceOrderScreenOptionsViewModel.cs",
+          "line": 15,
+          "symbol": "PreferenceOrderScreenOptionsViewModel.CommandToggleSection"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/PreferenceOrderScreenOptionsViewModel.cs",
+          "line": 150,
+          "symbol": "PreferenceOrderScreenOptionsViewModel.ToggleSection"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 3114,
+          "symbol": "OrderSummaryViewModel.UpdateControlVisibilityFromCSOptions"
+        }
+      ],
+      "acceptance": "Disable each section/option, save and restart offline; verify form visibility and validation stay consistent.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-043",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "General preferences, ring standards, language and performance",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/WindowModalOptions.cs",
+          "line": 463,
+          "symbol": "WindowModalOptions.SaveOptions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/WindowModalOptions.cs",
+          "line": 291,
+          "symbol": "WindowModalOptions.BtnCancelClick"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 320,
+          "symbol": "MainViewModel.CommandOpenPreferencesWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1137,
+          "symbol": "MainViewModel.OpenPreferencesWindow"
+        }
+      ],
+      "acceptance": "Change every preference and restart in airplane mode; verify persistence and geometry/price units. Freeze exchange rate with an explicit date until connectivity returns.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-044",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Application/library updates, defer and new content",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 94,
+          "symbol": "UpdateInfoViewModel.CommandApplyUpdates"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 319,
+          "symbol": "UpdateInfoViewModel.ApplyUpdates"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 96,
+          "symbol": "UpdateInfoViewModel.CommandDelayUpdates"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 389,
+          "symbol": "UpdateInfoViewModel.DelayUpdates"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 195,
+          "symbol": "UpdateInfoViewModel.CommandShowNewDesigns"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 430,
+          "symbol": "UpdateInfoViewModel.ShowNewDesigns"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 197,
+          "symbol": "UpdateInfoViewModel.CommandShowNewParts"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 421,
+          "symbol": "UpdateInfoViewModel.ShowNewParts"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 379,
+          "symbol": "UpdateInfoViewModel.ApplyLibraryUpdate"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/UpdateInfoViewModel.cs",
+          "line": 441,
+          "symbol": "UpdateInfoViewModel.GenerateNewLibraryInfo"
+        }
+      ],
+      "acceptance": "Install signed prepackaged content updates locally and verify versioned schema migration; defer network download when offline.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-045",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "User guides, release notes, resource images and about",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 300,
+          "symbol": "MainViewModel.CommandOpenAboutWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1723,
+          "symbol": "MainViewModel.OpenAboutWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 326,
+          "symbol": "MainViewModel.CommandOpenReleaseNotesLibraryWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1171,
+          "symbol": "MainViewModel.OpenReleaseNotesLibraryWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 328,
+          "symbol": "MainViewModel.CommandOpenReleaseNotesWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1191,
+          "symbol": "MainViewModel.OpenReleaseNotesWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 330,
+          "symbol": "MainViewModel.CommandOpenResourceImageView"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1911,
+          "symbol": "MainViewModel.OpenResourceImageView"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 338,
+          "symbol": "MainViewModel.CommandOpenUserGuide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1950,
+          "symbol": "MainViewModel.OpenUserGuide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 340,
+          "symbol": "MainViewModel.CommandOpenUserGuideAddendum"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1974,
+          "symbol": "MainViewModel.OpenUserGuideAddendum"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise user guides, release notes, resource images and about on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-046",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Troubleshooting, logs, debug report, email and remote assistance",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 334,
+          "symbol": "MainViewModel.CommandOpenTeamViewer"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1929,
+          "symbol": "MainViewModel.OpenTeamViewer"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 336,
+          "symbol": "MainViewModel.CommandOpenTroubleshootingWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1941,
+          "symbol": "MainViewModel.OpenTroubleshootingWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 358,
+          "symbol": "MainViewModel.CommandSendEmail"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2015,
+          "symbol": "MainViewModel.SendEmail"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 362,
+          "symbol": "MainViewModel.CommandSendQuickDebugReport"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2028,
+          "symbol": "MainViewModel.SendQuickDebugReport"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 396,
+          "symbol": "MainViewModel.CommandViewCounterSketchLog"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2226,
+          "symbol": "MainViewModel.ViewCounterSketchLog"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise troubleshooting, logs, debug report, email and remote assistance on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-047",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Account information, unregister and country override",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 306,
+          "symbol": "MainViewModel.CommandOpenAccountInfoWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1734,
+          "symbol": "MainViewModel.OpenAccountInfoWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 392,
+          "symbol": "MainViewModel.CommandUnregisterComputer"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2188,
+          "symbol": "MainViewModel.UnregisterComputer"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 394,
+          "symbol": "MainViewModel.CommandUseAlternateCountryCode"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2219,
+          "symbol": "MainViewModel.UseAlternateCountryCode"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise account information, unregister and country override on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-048",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "CAM forms, printer output and ProJet setup",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 207,
+          "symbol": "MainViewModel.CommandInstallProjetUsbDrivers"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1669,
+          "symbol": "MainViewModel.InstallProjetUsbDrivers"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 254,
+          "symbol": "MainViewModel.CommandSetCamModeState"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2037,
+          "symbol": "MainViewModel.SetCamModeState"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 342,
+          "symbol": "MainViewModel.CommandOpenCamStandards"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1772,
+          "symbol": "MainViewModel.OpenCamStandards"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 344,
+          "symbol": "MainViewModel.CommandOpenCamMountingForm"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1755,
+          "symbol": "MainViewModel.OpenCamMountingForm"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 346,
+          "symbol": "MainViewModel.CommandOpenCamStoneForm"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1789,
+          "symbol": "MainViewModel.OpenCamStoneForm"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 370,
+          "symbol": "MainViewModel.CommandSetRhinoCameraViewFront"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2047,
+          "symbol": "MainViewModel.SetRhinoCameraViewFront"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 372,
+          "symbol": "MainViewModel.CommandSetRhinoCameraViewPerspective"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2053,
+          "symbol": "MainViewModel.SetRhinoCameraViewPerspective"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 374,
+          "symbol": "MainViewModel.CommandSetRhinoCameraViewSide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2059,
+          "symbol": "MainViewModel.SetRhinoCameraViewSide"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 376,
+          "symbol": "MainViewModel.CommandSetRhinoCameraViewTop"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2065,
+          "symbol": "MainViewModel.SetRhinoCameraViewTop"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 406,
+          "symbol": "MainViewModel.CommandOpenPrintToProJet1200"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1829,
+          "symbol": "MainViewModel.OpenPrintToProject1200"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 408,
+          "symbol": "MainViewModel.CommandOpenPrintToEnvisionTec"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1824,
+          "symbol": "MainViewModel.OpenPrintToEnvisionTec"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 410,
+          "symbol": "MainViewModel.CommandCheckProjetAndUpsell"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1419,
+          "symbol": "MainViewModel.CheckProjetAndUpsell"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 895,
+          "symbol": "MainViewModel.CommandOpenProjetInstructions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1839,
+          "symbol": "MainViewModel.OpenProjetInstructions"
+        }
+      ],
+      "acceptance": "Offline produce validated manufacturing files for equivalent print workflows; direct USB/device control requires supported iPad integration and real hardware validation.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-049",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Window controls, resolution presets and clipboard capture",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 250,
+          "symbol": "MainViewModel.CommandCloseCounterSketch"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1453,
+          "symbol": "MainViewModel.CloseCounterSketch"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 252,
+          "symbol": "MainViewModel.CommandCopyFrameworkElementToClipboard"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 1459,
+          "symbol": "MainViewModel.CopyFrameworkElementToClipboard"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 256,
+          "symbol": "MainViewModel.CommandWindowSize1080"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2259,
+          "symbol": "MainViewModel.WindowSize1080"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 258,
+          "symbol": "MainViewModel.CommandWindowSize1050"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2252,
+          "symbol": "MainViewModel.WindowSize1050"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 897,
+          "symbol": "MainViewModel.CommandToggleWindowMaximized"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2166,
+          "symbol": "MainViewModel.ToggleWindowMaximized"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ItemChooserViewModelBase.cs",
+          "line": 29,
+          "symbol": "ItemChooserViewModelBase.CommandUpdateMouseOverText"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise window controls, resolution presets and clipboard capture on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-050",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Feature-gated internal test commands",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 938,
+          "symbol": "MainViewModel.CommandExcuteTest"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 2298,
+          "symbol": "MainViewModel.ExecuteTest"
+        }
+      ],
+      "acceptance": "In airplane mode, exercise feature-gated internal test commands on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-051",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Generic chooser confirm/cancel/clear and hover descriptions",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ItemChooserViewModelBase.cs",
+          "line": 138,
+          "symbol": "ItemChooserViewModelBase.CommandOK"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ItemChooserViewModelBase.cs",
+          "line": 172,
+          "symbol": "ItemChooserViewModelBase.OK"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ItemChooserViewModelBase.cs",
+          "line": 140,
+          "symbol": "ItemChooserViewModelBase.CommandCancel"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ItemChooserViewModelBase.cs",
+          "line": 152,
+          "symbol": "ItemChooserViewModelBase.Cancel"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ItemChooserViewModelBase.cs",
+          "line": 142,
+          "symbol": "ItemChooserViewModelBase.CommandClear"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ItemChooserViewModelBase.cs",
+          "line": 157,
+          "symbol": "ItemChooserViewModelBase.Clear"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MaterialOptionSelectorViewModel.cs",
+          "line": 328,
+          "symbol": "MaterialOptionSelectorViewModel.UpdateMouseOverText"
+        }
+      ],
+      "acceptance": "Open each material chooser, preview hover/focus descriptions, accept, cancel and clear; confirm downstream selection behavior and touch equivalents.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-052",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Design image summary placeholder",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignImageSummaryViewModel.cs",
+          "line": 31,
+          "symbol": "DesignImageSummaryViewModel.CommandPopulateImages"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignImageSummaryViewModel.cs",
+          "line": 102,
+          "symbol": "DesignImageSummaryViewModel.PopulateImages"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/DesignImageSummaryViewModel.cs",
+          "line": 134,
+          "symbol": "DesignImageSummaryViewModel.workerThread_DoWork"
+        }
+      ],
+      "acceptance": "Verify whether valid images are produced through another path; do not count this empty worker as implemented capture.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-053",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Range sliders, expanded limits, reset and fine/coarse steps",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueRangeControl.cs",
+          "line": 112,
+          "symbol": "CSValueRangeControl.BtnExpandControlClick"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueRangeControl.cs",
+          "line": 137,
+          "symbol": "CSValueRangeControl.Reset"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueRangeControl.cs",
+          "line": 227,
+          "symbol": "CSValueRangeControl.SliderValueChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueRangeControl.cs",
+          "line": 202,
+          "symbol": "CSValueRangeControl.SliderPreviewKeyDown"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueDualRangeControl.cs",
+          "line": 185,
+          "symbol": "CSValueDualRangeControl.SliderValueChanged"
+        }
+      ],
+      "acceptance": "Drag and type boundary/fine/coarse values, expand bounds, reset and undo; confirm identical graph values and limits after PC save/reopen.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-054",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Control factory, lists, on/off, text/numeric input and outputs",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSCategoryControl.cs",
+          "line": 187,
+          "symbol": "CSCategoryControl.CreateControlFromUIControlObject"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSUIControl.cs",
+          "line": 579,
+          "symbol": "CSUIControl.SetGraphValue"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueInputControl.cs",
+          "line": 72,
+          "symbol": "CSValueInputControl.TxtValue_OnLostFocus"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueOnOffControl.cs",
+          "line": 44,
+          "symbol": "CSValueOnOffControl.SetControl"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueListControl.cs",
+          "line": 70,
+          "symbol": "CSValueListControl.SetControl"
+        }
+      ],
+      "acceptance": "Exercise every UIControlType present in the bundled library, including output-only controls, and verify complete metadata and editing semantics on PC.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-055",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Ring size standards and selection",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueRingSizeControl.cs",
+          "line": 116,
+          "symbol": "CSValueRingSizeControl.ComboBoxSelectionChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueRingSizeControl.cs",
+          "line": 136,
+          "symbol": "CSValueRingSizeControl.UpdateRingSizeDisplayLookup"
+        }
+      ],
+      "acceptance": "For each supported regional standard, select smallest/default/largest size, switch standard and verify physical dimensions and editable size after desktop reopening.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-056",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Gem shape, table sizes, custom dimensions and assigned stone fit",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueGemSizeControl.cs",
+          "line": 245,
+          "symbol": "CSValueGemSizeControl.SldSizeValueChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueGemSizeControl.cs",
+          "line": 270,
+          "symbol": "CSValueGemSizeControl.TxtDepthLostFocus"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueGemSizeControl.cs",
+          "line": 280,
+          "symbol": "CSValueGemSizeControl.TxtHeightLostFocus"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueGemSizeControl.cs",
+          "line": 300,
+          "symbol": "CSValueGemSizeControl.TxtWidthLostFocus"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueGemSizeControl.cs",
+          "line": 290,
+          "symbol": "CSValueGemSizeControl.TxtPercentageLostFocus"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueGemShapeControl.cs",
+          "line": 169,
+          "symbol": "CSValueGemShapeControl.Selector_OnSelectionChanged"
+        }
+      ],
+      "acceptance": "Change all shape/size-table/custom dimension inputs and assigned-stone fit, including percentage and unsupported size cases; compare numeric geometry and saved control state on PC.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-057",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Head style, font selection and profile chooser",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueFontListControl.cs",
+          "line": 138,
+          "symbol": "CSValueFontListControl.CboItems_SelectionChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueHeadStyleListControl.cs",
+          "line": 136,
+          "symbol": "CSValueHeadStyleListControl.Selector_OnSelectionChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueChooserControl.cs",
+          "line": 129,
+          "symbol": "CSValueChooserControl.Selector_OnSelectionChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSValueChooserControl.cs",
+          "line": 114,
+          "symbol": "CSValueChooserControl.ButtonCurveEditorCopyClicked"
+        }
+      ],
+      "acceptance": "Use each supported font/head/profile, reset, save and reopen on PC; preserve font identity or declare substitution before design changes.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-058",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Curve profile editor control-point drag, mirroring and rebuilding",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.LegacyUIControl/CurveEditorForm.cs",
+          "line": 202,
+          "symbol": "CurveEditorForm.SetCurve"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.LegacyUIControl/CurveEditorForm.cs",
+          "line": 99,
+          "symbol": "CurveEditorForm.DrawCurve"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.LegacyUIControl/CurveEditorForm.cs",
+          "line": 384,
+          "symbol": "CurveEditorForm.frmCurveEditor_MouseWheel"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.LegacyUIControl/CurveEditorForm.cs",
+          "line": 691,
+          "symbol": "CurveEditorForm.Rebuild"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.LegacyUIControl/CurveEditorForm.cs",
+          "line": 785,
+          "symbol": "CurveEditorForm.UpdateCurve"
+        }
+      ],
+      "acceptance": "Edit open/closed/clamped/unclamped profiles with each symmetry option, rebuild, undo/save and reopen on PC, verifying exact curve parameters and resulting solids.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-059",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Default metal/gem groups and account-specific material options",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StudioMaterialSelectionViewModel.cs",
+          "line": 94,
+          "symbol": "StudioMaterialSelectionViewModel.DefaultMaterialGroupOptions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StudioMaterialSelectionViewModel.cs",
+          "line": 206,
+          "symbol": "StudioMaterialSelectionViewModel.ReloadMaterialsAfterAccountChanged"
+        }
+      ],
+      "acceptance": "Change default materials/account profile offline, open another design and verify permitted choices/defaults plus saved per-design materials.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-060",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Keyboard shortcuts and touch/pointer adaptations",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio/MainWindow.cs",
+          "line": 396,
+          "symbol": "MainWindow.MainWindow_KeyDown"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio/MainWindow.cs",
+          "line": 534,
+          "symbol": "MainWindow.MainWindow_MouseDown"
+        }
+      ],
+      "acceptance": "Verify hardware-keyboard shortcuts on iPad plus touch-accessible save/undo/redo/multiselect/fine-step actions and correct text-field focus.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-061",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Image zoom/pan and scrollable/touch lists",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/ZoomBorder.cs",
+          "line": 101,
+          "symbol": "ZoomBorder.Child_MouseWheel"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/ZoomBorder.cs",
+          "line": 89,
+          "symbol": "ZoomBorder.Child_MouseMove"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/ZoomBorder.cs",
+          "line": 53,
+          "symbol": "ZoomBorder.Reset"
+        }
+      ],
+      "acceptance": "Check long catalogs, paged lists, image zoom reset and drag gestures with touch/Pencil/keyboard; preserve selected item while scrolling.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-062",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Login credentials, serial-code validation and account options",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSLoginControl.cs",
+          "line": 186,
+          "symbol": "CSLoginControl.Authenticate"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/CSLoginControl.cs",
+          "line": 205,
+          "symbol": "CSLoginControl.btnLogin_Click"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/WindowModalAccount.cs",
+          "line": 248,
+          "symbol": "WindowModalAccount.SaveOptions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/WindowModalAccount.cs",
+          "line": 221,
+          "symbol": "WindowModalAccount.UpdateExchange"
+        }
+      ],
+      "acceptance": "Establish a legitimate offline entitlement policy and secure cached credentials; after restart in airplane mode, open/edit/save authorized projects and visibly defer sign-in/account refresh.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-063",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Timed project recovery and close handling",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio/MainWindow.cs",
+          "line": 144,
+          "symbol": "MainWindow.UpdateTimedBackupTimer"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio/MainWindow.cs",
+          "line": 824,
+          "symbol": "MainWindow.TimedBackupTimerOnTick"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio/MainWindow.cs",
+          "line": 239,
+          "symbol": "MainWindow.MainWindow_Closing"
+        }
+      ],
+      "acceptance": "Modify a saved and unsaved project; suspend, terminate and restore the iPad app offline at each stage and verify recoverable editable data on desktop.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-064",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Finishing, hallmarking, engraving and More Than A Ring options",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 1558,
+          "symbol": "OrderSummaryViewModel.SelectedFinishing"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 1591,
+          "symbol": "OrderSummaryViewModel.SelectedHallmarking"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 1482,
+          "symbol": "OrderSummaryViewModel.SelectedEngraving"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 1609,
+          "symbol": "OrderSummaryViewModel.SelectedMoreThanARing"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 418,
+          "symbol": "OrderSummaryViewModel.ValidationErrors"
+        }
+      ],
+      "acceptance": "Offline edit every finishing/hallmark/engraving/packaging choice, persist and reopen on PC; verify validation and exact fields in a deferred quote/order request.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-065",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Internal resource-icon gallery and clipboard HTML",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.View/WindowResourceImageView.cs",
+          "line": 92,
+          "symbol": "WindowResourceImageView.ComboBoxSelectionChanged"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.View/WindowResourceImageView.cs",
+          "line": 125,
+          "symbol": "WindowResourceImageView.CopyExecuted"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.View/WindowResourceImageView.cs",
+          "line": 157,
+          "symbol": "WindowResourceImageView.GetHTMLDumpString"
+        }
+      ],
+      "acceptance": "Open the bundled icon dictionary offline, export/copy selected icons and verify labels and artwork.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-066",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Embedded shopping browser and return to mounting search",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/WindowBrowser.cs",
+          "line": 110,
+          "symbol": "WindowBrowser.TheWindowLoaded"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.Controls/WindowBrowser.cs",
+          "line": 102,
+          "symbol": "WindowBrowser.ButtonSearchMountings_Click"
+        }
+      ],
+      "acceptance": "From cached/offline shopping UI return to the matching mounting search without losing assigned stone; external browsing indicates offline state.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-067",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Declared command properties without resolved instantiation",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 150,
+          "symbol": "CustomizePartsListViewModel.CommandAddToPartGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 208,
+          "symbol": "CustomizePartsListViewModel.CommandMakeSelectedPartGroupParent"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/CustomizePartsListViewModel.cs",
+          "line": 210,
+          "symbol": "CustomizePartsListViewModel.CommandSelectGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 77,
+          "symbol": "FreehandStackViewModel.CommandDeleteFreehandControl"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 79,
+          "symbol": "FreehandStackViewModel.CommandDuplicateImportGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 81,
+          "symbol": "FreehandStackViewModel.CommandDuplicateSelectedImportGroup"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 87,
+          "symbol": "FreehandStackViewModel.CommandSelectImportedGroupByIdentifier"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 89,
+          "symbol": "FreehandStackViewModel.CommandSetImportGroupToPrimaryMetal"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 91,
+          "symbol": "FreehandStackViewModel.CommandSetImportGroupToSecondaryMetal"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/FreehandStackViewModel.cs",
+          "line": 93,
+          "symbol": "FreehandStackViewModel.CommandSetImportGroupVisibilityByIdentifier"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/GemReportViewModel.cs",
+          "line": 224,
+          "symbol": "GemReportViewModel.CommandShopForStone"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/ItemChooserViewModelBase.cs",
+          "line": 31,
+          "symbol": "ItemChooserViewModelBase.CommandResetMouseOverText"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 260,
+          "symbol": "MainViewModel.CommandCreateBugWorkItem"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 262,
+          "symbol": "MainViewModel.CommandCreateProductBacklogWorkItem"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 264,
+          "symbol": "MainViewModel.CommandDesignFeedback"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 274,
+          "symbol": "MainViewModel.CommandDownloadTutorials"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 288,
+          "symbol": "MainViewModel.CommandFreeze"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 290,
+          "symbol": "MainViewModel.CommandHideViewportControls"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 294,
+          "symbol": "MainViewModel.CommandImportPart"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 308,
+          "symbol": "MainViewModel.CommandOpenBackupOptions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 312,
+          "symbol": "MainViewModel.CommandOpenLink"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 314,
+          "symbol": "MainViewModel.CommandOpenLiveChatWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 322,
+          "symbol": "MainViewModel.CommandOpenPrintCatalogHistoryWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 324,
+          "symbol": "MainViewModel.CommandOpenPrintCatalogWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 348,
+          "symbol": "MainViewModel.CommandOpenUsersOptions"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 360,
+          "symbol": "MainViewModel.CommandSendFeedback"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 390,
+          "symbol": "MainViewModel.CommandUnFreeze"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 400,
+          "symbol": "MainViewModel.CommandViewNeedsTestingBugs"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 402,
+          "symbol": "MainViewModel.CommandViewOpenBugs"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 404,
+          "symbol": "MainViewModel.CommandViewProductBacklog"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
+          "line": 827,
+          "symbol": "MainViewModel.CommandMaximizeRestoreMainWindow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 703,
+          "symbol": "OrderSummaryViewModel.CommandOrderSubmit"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/OrderSummaryViewModel.cs",
+          "line": 715,
+          "symbol": "OrderSummaryViewModel.CommandSaveQuote"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 159,
+          "symbol": "QuickEstimateViewModel.CommandSetMetalToWhite"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 161,
+          "symbol": "QuickEstimateViewModel.CommandSetMetalToYellow"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/QuickEstimateViewModel.cs",
+          "line": 163,
+          "symbol": "QuickEstimateViewModel.CommandSetMetalToAll"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/StoneTrayViewModel.cs",
+          "line": 58,
+          "symbol": "StoneTrayViewModel.OpenStoneTrayCommand"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchCategoryViewModel.cs",
+          "line": 27,
+          "symbol": "TileSearchCategoryViewModel.CommandLaunchStyleQuiz"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileSearchMainViewModel.cs",
+          "line": 82,
+          "symbol": "TileSearchMainViewModel.CommandSetSelectedSearchTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 196,
+          "symbol": "TileViewViewModelBase.CommandLoadLayout"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 204,
+          "symbol": "TileViewViewModelBase.CommandSetTileSize"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 281,
+          "symbol": "TileViewViewModelBase.CommandAddShowcaseTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/TileViewViewModelBase.cs",
+          "line": 283,
+          "symbol": "TileViewViewModelBase.CommandAddCustomURLTile"
+        },
+        {
+          "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/WindowDesignTryOnViewModel.cs",
+          "line": 239,
+          "symbol": "WindowDesignTryOnViewModel.CommandUpdateRhinoHand"
+        }
+      ],
+      "acceptance": "For each listed declaration, identify setter/delegate/runtime invocation or explicitly retire as dormant; compare supplemental XAML build carefully.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    },
+    {
+      "id": "UI-068",
+      "kind": "ui",
+      "phase": "P09",
+      "title": "Supplemental markup commands absent from baseline",
+      "status": "not_started",
+      "sourceEvidence": [
+        {
+          "path": "recovery/variants/desktop-xaml/GV.CounterSketch.Studio.Controls.WindowModalOptions.xaml",
+          "line": 430,
+          "symbol": "CommandGetAvailableThemes"
+        },
+        {
+          "path": "recovery/variants/desktop-xaml/GV.CounterSketch.Studio.View.PartsToolBoxView.xaml",
+          "line": 12,
+          "symbol": "CommandSelectTool"
+        },
+        {
+          "path": "recovery/variants/desktop-xaml/GV.CounterSketch.Studio.View.PartsToolBoxView.xaml",
+          "line": 18,
+          "symbol": "CommandReplaceImage"
+        },
+        {
+          "path": "recovery/variants/desktop-xaml/GV.CounterSketch.Studio.View.PartsToolBoxView.xaml",
+          "line": 308,
+          "symbol": "CommandPopulateParts"
+        },
+        {
+          "path": "recovery/variants/desktop-xaml/GV.CounterSketch.Studio.View.TileViewDesigns.xaml",
+          "line": 232,
+          "symbol": "CommandSetBackgroundColor"
+        },
+        {
+          "path": "recovery/variants/desktop-xaml/GV.CounterSketch.Studio.View.TileViewParts.xaml",
+          "line": 247,
+          "symbol": "CommandSetBackgroundColor"
+        }
+      ],
+      "acceptance": "Obtain matching baseline markup or controlled desktop fixtures and prove whether these bindings execute; do not infer behavior solely from names.",
+      "fixtureIds": [],
+      "testCommands": [],
+      "evidence": []
+    }
+  ]
+}

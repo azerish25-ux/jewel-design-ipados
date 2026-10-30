@@ -1,0 +1,1450 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>CounterSketch Studio</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net462</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="images\tile\1240x600\engagement_composite_gray.png" />
+    <None Remove="images\search\filteritems\gemsettings\scallop.png" />
+    <None Remove="images\search\filteritems\gemcolors\430_topazpoppy.jpg" />
+    <None Remove="images\search\filteritems\designelements\bead.png" />
+    <None Remove="images\tile\1240x600\find-20your-20stone-20red-20box_metal_gray.png" />
+    <None Remove="images\search\filteritems\designelements\pendant-20solitaire.png" />
+    <None Remove="images\search\filteritems\gemcolors\105_diamond.jpg" />
+    <None Remove="images\tile\1240x1240\bridal_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\bear.png" />
+    <None Remove="images\search\filteritems\metals\palladiumwhite18k.png" />
+    <None Remove="images\search\filteritems\gemcolors\620_garnettsavorite.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\705_diamondaquablue.jpg" />
+    <None Remove="images\search\filteritems\gemshapes\oval.png" />
+    <None Remove="images\missingimage.png" />
+    <None Remove="images\render\propmat\cherrywood.bmp" />
+    <None Remove="images\tile\1240x1240\find-20your-20stone_composite_white.png" />
+    <None Remove="images\search\filteritems\gemshapes\round.png" />
+    <None Remove="images\tile\1240x600\find-20your-20gem-20red-20box_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\pendant-20decorative.png" />
+    <None Remove="images\huegradient.png" />
+    <None Remove="images\icon_profile_2.ico" />
+    <None Remove="images\tile\1240x1240\ever-20and-20ever_composite_gray.png" />
+    <None Remove="images\tile\1240x600\three-20stone_composite_gray.png" />
+    <None Remove="images\render\propmat\buffednickel.bmp" />
+    <None Remove="images\search\filteritems\styles\settings-20halo-20and-20trims.png" />
+    <None Remove="images\tile\1240x1240\curated-20collection_metal_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\1120_spinelblack.jpg" />
+    <None Remove="images\tile\1240x1240\engagement_metal_gray.png" />
+    <None Remove="images\search\filteritems\designelements\fish.png" />
+    <None Remove="images\search\filteritems\gemcolors\525_diamondyellowlight.jpg" />
+    <None Remove="images\tile\1240x600\fh-wire-20rope-20knots.png" />
+    <None Remove="images\tile\1240x1240\fh-scrolls.png" />
+    <None Remove="images\search\filteritems\gemcolors\110_diamondkl.jpg" />
+    <None Remove="images\tile\1240x1240\find-20your-20gem-20red-20box_metal_gray.png" />
+    <None Remove="images\search\filteritems\styles\shanks-20with-20bridge.png" />
+    <None Remove="images\render\gem\peridot.bmp" />
+    <None Remove="images\search\filteritems\gemcolors\410_diamondburntorange.jpg" />
+    <None Remove="images\render\groundplane\graniteblack.bmp" />
+    <None Remove="images\render\propmat\plasticblack.bmp" />
+    <None Remove="images\zalessplash.png" />
+    <None Remove="images\tile\1240x1240\fh-repeating-20elements.png" />
+    <None Remove="images\render\groundplane\whitereflective.bmp" />
+    <None Remove="images\search\filteritems\gemcolors\265_topazpassionbabypink.jpg" />
+    <None Remove="images\search\filteritems\styles\showall_12.png" />
+    <None Remove="images\search\filteritems\gemcolors\925_quartzrosedefrance.jpg" />
+    <None Remove="images\render\groundplane\cherrywood.bmp" />
+    <None Remove="images\search\filteritems\designelements\pendant-203-20stone.png" />
+    <None Remove="controls\image0.png" />
+    <None Remove="images\search\filteritems\gemcolors\635_topazmysticgreen.jpg" />
+    <None Remove="images\tile\1240x600\family_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\pendant-20freeform.png" />
+    <None Remove="images\tile\1240x600\fh-newparts.png" />
+    <None Remove="images\tile\1240x1240\fashion_composite_gray.png" />
+    <None Remove="images\tile\1240x600\anniversary_composite_white.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20stone-20red-20box_metal_gray.png" />
+    <None Remove="images\tile\1240x600\curated-20collection_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\113_moissanite.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\910_diamondpurple.jpg" />
+    <None Remove="images\render\propmat\bronzetera.bmp" />
+    <None Remove="images\search\filteritems\gemcolors\225_garnetrhodoliteraspberry.jpg" />
+    <None Remove="images\tile\1240x1240\fh-misc.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20gem-20red-20box_composite_white.png" />
+    <None Remove="images\render\gem\green_tourmaline.bmp" />
+    <None Remove="images\search\filteritems\gemsettings\showall_10.png" />
+    <None Remove="images\tile\1240x600\freehand_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\235_quartzrose.jpg" />
+    <None Remove="images\tile\1240x1240\family_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\315_garnetrhodolite.jpg" />
+    <None Remove="images\tile\1240x600\private-20label_metal_gray.png" />
+    <None Remove="images\trialsplash.png" />
+    <None Remove="images\search\filteritems\styles\fh-settings-20multi-20stone.png" />
+    <None Remove="images\orderlogocs.png" />
+    <None Remove="images\render\groundplane\lightmarble.bmp" />
+    <None Remove="images\search\filteritems\metals\palladiumwhite14k.png" />
+    <None Remove="images\tile\1240x600\private-20label_metal_white.png" />
+    <None Remove="images\tile\1240x1240\fh-religious.png" />
+    <None Remove="images\search\filteritems\designelements\illusion.png" />
+    <None Remove="images\search\filteritems\styles\fh-settings-20halos-20--20trims.png" />
+    <None Remove="images\tile\1240x600\promise_metal_white.png" />
+    <None Remove="images\search\filteritems\designelements\signet.png" />
+    <None Remove="images\colorswatchcircle.png" />
+    <None Remove="images\tile\1240x600\solitaires_composite_white.png" />
+    <None Remove="images\search\filteritems\metals\whitegold9k.png" />
+    <None Remove="images\tile\1240x1240\kits_metal_gray.png" />
+    <None Remove="images\orderlogocsi.png" />
+    <None Remove="images\search\filteritems\gemcolors\720_topazaquablue.jpg" />
+    <None Remove="images\search\filteritems\metals\yellowgold9k.png" />
+    <None Remove="images\orderlogoplus.png" />
+    <None Remove="images\search\filteritems\styles\fh-settings-20single-20stone.png" />
+    <None Remove="images\tile\1240x1240\three-20stone_composite_white.png" />
+    <None Remove="images\tile\1240x600\fh-elements.png" />
+    <None Remove="images\search\filteritems\styles\fh-monogram.png" />
+    <None Remove="images\zalesbackground.png" />
+    <None Remove="images\render\propmat\crayon.bmp" />
+    <None Remove="images\search\filteritems\gemsettings\pin-20point.png" />
+    <None Remove="images\tile\1240x600\all-20rings_composite_white.png" />
+    <None Remove="images\render\groundplane\tanfelt.bmp" />
+    <None Remove="images\search\filteritems\designelements\misc.png" />
+    <None Remove="images\tile\1240x600\three-20stone_composite_white.png" />
+    <None Remove="images\tile\1240x1240\pendants_composite_white.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20stone-20red-20box_composite_white.png" />
+    <None Remove="images\win7uachelp.pdf" />
+    <None Remove="images\search\filteritems\gemcolors\605_diamondapplegreen.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\745_topazpassionaquablue.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\1000_diamondchampagne.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\520_diamondyellowgolden.jpg" />
+    <None Remove="images\tile\1240x1240\fh-bails.png" />
+    <None Remove="images\tile\1240x600\find-20your-20gem_composite_white.png" />
+    <None Remove="images\search\filteritems\designelements\scroll-20--20swirl.png" />
+    <None Remove="images\search\filteritems\designelements\twist.png" />
+    <None Remove="images\tile\1240x1240\style-20quiz_composite_white.png" />
+    <None Remove="images\tile\1240x600\wedding-20bands_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\750_topazskyblue.jpg" />
+    <None Remove="images\tile\1240x600\find-20your-20gem-20red-20box_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\540_topazpassionhoney.jpg" />
+    <None Remove="images\morethanaringimages\morethanaring_12.png" />
+    <None Remove="images\morethanaringimages\morethanaring_13.png" />
+    <None Remove="images\morethanaringimages\morethanaring_10.png" />
+    <None Remove="images\morethanaringimages\morethanaring_11.png" />
+    <None Remove="images\tile\1240x1240\wedding-20bands_composite_gray.png" />
+    <None Remove="images\search\filteritems\gemsettings\claw-20prongs.png" />
+    <None Remove="images\guaranteedpricing.png" />
+    <None Remove="images\tile\1240x1240\mens_metal_gray.png" />
+    <None Remove="images\search\filteritems\designelements\sculptural.png" />
+    <None Remove="images\tile\1240x1240\promise_composite_gray.png" />
+    <None Remove="images\render\propmat\elitegraphite.bmp" />
+    <None Remove="images\render\propmat\plasticred.bmp" />
+    <None Remove="images\colorswatchsquare.png" />
+    <None Remove="images\search\filteritems\gemcolors\250_spinelpink.jpg" />
+    <None Remove="images\tile\1240x1240\find-20your-20stone_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemsettings\half-20bezel.png" />
+    <None Remove="images\search\filteritems\gemcolors\660_tourmalineparaiba.jpg" />
+    <None Remove="images\tile\1240x1240\ever-20and-20ever_composite_white.png" />
+    <None Remove="images\render\propmat\plasticblue.bmp" />
+    <None Remove="images\redx.png" />
+    <None Remove="images\search\filteritems\designelements\ball.png" />
+    <None Remove="images\search\filteritems\styles\pinched.png" />
+    <None Remove="images\render\metal\metal_yellow.bmp" />
+    <None Remove="images\tile\1240x600\fh-sports.png" />
+    <None Remove="images\search\filteritems\gemcolors\815_sapphireblue.jpg" />
+    <None Remove="images\tile\1240x600\pendants_metal_white.png" />
+    <None Remove="images\search\filteritems\gemshapes\marquise.png" />
+    <None Remove="images\search\filteritems\gemcolors\515_diamondyellow.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\825_topazlondonblue.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\850_topazswissblue.jpg" />
+    <None Remove="images\sampledesignimage.png" />
+    <None Remove="images\search\filteritems\gemcolors\725_topaziceblue.jpg" />
+    <None Remove="images\tile\1240x600\find-20your-20gem_composite_gray.png" />
+    <None Remove="images\tile\1240x1240\fh-shapes.png" />
+    <None Remove="images\render\propmat\winter_redel_leatherette_bordeaux.bmp" />
+    <None Remove="images\search\filteritems\metals\yellowgold.png" />
+    <None Remove="images\search\filteritems\gemcolors\930_sapphirepurple.jpg" />
+    <None Remove="images\tile\1240x600\kits_composite_gray.png" />
+    <None Remove="images\search\filteritems\gemshapes\emerald.png" />
+    <None Remove="images\tile\1240x1240\solitaires_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\organic.png" />
+    <None Remove="images\search\filteritems\metals\whitegold14kx1.png" />
+    <None Remove="images\search\filteritems\gemshapes\asscher.png" />
+    <None Remove="images\search\filteritems\designelements\symbolic.png" />
+    <None Remove="images\search\filteritems\gemcolors\210_diamondpink.jpg" />
+    <None Remove="images\search\filteritems\designelements\fashion-20bands.png" />
+    <None Remove="images\search\filteritems\styles\art-20nouveau.png" />
+    <None Remove="images\search\filteritems\gemcolors\820_topazglacierblue.jpg" />
+    <None Remove="images\render\propmat\american_silk_silky_sensuede_color_driftwood.bmp" />
+    <None Remove="images\tile\1240x600\fh-misc.png" />
+    <None Remove="images\tile\1240x1240\anniversary_metal_white.png" />
+    <None Remove="images\tile\1240x600\fh-mix-20--20match.png" />
+    <None Remove="images\search\filteritems\gemcolors\340_topazblazingred.jpg" />
+    <None Remove="images\tile\1240x1240\engagement_composite_gray.png" />
+    <None Remove="images\tile\1240x1240\gemstones_composite_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\220_garnetrhodolitepinkrose.jpg" />
+    <None Remove="images\search\filteritems\designelements\bail.png" />
+    <None Remove="images\tile\1240x600\find-20your-20stone-20red-20box_composite_white.png" />
+    <None Remove="images\search\filteritems\gemsettings\gypsy.png" />
+    <None Remove="images\tile\1240x600\3c_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\900_amethyst.jpg" />
+    <None Remove="images\tile\1240x1240\all-20rings_composite_gray.png" />
+    <None Remove="image1.png" />
+    <None Remove="images\tile\1240x600\wedding-20bands_metal_gray.png" />
+    <None Remove="images\tile\1240x1240\wedding-20bands_metal_white.png" />
+    <None Remove="images\search\filteritems\gemshapes\trillion.png" />
+    <None Remove="images\search\filteritems\designelements\3-20stone.png" />
+    <None Remove="images\search\filteritems\gemcolors\770_zirconblue.jpg" />
+    <None Remove="images\tile\1240x600\fh-shapes.png" />
+    <None Remove="images\search\filteritems\gemcolors\845_topazpassionteal.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\535_sapphireyellow.jpg" />
+    <None Remove="images\tile\1240x600\curated-20collection_composite_gray.png" />
+    <None Remove="images\tile\1240x600\fh-userparts.png" />
+    <None Remove="images\search\filteritems\designelements\sports.png" />
+    <None Remove="images\render\gem\blue_topaz.bmp" />
+    <None Remove="images\tile\1240x1240\kits_composite_white.png" />
+    <None Remove="images\search\filteritems\styles\fh-bookman-20flat.png" />
+    <None Remove="images\tile\1240x600\engagement_metal_gray.png" />
+    <None Remove="images\search\filteritems\designelements\bands.png" />
+    <None Remove="images\tile\1240x600\anniversary_metal_gray.png" />
+    <None Remove="images\tile\1240x600\engagement_composite_white.png" />
+    <None Remove="images\installapplication-20x20.png" />
+    <None Remove="images\customstore.png" />
+    <None Remove="images\tile\1240x600\fh-scrolls.png" />
+    <None Remove="images\tile\1240x600\find-20your-20stone-20red-20box_metal_white.png" />
+    <None Remove="images\tile\1240x600\private-20label_composite_gray.png" />
+    <None Remove="images\randomcolorsquare.png" />
+    <None Remove="images\search\filteritems\designelements\cat.png" />
+    <None Remove="images\render\gem\aquamarine.bmp" />
+    <None Remove="images\search\filteritems\gemcolors\530_quartzlemon.jpg" />
+    <None Remove="images\tile\1240x1240\curated-20collection_composite_white.png" />
+    <None Remove="images\tile\1240x600\mens_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\420_opalmexicanfireorange.jpg" />
+    <None Remove="images\tile\1240x1240\find-20your-20gem-20red-20box_metal_white.png" />
+    <None Remove="images\tile\1240x600\anniversary_metal_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\115_sapphirewhite.jpg" />
+    <None Remove="images\tile\1240x600\promise_composite_white.png" />
+    <None Remove="images\tile\1240x1240\3c_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\300_diamondgarnetred.jpg" />
+    <None Remove="images\splashcountersketchfreehandinternational.png" />
+    <None Remove="images\search\filteritems\gemcolors\640_topazrainforest.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\270_topazpassionpink.jpg" />
+    <None Remove="images\tile\1240x1240\engagement_composite_white.png" />
+    <None Remove="images\search\filteritems\styles\european.png" />
+    <None Remove="images\search\filteritems\designelements\helmet.png" />
+    <None Remove="images\search\filteritems\gemcolors\630_quartzgreen.jpg" />
+    <None Remove="images\tile\1240x600\style-20quiz_metal_gray.png" />
+    <None Remove="images\tile\1240x1240\all-20rings_composite_white.png" />
+    <None Remove="images\tile\1240x600\find-20your-20stone_composite_gray.png" />
+    <None Remove="images\render\propmat\elitecream.bmp" />
+    <None Remove="images\info-color.png" />
+    <None Remove="images\search\filteritems\gemcolors\800_alexandrite.jpg" />
+    <None Remove="images\tile\1240x600\find-20your-20stone_metal_gray.png" />
+    <None Remove="images\search\filteritems\designelements\chain.png" />
+    <None Remove="images\search\filteritems\gemcolors\1020_quartzsmoky.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\325_ruby.jpg" />
+    <None Remove="images\tile\1240x1240\three-20stone_metal_white.png" />
+    <None Remove="images\tile\1240x1240\private-20label_metal_white.png" />
+    <None Remove="images\search\filteritems\designelements\jump-20ring.png" />
+    <None Remove="images\render\propmat\winter_redel_leatherette_marron.bmp" />
+    <None Remove="images\search\filteritems\gemshapes\showall_7.png" />
+    <None Remove="images\tile\1240x600\fh-text.png" />
+    <None Remove="images\tile\1240x1240\anniversary_composite_white.png" />
+    <None Remove="images\search\filteritems\styles\fh-settings-20decorations.png" />
+    <None Remove="images\search\filteritems\gemcolors\305_garnetbrazilian.jpg" />
+    <None Remove="images\search\filteritems\metals\platinum.png" />
+    <None Remove="images\countersketch-20international-20logo-20--20horizontal-20--20transparency.png" />
+    <None Remove="images\search\filteritems\designelements\side-20channel.png" />
+    <None Remove="images\splashcountersketchfreehand.png" />
+    <None Remove="images\rendershadow.png" />
+    <None Remove="images\search\filteritems\gemcolors\760_topazturquoisefrosted.jpg" />
+    <None Remove="images\tile\1240x1240\three-20stone_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\dolphin.png" />
+    <None Remove="images\search\filteritems\gemcolors\905_czlavender.jpg" />
+    <None Remove="images\tile\1240x1240\wedding-20bands_metal_gray.png" />
+    <None Remove="images\tile\1240x600\all-20rings_metal_white.png" />
+    <None Remove="images\tile\1240x1240\ever-20and-20ever_metal_gray.png" />
+    <None Remove="images\tile\1240x600\all-20rings_metal_gray.png" />
+    <None Remove="images\tile\1240x600\find-20your-20gem_metal_white.png" />
+    <None Remove="images\tile\1240x1240\pendants_metal_white.png" />
+    <None Remove="images\tile\1240x1240\wedding-20bands_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\1100_czblack.jpg" />
+    <None Remove="images\tile\1240x1240\ever-20and-20ever_metal_white.png" />
+    <None Remove="images\search\filteritems\styles\shanks-20mens.png" />
+    <None Remove="images\search\filteritems\metals\rosegold10k.png" />
+    <None Remove="images\render\propmat\american_silk_silky_sensuede_color_bone.bmp" />
+    <None Remove="images\render\gem\diamond.bmp" />
+    <None Remove="images\installlibrary-18x18.png" />
+    <None Remove="images\search\filteritems\gemshapes\baguette-20tappered.png" />
+    <None Remove="images\search\filteritems\designelements\leaf.png" />
+    <None Remove="images\search\filteritems\gemcolors\335_sapphirered.jpg" />
+    <None Remove="images\tile\1240x600\find-20your-20gem-20red-20box_metal_white.png" />
+    <None Remove="images\search\filteritems\designelements\cathedral.png" />
+    <None Remove="images\search\filteritems\designelements\pinched.png" />
+    <None Remove="images\render\groundplane\unfinishedwood.bmp" />
+    <None Remove="images\tile\1240x1240\3c_metal_white.png" />
+    <None Remove="images\search\filteritems\designelements\split.png" />
+    <None Remove="images\tile\1240x1240\pendants_composite_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\715_spinelaqua.jpg" />
+    <None Remove="images\search\filteritems\designelements\animals.png" />
+    <None Remove="images\search\filteritems\metals\rosegold.png" />
+    <None Remove="images\search\filteritems\gemcolors\505_czyellow.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\615_emerald.jpg" />
+    <None Remove="images\search\filteritems\gemshapes\showall_14.png" />
+    <None Remove="images\rendershadowpendant.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20gem_metal_gray.png" />
+    <None Remove="images\search\filteritems\designelements\pendant-20circle.png" />
+    <None Remove="images\search\filteritems\gemshapes\half-20moon.png" />
+    <None Remove="images\render\gem\smokeyquartz.bmp" />
+    <None Remove="images\morethanaringimages\morethanaring_9.png" />
+    <None Remove="images\morethanaringimages\morethanaring_8.png" />
+    <None Remove="images\render\propmat\unfinishedwood.bmp" />
+    <None Remove="images\morethanaringimages\morethanaring_3.png" />
+    <None Remove="images\morethanaringimages\morethanaring_2.png" />
+    <None Remove="images\morethanaringimages\morethanaring_1.png" />
+    <None Remove="images\morethanaringimages\morethanaring_7.png" />
+    <None Remove="images\render\propmat\novasuede_straw.bmp" />
+    <None Remove="images\morethanaringimages\morethanaring_6.png" />
+    <None Remove="images\morethanaringimages\morethanaring_5.png" />
+    <None Remove="images\morethanaringimages\morethanaring_4.png" />
+    <None Remove="images\tile\1240x1240\bridal_composite_white.png" />
+    <None Remove="images\tile\1240x1240\mens_composite_white.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20stone_composite_gray.png" />
+    <None Remove="images\render\propmat\whitegold.bmp" />
+    <None Remove="images\tile\1240x600\promise_composite_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\425_sapphireorange.jpg" />
+    <None Remove="images\render\groundplane\whitefelt.bmp" />
+    <None Remove="images\render\gem\tanzanite.bmp" />
+    <None Remove="images\search\filteritems\designelements\men-s-20band.png" />
+    <None Remove="images\search\filteritems\styles\fh-shanks-20with-20bridge.png" />
+    <None Remove="images\tile\1240x600\kits_metal_white.png" />
+    <None Remove="images\tile\1240x1240\fh-mix-20--20match.png" />
+    <None Remove="images\tile\1240x1240\fh-sports.png" />
+    <None Remove="images\5.0splash.png" />
+    <None Remove="images\tile\1240x1240\pendants_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemsettings\channel.png" />
+    <None Remove="images\search\filteritems\gemcolors\915_diamondpurplishpink.jpg" />
+    <None Remove="images\tile\1240x600\fh-shanks.png" />
+    <None Remove="images\search\filteritems\styles\fh-shanks-20men-s.png" />
+    <None Remove="images\search\filteritems\metals\rosegold18k.png" />
+    <None Remove="images\tile\1240x600\kits_composite_white.png" />
+    <None Remove="images\stylelinesshadow.png" />
+    <None Remove="images\render\propmat\american_silk_silky_sensuede_color_serpentine.bmp" />
+    <None Remove="images\search\filteritems\designelements\clusters.png" />
+    <None Remove="images\search\filteritems\gemcolors\920_garnetcolorchange.jpg" />
+    <None Remove="images\tile\1240x600\style-20quiz_metal_white.png" />
+    <None Remove="images\search\filteritems\designelements\wings.png" />
+    <None Remove="images\search\filteritems\gemcolors\710_diamondtealblue.jpg" />
+    <None Remove="images\tile\1240x1240\fh-shanks.png" />
+    <None Remove="images\search\filteritems\designelements\plate.png" />
+    <None Remove="images\tile\1240x1240\style-20quiz_composite_gray.png" />
+    <None Remove="images\search\filteritems\styles\settings-20single-20stone.png" />
+    <None Remove="images\search\filteritems\designelements\pendant-20accented.png" />
+    <None Remove="images\search\filteritems\gemcolors\935_sapphireviolet.jpg" />
+    <None Remove="images\search\filteritems\metals\whitegold18k.png" />
+    <None Remove="images\countersketch-20international-20logo-20--20block-20--20transparency.png" />
+    <None Remove="images\tile\1240x1240\fh-collars-20--20beads.png" />
+    <None Remove="images\splashcountersketchplus.png" />
+    <None Remove="images\search\filteritems\gemcolors\765_tourmalineblueparaiba.jpg" />
+    <None Remove="images\tile\1240x600\fh-bails.png" />
+    <None Remove="images\csiabout.png" />
+    <None Remove="images\search\filteritems\styles\settings-20multi-20stone.png" />
+    <None Remove="images\tile\1240x1240\style-20quiz_metal_white.png" />
+    <None Remove="images\search\filteritems\metals\yellowgold18k.png" />
+    <None Remove="images\tile\1240x1240\family_metal_white.png" />
+    <None Remove="images\search\filteritems\styles\glamorous.png" />
+    <None Remove="images\tile\1240x600\engagement_metal_white.png" />
+    <None Remove="images\tile\1240x600\ever-20and-20ever_metal_white.png" />
+    <None Remove="images\countersketch-20splash.png" />
+    <None Remove="images\countersketch-20splash.jpg" />
+    <None Remove="images\tile\1240x1240\promise_composite_white.png" />
+    <None Remove="images\search\filteritems\designelements\pendant-20geometric.png" />
+    <None Remove="images\tile\1240x600\fh-repeating-20elements.png" />
+    <None Remove="images\tile\1240x600\find-20your-20stone_composite_white.png" />
+    <None Remove="images\tile\1240x600\bridal_composite_white.png" />
+    <None Remove="images\tile\1240x600\gemstones_metal_white.png" />
+    <None Remove="images\tile\1240x600\anniversary_composite_gray.png" />
+    <None Remove="images\tile\1240x1240\bridal_metal_white.png" />
+    <None Remove="images\render\gem\reddishorange.bmp" />
+    <None Remove="images\search\filteritems\designelements\gem-20only.png" />
+    <None Remove="images\tile\1240x600\promise_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\1025_tourmalinebronze.jpg" />
+    <None Remove="images\tile\1240x600\family_composite_white.png" />
+    <None Remove="images\search\filteritems\metals\silver.png" />
+    <None Remove="images\tile\1240x1240\promise_metal_white.png" />
+    <None Remove="images\tile\1240x600\freehand_metal_white.png" />
+    <None Remove="images\tile\1240x1240\private-20label_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\pattern.png" />
+    <None Remove="images\search\filteritems\designelements\2-20stone.png" />
+    <None Remove="images\tile\1240x600\bridal_composite_gray.png" />
+    <None Remove="images\tile\1240x600\fashion_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\1015_garnetandradite.jpg" />
+    <None Remove="images\tile\1240x1240\promise_metal_gray.png" />
+    <None Remove="images\tile\1240x600\gemstones_composite_white.png" />
+    <None Remove="images\search\filteritems\styles\settings-20cluster-20top-20plates.png" />
+    <None Remove="images\search\filteritems\gemcolors\830_topazpassionglacierblue.jpg" />
+    <None Remove="images\tile\1240x1240\solitaires_composite_white.png" />
+    <None Remove="images\tile\1240x600\bridal_metal_white.png" />
+    <None Remove="images\tile\1240x1240\curated-20collection_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemshapes\calf.png" />
+    <None Remove="images\search\filteritems\metals\whitegold10k.png" />
+    <None Remove="images\search\filteritems\gemcolors\310_garnetmozambique.jpg" />
+    <None Remove="images\tile\1240x600\fashion_metal_white.png" />
+    <None Remove="images\search\filteritems\designelements\shape.png" />
+    <None Remove="images\search\filteritems\styles\settings-20decorations.png" />
+    <None Remove="images\tile\1240x1240\private-20label_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\100_czwhite.jpg" />
+    <None Remove="images\tile\1240x1240\3c_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\bar.png" />
+    <None Remove="images\search\filteritems\gemcolors\840_topazpassionparadiseblue.jpg" />
+    <None Remove="images\imagemenu.png" />
+    <None Remove="images\tile\1240x1240\bridal_metal_gray.png" />
+    <None Remove="images\tile\1240x600\gemstones_metal_gray.png" />
+    <None Remove="images\tile\1240x600\gemstones_composite_gray.png" />
+    <None Remove="images\search\filteritems\metals\yellowgold10k.png" />
+    <None Remove="images\tile\1240x1240\fh-symbolic.png" />
+    <None Remove="images\render\groundplane\redfabric.bmp" />
+    <None Remove="images\tile\1240x600\style-20quiz_composite_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\510_diamondcape.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\740_topazparaiba.jpg" />
+    <None Remove="images\search\filteritems\gemsettings\bezel.png" />
+    <None Remove="images\search\filteritems\metals\continuum.png" />
+    <None Remove="images\tile\1240x1240\anniversary_composite_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\200_czpink.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\600_bloodstone.jpg" />
+    <None Remove="images\search\filteritems\designelements\ribbon.png" />
+    <None Remove="images\search\filteritems\gemcolors\730_topazicebluefrosted.jpg" />
+    <None Remove="images\search\filteritems\designelements\side-20detail.png" />
+    <None Remove="images\search\filteritems\styles\contemporary.png" />
+    <None Remove="images\render\groundplane\bluefabric.bmp" />
+    <None Remove="images\tile\1240x1240\fh-userparts.png" />
+    <None Remove="images\render\gem\yellow_sapphire.bmp" />
+    <None Remove="images\tile\1240x600\freehand_metal_gray.png" />
+    <None Remove="images\search\filteritems\metals\whitegold.png" />
+    <None Remove="images\render\gem\yellow_topaz.bmp" />
+    <None Remove="images\search\filteritems\styles\shanks-20bands.png" />
+    <None Remove="images\render\groundplane\canvas.bmp" />
+    <None Remove="images\render\propmat\tuscanmarble.bmp" />
+    <None Remove="images\search\filteritems\gemsettings\showall_9.png" />
+    <None Remove="images\search\filteritems\designelements\heart.png" />
+    <None Remove="images\tile\1240x1240\kits_metal_white.png" />
+    <None Remove="images\icon.png" />
+    <None Remove="images\tile\1240x1240\freehand_composite_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\650_tourmalinegreen.jpg" />
+    <None Remove="images\splashcountersketchbridal.png" />
+    <None Remove="images\search\filteritems\gemcolors\255_topazcomplexion.jpg" />
+    <None Remove="images\search\filteritems\styles\vintage.png" />
+    <None Remove="images\tile\1240x1240\gemstones_metal_white.png" />
+    <None Remove="images\search\filteritems\styles\mobius.png" />
+    <None Remove="images\search\filteritems\metals\palladium.png" />
+    <None Remove="images\render\groundplane\linearfalloffblackblue.bmp" />
+    <None Remove="images\installlibrary-20x20.png" />
+    <None Remove="images\search\filteritems\designelements\repeating-20element.png" />
+    <None Remove="images\tile\1240x600\wedding-20bands_metal_white.png" />
+    <None Remove="images\search\filteritems\designelements\shank.png" />
+    <None Remove="images\tile\1240x600\three-20stone_metal_white.png" />
+    <None Remove="images\render\gem\orangeyellow.bmp" />
+    <None Remove="images\search\filteritems\gemcolors\610_diamonddarkgreen.jpg" />
+    <None Remove="images\search\filteritems\designelements\simple.png" />
+    <None Remove="images\tile\1240x1240\mens_metal_white.png" />
+    <None Remove="images\render\propmat\rosegold.bmp" />
+    <None Remove="images\tile\1240x600\pendants_metal_gray.png" />
+    <None Remove="images\tile\1240x1240\3c_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\625_peridot.jpg" />
+    <None Remove="images\search\filteritems\gemshapes\pear.png" />
+    <None Remove="images\render\propmat\elitelatte.bmp" />
+    <None Remove="images\tile\1240x600\fashion_metal_gray.png" />
+    <None Remove="images\info-carat.png" />
+    <None Remove="images\tile\1240x1240\all-20rings_metal_white.png" />
+    <None Remove="images\search\filteritems\designelements\solitaire.png" />
+    <None Remove="images\render\propmat\eliteonyx.bmp" />
+    <None Remove="images\search\filteritems\designelements\5-20stone.png" />
+    <None Remove="images\search\filteritems\gemcolors\245_sapphirepink.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\735_topazparadiseblue.jpg" />
+    <None Remove="images\tile\1240x1240\fashion_metal_white.png" />
+    <None Remove="images\orderlogobridal.png" />
+    <None Remove="images\render\gem\yellow_citrine.bmp" />
+    <None Remove="images\tile\1240x600\kits_metal_gray.png" />
+    <None Remove="images\tile\1240x600\freehand_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\milgrain.png" />
+    <None Remove="images\tile\1240x1240\three-20stone_metal_gray.png" />
+    <None Remove="images\search\filteritems\designelements\military.png" />
+    <None Remove="images\tile\1240x600\private-20label_composite_white.png" />
+    <None Remove="images\search\filteritems\styles\classic.png" />
+    <None Remove="images\tile\1240x1240\style-20quiz_metal_gray.png" />
+    <None Remove="images\tile\1240x600\3c_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\500_citrineyellow.jpg" />
+    <None Remove="images\tile\1240x1240\freehand_metal_white.png" />
+    <None Remove="images\tile\1240x600\style-20quiz_composite_gray.png" />
+    <None Remove="images\activation.ico" />
+    <None Remove="images\render\groundplane\linearfalloffblackred.bmp" />
+    <None Remove="images\render\metal\metal_white.bmp" />
+    <None Remove="images\tile\1240x1240\private-20label_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\415_garnetspessartite.jpg" />
+    <None Remove="images\search\filteritems\designelements\text.png" />
+    <None Remove="images\search\filteritems\gemcolors\440_topazmysticsunrise.jpg" />
+    <None Remove="images\search\filteritems\gemcolors\240_sapphirepadparadscha.jpg" />
+    <None Remove="images\tile\1240x600\find-20your-20stone-20red-20box_composite_gray.png" />
+    <None Remove="images\render\groundplane\linearfalloff.bmp" />
+    <None Remove="images\search\filteritems\designelements\setting.png" />
+    <None Remove="images\search\filteritems\gemcolors\1115_onyx.jpg" />
+    <None Remove="images\search\filteritems\styles\settings-20halo-20cluster.png" />
+    <None Remove="images\tile\1240x600\family_metal_white.png" />
+    <None Remove="images\search\filteritems\gemcolors\275_tourmalinepink.jpg" />
+    <None Remove="images\saveanimationmask.png" />
+    <None Remove="images\search\filteritems\gemsettings\pave-.png" />
+    <None Remove="images\render\propmat\butterumgranite.bmp" />
+    <None Remove="images\search\filteritems\designelements\floral.png" />
+    <None Remove="images\customlogo2.png" />
+    <None Remove="images\render\gem\alexandrite.bmp" />
+    <None Remove="images\search\filteritems\designelements\pendant-20journey.png" />
+    <None Remove="images\tile\1240x1240\fh-text.png" />
+    <None Remove="images\search\filteritems\designelements\knot.png" />
+    <None Remove="images\search\filteritems\metals\greengold10k.png" />
+    <None Remove="images\search\filteritems\styles\fh-shanks-20eternity-20--20anniversary.png" />
+    <None Remove="images\search\filteritems\styles\fh-settings-20cluster-20top-20plates.png" />
+    <None Remove="images\search\filteritems\gemcolors\260_topazmysticpurepink.jpg" />
+    <None Remove="images\tile\1240x1240\fh-floral.png" />
+    <None Remove="images\search\filteritems\metals\yellowgold22k.png" />
+    <None Remove="images\tile\1240x1240\kits_composite_gray.png" />
+    <None Remove="images\morethanaringimages\morethanaring_blank.png" />
+    <None Remove="images\tile\1240x1240\family_composite_gray.png" />
+    <None Remove="images\search\filteritems\styles\monogram.png" />
+    <None Remove="images\search\filteritems\designelements\skull.png" />
+    <None Remove="images\search\filteritems\gemsettings\none.png" />
+    <None Remove="images\tile\1240x600\fashion_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\bezel-20set.png" />
+    <None Remove="images\render\metal\metal_rose.bmp" />
+    <None Remove="images\search\filteritems\styles\fh-arial.png" />
+    <None Remove="images\tile\1240x600\fh-floral.png" />
+    <None Remove="images\tile\1240x600\fh-collars-20--20beads.png" />
+    <None Remove="images\search\filteritems\gemcolors\1030_tourmalineearth.jpg" />
+    <None Remove="images\tile\1240x1240\gemstones_metal_gray.png" />
+    <None Remove="images\tile\1240x600\solitaires_metal_white.png" />
+    <None Remove="images\tile\1240x1240\family_metal_gray.png" />
+    <None Remove="images\tile\1240x600\fh-symbolic.png" />
+    <None Remove="images\tile\1240x1240\all-20rings_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\120_topazwhite.jpg" />
+    <None Remove="images\tile\1240x1240\find-20your-20gem-20red-20box_composite_gray.png" />
+    <None Remove="images\tile\1240x600\family_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\230_morganite.jpg" />
+    <None Remove="images\tile\1240x1240\freehand_metal_gray.png" />
+    <None Remove="images\tile\1240x600\solitaires_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\weave.png" />
+    <None Remove="images\tile\1240x600\find-20your-20gem-20red-20box_metal_gray.png" />
+    <None Remove="images\search\filteritems\metals\greengold14k.png" />
+    <None Remove="images\search\filteritems\gemsettings\prong.png" />
+    <None Remove="images\tile\1240x600\mens_composite_gray.png" />
+    <None Remove="images\tile\1240x600\pendants_composite_white.png" />
+    <None Remove="images\render\gem\blue_sapphire.bmp" />
+    <None Remove="images\search\filteritems\designelements\halo.png" />
+    <None Remove="images\search\filteritems\gemshapes\sq.-20cushion.png" />
+    <None Remove="images\tile\1240x600\3c_metal_white.png" />
+    <None Remove="images\search\filteritems\designelements\nature.png" />
+    <None Remove="images\tile\1240x600\find-20your-20stone_metal_white.png" />
+    <None Remove="images\zalesabout.png" />
+    <None Remove="images\tile\1240x1240\fashion_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\405_citrinemadeira.jpg" />
+    <None Remove="images\search\filteritems\styles\art-20deco.png" />
+    <None Remove="images\render\groundplane\granite.bmp" />
+    <None Remove="images\search\filteritems\designelements\infinity.png" />
+    <None Remove="images\search\filteritems\styles\fh-shanks-20bands.png" />
+    <None Remove="images\search\filteritems\designelements\showall_13.png" />
+    <None Remove="images\search\filteritems\designelements\wire.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20gem_composite_gray.png" />
+    <None Remove="images\tile\1240x600\pendants_composite_gray.png" />
+    <None Remove="images\colorswatchsquare2.png" />
+    <None Remove="images\5.0intlsplash.png" />
+    <None Remove="images\search\filteritems\gemcolors\435_topazpreciousimperial.jpg" />
+    <None Remove="images\search\filteritems\gemsettings\bridge-20accent.png" />
+    <None Remove="images\search\filteritems\gemshapes\baguette.png" />
+    <None Remove="images\search\filteritems\designelements\paw.png" />
+    <None Remove="images\search\filteritems\gemcolors\835_topazpassioniceblue.jpg" />
+    <None Remove="images\tile\1240x1240\engagement_metal_white.png" />
+    <None Remove="images\search\filteritems\metals\greengold18k.png" />
+    <None Remove="images\search\filteritems\designelements\pendant-20halo.png" />
+    <None Remove="images\tile\1240x1240\anniversary_metal_gray.png" />
+    <None Remove="images\render\propmat\american_silk_silky_sensuede_color_platinum.bmp" />
+    <None Remove="images\tile\1240x1240\fh-newparts.png" />
+    <None Remove="images\search\filteritems\gemcolors\1005_diamondcognac.jpg" />
+    <None Remove="images\tile\1240x600\all-20rings_composite_gray.png" />
+    <None Remove="images\render\groundplane\bamboo.bmp" />
+    <None Remove="images\search\filteritems\gemcolors\700_aquamarine.jpg" />
+    <None Remove="images\search\filteritems\gemsettings\belcher.png" />
+    <None Remove="images\render\propmat\earthwash.bmp" />
+    <None Remove="images\search\filteritems\designelements\element.png" />
+    <None Remove="images\search\filteritems\gemcolors\400_citrine.jpg" />
+    <None Remove="images\search\filteritems\designelements\micro.png" />
+    <None Remove="images\search\filteritems\designelements\decorative.png" />
+    <None Remove="images\tile\1240x600\fh-religious.png" />
+    <None Remove="images\render\gem\darkgarnet.bmp" />
+    <None Remove="images\search\filteritems\gemcolors\215_diamondpinkpure.jpg" />
+    <None Remove="images\tile\1240x600\curated-20collection_metal_gray.png" />
+    <None Remove="images\render\propmat\novasuede_periwinkle.bmp" />
+    <None Remove="images\search\filteritems\gemsettings\bright-cut.png" />
+    <None Remove="images\search\filteritems\gemshapes\heart.png" />
+    <None Remove="images\tile\1240x600\fh-chain.png" />
+    <None Remove="images\search\filteritems\styles\fh-shanks-20remounts.png" />
+    <None Remove="images\search\filteritems\gemcolors\205_czpinklight.jpg" />
+    <None Remove="images\search\filteritems\styles\fh-settings-20halo-20cluster.png" />
+    <None Remove="images\search\filteritems\styles\modern.png" />
+    <None Remove="images\tile\1240x600\find-20your-20gem_metal_gray.png" />
+    <None Remove="images\tile\1240x1240\mens_composite_gray.png" />
+    <None Remove="images\search\filteritems\designelements\asymmetrical.png" />
+    <None Remove="images\render\groundplane\whitematte.bmp" />
+    <None Remove="images\tile\1240x1240\fh-settings.png" />
+    <None Remove="images\tile\1240x600\ever-20and-20ever_metal_gray.png" />
+    <None Remove="images\search\filteritems\designelements\pendant-20cluster.png" />
+    <None Remove="images\tile\1240x1240\fh-wire-20rope-20knots.png" />
+    <None Remove="images\render\propmat\lightmarble.bmp" />
+    <None Remove="images\info-clarity.png" />
+    <None Remove="images\search\filteritems\gemshapes\princess.png" />
+    <None Remove="images\search\filteritems\designelements\duck.png" />
+    <None Remove="images\search\filteritems\gemcolors\810_iolite.jpg" />
+    <None Remove="images\search\filteritems\designelements\horse.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20stone-20red-20box_composite_gray.png" />
+    <None Remove="images\tile\1240x1240\curated-20collection_composite_gray.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20gem_metal_white.png" />
+    <None Remove="images\render\gem\ruby.bmp" />
+    <None Remove="images\search\filteritems\designelements\pendant-20heart.png" />
+    <None Remove="images\search\filteritems\styles\show-20all.png" />
+    <None Remove="images\tile\1240x1240\fh-animals.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20stone_metal_white.png" />
+    <None Remove="images\tile\1240x600\mens_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\755_topazteal.jpg" />
+    <None Remove="images\tile\1240x600\ever-20and-20ever_composite_gray.png" />
+    <None Remove="images\tile\1240x1240\fashion_composite_white.png" />
+    <None Remove="images\search\filteritems\designelements\flower.png" />
+    <None Remove="images\search\filteritems\gemsettings\shared-20prong.png" />
+    <None Remove="images\tile\1240x1240\fh-elements.png" />
+    <None Remove="images\render\gem\emerald.bmp" />
+    <None Remove="images\search\filteritems\gemshapes\cushion.png" />
+    <None Remove="images\search\filteritems\gemcolors\1110_marcasite.jpg" />
+    <None Remove="images\installapplication-18x18.png" />
+    <None Remove="images\search\filteritems\gemcolors\330_rubymadagascar.jpg" />
+    <None Remove="images\search\filteritems\styles\shanks-20remounts.png" />
+    <None Remove="images\render\groundplane\blackreflective.bmp" />
+    <None Remove="images\blackwhitegradient.png" />
+    <None Remove="images\tile\1240x600\mens_metal_white.png" />
+    <None Remove="images\tile\1240x600\fh-settings.png" />
+    <None Remove="images\tile\1240x600\three-20stone_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemsettings\bar-20set.png" />
+    <None Remove="images\search\filteritems\gemcolors\940_tanzanite.jpg" />
+    <None Remove="images\render\propmat\novasuede_olive.bmp" />
+    <None Remove="images\search\filteritems\gemcolors\645_tourmalinechrome.jpg" />
+    <None Remove="images\gemorder_imagenotavailable.png" />
+    <None Remove="images\search\filteritems\gemcolors\545_topazpreciousgolden.jpg" />
+    <None Remove="images\search\filteritems\designelements\dog.png" />
+    <None Remove="images\search\filteritems\styles\fh-bookman-20chiseled.png" />
+    <None Remove="images\tile\1240x600\fh-animals.png" />
+    <None Remove="images\render\gem\lightgarnet.bmp" />
+    <None Remove="images\search\filteritems\designelements\cabochon.png" />
+    <None Remove="images\search\filteritems\designelements\french-20set.png" />
+    <None Remove="images\render\propmat\yellowgold.bmp" />
+    <None Remove="images\search\filteritems\gemcolors\1105_diamondblack.jpg" />
+    <None Remove="images\info-cut.png" />
+    <None Remove="images\search\filteritems\gemcolors\445_tourmalinegolden.jpg" />
+    <None Remove="images\search\filteritems\designelements\decorative-20setting.png" />
+    <None Remove="images\tile\1240x1240\freehand_composite_white.png" />
+    <None Remove="images\render\gem\amethyst.bmp" />
+    <None Remove="images\tile\1240x600\ever-20and-20ever_composite_white.png" />
+    <None Remove="images\search\filteritems\gemsettings\bead-20set.png" />
+    <None Remove="images\render\propmat\bamboo.bmp" />
+    <None Remove="images\tile\1240x1240\find-20your-20stone-20red-20box_metal_white.png" />
+    <None Remove="images\tile\1240x600\curated-20collection_metal_white.png" />
+    <None Remove="images\zalesicon.png" />
+    <None Remove="images\zalesicon.ico" />
+    <None Remove="images\search\filteritems\designelements\basket.png" />
+    <None Remove="images\tile\1240x1240\solitaires_metal_gray.png" />
+    <None Remove="images\search\filteritems\designelements\gems.png" />
+    <None Remove="images\orderlogorc.png" />
+    <None Remove="images\search\filteritems\gemcolors\1010_diamondtoplightbrown.jpg" />
+    <None Remove="images\tile\1240x600\3c_composite_gray.png" />
+    <None Remove="images\render\propmat\marble_veined6.bmp" />
+    <None Remove="images\render\propmat\marble_veined1.bmp" />
+    <None Remove="images\tile\1240x600\wedding-20bands_composite_gray.png" />
+    <None Remove="images\search\filteritems\gemshapes\radiant.png" />
+    <None Remove="images\tile\1240x1240\find-20your-20gem_composite_white.png" />
+    <None Remove="images\render\gem\pink_sapphire.bmp" />
+    <None Remove="images\tile\1240x600\bridal_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\655_tourmalineolive.jpg" />
+    <None Remove="images\tile\1240x1240\fh-chain.png" />
+    <None Remove="images\search\filteritems\gemcolors\320_opalmexicanfirered.jpg" />
+    <None Remove="images\tile\1240x1240\solitaires_metal_white.png" />
+    <None Remove="images\tile\1240x1240\gemstones_composite_white.png" />
+    <None Remove="images\tile\1240x600\solitaires_metal_gray.png" />
+    <None Remove="images\search\filteritems\gemcolors\805_diamondblue.jpg" />
+    <None Remove="Model.Entities.CounterSketchLibrary.CounterSketchLibrary.csdl" />
+    <None Remove="Model.Entities.CounterSketchLibrary.CounterSketchLibrary.msl" />
+    <None Remove="Model.Entities.CounterSketchLibrary.CounterSketchLibrary.ssdl" />
+    <EmbeddedResource Include="images\tile\1240x600\engagement_composite_gray.png" LogicalName="images/tile/1240x600/engagement_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\scallop.png" LogicalName="images/search/filteritems/gemsettings/scallop.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\430_topazpoppy.jpg" LogicalName="images/search/filteritems/gemcolors/430_topazpoppy.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\bead.png" LogicalName="images/search/filteritems/designelements/bead.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20stone-20red-20box_metal_gray.png" LogicalName="images/tile/1240x600/find%20your%20stone%20red%20box_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20solitaire.png" LogicalName="images/search/filteritems/designelements/pendant%20solitaire.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\105_diamond.jpg" LogicalName="images/search/filteritems/gemcolors/105_diamond.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\bridal_composite_gray.png" LogicalName="images/tile/1240x1240/bridal_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\bear.png" LogicalName="images/search/filteritems/designelements/bear.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\palladiumwhite18k.png" LogicalName="images/search/filteritems/metals/palladiumwhite18k.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\620_garnettsavorite.jpg" LogicalName="images/search/filteritems/gemcolors/620_garnettsavorite.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\705_diamondaquablue.jpg" LogicalName="images/search/filteritems/gemcolors/705_diamondaquablue.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\oval.png" LogicalName="images/search/filteritems/gemshapes/oval.png" />
+    <EmbeddedResource Include="images\missingimage.png" LogicalName="images/missingimage.png" />
+    <EmbeddedResource Include="images\render\propmat\cherrywood.bmp" LogicalName="images/render/propmat/cherrywood.bmp" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20stone_composite_white.png" LogicalName="images/tile/1240x1240/find%20your%20stone_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\round.png" LogicalName="images/search/filteritems/gemshapes/round.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20gem-20red-20box_composite_gray.png" LogicalName="images/tile/1240x600/find%20your%20gem%20red%20box_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20decorative.png" LogicalName="images/search/filteritems/designelements/pendant%20decorative.png" />
+    <EmbeddedResource Include="images\huegradient.png" LogicalName="images/huegradient.png" />
+    <EmbeddedResource Include="images\icon_profile_2.ico" LogicalName="images/icon_profile_2.ico" />
+    <EmbeddedResource Include="images\tile\1240x1240\ever-20and-20ever_composite_gray.png" LogicalName="images/tile/1240x1240/ever%20and%20ever_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\three-20stone_composite_gray.png" LogicalName="images/tile/1240x600/three%20stone_composite_gray.png" />
+    <EmbeddedResource Include="images\render\propmat\buffednickel.bmp" LogicalName="images/render/propmat/buffednickel.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\styles\settings-20halo-20and-20trims.png" LogicalName="images/search/filteritems/styles/settings%20halo%20and%20trims.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\curated-20collection_metal_white.png" LogicalName="images/tile/1240x1240/curated%20collection_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1120_spinelblack.jpg" LogicalName="images/search/filteritems/gemcolors/1120_spinelblack.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\engagement_metal_gray.png" LogicalName="images/tile/1240x1240/engagement_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\fish.png" LogicalName="images/search/filteritems/designelements/fish.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\525_diamondyellowlight.jpg" LogicalName="images/search/filteritems/gemcolors/525_diamondyellowlight.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-wire-20rope-20knots.png" LogicalName="images/tile/1240x600/fh-wire%20rope%20knots.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-scrolls.png" LogicalName="images/tile/1240x1240/fh-scrolls.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\110_diamondkl.jpg" LogicalName="images/search/filteritems/gemcolors/110_diamondkl.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20gem-20red-20box_metal_gray.png" LogicalName="images/tile/1240x1240/find%20your%20gem%20red%20box_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\shanks-20with-20bridge.png" LogicalName="images/search/filteritems/styles/shanks%20with%20bridge.png" />
+    <EmbeddedResource Include="images\render\gem\peridot.bmp" LogicalName="images/render/gem/peridot.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\410_diamondburntorange.jpg" LogicalName="images/search/filteritems/gemcolors/410_diamondburntorange.jpg" />
+    <EmbeddedResource Include="images\render\groundplane\graniteblack.bmp" LogicalName="images/render/groundplane/graniteblack.bmp" />
+    <EmbeddedResource Include="images\render\propmat\plasticblack.bmp" LogicalName="images/render/propmat/plasticblack.bmp" />
+    <EmbeddedResource Include="images\zalessplash.png" LogicalName="images/zalessplash.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-repeating-20elements.png" LogicalName="images/tile/1240x1240/fh-repeating%20elements.png" />
+    <EmbeddedResource Include="images\render\groundplane\whitereflective.bmp" LogicalName="images/render/groundplane/whitereflective.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\265_topazpassionbabypink.jpg" LogicalName="images/search/filteritems/gemcolors/265_topazpassionbabypink.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\styles\showall_12.png" LogicalName="images/search/filteritems/styles/showall_12.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\925_quartzrosedefrance.jpg" LogicalName="images/search/filteritems/gemcolors/925_quartzrosedefrance.jpg" />
+    <EmbeddedResource Include="images\render\groundplane\cherrywood.bmp" LogicalName="images/render/groundplane/cherrywood.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-203-20stone.png" LogicalName="images/search/filteritems/designelements/pendant%203%20stone.png" />
+    <EmbeddedResource Include="controls\image0.png" LogicalName="controls/image0.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\635_topazmysticgreen.jpg" LogicalName="images/search/filteritems/gemcolors/635_topazmysticgreen.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\family_composite_gray.png" LogicalName="images/tile/1240x600/family_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20freeform.png" LogicalName="images/search/filteritems/designelements/pendant%20freeform.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-newparts.png" LogicalName="images/tile/1240x600/fh-newparts.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fashion_composite_gray.png" LogicalName="images/tile/1240x1240/fashion_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\anniversary_composite_white.png" LogicalName="images/tile/1240x600/anniversary_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20stone-20red-20box_metal_gray.png" LogicalName="images/tile/1240x1240/find%20your%20stone%20red%20box_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\curated-20collection_composite_white.png" LogicalName="images/tile/1240x600/curated%20collection_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\113_moissanite.jpg" LogicalName="images/search/filteritems/gemcolors/113_moissanite.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\910_diamondpurple.jpg" LogicalName="images/search/filteritems/gemcolors/910_diamondpurple.jpg" />
+    <EmbeddedResource Include="images\render\propmat\bronzetera.bmp" LogicalName="images/render/propmat/bronzetera.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\225_garnetrhodoliteraspberry.jpg" LogicalName="images/search/filteritems/gemcolors/225_garnetrhodoliteraspberry.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-misc.png" LogicalName="images/tile/1240x1240/fh-misc.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20gem-20red-20box_composite_white.png" LogicalName="images/tile/1240x1240/find%20your%20gem%20red%20box_composite_white.png" />
+    <EmbeddedResource Include="images\render\gem\green_tourmaline.bmp" LogicalName="images/render/gem/green_tourmaline.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\showall_10.png" LogicalName="images/search/filteritems/gemsettings/showall_10.png" />
+    <EmbeddedResource Include="images\tile\1240x600\freehand_composite_white.png" LogicalName="images/tile/1240x600/freehand_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\235_quartzrose.jpg" LogicalName="images/search/filteritems/gemcolors/235_quartzrose.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\family_composite_white.png" LogicalName="images/tile/1240x1240/family_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\315_garnetrhodolite.jpg" LogicalName="images/search/filteritems/gemcolors/315_garnetrhodolite.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\private-20label_metal_gray.png" LogicalName="images/tile/1240x600/private%20label_metal_gray.png" />
+    <EmbeddedResource Include="images\trialsplash.png" LogicalName="images/trialsplash.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-settings-20multi-20stone.png" LogicalName="images/search/filteritems/styles/fh-settings%20multi%20stone.png" />
+    <EmbeddedResource Include="images\orderlogocs.png" LogicalName="images/orderlogocs.png" />
+    <EmbeddedResource Include="images\render\groundplane\lightmarble.bmp" LogicalName="images/render/groundplane/lightmarble.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\metals\palladiumwhite14k.png" LogicalName="images/search/filteritems/metals/palladiumwhite14k.png" />
+    <EmbeddedResource Include="images\tile\1240x600\private-20label_metal_white.png" LogicalName="images/tile/1240x600/private%20label_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-religious.png" LogicalName="images/tile/1240x1240/fh-religious.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\illusion.png" LogicalName="images/search/filteritems/designelements/illusion.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-settings-20halos-20--20trims.png" LogicalName="images/search/filteritems/styles/fh-settings%20halos%20&amp;%20trims.png" />
+    <EmbeddedResource Include="images\tile\1240x600\promise_metal_white.png" LogicalName="images/tile/1240x600/promise_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\signet.png" LogicalName="images/search/filteritems/designelements/signet.png" />
+    <EmbeddedResource Include="images\colorswatchcircle.png" LogicalName="images/colorswatchcircle.png" />
+    <EmbeddedResource Include="images\tile\1240x600\solitaires_composite_white.png" LogicalName="images/tile/1240x600/solitaires_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\whitegold9k.png" LogicalName="images/search/filteritems/metals/whitegold9k.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\kits_metal_gray.png" LogicalName="images/tile/1240x1240/kits_metal_gray.png" />
+    <EmbeddedResource Include="images\orderlogocsi.png" LogicalName="images/orderlogocsi.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\720_topazaquablue.jpg" LogicalName="images/search/filteritems/gemcolors/720_topazaquablue.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\metals\yellowgold9k.png" LogicalName="images/search/filteritems/metals/yellowgold9k.png" />
+    <EmbeddedResource Include="images\orderlogoplus.png" LogicalName="images/orderlogoplus.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-settings-20single-20stone.png" LogicalName="images/search/filteritems/styles/fh-settings%20single%20stone.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\three-20stone_composite_white.png" LogicalName="images/tile/1240x1240/three%20stone_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-elements.png" LogicalName="images/tile/1240x600/fh-elements.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-monogram.png" LogicalName="images/search/filteritems/styles/fh-monogram.png" />
+    <EmbeddedResource Include="images\zalesbackground.png" LogicalName="images/zalesbackground.png" />
+    <EmbeddedResource Include="images\render\propmat\crayon.bmp" LogicalName="images/render/propmat/crayon.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\pin-20point.png" LogicalName="images/search/filteritems/gemsettings/pin%20point.png" />
+    <EmbeddedResource Include="images\tile\1240x600\all-20rings_composite_white.png" LogicalName="images/tile/1240x600/all%20rings_composite_white.png" />
+    <EmbeddedResource Include="images\render\groundplane\tanfelt.bmp" LogicalName="images/render/groundplane/tanfelt.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\misc.png" LogicalName="images/search/filteritems/designelements/misc.png" />
+    <EmbeddedResource Include="images\tile\1240x600\three-20stone_composite_white.png" LogicalName="images/tile/1240x600/three%20stone_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\pendants_composite_white.png" LogicalName="images/tile/1240x1240/pendants_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20stone-20red-20box_composite_white.png" LogicalName="images/tile/1240x1240/find%20your%20stone%20red%20box_composite_white.png" />
+    <EmbeddedResource Include="images\win7uachelp.pdf" LogicalName="images/win7uachelp.pdf" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\605_diamondapplegreen.jpg" LogicalName="images/search/filteritems/gemcolors/605_diamondapplegreen.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\745_topazpassionaquablue.jpg" LogicalName="images/search/filteritems/gemcolors/745_topazpassionaquablue.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1000_diamondchampagne.jpg" LogicalName="images/search/filteritems/gemcolors/1000_diamondchampagne.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\520_diamondyellowgolden.jpg" LogicalName="images/search/filteritems/gemcolors/520_diamondyellowgolden.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-bails.png" LogicalName="images/tile/1240x1240/fh-bails.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20gem_composite_white.png" LogicalName="images/tile/1240x600/find%20your%20gem_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\scroll-20--20swirl.png" LogicalName="images/search/filteritems/designelements/scroll%20&amp;%20swirl.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\twist.png" LogicalName="images/search/filteritems/designelements/twist.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\style-20quiz_composite_white.png" LogicalName="images/tile/1240x1240/style%20quiz_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\wedding-20bands_composite_white.png" LogicalName="images/tile/1240x600/wedding%20bands_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\750_topazskyblue.jpg" LogicalName="images/search/filteritems/gemcolors/750_topazskyblue.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20gem-20red-20box_composite_white.png" LogicalName="images/tile/1240x600/find%20your%20gem%20red%20box_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\540_topazpassionhoney.jpg" LogicalName="images/search/filteritems/gemcolors/540_topazpassionhoney.jpg" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_12.png" LogicalName="images/morethanaringimages/morethanaring_12.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_13.png" LogicalName="images/morethanaringimages/morethanaring_13.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_10.png" LogicalName="images/morethanaringimages/morethanaring_10.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_11.png" LogicalName="images/morethanaringimages/morethanaring_11.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\wedding-20bands_composite_gray.png" LogicalName="images/tile/1240x1240/wedding%20bands_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\claw-20prongs.png" LogicalName="images/search/filteritems/gemsettings/claw%20prongs.png" />
+    <EmbeddedResource Include="images\guaranteedpricing.png" LogicalName="images/guaranteedpricing.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\mens_metal_gray.png" LogicalName="images/tile/1240x1240/mens_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\sculptural.png" LogicalName="images/search/filteritems/designelements/sculptural.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\promise_composite_gray.png" LogicalName="images/tile/1240x1240/promise_composite_gray.png" />
+    <EmbeddedResource Include="images\render\propmat\elitegraphite.bmp" LogicalName="images/render/propmat/elitegraphite.bmp" />
+    <EmbeddedResource Include="images\render\propmat\plasticred.bmp" LogicalName="images/render/propmat/plasticred.bmp" />
+    <EmbeddedResource Include="images\colorswatchsquare.png" LogicalName="images/colorswatchsquare.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\250_spinelpink.jpg" LogicalName="images/search/filteritems/gemcolors/250_spinelpink.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20stone_metal_gray.png" LogicalName="images/tile/1240x1240/find%20your%20stone_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\half-20bezel.png" LogicalName="images/search/filteritems/gemsettings/half%20bezel.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\660_tourmalineparaiba.jpg" LogicalName="images/search/filteritems/gemcolors/660_tourmalineparaiba.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\ever-20and-20ever_composite_white.png" LogicalName="images/tile/1240x1240/ever%20and%20ever_composite_white.png" />
+    <EmbeddedResource Include="images\render\propmat\plasticblue.bmp" LogicalName="images/render/propmat/plasticblue.bmp" />
+    <EmbeddedResource Include="images\redx.png" LogicalName="images/redx.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\ball.png" LogicalName="images/search/filteritems/designelements/ball.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\pinched.png" LogicalName="images/search/filteritems/styles/pinched.png" />
+    <EmbeddedResource Include="images\render\metal\metal_yellow.bmp" LogicalName="images/render/metal/metal_yellow.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-sports.png" LogicalName="images/tile/1240x600/fh-sports.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\815_sapphireblue.jpg" LogicalName="images/search/filteritems/gemcolors/815_sapphireblue.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\pendants_metal_white.png" LogicalName="images/tile/1240x600/pendants_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\marquise.png" LogicalName="images/search/filteritems/gemshapes/marquise.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\515_diamondyellow.jpg" LogicalName="images/search/filteritems/gemcolors/515_diamondyellow.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\825_topazlondonblue.jpg" LogicalName="images/search/filteritems/gemcolors/825_topazlondonblue.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\850_topazswissblue.jpg" LogicalName="images/search/filteritems/gemcolors/850_topazswissblue.jpg" />
+    <EmbeddedResource Include="images\sampledesignimage.png" LogicalName="images/sampledesignimage.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\725_topaziceblue.jpg" LogicalName="images/search/filteritems/gemcolors/725_topaziceblue.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20gem_composite_gray.png" LogicalName="images/tile/1240x600/find%20your%20gem_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-shapes.png" LogicalName="images/tile/1240x1240/fh-shapes.png" />
+    <EmbeddedResource Include="images\render\propmat\winter_redel_leatherette_bordeaux.bmp" LogicalName="images/render/propmat/winter_redel_leatherette_bordeaux.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\metals\yellowgold.png" LogicalName="images/search/filteritems/metals/yellowgold.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\930_sapphirepurple.jpg" LogicalName="images/search/filteritems/gemcolors/930_sapphirepurple.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\kits_composite_gray.png" LogicalName="images/tile/1240x600/kits_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\emerald.png" LogicalName="images/search/filteritems/gemshapes/emerald.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\solitaires_composite_gray.png" LogicalName="images/tile/1240x1240/solitaires_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\organic.png" LogicalName="images/search/filteritems/designelements/organic.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\whitegold14kx1.png" LogicalName="images/search/filteritems/metals/whitegold14kx1.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\asscher.png" LogicalName="images/search/filteritems/gemshapes/asscher.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\symbolic.png" LogicalName="images/search/filteritems/designelements/symbolic.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\210_diamondpink.jpg" LogicalName="images/search/filteritems/gemcolors/210_diamondpink.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\fashion-20bands.png" LogicalName="images/search/filteritems/designelements/fashion%20bands.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\art-20nouveau.png" LogicalName="images/search/filteritems/styles/art%20nouveau.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\820_topazglacierblue.jpg" LogicalName="images/search/filteritems/gemcolors/820_topazglacierblue.jpg" />
+    <EmbeddedResource Include="images\render\propmat\american_silk_silky_sensuede_color_driftwood.bmp" LogicalName="images/render/propmat/american_silk_silky_sensuede_color_driftwood.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-misc.png" LogicalName="images/tile/1240x600/fh-misc.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\anniversary_metal_white.png" LogicalName="images/tile/1240x1240/anniversary_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-mix-20--20match.png" LogicalName="images/tile/1240x600/fh-mix%20&amp;%20match.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\340_topazblazingred.jpg" LogicalName="images/search/filteritems/gemcolors/340_topazblazingred.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\engagement_composite_gray.png" LogicalName="images/tile/1240x1240/engagement_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\gemstones_composite_gray.png" LogicalName="images/tile/1240x1240/gemstones_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\220_garnetrhodolitepinkrose.jpg" LogicalName="images/search/filteritems/gemcolors/220_garnetrhodolitepinkrose.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\bail.png" LogicalName="images/search/filteritems/designelements/bail.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20stone-20red-20box_composite_white.png" LogicalName="images/tile/1240x600/find%20your%20stone%20red%20box_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\gypsy.png" LogicalName="images/search/filteritems/gemsettings/gypsy.png" />
+    <EmbeddedResource Include="images\tile\1240x600\3c_composite_white.png" LogicalName="images/tile/1240x600/3c_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\900_amethyst.jpg" LogicalName="images/search/filteritems/gemcolors/900_amethyst.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\all-20rings_composite_gray.png" LogicalName="images/tile/1240x1240/all%20rings_composite_gray.png" />
+    <EmbeddedResource Include="image1.png" LogicalName="image1.png" />
+    <EmbeddedResource Include="images\tile\1240x600\wedding-20bands_metal_gray.png" LogicalName="images/tile/1240x600/wedding%20bands_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\wedding-20bands_metal_white.png" LogicalName="images/tile/1240x1240/wedding%20bands_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\trillion.png" LogicalName="images/search/filteritems/gemshapes/trillion.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\3-20stone.png" LogicalName="images/search/filteritems/designelements/3%20stone.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\770_zirconblue.jpg" LogicalName="images/search/filteritems/gemcolors/770_zirconblue.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-shapes.png" LogicalName="images/tile/1240x600/fh-shapes.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\845_topazpassionteal.jpg" LogicalName="images/search/filteritems/gemcolors/845_topazpassionteal.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\535_sapphireyellow.jpg" LogicalName="images/search/filteritems/gemcolors/535_sapphireyellow.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\curated-20collection_composite_gray.png" LogicalName="images/tile/1240x600/curated%20collection_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-userparts.png" LogicalName="images/tile/1240x600/fh-userparts.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\sports.png" LogicalName="images/search/filteritems/designelements/sports.png" />
+    <EmbeddedResource Include="images\render\gem\blue_topaz.bmp" LogicalName="images/render/gem/blue_topaz.bmp" />
+    <EmbeddedResource Include="images\tile\1240x1240\kits_composite_white.png" LogicalName="images/tile/1240x1240/kits_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-bookman-20flat.png" LogicalName="images/search/filteritems/styles/fh-bookman%20flat.png" />
+    <EmbeddedResource Include="images\tile\1240x600\engagement_metal_gray.png" LogicalName="images/tile/1240x600/engagement_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\bands.png" LogicalName="images/search/filteritems/designelements/bands.png" />
+    <EmbeddedResource Include="images\tile\1240x600\anniversary_metal_gray.png" LogicalName="images/tile/1240x600/anniversary_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\engagement_composite_white.png" LogicalName="images/tile/1240x600/engagement_composite_white.png" />
+    <EmbeddedResource Include="images\installapplication-20x20.png" LogicalName="images/installapplication-20x20.png" />
+    <EmbeddedResource Include="images\customstore.png" LogicalName="images/customstore.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-scrolls.png" LogicalName="images/tile/1240x600/fh-scrolls.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20stone-20red-20box_metal_white.png" LogicalName="images/tile/1240x600/find%20your%20stone%20red%20box_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\private-20label_composite_gray.png" LogicalName="images/tile/1240x600/private%20label_composite_gray.png" />
+    <EmbeddedResource Include="images\randomcolorsquare.png" LogicalName="images/randomcolorsquare.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\cat.png" LogicalName="images/search/filteritems/designelements/cat.png" />
+    <EmbeddedResource Include="images\render\gem\aquamarine.bmp" LogicalName="images/render/gem/aquamarine.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\530_quartzlemon.jpg" LogicalName="images/search/filteritems/gemcolors/530_quartzlemon.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\curated-20collection_composite_white.png" LogicalName="images/tile/1240x1240/curated%20collection_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\mens_composite_white.png" LogicalName="images/tile/1240x600/mens_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\420_opalmexicanfireorange.jpg" LogicalName="images/search/filteritems/gemcolors/420_opalmexicanfireorange.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20gem-20red-20box_metal_white.png" LogicalName="images/tile/1240x1240/find%20your%20gem%20red%20box_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\anniversary_metal_white.png" LogicalName="images/tile/1240x600/anniversary_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\115_sapphirewhite.jpg" LogicalName="images/search/filteritems/gemcolors/115_sapphirewhite.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\promise_composite_white.png" LogicalName="images/tile/1240x600/promise_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\3c_composite_white.png" LogicalName="images/tile/1240x1240/3c_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\300_diamondgarnetred.jpg" LogicalName="images/search/filteritems/gemcolors/300_diamondgarnetred.jpg" />
+    <EmbeddedResource Include="images\splashcountersketchfreehandinternational.png" LogicalName="images/splashcountersketchfreehandinternational.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\640_topazrainforest.jpg" LogicalName="images/search/filteritems/gemcolors/640_topazrainforest.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\270_topazpassionpink.jpg" LogicalName="images/search/filteritems/gemcolors/270_topazpassionpink.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\engagement_composite_white.png" LogicalName="images/tile/1240x1240/engagement_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\european.png" LogicalName="images/search/filteritems/styles/european.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\helmet.png" LogicalName="images/search/filteritems/designelements/helmet.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\630_quartzgreen.jpg" LogicalName="images/search/filteritems/gemcolors/630_quartzgreen.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\style-20quiz_metal_gray.png" LogicalName="images/tile/1240x600/style%20quiz_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\all-20rings_composite_white.png" LogicalName="images/tile/1240x1240/all%20rings_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20stone_composite_gray.png" LogicalName="images/tile/1240x600/find%20your%20stone_composite_gray.png" />
+    <EmbeddedResource Include="images\render\propmat\elitecream.bmp" LogicalName="images/render/propmat/elitecream.bmp" />
+    <EmbeddedResource Include="images\info-color.png" LogicalName="images/info-color.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\800_alexandrite.jpg" LogicalName="images/search/filteritems/gemcolors/800_alexandrite.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20stone_metal_gray.png" LogicalName="images/tile/1240x600/find%20your%20stone_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\chain.png" LogicalName="images/search/filteritems/designelements/chain.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1020_quartzsmoky.jpg" LogicalName="images/search/filteritems/gemcolors/1020_quartzsmoky.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\325_ruby.jpg" LogicalName="images/search/filteritems/gemcolors/325_ruby.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\three-20stone_metal_white.png" LogicalName="images/tile/1240x1240/three%20stone_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\private-20label_metal_white.png" LogicalName="images/tile/1240x1240/private%20label_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\jump-20ring.png" LogicalName="images/search/filteritems/designelements/jump%20ring.png" />
+    <EmbeddedResource Include="images\render\propmat\winter_redel_leatherette_marron.bmp" LogicalName="images/render/propmat/winter_redel_leatherette_marron.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\showall_7.png" LogicalName="images/search/filteritems/gemshapes/showall_7.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-text.png" LogicalName="images/tile/1240x600/fh-text.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\anniversary_composite_white.png" LogicalName="images/tile/1240x1240/anniversary_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-settings-20decorations.png" LogicalName="images/search/filteritems/styles/fh-settings%20decorations.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\305_garnetbrazilian.jpg" LogicalName="images/search/filteritems/gemcolors/305_garnetbrazilian.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\metals\platinum.png" LogicalName="images/search/filteritems/metals/platinum.png" />
+    <EmbeddedResource Include="images\countersketch-20international-20logo-20--20horizontal-20--20transparency.png" LogicalName="images/countersketch%20international%20logo%20-%20horizontal%20-%20transparency.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\side-20channel.png" LogicalName="images/search/filteritems/designelements/side%20channel.png" />
+    <EmbeddedResource Include="images\splashcountersketchfreehand.png" LogicalName="images/splashcountersketchfreehand.png" />
+    <EmbeddedResource Include="images\rendershadow.png" LogicalName="images/rendershadow.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\760_topazturquoisefrosted.jpg" LogicalName="images/search/filteritems/gemcolors/760_topazturquoisefrosted.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\three-20stone_composite_gray.png" LogicalName="images/tile/1240x1240/three%20stone_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\dolphin.png" LogicalName="images/search/filteritems/designelements/dolphin.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\905_czlavender.jpg" LogicalName="images/search/filteritems/gemcolors/905_czlavender.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\wedding-20bands_metal_gray.png" LogicalName="images/tile/1240x1240/wedding%20bands_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\all-20rings_metal_white.png" LogicalName="images/tile/1240x600/all%20rings_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\ever-20and-20ever_metal_gray.png" LogicalName="images/tile/1240x1240/ever%20and%20ever_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\all-20rings_metal_gray.png" LogicalName="images/tile/1240x600/all%20rings_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20gem_metal_white.png" LogicalName="images/tile/1240x600/find%20your%20gem_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\pendants_metal_white.png" LogicalName="images/tile/1240x1240/pendants_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\wedding-20bands_composite_white.png" LogicalName="images/tile/1240x1240/wedding%20bands_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1100_czblack.jpg" LogicalName="images/search/filteritems/gemcolors/1100_czblack.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\ever-20and-20ever_metal_white.png" LogicalName="images/tile/1240x1240/ever%20and%20ever_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\shanks-20mens.png" LogicalName="images/search/filteritems/styles/shanks%20mens.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\rosegold10k.png" LogicalName="images/search/filteritems/metals/rosegold10k.png" />
+    <EmbeddedResource Include="images\render\propmat\american_silk_silky_sensuede_color_bone.bmp" LogicalName="images/render/propmat/american_silk_silky_sensuede_color_bone.bmp" />
+    <EmbeddedResource Include="images\render\gem\diamond.bmp" LogicalName="images/render/gem/diamond.bmp" />
+    <EmbeddedResource Include="images\installlibrary-18x18.png" LogicalName="images/installlibrary-18x18.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\baguette-20tappered.png" LogicalName="images/search/filteritems/gemshapes/baguette%20tappered.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\leaf.png" LogicalName="images/search/filteritems/designelements/leaf.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\335_sapphirered.jpg" LogicalName="images/search/filteritems/gemcolors/335_sapphirered.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20gem-20red-20box_metal_white.png" LogicalName="images/tile/1240x600/find%20your%20gem%20red%20box_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\cathedral.png" LogicalName="images/search/filteritems/designelements/cathedral.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pinched.png" LogicalName="images/search/filteritems/designelements/pinched.png" />
+    <EmbeddedResource Include="images\render\groundplane\unfinishedwood.bmp" LogicalName="images/render/groundplane/unfinishedwood.bmp" />
+    <EmbeddedResource Include="images\tile\1240x1240\3c_metal_white.png" LogicalName="images/tile/1240x1240/3c_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\split.png" LogicalName="images/search/filteritems/designelements/split.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\pendants_composite_gray.png" LogicalName="images/tile/1240x1240/pendants_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\715_spinelaqua.jpg" LogicalName="images/search/filteritems/gemcolors/715_spinelaqua.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\animals.png" LogicalName="images/search/filteritems/designelements/animals.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\rosegold.png" LogicalName="images/search/filteritems/metals/rosegold.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\505_czyellow.jpg" LogicalName="images/search/filteritems/gemcolors/505_czyellow.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\615_emerald.jpg" LogicalName="images/search/filteritems/gemcolors/615_emerald.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\showall_14.png" LogicalName="images/search/filteritems/gemshapes/showall_14.png" />
+    <EmbeddedResource Include="images\rendershadowpendant.png" LogicalName="images/rendershadowpendant.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20gem_metal_gray.png" LogicalName="images/tile/1240x1240/find%20your%20gem_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20circle.png" LogicalName="images/search/filteritems/designelements/pendant%20circle.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\half-20moon.png" LogicalName="images/search/filteritems/gemshapes/half%20moon.png" />
+    <EmbeddedResource Include="images\render\gem\smokeyquartz.bmp" LogicalName="images/render/gem/smokeyquartz.bmp" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_9.png" LogicalName="images/morethanaringimages/morethanaring_9.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_8.png" LogicalName="images/morethanaringimages/morethanaring_8.png" />
+    <EmbeddedResource Include="images\render\propmat\unfinishedwood.bmp" LogicalName="images/render/propmat/unfinishedwood.bmp" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_3.png" LogicalName="images/morethanaringimages/morethanaring_3.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_2.png" LogicalName="images/morethanaringimages/morethanaring_2.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_1.png" LogicalName="images/morethanaringimages/morethanaring_1.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_7.png" LogicalName="images/morethanaringimages/morethanaring_7.png" />
+    <EmbeddedResource Include="images\render\propmat\novasuede_straw.bmp" LogicalName="images/render/propmat/novasuede_straw.bmp" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_6.png" LogicalName="images/morethanaringimages/morethanaring_6.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_5.png" LogicalName="images/morethanaringimages/morethanaring_5.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_4.png" LogicalName="images/morethanaringimages/morethanaring_4.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\bridal_composite_white.png" LogicalName="images/tile/1240x1240/bridal_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\mens_composite_white.png" LogicalName="images/tile/1240x1240/mens_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20stone_composite_gray.png" LogicalName="images/tile/1240x1240/find%20your%20stone_composite_gray.png" />
+    <EmbeddedResource Include="images\render\propmat\whitegold.bmp" LogicalName="images/render/propmat/whitegold.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\promise_composite_gray.png" LogicalName="images/tile/1240x600/promise_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\425_sapphireorange.jpg" LogicalName="images/search/filteritems/gemcolors/425_sapphireorange.jpg" />
+    <EmbeddedResource Include="images\render\groundplane\whitefelt.bmp" LogicalName="images/render/groundplane/whitefelt.bmp" />
+    <EmbeddedResource Include="images\render\gem\tanzanite.bmp" LogicalName="images/render/gem/tanzanite.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\men-s-20band.png" LogicalName="images/search/filteritems/designelements/men's%20band.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-shanks-20with-20bridge.png" LogicalName="images/search/filteritems/styles/fh-shanks%20with%20bridge.png" />
+    <EmbeddedResource Include="images\tile\1240x600\kits_metal_white.png" LogicalName="images/tile/1240x600/kits_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-mix-20--20match.png" LogicalName="images/tile/1240x1240/fh-mix%20&amp;%20match.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-sports.png" LogicalName="images/tile/1240x1240/fh-sports.png" />
+    <EmbeddedResource Include="images\5.0splash.png" LogicalName="images/5.0splash.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\pendants_metal_gray.png" LogicalName="images/tile/1240x1240/pendants_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\channel.png" LogicalName="images/search/filteritems/gemsettings/channel.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\915_diamondpurplishpink.jpg" LogicalName="images/search/filteritems/gemcolors/915_diamondpurplishpink.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-shanks.png" LogicalName="images/tile/1240x600/fh-shanks.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-shanks-20men-s.png" LogicalName="images/search/filteritems/styles/fh-shanks%20men's.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\rosegold18k.png" LogicalName="images/search/filteritems/metals/rosegold18k.png" />
+    <EmbeddedResource Include="images\tile\1240x600\kits_composite_white.png" LogicalName="images/tile/1240x600/kits_composite_white.png" />
+    <EmbeddedResource Include="images\stylelinesshadow.png" LogicalName="images/stylelinesshadow.png" />
+    <EmbeddedResource Include="images\render\propmat\american_silk_silky_sensuede_color_serpentine.bmp" LogicalName="images/render/propmat/american_silk_silky_sensuede_color_serpentine.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\clusters.png" LogicalName="images/search/filteritems/designelements/clusters.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\920_garnetcolorchange.jpg" LogicalName="images/search/filteritems/gemcolors/920_garnetcolorchange.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\style-20quiz_metal_white.png" LogicalName="images/tile/1240x600/style%20quiz_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\wings.png" LogicalName="images/search/filteritems/designelements/wings.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\710_diamondtealblue.jpg" LogicalName="images/search/filteritems/gemcolors/710_diamondtealblue.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-shanks.png" LogicalName="images/tile/1240x1240/fh-shanks.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\plate.png" LogicalName="images/search/filteritems/designelements/plate.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\style-20quiz_composite_gray.png" LogicalName="images/tile/1240x1240/style%20quiz_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\settings-20single-20stone.png" LogicalName="images/search/filteritems/styles/settings%20single%20stone.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20accented.png" LogicalName="images/search/filteritems/designelements/pendant%20accented.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\935_sapphireviolet.jpg" LogicalName="images/search/filteritems/gemcolors/935_sapphireviolet.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\metals\whitegold18k.png" LogicalName="images/search/filteritems/metals/whitegold18k.png" />
+    <EmbeddedResource Include="images\countersketch-20international-20logo-20--20block-20--20transparency.png" LogicalName="images/countersketch%20international%20logo%20-%20block%20-%20transparency.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-collars-20--20beads.png" LogicalName="images/tile/1240x1240/fh-collars%20&amp;%20beads.png" />
+    <EmbeddedResource Include="images\splashcountersketchplus.png" LogicalName="images/splashcountersketchplus.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\765_tourmalineblueparaiba.jpg" LogicalName="images/search/filteritems/gemcolors/765_tourmalineblueparaiba.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-bails.png" LogicalName="images/tile/1240x600/fh-bails.png" />
+    <EmbeddedResource Include="images\csiabout.png" LogicalName="images/csiabout.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\settings-20multi-20stone.png" LogicalName="images/search/filteritems/styles/settings%20multi%20stone.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\style-20quiz_metal_white.png" LogicalName="images/tile/1240x1240/style%20quiz_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\yellowgold18k.png" LogicalName="images/search/filteritems/metals/yellowgold18k.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\family_metal_white.png" LogicalName="images/tile/1240x1240/family_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\glamorous.png" LogicalName="images/search/filteritems/styles/glamorous.png" />
+    <EmbeddedResource Include="images\tile\1240x600\engagement_metal_white.png" LogicalName="images/tile/1240x600/engagement_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\ever-20and-20ever_metal_white.png" LogicalName="images/tile/1240x600/ever%20and%20ever_metal_white.png" />
+    <EmbeddedResource Include="images\countersketch-20splash.png" LogicalName="images/countersketch%20splash.png" />
+    <EmbeddedResource Include="images\countersketch-20splash.jpg" LogicalName="images/countersketch%20splash.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\promise_composite_white.png" LogicalName="images/tile/1240x1240/promise_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20geometric.png" LogicalName="images/search/filteritems/designelements/pendant%20geometric.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-repeating-20elements.png" LogicalName="images/tile/1240x600/fh-repeating%20elements.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20stone_composite_white.png" LogicalName="images/tile/1240x600/find%20your%20stone_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\bridal_composite_white.png" LogicalName="images/tile/1240x600/bridal_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\gemstones_metal_white.png" LogicalName="images/tile/1240x600/gemstones_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\anniversary_composite_gray.png" LogicalName="images/tile/1240x600/anniversary_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\bridal_metal_white.png" LogicalName="images/tile/1240x1240/bridal_metal_white.png" />
+    <EmbeddedResource Include="images\render\gem\reddishorange.bmp" LogicalName="images/render/gem/reddishorange.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\gem-20only.png" LogicalName="images/search/filteritems/designelements/gem%20only.png" />
+    <EmbeddedResource Include="images\tile\1240x600\promise_metal_gray.png" LogicalName="images/tile/1240x600/promise_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1025_tourmalinebronze.jpg" LogicalName="images/search/filteritems/gemcolors/1025_tourmalinebronze.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\family_composite_white.png" LogicalName="images/tile/1240x600/family_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\silver.png" LogicalName="images/search/filteritems/metals/silver.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\promise_metal_white.png" LogicalName="images/tile/1240x1240/promise_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\freehand_metal_white.png" LogicalName="images/tile/1240x600/freehand_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\private-20label_composite_gray.png" LogicalName="images/tile/1240x1240/private%20label_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pattern.png" LogicalName="images/search/filteritems/designelements/pattern.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\2-20stone.png" LogicalName="images/search/filteritems/designelements/2%20stone.png" />
+    <EmbeddedResource Include="images\tile\1240x600\bridal_composite_gray.png" LogicalName="images/tile/1240x600/bridal_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fashion_composite_white.png" LogicalName="images/tile/1240x600/fashion_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1015_garnetandradite.jpg" LogicalName="images/search/filteritems/gemcolors/1015_garnetandradite.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\promise_metal_gray.png" LogicalName="images/tile/1240x1240/promise_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\gemstones_composite_white.png" LogicalName="images/tile/1240x600/gemstones_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\settings-20cluster-20top-20plates.png" LogicalName="images/search/filteritems/styles/settings%20cluster%20top%20plates.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\830_topazpassionglacierblue.jpg" LogicalName="images/search/filteritems/gemcolors/830_topazpassionglacierblue.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\solitaires_composite_white.png" LogicalName="images/tile/1240x1240/solitaires_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\bridal_metal_white.png" LogicalName="images/tile/1240x600/bridal_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\curated-20collection_metal_gray.png" LogicalName="images/tile/1240x1240/curated%20collection_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\calf.png" LogicalName="images/search/filteritems/gemshapes/calf.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\whitegold10k.png" LogicalName="images/search/filteritems/metals/whitegold10k.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\310_garnetmozambique.jpg" LogicalName="images/search/filteritems/gemcolors/310_garnetmozambique.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\fashion_metal_white.png" LogicalName="images/tile/1240x600/fashion_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\shape.png" LogicalName="images/search/filteritems/designelements/shape.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\settings-20decorations.png" LogicalName="images/search/filteritems/styles/settings%20decorations.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\private-20label_composite_white.png" LogicalName="images/tile/1240x1240/private%20label_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\100_czwhite.jpg" LogicalName="images/search/filteritems/gemcolors/100_czwhite.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\3c_composite_gray.png" LogicalName="images/tile/1240x1240/3c_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\bar.png" LogicalName="images/search/filteritems/designelements/bar.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\840_topazpassionparadiseblue.jpg" LogicalName="images/search/filteritems/gemcolors/840_topazpassionparadiseblue.jpg" />
+    <EmbeddedResource Include="images\imagemenu.png" LogicalName="images/imagemenu.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\bridal_metal_gray.png" LogicalName="images/tile/1240x1240/bridal_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\gemstones_metal_gray.png" LogicalName="images/tile/1240x600/gemstones_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\gemstones_composite_gray.png" LogicalName="images/tile/1240x600/gemstones_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\yellowgold10k.png" LogicalName="images/search/filteritems/metals/yellowgold10k.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-symbolic.png" LogicalName="images/tile/1240x1240/fh-symbolic.png" />
+    <EmbeddedResource Include="images\render\groundplane\redfabric.bmp" LogicalName="images/render/groundplane/redfabric.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\style-20quiz_composite_white.png" LogicalName="images/tile/1240x600/style%20quiz_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\510_diamondcape.jpg" LogicalName="images/search/filteritems/gemcolors/510_diamondcape.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\740_topazparaiba.jpg" LogicalName="images/search/filteritems/gemcolors/740_topazparaiba.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\bezel.png" LogicalName="images/search/filteritems/gemsettings/bezel.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\continuum.png" LogicalName="images/search/filteritems/metals/continuum.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\anniversary_composite_gray.png" LogicalName="images/tile/1240x1240/anniversary_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\200_czpink.jpg" LogicalName="images/search/filteritems/gemcolors/200_czpink.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\600_bloodstone.jpg" LogicalName="images/search/filteritems/gemcolors/600_bloodstone.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\ribbon.png" LogicalName="images/search/filteritems/designelements/ribbon.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\730_topazicebluefrosted.jpg" LogicalName="images/search/filteritems/gemcolors/730_topazicebluefrosted.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\side-20detail.png" LogicalName="images/search/filteritems/designelements/side%20detail.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\contemporary.png" LogicalName="images/search/filteritems/styles/contemporary.png" />
+    <EmbeddedResource Include="images\render\groundplane\bluefabric.bmp" LogicalName="images/render/groundplane/bluefabric.bmp" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-userparts.png" LogicalName="images/tile/1240x1240/fh-userparts.png" />
+    <EmbeddedResource Include="images\render\gem\yellow_sapphire.bmp" LogicalName="images/render/gem/yellow_sapphire.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\freehand_metal_gray.png" LogicalName="images/tile/1240x600/freehand_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\whitegold.png" LogicalName="images/search/filteritems/metals/whitegold.png" />
+    <EmbeddedResource Include="images\render\gem\yellow_topaz.bmp" LogicalName="images/render/gem/yellow_topaz.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\styles\shanks-20bands.png" LogicalName="images/search/filteritems/styles/shanks%20bands.png" />
+    <EmbeddedResource Include="images\render\groundplane\canvas.bmp" LogicalName="images/render/groundplane/canvas.bmp" />
+    <EmbeddedResource Include="images\render\propmat\tuscanmarble.bmp" LogicalName="images/render/propmat/tuscanmarble.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\showall_9.png" LogicalName="images/search/filteritems/gemsettings/showall_9.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\heart.png" LogicalName="images/search/filteritems/designelements/heart.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\kits_metal_white.png" LogicalName="images/tile/1240x1240/kits_metal_white.png" />
+    <EmbeddedResource Include="images\icon.png" LogicalName="images/icon.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\freehand_composite_gray.png" LogicalName="images/tile/1240x1240/freehand_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\650_tourmalinegreen.jpg" LogicalName="images/search/filteritems/gemcolors/650_tourmalinegreen.jpg" />
+    <EmbeddedResource Include="images\splashcountersketchbridal.png" LogicalName="images/splashcountersketchbridal.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\255_topazcomplexion.jpg" LogicalName="images/search/filteritems/gemcolors/255_topazcomplexion.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\styles\vintage.png" LogicalName="images/search/filteritems/styles/vintage.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\gemstones_metal_white.png" LogicalName="images/tile/1240x1240/gemstones_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\mobius.png" LogicalName="images/search/filteritems/styles/mobius.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\palladium.png" LogicalName="images/search/filteritems/metals/palladium.png" />
+    <EmbeddedResource Include="images\render\groundplane\linearfalloffblackblue.bmp" LogicalName="images/render/groundplane/linearfalloffblackblue.bmp" />
+    <EmbeddedResource Include="images\installlibrary-20x20.png" LogicalName="images/installlibrary-20x20.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\repeating-20element.png" LogicalName="images/search/filteritems/designelements/repeating%20element.png" />
+    <EmbeddedResource Include="images\tile\1240x600\wedding-20bands_metal_white.png" LogicalName="images/tile/1240x600/wedding%20bands_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\shank.png" LogicalName="images/search/filteritems/designelements/shank.png" />
+    <EmbeddedResource Include="images\tile\1240x600\three-20stone_metal_white.png" LogicalName="images/tile/1240x600/three%20stone_metal_white.png" />
+    <EmbeddedResource Include="images\render\gem\orangeyellow.bmp" LogicalName="images/render/gem/orangeyellow.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\610_diamonddarkgreen.jpg" LogicalName="images/search/filteritems/gemcolors/610_diamonddarkgreen.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\simple.png" LogicalName="images/search/filteritems/designelements/simple.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\mens_metal_white.png" LogicalName="images/tile/1240x1240/mens_metal_white.png" />
+    <EmbeddedResource Include="images\render\propmat\rosegold.bmp" LogicalName="images/render/propmat/rosegold.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\pendants_metal_gray.png" LogicalName="images/tile/1240x600/pendants_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\3c_metal_gray.png" LogicalName="images/tile/1240x1240/3c_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\625_peridot.jpg" LogicalName="images/search/filteritems/gemcolors/625_peridot.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\pear.png" LogicalName="images/search/filteritems/gemshapes/pear.png" />
+    <EmbeddedResource Include="images\render\propmat\elitelatte.bmp" LogicalName="images/render/propmat/elitelatte.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\fashion_metal_gray.png" LogicalName="images/tile/1240x600/fashion_metal_gray.png" />
+    <EmbeddedResource Include="images\info-carat.png" LogicalName="images/info-carat.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\all-20rings_metal_white.png" LogicalName="images/tile/1240x1240/all%20rings_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\solitaire.png" LogicalName="images/search/filteritems/designelements/solitaire.png" />
+    <EmbeddedResource Include="images\render\propmat\eliteonyx.bmp" LogicalName="images/render/propmat/eliteonyx.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\5-20stone.png" LogicalName="images/search/filteritems/designelements/5%20stone.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\245_sapphirepink.jpg" LogicalName="images/search/filteritems/gemcolors/245_sapphirepink.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\735_topazparadiseblue.jpg" LogicalName="images/search/filteritems/gemcolors/735_topazparadiseblue.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\fashion_metal_white.png" LogicalName="images/tile/1240x1240/fashion_metal_white.png" />
+    <EmbeddedResource Include="images\orderlogobridal.png" LogicalName="images/orderlogobridal.png" />
+    <EmbeddedResource Include="images\render\gem\yellow_citrine.bmp" LogicalName="images/render/gem/yellow_citrine.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\kits_metal_gray.png" LogicalName="images/tile/1240x600/kits_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\freehand_composite_gray.png" LogicalName="images/tile/1240x600/freehand_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\milgrain.png" LogicalName="images/search/filteritems/designelements/milgrain.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\three-20stone_metal_gray.png" LogicalName="images/tile/1240x1240/three%20stone_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\military.png" LogicalName="images/search/filteritems/designelements/military.png" />
+    <EmbeddedResource Include="images\tile\1240x600\private-20label_composite_white.png" LogicalName="images/tile/1240x600/private%20label_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\classic.png" LogicalName="images/search/filteritems/styles/classic.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\style-20quiz_metal_gray.png" LogicalName="images/tile/1240x1240/style%20quiz_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\3c_metal_gray.png" LogicalName="images/tile/1240x600/3c_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\500_citrineyellow.jpg" LogicalName="images/search/filteritems/gemcolors/500_citrineyellow.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\freehand_metal_white.png" LogicalName="images/tile/1240x1240/freehand_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\style-20quiz_composite_gray.png" LogicalName="images/tile/1240x600/style%20quiz_composite_gray.png" />
+    <EmbeddedResource Include="images\activation.ico" LogicalName="images/activation.ico" />
+    <EmbeddedResource Include="images\render\groundplane\linearfalloffblackred.bmp" LogicalName="images/render/groundplane/linearfalloffblackred.bmp" />
+    <EmbeddedResource Include="images\render\metal\metal_white.bmp" LogicalName="images/render/metal/metal_white.bmp" />
+    <EmbeddedResource Include="images\tile\1240x1240\private-20label_metal_gray.png" LogicalName="images/tile/1240x1240/private%20label_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\415_garnetspessartite.jpg" LogicalName="images/search/filteritems/gemcolors/415_garnetspessartite.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\text.png" LogicalName="images/search/filteritems/designelements/text.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\440_topazmysticsunrise.jpg" LogicalName="images/search/filteritems/gemcolors/440_topazmysticsunrise.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\240_sapphirepadparadscha.jpg" LogicalName="images/search/filteritems/gemcolors/240_sapphirepadparadscha.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20stone-20red-20box_composite_gray.png" LogicalName="images/tile/1240x600/find%20your%20stone%20red%20box_composite_gray.png" />
+    <EmbeddedResource Include="images\render\groundplane\linearfalloff.bmp" LogicalName="images/render/groundplane/linearfalloff.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\setting.png" LogicalName="images/search/filteritems/designelements/setting.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1115_onyx.jpg" LogicalName="images/search/filteritems/gemcolors/1115_onyx.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\styles\settings-20halo-20cluster.png" LogicalName="images/search/filteritems/styles/settings%20halo%20cluster.png" />
+    <EmbeddedResource Include="images\tile\1240x600\family_metal_white.png" LogicalName="images/tile/1240x600/family_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\275_tourmalinepink.jpg" LogicalName="images/search/filteritems/gemcolors/275_tourmalinepink.jpg" />
+    <EmbeddedResource Include="images\saveanimationmask.png" LogicalName="images/saveanimationmask.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\pave-.png" LogicalName="images/search/filteritems/gemsettings/pave'.png" />
+    <EmbeddedResource Include="images\render\propmat\butterumgranite.bmp" LogicalName="images/render/propmat/butterumgranite.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\floral.png" LogicalName="images/search/filteritems/designelements/floral.png" />
+    <EmbeddedResource Include="images\customlogo2.png" LogicalName="images/customlogo2.png" />
+    <EmbeddedResource Include="images\render\gem\alexandrite.bmp" LogicalName="images/render/gem/alexandrite.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20journey.png" LogicalName="images/search/filteritems/designelements/pendant%20journey.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-text.png" LogicalName="images/tile/1240x1240/fh-text.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\knot.png" LogicalName="images/search/filteritems/designelements/knot.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\greengold10k.png" LogicalName="images/search/filteritems/metals/greengold10k.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-shanks-20eternity-20--20anniversary.png" LogicalName="images/search/filteritems/styles/fh-shanks%20eternity%20&amp;%20anniversary.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-settings-20cluster-20top-20plates.png" LogicalName="images/search/filteritems/styles/fh-settings%20cluster%20top%20plates.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\260_topazmysticpurepink.jpg" LogicalName="images/search/filteritems/gemcolors/260_topazmysticpurepink.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-floral.png" LogicalName="images/tile/1240x1240/fh-floral.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\yellowgold22k.png" LogicalName="images/search/filteritems/metals/yellowgold22k.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\kits_composite_gray.png" LogicalName="images/tile/1240x1240/kits_composite_gray.png" />
+    <EmbeddedResource Include="images\morethanaringimages\morethanaring_blank.png" LogicalName="images/morethanaringimages/morethanaring_blank.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\family_composite_gray.png" LogicalName="images/tile/1240x1240/family_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\monogram.png" LogicalName="images/search/filteritems/styles/monogram.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\skull.png" LogicalName="images/search/filteritems/designelements/skull.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\none.png" LogicalName="images/search/filteritems/gemsettings/none.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fashion_composite_gray.png" LogicalName="images/tile/1240x600/fashion_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\bezel-20set.png" LogicalName="images/search/filteritems/designelements/bezel%20set.png" />
+    <EmbeddedResource Include="images\render\metal\metal_rose.bmp" LogicalName="images/render/metal/metal_rose.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-arial.png" LogicalName="images/search/filteritems/styles/fh-arial.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-floral.png" LogicalName="images/tile/1240x600/fh-floral.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-collars-20--20beads.png" LogicalName="images/tile/1240x600/fh-collars%20&amp;%20beads.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1030_tourmalineearth.jpg" LogicalName="images/search/filteritems/gemcolors/1030_tourmalineearth.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\gemstones_metal_gray.png" LogicalName="images/tile/1240x1240/gemstones_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\solitaires_metal_white.png" LogicalName="images/tile/1240x600/solitaires_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\family_metal_gray.png" LogicalName="images/tile/1240x1240/family_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-symbolic.png" LogicalName="images/tile/1240x600/fh-symbolic.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\all-20rings_metal_gray.png" LogicalName="images/tile/1240x1240/all%20rings_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\120_topazwhite.jpg" LogicalName="images/search/filteritems/gemcolors/120_topazwhite.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20gem-20red-20box_composite_gray.png" LogicalName="images/tile/1240x1240/find%20your%20gem%20red%20box_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\family_metal_gray.png" LogicalName="images/tile/1240x600/family_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\230_morganite.jpg" LogicalName="images/search/filteritems/gemcolors/230_morganite.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\freehand_metal_gray.png" LogicalName="images/tile/1240x1240/freehand_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\solitaires_composite_gray.png" LogicalName="images/tile/1240x600/solitaires_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\weave.png" LogicalName="images/search/filteritems/designelements/weave.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20gem-20red-20box_metal_gray.png" LogicalName="images/tile/1240x600/find%20your%20gem%20red%20box_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\greengold14k.png" LogicalName="images/search/filteritems/metals/greengold14k.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\prong.png" LogicalName="images/search/filteritems/gemsettings/prong.png" />
+    <EmbeddedResource Include="images\tile\1240x600\mens_composite_gray.png" LogicalName="images/tile/1240x600/mens_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\pendants_composite_white.png" LogicalName="images/tile/1240x600/pendants_composite_white.png" />
+    <EmbeddedResource Include="images\render\gem\blue_sapphire.bmp" LogicalName="images/render/gem/blue_sapphire.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\halo.png" LogicalName="images/search/filteritems/designelements/halo.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\sq.-20cushion.png" LogicalName="images/search/filteritems/gemshapes/sq.%20cushion.png" />
+    <EmbeddedResource Include="images\tile\1240x600\3c_metal_white.png" LogicalName="images/tile/1240x600/3c_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\nature.png" LogicalName="images/search/filteritems/designelements/nature.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20stone_metal_white.png" LogicalName="images/tile/1240x600/find%20your%20stone_metal_white.png" />
+    <EmbeddedResource Include="images\zalesabout.png" LogicalName="images/zalesabout.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fashion_metal_gray.png" LogicalName="images/tile/1240x1240/fashion_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\405_citrinemadeira.jpg" LogicalName="images/search/filteritems/gemcolors/405_citrinemadeira.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\styles\art-20deco.png" LogicalName="images/search/filteritems/styles/art%20deco.png" />
+    <EmbeddedResource Include="images\render\groundplane\granite.bmp" LogicalName="images/render/groundplane/granite.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\infinity.png" LogicalName="images/search/filteritems/designelements/infinity.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-shanks-20bands.png" LogicalName="images/search/filteritems/styles/fh-shanks%20bands.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\showall_13.png" LogicalName="images/search/filteritems/designelements/showall_13.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\wire.png" LogicalName="images/search/filteritems/designelements/wire.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20gem_composite_gray.png" LogicalName="images/tile/1240x1240/find%20your%20gem_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x600\pendants_composite_gray.png" LogicalName="images/tile/1240x600/pendants_composite_gray.png" />
+    <EmbeddedResource Include="images\colorswatchsquare2.png" LogicalName="images/colorswatchsquare2.png" />
+    <EmbeddedResource Include="images\5.0intlsplash.png" LogicalName="images/5.0intlsplash.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\435_topazpreciousimperial.jpg" LogicalName="images/search/filteritems/gemcolors/435_topazpreciousimperial.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\bridge-20accent.png" LogicalName="images/search/filteritems/gemsettings/bridge%20accent.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\baguette.png" LogicalName="images/search/filteritems/gemshapes/baguette.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\paw.png" LogicalName="images/search/filteritems/designelements/paw.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\835_topazpassioniceblue.jpg" LogicalName="images/search/filteritems/gemcolors/835_topazpassioniceblue.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\engagement_metal_white.png" LogicalName="images/tile/1240x1240/engagement_metal_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\metals\greengold18k.png" LogicalName="images/search/filteritems/metals/greengold18k.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20halo.png" LogicalName="images/search/filteritems/designelements/pendant%20halo.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\anniversary_metal_gray.png" LogicalName="images/tile/1240x1240/anniversary_metal_gray.png" />
+    <EmbeddedResource Include="images\render\propmat\american_silk_silky_sensuede_color_platinum.bmp" LogicalName="images/render/propmat/american_silk_silky_sensuede_color_platinum.bmp" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-newparts.png" LogicalName="images/tile/1240x1240/fh-newparts.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1005_diamondcognac.jpg" LogicalName="images/search/filteritems/gemcolors/1005_diamondcognac.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\all-20rings_composite_gray.png" LogicalName="images/tile/1240x600/all%20rings_composite_gray.png" />
+    <EmbeddedResource Include="images\render\groundplane\bamboo.bmp" LogicalName="images/render/groundplane/bamboo.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\700_aquamarine.jpg" LogicalName="images/search/filteritems/gemcolors/700_aquamarine.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\belcher.png" LogicalName="images/search/filteritems/gemsettings/belcher.png" />
+    <EmbeddedResource Include="images\render\propmat\earthwash.bmp" LogicalName="images/render/propmat/earthwash.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\element.png" LogicalName="images/search/filteritems/designelements/element.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\400_citrine.jpg" LogicalName="images/search/filteritems/gemcolors/400_citrine.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\micro.png" LogicalName="images/search/filteritems/designelements/micro.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\decorative.png" LogicalName="images/search/filteritems/designelements/decorative.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-religious.png" LogicalName="images/tile/1240x600/fh-religious.png" />
+    <EmbeddedResource Include="images\render\gem\darkgarnet.bmp" LogicalName="images/render/gem/darkgarnet.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\215_diamondpinkpure.jpg" LogicalName="images/search/filteritems/gemcolors/215_diamondpinkpure.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\curated-20collection_metal_gray.png" LogicalName="images/tile/1240x600/curated%20collection_metal_gray.png" />
+    <EmbeddedResource Include="images\render\propmat\novasuede_periwinkle.bmp" LogicalName="images/render/propmat/novasuede_periwinkle.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\bright-cut.png" LogicalName="images/search/filteritems/gemsettings/bright-cut.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\heart.png" LogicalName="images/search/filteritems/gemshapes/heart.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-chain.png" LogicalName="images/tile/1240x600/fh-chain.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-shanks-20remounts.png" LogicalName="images/search/filteritems/styles/fh-shanks%20remounts.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\205_czpinklight.jpg" LogicalName="images/search/filteritems/gemcolors/205_czpinklight.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-settings-20halo-20cluster.png" LogicalName="images/search/filteritems/styles/fh-settings%20halo%20cluster.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\modern.png" LogicalName="images/search/filteritems/styles/modern.png" />
+    <EmbeddedResource Include="images\tile\1240x600\find-20your-20gem_metal_gray.png" LogicalName="images/tile/1240x600/find%20your%20gem_metal_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\mens_composite_gray.png" LogicalName="images/tile/1240x1240/mens_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\asymmetrical.png" LogicalName="images/search/filteritems/designelements/asymmetrical.png" />
+    <EmbeddedResource Include="images\render\groundplane\whitematte.bmp" LogicalName="images/render/groundplane/whitematte.bmp" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-settings.png" LogicalName="images/tile/1240x1240/fh-settings.png" />
+    <EmbeddedResource Include="images\tile\1240x600\ever-20and-20ever_metal_gray.png" LogicalName="images/tile/1240x600/ever%20and%20ever_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20cluster.png" LogicalName="images/search/filteritems/designelements/pendant%20cluster.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-wire-20rope-20knots.png" LogicalName="images/tile/1240x1240/fh-wire%20rope%20knots.png" />
+    <EmbeddedResource Include="images\render\propmat\lightmarble.bmp" LogicalName="images/render/propmat/lightmarble.bmp" />
+    <EmbeddedResource Include="images\info-clarity.png" LogicalName="images/info-clarity.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\princess.png" LogicalName="images/search/filteritems/gemshapes/princess.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\duck.png" LogicalName="images/search/filteritems/designelements/duck.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\810_iolite.jpg" LogicalName="images/search/filteritems/gemcolors/810_iolite.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\horse.png" LogicalName="images/search/filteritems/designelements/horse.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20stone-20red-20box_composite_gray.png" LogicalName="images/tile/1240x1240/find%20your%20stone%20red%20box_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\curated-20collection_composite_gray.png" LogicalName="images/tile/1240x1240/curated%20collection_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20gem_metal_white.png" LogicalName="images/tile/1240x1240/find%20your%20gem_metal_white.png" />
+    <EmbeddedResource Include="images\render\gem\ruby.bmp" LogicalName="images/render/gem/ruby.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\pendant-20heart.png" LogicalName="images/search/filteritems/designelements/pendant%20heart.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\show-20all.png" LogicalName="images/search/filteritems/styles/show%20all.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-animals.png" LogicalName="images/tile/1240x1240/fh-animals.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20stone_metal_white.png" LogicalName="images/tile/1240x1240/find%20your%20stone_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\mens_metal_gray.png" LogicalName="images/tile/1240x600/mens_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\755_topazteal.jpg" LogicalName="images/search/filteritems/gemcolors/755_topazteal.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\ever-20and-20ever_composite_gray.png" LogicalName="images/tile/1240x600/ever%20and%20ever_composite_gray.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fashion_composite_white.png" LogicalName="images/tile/1240x1240/fashion_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\flower.png" LogicalName="images/search/filteritems/designelements/flower.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\shared-20prong.png" LogicalName="images/search/filteritems/gemsettings/shared%20prong.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-elements.png" LogicalName="images/tile/1240x1240/fh-elements.png" />
+    <EmbeddedResource Include="images\render\gem\emerald.bmp" LogicalName="images/render/gem/emerald.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\cushion.png" LogicalName="images/search/filteritems/gemshapes/cushion.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1110_marcasite.jpg" LogicalName="images/search/filteritems/gemcolors/1110_marcasite.jpg" />
+    <EmbeddedResource Include="images\installapplication-18x18.png" LogicalName="images/installapplication-18x18.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\330_rubymadagascar.jpg" LogicalName="images/search/filteritems/gemcolors/330_rubymadagascar.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\styles\shanks-20remounts.png" LogicalName="images/search/filteritems/styles/shanks%20remounts.png" />
+    <EmbeddedResource Include="images\render\groundplane\blackreflective.bmp" LogicalName="images/render/groundplane/blackreflective.bmp" />
+    <EmbeddedResource Include="images\blackwhitegradient.png" LogicalName="images/blackwhitegradient.png" />
+    <EmbeddedResource Include="images\tile\1240x600\mens_metal_white.png" LogicalName="images/tile/1240x600/mens_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-settings.png" LogicalName="images/tile/1240x600/fh-settings.png" />
+    <EmbeddedResource Include="images\tile\1240x600\three-20stone_metal_gray.png" LogicalName="images/tile/1240x600/three%20stone_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\bar-20set.png" LogicalName="images/search/filteritems/gemsettings/bar%20set.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\940_tanzanite.jpg" LogicalName="images/search/filteritems/gemcolors/940_tanzanite.jpg" />
+    <EmbeddedResource Include="images\render\propmat\novasuede_olive.bmp" LogicalName="images/render/propmat/novasuede_olive.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\645_tourmalinechrome.jpg" LogicalName="images/search/filteritems/gemcolors/645_tourmalinechrome.jpg" />
+    <EmbeddedResource Include="images\gemorder_imagenotavailable.png" LogicalName="images/gemorder_imagenotavailable.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\545_topazpreciousgolden.jpg" LogicalName="images/search/filteritems/gemcolors/545_topazpreciousgolden.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\dog.png" LogicalName="images/search/filteritems/designelements/dog.png" />
+    <EmbeddedResource Include="images\search\filteritems\styles\fh-bookman-20chiseled.png" LogicalName="images/search/filteritems/styles/fh-bookman%20chiseled.png" />
+    <EmbeddedResource Include="images\tile\1240x600\fh-animals.png" LogicalName="images/tile/1240x600/fh-animals.png" />
+    <EmbeddedResource Include="images\render\gem\lightgarnet.bmp" LogicalName="images/render/gem/lightgarnet.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\cabochon.png" LogicalName="images/search/filteritems/designelements/cabochon.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\french-20set.png" LogicalName="images/search/filteritems/designelements/french%20set.png" />
+    <EmbeddedResource Include="images\render\propmat\yellowgold.bmp" LogicalName="images/render/propmat/yellowgold.bmp" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1105_diamondblack.jpg" LogicalName="images/search/filteritems/gemcolors/1105_diamondblack.jpg" />
+    <EmbeddedResource Include="images\info-cut.png" LogicalName="images/info-cut.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\445_tourmalinegolden.jpg" LogicalName="images/search/filteritems/gemcolors/445_tourmalinegolden.jpg" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\decorative-20setting.png" LogicalName="images/search/filteritems/designelements/decorative%20setting.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\freehand_composite_white.png" LogicalName="images/tile/1240x1240/freehand_composite_white.png" />
+    <EmbeddedResource Include="images\render\gem\amethyst.bmp" LogicalName="images/render/gem/amethyst.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\ever-20and-20ever_composite_white.png" LogicalName="images/tile/1240x600/ever%20and%20ever_composite_white.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemsettings\bead-20set.png" LogicalName="images/search/filteritems/gemsettings/bead%20set.png" />
+    <EmbeddedResource Include="images\render\propmat\bamboo.bmp" LogicalName="images/render/propmat/bamboo.bmp" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20stone-20red-20box_metal_white.png" LogicalName="images/tile/1240x1240/find%20your%20stone%20red%20box_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\curated-20collection_metal_white.png" LogicalName="images/tile/1240x600/curated%20collection_metal_white.png" />
+    <EmbeddedResource Include="images\zalesicon.png" LogicalName="images/zalesicon.png" />
+    <EmbeddedResource Include="images\zalesicon.ico" LogicalName="images/zalesicon.ico" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\basket.png" LogicalName="images/search/filteritems/designelements/basket.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\solitaires_metal_gray.png" LogicalName="images/tile/1240x1240/solitaires_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\designelements\gems.png" LogicalName="images/search/filteritems/designelements/gems.png" />
+    <EmbeddedResource Include="images\orderlogorc.png" LogicalName="images/orderlogorc.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\1010_diamondtoplightbrown.jpg" LogicalName="images/search/filteritems/gemcolors/1010_diamondtoplightbrown.jpg" />
+    <EmbeddedResource Include="images\tile\1240x600\3c_composite_gray.png" LogicalName="images/tile/1240x600/3c_composite_gray.png" />
+    <EmbeddedResource Include="images\render\propmat\marble_veined6.bmp" LogicalName="images/render/propmat/marble_veined6.bmp" />
+    <EmbeddedResource Include="images\render\propmat\marble_veined1.bmp" LogicalName="images/render/propmat/marble_veined1.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\wedding-20bands_composite_gray.png" LogicalName="images/tile/1240x600/wedding%20bands_composite_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemshapes\radiant.png" LogicalName="images/search/filteritems/gemshapes/radiant.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\find-20your-20gem_composite_white.png" LogicalName="images/tile/1240x1240/find%20your%20gem_composite_white.png" />
+    <EmbeddedResource Include="images\render\gem\pink_sapphire.bmp" LogicalName="images/render/gem/pink_sapphire.bmp" />
+    <EmbeddedResource Include="images\tile\1240x600\bridal_metal_gray.png" LogicalName="images/tile/1240x600/bridal_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\655_tourmalineolive.jpg" LogicalName="images/search/filteritems/gemcolors/655_tourmalineolive.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\fh-chain.png" LogicalName="images/tile/1240x1240/fh-chain.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\320_opalmexicanfirered.jpg" LogicalName="images/search/filteritems/gemcolors/320_opalmexicanfirered.jpg" />
+    <EmbeddedResource Include="images\tile\1240x1240\solitaires_metal_white.png" LogicalName="images/tile/1240x1240/solitaires_metal_white.png" />
+    <EmbeddedResource Include="images\tile\1240x1240\gemstones_composite_white.png" LogicalName="images/tile/1240x1240/gemstones_composite_white.png" />
+    <EmbeddedResource Include="images\tile\1240x600\solitaires_metal_gray.png" LogicalName="images/tile/1240x600/solitaires_metal_gray.png" />
+    <EmbeddedResource Include="images\search\filteritems\gemcolors\805_diamondblue.jpg" LogicalName="images/search/filteritems/gemcolors/805_diamondblue.jpg" />
+    <EmbeddedResource Include="Model.Entities.CounterSketchLibrary.CounterSketchLibrary.csdl" LogicalName="Model.Entities.CounterSketchLibrary.CounterSketchLibrary.csdl" />
+    <EmbeddedResource Include="Model.Entities.CounterSketchLibrary.CounterSketchLibrary.msl" LogicalName="Model.Entities.CounterSketchLibrary.CounterSketchLibrary.msl" />
+    <EmbeddedResource Include="Model.Entities.CounterSketchLibrary.CounterSketchLibrary.ssdl" LogicalName="Model.Entities.CounterSketchLibrary.CounterSketchLibrary.ssdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Xpf.Grid.v16.1.Extensions">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/DevExpress.Xpf.Grid.v16.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Wpf">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CefSharp.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFMitsuControls">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/WPFMitsuControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Surface.Presentation">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/Microsoft.Surface.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v16.1">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/DevExpress.Xpf.Core.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Stuller.Web.API.v2.Models">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/Stuller.Web.API.v2.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v16.1">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/DevExpress.Xpf.LayoutControl.v16.1.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EventHelperLibrary">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/EventHelperLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIoClientDotNet">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/SocketIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpBITS.Base">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/SharpBITS.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Data" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Localization">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Management" />
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="EngineIoClientDotNet">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/EngineIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System.Printing" />
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="LZMA">
+      <HintPath>analysis/extracted/installer/pf64/CounterSketch Studio/LZMA.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

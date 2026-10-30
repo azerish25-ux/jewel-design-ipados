@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="GV.CounterSketch.Studio.Controls.WindowDebug" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:GV_CounterSketch="clr-namespace:GV.CounterSketch" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="theWindow" Title="Application Events" Width="800" Height="600" AllowsTransparency="True" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" ResizeMode="NoResize" SizeToContent="Height" SnapsToDevicePixels="True" Style="{DynamicResource WindowStyleModalCS4}" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <Style x:Key="ListBoxStyleEvents" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ListBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <Border Name="Bd" Padding="1" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                <ScrollViewer Padding="{TemplateBinding Control.Padding}" Focusable="False" FontFamily="Helvetica Neue LT Std">
+                  <ItemsPresenter Margin="4" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+                </ScrollViewer>
+              </Border>
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Property="Border.Background" />
+                </Trigger>
+                <Trigger Property="ItemsControl.IsGrouping" Value="True">
+                  <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel Name="mainDock" Margin="5">
+    <VisualStateManager.CustomVisualStateManager>
+      <ic:ExtendedVisualStateManager />
+    </VisualStateManager.CustomVisualStateManager>
+    <DockPanel Name="ActionButtons" Height="30" VerticalAlignment="Bottom" Dock="Bottom">
+      <Button Name="btnClose" Width="100" Height="25" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static l:Strings.Close}" DockPanel.Dock="Right" IsCancel="True" Template="{DynamicResource CS4ButtonRounded}" Click="BtnCloseClick" />
+      <Button Name="btnReport" Width="100" Height="25" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Send Report" DockPanel.Dock="Right" IsCancel="True" Template="{DynamicResource CS4ButtonRounded}" Click="BtnReportClick" />
+      <Button Name="btnCopyText" Width="100" Height="25" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Copy Text" DockPanel.Dock="Right" IsCancel="True" Template="{DynamicResource CS4ButtonRounded}" Click="btnCopyText_Click" />
+      <Button Name="btnRefresh" Width="100" Height="25" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Refresh" DockPanel.Dock="Right" IsCancel="True" Template="{DynamicResource CS4ButtonRounded}" Click="btnRefresh_Click" />
+      <DockPanel VerticalAlignment="Center">
+        <CheckBox Name="chkErrorsOnly" Margin="2" Click="chkErrorsOnly_Click" />
+        <TextBlock VerticalAlignment="Center" Text="Show Errors Only" />
+      </DockPanel>
+    </DockPanel>
+    <Path Name="Bar" Height="1" Margin="0,10,0,5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Data="M20,339.5 L438.18925,339.5" DockPanel.Dock="Bottom" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" />
+    <Grid Height="515" Margin="0,6,0,0">
+      <Controls:Spinner x:Name="spinner" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" />
+      <ListBox Name="listBox" Margin="4" Background="#00000000" Foreground="#FFFFFFFF" Style="{DynamicResource ListBoxStyleEvents}" BorderBrush="{x:Null}" ItemsSource="{Binding LogEntries, ElementName=theWindow, Mode=Default}">
+        <UIElement.CommandBindings>
+          <CommandBinding Command="ApplicationCommands.Copy" CanExecute="CopyCmdCanExecute" Executed="CopyCmdExecuted" />
+        </UIElement.CommandBindings>
+      </ListBox>
+    </Grid>
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup x:Name="VisualStateGroup">
+        <VisualStateGroup.Transitions>
+          <VisualTransition GeneratedDuration="00:00:00.5000000" />
+        </VisualStateGroup.Transitions>
+        <VisualState x:Name="Default" />
+        <VisualState x:Name="Loading">
+          <Storyboard>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="spinner" Storyboard.TargetProperty="(UIElement.Visibility)" Duration="00:00:00.0010000">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}" />
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="listBox" Storyboard.TargetProperty="(UIElement.Opacity)" Duration="00:00:00.0010000">
+              <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="btnRefresh" Storyboard.TargetProperty="(UIElement.Visibility)" Duration="00:00:00.0010000">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="btnReport" Storyboard.TargetProperty="(UIElement.Visibility)" Duration="00:00:00.0010000">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="btnCopyText" Storyboard.TargetProperty="(UIElement.Visibility)" Duration="00:00:00.0010000">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}" />
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="chkErrorsOnly" Storyboard.TargetProperty="(UIElement.Visibility)" Duration="00:00:00.0010000">
+              <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}" />
+            </ObjectAnimationUsingKeyFrames>
+          </Storyboard>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+  </DockPanel>
+</Window>

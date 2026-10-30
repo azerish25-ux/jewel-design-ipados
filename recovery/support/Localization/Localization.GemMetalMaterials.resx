@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>1.3</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><data name="Gem_GarnetColorChange" xml:space="preserve"><value>Garnet Color Change</value></data>
+  <data name="Metal_KaratGreenGoldHasACombinationOfCopperAndSilv" xml:space="preserve"><value>Karat Green Gold Has A Combination Of Copper And Silver As Its Main Alloy Addition With A Higher Percentage Of Silver Than Copper To Give It The Green Tint. This Metal Has A Softer Hardness Due To The Higher Silver Content.</value></data>
+  <data name="Metal_One4KGoldContains14PartsGoldAnd10PartsAnothe" xml:space="preserve"><value>14K Gold Contains 14 Parts Gold And 10 Parts Another Metal(S), Making It 58.3% Gold. A Setting Made With 14K Gold Will Hold Stones A Little Better Than A Higher Karat Because The Higher Percent Of Alloy Makes It A Harder Metal.</value></data>
+  <data name="Metal_ContinuumSterlingSilverIs925PureSilverItIsCo" xml:space="preserve"><value>Continuum™ Sterling Silver Is  .925 Pure Silver . It Is Considered A European-Friendly Sterling Silver, As It Contains No Nickel. It Is A Grade 1 Bright White Metal. This Sterling Silver Has An As-Cast Hardness That Allows Setting Of High Quality Stones .This, Combined With Superior Oxidizing And Tarnish Resistance, Allows For A Finish That Will Last Longer.</value></data>
+  <data name="Metal_DesignedEspeciallyForTheEuropeanMarketThisAl" xml:space="preserve"><value>Designed Especially For The European Market This Alloy Meets The UK Standard And Requirements For 9Kt White.</value></data>
+  <data name="Gem_TourmalineGolden" xml:space="preserve"><value>Tourmaline Golden</value></data>
+  <data name="Gem_DiamondTealBlue" xml:space="preserve"><value>Diamond Teal Blue</value></data>
+  <data name="Gem_AlongWithSardonyxPeridotIsTheBirthstoneForAugu" xml:space="preserve"><value>Along With Sardonyx, Peridot Is The Birthstone For August And Celebrates The 1St And 16Th Anniversary. Found In Lava, Meteorites, And Deep In The Earth’S Mantle, The Hawaiian People Believed Peridot To Be The Tears Of The Goddess Pele, And The Egyptians Called It The “Gem Of The Sun.” The Romans Called It “Evening Emerald” Because Its Brilliant Color Did Not Fade In Lamp Light, But Glowed In The Evening Hours. Peridot Was Thought To Help Dreams Become Reality.</value></data>
+  <data name="Gem_CitrineMadeira" xml:space="preserve"><value>Citrine Madeira </value></data>
+  <data name="Gem_TopazMysticSunrise" xml:space="preserve"><value>Topaz Mystic Sunrise</value></data>
+  <data name="Gem_SometimesReferredToAsPrasioliteTheColorOfGreen" xml:space="preserve"><value>Sometimes Referred To As Prasiolite, The Color Of Green Quartz Recalls The New Leaves Of Spring. One Of The Earliest Stones To Be Venerated, The Beauty Of Quartz Led People To Believe That This Versatile Stone Was Ice, Transformed Into An Eternal Gem By The Gods. Green Quartz Is A Breath Of Fresh Color, Verdantly Gorgeous At A Reasonable Price.</value></data>
+  <data name="Metal_Palladium950" xml:space="preserve"><value>Palladium .950 </value></data>
+  <data name="Gem_AquamarineIsTheBirthstoneForMarchAlongWithBloo" xml:space="preserve"><value>Aquamarine Is The Birthstone For March, Along With Bloodstone, And Is The Gemstone For The 16Th And 19Th Anniversaries. With Color Reminiscent Of Tropical Oceans, It’S No Surprise This Gemstone’S Name Derives From Latin For “Water Of The Sea.” The Romans Believed Aquamarine Absorbed And Protected Young Love, Making It An Ideal Romantic Gift.</value></data>
+  <data name="Gem_TourmalineOlive" xml:space="preserve"><value>Tourmaline Olive</value></data>
+  <data name="Gem_TourmalineEarth" xml:space="preserve"><value>Tourmaline Earth</value></data>
+  <data name="Gem_TourmalineGreen" xml:space="preserve"><value>Tourmaline Green</value></data>
+  <data name="Gem_TheSparkleOfDiamondsAtAnAffordablePriceLabCrea" xml:space="preserve"><value>The Sparkle Of Diamonds At An Affordable Price, Lab-Created Cubic Zirconia Add Drama To A Design Without The Large Monetary Commitment, Freeing You To Entertain Lots Of Exciting Options.</value></data>
+  <data name="Gem_DiamondDarkGreen" xml:space="preserve"><value>Diamond Dark Green</value></data>
+  <data name="Gem_Marcasite" xml:space="preserve"><value>Marcasite </value></data>
+  <data name="Gem_DiamondChampagne" xml:space="preserve"><value>Diamond Champagne </value></data>
+  <data name="Metal_One8KYellowGold" xml:space="preserve"><value>18K Yellow Gold </value></data>
+  <data name="Gem_SmokyQuartzRepresentsThe70ThAnniversarySubtlet" xml:space="preserve"><value>Smoky Quartz Represents The 70Th Anniversary. Subtlety Is The Appeal Of This Lustrous Stone. With Its Voluptuous Autumn Color And Understated Elegance, This Sophisticated Gemstone Makes A Powerful Statement. The Victorians, Who Understood The Rich Expressiveness Of Restraint, Used Smoky Quartz Frequently In Jewelry. The Delicious Color Of Smoky Quartz Makes It A Perfect Accessory For All Seasons.</value></data>
+  <data name="Gem_GarnetMozambique" xml:space="preserve"><value>Garnet Mozambique </value></data>
+  <data name="Gem_TopazHasAnExceptionallyWideColorRangeThatInclu" xml:space="preserve"><value>Topaz Has An Exceptionally Wide Color Range That Includes Various Tones And Saturations Of Brown, Blue, Green, Yellow, Orange, Red, Pink, And Purple. As The Name Suggests, Complexion Topaz Is A Light Peach Shade Reminiscent Of A Healthy Natural Glow.</value></data>
+  <data name="Metal_Two2KaratYellowGoldHasACombinationOfCopperAn" xml:space="preserve"><value>22 Karat Yellow Gold Has A Combination Of Copper And Silver As Its Main Alloy Addition And Is Softer Than 18 Karat Yellow Due To Its Higher Gold Content. This Metal Has A Warm-Rich Yellow Color.</value></data>
+  <data name="Metal_Two2KYellowGold" xml:space="preserve"><value>22K Yellow Gold </value></data>
+  <data name="Gem_TopazIceBlueFrosted" xml:space="preserve"><value>Topaz Ice Blue Frosted</value></data>
+  <data name="Gem_BlueTopazIsABirthstoneForDecemberTheGemOfThe4T" xml:space="preserve"><value>Blue Topaz Is A Birthstone For December, The Gem Of The 4Th Anniversary And The State Gemstone Of Texas.  From The Pure Pastel Blue Of An Alpine Glacier, The Glow Of The Mid-Summer Sky, And The Aquatic Hue Of The Deepest Ocean, Refreshing Blue Topaz Brings A Breath Of Fresh Air To Contemporary Jewelry Designs. Blue Topaz Rivals Aquamarine In Color And Charm. Found In Greater Abundance, It Offers Superb Clarity And Luminous Color At A Fraction Of The Cost.</value></data>
+  <data name="Gem_AlthoughTheNameSapphireIsDerivedFromTheGreekMe" xml:space="preserve"><value>Although The Name Sapphire Is Derived From The Greek Meaning “Blue,” Sapphires, Like The Sky Can Dazzle In Many Colors. One Of The Rarest Is The Beautifully Feminine Pink Variety. Ranging In Color From A Delicate Pastel To A Vibrantly Tropical Pink, This Winner Is Romantic And Vibrant, Which Explains Its Continuing Rise In Popularity.</value></data>
+  <data name="Gem_TsavoriteIsABeautifulExampleOfHowNotAllGarnets" xml:space="preserve"><value>Tsavorite Is A Beautiful Example Of How Not All Garnets Are Red. Ranging From A Light, Verdant Green To Rich, Deep Forest, Tsavorite Was Discovered In 1967 In Tanzania. Enthusiastically Promoted By Tiffany &amp; Co., It Was Tiffany’S President, Sir Henry Platt, Who Suggested The Name “Ysavorite”, In Honor Of Tsavo National Park In Kenya.</value></data>
+  <data name="Gem_OnyxIsOneOfTheGemsForThe7ThAnniversaryTheVelve" xml:space="preserve"><value>Onyx Is One Of The Gems For The 7Th Anniversary. The Velvety Black Of Onyx Makes An Unmistakable Statement Of Power, Authority And Sophistication. A Dramatic Background For Brilliantly Colored Gems, Onyx Can Also Stand Alone For A Bold And Richly Self-Assured Look, And Is A Natural For Masculine Jewelry.</value></data>
+  <data name="Metal_One0KWhiteGold" xml:space="preserve"><value>10K White Gold </value></data>
+  <data name="Metal_Platinum950" xml:space="preserve"><value>Platinum .950 </value></data>
+  <data name="Gem_DiamondAppleGreen" xml:space="preserve"><value>Diamond Apple Green</value></data>
+  <data name="Gem_TopazTurquoiseFrosted" xml:space="preserve"><value>Topaz Turquoise Frosted</value></data>
+  <data name="Gem_Citrine" xml:space="preserve"><value>Citrine </value></data>
+  <data name="Gem_TopazPreciousGolden" xml:space="preserve"><value>Topaz Precious Golden</value></data>
+  <data name="Gem_CitrineIsNovemberSBirthstoneAlongsideTopazAndT" xml:space="preserve"><value>Citrine Is November’S Birthstone, Alongside Topaz, And The Gem For The 11Th And  13Th Anniversary. French For “Lemon“, Citrine Ranges In Color From Yellow, Light Brown To A Honey-Brown Hue. Citrine Was Once Believed To Protect Against Everything From Snake Venom To Wicked Thoughts. Today Its Radiant Color Is Associated With Joyfulness, Youth And Vitality.</value></data>
+  <data name="Gem_SapphirePurple" xml:space="preserve"><value>Sapphire Purple </value></data>
+  <data name="Gem_CZLavender" xml:space="preserve"><value>CZ Lavender </value></data>
+  <data name="Gem_GarnetSpessartite" xml:space="preserve"><value>Garnet Spessartite </value></data>
+  <data name="Gem_AlthoughRareSpinelsAreAnAffordableGemstoneNotW" xml:space="preserve"><value>Although Rare, Spinels Are An Affordable Gemstone. Not Widely Known To Consumers, Black Spinel Is A Fantastic Choice For Those Seeking The Drama Of Black-Stone Jewelry. Without The Price Tag Of Black Diamonds And Tougher Than Onyx, Its Naturally-Profound Color Makes The Unusual Black Spinel A Marvelous Choice For Bold Jewelry Designs.</value></data>
+  <data name="Gem_AlthoughRareSpinelsAreAnAffordableGemstoneThat" xml:space="preserve"><value>Although Rare, Spinels Are An Affordable Gemstone That Mark The 65Th Anniversary. Because Most People Associate Spinel With The Synthetic Variety Often Found In Mass-Market Jewelry, The Savvy Consumer Can Enjoy The Beauty Of This Pretty Feminine Gemstone At A Bargain Price.</value></data>
+  <data name="Gem_BlueTopazIsABirthstoneForDecemberAlongWithTurq" xml:space="preserve"><value>Blue Topaz Is A Birthstone For December, Along With Turquoise, Tanzanite, And Blue Zircon, And Is The Gem Of The 4Th Anniversary.  From The Pure Pastel Blue Of An Alpine Glacier, The Glow Of The Mid-Summer Sky, And The Aquatic Hue Of The Deepest Ocean, Refreshing Blue Topaz Brings A Breath Of Fresh Air To Contemporary Jewelry Designs. Blue Topaz Rivals Aquamarine In Color And Charm. Found In Greater Abundance, It Offers Superb Clarity And Luminous Color At A Fraction Of The Cost.</value></data>
+  <data name="Gem_RoseDeFranceQuartzIsTheLightestShadeOfAmethyst" xml:space="preserve"><value>Rose De France Quartz Is The Lightest Shade Of Amethyst - Lingering In The Pale Lavender To Lilac Range. Less Costly Than Its Darker Amethyst Cousins, It Has Recently Been Vaulted To Popularity By Fashion Colors And Trends. Rose De France Quartz Works Well Whether In Earrings, Rings, Bracelets, Or As A Pendant.</value></data>
+  <data name="Metal_PalladiumIsInTheSameFamilyAsPlatinumButItIsS" xml:space="preserve"><value>Palladium Is In The Same Family As Platinum, But It Is Softer And Much Less Expensive. Similar Light Weight As Silver And Whiter In Color Than Platinum Or White Gold, Palladium Is Also Hypoallergenic.</value></data>
+  <data name="Metal_NineKYellowGold" xml:space="preserve"><value>9K Yellow Gold </value></data>
+  <data name="Gem_SapphirePadparadscha" xml:space="preserve"><value>Sapphire Padparadscha</value></data>
+  <data name="Gem_SapphireWhite" xml:space="preserve"><value>Sapphire White </value></data>
+  <data name="Gem_OneOfTheMostVibrantOfGemsItBringsALifeToJewelr" xml:space="preserve"><value>One Of The Most Vibrant Of Gems, It Brings A Life To Jewelry That Demands Attention. Its Blazing Reddish-Orange Color Communicates Security And Success, As Well As Health And Vitality. Treasured By The Maya And Aztecs, Mexico Produces This Transparent Opal And Regards It As The National Gemstone. Unlike White Opal, Fire Opal Is Usually Faceted.</value></data>
+  <data name="Gem_TheStoneOfThe21StAnniversaryIoliteSNameWasDeri" xml:space="preserve"><value>The Stone Of The 21St Anniversary, Iolite’S Name Was Derived From The Greek Word For “Violet”. An Interesting Property Of Iolite Is Its Color Change With The Direction Of The Light That Illuminates It. Because Of This Property, The Vikings Used Iolite On Their Voyages To Determine The Direction Of The Sun In Dense Fog, Overcast Conditions And Even When The Sun Was Below The Horizon, Giving It The Name Vikings’ Compass.</value></data>
+  <data name="Gem_QuartzLemon" xml:space="preserve"><value>Quartz Lemon </value></data>
+  <data name="Gem_QuartzGreen" xml:space="preserve"><value>Quartz Green </value></data>
+  <data name="Gem_QuartzSmoky" xml:space="preserve"><value>Quartz Smoky </value></data>
+  <data name="Gem_GarnetRhodolite" xml:space="preserve"><value>Garnet Rhodolite </value></data>
+  <data name="Gem_SapphireYellow" xml:space="preserve"><value>Sapphire Yellow </value></data>
+  <data name="Gem_ABrightPinkColorWithLotsOfSparkleAtAnAffordabl" xml:space="preserve"><value>A Bright Pink Color With Lots Of Sparkle At An Affordable Price. Lab-Created Cubic Zirconia Adds Drama To A Design Without A Large Monetary Commitment, Freeing You To Entertain Lots Of Exciting Options.</value></data>
+  <data name="Metal_One4KPalladiumWhiteGold" xml:space="preserve"><value>14K Palladium White Gold </value></data>
+  <data name="Gem_SapphireViolet" xml:space="preserve"><value>Sapphire Violet </value></data>
+  <data name="Metal_One4KYellowGold" xml:space="preserve"><value>14K Yellow Gold </value></data>
+  <data name="Gem_Description" xml:space="preserve"><value>Description</value></data>
+  <data name="Gem_TopazTeal" xml:space="preserve"><value>Topaz Teal </value></data>
+  <data name="Gem_Diamond" xml:space="preserve"><value>Diamond </value></data>
+  <data name="Metal_One8KWhiteGold" xml:space="preserve"><value>18K White Gold </value></data>
+  <data name="Gem_TopazGlacierBlue" xml:space="preserve"><value>Topaz Glacier Blue</value></data>
+  <data name="Gem_Aquamarine" xml:space="preserve"><value>Aquamarine </value></data>
+  <data name="Gem_CitrineIsABirthstoneForNovemberAlongWithTopazA" xml:space="preserve"><value>Citrine Is A Birthstone For November, Along With Topaz, And A Gem Used To Celebrate The 11Th And 13Th Anniversaries. Madeira Citrine Is Suffused With Tones Of Amber, Orange And Honeyed Caramel, And Is Named After The Legendary Sherry Wines Of The Madeira Islands.</value></data>
+  <data name="Gem_WithTheOrangeyColorsOfATropicalSunsetSpessarti" xml:space="preserve"><value>With The Orangey Colors Of A Tropical Sunset, Spessartite Garnet Is A Relative Newcomer To The Jewelry World. Often Called Mandarin Garnet, This Attractive Gemstone Was Once So Rare It Was Once Available Only To Collectors.</value></data>
+  <data name="Gem_DiamondGarnetRed" xml:space="preserve"><value>Diamond Garnet Red</value></data>
+  <data name="Gem_CZBlack" xml:space="preserve"><value>CZ Black </value></data>
+  <data name="Gem_CZWhite" xml:space="preserve"><value>CZ White </value></data>
+  <data name="Gem_TourmalinePink" xml:space="preserve"><value>Tourmaline Pink</value></data>
+  <data name="Gem_RubyIsTheBirthstoneForJulyAndIsAlsoTheGemForTh" xml:space="preserve"><value>Ruby Is The Birthstone For July And Is Also The Gem For The 15Th And 40Th Anniversaries. Blood-Red, Fire-Red, The Color Of Many Fruits When Ripe…  Ruby Is The Color Of Life Itself. It Is The Most Valuable Variety Of The Corundum Mineral Species, And Can Command The Highest Per-Carat Price Of Any Colored Stone. In Ancient Sanskrit, Ruby Was Called Ratnaraj, Or "King Of Precious Stones."</value></data>
+  <data name="Metal_One0KGreenGold" xml:space="preserve"><value>10K Green Gold</value></data>
+  <data name="Gem_SapphirePink" xml:space="preserve"><value>Sapphire Pink </value></data>
+  <data name="Gem_SapphireBlue" xml:space="preserve"><value>Sapphire Blue </value></data>
+  <data name="Gem_TopazPreciousImperial" xml:space="preserve"><value>Topaz Precious Imperial</value></data>
+  <data name="Gem_DiamondKL" xml:space="preserve"><value>Diamond KL </value></data>
+  <data name="Metal_WithStullersX1WhiteGoldYouGetPremiumWhiteCol" xml:space="preserve"><value>With Stuller's X-1 White Gold®, You Get Premium White Color That Provides The Look Of Platinum At The Cost Of Gold. You No Longer Need To Rhodium Plate In Order To Achieve A Bright White Surface Finish.</value></data>
+  <data name="Gem_EmeraldIsTheBirthstoneForMayAndTheGemstoneForT" xml:space="preserve"><value>Emerald Is The Birthstone For May And The Gemstone For The 20Th, 35Th And 55Th Anniversaries. The Source Of Many Legends And Mysteries, Emeralds Were Gathered In Cleopatra's Mines Near The Red Sea, Worshipped By The Incas And Aztecs, And Treasured By The Maharajas Of India.</value></data>
+  <data name="Gem_DiamondPink" xml:space="preserve"><value>Diamond Pink </value></data>
+  <data name="Gem_DiamondBlue" xml:space="preserve"><value>Diamond Blue </value></data>
+  <data name="Gem_DiamondCape" xml:space="preserve"><value>Diamond Cape </value></data>
+  <data name="Gem_Tanzanite" xml:space="preserve"><value>Tanzanite </value></data>
+  <data name="Gem_SapphireOrange" xml:space="preserve"><value>Sapphire Orange </value></data>
+  <data name="Gem_DiamondPurple" xml:space="preserve"><value>Diamond Purple </value></data>
+  <data name="Gem_PreciousTopazIsABirthstoneForNovemberAlongWith" xml:space="preserve"><value>Precious Topaz Is A Birthstone For November, Along With Citrine, And Imperial Topaz Is The Gem Of The 23Rd Anniversary. Topaz Has An Exceptionally Wide Color Range That Includes Various Tones And Saturations Of Brown, Blue, Green, Yellow, Orange, Red, Pink, And Purple.</value></data>
+  <data name="Gem_PreciousTopazIsABirthstoneForNovemberAlongside" xml:space="preserve"><value>Precious Topaz Is A Birthstone For November, Alongside Citrine, And A Gemstone For The 4Th And 19Th Wedding Anniversaries. Topaz Has An Exceptionally Wide Color Range That Includes Various Tones And Saturations Of Brown, Blue, Green, Yellow, Orange, Red, Pink, And Purple.</value></data>
+  <data name="Gem_RainforestTopazGemstonesHaveBeenEnhancedUsingA" xml:space="preserve"><value>Rainforest Topaz Gemstones Have Been Enhanced Using A Standard Treatment Called "Vacuum Deposition" Where A Coating Of Titanium Is Applied To The Pavilion Of The Gem Through The Use Of Electricity, Thus Giving The Stone An Ethereal Iridescent Color, Sparkling In Lush, Tropical Shades Of The Blue-Green Spectrum.</value></data>
+  <data name="Metal_One8KGreenGold" xml:space="preserve"><value>18K Green Gold </value></data>
+  <data name="Gem_BrightYellowColorWithLotsOfSparkleAtAnAffordab" xml:space="preserve"><value>Bright Yellow Color With Lots Of Sparkle At An Affordable Price. Lab-Created Cubic Zirconia Adds Drama To A Design Without A Large Monetary Commitment, Freeing You To Entertain Lots Of Exciting Options.</value></data>
+  <data name="Metal_One0KYellowGold" xml:space="preserve"><value>10K Yellow Gold </value></data>
+  <data name="Gem_BeforeCubicZirconiaWhiteSapphireWasOftenUsedAs" xml:space="preserve"><value>Before Cubic Zirconia, White Sapphire Was Often Used As A Substitute For Diamonds. Now, White Sapphire Is Coming Into Its Own. Its Unique Beauty Lies In Purely Reflecting White Light.</value></data>
+  <data name="Metal_One0KRoseGold" xml:space="preserve"><value>10K Rose Gold </value></data>
+  <data name="Gem_TopazPoppy" xml:space="preserve"><value>Topaz Poppy </value></data>
+  <data name="Gem_TopazWhite" xml:space="preserve"><value>Topaz White </value></data>
+  <data name="Gem_TopazPassionGlacierBlue" xml:space="preserve"><value>Topaz Passion Glacier Blue</value></data>
+  <data name="Gem_RoseQuartzEmbodiesSophisticationAndEleganceTou" xml:space="preserve"><value>Rose Quartz Embodies Sophistication And Elegance. Touched By The Palest Shade Of Pink And Prized For Its Subtlety, It Has Always Been A Popular And Feminine Choice. Also Called The Heart Stone, Rose Quartz May Have Been Used As A Love Token As Early As 600 B.C. And Is Still An Important Talisman Of Romantic Relationships.</value></data>
+  <data name="Gem_DiamondYellow" xml:space="preserve"><value>Diamond Yellow </value></data>
+  <data name="Gem_Morganite" xml:space="preserve"><value>Morganite </value></data>
+  <data name="Gem_ALightPinkColorWithLotsOfSparkleAtAnAffordable" xml:space="preserve"><value>A Light Pink Color With Lots Of Sparkle At An Affordable Price. Lab-Created Cubic Zirconia Adds Drama To A Design Without A Large Monetary Commitment, Freeing You To Entertain Lots Of Exciting Options.</value></data>
+  <data name="Gem_TopazIceBlue" xml:space="preserve"><value>Topaz Ice Blue</value></data>
+  <data name="Gem_TopazLondonBlue" xml:space="preserve"><value>Topaz London Blue</value></data>
+  <data name="Gem_Bloodstone" xml:space="preserve"><value>Bloodstone </value></data>
+  <data name="Gem_InspiredByThePassionForColorTheBeautyOfNatureA" xml:space="preserve"><value>Inspired By The Passion For Color, The Beauty Of Nature And Innovative Technology, SWAROVSKI GEMS™ Passion Topaz Brings An Added Touch Of Something Special To Fine Jewelry. SWAROVSKI GEMS™ Passion Topaz Applies An Environmentally Friendly Form Of Enhancement To Genuine White Topaz, Creating An Iridescent And Colorful Quality To The Stone. The Patented Treatment Is Permanent And Durable, Offering An Affordable Gem With Vast Color Possibilities.</value></data>
+  <data name="Gem_SpinelBlack" xml:space="preserve"><value>Spinel Black</value></data>
+  <data name="Gem_JetBlackColorWithLotsOfSparkleAtAnAffordablePr" xml:space="preserve"><value>Jet-Black Color With Lots Of Sparkle At An Affordable Price. Lab-Created Cubic Zirconia Adds Drama To A Design Without A Large Monetary Commitment, Freeing You To Entertain Lots Of Exciting Options.</value></data>
+  <data name="Gem_DiamondCognac" xml:space="preserve"><value>Diamond Cognac </value></data>
+  <data name="Gem_OpalMexicanFireRed" xml:space="preserve"><value>Opal Mexican Fire Red</value></data>
+  <data name="Gem_TopazPassionIceBlue" xml:space="preserve"><value>Topaz Passion Ice Blue</value></data>
+  <data name="Gem_Peridot" xml:space="preserve"><value>Peridot </value></data>
+  <data name="Gem_GarnetTsavorite" xml:space="preserve"><value>Garnet Tsavorite </value></data>
+  <data name="Gem_RubyMadagascar" xml:space="preserve"><value>Ruby Madagascar </value></data>
+  <data name="Gem_TopazComplexion" xml:space="preserve"><value>Topaz Complexion</value></data>
+  <data name="Gem_Emerald" xml:space="preserve"><value>Emerald </value></data>
+  <data name="Metal_One4KGreenGold" xml:space="preserve"><value>14K Green Gold </value></data>
+  <data name="Gem_SpinelPink" xml:space="preserve"><value>Spinel Pink </value></data>
+  <data name="Gem_SpinelAqua" xml:space="preserve"><value>Spinel Aqua </value></data>
+  <data name="Gem_TheTraditionalBirthstoneForMarchAlongWithAquam" xml:space="preserve"><value>The Traditional Birthstone For March, Along With Aquamarine, The Combination Of Profound Deep Green Spangled With Vivid Spots Of Red Earns This Unusual Stone The Gothically-Romantic Name Of Bloodstone. The Startling Color Contrast Has Spawned Many Legends, But Today It Is Valued For Its Unique Aesthetic Appeal.</value></data>
+  <data name="Gem_MetallicShineAndRichNeutralColorMakeMarcasiteT" xml:space="preserve"><value>Metallic Shine And Rich, Neutral Color Make Marcasite The Essential Accent Stone. Gleaming Like Finely Polished Silver, Marcasite Was Highly Favored By Art Deco Designers Of The 20S And 30S. Today, The Streamlined Geometrics Of That Period Are Enjoying Renewed Popularity, As Customers Seek The Glamour Of Hollywood’S “Film Noir” Era And Its Sophisticated Styles.</value></data>
+  <data name="Gem_TopazAquaBlue" xml:space="preserve"><value>Topaz Aqua Blue</value></data>
+  <data name="Gem_TopazParaiba" xml:space="preserve"><value>Topaz Paraiba </value></data>
+  <data name="Gem_PreciousTopazIsABirthstoneForNovemberWhileImpe" xml:space="preserve"><value>Precious Topaz Is A Birthstone For November, While Imperial Topaz Is The Gem Of The 23Rd Anniversary. As The Name Describes, Blazing Red Topaz Has A Rich, Vibrant Fiery-Red Coloration.</value></data>
+  <data name="Metal_KaratRoseGoldIsMadeUsingAMixOfPureGoldWithAl" xml:space="preserve"><value>Karat Rose Gold Is Made Using A Mix Of Pure Gold With Alloys Including Copper. The Copper Provides The Rose-Reddish Color.</value></data>
+  <data name="Gem_TheFirstGemQualityMorganiteWasDiscoveredInMada" xml:space="preserve"><value>The First Gem Quality Morganite Was Discovered In Madagascar And Was Named In Honor Of J.P. Morgan, The Famous Banker And Avid Mineral Collector. Blends Of Soft Pink And Orange Are Typical Natural Morganite Colors. This Highly Brilliant Stone Is Ideal For Romantic Designs That Highlight Its Feminine Beauty And Soft Pink Shade.</value></data>
+  <data name="Gem_TopazBlazingRed" xml:space="preserve"><value>Topaz Blazing Red</value></data>
+  <data name="Gem_AlexandriteIsOftenCitedAsABirthstoneForJuneAlo" xml:space="preserve"><value>Alexandrite Is Often Cited As A Birthstone For June, Along With Both Pearl And Moonstone, And Is The Gemstone Of The 45Th And 55Th Wedding Anniversaries. This Fascinating Gemstone’S Color Changes Depending On The Light Source: From Bluish-Green In Daylight, To Purplish-Red In Incandescent.</value></data>
+  <data name="Gem_OftenTakenForPinkSapphiresPinkSpinelsAreAMoreA" xml:space="preserve"><value>Often Taken For Pink Sapphires, Pink Spinels Are A More Affordable Alternative, Even Though They Are Surprisingly More Rare. Because Most People Associate Spinel With The Synthetic Variety Often Found In Mass-Market Jewelry, The Savvy Consumer Can Enjoy The Beauty Of This Pretty Feminine Gemstone At A Bargain Price.</value></data>
+  <data name="Metal_One4KWhiteGold" xml:space="preserve"><value>14K White Gold </value></data>
+  <data name="Gem_TopazPassionParadiseBlue" xml:space="preserve"><value>Topaz Passion Paradise Blue</value></data>
+  <data name="Gem_OneOfTheMostPopularGemsInIndiaAndTheGemForThe7" xml:space="preserve"><value>One Of The Most Popular Gems In India And The Gem For The 7Th Anniversary. Yellow Sapphires Range From A Lovely Warm Gold To The Naturally Beautiful Canary Yellow And Is Thought To Promote Wisdom And Bring Prosperity. Depending On Their Trace Element Content, Sapphire Varieties Of The Mineral Corundum Might Be Blue, Yellow, Green, Orange, Pink, Purple, White - Or Even Show A Six-Rayed Star If Cut As A Cabochon.</value></data>
+  <data name="Metal_One8KPalladiumWhiteGold" xml:space="preserve"><value>18K Palladium White Gold </value></data>
+  <data name="Gem_PinkTourmalineHonorsThe5ThAnniversaryInAdditio" xml:space="preserve"><value>Pink Tourmaline Honors The 5Th Anniversary In Addition To Sharing In The Celebration Of 8Th Anniversaries With Its Other-Color Cousins, And October Births With Opal. Charmingly Pretty, Pink Tourmaline Flashes Its Femininity In A Sparkling Display. One Of The More Rare Color Varieties Of Tourmaline, The Pink Ranges From A Pale Bubblegum To Vibrant, Light Cherry. The Cheerful Color So Enchanted The Last Empress Of China That She Valued It Above All Gemstones.</value></data>
+  <data name="Gem_CharlesColvardCreatedMoissaniteIsAFavoriteAmon" xml:space="preserve"><value>Charles &amp; Colvard Created Moissanite is a favorite among customers. Made from silicon carbide, this unique jewel has more brilliance than a diamond at a fraction of the cost. Created Moissanite is among the hardest minerals on Earth, more so than ruby, emerald, or sapphire.</value></data>
+  <data name="Gem_TheBirthstoneForFebruaryAndTheGemToCelebrateTh" xml:space="preserve"><value>The Birthstone For February And The Gem To Celebrate The 4Th, 6Th, 8Th And 9Th, Amethyst Ranges In Color From A Delicate Lilac To Deepest Plum. This Regal Gemstone Has Been Valued For Millennia. Believed To Promote Sobriety And Clarity Of Thought, This Form Of Quartz Was Used In The Middle Ages As An Antidote To Poison.</value></data>
+  <data name="Gem_TopazSkyBlue" xml:space="preserve"><value>Topaz Sky Blue</value></data>
+  <data name="Gem_AVividLilacColorWithLotsOfSparkleAtAnAffordabl" xml:space="preserve"><value>A Vivid Lilac Color With Lots Of Sparkle At An Affordable Price. Lab-Created Cubic Zirconia Adds Drama To A Design Without A Large Monetary Commitment, Freeing You To Entertain Lots Of Exciting Options.</value></data>
+  <data name="Gem_AlongWithTurquoiseBlueTopazAndTanzaniteBlueZir" xml:space="preserve"><value>Along With Turquoise, Blue Topaz And Tanzanite, Blue Zircon Is Also A Birthstone For The Month Of December And Is Often Used To Mark 4Th Anniversaries. An Enchanting Shade Of Sea Blue, This Exceptional Jewel Shines Brightly Among Gems And Blue Is The Most Popular Color. In Fact, So Brilliant And Fiery Is Blue Zircon That It Rivals The Far More Costly Blue Diamond.</value></data>
+  <data name="Gem_OpalMexicanFireOrange" xml:space="preserve"><value>Opal Mexican Fire Orange</value></data>
+  <data name="Gem_TanzaniteIsABirthstoneForDecemberAlongWithTurq" xml:space="preserve"><value>Tanzanite Is A Birthstone For December, Along With Turquoise, Blue Topaz And Blue Zircon, And The Gemstone Of The 8Th And 24Th Anniversaries. Tanzanite’S Rarity And Exotic Origin Have Added To Its Fascination. This Modern Gemstone Was Unknown Until 1967, When Masai Herdsmen In Eastern Africa Noticed Blue Crystals Sparkling In The Sun. Tanzanite’S Dramatic Discovery, Coupled With Its Scintillating Beauty, Caused A Worldwide Sensation. To Date, The World’S Only Source For The Gem Remains The Hills Of Northern Tanzania, Near Mount Kilimanjaro.</value></data>
+  <data name="Gem_AndraditeGarnetsRangeInAWideSpectrumOfEarthyAu" xml:space="preserve"><value>Andradite Garnets Range In A Wide Spectrum Of Earthy Autumn-Inspired Colors Such As Rich Browns To Moss Green And Shades In Between. Favored Since Egyptian Times, Garnets Appear In Stories And Legends Throughout History.</value></data>
+  <data name="Gem_TopazParadiseBlue" xml:space="preserve"><value>Topaz Paradise Blue</value></data>
+  <data name="Metal_One4KX1WhiteGold" xml:space="preserve"><value>14K X-1 White Gold </value></data>
+  <data name="Gem_CZPinkLight" xml:space="preserve"><value>CZ Pink Light</value></data>
+  <data name="Gem_QuartzRose" xml:space="preserve"><value>Quartz Rose </value></data>
+  <data name="Gem_DiamondAquaBlue" xml:space="preserve"><value>Diamond Aqua Blue</value></data>
+  <data name="Gem_LemonQuartzIsTheClearestExpressionOfSunshineIn" xml:space="preserve"><value>Lemon Quartz Is The Clearest Expression Of Sunshine In The Quartz Family. Lemon Quartz Often Displays A Subtle Green Undertone That Highlights Its Sunny Nature. An Affordable And Colorful Gemstone, Lemon Quartz Is Ideal For Bold, Modern Jewelry Designs.</value></data>
+  <data name="Gem_Ruby" xml:space="preserve"><value>Ruby </value></data>
+  <data name="Gem_Onyx" xml:space="preserve"><value>Onyx </value></data>
+  <data name="Gem_QuartzRoseDeFrance" xml:space="preserve"><value>Quartz Rose De France</value></data>
+  <data name="Gem_CitrineYellow" xml:space="preserve"><value>Citrine Yellow </value></data>
+  <data name="Gem_DiamondYellowGolden" xml:space="preserve"><value>Diamond Yellow Golden</value></data>
+  <data name="Gem_CZYellow" xml:space="preserve"><value>CZ Yellow </value></data>
+  <data name="Gem_CZPink" xml:space="preserve"><value>CZ Pink </value></data>
+  <data name="Metal_One4KRoseGold" xml:space="preserve"><value>14K Rose Gold </value></data>
+  <data name="Gem_Amethyst" xml:space="preserve"><value>Amethyst </value></data>
+  <data name="Metal_One8KRoseGold" xml:space="preserve"><value>18K Rose Gold </value></data>
+  <data name="Gem_DiamondYellowLight" xml:space="preserve"><value>Diamond Yellow Light</value></data>
+  <data name="Gem_TopazPassionTeal" xml:space="preserve"><value>Topaz Passion Teal</value></data>
+  <data name="Gem_TopazPassionPink" xml:space="preserve"><value>Topaz Passion Pink</value></data>
+  <data name="Gem_DiamondTopLightBrown" xml:space="preserve"><value>Diamond Top Light Brown</value></data>
+  <data name="Metal_PlatinumIsAWhiteMetalButUnlikeGoldItIsUsedIn" xml:space="preserve"><value>Platinum Is A White Metal, But Unlike Gold It Is Used In Jewelry In Almost Its Pure Form (Approximately 95% Pure). It Is Also More Durable Than Gold, And Has A Heavier, More Substantial Feel.</value></data>
+  <data name="Gem_GarnetRhodoliteRaspberry" xml:space="preserve"><value>Garnet Rhodolite Raspberry</value></data>
+  <data name="Gem_DiamondPurplishPink" xml:space="preserve"><value>Diamond Purplish Pink</value></data>
+  <data name="Gem_DependingOnTheirTraceElementContentSapphireVar" xml:space="preserve"><value>Depending On Their Trace Element Content, Sapphire Varieties Of The Mineral Corundum Might Be Blue, Yellow, Green, Red, Orange, Pink, Purple, White - Or Even Show A Six-Rayed Star If Cut As A Cabochon.</value></data>
+  <data name="Gem_WhiteTopazIsOftenASensibleSubstituteForDiamond" xml:space="preserve"><value>White Topaz Is Often A Sensible Substitute For Diamonds And A Practical Choice As The Birthstone For April. The Cool, Calm Pureness Of White Topaz Catches The Eye As Its Inner Fire Flashes Rainbow Prisms. The Natural Magnificence Of White Topaz Is Untreated And Readily Available In Smaller Sizes. While White Topaz Itself Is Untreated, Its Beauty Is The Foundation For The Varieties Of Treated Topaz Available In The Market.</value></data>
+  <data name="Gem_DiamondIsTheBirthstoneForAprilAndTheGemThatMar" xml:space="preserve"><value>Diamond Is The Birthstone For April, And The Gem That Marks The 75Th Wedding Anniversary. Originating From The Greek Word Meaning “Unbreakable”, Diamond Is The Hardest Element Known To Man - The Only Pure Carbon Stone. All Gem-Quality Diamonds Are Rare, Taking Billions Of Years For Nature To Form Them. Fine Diamonds Are Among The Most Coveted Of All Gems.</value></data>
+  <data name="Gem_Moissanite" xml:space="preserve"><value>Moissanite</value></data>
+  <data name="Gem_ShimmeringAndEnchantingMysticTopazIsADelightTo" xml:space="preserve"><value>Shimmering And Enchanting, Mystic Topaz Is A Delight To Wear. Available In Iridescent Green, Luminous Sunrise Or Pure Pink, These Affordable And Fashionable Gems Add The Ultimate Color Accent To Fashions. As The Name Suggests, Mystic Topaz Is Mystical. Its Colors Are Mesmerizing And Fun. If You’Re Looking For Affordable, Bold Color – Mystic Topaz Is Definitely A Gem To Satisfy Your Color Cravings.</value></data>
+  <data name="Gem_GarnetAndradite" xml:space="preserve"><value>Garnet Andradite </value></data>
+  <data name="Gem_TourmalineParaiba" xml:space="preserve"><value>Tourmaline Paraiba</value></data>
+  <data name="Gem_Iolite" xml:space="preserve"><value>Iolite </value></data>
+  <data name="Gem_BlueSapphireIsTheBirthstoneForSeptemberAndTheG" xml:space="preserve"><value>Blue Sapphire Is The Birthstone For September And The Gem Of The 5Th And 45Th And 70Th Anniversaries. Depending On Their Trace Element Content, Sapphire Varieties Of The Mineral Corundum Might Be Blue, Yellow, Green, Orange, Pink, Purple, White - Or Even Show A Six-Rayed Star If Cut As A Cabochon.</value></data>
+  <data name="Gem_GarnetIsTheBirthstoneForJanuaryAndTheGemForThe" xml:space="preserve"><value>Garnet Is The Birthstone For January And The Gem For The 2Nd  Anniversary. Favored Since Egyptian Times, Garnets Appear In Stories And Legends Throughout History.</value></data>
+  <data name="Metal_One8KGoldContains18PartsGoldAnd6PartsAnother" xml:space="preserve"><value>18K Gold Contains 18 Parts Gold And 6 Parts Another Metal(S), Making It 75% Gold. So, 18K Gold Is More Expensive Due To The Higher Gold Content, And Because It Has More Gold, It Is More Yellow. However, The Extra Gold Also Makes It Softer.</value></data>
+  <data name="Metal_NineKWhiteGold" xml:space="preserve"><value>9K White Gold </value></data>
+  <data name="Gem_GarnetBrazilian" xml:space="preserve"><value>Garnet Brazilian </value></data>
+  <data name="Gem_TopazMysticPurePink" xml:space="preserve"><value>Topaz Mystic Pure Pink</value></data>
+  <data name="Gem_TourmalineIsABirthstoneForOctoberAlongWithOpal" xml:space="preserve"><value>Tourmaline Is A Birthstone For October, Along With Opal, And Is The Gem Of The 8Th Anniversary. Tourmalines Have A Variety Of Exciting Colors With One Of The Widest Color Ranges Of Any Gem, And Is Known For Their Hardness And Durability.</value></data>
+  <data name="Metal_ContinuumSterlingSilver" xml:space="preserve"><value>Continuum Sterling Silver </value></data>
+  <data name="Gem_TopazPassionAquaBlue" xml:space="preserve"><value>Topaz Passion Aqua Blue</value></data>
+  <data name="Gem_DiamondPinkPure" xml:space="preserve"><value>Diamond Pink Pure</value></data>
+  <data name="Metal_One0KGoldContains10PartsGoldAnd14PartsAnothe" xml:space="preserve"><value>10K Gold Contains 10 Parts Gold And 14 Parts Another Metal(S), Making It 41.7% Gold. 10K Is The Minimum Karat Designation That Can Still Be Called Gold In The US.</value></data>
+  <data name="Gem_SapphireRed" xml:space="preserve"><value>Sapphire Red </value></data>
+  <data name="Gem_TourmalineBlueParaiba" xml:space="preserve"><value>Tourmaline Blue Paraiba</value></data>
+  <data name="Gem_DiamondBlack" xml:space="preserve"><value>Diamond Black </value></data>
+  <data name="Metal_KaratWhiteGoldIsAPreciousMetalAlloyThatProvi" xml:space="preserve"><value>Karat White Gold Is A Precious Metal Alloy That Provides  Exceptional  White Color And Bright Finish. To Cover Its Natural White-Yellow Tint It Is Commonly Plated With An Extremely Hard Element Called Rhodium.</value></data>
+  <data name="Gem_TopazRainforest" xml:space="preserve"><value>Topaz Rainforest </value></data>
+  <data name="Gem_DiamondBurntOrange" xml:space="preserve"><value>Diamond Burnt Orange</value></data>
+  <data name="Gem_GarnetRhodolitePinkRose" xml:space="preserve"><value>Garnet Rhodolite Pink Rose</value></data>
+  <data name="Gem_TopazPassionHoney" xml:space="preserve"><value>Topaz Passion Honey</value></data>
+  <data name="Gem_Alexandrite" xml:space="preserve"><value>Alexandrite </value></data>
+  <data name="Gem_TopazPassionBabyPink" xml:space="preserve"><value>Topaz Passion Baby Pink</value></data>
+  <data name="Gem_TopazSwissBlue" xml:space="preserve"><value>Topaz Swiss Blue</value></data>
+  <data name="Gem_ZirconBlue" xml:space="preserve"><value>Zircon Blue </value></data>
+  <data name="Gem_TopazMysticGreen" xml:space="preserve"><value>Topaz Mystic Green</value></data>
+  <data name="Gem_TourmalineBronze" xml:space="preserve"><value>Tourmaline Bronze</value></data>
+  <data name="Gem_TourmalineChrome" xml:space="preserve"><value>Tourmaline Chrome</value></data>
+  <data name="Metal_KaratPalladiumWhiteGoldHasAGreyerToneThanNic" xml:space="preserve"><value>Karat Palladium White Gold Has A Greyer Tone Than Nickel Whites. Palladium Is Used As The Whitener In Place Of Nickel. This Metal Will Meet European Standards For Purity. This Metal Is Less Prone To Stress Corrosion And Is Softer As Compared To Nickel White Gold.</value></data>
+  </root>

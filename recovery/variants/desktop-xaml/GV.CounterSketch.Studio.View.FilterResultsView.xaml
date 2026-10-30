@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.View.FilterResultsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:behaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:command="http://www.galasoft.ch/mvvmlight" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:converters="clr-namespace:GV.CounterSketch.Studio.Utilities.Converters" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:local="clr-namespace:GV.CounterSketch.Studio.View" xmlns:localization="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:pagedListBox="clr-namespace:GV.CounterSketch.Studio.UserControls.PagedListBox" xmlns:system="clr-namespace:System;assembly=mscorlib" DataContext="{Binding TileSearchMainVM.ActiveSearchResultViewModel, Source={StaticResource Locator}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplateNotVirtualized">
+        <StackPanel IsItemsHost="True" Orientation="Horizontal" />
+      </ItemsPanelTemplate>
+      <DataTemplate x:Key="DataTemplateTileSearchFilterItemPaged">
+        <Border Width="150" Margin="0,0,30,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFFFFFF" BorderBrush="#DDDDDD" BorderThickness="1" Cursor="Hand">
+          <Grid>
+            <Button Width="Auto" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Style="{DynamicResource ButtonStyleClear}">
+              <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                  <ei:ChangePropertyAction PropertyName="IsOpen" Value="True" TargetObject="{Binding ElementName=popup}" />
+                  <ei:ChangePropertyAction PropertyName="IsOpen" Value="True" TargetObject="{Binding}" />
+                </i:EventTrigger>
+              </i:Interaction.Triggers>
+              <DockPanel Name="dockPanel" Width="Auto" HorizontalAlignment="Stretch" Cursor="Hand">
+                <StackPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Orientation="Vertical">
+                  <TextBlock Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="12" FontWeight="Bold" TextAlignment="Left" Text="{Binding TitleTranslated, FallbackValue=[Title], Converter={StaticResource StringToTitleCaseConverter}}" />
+                  <StackPanel Width="Auto" Margin="0,2,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="10.667" FontWeight="Bold" Foreground="#FF65615D" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding SelectedItemLabel, FallbackValue=[Name]}" />
+                    <TextBlock Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="10.667" FontWeight="Bold" Foreground="#FF65615D" Style="{DynamicResource TextBlockService}" TextAlignment="Center" TextTrimming="CharacterEllipsis" Text="{Binding SelectedSearchFilterItem.SecondaryText, FallbackValue=[Name]}" />
+                  </StackPanel>
+                </StackPanel>
+                <Grid Margin="0,5,0,10" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.EdgeMode="Aliased">
+                  <Image Source="{Binding SelectedSearchFilterItem.ImagePath}" />
+                  <controls:SelectedItemsImageControl ItemsSource="{Binding SelectedSearchFilterItemImages}" Visibility="{Binding SelectedSearchFilterItemImages.Count, ConverterParameter=1, Converter={StaticResource IntegerToVisibilityConverter}}" />
+                </Grid>
+              </DockPanel>
+            </Button>
+            <Grid Width="0" HorizontalAlignment="Right">
+              <Popup Name="popup" AllowsTransparency="True" HorizontalOffset="-1" IsOpen="False" Placement="Bottom" PopupAnimation="Slide" StaysOpen="False" VerticalOffset="3" PlacementTarget="{Binding ElementName=dockPanel, Mode=OneWay}">
+                <local:ItemChooserView x:Name="pagedListBox" IsFilterPicker="True" IsGemPicker="False" IsMetalPicker="False" SelectionMode="Multiple" IsOpen="{Binding ElementName=popup, Path=IsOpen, Mode=TwoWay}" ItemsSource="{Binding SearchFilterItems, Mode=OneWay}" />
+              </Popup>
+            </Grid>
+            <Border VerticalAlignment="Stretch" Background="#BFFFFFFF" BorderThickness="0" Cursor="No" ToolTip="{x:Static localization:Strings.RemoveAssignedStoneToEdit}" Visibility="{Binding IsFilterDisabled, Converter={StaticResource BooleanToVisibilityConverter}}" />
+          </Grid>
+        </Border>
+      </DataTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <DockPanel Height="134" Margin="0,8">
+    <DockPanel Width="450" Margin="0,0,60,0" Background="#FFFFFFFF" Dock="Right" IsHitTestVisible="True" Visibility="{Binding ResultsVisibility}">
+      <StackPanel Margin="10,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Orientation="Horizontal">
+        <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#FF000000" Text="SHOWING" />
+        <TextBlock Margin="6,0,4,0" VerticalAlignment="Center" FontSize="14" Foreground="#FF000000" Text="{Binding FirstDesignIndexOnPage}" />
+        <TextBlock Margin="0" VerticalAlignment="Center" FontSize="14" Foreground="#FF000000" Text="-" />
+        <TextBlock Margin="4,0,4,0" VerticalAlignment="Center" FontSize="14" Foreground="#FF000000" Text="{Binding LastDesignIndexOnPage}" />
+        <TextBlock Margin="4,0" VerticalAlignment="Center" FontSize="14" Foreground="#FF000000" Text="{Binding Converter={StaticResource StringToUpperCaseConverter}, Source={x:Static localization:Strings.Of}}" />
+        <TextBlock Margin="4,0,4,0" VerticalAlignment="Center" FontSize="14" Foreground="#FF000000" Text="{Binding SearchResults.Count}" />
+        <TextBlock Margin="14,0,14,0" VerticalAlignment="Top" FontSize="16" Foreground="#FFABABAB" Text="|" />
+        <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#FF000000" Text="RESULTS PER PAGE" />
+        <ComboBox Width="60" Margin="14,0,0,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Focusable="False" SelectedValuePath="Content" SelectedValue="{Binding PageSize, Mode=TwoWay}">
+          <ComboBoxItem Content="36" />
+          <ComboBoxItem Content="72" />
+          <ComboBoxItem Content="144" />
+        </ComboBox>
+      </StackPanel>
+      <local:SearchResultsPagerControl Margin="0,10" HorizontalAlignment="Right" />
+    </DockPanel>
+    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="Uniform">
+      <DockPanel>
+        <Border Height="150" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#00000000" BorderThickness="1,1,1,1" DockPanel.Dock="Left">
+          <Grid>
+            <Border Background="#FFFFFFFF" Visibility="{Binding TileViewDesignsVM.IsLightTheme, Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}" />
+            <Image Width="310" Height="150" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Stretch" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.EdgeMode="Aliased" Visibility="{Binding SelectedSearchTileCategory.PackageAttributeId, ConverterParameter=True, Converter={StaticResource IntegerGreaterThanZeroToVisibilityConverter}, Mode=OneWay}">
+              <Image.Source>
+                <MultiBinding Converter="{StaticResource TileSizeImagePathToImageConverter}">
+                  <Binding Source="{x:Static dxlc:TileSize.Large}" />
+                  <Binding Path="SelectedSearchTileCategory.TileImagePath" />
+                  <Binding>
+                    <Binding.Source>
+                      <system:Boolean>true</system:Boolean>
+                    </Binding.Source>
+                  </Binding>
+                  <Binding Path="TileViewDesignsVM.IsTechTheme" Source="{StaticResource Locator}" />
+                </MultiBinding>
+              </Image.Source>
+            </Image>
+            <Image Width="310" Height="150" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Stretch" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.EdgeMode="Aliased" Source="{Binding SelectedSearchTileCategory.TileImagePath, Converter={StaticResource ImagePathToBitmapImageConverter}}" Visibility="{Binding SelectedSearchTileCategory.PackageAttributeId, Converter={StaticResource IntegerGreaterThanZeroToVisibilityConverter}, Mode=OneWay}" />
+          </Grid>
+        </Border>
+        <DockPanel Grid.Column="1" HorizontalAlignment="Stretch" Dock="Left" LastChildFill="True">
+          <Border Height="150" Margin="60,0,30,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFFFFFF" BorderBrush="#DDDDDD" BorderThickness="1" DockPanel.Dock="Left">
+            <UniformGrid Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Columns="2" Rows="2">
+              <RadioButton Width="40" Height="40" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static localization:Strings.Perspective}" Command="{Binding CommandUpdateSearchResultImageSizes}" IsChecked="{Binding IsPerspectiveView, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <Viewbox Name="CsButtonViewPerspectiveDefaultCopy" Width="14.02" Height="17.588" HorizontalAlignment="Center" VerticalAlignment="Center">
+                  <Canvas Width="14.0196" Height="17.5875">
+                    <Path Canvas.Left="1.45222" Canvas.Top="2.66034" Width="12.3966" Height="14.6085" Data="F1 M3.29077,2.78534 C3.29077,2.78534 0.125,6.04932 2.39944,11.5817 C4.67389,17.1141 9.03833,17.4625 10.1755,16.9963 C11.3128,16.5302 13.4642,15.2868 13.6794,13.5573 C13.8946,11.8276 13.3721,7.92181 11.1284,4.35767 C11.1284,4.35767 9.86816,4.62982 9.62231,4.98608 C9.37643,5.34247 8.76175,6.72412 8.76175,6.72412 C8.76175,6.72412 12.1734,11.3835 10.6673,15.0634 C10.6673,15.0634 8.73102,15.1406 6.64099,12.6542 C4.55093,10.1679 3.69031,7.12463 4.36652,5.49585 C4.36652,5.49585 3.32153,3.33264 3.29077,2.78534" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF000000" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeThickness="0.25" />
+                    <Path Canvas.Left="2.03563" Canvas.Top="4.69031" Width="8.72597" Height="12.0061" Data="F1 M4.04913,4.81531 C4.04913,4.81531 3.07562,5.29199 2.73755,5.96265 C2.39944,6.6333 1.50812,8.84631 2.9834,11.674 C4.45874,14.5016 6.08774,16.1699 7.93188,16.519 C9.776,16.8683 10.6058,15.3612 10.6366,15.2123" Stretch="Fill" Stroke="#B3000000" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeThickness="0.25" />
+                    <Path Canvas.Left="3.16077" Canvas.Top="0" Width="8.64421" Height="6.92834" Data="F1 M11.6763,2.23889 C11.6172,1.07294 9.80481,0.125 7.49625,0.125 C5.18765,0.125 3.31616,1.07141 3.31616,2.23889 C3.31616,2.23889 2.9834,3.07544 4.5202,5.66888 C4.5202,5.66888 5.34982,7.1579 8.76175,6.72412 C8.76175,6.72412 9.487,5.11542 9.62231,4.98608 C9.7576,4.85681 11.1284,4.35767 11.1284,4.35767 C11.1284,4.35767 11.7324,3.34613 11.6763,2.23889" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF000000" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeThickness="0.25" />
+                    <Path Canvas.Left="3.98361" Canvas.Top="0.400757" Width="7.02527" Height="3.67627" Data="F1 M10.8839,2.23889 C10.8839,3.185 9.36719,3.95203 7.49625,3.95203 C5.62531,3.95203 4.10861,3.185 4.10861,2.23889 C4.10861,1.29272 5.62531,0.525757 7.49625,0.525757 C9.36719,0.525757 10.8839,1.29272 10.8839,2.23889" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeThickness="0.25" />
+                  </Canvas>
+                </Viewbox>
+              </RadioButton>
+              <RadioButton Width="40" Height="40" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static localization:Strings.TopDown}" Command="{Binding CommandUpdateSearchResultImageSizes}" IsChecked="{Binding IsTopView, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <Viewbox Name="CsButtonViewTopDownDefaultCopy" Width="17.25" Height="7.964" HorizontalAlignment="Center" VerticalAlignment="Center">
+                  <Canvas Width="17.2497" Height="7.96405">
+                    <Path Canvas.Left="-3.05176e-005" Canvas.Top="2.46429" Width="17.2497" Height="3.03571" Data="M0.624954,2.58929 L16.6247,2.58929 C16.9008,2.58929 17.1247,2.81317 17.1247,3.08929 L17.1247,4.875 C17.1247,5.15112 16.9008,5.375 16.6247,5.375 L0.624954,5.375 C0.348846,5.375 0.124969,5.15112 0.124969,4.875 L0.124969,3.08929 C0.124969,2.81317 0.348846,2.58929 0.624954,2.58929" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF000000" StrokeLineJoin="Round" StrokeThickness="0.25" />
+                    <Path Canvas.Left="4.64383" Canvas.Top="0" Width="7.96402" Height="7.96405" Data="M8.62585,0.125 C10.756,0.125 12.4828,1.85193 12.4828,3.98206 C12.4828,6.11224 10.756,7.83905 8.62585,7.83905 C6.49568,7.83905 4.76883,6.11224 4.76883,3.98206 C4.76883,1.85193 6.49568,0.125 8.62585,0.125" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF000000" StrokeLineJoin="Round" StrokeThickness="0.25" />
+                    <Path Canvas.Left="5.358" Canvas.Top="0.714294" Width="6.53557" Height="6.53546" Data="M8.62579,0.839294 C10.3615,0.839294 11.7686,2.24634 11.7686,3.98206 C11.7686,5.71771 10.3615,7.12476 8.62579,7.12476 C6.89008,7.12476 5.483,5.71771 5.483,3.98206 C5.483,2.24634 6.89008,0.839294 8.62579,0.839294" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" StrokeLineJoin="Round" StrokeThickness="0.25" />
+                  </Canvas>
+                </Viewbox>
+              </RadioButton>
+              <RadioButton Width="40" Height="40" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static localization:Strings.ThroughFinger}" Command="{Binding CommandUpdateSearchResultImageSizes}" IsChecked="{Binding IsFrontView, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <Viewbox Name="CsButtonViewThroughFingerDefaultCopy" Width="15.684" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center">
+                  <Canvas Width="15.6843" Height="17.9999">
+                    <Path Canvas.Left="0.375" Canvas.Top="2.03754" Width="14.9343" Height="15.5874" Data="F1 M3.90544,2.16254 C3.90544,2.16254 0.5,5.48553 0.5,10.226 C0.5,14.9663 4.42308,17.4999 7.77403,17.4999 C11.125,17.4999 15.1843,14.7211 15.1843,10.3076 C15.1843,5.89423 11.6699,2.16254 11.6699,2.16254 L10.3349,4.83264 C10.3349,4.83264 13.7131,6.87494 13.7131,10.3622 C13.7131,14.3669 10.172,16.3013 7.84216,16.3013 C5.31505,16.3013 1.86218,14.2035 1.86218,10.3076 C1.86218,6.79321 5.29486,4.80444 5.29486,4.80444 L3.90544,2.16254" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF000000" StrokeMiterLimit="2.75" StrokeThickness="0.25" />
+                    <Path Canvas.Left="3.679" Canvas.Top="1.12842" Width="8.24297" Height="3.82922" Data="F1 M7.71954,4.83173 L10.0625,4.83173 C10.0625,4.83173 10.5529,4.96796 11.7516,1.8349 C11.7516,1.8349 12.024,1.26282 11.234,1.26282 C10.4439,1.26282 4.50481,1.26282 4.50481,1.26282 C4.50481,1.26282 3.5329,1.12048 3.8782,1.94385 C4.2235,2.76727 5.07693,4.83264 5.48558,4.83264 C5.89423,4.83264 7.71954,4.83173 7.71954,4.83173" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF000000" StrokeMiterLimit="2.75" StrokeThickness="0.25" />
+                    <Path Canvas.Left="4.67949" Canvas.Top="0.375" Width="6.13463" Height="1.01282" Data="F1 M5.92148,0.5 L9.68108,0.5 L10.6891,1.26282 L4.80449,1.26282 L5.92148,0.5" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" StrokeMiterLimit="2.75" StrokeThickness="0.25" />
+                  </Canvas>
+                </Viewbox>
+              </RadioButton>
+              <RadioButton Width="40" Height="40" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static localization:Strings.Side}" Command="{Binding CommandUpdateSearchResultImageSizes}" IsChecked="{Binding IsSideView, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <Viewbox Name="CsButtonViewSideDefault" Width="10.639" Height="18.094" HorizontalAlignment="Center" VerticalAlignment="Center">
+                  <Canvas Width="10.6393" Height="18.0943">
+                    <Viewbox Canvas.Left="0" Canvas.Top="0" Width="10.6393" Height="5.06989">
+                      <Canvas Width="10.6393" Height="5.06989">
+                        <Path Canvas.Left="0.682742" Canvas.Top="1.06127" Width="9.32383" Height="3.52201" Data="F1 M4.04868,3.45221 C4.11206,2.88013 5.31625,2.93097 5.31625,2.93097 C5.31625,2.93097 7.07501,2.82928 6.71057,4.4458 L7.91254,4.4458 C7.91254,4.4458 8.46924,4.56989 9.83005,1.716 C9.83005,1.716 10.1393,1.19482 9.24243,1.19482 C8.34552,1.19482 1.60333,1.19482 1.60333,1.19482 C1.60333,1.19482 0.5,1.06519 0.891968,1.81525 C1.28397,2.56525 2.25281,4.44659 2.71671,4.44659 C2.91968,4.44659 3.43155,4.47308 3.94086,4.44629 C3.98532,4.44391 4.04868,3.45221 4.04868,3.45221" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF000000" StrokeMiterLimit="2.75" StrokeThickness="0.25" />
+                        <Path Canvas.Left="1.81851" Canvas.Top="0.375" Width="6.93036" Height="0.944824" Data="F1 M3.21155,0.5 L7.47955,0.5 L8.62387,1.19482 L1.94351,1.19482 L3.21155,0.5" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" StrokeMiterLimit="2.75" StrokeThickness="0.25" />
+                      </Canvas>
+                    </Viewbox>
+                    <Path Canvas.Left="3.19" Canvas.Top="2.83494" Width="4.388" Height="14.7919" Data="F1 M5.30737,2.96307 C5.30737,2.96307 6.62762,2.87433 6.67563,3.64105 C6.72363,4.40771 7.1077,11.843 7.1077,12.4979 C7.1077,13.1528 7.68381,17.3906 7.34775,17.4675 C7.01169,17.5446 3.98712,17.4675 3.98712,17.4675 C3.98712,17.4675 3.315,17.5943 3.315,17.1843 C3.315,16.7741 4.03513,3.64105 4.03513,3.64105 C4.03513,3.64105 3.96939,2.96307 5.30737,2.96307" Fill="#FFCCC6C1" Stretch="Fill" Stroke="#FF000000" StrokeMiterLimit="2.75" StrokeThickness="0.25" />
+                  </Canvas>
+                </Viewbox>
+              </RadioButton>
+            </UniformGrid>
+          </Border>
+          <ItemsControl Height="150" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="#FFFFFFFF" BorderThickness="0" DockPanel.Dock="Left" ItemTemplate="{StaticResource DataTemplateTileSearchFilterItemPaged}" ItemsPanel="{DynamicResource ItemsPanelTemplateNotVirtualized}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemsSource="{Binding SearchFilters}" />
+          <Border Height="150" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFFFFFF" BorderBrush="#DDDDDD" BorderThickness="1" DockPanel.Dock="Left" Visibility="{Binding TileSearchMainVM.IsSearchingParts, Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}">
+            <UniformGrid Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Columns="2" DockPanel.Dock="Left" Rows="2">
+              <RadioButton Width="40" Height="40" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Top" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static localization:Strings.AllResults}" Command="{Binding CommandUpdateSearchFromFilter}" IsChecked="{Binding IsFilterModeAllParts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFA9A9A9" Text="ALL" />
+              </RadioButton>
+              <RadioButton Width="40" Height="40" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static localization:Strings.HasGems}" Command="{Binding CommandUpdateSearchFromFilter}" IsChecked="{Binding IsFilterModeHasGem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <wpf:ImageAwesome ImageAwesome.Foreground="#FFA9A9A9" xmlns:wpf="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" wpf:ImageAwesome.Icon="Diamond" />
+              </RadioButton>
+              <RadioButton Width="40" Height="40" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static localization:Strings.CounterPart}" Command="{Binding CommandUpdateSearchFromFilter}" IsChecked="{Binding IsFilterModeCounterPartsOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="#FFA9A9A9" Text="CP" />
+              </RadioButton>
+              <RadioButton Width="40" Height="40" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static localization:Strings.StaticPart}" Command="{Binding CommandUpdateSearchFromFilter}" IsChecked="{Binding IsFilterModeStaticPartsOnly, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="#FFA9A9A9" Text="SP" />
+              </RadioButton>
+            </UniformGrid>
+          </Border>
+        </DockPanel>
+      </DockPanel>
+    </Viewbox>
+  </DockPanel>
+</UserControl>

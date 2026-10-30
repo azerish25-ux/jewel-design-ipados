@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.View.TileSearchResultDetailView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:behaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.Behaviors" xmlns:command="http://www.galasoft.ch/mvvmlight" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:localization="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Name="UserControl" Background="#FFFFFFFF" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" DataContext="{Binding Path=TileSearchMainVM.ActiveSearchResultViewModel, Source={StaticResource Locator}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+        <controls:AlignableWrapPanel HorizontalContentAlignment="Center" IsItemsHost="True" />
+      </ItemsPanelTemplate>
+      <ItemsPanelTemplate x:Key="ItemsPanelTemplateGemShapes">
+        <UniformGrid HorizontalAlignment="Center" IsItemsHost="True" Rows="1" />
+      </ItemsPanelTemplate>
+      <DataTemplate x:Key="DataTemplateGemShapes">
+        <Grid Width="80" Height="80">
+          <UIElement.InputBindings>
+            <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding Path=TileSearchMainVM.ActiveSearchResultViewModel.CommandOpenDesignWithSelectedShape, Source={StaticResource Locator}}" CommandParameter="{Binding}" />
+          </UIElement.InputBindings>
+          <Image ToolTip="{x:Static localization:Strings.OpenDesignWithGemShape}" Source="{Binding Converter={StaticResource GemShapeStringToImageConverter}}" />
+        </Grid>
+      </DataTemplate>
+      <Style x:Key="ListBoxItemStyleNoMouseOver" TargetType="{x:Type ListBoxItem}">
+        <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="4,1" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+              <Border Name="Bd" Padding="{TemplateBinding Control.Padding}" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" SnapsToDevicePixels="True">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+              </Border>
+              <ControlTemplate.Triggers>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="Selector.IsSelectionActive" Value="False" />
+                    <Condition Property="ListBoxItem.IsSelected" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter TargetName="Bd" Property="Border.Background" Value="{StaticResource Item.SelectedInactive.Background}" />
+                  <Setter TargetName="Bd" Property="Border.BorderBrush" Value="{StaticResource Item.SelectedInactive.Border}" />
+                </MultiTrigger>
+                <MultiTrigger>
+                  <MultiTrigger.Conditions>
+                    <Condition Property="Selector.IsSelectionActive" Value="True" />
+                    <Condition Property="ListBoxItem.IsSelected" Value="True" />
+                  </MultiTrigger.Conditions>
+                  <Setter TargetName="Bd" Value="{DynamicResource HighlightAndAccent}" Property="Border.Background" />
+                  <Setter TargetName="Bd" Property="Border.BorderBrush" Value="{StaticResource Item.SelectedActive.Border}" />
+                </MultiTrigger>
+                <Trigger Property="IsEnabled" Value="False">
+                  <Setter TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" Property="TextElement.Foreground" />
+                </Trigger>
+              </ControlTemplate.Triggers>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Margin="10,10,0,10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="50" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="100" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="100" />
+    </Grid.ColumnDefinitions>
+    <DockPanel Name="DesignImages" Grid.Column="1" ToolTip="{x:Static localization:Strings.OpenDesignFile}">
+      <UniformGrid HorizontalAlignment="Center" Columns="1" DockPanel.Dock="Right" Rows="4">
+        <Border Margin="10" Background="#FFFFFFFF" BorderBrush="#DDDDDD" BorderThickness="1" ToolTip="{x:Static localization:Strings.ClickToRelargeImage}">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonDown">
+              <command:EventToCommand CommandParameter="P" Command="{Binding CommandSwitchDesignDetailImage}" />
+            </i:EventTrigger>
+            <i:EventTrigger EventName="TouchDown">
+              <command:EventToCommand CommandParameter="P" Command="{Binding CommandSwitchDesignDetailImage}" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+          <Image Margin="5" Cursor="Hand" Source="{Binding DesignDetailImagePerspective, Converter={StaticResource NullObjectToDoNothingConverter}, Mode=OneWay}" />
+        </Border>
+        <Border Margin="10" Background="#FFFFFFFF" BorderBrush="#DDDDDD" BorderThickness="1" ToolTip="{x:Static localization:Strings.ClickToRelargeImage}">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonDown">
+              <command:EventToCommand CommandParameter="T" Command="{Binding CommandSwitchDesignDetailImage}" />
+            </i:EventTrigger>
+            <i:EventTrigger EventName="TouchDown">
+              <command:EventToCommand CommandParameter="T" Command="{Binding CommandSwitchDesignDetailImage}" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+          <Image Margin="5" Cursor="Hand" Source="{Binding DesignDetailImageTop, Converter={StaticResource NullObjectToDoNothingConverter}, Mode=OneWay}" />
+        </Border>
+        <Border Margin="10" Background="#FFFFFFFF" BorderBrush="#DDDDDD" BorderThickness="1">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonDown">
+              <command:EventToCommand CommandParameter="F" Command="{Binding CommandSwitchDesignDetailImage}" />
+            </i:EventTrigger>
+            <i:EventTrigger EventName="TouchDown">
+              <command:EventToCommand CommandParameter="F" Command="{Binding CommandSwitchDesignDetailImage}" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+          <Image Margin="5" Cursor="Hand" ToolTip="{x:Static localization:Strings.ClickToRelargeImage}" Source="{Binding DesignDetailImageFront, Converter={StaticResource NullObjectToDoNothingConverter}, Mode=OneWay}" />
+        </Border>
+        <Border Margin="10" Background="#FFFFFFFF" BorderBrush="#DDDDDD" BorderThickness="1">
+          <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseLeftButtonDown">
+              <command:EventToCommand CommandParameter="S" Command="{Binding CommandSwitchDesignDetailImage}" />
+            </i:EventTrigger>
+            <i:EventTrigger EventName="TouchDown">
+              <command:EventToCommand CommandParameter="S" Command="{Binding CommandSwitchDesignDetailImage}" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>
+          <Image Margin="5" Cursor="Hand" ToolTip="{x:Static localization:Strings.ClickToRelargeImage}" Source="{Binding DesignDetailImageSide, Converter={StaticResource NullObjectToDoNothingConverter}, Mode=OneWay}" />
+        </Border>
+      </UniformGrid>
+      <Grid Margin="10" Background="#FFFFFFFF" Cursor="Hand">
+        <UIElement.InputBindings>
+          <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding Source={StaticResource Locator}, Path=TileSearchMainVM.ActiveSearchResultViewModel.CommandOpenDesignFromDesignSearch}" CommandParameter="{Binding SelectedDesignSearch}" />
+        </UIElement.InputBindings>
+        <Image Margin="5" Source="{Binding DesignDetailImage, Converter={StaticResource NullObjectToDoNothingConverter}, Mode=OneWay}" />
+      </Grid>
+    </DockPanel>
+    <Border Grid.Row="2" Grid.Column="1" Margin="10,0" Background="#DDDDDD">
+      <StackPanel Name="SelectedDesignInfo" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+        <DockPanel Visibility="{Binding SelectedDesignSearch.SPINumber, Converter={StaticResource StringIsNullOrEmptyToVisibilityConverter}}">
+          <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="14" Foreground="#FF65615D" Text="{x:Static localization:Strings.Model}" TextWrapping="Wrap" />
+          <TextBox Margin="5,0,0,0" VerticalAlignment="Center" Background="#00FFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="18" FontWeight="Bold" Foreground="#FF32302E" IsReadOnly="True" TextWrapping="Wrap" Text="{Binding SelectedDesignSearch.SPINumber}" />
+        </DockPanel>
+        <DockPanel MinHeight="20" Margin="50,0,0,0" VerticalAlignment="Top" Visibility="{Binding SelectedDesignSearch.SeriesNumber, Converter={StaticResource StringIsNullOrEmptyToVisibilityConverter}}">
+          <TextBlock VerticalAlignment="Center" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="14" Foreground="#FF65615D" Text="{x:Static localization:Strings.Series}" />
+          <TextBox Name="TextBox" Margin="5,0,0,0" VerticalAlignment="Center" Background="#00FFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="18" FontWeight="Bold" Foreground="#FF32302E" IsReadOnly="True" TextWrapping="Wrap" Text="{Binding SelectedDesignSearch.SeriesNumber}" />
+        </DockPanel>
+        <DockPanel MinHeight="20" Margin="50,0,0,0" VerticalAlignment="Top" Visibility="{Binding SelectedDesignSearch.DefaultStyle, Converter={StaticResource StringIsNullOrEmptyToVisibilityConverter}}">
+          <TextBlock VerticalAlignment="Center" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="14" Foreground="#FF65615D" Text="{x:Static localization:Strings.Style}" />
+          <TextBox Name="TextBox1" Margin="5,0,0,0" VerticalAlignment="Center" Background="#00FFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="18" FontWeight="Bold" Foreground="#FF32302E" IsReadOnly="True" TextWrapping="Wrap" Text="{Binding SelectedDesignSearch.DefaultStyle}" />
+        </DockPanel>
+        <DockPanel MinHeight="20" Margin="50,0,0,0" VerticalAlignment="Top" Visibility="{Binding SelectedDesignSearch.DefaultStyleElement, Converter={StaticResource StringIsNullOrEmptyToVisibilityConverter}}">
+          <TextBlock VerticalAlignment="Center" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="14" Foreground="#FF65615D" Text="{x:Static localization:Strings.DesignElement}" />
+          <TextBox Name="TextBox2" Margin="5,0,10,0" VerticalAlignment="Center" Background="#00FFFFFF" BorderThickness="0" CaretBrush="{DynamicResource HighlightAndAccent}" FontFamily="/EmbeddedFonts;Component/Fonts/#Helvetica Neue LT Std" FontSize="18" FontWeight="Bold" Foreground="#FF32302E" IsReadOnly="True" TextWrapping="Wrap" Text="{Binding SelectedDesignSearch.DefaultStyleElement}" />
+        </DockPanel>
+      </StackPanel>
+    </Border>
+    <ListBox Grid.Row="1" Grid.Column="1" Height="84" MinWidth="800" Margin="10,10,10,0" BorderBrush="#DDDDDD" ItemContainerStyle="{DynamicResource ListBoxItemStyleNoMouseOver}" ItemTemplate="{DynamicResource DataTemplateGemShapes}" ItemsPanel="{DynamicResource ItemsPanelTemplateGemShapes}" ScrollViewer.VerticalScrollBarVisibility="Disabled" Style="{DynamicResource ListBoxStyleNoTriggers}" ItemsSource="{Binding SelectedDesignSearchShapes}" SelectedItem="{Binding SelectedCenterShapeName}" Visibility="{Binding IsDesignShapesVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
+    <Button Grid.RowSpan="2" Grid.Column="2" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#a3a3a3" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static localization:Strings.NextDesign}" Command="{Binding CommandNextDesignInfo}">
+      <wpf:ImageAwesome FrameworkElement.Width="15" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" ImageAwesome.Foreground="#FFFFFFFF" xmlns:wpf="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" wpf:ImageAwesome.Icon="ArrowRight" />
+    </Button>
+    <Button Grid.RowSpan="2" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#a3a3a3" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static localization:Strings.PreviousDesign}" Command="{Binding CommandPreviousDesignInfo}">
+      <ImageAwesome FrameworkElement.Width="15" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p15:ImageAwesome.Foreground="#FFFFFFFF" p15:ImageAwesome.Icon="ArrowLeft" xmlns:p15="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+    </Button>
+    <Button Grid.Column="2" Grid.ColumnSpan="2" Width="50" Height="50" Margin="0,-20,-10,0" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFFF6A6A" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static localization:Strings.Close}" Command="{Binding CommandCloseDesignInfo}">
+      <ImageAwesome FrameworkElement.Width="20" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p15:ImageAwesome.Foreground="#FFFFFFFF" p15:ImageAwesome.Icon="Close" xmlns:p15="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+    </Button>
+    <Button Grid.Row="2" Grid.Column="2" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#a3a3a3" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static localization:Strings.OpenDesignFile}" Command="{Binding CommandOpenDesignFromDesignSearch}" CommandParameter="{Binding SelectedDesignSearch}">
+      <ImageAwesome FrameworkElement.Width="20" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p15:ImageAwesome.Foreground="#FFFFFFFF" p15:ImageAwesome.Icon="MailForward" xmlns:p15="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+    </Button>
+  </Grid>
+</UserControl>

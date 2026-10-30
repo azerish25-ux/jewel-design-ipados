@@ -1,0 +1,47 @@
+Independent review of bounded CSG numeric round-trip proof
+Date: 2026-10-29
+
+Scope
+The review covers the selected library sample only: analysis/runtime-data/library-sample/item-4.csg (383069 bytes). No CounterSketch, Rhino, target assemblies, native geometry DLLs, GUI, network, or downloads were invoked by this review. This is source/byte-level evidence, not an application reopen or geometry regeneration test. All review artifacts reside in reference/file-proof.
+
+Source contract (all references under recovery/canonical/cad)
+CS.CSObjects/CSObject.cs:876-885 encloses a node in a TC_USER|TC_CRC chunk and passes the chunk major/minor to inherited readers. PostRead/PostWrite at 861-868 end that chunk.
+CS.CSObjects/CSObject.cs:895-947 reads identifier, flags, material/layer integer, UserData, and (major >= 2) instance-GUID string. The legacy material branch is exactly major <= 2 && minor <= 3. Write at 1048-1050 emits the modern base fields.
+CS.CSObjects.CSBlocks/CSBlock.cs:29 establishes CSBlock : CSObject. Read at 342 onward reads object-index and channel-index integer arrays; Write at 914 onward writes both arrays. Their lengths must agree.
+CS.CSValues/CSValueBase.cs:12 establishes CSValueBase : CSBlock. Read at 93 onward reads category-index array and consumes a legacy extra int for (major == 1 && minor > 0) || (major == 2 && minor < 2). Write at 164 onward writes the current category array without that legacy extra int.
+CS.CSValues/CSValue.cs:15 establishes CSValue : CSValueBase. Read at 295-327 reads stored _doubleValue, then CAM data only for major >= 4 (and a bool for major >= 5). Write at 400 onward emits stored _doubleValue and optional CAM fields. MajorMinorVersion at 275-279 chooses 3.0 or 5.0 today.
+CS.CSValues/CSValueRange.cs:13 establishes sealed CSValueRange : CSValue. Its GUID is 56B84606-7F1D-41FB-B81F-F521D9A9577D. Read at 142-148 appends three doubles in min, max, step order; Write at 413-420 writes the same order.
+CS.Parametric/CSUserData.cs:210-222 reads a count followed by UserDataElement records; CS.Parametric/UserDataElement.cs:86-88 reads the type/key/value string triple. CS/CSUtilIO.cs:32 onward reads count-prefixed int arrays; Write at 243 onward writes them.
+
+Independent sample decode
+A PowerShell byte cursor, independent of the planned Node editor and C# verifier, decoded node 8 at chunk offset 135761, declared body length 490, observed version 1.1.
+Identifier: Top Thickness. Flags: 327632. Legacy layer/material integer: 0.
+Five user-data entries: Spec:Outside Ring Rails=Top Thickness; Identifier:Original=Top Thickness; UI:SortIndex=2; ExpandedSlider:OriginalMin=3; ExpandedSlider:OriginalMax=6.
+Object indices [-1,-1,-1,-1]; channel indices [-5,-5,-5,-5]; categories [0]. Legacy extra int at 136219 is 0.
+Stored value at 136223 is 4.38; minimum at 136231 is 3; maximum at 136239 is 6; step at 136247 is 0.01. Cursor ends at 136255, exactly the leaf CRC boundary. The planned 4.48 value is finite, within the observed bounds, and 10 increments of the observed step above 4.38.
+
+Recommendations / acceptance criteria
+1. Fail closed for any unsupported record version, wrong type GUID, mismatched expected identifier, malformed lengths/counts/strings, nonfinite number, or payload not consumed exactly to the CRC boundary. In particular do not assume current writer version 3.0 describes this legacy 1.1 node.
+2. Preserve the source sample. Write copies only in reference/file-proof. Allow differences only in the selected eight-byte double and its four-byte leaf CRC; exact byte equality everywhere else is stronger evidence than field-only comparison.
+3. Require all 241 node CRCs and the graph directory CRC to validate before and after editing. The graph CRC scope is empirical for this file and excludes nested records; preserve it only after verifying that scope against the original and edited bytes.
+4. Independently re-read the saved bytes with a separately implemented reader and CRC routine, not an in-memory editor object or imported editor functions. Compare structural counts, GUID order, target layout and values, length, and changed-byte ranges.
+5. Include unchanged-copy byte identity, reverse edit to original value restoring byte identity, and a stale/corrupted leaf CRC rejection. A malformed/truncated input rejection is useful additional boundary coverage.
+6. Report unknown node bodies, preview images, geometry/native data, and all unedited sections as opaque preserved bytes. Preservation does not establish their semantic validity.
+7. Name the result a bounded file-format edit/save/re-read proof. It is a library CSG experiment, not a portfolio CSP workflow, full serializer, application save/reopen, or geometry/preview refresh. The recovered modern managed serializer can upgrade versioned fields and mutate metadata during reads, so our preserved legacy record is not proof of identical application serialization behavior.
+
+Implementation review status
+Complete for the bounded fixture proof. See final review and evidence below.
+
+Independent CRC cross-check: a bit-at-a-time PowerShell implementation of reflected CRC32 (polynomial 0xEDB88320, initial/final XOR 0xFFFFFFFF) computed target leaf CRC 0x0C55184D, matching the stored word at 136255. Original SHA256: 73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd.
+
+Node implementation review (2026-10-29)
+Read csg-v4.cjs and run-file-proof.cjs after creation, plus file-roundtrip-result.json. No blocking correctness issue found for the selected hash-pinned fixture. The proof identifies duplicate display labels and selects graph index 8 plus type GUID, checks source hash before and after, preserves all original bytes outside the allowed double/CRC range, and asserts unchanged-copy, reverse-edit, stale-CRC, truncation, and unsupported-version controls.
+The UTF16 terminator check suggested during review was added to Cursor.text. The parser deliberately recognizes only observed legacy range 1.1 and ring 1.2 layouts; this is a bounded proof, not a generic deserializer.
+A separate PowerShell reread of the saved 02 output confirms 4.48 at 136223. Its only byte differences from original are 136223,136224,136225,136226,136227,136228,136255,136256,136257,136258. A separate bitwise CRC implementation computes 0x0450D0DD over the edited leaf payload, matching the stored word. This corroborates the Node report independently.
+C# verifier review is complete; see final review below.
+
+Final independent code/evidence review (2026-10-29)
+Reviewed csg-v4.cjs, run-file-proof.cjs, IndependentVerifier/Program.cs, IndependentVerifier.csproj, run-independent-check.cjs, file-roundtrip-result.json, independent-verification.json, and saved build/reader logs. Reviewed source evidence exclusively in server-complete-refs.
+No blocking issues found for this hash-pinned library sample and bounded proof. The string-terminator check and separate .json verifier output safeguard were added during review. The verifier contains no target assembly/package references and uses a separate C# reader, Guid decoding, and bitwise CRC implementation. Its build log reports zero warnings/errors. Saved source, unchanged, edited, and restored reader runs exit 0; corrupted-leaf CRC exits 1 with 'CRC mismatch at 135761' and no success JSON.
+The comparison script checks both source and edited snapshots across all 241 node GUIDs, versions and raw hashes, plus 74 decoded numeric records and their link/category arrays. The edited node is graph index 8, resolved using the fixture hash and type GUID because two display labels match Top Thickness. It saves 4.48 and reads it back in both languages; reverse editing returns 4.38 and the original SHA256. All 240 other node records and 73 other decoded numeric records remain unchanged. Exactly 10 byte positions differ within the selected double and its CRC only. The original sample remains unchanged.
+Scope accepted: bounded legacy CSG file-format edit/save/re-read, with opaque byte preservation. This evidence does not claim CounterSketch application reopening/resaving, geometry regeneration, preview or cached volume refresh, full CSP serialization, iPad operation, or PC-to-iPad-to-PC round-trip acceptance. The native application was intentionally not run because its writes outside D were not contained. Further runtime/application acceptance remains separate work.

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<controls:CSUIControl x:Class="GV.CounterSketch.Studio.Controls.CSValueOutputControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="TheValueOutputControl" Margin="0,4">
+  <Grid Margin="0,4">
+    <DockPanel>
+      <Border Height="1" VerticalAlignment="Top" Background="#FFC6BEB6" DockPanel.Dock="Top" />
+      <Grid Name="GridDisplayImage">
+        <Rectangle Name="RectImage" Width="50" Height="70" Stretch="Fill" StrokeLineJoin="Round" StrokeThickness="0" />
+      </Grid>
+      <Border Name="BorderSubMenu" Margin="0" Background="#02000000" DockPanel.Dock="Right" />
+      <Grid Margin="0" DockPanel.Dock="Top">
+        <DockPanel Margin="0" VerticalAlignment="Top">
+          <TextBlock Name="TxtTitle" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF32302E" Text="{Binding Path=DisplayTitle, ElementName=TheValueOutputControl, FallbackValue=Title}" />
+        </DockPanel>
+        <DockPanel>
+          <TextBlock Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF32302E" TextWrapping="Wrap" Text="{Binding ElementName=TheValueOutputControl, Path=DisplayText, FallbackValue=Value}" />
+        </DockPanel>
+      </Grid>
+    </DockPanel>
+  </Grid>
+</controls:CSUIControl>

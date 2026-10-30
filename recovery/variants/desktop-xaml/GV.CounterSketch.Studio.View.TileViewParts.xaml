@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="GV.CounterSketch.Studio.View.TileViewParts" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:attachedBehaviors="clr-namespace:GV.CounterSketch.Studio.Utilities.AttachedBehaviors" xmlns:c="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:command="http://www.galasoft.ch/mvvmlight" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:l="clr-namespace:Localization;assembly=Localization" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:model="clr-namespace:GV.CounterSketch.Studio.Model" xmlns:view="clr-namespace:GV.CounterSketch.Studio.View" xmlns:viewModel="clr-namespace:GV.CounterSketch.Studio.ViewModel" DataContext="{Binding TileViewPartsVM, Source={StaticResource Locator}}">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="DataTemplateTileList" DataType="model:TileItem">
+        <Grid Width="310" Height="150" Margin="0,0,0,10">
+          <Border Background="#FFFFFFFF" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+          <Border Background="#333333" Visibility="{Binding TileViewPartsVM.IsLightTheme, ConverterParameter=True, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+          <Image Stretch="Fill">
+            <Image.Source>
+              <MultiBinding Converter="{StaticResource TileSizeImagePathToImageConverter}">
+                <Binding Path="Size" />
+                <Binding Path="ImagePath" />
+                <Binding Path="TileViewPartsVM.IsLightTheme" Source="{StaticResource Locator}" />
+                <Binding Path="TileViewPartsVM.IsTechTheme" Source="{StaticResource Locator}" />
+              </MultiBinding>
+            </Image.Source>
+          </Image>
+          <Grid Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="{Binding Title, Converter={StaticResource StringIsNullOrEmptyToVisibilityConverter}}">
+            <TextBlock Margin="5,5,5,5" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="18" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding Title}" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <TextBlock Margin="5,5,5,5" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="18" Foreground="#FFFFFFFF" TextWrapping="Wrap" Text="{Binding Title}" Visibility="{Binding TileViewPartsVM.IsLightTheme, ConverterParameter=True, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+          </Grid>
+          <Button Width="32" Height="32" Margin="10,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ButtonStyleRoundAction}" Command="{Binding Path=ParentViewModel.CommandAddTile}" CommandParameter="{Binding}">
+            <wpf:ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" xmlns:wpf="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" wpf:ImageAwesome.Icon="Plus" />
+          </Button>
+        </Grid>
+      </DataTemplate>
+      <Style x:Key="CSTileLayoutControlStyle" TargetType="{x:Type dxlc:TileLayoutControl}">
+        <Setter Property="dxlc:FlowLayoutControl.ItemTemplate">
+          <Setter.Value>
+            <DataTemplate DataType="model:TileItem">
+              <dxlc:Tile dxlc:FlowLayoutControl.IsFlowBreak="{Binding IsGroupStart, Mode=TwoWay}" Background="{x:Null}" Command="{Binding TileCommandObject}" CommandParameter="{Binding TileCommandObjectInput}" IsHitTestVisible="{Binding IsHitTestVisible}" IsManipulationEnabled="{Binding TileViewPartsVM.IsInEditMode, Source={StaticResource Locator}, Converter={StaticResource BooleanInverseConverter}}" Size="{Binding Size, UpdateSourceTrigger=PropertyChanged}">
+                <dx:ContentControlBase.Content>
+                  <Grid>
+                    <Border Background="#FFFFFFFF" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <Border Background="#333333" Visibility="{Binding TileViewPartsVM.IsLightTheme, ConverterParameter=True, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <Image Visibility="{Binding TileCommandType, ConverterParameter=True, Converter={StaticResource TileCommandIsCustomToVisibilityConverter}}">
+                      <Image.Source>
+                        <MultiBinding Converter="{StaticResource TileSizeImagePathToImageConverter}">
+                          <Binding Path="Size" />
+                          <Binding Path="ImagePath" />
+                          <Binding Path="TileViewPartsVM.IsLightTheme" Source="{StaticResource Locator}" />
+                          <Binding Path="TileViewPartsVM.IsTechTheme" Source="{StaticResource Locator}" />
+                        </MultiBinding>
+                      </Image.Source>
+                    </Image>
+                    <Image Stretch="Fill" Source="{Binding ImagePath, Converter={StaticResource ImagePathToBitmapImageConverter}}" Visibility="{Binding TileCommandType, Converter={StaticResource TileCommandIsCustomToVisibilityConverter}}" />
+                    <Grid Visibility="{Binding TileViewPartsVM.IsInEditMode, ConverterParameter=False, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                      <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5" Visibility="{Binding Size, ConverterParameter=True, Converter={StaticResource TileSizeToTextVisibilityConverter}}">
+                        <FrameworkElement.LayoutTransform>
+                          <TransformGroup>
+                            <ScaleTransform ScaleX=".8" ScaleY=".8" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform />
+                          </TransformGroup>
+                        </FrameworkElement.LayoutTransform>
+                        <c:TileSizeButtonFlyoutControl Margin="5" CurrentTileSize="{Binding Size, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <Button Width="32" Height="32" Margin="5" Style="{DynamicResource ButtonStyleRoundAction}" Command="{Binding ParentViewModel.CommandEditTileImage}" CommandParameter="{Binding}" Visibility="{Binding TileCommandType, Converter={StaticResource TileCommandIsCustomToVisibilityConverter}}">
+                          <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p30:ImageAwesome.Icon="Image" xmlns:p30="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                        </Button>
+                        <Button Width="32" Height="32" Margin="5" Style="{DynamicResource ButtonStyleRoundAction}" Command="{Binding ParentViewModel.CommandSetShowcaseTile}" CommandParameter="{Binding}" Visibility="{Binding TileCommandType, Converter={StaticResource TileCommandIsCustomToVisibilityConverter}}">
+                          <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p30:ImageAwesome.Icon="Book" xmlns:p30="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                        </Button>
+                        <Button Width="32" Height="32" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource ButtonStyleRoundAction}" Command="{Binding ParentViewModel.CommandEditTileURL}" CommandParameter="{Binding}" Visibility="{Binding TileCommandType, Converter={StaticResource TileCommandIsCustomToVisibilityConverter}}">
+                          <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p30:ImageAwesome.Icon="Link" xmlns:p30="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                        </Button>
+                        <Button Width="32" Height="32" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource ButtonStyleRoundAction}" Command="{Binding ParentViewModel.CommandRemoveTile}" CommandParameter="{Binding}">
+                          <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p30:ImageAwesome.Icon="Trash" xmlns:p30="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                        </Button>
+                      </WrapPanel>
+                      <Grid HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <WrapPanel Margin="10,10,10,0" Orientation="Horizontal" Visibility="{Binding Size, Converter={StaticResource TileSizeToTextVisibilityConverter}}">
+                          <c:TileSizeButtonFlyoutControl Margin="5" CurrentTileSize="{Binding Size, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                          <Button Width="32" Height="32" Margin="5" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.AddCustomImageTile}" Command="{Binding ParentViewModel.CommandEditTileImage}" CommandParameter="{Binding}" Visibility="{Binding TileCommandType, Converter={StaticResource TileCommandIsCustomToVisibilityConverter}}">
+                            <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p31:ImageAwesome.Icon="Image" xmlns:p31="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                          </Button>
+                          <Button Width="32" Height="32" Margin="5" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.ShowcaseTileURL}" Command="{Binding ParentViewModel.CommandSetShowcaseTile}" CommandParameter="{Binding}" Visibility="{Binding TileCommandType, Converter={StaticResource TileCommandIsCustomToVisibilityConverter}}">
+                            <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p31:ImageAwesome.Icon="Book" xmlns:p31="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                          </Button>
+                          <Button Width="32" Height="32" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.TileURL}" Command="{Binding ParentViewModel.CommandEditTileURL}" CommandParameter="{Binding}" Visibility="{Binding TileCommandType, Converter={StaticResource TileCommandIsCustomToVisibilityConverter}}">
+                            <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p31:ImageAwesome.Icon="Link" xmlns:p31="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                          </Button>
+                          <Button Width="32" Height="32" Margin="5" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.Delete}" Command="{Binding ParentViewModel.CommandRemoveTile}" CommandParameter="{Binding}">
+                            <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p31:ImageAwesome.Icon="Trash" xmlns:p31="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                          </Button>
+                        </WrapPanel>
+                      </Grid>
+                    </Grid>
+                    <Grid Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="{Binding Title, Converter={StaticResource StringIsNullOrEmptyToVisibilityConverter}}">
+                      <TextBlock Margin="5,5,5,5" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="18" Foreground="#FF000000" TextWrapping="Wrap" Text="{Binding Title}" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                      <TextBlock Margin="5,5,5,5" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="18" Foreground="#FFFFFFFF" TextWrapping="Wrap" Text="{Binding Title}" Visibility="{Binding TileViewPartsVM.IsLightTheme, ConverterParameter=True, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    </Grid>
+                  </Grid>
+                </dx:ContentControlBase.Content>
+              </dxlc:Tile>
+            </DataTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      <Style x:Key="ListBoxStyleAvailableTiles" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{StaticResource ListBox.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ListBox.Static.Border}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="True" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ListBox}">
+              <ScrollViewer Padding="0" Focusable="False" HorizontalScrollBarVisibility="Disabled">
+                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" />
+              </ScrollViewer>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <Grid Name="GridMainParts" attachedBehaviors:SizeObserver.Observe="True" ClipToBounds="True" attachedBehaviors:SizeObserver.ObservedWidth="{Binding TileSearchMainVM.TileSearchResultPartsVM.SectionWidth, Source={StaticResource Locator}, Mode=OneWayToSource}">
+      <i:Interaction.Triggers>
+        <ei:DataTrigger Value="True" Binding="{Binding TileSearchMainVM.TileSearchResultPartsVM.ScrollSection, Source={StaticResource Locator}}">
+          <ei:ControlStoryboardAction x:Name="ScrollSectionAnimation">
+            <ei:StoryboardAction.Storyboard>
+              <Storyboard Completed="Storyboard_Completed">
+                <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="StackPanelParts" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                  <EasingThicknessKeyFrame KeyTime="{Binding SectionTransitionTime}" Value="{Binding TileSearchMainVM.TileSearchResultPartsVM.SectionMargin, Source={StaticResource Locator}}" />
+                </ThicknessAnimationUsingKeyFrames>
+              </Storyboard>
+            </ei:StoryboardAction.Storyboard>
+          </ei:ControlStoryboardAction>
+        </ei:DataTrigger>
+      </i:Interaction.Triggers>
+      <StackPanel Name="StackPanelParts" Margin="0" HorizontalAlignment="Left" Orientation="Horizontal">
+        <Grid Name="TileUIGrid" Width="{Binding ActualWidth, ElementName=GridMainParts}" Background="{Binding TileBackgroundColor, Converter={StaticResource ColorToBrushConverter}, UpdateSourceTrigger=PropertyChanged}">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <i:Interaction.Triggers>
+            <ei:DataTrigger Value="True" Binding="{Binding IsInEditMode}">
+              <ei:ControlStoryboardAction>
+                <ei:StoryboardAction.Storyboard>
+                  <Storyboard>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ToolboxBorder" Storyboard.TargetProperty="Width">
+                      <EasingDoubleKeyFrame KeyTime="0:00:01" Value="336">
+                        <EasingDoubleKeyFrame.EasingFunction>
+                          <PowerEase EasingMode="EaseInOut" />
+                        </EasingDoubleKeyFrame.EasingFunction>
+                      </EasingDoubleKeyFrame>
+                    </DoubleAnimationUsingKeyFrames>
+                  </Storyboard>
+                </ei:StoryboardAction.Storyboard>
+              </ei:ControlStoryboardAction>
+            </ei:DataTrigger>
+            <ei:DataTrigger Value="False" Binding="{Binding IsInEditMode}">
+              <ei:ControlStoryboardAction>
+                <ei:StoryboardAction.Storyboard>
+                  <Storyboard>
+                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ToolboxBorder" Storyboard.TargetProperty="Width">
+                      <EasingDoubleKeyFrame KeyTime="0:00:0.3" Value="0">
+                        <EasingDoubleKeyFrame.EasingFunction>
+                          <PowerEase EasingMode="EaseInOut" />
+                        </EasingDoubleKeyFrame.EasingFunction>
+                      </EasingDoubleKeyFrame>
+                    </DoubleAnimationUsingKeyFrames>
+                  </Storyboard>
+                </ei:StoryboardAction.Storyboard>
+              </ei:ControlStoryboardAction>
+            </ei:DataTrigger>
+          </i:Interaction.Triggers>
+          <Border Name="ToolboxBorder" Grid.ColumnSpan="1" Width="0">
+            <Grid Background="#FFB6B6B6">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="5" />
+              </Grid.ColumnDefinitions>
+              <DockPanel Margin="10">
+                <StackPanel Margin="0,0,0,10" HorizontalAlignment="Right" DockPanel.Dock="Top" Orientation="Horizontal">
+                  <Button Name="AddCustomTile" Width="36" Height="36" Margin="0,0,8,0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.AddCustomTile}" Command="{Binding CommandAddCustomTile}">
+                    <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p27:ImageAwesome.Icon="Plus" xmlns:p27="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                  </Button>
+                </StackPanel>
+                <ListBox MinWidth="310" HorizontalAlignment="Center" DockPanel.Dock="Top" ItemTemplate="{DynamicResource DataTemplateTileList}" Style="{DynamicResource ListBoxStyleAvailableTiles}" Background="{x:Null}" BorderBrush="{x:Null}" ItemsSource="{Binding AvailableTiles}" />
+              </DockPanel>
+            </Grid>
+          </Border>
+          <DockPanel Grid.Column="1" VerticalAlignment="Stretch">
+            <Border Name="FixedTools" VerticalAlignment="Center">
+              <Grid VerticalAlignment="Center" Height="{Binding ElementName=TileLayoutControlViewbox, Path=ActualHeight}">
+                <StackPanel Margin="8,8,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Vertical" Background="{Binding TileBackgroundColor, Converter={StaticResource ColorToBrushConverter}, FallbackValue=Red, UpdateSourceTrigger=PropertyChanged}">
+                  <Button Width="86" Height="86" Margin="0,0,0,8" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleTileTool}" ToolTip="{x:Static l:Strings.AddRingRailGuide}" Command="{Binding CommandAddRingRailGuide}">
+                    <Grid>
+                      <Border Background="#FFFFFFFF" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                      <Border Background="#333333" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=True}" />
+                      <Viewbox Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ContentPresenter Content="{DynamicResource FreehandRingRailIcon}" />
+                      </Viewbox>
+                    </Grid>
+                  </Button>
+                  <Button Width="86" Height="86" Margin="0,0,0,8" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleTileTool}" ToolTip="{x:Static l:Strings.AddAGem}" Command="{Binding CommandAddAGem}">
+                    <Grid>
+                      <Border Background="#FFFFFFFF" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                      <Border Background="#333333" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=True}" />
+                      <Viewbox Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ImageAwesome p29:ImageAwesome.Icon="Diamond" p29:ImageAwesome.Foreground="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type StackPanel}}}" xmlns:p29="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                      </Viewbox>
+                    </Grid>
+                  </Button>
+                  <Button Width="86" Height="86" Margin="0,0,0,8" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{DynamicResource ButtonStyleTileTool}" ToolTip="{x:Static l:Strings.AddText}" Visibility="Collapsed" Command="{Binding CommandAddText}">
+                    <Grid>
+                      <Border Background="#FFFFFFFF" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                      <Border Background="#333333" Visibility="{Binding TileViewPartsVM.IsLightTheme, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=True}" />
+                      <Viewbox Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ContentPresenter Content="{DynamicResource FreehandTextToolIcon}" />
+                      </Viewbox>
+                    </Grid>
+                  </Button>
+                </StackPanel>
+              </Grid>
+            </Border>
+            <Viewbox Name="TileLayoutControlViewbox" VerticalAlignment="Center">
+              <dxlc:TileLayoutControl Margin="0,0,0,0" Padding="10" AllowMaximizedElementMoving="True" GroupHeaderSpace="10" ItemMovingAnimationDuration="0:0:0.5" LayerSpace="10" MovingItemPlaceHolderBrush="#4C000000" Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Disabled" Style="{DynamicResource CSTileLayoutControlStyle}" AllowAddFlowBreaksDuringItemMoving="{Binding IsInEditMode}" AllowItemMoving="{Binding IsInEditMode}" ItemsSource="{Binding Tiles}" TouchUp="TileLayoutControl_TouchUp">
+                <FrameworkElement.Resources>
+                  <ResourceDictionary>
+                    <Style x:Key="{x:Type dxlc:Tile}" TargetType="{x:Type dxlc:Tile}">
+                      <Setter Property="BorderBrush" Value="#FF000000" />
+                      <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+                    </Style>
+                  </ResourceDictionary>
+                </FrameworkElement.Resources>
+              </dxlc:TileLayoutControl>
+            </Viewbox>
+          </DockPanel>
+          <Border Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="#FF000000" BorderThickness="1" />
+          <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="#40DDDDDD" Orientation="Horizontal" Visibility="{Binding IsInEditMode, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Popup Name="Popup" Placement="Top" StaysOpen="False">
+              <Grid Width="321" Height="137">
+                <view:ColorPickerView Background="#FF9B9B9B" DataContext="{Binding TileViewPartsVM.ColorPickerViewModel, Source={StaticResource Locator}}" />
+              </Grid>
+            </Popup>
+            <ToggleButton Width="32" Height="32" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static l:Strings.ColorTheme}" Command="{Binding CommandSetBackgroundColor}" IsChecked="{Binding IsOpen, ElementName=Popup, Mode=TwoWay}">
+              <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p24:ImageAwesome.Icon="PaintBrush" xmlns:p24="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+            </ToggleButton>
+            <ToggleButton Width="32" Height="32" Margin="15,5,5,5" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static l:Strings.LightDarkTheme}" IsChecked="{Binding IsLightTheme}">
+              <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p24:ImageAwesome.Foreground="#FF292929" p24:ImageAwesome.Icon="LightbulbOutline" xmlns:p24="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+            </ToggleButton>
+            <StackPanel Name="EditTemplatesPanel" Margin="15,5,5,5" VerticalAlignment="Center" Orientation="Horizontal">
+              <RadioButton Width="32" Height="32" Margin="0,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" GroupName="TemplateParts1" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static l:Strings.LayoutOne}" IsChecked="{Binding IsTemplateOne, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <Grid Width="16" Height="15">
+                  <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p26:ImageAwesome.Icon="Bookmark" xmlns:p26="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                  <TextBlock Margin="0,0,0,4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" FontWeight="Bold" Foreground="#FFFFFFFF" Text="1" />
+                </Grid>
+              </RadioButton>
+              <RadioButton Width="32" Height="32" Margin="0,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" GroupName="TemplateParts2" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static l:Strings.LayoutTwo}" IsChecked="{Binding IsTemplateTwo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <Grid Width="16" Height="15">
+                  <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p26:ImageAwesome.Icon="Bookmark" xmlns:p26="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                  <TextBlock Margin="0,0,0,4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" FontWeight="Bold" Foreground="#FFFFFFFF" Text="2" />
+                </Grid>
+              </RadioButton>
+              <RadioButton Width="32" Height="32" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" GroupName="TemplateParts3" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ToggleButtonRoundAction}" ToolTip="{x:Static l:Strings.LayoutThree}" IsChecked="{Binding IsTemplateThree, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <Grid Width="16" Height="15">
+                  <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p26:ImageAwesome.Icon="Bookmark" xmlns:p26="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+                  <TextBlock Margin="0,0,0,4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="8" FontWeight="Bold" Foreground="#FFFFFFFF" Text="3" />
+                </Grid>
+              </RadioButton>
+            </StackPanel>
+            <StackPanel Name="EditActionsPanel" Margin="15,5,5,5" VerticalAlignment="Center" Orientation="Horizontal">
+              <Button Width="32" Height="32" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.ResetLayout}" Command="{Binding CommandResetLayout}">
+                <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p25:ImageAwesome.Icon="Refresh" xmlns:p25="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+              </Button>
+              <Button Width="32" Height="32" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.CANCEL}" Command="{Binding CommandCancelLayout}">
+                <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p25:ImageAwesome.Icon="Times" UIElement.RenderTransformOrigin="0.5,0.5" xmlns:p25="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+              </Button>
+              <Button Width="32" Height="32" Margin="5,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Style="{DynamicResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.Save}" Command="{Binding CommandSaveLayout}">
+                <ImageAwesome FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p25:ImageAwesome.Icon="Save" xmlns:p25="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+              </Button>
+            </StackPanel>
+          </StackPanel>
+        </Grid>
+        <Grid Name="SearchPartsViewGrid" Background="#FFFFFFFF" Width="{Binding ActualWidth, ElementName=GridMainParts}" DataContext="{Binding TileSearchMainVM.TileSearchResultPartsVM, Source={StaticResource Locator}}">
+          <view:TileSearchResultListView Margin="30,0,10,0" DataContext="{Binding TileSearchMainVM.TileSearchResultPartsVM, Source={StaticResource Locator}}" Visibility="{Binding TileSearchMainVM.IsSearchingUserParts, ConverterParameter=True, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+          <view:UserPartsView Grid.Column="1" DataContext="{Binding UserPartsVM, Source={StaticResource Locator}}" Visibility="{Binding TileSearchMainVM.IsSearchingUserParts, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+          <Border Grid.ColumnSpan="2" Background="#33000000" Visibility="{Binding TileSearchMainVM.TileSearchResultPartsVM.IsDesignSelected, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <UIElement.InputBindings>
+              <MouseBinding MouseAction="LeftClick" Command="{Binding TileSearchMainVM.TileSearchResultPartsVM.CommandCloseDesignInfo, Source={StaticResource Locator}}" />
+            </UIElement.InputBindings>
+          </Border>
+          <view:TileSearchResultDetailView Margin="195,40,195,40" HorizontalAlignment="Center" MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" Visibility="{Binding TileSearchMainVM.TileSearchResultPartsVM.IsDesignSelected, Source={StaticResource Locator}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        </Grid>
+      </StackPanel>
+      <Button Width="50" Height="50" Margin="10,0,0,0" HorizontalAlignment="Left" Background="#a3a3a3" Style="{StaticResource ButtonStyleRoundAction}" ToolTip="{x:Static l:Strings.Back}" Command="{Binding TileSearchMainVM.TileSearchResultPartsVM.CommandNavigateBackToTiles, Source={StaticResource Locator}}" Visibility="{Binding TileSearchMainVM.TileSearchResultPartsVM.IsShowingPartSearchResults, Converter={StaticResource BooleanToVisibilityConverter}, Source={StaticResource Locator}}">
+        <ImageAwesome FrameworkElement.Width="15" FrameworkElement.HorizontalAlignment="Center" FrameworkElement.VerticalAlignment="Center" p21:ImageAwesome.Foreground="#FFFFFFFF" p21:ImageAwesome.Icon="ArrowLeft" xmlns:p21="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" xmlns="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF" />
+      </Button>
+    </Grid>
+  </Grid>
+</UserControl>

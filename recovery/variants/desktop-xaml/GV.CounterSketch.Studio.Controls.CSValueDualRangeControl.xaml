@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Controls:CSUIControl x:Class="GV.CounterSketch.Studio.Controls.CSValueDualRangeControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Controls="clr-namespace:GV.CounterSketch.Studio.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="theCSValueDualRangeControl" Background="#00FFFFFF" MinHeight="35" VerticalAlignment="Top">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CounterSketch Studio;component/ResourceDictionaries/Converters.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Margin="0">
+    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
+      <Border Height="1" Background="#FFC6BEB6" DockPanel.Dock="Top" />
+      <Grid Name="gridDisplayImage" Margin="0,0,5,0" VerticalAlignment="Top">
+        <Rectangle Name="rectImage" Width="50" Height="70" Stretch="Fill" StrokeLineJoin="Round" StrokeThickness="0" />
+      </Grid>
+      <Grid Margin="0" DockPanel.Dock="Top">
+        <Grid Margin="0,19,4,0" Row="1">
+          <Path Stretch="Fill" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="#FF898684" Data="F1 M286.406,104.895 L286.406,114.895" Height="10" VerticalAlignment="Center" />
+          <telerik:RadSlider xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" Name="sliderA" MinWidth="95" MinHeight="15" IsSnapToTickEnabled="True" TickPlacement="None" VerticalAlignment="Center" IsSelectionRangeEnabled="True" ThumbStyle="{DynamicResource RadThumbStyle}" TrackStyle="{DynamicResource RadSliderTrackStyle}" AlternateThumbStyle="{DynamicResource RadThumbStyle}" SelectionMiddleThumbStyle="{DynamicResource DualSelectionThumbStyle}" Foreground="{Binding ControlColorBrush, ElementName=theCSValueDualRangeControl}" Background="{x:Null}" ToolTip="{Binding Value, ElementName=theCSValueDualRangeControl}" SmallChange="{Binding StepValue, Converter={StaticResource DoubleFormatConverter}, ElementName=theCSValueDualRangeControl, Mode=TwoWay}" TickFrequency="{Binding StepValue, Converter={StaticResource DoubleFormatConverter}, ElementName=theCSValueDualRangeControl, Mode=TwoWay}" Value="{Binding Value, Converter={StaticResource DoubleFormatConverter}, ElementName=theCSValueDualRangeControl, Mode=TwoWay}" SelectionEnd="{Binding Value2, Converter={StaticResource DoubleFormatConverter}, ElementName=theCSValueDualRangeControl, Mode=TwoWay}" SelectionStart="{Binding Value, Converter={StaticResource DoubleFormatConverter}, ElementName=theCSValueDualRangeControl, Mode=TwoWay}" LargeChange="{Binding StepValue, Converter={StaticResource DoubleFormatConverter}, ElementName=theCSValueDualRangeControl, Mode=TwoWay}" Maximum="{Binding MaxValue2, Converter={StaticResource DoubleFormatConverter}, ElementName=theCSValueDualRangeControl, Mode=TwoWay}" Minimum="{Binding MinValue, Converter={StaticResource DoubleFormatConverter}, ElementName=theCSValueDualRangeControl, Mode=TwoWay}" PreviewKeyDown="SliderPreviewKeyDown" PreviewKeyUp="SliderPreviewKeyUp" PreviewMouseLeftButtonDown="SliderMouseLeftButtonDown" PreviewMouseLeftButtonUp="SliderMouseLeftButtonUp" ValueChanged="SliderValueChanged" />
+        </Grid>
+        <DockPanel VerticalAlignment="Top">
+          <TextBlock Name="txtTitle" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF32302E" Text="{Binding DisplayTitle, ElementName=theCSValueDualRangeControl}" />
+          <Button Name="btnSubMenu" VerticalAlignment="Top" Style="{DynamicResource CSSubMenuButton}" Height="13" Width="12" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="2,2,1,0" Click="BtnSubMenuClick">
+            <Control.Background>
+              <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Offset="0" Color="#FFF3F3F3" />
+                <GradientStop Offset="0.5" Color="#FFEBEBEB" />
+                <GradientStop Offset="0.5" Color="#FFDDDDDD" />
+                <GradientStop Offset="1" Color="White" />
+              </LinearGradientBrush>
+            </Control.Background>
+          </Button>
+          <Line HorizontalAlignment="Right" VerticalAlignment="Top" Stroke="#FFC6BEB6" Y2="15" DockPanel.Dock="Right" />
+        </DockPanel>
+      </Grid>
+    </DockPanel>
+    <Popup Name="popupSubMenu" AllowsTransparency="True" HorizontalOffset="-19" Placement="Right" PopupAnimation="None" VerticalOffset="-22" VerticalAlignment="Top" PlacementTarget="{Binding ElementName=btnSubMenu}" MouseLeave="PopupSubMenuMouseLeave">
+      <Border Margin="0" Background="#02000000" BorderThickness="0" Padding="20,20,0,0">
+        <Border Background="{DynamicResource WindowFrameBackground}" BorderBrush="#FF65615D" BorderThickness="1">
+          <StackPanel Name="stackSubMenuActions" Margin="10,4">
+            <Border>
+              <StackPanel Margin="0">
+                <Button Name="btnResetControl" HorizontalContentAlignment="Center" Content="Reset Control To Default" Cursor="Hand" Foreground="#FF65615D" Style="{DynamicResource CSSubMenuActionButton}" Background="{x:Null}" Click="BtnResetControlClick" />
+              </StackPanel>
+            </Border>
+          </StackPanel>
+        </Border>
+      </Border>
+    </Popup>
+  </Grid>
+</Controls:CSUIControl>
