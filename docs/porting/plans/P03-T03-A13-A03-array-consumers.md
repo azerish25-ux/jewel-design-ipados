@@ -12,6 +12,7 @@ Sources: CSTransformObject.Update; CSDataArray copy/ApplyTransform/GetTransform/
 - [x] CSAdd provider uses source array arithmetic outputs; direct array transform capability uses first non-array item, per source.
 - [x] Exact-source/analytical/native mixed tree cases, current scene/profile geometry, saved edits/reopen, old snapshots, rollback/cycles/zero entries; preserve earlier tests.
 - [x] Review/source/provenance/repository checks.
-- [ ] Commit/push and Apple native simulator/device validation; inspect actual reports.
+- [x] Commit/push6f18df4; dispatch native host/iPad/iPhone41117797147 and unsigned device41117800707, both queued.
+- [ ] Inspect actual source49/native array application/bounds/metadata/family/AOT reports.
 
 Known represented data are numeric/empty/missing/transform/stored profile/generated curve/nested array. Arbitrary other source data, material/display/segmentation/raw4x4/Unset/degenerate native geometry/all builders/UI/PC/physical acceptance remain open. A13 and full port are not complete from compilation/limited tests. All local writes/cache D:, wait5 seconds/retry transient D errors.
