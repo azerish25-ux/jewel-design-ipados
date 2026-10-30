@@ -42,7 +42,10 @@
     "src/Port/Geometry.Candidate/CandidateContext.Curves.cs",
     "tests/Port/Geometry.Candidate.Contracts/CurveAssertions.cs",
     "docs/porting/plans/P05-T02-A06-native-curves.md",
-    "scripts/build-native-windows.cjs"
+    "scripts/build-native-windows.cjs",
+    "tests/Port/Geometry.Candidate.HostTests/Geometry.Candidate.HostTests.csproj",
+    "tests/Port/Geometry.Candidate.HostTests/Program.cs",
+    "docs/evidence/native/four-span-curve-host-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -95,7 +98,7 @@
     {
       "id": "P05-T02-A06",
       "scope": "Actual native four-span rational curve creation/inspection/evaluation through CSharp ownership adapter",
-      "status": "representation_fix_ci_pending"
+      "status": "host_curve_verified_apple_pending"
     }
   ],
   "checks": [
@@ -147,12 +150,19 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "actual": "GNU16.1.0 found; pinned native candidate configured and API objects compile. Full local SDK build session43984 still live; no runtime result asserted."
+    },
+    {
+      "command": "node scripts/build-native-windows.cjs; dotnet run Geometry.Candidate.HostTests with D:-local DLL",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/native/four-span-curve-host-results.json",
+      "actual": "Corrected native executable and actual managed/native contracts pass; helper reuses cached SDK. Initial DLL prefix mismatch fixed with explicit PREFIX empty."
     }
   ],
   "review": {
     "scope": "Acquisition/platform experiment; no local iOS/native compiler execution asserted",
     "security": "Public source commit pinned, no original account/runtime/key use; upload text only",
-    "limits": "An existing GNU16.1.0 WinLibs/UCRT C++ compiler and Ninja were found. Pinned SDK configured under .local/native/windows-gnu and candidate API objects compiled successfully; full Windows native build is live and not yet a runtime pass. Mac/iOS proof remains required.",
+    "limits": "Existing GNU16.1.0/UCRT toolchain built pinned SDK under D: and passed native executable plus actual CSharp/host DLL curve/ownership contracts. Mac curve runtime/device proof still required; prior no-active-compiler observation is obsolete.",
     "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim",
     "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending.",
     "currentStatus": "Native C ABI and actual CSharp SafeHandle adapter passed both simulator families and unsigned device compile/link/platform checks. This is a bounded candidate interface, not backend selection/full CAD/PC/physical proof.",
@@ -164,7 +174,7 @@
     "redLogSha256": "7ce7453be4e8313065e8ee0886c5635144b572c2b87dae594eae3823abd400a3",
     "managedAdapter": "Header widths/entrypoints/Cdecl matched; input SafeHandles marshal lifetime; per-context gate covers native result plus child parent-lease creation; explicit logical Dispose separate from IsClosed. Native creation cleanup and paired parent leases reviewed. Windows build proves managed compilation only; Apple real/native/disposal/trim tests pending. No full kernel/cancellation/process-memory/physical/PC claim.",
     "curves": "Initial host execution failed Unexpected four-span circle representation. Source investigation found GeomConvert.cxx untrimmed circle path forces SetPeriodic after low-level_4 conversion; trimmed-circle branch does not. Native factory now supplies full-period Geom_TrimmedCurve before explicit_4 conversion. All9-pole/rational/nonperiodic/28-sample/ownership assertions remain unchanged. Actual corrected runtime proof pending.",
-    "windowsNative": "Local commands use run-local.cjs for D:-scoped SDK/temp/cache/build paths. Existing C: compiler/tool binaries are read only; no installer or original Rhino/CounterSketch execution. build-native-windows.cjs is syntax/drive-guard checked but not launched against the already-live build directory."
+    "windowsNative": "D:-local incremental helper verified end to end. Windows-only shared test DLL plus process-lifetime NativeLibrary resolver executes existing CSharp contracts against actual native geometry. Native compiler/tool binaries are existing C: reads; source/cache/temp/output remain D:. Original CounterSketch/Rhino not loaded."
   },
   "blockers": [
     "Full CAD semantic mapping/candidate acceptance and broader recovered trim safety remain incomplete",
@@ -254,6 +264,18 @@
       "commit": "ed015049cdcc1f9dacbc508c060711de4af10bd0",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41041207911",
       "verification": "Unsigned device curve adapter build dispatched and confirmed live/queued. Host early API compile passed; full native/runtime results pending."
+    },
+    {
+      "id": 41043301675,
+      "commit": "e54d076",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41043301675",
+      "verification": "Corrected host C++ assertions passed; Apple job still live. Source e54d076. See four-span-curve-host-results.json."
+    },
+    {
+      "id": 41043305181,
+      "commit": "e54d076",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41043305181",
+      "verification": "Corrected unsigned Apple device build confirmed live; terminal proof pending."
     }
   ]
 }

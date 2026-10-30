@@ -42,8 +42,8 @@ All local downloads/logs remain under .local on D:. CI uploads text evidence onl
 
 ## D:-local Windows native iteration
 
-An existing WinLibs GNU16.1.0/UCRT toolchain and Ninja were found without installing tools. The pinned OCCT candidate configures and its API objects compile locally; the first full native Windows build is pending at this checkpoint. The reproducible helper keeps source/build/temp/cache under the D: repository through run-local.cjs:
+An existing WinLibs GNU16.1.0/UCRT toolchain and Ninja were found without installing tools. The pinned OCCT candidate configures and its API objects compile locally; the full native Windows executable and actual CSharp/native contract runner now pass. The reproducible helper keeps source/build/temp/cache under the D: repository through run-local.cjs:
 
     node scripts/build-native-windows.cjs
 
-It requires an existing g++/CMake/Ninja on PATH and the pinned .local/native/occt-source checkout. It installs nothing and reuses .local/native/windows-gnu for incremental builds. Do not launch another build/configure against that directory while its current Ninja process is live. This helper is Windows candidate validation, not Apple or original CounterSketch/Rhino execution. Mac CI remains required.
+It requires an existing g++/CMake/Ninja on PATH and the pinned .local/native/occt-source checkout. It installs nothing and reuses .local/native/windows-gnu for incremental builds. Do not launch another build/configure against that directory while its current Ninja process is live. This helper is Windows candidate validation, not Apple or original CounterSketch/Rhino execution. Mac CI remains required. The helper also builds the Windows-only jewel_occt_candidate_host.dll and runs the existing managed geometry contracts against that real module through a process-lifetime DllImport resolver. This does not load the original CounterSketch/Rhino application or replace Apple testing.

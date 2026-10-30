@@ -39,3 +39,10 @@ if(NOT CMAKE_SYSTEM_NAME STREQUAL "iOS")
   enable_testing()
   add_test(NAME analytic_native_geometry COMMAND occt_candidate_test)
 endif()
+
+# Local Windows test module only; Apple apps keep static __Internal linking.
+if(WIN32)
+  add_library(jewel_occt_candidate_host SHARED $<TARGET_OBJECTS:jewel_occt_candidate_objects>)
+  set_target_properties(jewel_occt_candidate_host PROPERTIES PREFIX "" WINDOWS_EXPORT_ALL_SYMBOLS ON LINKER_LANGUAGE CXX)
+  target_link_libraries(jewel_occt_candidate_host PRIVATE jewel_occt_candidate)
+endif()

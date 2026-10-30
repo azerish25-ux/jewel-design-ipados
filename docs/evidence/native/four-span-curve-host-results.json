@@ -1,0 +1,23 @@
+{
+  "correctedSourceCommit": "e54d076",
+  "linuxRun": 41043301675,
+  "linuxUrl": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41043301675",
+  "reports": [
+    {
+      "platform": "Linux native",
+      "text": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; candidate-four-span-curves=pass; analytic fixtures only, no CounterSketch/PC parity claim.\n",
+      "sha256": "478396389534065458bf260b8c81c60ce7be36afced167a22cf9c19d56e80e90"
+    },
+    {
+      "platform": "Windows GNU16.1/UCRT native",
+      "text": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; candidate-four-span-curves=pass; analytic fixtures only, no CounterSketch/PC parity claim.\r\n",
+      "sha256": "d5391901e5ef73182c272e1c1ae3559ecadfb335957de7d0301fc9ce07323cb2"
+    },
+    {
+      "platform": "Windows actual CSharp/native DLL interop",
+      "text": "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. PASS candidate native curves: four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.\r\n",
+      "sha256": "233a2ed96397b9f5f0f7c6b1acc0a527ee7d45692e9727b273e86078c0e31efe"
+    }
+  ],
+  "scope": "Actual corrected four-span rational curve assertions passed C++ host and CSharp/Windows native module. Windows outputs/caches stay under D: .local/native. No Apple/physical/PC/full ring-graph parity or process-memory leak proof implied."
+}

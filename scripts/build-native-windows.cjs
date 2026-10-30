@@ -6,5 +6,6 @@ const build=path.join(root,'.local/native/windows-gnu'),source=path.join(root,'.
 run('g++',['--version']);
 run('cmake',['-S','native/GeometryBridge/CandidateProbe','-B',build,'-G','Ninja','-DCMAKE_BUILD_TYPE=Release','-DOCCT_SOURCE_DIR='+source]);
 run('cmake',['--build',build,'--target','jewel_occt_candidate_objects','--parallel','2']);
-run('cmake',['--build',build,'--target','occt_candidate_test','--parallel','4']);
+run('cmake',['--build',build,'--target','occt_candidate_test','jewel_occt_candidate_host','--parallel','4']);
 run(path.join(build,'occt_candidate_test.exe'),[]);
+run('dotnet',['run','--project','tests/Port/Geometry.Candidate.HostTests','--',path.join(build,'jewel_occt_candidate_host.dll')]);
