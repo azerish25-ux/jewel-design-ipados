@@ -587,6 +587,18 @@
       "commit": "ba83e0e2b656d477871eb9bfcbb699f6821a39f2",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41104242957",
       "verification": "SUCCESS: inspected actual arm64/platform IOS unsigned Release52 warnings0 errors/hash and pinned published reference manifest; rotation-producer-device-results.json. Simulator still live; no physical execution."
+    },
+    {
+      "id": 41108929102,
+      "commit": "32542f3676f24e92b63c4659691bb46150aac84c",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41108929102",
+      "verification": "Consumer host/iPad/iPhone queued; actual source12285/native original3 profiles/metadata/matrix/ownership/family report inspection pending."
+    },
+    {
+      "id": 41108932509,
+      "commit": "32542f3676f24e92b63c4659691bb46150aac84c",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41108932509",
+      "verification": "Consumer unsigned ARM64 build queued; actual source pin/platform/AOT/warnings/hash inspection pending; no physical execution."
     }
   ],
   "requirementIds": [

@@ -14,6 +14,7 @@ Owned: Documents replay helper/header allowlist; candidate output metadata/consu
 - [x] Transform composition, native profile/rail copies, profile names/sweeps/matrix capabilities and source-specific multiply order; no geometry placeholder.
 - [x] Original3 consumer pipelines, source coefficients/native points/metadata, nested transforms/selector snapshots, edits/save/reopen, native readers across replacements, failed/cyclic/disposal/zero-entry cases; retained earlier tests.
 - [x] Source/runtime/provenance/reference/repository checks and review; no full PC/UI/material/array/invalid4x4 sign-off.
-- [ ] Commit/push and macOS native simulator/device runs; inspect actual artifacts.
+- [x] Commit/push32542f3; dispatch native host/iPad/iPhone41108929102 and unsigned device41108932509, both queued.
+- [ ] Inspect actual source12285/native/profile metadata/family/AOT artifacts.
 
 Scope remains full port. This card implements the currently resolvable known non-array data slice; complete arrays/other data, material/display flags, invalid4x4/Unset, segmentation APIs, all variants/one-rail/gem producers/full scheduler/render/export/UI/PC/physical parity remain required. Every local file/cache stays D:; retry transient D errors after5 seconds.
