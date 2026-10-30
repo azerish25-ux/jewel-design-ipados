@@ -1,0 +1,13 @@
+# ADR0043: automatic cap-plane candidate
+
+Status: local analytical/current-native tests and recovered fallback comparisons pass. Independent published planar-body differential and private Rhino5 equivalence remain unverified; full BLD-0020/SER-0055 acceptance stays open.
+
+CurvePlaneCandidate.TryPlanar adapts the pinned published openNURBS6 policy for current native nonperiodic3D NURBS. It preserves clamped linear/control-order checks, line axis priority and zero-tolerance retry, largest control-triangle sampling/strict maximum tie behavior, minimum-error normal choice, initial-tangent alignment with sqrt-epsilon snapping, and the SDK5 default1e-12 control-plane tolerance. [Source method hashes](../evidence/audit/published-plane-candidate-source.json) identify the comparison algorithms. This is not an arbitrary best-fit plane.
+
+TryAveragePlane first uses that planar candidate, then adapts recovered CSUtilMath.AveragePlaneOfCurve. The fallback retains normalized samples .25/.33/.5/.66/.75, its dot-product comparisons against .01 and3.14, unit-cross averaging, and the published perpendicular-axis tie order. Cancellation to an invalid zero normal is explicitly unsupported. Native arc-length sampling uses the existing candidate absolute tolerance1e-9; original Rhino fractional solver equivalence remains open.
+
+The unchanged recovered fallback method is extracted into a data observation harness. TryGetPlane is forced false there to isolate the fallback; native points/arc-length queries are callbacks, and its plane constructor records the normalized normal. Four signed nonplanar cases compare that source-body normal against the production candidate. These tests do not independently validate the planar source implementation or native length solver.
+
+Twenty local cases cover oriented/translated circles and reversals, four line directions, four signed nonplanar fallbacks and six generated profile states. Actual115/122 feed the automatic-plane result into the A23 cap constructor before edit, after radius edit and after save/reopen.198 boundary points match the actual native profiles; native entry count returns to zero. Thickness signs in these tests are supplied explicitly, not read from graph136/138/139.
+
+Next gate: independently compile/exercise the published planar source body with identical exported controls/endpoints/tangents and compare axes/origin across non-default and near-degenerate cases. Then add actual ProfileCap serializer/graph nodes138/139, source thickness channels and join140. Original PC/physical device/full UI/feature parity remain open. [Evidence](evidence/P05-T02-A24.json).

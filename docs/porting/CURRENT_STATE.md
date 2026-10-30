@@ -2,7 +2,7 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P05-T02-A23 constructs recovered native profile caps after explicit plane selection. Windows18 faces/594 boundary samples, signed/flat domes, three world frames, asymmetric control-hull centering/apex/inverse metadata and failure cleanup pass. Apple cap-placement execution pending. [ADR0042](ADR-0042-explicit-plane-profile-caps.md). Automatic source plane selection/fallback, graph138/139 and join140 remain required. Full parity0/1451.
+Latest implementation: P05-T02-A24 supplies an automatic cap-plane candidate using pinned published6 NURBS policy and recovered sampled fallback. Windows20 plane cases/198 actual115/122 cap boundary points and4 unchanged-source fallback comparisons pass, including edit/save/reopen. Independent planar-source differential and new Apple execution pending. [ADR0043](ADR-0043-automatic-cap-plane-candidate.md). Actual cap graph138/139, thickness136 bindings and join140 remain required. Full parity0/1451.
 
 The prior [dome profile checkpoint](../evidence/apple/dome-profile-runtime-results.json) passed iPad/iPhone simulator assertions and unsigned arm64 iOS build. It predates tensor/export/cap-placement work; their Apple runs remain separately tracked.
 
