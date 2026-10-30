@@ -67,6 +67,8 @@ int32_t jd_candidate_line(uint64_t context,double sx,double sy,double sz,double 
 int32_t jd_candidate_curve_line_intersections(uint64_t context,uint64_t shape,double sx,double sy,double sz,double ex,double ey,double ez,double tolerance,jd_candidate_curve_line_event* events,uint32_t event_capacity,uint32_t* count,double* effective_fuzzy,char* diagnostic,uint32_t capacity);
 /* Copied closed seam; output domain starts at requested in-domain parameter. */
 int32_t jd_candidate_curve_seam(uint64_t context,uint64_t shape,double seam,uint64_t* output,char* diagnostic,uint32_t capacity);
+/* Unpadded numerical extrema plus native box gap; not a pole/control-hull box. */
+int32_t jd_candidate_curve_bounds(uint64_t context,uint64_t shape,double tolerance,double* min_x,double* min_y,double* min_z,double* max_x,double* max_y,double* max_z,double* padding,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

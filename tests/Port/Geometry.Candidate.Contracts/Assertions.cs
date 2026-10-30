@@ -64,6 +64,7 @@ public static class Assertions
         var ringRail=RingRailAssertions.Run();
         var curveLine=CurveLineAssertions.Run();
         var seam=CurveSeamAssertions.Run();
-        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam;
+        var bounds=CurveBoundsAssertions.Run();
+        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam+" "+bounds;
     }
 }

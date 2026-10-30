@@ -136,6 +136,25 @@ void run_candidate_curve_contracts()
     double sourceX=0,sourceY=0,sourceZ=0;ok(jd_candidate_curve_point(context.id,seamAffine,.7,&sourceX,&sourceY,&sourceZ,error,sizeof(error)));
     ok(jd_candidate_curve_point(context.id,seamAffineResult,.7,&x,&y,&z,error,sizeof(error)));nearCurve(x,sourceX);nearCurve(y,sourceY);nearCurve(z,sourceZ);
     for(uint64_t owned:{relocated,openSeam,seamAffine,seamAffineResult})ok(jd_candidate_shape_release(context.id,owned,error,sizeof(error)));
+
+    double boundsMinX=0,boundsMinY=0,boundsMinZ=0,boundsMaxX=0,boundsMaxY=0,boundsMaxZ=0,boundsPadding=0;
+    auto bounds=[&](uint64_t shape,double tolerance){
+        return jd_candidate_curve_bounds(context.id,shape,tolerance,&boundsMinX,&boundsMinY,&boundsMinZ,&boundsMaxX,&boundsMaxY,&boundsMaxZ,&boundsPadding,error,sizeof(error));
+    };
+    auto nearBounds=[&](double actual,double expected){checkCurve(std::isfinite(actual)&&std::abs(actual-expected)<1e-6,"Native optimal extrema mismatch");};
+    ok(bounds(circle,1e-10));nearBounds(boundsMinX,-7);nearBounds(boundsMaxX,7);nearBounds(boundsMinY,0);nearBounds(boundsMaxY,0);nearBounds(boundsMinZ,-7);nearBounds(boundsMaxZ,7);
+    checkCurve(boundsPadding>=1e-7,"Kernel bounds gap not exposed");
+    uint64_t boundsArc=0;ok(jd_candidate_curve_trim(context.id,circle,pi/4,3*pi/4,&boundsArc,error,sizeof(error)));
+    ok(bounds(boundsArc,1e-10));nearBounds(boundsMinX,7/std::sqrt(2.0));nearBounds(boundsMaxX,7);nearBounds(boundsMinZ,-7/std::sqrt(2.0));nearBounds(boundsMaxZ,7/std::sqrt(2.0));
+    ok(jd_candidate_shape_release(context.id,boundsArc,error,sizeof(error)));
+    uint64_t boundsEllipse=0;ok(jd_candidate_affine(context.id,circle,matrix,12,&boundsEllipse,error,sizeof(error)));
+    ok(bounds(boundsEllipse,1e-10));nearBounds(boundsMinX,1-7*std::sqrt(4.25));nearBounds(boundsMaxX,1+7*std::sqrt(4.25));nearBounds(boundsMinY,2);nearBounds(boundsMaxY,2);nearBounds(boundsMinZ,-25);nearBounds(boundsMaxZ,17);
+    checkCurve(boundsMaxX<17,"Native control-pole box used as extrema");
+    ok(jd_candidate_shape_release(context.id,boundsEllipse,error,sizeof(error)));
+    for(double bad:{0.0,-1.0,std::numeric_limits<double>::quiet_NaN(),std::numeric_limits<double>::infinity()})
+        checkCurve(bounds(circle,bad)==JD_CANDIDATE_INVALID_ARGUMENT,"Invalid bounds tolerance accepted");
+    checkCurve(bounds(box,1e-10)==JD_CANDIDATE_UNSUPPORTED_OPERATION,"Solid produced fake curve bounds");
+    checkCurve(jd_candidate_curve_bounds(context.id,circle,1e-10,&boundsMinX,&boundsMinY,&boundsMinZ,&boundsMaxX,&boundsMaxY,&boundsMaxZ,nullptr,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Missing bounds output accepted");
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }

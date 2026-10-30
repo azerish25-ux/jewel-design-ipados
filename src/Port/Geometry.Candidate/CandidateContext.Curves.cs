@@ -74,4 +74,19 @@ public sealed partial class CandidateContext
     public CandidateShape RelocateClosedCurveSeam(CandidateShape shape,double seam)=>CreateShape(diagnostic=>{
         var status=NativeMethods.CurveSeam(_handle,shape.Handle,seam,out var id,diagnostic,DiagnosticCapacity);return(status,id);
     },shape);
+
+    /// <summary>Native refined extrema estimates; kernel numerical padding is reported separately.</summary>
+    public CandidateCurveBounds GetCurveBounds(CandidateShape shape,double tolerance)
+    {
+        lock(_gate){
+            ThrowIfDisposed();Validate(shape);var diagnostic=new byte[DiagnosticCapacity];
+            Check(NativeMethods.CurveBounds(_handle,shape.Handle,tolerance,out var x0,out var y0,out var z0,
+                out var x1,out var y1,out var z1,out var padding,diagnostic,DiagnosticCapacity),diagnostic);
+            static bool Finite(double x,double y,double z)=>double.IsFinite(x)&&double.IsFinite(y)&&double.IsFinite(z);
+            if(!Finite(x0,y0,z0)||!Finite(x1,y1,z1)||!double.IsFinite(padding)||padding<0||
+                !Finite(x0-padding,y0-padding,z0-padding)||!Finite(x1+padding,y1+padding,z1+padding)||x0>x1||y0>y1||z0>z1)
+                throw new InvalidOperationException("Invalid native curve bounds response.");
+            return new(new(x0,y0,z0),new(x1,y1,z1),tolerance,padding);
+        }
+    }
 }

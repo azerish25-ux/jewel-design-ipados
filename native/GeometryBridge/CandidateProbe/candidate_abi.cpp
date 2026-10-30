@@ -2,6 +2,8 @@
 #include <BRepPrimAPI_MakeBox.hxx>
 #include <BRepBuilderAPI_MakeEdge.hxx>
 #include <BRepAdaptor_Curve.hxx>
+#include <BndLib_Add3dCurve.hxx>
+#include <Bnd_Box.hxx>
 #include <Geom_Circle.hxx>
 #include <Geom_Line.hxx>
 #include <IntTools_EdgeEdge.hxx>
@@ -613,6 +615,33 @@ extern "C" int32_t jd_candidate_curve_seam(uint64_t context,uint64_t shape,doubl
             if(curve->IsPeriodic()||std::abs(curve->FirstParameter()-seam)>slack||std::abs(curve->LastParameter()-end)>slack)
                 fail(JD_CANDIDATE_KERNEL_FAILURE,"Native seam domain was not preserved");
             *output=storeCurveEdge(value,curve);
+        });
+    },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_curve_bounds(uint64_t context,uint64_t shape,double tolerance,double* min_x,double* min_y,double* min_z,double* max_x,double* max_y,double* max_z,double* padding,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        if(!min_x||!min_y||!min_z||!max_x||!max_y||!max_z||!padding)
+            fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing curve bounds output");
+        *min_x=0;*min_y=0;*min_z=0;*max_x=0;*max_y=0;*max_z=0;*padding=0;
+        if(!std::isfinite(tolerance)||tolerance<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Bounds tolerance must be finite positive");
+        withContext(context,[&](Context& value){
+            const auto& input=findShape(value,shape).shape;
+            if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Curve bounds require an edge");
+            BRepAdaptor_Curve curve(TopoDS::Edge(input));
+            const double first=curve.FirstParameter(),last=curve.LastParameter();
+            if(!std::isfinite(first)||!std::isfinite(last)||last<=first)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid bounds curve domain");
+            Bnd_Box box;BndLib_Add3dCurve::AddOptimal(curve,first,last,tolerance,box);
+            if(box.IsVoid()||box.IsOpen())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native bounds are void or unbounded");
+            const double gap=box.GetGap();
+            if(!std::isfinite(gap)||gap<0)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid native bounds padding");
+            // Preserve numerical padding as metadata, not a physical radius increase.
+            box.SetGap(0);double x0=0,y0=0,z0=0,x1=0,y1=0,z1=0;box.Get(x0,y0,z0,x1,y1,z1);
+            for(double number:{x0,y0,z0,x1,y1,z1,x0-gap,y0-gap,z0-gap,x1+gap,y1+gap,z1+gap})
+                if(!std::isfinite(number))fail(JD_CANDIDATE_KERNEL_FAILURE,"Nonfinite native bounds");
+            if(x0>x1||y0>y1||z0>z1)fail(JD_CANDIDATE_KERNEL_FAILURE,"Reversed native bounds");
+            *min_x=x0;*min_y=y0;*min_z=z0;*max_x=x1;*max_y=y1;*max_z=z1;*padding=gap;
         });
     },diagnostic,capacity);
 }
