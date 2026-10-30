@@ -97,10 +97,10 @@ jobs:
       - name: Build signed native-execution test app
         run: dotnet build tests/iOS.Native -c Debug -r iossimulator-arm64 -p:EnableCodeSigning=true -p:CodesignKey=- -p:CodesignRequireProvisioningProfile=false -p:MtouchDebug=false -p:EnableDiagnostics=false | tee artifacts/native-app-build.txt
       - name: Execute native cases on iPad simulator
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: bash scripts/run-native-simulator.sh ipad
       - name: Execute native cases on iPhone simulator
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: bash scripts/run-native-simulator.sh iphone
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         if: always()

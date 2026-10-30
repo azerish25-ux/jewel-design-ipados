@@ -14,3 +14,5 @@ Owned: native/GeometryBridge/CandidateProbe CMake/CPP/header; tests/iOS.Native; 
 - [ ] Build/run host and compile/run simulator experiment in GitHub Actions; inspect actual outputs and failures before changing code.
 - [ ] Verify iPad/iPhone runtime families and native case results; preserve build/source logs and bounded results.
 - [ ] Commit/push all authored progress; keep full P05-T01/T02/T03 and native ABI/cancellation/PC/native archive requirements incomplete.
+
+Attempt 3 (41014361843): host and iPad native analytical assertions passed. iPhone artifact contains PASS and family=iphone, but the 10-minute step timed out after >7 minutes of first-boot migration. Increase only the simulator step budget to 20 minutes; keep all native assertions and family checks unchanged. Require a terminal successful rerun before closing this bounded experiment. This is infrastructure timeout evidence, not a geometry parity result.

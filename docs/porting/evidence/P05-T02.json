@@ -42,7 +42,7 @@
     {
       "id": "P05-T02-A01",
       "scope": "Pinned native analytic fixture candidate build/execution",
-      "status": "api_compile_fix_pending"
+      "status": "simulator_timeout_fix_pending"
     }
   ],
   "checks": [],
@@ -52,11 +52,11 @@
     "limits": "Windows host has no active C++ compiler in PATH; actual host/iOS builds must run in CI",
     "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim",
     "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending.",
-    "currentStatus": "No analytical native/runtime result observed yet; source-backed compile fix validated only through configure so far",
-    "secondBuildFailure": "Completed iOS job 123922543783 failed compiling probe.cpp at deprecated TopTools_ListOfShape.hxx; pinned OCCT8 boolean signatures use NCollection_List<TopoDS_Shape>. Replaced alias and added a compile-only object target before SDK build. Original host job still running; no native runtime result."
+    "currentStatus": "Native compile/link and host/iPad analytical runtime proof observed. iPhone emitted PASS and family=iphone but step timed out; increase simulator step budget to 20 minutes, rerun required.",
+    "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed."
   },
   "blockers": [
-    "Native candidate host/iOS compilation and runtime results pending",
+    "Clean terminal iPhone simulator execution pending; captured report is insufficient while job failed",
     "Full kernel semantic mapping, candidate decision, native ABI and cancellation/leak/physical-device/PC evidence incomplete"
   ],
   "ciRuns": [
@@ -70,7 +70,13 @@
       "id": 41012893771,
       "commit": "be03728a938f63278b23b98453dd49cd0d014a4a",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41012893771",
-      "verification": "confirmed live; host/iOS configure and generated-header existence assertion passed, both native builds running"
+      "verification": "host and iOS both failed on deprecated TopTools_ListOfShape.hxx; no runtime cases ran"
+    },
+    {
+      "id": 41014361843,
+      "commit": "6a097b2416a83a740d9b2bdb0696f81e8023c332",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41014361843",
+      "verification": "host and iPad steps passed; iPhone report and actual family were captured but step timed out at 10 minutes after over 7 minutes of first-boot migration. Overall failure, not a verified successful iPhone job."
     }
   ]
 }
