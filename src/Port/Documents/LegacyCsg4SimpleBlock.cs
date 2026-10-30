@@ -22,8 +22,8 @@ public sealed class LegacyCsg4SimpleBlock:ILegacyCsg4Header
     internal static LegacyCsg4SimpleBlock Read(CsgCursor r,LegacyCsg4Version version,int end)
     {
         var name=r.Text();uint flags=r.UInt();int layer=r.Int();var data=r.UserData();var objects=r.Ints();var channels=r.Ints();
-        if(objects.Length!=channels.Length)throw new InvalidDataException("Rail block link count mismatch");
-        if(r.Position!=end)throw new InvalidDataException("Unexpected trailing known rail block data");
+        if(objects.Length!=channels.Length)throw new InvalidDataException("Known block link count mismatch");
+        if(r.Position!=end)throw new InvalidDataException("Unexpected trailing known block data");
         return new(version,name,flags,layer,data,objects,channels);
     }
     internal LegacyCsg4SimpleBlock WithInputLink(int input,int objectIndex,int channelIndex)

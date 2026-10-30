@@ -45,7 +45,17 @@
     "src/Port/Features.Candidate/CandidateRailGraphSession.cs",
     "tests/Port/Geometry.Candidate.Contracts/RailGraphAssertions.cs",
     "docs/porting/plans/P03-T03-A07-rail-outputs.md",
-    "docs/porting/ADR-0026-graph-managed-rail-outputs.md"
+    "docs/porting/ADR-0026-graph-managed-rail-outputs.md",
+    "docs/evidence/apple/value-channel-results.json",
+    "docs/porting/plans/P03-T03-A08-select-ring-rail.md",
+    "docs/porting/ADR-0027-select-ring-rail.md",
+    "reference/file-proof/select-ring-rail-v1.cjs",
+    "docs/evidence/audit/select-ring-rail-reference.json",
+    "scripts/verify-select-rail-oracle.cjs",
+    "tests/select-rail-oracle.test.cjs",
+    "tests/select-ring-rail-v1-reference.test.cjs",
+    "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacySelectRingRail.cs",
+    "tests/Port/Geometry.Candidate.Contracts/SelectRailAssertions.cs"
   ],
   "fixtures": [],
   "checks": [
@@ -210,6 +220,41 @@
       "expectedExitCode": 0,
       "actual": "Document/profile/rail bindings,28160 source channel differential cases and8 oracle tamper/provenance controls pass after provider extension.",
       "artifact": ".local/evidence/P03-T03-A07/document-proof.log"
+    },
+    {
+      "command": "node scripts/build-native-windows.cjs (RED before A08)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/SelectRailAssertions.cs",
+      "actual": "Native base cases pass; managed regression fails Selector header missing at real saved node16."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/SelectRailAssertions.cs",
+      "actual": "PASS150 exact-source forwarding cases plus failed Boolean controls, source initial0, old selection after upstream-only regeneration, selection edit/save/reopen/native downstream/cycle/zero native entries; all adjacent native managed suites pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
+      "actual": "PASS independent selector common fields/link oracle,109 known headers/132 opaque/100 scalar handles, no-op/rewire/reopen/reversal/future schema; previous28160 channel and codec suites pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/select-rail-oracle.test.cjs tests/select-ring-rail-v1-reference.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "scripts/verify-select-rail-oracle.cjs",
+      "actual": "6/6 pass: exact source Update, reversed-choice/null-logic tamper rejection, full-body independent header, future/bounded/mismatched links."
+    },
+    {
+      "command": "node scripts/run-local.cjs node scripts/check-production-csg.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "src/Port/Documents/LegacyCsg4Codec.cs",
+      "actual": "PASS241 records/74 numeric; four writer outputs read by two independent readers and exact source/rebuild/restoration hashes."
     }
   ],
   "review": {
@@ -237,7 +282,8 @@
       "limitations": "No cross-load identity matching, live mutable instance-GUID setter, codec write, applied graph commands or link remapping"
     },
     "valueChannels": "Reviewed source empty-vs-zero/conversion/ref semantics, exact arithmetic/CAM signed-zero and override latching distinct from setter/previous state; preflight dependency validation, no unsupported defaulting, read cycle/depth guards and serialized link count preservation. Complete scheduler/UI/CAM serialization/native producer/failure/concurrency/PC equivalence remain explicit. Native profile temporaries and binding snapshot ownership reviewed.",
-    "railOutputs": "Reviewed no native dependency/handles in document channel data, explicit supported producer/dependency validation, no recursive generation, source curve vs numeric and Scale1/0 metadata, immutable output snapshots/retained readers, allocation exception cleanup and pending output disposal. Candidate native-cache commit differs from unproven original failure/dirty/parallel policies; scalar updates are not rolled back after later native errors."
+    "railOutputs": "Reviewed no native dependency/handles in document channel data, explicit supported producer/dependency validation, no recursive generation, source curve vs numeric and Scale1/0 metadata, immutable output snapshots/retained readers, allocation exception cleanup and pending output disposal. Candidate native-cache commit differs from unproven original failure/dirty/parallel policies; scalar updates are not rolled back after later native errors.",
+    "selectRingRail": "Reviewed exact1.0 GUID/full-body schema, disconnected-null vs inactive/invalid-empty distinction, source conditional ordering, supported-data forwarding despite UI filter, retained alias native ownership/old-generation snapshots, noncurve getter rejection, cycle/unsupported preflight and native entry cleanup. No recovered scripts/credentials/Windows execution. Full parity0/1451 remains unchanged."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -297,13 +343,13 @@
       "id": 41084116370,
       "commit": "8a764f74e08cedbd094e3174dfd804ad1cff9c6b",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41084116370",
-      "verification": "Value-channel/source-oracle/native bridge host running; iPad/iPhone queued confirmed live; terminal verification pending"
+      "verification": "SUCCESS: actual iPad/iPhone native/CSharp value-channel reports/family/source differential/native regeneration markers inspected; value-channel-results.json"
     },
     {
       "id": 41084119917,
       "commit": "8a764f74e08cedbd094e3174dfd804ad1cff9c6b",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41084119917",
-      "verification": "Value-channel/source-oracle/native bridge unsigned device running confirmed live; terminal verification pending"
+      "verification": "SUCCESS: unsigned arm64/platform IOS Release log52 warnings0 errors plus executable hash inspected; no physical execution"
     },
     {
       "id": 41089011365,
@@ -417,6 +463,21 @@
       "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
       "sha256": "33aa3bd1e6dddc2b5332bd1ef350d30751aebb5d93440eda00f5ba9e81d2ea1a",
       "scope": "P03-T03-A07 source curve data/no numeric coercion/metadata/numeric scale0 and consumer/output getter contracts; scheduler/cache equivalence not implied"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails/CSSelectRingRail.cs",
+      "sha256": "9322a3c04187a9f4b1cb8aeb2836982787429b4e95fd1e8b2db04a75a5642256",
+      "scope": "P03-T03-A08 exact selector Update, null Data vs empty CSData, Boolean conversion and output assignment; no full scheduler/display/export proof"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.Parametric.Channels/CSInputChannel.cs",
+      "sha256": "1b3a8f3c40e751163d0aa493a0044d4a961be981579db831b30c841824fdf74c",
+      "scope": "P03-T03-A08 exact selector Update, null Data vs empty CSData, Boolean conversion and output assignment; no full scheduler/display/export proof"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.Parametric.Channels/CSOutputChannel.cs",
+      "sha256": "f9f90f12b0a91f87ed50d1e2eb13cbc2ba9d477e858f7c159baf87db2c7d5f38",
+      "scope": "P03-T03-A08 exact selector Update, null Data vs empty CSData, Boolean conversion and output assignment; no full scheduler/display/export proof"
     }
   ],
   "subtasks": [
@@ -451,12 +512,18 @@
     {
       "id": "P03-T03-A06",
       "scope": "Recovered value field/output/update behavior, known scalar/profile generations and evaluated native geometry input slice",
-      "status": "local_verified_apple_pending"
+      "status": "verified_simulator_subset"
     },
     {
       "id": "P03-T03-A07",
       "scope": "Pure external producer/curve token boundary and owned native known-rail generation/cache",
       "status": "local_verified_apple_pending"
+    },
+    {
+      "id": "P03-T03-A08",
+      "scope": "Exact SelectRingRail1.0 saved header, null/empty distinction and owned supported-data/native curve forwarding",
+      "status": "local_verified_apple_pending",
+      "plan": "docs/porting/plans/P03-T03-A08-select-ring-rail.md"
     }
   ]
 }

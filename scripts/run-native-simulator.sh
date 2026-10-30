@@ -41,6 +41,7 @@ for i in $(seq 1 120); do
   grep -q 'PASS legacy rail block bindings:' "$OUT/result.txt"
   grep -q 'PASS record-bound rail builders:' "$OUT/result.txt"
   grep -q 'PASS graph-managed rail outputs:' "$OUT/result.txt"
+  grep -q 'PASS select ring rail:150 exact-source forwarding cases,' "$OUT/result.txt"
   exit 0
  fi
  sleep 1

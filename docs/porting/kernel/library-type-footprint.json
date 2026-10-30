@@ -31,7 +31,7 @@
     {
       "path": "src/Port/Documents/LegacyCsg4Codec.cs",
       "normalization": "utf8-lf",
-      "sha256": "b1b332d0aa9cefc063bbb9e6990fc523851a803a3dc0814a2e2c5e5fc3057363"
+      "sha256": "2e2d299d0582056918d4a8ec496a34175eea0583ac07b2930cf02e742b84efca"
     },
     {
       "path": "src/Port/Documents/LegacyCsg4Scalar.cs",
@@ -51,7 +51,7 @@
     {
       "path": "src/Port/Documents/LegacyCsg4SimpleBlock.cs",
       "normalization": "utf8-lf",
-      "sha256": "3726712f28f58ad47d22c03b6bfb27fb53a5c1173d9f5f351e0ef724c83c0f7b"
+      "sha256": "5e811f40424ebc8011729e7a6e4509126672ec3a6a7fb3119a9dc389c7aa2765"
     },
     {
       "path": "reference/file-proof/ring-rail-v1.cjs",
@@ -62,6 +62,11 @@
       "path": "reference/file-proof/outside-rail-v1.cjs",
       "normalization": "utf8-lf",
       "sha256": "017972509901ca1f891785a06f5ed962c1cb3297d95d7146713997643d968d79"
+    },
+    {
+      "path": "reference/file-proof/select-ring-rail-v1.cjs",
+      "normalization": "utf8-lf",
+      "sha256": "781476aee324b7f0b47341c8ca0afbe1536c9257d385d839aff932ded29e1474"
     }
   ],
   "counts": {
@@ -69,10 +74,10 @@
     "registrationGuids": 43,
     "numericDecoded": 74,
     "scalarDecoded": 100,
-    "railBlockHeadersDecoded": 2,
+    "railBlockHeadersDecoded": 3,
     "matrixProfileGroupsDecoded": 6,
     "embeddedProfileCurves": 155,
-    "opaquePayloads": 133,
+    "opaquePayloads": 132,
     "unknownGuids": 0,
     "ambiguousGuids": 0,
     "legacyNodes": 33,
@@ -1090,9 +1095,9 @@
       ],
       "numericDecoded": 0,
       "scalarDecoded": 0,
-      "railHeadersDecoded": 0,
+      "railHeadersDecoded": 1,
       "matrixProfilesDecoded": 0,
-      "opaquePayloads": 1,
+      "opaquePayloads": 0,
       "registrationAmbiguous": false,
       "registrations": [
         {

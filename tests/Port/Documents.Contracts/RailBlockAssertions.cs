@@ -16,8 +16,8 @@ internal static class RailBlockAssertions
         var outside=document.Records[13].SimpleBlock??throw new Exception("Missing outside consumer header");
         Check(ring.ObjectIndices.SequenceEqual(new[]{2})&&ring.ChannelIndices.SequenceEqual(new[]{0}),"Ring input bindings");
         Check(outside.ObjectIndices.SequenceEqual(new[]{2,6,8,9,10,11})&&outside.ChannelIndices.SequenceEqual(new[]{0,3,0,0,0,0}),"Outside input bindings");
-        Check(document.Records.Count(x=>x.Header is not null)==108&&document.Records.Count(x=>x.OpaqueReason is not null)==133&&document.ScalarRecordCount==100,"Header vs scalar boundary");
-        foreach(var resource in new[]{"RailHeaderRingOracle","RailHeaderOutsideOracle"}){
+        Check(document.Records.Count(x=>x.Header is not null)==109&&document.Records.Count(x=>x.OpaqueReason is not null)==132&&document.ScalarRecordCount==100,"Header vs scalar boundary");
+        foreach(var resource in new[]{"RailHeaderRingOracle","RailHeaderOutsideOracle","RailHeaderSelectOracle"}){
             using var stream=typeof(RailBlockAssertions).Assembly.GetManifestResourceStream(resource)!;using var oracle=JsonDocument.Parse(stream);
             foreach(var expected in oracle.RootElement.GetProperty("rails").EnumerateArray()){
                 int ordinal=expected.GetProperty("index").GetInt32();var header=document.Records[ordinal].SimpleBlock!;
@@ -33,7 +33,7 @@ internal static class RailBlockAssertions
         Throws<NotSupportedException>(()=>document.WithScalarValue(13,1));
         Throws<ArgumentOutOfRangeException>(()=>document.WithInputLink(13,6,9,0));
         Throws<NotSupportedException>(()=>document.WithInputLink(0,0,1,0));
-        foreach(int index in new[]{4,13}){
+        foreach(int index in new[]{4,13,16}){
             var record=document.Records[index];var future=(byte[])original.Clone();BinaryPrimitives.WriteInt32LittleEndian(future.AsSpan(record.OriginalFileOffset+8),99);
             int start=record.OriginalFileOffset,length=record.CopyOriginalRecordBytes().Length;
             BinaryPrimitives.WriteUInt32LittleEndian(future.AsSpan(start+length-4),Crc(future.AsSpan(start+8,length-12)));

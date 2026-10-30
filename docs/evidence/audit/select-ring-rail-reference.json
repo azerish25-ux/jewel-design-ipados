@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_reader_only",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "rails": [
+    {
+      "index": 16,
+      "guid": "e10a6966-719f-4ba9-9efe-b7ad0378b5f3",
+      "identifier": "Select Ring Rail",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Select Ring Rail"
+        }
+      ],
+      "objects": [
+        4,
+        13,
+        15
+      ],
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails/CSSelectRingRail.cs",
+      "sha256": "9322a3c04187a9f4b1cb8aeb2836982787429b4e95fd1e8b2db04a75a5642256"
+    }
+  ],
+  "scope": "Exact stored selector1.0 header only; execution and original PC parity not claimed."
+}

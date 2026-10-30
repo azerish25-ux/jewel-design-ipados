@@ -10,7 +10,10 @@ public sealed class LegacyChannelValue
     public bool HasNumber {get;}
     public LegacyProfileSelection? Profile {get;}
     public LegacyCurveSelection? Curve {get;}
+    public bool IsMissing {get;}
+    public static LegacyChannelValue Missing {get;}=new(true);
     public static LegacyChannelValue Empty {get;}=new();
+    private LegacyChannelValue(bool missing){IsMissing=missing;}
     private LegacyChannelValue(){}
     private LegacyChannelValue(double value){HasNumber=true;number=value;}
     private LegacyChannelValue(LegacyProfileSelection profile){Profile=profile;}
@@ -75,7 +78,7 @@ public sealed class LegacyValueGraphSession
     private LegacyChannelValue ReadInput(int node,int input,HashSet<(int,int)> path,int depth)
     {
         var scalar=Record(node).Scalar??throw new NotSupportedException("Scalar input header unavailable.");
-        if(input>=scalar.ObjectIndices.Count||scalar.ObjectIndices[input]<0)return LegacyChannelValue.Empty;
+        if(input>=scalar.ObjectIndices.Count||scalar.ObjectIndices[input]<0)return LegacyChannelValue.Missing;
         return ReadOutput(scalar.ObjectIndices[input],scalar.ChannelIndices[input],path,depth+1);
     }
     private LegacyChannelValue ReadOutput(int node,int channel,HashSet<(int,int)> path,int depth)

@@ -5,6 +5,7 @@ const {readAdditionalScalars}=require('../reference/file-proof/scalar-v1.cjs');
 const {readMatrixProfiles}=require('../reference/file-proof/matrix-profiles-v1.cjs');
 const {readRingRails}=require('../reference/file-proof/ring-rail-v1.cjs');
 const {readOutsideRails}=require('../reference/file-proof/outside-rail-v1.cjs');
+const {readSelectRails}=require('../reference/file-proof/select-ring-rail-v1.cjs');
 const read=name=>fs.readFileSync(path.join(root,name));
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 function build(){
@@ -13,7 +14,7 @@ function build(){
  const parsed=parse(bytes);
  const additional=new Set(readAdditionalScalars(bytes).extras.map(x=>x.index));
  const profileGroups=readMatrixProfiles(bytes).groups,profiles=new Set(profileGroups.map(x=>x.index));
- const blocks=new Set([...readRingRails(bytes),...readOutsideRails(bytes)].map(x=>x.index));
+ const blocks=new Set([...readRingRails(bytes),...readOutsideRails(bytes),...readSelectRails(bytes)].map(x=>x.index));
  if(parsed.count!==241)throw Error('Unexpected serialized node table');
  const matrixPath='docs/evidence/audit/serialization-matrix.json',inventoryPath='docs/evidence/audit/cad-type-inventory.json';
  const matrix=JSON.parse(read(matrixPath)),inventory=JSON.parse(read(inventoryPath));
@@ -46,7 +47,7 @@ function build(){
  }
  return {schemaVersion:1,status:'source_inventory_only',
   scope:'Pinned library serialized type footprint, not executed graph reachability, transitive dependency closure, complete field/runtime decoding or geometry parity',
-  inputs:[fixture,matrixPath,inventoryPath,'reference/file-proof/csg-v4.cjs','reference/file-proof/scalar-v1.cjs','src/Port/Documents/LegacyCsg4Codec.cs','src/Port/Documents/LegacyCsg4Scalar.cs','src/Port/Documents/LegacyCsg4MatrixProfiles.cs','reference/file-proof/matrix-profiles-v1.cjs','src/Port/Documents/LegacyCsg4SimpleBlock.cs','reference/file-proof/ring-rail-v1.cjs','reference/file-proof/outside-rail-v1.cjs'].map(p=>({path:p,normalization:p.endsWith('.csg')?'none':'utf8-lf',sha256:sha(p.endsWith('.csg')?read(p):Buffer.from(read(p).toString('utf8').replaceAll('\r\n','\n')))})),
+  inputs:[fixture,matrixPath,inventoryPath,'reference/file-proof/csg-v4.cjs','reference/file-proof/scalar-v1.cjs','src/Port/Documents/LegacyCsg4Codec.cs','src/Port/Documents/LegacyCsg4Scalar.cs','src/Port/Documents/LegacyCsg4MatrixProfiles.cs','reference/file-proof/matrix-profiles-v1.cjs','src/Port/Documents/LegacyCsg4SimpleBlock.cs','reference/file-proof/ring-rail-v1.cjs','reference/file-proof/outside-rail-v1.cjs','reference/file-proof/select-ring-rail-v1.cjs'].map(p=>({path:p,normalization:p.endsWith('.csg')?'none':'utf8-lf',sha256:sha(p.endsWith('.csg')?read(p):Buffer.from(read(p).toString('utf8').replaceAll('\r\n','\n')))})),
   counts:{serializedNodes:parsed.count,registrationGuids:types.length,numericDecoded:parsed.numericCount,scalarDecoded:parsed.numericCount+additional.size,
    railBlockHeadersDecoded:blocks.size,matrixProfileGroupsDecoded:profiles.size,embeddedProfileCurves:profileGroups.reduce((n,g)=>n+g.curves.length,0),
    opaquePayloads:parsed.count-parsed.numericCount-additional.size-profiles.size-blocks.size,unknownGuids:types.filter(x=>!x.registrations.length).length,

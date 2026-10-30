@@ -123,7 +123,8 @@
     "tests/Port/Documents.Contracts/RailBlockAssertions.cs",
     "tests/Port/Geometry.Candidate.Contracts/RailNodeAssertions.cs",
     "docs/porting/plans/P04-T01-A04-rail-bindings.md",
-    "docs/porting/ADR-0025-rail-consumer-bindings.md"
+    "docs/porting/ADR-0025-rail-consumer-bindings.md",
+    "docs/evidence/apple/rail-bindings-managed-results.json"
   ],
   "fixtures": [
     {
@@ -362,7 +363,12 @@
       "id": 41086522718,
       "commit": "e90440ab27573a6d0b31e41b7466c1a72861a5d0",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41086522718",
-      "verification": "Saved rail consumer bindings unsigned device queued; terminal artifact verification pending"
+      "verification": "SUCCESS: arm64/platform IOS unsigned Release build52 warnings0 errors/hash inspected in rail-bindings-managed-results.json. Native simulator remains separate."
+    },
+    {
+      "id": 41086520217,
+      "commit": "e90440ab27573a6d0b31e41b7466c1a72861a5d0",
+      "verification": "SUCCESS: actual iPad/iPhone managed saved-header/source-channel reports inspected with dynamic-code False; does not execute native consumers."
     }
   ]
 }

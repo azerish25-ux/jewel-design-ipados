@@ -11,10 +11,11 @@ public sealed class CandidateRailGraphSession:ILegacyValueNodeProvider,IDisposab
 {
     private sealed class Output:IDisposable
     {
-        internal CandidateShape Curve {get;}
-        internal CandidateRailOutputInfo Info {get;}
-        internal Output(CandidateShape curve,CandidateRailOutputInfo info){Curve=curve;Info=info;}
-        public void Dispose()=>Curve.Dispose();
+        internal CandidateShape? Curve {get;}
+        internal LegacyChannelValue Data {get;}
+        internal CandidateRailOutputInfo? Info {get;}
+        internal Output(CandidateShape? curve,CandidateRailOutputInfo? info,LegacyChannelValue data){Curve=curve;Info=info;Data=data;}
+        public void Dispose()=>Curve?.Dispose();
     }
     private readonly CandidateContext context;
     private readonly OutsideRailCandidateSettings settings;
@@ -33,12 +34,12 @@ public sealed class CandidateRailGraphSession:ILegacyValueNodeProvider,IDisposab
         Check();if((uint)index>=(uint)Values.Document.Records.Count)return false;
         var record=Values.Document.Records[index];
         return record.SimpleBlock is not null&&record.Version==new LegacyCsg4Version(1,0)&&
-            (record.TypeGuid==RingRailV1Candidate.TypeGuid||record.TypeGuid==OutsideRailV1Candidate.TypeGuid);
+            (record.TypeGuid==RingRailV1Candidate.TypeGuid||record.TypeGuid==OutsideRailV1Candidate.TypeGuid||record.TypeGuid==LegacyCsg4Codec.SelectRingRailTypeGuid);
     }
     public IReadOnlyList<SerializedChannelLink> Inputs(int index)
     {
         if(!Supports(index))throw new NotSupportedException("Unsupported rail producer.");
-        var record=Values.Document.Records[index];var block=record.SimpleBlock!;int count=record.TypeGuid==RingRailV1Candidate.TypeGuid?1:6;
+        var record=Values.Document.Records[index];var block=record.SimpleBlock!;int count=record.TypeGuid==RingRailV1Candidate.TypeGuid?1:record.TypeGuid==LegacyCsg4Codec.SelectRingRailTypeGuid?3:6;
         var result=new SerializedChannelLink[count];
         for(int i=0;i<count;i++)result[i]=i<block.ObjectIndices.Count?new(block.ObjectIndices[i],block.ChannelIndices[i]):SerializedChannelLink.Disconnected;
         return Array.AsReadOnly(result);
@@ -63,19 +64,37 @@ public sealed class CandidateRailGraphSession:ILegacyValueNodeProvider,IDisposab
         Check();if(pending is null)throw new InvalidOperationException("Use the rail graph Generate method.");
         if(!Supports(index))throw new NotSupportedException("Unsupported rail producer.");
         Output entry;
-        if(Values.Document.Records[index].TypeGuid==RingRailV1Candidate.TypeGuid){
+        if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.SelectRingRailTypeGuid){
+            entry=SelectOutput(index);
+        }else if(Values.Document.Records[index].TypeGuid==RingRailV1Candidate.TypeGuid){
             using var result=RingRailV1Candidate.BuildFromNodeCore(context,Values,index,false);
             var info=new CandidateRailOutputInfo(CandidateRailOutputKind.Ring,result.Radius,null,Array.Empty<OutsideRailKernelDiagnostic>());
-            entry=Own(context.Retain(result.Curve),info);
+            entry=Own(context.Retain(result.Curve),info,LegacyChannelValue.FromCurve(index,0));
         }else{
             using var result=OutsideRailV1Candidate.BuildFromNodeCore(context,Values,index,settings,false,ResolveCurve);
             var info=new CandidateRailOutputInfo(CandidateRailOutputKind.Outside,null,1,result.Diagnostics);
-            entry=Own(context.Retain(result.Curve),info);
+            entry=Own(context.Retain(result.Curve),info,LegacyChannelValue.FromCurve(index,0));
         }
         try{pending.Add(index,entry);}catch{entry.Dispose();throw;}
     }
-    private static Output Own(CandidateShape curve,CandidateRailOutputInfo info)
-    {try{return new(curve,info);}catch{curve.Dispose();throw;}}
+    private Output SelectOutput(int index)
+    {
+        var links=Inputs(index);
+        LegacyChannelValue Read(int slot)=>links[slot].ObjectIndex<0?LegacyChannelValue.Missing:Values.ReadOutput(links[slot].ObjectIndex,links[slot].ChannelIndex);
+        bool useSecond=false;Read(2).GetBoolean(ref useSecond);
+        var first=Read(0);var second=Read(1);
+        LegacyChannelValue selected;
+        if(first.IsMissing)selected=second;
+        else if(second.IsMissing)selected=first;
+        else selected=useSecond?second:first;
+        if(selected.Curve is{} reference){
+            var info=Find(reference.ProducerRecordIndex).Info;
+            return Own(ResolveCurve(reference),info,LegacyChannelValue.FromCurve(index,0));
+        }
+        return new(null,null,selected);
+    }
+    private static Output Own(CandidateShape curve,CandidateRailOutputInfo? info,LegacyChannelValue data)
+    {try{return new(curve,info,data);}catch{curve.Dispose();throw;}}
     private Output Find(int index)
     {
         Check();if(pending is not null&&pending.TryGetValue(index,out var current))return current;
@@ -85,16 +104,16 @@ public sealed class CandidateRailGraphSession:ILegacyValueNodeProvider,IDisposab
     public CandidateShape RetainCurve(int record,int channel=0)
     {
         if(channel!=0)throw new NotSupportedException("Only the rail curve output is retainable.");
-        return context.Retain(Find(record).Curve);
+        return context.Retain(Find(record).Curve??throw new NotSupportedException("Output does not contain a native rail curve."));
     }
-    public CandidateRailOutputInfo ReadMetadata(int record)=>Find(record).Info;
+    public CandidateRailOutputInfo ReadMetadata(int record)=>Find(record).Info??throw new NotSupportedException("Output has no rail metadata.");
     public LegacyChannelValue ReadOutput(int record,int channel)
     {
         if(!Supports(record))return Values.ReadOutput(record,channel);
         bool outside=Values.Document.Records[record].TypeGuid==OutsideRailV1Candidate.TypeGuid;
         if(channel!=0&&!(channel==1&&outside))return LegacyChannelValue.Empty;
-        Find(record);
-        return channel==0?LegacyChannelValue.FromCurve(record,channel):LegacyChannelValue.FromNumber(0);
+        var output=Find(record);
+        return channel==0?output.Data:LegacyChannelValue.FromNumber(0);
     }
     public void Dispose()
     {
