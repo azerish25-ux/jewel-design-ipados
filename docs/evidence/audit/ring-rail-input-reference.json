@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_reader_only",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "rails": [
+    {
+      "index": 4,
+      "guid": "65aa45c6-d1cd-4c45-92bb-b5a9a6a2ec47",
+      "major": 1,
+      "minor": 0,
+      "identifier": "RingRail",
+      "flags": 65501,
+      "legacyLayer": 17,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "RingRail"
+        }
+      ],
+      "objects": [
+        2
+      ],
+      "channels": [
+        0
+      ],
+      "fullyConsumed": true
+    }
+  ],
+  "recordedInputCandidates": [
+    {
+      "railIndex": 4,
+      "sourceIndex": 2,
+      "sourceChannel": 0,
+      "sourceTypeGuid": "dd5c2342-d89a-440e-a76e-624a1faf2b68",
+      "sourceRecordVersion": "1.2",
+      "storedValue": 8.667196228921199,
+      "units": "stored radius mm"
+    }
+  ],
+  "scope": "Read-only exact RingRail_V1 header/input references. Stored scalar candidate is not an evaluated channel output; activation/override/missing-input/default/graph/CAD behavior remains unexecuted.",
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSRingRail1.cs",
+      "sha256": "fd06635926c702a605d94a812847f7f84c6d0a7fde5db362e4f1e8d0bf74267b"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects/CSObject.cs",
+      "sha256": "32460012d6e5d127d9bce60be12a1c5e2432265c827a47940e92292e0be1dd8b"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSValues/CSValueRingSize.cs",
+      "sha256": "df9c4a0cbb44fe040098edcc0e3caa55fe34e18889d42953450162c93efc69d3"
+    }
+  ]
+}

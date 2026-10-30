@@ -11,7 +11,11 @@
     "docs/porting/kernel/SURFACE_SEMANTICS.md",
     "scripts/library-type-footprint.cjs",
     "docs/porting/kernel/library-type-footprint.json",
-    "docs/porting/kernel/LIBRARY_TYPE_FOOTPRINT.md"
+    "docs/porting/kernel/LIBRARY_TYPE_FOOTPRINT.md",
+    "docs/porting/kernel/ring-rail-caller-contracts.json",
+    "reference/file-proof/ring-rail-v1.cjs",
+    "tests/ring-rail-v1-reference.test.cjs",
+    "docs/evidence/audit/ring-rail-input-reference.json"
   ],
   "sourceEvidence": [
     {
@@ -120,6 +124,11 @@
       "id": "P05-T01-A04",
       "scope": "Pinned library serialized type/legacy/source footprint; not active graph reachability or transitive runtime closure",
       "status": "source_inventory_verified"
+    },
+    {
+      "id": "P05-T01-A05",
+      "scope": "Source-correlated RingRail_V1 caller and exact fixture v1.0 header/input trace",
+      "status": "source_reference_verified_not_evaluated"
     }
   ],
   "checks": [
@@ -143,6 +152,19 @@
       "expectedExitCode": 0,
       "artifact": "docs/porting/kernel/library-type-footprint.json",
       "actual": "241 nodes/43 GUIDs, 0 unknown/ambiguous registrations, 33 legacy-node occurrences, 74 numeric decoded/167 opaque payloads, 44 unique direct lexical static call names. Source hashes and registration anchors validated; instance/helper/base/runtime closure unproved."
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/ring-rail-v1-reference.test.cjs (RED)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "Missing ring-rail-v1.cjs before implementation"
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/ring-rail-v1-reference.test.cjs tests/scalar-v1-reference.test.cjs; node scripts/run-local.cjs node reference/file-proof/ring-rail-v1.cjs --record",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/audit/ring-rail-input-reference.json",
+      "actual": "6 cases pass. Rail4 header fully consumed and links source2/channel0; RingSize1.2 stores radius8.667196228921199mm. Future version skipped and string bounds enforced. No channel/runtime/CAD execution."
     }
   ],
   "review": {

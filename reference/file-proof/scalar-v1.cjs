@@ -43,4 +43,4 @@ if(require.main===module){
  const counts={};for(const item of report.extras)counts[item.type]=(counts[item.type]||0)+1;
  console.log(JSON.stringify({existingNumeric:report.existingNumericCount,additionalScalars:report.extras.length,types:counts},null,2));
 }
-module.exports={readAdditionalScalars};
+module.exports={readAdditionalScalars,ScalarCursor};

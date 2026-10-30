@@ -26,7 +26,7 @@
     {
       "path": "reference/file-proof/scalar-v1.cjs",
       "normalization": "utf8-lf",
-      "sha256": "518f056d804e99fa4ddf74aa9b7d37baef7482392256046cc4ba8fb54b575842"
+      "sha256": "0aa566859c8f69f3310a9309ef3be01c50c7c2b7ab9c09092efb52de336efbf4"
     },
     {
       "path": "src/Port/Documents/LegacyCsg4Codec.cs",
