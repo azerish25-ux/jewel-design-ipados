@@ -10,8 +10,8 @@ Architecture: Documents owns immutable records, decoded numeric metadata, bounde
 
 Owned: src/Port/Documents; tests/Port/Documents.Contracts and Documents.Tests; Smoke/CI wiring; evidence/classification/ADR. Shared fixture is embedded so the same codec reads/edits/writes/reopens on iPad/iPhone. Console exports bounded outputs under .local/file-proof/production for independent Node/CSharp checks.
 
-- [ ] Write failing fixture tests first: 241/74 counts, no-op/reversal byte identity, one numeric edit, other records unchanged, alias isolation, CRC/truncation/count/header/EOF rejection, opaque future type/version retention and edit rejection, nonfinite/signed-zero and raw UTF16 preservation.
-- [ ] Implement bounded codec/models and full known-record writer; expose validation coverage honestly.
-- [ ] Run local/shared/independent readers, source/security/integrity checks; review unsupported data and regeneration claims.
-- [ ] Commit/push; inspect macOS iPad/iPhone codec output and runtime family.
-- [ ] Commit/push results; parent phase/tasks and all full PC/geometry parity gates remain incomplete.
+- [x] Write failing fixture tests first: 241/74 counts, no-op/reversal byte identity, one numeric edit, other records unchanged, alias isolation, CRC/truncation/count/header/EOF rejection, opaque future type/version retention and edit rejection, nonfinite/signed-zero and raw UTF16 preservation.
+- [x] Implement bounded codec/models and full known-record writer; expose validation coverage honestly.
+- [x] Run local/shared/independent readers, source/security/integrity checks; review unsupported data and regeneration claims.
+- [x] Commit/push; inspect macOS iPad/iPhone codec output and runtime family.
+- [x] Commit/push results; parent phase/tasks and all full PC/geometry parity gates remain incomplete.

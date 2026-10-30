@@ -44,7 +44,9 @@
     "tests/Port/Documents.Tests/Program.cs",
     "scripts/check-production-csg.cjs",
     "docs/porting/plans/P04-T01-A01-legacy-csg4-codec.md",
-    "docs/porting/ADR-0005-legacy-csg4-codec.md"
+    "docs/porting/ADR-0005-legacy-csg4-codec.md",
+    "docs/evidence/audit/production-csg4-crosscheck.json",
+    "docs/evidence/apple/production-csg4-results.json"
   ],
   "fixtures": [
     {
@@ -57,7 +59,7 @@
     {
       "id": "P04-T01-A01",
       "scope": "Production structural legacy library codec and independent fixture readers",
-      "status": "implemented_local",
+      "status": "verified_simulator",
       "depends": [
         "P03-T01",
         "P00"
@@ -92,6 +94,13 @@
       "expectedExitCode": 0,
       "artifact": "src/Port/Documents/Documents.csproj",
       "actual": "zero warnings, zero errors"
+    },
+    {
+      "command": "Inspect iPad/iPhone artifacts from GitHub Actions 41002808372",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/evidence/apple/production-csg4-results.json",
+      "actual": "Both families pass structural fixture no-op/edit/reopen/reversal and negative tests; main-run startup failure retained separately, retry pending"
     }
   ],
   "review": {
@@ -100,10 +109,29 @@
     "architecture": "BCL-only Documents module; no Rhino, UI, graph execution or file-layer identity guessing",
     "security": "No scripts/credential use or external requests; count/byte/frame bounds before allocation; raw text never executed",
     "performance": "CRC table and bounded linear parsing/writing; default 64MiB configurable; fixture 383069 bytes",
-    "limitations": "Nested preview/gem checksums opaque; no native-load side effects, portfolio, all 654 schemas, migration, PC app reopen or geometry generation"
+    "limitations": "Nested preview/gem checksums opaque; no native-load side effects, portfolio, all 654 schemas, migration, PC app reopen or geometry generation",
+    "appleStartup": "Same source commit passed both families in parallel control; failed main iPad lacked managed result. Exact startup cause remains unproven, no codec workaround applied."
   },
   "blockers": [
-    "macOS production codec execution pending",
     "Full P04 still needs P02/P03, representative PC corpus/oracle, all serializers/portfolio/migration and geometry/sidecar integration"
+  ],
+  "ciRuns": [
+    {
+      "id": 41002808424,
+      "commit": "6e96320fe05932890c9127c27d8ec85df4feb641",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41002808424",
+      "verification": "attempt 1: iPhone passed, iPad produced no app result/empty console; failed job retried as attempt 2 and confirmed live"
+    },
+    {
+      "id": 41002808456,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41002808456",
+      "verification": "success; clean checkout production codec and independent readers"
+    },
+    {
+      "id": 41002808372,
+      "commit": "6e96320fe05932890c9127c27d8ec85df4feb641",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41002808372",
+      "verification": "success; both artifacts inspected for correct family and production codec fixture assertions on identical source commit"
+    }
   ]
 }

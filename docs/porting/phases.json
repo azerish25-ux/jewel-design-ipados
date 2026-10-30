@@ -477,7 +477,9 @@
             "tests/Port/Documents.Tests/Program.cs",
             "scripts/check-production-csg.cjs",
             "docs/porting/plans/P04-T01-A01-legacy-csg4-codec.md",
-            "docs/porting/ADR-0005-legacy-csg4-codec.md"
+            "docs/porting/ADR-0005-legacy-csg4-codec.md",
+            "docs/evidence/audit/production-csg4-crosscheck.json",
+            "docs/evidence/apple/production-csg4-results.json"
           ],
           "evidence": [
             "docs/porting/evidence/P04-T01.json"

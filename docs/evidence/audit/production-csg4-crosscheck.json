@@ -1,0 +1,37 @@
+{
+  "scope": "Production structural writer independently read by Node/zlib and separate CSharp verifier; no original PC app or geometry regeneration",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "records": 241,
+  "numericRecords": 74,
+  "outputs": {
+    "source": {
+      "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+      "independentReaders": [
+        "Node/zlib",
+        "CSharp bitwise CRC"
+      ]
+    },
+    "rebuilt": {
+      "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+      "independentReaders": [
+        "Node/zlib",
+        "CSharp bitwise CRC"
+      ]
+    },
+    "edited": {
+      "sha256": "26b6ef6e22f2a6d9ff131350f18b6951818824291de1b1a2ae8d000d85c07b1a",
+      "independentReaders": [
+        "Node/zlib",
+        "CSharp bitwise CRC"
+      ]
+    },
+    "restored": {
+      "sha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+      "independentReaders": [
+        "Node/zlib",
+        "CSharp bitwise CRC"
+      ]
+    }
+  },
+  "implementationCommit": "6e96320fe05932890c9127c27d8ec85df4feb641"
+}
