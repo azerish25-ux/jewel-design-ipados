@@ -57,4 +57,6 @@ internal static class NativeMethods
     internal static extern int CurveSeam(ContextHandle context,ShapeHandle shape,double seam,out ulong output,[Out]byte[] diagnostic,uint capacity);
     [DllImport(Library,EntryPoint="jd_candidate_curve_bounds",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
     internal static extern int CurveBounds(ContextHandle context,ShapeHandle shape,double tolerance,out double minX,out double minY,out double minZ,out double maxX,out double maxY,out double maxZ,out double padding,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_curve_closed",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int CurveClosed(ContextHandle context,ShapeHandle shape,out uint closed,[Out]byte[] diagnostic,uint capacity);
 }

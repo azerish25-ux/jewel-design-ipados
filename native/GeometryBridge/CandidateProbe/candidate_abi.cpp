@@ -331,7 +331,8 @@ extern "C" int32_t jd_candidate_affine(uint64_t context,uint64_t shape,const dou
             transform.SetValue(static_cast<int>(i/4)+1,static_cast<int>(i%4)+1,matrix[i]);
         }
         if(!std::isfinite(transform.VectorialPart().Determinant())||transform.IsSingular())fail(JD_CANDIDATE_INVALID_ARGUMENT,"Unsupported singular or overflowing affine matrix");
-        transform.SetForm();
+        // SetValue stores the full matrix in gp_Other form. Preserve it: pinned SetForm
+        // can reclassify uniform matrices while retaining scale0, collapsing vertices.
         withContext(context,[&](Context& value){
             BRepBuilderAPI_GTransform operation(findShape(value,shape).shape,transform,true);
             if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native affine transformation failed");
@@ -642,6 +643,18 @@ extern "C" int32_t jd_candidate_curve_bounds(uint64_t context,uint64_t shape,dou
                 if(!std::isfinite(number))fail(JD_CANDIDATE_KERNEL_FAILURE,"Nonfinite native bounds");
             if(x0>x1||y0>y1||z0>z1)fail(JD_CANDIDATE_KERNEL_FAILURE,"Reversed native bounds");
             *min_x=x0;*min_y=y0;*min_z=z0;*max_x=x1;*max_y=y1;*max_z=z1;*padding=gap;
+        });
+    },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_curve_closed(uint64_t context,uint64_t shape,uint32_t* closed,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        if(!closed)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing closure output");*closed=0;
+        withContext(context,[&](Context& value){
+            const auto& input=findShape(value,shape).shape;
+            if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Curve closure requires an edge");
+            BRepAdaptor_Curve curve(TopoDS::Edge(input));*closed=curve.IsClosed()?1u:0u;
         });
     },diagnostic,capacity);
 }

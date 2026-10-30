@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_header_and_analytic_fixture_only",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "rails": [
+    {
+      "index": 13,
+      "guid": "f9f6400f-67c2-4883-8c44-a91f411f2ee3",
+      "major": 1,
+      "minor": 0,
+      "identifier": "OutsideRingRail",
+      "flags": 65501,
+      "legacyLayer": 17,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "OutsideRingRail"
+        }
+      ],
+      "objects": [
+        2,
+        6,
+        8,
+        9,
+        10,
+        11
+      ],
+      "channels": [
+        0,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    }
+  ],
+  "storedInputCandidates": [
+    {
+      "railIndex": 13,
+      "inputs": [
+        {
+          "name": "RingRadius",
+          "sourceIndex": 2,
+          "sourceChannel": 0,
+          "sourceTypeGuid": "dd5c2342-d89a-440e-a76e-624a1faf2b68",
+          "sourceVersion": "1.2",
+          "storedValue": 8.667196228921199,
+          "meaning": "stored scalar candidate, NOT evaluated channel"
+        },
+        {
+          "name": "OutsideCurve",
+          "sourceIndex": 6,
+          "sourceChannel": 3,
+          "sourceTypeGuid": "6c85fe71-927a-4d28-9335-8f1eb8713979",
+          "sourceVersion": "1.1",
+          "storedValue": 0,
+          "meaning": "stored chooser selection, NOT evaluated curve"
+        },
+        {
+          "name": "TopThickness",
+          "sourceIndex": 8,
+          "sourceChannel": 0,
+          "sourceTypeGuid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+          "sourceVersion": "1.1",
+          "storedValue": 4.38,
+          "meaning": "stored scalar candidate, NOT evaluated channel"
+        },
+        {
+          "name": "SideThickness",
+          "sourceIndex": 9,
+          "sourceChannel": 0,
+          "sourceTypeGuid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+          "sourceVersion": "1.1",
+          "storedValue": 1.84,
+          "meaning": "stored scalar candidate, NOT evaluated channel"
+        },
+        {
+          "name": "BottomThickness",
+          "sourceIndex": 10,
+          "sourceChannel": 0,
+          "sourceTypeGuid": "56b84606-7f1d-41fb-b81f-f521d9a9577d",
+          "sourceVersion": "1.1",
+          "storedValue": 1.7,
+          "meaning": "stored scalar candidate, NOT evaluated channel"
+        },
+        {
+          "name": "LockOn",
+          "sourceIndex": 11,
+          "sourceChannel": 0,
+          "sourceTypeGuid": "a5d6b280-42fe-4188-8ff0-9ac6caed7831",
+          "sourceVersion": "1.1",
+          "storedValue": 1,
+          "meaning": "stored number candidate; CSNumberData Boolean is >0.5"
+        }
+      ]
+    }
+  ],
+  "analyticEllipse": {
+    "semiX": 3,
+    "semiZ": 7,
+    "samples": 50,
+    "endpointExcluded": true,
+    "method": "Independent analytic ellipse speed, composite Simpson2048 plus bisection50; no native geometry calls",
+    "sampledMinimum": 3.014498436003,
+    "exactClosestDistance": 3
+  },
+  "scope": "Read-only exact OutsideRail_V1 header and stored input candidates. Actual chooser curve/channel activation/override/graph/PC regeneration not executed. Analytic ellipse is independently computed test geometry, not recovered project output.",
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+      "sha256": "33aa3bd1e6dddc2b5332bd1ef350d30751aebb5d93440eda00f5ba9e81d2ea1a"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilGeometry.cs",
+      "sha256": "001df9dbed85eb3a982468ffbc895666d23abf6ef1ec615836eb73dda004f08d"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilRingRail.cs",
+      "sha256": "5cd38b0e906a051e19c755017699d47589a452ef93a8fe4d75921d8142faead6"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSNumberData.cs",
+      "sha256": "a1f54695fee3712cfc3052c11377cf8ae7c21e004a36d373f92b2349c481b7f5"
+    }
+  ]
+}

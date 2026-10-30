@@ -155,6 +155,24 @@ void run_candidate_curve_contracts()
         checkCurve(bounds(circle,bad)==JD_CANDIDATE_INVALID_ARGUMENT,"Invalid bounds tolerance accepted");
     checkCurve(bounds(box,1e-10)==JD_CANDIDATE_UNSUPPORTED_OPERATION,"Solid produced fake curve bounds");
     checkCurve(jd_candidate_curve_bounds(context.id,circle,1e-10,&boundsMinX,&boundsMinY,&boundsMinZ,&boundsMaxX,&boundsMaxY,&boundsMaxZ,nullptr,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Missing bounds output accepted");
+
+    uint32_t curveClosed=99;ok(jd_candidate_curve_closed(context.id,circle,&curveClosed,error,sizeof(error)));checkCurve(curveClosed==1,"Closed circle query");
+    uint64_t closureLine=0;ok(jd_candidate_line(context.id,0,0,0,1,0,0,&closureLine,error,sizeof(error)));
+    ok(jd_candidate_curve_closed(context.id,closureLine,&curveClosed,error,sizeof(error)));checkCurve(curveClosed==0,"Open line query");
+    ok(jd_candidate_shape_release(context.id,closureLine,error,sizeof(error)));
+    checkCurve(jd_candidate_curve_closed(context.id,box,&curveClosed,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION,"Solid closure query");
+    checkCurve(jd_candidate_curve_closed(context.id,circle,nullptr,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Null closure output accepted");
+    for(double scale:{1.0,1.0000000000000002,2.0,-1.0}){
+        const double uniformMatrix[12]={scale,0,0,1,0,scale,0,2,0,0,scale,3};uint64_t uniformShape=0;
+        ok(jd_candidate_affine(context.id,circle,uniformMatrix,12,&uniformShape,error,sizeof(error)));
+        ok(jd_candidate_curve_point(context.id,uniformShape,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,1);nearCurve(y,2);nearCurve(z,7*scale+3);
+        ok(jd_candidate_shape_release(context.id,uniformShape,error,sizeof(error)));
+    }
+    const double boxUniform[12]={2,0,0,1,0,2,0,2,0,0,2,3};uint64_t uniformBox=0;
+    ok(jd_candidate_affine(context.id,box,boxUniform,12,&uniformBox,error,sizeof(error)));
+    double uniformVolume=0;uint32_t uniformSolids=0,uniformValid=0;
+    ok(jd_candidate_shape_inspect(context.id,uniformBox,&uniformVolume,&uniformSolids,&uniformValid,error,sizeof(error)));nearCurve(uniformVolume,8);checkCurve(uniformSolids==1&&uniformValid==1,"Uniform solid affine validity");
+    ok(jd_candidate_shape_release(context.id,uniformBox,error,sizeof(error)));
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }

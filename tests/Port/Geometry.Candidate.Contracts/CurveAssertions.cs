@@ -37,6 +37,13 @@ internal static class CurveAssertions
             Check(Math.Abs(context.ParameterAtNormalizedLength(circle,.0625,1e-9)-Math.PI/8)>1e-4,"Arc-length mapper used naive parameter scaling");
             foreach(double bad in new[]{-.1,1.1,double.NaN,double.PositiveInfinity})Check(Fails(()=>context.ParameterAtNormalizedLength(circle,bad,1e-9)).Status==CandidateNativeStatus.InvalidArgument,"Invalid length fraction");
             Check(Fails(()=>context.ParameterAtNormalizedLength(circle,.5,0)).Status==CandidateNativeStatus.InvalidArgument,"Invalid length tolerance");
+            foreach(double scale in new[]{1.0,1.0000000000000002,2.0,-1.0}){
+                using var uniform=context.TransformAffine(circle,new(scale,0,0,1,0,scale,0,2,0,0,scale,3));
+                Point(context.PointAt(uniform,0),1,2,7*scale+3);
+                Point(context.PointAt(uniform,Math.PI/2),7*scale+1,2,3);
+                using var twice=context.TransformAffine(uniform,new(1,0,0,-1,0,1,0,-2,0,0,2,-6));
+                Point(context.PointAt(twice,0),0,0,14*scale);
+            }
             var affine=new CandidateAffine(2,0,.5,1,0,1,0,2,0,0,3,-4);
             using(var changed=context.TransformAffine(circle,affine)){
                 Point(context.PointAt(changed,0),4.5,2,17);

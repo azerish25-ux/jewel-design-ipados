@@ -81,7 +81,15 @@
     "docs/porting/ADR-0020-candidate-curve-bounds.md",
     "docs/porting/plans/P05-T02-A16-curve-bounds.md",
     "tests/Port/Geometry.Candidate.Contracts/CurveBoundsAssertions.cs",
-    "docs/evidence/apple/native-trim-reverse-results.json"
+    "docs/evidence/apple/native-trim-reverse-results.json",
+    "src/Port/Features.Candidate/OutsideRailTypes.cs",
+    "src/Port/Features.Candidate/OutsideRailV1Candidate.cs",
+    "tests/Port/Geometry.Candidate.Contracts/OutsideRailAssertions.cs",
+    "reference/file-proof/outside-rail-v1.cjs",
+    "tests/outside-rail-v1-reference.test.cjs",
+    "docs/evidence/audit/outside-rail-input-reference.json",
+    "docs/porting/ADR-0021-outside-rail-geometry-core.md",
+    "docs/porting/plans/P05-T02-A17-outside-rail-composition.md"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -233,6 +241,50 @@
       "path": ".local/native/occt-source/src/FoundationClasses/TKMath/Bnd/Bnd_Box.hxx",
       "sha256": "9cf14c296b0b5fcaa06ae6b1696d12b957579c5810ef354f791e8422b86fd654",
       "scope": "P05-T02-A16 source Max.Z fallback, located optimal bounds and numerical gap/optimizer floor; SDK local-only"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Rails.Obsolete/CSOutsideRail1.cs",
+      "sha256": "33aa3bd1e6dddc2b5332bd1ef350d30751aebb5d93440eda00f5ba9e81d2ea1a",
+      "scope": "P05-T02-A17 exact branch/default/sample/ray/tolerance/Boolean contracts and pinned affine/closure behavior; SDK local-only"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilGeometry.cs",
+      "sha256": "001df9dbed85eb3a982468ffbc895666d23abf6ef1ec615836eb73dda004f08d",
+      "scope": "P05-T02-A17 exact branch/default/sample/ray/tolerance/Boolean contracts and pinned affine/closure behavior; SDK local-only"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilRingRail.cs",
+      "sha256": "5cd38b0e906a051e19c755017699d47589a452ef93a8fe4d75921d8142faead6",
+      "scope": "P05-T02-A17 exact branch/default/sample/ray/tolerance/Boolean contracts and pinned affine/closure behavior; SDK local-only"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtil.cs",
+      "sha256": "c2aef5490468e8970b91b6aeefde0b0d0533aa35912ca1acefc41e9a795fa653",
+      "scope": "P05-T02-A17 exact branch/default/sample/ray/tolerance/Boolean contracts and pinned affine/closure behavior; SDK local-only"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSNumberData.cs",
+      "sha256": "a1f54695fee3712cfc3052c11377cf8ae7c21e004a36d373f92b2349c481b7f5",
+      "scope": "P05-T02-A17 exact branch/default/sample/ray/tolerance/Boolean contracts and pinned affine/closure behavior; SDK local-only"
+    },
+    {
+      "path": ".local/native/occt-source/src/FoundationClasses/TKMath/gp/gp_GTrsf.hxx",
+      "sha256": "9779fc0733120bf48aaeb649700520fa591fd696a3bedf3a025fc736e7dc0ac3",
+      "scope": "P05-T02-A17 exact branch/default/sample/ray/tolerance/Boolean contracts and pinned affine/closure behavior; SDK local-only"
+    },
+    {
+      "path": ".local/native/occt-source/src/FoundationClasses/TKMath/gp/gp_GTrsf.cxx",
+      "sha256": "712f8685814b799e28ded7cc39dab09585aa6c9fc5f3e842c7e34f87720599a7",
+      "scope": "P05-T02-A17 exact branch/default/sample/ray/tolerance/Boolean contracts and pinned affine/closure behavior; SDK local-only"
+    },
+    {
+      "path": ".local/native/occt-source/src/ModelingData/TKG3d/GeomAdaptor/GeomAdaptor_Curve.cxx",
+      "sha256": "5012d56077be8b1ede8fc1a5dfe3a7edb48e1abee9908e2ac6d8e25a4cd8674e",
+      "scope": "P05-T02-A17 exact branch/default/sample/ray/tolerance/Boolean contracts and pinned affine/closure behavior; SDK local-only"
+    },
+    {
+      "url": "https://github.com/mcneel/rhinocommon/blob/3aebe3553b5e2c78ed4d5ae1c21f3e752a6b7f69/dotnet/opennurbs/opennurbs_curve.cs",
+      "scope": "Official wrapper corroboration: JoinCurves default native0/preserveDirection false and array-length absolute tolerance plus fractional1e-8; original target binary equivalence remains open"
     }
   ],
   "subtasks": [
@@ -314,6 +366,11 @@
     {
       "id": "P05-T02-A16",
       "scope": "Actual finite-domain native refined curve bounds with unpadded extrema, explicit SDK padding and managed ownership adapter",
+      "status": "local_native_verified_apple_pending"
+    },
+    {
+      "id": "P05-T02-A17",
+      "scope": "Adapted OutsideRail_V1 native geometry branches, stored-input evidence, explicit candidate policies and uniform affine correction",
       "status": "local_native_verified_apple_pending"
     }
   ],
@@ -522,6 +579,35 @@
       "expectedExitCode": 0,
       "actual": "Actual C ABI/CSharp optimal bounds pass circle/3D line/trim/interior maximum/sheared ellipse analytical extrema within1e-6 model units, translated/seam/reversed source geometry, explicit requested/minimum gap and raw/padded separation, invalid/solid/null outputs and zero retained shape entries. Prior native/managed/ring/curve suites pass; native deprecated-message warnings remain.",
       "artifact": ".local/evidence/P05-T02-A16/host-proof.log"
+    },
+    {
+      "subtaskId": "P05-T02-A17",
+      "command": "dotnet build Geometry.Candidate.Contracts before feature APIs",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED3 missing feature/type errors before implementation; .local/evidence/P05-T02-A17/red.txt"
+    },
+    {
+      "subtaskId": "P05-T02-A17",
+      "command": "Actual source pipeline before uniform affine correction",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "Native BRepCheck vertex-on-edge status1 InvalidPointOnCurve. Pinned SetValue scale0/SetForm reclassification diagnosed; remove SetForm and preserve raw gp_Other matrix. No topology repair. Temporary instrumentation removed; .local/evidence/P05-T02-A17/affine-diagnostic.log"
+    },
+    {
+      "subtaskId": "P05-T02-A17",
+      "command": "node scripts/build-native-windows.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Actual native/CSharp source-ordered locked/unlocked pipeline passes analytical/asymmetric/default/negative/shifted/reversed cases, independent ellipse sampled minimum, radius bounds/priority, separate helper/application tolerance, finite-ray closest fallback and failure cleanup, stored top edit/save/reopen/rebuild/byte-identical undo with explicit profile. Identity/uniform/reflection/consecutive/solid affine and closure ABI tests plus all earlier suites pass; native deprecation warnings remain.",
+      "artifact": ".local/evidence/P05-T02-A17/host-proof.log"
+    },
+    {
+      "subtaskId": "P05-T02-A17",
+      "command": "node --test tests/outside-rail-v1-reference.test.cjs tests/ring-rail-v1-reference.test.cjs tests/scalar-v1-reference.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "8 independent reference-reader tests pass; outside header known-schema six links/full consumption, unknown version and bounds/count guards; prior ring/scalar regressions preserved."
     }
   ],
   "review": {
@@ -548,7 +634,8 @@
     "orderedJoin": "Pinned native concatenation constructor/Add flags inspected. Input curves copied and restricted; endpoint continuity checked before native append; actual validated BRep output and existing context/SafeHandle lifetime reused. Uniform-ratio native parameterization and ordered-only policy are candidate behavior, not original Rhino join/output equivalence. Apple/full outside-rail/PC/physical checks remain open.",
     "curveLine": "Reviewed native buffer count/capacity,136-byte nested blittable layout, exception/status paths, finite/range guards, no original input mutation, exact linear mapping rather than curved approximation, immutable managed results and SafeHandle leases. Candidate source ordering/fuzzy/complexity and arbitrary imported overlaps remain explicit gates; no full parity row closed.",
     "closedSeam": "Reviewed copied/located basis geometry, edge-domain preservation when unwrapping exact affine trims, bounded finite seam/period, native closure and output-domain guards, exception-safe ownership and source preservation. Shared helper change is covered by adjacent affine trim/reverse plus prior native suites. Candidate vs Rhino failure/tolerance/out-of-domain semantics and full builder/PC/physical gates remain explicit.",
-    "curveBounds": "Reviewed finite edge-domain/location use, actual native extrema refinement rather than pole/preview substitution, explicit gap removal only on temporary box, returned raw/padded finite checks, unsupported/error handling and no new persistent ownership. Numerical floor/arbitrary curves/Rhino accurate-box/PC equivalence remain explicit gates."
+    "curveBounds": "Reviewed finite edge-domain/location use, actual native extrema refinement rather than pole/preview substitution, explicit gap removal only on temporary box, returned raw/padded finite checks, unsupported/error handling and no new persistent ownership. Numerical floor/arbitrary curves/Rhino accurate-box/PC equivalence remain explicit gates.",
+    "outsideRail": "Reviewed source order/defaults/sampling/ray lengths/Max.Z/scale0, explicit join/seam diagnostics versus hidden fallback, temporary ownership/exception cleanup and numeric/curve priority. Original batch solver/native0 join/failure/chooser/graph/PC equivalence remain explicit. Raw affine fix follows pinned scale/form implementation and independent uniform/consecutive geometry regressions; no surrogate geometry or unvalidated repair."
   },
   "blockers": [
     "Full CAD semantic mapping/candidate acceptance and broader recovered trim safety remain incomplete",

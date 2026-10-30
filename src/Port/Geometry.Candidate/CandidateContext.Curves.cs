@@ -89,4 +89,12 @@ public sealed partial class CandidateContext
             return new(new(x0,y0,z0),new(x1,y1,z1),tolerance,padding);
         }
     }
+    public bool IsCurveClosed(CandidateShape shape)
+    {
+        lock(_gate){
+            ThrowIfDisposed();Validate(shape);var diagnostic=new byte[DiagnosticCapacity];
+            Check(NativeMethods.CurveClosed(_handle,shape.Handle,out var closed,diagnostic,DiagnosticCapacity),diagnostic);
+            if(closed>1)throw new InvalidOperationException("Invalid native closure response.");return closed==1;
+        }
+    }
 }
