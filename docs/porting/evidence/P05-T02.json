@@ -42,7 +42,7 @@
     {
       "id": "P05-T02-A01",
       "scope": "Pinned native analytic fixture candidate build/execution",
-      "status": "building"
+      "status": "api_compile_fix_pending"
     }
   ],
   "checks": [],
@@ -52,7 +52,8 @@
     "limits": "Windows host has no active C++ compiler in PATH; actual host/iOS builds must run in CI",
     "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim",
     "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending.",
-    "currentStatus": "No analytical native/runtime result observed yet; source-backed compile fix validated only through configure so far"
+    "currentStatus": "No analytical native/runtime result observed yet; source-backed compile fix validated only through configure so far",
+    "secondBuildFailure": "Completed iOS job 123922543783 failed compiling probe.cpp at deprecated TopTools_ListOfShape.hxx; pinned OCCT8 boolean signatures use NCollection_List<TopoDS_Shape>. Replaced alias and added a compile-only object target before SDK build. Original host job still running; no native runtime result."
   },
   "blockers": [
     "Native candidate host/iOS compilation and runtime results pending",

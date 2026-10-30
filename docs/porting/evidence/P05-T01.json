@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P05-T01",
+  "status": "in_progress",
+  "outputs": [
+    "docs/porting/kernel/boolean-caller-contracts.json",
+    "docs/porting/kernel/BOOLEAN_SEMANTICS.md"
+  ],
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+      "sha256": "1147a8fd9208503c5b14945ed726327149acc2e5282d30239dfbb5b650aa1594"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanIntersection.cs",
+      "sha256": "10e19367d8addfdf23206f0adf3851e61cc5e56a63b59f57392e0e3394771aa6"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanUnion.cs",
+      "sha256": "9a3db74ec02c6e680184127d128929c0cac9d65257ca3a37c06e1de985d7455a"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockDataUtils/CSUtilDataHelper.cs",
+      "sha256": "4c2fc0b4c3724866070b999557e4b077e8531cf6913dd1a96cd374a162b7cf46"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilGeometry.cs",
+      "sha256": "001df9dbed85eb3a982468ffbc895666d23abf6ef1ec615836eb73dda004f08d"
+    },
+    {
+      "path": "recovery/canonical/cad/CS/CSApplication.cs",
+      "sha256": "78aff52cf0615558541659a5eb4d77b1eeff298e94c32040fdde4893929c4f35"
+    }
+  ],
+  "fixtures": [],
+  "subtasks": [
+    {
+      "id": "P05-T01-A01",
+      "scope": "Three boolean nodes and cleanup path",
+      "status": "source_observed"
+    }
+  ],
+  "checks": [
+    {
+      "command": "Inspect Update/cleanup bodies and source SHA256/GUID anchors",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "docs/porting/kernel/boolean-caller-contracts.json",
+      "actual": "Tolerance, fallback, cardinality and cleanup requirements recorded; original runtime not executed"
+    }
+  ],
+  "review": {
+    "scope": "Source-only analysis while confirmed-live native builds run",
+    "limits": "Lexical catalog includes helpers and omits instance operations; no full mapping or native behavior proof"
+  },
+  "blockers": [
+    "Remaining calls/instance operations and original PC fixture semantics unmapped"
+  ]
+}

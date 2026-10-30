@@ -594,10 +594,15 @@
         {
           "id": "P05-T01",
           "title": "Map all 315 kernel/wrapper call families to required semantics",
-          "status": "not_started",
+          "status": "in_progress",
           "depends": [],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "docs/porting/kernel/boolean-caller-contracts.json",
+            "docs/porting/kernel/BOOLEAN_SEMANTICS.md"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P05-T01.json"
+          ]
         },
         {
           "id": "P05-T02",

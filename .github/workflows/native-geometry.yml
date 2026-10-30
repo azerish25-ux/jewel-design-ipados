@@ -35,6 +35,8 @@ jobs:
           sha256sum .local/native/occt-source/LICENSE_LGPL_21.txt .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt > artifacts/native-license-hashes.txt
       - name: Configure genuine modeling kernel
         run: cmake -S native/GeometryBridge/CandidateProbe -B .local/native/host -DCMAKE_BUILD_TYPE=Release -DOCCT_SOURCE_DIR="$PWD/.local/native/occt-source" | tee artifacts/native-configure.txt
+      - name: Compile candidate API usage before kernel build
+        run: cmake --build .local/native/host --target jewel_occt_candidate_objects --parallel 2 | tee artifacts/native-probe-compile.txt
       - name: Build analytical native fixture runner
         run: cmake --build .local/native/host --target occt_candidate_test --parallel 4 | tee artifacts/native-build.txt
       - name: Execute native analytical assertions
@@ -82,6 +84,8 @@ jobs:
           shasum -a 256 .local/native/occt-source/LICENSE_LGPL_21.txt .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt > artifacts/native-license-hashes.txt
       - name: Configure actual iOS simulator kernel
         run: cmake -S native/GeometryBridge/CandidateProbe -B .local/native/ios-sim -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphonesimulator -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0 -DOCCT_SOURCE_DIR="$PWD/.local/native/occt-source" | tee artifacts/native-configure.txt
+      - name: Compile candidate API usage before kernel build
+        run: cmake --build .local/native/ios-sim --target jewel_occt_candidate_objects --parallel 2 | tee artifacts/native-probe-compile.txt
       - name: Build native kernel and test entry
         run: cmake --build .local/native/ios-sim --target jewel_occt_candidate --parallel 3 | tee artifacts/native-build.txt
       - name: Combine static test dependencies

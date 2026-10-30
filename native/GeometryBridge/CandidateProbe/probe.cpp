@@ -9,7 +9,7 @@
 #include <BRep_Tool.hxx>
 #include <TopoDS.hxx>
 #include <TopExp_Explorer.hxx>
-#include <TopTools_ListOfShape.hxx>
+#include <NCollection_List.hxx>
 #include <Poly_Triangulation.hxx>
 #include <Geom_Circle.hxx>
 #include <Geom_BSplineCurve.hxx>
@@ -34,7 +34,7 @@ int count(const TopoDS_Shape& shape,TopAbs_ShapeEnum kind) { int n=0;for(TopExp_
 double volume(const TopoDS_Shape& shape) { GProp_GProps properties;BRepGProp::VolumeProperties(shape,properties,true,false,false);return properties.Mass(); }
 template<class Operation> TopoDS_Shape boolean(const TopoDS_Shape& lhs,const TopoDS_Shape& rhs)
 {
-    TopTools_ListOfShape arguments,tools;arguments.Append(lhs);tools.Append(rhs);
+    NCollection_List<TopoDS_Shape> arguments,tools;arguments.Append(lhs);tools.Append(rhs);
     Operation operation;operation.SetArguments(arguments);operation.SetTools(tools);operation.SetFuzzyValue(.01);operation.Build();
     require(operation.IsDone()&&!operation.HasErrors(),"OCCT boolean failed");
     require(!operation.Shape().IsNull(),"OCCT boolean returned null shape");return operation.Shape();

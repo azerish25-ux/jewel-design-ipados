@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "scope": "Three registered boolean caller bodies and cleanup only; full 315 lexical call families and native PC parity remain open",
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+      "sha256": "1147a8fd9208503c5b14945ed726327149acc2e5282d30239dfbb5b650aa1594"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanIntersection.cs",
+      "sha256": "10e19367d8addfdf23206f0adf3851e61cc5e56a63b59f57392e0e3394771aa6"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanUnion.cs",
+      "sha256": "9a3db74ec02c6e680184127d128929c0cac9d65257ca3a37c06e1de985d7455a"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockDataUtils/CSUtilDataHelper.cs",
+      "sha256": "4c2fc0b4c3724866070b999557e4b077e8531cf6913dd1a96cd374a162b7cf46"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlockUtil/CSUtilGeometry.cs",
+      "sha256": "001df9dbed85eb3a982468ffbc895666d23abf6ef1ec615836eb73dda004f08d"
+    },
+    {
+      "path": "recovery/canonical/cad/CS/CSApplication.cs",
+      "sha256": "78aff52cf0615558541659a5eb4d77b1eeff298e94c32040fdde4893929c4f35"
+    }
+  ],
+  "inputs": "Flatten arrays; GetCleanBrepInput ignores non-ICSBrep/null values, normalizes orientation and splits kinky faces for valid shapes; invalid shapes are not rejected by the helper",
+  "outputs": "Each result Faces.ShrinkFaces then orientation cleanup; null elements dereferenced rather than filtered; one result emits individual data, multiple emit array, cleaned zero falls back to duplicated original input",
+  "nodes": [
+    {
+      "name": "BooleanDifference",
+      "guid": "d8022cc9-8ac7-4416-9195-551f462e4150",
+      "source": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanDifference.cs",
+      "operation": "iFlip true -> intersection, false/default -> difference",
+      "tolerance": "literal .01",
+      "null": "duplicate original LHS",
+      "empty": "duplicate original LHS after cleanup"
+    },
+    {
+      "name": "BooleanIntersection",
+      "guid": "62c5f427-b471-433c-afca-d6a6ac0a5199",
+      "source": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanIntersection.cs",
+      "operation": "intersection",
+      "tolerance": "literal .01",
+      "null": "Recovered body accesses array.Length before array==null; original-binary behavior untested",
+      "empty": "duplicate original LHS before cleanup"
+    },
+    {
+      "name": "BooleanUnion",
+      "guid": "671b7ae9-dbd8-47ce-a0b6-b3db83fbf91e",
+      "source": "recovery/canonical/cad/CSBlocks.Solids/CSBooleanUnion.cs",
+      "operation": "union",
+      "tolerance": "mutable application Tolerance, startup .001",
+      "null": "duplicate original input",
+      "empty": "duplicate original input after cleanup"
+    }
+  ],
+  "requiredOracleCases": [
+    "null vs empty and suspected recovery defect",
+    "output cardinality/order",
+    "input mutation/duplication ownership",
+    "orientation/kink/face shrink effects",
+    "nondefault tolerances and backend fuzzy equivalence"
+  ],
+  "probeGap": "Analytic OCCT empty intersection is not final node behavior; caller falls back to input. No tolerance/caller/archive parity is established.",
+  "status": "source_observed"
+}
