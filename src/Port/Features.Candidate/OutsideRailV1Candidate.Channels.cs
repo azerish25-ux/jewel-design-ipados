@@ -33,6 +33,7 @@ public static partial class OutsideRailV1Candidate
         LegacyChannelValue Read(int input){var link=inputs[input];return link.ObjectIndex<0?LegacyChannelValue.Empty:session.ReadOutput(link.ObjectIndex,link.ChannelIndex);}
         CandidateShape? Curve(LegacyChannelValue value)
         {
+            if(value.Array is not null)throw new NotSupportedException("Array curve conversion requires A13-A03 first-item semantics.");
             if(value.Profile is{} profile){
                 using var imported=StoredMatrixProfileCandidate.Build(context,session.Document.Records[profile.GroupRecordIndex].MatrixProfiles!,profile.ProfileIndex);
                 return context.Retain(imported.Curve);

@@ -9,7 +9,7 @@ public sealed partial class CandidateRailGraphSession
         var links=Inputs(index);
         LegacyChannelValue Read(int slot)=>links[slot].ObjectIndex<0?LegacyChannelValue.Missing:Values.ReadOutput(links[slot].ObjectIndex,links[slot].ChannelIndex);
         if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.AddTypeGuid)
-            return new(null,null,LegacyChannelValue.FromNumber(TransformProducerCandidate.AddScalars(Read(0),Read(1))));
+            {double sum=TransformProducerCandidate.AddScalars(Read(0),Read(1));return new(null,null,LegacyChannelValue.FromNumber(sum),new[]{LegacyChannelValue.FromNumber(0.0-sum),LegacyChannelValue.FromNumber(1.0-sum)});}
         LegacyAffineTransform transform;
         if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.RotateObjectTypeGuid)
             transform=RotationProducerCandidate.Build(Read(0),Read(1),Read(2),Read(3));

@@ -24,8 +24,10 @@ internal static class CollectionSocketAssertions
         using var stream=typeof(CollectionSocketAssertions).Assembly.GetManifestResourceStream("RingRailLibraryFixture")!;
         using var memory=new MemoryStream();stream.CopyTo(memory);var document=LegacyCsg4Codec.Read(memory.ToArray());
         using var context=CandidateContext.Create();using var graph=new CandidateRailGraphSession(context,document,new(1e-7,1e-7,1e-7));
-        Unsupported(()=>graph.Generate(61));Unsupported(()=>graph.Generate(116));
+        Unsupported(()=>graph.Generate(61));graph.Generate(116);
+        using(var curve=graph.RetainCurve(116)){Check(graph.ReadProfileMetadata(116).Name is not null,"Unarray profile metadata missing");}
+        graph.Dispose();
         Check(context.DiagnosticLiveShapeCount==0,"Unimplemented collection path fabricated or leaked geometry");
-        return "PASS collection socket constructors:"+count+" exact-source zero-fixed-input cases; array data stays explicit until native ownership integration, no native execution claim.";
+        return "PASS collection socket constructors:"+count+" exact-source zero-fixed-input cases; source replay preserved while native collection execution is tested separately.";
     }
 }

@@ -29,7 +29,7 @@ public sealed class LegacyChannelValue
         return new(copy.ToArray());
     }
     public static LegacyChannelValue FromTransform(LegacyAffineTransform transform)=>new(transform);
-    public static LegacyChannelValue FromCurve(int record,int channel)=>new(new LegacyCurveSelection(record,channel));
+    public static LegacyChannelValue FromCurve(int record,int channel,int item=0)=>new(new LegacyCurveSelection(record,channel,item));
     public static LegacyChannelValue FromNumber(double value)=>Number(value);
     internal static LegacyChannelValue Number(double value)=>new(value);
     internal static LegacyChannelValue ProfileData(int record,int profile)=>new(new LegacyProfileSelection(record,profile));

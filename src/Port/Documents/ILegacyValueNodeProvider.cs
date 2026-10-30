@@ -9,4 +9,4 @@ public interface ILegacyValueNodeProvider
     void Update(int recordIndex);
     LegacyChannelValue ReadOutput(int recordIndex,int channelIndex);
 }
-public readonly record struct LegacyCurveSelection(int ProducerRecordIndex,int OutputChannelIndex);
+public readonly record struct LegacyCurveSelection(int ProducerRecordIndex,int OutputChannelIndex,int ItemIndex=0);

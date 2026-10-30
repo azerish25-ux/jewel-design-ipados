@@ -14735,11 +14735,13 @@
       "acceptance": "Exercise this declared GUID and supported record-version branches with non-default serialized fields; PC -> iPad -> PC must retain graph identity/connections/data and remain editable. Compare computed geometry separately. Reserved expired-node GUID requires expected-error behavior, not successful geometry.",
       "fixtureIds": [],
       "testCommands": [
-        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production"
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll"
       ],
       "evidence": [
         "docs/porting/evidence/P03-T03.json",
-        "docs/porting/ADR-0032-pure-array-semantics.md"
+        "docs/porting/ADR-0032-pure-array-semantics.md",
+        "docs/porting/ADR-0033-owned-native-collections.md"
       ],
       "guid": "8d8b262f-f2bb-43c5-9486-fbd563c4759b",
       "legacy": false,
@@ -14747,7 +14749,7 @@
         "path": "docs/evidence/audit/serialization-matrix.json",
         "id": "SER-0640"
       },
-      "implementationScope": "Exact1.0 common headers and pure collection semantics only. Native ownership/producer emission/output counts/wildcard/one-level trailing-empty semantics/full data and PC/UI acceptance remain required."
+      "implementationScope": "Exact1.0 known native/scalar/profile nested collection execution/ownership; six original resolved chains. Broader data/arrays consuming behavior/A03/all producers/PC/UI/physical acceptance remain open."
     },
     {
       "id": "SER-0641",
@@ -15063,11 +15065,13 @@
       "acceptance": "Exercise this declared GUID and supported record-version branches with non-default serialized fields; PC -> iPad -> PC must retain graph identity/connections/data and remain editable. Compare computed geometry separately. Reserved expired-node GUID requires expected-error behavior, not successful geometry.",
       "fixtureIds": [],
       "testCommands": [
-        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production"
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll"
       ],
       "evidence": [
         "docs/porting/evidence/P03-T03.json",
-        "docs/porting/ADR-0032-pure-array-semantics.md"
+        "docs/porting/ADR-0032-pure-array-semantics.md",
+        "docs/porting/ADR-0033-owned-native-collections.md"
       ],
       "guid": "e147e20f-a225-4005-ab5e-2f37d149e81c",
       "legacy": true,
@@ -15075,7 +15079,7 @@
         "path": "docs/evidence/audit/serialization-matrix.json",
         "id": "SER-0654"
       },
-      "implementationScope": "Exact1.0 common headers and pure collection semantics only. Native ownership/producer emission/output counts/wildcard/one-level trailing-empty semantics/full data and PC/UI acceptance remain required."
+      "implementationScope": "Exact1.0 known native/scalar/profile nested collection execution/ownership; six original resolved chains. Broader data/arrays consuming behavior/A03/all producers/PC/UI/physical acceptance remain open."
     }
   ]
 }

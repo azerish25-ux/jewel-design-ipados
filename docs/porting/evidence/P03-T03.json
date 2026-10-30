@@ -122,7 +122,18 @@
     "docs/porting/ADR-0032-pure-array-semantics.md",
     "docs/porting/plans/P03-T03-A13-owned-arrays.md",
     "docs/evidence/apple/rotation-producer-results.json",
-    "docs/evidence/apple/transform-consumer-device-results.json"
+    "docs/evidence/apple/transform-consumer-device-results.json",
+    "src/Port/Features.Candidate/CandidateDataSnapshot.cs",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.Output.cs",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.Collections.cs",
+    "tests/Port/Geometry.Candidate.Contracts/OwnedCollectionAssertions.cs",
+    "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyCollections.cs",
+    "scripts/verify-collection-execution-oracle.cjs",
+    "tests/collection-execution-oracle.test.cjs",
+    "docs/porting/ADR-0033-owned-native-collections.md",
+    "docs/porting/plans/P03-T03-A13-A02-owned-native-collections.md",
+    "docs/evidence/apple/transform-consumer-results.json",
+    "docs/evidence/apple/pure-array-device-results.json"
   ],
   "fixtures": [],
   "checks": [
@@ -469,6 +480,34 @@
       "expectedExitCode": 0,
       "artifact": "scripts/verify-array-oracle.cjs",
       "actual": "11/11 exact source arithmetic/copy/flatten/link/slot tamper and independent20 header/future/bounds controls."
+    },
+    {
+      "command": "dotnet run --project tests/Port/Geometry.Candidate.HostTests (RED before A02)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/OwnedCollectionAssertions.cs",
+      "actual": "RED Unsupported linked producer131 while requesting original collection131/116."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Geometry.Candidate.Contracts/OwnedCollectionAssertions.cs",
+      "actual": "PASS18 exact source output comparisons for original6 ready collection chains and nested one-level outputs; source trailing-empty/null/wildcard observations; per-item native profile geometry/metadata, old snapshots after upstream-only/full rebuild/graph disposal, independent reader lifetime, raw profile imports, edits/save/reopen, partial retain failure/resource bounds, producer failure/cycles and zero entries. Prior source12285/44217/4496/16093/native suites pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs node --test tests/collection-execution-oracle.test.cjs tests/array-oracle.test.cjs tests/consumer-sockets-oracle.test.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "scripts/verify-collection-execution-oracle.cjs",
+      "actual": "12/12 exact collection wildcard/type/trailing-output and earlier array/copy/socket source tamper controls pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Documents.Contracts/ArrayValueAssertions.cs",
+      "actual": "PASS all earlier source289/33/789 pure collection semantics, codec161/80/100 structural/reference/scalar cases."
     }
   ],
   "review": {
@@ -502,7 +541,8 @@
     "profilePlacement": "Reviewed source normalized fraction/native parameter distinction, frame handedness/Y scale, finite30-unit ray, line-A event ordering and paired reversed overlap ranges, floor.01, empty optional output reset, immutable additional channel snapshot, centralized native curve lifetime, explicit degenerate/missing/cycle failures and transactional cache policy. Observation stubs are not original native oracle; no unsupported producer/default or stored height substitute is used.",
     "rotation": "Reviewed XYZ product convention and affine4-term arithmetic; strict mirror and source default/degree input semantics; published epsilon/noise policy vs original-native unknowns; finite guards rather than truncating invalid projective rows; pinned acquisition/hash/notice protection, test-only source/native ABI separation, host import resolver and iOS static linkage, independent basis/native point/order comparisons, immutable cache/save/cycle/ownership; no application-time network or native substitute geometry.",
     "transformConsumer": "Reviewed source load replay vs unchanged stored arrays, negative-index spare dependencies, prefix transform input ordering and source-specific profile/rail/pure metadata ordering; supported transform capabilities on curve data, actual native geometry duplication and snapshot ownership; profile names/sweep bits/no path interpretation, numeric/empty/missing/invalid/overflow behavior, explicit unsupported producers/arrays and no preview/default substitute. Material/segmentation/invalid4x4/full scene side effects and PC/UI/full parity remain open.",
-    "pureArrays": "Reviewed immutable child snapshots vs explicit native reference non-ownership, distinct null/empty/nested semantics, ref-latching arithmetic and Cartesian order, empty-array scalar fallback/null failure, factory/traversal/cartesian bounds without truncation, source body drift protection, exact1.0 common headers/future bytes and fixed constructor cases. Native collection emission remains blocked explicitly until owned per-item snapshots; full parent scope retained."
+    "pureArrays": "Reviewed immutable child snapshots vs explicit native reference non-ownership, distinct null/empty/nested semantics, ref-latching arithmetic and Cartesian order, empty-array scalar fallback/null failure, factory/traversal/cartesian bounds without truncation, source body drift protection, exact1.0 common headers/future bytes and fixed constructor cases. Native collection emission remains blocked explicitly until owned per-item snapshots; full parent scope retained.",
+    "ownedCollections": "Reviewed multi-channel/item ownership and old default0 compatibility; immutable relay values and raw profile document data, reference rewriting/retains/metadata, rollback on partial capture/output failures and overflow bounds, dynamic count/trailing empty/one-level/null/wildcard source behavior, retained readers/context lifetime, selector copies and explicit A03 unsupported gates. No native pointers serialized and no array reduced to a curve/number. Broader source error/material/data/PC/UI parity remains open."
   },
   "blockers": [
     "General document/native units, persistent cross-load identity and legacy codec integration remain unfinished"
@@ -634,7 +674,7 @@
       "id": 41108929102,
       "commit": "32542f3676f24e92b63c4659691bb46150aac84c",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41108929102",
-      "verification": "Consumer host/iPad/iPhone queued; actual source12285/native original3 profiles/metadata/matrix/ownership/family report inspection pending."
+      "verification": "SUCCESS: actual iPad/iPhone source12285/native profile/name/sweep/matrix/points/order/save/readers/family reports inspected in transform-consumer-results.json; later arrays not covered."
     },
     {
       "id": 41108932509,
@@ -652,7 +692,7 @@
       "id": 41112027142,
       "commit": "2bf2ee22c54b1868349de4a5461d96c43f31ac91",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41112027142",
-      "verification": "Pure array unsigned ARM64 build queued; actual platform/AOT/log/hash inspection pending; no runtime/physical proof."
+      "verification": "SUCCESS: actual unsigned arm64/platform IOS52 warnings0 errors/hash inspected; pure-array-device-results.json. Runtime/owned arrays still separate."
     }
   ],
   "requirementIds": [
@@ -914,6 +954,31 @@
       "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
       "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa",
       "scope": "P03-T03-A13-A01 pure array/copy/flatten/arithmetic and exact common headers/zero-fixed constructor; native ownership/producer execution still required"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Utilities/CSArray.cs",
+      "sha256": "757402a379d77af792cf915e735b04b871c282b8911889b1bedacdcc2f699d0f",
+      "scope": "P03-T03-A13-A02 exact Array/Unarray Update/output/wildcard/count/nesting/null source; candidate native ownership is an adapter policy, full scheduler/PC/data flags remain open"
+    },
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Utilities.Obsolete/CSUnarray1.cs",
+      "sha256": "699228bf6b3982fc7adcaa7e77e37247df7449b4a6945acde5fe188476f854ed",
+      "scope": "P03-T03-A13-A02 exact Array/Unarray Update/output/wildcard/count/nesting/null source; candidate native ownership is an adapter policy, full scheduler/PC/data flags remain open"
+    },
+    {
+      "path": "recovery/canonical/cad/CSDatas/CSDataArray.cs",
+      "sha256": "f7f0425e3e35fb0835ac161303a3cc7fa269c7f4f765938db91dd76956620b03",
+      "scope": "P03-T03-A13-A02 exact Array/Unarray Update/output/wildcard/count/nesting/null source; candidate native ownership is an adapter policy, full scheduler/PC/data flags remain open"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4",
+      "scope": "P03-T03-A13-A02 exact Array/Unarray Update/output/wildcard/count/nesting/null source; candidate native ownership is an adapter policy, full scheduler/PC/data flags remain open"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlockExpandableInput.cs",
+      "sha256": "9fe1374fd0c08047c8f1284bf126717cbd5a4bdbf0413d47ee8a2b279285f5fa",
+      "scope": "P03-T03-A13-A02 exact Array/Unarray Update/output/wildcard/count/nesting/null source; candidate native ownership is an adapter policy, full scheduler/PC/data flags remain open"
     }
   ],
   "subtasks": [
@@ -990,7 +1055,7 @@
     {
       "id": "P03-T03-A12",
       "scope": "Known expandable TransformObject non-array pipeline, exact socket replay, owned generated profiles and metadata/capabilities",
-      "status": "local_verified_apple_pending",
+      "status": "verified_simulator_subset",
       "plan": "docs/porting/plans/P03-T03-A12-transform-consumer.md",
       "relatedRows": [
         "BLD-0576",
@@ -1008,6 +1073,12 @@
       "scope": "Immutable pure array semantics, source arithmetic/flatten/copy, zero-fixed sockets and20 exact headers",
       "status": "local_verified_apple_pending",
       "plan": "docs/porting/plans/P03-T03-A13-owned-arrays.md"
+    },
+    {
+      "id": "P03-T03-A13-A02",
+      "scope": "Owned multi-channel/per-item native collection snapshots and known source Array/Unarray execution",
+      "status": "local_verified_apple_pending",
+      "plan": "docs/porting/plans/P03-T03-A13-A02-owned-native-collections.md"
     }
   ]
 }
