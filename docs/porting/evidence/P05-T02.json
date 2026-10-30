@@ -125,7 +125,7 @@
     "limits": "Windows host has no active C++ compiler in PATH; actual host/iOS builds must run in CI",
     "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim",
     "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending.",
-    "currentStatus": "Native-only candidate passed host/iPad/iPhone analytical execution and unsigned Release device compile/link/platform checks. Combined recovered/native runtime/device follow-ups remain pending. No backend selection or full geometry/PC/physical evidence.",
+    "currentStatus": "Native C ABI and shared recovered/production suite passed host/iPad/iPhone and unsigned device linking. New CSharp SafeHandle adapter compiles locally and passed iPad execution step; its complete iPhone/device proofs remain pending.",
     "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed.",
     "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs.",
     "combinedRuntime": "Combined app passed native analytical and shared recovered/production managed assertions on iPad/iPhone run41023784246, dynamic-code=False. Newer freshness/device build41024529850 passed ios-arm64/platform IOS with 52 warnings/0 errors. Broader recovered reflection/XML trim risks remain; no physical execution or all-class behavior claim.",
@@ -135,7 +135,7 @@
     "managedAdapter": "Header widths/entrypoints/Cdecl matched; input SafeHandles marshal lifetime; per-context gate covers native result plus child parent-lease creation; explicit logical Dispose separate from IsClosed. Native creation cleanup and paired parent leases reviewed. Windows build proves managed compilation only; Apple real/native/disposal/trim tests pending. No full kernel/cancellation/process-memory/physical/PC claim."
   },
   "blockers": [
-    "Full CAD operation mapping and candidate acceptance remain incomplete; device build/combined-runtime follow-ups pending",
+    "Complete CSharp adapter Apple runtime/device result inspection pending; full CAD semantic mapping and candidate acceptance remain incomplete",
     "Full kernel semantic mapping, candidate decision, native ABI and cancellation/leak/physical-device/PC evidence incomplete"
   ],
   "ciRuns": [
@@ -198,6 +198,18 @@
       "commit": "94480abb0321541f81f58a31aea824d92b2b3fab",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41024529850",
       "verification": "Combined unsigned device app build passed with 52 warnings/0 errors; arm64/platform IOS. No physical execution."
+    },
+    {
+      "id": 41028520528,
+      "commit": "fc4a6052377aae3fd640e5b7b643ef709e3b3861",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41028520528",
+      "verification": "Actual CSharp SafeHandle adapter run: host native assertions passed, iPad execution step passed; iPhone still live when observed. Full result/artifact inspection pending."
+    },
+    {
+      "id": 41028523338,
+      "commit": "fc4a6052377aae3fd640e5b7b643ef709e3b3861",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41028523338",
+      "verification": "Actual CSharp adapter unsigned device Release build still live when observed; no result claimed."
     }
   ]
 }
