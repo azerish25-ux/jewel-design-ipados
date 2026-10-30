@@ -4,7 +4,9 @@ Goal: real independent native NURBS interval trimming and parameter-direction re
 
 Inspect pinned Geom_BSplineCurve::Segment/Reverse and located BRep_Tool::Curve. Copy located geometry, segment within current edge domain or reverse while retaining that domain, then create/validate a real native edge. Reject nonfinite/out-of-domain/decreasing/zero intervals and unsupported solids. No topology-only reversed flag standing in for reversed curve geometry.
 
-- [ ] RED managed TrimCurve/ReverseCurve methods absent before implementation.
-- [ ] Fixed-width C APIs and existing context/SafeHandle factory, deep native copy and typed failure guards.
-- [ ] Actual tests quarter-circle length/degree/domain/endpoints, reverse parameter relationship, source preservation and ownership. Open-arc closest queries beyond either end must choose real endpoint; this extends the prior projection tests. Reject unsupported solids/intervals.
-- [ ] Run cached D:-local C ABI/CSharp tests then native/Apple simulator/device verification. Keep full OutsideRail seam/join/intersection and PC/physical/cancellation/leak requirements incomplete.
+- [x] RED managed TrimCurve/ReverseCurve methods absent before implementation.
+- [x] Fixed-width C APIs and existing context/SafeHandle factory, deep native copy and typed failure guards.
+- [x] Actual tests quarter-circle length/degree/domain/endpoints, reverse parameter relationship, source preservation and ownership. Open-arc closest queries beyond either end must choose real endpoint; this extends the prior projection tests. Reject unsupported solids/intervals.
+- [x] Run cached D:-local C ABI/CSharp tests then native/Apple simulator/device verification. Keep full OutsideRail seam/join/intersection and PC/physical/cancellation/leak requirements incomplete.
+
+Bounded [Apple reports](../../evidence/apple/native-trim-reverse-results.json) inspected. Later affine-wrapper composition belongs to A15; general extrapolation/PC/physical gates remain open.

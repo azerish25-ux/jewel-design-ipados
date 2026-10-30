@@ -10,7 +10,7 @@ Interface: CandidateContext.GetCurveBounds(shape,tolerance)->CandidateCurveBound
 - [x] Implement genuine native optimal bounds and gated/SafeHandle CSharp adapter; ADR0020 defines raw/padded meaning and numerical limits.
 - [x] Native and managed analytical tests: circle, 3D line, actual trimmed arc with interior maximum, affine/sheared ellipse analytic amplitudes (distinct from pole hull), translated/seam/reversed curves, explicit minimum/requested padding, invalid tolerance/solid/null outputs, input preservation and no retained entries.
 - [x] Run D: actual native/CSharp suites, repository/provenance checks and review; record exact source hashes and output.
-- [ ] Dispatch host/macOS iPad/iPhone and unsigned device builds, preserve existing runs.
+- [x] Dispatch host/macOS iPad/iPhone and unsigned device builds, preserve existing runs. Runs41061366581/41061370035 atdf208e2 confirmed live/queued.
 - [ ] Inspect Apple reports before verification. Full radius-data/channel selection, OutsideRail/caller composition, arbitrary near-extrema/imported curves and original-PC/physical/cancellation/process-memory acceptance stay open.
 
 Owned: ABI header/cpp/native contracts/probe, NativeMethods/CandidateContext.Curves/CandidateCurveTypes, new shared bounds tests/runner, simulator markers, plan/ADR/evidence. Next: full recovered outside-rail geometry algorithm using these primitives and explicit source policy.

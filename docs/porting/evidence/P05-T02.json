@@ -80,7 +80,8 @@
     "tests/Port/Geometry.Candidate.Contracts/CurveSeamAssertions.cs",
     "docs/porting/ADR-0020-candidate-curve-bounds.md",
     "docs/porting/plans/P05-T02-A16-curve-bounds.md",
-    "tests/Port/Geometry.Candidate.Contracts/CurveBoundsAssertions.cs"
+    "tests/Port/Geometry.Candidate.Contracts/CurveBoundsAssertions.cs",
+    "docs/evidence/apple/native-trim-reverse-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -288,7 +289,7 @@
     {
       "id": "P05-T02-A11",
       "scope": "Actual copied NURBS segmentation/reversal and open-end closest-point regression",
-      "status": "local_native_verified_apple_pending"
+      "status": "verified_bounded_native_trim_reverse"
     },
     {
       "id": "P05-T02-A12",
@@ -702,13 +703,13 @@
       "id": 41051769607,
       "commit": "a069861",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051769607",
-      "verification": "Native/CSharp trim-reverse/open-end host/iPad/iPhone runtime dispatched; terminal result inspection pending"
+      "verification": "SUCCESS: inspected actual iPad/iPhone family/trim-reverse/open-end reports and hashes; native-trim-reverse-results.json. Later affine wrapper fix remains A15."
     },
     {
       "id": 41051772180,
       "commit": "a069861",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41051772180",
-      "verification": "Workflow completed SUCCESS; trim/reverse device artifact inspection still required before bounded verification"
+      "verification": "SUCCESS: inspected unsigned arm64/platform IOS Release executable and log52 warnings0 errors; not physical execution"
     },
     {
       "id": 41052693327,
@@ -757,6 +758,18 @@
       "commit": "f657de6a05d642441ff1176a52bdaed177baf6d4",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41059570457",
       "verification": "Closed seam and affine composition unsigned device queued; terminal verification pending"
+    },
+    {
+      "id": 41061366581,
+      "commit": "df208e2f14c2a67e5c522db31d2c3f520ab75151",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41061366581",
+      "verification": "Native refined curve bounds host confirmed running; iPad/iPhone queued; terminal verification pending"
+    },
+    {
+      "id": 41061370035,
+      "commit": "df208e2f14c2a67e5c522db31d2c3f520ab75151",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41061370035",
+      "verification": "Native refined curve bounds unsigned device queued; terminal verification pending"
     }
   ]
 }
