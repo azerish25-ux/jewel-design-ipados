@@ -57,4 +57,17 @@ public sealed partial class CandidateContext
     public CandidateShape JoinCurves(CandidateShape first,CandidateShape second,double tolerance)=>CreateShape(diagnostic=>{
         var status=NativeMethods.CurveJoin(_handle,first.Handle,second.Handle,tolerance,out var id,diagnostic,DiagnosticCapacity);return(status,id);
     },first,second);
+
+    /// <summary>Unit direction from the actual native derivative within the edge domain. No extrapolation.</summary>
+    public CandidateVector3 TangentAt(CandidateShape shape,double parameter)
+    {
+        lock(_gate){
+            ThrowIfDisposed();Validate(shape);var diagnostic=new byte[DiagnosticCapacity];
+            Check(NativeMethods.CurveTangent(_handle,shape.Handle,parameter,out var x,out var y,out var z,diagnostic,DiagnosticCapacity),diagnostic);
+            var normSquared=x*x+y*y+z*z;
+            if(!double.IsFinite(normSquared)||Math.Abs(normSquared-1)>1e-10)
+                throw new InvalidOperationException("Invalid native unit tangent response.");
+            return new(x,y,z);
+        }
+    }
 }

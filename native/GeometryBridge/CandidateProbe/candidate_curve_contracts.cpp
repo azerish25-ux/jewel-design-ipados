@@ -32,18 +32,26 @@ void run_candidate_curve_contracts()
         checkCurve(parameter>=previous,"Native length parameters not monotone");previous=parameter;
         ok(jd_candidate_curve_point(context.id,circle,parameter,&x,&y,&z,error,sizeof(error)));
         nearCurve(x,7*std::sin(2*pi*fraction));nearCurve(y,0);nearCurve(z,7*std::cos(2*pi*fraction));
+        ok(jd_candidate_curve_tangent(context.id,circle,parameter,&x,&y,&z,error,sizeof(error)));
+        nearCurve(x,std::cos(2*pi*fraction));nearCurve(y,0);nearCurve(z,-std::sin(2*pi*fraction));
     }
     double parameter=0;ok(jd_candidate_curve_length_parameter(context.id,circle,0,1e-9,&parameter,error,sizeof(error)));nearCurve(parameter,0);
     ok(jd_candidate_curve_length_parameter(context.id,circle,1,1e-9,&parameter,error,sizeof(error)));nearCurve(parameter,2*pi);
     checkCurve(jd_candidate_curve_length_parameter(context.id,circle,-.1,1e-9,&parameter,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Invalid length fraction accepted");
     uint64_t moved=0;ok(jd_candidate_translate(context.id,circle,1,2,3,&moved,error,sizeof(error)));
     double x=0,y=0,z=0;ok(jd_candidate_curve_point(context.id,moved,first,&x,&y,&z,error,sizeof(error)));nearCurve(x,1);nearCurve(y,2);nearCurve(z,10);
+    ok(jd_candidate_curve_tangent(context.id,moved,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,1);nearCurve(y,0);nearCurve(z,0);
+    ok(jd_candidate_curve_tangent(context.id,circle,2*pi,&x,&y,&z,error,sizeof(error)));nearCurve(x,1);nearCurve(y,0);nearCurve(z,0);
+    for(double bad:{-.1,2*pi+.1,std::numeric_limits<double>::quiet_NaN(),std::numeric_limits<double>::infinity()})
+        checkCurve(jd_candidate_curve_tangent(context.id,circle,bad,&x,&y,&z,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Invalid tangent parameter accepted");
+    checkCurve(jd_candidate_curve_tangent(context.id,circle,0,nullptr,&y,&z,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Missing tangent output accepted");
     uint64_t box=0;ok(jd_candidate_box(context.id,1,1,1,&box,error,sizeof(error)));
     checkCurve(jd_candidate_curve_inspect(context.id,box,&first,&last,&length,&degree,&poles,&rational,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION,"Solid produced fake curve info");
     checkCurve(jd_candidate_curve_point(context.id,circle,std::numeric_limits<double>::quiet_NaN(),&x,&y,&z,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Nonfinite parameter accepted");
     for(double radius:{0.0,-1.0,std::numeric_limits<double>::infinity()}){
         uint64_t rejected=99;checkCurve(jd_candidate_circle(context.id,radius,0,0,0,0,1,0,0,0,1,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"Invalid radius created geometry");
     }
+    checkCurve(jd_candidate_curve_tangent(context.id,box,0,&x,&y,&z,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION,"Solid produced fake tangent");
     const double matrix[12]={2,0,.5,1,0,1,0,2,0,0,3,-4};uint64_t affine=0;
     ok(jd_candidate_affine(context.id,circle,matrix,12,&affine,error,sizeof(error)));
     ok(jd_candidate_curve_point(context.id,affine,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,4.5);nearCurve(y,2);nearCurve(z,17);
@@ -51,6 +59,7 @@ void run_candidate_curve_contracts()
     uint64_t rejected=99;checkCurve(jd_candidate_affine(context.id,circle,matrix,11,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"Invalid matrix count");
     double badMatrix[12]={1,0,0,0,0,1,0,0,0,0,1,0};badMatrix[0]=std::numeric_limits<double>::quiet_NaN();
     checkCurve(jd_candidate_affine(context.id,circle,badMatrix,12,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Nonfinite matrix");
+    ok(jd_candidate_curve_tangent(context.id,affine,pi/2,&x,&y,&z,error,sizeof(error)));nearCurve(x,-.5/std::sqrt(9.25));nearCurve(y,0);nearCurve(z,-3/std::sqrt(9.25));
     ok(jd_candidate_shape_release(context.id,affine,error,sizeof(error)));
     double nearestParameter=0,nearestX=0,nearestY=0,nearestZ=0,nearestDistance=0;
     ok(jd_candidate_curve_closest(context.id,circle,10,3,10,&nearestParameter,&nearestX,&nearestY,&nearestZ,&nearestDistance,error,sizeof(error)));
@@ -61,6 +70,8 @@ void run_candidate_curve_contracts()
     uint64_t quarter=0,reversed=0;ok(jd_candidate_curve_trim(context.id,circle,0,pi/2,&quarter,error,sizeof(error)));
     ok(jd_candidate_curve_inspect(context.id,quarter,&first,&last,&length,&degree,&poles,&rational,error,sizeof(error)));nearCurve(first,0);nearCurve(last,pi/2);nearCurve(length,7*pi/2);
     ok(jd_candidate_curve_reverse(context.id,quarter,&reversed,error,sizeof(error)));
+    ok(jd_candidate_curve_tangent(context.id,quarter,pi/2,&x,&y,&z,error,sizeof(error)));nearCurve(x,0);nearCurve(y,0);nearCurve(z,-1);
+    ok(jd_candidate_curve_tangent(context.id,reversed,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,0);nearCurve(y,0);nearCurve(z,1);
     ok(jd_candidate_curve_point(context.id,reversed,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,7);nearCurve(y,0);nearCurve(z,0);
     ok(jd_candidate_curve_closest(context.id,quarter,10,0,-2,&nearestParameter,&nearestX,&nearestY,&nearestZ,&nearestDistance,error,sizeof(error)));
     nearCurve(nearestX,7);nearCurve(nearestY,0);nearCurve(nearestZ,0);nearCurve(nearestDistance,std::sqrt(13.0));

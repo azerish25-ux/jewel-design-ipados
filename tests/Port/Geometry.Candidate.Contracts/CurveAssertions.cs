@@ -8,6 +8,7 @@ internal static class CurveAssertions
     private static void Point(CandidatePoint3 value,double x,double y,double z){Near(value.X,x);Near(value.Y,y);Near(value.Z,z);}
     private static CandidateGeometryException Fails(Action action)
     {try{action();}catch(CandidateGeometryException e){return e;}throw new Exception("Expected native curve failure");}
+    private static void Direction(CandidateVector3 value,double x,double y,double z){Near(value.X,x);Near(value.Y,y);Near(value.Z,z);Near(value.X*value.X+value.Y*value.Y+value.Z*value.Z,1);}
     public static string Run()
     {
         using var context=CandidateContext.Create();
@@ -22,11 +23,14 @@ internal static class CurveAssertions
                 double localX=c[quarter]*a-s[quarter]*b,localY=s[quarter]*a+c[quarter]*b;
                 Point(context.PointAt(circle,(quarter+u)*Math.PI/2),localY,0,localX);
             }
+            Direction(context.TangentAt(circle,0),1,0,0);Direction(context.TangentAt(circle,2*Math.PI),1,0,0);
+            foreach(double bad in new[]{-.1,2*Math.PI+.1,double.NaN,double.PositiveInfinity})Check(Fails(()=>context.TangentAt(circle,bad)).Status==CandidateNativeStatus.InvalidArgument,"Invalid tangent parameter");
             double previous=-1;
             for(int i=0;i<50;i++){
                 double fraction=i/50.0,parameter=context.ParameterAtNormalizedLength(circle,fraction,1e-9);
                 Check(parameter>=previous,"Arc-length parameters are not monotone");previous=parameter;
                 Point(context.PointAt(circle,parameter),7*Math.Sin(2*Math.PI*fraction),0,7*Math.Cos(2*Math.PI*fraction));
+                Direction(context.TangentAt(circle,parameter),Math.Cos(2*Math.PI*fraction),0,-Math.Sin(2*Math.PI*fraction));
             }
             Near(context.ParameterAtNormalizedLength(circle,0,1e-9),info.FirstParameter);
             Near(context.ParameterAtNormalizedLength(circle,1,1e-9),info.LastParameter);
@@ -37,6 +41,8 @@ internal static class CurveAssertions
             using(var changed=context.TransformAffine(circle,affine)){
                 Point(context.PointAt(changed,0),4.5,2,17);
                 Point(context.PointAt(changed,Math.PI/2),15,2,-4);
+                Direction(context.TangentAt(changed,Math.PI/2),-.5/Math.Sqrt(9.25),0,-3/Math.Sqrt(9.25));
+                Direction(context.TangentAt(circle,Math.PI/2),0,0,-1);
                 Point(context.PointAt(changed,Math.PI),-2.5,2,-25);
                 Point(context.PointAt(circle,0),0,0,7);
             }
@@ -54,6 +60,7 @@ internal static class CurveAssertions
                 var outsideEnd=context.ClosestPoint(quarter,new(10,0,-2));Point(outsideEnd.Point,7,0,0);Near(outsideEnd.Distance,Math.Sqrt(13));
                 var outsideStart=context.ClosestPoint(quarter,new(-2,0,10));Point(outsideStart.Point,0,0,7);
                 using var reversed=context.ReverseCurve(quarter);
+                Direction(context.TangentAt(quarter,Math.PI/2),0,0,-1);Direction(context.TangentAt(reversed,0),0,0,1);
                 Point(context.PointAt(reversed,0),7,0,0);Point(context.PointAt(reversed,Math.PI/2),0,0,7);
                 var sample=context.PointAt(quarter,.3);var opposite=context.PointAt(reversed,Math.PI/2-.3);Point(opposite,sample.X,sample.Y,sample.Z);
                 Point(context.PointAt(quarter,0),0,0,7);
@@ -70,6 +77,7 @@ internal static class CurveAssertions
             Check(Fails(()=>{using var rejected=context.TrimCurve(circle,0,7);}).Status==CandidateNativeStatus.InvalidArgument,"Out-of-domain trim interval");
             using var moved=context.Translate(circle,1,2,3);
             Point(context.PointAt(moved,info.FirstParameter),1,2,10);
+            Direction(context.TangentAt(moved,info.FirstParameter),1,0,0);
             var projectedMoved=context.ClosestPoint(moved,new(11,5,13));Point(projectedMoved.Point,1+diagonal,2,3+diagonal);
             using var clone=context.Clone(circle);using var alias=context.Retain(circle);
             circle.Dispose();Point(context.PointAt(clone,info.FirstParameter),0,0,7);Point(context.PointAt(alias,info.FirstParameter),0,0,7);
@@ -84,11 +92,12 @@ internal static class CurveAssertions
         using(var box=context.CreateBox(1,2,3))using(var changed=context.TransformAffine(box,new(2,0,1,5,0,3,0,-2,0,0,4,7))){
             Near(context.Inspect(changed).Volume,144);Near(context.Inspect(box).Volume,6);
         }
+        using(var solid=context.CreateBox(1,1,1))Check(Fails(()=>context.TangentAt(solid,0)).Status==CandidateNativeStatus.UnsupportedOperation,"Solid produced fake tangent");
         foreach(double radius in new[]{0,-1,double.NaN,double.PositiveInfinity})
             Check(Fails(()=>{using var rejected=context.CreateCircle(radius,CandidatePlane.WorldZX);}).Status==CandidateNativeStatus.InvalidArgument,"Invalid circle radius");
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,0),new(1,0,0)));});
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,1),new(0,0,1)));});
         Check(context.DiagnosticLiveShapeCount==0,"Curve ownership retained native entries");
-        return "PASS candidate native curves: actual ordered NURBS join, actual NURBS trim/reverse/open-end projection, actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
+        return "PASS candidate native curves: actual native unit tangents/50 analytic directions, actual ordered NURBS join, actual NURBS trim/reverse/open-end projection, actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
     }
 }

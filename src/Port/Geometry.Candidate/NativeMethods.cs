@@ -46,4 +46,6 @@ internal static class NativeMethods
     internal static extern int CurveReverse(ContextHandle context,ShapeHandle shape,out ulong output,[Out]byte[] diagnostic,uint capacity);
     [DllImport(Library,EntryPoint="jd_candidate_curve_join",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
     internal static extern int CurveJoin(ContextHandle context,ShapeHandle first,ShapeHandle second,double tolerance,out ulong output,[Out]byte[] diagnostic,uint capacity);
+    [DllImport(Library,EntryPoint="jd_candidate_curve_tangent",CallingConvention=CallingConvention.Cdecl,ExactSpelling=true)]
+    internal static extern int CurveTangent(ContextHandle context,ShapeHandle shape,double parameter,out double x,out double y,out double z,[Out]byte[] diagnostic,uint capacity);
 }

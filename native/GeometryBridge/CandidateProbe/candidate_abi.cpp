@@ -419,3 +419,27 @@ extern "C" int32_t jd_candidate_curve_join(uint64_t context,uint64_t first,uint6
         });
     },diagnostic,capacity);
 }
+
+extern "C" int32_t jd_candidate_curve_tangent(uint64_t context,uint64_t shape,double parameter,double* x,double* y,double* z,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        if(!x||!y||!z)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing tangent output");
+        *x=0;*y=0;*z=0;
+        if(!std::isfinite(parameter))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Tangent parameter must be finite");
+        withContext(context,[&](Context& value){
+            const auto& input=findShape(value,shape).shape;
+            if(input.ShapeType()!=TopAbs_EDGE)fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Tangent evaluation requires an edge");
+            BRepAdaptor_Curve curve(TopoDS::Edge(input));
+            const double first=curve.FirstParameter(),last=curve.LastParameter();
+            if(!std::isfinite(first)||!std::isfinite(last)||last<=first)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid tangent curve domain");
+            if(parameter<first||parameter>last)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Tangent parameter outside edge domain");
+            const auto evaluated=curve.EvalD1(parameter);
+            const auto& derivative=evaluated.D1;
+            if(!std::isfinite(derivative.X())||!std::isfinite(derivative.Y())||!std::isfinite(derivative.Z()))
+                fail(JD_CANDIDATE_KERNEL_FAILURE,"Nonfinite native derivative");
+            const double magnitude=std::hypot(derivative.X(),derivative.Y(),derivative.Z());
+            if(!std::isfinite(magnitude)||magnitude<=0)fail(JD_CANDIDATE_KERNEL_FAILURE,"Native tangent is undefined");
+            *x=derivative.X()/magnitude;*y=derivative.Y()/magnitude;*z=derivative.Z()/magnitude;
+        });
+    },diagnostic,capacity);
+}

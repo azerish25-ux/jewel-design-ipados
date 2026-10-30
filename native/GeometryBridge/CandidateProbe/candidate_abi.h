@@ -49,6 +49,8 @@ int32_t jd_candidate_curve_trim(uint64_t context,uint64_t shape,double first,dou
 int32_t jd_candidate_curve_reverse(uint64_t context,uint64_t shape,uint64_t* output,char* diagnostic,uint32_t capacity);
 /* Ordered end-to-start pair join; no automatic source-compatible reordering. */
 int32_t jd_candidate_curve_join(uint64_t context,uint64_t first,uint64_t second,double tolerance,uint64_t* output,char* diagnostic,uint32_t capacity);
+/* Unit tangent from actual native derivative; parameter must lie within edge domain. */
+int32_t jd_candidate_curve_tangent(uint64_t context,uint64_t shape,double parameter,double* x,double* y,double* z,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif
