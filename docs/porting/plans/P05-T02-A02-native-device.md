@@ -15,3 +15,5 @@ Prerequisites: Pinned candidate sources and toolchain already configured; no phy
 - [ ] Record result as build-only. Do not claim physical execution, full NativeAOT, full geometry, memory/cancellation, license/distribution or PC project parity. Keep parent phase incomplete.
 
 Official build contract: [NativeReference](https://learn.microsoft.com/en-us/dotnet/ios/building-apps/build-items#nativereference) links native references into the executable; [EnableCodeSigning](https://learn.microsoft.com/en-us/dotnet/ios/building-apps/build-properties#enablecodesigning) may be disabled for this build check. Native build flags follow the pinned OCCT iOS script and existing passing simulator CMake.
+
+Initial proof: run 41023254221 at 8054ecf completed success, native-only app build 0 warnings/0 errors, arm64 and platform IOS confirmed. Evidence docs/evidence/apple/native-device-initial-results.json. This predates the recovered-suite integration; the combined device build still needs independent results. Physical execution remains unverified.

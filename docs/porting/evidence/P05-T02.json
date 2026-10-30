@@ -18,7 +18,8 @@
     ".github/workflows/native-device.yml",
     "docs/porting/plans/P05-T02-A02-native-device.md",
     "docs/porting/plans/P05-T02-A03-combined-runtime.md",
-    "docs/evidence/apple/native-candidate-results.json"
+    "docs/evidence/apple/native-candidate-results.json",
+    "docs/evidence/apple/native-device-initial-results.json"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -51,7 +52,7 @@
     {
       "id": "P05-T02-A02",
       "scope": "Unsigned iPhoneOS arm64 native-linked Release/Mono AOT build and Mach-O platform inspection; no physical execution",
-      "status": "ci_pending"
+      "status": "verified_native_only_device_build"
     },
     {
       "id": "P05-T02-A03",
@@ -80,7 +81,7 @@
     "limits": "Windows host has no active C++ compiler in PATH; actual host/iOS builds must run in CI",
     "geometry": "Real boolean/NURBS/mesh analytical cases; no CounterSketch builder or PC oracle claim",
     "initialBuildFailure": "configure_file creates Standard_Version.hxx in OCCT subproject binary/inc, while ordinary header collection uses top-level binary/inc. Wrapper now includes the generated path and asserts existence; CI proof pending.",
-    "currentStatus": "Pinned OCCT compiled/linked and analytical native cases passed host/iPad/iPhone. Candidate only; device build, combined managed/native runtime, full semantics and backend decision pending.",
+    "currentStatus": "Native-only candidate passed host/iPad/iPhone analytical execution and unsigned Release device compile/link/platform checks. Combined recovered/native runtime/device follow-ups remain pending. No backend selection or full geometry/PC/physical evidence.",
     "secondBuildFailure": "Both jobs failed at deprecated TopTools_ListOfShape.hxx; fixed against pinned OCCT8 NCollection_List<TopoDS_Shape> API; attempt 3 compile/link passed.",
     "deviceBuild": "Separate iphoneos/arm64 native archive selected by explicit RID; unsupported/missing archive errors. Unsigned app only, no binary uploads. NativeReference/EnableCodeSigning contract checked against official .NET for iOS docs.",
     "combinedRuntime": "Existing shared Smoke referenced rather than copied. Native report/status and all managed gated assertions must finish before final PASS file. Runner requires both PASS lines and actual family. Existing zlib diagnostic remains visibly non-gating. Local managed suite passed; Mac coexistence pending.",
@@ -114,6 +115,12 @@
       "commit": "9be645e1f633b2200ef190046457568920e44bfc",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41021318486",
       "verification": "Host analytical execution and iPad/iPhone simulator execution steps all passed. Actual family/report hashes verified in native-candidate-results.json. Newer device and combined-runtime experiments remain pending."
+    },
+    {
+      "id": 41023254221,
+      "commit": "8054ecf63a816f264fa13bb7b292819dc66cf899",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41023254221",
+      "verification": "Native-only unsigned Release device app passed, 0 warnings/errors; final Mach-O arm64/platform IOS, sdk26.5/min15. Combined recovered/native device build pending."
     }
   ]
 }

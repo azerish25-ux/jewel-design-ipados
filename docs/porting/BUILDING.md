@@ -34,7 +34,7 @@ The iOS workflow also watches tests/Port/** so contract-only changes run on macO
 
 ## Native candidate device build
 
-[Device build plan](plans/P05-T02-A02-native-device.md) extends the pinned analytical experiment to an unsigned Release ios-arm64 app. The native-device.yml workflow uses iphoneos CMake and a separate .local/native/ios-device-all.a, then verifies the app executable is arm64/platform IOS with Apple lipo/vtool. Build result is pending; no physical-device execution or distribution permission is implied. Simulator and device archive selection is explicit in tests/iOS.Native/NativeGeometry.csproj.
+[Device build plan](plans/P05-T02-A02-native-device.md) extends the pinned analytical experiment to an unsigned Release ios-arm64 app. The native-device.yml workflow uses iphoneos CMake and a separate .local/native/ios-device-all.a, then verifies the app executable is arm64/platform IOS with Apple lipo/vtool. The initial native-only build passed in run 41023254221; the newer combined recovered/native build is pending. No physical-device execution or distribution permission is implied. Simulator and device archive selection is explicit in tests/iOS.Native/NativeGeometry.csproj.
 
     node scripts/run-local.cjs gh workflow run native-device.yml --ref main
 

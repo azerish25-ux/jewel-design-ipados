@@ -1,0 +1,43 @@
+{
+  "run": 41023254221,
+  "commit": "8054ecf63a816f264fa13bb7b292819dc66cf899",
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41023254221",
+  "status": "success",
+  "configuration": "Release ios-arm64; EnableCodeSigning=false; BuildIpa=false; MtouchLink=SdkOnly",
+  "warnings": 0,
+  "errors": 0,
+  "appBuildElapsed": "00:01:27.54",
+  "artifacts": [
+    {
+      "name": "native-device-architectures.txt",
+      "text": "arm64\n",
+      "sha256": "c1669e1d8edca98769c37d494b76442a1d6e5ffffd7b4da1fb63aef8ebaf6f01"
+    },
+    {
+      "name": "native-device-platform.txt",
+      "text": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+      "sha256": "f4be9f2183bedf15aeabed171cd49d6e9b570cc92462bb08f7a963aab776437d"
+    },
+    {
+      "name": "native-device-executable-sha256.txt",
+      "text": "beeb1ea0e9b302962d11044b6d63c7371c1c50e6cc0db3d877142f7620d9cc5e  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+      "sha256": "d6fd56e8e84c4143afc535b3d76768081eea649f3f63e64f8f9fcc47fbf8ba7a"
+    },
+    {
+      "name": "native-device-scope.txt",
+      "text": "BUILD ONLY: unsigned ios-arm64 native-linked Release app; no physical execution or distribution approval\n",
+      "sha256": "2100ea67d832eb3329e46338cd9d4326b81f437634bae2b209e7a5efbb790623"
+    },
+    {
+      "name": "native-source.txt",
+      "text": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42\n",
+      "sha256": "91e2db15d9128ec36b474be8f1acdc8ac6a0856b7e19d31e4eff1a790ce5ab35"
+    },
+    {
+      "name": "native-license-hashes.txt",
+      "text": "e237fa56668030e928551ddd60f05df5fe957f75eab874bbd017e085ed722e7c  .local/native/occt-source/LICENSE_LGPL_21.txt\n04580a884ea6cea294402649ff7b5cbb167d47462d1340a4ed33e550db10a81b  .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt\n",
+      "sha256": "7c0d030061da1a325f132dc15628ecf97f167061ad869df8836118206e50eefb"
+    }
+  ],
+  "scope": "Unsigned native-only candidate device build and final executable platform inspection. Older than combined recovered/native app change. No physical execution, native fixture execution on device, full NativeAOT, distribution or PC parity claim."
+}
