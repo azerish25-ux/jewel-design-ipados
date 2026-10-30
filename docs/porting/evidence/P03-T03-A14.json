@@ -60,5 +60,32 @@
     "PC/iPad/PC project corpus, rendering/touch/offline data and physical acceptance",
     "Apple execution/AOT for this graph integration"
   ],
-  "scope": "Known candidate graph integration, not full source feature/block/PC parity;0/1451 full acceptance rows verified."
+  "scope": "Known candidate graph integration, not full source feature/block/PC parity;0/1451 full acceptance rows verified.",
+  "implementationCommit": "cd61173725c6a36b7f79adb04e71a9e0386458ea",
+  "ciRuns": [
+    {
+      "id": 41138747229,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41138747229",
+      "scope": "native host/macOS actual iPad/iPhone including typed BRep graph gate",
+      "status": "queued"
+    },
+    {
+      "id": 41138750349,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41138750349",
+      "scope": "macOS unsigned ios-arm64 AOT",
+      "status": "queued"
+    },
+    {
+      "id": 41138736189,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41138736189",
+      "scope": "repository/source bounded proofs",
+      "status": "in_progress"
+    },
+    {
+      "id": 41138736083,
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41138736083",
+      "scope": "managed recovered iOS reuse",
+      "status": "in_progress"
+    }
+  ]
 }
