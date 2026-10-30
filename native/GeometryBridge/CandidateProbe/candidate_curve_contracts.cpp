@@ -44,6 +44,14 @@ void run_candidate_curve_contracts()
     for(double radius:{0.0,-1.0,std::numeric_limits<double>::infinity()}){
         uint64_t rejected=99;checkCurve(jd_candidate_circle(context.id,radius,0,0,0,0,1,0,0,0,1,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"Invalid radius created geometry");
     }
+    const double matrix[12]={2,0,.5,1,0,1,0,2,0,0,3,-4};uint64_t affine=0;
+    ok(jd_candidate_affine(context.id,circle,matrix,12,&affine,error,sizeof(error)));
+    ok(jd_candidate_curve_point(context.id,affine,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,4.5);nearCurve(y,2);nearCurve(z,17);
+    ok(jd_candidate_curve_point(context.id,circle,0,&x,&y,&z,error,sizeof(error)));nearCurve(x,0);nearCurve(y,0);nearCurve(z,7);
+    uint64_t rejected=99;checkCurve(jd_candidate_affine(context.id,circle,matrix,11,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&rejected==0,"Invalid matrix count");
+    double badMatrix[12]={1,0,0,0,0,1,0,0,0,0,1,0};badMatrix[0]=std::numeric_limits<double>::quiet_NaN();
+    checkCurve(jd_candidate_affine(context.id,circle,badMatrix,12,&rejected,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Nonfinite matrix");
+    ok(jd_candidate_shape_release(context.id,affine,error,sizeof(error)));
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }

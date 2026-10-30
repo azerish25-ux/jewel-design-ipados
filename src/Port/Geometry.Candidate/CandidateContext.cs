@@ -28,6 +28,10 @@ public sealed partial class CandidateContext:IDisposable
     public CandidateShape CreateBox(double x,double y,double z)=>CreateShape(diagnostic=>{
         var status=NativeMethods.Box(_handle,x,y,z,out var id,diagnostic,DiagnosticCapacity);return(status,id);
     });
+    public CandidateShape TransformAffine(CandidateShape shape,CandidateAffine transform)=>CreateShape(diagnostic=>{
+        var coefficients=transform.ToArray();
+        var status=NativeMethods.Affine(_handle,shape.Handle,coefficients,(uint)coefficients.Length,out var id,diagnostic,DiagnosticCapacity);return(status,id);
+    },shape);
     public CandidateShape Translate(CandidateShape shape,double x,double y,double z)=>CreateShape(diagnostic=>{
         var status=NativeMethods.Translate(_handle,shape.Handle,x,y,z,out var id,diagnostic,DiagnosticCapacity);return(status,id);
     },shape);

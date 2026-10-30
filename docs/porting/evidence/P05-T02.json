@@ -53,7 +53,10 @@
     "docs/porting/ADR-0011-ring-rail-candidate.md",
     "docs/evidence/apple/native-curve-results.json",
     "docs/porting/plans/P05-T02-A08-arc-length-parameters.md",
-    "docs/porting/ADR-0012-candidate-arc-length.md"
+    "docs/porting/ADR-0012-candidate-arc-length.md",
+    "src/Port/Geometry.Candidate/CandidateAffine.cs",
+    "docs/porting/plans/P05-T02-A09-affine-geometry.md",
+    "docs/porting/ADR-0013-candidate-affine.md"
   ],
   "fixtures": [],
   "sourceEvidence": [
@@ -116,6 +119,11 @@
     {
       "id": "P05-T02-A08",
       "scope": "Actual native normalized arc-length parameter inversion through managed ownership adapter",
+      "status": "local_native_verified_apple_pending"
+    },
+    {
+      "id": "P05-T02-A09",
+      "scope": "Copied actual native affine BRep transformations with fixed-layout counted coefficients",
       "status": "local_native_verified_apple_pending"
     }
   ],
@@ -199,6 +207,18 @@
       "exitCode": 0,
       "expectedExitCode": 0,
       "actual": "Incremental C ABI and actual CSharp/native tests pass50 analytic arc-length samples, monotonicity/endpoints/nonlinear parameter distinction and invalid fraction/tolerance guards. Existing curve/ring/ownership tests remain passing."
+    },
+    {
+      "command": "dotnet build Geometry.Candidate.Contracts before affine API/DTO",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "actual": "RED missing CandidateAffine/TransformAffine before implementation"
+    },
+    {
+      "command": "node scripts/build-native-windows.cjs",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "actual": "Actual native+CSharp curve affine scale/shear/translation/source preservation and determinant-scaled solid mass pass, with count/nonfinite/singular rejection. Existing curve/arc/ring/ownership tests remain passing."
     }
   ],
   "review": {
@@ -218,7 +238,8 @@
     "curves": "Initial host execution failed Unexpected four-span circle representation. Source investigation found GeomConvert.cxx untrimmed circle path forces SetPeriodic after low-level_4 conversion; trimmed-circle branch does not. Native factory now supplies full-period Geom_TrimmedCurve before explicit_4 conversion. All9-pole/rational/nonperiodic/28-sample/ownership assertions remain unchanged. Actual corrected runtime proof pending. Corrected run41043301675 passed host/iPad/iPhone;41043305181 device build passed. Windows native and CSharp tests also passed. Original-PC/kernel-selection/full graph gates remain open.",
     "windowsNative": "D:-local incremental helper verified end to end. Windows-only shared test DLL plus process-lifetime NativeLibrary resolver executes existing CSharp contracts against actual native geometry. Native compiler/tool binaries are existing C: reads; source/cache/temp/output remain D:. Original CounterSketch/Rhino not loaded.",
     "ringRail": "Feature-layer boundary is separate from generic kernel. GUID/radius/default/ZX operations follow inspected source; output owns actual native curve and radius metadata. No placeholder geometry or intercepted original SDK. Candidate ring-data copy/user-string/export/material/Update error lifecycle and active channel evaluation remain unimplemented.",
-    "arcLength": "Pinned GCPnts overloads inspected. Actual integrated length plus abscissa solver, explicit tolerance, convergence/domain/finite checks, fixed-width outputs and existing SafeHandles. No source-compatible tolerance/PC/outside-rail or process-memory claim. Native module and managed client built together; stable production capability negotiation remains open."
+    "arcLength": "Pinned GCPnts overloads inspected. Actual integrated length plus abscissa solver, explicit tolerance, convergence/domain/finite checks, fixed-width outputs and existing SafeHandles. No source-compatible tolerance/PC/outside-rail or process-memory claim. Native module and managed client built together; stable production capability negotiation remains open.",
+    "affine": "Pinned gp_GTrsf SetValue/SetForm/IsSingular and GTransform Copy=true inspected. Matrix width/layout/count explicit; native input bounds/finiteness checked, result owned and validated, CSharp existing gated factory/SafeHandle lifetime reused. No full source caller singular/orientation/PC semantics claimed; Apple proof pending."
   },
   "blockers": [
     "Full CAD semantic mapping/candidate acceptance and broader recovered trim safety remain incomplete",

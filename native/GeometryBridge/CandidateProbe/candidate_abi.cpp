@@ -15,6 +15,8 @@
 #include <gp_Pnt.hxx>
 #include <BRepBuilderAPI_Copy.hxx>
 #include <BRepBuilderAPI_Transform.hxx>
+#include <BRepBuilderAPI_GTransform.hxx>
+#include <gp_GTrsf.hxx>
 #include <BRepAlgoAPI_Common.hxx>
 #include <BRepAlgoAPI_Fuse.hxx>
 #include <BRepAlgoAPI_Cut.hxx>
@@ -302,6 +304,26 @@ extern "C" int32_t jd_candidate_curve_length_parameter(uint64_t context,uint64_t
             const double result=solver.Parameter();
             if(!std::isfinite(result)||result<first||result>last)fail(JD_CANDIDATE_KERNEL_FAILURE,"Length solver returned invalid parameter");
             *parameter=result;
+        });
+    },diagnostic,capacity);
+}
+
+extern "C" int32_t jd_candidate_affine(uint64_t context,uint64_t shape,const double* matrix,uint32_t count,uint64_t* output,char* diagnostic,uint32_t capacity)
+{
+    return protect([&]{
+        outputHandle(output);
+        if(!matrix||count!=12)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Expected12 affine coefficients");
+        gp_GTrsf transform;
+        for(uint32_t i=0;i<12;i++){
+            if(!std::isfinite(matrix[i]))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Affine coefficients must be finite");
+            transform.SetValue(static_cast<int>(i/4)+1,static_cast<int>(i%4)+1,matrix[i]);
+        }
+        if(!std::isfinite(transform.VectorialPart().Determinant())||transform.IsSingular())fail(JD_CANDIDATE_INVALID_ARGUMENT,"Unsupported singular or overflowing affine matrix");
+        transform.SetForm();
+        withContext(context,[&](Context& value){
+            BRepBuilderAPI_GTransform operation(findShape(value,shape).shape,transform,true);
+            if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native affine transformation failed");
+            *output=store(value,operation.Shape());
         });
     },diagnostic,capacity);
 }

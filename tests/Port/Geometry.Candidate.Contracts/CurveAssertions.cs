@@ -33,6 +33,15 @@ internal static class CurveAssertions
             Check(Math.Abs(context.ParameterAtNormalizedLength(circle,.0625,1e-9)-Math.PI/8)>1e-4,"Arc-length mapper used naive parameter scaling");
             foreach(double bad in new[]{-.1,1.1,double.NaN,double.PositiveInfinity})Check(Fails(()=>context.ParameterAtNormalizedLength(circle,bad,1e-9)).Status==CandidateNativeStatus.InvalidArgument,"Invalid length fraction");
             Check(Fails(()=>context.ParameterAtNormalizedLength(circle,.5,0)).Status==CandidateNativeStatus.InvalidArgument,"Invalid length tolerance");
+            var affine=new CandidateAffine(2,0,.5,1,0,1,0,2,0,0,3,-4);
+            using(var changed=context.TransformAffine(circle,affine)){
+                Point(context.PointAt(changed,0),4.5,2,17);
+                Point(context.PointAt(changed,Math.PI/2),15,2,-4);
+                Point(context.PointAt(changed,Math.PI),-2.5,2,-25);
+                Point(context.PointAt(circle,0),0,0,7);
+            }
+            Check(Fails(()=>{using var rejected=context.TransformAffine(circle,new(0,0,0,0,0,1,0,0,0,0,1,0));}).Status==CandidateNativeStatus.InvalidArgument,"Singular affine matrix accepted");
+            Check(Fails(()=>{using var rejected=context.TransformAffine(circle,new(double.NaN,0,0,0,0,1,0,0,0,0,1,0));}).Status==CandidateNativeStatus.InvalidArgument,"Nonfinite affine matrix accepted");
             using var moved=context.Translate(circle,1,2,3);
             Point(context.PointAt(moved,info.FirstParameter),1,2,10);
             using var clone=context.Clone(circle);using var alias=context.Retain(circle);
@@ -45,11 +54,14 @@ internal static class CurveAssertions
             Check(Fails(()=>context.PointAt(circle,double.NaN)).Status==CandidateNativeStatus.InvalidArgument,"Nonfinite curve parameter");
         }
         using(var box=context.CreateBox(1,1,1))Check(Fails(()=>context.InspectCurve(box)).Status==CandidateNativeStatus.UnsupportedOperation,"Solid must not produce fake curve metadata");
+        using(var box=context.CreateBox(1,2,3))using(var changed=context.TransformAffine(box,new(2,0,1,5,0,3,0,-2,0,0,4,7))){
+            Near(context.Inspect(changed).Volume,144);Near(context.Inspect(box).Volume,6);
+        }
         foreach(double radius in new[]{0,-1,double.NaN,double.PositiveInfinity})
             Check(Fails(()=>{using var rejected=context.CreateCircle(radius,CandidatePlane.WorldZX);}).Status==CandidateNativeStatus.InvalidArgument,"Invalid circle radius");
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,0),new(1,0,0)));});
         Fails(()=>{using var rejected=context.CreateCircle(1,new(new(0,0,0),new(0,0,1),new(0,0,1)));});
         Check(context.DiagnosticLiveShapeCount==0,"Curve ownership retained native entries");
-        return "PASS candidate native curves: normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
+        return "PASS candidate native curves: actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim.";
     }
 }
