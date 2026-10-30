@@ -10,7 +10,7 @@ Fixture assertions: true cylinder cut annulus with analytic volume and solid val
 
 Owned: native/GeometryBridge/CandidateProbe CMake/CPP/header; tests/iOS.Native; scripts/native candidate simulator runner; .github/workflows/native-geometry.yml; candidate pin/source requirement subset/evidence/ADR. Keep candidate self-test entry separate from a production operation ABI with handles.
 
-- [ ] Record exact source pin, build flags, native licenses and recovered requirement subset; write analytic fixture tests against documented API.
+- [x] Record exact source pin, build flags, native licenses and recovered requirement subset; write analytic fixture tests against documented API.
 - [ ] Build/run host and compile/run simulator experiment in GitHub Actions; inspect actual outputs and failures before changing code.
 - [ ] Verify iPad/iPhone runtime families and native case results; preserve build/source logs and bounded results.
 - [ ] Commit/push all authored progress; keep full P05-T01/T02/T03 and native ABI/cancellation/PC/native archive requirements incomplete.
