@@ -11,3 +11,5 @@ Owned: LegacyCsg4GraphProjection/EditSession; ProjectionAssertions/EditBridgeAss
 - [ ] Run shared Windows suite and existing independent codec crosschecks; commit/push and inspect real macOS iPad/iPhone outcomes. Keep native snapshots, graph execution, UI normalization, CAM and PC application parity incomplete.
 
 RED observed at Known legacy header projection before switching consumers. Local GREEN covers100 targets and a mixed four-type transaction plus26 scalar codec/oracle cases and existing independent readers. Apple execution remains pending.
+
+Apple GREEN: f0a6282 runtime run41037855060 passed iPad/iPhone; repository run41037854618 passed. Reports/hashes: docs/evidence/apple/all-scalar-handles-results.json. This closes the bounded100-scalar bridge integration, not full P04/app generation or PC round trip.
