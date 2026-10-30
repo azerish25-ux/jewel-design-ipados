@@ -110,7 +110,7 @@
     },
     {
       "id": "P05-T01-A03",
-      "scope": "Loft/planar extrusion and orientation/seam/short-segment/join path; detailed scoring and sweeps still open",
+      "scope": "Loft/planar extrusion, sampled seam score/tie rules, short-segment and join path; sweeps and native semantics still open",
       "status": "source_observed"
     }
   ],
@@ -132,7 +132,11 @@
   ],
   "review": {
     "scope": "Source-only analysis while confirmed-live native builds run",
-    "limits": "Lexical catalog includes helpers and omits instance operations; no full mapping or native behavior proof"
+    "limits": "Lexical catalog includes helpers and omits instance operations; no full mapping or native behavior proof",
+    "correctness": "Bodies checked for literal operation order and error/return handling; hashes and registration GUID anchors verified. Findings remain source observations, not feature passes.",
+    "architecture": "Analysis stays separate from recovery and production/native candidate code; no geometry fallback or backend selection introduced.",
+    "security": "Read-only recovered source, no account/script/native original execution; repository credential scan passes.",
+    "performance": "No product runtime change; source analysis artifacts only."
   },
   "blockers": [
     "Remaining calls/instance operations and original PC fixture semantics unmapped"
