@@ -332,6 +332,18 @@
       "commit": "dae97a1",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41046675230",
       "verification": "Unsigned device ring rail subcomponent build dispatched; terminal proof pending"
+    },
+    {
+      "id": 41048645156,
+      "commit": "4d8bb800b74bcb7c0b1f8cc8844d0a60ba033643",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41048645156",
+      "verification": "Host/iPad/iPhone normalized length mapping and existing native/managed/ring assertions dispatched and confirmed live/queued; terminal result pending"
+    },
+    {
+      "id": 41048648756,
+      "commit": "4d8bb800b74bcb7c0b1f8cc8844d0a60ba033643",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41048648756",
+      "verification": "Unsigned device normalized length adapter build dispatched and confirmed live/queued; terminal result pending"
     }
   ]
 }
