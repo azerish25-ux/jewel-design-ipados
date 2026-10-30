@@ -118,3 +118,7 @@ Consume [architecture contracts](../ARCHITECTURE.md). Public boundary changes re
 - [ ] Handoff exact paths, commands and remaining risks.
 
 These work-card actions are checkpoints, not a claim that a phase takes minutes.
+
+## Independent child P03-T04-A01
+
+[Undo journal plan](../plans/P03-T04-A01-undo-journal.md) depends only on completed P03-T01/T02. It can progress while P03-T03 remains incomplete because the recovered scheduler identifies live targets by reference and delegates snapshots. Parent P03-T04 retains its P03-T03 dependency for full parameter/unit/undo integration; this child cannot close that parent or native undo parity. [Boundary decision](../ADR-0003-portable-undo-journal.md).

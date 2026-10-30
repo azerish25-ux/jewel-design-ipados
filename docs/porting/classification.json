@@ -83,6 +83,22 @@
       "path": "src/Port/Domain/NumericValueState.cs",
       "classification": "adapted scalar setter decision/state ordering; new immutable boundary without native callbacks or undo",
       "source": "recovery/canonical/cad/CS.CSValues/CSValue.cs"
+    },
+    {
+      "path": "src/Port/Graph/UndoJournal.cs",
+      "classification": "adapted recovered undo transaction/history scheduler; typed capture/restore target boundary",
+      "sources": [
+        "recovery/canonical/cad/CS/CSUndoTable.cs",
+        "recovery/canonical/cad/CS/CUndoItem.cs"
+      ]
+    },
+    {
+      "path": "src/Port/Graph/IUndoTarget.cs",
+      "classification": "new platform boundary for complete target-specific undo snapshots",
+      "sources": [
+        "recovery/canonical/cad/CS/CSUndoTable.cs",
+        "recovery/canonical/cad/CS/CUndoItem.cs"
+      ]
     }
   ]
 }

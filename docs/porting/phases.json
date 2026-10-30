@@ -392,12 +392,22 @@
         {
           "id": "P03-T04",
           "title": "Port validation, numerical/material helpers and undoable parameter changes",
-          "status": "not_started",
+          "status": "in_progress",
           "depends": [
             "P03-T03"
           ],
-          "outputs": [],
-          "evidence": []
+          "outputs": [
+            "src/Port/Graph/UndoJournal.cs",
+            "src/Port/Graph/IUndoTarget.cs",
+            "tests/Port/LegacyUndoHarness/LegacyUndoHarness.csproj",
+            "tests/Port/LegacyUndoHarness/CSObject.cs",
+            "tests/Port/Graph.Contracts/UndoJournalAssertions.cs",
+            "docs/porting/plans/P03-T04-A01-undo-journal.md",
+            "docs/porting/ADR-0003-portable-undo-journal.md"
+          ],
+          "evidence": [
+            "docs/porting/evidence/P03-T04.json"
+          ]
         },
         {
           "id": "P03-T05",

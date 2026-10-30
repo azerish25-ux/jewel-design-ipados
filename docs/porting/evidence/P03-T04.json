@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P03-T04",
+  "status": "in_progress",
+  "requirementIds": [
+    "P03-A1",
+    "P03-A2"
+  ],
+  "sourceEvidence": [
+    {
+      "path": "recovery/canonical/cad/CS/CSUndoTable.cs",
+      "sha256": "01fda0a8f0a522c090b1246220d374a5e3280788ca6c48a6e630a722ddd5729f"
+    },
+    {
+      "path": "recovery/canonical/cad/CS/CUndoItem.cs",
+      "sha256": "30c659c3db96abb6923c3c12eb432ca06a69faa26a366e8369769e57262e4927"
+    }
+  ],
+  "outputs": [
+    "src/Port/Graph/UndoJournal.cs",
+    "src/Port/Graph/IUndoTarget.cs",
+    "tests/Port/LegacyUndoHarness/LegacyUndoHarness.csproj",
+    "tests/Port/LegacyUndoHarness/CSObject.cs",
+    "tests/Port/Graph.Contracts/UndoJournalAssertions.cs",
+    "docs/porting/plans/P03-T04-A01-undo-journal.md",
+    "docs/porting/ADR-0003-portable-undo-journal.md"
+  ],
+  "fixtures": [],
+  "subtasks": [
+    {
+      "id": "P03-T04-A01",
+      "scope": "Portable undo transaction/history scheduling with typed state targets",
+      "depends": [
+        "P03-T01",
+        "P03-T02"
+      ],
+      "status": "implemented_local"
+    }
+  ],
+  "checks": [
+    {
+      "command": "dotnet run --project tests/Port/Graph.Tests (before journal implementation)",
+      "exitCode": 1,
+      "expectedExitCode": 1,
+      "artifact": "tests/Port/Graph.Contracts/UndoJournalAssertions.cs",
+      "actual": "RED CS0246: IUndoTarget and UndoJournal missing"
+    },
+    {
+      "command": "dotnet run --project tests/Port/Graph.Tests",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "artifact": "tests/Port/Graph.Contracts/UndoJournalAssertions.cs",
+      "actual": "PASS 6130 differential scheduling steps; identity, target values, capture/restore traces, buffer/UI flags, nested/empty/numbered transactions, >1000 history and failure paths"
+    }
+  ],
+  "review": {
+    "correctness": "Original scheduling retained including unusual pause-reset/pruning and partial failures; compares source-linked oracle",
+    "readability": "Scheduling close to canonical source; typed capture/restore contract isolated",
+    "architecture": "No platform dependency; native object construction remains a separate adapter",
+    "security": "No original account access or credentials; undo-only local lock behavior",
+    "performance": "Original bounded pruning/linear history scans retained; differential suite includes 1005 transactions",
+    "limitations": "No native CSObject snapshot/callback parity, geometry, graph invalidation or PC round trip"
+  },
+  "blockers": [
+    "macOS simulator verification pending for the journal",
+    "Full P03-T04 still requires P03-T03, native/parameter snapshot adapters, validation and UI gesture integration"
+  ]
+}
