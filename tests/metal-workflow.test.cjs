@@ -18,3 +18,11 @@ test('Regression rejects Metal preflight moved into Linux host job', () => {
  const broken = text.replace(/\r/g, '').replace(step, '').replace('      - name: Configure genuine modeling kernel\n', step + '      - name: Configure genuine modeling kernel\n');
  assert.throws(() => checkPlacement(broken), /requires macOS/);
 });
+
+test('Metal preflight does not hide missing imports with implicit global usings', () => {
+ const project = fs.readFileSync(path.join(root, 'tests/iOS.Metal.Compile/Metal.Compile.csproj'), 'utf8');
+ assert.match(project, /<ImplicitUsings>disable<\/ImplicitUsings>/);
+ const harness = fs.readFileSync(path.join(root, 'tests/iOS.Native/MetalViewportChecks.cs'), 'utf8');
+ assert.match(harness, /^using System;$/m);
+ assert.match(harness, /^using System\.IO;$/m);
+});

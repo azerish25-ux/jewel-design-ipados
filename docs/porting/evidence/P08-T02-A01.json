@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T02-A01",
-  "status": "in_progress_metal_binding_compile_passed_gpu_pending",
+  "status": "in_progress_actual_app_import_failure_fixed_preflight_recheck_pending",
   "sources": {
     "officialBindingRepository": "https://github.com/dotnet/macios",
     "pin": "410dc42e09f1bfca3258d46d5ec95cf48903d1b2",
@@ -72,7 +72,18 @@
       "conclusion": "success"
     },
     "runtimeStatus": "iOS job building native kernel at last observation; host job failure is the separately corrected Linux placement.",
-    "deviceStatus": "Building native kernel at last observation."
+    "deviceStatus": "Building native kernel at last observation.",
+    "firstFullAppFailure": {
+      "runtimeRun": 41180073419,
+      "deviceRun": 41180075019,
+      "sourceCommit": "74efefb1c4a6a594817a04333f0a69bf9da1e739",
+      "errors": 12,
+      "diagnosis": "MetalViewportChecks lacked System and System.IO. ImplicitUsings enabled in compile-only harness but not in actual app, masking source compile errors.",
+      "deviceBuildLogSha256": "5d2ba84a31dd4d13a1abfb91fe3332dec2fad64d21c29060ece75ae49e0191c2",
+      "fix": "Explicit System/System.IO imports; compile-only harness disables implicit usings to match actual app.",
+      "reproductionPreflightRun": 41181096985
+    },
+    "correctedWorkflowStatus": "41180366163 cancellation requested after same actual-app compilation failure was reproduced; no runtime claim."
   },
   "ciCorrection": {
     "failure": "Linux host job attempted iOS Metal preflight and failed NETSDK1147 before native configuration.",
