@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "commit": "2cb2a9b3789b0bf9af91bb5f294b500dba793bac",
+  "runtimeRun": 41177982399,
+  "deviceRun": 41177983988,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "1f9e25a019f345a477f7fb6f796cc269ec17970dfcb1ce73075e19bb431b1942",
+      "meshReport": "PASS native BRep mesh snapshots:9 analytic/actual cases, normals/winding/indices/face ordinals, real coarse-fine/edit-save-reopen tessellation, copied inputs/detached lifetime/guards; actual-triangles=2128->99788; viewport/original-render/PC parity separate.",
+      "affineReport": "PASS collapsed-apex BRep affine:20 native cases and350 coefficient-mapped points; actual local/world caps and joined design, rigid/uniform/nonuniform/shear/reflection, volume/source/ownership; original-PC/full affine-family parity separate.",
+      "joinReport": "PASS saved legacy join140:10 native states, actual closed3-face design/edit-save-reopen/reversal, mixed arrays/open/disconnected parts, binary-proven empty retention/output identity and native ownership/failure/cycle guards; private repair/original-PC/full feature parity separate."
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "1f9e25a019f345a477f7fb6f796cc269ec17970dfcb1ce73075e19bb431b1942",
+      "meshReport": "PASS native BRep mesh snapshots:9 analytic/actual cases, normals/winding/indices/face ordinals, real coarse-fine/edit-save-reopen tessellation, copied inputs/detached lifetime/guards; actual-triangles=2128->99788; viewport/original-render/PC parity separate.",
+      "affineReport": "PASS collapsed-apex BRep affine:20 native cases and350 coefficient-mapped points; actual local/world caps and joined design, rigid/uniform/nonuniform/shear/reflection, volume/source/ownership; original-PC/full affine-family parity separate.",
+      "joinReport": "PASS saved legacy join140:10 native states, actual closed3-face design/edit-save-reopen/reversal, mixed arrays/open/disconnected parts, binary-proven empty retention/output identity and native ownership/failure/cycle guards; private repair/original-PC/full feature parity separate."
+    }
+  ],
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "ce9191b5daeb228a50f579ae908fd9a4561eab3fe69fba1d051fc44333e18156  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "ae3dbd9eea2aa1b1136dbd247af1640589a04c55a3aa9e4398138b087b00e2a6",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only; no physical execution."
+  },
+  "scope": "Native mesh 9 cases/6 ABI guards; preceding joined140 10 states and affine20 cases/350 points also executed. Mesh triangle counts are platform-dependent: Apple2128->99788, Windows2196->108118. No viewport, original-PC, private repair, physical-device or full feature parity claim."
+}

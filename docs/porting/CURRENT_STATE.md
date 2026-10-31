@@ -2,7 +2,9 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P05-T02-A28 exports genuine native BRep tessellation snapshots with world positions/unit normals/zero-based triangles and mesh-local face ordinals. Windows9 analytic/actual cases and6 raw buffer guards pass; actual joined140 produced2196->108118 triangles for coarse/fine settings, then regenerated after edit/save/reopen. Original BRep/tolerances and detached ownership preserved. Apple mesh execution pending. [ADR0049](ADR-0049-native-mesh-snapshots.md). Viewport/material/texture/picking, wider/native repair/affine families, downstream/original-PC/physical/full acceptance remain open. Full parity0/1451.
+Latest implementation: P08-T02-A01 provides centered double-to-float CAD mesh upload, fitted camera, and a real Metal offscreen renderer/image harness. Portable144 clip-point/precision checks and macOS iOS binding/harness compilation passed; actual GPU image/edit/orbit/depth checks remain pending. A misplaced Linux iOS preflight was corrected in13670c5 with regression coverage. No finished viewport/UI/render parity claim. Full parity0/1451.
+
+[Native mesh Apple checkpoint](../evidence/apple/native-mesh-results.json) confirms9 mesh cases/6 ABI guards, joined14010 states, and affine20 cases/350 points on iPad/iPhone simulators at2cb2a9b; unsigned arm64 iOS compile/link passed52 warnings0 errors. Apple coarse/fine counts2128->99788 differ from Windows2196->108118; geometric invariants pass separately. Physical-device/original-PC/private repair/wider geometry acceptance remains open. [ADR0049](ADR-0049-native-mesh-snapshots.md).
 
 [Raw native sewing Apple proof](../evidence/apple/native-sewing-results.json) passed10 cases/8 ABI guards on both simulators and unsigned arm64 iOS compile/link52 warnings0 errors at8ea10cc; it predates legacy140 graph registration.
 
