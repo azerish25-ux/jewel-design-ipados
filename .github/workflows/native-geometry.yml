@@ -15,10 +15,18 @@ on:
       - "scripts/ios-device.cjs"
       - ".github/workflows/native-geometry.yml"
   workflow_dispatch:
+    inputs:
+      native_archive_run:
+        description: Optional same-repository producer run with matching native archive
+        type: string
+        required: false
+        default: ''
 permissions:
   contents: read
+  actions: read
 jobs:
   host:
+    if: ${{ !inputs.native_archive_run }}
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     defaults:
@@ -95,23 +103,47 @@ jobs:
           dotnet --info > artifacts/dotnet.txt
           shasum -a 256 .local/native/occt-source/LICENSE_LGPL_21.txt .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt > artifacts/native-license-hashes.txt
       - name: Prepare pinned published geometry comparisons
+        if: ${{ !inputs.native_archive_run }}
         run: |
           node scripts/prepare-rotation-reference.cjs | tee artifacts/native-rotation-reference.json
           node scripts/prepare-plane-reference.cjs | tee artifacts/native-plane-reference.json
       - name: Compile Metal renderer bindings before kernel build
         run: dotnet build tests/iOS.Metal.Compile -c Debug -r iossimulator-arm64
+      - name: Restore validated native archive for app-only retest
+        if: ${{ inputs.native_archive_run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NATIVE_ARCHIVE_RUN: ${{ inputs.native_archive_run }}
+        run: |
+          [[ "$NATIVE_ARCHIVE_RUN" =~ ^[1-9][0-9]*$ ]]
+          gh run download "$NATIVE_ARCHIVE_RUN" --repo "$GITHUB_REPOSITORY" --name native-kernel-iossimulator-arm64 --dir .local/native/reused
+          node scripts/native-archive.cjs restore iossimulator-arm64 .local/native/reused "$NATIVE_ARCHIVE_RUN"
       - name: Configure actual iOS simulator kernel
+        if: ${{ !inputs.native_archive_run }}
         run: cmake -S native/GeometryBridge/CandidateProbe -B .local/native/ios-sim -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphonesimulator -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0 -DOCCT_SOURCE_DIR="$PWD/.local/native/occt-source" | tee artifacts/native-configure.txt
       - name: Compile candidate API usage before kernel build
+        if: ${{ !inputs.native_archive_run }}
         run: cmake --build .local/native/ios-sim --target jewel_occt_candidate_objects --parallel 2 | tee artifacts/native-probe-compile.txt
       - name: Build native kernel and test entry
+        if: ${{ !inputs.native_archive_run }}
         run: cmake --build .local/native/ios-sim --target jewel_occt_candidate --parallel 3 | tee artifacts/native-build.txt
       - name: Combine static test dependencies
+        if: ${{ !inputs.native_archive_run }}
         run: |
           libraries=()
           while IFS= read -r -d '' library; do libraries+=("$library"); done < <(find .local/native/ios-sim -name '*.a' -print0)
           test "${#libraries[@]}" -gt 1
           xcrun libtool -static -o .local/native/ios-sim-all.a "${libraries[@]}" 2>&1 | tee artifacts/native-merge.txt
+      - name: Retain validated native archive before app compilation
+        if: ${{ !inputs.native_archive_run }}
+        run: node scripts/native-archive.cjs pack iossimulator-arm64
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: ${{ !inputs.native_archive_run }}
+        with:
+          name: native-kernel-iossimulator-arm64
+          path: artifacts/native-kernel-iossimulator-arm64/
+          if-no-files-found: error
+          retention-days: 7
       - name: Build signed native-execution test app
         run: dotnet build tests/iOS.Native -c Debug -r iossimulator-arm64 -p:EnableCodeSigning=true -p:CodesignKey=- -p:CodesignRequireProvisioningProfile=false -p:MtouchDebug=false -p:EnableDiagnostics=false | tee artifacts/native-app-build.txt
       - name: Execute native cases on iPad simulator
@@ -124,5 +156,7 @@ jobs:
         if: always()
         with:
           name: native-candidate-ios-evidence
-          path: artifacts/
+          path: |
+            artifacts/
+            !artifacts/native-kernel-*/**
           retention-days: 14

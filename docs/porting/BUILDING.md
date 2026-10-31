@@ -53,3 +53,10 @@ Native candidate comparison tests also require the pinned published rotation ref
     node scripts/run-local.cjs node scripts/prepare-rotation-reference.cjs
 
 The first preparation fetches three hash-pinned public files; subsequent builds use .local/reference/opennurbs6-rotation. Source/defines/license and method hashes are emitted in native-rotation-reference.json CI artifacts. Keep this cache and generated include on D: locally. This is a test-only published6 math comparison, not the original Rhino5 SDK or a production runtime download; see [ADR0030](ADR-0030-rotation-producers.md).
+
+## Native app-only retests
+
+Native workflows retain `native-kernel-iossimulator-arm64` or `native-kernel-ios-arm64` before compiling the test app. After a managed-only fix, dispatch the matching workflow with `native_archive_run` set to that producer run ID. The manifest checks the producer, OCCT pin, exact tracked native/preparation/workflow input bytes, Xcode identity, platform and archive digest before restoring a fixed path. Native input or workflow changes require a fresh build. App compile, simulator assertions and final device platform inspection still run; reuse is not an app pass. See [integrity evidence](evidence/P08-T02-A01-F02.json).
+
+    node scripts/run-local.cjs gh workflow run native-geometry.yml --ref codex/dotnet-ios-reuse -f native_archive_run=PRODUCER_RUN_ID
+    node scripts/run-local.cjs gh workflow run native-device.yml --ref codex/dotnet-ios-reuse -f native_archive_run=PRODUCER_RUN_ID

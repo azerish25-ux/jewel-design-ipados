@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T02-A01-F02",
+  "status": "in_progress_local_integrity_checks_passed_real_apple_producer_pending",
+  "red": "node --test tests/native-archive.test.cjs failed MODULE_NOT_FOUND before script implementation.",
+  "checks": {
+    "command": "node --test tests/native-archive.test.cjs tests/metal-workflow.test.cjs",
+    "passed": 8,
+    "scope": "Archive integrity/provenance/configuration guards only; no simulated geometry/native build claim."
+  },
+  "identity": [
+    "Same-repository named artifact/explicit producer run",
+    "OCCT pin",
+    "Tracked native source/preparation scripts/both workflow byte fingerprints",
+    "Xcode identity",
+    "Fixed platform-specific destination",
+    "Archive SHA256/byte length/static archive header"
+  ],
+  "implementation": [
+    "scripts/native-archive.cjs",
+    "tests/native-archive.test.cjs",
+    ".github/workflows/native-geometry.yml",
+    ".github/workflows/native-device.yml"
+  ],
+  "officialReferences": [
+    "https://docs.github.com/en/actions/tutorials/store-and-share-data",
+    "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
+  ],
+  "limits": "Producer app may fail; archive capture is separate from app acceptance. Reused binary is never counted as regenerated native source. Final iOS compile/runtime/platform verification remains mandatory. Physical/full parity unverified."
+}

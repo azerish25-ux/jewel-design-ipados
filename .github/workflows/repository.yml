@@ -31,7 +31,7 @@ jobs:
       - name: Footprint freshness regressions
         run: node --test tests/library-type-footprint.test.cjs
       - name: Apple preflight runner regression
-        run: node --test tests/metal-workflow.test.cjs
+        run: node --test tests/metal-workflow.test.cjs tests/native-archive.test.cjs
       - name: Simulator selection regressions
         run: node --test tests/ios-device.test.cjs tests/simulator-launch.test.cjs
       - name: Verify full recovery, source links and work ledgers

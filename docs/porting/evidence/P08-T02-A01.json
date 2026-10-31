@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T02-A01",
-  "status": "in_progress_actual_app_import_failure_fixed_preflight_recheck_pending",
+  "status": "in_progress_actual_app_import_fix_preflight_passed_gpu_pending",
   "sources": {
     "officialBindingRepository": "https://github.com/dotnet/macios",
     "pin": "410dc42e09f1bfca3258d46d5ec95cf48903d1b2",
@@ -81,9 +81,24 @@
       "diagnosis": "MetalViewportChecks lacked System and System.IO. ImplicitUsings enabled in compile-only harness but not in actual app, masking source compile errors.",
       "deviceBuildLogSha256": "5d2ba84a31dd4d13a1abfb91fe3332dec2fad64d21c29060ece75ae49e0191c2",
       "fix": "Explicit System/System.IO imports; compile-only harness disables implicit usings to match actual app.",
-      "reproductionPreflightRun": 41181096985
+      "reproductionPreflightRun": 41181096985,
+      "reproductionPreflight": {
+        "run": 41181096985,
+        "commit": "6e985c9197b1316eb3fe178af6e68d265fc81f63",
+        "conclusion": "failure",
+        "buildLogSha256": "ea10a16c38b0fb81dff79748460ee892cf159a51860d6240f65ce692b3434b2a"
+      }
     },
-    "correctedWorkflowStatus": "41180366163 cancellation requested after same actual-app compilation failure was reproduced; no runtime claim."
+    "correctedWorkflowStatus": "41180366163 cancellation requested after same actual-app compilation failure was reproduced; no runtime claim.",
+    "importFixPreflight": {
+      "run": 41181190164,
+      "commit": "7d64ed4c9e59c04ad6582dca9c4edbef9ae4d3b4",
+      "conclusion": "success",
+      "buildLogSha256": "eccd030b78fe42f6f70390f3b28a17f2125060c09eea1a8f740353c8ee973374",
+      "warnings": 0,
+      "errors": 0,
+      "scope": "Actual harness file compiles with ImplicitUsings disabled; not native app AOT/runtime."
+    }
   },
   "ciCorrection": {
     "failure": "Linux host job attempted iOS Metal preflight and failed NETSDK1147 before native configuration.",
