@@ -16,6 +16,7 @@ public sealed class CadMetalView : MTKView
     private Exception? viewError;
     private float yaw=.6f,pitch=.35f;
     public event Action<CadMetalFrameInfo>? FramePresented;
+    public event Action<CadMetalFrameInfo>? FrameGpuCompleted;
     public event Action<Exception>? FrameFailed;
     public CadMetalViewStats Stats{get{var snapshot=presenter.Stats;return snapshot with{LastError=snapshot.LastError??viewError?.ToString()};}}
 
@@ -33,6 +34,7 @@ public sealed class CadMetalView : MTKView
         AutoResizeDrawable=true;Paused=true;EnableSetNeedsDisplay=true;
         var weak=new WeakReference<CadMetalView>(this);
         presenter.Presented=info=>Post(weak,view=>view.FramePresented?.Invoke(info));
+        presenter.GpuCompleted=info=>Post(weak,view=>view.FrameGpuCompleted?.Invoke(info));
         presenter.Failed=error=>Post(weak,view=>view.Fail(error));
         presenter.Completed=()=>Post(weak,view=>{if(view.presenter.CanSubmit)view.SetNeedsDisplay();});
         drawDelegate=new ViewDelegate(weak);Delegate=drawDelegate;

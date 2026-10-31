@@ -4,7 +4,7 @@ using Metal;
 using JewelDesign.Rendering.Candidate;
 namespace JewelDesign.Rendering.Candidate.iOS;
 
-public readonly record struct CadMetalFrameInfo(long FrameId,long Revision,long MeshUploadId,int Width,int Height,double PresentedTime,Matrix4x4 ViewProjection);
+public readonly record struct CadMetalFrameInfo(long FrameId,long Revision,long MeshUploadId,int Width,int Height,double? PresentedTime,bool SupportsNativePresentationTiming,Matrix4x4 ViewProjection);
 public readonly record struct CadMetalViewStats(long MeshUploads,long SubmittedFrames,long CompletedFrames,long PresentedFrames,
     int InFlightFrames,int PeakInFlightFrames,int LiveMeshResources,int LiveMeshBuffers,bool IsDisposed,string? LastError);
 
@@ -19,6 +19,7 @@ internal sealed class CadMetalDrawablePresenter : IDisposable
     private bool disposed,rendererDisposed;
     private Exception? lastError;
     internal Action<CadMetalFrameInfo>? Presented;
+    internal Action<CadMetalFrameInfo>? GpuCompleted;
     internal Action<Exception>? Failed;
     internal Action? Completed;
     internal bool CanSubmit{get{lock(sync){var state=frames.State;return !disposed&&state.NeedsFrame&&state.InFlight<CadFrameGate<CadMetalGpuMesh>.MaximumFramesInFlight;}}}
@@ -65,10 +66,10 @@ internal sealed class CadMetalDrawablePresenter : IDisposable
                 if(!command.RetainedReferences)throw new InvalidOperationException("Visible commands must retain presentation textures.");
                 using(var encoder=command.CreateRenderCommandEncoder(pass)??throw new InvalidOperationException("Visible render encoder unavailable."))
                 {renderer.Encode(encoder,mesh.Vertices,mesh.Indices,camera,mesh.TriangleCount);encoder.EndEncoding();}
-                var info=new CadMetalFrameInfo(checked(++nextFrame),lease.Revision,mesh.UploadId,width,height,0,matrix);
+                var info=new CadMetalFrameInfo(checked(++nextFrame),lease.Revision,mesh.UploadId,width,height,null,CadMetalTimingCapabilities.SupportsNativeTiming(drawable),matrix);
                 frame=new Submission(lease,camera,command,drawable,info);
                 var owned=frame;
-                drawable.AddPresentedHandler(value=>OnPresented(owned.Info with{PresentedTime=value.PresentedTime}));
+                if(info.SupportsNativePresentationTiming)drawable.AddPresentedHandler(value=>OnPresented(owned.Info with{PresentedTime=value.PresentedTime}));
                 command.AddCompletedHandler(value=>OnCompleted(owned,value));
                 command.PresentDrawable(drawable);command.Commit();submitted++;
                 peak=Math.Max(peak,frames.State.InFlight);
@@ -91,7 +92,7 @@ internal sealed class CadMetalDrawablePresenter : IDisposable
     }
     private void OnCompleted(Submission frame,IMTLCommandBuffer command)
     {
-        Exception? error=null;Action<Exception>? failure;Action? notification;
+        Exception? error=null;Action<Exception>? failure;Action? notification;Action<CadMetalFrameInfo>? gpuNotification;
         lock(sync)
         {
             if(command.Status!=MTLCommandBufferStatus.Completed)error=new InvalidOperationException("Visible GPU command failed: "+command.Status+" "+command.Error);
@@ -99,9 +100,9 @@ internal sealed class CadMetalDrawablePresenter : IDisposable
             error??=lastError;
             if(error is not null)lastError??=error;
             if(disposed&&frames.State.InFlight==0)ReleaseRenderer();
-            failure=disposed?null:Failed;notification=disposed?null:Completed;
+            failure=disposed?null:Failed;notification=disposed?null:Completed;gpuNotification=disposed?null:GpuCompleted;
         }
-        if(error is not null)failure?.Invoke(error);
+        if(error is not null)failure?.Invoke(error);else gpuNotification?.Invoke(frame.Info);
         notification?.Invoke();
     }
     private static Exception? DisposeAll(params IDisposable?[] values)

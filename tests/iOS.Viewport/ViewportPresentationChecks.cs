@@ -11,7 +11,7 @@ using JewelDesign.Rendering.Candidate;
 using JewelDesign.Rendering.Candidate.iOS;
 namespace ViewportPresentationCandidate;
 
-internal sealed record ViewportFrameMark(string Stage,long FrameId,long Revision,long MeshUploadId,int Width,int Height,double PresentedTime);
+internal sealed record ViewportFrameMark(string Stage,long FrameId,long Revision,long MeshUploadId,int Width,int Height,double? PresentedTime,bool SupportsNativePresentationTiming,string EvidenceKind);
 internal sealed record ViewportPresentationReport(int SchemaVersion,string Scope,List<ViewportFrameMark> Frames,
     CadMetalViewStats BeforeDisposal,CadMetalViewStats AfterDisposal,CadMetalViewStats FinalView,int DisposalInFlight);
 internal static class ViewportPresentationChecks
@@ -38,17 +38,18 @@ internal static class ViewportPresentationChecks
     {
         long expected=-1;
         var completion=new TaskCompletionSource<CadMetalFrameInfo>(TaskCreationOptions.RunContinuationsAsynchronously);
-        void Presented(CadMetalFrameInfo frame) { if(frame.MeshUploadId==expected&&frame.PresentedTime>0)completion.TrySetResult(frame); }
+        void Presented(CadMetalFrameInfo frame) { if(frame.MeshUploadId==expected&&frame.SupportsNativePresentationTiming&&frame.PresentedTime>0)completion.TrySetResult(frame); }
+        void GpuCompleted(CadMetalFrameInfo frame) { if(frame.MeshUploadId==expected&&!frame.SupportsNativePresentationTiming)completion.TrySetResult(frame); }
         void Failed(Exception error)=>completion.TrySetException(error);
-        view.FramePresented+=Presented;view.FrameFailed+=Failed;
+        view.FramePresented+=Presented;view.FrameGpuCompleted+=GpuCompleted;view.FrameFailed+=Failed;
         try
         {
             expected=change();view.Draw();
             var frame=await completion.Task.WaitAsync(TimeSpan.FromSeconds(30));
-            Check(frame.Width>0&&frame.Height>0&&double.IsFinite(frame.PresentedTime),"Presented frame has invalid dimensions/time");
+            Check(frame.Width>0&&frame.Height>0&&(!frame.SupportsNativePresentationTiming||frame.PresentedTime is double time&&double.IsFinite(time)&&time>0),"Presented frame has invalid dimensions/time");
             return frame;
         }
-        finally {view.FramePresented-=Presented;view.FrameFailed-=Failed;}
+        finally {view.FramePresented-=Presented;view.FrameGpuCompleted-=GpuCompleted;view.FrameFailed-=Failed;}
     }
     private static async Task Drain(Func<bool> done)
     {
@@ -64,7 +65,7 @@ internal static class ViewportPresentationChecks
         parent.AddSubview(view);parent.LayoutIfNeeded();
         async Task Record(string stage,CadMetalFrameInfo frame)
         {
-            frames.Add(new(stage,frame.FrameId,frame.Revision,frame.MeshUploadId,frame.Width,frame.Height,frame.PresentedTime));
+            frames.Add(new(stage,frame.FrameId,frame.Revision,frame.MeshUploadId,frame.Width,frame.Height,frame.PresentedTime,frame.SupportsNativePresentationTiming,frame.SupportsNativePresentationTiming?"native-presented":"gpu-completed"));
             await capture(stage);
         }
         var original=await Present(view,()=>view.SetMesh(meshes.Original));await Record("original",original);
@@ -87,6 +88,6 @@ internal static class ViewportPresentationChecks
         var finalView=new CadMetalView(parent.Bounds){AutoresizingMask=UIViewAutoresizing.FlexibleWidth|UIViewAutoresizing.FlexibleHeight};parent.AddSubview(finalView);
         var final=await Present(finalView,()=>finalView.SetMesh(meshes.Original));await Record("final",final);
         await Drain(()=>finalView.Stats.InFlightFrames==0);Check(finalView.Stats.LiveMeshBuffers==2&&finalView.Stats.LastError is null,"Visible final mesh ownership invalid");
-        return new(1,"Actual visible MTKView CAD/presentation ownership checkpoint; full product UI/source-camera/material/picking/PC/physical parity separate",frames,before,after,finalView.Stats,pending);
+        return new(2,"Actual visible MTKView CAD/GPU ownership checkpoint; native timing is recorded only when supported; full product UI/source-camera/material/picking/PC/physical parity separate",frames,before,after,finalView.Stats,pending);
     }
 }

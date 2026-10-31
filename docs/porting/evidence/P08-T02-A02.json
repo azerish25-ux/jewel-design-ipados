@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T02-A02",
-  "status": "in_progress_view_compile_passed_visible_app_runtime_pending",
+  "status": "in_progress_runtime_timing_selector_failure_corrected_recheck_pending",
   "requirementScope": [
     "P08-T02",
     "UI-039 viewport prerequisite only"
@@ -45,6 +45,7 @@
     "resourceContract": "Ownership transfers on valid replacement; GPU resources implement nonthrowing disposal. Failed guard checks leave caller ownership intact."
   },
   "remaining": [
+    "Capability-guarded native timing and actual simulator screenshot evidence recheck",
     "Persistent Metal buffers and shared actual encode path",
     "Real MTKView presentation and completion/resource lifecycle",
     "Visible edit/orbit/empty/resize/disposal stress screenshots on iPad/iPhone",
@@ -99,7 +100,7 @@
   "visibleRun": {
     "id": 41188809450,
     "sourceCommit": "5d485a7dc9d0b048a8476e179feb87741b57d33e",
-    "status": "actual_app_build_passed_iPad_runtime_in_progress_last_observed",
+    "status": "failed_runtime_addPresentedHandler_unrecognized_selector",
     "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41188809450"
   },
   "currentBindingPreflight": {
@@ -107,5 +108,6 @@
     "sourceCommit": "5d485a7dc9d0b048a8476e179feb87741b57d33e",
     "conclusion": "success",
     "scope": "View/presenter/acceptance-helper compile; actual app and screenshots remain separate."
-  }
+  },
+  "runtimeFailure": "docs/evidence/apple/visible-first-failure.json"
 }

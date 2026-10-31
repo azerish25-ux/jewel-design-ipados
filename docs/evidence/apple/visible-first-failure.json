@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T02-A02-F01",
+  "run": 41188809450,
+  "sourceCommit": "5d485a7dc9d0b048a8476e179feb87741b57d33e",
+  "family": "ipad",
+  "resultSha256": "b4e7fcbcf5de366708a2bc27518baae06fff66684d51c1366d74fec5e5746aa3",
+  "observedFailure": "NSInvalidArgumentException: CAMetalDrawable addPresentedHandler: unrecognized selector",
+  "diagnosis": "Pinned simulator runtime drawable lacks the selector despite SDK protocol binding availability. Native timing must be queried by actual runtime capability; this observation does not establish support on every simulator/device.",
+  "correction": "Probe public Objective-C class selectors before AddPresentedHandler/presentedTime. Keep FramePresented native-only; expose separate FrameGpuCompleted. Unsupported timing is null and never replaced by a GPU clock.",
+  "verification": "Report schema2 requires positive native presentation time when supported; otherwise explicitly records GPU completion and requires actual screenshot evidence. Physical native timing acceptance remains open.",
+  "officialReferences": [
+    "https://developer.apple.com/documentation/objectivec/class_respondstoselector(_:_:)",
+    "https://developer.apple.com/documentation/objectivec/object_getclass(_:)",
+    "https://developer.apple.com/documentation/metal/mtldrawable/presentedtime"
+  ],
+  "status": "implemented_local_report_regressions_passed_apple_recheck_pending"
+}
