@@ -60,3 +60,9 @@ Native workflows retain `native-kernel-iossimulator-arm64` or `native-kernel-ios
 
     node scripts/run-local.cjs gh workflow run native-geometry.yml --ref codex/dotnet-ios-reuse -f native_archive_run=PRODUCER_RUN_ID
     node scripts/run-local.cjs gh workflow run native-device.yml --ref codex/dotnet-ios-reuse -f native_archive_run=PRODUCER_RUN_ID
+
+## Visible viewport acceptance
+
+The `Visible CAD viewport experiment` Actions workflow builds [the UIKit test app](../../tests/iOS.Viewport) from the current branch. It restores a validated unchanged simulator archive, compiles the actual MTKView component, and runs both iPad/iPhone families. The app holds each original/orbit/edited/empty/resized/final stage until the driver captures a new screenshot and acknowledges its fresh launch token. It also reruns the existing offscreen GPU pixel proof.
+
+Inspect `visible-viewport-evidence`: selected/actual family identities, six screen PNGs, native presentation timestamps and resource retirement counts, the unchanged offscreen BGRA hash, and compiler/runtime errors. Window display and shader compilation alone do not establish full UI/source-camera/material/PC/physical parity. See [the work card](evidence/P08-T02-A02.json).

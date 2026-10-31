@@ -95,5 +95,17 @@
     "nativeProducerRun": 41181433871,
     "localChecks": "Bash syntax;7 report/driver regressions including capacity RED/GREEN, valid/invalid stage paths, stale-output rejection and failure shutdown pass;20 adjacent protocol/source/artifact checks pass.",
     "limits": "Visible UIKit test harness is not the completed product UI. Native PresentedTime, actual screenshots, source edit/orbit/empty/resize and resource retirement must pass on iPad/iPhone before acceptance."
+  },
+  "visibleRun": {
+    "id": 41188809450,
+    "sourceCommit": "5d485a7dc9d0b048a8476e179feb87741b57d33e",
+    "status": "actual_app_build_passed_iPad_runtime_in_progress_last_observed",
+    "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41188809450"
+  },
+  "currentBindingPreflight": {
+    "id": 41188809414,
+    "sourceCommit": "5d485a7dc9d0b048a8476e179feb87741b57d33e",
+    "conclusion": "success",
+    "scope": "View/presenter/acceptance-helper compile; actual app and screenshots remain separate."
   }
 }
