@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "device": "Apple iOS simulator GPU",
+  "width": 320,
+  "height": 320,
+  "sourceTriangles": 5544,
+  "editedTriangles": 5622,
+  "foregroundPixels": 16109,
+  "editedPixels": 12377,
+  "orbitPixels": 19835,
+  "orderPixels": 0,
+  "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+  "scope": "Metal offscreen actual CAD proof; no full UI/material/source-camera/original-render/physical parity"
+}

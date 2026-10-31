@@ -60,3 +60,5 @@ Saved portfolio XML metadata: [ADR 0007](ADR-0007-portfolio-xml-metadata.md) pre
 Portfolio member inventory and raw-data replacement: [ADR 0008](ADR-0008-portfolio-member-inventory.md). Native reconciliation, filesystem import and regenerated application save remain separate.
 
 Native CAD candidate experiment: [ADR 0009](ADR-0009-native-cad-candidate.md) is a pinned analytical probe, not a selected backend or production operation ABI.
+
+Actual CAD-to-Metal checkpoint: [P08 pixel evidence](../evidence/apple/metal-viewport-results.json) verifies double-centered native mesh upload and real offscreen GPU output after edit/orbit/empty-scene tests on iPad/iPhone. Rendering.Candidate.iOS owns GPU resources and currently waits/reads back synchronously for reproducible proof images. Interactive rendering needs GPU drawables, mesh/frame ownership and synchronization; use this checkpoint as its input, with original camera/material/UI and physical/original-PC acceptance still open.

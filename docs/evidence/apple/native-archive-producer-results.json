@@ -38,9 +38,9 @@
     "simulator": 41182340484,
     "device": 41182342075,
     "consumerCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
-    "status": "device_completed_success_simulator_iPhone_in_progress_last_observed"
+    "status": "both_completed_success_actual_artifacts_inspected"
   },
-  "limits": "Archive integrity and both real Mac restore steps passed; device app compiled/linked. Simulator iPad gates passed but full runtime/image artifact inspection is pending. No physical/original-PC/full parity.",
+  "limits": "Actual producer archives, input fingerprints, both Mac restore paths and current app builds/runtime passed. Native reuse is distinct from original-PC/full feature or physical-device acceptance.",
   "deviceConsumer": {
     "schemaVersion": 1,
     "occtPin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
@@ -53,6 +53,20 @@
     "archiveBytes": 75421232,
     "consumerCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
     "consumerRunId": "41182342075",
+    "scope": "Validated native archive reuse only; app compile/runtime still required."
+  },
+  "simulatorConsumer": {
+    "schemaVersion": 1,
+    "occtPin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "runId": "41181433871",
+    "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+    "platform": "iossimulator-arm64",
+    "nativeInputSha256": "6d4e695ca9a910ab2cf52ebb768824f87b6b7dd921b9f1216f98b8779e2f0553",
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "archiveSha256": "f4f15e02ec58dba1d534657a2c516bac6e502e72a0b99a13ed915c07217b0bae",
+    "archiveBytes": 74590936,
+    "consumerCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+    "consumerRunId": "41182340484",
     "scope": "Validated native archive reuse only; app compile/runtime still required."
   }
 }

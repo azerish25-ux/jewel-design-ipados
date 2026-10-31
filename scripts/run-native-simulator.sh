@@ -30,6 +30,7 @@ for i in $(seq 1 120); do
   for name in original edited orbit empty; do test -s "$DATA/Documents/native-metal-$name.png"; cp "$DATA/Documents/native-metal-$name.png" "$OUT/metal/$name.png"; done
   test -s "$DATA/Documents/native-metal-report.json"
   cp "$DATA/Documents/native-metal-report.json" "$OUT/metal/report.json"
+  node scripts/verify-metal-artifacts.cjs "$OUT/metal" > "$OUT/metal/pixel-verification.json"
   grep -q '^PASS managed candidate ABI:' "$OUT/result.txt"
   grep -q 'PASS candidate native curves:' "$OUT/result.txt"
   grep -q 'PASS ring rail candidate:' "$OUT/result.txt"

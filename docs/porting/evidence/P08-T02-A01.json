@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T02-A01",
-  "status": "in_progress_actual_app_import_fix_preflight_passed_gpu_pending",
+  "status": "verified_bounded_actual_CAD_Metal_checkpoint",
   "sources": {
     "officialBindingRepository": "https://github.com/dotnet/macios",
     "pin": "410dc42e09f1bfca3258d46d5ec95cf48903d1b2",
@@ -38,12 +38,19 @@
     "portableClipPoints": 144,
     "largeWorldOffset": 1000000000,
     "scope": "Real native mesh, double center/unit-radius before float conversion, float6/UInt32/source-face ordering, owned copy buffers and invalid camera guards pass locally.",
-    "localRerun": "Full native managed host contract suite passed, including144 viewport clip points after CI fix."
+    "localRerun": "Full native managed host contract suite passed, including144 viewport clip points after CI fix.",
+    "independentPixels": {
+      "foregroundPixels": 16109,
+      "editedPixels": 12377,
+      "orbitPixels": 19835,
+      "reverseTriangleOrderPixels": 0,
+      "sourceTriangles": 5544,
+      "editedTriangles": 5622,
+      "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
   },
   "pending": [
-    "Full iPad/iPhone Metal image artifacts inspected",
-    "Original camera/material/render quality and interactive UI acceptance",
-    "Physical-device execution separately from unsigned compile"
+    "Full UI/material/source-camera/original-render/physical/original-PC parity remains outside this bounded checkpoint"
   ],
   "limits": "No finished UI, original camera/material/render quality, touch/picking/frame synchronization or full parity claim.",
   "apple": {
@@ -103,7 +110,7 @@
       "runtime": 41181433871,
       "device": 41181435472,
       "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
-      "status": "Host native fixtures and iPad step passed; iPhone in_progress last observed. Device completed success and artifacts inspected."
+      "status": "completed success; host native/iPad/iPhone and unsigned arm64 device evidence inspected"
     },
     "cameraAndMetalPreflight": {
       "run": 41181809482,
@@ -116,8 +123,9 @@
       "run": 41182340484,
       "sourceCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
       "nativeArchiveProducerRun": 41181433871,
-      "status": "iPad step passed; iPhone step in_progress last observed; actual render artifacts pending inspection"
-    }
+      "status": "completed success; iPad/iPhone result identity, actual PNGs, source camera comparisons and independent pixel hashes inspected"
+    },
+    "actualViewportReport": "docs/evidence/apple/metal-viewport-results.json"
   },
   "ciCorrection": {
     "failure": "Linux host job attempted iOS Metal preflight and failed NETSDK1147 before native configuration.",

@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T02-A01",
+  "status": "verified_bounded_actual_CAD_Metal_checkpoint",
+  "checkpoints": [
+    {
+      "folder": "metal-producer-runtime",
+      "run": 41181433871,
+      "commit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+      "camera": false,
+      "simulators": [
+        {
+          "family": "ipad",
+          "selected": {
+            "family": "ipad",
+            "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+            "name": "iPad (A16)",
+            "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+          },
+          "actualRuntimeFamily": "ipad",
+          "resultSha256": "58a7382078ebaf0af1ae39709415e7784756aef8790717f6b5ddd7534a52d439",
+          "metalReport": {
+            "schemaVersion": 1,
+            "device": "Apple iOS simulator GPU",
+            "width": 320,
+            "height": 320,
+            "sourceTriangles": 5544,
+            "editedTriangles": 5622,
+            "foregroundPixels": 16109,
+            "editedPixels": 12377,
+            "orbitPixels": 19835,
+            "orderPixels": 0,
+            "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+            "scope": "Metal offscreen actual CAD proof; no full UI/material/source-camera/original-render/physical parity"
+          },
+          "independentPixels": {
+            "width": 320,
+            "height": 320,
+            "foregroundPixels": 16109,
+            "editedPixels": 12377,
+            "orbitPixels": 19835,
+            "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+            "orderPixels": 0,
+            "pngSha256": {
+              "original": "6da73fa31ed84f2114cf25d60fc3c42432248b294c5ebe590e55a3cef16c346c",
+              "edited": "cf0fb200efd7b35497b876549e5de0c2c055e1886c4bb02fab7f2c00dc504ddc",
+              "orbit": "fd8986b8493f30e6407035861b5278587c306478ebc7de4995643b15ba9ec905",
+              "empty": "014213d8c543df47774080f72485fbbe701af3934f5a6b8ed625705c838e13d0"
+            },
+            "bgraSha256": {
+              "original": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+              "edited": "13c7273d8a6bf87ec7b0dea40cd0471c1f7d9b31e88cf46f6f24767d459dcb35",
+              "orbit": "4f719534df68c2670848a824a2aa9111f0a942ab1428a544578fe932cd34aee5",
+              "empty": "8fadfc1b0a327f76aafa537d961d823f8229d24f3dcaa6f04d61cb1e6d029612"
+            },
+            "depthOrderScope": "Real harness raw-frame comparison; reordered PNG not retained in this checkpoint."
+          },
+          "cameraReport": null
+        },
+        {
+          "family": "iphone",
+          "selected": {
+            "family": "iphone",
+            "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+            "name": "iPhone 17",
+            "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+          },
+          "actualRuntimeFamily": "iphone",
+          "resultSha256": "58a7382078ebaf0af1ae39709415e7784756aef8790717f6b5ddd7534a52d439",
+          "metalReport": {
+            "schemaVersion": 1,
+            "device": "Apple iOS simulator GPU",
+            "width": 320,
+            "height": 320,
+            "sourceTriangles": 5544,
+            "editedTriangles": 5622,
+            "foregroundPixels": 16109,
+            "editedPixels": 12377,
+            "orbitPixels": 19835,
+            "orderPixels": 0,
+            "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+            "scope": "Metal offscreen actual CAD proof; no full UI/material/source-camera/original-render/physical parity"
+          },
+          "independentPixels": {
+            "width": 320,
+            "height": 320,
+            "foregroundPixels": 16109,
+            "editedPixels": 12377,
+            "orbitPixels": 19835,
+            "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+            "orderPixels": 0,
+            "pngSha256": {
+              "original": "6da73fa31ed84f2114cf25d60fc3c42432248b294c5ebe590e55a3cef16c346c",
+              "edited": "cf0fb200efd7b35497b876549e5de0c2c055e1886c4bb02fab7f2c00dc504ddc",
+              "orbit": "fd8986b8493f30e6407035861b5278587c306478ebc7de4995643b15ba9ec905",
+              "empty": "014213d8c543df47774080f72485fbbe701af3934f5a6b8ed625705c838e13d0"
+            },
+            "bgraSha256": {
+              "original": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+              "edited": "13c7273d8a6bf87ec7b0dea40cd0471c1f7d9b31e88cf46f6f24767d459dcb35",
+              "orbit": "4f719534df68c2670848a824a2aa9111f0a942ab1428a544578fe932cd34aee5",
+              "empty": "8fadfc1b0a327f76aafa537d961d823f8229d24f3dcaa6f04d61cb1e6d029612"
+            },
+            "depthOrderScope": "Real harness raw-frame comparison; reordered PNG not retained in this checkpoint."
+          },
+          "cameraReport": null
+        }
+      ]
+    },
+    {
+      "folder": "metal-retest-runtime",
+      "run": 41182340484,
+      "commit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+      "camera": true,
+      "simulators": [
+        {
+          "family": "ipad",
+          "selected": {
+            "family": "ipad",
+            "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+            "name": "iPad (A16)",
+            "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+          },
+          "actualRuntimeFamily": "ipad",
+          "resultSha256": "b1693c351ee8926038d518450fdc1d6c2b2b1f210daf2c8347588f9e4ef72a09",
+          "metalReport": {
+            "schemaVersion": 1,
+            "device": "Apple iOS simulator GPU",
+            "width": 320,
+            "height": 320,
+            "sourceTriangles": 5544,
+            "editedTriangles": 5622,
+            "foregroundPixels": 16109,
+            "editedPixels": 12377,
+            "orbitPixels": 19835,
+            "orderPixels": 0,
+            "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+            "scope": "Metal offscreen actual CAD proof; no full UI/material/source-camera/original-render/physical parity"
+          },
+          "independentPixels": {
+            "width": 320,
+            "height": 320,
+            "foregroundPixels": 16109,
+            "editedPixels": 12377,
+            "orbitPixels": 19835,
+            "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+            "orderPixels": 0,
+            "pngSha256": {
+              "original": "6da73fa31ed84f2114cf25d60fc3c42432248b294c5ebe590e55a3cef16c346c",
+              "edited": "cf0fb200efd7b35497b876549e5de0c2c055e1886c4bb02fab7f2c00dc504ddc",
+              "orbit": "fd8986b8493f30e6407035861b5278587c306478ebc7de4995643b15ba9ec905",
+              "empty": "014213d8c543df47774080f72485fbbe701af3934f5a6b8ed625705c838e13d0"
+            },
+            "bgraSha256": {
+              "original": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+              "edited": "13c7273d8a6bf87ec7b0dea40cd0471c1f7d9b31e88cf46f6f24767d459dcb35",
+              "orbit": "4f719534df68c2670848a824a2aa9111f0a942ab1428a544578fe932cd34aee5",
+              "empty": "8fadfc1b0a327f76aafa537d961d823f8229d24f3dcaa6f04d61cb1e6d029612"
+            },
+            "depthOrderScope": "Real harness raw-frame comparison; reordered PNG not retained in this checkpoint."
+          },
+          "cameraReport": "PASS source camera presets:120 unchanged-wrapper comparisons across invariant/en-US/tr-TR, original pose/up/plane/lens/projection, null and unknown-name behavior; source call-order/viewport preference observed, native frustum/zoom/UI/PC parity separate."
+        },
+        {
+          "family": "iphone",
+          "selected": {
+            "family": "iphone",
+            "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+            "name": "iPhone 17",
+            "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+          },
+          "actualRuntimeFamily": "iphone",
+          "resultSha256": "b1693c351ee8926038d518450fdc1d6c2b2b1f210daf2c8347588f9e4ef72a09",
+          "metalReport": {
+            "schemaVersion": 1,
+            "device": "Apple iOS simulator GPU",
+            "width": 320,
+            "height": 320,
+            "sourceTriangles": 5544,
+            "editedTriangles": 5622,
+            "foregroundPixels": 16109,
+            "editedPixels": 12377,
+            "orbitPixels": 19835,
+            "orderPixels": 0,
+            "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+            "scope": "Metal offscreen actual CAD proof; no full UI/material/source-camera/original-render/physical parity"
+          },
+          "independentPixels": {
+            "width": 320,
+            "height": 320,
+            "foregroundPixels": 16109,
+            "editedPixels": 12377,
+            "orbitPixels": 19835,
+            "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+            "orderPixels": 0,
+            "pngSha256": {
+              "original": "6da73fa31ed84f2114cf25d60fc3c42432248b294c5ebe590e55a3cef16c346c",
+              "edited": "cf0fb200efd7b35497b876549e5de0c2c055e1886c4bb02fab7f2c00dc504ddc",
+              "orbit": "fd8986b8493f30e6407035861b5278587c306478ebc7de4995643b15ba9ec905",
+              "empty": "014213d8c543df47774080f72485fbbe701af3934f5a6b8ed625705c838e13d0"
+            },
+            "bgraSha256": {
+              "original": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+              "edited": "13c7273d8a6bf87ec7b0dea40cd0471c1f7d9b31e88cf46f6f24767d459dcb35",
+              "orbit": "4f719534df68c2670848a824a2aa9111f0a942ab1428a544578fe932cd34aee5",
+              "empty": "8fadfc1b0a327f76aafa537d961d823f8229d24f3dcaa6f04d61cb1e6d029612"
+            },
+            "depthOrderScope": "Real harness raw-frame comparison; reordered PNG not retained in this checkpoint."
+          },
+          "cameraReport": "PASS source camera presets:120 unchanged-wrapper comparisons across invariant/en-US/tr-TR, original pose/up/plane/lens/projection, null and unknown-name behavior; source call-order/viewport preference observed, native frustum/zoom/UI/PC parity separate."
+        }
+      ]
+    }
+  ],
+  "deviceEvidence": "docs/evidence/apple/metal-device-results.json",
+  "simulatorArchiveReuse": {
+    "schemaVersion": 1,
+    "occtPin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "runId": "41181433871",
+    "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+    "platform": "iossimulator-arm64",
+    "nativeInputSha256": "6d4e695ca9a910ab2cf52ebb768824f87b6b7dd921b9f1216f98b8779e2f0553",
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "archiveSha256": "f4f15e02ec58dba1d534657a2c516bac6e502e72a0b99a13ed915c07217b0bae",
+    "archiveBytes": 74590936,
+    "consumerCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+    "consumerRunId": "41182340484",
+    "scope": "Validated native archive reuse only; app compile/runtime still required."
+  },
+  "visualReview": {
+    "frames": "Original/edited/orbit/empty proof rasters inspected; iPhone original inspected separately.",
+    "identity": "All four decoded BGRA frame hashes match between iPad/iPhone and producer/current source checkpoints.",
+    "allEncodedFramesIdentical": true,
+    "observation": "Actual curved open-band library design and its closed end caps are visible under neutral test lighting. Edit and orbit change the rendered geometry/view. Empty native Boolean scene is uniform background.",
+    "limits": "No full app UI, original material/photorealistic quality or source camera matching claim."
+  },
+  "independentPixelVerification": {
+    "implementation": "scripts/verify-metal-artifacts.cjs",
+    "red": "tests/metal-artifacts.test.cjs failed MODULE_NOT_FOUND before implementation.",
+    "tests": "3 pixel/hash/corruption/unsafe-dimension/forged-report regressions pass;13 adjacent artifact/source/workflow checks pass.",
+    "scope": "RGBA PNG CRC/filter decode exactly reproduces raw GPU BGRA hash and RGB difference metrics. Reverse triangle order statistic is from real Metal harness; reordered PNG is not retained in this checkpoint.",
+    "officialReferences": [
+      "https://www.w3.org/TR/2025/REC-png-3-20250624/",
+      "https://nodejs.org/docs/latest-v24.x/api/zlib.html#zlibcrc32data-value"
+    ]
+  },
+  "retainedFrames": {
+    "folder": "docs/evidence/apple/metal-viewport",
+    "sourceCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+    "run": 41182340484,
+    "family": "ipad"
+  },
+  "remaining": [
+    "Original camera/lens/visible-design zoom behavior",
+    "Interactive GPU drawables, mesh/frame lifetime, picking/touch/navigation",
+    "Original materials/textures/final render quality and wider model corpus",
+    "Original-PC project regeneration and physical-device acceptance",
+    "Full1451-row feature parity"
+  ]
+}
