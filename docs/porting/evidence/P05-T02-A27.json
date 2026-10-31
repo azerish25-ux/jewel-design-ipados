@@ -67,5 +67,32 @@
     "Private legacy repair/broader join semantics",
     "Downstream/original-PC/physical/UI/render/export/full1451-row acceptance"
   ],
-  "scope": "Known explicit-spline collapsed-apex affine reproduction fixed; no full parity row closed."
+  "scope": "Known explicit-spline collapsed-apex affine reproduction fixed; no full parity row closed.",
+  "implementationCommit": "ed1c541d3232d0b16f561f6ec9b2292ba1c71b10",
+  "ciRuns": [
+    {
+      "id": 41176344514,
+      "scope": "native host/macOS iPad/iPhone20-case/350-point collapsed BRep affine",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41176344514"
+    },
+    {
+      "id": 41176346201,
+      "scope": "macOS unsigned ios-arm64 AOT with direct native modifier",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41176346201"
+    },
+    {
+      "id": 41176344296,
+      "scope": "repository/provenance/freshness checks",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41176344296"
+    },
+    {
+      "id": 41176344364,
+      "scope": "recovered managed iOS reuse",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41176344364"
+    }
+  ]
 }
