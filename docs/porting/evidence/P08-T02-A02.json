@@ -109,5 +109,12 @@
     "conclusion": "success",
     "scope": "View/presenter/acceptance-helper compile; actual app and screenshots remain separate."
   },
-  "runtimeFailure": "docs/evidence/apple/visible-first-failure.json"
+  "runtimeFailure": "docs/evidence/apple/visible-first-failure.json",
+  "timingGuardRetry": {
+    "run": 41190078324,
+    "sourceCommit": "a99d3ee35fe61d0940e77a6d2099cab13f41730b",
+    "status": "queued_last_observed",
+    "preflightRun": 41190078438,
+    "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41190078324"
+  }
 }
