@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "caller": {
+    "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinBrep1.cs",
+    "sourceSha256": "304a0c75dcdecc7fe3a1b20d34479bda53a0eaff71157dbe237e44b592c85a25",
+    "updateBodySha256": "b0f64b841823e504460354c929cea0d9e66ac79686368399c911fea677e1db52"
+  },
+  "helper": {
+    "path": "recovery/canonical/cad/CSBlockUtil/CSUtilRhino.cs",
+    "sourceSha256": "a3f88b3e298997258aaf050418380b9ccbb2ebc8254a3e0de5fd2f94a6b213ed",
+    "legacyBodySha256": "40d892a59d5724d4c6f296b869cc457f6d67030372c55c16fc566d1e4bcb7251",
+    "modernBodySha256": "d1d48eb1cb359609f83af9c32506dded44f3bf557bffd9299942cfd26e99d8ee"
+  },
+  "selectedOverload": "OnBrep[] legacy",
+  "tolerance": 0.01,
+  "sourcePolicy": {
+    "prefilter": "No managed legacy validity/solid filter",
+    "repair": "Non-null invalid result invokes legacy repair",
+    "nullResult": "Output data is not overwritten; base.Update still called"
+  },
+  "scope": "Canonical call/overload contracts only; native legacy kernel behavior remains unverified."
+}

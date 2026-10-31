@@ -84,6 +84,13 @@ int32_t jd_candidate_nurbs_surface(uint64_t context,uint32_t degree_u,uint32_t d
  * Null arrays/zero capacities query metadata. Short buffers report required
  * metadata and InvalidArgument without writing any data arrays. No new handles. */
 int32_t jd_candidate_curve_nurbs_export(uint64_t context,uint64_t shape,uint32_t* degree,uint32_t* pole_count,uint32_t* knot_count,uint32_t* rational,double* coordinates,uint32_t coordinate_capacity,double* weights,uint32_t weight_capacity,double* full_knots,uint32_t knot_capacity,char* diagnostic,uint32_t capacity);
+/* Genuine copied BRep sewing. Native disconnected results are preserved and counted.
+ * No Rhino filtering/repair/solidization policy is implied. All inputs need faces. */
+typedef struct jd_candidate_sewing_info {
+ uint32_t parts,faces,free_edges,multiple_edges,contiguous_edges,deleted_faces,closed_shells,reserved;
+ double tolerance,min_tolerance,max_tolerance;
+} jd_candidate_sewing_info;
+int32_t jd_candidate_sew(uint64_t context,const uint64_t* shapes,uint32_t count,double tolerance,uint64_t* output,jd_candidate_sewing_info* info,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif

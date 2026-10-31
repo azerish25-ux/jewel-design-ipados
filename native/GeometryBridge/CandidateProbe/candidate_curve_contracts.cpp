@@ -202,6 +202,15 @@ void run_candidate_curve_contracts()
     checkCurve(jd_candidate_curve_nurbs_export(context.id,box,&ed,&en,&ek,&er,nullptr,0,nullptr,0,nullptr,0,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION&&ed==0&&en==0&&ek==0&&er==0,"BRep export accepted or stale metadata retained");
     ok(jd_candidate_curve_nurbs_export(context.id,circle,&ed,&en,&ek,&er,ec,27,ew,9,eks,12,error,sizeof(error)));
     nearCurve(ec[0],0);nearCurve(ec[1],0);nearCurve(ec[2],7);nearCurve(ew[1],std::sqrt(.5));nearCurve(eks[11],2*pi);
+    jd_candidate_sewing_info sewingInfo{};uint64_t sewn=99;const uint64_t breps[]={box},invalidBreps[]={std::numeric_limits<uint64_t>::max()},curveOnly[]={circle};
+    checkCurve(jd_candidate_sew(context.id,nullptr,0,.01,&sewn,&sewingInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&sewn==0&&sewingInfo.parts==0,"Sew null/count guard");
+    sewn=99;checkCurve(jd_candidate_sew(context.id,breps,65537,.01,&sewn,&sewingInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&sewn==0,"Sew count bound");
+    sewn=99;checkCurve(jd_candidate_sew(context.id,breps,1,0,&sewn,&sewingInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&sewn==0,"Sew tolerance guard");
+    sewn=99;checkCurve(jd_candidate_sew(context.id,breps,1,std::numeric_limits<double>::quiet_NaN(),&sewn,&sewingInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&sewn==0,"Sew nonfinite tolerance guard");
+    sewingInfo.parts=99;checkCurve(jd_candidate_sew(context.id,breps,1,.01,nullptr,&sewingInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&sewingInfo.parts==0,"Sew missing output guard");
+    sewn=99;checkCurve(jd_candidate_sew(context.id,breps,1,.01,&sewn,nullptr,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&sewn==0,"Sew missing diagnostics guard");
+    sewn=99;checkCurve(jd_candidate_sew(context.id,invalidBreps,1,.01,&sewn,&sewingInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_SHAPE&&sewn==0&&sewingInfo.parts==0,"Sew stale shape guard");
+    sewn=99;checkCurve(jd_candidate_sew(context.id,curveOnly,1,.01,&sewn,&sewingInfo,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION&&sewn==0&&sewingInfo.faces==0,"Sew non-BRep guard");
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }

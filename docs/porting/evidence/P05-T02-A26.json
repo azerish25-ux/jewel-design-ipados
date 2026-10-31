@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P05-T02-A26",
+  "status": "in_progress_local_native_sewing_verified_apple_pending",
+  "sourceContracts": "docs/evidence/audit/legacy-join-source-contracts.json",
+  "sdkStaticEvidence": "docs/evidence/audit/legacy-join-overload.json",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "implementation": [
+    "native/GeometryBridge/CandidateProbe/candidate_abi.cpp",
+    "native/GeometryBridge/CandidateProbe/candidate_abi.h",
+    "src/Port/Geometry.Candidate/CandidateContext.Sewing.cs"
+  ],
+  "red": "Shared compile failed5 CS1061 errors for missing SewBreps API.",
+  "sourceCorrection": "Actual140 uses legacy OnBrep[] JoinAllBreps, not modern filtered/single-array-result helper. Legacy conditional repair and null-output retention require separate graph policy.",
+  "checks": {
+    "cases": 10,
+    "nativeAbiGuards": 8,
+    "abiStructBytes": 56,
+    "actualDesignStates": 4,
+    "actualDesignTopology": {
+      "parts": 1,
+      "faces": 3,
+      "freeEdges": 0,
+      "closedShells": 1
+    },
+    "analyticClosedShell": {
+      "faces": 6,
+      "contiguousEdges": 12,
+      "closedShells": 1,
+      "volume": 24
+    },
+    "toleranceGapCases": "Gap.001:1e-5 remains2 parts;.01 sews1 part.",
+    "inputIsolation": "Deep geometry copies; original geometry/validity/tolerance bounds unchanged.",
+    "ownership": "Result ownership, invalid/null/count/tolerance/foreign/disposed/non-BRep guards; final entries0.",
+    "nativeReport": "PASS OCCT 8.0.1 native candidate: annulus-volume=339.292; solids=1; native-triangles=340; box-common=4; box-union=12; disjoint-empty; rational-NURBS-length=62.8319; repeated-lifetimes=16; native-invalid-inputs=16; candidate-ABI-ownership=pass; native-handle-cycles=64; candidate-four-span-curves=pass; native-arc-length-samples=50; native-affine-copy=pass; native-closest-point=pass; native-trim-reverse=pass; native-ordered-join=pass; native-unit-tangents=pass; native-curve-line-events=pass; native-closed-seam=pass; native-curve-bounds=pass; native-uniform-affine-and-closure=pass; native-nurbs-construction=pass; native-nurbs-export-buffers=pass; candidate-brep-sewing-ABI-guards=8; published-rotation-reference=pass; published-plane-reference=pass; native-sweep-feasibility=observed; tangent-plane-three-section-shell=pass; three-section-shell-area=100; constant-section-max-residual=8.8817841970012523e-16; varying-section-max-residual=1.1102230246251565e-15; variable-width-max-residual=1.7763568394002505e-15; variable-width-area=120.1980390271856; arc-length-guide-max-residual=0.0015191738065429255; arc-length-guide-area=99.988685370456992; arc-length-untrimmed-projection=0.0015191738065429255; arc-length-worst-sample=3,3.6000000000000001,1; arc-length-guide-contact=rejected; contact-on-border-retained-profiles=1/3; arbitrary-two-rail-correspondence=unverified; paired-rail-native-surface=pass; paired-contact-samples=271; paired-derivative-components=384; paired-max-residual=3.5527136788005009e-15; paired-surface-error=8.7754519199127298e-15; paired-abi-guards=16; rational-profile-cylinder=pass; original134-full-block-parity=unverified; analytic fixtures only, no CounterSketch/PC parity claim.",
+    "nativeReportSha256": "16f3bfe8b6d7f8a6c40e4a8d40028a7f69cbef0356bfdee9df78df27e4e071e0",
+    "managedReport": "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. PASS candidate native curves: actual native unit tangents/50 analytic directions, actual ordered NURBS join, actual NURBS trim/reverse/open-end projection, actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim. PASS ring rail candidate: source default7/ZX radius plan, actual NURBS output, recorded library radius edit/save/reopen/rebuild/undo; stored input supplied explicitly, no full channel/graph/UI/export/PC parity claim. PASS native finite curve-line events: exact linear NURBS, diameter/rays/finite/skew/tangent/trim/3D and point/overlap/reversed ranges, explicit fuzzy tolerance and typed guards; no Rhino ordering/full builder/PC claim. PASS native closed-curve seam: copied circle/affine/corner curves, requested domain start, wrapped points/length/orientation, reverse/closest/trim and ownership/error guards; no original-PC/full OutsideRail claim. PASS native curve bounds: unpadded optimal extrema and explicit padding, circle/trim/interior maximum/affine ellipse/line/translation/seam/reverse, input preservation and typed guards; no arbitrary-spline/Rhino/PC guarantee. PASS outside rail candidate: actual source-ordered unlocked/locked deformation, split/join/seam/direction, defaults/radius fallback/priority/scale0, independent sampled ellipse, stored-input edit/save/reopen/rebuild/undo and ownership/errors; no actual chooser/graph/PC claim. PASS stored native profiles:155 exact NURBS imports against independent homogeneous points, degrees/weights/domains including non-clamped knots, stored chooser edit/save/reopen/rebuild/undo and all5 actual-profile OutsideRail choices; no active graph/PC claim. PASS evaluated value-channel geometry: generated override changes actual selected-profile OutsideRail, state save/reopen rebuild and inactive chooser/missing-curve/ownership guards; explicit input bindings, not full graph/PC parity. PASS record-bound rail builders:actual saved RingRail/OutsideRail links, generation, consumer rewire/save/reopen/rebuild/reversal, disconnected/non-numeric defaults and ownership; no full scheduler/PC claim. PASS graph-managed rail outputs:source curve/number/metadata conversions, dependency generation, real curve edges, replacement/retained readers, failure cache/disposal and cycle guards; known candidate subset. PASS select ring rail:150 exact-source forwarding cases, null vs empty/numeric/profile/native curve, Boolean defaults/threshold/NaN, saved selection/edit/reopen/downstream and retained generations/disposal; known candidate subset. PASS saved transform producers:16093 exact-source translation/scale/scalar-add cases, saved6 translations/all7 original scales via placement, all7 scale plans also on explicit resolved links, native application/source preservation, override/edit/save/reopen/forwarding/cycle/cleanup; no full transform-chain/PC parity. PASS two-rail profile placement:4496 extracted frame/seam cases; actual native circle/ellipse/3D/finite ray/overlap/order/height floor, original3 placement->Add->scale chains, native sizing/edit/save/reopen/chooser/no-hit reset/failure/cycle/cleanup; candidate subset, no original-PC parity. PASS saved rotation producers:44217 recovered-wrapper/published-native cases, actual6 saved nodes, cardinal/noise/threshold/large-angle/order/mirror/default/finite guards, affine products/native application/source preservation, edit/save/reopen/forwarding/failure/cycle/cleanup; published6 comparison only, no original Rhino5/PC parity. PASS expandable transform consumer:12285 exact source socket cases, original3 native profile pipelines/metadata/parameters/matrix/points, source-specific multiply order, nested/selector copies, edit/save/reopen/retained readers, invalid/missing/overflow/cycle/cleanup; known non-array candidate subset, no original-PC parity. PASS collection socket constructors:12285 exact-source zero-fixed-input cases; source replay preserved while native collection execution is tested separately. PASS owned native collections:18 source output comparisons, original6 array/unarray chains, nested/per-item metadata, trailing-empty/null/wildcard semantics, retained snapshots across rebuild/disposal, save/reopen/failure/cycle/cleanup; known candidate subset, no full array-consumer/PC parity. PASS native array consumers:49 source first-item cases; nested transform flatten/object preservation/null copy, actual native leaf geometry/metadata/order, source aggregate bounds/first transform capability, direct-method rejection/helper-flatten curve queries, arithmetic array channels, saved reopen/failure/disposal; candidate subset, no original-PC/full data parity. PASS explicit sweep2 preparation:3906 exact stable-order cases; open/mixed clamps, closed native seam/remap/ties/ownership, original134 actual3 profile copies/metadata/params, real near-knot seam domain/geometry, edit/save/reopen/cleanup; no BRep or original-PC sweep claim. PASS managed paired-rail surface:301 actual134 rail/profile samples, native BRep/affine/retain/input isolation/edit-save-reopen/error cleanup; experimental explicit map, no original-PC/full sweep-block parity. PASS owned BRep graph:real134 typed output/name/edit-save-reopen, kind rejection/transform metadata, nested mixed arrays/unarray/wildcards/affine, retained snapshots and failed-generation cleanup; candidate subset, no original-PC/full block parity. PASS rational NURBS surfaces:1445 independent homogeneous tensor points, U-major/rational/nonuniform/nonclamped active domains/collapsed apex, immutable definitions, native face/affine/error/disposal; cap algorithm/PC parity separate. PASS recovered Rhino5 dome:21 threshold/sign/radius profiles and693 exact-source native point comparisons; tensor-boundary=204; tensor-grid=20; full cap/plane/PC parity separate. PASS native NURBS export:14 curve cases and462 native reimport samples; rational/nonclamped/affine/trim/reverse/seam/join, detached definitions, actual115/122 edited-save-reopen and ownership guards; plane/cap/PC parity separate. PASS explicit-plane profile caps:18 native faces and594 boundary samples, signed/flat domes, translated/tilted frames, asymmetric control-hull center/apex and inverse metadata; automatic plane/graph/join/PC parity separate. PASS automatic cap plane candidate:20 oriented/linear/fallback/generated cases and198 actual-profile cap boundary points; published-plane-comparisons=1228; max-axis-error=5.551115123125783E-16; published6 policy, original-PC/full graph parity separate. PASS saved ProfileCap graph:30 native cap states and990 source-profile boundary samples, actual138/139 signed136/default/flatten-first/name/metadata, edit-save-reopen/reversal/retained generations/failure/cycle/cleanup; join/original-PC/full feature parity separate. PASS native BRep sewing:10 analytical/actual design cases; connected/free-edge/part diagnostics and copied inputs; source legacy join/repair/PC parity separate.",
+    "managedReportSha256": "0663105707af14ff0beb24e104894a8a6d81b2e0028ae595fac7289d3d1325b0",
+    "commands": [
+      {
+        "command": "node scripts/run-local.cjs cmake --build .local/native/windows-gnu --target occt_candidate_test jewel_occt_candidate_host --parallel 2",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/run-local.cjs .local/native/windows-gnu/occt_candidate_test.exe",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+        "exitCode": 0
+      },
+      {
+        "command": "node --test tests/legacy-join-contracts.test.cjs tests/library-type-footprint.test.cjs; node scripts/verify-legacy-join-contracts.cjs; node tools/repository/check.cjs",
+        "exitCode": 0
+      }
+    ],
+    "buildNotes": "Initial legacy TopTools alias includes were replaced by actual pinned OCCT8 NCollection templates; existing Standard_Failure deprecation warnings remain."
+  },
+  "review": {
+    "correctness": "Real native stitching with topology diagnostics; multiple native parts remain explicitly distinct, no compound-as-connected claim. Actual134+138+139 yields closed shell before/after edits and reopening.",
+    "architecture": "Raw candidate kernel operation separated from legacy graph policy; typed disposable result and fixed-layout counted ABI.",
+    "security": "No original scripts/account/activation/native SDK runtime. SDK static inspection only. All local artifacts/cache D:; recovery/kernel read-only.",
+    "limits": "Default manifold native sewing candidate is not RhinoJoinBreps/repair equivalence. No forced solid/orientation policy, disconnected aggregation decision or empty/null graph policy inferred. Original-PC/physical/full-feature acceptance open.",
+    "readability": "Dedicated owned sewing result/diagnostics and context partial; source overload contract separately verified. Count/metadata/error paths share existing context/handle protocol."
+  },
+  "remaining": [
+    "Apple native sewing artifacts",
+    "Legacy140 header/input/output/null/repair/ownership semantics and registration",
+    "Generic existing collapsed-apex BRep affine robustness",
+    "Original-PC/physical-device/UI/render/export/full1451-row acceptance"
+  ],
+  "scope": "Genuine native BRep sewing prerequisite and corrected source-overload contract only; no full parity row closed."
+}

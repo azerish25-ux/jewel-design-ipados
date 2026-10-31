@@ -12,4 +12,4 @@ The document suite also independently checks cap metadata/input headers, future 
 
 [Inspected earlier Apple corrections](../evidence/apple/plane-differential-results.json) passed1228 published-plane comparisons on both iPad/iPhone with observed maximum6.66e-16 and unsigned arm64 device build52 warnings0 errors. That checkpoint predates saved cap graph registration. Native candidate/plane publication limits, generic collapsed-apex BRep affine robustness, original Windows topology/regeneration, rendering/export/UI and physical execution remain open.
 
-Next: source/native JoinAllBreps filtering, result multiplicity/topology/orientation and original140 registration; do not replace the join with a compound or assumed solid. No full parity row is closed by this increment.
+Correction/next: original140 selects the legacy OnBrep[] overload, not the modern filtered/single-array-result helper. Validate its native disconnected/repair/ownership/null-output policy before graph registration; see [ADR0046](ADR-0046-native-sewing-legacy-join.md). No full parity row is closed by this increment.

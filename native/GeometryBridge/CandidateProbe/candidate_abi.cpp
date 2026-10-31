@@ -1,3 +1,10 @@
+#include <BRepBuilderAPI_Sewing.hxx>
+#include <TopoDS_Iterator.hxx>
+#include <TopExp.hxx>
+#include <NCollection_IndexedMap.hxx>
+#include <TopTools_ShapeMapHasher.hxx>
+#include <initializer_list>
+#include <NCollection_IndexedDataMap.hxx>
 #include <Geom_BSplineSurface.hxx>
 #include <BRepBuilderAPI_MakeFace.hxx>
 #include <NCollection_Array2.hxx>
@@ -808,6 +815,31 @@ extern "C" int32_t jd_candidate_curve_nurbs_export(uint64_t context,uint64_t sha
    if(!coordinates||!full_knots||coordinate_capacity<*pole_count*3||knot_capacity<*knot_count||(*rational&&(!weights||weight_capacity<*pole_count)))fail(JD_CANDIDATE_INVALID_ARGUMENT,"NURBS export buffers too small or missing");
    for(uint32_t i=0;i<*pole_count;i++){const auto& p=curve->Pole(static_cast<int>(i)+1);coordinates[i*3]=p.X();coordinates[i*3+1]=p.Y();coordinates[i*3+2]=p.Z();if(*rational)weights[i]=curve->Weight(static_cast<int>(i)+1);}
    for(uint32_t i=0;i<*knot_count;i++)full_knots[i]=knots.Value(knots.Lower()+static_cast<int>(i));
+  });
+ },diagnostic,capacity);
+}
+
+static_assert(sizeof(jd_candidate_sewing_info)==56,"Sewing ABI layout");
+extern "C" int32_t jd_candidate_sew(uint64_t context,const uint64_t* shapes,uint32_t count,double tolerance,uint64_t* output,jd_candidate_sewing_info* info,char* diagnostic,uint32_t capacity)
+{
+ return protect([&]{
+  if(info)*info={};outputHandle(output);
+  if(!info||!shapes||count==0||count>65536||!std::isfinite(tolerance)||tolerance<=0)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Invalid counted BRep sewing inputs");
+  withContext(context,[&](Context& value){
+   BRepBuilderAPI_Sewing sewing(tolerance,true,true,true,false);std::vector<TopoDS_Shape> copies;copies.reserve(count);
+   for(uint32_t i=0;i<count;i++){
+    const auto& input=findShape(value,shapes[i]).shape;NCollection_IndexedMap<TopoDS_Shape,TopTools_ShapeMapHasher> faces;TopExp::MapShapes(input,TopAbs_FACE,faces);
+    if(faces.IsEmpty())fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Sewing requires BRep faces");
+    for(auto kind:{TopAbs_EDGE,TopAbs_VERTEX}){NCollection_IndexedDataMap<TopoDS_Shape,NCollection_List<TopoDS_Shape>,TopTools_ShapeMapHasher> ancestors;TopExp::MapShapesAndAncestors(input,kind,TopAbs_FACE,ancestors);for(int j=1;j<=ancestors.Extent();j++)if(ancestors.FindFromIndex(j).IsEmpty())fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Sewing cannot silently drop non-face components");}
+    BRepBuilderAPI_Copy copy(input,true,false);if(!copy.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native BRep copy failed");copies.push_back(copy.Shape());sewing.Add(copies.back());
+   }
+   sewing.Perform();const auto& result=sewing.SewedShape();if(result.IsNull())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native sewing produced no shape");
+   NCollection_IndexedMap<TopoDS_Shape,TopTools_ShapeMapHasher> faces,shells;TopExp::MapShapes(result,TopAbs_FACE,faces);TopExp::MapShapes(result,TopAbs_SHELL,shells);
+   std::vector<TopoDS_Shape> pending{result};uint32_t parts=0;size_t visited=0;
+   while(!pending.empty()){auto part=pending.back();pending.pop_back();if(++visited>1000000)fail(JD_CANDIDATE_LIFETIME_LIMIT,"Sewing result hierarchy exceeds candidate limit");if(part.ShapeType()==TopAbs_COMPOUND){for(TopoDS_Iterator it(part);it.More();it.Next())pending.push_back(it.Value());}else parts++;}
+   uint32_t closed=0;for(int i=1;i<=shells.Extent();i++)if(BRep_Tool::IsClosed(shells.FindKey(i)))closed++;
+   const jd_candidate_sewing_info completed={parts,static_cast<uint32_t>(faces.Extent()),static_cast<uint32_t>(sewing.NbFreeEdges()),static_cast<uint32_t>(sewing.NbMultipleEdges()),static_cast<uint32_t>(sewing.NbContigousEdges()),static_cast<uint32_t>(sewing.NbDeletedFaces()),closed,0,sewing.Tolerance(),sewing.MinTolerance(),sewing.MaxTolerance()};
+   *output=store(value,result);*info=completed;
   });
  },diagnostic,capacity);
 }

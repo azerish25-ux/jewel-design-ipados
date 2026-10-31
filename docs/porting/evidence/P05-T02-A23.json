@@ -70,7 +70,7 @@
     "Automatic TryGetPlane linear/planar orientation at default1e-12",
     "Recovered AveragePlaneOfCurve fallback and its dot-product quirks",
     "Actual graph138/139 signed thickness input and serializer bindings",
-    "Join140 source filtering and single-result policy",
+    "Legacy OnBrep[] node140 join/repair/null-output/ownership policy; modern filter/single-array-result rule does not apply",
     "New Apple execution, original PC and physical-device/full acceptance"
   ],
   "scope": "Cap geometry construction after explicit plane selection only; full1451-row parity still0 verified.",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P03-T03-A15-F01",
-  "status": "local_verified_ci_rerun_pending",
+  "status": "verified_repository_ci",
   "parent": "P03-T03-A15",
   "failure": {
     "runs": [
@@ -34,5 +34,11 @@
       "command": "node tools/repository/check.cjs",
       "exitCode": 0
     }
-  ]
+  ],
+  "implementationCommit": "809d0a5f31e5032219839b89c93c74918d92a6c6",
+  "ciRun": {
+    "id": 41170635736,
+    "conclusion": "success",
+    "scope": "Repository checks including new cap footprint freshness controls"
+  }
 }

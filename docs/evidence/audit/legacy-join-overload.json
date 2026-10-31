@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "status": "static_overload_binding_evidence_only",
+  "caller": {
+    "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinBrep1.cs",
+    "sourceSha256": "e89c3e1fc4828c155505109d80b4f560440bbb0046c7c7699f433d576609b12c",
+    "updateBodySha256": "b0f64b841823e504460354c929cea0d9e66ac79686368399c911fea677e1db52",
+    "selectedOverload": "CSUtilRhino.JoinAllBreps(OnBrep[],double)",
+    "tolerance": 0.01,
+    "outputIdentifier": "OutJoined"
+  },
+  "overloads": [
+    {
+      "signature": "public static OnBrep JoinAllBreps(OnBrep[] inputBreps, double tolerance)",
+      "behavior": "Native legacy RhinoJoinBreps; null propagates; invalid nonnull result gets RhinoRepairBrep; no source prefilter/single-array-result check.",
+      "bodySha256": "40d892a59d5724d4c6f296b869cc457f6d67030372c55c16fc566d1e4bcb7251"
+    },
+    {
+      "signature": "public static Brep JoinAllBreps(IEnumerable<Brep> inputBreps, double tolerance)",
+      "behavior": "Different overload: filters null/invalid/solid, modern Brep.JoinBreps array, accepts exactly1 result.",
+      "bodySha256": "d1d48eb1cb359609f83af9c32506dded44f3bf557bffd9299942cfd26e99d8ee"
+    }
+  ],
+  "acquiredSdk5": {
+    "assemblyPath": "analysis/runtime-prerequisites/rhino5/System/Rhino_DotNet.dll",
+    "assemblySha256": "19f7616af2a96a7e9eec71c5ef637fd08ac785195c0ced869cfefa2c4dc4e212",
+    "type": "RMA.Rhino.RhUtil",
+    "method": "public unsafe static OnBrep RhinoJoinBreps(OnBrep[] breps, double tolerance)",
+    "decompiledTypeSha256": "9f9ad4faefcf260a75137e75dafd2550735a5edf258cda979b3c97bc57e16e04",
+    "bodySha256": "e5b06ca54c5f1d85cc6d2818e804b13c88c610e6b86e9907a24d15e235070e4a",
+    "observations": "Appends all supplied managed OnBrep native pointers; calls <Module>.RhinoJoinBreps(&obj,tolerance); null pointer maps to null; nonnull pointer wrapped with handleDelete:true. Static inspection only."
+  },
+  "publishedComparison": {
+    "url": "https://developer.rhino3d.com/api/cpp/group___rhino.html",
+    "apiVersion": "9.0",
+    "dateRead": "2026-10-31",
+    "observations": "Single-pointer overload documents modification of input Breps and return of one Brep assembled from inputs. Current9 docs are comparison context, not Rhino5 behavior proof."
+  },
+  "remaining": [
+    "Legacy native disconnected/empty/single/solid/nonmanifold and repair cases",
+    "Source geometry duplication/Convert ownership and graph output-retention semantics",
+    "Original Rhino5/PC topology/runtime equivalence"
+  ]
+}

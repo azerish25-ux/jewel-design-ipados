@@ -60,7 +60,7 @@
     "Independent compiled published-planar-body differential with non-default/near-degenerate inputs",
     "Apple simulator/device artifacts",
     "Actual138/139 header/graph/thickness136 channels",
-    "Join140 filtering/single-result policy",
+    "Legacy OnBrep[] node140 join/repair/null-output/ownership policy; modern filter/single-array-result rule does not apply",
     "Original-PC/physical-device/full1451-row acceptance"
   ],
   "scope": "Automatic native cap-plane candidate plus source-extracted fallback comparisons; full parity still0 verified.",
