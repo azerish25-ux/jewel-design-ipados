@@ -2,7 +2,9 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P05-T02-A24 supplies an automatic cap-plane candidate using pinned published6 NURBS policy and recovered sampled fallback. Windows20 plane cases/198 actual115/122 cap boundary points and4 unchanged-source fallback comparisons pass, including edit/save/reopen. Independent planar-source differential and new Apple execution pending. [ADR0043](ADR-0043-automatic-cap-plane-candidate.md). Actual cap graph138/139, thickness136 bindings and join140 remain required. Full parity0/1451.
+Latest implementation: P05-T02-A25 independently compares1228 cases against13 compiled pinned published plane methods. Corrected source normalization order and cap surface-transform-before-BRep order; local maximum axis/origin error5.55e-16 at unchanged1e-10 limit. Native/shared/source checks pass; new Apple execution pending. [ADR0044](ADR-0044-published-plane-differential.md). Actual cap graph138/139, thickness136 and join140 plus generic collapsed-apex BRep affine robustness remain required. Full parity0/1451.
+
+[Prior tensor Apple checkpoint](../evidence/apple/rail-revolve-results.json) passed iPad/iPhone runtime and unsigned arm64 iOS build52 warnings0 errors. It predates export/cap placement/automatic plane/source-differential corrections.
 
 The prior [dome profile checkpoint](../evidence/apple/dome-profile-runtime-results.json) passed iPad/iPhone simulator assertions and unsigned arm64 iOS build. It predates tensor/export/cap-placement work; their Apple runs remain separately tracked.
 

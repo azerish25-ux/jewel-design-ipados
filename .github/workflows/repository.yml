@@ -65,10 +65,12 @@ jobs:
         run: node scripts/verify-sources.cjs
       - name: Production source provenance
         run: node scripts/verify-production.cjs
-      - name: Prepare pinned published rotation comparison
-        run: node scripts/prepare-rotation-reference.cjs
+      - name: Prepare pinned published geometry comparisons
+        run: |
+          node scripts/prepare-rotation-reference.cjs
+          node scripts/prepare-plane-reference.cjs
       - name: Numeric oracle provenance controls
-        run: node --test tests/numeric-oracle.test.cjs tests/value-channel-oracle.test.cjs tests/select-rail-oracle.test.cjs tests/transform-producer-oracle.test.cjs tests/profile-placement-oracle.test.cjs tests/rotation-oracle.test.cjs tests/rotation-reference-source.test.cjs tests/consumer-sockets-oracle.test.cjs tests/array-oracle.test.cjs tests/collection-execution-oracle.test.cjs tests/array-query-oracle.test.cjs tests/curve-routing-oracle.test.cjs tests/sweep-preparation-oracle.test.cjs tests/brep-data-contracts.test.cjs tests/dome-profile-oracle.test.cjs tests/rail-revolve-oracle.test.cjs tests/cap-placement-contracts.test.cjs tests/average-plane-oracle.test.cjs
+        run: node --test tests/numeric-oracle.test.cjs tests/value-channel-oracle.test.cjs tests/select-rail-oracle.test.cjs tests/transform-producer-oracle.test.cjs tests/profile-placement-oracle.test.cjs tests/rotation-oracle.test.cjs tests/rotation-reference-source.test.cjs tests/consumer-sockets-oracle.test.cjs tests/array-oracle.test.cjs tests/collection-execution-oracle.test.cjs tests/array-query-oracle.test.cjs tests/curve-routing-oracle.test.cjs tests/sweep-preparation-oracle.test.cjs tests/brep-data-contracts.test.cjs tests/dome-profile-oracle.test.cjs tests/rail-revolve-oracle.test.cjs tests/cap-placement-contracts.test.cjs tests/average-plane-oracle.test.cjs tests/plane-reference-source.test.cjs
       - name: Verify recovered value-channel method oracle
         run: |
           node scripts/verify-value-channel-oracle.cjs

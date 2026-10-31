@@ -37,7 +37,10 @@ public static class ProfileCapWithPlaneCandidate
   var center=LegacyAffineTransform.Translation(-cx,-cy,0);using var centered=context.TransformAffine(inPlane,Native(center));
   var inverse=Inverse(center*basis);var rail=context.ExportNurbs(centered);
   var tensor=RailRevolveTensorCandidate.Build(context,RailRevolveTensorCandidate.CreateDomeRhino5(domeAmount),rail,0,zAdjust:true);
-  using var surface=context.CreateNurbsSurface(tensor,tolerance);var placed=context.TransformAffine(surface,Native(inverse));
+  // Source transforms the NURBS surface controls before ToBrep, not an already built face.
+  var points=tensor.Poles.Select((q,index)=>{double w=tensor.PoleWeights?[index]??1,x=q.X*w,y=q.Y*w,z=q.Z*w;return new CandidatePoint3((inverse.M11*x+inverse.M12*y+inverse.M13*z+inverse.M14*w)/w,(inverse.M21*x+inverse.M22*y+inverse.M23*z+inverse.M24*w)/w,(inverse.M31*x+inverse.M32*y+inverse.M33*z+inverse.M34*w)/w);}).ToArray();
+  var worldTensor=new CandidateNurbsSurfaceDefinition(tensor.DegreeU,tensor.DegreeV,tensor.CountU,tensor.CountV,points,tensor.KnotVectorU,tensor.KnotVectorV,tensor.PoleWeights);
+  var placed=context.CreateNurbsSurface(worldTensor,tolerance);
   try{return new(placed,inverse);}catch{placed.Dispose();throw;}
  }
 }

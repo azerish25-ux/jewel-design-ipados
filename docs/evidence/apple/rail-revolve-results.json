@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "commit": "1138bee43cd2f8a21c893725671aad366c963282",
+  "runtimeRun": 41144786278,
+  "deviceRun": 41144788304,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "2400f81dfcb72bbe0b5f82c85951e397d4f16436675447699fe369aaf51ee6c0",
+      "managedReport": "PASS recovered Rhino5 dome:21 threshold/sign/radius profiles and693 exact-source native point comparisons; tensor-boundary=204; tensor-grid=20; full cap/plane/PC parity separate."
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "2400f81dfcb72bbe0b5f82c85951e397d4f16436675447699fe369aaf51ee6c0",
+      "managedReport": "PASS recovered Rhino5 dome:21 threshold/sign/radius profiles and693 exact-source native point comparisons; tensor-boundary=204; tensor-grid=20; full cap/plane/PC parity separate."
+    }
+  ],
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "e1741922b94946fc8f7f23c17fff28686cbc87c60ba7e4a5ce436bafd6eda3f8  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "c9b1a0d7bd777b83f5138e680ea6c4f1dfff5b46f24e0f02b2f938b20afd43c5",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only, no physical execution."
+  },
+  "scope": "Recovered dome/tensor20-grid/204-boundary candidate checkpoint. Predates native export/cap placement/automatic plane/source differential corrections; no original-PC/physical/full feature claim."
+}

@@ -13,8 +13,20 @@ public static class CurvePlaneCandidate
  private static V D(CandidateVector3 v)=>new(v.X,v.Y,v.Z);
  private static double Dot(V a,V b)=>a.X*b.X+a.Y*b.Y+a.Z*b.Z;
  private static V Cross(V a,V b)=>new(a.Y*b.Z-a.Z*b.Y,a.Z*b.X-a.X*b.Z,a.X*b.Y-a.Y*b.X);
- private static double Length(V a){double scale=Math.Max(Math.Abs(a.X),Math.Max(Math.Abs(a.Y),Math.Abs(a.Z)));if(scale==0)return 0;var b=a/scale;return scale*Math.Sqrt(Dot(b,b));}
- private static V Unit(V a){double scale=Math.Max(Math.Abs(a.X),Math.Max(Math.Abs(a.Y),Math.Abs(a.Z)));if(scale==0)return default;if(!double.IsFinite(scale))throw new NotSupportedException("Nonfinite plane vector.");var b=a/scale;return b/Math.Sqrt(Dot(b,b));}
+ private const double MinimumNormal=2.2250738585072014e-308;
+ private static double Length(V a){
+  double x=Math.Abs(a.X),y=Math.Abs(a.Y),z=Math.Abs(a.Z),swap;
+  if(y>=x&&y>=z){swap=x;x=y;y=swap;}else if(z>=x&&z>=y){swap=x;x=z;z=swap;}
+  if(x>MinimumNormal){y/=x;z/=x;return x*Math.Sqrt(1+y*y+z*z);}return x>0&&double.IsFinite(x)?x:0;
+ }
+ private static V Unit(V a){
+  double length=Length(a);if(double.IsFinite(length)){
+   if(length>MinimumNormal)return a/length;
+   if(length>0){var scaled=8.9884656743115795386465259539451e307*a;length=Length(scaled);if(double.IsFinite(length)&&length>MinimumNormal)return scaled/length;}
+  }
+  return default;
+ }
+ private static double Length2(double x,double y){x=Math.Abs(x);y=Math.Abs(y);if(y>x){double swap=x;x=y;y=swap;}if(x>MinimumNormal){y/=x;return x*Math.Sqrt(1+y*y);}return x>0&&double.IsFinite(x)?x:0;}
  private static CandidatePlane Plane(V p,V n,V x)=>new(new(p.X,p.Y,p.Z),new(n.X,n.Y,n.Z),new(x.X,x.Y,x.Z));
  // Published ON_3dVector::PerpendicularTo tie ordering is significant for fallback orientation.
  private static V Perpendicular(V v){
@@ -61,8 +73,8 @@ public static class CurvePlaneCandidate
   int count=definition.Poles.Count,step=Math.Max(1,count/64);V q=p,r=p;double largest=0;
   for(int i=1;i<count;i+=step)for(int j=i+step;j<count;j+=step){var a=P(definition.Poles[i]);var b=P(definition.Poles[j]);double area=Length(Cross(a-p,b-p));if(area>largest){largest=area;q=a;r=b;}}
   if(!Triangle(p,q,r,out var n,out var x,out var y))return false;
-  var tangent=D(context.TangentAt(curve,domain.FirstParameter));double vx=Dot(tangent,x),vy=Dot(tangent,y),length=Math.Sqrt(vx*vx+vy*vy);
-  if(length>0){vx/=length;vy/=length;const double epsilon=1.490116119384765625e-8;if(Math.Abs(vy)<=epsilon){vx=vx>=0?1:-1;vy=0;}else if(Math.Abs(vx)<=epsilon){vy=vy>=0?1:-1;vx=0;}x=vx*x+vy*y;}
+  var tangent=D(context.TangentAt(curve,domain.FirstParameter));double vx=Dot(tangent,x),vy=Dot(tangent,y),length=Length2(vx,vy);
+  if(length>0){vx/=length;vy/=length;const double epsilon=1.490116119385000000e-8;if(Math.Abs(vy)<=epsilon){vx=vx>=0?1:-1;vy=0;}else if(Math.Abs(vx)<=epsilon){vy=vy>=0?1:-1;vx=0;}x=vx*x+vy*y;}
   foreach(var point in definition.Poles)if(Math.Abs(Dot(P(point)-p,n))>1e-12)return false;
   plane=Plane(p,n,x);return true;
  }

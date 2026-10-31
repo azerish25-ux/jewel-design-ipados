@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+  "sourceRepository": "https://github.com/mcneel/opennurbs",
+  "files": [
+    {
+      "file": "opennurbs_point.cpp",
+      "sha256": "4aac860b778a37de2942f0bc665c655bed8f98e51e0c94beb542752a08558eeb",
+      "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_point.cpp"
+    },
+    {
+      "file": "opennurbs_plane.cpp",
+      "sha256": "a33e6973e8b36fabb65d7534dcc83b3637f23d05bce776c4ea28359b9c786748",
+      "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_plane.cpp"
+    },
+    {
+      "file": "opennurbs_line.cpp",
+      "sha256": "1453dba5195c8dd94ca0c3c3ee3aff6fa483b8007f70f69cb817e41101528adb",
+      "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_line.cpp"
+    },
+    {
+      "file": "opennurbs_nurbscurve.cpp",
+      "sha256": "9dfe9df60d6703bc8bfe636e46b6c82095694d7aca713e471f49e0432cc6c11a",
+      "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_nurbscurve.cpp"
+    },
+    {
+      "file": "LICENSE",
+      "sha256": "de437cd429817f50999710543b9d3e743b17b35b4c96842393b9d39f7bb9b3bd",
+      "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/LICENSE"
+    }
+  ],
+  "methods": [
+    {
+      "file": "opennurbs_point.cpp",
+      "signature": "double ON_Length3d(",
+      "sha256": "8fa6a44f3f91bb7beee5890ac084e663891390f796ae4fa69f3e4c4671043f03"
+    },
+    {
+      "file": "opennurbs_point.cpp",
+      "signature": "double ON_3dVector::Length() const",
+      "sha256": "c4bcde221dcd92aafb76e865bca21fe57fa69eb59b890db2963101a02289058b"
+    },
+    {
+      "file": "opennurbs_point.cpp",
+      "signature": "bool ON_3dVector::Unitize()",
+      "sha256": "d5b1ebb8bce26d3b7285273900d24c603179f06446298f5d5996c7222db3dfd2"
+    },
+    {
+      "file": "opennurbs_point.cpp",
+      "signature": "double ON_Length2d(",
+      "sha256": "0b3559179665a53db29b76556bd364813681fb19627022da96097dc9e1188c53"
+    },
+    {
+      "file": "opennurbs_point.cpp",
+      "signature": "double ON_2dVector::Length() const",
+      "sha256": "7900f744be2c627145ce663d8f2e410cf5b7865b9e458ea6d607ccb4cd327619"
+    },
+    {
+      "file": "opennurbs_point.cpp",
+      "signature": "bool ON_2dVector::Unitize()",
+      "sha256": "054ac41c33ce2520e0c66547104e6b8c7597722f64d8f6890da136ea5fd990d9"
+    },
+    {
+      "file": "opennurbs_point.cpp",
+      "signature": "bool ON_3dVector::PerpendicularTo( const ON_3dVector& v )",
+      "sha256": "b62ab1fc3d556dc28a87cc20af62c22ad0af6e4d171e16cba8e6433f7c8efc2b"
+    },
+    {
+      "file": "opennurbs_point.cpp",
+      "signature": "ON_3dVector::PerpendicularTo( \n      const ON_3dPoint& P0",
+      "sha256": "188d3331e4e34d03163e59188b752589fddc1308da826f7567b8c04e564849f6"
+    },
+    {
+      "file": "opennurbs_plane.cpp",
+      "signature": "bool ON_Plane::CreateFromFrame(",
+      "sha256": "573fa11923de61dc83c1a1cd09bcab26b93cc389b4e8ed6fac05fa69e6975a12"
+    },
+    {
+      "file": "opennurbs_plane.cpp",
+      "signature": "bool ON_Plane::CreateFromPoints(",
+      "sha256": "d3139ca0353e5522b198acbd94768012549a55811ba98846bf454170b6e17f61"
+    },
+    {
+      "file": "opennurbs_line.cpp",
+      "signature": "bool ON_Line::InPlane(",
+      "sha256": "1254de7599423f0060af9168565a17eb43187ea6c0e58ed713d8e6983eae5b0c"
+    },
+    {
+      "file": "opennurbs_nurbscurve.cpp",
+      "signature": "ON_NurbsCurve::IsLinear(",
+      "sha256": "53d7b208a18d6001305afa16b85b9a6b30a29124b677076d621d7e9b96dc4dd4"
+    },
+    {
+      "file": "opennurbs_nurbscurve.cpp",
+      "signature": "ON_NurbsCurve::IsPlanar(",
+      "sha256": "9ad14f11bde68f857c06ed8e52ac70c0a359b2cfb083f29e8869b04e4a4ade03"
+    }
+  ],
+  "generatedSha256": "a20609e59747a57a0b9124bdc7d5123e094a4126ddfa683b806b85afa7068af5",
+  "scope": "Test-only published6 method comparison, not original Rhino5 runtime;3D inputs/positive1e-12 tolerance only."
+}

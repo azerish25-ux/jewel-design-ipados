@@ -1,0 +1,5 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');const {specs,validate,build}=require('../scripts/prepare-plane-reference.cjs');const root=path.resolve(__dirname,'..'),folder=path.join(root,'.local/reference/opennurbs6-plane');
+function files(){return Object.fromEntries(specs.map(x=>[x.file,fs.readFileSync(path.join(folder,x.file))]));}
+test('Published plane sources and extracted method manifest match pin',()=>{const result=build(files());assert.deepEqual(result.report,JSON.parse(fs.readFileSync(path.join(root,'docs/evidence/audit/published-plane-reference.json'),'utf8')));assert.equal(result.code,fs.readFileSync(path.join(folder,'plane-methods.inc'),'utf8'));});
+test('Published plane source mutation is rejected',()=>{const values=files();values['opennurbs_nurbscurve.cpp']=Buffer.from(values['opennurbs_nurbscurve.cpp'].toString().replace('double maxd','double maxD')+' ');assert.throws(()=>build(values),/hash mismatch/);});
+test('Plane reference wrong/unknown source rejected',()=>assert.throws(()=>validate('untrusted.cpp',Buffer.from('')),/hash mismatch/));

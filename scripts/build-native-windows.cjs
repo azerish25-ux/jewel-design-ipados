@@ -4,6 +4,7 @@ if(process.platform!=='win32'||!path.parse(root).root.toUpperCase().startsWith('
 function run(command,args){const result=cp.spawnSync(process.execPath,[wrapper,command,...args],{cwd:root,stdio:'inherit'});if(result.error)throw result.error;if(result.status!==0)throw Error(command+' failed with exit '+result.status);}
 const build=path.join(root,'.local/native/windows-gnu'),source=path.join(root,'.local/native/occt-source');
 run('node',['scripts/prepare-rotation-reference.cjs']);
+run('node',['scripts/prepare-plane-reference.cjs']);
 run('g++',['--version']);
 run('cmake',['-S','native/GeometryBridge/CandidateProbe','-B',build,'-G','Ninja','-DCMAKE_BUILD_TYPE=Release','-DOCCT_SOURCE_DIR='+source]);
 run('cmake',['--build',build,'--target','jewel_occt_candidate_objects','--parallel','2']);
