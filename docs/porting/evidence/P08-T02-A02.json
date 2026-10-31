@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T02-A02",
-  "status": "in_progress_visible_component_implemented_apple_compile_pending",
+  "status": "in_progress_view_compile_passed_visible_app_runtime_pending",
   "requirementScope": [
     "P08-T02",
     "UI-039 viewport prerequisite only"
@@ -22,12 +22,12 @@
     {
       "id": "P08-T02-A02-02",
       "scope": "Real GPU buffers/presenter/MTKView",
-      "status": "implemented_apple_binding_compile_pending"
+      "status": "apple_binding_compile_passed_runtime_pending"
     },
     {
       "id": "P08-T02-A02-03",
       "scope": "Visible actual Apple tests and screenshot inspection",
-      "status": "pending"
+      "status": "harness_and_workflow_implemented_apple_runtime_pending"
     }
   ],
   "red": "Rendering.Tests failed CS0246 missing CadFrameGate/CadFrameLease before implementation.",
@@ -69,5 +69,31 @@
     "src/Port/Rendering.Candidate.iOS/CadMetalGpuMesh.cs",
     "src/Port/Rendering.Candidate.iOS/CadMetalDrawablePresenter.cs",
     "src/Port/Rendering.Candidate.iOS/CadMetalView.cs"
-  ]
+  ],
+  "visibleCompile": {
+    "run": 41187169270,
+    "sourceCommit": "34b95543a2103b84cef0af59568b7b76a4947d27",
+    "conclusion": "success",
+    "warnings": 0,
+    "errors": 0,
+    "buildLogSha256": "12acbf13f11d02aaaa9d2fe30b4c1bc159fc7505da04ab8a3c3604e7910fd858",
+    "scope": "Actual MTKView/presenter and acceptance-helper iOS binding compilation; not visible execution."
+  },
+  "harness": {
+    "project": "tests/iOS.Viewport",
+    "script": "scripts/run-viewport-simulator.sh",
+    "workflow": ".github/workflows/viewport-presentation.yml",
+    "stages": [
+      "original",
+      "orbit",
+      "edited",
+      "empty",
+      "resized",
+      "final"
+    ],
+    "sourceFixture": "reference/fixtures/library-item-4.csg",
+    "nativeProducerRun": 41181433871,
+    "localChecks": "Bash syntax;7 report/driver regressions including capacity RED/GREEN, valid/invalid stage paths, stale-output rejection and failure shutdown pass;20 adjacent protocol/source/artifact checks pass.",
+    "limits": "Visible UIKit test harness is not the completed product UI. Native PresentedTime, actual screenshots, source edit/orbit/empty/resize and resource retirement must pass on iPad/iPhone before acceptance."
+  }
 }

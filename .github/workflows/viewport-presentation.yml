@@ -1,0 +1,73 @@
+name: Visible CAD viewport experiment
+on:
+  push:
+    branches: [codex/dotnet-ios-reuse]
+    paths:
+      - "src/Port/Rendering.Candidate*/**"
+      - "tests/iOS.Viewport/**"
+      - "scripts/run-viewport-simulator.sh"
+      - "scripts/check-viewport-report.cjs"
+      - ".github/workflows/viewport-presentation.yml"
+  workflow_dispatch:
+    inputs:
+      native_archive_run:
+        description: Same-repository simulator kernel producer run
+        type: string
+        required: false
+        default: '41181433871'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  visible:
+    runs-on: macos-26
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: 'false'
+      NATIVE_ARCHIVE_RUN: ${{ inputs.native_archive_run || '41181433871' }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Pin existing Apple toolchain
+        run: |
+          echo '{"sdk":{"version":"10.0.302","rollForward":"disable"}}' > global.json
+          sudo xcode-select -s /Applications/Xcode_26.6.app
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+        with:
+          global-json-file: global.json
+      - name: Install pinned iOS workload
+        run: dotnet workload install ios --version 10.0.302.0
+      - name: Record source and toolchain
+        run: |
+          mkdir -p artifacts
+          git rev-parse HEAD > artifacts/consumer-source.txt
+          xcodebuild -version > artifacts/xcode.txt
+          dotnet --info > artifacts/dotnet.txt
+      - name: Compile actual view and acceptance helper
+        run: dotnet build tests/iOS.Metal.Compile -c Debug -r iossimulator-arm64 | tee artifacts/visible-binding-build.txt
+      - name: Restore validated simulator kernel
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [[ "$NATIVE_ARCHIVE_RUN" =~ ^[1-9][0-9]*$ ]]
+          gh run download "$NATIVE_ARCHIVE_RUN" --repo "$GITHUB_REPOSITORY" --name native-kernel-iossimulator-arm64 --dir .local/native/reused
+          node scripts/native-archive.cjs restore iossimulator-arm64 .local/native/reused "$NATIVE_ARCHIVE_RUN"
+      - name: Build actual visible test app
+        run: dotnet build tests/iOS.Viewport -c Debug -r iossimulator-arm64 -p:EnableCodeSigning=true -p:CodesignKey=- -p:CodesignRequireProvisioningProfile=false -p:MtouchDebug=false -p:EnableDiagnostics=false | tee artifacts/visible-app-build.txt
+      - name: Visible iPad presentation and screenshots
+        timeout-minutes: 25
+        run: bash scripts/run-viewport-simulator.sh ipad
+      - name: Visible iPhone presentation and screenshots
+        timeout-minutes: 25
+        run: bash scripts/run-viewport-simulator.sh iphone
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: visible-viewport-evidence
+          path: artifacts/
+          retention-days: 14
