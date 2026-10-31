@@ -40,8 +40,6 @@ jobs:
           git -C .local/native/occt-source rev-parse HEAD > artifacts/native-source.txt
           sha256sum .local/native/occt-source/src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.hxx .local/native/occt-source/src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.cxx .local/native/occt-source/src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_GuideTrihedronAC.cxx .local/native/occt-source/src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_NSections.cxx .local/native/occt-source/src/ModelingData/TKG3d/Geom/Geom_BSplineSurface.hxx > artifacts/native-sweep-source-hashes.txt
           sha256sum .local/native/occt-source/LICENSE_LGPL_21.txt .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt > artifacts/native-license-hashes.txt
-      - name: Compile Metal renderer bindings before kernel build
-        run: dotnet build tests/iOS.Metal.Compile -c Debug -r iossimulator-arm64
       - name: Prepare pinned published geometry comparisons
         run: |
           node scripts/prepare-rotation-reference.cjs | tee artifacts/native-rotation-reference.json
@@ -100,6 +98,8 @@ jobs:
         run: |
           node scripts/prepare-rotation-reference.cjs | tee artifacts/native-rotation-reference.json
           node scripts/prepare-plane-reference.cjs | tee artifacts/native-plane-reference.json
+      - name: Compile Metal renderer bindings before kernel build
+        run: dotnet build tests/iOS.Metal.Compile -c Debug -r iossimulator-arm64
       - name: Configure actual iOS simulator kernel
         run: cmake -S native/GeometryBridge/CandidateProbe -B .local/native/ios-sim -DCMAKE_BUILD_TYPE=Release -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphonesimulator -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0 -DOCCT_SOURCE_DIR="$PWD/.local/native/occt-source" | tee artifacts/native-configure.txt
       - name: Compile candidate API usage before kernel build

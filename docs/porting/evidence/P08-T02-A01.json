@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T02-A01",
-  "status": "in_progress_portable_passed_metal_compile_gpu_pending",
+  "status": "in_progress_metal_binding_compile_passed_gpu_pending",
   "sources": {
     "officialBindingRepository": "https://github.com/dotnet/macios",
     "pin": "410dc42e09f1bfca3258d46d5ec95cf48903d1b2",
@@ -40,10 +40,25 @@
     "scope": "Real native mesh, double center/unit-radius before float conversion, float6/UInt32/source-face ordering, owned copy buffers and invalid camera guards pass locally."
   },
   "pending": [
-    "Mac binding/harness compilation",
     "Actual Metal GPU pixel/depth/original-edit-orbit-empty checks",
     "Image artifacts inspected on iPad/iPhone",
     "Unsigned device build separate from physical execution"
   ],
-  "limits": "No finished UI, original camera/material/render quality, touch/picking/frame synchronization or full parity claim."
+  "limits": "No finished UI, original camera/material/render quality, touch/picking/frame synchronization or full parity claim.",
+  "apple": {
+    "sourceCommit": "74efefb1c4a6a594817a04333f0a69bf9da1e739",
+    "bindingPreflight": {
+      "run": 41179941852,
+      "conclusion": "success",
+      "scope": "Pinned macOS .NET iOS renderer and linked image/JSON harness compilation only."
+    },
+    "runtimeRun": 41180073419,
+    "deviceRun": 41180075019
+  },
+  "ciCorrection": {
+    "failure": "Linux host job attempted iOS Metal preflight and failed NETSDK1147 before native configuration.",
+    "failedJob": 124475497131,
+    "fix": "Move preflight to macOS ios job after pinned workload installation, before kernel build.",
+    "regression": "node --test tests/metal-workflow.test.cjs (2 passed, including rejected original placement)"
+  }
 }
