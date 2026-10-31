@@ -15,7 +15,7 @@ function verifyPixels(frames){
  }
  function different(a,b){let count=0;for(let y=bounds.top;y<bounds.bottom;y++)for(let x=bounds.left;x<bounds.right;x++){const i=(y*width+x)*4;if(Math.abs(a[i]-b[i])>3||Math.abs(a[i+1]-b[i+1])>3||Math.abs(a[i+2]-b[i+2])>3)count++;}return count;}
  const original=frames.original.bgra;
- const result={width,height,bounds,uniformPixels,foregroundPixels:different(original,background),editedPixels:different(original,frames.edited.bgra),orbitPixels:different(original,frames.orbit.bgra),resizedPixels:different(original,frames.resized.bgra),finalDifferencePixels:different(original,frames.final.bgra)};
+ const result={width,height,bounds,uniformPixels,foregroundPixels:different(original,background),editedPixels:different(frames.orbit.bgra,frames.edited.bgra),orbitPixels:different(original,frames.orbit.bgra),resizedPixels:different(frames.orbit.bgra,frames.resized.bgra),finalDifferencePixels:different(original,frames.final.bgra)};
  for(const key of ['foregroundPixels','editedPixels','orbitPixels','resizedPixels'])if(result[key]<=100)throw Error('Visible scene change missing: '+key);
  if(result.finalDifferencePixels>32)throw Error('Fresh final viewport did not reproduce original CAD screen');
  return result;

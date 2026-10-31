@@ -113,7 +113,7 @@
   "timingGuardRetry": {
     "run": 41190078324,
     "sourceCommit": "a99d3ee35fe61d0940e77a6d2099cab13f41730b",
-    "status": "queued_last_observed",
+    "status": "cancelled_after_stronger_screenshot_gate_superseded_queued_run",
     "preflightRun": 41190078438,
     "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41190078324"
   },
@@ -127,6 +127,13 @@
       "Uniform empty CAD region",
       "Fresh final view reproduces original scene"
     ],
-    "scope": "Screenshot consistency plus manual actual-image inspection is required; native presentation timing is separately unavailable until supported hardware/runtime evidence."
+    "scope": "Screenshot consistency plus manual actual-image inspection is required; native presentation timing is separately unavailable until supported hardware/runtime evidence.",
+    "baselines": "Edit and resized scenes are compared against the orbit screenshot: they retain the same camera pose in the actual harness. Final fresh view is compared against the original default-pose screenshot.",
+    "extraRegression": "Stale orbit scene cannot satisfy either edit or resize acceptance; RED reproduced before baseline correction."
+  },
+  "screenPixelRetry": {
+    "run": 41190555175,
+    "sourceCommit": "eeaff14f1f9a9f6499aa12d12028774de31ef5fb",
+    "status": "queued_last_observed"
   }
 }
