@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A01",
+  "status": "source_observation_only",
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CS/CSUtil.cs",
+      "sha256": "421af2e1725afe8571b3c407104ea04d32eee64318857c072b1f3cef6b1881b5"
+    },
+    {
+      "path": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+      "sha256": "28a5bd9f9a059c320660a412e441bbe6140a1fe079276ddbefd0fb6545815cbc"
+    },
+    {
+      "path": "recovery/canonical/cad/CS/CameraView.cs",
+      "sha256": "1130791b078e2af7d7bf1e0db567ce7bc879486b0f49c7cc7d76b471e2a66cf3"
+    }
+  ],
+  "methods": [
+    {
+      "file": "recovery/canonical/cad/CS/CSUtil.cs",
+      "symbol": "CSUtil.DocumentSetCameraView",
+      "lines": [
+        229,
+        281
+      ],
+      "normalization": "Trim().ToLowerInvariant(); null faults before viewport access.",
+      "viewportSelection": "Active main viewport, overridden by first standard view whose MainViewport.Name.ToLower() equals perspective.",
+      "initialProjection": {
+        "perspective": true,
+        "symmetricFrustum": true,
+        "lensMillimeters": 50
+      },
+      "presets": [
+        {
+          "name": "top",
+          "constructionPlane": "WorldXY",
+          "camera": [
+            0,
+            0,
+            80
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "up": [
+            0,
+            1,
+            0
+          ],
+          "state": "Top"
+        },
+        {
+          "name": "front",
+          "constructionPlane": "WorldZX",
+          "camera": [
+            0,
+            -80,
+            0
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "state": "Front"
+        },
+        {
+          "name": "side",
+          "constructionPlane": "WorldYZ",
+          "camera": [
+            80,
+            0,
+            0
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "state": "Side"
+        },
+        {
+          "name": "default (including perspective and unknown strings)",
+          "constructionPlane": "WorldXY",
+          "camera": [
+            45,
+            -75,
+            50
+          ],
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "up": [
+            0,
+            0,
+            1
+          ],
+          "state": "Perspective"
+        }
+      ],
+      "order": [
+        "Set construction plane and CurrentCameraViewName",
+        "SetCameraLocations(target, camera)",
+        "Camera35mmLensLength=50",
+        "CameraUp=selected axis",
+        "If normalized input is not exactly perspective and viewport is not parallel, ChangeToParallelProjection(true)",
+        "Redraw"
+      ],
+      "edgeBehavior": "Unknown/empty names use perspective pose/state but request parallel projection because original normalized string differs from perspective."
+    },
+    {
+      "file": "recovery/canonical/cad/CounterSketchServer/RhinoServices.cs",
+      "symbol": "RhinoServices.DocumentZoomCameraToBoundingBox",
+      "lines": [
+        667,
+        692
+      ],
+      "selection": "All graph CSBlock objects with DisplayVisible && InDisplay && (!ForceHide || ForceVisible).",
+      "bounds": "For each non-null output channel data, GetBoundingBox then transform by Conduit.GetDesignTransform, union, finally native ZoomBoundingBox.",
+      "limits": "Rhino actual zoom/frustum/padding/invalid bounding-box policy not implemented by recovered wrapper."
+    }
+  ],
+  "candidateDifference": "P08-T02-A01 fitted unit-sphere camera is an upload/raster proof only; it uses a candidate FOV and Y-up orbit and does not implement these original presets, design-space transforms or zoom visibility rules.",
+  "remaining": [
+    "Source material/display mode and document camera persistence mapping",
+    "Rhino lens/sensor/frustum and zoom behavior independent reference",
+    "Source-backed preset/visibility tests and actual GPU matching frames",
+    "Touch gestures, picking, grid/spin and frame synchronization",
+    "Original-PC/physical-device/full rendering acceptance"
+  ]
+}
