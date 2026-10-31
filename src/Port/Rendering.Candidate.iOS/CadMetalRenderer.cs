@@ -21,9 +21,17 @@ public sealed class CadMetalRenderer:IDisposable
   using var pass=MTLRenderPassDescriptor.CreateRenderPassDescriptor();pass.ColorAttachments[0].Texture=target;pass.ColorAttachments[0].LoadAction=MTLLoadAction.Clear;pass.ColorAttachments[0].StoreAction=MTLStoreAction.Store;pass.ColorAttachments[0].ClearColor=new MTLClearColor(.035,.045,.06,1);var depthAttachment=pass.DepthAttachment??throw new InvalidOperationException("Metal render pass depth attachment unavailable.");depthAttachment.Texture=depthTarget;depthAttachment.LoadAction=MTLLoadAction.Clear;depthAttachment.StoreAction=MTLStoreAction.DontCare;depthAttachment.ClearDepth=1;
   using var command=queue!.CommandBuffer()??throw new InvalidOperationException("Metal command buffer unavailable.");using var encoder=command.CreateRenderCommandEncoder(pass)??throw new InvalidOperationException("Metal render encoder unavailable.");
   using var vertices=mesh.VertexCount==0?null:device.CreateBuffer(mesh.CopyInterleavedVertices(),MTLResourceOptions.StorageModeShared);using var indices=mesh.TriangleCount==0?null:device.CreateBuffer(OrderedIndices(mesh,reverseSubmission),MTLResourceOptions.StorageModeShared);using var camera=device.CreateBuffer(CadViewportCamera.MatrixScalars(matrix),MTLResourceOptions.StorageModeShared)??throw new InvalidOperationException("Metal camera upload failed.");
-  if(mesh.TriangleCount>0){if(vertices is null||indices is null)throw new InvalidOperationException("Metal CAD upload failed.");encoder.SetRenderPipelineState(pipeline!);encoder.SetDepthStencilState(depth!);encoder.SetCullMode(MTLCullMode.Back);encoder.SetFrontFacingWinding(MTLWinding.CounterClockwise);encoder.SetVertexBuffer(vertices,0,0);encoder.SetVertexBuffer(camera,0,1);encoder.DrawIndexedPrimitives(MTLPrimitiveType.Triangle,(nuint)(mesh.TriangleCount*3),MTLIndexType.UInt32,indices,0);}
+  Encode(encoder,vertices,indices,camera,mesh.TriangleCount);
   encoder.EndEncoding();command.Commit();command.WaitUntilCompleted();if(command.Status!=MTLCommandBufferStatus.Completed)throw new InvalidOperationException("Metal draw did not complete: "+command.Status+" "+command.Error);
   var bytes=new byte[checked(width*height*4)];var handle=GCHandle.Alloc(bytes,GCHandleType.Pinned);try{target.GetBytes(handle.AddrOfPinnedObject(),(nuint)(width*4),MTLRegion.Create2D(0,0,(nuint)width,(nuint)height),0);}finally{handle.Free();}return bytes;
+ }
+ internal IMTLDevice Device=>device;
+ internal IMTLCommandBuffer CreateCommandBuffer(){ObjectDisposedException.ThrowIf(disposed,this);return queue!.CommandBuffer()??throw new InvalidOperationException("Metal command buffer unavailable.");}
+ internal static MTLClearColor Background=>new(.035,.045,.06,1);
+ internal void Encode(IMTLRenderCommandEncoder encoder,IMTLBuffer? vertices,IMTLBuffer? indices,IMTLBuffer camera,int triangleCount){
+  ObjectDisposedException.ThrowIf(disposed,this);if(triangleCount==0)return;
+  if(vertices is null||indices is null)throw new InvalidOperationException("Metal CAD upload failed.");
+  encoder.SetRenderPipelineState(pipeline!);encoder.SetDepthStencilState(depth!);encoder.SetCullMode(MTLCullMode.Back);encoder.SetFrontFacingWinding(MTLWinding.CounterClockwise);encoder.SetVertexBuffer(vertices,0,0);encoder.SetVertexBuffer(camera,0,1);encoder.DrawIndexedPrimitives(MTLPrimitiveType.Triangle,(nuint)(triangleCount*3),MTLIndexType.UInt32,indices,0);
  }
  private static uint[] OrderedIndices(CadViewportMesh mesh,bool reverse){var data=mesh.CopyIndices();if(reverse)for(int a=0,b=data.Length-3;a<b;a+=3,b-=3)for(int i=0;i<3;i++)(data[a+i],data[b+i])=(data[b+i],data[a+i]);return data;}
  public void Dispose(){if(disposed)return;disposed=true;depth?.Dispose();pipeline?.Dispose();queue?.Dispose();}

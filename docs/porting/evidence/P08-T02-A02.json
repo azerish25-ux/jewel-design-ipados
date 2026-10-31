@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T02-A02",
-  "status": "in_progress_portable_ownership_passed_visible_gpu_pending",
+  "status": "in_progress_visible_component_implemented_apple_compile_pending",
   "requirementScope": [
     "P08-T02",
     "UI-039 viewport prerequisite only"
@@ -22,7 +22,7 @@
     {
       "id": "P08-T02-A02-02",
       "scope": "Real GPU buffers/presenter/MTKView",
-      "status": "pending"
+      "status": "implemented_apple_binding_compile_pending"
     },
     {
       "id": "P08-T02-A02-03",
@@ -51,5 +51,23 @@
     "Prior offscreen pixel hash preserved after refactor",
     "Full source camera/material/UI/picking/PC/physical parity"
   ],
-  "limits": "Portable resource scheduling is not device GPU acceptance or full feature parity."
+  "limits": "Portable resource scheduling is not device GPU acceptance or full feature parity.",
+  "redPlatform": {
+    "run": 41186359796,
+    "sourceCommit": "5a0447739c50b167294725b69894248bc6277aa9",
+    "result": "Expected CS0246 missing CadMetalView/CadMetalViewStats/CadMetalFrameInfo from actual visible acceptance helper before implementation."
+  },
+  "ownershipMacPreflight": {
+    "run": 41185858920,
+    "sourceCommit": "863ff5ca27ac18d11c89714b5faa66314d812a98",
+    "conclusion": "success",
+    "scope": "Portable camera/lifetime runner plus iOS binding library compile; no visible GPU proof."
+  },
+  "implementation": [
+    "src/Port/Rendering.Candidate/CadFrameGate.cs",
+    "src/Port/Rendering.Candidate.iOS/CadMetalRenderer.cs",
+    "src/Port/Rendering.Candidate.iOS/CadMetalGpuMesh.cs",
+    "src/Port/Rendering.Candidate.iOS/CadMetalDrawablePresenter.cs",
+    "src/Port/Rendering.Candidate.iOS/CadMetalView.cs"
+  ]
 }
