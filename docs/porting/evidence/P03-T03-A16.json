@@ -64,7 +64,7 @@
         "tests": 10
       },
       {
-        "command": "node scripts/verify-legacy-empty-join.cjs --verify-local D:/MAIN SOFTWARE/jewerly software/analysis/runtime-prerequisites/rhino5/System",
+        "command": "node scripts/verify-legacy-empty-join.cjs --verify-local \"D:/MAIN SOFTWARE/jewerly software/analysis/runtime-prerequisites/rhino5/System\"",
         "exitCode": 0
       },
       {
@@ -85,5 +85,32 @@
     "Generic existing collapsed-apex BRep affine robustness",
     "Downstream builders/original-PC/physical/UI/render/export/full1451-row acceptance"
   ],
-  "scope": "Actual saved legacy140 native graph candidate plus source-proven empty retention; no full parity row closed."
+  "scope": "Actual saved legacy140 native graph candidate plus source-proven empty retention; no full parity row closed.",
+  "implementationCommit": "4ccef43a048aef7c7900743deea1acfeb61c9028",
+  "ciRuns": [
+    {
+      "id": 41175048487,
+      "scope": "native host/macOS iPad/iPhone saved legacy14010-state graph execution",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41175048487"
+    },
+    {
+      "id": 41175050462,
+      "scope": "macOS unsigned ios-arm64 AOT with retained output copy",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41175050462"
+    },
+    {
+      "id": 41175042352,
+      "scope": "repository/header/binary-proof/freshness/document compatibility",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41175042352"
+    },
+    {
+      "id": 41175042377,
+      "scope": "recovered managed iOS reuse",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41175042377"
+    }
+  ]
 }
