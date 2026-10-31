@@ -134,6 +134,12 @@
   "screenPixelRetry": {
     "run": 41190555175,
     "sourceCommit": "eeaff14f1f9a9f6499aa12d12028774de31ef5fb",
-    "status": "queued_last_observed"
+    "status": "cancellation_requested_while_queued_after_camera_baseline_fix"
+  },
+  "latestVisibleRun": {
+    "run": 41190815914,
+    "sourceCommit": "1feab10b8bac3964d370addccba291107d46d36f",
+    "status": "queued_last_observed",
+    "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41190815914"
   }
 }
