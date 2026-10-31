@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P05-T02-A27",
-  "status": "in_progress_local_explicit_spline_brep_affine_verified_apple_pending",
+  "status": "in_progress_explicit_spline_brep_affine_verified_apple_checkpoint_inspected",
   "sourceAudit": "docs/evidence/audit/direct-spline-affine-kernel.json",
   "red": {
     "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
@@ -62,7 +62,6 @@
     "diagnostics": "Invalid shapes now report bounded native subshape/status details. No invalid output is accepted or stored."
   },
   "remaining": [
-    "New Apple affine regression artifacts",
     "Conversion-dependent/other degenerate/triangulated affine families",
     "Private legacy repair/broader join semantics",
     "Downstream/original-PC/physical/UI/render/export/full1451-row acceptance"
@@ -94,5 +93,12 @@
       "status": "dispatched",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41176344364"
     }
-  ]
+  ],
+  "appleCheckpoint": {
+    "report": "docs/evidence/apple/native-mesh-results.json",
+    "commit": "2cb2a9b3789b0bf9af91bb5f294b500dba793bac",
+    "runtimeRun": 41177982399,
+    "deviceRun": 41177983988,
+    "scope": "Inspected later cumulative mesh checkpoint includes this candidate test suite on iPad/iPhone plus unsigned device build; not original-PC or physical execution."
+  }
 }

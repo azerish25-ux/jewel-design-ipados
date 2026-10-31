@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P03-T03-A16",
-  "status": "in_progress_local_saved_legacy_join_verified_apple_pending",
+  "status": "in_progress_saved_legacy_join_verified_apple_checkpoint_inspected",
   "requirements": [
     "BLD-0498",
     "SER-0533"
@@ -80,7 +80,6 @@
     "limits": "Acquired SDK5 x64 proof is version-pinned. Native replacement/repair/disconnected equivalence, UI link validation, actual PC portfolio corpus, physical device and full feature parity remain unverified."
   },
   "remaining": [
-    "New Apple legacy140 graph artifacts",
     "Private repair/deleted-face and broader legacy join semantics",
     "Generic existing collapsed-apex BRep affine robustness",
     "Downstream builders/original-PC/physical/UI/render/export/full1451-row acceptance"
@@ -112,5 +111,12 @@
       "status": "dispatched",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41175042377"
     }
-  ]
+  ],
+  "appleCheckpoint": {
+    "report": "docs/evidence/apple/native-mesh-results.json",
+    "commit": "2cb2a9b3789b0bf9af91bb5f294b500dba793bac",
+    "runtimeRun": 41177982399,
+    "deviceRun": 41177983988,
+    "scope": "Inspected later cumulative mesh checkpoint includes this candidate test suite on iPad/iPhone plus unsigned device build; not original-PC or physical execution."
+  }
 }

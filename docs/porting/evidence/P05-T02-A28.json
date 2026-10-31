@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P05-T02-A28",
-  "status": "in_progress_local_native_mesh_snapshots_verified_apple_pending",
+  "status": "in_progress_native_mesh_snapshots_verified_apple_checkpoint_inspected",
   "sourceAudit": "docs/evidence/audit/native-mesh-source.json",
   "implementation": [
     "native/GeometryBridge/CandidateProbe/candidate_abi.cpp",
@@ -59,7 +59,6 @@
     "limits": "Two meshing passes; no complete large-model performance/cancellation, texture/material/picking/viewport/original-Rhino-render/physical acceptance. Native normal fallback is kernel policy, not original5 proof."
   },
   "remaining": [
-    "New Apple mesh extraction artifacts",
     "Viewport/GPU upload/material/texture/picking/interaction integration",
     "Large-model performance/cancellation and wider tessellation families",
     "Private repair/other affine/downstream/original-PC/physical/full1451-row acceptance"
@@ -91,5 +90,12 @@
       "status": "dispatched",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41177981793"
     }
-  ]
+  ],
+  "appleCheckpoint": {
+    "report": "docs/evidence/apple/native-mesh-results.json",
+    "commit": "2cb2a9b3789b0bf9af91bb5f294b500dba793bac",
+    "runtimeRun": 41177982399,
+    "deviceRun": 41177983988,
+    "scope": "Inspected later cumulative mesh checkpoint includes this candidate test suite on iPad/iPhone plus unsigned device build; not original-PC or physical execution."
+  }
 }
