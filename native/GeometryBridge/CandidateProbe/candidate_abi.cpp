@@ -1,3 +1,7 @@
+#include <BRepMesh_IncrementalMesh.hxx>
+#include <BRepLib_ToolTriangulatedShape.hxx>
+#include <Poly_Triangulation.hxx>
+#include <Precision.hxx>
 #include <BRepTools_Modifier.hxx>
 #include <BRepTools_GTrsfModification.hxx>
 #include <Geom_BezierSurface.hxx>
@@ -857,6 +861,32 @@ extern "C" int32_t jd_candidate_sew(uint64_t context,const uint64_t* shapes,uint
    uint32_t closed=0;for(int i=1;i<=shells.Extent();i++)if(BRep_Tool::IsClosed(shells.FindKey(i)))closed++;
    const jd_candidate_sewing_info completed={parts,static_cast<uint32_t>(faces.Extent()),static_cast<uint32_t>(sewing.NbFreeEdges()),static_cast<uint32_t>(sewing.NbMultipleEdges()),static_cast<uint32_t>(sewing.NbContigousEdges()),static_cast<uint32_t>(sewing.NbDeletedFaces()),closed,0,sewing.Tolerance(),sewing.MinTolerance(),sewing.MaxTolerance()};
    *output=store(value,result);*info=completed;
+  });
+ },diagnostic,capacity);
+}
+
+static_assert(sizeof(jd_candidate_mesh_vertex)==48&&sizeof(jd_candidate_mesh_triangle)==16&&sizeof(jd_candidate_mesh_info)==24,"Mesh ABI layout");
+extern "C" int32_t jd_candidate_mesh(uint64_t context,uint64_t shape,double deflection,double angle,jd_candidate_mesh_vertex* vertices,uint32_t vertex_capacity,jd_candidate_mesh_triangle* triangles,uint32_t triangle_capacity,jd_candidate_mesh_info* info,char* diagnostic,uint32_t capacity)
+{
+ return protect([&]{
+  if(!info)fail(JD_CANDIDATE_INVALID_ARGUMENT,"Missing mesh count diagnostics");*info={};
+  if(!std::isfinite(deflection)||deflection<Precision::Confusion()||!std::isfinite(angle)||angle<=0||angle>std::acos(-1.0))fail(JD_CANDIDATE_INVALID_ARGUMENT,"Invalid absolute meshing deflection/angle");
+  withContext(context,[&](Context& value){
+   const auto& input=findShape(value,shape).shape;TopExp_Explorer faceCheck(input,TopAbs_FACE);
+   if(!faceCheck.More()){if(input.ShapeType()==TopAbs_COMPOUND&&!TopExp_Explorer(input,TopAbs_VERTEX).More())return;fail(JD_CANDIDATE_UNSUPPORTED_OPERATION,"Tessellation requires BRep faces or an empty BRep");}
+   BRepBuilderAPI_Copy copy(input,true,false);if(!copy.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Meshing BRep copy failed");auto copied=copy.Shape();BRepMesh_IncrementalMesh mesher(copied,deflection,false,angle,false);if(!mesher.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native BRep mesher did not complete");
+   std::vector<jd_candidate_mesh_vertex> outputVertices;std::vector<jd_candidate_mesh_triangle> outputTriangles;uint32_t faceIndex=0;double maxDeflection=0;
+   for(TopExp_Explorer it(copied,TopAbs_FACE);it.More();it.Next(),faceIndex++){
+    if(faceIndex>=65536)fail(JD_CANDIDATE_LIFETIME_LIMIT,"Mesh face count exceeds candidate limit");const auto face=TopoDS::Face(it.Current());TopLoc_Location location;auto mesh=BRep_Tool::Triangulation(face,location);
+    if(mesh.IsNull()||mesh->NbNodes()<=0||mesh->NbTriangles()<=0)fail(JD_CANDIDATE_KERNEL_FAILURE,"Native face has no real tessellation");
+    if(outputVertices.size()+mesh->NbNodes()>1000000||outputTriangles.size()+mesh->NbTriangles()>2000000)fail(JD_CANDIDATE_LIFETIME_LIMIT,"Mesh snapshot exceeds candidate buffer limits");
+    BRepLib_ToolTriangulatedShape::ComputeNormals(face,mesh);if(!mesh->HasNormals())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native mesh normals missing");maxDeflection=std::max(maxDeflection,mesh->Deflection());const uint32_t base=static_cast<uint32_t>(outputVertices.size());const bool reverse=face.Orientation()==TopAbs_REVERSED;
+    for(int i=1;i<=mesh->NbNodes();i++){auto point=mesh->Node(i).Transformed(location.Transformation());auto normal=mesh->Normal(i).Transformed(location.Transformation());if(reverse)normal.Reverse();if(!std::isfinite(point.X())||!std::isfinite(point.Y())||!std::isfinite(point.Z())||!std::isfinite(normal.X())||!std::isfinite(normal.Y())||!std::isfinite(normal.Z())||std::abs((normal.X()*normal.X()+normal.Y()*normal.Y()+normal.Z()*normal.Z())-1)>1e-10)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid native mesh position/normal");outputVertices.push_back({point.X(),point.Y(),point.Z(),normal.X(),normal.Y(),normal.Z()});}
+    for(int i=1;i<=mesh->NbTriangles();i++){int a,b,c;mesh->Triangle(i).Get(a,b,c);if(a<1||b<1||c<1||a>mesh->NbNodes()||b>mesh->NbNodes()||c>mesh->NbNodes())fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid native mesh triangle indices");if(reverse)std::swap(b,c);outputTriangles.push_back({base+static_cast<uint32_t>(a-1),base+static_cast<uint32_t>(b-1),base+static_cast<uint32_t>(c-1),faceIndex});}
+   }
+   if(!std::isfinite(maxDeflection)||maxDeflection<0)fail(JD_CANDIDATE_KERNEL_FAILURE,"Invalid native triangulation deflection");*info={static_cast<uint32_t>(outputVertices.size()),static_cast<uint32_t>(outputTriangles.size()),faceIndex,static_cast<uint32_t>(mesher.GetStatusFlags()),maxDeflection};
+   if(!vertices&&!triangles&&vertex_capacity==0&&triangle_capacity==0)return;
+   if(!vertices||!triangles||vertex_capacity<outputVertices.size()||triangle_capacity<outputTriangles.size())fail(JD_CANDIDATE_INVALID_ARGUMENT,"Mesh buffers too short or missing");std::copy(outputVertices.begin(),outputVertices.end(),vertices);std::copy(outputTriangles.begin(),outputTriangles.end(),triangles);
   });
  },diagnostic,capacity);
 }

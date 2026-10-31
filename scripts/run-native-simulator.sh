@@ -56,6 +56,8 @@ for i in $(seq 1 120); do
   grep -q 'paired-abi-guards=16;' "$OUT/result.txt"
   grep -q 'rational-profile-cylinder=pass;' "$OUT/result.txt"
   grep -q 'PASS recovered Rhino5 dome:21 threshold/sign/radius profiles and693 exact-source native point comparisons; tensor-boundary=204; tensor-grid=20;' "$OUT/result.txt"
+  grep -q 'PASS native BRep mesh snapshots:9 analytic/actual cases,' "$OUT/result.txt"
+  grep -q 'candidate-mesh-buffer-guards=6;' "$OUT/result.txt"
   grep -q 'PASS collapsed-apex BRep affine:20 native cases and350 coefficient-mapped points;' "$OUT/result.txt"
   grep -q 'PASS saved legacy join140:10 native states,' "$OUT/result.txt"
   grep -q 'PASS native BRep sewing:10 analytical/actual design cases;' "$OUT/result.txt"

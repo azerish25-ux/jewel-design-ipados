@@ -1,3 +1,4 @@
+#include <vector>
 #include <algorithm>
 #include "candidate_abi.h"
 #include <cmath>
@@ -211,6 +212,20 @@ void run_candidate_curve_contracts()
     sewn=99;checkCurve(jd_candidate_sew(context.id,breps,1,.01,&sewn,nullptr,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&sewn==0,"Sew missing diagnostics guard");
     sewn=99;checkCurve(jd_candidate_sew(context.id,invalidBreps,1,.01,&sewn,&sewingInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_SHAPE&&sewn==0&&sewingInfo.parts==0,"Sew stale shape guard");
     sewn=99;checkCurve(jd_candidate_sew(context.id,curveOnly,1,.01,&sewn,&sewingInfo,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION&&sewn==0&&sewingInfo.faces==0,"Sew non-BRep guard");
+    jd_candidate_mesh_info meshInfo{};ok(jd_candidate_mesh(context.id,box,.05,.35,nullptr,0,nullptr,0,&meshInfo,error,sizeof(error)));
+    checkCurve(meshInfo.vertices>0&&meshInfo.triangles>0&&meshInfo.faces==6,"Mesh native query counts");
+    std::vector<jd_candidate_mesh_vertex> meshVertices(meshInfo.vertices);std::vector<jd_candidate_mesh_triangle> meshTriangles(meshInfo.triangles);for(auto& v:meshVertices)v.x=987;for(auto& t:meshTriangles)t.a=987;
+    const auto vertexCount=meshInfo.vertices,triangleCount=meshInfo.triangles;
+    checkCurve(jd_candidate_mesh(context.id,box,.05,.35,meshVertices.data(),vertexCount-1,meshTriangles.data(),triangleCount,&meshInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&meshInfo.vertices==vertexCount,"Mesh short vertex buffer guard");
+    checkCurve(std::all_of(meshVertices.begin(),meshVertices.end(),[](const auto& v){return v.x==987;})&&std::all_of(meshTriangles.begin(),meshTriangles.end(),[](const auto& t){return t.a==987;}),"Mesh short buffer partially wrote arrays");
+    checkCurve(jd_candidate_mesh(context.id,box,.05,.35,meshVertices.data(),vertexCount,meshTriangles.data(),triangleCount-1,&meshInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Mesh short index buffer guard");
+    checkCurve(std::all_of(meshVertices.begin(),meshVertices.end(),[](const auto& v){return v.x==987;})&&std::all_of(meshTriangles.begin(),meshTriangles.end(),[](const auto& t){return t.a==987;}),"Mesh index failure partially wrote arrays");
+    checkCurve(jd_candidate_mesh(context.id,box,0,.35,nullptr,0,nullptr,0,&meshInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&meshInfo.vertices==0,"Mesh zero deflection guard");
+    checkCurve(jd_candidate_mesh(context.id,box,.05,std::numeric_limits<double>::quiet_NaN(),nullptr,0,nullptr,0,&meshInfo,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT&&meshInfo.faces==0,"Mesh nonfinite angle guard");
+    checkCurve(jd_candidate_mesh(context.id,box,.05,.35,nullptr,0,nullptr,0,nullptr,error,sizeof(error))==JD_CANDIDATE_INVALID_ARGUMENT,"Mesh missing diagnostics guard");
+    checkCurve(jd_candidate_mesh(context.id,circle,.05,.35,nullptr,0,nullptr,0,&meshInfo,error,sizeof(error))==JD_CANDIDATE_UNSUPPORTED_OPERATION&&meshInfo.vertices==0,"Mesh curve rejection");
+    ok(jd_candidate_mesh(context.id,box,.05,.35,meshVertices.data(),vertexCount,meshTriangles.data(),triangleCount,&meshInfo,error,sizeof(error)));
+    for(const auto& t:meshTriangles)checkCurve(t.a<vertexCount&&t.b<vertexCount&&t.c<vertexCount&&t.face<meshInfo.faces,"Mesh native zero-based index/face contract");
     for(uint64_t shape:{circle,moved,box})ok(jd_candidate_shape_release(context.id,shape,error,sizeof(error)));
     uint64_t count=99;ok(jd_candidate_context_live_shapes(context.id,&count,error,sizeof(error)));checkCurve(count==0,"Native curve entries retained");
 }

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "pin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+  "files": [
+    {
+      "path": "src/ModelingAlgorithms/TKMesh/BRepMesh/BRepMesh_IncrementalMesh.hxx",
+      "normalizedLfSha256": "27d880c846f81f6a28061956045438e65dce7dcbb1b93c5aaacd9f5310e55f78"
+    },
+    {
+      "path": "src/ModelingAlgorithms/TKTopAlgo/BRepLib/BRepLib_ToolTriangulatedShape.cxx",
+      "normalizedLfSha256": "b9f024198a0171f80ec5a721b9c7316a0765096a8480faa1b0108d4a89db0eaf"
+    },
+    {
+      "path": "src/FoundationClasses/TKMath/Poly/Poly_Triangulation.hxx",
+      "normalizedLfSha256": "885f46dcacaf7f3260c347f87ff9de1a4929362671229fcf0080bf8e89d8f802"
+    }
+  ],
+  "observations": {
+    "mesher": "Absolute linear deflection, radians angular deflection, serial meshing of deep geometry copy without cached meshes.",
+    "normals": "Pinned helper uses actual UV/surface normals and its native singular-node fallback; copied triangulation only.",
+    "orientation": "World-space location applied; reversed face reverses normals and triangle winding.",
+    "payload": "48-byte position+normal vertex,16-byte zero-based triangle+mesh-local face,24-byte count/status/maximum-deflection info.",
+    "limits": "1M exported vertices/2M triangles/65536 faces. No partial output writes on short buffers; every face must have actual triangulation."
+  },
+  "scope": "Native candidate tessellation, not original Rhino mesh/material/render equivalence."
+}

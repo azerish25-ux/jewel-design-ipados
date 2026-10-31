@@ -2,7 +2,7 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P05-T02-A27 fixes the reproduced collapsed-apex affine failure for explicit spline BReps by applying the native modifier without redundant conversion. Windows20 cases/350 coefficient-mapped points pass across rigid/uniform/nonuniform/shear/reflection, actual caps and joined140 volume/input/ownership checks. Matrix coefficients and tolerances remain unchanged. New Apple execution pending. [ADR0048](ADR-0048-direct-spline-brep-affine.md). Conversion-dependent/other degenerations/triangulations, private legacy repair, downstream/original-PC/physical/full acceptance remain open. Full parity0/1451.
+Latest implementation: P05-T02-A28 exports genuine native BRep tessellation snapshots with world positions/unit normals/zero-based triangles and mesh-local face ordinals. Windows9 analytic/actual cases and6 raw buffer guards pass; actual joined140 produced2196->108118 triangles for coarse/fine settings, then regenerated after edit/save/reopen. Original BRep/tolerances and detached ownership preserved. Apple mesh execution pending. [ADR0049](ADR-0049-native-mesh-snapshots.md). Viewport/material/texture/picking, wider/native repair/affine families, downstream/original-PC/physical/full acceptance remain open. Full parity0/1451.
 
 [Raw native sewing Apple proof](../evidence/apple/native-sewing-results.json) passed10 cases/8 ABI guards on both simulators and unsigned arm64 iOS compile/link52 warnings0 errors at8ea10cc; it predates legacy140 graph registration.
 

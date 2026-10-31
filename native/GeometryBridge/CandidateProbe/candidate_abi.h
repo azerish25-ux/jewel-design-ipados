@@ -91,6 +91,13 @@ typedef struct jd_candidate_sewing_info {
  double tolerance,min_tolerance,max_tolerance;
 } jd_candidate_sewing_info;
 int32_t jd_candidate_sew(uint64_t context,const uint64_t* shapes,uint32_t count,double tolerance,uint64_t* output,jd_candidate_sewing_info* info,char* diagnostic,uint32_t capacity);
+/* Actual tessellation of a deep BRep copy. Two-pass query/fill re-meshes serially.
+ * Null arrays/zero capacities query counts; short buffers receive counts and no data writes.
+ * World positions/normals; face-local vertices, zero-based indices/mesh-local face ordinals. */
+typedef struct jd_candidate_mesh_vertex { double x,y,z,nx,ny,nz; } jd_candidate_mesh_vertex;
+typedef struct jd_candidate_mesh_triangle { uint32_t a,b,c,face; } jd_candidate_mesh_triangle;
+typedef struct jd_candidate_mesh_info { uint32_t vertices,triangles,faces,status_flags;double max_reported_deflection; } jd_candidate_mesh_info;
+int32_t jd_candidate_mesh(uint64_t context,uint64_t shape,double deflection,double angle,jd_candidate_mesh_vertex* vertices,uint32_t vertex_capacity,jd_candidate_mesh_triangle* triangles,uint32_t triangle_capacity,jd_candidate_mesh_info* info,char* diagnostic,uint32_t capacity);
 #ifdef __cplusplus
 }
 #endif
