@@ -1,0 +1,28 @@
+# P08-T02-A02 on-screen Metal presentation and frame ownership
+
+Goal: turn the inspected offscreen CAD checkpoint into a reusable visible MTKView component, preserving actual native geometry and bounded GPU-resource lifetime. This advances P08-T02 and viewport prerequisites for UI-039; full UI/material/camera/picking/PC/physical acceptance remains open.
+
+Approved direction: C#/.NET iOS/UIKit and genuine native CAD plus Metal. Render directly into MTKView drawables, retain uploaded meshes, and bound outstanding frames to3. Alternatives: synchronous offscreen readback for every frame would block interaction; a separate scene-graph renderer would duplicate the verified pipeline. Reuse its exact encode path and add explicit frame-resource ownership instead. No product layout or gesture mapping is invented in this card.
+
+Sources/prerequisites: actual P08-T02-A01 PNG proof at1b62e58 and native archives from41181433871/41181435472; shader/mesh/camera contracts; published dotnet/macios pin410dc42e09f1bfca3258d46d5ec95cf48903d1b2, metalkit.cs SHA256 666c3833fd0ba2f882c5def086d7427e85096b5d01e69f4a5c8a87c87c77b4a0 and existing metal.cs pin. Initial CadMetalRenderer.cs SHA256 773d2e0114a2f2ff546edb36d59d4601afac8c0eefb9f1ec1079c70831936069. Current candidate camera/neutral lighting remain explicitly separate from recovered50mm projection/material behavior.
+
+Interfaces and files:
+- Rendering.Candidate/CadFrameGate.cs: bounded3-frame latest-revision scheduling, one owning current resource, immutable leased resource/revision per submission, deferred retirement after replacement/disposal, idempotent/out-of-order completion and diagnostics. It is resource logic, not simulated GPU execution.
+- shared Geometry.Candidate.Contracts/CadFrameGateAssertions.cs plus Rendering.Tests: deterministic ownership/limit/dirty/replacement/disposal/alias/failure cases, then shared iOS execution.
+- Rendering.Candidate.iOS/CadMetalRenderer.cs: factor existing identical encoding for offscreen and drawable rendering. Offscreen PNG hash must remain unchanged in actual Apple tests.
+- CadMetalGpuMesh.cs, CadMetalDrawablePresenter.cs: persistent real buffers; per-frame immutable camera buffer and explicit mesh lease; present real drawables, release on GPU completion; defer pipeline/queue destruction while work remains; capture command failures. No main-thread GPU wait/readback in visible path.
+- CadMetalView.cs: main-thread MTKView adapter with strong managed delegate/weak owner, on-demand invalidation, resize and candidate pose support, actual presented-time events and bounded resource statistics. Missing drawable during layout/visibility is pending work, not a fabricated frame. Frame failures are explicit.
+- tests/iOS.Viewport: separate UIWindow harness, original/edited/empty native meshes generated from library CSG, actual visible original/edit/orbit/empty/resize stages, repeated replacement/disposal and late GPU completion. Preserve actual frame IDs, mesh upload IDs, dimensions and native PresentedTime. Also run prior offscreen checks and portable camera/lifetime checks.
+- scripts/run-viewport-simulator.sh: fresh nonce/stage/ack/result protocol, whitelisted screenshot phases, actual simctl screenshots after presentation; record selected and actual iPad/iPhone identities; shut down each simulator after capture. No stale image/result acceptance.
+- .github/workflows/viewport-presentation.yml: branch push/manual pinned macOS26/.NET10.0.302/workload10.0.302.0/Xcode26.6. Restore validated unchanged simulator archive; build ad-hoc signed app, execute both families and retain reports/screenshots. Dedicated iOS compile preflight first. Native-source changes require a fresh producer; archive expiry is an explicit acquisition failure.
+
+Execution:
+1. Commit reviewed plan. RED portable gate tests before implementation; no unrelated recovery/kernel edits.
+2. Implement gate and verify original ownership/error/retention behavior; integrate shared and lightweight runners.
+3. Implement persistent GPU mesh, presenter and MTKView; run actual macOS binding compile and fix real errors. Preserve existing encode/offscreen output.
+4. Build/run visible harness through Actions and inspect actual screenshots, presentation timing, edit/orbit/empty/resize results and retired-resource counts. Separate compile, GPU completion, actual presentation, screenshots, physical-device and PC parity.
+5. Run adjacent portable/source/repository checks, record source hashes/commands/review/limits under evidenceP08-T02-A02, update only affected statuses and commit/push.
+
+Acceptance: actual CAD pixels appear in a visible MTKView; real source edits regenerate before re-upload; orbit/resize produce later presented frames without mesh re-upload; true empty native output clears; maximum outstanding submissions<=3; old buffers survive their submitted work and retire afterward; disposal and invalid input retain correct ownership; unchanged offscreen BGRA hash; fresh platform-specific screen/report artifacts inspected. A fast GPU may complete before a disposal attempt; record observed timing rather than claiming overlap that did not occur. Portable retained-lease tests cover deterministic pending ownership.
+
+All local files/tools/cache/temp/auth/output D: through run-local;5-second retry on transient D: failures. No subagents, original native execution, account access, fake geometry, cached preview substitution or recovered-source mutation. Self-review: coherent ownership boundaries, no GPU wait in display path, no unbounded frame queue, error propagation, source/frame identity explicit, test harness kept separate from final UI.
