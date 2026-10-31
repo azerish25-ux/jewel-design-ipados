@@ -25,7 +25,7 @@
         281
       ],
       "normalization": "Trim().ToLowerInvariant(); null faults before viewport access.",
-      "viewportSelection": "Active main viewport, overridden by first standard view whose MainViewport.Name.ToLower() equals perspective.",
+      "viewportSelection": "Active main viewport, overridden by first standard view whose MainViewport.Name.ToLower() equals perspective. Name.ToLower() follows current culture (unlike input invariant normalization); uppercase PERSPECTIVE is not selected under tr-TR. Observed by unchanged wrapper replay only.",
       "initialProjection": {
         "perspective": true,
         "symmetricFrustum": true,

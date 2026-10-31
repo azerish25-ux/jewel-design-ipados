@@ -5,6 +5,11 @@ on:
     paths:
       - "src/Port/Rendering.Candidate*/**"
       - "tests/iOS.Metal.Compile/**"
+      - "tests/Port/Rendering.Tests/**"
+      - "tests/Port/Geometry.Candidate.Contracts/LegacyCameraPresetAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyCameraPresets.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Recovered/CameraObservationTypes.txt"
+      - "scripts/verify-camera-preset-oracle.cjs"
       - "tests/iOS.Native/MetalViewportChecks.cs"
       - ".github/workflows/metal-preflight.yml"
   workflow_dispatch:
@@ -33,6 +38,11 @@ jobs:
           global-json-file: global.json
       - name: Install pinned iOS workload
         run: dotnet workload install ios --version 10.0.302.0
+      - name: Execute source camera preset differential on macOS
+        run: |
+          mkdir -p artifacts
+          node scripts/verify-camera-preset-oracle.cjs | tee artifacts/camera-source-fidelity.json
+          dotnet run --project tests/Port/Rendering.Tests | tee artifacts/camera-preset-tests.txt
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

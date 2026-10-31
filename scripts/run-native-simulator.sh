@@ -25,6 +25,7 @@ for i in $(seq 1 120); do
   grep -q '^PASS OCCT ' "$OUT/result.txt"
   grep -q '^PASS 16 original-binary golden Bernstein cases;' "$OUT/result.txt"
   grep -q 'PASS Metal offscreen viewport:actual-CAD pixels=' "$OUT/result.txt"
+  grep -q 'PASS source camera presets:120 unchanged-wrapper comparisons' "$OUT/result.txt"
   mkdir -p "$OUT/metal"
   for name in original edited orbit empty; do test -s "$DATA/Documents/native-metal-$name.png"; cp "$DATA/Documents/native-metal-$name.png" "$OUT/metal/$name.png"; done
   test -s "$DATA/Documents/native-metal-report.json"

@@ -2786,7 +2786,7 @@
       "kind": "ui",
       "phase": "P09",
       "title": "Camera presets, spin, grid and control highlight",
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/desktop/GV.CounterSketch.Studio.ViewModel/MainViewModel.cs",
@@ -2901,8 +2901,13 @@
       ],
       "acceptance": "In airplane mode, exercise camera presets, spin, grid and control highlight on representative catalog and freehand designs; verify resulting UI state, saved document, and reopening on the desktop against the cited behavior.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": []
+      "testCommands": [
+        "node scripts/verify-camera-preset-oracle.cjs",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P08-T01-A02.json"
+      ]
     },
     {
       "id": "UI-040",

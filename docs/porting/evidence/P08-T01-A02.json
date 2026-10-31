@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "in_progress_local_portable_decisions_verified_apple_pending",
+  "sources": {
+    "audit": "docs/evidence/audit/viewport-camera-source.json",
+    "wrapper": "recovery/canonical/cad/CS/CSUtil.cs",
+    "wrapperSha256": "421af2e1725afe8571b3c407104ea04d32eee64318857c072b1f3cef6b1881b5",
+    "bodySha256": "07de1cdde19dc2dc046bf627a1db3c8a1ebd85625175842eed3021f802e65ae2",
+    "enumSha256": "1130791b078e2af7d7bf1e0db567ce7bc879486b0f49c7cc7d76b471e2a66cf3",
+    "method": "CSUtil.DocumentSetCameraView"
+  },
+  "implementation": [
+    "src/Port/Rendering.Candidate/LegacyCameraPreset.cs"
+  ],
+  "red": "After test declaration errors were corrected, Rendering.Tests failed CS0103 missing LegacyCameraPreset/LegacyCameraView before implementation.",
+  "checks": {
+    "sourceComparisons": 120,
+    "cultures": [
+      "Invariant",
+      "en-US",
+      "tr-TR"
+    ],
+    "decisions": "Exact pose/up/target/construction plane/state/50mm lens/symmetric frustum/projection request; input normalization/null/empty/unknown/Unicode whitespace preserved.",
+    "wrapperObservation": "Exact original method and enum compiled with observation-only types. First perspective standard viewport and culture-dependent name lookup/active fallback, source call order and redraw observed; stubs do not implement native projection.",
+    "nativeContractReportSha256": "1c67ffe64622c74d25b911ab1f3c6e826d03711871b184f1c3efdc2eb97239f8",
+    "commands": [
+      {
+        "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/verify-camera-preset-oracle.cjs",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+        "exitCode": 0
+      }
+    ]
+  },
+  "remaining": [
+    "Mac execution of this new source decision test",
+    "Actual iPad/iPhone execution of this shared assertion",
+    "Original lens/sensor/frustum and zoom/native projection implementation",
+    "Camera UI/touch/navigation/grid/spin/highlight and frame synchronization",
+    "Original-PC visual/persistence, physical-device and full feature acceptance"
+  ],
+  "review": {
+    "correctness": "Source wrapper/enum byte hashes and exact extracted body verified; source null and unknown-name differences retained.",
+    "architecture": "Portable immutable command decision object uses doubles; does not conflate request with successful native projection.",
+    "security": "No source mutation, accounts, scripts or Windows/Rhino invocation; all local writes D:.",
+    "performance": "Small constant-time preset selection; no native resources or frame loop work."
+  },
+  "scope": "Portable managed decisions only; no full UI-039 acceptance or feature row closed."
+}

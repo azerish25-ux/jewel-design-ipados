@@ -31,7 +31,7 @@ jobs:
       - name: Footprint freshness regressions
         run: node --test tests/library-type-footprint.test.cjs
       - name: Apple preflight runner regression
-        run: node --test tests/metal-workflow.test.cjs tests/native-archive.test.cjs
+        run: node --test tests/metal-workflow.test.cjs tests/native-archive.test.cjs tests/camera-preset-oracle.test.cjs
       - name: Simulator selection regressions
         run: node --test tests/ios-device.test.cjs tests/simulator-launch.test.cjs
       - name: Verify full recovery, source links and work ledgers
@@ -99,10 +99,13 @@ jobs:
           node scripts/verify-average-plane-oracle.cjs
           node scripts/verify-legacy-join-contracts.cjs
           node scripts/verify-legacy-empty-join.cjs
+          node scripts/verify-camera-preset-oracle.cjs
       - name: Verify source-derived portfolio XML contracts
         run: node scripts/run-local.cjs dotnet run --project tools/PortfolioContractGenerator -- "$GITHUB_WORKSPACE" --verify
       - name: Graph snapshot contracts
         run: node scripts/run-local.cjs dotnet run --project tests/Port/Graph.Tests
+      - name: Source camera preset differential
+        run: node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests
       - name: Production domain material contract
         run: node scripts/run-local.cjs dotnet run --project tests/Port/Domain.Tests
       - name: Portable recovered checks with explicit compression diagnostic
