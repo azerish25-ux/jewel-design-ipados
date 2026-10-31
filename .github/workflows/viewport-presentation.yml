@@ -7,6 +7,7 @@ on:
       - "tests/iOS.Viewport/**"
       - "scripts/run-viewport-simulator.sh"
       - "scripts/check-viewport-report.cjs"
+      - "scripts/verify-viewport-screenshots.cjs"
       - ".github/workflows/viewport-presentation.yml"
   workflow_dispatch:
     inputs:

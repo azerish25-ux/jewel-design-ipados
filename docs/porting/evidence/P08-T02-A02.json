@@ -116,5 +116,17 @@
     "status": "queued_last_observed",
     "preflightRun": 41190078438,
     "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41190078324"
+  },
+  "screenPixelGate": {
+    "script": "scripts/verify-viewport-screenshots.cjs",
+    "red": "Test failed MODULE_NOT_FOUND before implementation.",
+    "coverage": "Prior real CAD PNGs exercise the comparison logic; blank/stale/nonuniform clear/incorrect final scenes rejected. These fixtures are not on-screen acceptance.",
+    "requirements": [
+      "Actual central screen-region CAD foreground",
+      "Actual edit/orbit/resize screen changes",
+      "Uniform empty CAD region",
+      "Fresh final view reproduces original scene"
+    ],
+    "scope": "Screenshot consistency plus manual actual-image inspection is required; native presentation timing is separately unavailable until supported hardware/runtime evidence."
   }
 }

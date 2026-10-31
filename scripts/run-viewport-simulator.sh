@@ -46,6 +46,7 @@ for i in $(seq 1 600); do
   cp "$DATA/Documents/viewport-report.json" "$OUT/report.json"
   for phase in original orbit edited empty resized final; do test -s "$OUT/$phase.png"; done
   node scripts/check-viewport-report.cjs "$OUT/report.json" > "$OUT/report-verification.json"
+  node scripts/verify-viewport-screenshots.cjs "$OUT" > "$OUT/screen-pixel-verification.json"
   mkdir -p "$OUT/offscreen"
   for phase in original edited orbit empty; do cp "$DATA/Documents/native-metal-$phase.png" "$OUT/offscreen/$phase.png"; done
   cp "$DATA/Documents/native-metal-report.json" "$OUT/offscreen/report.json"
