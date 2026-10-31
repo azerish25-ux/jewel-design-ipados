@@ -4,7 +4,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "in_progress_local_portable_decisions_verified_apple_pending",
+  "status": "in_progress_windows_macos_decisions_verified_ios_runtime_pending",
   "sources": {
     "audit": "docs/evidence/audit/viewport-camera-source.json",
     "wrapper": "recovery/canonical/cad/CS/CSUtil.cs",
@@ -43,7 +43,6 @@
     ]
   },
   "remaining": [
-    "Mac execution of this new source decision test",
     "Actual iPad/iPhone execution of this shared assertion",
     "Original lens/sensor/frustum and zoom/native projection implementation",
     "Camera UI/touch/navigation/grid/spin/highlight and frame synchronization",
@@ -55,5 +54,6 @@
     "security": "No source mutation, accounts, scripts or Windows/Rhino invocation; all local writes D:.",
     "performance": "Small constant-time preset selection; no native resources or frame loop work."
   },
-  "scope": "Portable managed decisions only; no full UI-039 acceptance or feature row closed."
+  "scope": "Portable managed decisions only; no full UI-039 acceptance or feature row closed.",
+  "appleCheckpoint": "docs/evidence/apple/camera-presets-preflight-results.json"
 }

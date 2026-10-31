@@ -26,5 +26,11 @@
     "https://docs.github.com/en/actions/tutorials/store-and-share-data",
     "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax"
   ],
-  "limits": "Producer app may fail; archive capture is separate from app acceptance. Reused binary is never counted as regenerated native source. Final iOS compile/runtime/platform verification remains mandatory. Physical/full parity unverified."
+  "limits": "Producer app may fail; archive capture is separate from app acceptance. Reused binary is never counted as regenerated native source. Final iOS compile/runtime/platform verification remains mandatory. Physical/full parity unverified.",
+  "producerRuns": {
+    "simulator": 41181433871,
+    "device": 41181435472,
+    "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+    "status": "in_progress_native_kernel_build_last_observed"
+  }
 }

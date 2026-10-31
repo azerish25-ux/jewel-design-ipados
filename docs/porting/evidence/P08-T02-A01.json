@@ -98,6 +98,18 @@
       "warnings": 0,
       "errors": 0,
       "scope": "Actual harness file compiles with ImplicitUsings disabled; not native app AOT/runtime."
+    },
+    "replacementProducerRuns": {
+      "runtime": 41181433871,
+      "device": 41181435472,
+      "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+      "status": "in_progress_native_kernel_build_last_observed"
+    },
+    "cameraAndMetalPreflight": {
+      "run": 41181809482,
+      "sourceCommit": "b0a92656f7c70a0967ef379a70578e0e1ed6aca2",
+      "conclusion": "success",
+      "report": "docs/evidence/apple/camera-presets-preflight-results.json"
     }
   },
   "ciCorrection": {

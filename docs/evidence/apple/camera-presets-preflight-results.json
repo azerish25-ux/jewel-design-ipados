@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "b0a92656f7c70a0967ef379a70578e0e1ed6aca2",
+  "run": 41181809482,
+  "sourceComparisons": 120,
+  "report": "PASS source camera presets:120 unchanged-wrapper comparisons across invariant/en-US/tr-TR, original pose/up/plane/lens/projection, null and unknown-name behavior; source call-order/viewport preference observed, native frustum/zoom/UI/PC parity separate.",
+  "reportSha256": "46df5cc52ecbe589495df08221698b32cf01e32bafcec4b0ea9fc1ab336e38ce",
+  "fidelity": {
+    "source": "recovery/canonical/cad/CS/CSUtil.cs",
+    "sourceSha256": "421af2e1725afe8571b3c407104ea04d32eee64318857c072b1f3cef6b1881b5",
+    "bodySha256": "07de1cdde19dc2dc046bf627a1db3c8a1ebd85625175842eed3021f802e65ae2",
+    "supportSha256": "5f9194b6b33260e3e62c801a7dcaff0245c875601404dfa9d45a8299e85a3056",
+    "enumSourceSha256": "1130791b078e2af7d7bf1e0db567ce7bc879486b0f49c7cc7d76b471e2a66cf3",
+    "target": "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyCameraPresets.cs"
+  },
+  "compile": {
+    "warnings": 0,
+    "errors": 0,
+    "buildLogSha256": "e8ab44d346ec6c0f83d0f89450d24efc4bd52980b8b26be8ff163a67c60b1397"
+  },
+  "scope": "Actual macOS managed camera decisions plus iOS simulator library/harness compilation. No iPad/iPhone runtime, native frustum/zoom or physical-device proof."
+}
