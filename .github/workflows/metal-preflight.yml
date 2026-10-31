@@ -5,6 +5,7 @@ on:
     paths:
       - "src/Port/Rendering.Candidate*/**"
       - "tests/iOS.Metal.Compile/**"
+      - "tests/iOS.Viewport/**"
       - "tests/Port/Rendering.Tests/**"
       - "tests/Port/Geometry.Candidate.Contracts/LegacyCameraPresetAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Recovered/LegacyCameraPresets.cs"
