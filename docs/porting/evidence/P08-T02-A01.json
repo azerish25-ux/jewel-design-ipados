@@ -59,7 +59,20 @@
     },
     "runtimeRun": 41180073419,
     "deviceRun": 41180075019,
-    "correctedWorkflowRun": 41180366163
+    "correctedWorkflowRun": 41180366163,
+    "depthGuardPreflight": {
+      "run": 41180603539,
+      "commit": "7546d17",
+      "status": "queued_last_observed",
+      "scope": "Explicit depth attachment null guard compile recheck; do not infer success."
+    },
+    "correctedRepositoryRun": {
+      "run": 41180359414,
+      "commit": "13670c5",
+      "conclusion": "success"
+    },
+    "runtimeStatus": "iOS job building native kernel at last observation; host job failure is the separately corrected Linux placement.",
+    "deviceStatus": "Building native kernel at last observation."
   },
   "ciCorrection": {
     "failure": "Linux host job attempted iOS Metal preflight and failed NETSDK1147 before native configuration.",
