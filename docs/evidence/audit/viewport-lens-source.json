@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A03",
+  "status": "pinned_published_source_acquired_no_projection_implementation_claim",
+  "source": {
+    "repository": "https://github.com/mcneel/opennurbs",
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "file": "opennurbs_viewport.cpp",
+    "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_viewport.cpp",
+    "sha256": "2403be6f12b9f3fa7c723da44793eda28c78e1e06d2ae7f2c529241c5b0498ce",
+    "bytes": 134171,
+    "methods": [
+      {
+        "signature": "bool ON_Viewport::GetCamera35mmLensLength( double* lens_length ) const",
+        "bodySha256": "f34c479b847af842fa36fb930118f5960753d345038d07168ff2e790617a2183"
+      },
+      {
+        "signature": "bool ON_Viewport::SetCamera35mmLensLength( double lens_length )",
+        "bodySha256": "89a65f0815e77b3e6d28c412a46c514fa3d566fce333e1fdf7ba5b8e49b72c6a"
+      },
+      {
+        "signature": "bool ON_Viewport::SetCameraAngle( double angle )",
+        "bodySha256": "47d17abbb284f2d6d8895f79205bda8f47bf1253c4315c06ef5f7fde14fbc371"
+      }
+    ]
+  },
+  "observations": {
+    "getter": {
+      "requires": "Non-null result pointer and successful GetFrustum, positive near distance and positive view radius.",
+      "resultInitialization": "Resets output lens to0 before reading frustum.",
+      "halfWidth": "max(right,-left)",
+      "halfHeight": "max(top,-bottom)",
+      "viewRadius": "Use halfWidth when halfWidth<=halfHeight OR IsTwoPointPerspectiveProjection(); otherwise halfHeight.",
+      "filmRadiusMillimeters": 12,
+      "lens": "near*12/viewRadius",
+      "projectionGate": "No explicit perspective-only gate in this getter."
+    },
+    "setter": {
+      "requires": "ON_IsValid(lens) and lens>0, successful GetFrustum, positive near distance and view radius.",
+      "scale": "(12/viewRadius)*(near/lens)",
+      "deadband": "abs(scale-1)<1e-6 returns true without calling SetFrustum; equality is not included.",
+      "updates": "Multiply left/right/bottom/top by scale, preserve near/far, return native SetFrustum result.",
+      "twoPoint": "Same halfWidth preference as getter."
+    },
+    "setCameraAngle": {
+      "inputMeaning": "Smallest half-angle, not vertical or diagonal FOV.",
+      "aspect": "aspect>=1: halfWidth=near*tan(angle)*aspect,halfHeight=near*tan(angle); aspect<1: halfWidth=near*tan(angle),halfHeight=near*tan(angle)/aspect.",
+      "limits": "Uses native GetFrustum/GetFrustumAspect/SetFrustum and ON_PI/ON_SQRT_EPSILON bounds."
+    }
+  },
+  "derivedSymmetricOrdinaryPerspective": {
+    "lensMillimeters": 50,
+    "smallestFullFovRadians": 0.47108996144172666,
+    "smallestFullFovDegrees": 26.991466561591626,
+    "scope": "Inference for symmetric ordinary perspective with a successful lens update; not a Rhino5 runtime measurement or general asymmetric/two-point framing guarantee."
+  },
+  "currentPortGap": "LegacyCameraPreset preserves50mm request; CadViewportCamera.Fit still intentionally uses a generic PI/4 vertical test camera. No original lens/projection equivalence is claimed.",
+  "nextRequired": [
+    "Map exact GetFrustum/SetFrustum/GetFrustumAspect validation and ON_IsValid/sentinel behavior",
+    "Compile published camera methods and independent matrix checks for symmetric/asymmetric/parallel/two-point/deadband/failure cases",
+    "Preserve original pose/up/construction plane and visible-design zoom semantics when applying projection",
+    "Actual Metal preset frames on iPad/iPhone; original-PC/physical-device visual/persistence acceptance"
+  ],
+  "limits": "Published openNURBS6 revision matches existing independent reference pin, not proof of private Rhino5 viewport implementation. No native archive fingerprint or rendering behavior changed."
+}

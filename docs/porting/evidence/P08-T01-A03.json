@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A03",
+  "status": "source_acquisition_complete_projection_port_pending",
+  "sourceAudit": "docs/evidence/audit/viewport-lens-source.json",
+  "check": {
+    "command": "node scripts/verify-camera-lens-source.cjs .local/reference/opennurbs6-camera/opennurbs_viewport.cpp",
+    "exitCode": 0,
+    "fileSha256": "2403be6f12b9f3fa7c723da44793eda28c78e1e06d2ae7f2c529241c5b0498ce",
+    "methodsVerified": 3,
+    "scope": "Acquired source content/size/body fidelity only."
+  },
+  "finding": "50mm preset request is now portable, but original projection cannot be inferred from the current generic Metal PI/4 vertical-FOV proof camera. Published lens code selects maximum signed extents and uses a smallest-axis12mm policy (width in two-point perspective), including a strict1e-6 update deadband.",
+  "remaining": [
+    "Compile and compare actual lens/frustum/native projection algorithms with source validation and failure cases",
+    "Apply camera presets and source visible-design zoom to actual GPU frames",
+    "Original Rhino5/private viewport, original-PC and physical-device visual/persistence acceptance"
+  ],
+  "limits": "No rendering or native input changed; no full parity row closed. Published6 source pin is independent evidence, not original Rhino5 runtime."
+}

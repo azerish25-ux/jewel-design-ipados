@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const {extract}=require('./verify-value-channel-oracle.cjs');
+const root=path.resolve(__dirname,'..'),audit=JSON.parse(fs.readFileSync(path.join(root,'docs/evidence/audit/viewport-lens-source.json'),'utf8'));
+const sha=x=>crypto.createHash('sha256').update(x).digest('hex');
+const file=process.argv[2];if(!file)throw Error('Supply the locally acquired pinned opennurbs_viewport.cpp path');
+const bytes=fs.readFileSync(path.resolve(root,file));
+if(bytes.length!==audit.source.bytes||sha(bytes)!==audit.source.sha256)throw Error('Published viewport source hash/size mismatch');
+for(const method of audit.source.methods)if(sha(extract(bytes.toString('utf8'),method.signature))!==method.bodySha256)throw Error('Published camera body mismatch: '+method.signature);
+console.log(JSON.stringify({sourceSha256:sha(bytes),methodsVerified:audit.source.methods.length,scope:'Pinned source acquisition/fidelity only; no compiled projection or original-PC runtime claim.'},null,2));
