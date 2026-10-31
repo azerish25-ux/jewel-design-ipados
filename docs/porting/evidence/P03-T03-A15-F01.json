@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P03-T03-A15-F01",
+  "status": "local_verified_ci_rerun_pending",
+  "parent": "P03-T03-A15",
+  "failure": {
+    "runs": [
+      41170280601,
+      41170356411
+    ],
+    "step": "Verify available library serialized type footprint",
+    "error": "Stale library type footprint",
+    "cause": "Codec input hash changed with cap schema registration. The footprint generator also had no cap-header classification yet; ledger rows are not generator inputs."
+  },
+  "changes": [
+    "Classify exact saved ProfileCap138/139 with independent bounded reader;2 cap headers and77 opaque records.",
+    "Refresh generated JSON/Markdown footprint and source hashes.",
+    "Expose check/verify and call the same freshness check from local repository checker.",
+    "Add cap-classification and stale JSON/Markdown regression controls to CI."
+  ],
+  "red": "New local repository freshness check reproduced Stale library type footprint before regenerating artifacts.",
+  "scope": "CI/source-inventory consistency followup only, no new native/runtime/PC parity claims.",
+  "checks": [
+    {
+      "command": "node --test tests/library-type-footprint.test.cjs",
+      "exitCode": 0,
+      "tests": 4
+    },
+    {
+      "command": "node scripts/library-type-footprint.cjs --check",
+      "exitCode": 0
+    },
+    {
+      "command": "node tools/repository/check.cjs",
+      "exitCode": 0
+    }
+  ]
+}

@@ -107,7 +107,7 @@
     {
       "id": 41170280601,
       "scope": "repository/header/reference and document proofs",
-      "status": "dispatched",
+      "status": "failure_stale_library_footprint",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41170280601"
     },
     {
@@ -116,5 +116,8 @@
       "status": "dispatched",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41170280620"
     }
+  ],
+  "followups": [
+    "docs/porting/evidence/P03-T03-A15-F01.json"
   ]
 }

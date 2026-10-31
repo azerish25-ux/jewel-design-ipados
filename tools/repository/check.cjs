@@ -18,6 +18,7 @@ function checks() {
         recovery: require("../../scripts/recovery.cjs").verify(),
         planning: require("../../scripts/porting.cjs").check(),
     };
+    results.libraryFootprint = require("../../scripts/library-type-footprint.cjs").check();
     results.contracts = require("./contracts.cjs").check();
     let links = 0,
         scanned = 0;
