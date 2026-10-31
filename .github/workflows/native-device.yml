@@ -52,6 +52,8 @@ jobs:
           xcodebuild -version > artifacts/xcode.txt
           dotnet --info > artifacts/dotnet.txt
           shasum -a 256 .local/native/occt-source/LICENSE_LGPL_21.txt .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt > artifacts/native-license-hashes.txt
+      - name: Compile Metal renderer bindings before kernel build
+        run: dotnet build tests/iOS.Metal.Compile -c Debug -r iossimulator-arm64
       - name: Prepare pinned published geometry comparisons
         run: |
           node scripts/prepare-rotation-reference.cjs | tee artifacts/native-rotation-reference.json

@@ -40,6 +40,8 @@ jobs:
           git -C .local/native/occt-source rev-parse HEAD > artifacts/native-source.txt
           sha256sum .local/native/occt-source/src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.hxx .local/native/occt-source/src/ModelingAlgorithms/TKBool/BRepFill/BRepFill_PipeShell.cxx .local/native/occt-source/src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_GuideTrihedronAC.cxx .local/native/occt-source/src/ModelingAlgorithms/TKGeomAlgo/GeomFill/GeomFill_NSections.cxx .local/native/occt-source/src/ModelingData/TKG3d/Geom/Geom_BSplineSurface.hxx > artifacts/native-sweep-source-hashes.txt
           sha256sum .local/native/occt-source/LICENSE_LGPL_21.txt .local/native/occt-source/OCCT_LGPL_EXCEPTION.txt > artifacts/native-license-hashes.txt
+      - name: Compile Metal renderer bindings before kernel build
+        run: dotnet build tests/iOS.Metal.Compile -c Debug -r iossimulator-arm64
       - name: Prepare pinned published geometry comparisons
         run: |
           node scripts/prepare-rotation-reference.cjs | tee artifacts/native-rotation-reference.json

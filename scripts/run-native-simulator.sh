@@ -14,6 +14,7 @@ xcrun simctl install "$UDID" "$APP"
 DATA=$(xcrun simctl get_app_container "$UDID" com.jeweldesign.nativegeometry data)
 # A result from an earlier launch cannot prove this invocation ran.
 rm -f "$DATA/Documents/native-result.txt" "$DATA/Documents/native-result.txt.family" "$DATA/Documents/native-result.txt.started"
+rm -f "$DATA/Documents/native-metal-original.png" "$DATA/Documents/native-metal-edited.png" "$DATA/Documents/native-metal-orbit.png" "$DATA/Documents/native-metal-empty.png" "$DATA/Documents/native-metal-report.json"
 xcrun simctl launch --terminate-running-process "$UDID" com.jeweldesign.nativegeometry | tee "$OUT/launch.txt"
 for i in $(seq 1 120); do
  if test -f "$DATA/Documents/native-result.txt"; then
@@ -23,6 +24,11 @@ for i in $(seq 1 120); do
   test "$(cat "$OUT/runtime-family.txt")" = "$FAMILY"
   grep -q '^PASS OCCT ' "$OUT/result.txt"
   grep -q '^PASS 16 original-binary golden Bernstein cases;' "$OUT/result.txt"
+  grep -q 'PASS Metal offscreen viewport:actual-CAD pixels=' "$OUT/result.txt"
+  mkdir -p "$OUT/metal"
+  for name in original edited orbit empty; do test -s "$DATA/Documents/native-metal-$name.png"; cp "$DATA/Documents/native-metal-$name.png" "$OUT/metal/$name.png"; done
+  test -s "$DATA/Documents/native-metal-report.json"
+  cp "$DATA/Documents/native-metal-report.json" "$OUT/metal/report.json"
   grep -q '^PASS managed candidate ABI:' "$OUT/result.txt"
   grep -q 'PASS candidate native curves:' "$OUT/result.txt"
   grep -q 'PASS ring rail candidate:' "$OUT/result.txt"

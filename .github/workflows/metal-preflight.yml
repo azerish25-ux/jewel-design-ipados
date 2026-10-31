@@ -1,0 +1,38 @@
+name: Metal renderer binding preflight
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compile:
+    runs-on: macos-26
+    timeout-minutes: 12
+    defaults:
+      run:
+        shell: bash
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_GENERATE_ASPNET_CERTIFICATE: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Pin existing Apple toolchain
+        run: |
+          echo '{"sdk":{"version":"10.0.302","rollForward":"disable"}}' > global.json
+          sudo xcode-select -s /Applications/Xcode_26.6.app
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+        with:
+          global-json-file: global.json
+      - name: Install pinned iOS workload
+        run: dotnet workload install ios --version 10.0.302.0
+      - name: Compile real Metal binding library
+        run: |
+          mkdir -p artifacts
+          dotnet build tests/iOS.Metal.Compile -c Debug -r iossimulator-arm64 | tee artifacts/metal-binding-build.txt
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: metal-binding-preflight
+          path: artifacts/
+          retention-days: 14

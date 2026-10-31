@@ -23,7 +23,8 @@ public class AppDelegate:UIApplicationDelegate
    if(status!=0||!result.StartsWith("PASS OCCT ",StringComparison.Ordinal))throw new Exception("Native candidate status "+status+": "+result);
    var managedResult=ReuseSmoke.Checks.Run();
    var adapterResult=CandidateGeometryContractChecks.Assertions.Run();
-   result+=Environment.NewLine+managedResult+Environment.NewLine+adapterResult;
+   var metalResult=MetalViewportChecks.Run(Path.GetDirectoryName(path)!);
+   result+=Environment.NewLine+managedResult+Environment.NewLine+adapterResult+Environment.NewLine+metalResult;
    File.WriteAllText(path+".pending",result);
    File.Move(path+".pending",path,overwrite:true);
    Console.WriteLine(result);

@@ -6,7 +6,7 @@ Design decision: use Metal directly with the genuine P05 mesh snapshot. Scene-gr
 
 Boundaries/files:
 - src/Port/Rendering.Candidate: portable double-center/unit-radius mesh packing, float6 position/normal vertex layout, UInt32 indices and source face ordinals, fitted right-handed0..1-depth camera matrix. Empty mesh clears only. Validate finite values and image dimensions.
-- tests/Port/Rendering.Candidate.Tests: RED missing portable packing; independent fit/clip/precision/normal/layout/empty/error checks using real native mesh through shared contract runner where relevant.
+- tests/Port/Geometry.Candidate.Contracts/ViewportPackingAssertions.cs: RED missing portable packing; independent fit/clip/precision/normal/layout/empty/error checks using real native mesh through shared contract runner where relevant.
 - src/Port/Rendering.Candidate.iOS: Metal-only library; compile shader, upload real buffers, depth-test indexed triangles, render shared BGRA target, wait/check GPU completion, read back pixels. No CPU fallback or cached image.
 - tests/iOS.Native: render original/edited/orbit/empty frames from actual native joined140; write PNG/metrics and PASS marker only after foreground/change/depth checks. Existing result protocol gates platform-family identity.
 - scripts/run-native-simulator.sh and native workflow: compile Metal binding library before expensive kernel build; copy/verify fresh PNG/JSON artifacts, retain logs. A library build is compile proof, not GPU execution.
@@ -17,3 +17,5 @@ Boundaries/files:
 4. Verify images/metrics on iPad/iPhone and unsigned device compile/link separately. Update source/provenance/repository checks, evidence and current state; commit/push progress.
 
 Success for this card: actual CAD triangles visibly rendered by Metal, edit/orbit change pixels, empty scene remains background, image artifacts inspected. This does not complete full1:1 UI/material/render/picking/physical/PC parity. All local tools/cache/output D:;5-second retry for transient D: errors. No recovery/kernel edits.
+
+Portable RED missing Rendering namespace recorded;144 real mesh clip points and1e9-offset precision/stride/face-identity/owned-buffer guards pass locally. Metal renderer and actual image harness implemented, pending macOS binding compile then GPU execution. Dedicated library/harness preflight has no fake native archive and proves compile only.

@@ -1,0 +1,10 @@
+#include <metal_stdlib>
+using namespace metal;
+struct CadVertex { packed_float3 position; packed_float3 normal; };
+struct CadRaster { float4 position [[position]]; float3 normal; };
+vertex CadRaster cad_vertex(uint id [[vertex_id]],device const CadVertex* vertices [[buffer(0)]],constant float4x4& viewProjection [[buffer(1)]]) {
+ CadRaster out;out.position=viewProjection*float4(float3(vertices[id].position),1);out.normal=normalize(float3(vertices[id].normal));return out;
+}
+fragment float4 cad_fragment(CadRaster in [[stage_in]]) {
+ float3 normal=normalize(in.normal);float illumination=.18+.62*max(dot(normal,normalize(float3(.5,.7,1))),0.0)+.2*max(dot(normal,normalize(float3(-.7,.1,.2))),0.0);return float4(float3(.68,.71,.76)*illumination,1);
+}
