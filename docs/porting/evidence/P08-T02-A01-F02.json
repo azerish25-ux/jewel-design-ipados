@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T02-A01-F02",
-  "status": "in_progress_local_integrity_checks_passed_real_apple_producer_pending",
+  "status": "in_progress_real_producers_and_device_consumer_inspected_simulator_pending",
   "red": "node --test tests/native-archive.test.cjs failed MODULE_NOT_FOUND before script implementation.",
   "checks": {
     "command": "node --test tests/native-archive.test.cjs tests/metal-workflow.test.cjs",
@@ -32,5 +32,13 @@
     "device": 41181435472,
     "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
     "status": "in_progress_native_kernel_build_last_observed"
-  }
+  },
+  "producerReport": "docs/evidence/apple/native-archive-producer-results.json",
+  "consumerRuns": {
+    "simulator": 41182340484,
+    "device": 41182342075,
+    "consumerCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+    "status": "device_completed_success_simulator_iPhone_in_progress_last_observed"
+  },
+  "deviceConsumerReport": "docs/evidence/apple/metal-device-results.json"
 }

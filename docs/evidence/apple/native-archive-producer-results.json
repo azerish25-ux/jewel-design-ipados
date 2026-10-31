@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "producerCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+  "archives": [
+    {
+      "schemaVersion": 1,
+      "occtPin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+      "runId": "41181433871",
+      "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+      "platform": "iossimulator-arm64",
+      "nativeInputSha256": "6d4e695ca9a910ab2cf52ebb768824f87b6b7dd921b9f1216f98b8779e2f0553",
+      "xcode": "Xcode 26.6\nBuild version 17F113",
+      "archiveSha256": "f4f15e02ec58dba1d534657a2c516bac6e502e72a0b99a13ed915c07217b0bae",
+      "archiveBytes": 74590936
+    },
+    {
+      "schemaVersion": 1,
+      "occtPin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+      "runId": "41181435472",
+      "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+      "platform": "ios-arm64",
+      "nativeInputSha256": "6d4e695ca9a910ab2cf52ebb768824f87b6b7dd921b9f1216f98b8779e2f0553",
+      "xcode": "Xcode 26.6\nBuild version 17F113",
+      "archiveSha256": "5cbb081ce6d0846544064ee4015bbdf815782f353e404a0cfef5be0baf13d22e",
+      "archiveBytes": 75421232
+    }
+  ],
+  "inspection": "Actual named artifacts downloaded beneath D:; source/run/platform declarations, static archive header, actual byte length and SHA256 checked. Both producers share exact input fingerprint and Xcode identity.",
+  "host": {
+    "run": 41181433871,
+    "job": "host",
+    "conclusion": "success",
+    "sourcePin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "reportSha256": "ecd7cefce4dfd25375540195ebc7c0adca89763d1b780657f3c4dabdc066ecde",
+    "scope": "Linux native analytical/ABI fixtures only; no managed graph, GPU or original-PC claim."
+  },
+  "consumerRuns": {
+    "simulator": 41182340484,
+    "device": 41182342075,
+    "consumerCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+    "status": "device_completed_success_simulator_iPhone_in_progress_last_observed"
+  },
+  "limits": "Archive integrity and both real Mac restore steps passed; device app compiled/linked. Simulator iPad gates passed but full runtime/image artifact inspection is pending. No physical/original-PC/full parity.",
+  "deviceConsumer": {
+    "schemaVersion": 1,
+    "occtPin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "runId": "41181435472",
+    "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+    "platform": "ios-arm64",
+    "nativeInputSha256": "6d4e695ca9a910ab2cf52ebb768824f87b6b7dd921b9f1216f98b8779e2f0553",
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "archiveSha256": "5cbb081ce6d0846544064ee4015bbdf815782f353e404a0cfef5be0baf13d22e",
+    "archiveBytes": 75421232,
+    "consumerCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+    "consumerRunId": "41182342075",
+    "scope": "Validated native archive reuse only; app compile/runtime still required."
+  }
+}

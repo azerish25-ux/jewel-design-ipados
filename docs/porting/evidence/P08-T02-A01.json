@@ -41,9 +41,9 @@
     "localRerun": "Full native managed host contract suite passed, including144 viewport clip points after CI fix."
   },
   "pending": [
-    "Actual Metal GPU pixel/depth/original-edit-orbit-empty checks",
-    "Image artifacts inspected on iPad/iPhone",
-    "Unsigned device build separate from physical execution"
+    "Full iPad/iPhone Metal image artifacts inspected",
+    "Original camera/material/render quality and interactive UI acceptance",
+    "Physical-device execution separately from unsigned compile"
   ],
   "limits": "No finished UI, original camera/material/render quality, touch/picking/frame synchronization or full parity claim.",
   "apple": {
@@ -103,13 +103,20 @@
       "runtime": 41181433871,
       "device": 41181435472,
       "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
-      "status": "in_progress_native_kernel_build_last_observed"
+      "status": "Host native fixtures and iPad step passed; iPhone in_progress last observed. Device completed success and artifacts inspected."
     },
     "cameraAndMetalPreflight": {
       "run": 41181809482,
       "sourceCommit": "b0a92656f7c70a0967ef379a70578e0e1ed6aca2",
       "conclusion": "success",
       "report": "docs/evidence/apple/camera-presets-preflight-results.json"
+    },
+    "unsignedDeviceReport": "docs/evidence/apple/metal-device-results.json",
+    "currentSimulatorRetest": {
+      "run": 41182340484,
+      "sourceCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+      "nativeArchiveProducerRun": 41181433871,
+      "status": "iPad step passed; iPhone step in_progress last observed; actual render artifacts pending inspection"
     }
   },
   "ciCorrection": {

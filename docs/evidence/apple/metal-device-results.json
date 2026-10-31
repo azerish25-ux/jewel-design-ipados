@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "producer": {
+    "run": 41181435472,
+    "commit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+    "proof": {
+      "warnings": 52,
+      "errors": 0,
+      "architectures": "arm64",
+      "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+      "executableSha256Report": "c35ce8385d99f6824d2d5a6ca3610781596039c6f29f85e5b659c0cfafbf0915  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+      "buildLogSha256": "45131ad2e38579040fa1fe1bdddf92f19aca65ed9ba81d6a8426cf5d1814669e",
+      "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+      "scope": "Unsigned ios-arm64 Release/AOT compile/link and executable platform inspection only; no physical execution."
+    }
+  },
+  "consumer": {
+    "run": 41182342075,
+    "commit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+    "proof": {
+      "warnings": 52,
+      "errors": 0,
+      "architectures": "arm64",
+      "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+      "executableSha256Report": "e52d32c824c6f829b97e9a03b1ac948aa2bd842aba24255fd7c7163824cc289c  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+      "buildLogSha256": "8ad81bc359696563627ff81580e51e40c4bc6a581b3170be559d13ea32546406",
+      "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+      "archiveReuse": {
+        "schemaVersion": 1,
+        "occtPin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+        "runId": "41181435472",
+        "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+        "platform": "ios-arm64",
+        "nativeInputSha256": "6d4e695ca9a910ab2cf52ebb768824f87b6b7dd921b9f1216f98b8779e2f0553",
+        "xcode": "Xcode 26.6\nBuild version 17F113",
+        "archiveSha256": "5cbb081ce6d0846544064ee4015bbdf815782f353e404a0cfef5be0baf13d22e",
+        "archiveBytes": 75421232,
+        "consumerCommit": "1b62e5896c5101cc2ea0c2c5006ad2f69a978851",
+        "consumerRunId": "41182342075",
+        "scope": "Validated native archive reuse only; app compile/runtime still required."
+      },
+      "scope": "Unsigned ios-arm64 Release/AOT including source camera decisions; no physical-device execution."
+    }
+  },
+  "scope": "Actual Metal-enabled unsigned ios-arm64 AOT compile/link; latest consumer includes portable camera decisions and verifies unchanged native archive inputs. No physical-device or original-PC/UI/render visual parity claim."
+}
