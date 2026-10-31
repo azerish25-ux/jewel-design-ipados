@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "pin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+  "files": [
+    {
+      "path": "src/ModelingAlgorithms/TKTopAlgo/BRepBuilderAPI/BRepBuilderAPI_GTransform.cxx",
+      "normalizedLfSha256": "6122c3764b32ccbea11747f5c1442391be84aa326abb80a645831a121e8cc64a"
+    },
+    {
+      "path": "src/ModelingData/TKBRep/BRepTools/BRepTools_GTrsfModification.cxx",
+      "normalizedLfSha256": "4c6335bc1ab452870104a034823a1a39e073dba4c2919e18253d406b7da0ecde"
+    },
+    {
+      "path": "src/ModelingData/TKBRep/BRepTools/BRepTools_Modifier.cxx",
+      "normalizedLfSha256": "4c5ee6d7bed8b857d48d427925aa5ce0e90c137a69d13848ddf935aa92fbef55"
+    },
+    {
+      "path": "src/FoundationClasses/TKMath/gp/gp_GTrsf.cxx",
+      "normalizedLfSha256": "712f8685814b799e28ded7cc39dab09585aa6c9fc5f3e842c7e34f87720599a7"
+    },
+    {
+      "path": "src/FoundationClasses/TKMath/gp/gp_Trsf.cxx",
+      "normalizedLfSha256": "16cbfc3987ded03b184652038bf24b3592c9b9056bbfec704cca71333f7ff645"
+    }
+  ],
+  "observations": {
+    "wrapper": "BRepBuilderAPI_GTransform::Perform always runs BRepBuilderAPI_NurbsConvert before its modification.",
+    "directModifier": "BRepTools_GTrsfModification supports explicit BSpline/Bezier surfaces/curves and preserves full matrix pole/point mapping; modifier constructor mutable input is false.",
+    "classification": "Candidate checks every face/edge representation before selecting direct path. Wrapped/analytic geometry retains existing conversion path.",
+    "matrix": "No gp_Trsf.SetValues orthogonalization or gp_GTrsf.SetForm reclassification; exact requested full affine remains gp_Other.",
+    "failure": "Reproduced local cap inverse failed face UnorientableShape27 and wire NotClosed28 through redundant conversion; direct modification passes."
+  },
+  "scope": "Pinned source/observed candidate fix, not a patch to OCCT or proof for all conversion-dependent analytic pole/mesh families."
+}

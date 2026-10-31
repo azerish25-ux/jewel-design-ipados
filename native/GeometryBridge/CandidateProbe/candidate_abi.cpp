@@ -1,3 +1,8 @@
+#include <BRepTools_Modifier.hxx>
+#include <BRepTools_GTrsfModification.hxx>
+#include <Geom_BezierSurface.hxx>
+#include <Geom_BezierCurve.hxx>
+#include <BRepCheck_Result.hxx>
 #include <BRepBuilderAPI_Sewing.hxx>
 #include <TopoDS_Iterator.hxx>
 #include <TopExp.hxx>
@@ -129,7 +134,17 @@ void outputHandle(uint64_t* output)
 }
 uint64_t store(Context& context,const TopoDS_Shape& shape)
 {
-    if(shape.IsNull()||!BRepCheck_Analyzer(shape).IsValid())fail(JD_CANDIDATE_KERNEL_FAILURE,"Kernel produced null or invalid BRep");
+    if(shape.IsNull())fail(JD_CANDIDATE_KERNEL_FAILURE,"Kernel produced null BRep");
+    BRepCheck_Analyzer checked(shape);
+    if(!checked.IsValid()){
+        std::string detail="Kernel produced invalid BRep";int statuses=0;
+        for(auto kind:{TopAbs_FACE,TopAbs_WIRE,TopAbs_EDGE,TopAbs_VERTEX})for(TopExp_Explorer it(shape,kind);it.More()&&statuses<12;it.Next()){
+            auto result=checked.Result(it.Current());if(result.IsNull())continue;
+            auto append=[&](const NCollection_List<BRepCheck_Status>& list){for(auto status:list)if(status!=BRepCheck_NoError&&statuses++<12)detail+=" type"+std::to_string(static_cast<int>(kind))+":status"+std::to_string(static_cast<int>(status));};
+            append(result->Status());for(result->InitContextIterator();result->MoreShapeInContext()&&statuses<12;result->NextShapeInContext())append(result->StatusOnShape());
+        }
+        fail(JD_CANDIDATE_KERNEL_FAILURE,detail.c_str());
+    }
     const auto id=identity();
     context.shapes.emplace(id,ShapeRecord{shape,1});return id;
 }
@@ -348,9 +363,11 @@ extern "C" int32_t jd_candidate_affine(uint64_t context,uint64_t shape,const dou
         // SetValue stores the full matrix in gp_Other form. Preserve it: pinned SetForm
         // can reclassify uniform matrices while retaining scale0, collapsing vertices.
         withContext(context,[&](Context& value){
-            BRepBuilderAPI_GTransform operation(findShape(value,shape).shape,transform,true);
-            if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native affine transformation failed");
-            *output=store(value,operation.Shape());
+            const auto& input=findShape(value,shape).shape;bool direct=true;
+            for(TopExp_Explorer it(input,TopAbs_FACE);it.More()&&direct;it.Next()){TopLoc_Location location;auto surface=BRep_Tool::Surface(TopoDS::Face(it.Current()),location);direct=!surface.IsNull()&&(surface->DynamicType()==STANDARD_TYPE(Geom_BSplineSurface)||surface->DynamicType()==STANDARD_TYPE(Geom_BezierSurface));}
+            for(TopExp_Explorer it(input,TopAbs_EDGE);it.More()&&direct;it.Next()){double first,last;auto curve=BRep_Tool::Curve(TopoDS::Edge(it.Current()),first,last);direct=curve.IsNull()||curve->DynamicType()==STANDARD_TYPE(Geom_BSplineCurve)||curve->DynamicType()==STANDARD_TYPE(Geom_BezierCurve);}
+            if(direct){occ::handle<BRepTools_Modification> modification=new BRepTools_GTrsfModification(transform);BRepTools_Modifier operation(input,modification);if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native direct NURBS affine modification failed");*output=store(value,operation.ModifiedShape(input));}
+            else{BRepBuilderAPI_GTransform operation(input,transform,true);if(!operation.IsDone())fail(JD_CANDIDATE_KERNEL_FAILURE,"Native affine transformation failed");*output=store(value,operation.Shape());}
         });
     },diagnostic,capacity);
 }

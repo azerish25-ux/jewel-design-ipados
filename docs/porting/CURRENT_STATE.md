@@ -2,7 +2,7 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P03-T03-A16 decodes/executes saved legacy join140 from134/138/139. Windows10 native states pass for the closed3-face design, edit-save-reopen/reversal, open/disconnected results, mixed data, native-empty output retention and ownership/failure/cycle guards. Acquired SDK5 static native control flow proves empty Count0 returns null. Headers165/opaque76/scalars100. New Apple graph execution pending. [ADR0047](ADR-0047-saved-legacy-join-graph.md). Private repair/broader legacy join, generic collapsed-apex BRep affine, downstream/original-PC/physical/full acceptance remain open. Full parity0/1451.
+Latest implementation: P05-T02-A27 fixes the reproduced collapsed-apex affine failure for explicit spline BReps by applying the native modifier without redundant conversion. Windows20 cases/350 coefficient-mapped points pass across rigid/uniform/nonuniform/shear/reflection, actual caps and joined140 volume/input/ownership checks. Matrix coefficients and tolerances remain unchanged. New Apple execution pending. [ADR0048](ADR-0048-direct-spline-brep-affine.md). Conversion-dependent/other degenerations/triangulations, private legacy repair, downstream/original-PC/physical/full acceptance remain open. Full parity0/1451.
 
 [Raw native sewing Apple proof](../evidence/apple/native-sewing-results.json) passed10 cases/8 ABI guards on both simulators and unsigned arm64 iOS compile/link52 warnings0 errors at8ea10cc; it predates legacy140 graph registration.
 
