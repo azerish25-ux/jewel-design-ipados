@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T02-A02",
+  "status": "in_progress_portable_ownership_passed_visible_gpu_pending",
+  "requirementScope": [
+    "P08-T02",
+    "UI-039 viewport prerequisite only"
+  ],
+  "source": {
+    "priorPixelEvidence": "docs/evidence/apple/metal-viewport-results.json",
+    "bindingPin": "410dc42e09f1bfca3258d46d5ec95cf48903d1b2",
+    "metalKitSha256": "666c3833fd0ba2f882c5def086d7427e85096b5d01e69f4a5c8a87c87c77b4a0",
+    "initialRendererSha256": "773d2e0114a2f2ff546edb36d59d4601afac8c0eefb9f1ec1079c70831936069"
+  },
+  "children": [
+    {
+      "id": "P08-T02-A02-01",
+      "scope": "Portable retained frame ownership",
+      "status": "local_tests_passed",
+      "checks": 116
+    },
+    {
+      "id": "P08-T02-A02-02",
+      "scope": "Real GPU buffers/presenter/MTKView",
+      "status": "pending"
+    },
+    {
+      "id": "P08-T02-A02-03",
+      "scope": "Visible actual Apple tests and screenshot inspection",
+      "status": "pending"
+    }
+  ],
+  "red": "Rendering.Tests failed CS0246 missing CadFrameGate/CadFrameLease before implementation.",
+  "checks": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "scope": "116 resource-only checks plus120 original camera decision comparisons. No fake GPU/geometry substitute.",
+    "coverage": [
+      "No resource/unchanged revision produces no submission",
+      "Three-frame bound retains latest pending revision",
+      "Old resource remains live across replacement until final submitted lease",
+      "Owner disposal and out-of-order/idempotent/concurrent completion",
+      "Rapid100 replacements stay bounded",
+      "Null/duplicate/retired-alias/disposed-owner failures preserve ownership"
+    ],
+    "resourceContract": "Ownership transfers on valid replacement; GPU resources implement nonthrowing disposal. Failed guard checks leave caller ownership intact."
+  },
+  "remaining": [
+    "Persistent Metal buffers and shared actual encode path",
+    "Real MTKView presentation and completion/resource lifecycle",
+    "Visible edit/orbit/empty/resize/disposal stress screenshots on iPad/iPhone",
+    "Prior offscreen pixel hash preserved after refactor",
+    "Full source camera/material/UI/picking/PC/physical parity"
+  ],
+  "limits": "Portable resource scheduling is not device GPU acceptance or full feature parity."
+}

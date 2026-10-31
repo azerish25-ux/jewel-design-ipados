@@ -16,6 +16,8 @@ Interfaces and files:
 - scripts/run-viewport-simulator.sh: fresh nonce/stage/ack/result protocol, whitelisted screenshot phases, actual simctl screenshots after presentation; record selected and actual iPad/iPhone identities; shut down each simulator after capture. No stale image/result acceptance.
 - .github/workflows/viewport-presentation.yml: branch push/manual pinned macOS26/.NET10.0.302/workload10.0.302.0/Xcode26.6. Restore validated unchanged simulator archive; build ad-hoc signed app, execute both families and retain reports/screenshots. Dedicated iOS compile preflight first. Native-source changes require a fresh producer; archive expiry is an explicit acquisition failure.
 
+Stable independently reviewable children: P08-T02-A02-01 portable ownership; P08-T02-A02-02 Metal buffers/presenter/view; P08-T02-A02-03 visible harness and Apple acceptance. Parent acceptance remains unchanged.
+
 Execution:
 1. Commit reviewed plan. RED portable gate tests before implementation; no unrelated recovery/kernel edits.
 2. Implement gate and verify original ownership/error/retention behavior; integrate shared and lightweight runners.
