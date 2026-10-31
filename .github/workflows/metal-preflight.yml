@@ -1,5 +1,12 @@
 name: Metal renderer binding preflight
 on:
+  push:
+    branches: [codex/dotnet-ios-reuse]
+    paths:
+      - "src/Port/Rendering.Candidate*/**"
+      - "tests/iOS.Metal.Compile/**"
+      - "tests/iOS.Native/MetalViewportChecks.cs"
+      - ".github/workflows/metal-preflight.yml"
   workflow_dispatch:
 permissions:
   contents: read
