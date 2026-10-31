@@ -62,6 +62,18 @@
         "command": "node scripts/verify-cap-placement-contracts.cjs; node scripts/verify-production.cjs; node tools/repository/check.cjs",
         "exitCode": 0
       }
+    ],
+    "independentCrosschecks": [
+      {
+        "command": "node scripts/run-local.cjs node scripts/check-production-csg.cjs",
+        "exitCode": 0,
+        "scope": "four outputs/241 records/74 bounded numeric/source-rebuild-reversal hashes"
+      },
+      {
+        "command": "node scripts/run-local.cjs node reference/file-proof/check-additional-scalars.cjs",
+        "exitCode": 0,
+        "scope": "three scalar output cases with240 other records preserved"
+      }
     ]
   },
   "review": {
@@ -77,5 +89,32 @@
     "Original Windows/PC-iPad-PC, physical-device/render/export/UI/full feature acceptance"
   ],
   "scope": "Saved exact1.0 cap graph candidate; full1451-row parity remains0 verified.",
-  "sourceHeaderObservationSha256": "ef71f7b0f962d5c96e8a7cc868b1c10874afb9ea7feb601a2753060e06f0a041"
+  "sourceHeaderObservationSha256": "ef71f7b0f962d5c96e8a7cc868b1c10874afb9ea7feb601a2753060e06f0a041",
+  "implementationCommit": "913eaacc95f66d9e39757b39faaa6751b10835f9",
+  "ciRuns": [
+    {
+      "id": 41170281340,
+      "scope": "native host/macOS iPad/iPhone saved-cap graph30-state/990-boundary execution",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41170281340"
+    },
+    {
+      "id": 41170283654,
+      "scope": "macOS unsigned ios-arm64 AOT with saved-cap graph contracts",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41170283654"
+    },
+    {
+      "id": 41170280601,
+      "scope": "repository/header/reference and document proofs",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41170280601"
+    },
+    {
+      "id": 41170280620,
+      "scope": "recovered managed iOS reuse",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41170280620"
+    }
+  ]
 }
