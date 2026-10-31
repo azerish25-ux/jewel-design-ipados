@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P01-T05-A01",
+  "status": "diagnostic_checksum_failure_localized_original_IL_signedness_confirmed_compatibility_unresolved",
+  "commands": [
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tools/CompressionProbe -- .local/evidence/compression/boundary-report.json",
+      "exitCode": 0,
+      "scope": "Diagnostic acquisition only;84 separately measured stages, not a compatibility pass."
+    },
+    {
+      "command": "node scripts/run-local.cjs dotnet run --project tools/CompressionProbe -- --inspect-adler-il ORIGINAL_EXTRACTED_STUDIO_EXE .local/evidence/compression/original-adler-il.json",
+      "exitCode": 0,
+      "scope": "PE metadata/method bytes only; original assembly never loaded/executed."
+    },
+    {
+      "command": "node scripts/run-local.cjs node scripts/analyze-compression-probe.cjs .local/evidence/compression/boundary-report.json",
+      "exitCode": 0,
+      "scope": "Captured compressed bytes verified against input hashes; raw DEFLATE payload and independent Adler checksum comparison."
+    }
+  ],
+  "sources": [
+    {
+      "file": "recovery/canonical/desktop/GV.CounterSketch.Studio.ZipIt/Adler.cs",
+      "sha256": "16823a80f554b28bb39186fb4fa2bf8dcaa906de7596e4da01b04d5989695801"
+    },
+    {
+      "file": "src/Recovered/desktop/GV.CounterSketch.Studio.ZipIt/Adler.cs",
+      "sha256": "16823a80f554b28bb39186fb4fa2bf8dcaa906de7596e4da01b04d5989695801"
+    },
+    {
+      "file": "recovery/canonical/desktop/GV.CounterSketch.Studio.ZipIt/ZlibBaseStream.cs",
+      "sha256": "c74efec37e69d34b17a9eeb92ee95cfc7057f7cbaec4d0f0163e98aa2028dbfe"
+    },
+    {
+      "file": "recovery/canonical/desktop/GV.CounterSketch.Studio.ZipIt/ZlibCodec.cs",
+      "sha256": "5c3539db91358c87e7077617fe5d4d8c5dd7a2bc8ff9a15bf1906de81a710724"
+    }
+  ],
+  "originalIL": {
+    "proof": "docs/evidence/audit/original-adler-il.json",
+    "assemblySha256": "ad7881ad62da2101d54de1fd228c422201f1b51c35371ffea3c33f1058838c2e",
+    "methodToken": "06000d58",
+    "methodRva": 163428,
+    "methodIlSha256": "464a9035ae20567d2dd536315ce2a4621adff7f0986ae29876f4c6372e9a485f",
+    "signedInt32Locals": 3,
+    "signedRemainders": 2,
+    "unsignedRemainders": 0,
+    "uncheckedAdds": 51,
+    "checkedAdds": 0,
+    "normalizedDecompilerSourceMatchesCanonical": true
+  },
+  "findings": {
+    "inputCases": 21,
+    "managedStages": 84,
+    "managedFailureStages": 10,
+    "bclToRecoveredSuccessfulCases": 21,
+    "nonemptyRawPayloadsVerified": 18,
+    "incorrectAdlerTrailers": 5,
+    "zeroByteOutputsForEmptyCases": 3,
+    "scope": "Five payloads are byte-correct under independent raw DEFLATE extraction but have wrong Adler-32 trailers; recovered and BCL decoders reject them. Empty inputs produce no zlib frame. This is separate from active on-screen renderer acceptance."
+  },
+  "diagnosis": "Original IL uses signed int32 accumulators and signed remainder; recovered arithmetic matches. NMAX5552 permits sums above signed32 capacity. The observed failure supports an original signed-overflow checksum defect, not a demonstrated decompiler-only bug.",
+  "remaining": [
+    "Prove exact original read-buffer/chunk arithmetic against observed stored checksums",
+    "Determine actual application/project-format call sites; a public helper failure is not automatically a PC document failure",
+    "Define reviewed strict-versus-legacy compatibility policy before adapting production code",
+    "Original-runtime/PC corpus and Apple platform regression acceptance"
+  ],
+  "limits": "Recovery/src/Recovered untouched. No checksum bypass, original activation/account use, original native execution or codec compatibility claim. REA MCP unavailable; static ILSpy9.1 and own PEReader inspection are ordinary tool evidence.",
+  "independentReport": "docs/evidence/audit/recovered-compression-boundary-results.json"
+}

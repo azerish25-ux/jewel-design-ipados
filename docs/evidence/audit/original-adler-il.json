@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "scope": "Static original PE method inspection only; original assembly not executed",
+  "assemblyFile": "CounterSketch Studio.exe",
+  "assemblySha256": "ad7881ad62da2101d54de1fd228c422201f1b51c35371ffea3c33f1058838c2e",
+  "methodToken": "06000d58",
+  "methodRva": 163428,
+  "ilSha256": "464a9035ae20567d2dd536315ce2a4621adff7f0986ae29876f4c6372e9a485f",
+  "ilBytes": "032d02172a0220ffff00005f0a021f106420ffff00005f0b3841010000057e3e05000432077e3e0500042b01050c050859100338f5000000060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b060304251758100291580a0706580b081f10590c081f103c03ffffff082c16060304251758100291580a0706580b081759250c2dea067e3d0500045d0a077e3d0500045d0b05163db8feffff071f106206602a",
+  "localSignatureHex": "0703080808",
+  "signedRemainders": 2,
+  "unsignedRemainders": 0,
+  "operations": [
+    {
+      "offset": 326,
+      "opcode": "stloc.1",
+      "operandHex": ""
+    },
+    {
+      "offset": 327,
+      "opcode": "ldloc.2",
+      "operandHex": ""
+    },
+    {
+      "offset": 328,
+      "opcode": "ldc.i4.1",
+      "operandHex": ""
+    },
+    {
+      "offset": 329,
+      "opcode": "sub",
+      "operandHex": ""
+    },
+    {
+      "offset": 330,
+      "opcode": "dup",
+      "operandHex": ""
+    },
+    {
+      "offset": 331,
+      "opcode": "stloc.2",
+      "operandHex": ""
+    },
+    {
+      "offset": 332,
+      "opcode": "brtrue.s",
+      "operandHex": "ea"
+    },
+    {
+      "offset": 334,
+      "opcode": "ldloc.0",
+      "operandHex": ""
+    },
+    {
+      "offset": 335,
+      "opcode": "ldsfld",
+      "operandHex": "3d050004"
+    },
+    {
+      "offset": 340,
+      "opcode": "rem",
+      "operandHex": ""
+    },
+    {
+      "offset": 341,
+      "opcode": "stloc.0",
+      "operandHex": ""
+    },
+    {
+      "offset": 342,
+      "opcode": "ldloc.1",
+      "operandHex": ""
+    },
+    {
+      "offset": 343,
+      "opcode": "ldsfld",
+      "operandHex": "3d050004"
+    },
+    {
+      "offset": 348,
+      "opcode": "rem",
+      "operandHex": ""
+    },
+    {
+      "offset": 349,
+      "opcode": "stloc.1",
+      "operandHex": ""
+    },
+    {
+      "offset": 350,
+      "opcode": "ldarg.3",
+      "operandHex": ""
+    },
+    {
+      "offset": 351,
+      "opcode": "ldc.i4.0",
+      "operandHex": ""
+    },
+    {
+      "offset": 352,
+      "opcode": "bgt",
+      "operandHex": "b8feffff"
+    }
+  ],
+  "operationCount": 297,
+  "operationListingScope": "Only arithmetic reduction neighborhoods; complete raw IL bytes and SHA256 retained above; tool mode can reproduce full listing.",
+  "uncheckedAddCount": 51,
+  "checkedAddCount": 0
+}

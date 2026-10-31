@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "scope": "Actual captured recovered outputs checked independently; no original binary execution or compatibility pass",
+  "managedStages": 84,
+  "managedFailures": [
+    {
+      "length": 32768,
+      "pattern": "random",
+      "stage": "bcl.decode.recovered",
+      "error": "System.IO.InvalidDataException: The archive entry was compressed using an unsupported compression method."
+    },
+    {
+      "length": 32768,
+      "pattern": "random",
+      "stage": "recovered.decode.recovered",
+      "error": "GV.CounterSketch.Studio.ZipIt.ZlibException: Bad state (incorrect data check)"
+    },
+    {
+      "length": 65536,
+      "pattern": "repeat",
+      "stage": "bcl.decode.recovered",
+      "error": "System.IO.InvalidDataException: The archive entry was compressed using an unsupported compression method."
+    },
+    {
+      "length": 65536,
+      "pattern": "repeat",
+      "stage": "recovered.decode.recovered",
+      "error": "GV.CounterSketch.Studio.ZipIt.ZlibException: Bad state (incorrect data check)"
+    },
+    {
+      "length": 65536,
+      "pattern": "random",
+      "stage": "bcl.decode.recovered",
+      "error": "System.IO.InvalidDataException: The archive entry was compressed using an unsupported compression method."
+    },
+    {
+      "length": 65536,
+      "pattern": "random",
+      "stage": "recovered.decode.recovered",
+      "error": "GV.CounterSketch.Studio.ZipIt.ZlibException: Bad state (incorrect data check)"
+    },
+    {
+      "length": 100000,
+      "pattern": "repeat",
+      "stage": "bcl.decode.recovered",
+      "error": "System.IO.InvalidDataException: The archive entry was compressed using an unsupported compression method."
+    },
+    {
+      "length": 100000,
+      "pattern": "repeat",
+      "stage": "recovered.decode.recovered",
+      "error": "GV.CounterSketch.Studio.ZipIt.ZlibException: Bad state (incorrect data check)"
+    },
+    {
+      "length": 100000,
+      "pattern": "random",
+      "stage": "bcl.decode.recovered",
+      "error": "System.IO.InvalidDataException: The archive entry was compressed using an unsupported compression method."
+    },
+    {
+      "length": 100000,
+      "pattern": "random",
+      "stage": "recovered.decode.recovered",
+      "error": "GV.CounterSketch.Studio.ZipIt.ZlibException: Bad state (incorrect data check)"
+    }
+  ],
+  "checks": [
+    {
+      "length": 0,
+      "pattern": "repeat",
+      "packedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "missing_zlib_frame"
+    },
+    {
+      "length": 0,
+      "pattern": "text",
+      "packedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "missing_zlib_frame"
+    },
+    {
+      "length": 0,
+      "pattern": "random",
+      "packedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "missing_zlib_frame"
+    },
+    {
+      "length": 1,
+      "pattern": "repeat",
+      "packedBytes": 9,
+      "packedSha256": "3bb1b5e4ea94512babe8b68dba2f15a4095dfbab6df24ff1f9dc0d1971ea3c6a",
+      "inputSha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
+      "rawPayloadMatches": true,
+      "storedAdler32": "00790079",
+      "expectedAdler32": "00790079",
+      "checksumMatches": true
+    },
+    {
+      "length": 1,
+      "pattern": "text",
+      "packedBytes": 9,
+      "packedSha256": "8afc294dd970ad8b23c70ea29581f49225fac0e9197b835fbb5bfd5b56e27a98",
+      "inputSha256": "6b23c0d5f35d1b11f9b683f0b0a617355deb11277d91ae091d399c655b87940d",
+      "rawPayloadMatches": true,
+      "storedAdler32": "00440044",
+      "expectedAdler32": "00440044",
+      "checksumMatches": true
+    },
+    {
+      "length": 1,
+      "pattern": "random",
+      "packedBytes": 9,
+      "packedSha256": "17b4a3668d4511a6803319fa53014fdbe23668aefbb89e15626972207bbb0343",
+      "inputSha256": "6da43b944e494e885e69af021f93c6d9331c78aa228084711429160a5bbd15b5",
+      "rawPayloadMatches": true,
+      "storedAdler32": "004b004b",
+      "expectedAdler32": "004b004b",
+      "checksumMatches": true
+    },
+    {
+      "length": 32,
+      "pattern": "repeat",
+      "packedBytes": 11,
+      "packedSha256": "8af37fd23c57be2dfd7a2dc8951dea95d953f6733f1d5b06c74db809c48930ec",
+      "inputSha256": "c62e4615bd39e222572f3a1bf7c2132ea1e65b17ec805047bd6b2842c593493f",
+      "rawPayloadMatches": true,
+      "storedAdler32": "f7a00f01",
+      "expectedAdler32": "f7a00f01",
+      "checksumMatches": true
+    },
+    {
+      "length": 32,
+      "pattern": "text",
+      "packedBytes": 40,
+      "packedSha256": "1a5cc026ef812d7378952db8bc32abcd31440b82a0afe581b48ff690e1dd6e6b",
+      "inputSha256": "1e3b33cedf11d5cb3ce016ccdf66c444310db6c56fc14f585b1c679aff00c6f7",
+      "rawPayloadMatches": true,
+      "storedAdler32": "cff30cb1",
+      "expectedAdler32": "cff30cb1",
+      "checksumMatches": true
+    },
+    {
+      "length": 32,
+      "pattern": "random",
+      "packedBytes": 41,
+      "packedSha256": "f69325e06a82a7743156ea8dbc340fa074c9040f459522cb7a7171962b9c16f7",
+      "inputSha256": "d29cfd2b8f322dae91036a5f533d243ab1e1dd252812a48c9303689856ec2ff0",
+      "rawPayloadMatches": true,
+      "storedAdler32": "fa590f69",
+      "expectedAdler32": "fa590f69",
+      "checksumMatches": true
+    },
+    {
+      "length": 1024,
+      "pattern": "repeat",
+      "packedBytes": 17,
+      "packedSha256": "f9a1dc3e7347ebb82659fb88d607b3891e99a6a8c21be1279ef6f0dc9cbbebb2",
+      "inputSha256": "49abd65bbf7f7e40c7055093ed2e3fd75f2f602f2c5fcf955c213e3135eb03f7",
+      "rawPayloadMatches": true,
+      "storedAdler32": "2c4fe010",
+      "expectedAdler32": "2c4fe010",
+      "checksumMatches": true
+    },
+    {
+      "length": 1024,
+      "pattern": "text",
+      "packedBytes": 53,
+      "packedSha256": "a167d0b67370999bea1f87fe08609daa4cc4dd3aadfc131e9b49bd09624e5fb4",
+      "inputSha256": "047dbb0ec3fe6f7cba23dc9a18d97c03694026a1d88edb09f670676d00bffdb5",
+      "rawPayloadMatches": true,
+      "storedAdler32": "6fff9047",
+      "expectedAdler32": "6fff9047",
+      "checksumMatches": true
+    },
+    {
+      "length": 1024,
+      "pattern": "random",
+      "packedBytes": 1035,
+      "packedSha256": "9b8dd45af3df082747ebcd1a348327e56a1934ee84edcdcedf20e80385531a52",
+      "inputSha256": "4a841295293d7a89b0f60e00d7cb8dc4529c4d90cce0b02004302a551e2b1198",
+      "rawPayloadMatches": true,
+      "storedAdler32": "a4630269",
+      "expectedAdler32": "a4630269",
+      "checksumMatches": true
+    },
+    {
+      "length": 32768,
+      "pattern": "repeat",
+      "packedBytes": 52,
+      "packedSha256": "11187cc400d8fdcb32c9a514c66fc01bd256ad72f5dfe8df26a97ee3458785dc",
+      "inputSha256": "427965f49a857174e308658227325dbd23ff4eccbe399d5ad4817dda3ec79f87",
+      "rawPayloadMatches": true,
+      "storedAdler32": "8ef10385",
+      "expectedAdler32": "8ef10385",
+      "checksumMatches": true
+    },
+    {
+      "length": 32768,
+      "pattern": "text",
+      "packedBytes": 153,
+      "packedSha256": "66900b709e31122393d62e7d84990b1a55180cdcdf98fab3aaf9a46365430aaa",
+      "inputSha256": "27fb759a060343cd00e19cd153bb5df5be1d3f8603d004b7e9ca9490daab1618",
+      "rawPayloadMatches": true,
+      "storedAdler32": "828906aa",
+      "expectedAdler32": "828906aa",
+      "checksumMatches": true
+    },
+    {
+      "length": 32768,
+      "pattern": "random",
+      "packedBytes": 32784,
+      "packedSha256": "65b604ec5eaad9273413b2ba4323128778aa6d087dae45f2292a313805e1d6c1",
+      "inputSha256": "8277423bbb52f3014539f35a4ffdb266a9a685932091b5903fbd7884fcefb758",
+      "rawPayloadMatches": true,
+      "storedAdler32": "87eff92a",
+      "expectedAdler32": "8a92f92a",
+      "checksumMatches": false
+    },
+    {
+      "length": 65536,
+      "pattern": "repeat",
+      "packedBytes": 84,
+      "packedSha256": "ce5f66d06423f2f8ec24a3462cc281cbc2f8ebfac39b5d9656cdb5f8275e220a",
+      "inputSha256": "1f8745f0d2d1387ec1af2211a3cf417b2e9e885e853472649c1d979d0e9370e3",
+      "rawPayloadMatches": true,
+      "storedAdler32": "376e0709",
+      "expectedAdler32": "384f0709",
+      "checksumMatches": false
+    },
+    {
+      "length": 65536,
+      "pattern": "text",
+      "packedBytes": 248,
+      "packedSha256": "460d5240497106975a8603dd90a4c6d0c77f56b572fb8c252bec261b9e90d27f",
+      "inputSha256": "799b0f4a2bae8ca9c5bdfdda7035e480d1dc7fc019ba84d99e35ff36163258ed",
+      "rawPayloadMatches": true,
+      "storedAdler32": "54340d2e",
+      "expectedAdler32": "54340d2e",
+      "checksumMatches": true
+    },
+    {
+      "length": 65536,
+      "pattern": "random",
+      "packedBytes": 65562,
+      "packedSha256": "7cf261f7a2439cba47543c01c5015e91ce7b2bc521f182540de7eadb734c72f4",
+      "inputSha256": "117edc42cd5819e14ce57019a4a0f16dd416b18bafd8e84d1831e777d9a18904",
+      "rawPayloadMatches": true,
+      "storedAdler32": "8728c6f9",
+      "expectedAdler32": "8aacc6f9",
+      "checksumMatches": false
+    },
+    {
+      "length": 100000,
+      "pattern": "repeat",
+      "packedBytes": 120,
+      "packedSha256": "2559cf0d0a19bfd19e3ee6caad6540ebc00d0b31b9fcc1a1eaf8ebb327ee1e70",
+      "inputSha256": "d69e68988157833272305aaf21f453c800346e8a3640db6578e260215542e5d4",
+      "rawPayloadMatches": true,
+      "storedAdler32": "7d4925ba",
+      "expectedAdler32": "7e2a25ba",
+      "checksumMatches": false
+    },
+    {
+      "length": 100000,
+      "pattern": "text",
+      "packedBytes": 349,
+      "packedSha256": "c4413a826334f7f69217c62bf4135fbd24e0b71d7b2bd4fc018dda87ca6ad78e",
+      "inputSha256": "4b2858f981f36275b2f30da83799042c0d566a8fc69b86e581485cd8f0d327fb",
+      "rawPayloadMatches": true,
+      "storedAdler32": "c21eaaa7",
+      "expectedAdler32": "c21eaaa7",
+      "checksumMatches": true
+    },
+    {
+      "length": 100000,
+      "pattern": "random",
+      "packedBytes": 100041,
+      "packedSha256": "42fe1fdbbb058540d379268dcc4588d2c49d3b4cf94a216b5fb2ab2fda784c22",
+      "inputSha256": "5e42a5e57056959927094f53ba870b548046165cb6e26a1b22f3ee2dc1fba64e",
+      "rawPayloadMatches": true,
+      "storedAdler32": "a37ef490",
+      "expectedAdler32": "a9a5f490",
+      "checksumMatches": false
+    }
+  ]
+}
