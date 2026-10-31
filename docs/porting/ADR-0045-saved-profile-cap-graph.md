@@ -1,0 +1,15 @@
+# ADR0045: saved ProfileCap graph nodes
+
+Status: local candidate graph/document/source tests pass; new Apple saved-node execution pending. BLD-0020/SER-0055 are in progress, not verified. Join140 and PC/physical/full-feature acceptance remain open.
+
+The independent bounded reader observes exact1.0 ProfileCap records138/139 (GUID c88750ae-3440-48d5-9501-c3bd55e8b2b8), curve links115/122 and thickness136 channels0/1. The saved thickness is.3, so those channels supply.3 and-.3. Payloads are fully consumed by the common header. The codec now promotes these two headers; total known headers164, opaque77, scalars100. Future cap versions remain opaque and write back unchanged; no-edit/reversal bytes remain identical.
+
+The graph adapter follows CSDataHelper.GetNurbsCurve: recursively flatten input arrays, then convert only the first leaf. Empty nested arrays disappear; a numeric/BRep first leaf is not skipped to find a later curve. Thickness uses direct channel GetDouble, default.5 on missing or nonnumeric data (including arrays). The source field-derived output name is oBrep. Generated native geometry is already world-placed; inverse transform is metadata and is not applied again. Owned typed BRep outputs and captured snapshots use the existing pending-cache transaction/retention rules.
+
+Thirty native cap states pass990 source-profile boundary comparisons and apex/domain/metadata checks. Cases include actual signed links, radius/thickness edit-save-reopen and exact reversal, zero/min/max/threshold domes, default thickness, nested empty/curve arrays, noncurve rejection, cycles, failed native generation and retained generations after graph disposal. The recovered live-value1e-5 deadband is preserved: a1e-6 edit near the dome threshold is ignored. Exact stored±.005 values are separately decoded/generated, avoiding an incorrect assumption that every SetValue request changes runtime state.
+
+The document suite also independently checks cap metadata/input headers, future versions, structural no-op/rewire/reopen/reversal and the new header/opaque counts. [Independent report](../evidence/audit/profile-cap-header-reference.json) is a header observation, not runtime proof. [Task evidence](evidence/P03-T03-A15.json) records the native graph checks and platform handles separately.
+
+[Inspected earlier Apple corrections](../evidence/apple/plane-differential-results.json) passed1228 published-plane comparisons on both iPad/iPhone with observed maximum6.66e-16 and unsigned arm64 device build52 warnings0 errors. That checkpoint predates saved cap graph registration. Native candidate/plane publication limits, generic collapsed-apex BRep affine robustness, original Windows topology/regeneration, rendering/export/UI and physical execution remain open.
+
+Next: source/native JoinAllBreps filtering, result multiplicity/topology/orientation and original140 registration; do not replace the join with a compound or assumed solid. No full parity row is closed by this increment.

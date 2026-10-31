@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_reader_only",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "blocks": [
+    {
+      "index": 138,
+      "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8",
+      "identifier": "Profile Cap Mirror",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Cap Mirror"
+        }
+      ],
+      "objects": [
+        115,
+        136
+      ],
+      "channels": [
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    },
+    {
+      "index": 139,
+      "guid": "c88750ae-3440-48d5-9501-c3bd55e8b2b8",
+      "identifier": "Profile Cap Mirror",
+      "flags": 65488,
+      "legacyLayer": 0,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Profile Cap Mirror"
+        }
+      ],
+      "objects": [
+        122,
+        136
+      ],
+      "channels": [
+        0,
+        1
+      ],
+      "fullyConsumed": true
+    }
+  ],
+  "thicknessProducer": {
+    "index": 136,
+    "storedValue": 0.3,
+    "channels": [
+      0,
+      1
+    ]
+  },
+  "sources": [
+    {
+      "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCap.cs",
+      "sha256": "9adefc9dae390feb8dc2459e97ad842092306f57d640bba6c22b2904601ba737"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSDataUtilities/CSDataHelper.cs",
+      "sha256": "c509aee07abf4396b61d534389106651642fcc60606559aaae178834430e9714"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.CSObjects.CSBlocks/CSBlock.cs",
+      "sha256": "6fd9a5e21e0a17de49097d7ffb229ac96f2d01a04eb6e75095699e52a63891c4"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.Parametric.Channels/CSOutputChannel.cs",
+      "sha256": "f9f90f12b0a91f87ed50d1e2eb13cbc2ba9d477e858f7c159baf87db2c7d5f38"
+    },
+    {
+      "path": "recovery/canonical/cad/CS.Parametric.Channels/CSInputChannel.cs",
+      "sha256": "1b3a8f3c40e751163d0aa493a0044d4a961be981579db831b30c841824fdf74c"
+    }
+  ],
+  "scope": "Exact1.0 header/link observation only; graph/native/PC execution is separate."
+}

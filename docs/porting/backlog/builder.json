@@ -427,7 +427,7 @@
       "title": "CSBlocks.Caps.CSProfileCap",
       "guid": "C88750AE-3440-48d5-9501-C3BD55E8B2B8",
       "legacy": false,
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Caps/CSProfileCap.cs",
@@ -436,8 +436,13 @@
       ],
       "acceptance": "Preserve GUID, channels, legacy algorithms and versions. Compare non-default edits and geometry to Windows. Pass editable PC/iOS/PC reopen.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node --test tests/profile-cap-header-v1-reference.test.cjs",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P03-T03-A15.json"
+      ],
       "namespace": "CSBlocks.Caps",
       "serializerId": "SER-0055",
       "batchId": "BATCH-0006"

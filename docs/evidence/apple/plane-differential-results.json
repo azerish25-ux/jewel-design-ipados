@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "commit": "721d3a158978e089cf98ad3272756219d2899199",
+  "runtimeRun": 41148150312,
+  "deviceRun": 41148153123,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "a3cf443371f24bb5beb53e4a4ef663aa0a5de8e0e8dc8912cdd05676ee3ed10e",
+      "managedPlaneReport": "PASS automatic cap plane candidate:20 oriented/linear/fallback/generated cases and198 actual-profile cap boundary points; published-plane-comparisons=1228; max-axis-error=6.661338147750939E-16; published6 policy, original-PC/full graph parity separate.",
+      "maximumAxisError": 6.661338147750939e-16
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "a3cf443371f24bb5beb53e4a4ef663aa0a5de8e0e8dc8912cdd05676ee3ed10e",
+      "managedPlaneReport": "PASS automatic cap plane candidate:20 oriented/linear/fallback/generated cases and198 actual-profile cap boundary points; published-plane-comparisons=1228; max-axis-error=6.661338147750939E-16; published6 policy, original-PC/full graph parity separate.",
+      "maximumAxisError": 6.661338147750939e-16
+    }
+  ],
+  "referenceGeneratedSha256": "a20609e59747a57a0b9124bdc7d5123e094a4126ddfa683b806b85afa7068af5",
+  "referenceManifestSha256": "1abbbc2f9a26ccc5acf8576b96f98743d85205c5a3199ab670059b672dff37a7",
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "b63a13dcab38797e64f3f0f6c0e38151ad5f72e27769ecd18084ed7667fdea4e  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "77b09e5a5a3752431771b4533b4748cd7cc99a4db0d0eadc55fdcf9385cdec2a",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only; no physical execution."
+  },
+  "scope": "Published source plane differential and corrected surface-before-BRep cap checkpoint. Predates actual saved cap138/139 graph integration. Original Rhino5/PC, physical device and full1451-row parity remain unverified."
+}

@@ -16,10 +16,11 @@ internal static class RailBlockAssertions
         var outside=document.Records[13].SimpleBlock??throw new Exception("Missing outside consumer header");
         Check(ring.ObjectIndices.SequenceEqual(new[]{2})&&ring.ChannelIndices.SequenceEqual(new[]{0}),"Ring input bindings");
         Check(outside.ObjectIndices.SequenceEqual(new[]{2,6,8,9,10,11})&&outside.ChannelIndices.SequenceEqual(new[]{0,3,0,0,0,0}),"Outside input bindings");
-        Check(document.Records.Count(x=>x.Header is not null)==162&&document.Records.Count(x=>x.OpaqueReason is not null)==79&&document.ScalarRecordCount==100,"Header vs scalar boundary");
-        foreach(var resource in new[]{"RailHeaderRingOracle","RailHeaderOutsideOracle","RailHeaderSelectOracle","TransformHeaderOracle","PlacementHeaderOracle","ConsumerHeaderOracle","CollectionHeaderOracle","SweepHeaderOracle"}){
+        Check(document.Records.Count(x=>x.Header is not null)==164&&document.Records.Count(x=>x.OpaqueReason is not null)==77&&document.ScalarRecordCount==100,"Header vs scalar boundary");
+        foreach(var resource in new[]{"RailHeaderRingOracle","RailHeaderOutsideOracle","RailHeaderSelectOracle","TransformHeaderOracle","PlacementHeaderOracle","ConsumerHeaderOracle","CollectionHeaderOracle","SweepHeaderOracle","CapHeaderOracle"}){
             using var stream=typeof(RailBlockAssertions).Assembly.GetManifestResourceStream(resource)!;using var oracle=JsonDocument.Parse(stream);
-            foreach(var expected in oracle.RootElement.GetProperty(resource is "TransformHeaderOracle" or "PlacementHeaderOracle" or "ConsumerHeaderOracle" or "CollectionHeaderOracle" or "SweepHeaderOracle"?"blocks":"rails").EnumerateArray()){
+            var rows=oracle.RootElement.TryGetProperty("blocks",out var blocks)?blocks:oracle.RootElement.GetProperty("rails");
+            foreach(var expected in rows.EnumerateArray()){
                 int ordinal=expected.GetProperty("index").GetInt32();var header=document.Records[ordinal].SimpleBlock!;
                 Check(header.Identifier==expected.GetProperty("identifier").GetString()&&header.Flags==expected.GetProperty("flags").GetUInt32()&&header.LegacyLayer==expected.GetProperty("legacyLayer").GetInt32(),"Independent header fields");
                 Check(header.ObjectIndices.SequenceEqual(expected.GetProperty("objects").EnumerateArray().Select(x=>x.GetInt32()))&&header.ChannelIndices.SequenceEqual(expected.GetProperty("channels").EnumerateArray().Select(x=>x.GetInt32())),"Independent header links");
@@ -33,7 +34,7 @@ internal static class RailBlockAssertions
         Throws<NotSupportedException>(()=>document.WithScalarValue(13,1));
         Throws<ArgumentOutOfRangeException>(()=>document.WithInputLink(13,6,9,0));
         Throws<NotSupportedException>(()=>document.WithInputLink(0,0,1,0));
-        foreach(int index in new[]{4,13,16,49,50,51,111,110,115,61,116,134}){
+        foreach(int index in new[]{4,13,16,49,50,51,111,110,115,61,116,134,138,139}){
             var record=document.Records[index];var future=(byte[])original.Clone();BinaryPrimitives.WriteInt32LittleEndian(future.AsSpan(record.OriginalFileOffset+8),99);
             int start=record.OriginalFileOffset,length=record.CopyOriginalRecordBytes().Length;
             BinaryPrimitives.WriteUInt32LittleEndian(future.AsSpan(start+length-4),Crc(future.AsSpan(start+8,length-12)));

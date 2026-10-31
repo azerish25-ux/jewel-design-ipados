@@ -2,7 +2,9 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Latest implementation: P05-T02-A25 independently compares1228 cases against13 compiled pinned published plane methods. Corrected source normalization order and cap surface-transform-before-BRep order; local maximum axis/origin error5.55e-16 at unchanged1e-10 limit. Native/shared/source checks pass; new Apple execution pending. [ADR0044](ADR-0044-published-plane-differential.md). Actual cap graph138/139, thickness136 and join140 plus generic collapsed-apex BRep affine robustness remain required. Full parity0/1451.
+Latest implementation: P03-T03-A15 decodes and executes saved ProfileCap138/139 through curve115/122 and signed thickness136 channels. Windows30 native cap states/990 boundary points, apex/domain/metadata, edit-save-reopen/reversal/default/array routing/retained generations/failure/cycle cleanup pass. Known headers164/opaque77/scalars100. New Apple saved-node execution pending. [ADR0045](ADR-0045-saved-profile-cap-graph.md). Join140, generic collapsed-apex BRep affine robustness and original-PC/physical/full acceptance remain open. Full parity0/1451.
+
+[Earlier plane/cap correction Apple checkpoint](../evidence/apple/plane-differential-results.json) passed1228 published-plane comparisons on iPad/iPhone and unsigned arm64 iOS build52 warnings0 errors. It predates saved cap graph registration.
 
 [Prior tensor Apple checkpoint](../evidence/apple/rail-revolve-results.json) passed iPad/iPhone runtime and unsigned arm64 iOS build52 warnings0 errors. It predates export/cap placement/automatic plane/source-differential corrections.
 
