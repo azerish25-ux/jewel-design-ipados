@@ -69,5 +69,32 @@
     "Generic existing collapsed-apex BRep affine robustness",
     "Original-PC/physical-device/UI/render/export/full1451-row acceptance"
   ],
-  "scope": "Genuine native BRep sewing prerequisite and corrected source-overload contract only; no full parity row closed."
+  "scope": "Genuine native BRep sewing prerequisite and corrected source-overload contract only; no full parity row closed.",
+  "implementationCommit": "8ea10ccc97a5ddb026dff7e53aed0c9c1ca7b3c9",
+  "ciRuns": [
+    {
+      "id": 41172366503,
+      "scope": "native host/macOS iPad/iPhone10-case BRep sewing and8 ABI guards",
+      "status": "queued",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41172366503"
+    },
+    {
+      "id": 41172368296,
+      "scope": "macOS unsigned ios-arm64 AOT",
+      "status": "queued",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41172368296"
+    },
+    {
+      "id": 41172220761,
+      "scope": "repository/legacy-overload/source/freshness controls",
+      "status": "success",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41172220761"
+    },
+    {
+      "id": 41172220747,
+      "scope": "recovered managed iOS reuse",
+      "status": "in_progress",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41172220747"
+    }
+  ]
 }

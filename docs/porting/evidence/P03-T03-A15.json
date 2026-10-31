@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P03-T03-A15",
-  "status": "in_progress_local_saved_caps_verified_apple_pending",
+  "status": "candidate_saved_caps_apple_runtime_and_unsigned_device_passed_full_parity_open",
   "requirements": [
     "BLD-0020",
     "SER-0055"
@@ -95,13 +95,13 @@
     {
       "id": 41170281340,
       "scope": "native host/macOS iPad/iPhone saved-cap graph30-state/990-boundary execution",
-      "status": "dispatched",
+      "status": "success",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41170281340"
     },
     {
       "id": 41170283654,
       "scope": "macOS unsigned ios-arm64 AOT with saved-cap graph contracts",
-      "status": "dispatched",
+      "status": "success",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41170283654"
     },
     {
@@ -113,11 +113,12 @@
     {
       "id": 41170280620,
       "scope": "recovered managed iOS reuse",
-      "status": "dispatched",
+      "status": "success",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41170280620"
     }
   ],
   "followups": [
     "docs/porting/evidence/P03-T03-A15-F01.json"
-  ]
+  ],
+  "appleArtifactEvidence": "docs/evidence/apple/saved-profile-caps-results.json"
 }

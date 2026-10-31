@@ -4,6 +4,8 @@ The recovery is present; the application port is unfinished. Feature/type parity
 
 Latest implementation: P05-T02-A26 supplies copied native BRep sewing with explicit topology/tolerance diagnostics. Windows10 analytical/actual cases and8 raw ABI guards pass; actual134/138/139 sew into one valid3-face closed shell with zero free edges before/after edits and save/reopen. New Apple sewing execution pending. [ADR0046](ADR-0046-native-sewing-legacy-join.md). Important correction: node140 uses legacy OnBrep[] overload, not modern validity/solid/single-result filtering. Legacy null/repair/ownership/graph integration, generic collapsed-apex BRep affine robustness and original-PC/physical/full acceptance remain open. Full parity0/1451.
 
+[Saved cap graph Apple proof](../evidence/apple/saved-profile-caps-results.json) now confirms30 native cap states/990 boundary samples on iPad/iPhone plus unsigned arm64 iOS build52 warnings0 errors at913eaac. It predates native sewing. The stale footprint repository failure was fixed and its replacement workflow passed at809d0a5.
+
 [Earlier plane/cap correction Apple checkpoint](../evidence/apple/plane-differential-results.json) passed1228 published-plane comparisons on iPad/iPhone and unsigned arm64 iOS build52 warnings0 errors. It predates saved cap graph registration.
 
 [Prior tensor Apple checkpoint](../evidence/apple/rail-revolve-results.json) passed iPad/iPhone runtime and unsigned arm64 iOS build52 warnings0 errors. It predates export/cap placement/automatic plane/source-differential corrections.

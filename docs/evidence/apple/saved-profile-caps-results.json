@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "commit": "913eaacc95f66d9e39757b39faaa6751b10835f9",
+  "runtimeRun": 41170281340,
+  "deviceRun": 41170283654,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D798106A-0403-425E-8352-3E7056FA9F79"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "ef8cefcebcbad89cecb4f773fbf5b0d2b7346e0e82877bb040018df691ac1385",
+      "managedReport": "PASS saved ProfileCap graph:30 native cap states and990 source-profile boundary samples, actual138/139 signed136/default/flatten-first/name/metadata, edit-save-reopen/reversal/retained generations/failure/cycle/cleanup; join/original-PC/full feature parity separate."
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "F94FB7BA-C33C-4B3B-B505-F0FB478DB847"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "ef8cefcebcbad89cecb4f773fbf5b0d2b7346e0e82877bb040018df691ac1385",
+      "managedReport": "PASS saved ProfileCap graph:30 native cap states and990 source-profile boundary samples, actual138/139 signed136/default/flatten-first/name/metadata, edit-save-reopen/reversal/retained generations/failure/cycle/cleanup; join/original-PC/full feature parity separate."
+    }
+  ],
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "740777d12d42aa1272df542f72ad1f717c83c1df4dbb7c8f04c3c159f098d149  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "2a427ff066675b4ba6f7402b1a74b8fadb618b1dd61959342a5903318e458f19",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only; no physical execution."
+  },
+  "scope": "Actual saved cap138/139 graph/30-state/990-boundary candidate checkpoint, not original-PC/physical/full feature parity. Predates new native sewing operation. Separate repository stale-footprint failure was fixed at809d0a5."
+}
