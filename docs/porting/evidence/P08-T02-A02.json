@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T02-A02",
-  "status": "in_progress_runtime_timing_selector_failure_corrected_recheck_pending",
+  "status": "verified_bounded_visible_simulator_checkpoint_native_timing_and_full_UI_pending",
   "requirementScope": [
     "P08-T02",
     "UI-039 viewport prerequisite only"
@@ -16,18 +16,18 @@
     {
       "id": "P08-T02-A02-01",
       "scope": "Portable retained frame ownership",
-      "status": "local_tests_passed",
+      "status": "portable_and_actual_iOS_resource_checks_passed",
       "checks": 116
     },
     {
       "id": "P08-T02-A02-02",
       "scope": "Real GPU buffers/presenter/MTKView",
-      "status": "apple_binding_compile_passed_runtime_pending"
+      "status": "actual_simulator_rendering_and_retirement_verified_native_timing_pending"
     },
     {
       "id": "P08-T02-A02-03",
       "scope": "Visible actual Apple tests and screenshot inspection",
-      "status": "harness_and_workflow_implemented_apple_runtime_pending"
+      "status": "actual_iPad_iPhone_screens_and_pixel_checks_verified_physical_UI_pending"
     }
   ],
   "red": "Rendering.Tests failed CS0246 missing CadFrameGate/CadFrameLease before implementation.",
@@ -45,12 +45,9 @@
     "resourceContract": "Ownership transfers on valid replacement; GPU resources implement nonthrowing disposal. Failed guard checks leave caller ownership intact."
   },
   "remaining": [
-    "Capability-guarded native timing and actual simulator screenshot evidence recheck",
-    "Persistent Metal buffers and shared actual encode path",
-    "Real MTKView presentation and completion/resource lifecycle",
-    "Visible edit/orbit/empty/resize/disposal stress screenshots on iPad/iPhone",
-    "Prior offscreen pixel hash preserved after refactor",
-    "Full source camera/material/UI/picking/PC/physical parity"
+    "Native presentation timing on supported physical hardware/runtime",
+    "Complete source camera/material/picking/touch and product UI",
+    "Original-PC and physical-device full feature acceptance"
   ],
   "limits": "Portable resource scheduling is not device GPU acceptance or full feature parity.",
   "redPlatform": {
@@ -139,7 +136,8 @@
   "latestVisibleRun": {
     "run": 41190815914,
     "sourceCommit": "1feab10b8bac3964d370addccba291107d46d36f",
-    "status": "queued_last_observed",
+    "status": "completed_success_actual_screens_reports_and_ownership_inspected",
     "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41190815914"
-  }
+  },
+  "actualVisibleReport": "docs/evidence/apple/visible-viewport-results.json"
 }

@@ -1,0 +1,25 @@
+{
+  "width": 1640,
+  "height": 2360,
+  "bounds": {
+    "left": 205,
+    "top": 295,
+    "right": 1435,
+    "bottom": 2065
+  },
+  "uniformPixels": 2177100,
+  "foregroundPixels": 428796,
+  "editedPixels": 64797,
+  "orbitPixels": 517987,
+  "resizedPixels": 181766,
+  "finalDifferencePixels": 0,
+  "pngSha256": {
+    "original": "1e2b318ffe8571134a8049f4c6418ce40e7dba195e77680e9558191587c863d0",
+    "orbit": "bd1c7ad7da289a501d98b55b04201c63ec93fdd36b31aed00440bde5cb349741",
+    "edited": "8679507861269fc49d84220ecf9f0dd6bfe30a2797502959bdc41e1324ec46ba",
+    "empty": "812f18a9989401617341158cd21f009e178fe6158ff0492843940b5174dedd52",
+    "resized": "a39344a0d6ec1666b639aeafa2ceb06e688ebc1acbceb912a4ec49f84faf65cc",
+    "final": "1e2b318ffe8571134a8049f4c6418ce40e7dba195e77680e9558191587c863d0"
+  },
+  "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+}

@@ -1,0 +1,109 @@
+{
+  "SchemaVersion": 2,
+  "Scope": "Actual visible MTKView CAD/GPU ownership checkpoint; native timing is recorded only when supported; full product UI/source-camera/material/picking/PC/physical parity separate",
+  "Frames": [
+    {
+      "Stage": "original",
+      "FrameId": 1,
+      "Revision": 1,
+      "MeshUploadId": 1,
+      "Width": 1206,
+      "Height": 2622,
+      "PresentedTime": null,
+      "SupportsNativePresentationTiming": false,
+      "EvidenceKind": "gpu-completed"
+    },
+    {
+      "Stage": "orbit",
+      "FrameId": 2,
+      "Revision": 2,
+      "MeshUploadId": 1,
+      "Width": 1206,
+      "Height": 2622,
+      "PresentedTime": null,
+      "SupportsNativePresentationTiming": false,
+      "EvidenceKind": "gpu-completed"
+    },
+    {
+      "Stage": "edited",
+      "FrameId": 3,
+      "Revision": 3,
+      "MeshUploadId": 2,
+      "Width": 1206,
+      "Height": 2622,
+      "PresentedTime": null,
+      "SupportsNativePresentationTiming": false,
+      "EvidenceKind": "gpu-completed"
+    },
+    {
+      "Stage": "empty",
+      "FrameId": 4,
+      "Revision": 4,
+      "MeshUploadId": 3,
+      "Width": 1206,
+      "Height": 2622,
+      "PresentedTime": null,
+      "SupportsNativePresentationTiming": false,
+      "EvidenceKind": "gpu-completed"
+    },
+    {
+      "Stage": "resized",
+      "FrameId": 6,
+      "Revision": 6,
+      "MeshUploadId": 4,
+      "Width": 1062,
+      "Height": 2382,
+      "PresentedTime": null,
+      "SupportsNativePresentationTiming": false,
+      "EvidenceKind": "gpu-completed"
+    },
+    {
+      "Stage": "final",
+      "FrameId": 1,
+      "Revision": 1,
+      "MeshUploadId": 1,
+      "Width": 1206,
+      "Height": 2622,
+      "PresentedTime": null,
+      "SupportsNativePresentationTiming": false,
+      "EvidenceKind": "gpu-completed"
+    }
+  ],
+  "BeforeDisposal": {
+    "MeshUploads": 16,
+    "SubmittedFrames": 18,
+    "CompletedFrames": 17,
+    "PresentedFrames": 0,
+    "InFlightFrames": 1,
+    "PeakInFlightFrames": 3,
+    "LiveMeshResources": 1,
+    "LiveMeshBuffers": 2,
+    "IsDisposed": false,
+    "LastError": null
+  },
+  "AfterDisposal": {
+    "MeshUploads": 16,
+    "SubmittedFrames": 18,
+    "CompletedFrames": 18,
+    "PresentedFrames": 0,
+    "InFlightFrames": 0,
+    "PeakInFlightFrames": 3,
+    "LiveMeshResources": 0,
+    "LiveMeshBuffers": 0,
+    "IsDisposed": true,
+    "LastError": null
+  },
+  "FinalView": {
+    "MeshUploads": 1,
+    "SubmittedFrames": 1,
+    "CompletedFrames": 1,
+    "PresentedFrames": 0,
+    "InFlightFrames": 0,
+    "PeakInFlightFrames": 1,
+    "LiveMeshResources": 1,
+    "LiveMeshBuffers": 2,
+    "IsDisposed": false,
+    "LastError": null
+  },
+  "DisposalInFlight": 1
+}

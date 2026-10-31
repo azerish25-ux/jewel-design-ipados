@@ -1,0 +1,16 @@
+{
+  "stages": [
+    "original",
+    "orbit",
+    "edited",
+    "empty",
+    "resized",
+    "final"
+  ],
+  "peakInFlight": 3,
+  "disposalInFlight": 1,
+  "retiredBuffers": 0,
+  "nativePresentationTimingVerified": false,
+  "screenEvidenceRequired": true,
+  "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+}

@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T02-A02",
+  "status": "verified_bounded_simulator_visible_CAD_and_ownership_native_timing_physical_pending",
+  "run": 41190815914,
+  "sourceCommit": "1feab10b8bac3964d370addccba291107d46d36f",
+  "nativeArchiveReuse": {
+    "schemaVersion": 1,
+    "occtPin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "runId": "41181433871",
+    "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+    "platform": "iossimulator-arm64",
+    "nativeInputSha256": "6d4e695ca9a910ab2cf52ebb768824f87b6b7dd921b9f1216f98b8779e2f0553",
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "archiveSha256": "f4f15e02ec58dba1d534657a2c516bac6e502e72a0b99a13ed915c07217b0bae",
+    "archiveBytes": 74590936,
+    "consumerCommit": "1feab10b8bac3964d370addccba291107d46d36f",
+    "consumerRunId": "41190815914",
+    "scope": "Validated native archive reuse only; app compile/runtime still required."
+  },
+  "build": {
+    "warnings": 2,
+    "errors": 0,
+    "logSha256": "87502eaa189dd8cd8df9896e256417d1eb476ed71672115b601e2dedf3956d93",
+    "warningScope": "Test AppDelegate nullability and deprecated UIWindow initialization; view/helper binding preflight separately had0 warnings0 errors."
+  },
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "resultSha256": "afe65d93c9974ff4d70fa15a737342de8df011eaec17e11a4d2439a19365c5d2",
+      "runtimeReport": "docs/evidence/apple/visible-viewport/ipad/report.json",
+      "resourceVerification": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 2,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screenPixels": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "1e2b318ffe8571134a8049f4c6418ce40e7dba195e77680e9558191587c863d0",
+          "orbit": "bd1c7ad7da289a501d98b55b04201c63ec93fdd36b31aed00440bde5cb349741",
+          "edited": "8679507861269fc49d84220ecf9f0dd6bfe30a2797502959bdc41e1324ec46ba",
+          "empty": "812f18a9989401617341158cd21f009e178fe6158ff0492843940b5174dedd52",
+          "resized": "a39344a0d6ec1666b639aeafa2ceb06e688ebc1acbceb912a4ec49f84faf65cc",
+          "final": "1e2b318ffe8571134a8049f4c6418ce40e7dba195e77680e9558191587c863d0"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenRawBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "resultSha256": "afe65d93c9974ff4d70fa15a737342de8df011eaec17e11a4d2439a19365c5d2",
+      "runtimeReport": "docs/evidence/apple/visible-viewport/iphone/report.json",
+      "resourceVerification": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screenPixels": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "119302df7bf6563dd17c5ecd8abb324206c5fb9dd7bd730aa4785edff3338d17",
+          "orbit": "a8a988fded134ba60f7c0bf9f75fac2588cae6e0e489f7ef3c7196d732c15730",
+          "edited": "66fd216f85c7490deb20b308134b2a1cc91b2979e2b68cbda08a938345d247b6",
+          "empty": "380419a18e8966758e5996d67f32f7d45a10c7167f0a1bcf5df001b373f39bab",
+          "resized": "56a557818ad6f734554e62a8d320dad7bb2085b9cdbe96443cb48e53c1232c94",
+          "final": "119302df7bf6563dd17c5ecd8abb324206c5fb9dd7bd730aa4785edff3338d17"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenRawBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "visualReview": {
+    "inspected": [
+      "ipad/original",
+      "ipad/orbit",
+      "ipad/edited",
+      "ipad/empty",
+      "ipad/resized",
+      "iphone/original"
+    ],
+    "observation": "Actual CAD output is visible inside UIKit MTKView, including source-regenerated edit at the same orbit pose and physical viewport resize. Empty source result clears. Final PNG matches original exactly in both families.",
+    "scope": "Engineering viewport test window; no final product controls/layout/gestures/material/source-camera fidelity claim."
+  },
+  "remaining": [
+    "Native drawable presentation timing on supporting physical hardware/runtime",
+    "Original lens/camera/picking/touch/navigation and complete UI workflows",
+    "Original material/photoreal quality and wider model corpus",
+    "Original-PC project round-trip regeneration and physical device acceptance",
+    "Full1451-row parity"
+  ]
+}
