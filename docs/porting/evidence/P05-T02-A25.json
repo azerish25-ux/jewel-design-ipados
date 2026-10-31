@@ -86,5 +86,32 @@
     "Generic existing collapsed-apex BRep affine robustness",
     "Original-PC/physical-device/full1451-row parity"
   ],
-  "scope": "Independent published plane comparison and two source-faithfulness corrections; no full feature row closed."
+  "scope": "Independent published plane comparison and two source-faithfulness corrections; no full feature row closed.",
+  "implementationCommit": "721d3a158978e089cf98ad3272756219d2899199",
+  "ciRuns": [
+    {
+      "id": 41148150312,
+      "scope": "native host/macOS iPad/iPhone1228-source-differential and corrected cap order",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41148150312"
+    },
+    {
+      "id": 41148153123,
+      "scope": "macOS unsigned ios-arm64 AOT including pinned plane reference",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41148153123"
+    },
+    {
+      "id": 41148149333,
+      "scope": "repository/source/license/provenance controls",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41148149333"
+    },
+    {
+      "id": 41148149341,
+      "scope": "recovered managed iOS reuse",
+      "status": "dispatched",
+      "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41148149341"
+    }
+  ]
 }
