@@ -5,6 +5,7 @@ namespace JewelDesign.Documents;
 /// <summary>Observed archive-4 CSG library envelope and numeric record schemas; not a portfolio or CAD evaluator.</summary>
 public static class LegacyCsg4Codec
 {
+    public static readonly Guid LegacyJoinBrepTypeGuid=new("ce5be8f9-4162-4438-99e4-a2606573f739");
     public static readonly Guid ProfileCapTypeGuid=new("c88750ae-3440-48d5-9501-c3bd55e8b2b8");
     public static readonly Guid SimpleSweep2TypeGuid=new("f19ea1ff-57e7-4922-9ff7-87535b49c1c6");
     public static readonly Guid ArrayTypeGuid=new("8d8b262f-f2bb-43c5-9486-fbd563c4759b");
@@ -24,7 +25,7 @@ public static class LegacyCsg4Codec
     public static readonly Guid ValueTypeGuid=new("38455005-5ef2-43db-8fb9-60e447d75d59");
     public static readonly Guid OnOffTypeGuid=new("a5d6b280-42fe-4188-8ff0-9ac6caed7831");
     public static readonly Guid ChooserTypeGuid=new("6c85fe71-927a-4d28-9335-8f1eb8713979");
-    private static readonly HashSet<Guid> ExactV1SimpleBlockTypes=new(){RingRailV1TypeGuid,OutsideRailV1TypeGuid,SelectRingRailTypeGuid,TranslateObjectTypeGuid,ScaleObjectToSizeTypeGuid,AddTypeGuid,ProfilePlacement2RailTypeGuid,RotateObjectTypeGuid,TransformObjectTypeGuid,ArrayTypeGuid,UnarrayV1TypeGuid,SimpleSweep2TypeGuid,ProfileCapTypeGuid};
+    private static readonly HashSet<Guid> ExactV1SimpleBlockTypes=new(){RingRailV1TypeGuid,OutsideRailV1TypeGuid,SelectRingRailTypeGuid,TranslateObjectTypeGuid,ScaleObjectToSizeTypeGuid,AddTypeGuid,ProfilePlacement2RailTypeGuid,RotateObjectTypeGuid,TransformObjectTypeGuid,ArrayTypeGuid,UnarrayV1TypeGuid,SimpleSweep2TypeGuid,ProfileCapTypeGuid,LegacyJoinBrepTypeGuid};
     internal static bool IsPlainScalarType(Guid type)=>type==ValueTypeGuid||type==OnOffTypeGuid||type==ChooserTypeGuid;
     private static readonly Guid marker = new("b237ee6c-ac7e-4725-86ee-54bccda34fea");
     private const uint RecordCode = 0x40008000;

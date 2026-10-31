@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "commit": "8ea10ccc97a5ddb026dff7e53aed0c9c1ca7b3c9",
+  "runtimeRun": 41172366503,
+  "deviceRun": 41172368296,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "reportSha256": "2f901eedc5038f23f0297a6dd53faaf7dc3a6beb79ae6a9d106b36e2737d2764",
+      "managedReport": "PASS native BRep sewing:10 analytical/actual design cases; connected/free-edge/part diagnostics and copied inputs; source legacy join/repair/PC parity separate."
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "reportSha256": "2f901eedc5038f23f0297a6dd53faaf7dc3a6beb79ae6a9d106b36e2737d2764",
+      "managedReport": "PASS native BRep sewing:10 analytical/actual design cases; connected/free-edge/part diagnostics and copied inputs; source legacy join/repair/PC parity separate."
+    }
+  ],
+  "device": {
+    "warnings": 52,
+    "errors": 0,
+    "architectures": "arm64",
+    "platform": "tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry:\nLoad command 11\n      cmd LC_BUILD_VERSION\n  cmdsize 32\n platform IOS\n    minos 15.0\n      sdk 26.5\n   ntools 1\n     tool LD\n  version 1267.0\n",
+    "executableSha256Report": "0d4a21c37a020a5ec2bd1a01c9df6ad2668260a0964c74c8a6f10780b6703c84  tests/iOS.Native/bin/Release/net10.0-ios/ios-arm64/NativeGeometry.app/NativeGeometry\n",
+    "buildLogSha256": "61a899570316493c719a058325234ea2a60e05cde593b129e4f955738e2b46eb",
+    "nativeSource": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "scope": "Unsigned ios-arm64 Release/AOT compile/link only; no physical execution."
+  },
+  "scope": "Copied native sewing10-case/8-ABI-guard checkpoint. Predates saved legacy140 graph registration; no original-PC/private repair/physical/full feature parity."
+}

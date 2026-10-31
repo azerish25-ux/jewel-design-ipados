@@ -11,7 +11,7 @@ public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,I
 {
     private static readonly IReadOnlyDictionary<Guid,int> InputCounts=new Dictionary<Guid,int>{
         [RingRailV1Candidate.TypeGuid]=1,[OutsideRailV1Candidate.TypeGuid]=6,[LegacyCsg4Codec.SelectRingRailTypeGuid]=3,
-        [LegacyCsg4Codec.ProfileCapTypeGuid]=2,[LegacyCsg4Codec.SimpleSweep2TypeGuid]=8,[LegacyCsg4Codec.ArrayTypeGuid]=1,[LegacyCsg4Codec.UnarrayV1TypeGuid]=1,[LegacyCsg4Codec.ProfilePlacement2RailTypeGuid]=4,[LegacyCsg4Codec.TransformObjectTypeGuid]=2,[LegacyCsg4Codec.RotateObjectTypeGuid]=4,[LegacyCsg4Codec.AddTypeGuid]=2,[LegacyCsg4Codec.TranslateObjectTypeGuid]=4,[LegacyCsg4Codec.ScaleObjectToSizeTypeGuid]=4
+        [LegacyCsg4Codec.LegacyJoinBrepTypeGuid]=0,[LegacyCsg4Codec.ProfileCapTypeGuid]=2,[LegacyCsg4Codec.SimpleSweep2TypeGuid]=8,[LegacyCsg4Codec.ArrayTypeGuid]=1,[LegacyCsg4Codec.UnarrayV1TypeGuid]=1,[LegacyCsg4Codec.ProfilePlacement2RailTypeGuid]=4,[LegacyCsg4Codec.TransformObjectTypeGuid]=2,[LegacyCsg4Codec.RotateObjectTypeGuid]=4,[LegacyCsg4Codec.AddTypeGuid]=2,[LegacyCsg4Codec.TranslateObjectTypeGuid]=4,[LegacyCsg4Codec.ScaleObjectToSizeTypeGuid]=4
     };
     private readonly CandidateContext context;
     private readonly OutsideRailCandidateSettings settings;
@@ -37,7 +37,7 @@ public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,I
         if(!Supports(index))throw new NotSupportedException("Unsupported candidate producer.");
         var record=Values.Document.Records[index];
         if(record.TypeGuid==LegacyCsg4Codec.TransformObjectTypeGuid)return ConsumerLayout(index).AllChannels;
-        if(record.TypeGuid==LegacyCsg4Codec.ArrayTypeGuid||record.TypeGuid==LegacyCsg4Codec.UnarrayV1TypeGuid)return CollectionLayout(index).AllChannels;
+        if(record.TypeGuid==LegacyCsg4Codec.ArrayTypeGuid||record.TypeGuid==LegacyCsg4Codec.UnarrayV1TypeGuid||record.TypeGuid==LegacyCsg4Codec.LegacyJoinBrepTypeGuid)return CollectionLayout(index).AllChannels;
         var block=record.SimpleBlock!;int count=InputCounts[record.TypeGuid];
         var result=new SerializedChannelLink[count];
         for(int i=0;i<count;i++)result[i]=i<block.ObjectIndices.Count?new(block.ObjectIndices[i],block.ChannelIndices[i]):SerializedChannelLink.Disconnected;
@@ -70,6 +70,8 @@ public sealed partial class CandidateRailGraphSession:ILegacyValueNodeProvider,I
         Output entry;
         if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.ArrayTypeGuid||Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.UnarrayV1TypeGuid){
             entry=CollectionOutput(index);
+        }else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.LegacyJoinBrepTypeGuid){
+            entry=LegacyJoinOutput(index);
         }else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.ProfileCapTypeGuid){
             entry=ProfileCapOutput(index);
         }else if(Values.Document.Records[index].TypeGuid==LegacyCsg4Codec.SimpleSweep2TypeGuid){

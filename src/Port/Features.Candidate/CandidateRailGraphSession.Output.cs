@@ -6,13 +6,15 @@ public sealed partial class CandidateRailGraphSession
  private sealed class Output:IDisposable
  {
   internal IReadOnlyList<LegacyChannelValue> Channels {get;}
+  internal CandidateSewingInfo? Sewing {get;}
   private readonly Dictionary<(int Channel,int Item),CandidateGeometryState> geometry;
   private readonly IReadOnlyList<string>? identifiers;
-  internal Output(CandidateShape? shape,CandidateRailOutputInfo? info,LegacyChannelValue data,IReadOnlyList<LegacyChannelValue>? additional=null,CandidateProfileOutputInfo? profile=null,LegacyAffineTransform? applied=null,IReadOnlyList<string>? identifiers=null){
-   Channels=Array.AsReadOnly(new[]{data}.Concat(additional??Array.Empty<LegacyChannelValue>()).ToArray());geometry=new();this.identifiers=identifiers is null?null:Array.AsReadOnly(identifiers.ToArray());
+  internal Output(CandidateShape? shape,CandidateRailOutputInfo? info,LegacyChannelValue data,IReadOnlyList<LegacyChannelValue>? additional=null,CandidateProfileOutputInfo? profile=null,LegacyAffineTransform? applied=null,IReadOnlyList<string>? identifiers=null,CandidateSewingInfo? sewing=null){
+   Channels=Array.AsReadOnly(new[]{data}.Concat(additional??Array.Empty<LegacyChannelValue>()).ToArray());geometry=new();Sewing=sewing;this.identifiers=identifiers is null?null:Array.AsReadOnly(identifiers.ToArray());
    if(shape is not null)geometry.Add((0,0),new(shape,info,profile,applied??LegacyAffineTransform.Identity,data.Brep.HasValue?CandidateGeometryKind.Brep:CandidateGeometryKind.Curve));
   }
-  internal Output(IReadOnlyList<LegacyChannelValue> channels,Dictionary<(int,int),CandidateGeometryState> geometry){Channels=Array.AsReadOnly(channels.ToArray());this.geometry=geometry;}
+  internal Output(IReadOnlyList<LegacyChannelValue> channels,Dictionary<(int,int),CandidateGeometryState> geometry,IReadOnlyList<string>? identifiers=null,CandidateSewingInfo? sewing=null){Channels=Array.AsReadOnly(channels.ToArray());this.geometry=geometry;this.identifiers=identifiers is null?null:Array.AsReadOnly(identifiers.ToArray());Sewing=sewing;}
+  internal Output RetainedCopy(Func<CandidateGeometryState,CandidateGeometryState> retain){var owned=new Dictionary<(int,int),CandidateGeometryState>();try{foreach(var pair in geometry){var state=retain(pair.Value);try{owned.Add(pair.Key,state);}catch{state.Dispose();throw;}}return new(Channels,owned,identifiers,Sewing);}catch{foreach(var state in owned.Values)state.Dispose();throw;}}
   internal LegacyChannelValue Read(int channel)=>(uint)channel<(uint)Channels.Count?Channels[channel]:LegacyChannelValue.Empty;
   internal string Identifier(int channel)=>identifiers is not null&&(uint)channel<(uint)identifiers.Count?identifiers[channel]:throw new NotSupportedException("Output identifier is not represented for this producer/channel.");
   internal CandidateGeometryState Geometry(int channel,int item,CandidateGeometryKind kind){var state=geometry.TryGetValue((channel,item),out var value)?value:throw new NotSupportedException("Output item has no owned native geometry.");return state.Kind==kind?state:throw new NotSupportedException("Output geometry kind does not match reference.");}

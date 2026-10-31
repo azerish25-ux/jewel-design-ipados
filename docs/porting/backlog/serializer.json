@@ -12255,7 +12255,7 @@
       "kind": "serializer",
       "phase": "P04",
       "title": "CSBlocks.Solids.Obsolete.CSJoinBrep1",
-      "status": "not_started",
+      "status": "in_progress",
       "sourceEvidence": [
         {
           "path": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinBrep1.cs",
@@ -12264,8 +12264,13 @@
       ],
       "acceptance": "Exercise this declared GUID and supported record-version branches with non-default serialized fields; PC -> iPad -> PC must retain graph identity/connections/data and remain editable. Compare computed geometry separately. Reserved expired-node GUID requires expected-error behavior, not successful geometry.",
       "fixtureIds": [],
-      "testCommands": [],
-      "evidence": [],
+      "testCommands": [
+        "node --test tests/legacy-join-header-v1-reference.test.cjs tests/legacy-empty-join.test.cjs",
+        "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll"
+      ],
+      "evidence": [
+        "docs/porting/evidence/P03-T03-A16.json"
+      ],
       "guid": "ce5be8f9-4162-4438-99e4-a2606573f739",
       "legacy": true,
       "details": {

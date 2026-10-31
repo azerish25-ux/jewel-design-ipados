@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_header_observation_only",
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "blocks": [
+    {
+      "index": 140,
+      "guid": "ce5be8f9-4162-4438-99e4-a2606573f739",
+      "identifier": "Tapered Band on 2 Ring Rails (Joined Surface)",
+      "flags": 65501,
+      "legacyLayer": 4,
+      "userData": [
+        {
+          "type": "Identifier",
+          "key": "Original",
+          "value": "Tapered Band on 2 Ring Rails (Joined Surface)"
+        }
+      ],
+      "objects": [
+        134,
+        138,
+        139
+      ],
+      "channels": [
+        0,
+        0,
+        0
+      ],
+      "fullyConsumed": true
+    }
+  ],
+  "source": "recovery/canonical/cad/CSBlocks.Solids.Obsolete/CSJoinBrep1.cs",
+  "scope": "Exact1.0 header/input links only; native/source/PC behavior is separate."
+}

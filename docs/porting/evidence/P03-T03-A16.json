@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P03-T03-A16",
+  "status": "in_progress_local_saved_legacy_join_verified_apple_pending",
+  "requirements": [
+    "BLD-0498",
+    "SER-0533"
+  ],
+  "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
+  "headerObservation": "docs/evidence/audit/legacy-join-header-reference.json",
+  "nativeEmptyProof": "docs/evidence/audit/legacy-empty-join-native.json",
+  "canonicalSourceContract": "docs/evidence/audit/legacy-join-source-contracts.json",
+  "red": "Shared build failed7 CS1061 errors for missing sewing-output diagnostics before join implementation.",
+  "implementation": [
+    "src/Port/Documents/LegacyCsg4Codec.cs",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.Joins.cs",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.Output.cs",
+    "src/Port/Features.Candidate/CandidateRailGraphSession.cs"
+  ],
+  "behavior": {
+    "exactVersion": "1.0",
+    "guid": "ce5be8f9-4162-4438-99e4-a2606573f739",
+    "inputs": [
+      134,
+      138,
+      139
+    ],
+    "output": "OutJoined, one BRep data channel, identity transform metadata",
+    "collection": "Expandable replay zero fixed inputs; flatten all operation data, collect BReps only; no modern validity/solid filter or wildcard expansion.",
+    "empty": "Native Count0 is null; retain existing output/data identity/native leases/diagnostics or initially empty.",
+    "kernel": "Copied native sewing at.01; open/disconnected parts preserved; private invalid/deleted-face repair unsupported."
+  },
+  "checks": {
+    "nativeStates": 10,
+    "actualJoinedDesign": {
+      "faces": 3,
+      "parts": 1,
+      "closedShells": 1,
+      "freeEdges": 0
+    },
+    "headers": 165,
+    "opaqueRecords": 76,
+    "scalars": 100,
+    "fileFidelity": "Original no-op and parameter reversal byte-identical; edited save/reopen diagnostics and native volume consistent.",
+    "nullRetention": "Initial empty, nonempty, empty-retains-previous identity/geometry/diagnostics, nonempty replacement.",
+    "ownership": "Snapshots survive graph disposal; failed pending generation retains previous output/count; final native entries0.",
+    "guards": "Curve/numeric skipping, negative-index empty semantics, future/corrupt headers, cycles and source binary mutation controls.",
+    "managedReport": "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. PASS candidate native curves: actual native unit tangents/50 analytic directions, actual ordered NURBS join, actual NURBS trim/reverse/open-end projection, actual bounded3D closest points, actual affine scale/shear/translation/source preservation, normalized arc-length mapping/50 analytic samples, four-span rational quadratic circles, ZX/translated/rotated frames, domain/length/poles and 28 rational parameter samples, copy/retain/disposal and invalid-input guards; no original-PC or full ring-graph claim. PASS ring rail candidate: source default7/ZX radius plan, actual NURBS output, recorded library radius edit/save/reopen/rebuild/undo; stored input supplied explicitly, no full channel/graph/UI/export/PC parity claim. PASS native finite curve-line events: exact linear NURBS, diameter/rays/finite/skew/tangent/trim/3D and point/overlap/reversed ranges, explicit fuzzy tolerance and typed guards; no Rhino ordering/full builder/PC claim. PASS native closed-curve seam: copied circle/affine/corner curves, requested domain start, wrapped points/length/orientation, reverse/closest/trim and ownership/error guards; no original-PC/full OutsideRail claim. PASS native curve bounds: unpadded optimal extrema and explicit padding, circle/trim/interior maximum/affine ellipse/line/translation/seam/reverse, input preservation and typed guards; no arbitrary-spline/Rhino/PC guarantee. PASS outside rail candidate: actual source-ordered unlocked/locked deformation, split/join/seam/direction, defaults/radius fallback/priority/scale0, independent sampled ellipse, stored-input edit/save/reopen/rebuild/undo and ownership/errors; no actual chooser/graph/PC claim. PASS stored native profiles:155 exact NURBS imports against independent homogeneous points, degrees/weights/domains including non-clamped knots, stored chooser edit/save/reopen/rebuild/undo and all5 actual-profile OutsideRail choices; no active graph/PC claim. PASS evaluated value-channel geometry: generated override changes actual selected-profile OutsideRail, state save/reopen rebuild and inactive chooser/missing-curve/ownership guards; explicit input bindings, not full graph/PC parity. PASS record-bound rail builders:actual saved RingRail/OutsideRail links, generation, consumer rewire/save/reopen/rebuild/reversal, disconnected/non-numeric defaults and ownership; no full scheduler/PC claim. PASS graph-managed rail outputs:source curve/number/metadata conversions, dependency generation, real curve edges, replacement/retained readers, failure cache/disposal and cycle guards; known candidate subset. PASS select ring rail:150 exact-source forwarding cases, null vs empty/numeric/profile/native curve, Boolean defaults/threshold/NaN, saved selection/edit/reopen/downstream and retained generations/disposal; known candidate subset. PASS saved transform producers:16093 exact-source translation/scale/scalar-add cases, saved6 translations/all7 original scales via placement, all7 scale plans also on explicit resolved links, native application/source preservation, override/edit/save/reopen/forwarding/cycle/cleanup; no full transform-chain/PC parity. PASS two-rail profile placement:4496 extracted frame/seam cases; actual native circle/ellipse/3D/finite ray/overlap/order/height floor, original3 placement->Add->scale chains, native sizing/edit/save/reopen/chooser/no-hit reset/failure/cycle/cleanup; candidate subset, no original-PC parity. PASS saved rotation producers:44217 recovered-wrapper/published-native cases, actual6 saved nodes, cardinal/noise/threshold/large-angle/order/mirror/default/finite guards, affine products/native application/source preservation, edit/save/reopen/forwarding/failure/cycle/cleanup; published6 comparison only, no original Rhino5/PC parity. PASS expandable transform consumer:12285 exact source socket cases, original3 native profile pipelines/metadata/parameters/matrix/points, source-specific multiply order, nested/selector copies, edit/save/reopen/retained readers, invalid/missing/overflow/cycle/cleanup; known non-array candidate subset, no original-PC parity. PASS collection socket constructors:12285 exact-source zero-fixed-input cases; source replay preserved while native collection execution is tested separately. PASS owned native collections:18 source output comparisons, original6 array/unarray chains, nested/per-item metadata, trailing-empty/null/wildcard semantics, retained snapshots across rebuild/disposal, save/reopen/failure/cycle/cleanup; known candidate subset, no full array-consumer/PC parity. PASS native array consumers:49 source first-item cases; nested transform flatten/object preservation/null copy, actual native leaf geometry/metadata/order, source aggregate bounds/first transform capability, direct-method rejection/helper-flatten curve queries, arithmetic array channels, saved reopen/failure/disposal; candidate subset, no original-PC/full data parity. PASS explicit sweep2 preparation:3906 exact stable-order cases; open/mixed clamps, closed native seam/remap/ties/ownership, original134 actual3 profile copies/metadata/params, real near-knot seam domain/geometry, edit/save/reopen/cleanup; no BRep or original-PC sweep claim. PASS managed paired-rail surface:301 actual134 rail/profile samples, native BRep/affine/retain/input isolation/edit-save-reopen/error cleanup; experimental explicit map, no original-PC/full sweep-block parity. PASS owned BRep graph:real134 typed output/name/edit-save-reopen, kind rejection/transform metadata, nested mixed arrays/unarray/wildcards/affine, retained snapshots and failed-generation cleanup; candidate subset, no original-PC/full block parity. PASS rational NURBS surfaces:1445 independent homogeneous tensor points, U-major/rational/nonuniform/nonclamped active domains/collapsed apex, immutable definitions, native face/affine/error/disposal; cap algorithm/PC parity separate. PASS recovered Rhino5 dome:21 threshold/sign/radius profiles and693 exact-source native point comparisons; tensor-boundary=204; tensor-grid=20; full cap/plane/PC parity separate. PASS native NURBS export:14 curve cases and462 native reimport samples; rational/nonclamped/affine/trim/reverse/seam/join, detached definitions, actual115/122 edited-save-reopen and ownership guards; plane/cap/PC parity separate. PASS explicit-plane profile caps:18 native faces and594 boundary samples, signed/flat domes, translated/tilted frames, asymmetric control-hull center/apex and inverse metadata; automatic plane/graph/join/PC parity separate. PASS automatic cap plane candidate:20 oriented/linear/fallback/generated cases and198 actual-profile cap boundary points; published-plane-comparisons=1228; max-axis-error=5.551115123125783E-16; published6 policy, original-PC/full graph parity separate. PASS saved ProfileCap graph:30 native cap states and990 source-profile boundary samples, actual138/139 signed136/default/flatten-first/name/metadata, edit-save-reopen/reversal/retained generations/failure/cycle/cleanup; join/original-PC/full feature parity separate. PASS native BRep sewing:10 analytical/actual design cases; connected/free-edge/part diagnostics and copied inputs; source legacy join/repair/PC parity separate. PASS saved legacy join140:10 native states, actual closed3-face design/edit-save-reopen/reversal, mixed arrays/open/disconnected parts, binary-proven empty retention/output identity and native ownership/failure/cycle guards; private repair/original-PC/full feature parity separate.",
+    "managedReportSha256": "55be2d001409ae87e18f47cecab2bd3f721608a7154c595e46219593456e064f",
+    "documentReport": "PASS legacy array values:289 exact-source arithmetic pairs/33 null-item failures;789 source flatten/copy trees, immutable missing/empty/nested/bit fidelity, Cartesian carry/order and bounded failures; pure references only, no native snapshot/producer execution claim.; PASS legacy rail block bindings:exact known headers/links, structural no-op/rewire/reopen/reversal and future/slot/non-scalar guards; no complete graph/PC claim.; PASS value graph channels:28160 source differential cases; activation/override generations, source output transformations, persistent real/previous state, stored chooser profile and rewired save/reopen/cycle/unsupported guards; known subset only.; PASS embedded matrix profiles:6 groups/155 curves/4012 controls, bit-exact knots/homogeneous coordinates/bbox/sweeps/names, structural no-op/edit/reopen, legacy1.0/unknown/malformed/immutability and raw NaN/-0 guards; no native import/chooser/PC claim.; PASS additional scalar codec: 26 source/oracle-matched Value/OnOff/Chooser records, 100 total scalars/74 bounded numeric; structural edit/reopen/reversal and other-record/bit/version/bounds fidelity; no UI/graph regeneration or PC claim.; PASS portfolio package: immutable member/sidecar preservation, real CSG edit/reopen, metadata/history candidates, ownership/case/path/bounds guards and unresolved-entry diagnostics; synthetic inventory, no native folder/PC claim.; PASS portfolio XML: source-derived 16/27 property contracts, nested/unknown/nil/path and UTF8/UTF16 preservation, bounded DTD rejection and paired filenames; synthetic fixtures only; dynamic-code=True; no PC portfolio/load-mutation claim.; PASS additional scalar handles:100 scoped fields, decoded header/links, mixed Range/Chooser/OnOff/Value transactions, save/reopen and byte-identical undo/redo; generic stored state only, no UI/graph/CAD/PC claim.; PASS library edit session: real handles, setter epsilon/previous state, grouped scalar undo/redo, branch/foreign/opaque guards and rebuilt archive reopening; no native snapshot or CAD claim.; PASS production CSG4 codec: 241 records/74 numeric; structural no-op/edit/reopen/reversal, opaque and bit/text fidelity, CRC/bounds/version failures; no PC app or geometry regeneration claim.",
+    "documentReportSha256": "9a698f5fe10cf9f59428ed21045c8c09f6bdfd40b677e47e74d2c0edb67f9362",
+    "commands": [
+      {
+        "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Documents.Tests -- .local/file-proof/production",
+        "exitCode": 0
+      },
+      {
+        "command": "node --test tests/legacy-empty-join.test.cjs tests/legacy-join-header-v1-reference.test.cjs tests/library-type-footprint.test.cjs",
+        "exitCode": 0,
+        "tests": 10
+      },
+      {
+        "command": "node scripts/verify-legacy-empty-join.cjs --verify-local D:/MAIN SOFTWARE/jewerly software/analysis/runtime-prerequisites/rhino5/System",
+        "exitCode": 0
+      },
+      {
+        "command": "node tools/repository/check.cjs; git diff --cached --check",
+        "exitCode": 0
+      }
+    ]
+  },
+  "review": {
+    "correctness": "Native empty proof and canonical conditional SetData used together; actual saved links/guid/version and physical native closed design generated.",
+    "architecture": "Dedicated legacy join adapter and generic retained-output copy; generation diagnostics belong to last output; immutable scopes remain intact.",
+    "security": "Ordinary static objdump/ILSpy only; no original native execution/licensing/account/scripts. All local caches/evidence D:; recovery/kernel read-only.",
+    "limits": "Acquired SDK5 x64 proof is version-pinned. Native replacement/repair/disconnected equivalence, UI link validation, actual PC portfolio corpus, physical device and full feature parity remain unverified."
+  },
+  "remaining": [
+    "New Apple legacy140 graph artifacts",
+    "Private repair/deleted-face and broader legacy join semantics",
+    "Generic existing collapsed-apex BRep affine robustness",
+    "Downstream builders/original-PC/physical/UI/render/export/full1451-row acceptance"
+  ],
+  "scope": "Actual saved legacy140 native graph candidate plus source-proven empty retention; no full parity row closed."
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "status": "static_binary_control_flow_proof_not_runtime_execution",
+  "tool": "GNU objdump2.47, ordinary CLI output; no REA Evidence handle",
+  "callChain": [
+    {
+      "artifact": "Rhino_DotNet.dll",
+      "sha256": "19f7616af2a96a7e9eec71c5ef637fd08ac785195c0ced869cfefa2c4dc4e212",
+      "importDll": "rhino.exe",
+      "importSlotRva": "0x1ade28",
+      "symbol": "?RhinoJoinBreps@@YAPEAVON_Brep@@AEAV?$ON_SimpleArray@PEAVON_Brep@@@@N@Z"
+    },
+    {
+      "artifact": "Rhino.exe",
+      "sha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+      "exportRva": "0x725170",
+      "thunk": "jmp qword ptr [0x140ee4a68]",
+      "importDll": "tlx64.dll",
+      "symbol": "?TL_JoinBreps@@YAPEAVON_Brep@@AEAV?$ON_SimpleArray@PEAVON_Brep@@@@N@Z"
+    },
+    {
+      "artifact": "tlx64.dll",
+      "sha256": "9d669a912305c37c9e4f253b074741c49869b63b61fd1de141251c9bc8c508fe",
+      "imageBase": "0x180000000",
+      "exportRva": "0xb3dd0",
+      "rawOffset": 733648
+    }
+  ],
+  "emptyCase": {
+    "arrayCountFieldOffset": 16,
+    "branchRva": "0xb3df3",
+    "nonzeroTargetRva": "0xb3e09",
+    "zeroReturnRva": "0xb3df7",
+    "returnInstructionRva": "0xb3e08",
+    "bytesHex": "4c8bdc554154498dab68ffffff4881ec880100008b5110410f2973c84c8be1660f28f185d2751233c0410f2873c84881c488010000415c5dc3",
+    "bytesSha256": "336d16d503af128e33a2f46c672a2d7d84a86379a67ab38817fce0ff68d6babf",
+    "derivation": "SDK5 OnBrep simple-array Count is at+0x10. Native entry loads it, tests zero, and on zero executes xor eax,eax then restores registers and returns, with no intervening calls."
+  },
+  "fallback": {
+    "rangeRva": [
+      "0xb41a2",
+      "0xb423a"
+    ],
+    "observed": "Allocates a new ON_Brep, loops non-null filtered input pointers and calls imported ON_Brep::Append(const ON_Brep&), then returns the new pointer.",
+    "appendImportSlotRva": "0x463000",
+    "limits": "Existence of append fallback is proven; internal branch conditions/full disconnected, single, repair or topology behavior are not all reconstructed."
+  },
+  "limits": [
+    "Acquired official Rhino5 x64 artifacts only; no execution or licensing changes.",
+    "Static control-flow evidence proves empty Count0 returns null for this binary; not a complete kernel equivalence proof."
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P05-T02-A26",
-  "status": "in_progress_local_native_sewing_verified_apple_pending",
+  "status": "candidate_native_sewing_apple_runtime_unsigned_device_passed_full_parity_open",
   "sourceContracts": "docs/evidence/audit/legacy-join-source-contracts.json",
   "sdkStaticEvidence": "docs/evidence/audit/legacy-join-overload.json",
   "fixtureSha256": "73e1e22f2f00346d0fee649cecc3b0633c03ee0dbe38ac88a5a2bdd2c40498cd",
@@ -75,13 +75,13 @@
     {
       "id": 41172366503,
       "scope": "native host/macOS iPad/iPhone10-case BRep sewing and8 ABI guards",
-      "status": "queued",
+      "status": "success",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41172366503"
     },
     {
       "id": 41172368296,
       "scope": "macOS unsigned ios-arm64 AOT",
-      "status": "queued",
+      "status": "success",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41172368296"
     },
     {
@@ -93,8 +93,9 @@
     {
       "id": 41172220747,
       "scope": "recovered managed iOS reuse",
-      "status": "in_progress",
+      "status": "success",
       "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41172220747"
     }
-  ]
+  ],
+  "appleArtifactEvidence": "docs/evidence/apple/native-sewing-results.json"
 }
