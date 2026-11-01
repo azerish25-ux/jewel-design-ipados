@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "original5_static_derived_scalar_frame_viewport_windows_macos_passed_ios_pending",
+  "status": "original5_static_derived_numeric_model_windows_macos_iPad_iPhone_checks_passed",
   "plan": "docs/porting/plans/P08-T01-A05-03c-perspective.md",
   "adr": "docs/porting/ADR-0054-original-rhino5-viewport-policy.md",
   "binaryAudit": "docs/evidence/audit/rhino5-core-perspective.json",
@@ -40,7 +40,6 @@
     "scope": "No original DLL/app execution or full native UI commit/view-history/preset rendering claim."
   },
   "remaining": [
-    "macOS and actual iPad/iPhone execution of the new original5-derived C# model",
     "Wider original-state differential oracle/corpus, including all malformed floating-point branches",
     "Native SetTargetAndCameraLocation up/roll recipe and SetVP document/history/cache adapters",
     "Complete source preset ordering, world-normalized Metal camera composition and source-preset captures",
@@ -54,7 +53,7 @@
     },
     "visible": {
       "id": 41300792235,
-      "status": "in_progress_iPad_stage_passed_iPhone_active_last_observed"
+      "status": "completed_success_both_families_actual_reports_and_adjacent_pixels_inspected"
     },
     "repository": {
       "id": 41300792223,
@@ -62,10 +61,11 @@
     },
     "reuse": {
       "id": 41300792197,
-      "status": "in_progress_last_observed"
+      "status": "completed_success_github_terminal_status_checked"
     }
   },
-  "nextAction": "Re-poll these exact current-source handles; do not redispatch while queued/running. Independently continue native setter/commit adapter work when the numerical phase is platform-reviewed.",
+  "nextAction": "Continue original arbitrary-axis rotation/up-roll recipe, SetVP document/history/cache adapters and complete source-preset Metal integration. Numeric checks are not original DLL runtime parity.",
   "appleReport": "docs/evidence/apple/rhino5-viewport-numeric-results.json",
-  "nextRotationAudit": "docs/evidence/audit/rhino5-camera-rotation-source.json"
+  "nextRotationAudit": "docs/evidence/audit/rhino5-camera-rotation-source.json",
+  "appleRuntimeReport": "docs/evidence/apple/rhino5-viewport-ios-results.json"
 }

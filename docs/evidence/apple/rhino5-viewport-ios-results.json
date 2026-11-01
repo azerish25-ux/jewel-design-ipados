@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "run": 41300792235,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41300792235",
+  "sourceCommit": "1e0f96ce9ed9843417ff419d0e591eec3768e5b2",
+  "status": "success",
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D798106A-0403-425E-8352-3E7056FA9F79"
+      },
+      "actualRuntimeFamily": "ipad",
+      "resultSha256": "974031ee32e74c3191913b98da9b34a86b957f0d3fe4f6818f835faf16b5663b",
+      "reports": [
+        "PASS original Rhino5 scalar validity:18 native-branch boundary cases/196608 IEEE high-word patterns; negative unset/nonfinite reject and positive unset accepts; static byte semantics, original runtime/viewport parity separate.",
+        "PASS original Rhino5 camera frame:32 native-derived state/boundary checks and4 analytical poses; one validity flag, no location repair/world cutoff, reject-with-retention setters and raw tiny frame; static control flow, original runtime/PC parity separate.",
+        "PASS original Rhino5 viewport:26 native-derived perspective/frustum/lens/target checks; legacy limits/sentinels, strict lens threshold, width dolly/locks/near correction and failure mutation; static control flow, original runtime/preset/PC parity separate."
+      ],
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "acb85ffc669c0b7c1b71dc4b665726115f7e59d7fe70aecbdec321b6903be83b",
+          "orbit": "f7b923625a14d5a3be36cdf748097c89824625d487bbb54bee785619a0220ef4",
+          "edited": "f0d8dd25e5a182847c2a833506ba1d27a12004f8224b0f6a72ae44cf0a0ef57c",
+          "empty": "3365cc005aa71e2b1a8c2cf9f1dab58d5ffbb54a7336e7d305526150d4eede8d",
+          "resized": "3f1d0b54af1c0ee4a357dade7734dcf5b953c2e5bca400b82428347b1dce9163",
+          "final": "acb85ffc669c0b7c1b71dc4b665726115f7e59d7fe70aecbdec321b6903be83b"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "F94FB7BA-C33C-4B3B-B505-F0FB478DB847"
+      },
+      "actualRuntimeFamily": "iphone",
+      "resultSha256": "974031ee32e74c3191913b98da9b34a86b957f0d3fe4f6818f835faf16b5663b",
+      "reports": [
+        "PASS original Rhino5 scalar validity:18 native-branch boundary cases/196608 IEEE high-word patterns; negative unset/nonfinite reject and positive unset accepts; static byte semantics, original runtime/viewport parity separate.",
+        "PASS original Rhino5 camera frame:32 native-derived state/boundary checks and4 analytical poses; one validity flag, no location repair/world cutoff, reject-with-retention setters and raw tiny frame; static control flow, original runtime/PC parity separate.",
+        "PASS original Rhino5 viewport:26 native-derived perspective/frustum/lens/target checks; legacy limits/sentinels, strict lens threshold, width dolly/locks/near correction and failure mutation; static control flow, original runtime/preset/PC parity separate."
+      ],
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "75907d2cfc3142128a88f7022fc1838390178295b1c9367afbfa136ffc0cc685",
+          "orbit": "2407b1707007dc326714da95c7301f42b2ca25ac3c218f95b165be8e18753f10",
+          "edited": "1e678d5d821cdc61e80917045736be248da15cdcf8a4c73a2f62789084c60b6c",
+          "empty": "87ef9a834266771fbc189b31611e814804ecec4135817db7ce1774ab8fa69158",
+          "resized": "2c629f07e1a62c1ee4ecfa4ba2f77715e1fc734cc4748d7f67e988a0433d03eb",
+          "final": "67b8358da5634afe71537cc4d42977d92115928e1ad5a52a8f1c2997a8a1457c"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "scope": "Actual original5-static-derived C# scalar/frame/viewport assertions on both simulator families, plus independent adjacent real CAD pixels. The original DLL was not executed and the visible renderer still uses its existing fitted camera; full native setter/preset/PC/physical acceptance remains open.",
+  "build": {
+    "warnings": 2,
+    "errors": 0,
+    "warningIds": [
+      "CS8765 existing AppDelegate options nullability",
+      "CA1422 existing UIWindow constructor deprecated on iOS26"
+    ]
+  }
+}

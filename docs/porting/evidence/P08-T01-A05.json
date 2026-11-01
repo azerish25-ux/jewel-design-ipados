@@ -36,7 +36,7 @@
     },
     {
       "id": "P08-T01-A05-03",
-      "status": "original5_numerical_policy_windows_passed_apple_and_full_preset_integration_pending",
+      "status": "original5_derived_numeric_model_windows_macos_iPad_iPhone_passed_native_preset_renderer_integration_pending",
       "sourceAudit": "docs/evidence/audit/camera-frame-source.json",
       "frameWorkCard": "docs/porting/evidence/P08-T01-A05-03a.json",
       "parallelWorkCard": "docs/porting/evidence/P08-T01-A05-03b.json",

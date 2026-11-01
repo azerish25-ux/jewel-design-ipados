@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T01-A05-03c",
-  "status": "original5_static_core_differences_observed_CSharp_implementation_windows_passed_apple_pending",
+  "status": "original5_static_derived_CSharp_numeric_model_windows_macos_iPad_iPhone_checks_passed",
   "file": "analysis/runtime-prerequisites/rhino5/System/opennurbsx64.dll",
   "sha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
   "targetExecuted": false,
@@ -296,11 +296,12 @@
     }
   ],
   "remaining": [
-    "macOS and actual iPad/iPhone execution of the new original5-derived C# model",
     "Wider original-state differential oracle/corpus, including all malformed floating-point branches",
     "Native SetTargetAndCameraLocation up/roll recipe and SetVP document/history/cache adapters",
     "Complete source preset ordering, world-normalized Metal camera composition and source-preset captures",
     "Original licensed PC and physical-device acceptance"
   ],
-  "limits": "Original dependency candidate static evidence plus explicitly separate C# model. Published6 candidate is retained unchanged for its own tests, not relabeled as Rhino5. No full UI/PC/physical parity row closed."
+  "limits": "Original dependency candidate static evidence plus explicitly separate C# model. Published6 candidate is retained unchanged for its own tests, not relabeled as Rhino5. No full UI/PC/physical parity row closed.",
+  "appleReport": "docs/evidence/apple/rhino5-viewport-numeric-results.json",
+  "appleRuntimeReport": "docs/evidence/apple/rhino5-viewport-ios-results.json"
 }
