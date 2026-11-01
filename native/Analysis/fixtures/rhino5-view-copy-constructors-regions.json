@@ -31,6 +31,36 @@
           "unwind": 3419784
         }
       ]
+    },
+    {
+      "role": "viewport-default-constructor",
+      "name": "??0ON_Viewport@@QEAA@XZ",
+      "abi": null,
+      "rva": 2937104,
+      "length": 129,
+      "sha256": "e232ab9df4b8f1a34e9fd312abad1fb979b9f30a399ff95ed4cc2df6052accb1",
+      "unwindRegions": [
+        {
+          "begin": 2937104,
+          "end": 2937233,
+          "unwind": 3617060
+        }
+      ]
+    },
+    {
+      "role": "viewport-initialize",
+      "name": "?Initialize@ON_Viewport@@QEAAXXZ",
+      "abi": null,
+      "rva": 2936448,
+      "length": 643,
+      "sha256": "71e357a4b31c3581534f39d9a506615ea7f0dddb7a4d5be04019ab584ea5fff3",
+      "unwindRegions": [
+        {
+          "begin": 2936448,
+          "end": 2937091,
+          "unwind": 3422324
+        }
+      ]
     }
   ]
 }

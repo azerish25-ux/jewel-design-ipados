@@ -528,7 +528,8 @@
       "constructor": "Copy source raw byte",
       "assignment": "Leave destination byte unchanged",
       "meaning": "Unresolved original5 identity; do not substitute later6 field naming",
-      "implementation": "Not yet exposed in A01 current data model; required before whole runtime-view copy/history"
+      "implementation": "Not yet exposed in A01 current data model; required before whole runtime-view copy/history",
+      "initialize": "Reset to0 by dword0x00000101 at+0x18"
     }
   },
   "guardResolution": {

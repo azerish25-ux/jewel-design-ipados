@@ -35,6 +35,36 @@
           "unwind": 3419784
         }
       ]
+    },
+    {
+      "role": "viewport-default-constructor",
+      "name": "??0ON_Viewport@@QEAA@XZ",
+      "abi": null,
+      "rva": 2937104,
+      "length": 129,
+      "sha256": "e232ab9df4b8f1a34e9fd312abad1fb979b9f30a399ff95ed4cc2df6052accb1",
+      "unwindRegions": [
+        {
+          "begin": 2937104,
+          "end": 2937233,
+          "unwind": 3617060
+        }
+      ]
+    },
+    {
+      "role": "viewport-initialize",
+      "name": "?Initialize@ON_Viewport@@QEAAXXZ",
+      "abi": null,
+      "rva": 2936448,
+      "length": 643,
+      "sha256": "71e357a4b31c3581534f39d9a506615ea7f0dddb7a4d5be04019ab584ea5fff3",
+      "unwindRegions": [
+        {
+          "begin": 2936448,
+          "end": 2937091,
+          "unwind": 3422324
+        }
+      ]
     }
   ],
   "views": [
@@ -51,13 +81,28 @@
       "signature": "undefined ON_Viewport(ON_Viewport * param_1)",
       "decompilerSha256": "276d01a82af14cddb48558956bfa9c7d946497c3d2e22816ea1bf8d01ef8ed20",
       "blocks": 1
+    },
+    {
+      "role": "viewport-default-constructor",
+      "entry": "1802cd110",
+      "signature": "undefined ON_Viewport(void)",
+      "decompilerSha256": "dce86b2b381df5d578f18b0e7ae65c4a89f49013bb29e6bfd1c5080c82bfd24b",
+      "blocks": 1
+    },
+    {
+      "role": "viewport-initialize",
+      "entry": "1802cce80",
+      "signature": "void Initialize(void)",
+      "decompilerSha256": "667ecd42faf0b0c64a0ab6667658297e11083fc4a1ab06880efadf33f9217d82",
+      "blocks": 1
     }
   ],
   "observations": [
     "Original ON_Object copy ctor installs base vtable, zeroes header slots+8 and+0x10, calls CopyUserData exactly once.",
     "Original ON_Viewport copy ctor inlines base initialization, calls CopyUserData once, installs viewport vtable and copies scalar/matrix/UUID/near data; it does not route through viewport assignment or purge a pre-populated list.",
     "Original viewport assignment has a self guard, purges destination userdata before CopyUserData, then copies mapped numeric fields.",
-    "Constructor copies the opaque byte at+0x1b; assignment copies+0x18,+0x19,+0x1a but leaves+0x1b untouched. The current typed view model does not expose this extra byte."
+    "Constructor copies the opaque byte at+0x1b; assignment copies+0x18,+0x19,+0x1a but leaves+0x1b untouched. The current typed view model does not expose this extra byte.",
+    "Original default viewport ctor zeroes base header/userdata slots, installs viewport vtable and calls Initialize. Initialize writes dword0x00000101 at+0x18, so opaque byte+0x1b resets to0 without purging userdata; the original field meaning remains unresolved."
   ],
   "instructionProof": {
     "copyOnlyByte": {
@@ -72,13 +117,23 @@
     "assignmentCalls": [
       "0x1802cd1b9 -> 0x1801bcff0 PurgeUserData",
       "0x1802cd1c4 -> 0x1801bd370 CopyUserData"
-    ]
+    ],
+    "initializeCopyByte": {
+      "address": "0x1802cce8f",
+      "bytes": "c7411801010000",
+      "instruction": "movl $0x101,0x18(%rcx)",
+      "effect": "Little-endian dword sets+0x18=1,+0x19=1,+0x1a=0,+0x1b=0"
+    }
   },
   "sourceFiles": {
     "object-copy-constructor.c": "65e0e80e82caed51234a98a3e9b4cd9fb9259ee2dcc27fcb13d1de4c4e33cc99",
     "viewport-copy-constructor.c": "276d01a82af14cddb48558956bfa9c7d946497c3d2e22816ea1bf8d01ef8ed20",
     "viewport-copy-constructor.asm.txt": "81b98c1154ef701ff863813a687f2cabce70272451ddfc5b354b948e92c57402",
-    "viewport-assignment.asm.txt": "40428e1fa28d42aea724b56c61c6d6bcd5d5681b445d1794e03411c7b7baa72f"
+    "viewport-assignment.asm.txt": "40428e1fa28d42aea724b56c61c6d6bcd5d5681b445d1794e03411c7b7baa72f",
+    "viewport-default-constructor.c": "dce86b2b381df5d578f18b0e7ae65c4a89f49013bb29e6bfd1c5080c82bfd24b",
+    "viewport-initialize.c": "667ecd42faf0b0c64a0ab6667658297e11083fc4a1ab06880efadf33f9217d82",
+    "viewport-default-constructor.asm.txt": "c54cd3fc232825c4b847f77ef7509ea3c0c7df0e95b72e0b5c14b786323a8c82",
+    "viewport-initialize.asm.txt": "41fe011bac4276223296a6f2604f0377032ceccada46ff27f8c56fc5427b01f2"
   },
   "limits": [
     "Byte+0x1b meaning is unresolved; later published6 field names are not proof of its original5 semantics. Preserve it as opaque state with distinct constructor/assignment rules.",
