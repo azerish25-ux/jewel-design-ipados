@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "original5_static_derived_scalar_frame_viewport_windows_passed_apple_pending",
+  "status": "original5_static_derived_scalar_frame_viewport_windows_macos_passed_ios_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03c-perspective.md",
   "adr": "docs/porting/ADR-0054-original-rhino5-viewport-policy.md",
   "binaryAudit": "docs/evidence/audit/rhino5-core-perspective.json",
@@ -50,11 +50,11 @@
     "sourceCommit": "1e0f96ce9ed9843417ff419d0e591eec3768e5b2",
     "preflight": {
       "id": 41300792200,
-      "status": "queued_last_observed"
+      "status": "completed_success_actual_artifacts_inspected"
     },
     "visible": {
       "id": 41300792235,
-      "status": "queued_last_observed"
+      "status": "in_progress_iPad_stage_passed_iPhone_active_last_observed"
     },
     "repository": {
       "id": 41300792223,
@@ -62,8 +62,10 @@
     },
     "reuse": {
       "id": 41300792197,
-      "status": "queued_last_observed"
+      "status": "in_progress_last_observed"
     }
   },
-  "nextAction": "Re-poll these exact current-source handles; do not redispatch while queued/running. Independently continue native setter/commit adapter work when the numerical phase is platform-reviewed."
+  "nextAction": "Re-poll these exact current-source handles; do not redispatch while queued/running. Independently continue native setter/commit adapter work when the numerical phase is platform-reviewed.",
+  "appleReport": "docs/evidence/apple/rhino5-viewport-numeric-results.json",
+  "nextRotationAudit": "docs/evidence/audit/rhino5-camera-rotation-source.json"
 }

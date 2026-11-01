@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03e",
+  "status": "static_original_rotation_dependency_views_observed_implementation_pending",
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "targetExecuted": false,
+  "methods": [
+    {
+      "role": "rotation-sincos",
+      "name": "?Rotation@ON_Xform@@QEAAXNNVON_3dVector@@VON_3dPoint@@@Z",
+      "abi": null,
+      "rva": 3044016,
+      "length": 1125,
+      "sha256": "e20cd2931b0b2326ec178d18370a25368f597d54b00e0df2bdd9d377c13ec096",
+      "unwindRegions": [
+        {
+          "begin": 3044016,
+          "end": 3044497,
+          "unwind": 3500232
+        },
+        {
+          "begin": 3044497,
+          "end": 3044899,
+          "unwind": 3500200
+        },
+        {
+          "begin": 3044899,
+          "end": 3045090,
+          "unwind": 3500176
+        },
+        {
+          "begin": 3045090,
+          "end": 3045141,
+          "unwind": 3500160
+        }
+      ]
+    },
+    {
+      "role": "rotation-angle",
+      "name": "?Rotation@ON_Xform@@QEAAXNVON_3dVector@@VON_3dPoint@@@Z",
+      "abi": null,
+      "rva": 3043344,
+      "length": 139,
+      "sha256": "ea0f5d8c3421993536bc820c34d1fb5a9af4413439854920d41a5e90238ccee7",
+      "unwindRegions": [
+        {
+          "begin": 3043344,
+          "end": 3043483,
+          "unwind": 3500316
+        }
+      ]
+    },
+    {
+      "role": "vector-transform",
+      "name": "??DON_Xform@@QEBA?AVON_3dVector@@AEBV1@@Z",
+      "abi": null,
+      "rva": 3040144,
+      "length": 143,
+      "sha256": "69250dfb8143bd0e6df0f328614c4045196ca374174b6f5c53999b1dbe0c5058",
+      "unwindRegions": [
+        {
+          "begin": 3040144,
+          "end": 3040287,
+          "unwind": 3405936
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "rotation-sincos",
+      "entry": "1802e72b0",
+      "signature": "void Rotation(double param_1, double param_2, ON_3dVector param_3, ON_3dPoint param_4)",
+      "decompilerSha256": "4f0e200832318845b32462e711577b78670be37a6be39ef4f0549654a2010948",
+      "basicBlocks": 25
+    },
+    {
+      "role": "rotation-angle",
+      "entry": "1802e7010",
+      "signature": "void Rotation(double param_1, ON_3dVector param_2, ON_3dPoint param_3)",
+      "decompilerSha256": "1308747459757099eb8287c4b0355b49c2c5a07a18c99e5b251e570fa17a8765",
+      "basicBlocks": 1
+    },
+    {
+      "role": "vector-transform",
+      "entry": "1802e6390",
+      "signature": "ON_3dVector operator*(ON_3dVector * param_1)",
+      "decompilerSha256": "6c9d3eb68bb75a4319cd4d3760b4b5e870ecb25dea84f0178c3fa6a666af0450",
+      "basicBlocks": 1
+    }
+  ],
+  "constants": [
+    {
+      "rva": 3345616,
+      "value": 0.9999999850988388,
+      "bytes": "000000f8ffffef3f"
+    },
+    {
+      "rva": 3345072,
+      "value": 1.490116119385e-8,
+      "bytes": "c40200000000503e"
+    },
+    {
+      "rva": 3345008,
+      "value": 2.220446049250313e-16,
+      "bytes": "000000000000b03c"
+    },
+    {
+      "rva": 3345600,
+      "value": 0.9999999999999998,
+      "bytes": "feffffffffffef3f"
+    }
+  ],
+  "observations": [
+    "The angle overload computes trigonometric values and delegates to the sine/cosine overload. Standard math thunk prototypes still require final annotation before using its decompiler C as a direct algorithm transcription.",
+    "The sine/cosine overload initializes identity, snaps cardinal noise, normalizes a deviating pair, unitizes a nonunit axis and builds the full matrix with optional center translation.",
+    "The vector-transform overload uses only the linear3x3 coefficients; camera-location center translation does not apply to an up vector."
+  ],
+  "remaining": [
+    "Confirm sin/cos thunk identities and remaining unordered/cardinal comparison details from exact instructions.",
+    "Implement the original arbitrary-axis vector rotation and native up/roll recipe with tests before integrating the complete preset command.",
+    "Retain native commit guards, document/history/cache effects and original-PC/physical gates."
+  ],
+  "limits": "Prepared next dependency while existing Apple jobs were queued. Static original data, not a completed rotation or camera setter port."
+}

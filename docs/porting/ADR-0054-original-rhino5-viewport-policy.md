@@ -1,6 +1,6 @@
 # ADR0054: original Rhino5 numerical viewport is a distinct policy
 
-Status: original core static comparison and Windows C# checks pass; Apple execution pending.
+Status: original core static comparison and Windows/macOS C# checks pass; real iOS binding library builds with zero warnings/errors. Actual iPad/iPhone execution is in progress.
 
 The original dependency candidate differs materially from the published6 source candidate. Original scalar validity accepts the positive unset counterpart. Camera location validation has no later world cutoff and does not repair a false camera-valid flag. Invalid/tiny direction/up requests are rejected before storage. Original frame closure has one camera-valid flag; frustum validation has no later world bounds. These are behavioral differences, not merely implementation details.
 
