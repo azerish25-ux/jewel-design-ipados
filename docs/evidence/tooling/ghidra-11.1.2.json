@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "tool": "Ghidra",
+  "version": "11.1.2",
+  "release": "PUBLIC",
+  "officialReleaseUrl": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_11.1.2_build",
+  "officialReadmeUrl": "https://github.com/NationalSecurityAgency/ghidra/blob/Ghidra_11.1.2_build/README.md",
+  "archive": {
+    "name": "ghidra_11.1.2_PUBLIC_20240709.zip",
+    "assetId": 178624402,
+    "bytes": 422385730,
+    "officialSha256": "219ec130b901645779948feeb7cc86f131dd2da6c36284cf538c3a7f3d44b588",
+    "observedSha256": "219ec130b901645779948feeb7cc86f131dd2da6c36284cf538c3a7f3d44b588",
+    "validatedMembers": 5307,
+    "extractedBytes": 656664331
+  },
+  "selectedFor": "Official release supports the existing JDK17; no global JDK/tool installation or client/MCP registration change.",
+  "engineFiles": [
+    {
+      "name": "support/launch.properties",
+      "bytes": 7208,
+      "sha256": "451dfe30c08970d7006e34e22a83ababd2bfa2505cb0789bf7e78639382c5004"
+    },
+    {
+      "name": "Ghidra/application.properties",
+      "bytes": 596,
+      "sha256": "b8c0defe6ecdd655b7f1accad2bea906eaaae00c85d657da580804cc7a3a45c2"
+    },
+    {
+      "name": "Ghidra/Framework/Utility/lib/Utility.jar",
+      "bytes": 149136,
+      "sha256": "dbd8834f67c5725f6e8cfcc0a13d433afade64427a00bdfb5fdb32ecde241c1a"
+    },
+    {
+      "name": "Ghidra/Features/Decompiler/os/win_x86_64/decompile.exe",
+      "bytes": 3630080,
+      "sha256": "02364b31a3364538ef871b3283a648ab9384b01576e8d32ed29fd18ad1c23679"
+    }
+  ],
+  "launcher": "scripts/run-ghidra-local.cjs",
+  "writableRoot": ".local/ghidra-runtime",
+  "projects": ".local/ghidra/projects",
+  "localEvidence": ".local/evidence/native-camera",
+  "actualStartupObserved": [
+    "Preferences under .local/ghidra-runtime/settings",
+    "File cache under .local/ghidra-runtime/cache",
+    "Headless/script logs under .local/evidence/native-camera",
+    "Project under .local/ghidra/projects",
+    "Generated library-export symbols under .local/ghidra-runtime/settings"
+  ],
+  "constraints": "Windows wrapper rejects non-D roots and escaped project/log/script paths; preserves HOME/CODEX_HOME; overrides Java/Ghidra cache/home/temp process settings only. Original target is imported as static data, never loaded/executed."
+}

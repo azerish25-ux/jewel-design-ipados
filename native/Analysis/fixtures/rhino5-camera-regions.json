@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "camera-setter",
+      "name": "?SetTargetAndCameraLocation@CRhinoViewport@@QEAAXVON_3dPoint@@0H@Z",
+      "rva": 4507440,
+      "length": 1386,
+      "sha256": "f7985a9f51de07cb8638a58cf4aaacf4010e5205e318fb7acca6d31ff334be28"
+    },
+    {
+      "role": "viewport-commit",
+      "name": "?SetVP@CRhinoViewport@@QEAA_NAEBVON_Viewport@@H@Z",
+      "rva": 4505792,
+      "length": 1266,
+      "sha256": "b05d274c3ab09410362b29356b916a356fda7385f13da6aa10363db95faf05b1",
+      "unwindRegions": [
+        {
+          "begin": 4505792,
+          "end": 4506110,
+          "unwind": 19840260,
+          "version": 1,
+          "flags": 0,
+          "codes": 8,
+          "chain": null,
+          "bytes": 318,
+          "sha256": "c4d54ad676156e2cf7bd87270043dae8c72ac17cdd51fd368d9d904c0d75fe9b"
+        },
+        {
+          "begin": 4506110,
+          "end": 4506132,
+          "unwind": 19840236,
+          "version": 1,
+          "flags": 4,
+          "codes": 4,
+          "chain": {
+            "begin": 4505792,
+            "end": 4506110,
+            "unwind": 19840260
+          },
+          "bytes": 22,
+          "sha256": "7650a2ad66bf04d5d9d68acd72b709d805a3dbe41d22439be13cd4cd5a4590b9"
+        },
+        {
+          "begin": 4506132,
+          "end": 4506760,
+          "unwind": 19840216,
+          "version": 1,
+          "flags": 4,
+          "codes": 2,
+          "chain": {
+            "begin": 4506110,
+            "end": 4506132,
+            "unwind": 19840236
+          },
+          "bytes": 628,
+          "sha256": "8d51bb30d8a603464792b8d819a74c9b73c899cfa02946b1c614e44e2baf8746"
+        },
+        {
+          "begin": 4506760,
+          "end": 4507031,
+          "unwind": 19840200,
+          "version": 1,
+          "flags": 4,
+          "codes": 0,
+          "chain": {
+            "begin": 4506110,
+            "end": 4506132,
+            "unwind": 19840236
+          },
+          "bytes": 271,
+          "sha256": "816d8215612947d21fefd289f65f049a5d247b4d41951b3e3bc241fd5e367a84"
+        },
+        {
+          "begin": 4507031,
+          "end": 4507058,
+          "unwind": 19840184,
+          "version": 1,
+          "flags": 4,
+          "codes": 0,
+          "chain": {
+            "begin": 4505792,
+            "end": 4506110,
+            "unwind": 19840260
+          },
+          "bytes": 27,
+          "sha256": "b5d3fd5373fe7b8659e945a949c60b25dd85637070cbdb800c28f4605282d96e"
+        }
+      ]
+    }
+  ],
+  "scalarThunk": {
+    "rva": 14095990,
+    "length": 6,
+    "iatRva": 15556440,
+    "expectedImport": "acos"
+  }
+}

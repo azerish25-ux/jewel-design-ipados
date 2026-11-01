@@ -1,0 +1,1 @@
+2026-11-01 05:25:02 ERROR (HeadlessAnalyzer) REPORT SCRIPT ERROR:  java.lang.Exception: Scalar thunk does not resolve to expected acos import

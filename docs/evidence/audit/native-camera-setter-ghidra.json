@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03d",
+  "status": "original_binary_setter_and_full_commit_static_contract_observed_callback_runtime_gaps_open",
+  "tooling": "docs/evidence/tooling/ghidra-11.1.2.json",
+  "inputAudit": "docs/evidence/audit/native-camera-set-locations.json",
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "targetExecuted": false,
+  "engine": "Ghidra11.1.2 headless with existing JDK17, direct launcher under D:",
+  "method": {
+    "rva": 4507440,
+    "bytes": 1386,
+    "sha256": "f7985a9f51de07cb8638a58cf4aaacf4010e5205e318fb7acca6d31ff334be28",
+    "disassembledInstructions": 301,
+    "decompilerBasicBlocks": 30
+  },
+  "commit": {
+    "symbol": "?SetVP@CRhinoViewport@@QEAA_NAEBVON_Viewport@@H@Z",
+    "rva": 4505792,
+    "endExclusive": 4507058,
+    "bytes": 1266,
+    "sha256": "b05d274c3ab09410362b29356b916a356fda7385f13da6aa10363db95faf05b1",
+    "chainedUnwindRegions": [
+      {
+        "begin": 4505792,
+        "end": 4506110,
+        "unwind": 19840260,
+        "version": 1,
+        "flags": 0,
+        "codes": 8,
+        "chain": null,
+        "bytes": 318,
+        "sha256": "c4d54ad676156e2cf7bd87270043dae8c72ac17cdd51fd368d9d904c0d75fe9b"
+      },
+      {
+        "begin": 4506110,
+        "end": 4506132,
+        "unwind": 19840236,
+        "version": 1,
+        "flags": 4,
+        "codes": 4,
+        "chain": {
+          "begin": 4505792,
+          "end": 4506110,
+          "unwind": 19840260
+        },
+        "bytes": 22,
+        "sha256": "7650a2ad66bf04d5d9d68acd72b709d805a3dbe41d22439be13cd4cd5a4590b9"
+      },
+      {
+        "begin": 4506132,
+        "end": 4506760,
+        "unwind": 19840216,
+        "version": 1,
+        "flags": 4,
+        "codes": 2,
+        "chain": {
+          "begin": 4506110,
+          "end": 4506132,
+          "unwind": 19840236
+        },
+        "bytes": 628,
+        "sha256": "8d51bb30d8a603464792b8d819a74c9b73c899cfa02946b1c614e44e2baf8746"
+      },
+      {
+        "begin": 4506760,
+        "end": 4507031,
+        "unwind": 19840200,
+        "version": 1,
+        "flags": 4,
+        "codes": 0,
+        "chain": {
+          "begin": 4506110,
+          "end": 4506132,
+          "unwind": 19840236
+        },
+        "bytes": 271,
+        "sha256": "816d8215612947d21fefd289f65f049a5d247b4d41951b3e3bc241fd5e367a84"
+      },
+      {
+        "begin": 4507031,
+        "end": 4507058,
+        "unwind": 19840184,
+        "version": 1,
+        "flags": 4,
+        "codes": 0,
+        "chain": {
+          "begin": 4505792,
+          "end": 4506110,
+          "unwind": 19840260
+        },
+        "bytes": 27,
+        "sha256": "b5d3fd5373fe7b8659e945a949c60b25dd85637070cbdb800c28f4605282d96e"
+      }
+    ],
+    "decompilerBasicBlocks": 34,
+    "formatReference": "https://learn.microsoft.com/en-us/cpp/build/exception-handling-x64?view=msvc-170#chained-unwind-info-structures"
+  },
+  "typing": {
+    "calledImportsWithFormalSignatures": 52,
+    "pointAndVectorBytes": 24,
+    "transformBytes": 128,
+    "guards": [
+      "Actual whole PE and function byte hashes",
+      "All six formal GetFrustum arguments",
+      "24-byte formal camera-vector returns",
+      "Viewport source and int arguments retained for SetVP",
+      "Scalar six-byte thunk resolves to actual MSVCR100 acos import"
+    ],
+    "rejectedIntermediateViews": [
+      "First import resolver did not convert called external labels into functions; its scalar guard failed.",
+      "All-parameter mode after filtering automatic parameters dropped first formal pointers and lowered formal returns; intermediate C is not accepted.",
+      "Formal parameter/return types plus explicit chained-region disassembly were rerun in a fresh project before review."
+    ],
+    "apiReference": "https://github.com/NationalSecurityAgency/ghidra/blob/Ghidra_11.1.2_build/Ghidra/Framework/SoftwareModeling/src/main/java/ghidra/program/model/listing/Function.java"
+  },
+  "observedConstants": [
+    {
+      "address": "0x1410e8938",
+      "value": "2.3283064365386962890625e-10",
+      "role": "Input and up-locked projected direction IsTiny threshold"
+    },
+    {
+      "address": "0x1410e8668",
+      "value": -1,
+      "role": "Lower acos clamp"
+    },
+    {
+      "address": "0x1410e8258",
+      "value": 1,
+      "role": "Upper acos clamp"
+    },
+    {
+      "address": "0x140f21568",
+      "value": 0.000001,
+      "role": "Absolute roll-angle threshold; pooled Gumball symbol name is not its camera semantic name"
+    },
+    {
+      "address": "0x1410e80b8",
+      "value": 0.5,
+      "role": "Commit frustum symmetrization"
+    }
+  ],
+  "staticContract": [
+    "Validate target/camera and their direction; reject invalid/tiny input before viewport copy.",
+    "Build a temporary ON_Viewport copy and obtain old camera basis. Up-locked and unlocked branches use different direction/up policies.",
+    "Unlocked path starts from ON_zaxis and computes signed prior roll from normalized projected up, clamped dot and acos.",
+    "Apply requested location/direction to the temporary viewport; attempt candidate up, old camera Y, and rotated old up fallback. Reapply significant prior roll.",
+    "Only after accepted up, set the temporary target, call SetVP(temp,0), then set original ON_3dmView target. SetVP bool return is not checked by this caller.",
+    "SetVP has original view-state/parent-view guards, validates incoming camera/frustum and reads all six frustum values.",
+    "Commit clears camera locks/symmetry, applies projection/location/direction/up/frustum, then restores incoming locks/symmetry.",
+    "Commit advances a nonzero change counter, refreshes transform/screen caches and calls an unresolved native update plus PushViewProjection.",
+    "PushViewProjection is inside SetVP and therefore precedes the caller subsequent original ON_3dmView target metadata write; preserve this order rather than normalizing it."
+  ],
+  "knownNativeCalls": [
+    {
+      "name": "?ChangeCounter@CRhinoViewport@@QEBAIXZ",
+      "rva": 4452160,
+      "va": "0x14043ef40"
+    },
+    {
+      "name": "?ParentView@CRhinoViewport@@QEBAPEAVCRhinoView@@XZ",
+      "rva": 4451936,
+      "va": "0x14043ee60"
+    },
+    {
+      "name": "?PushViewProjection@CRhinoViewport@@QEAAXXZ",
+      "rva": 4510432,
+      "va": "0x14044d2e0"
+    },
+    {
+      "name": "?View@CRhinoViewport@@QEBAAEBVON_3dmView@@XZ",
+      "rva": 2919024,
+      "va": "0x1402c8a70"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "verified-replay/pre-refinement/analysis.json",
+      "bytes": 13721,
+      "sha256": "ff4ca7fe76479aae074d7e772f54eae75296f22cbcd2c1174185be92a09a0160"
+    },
+    {
+      "name": "verified-replay/final/analysis.json",
+      "bytes": 28965,
+      "sha256": "586b62f0fb354ccf75f8812ccca390c61d6843cd6517495c151652b10766a6ed"
+    },
+    {
+      "name": "verified-replay/final/camera-setter.c",
+      "bytes": 8410,
+      "sha256": "91c31898b2dd97b83b1600b0331e437ad788a447d002d5df0b926bdf6b58b7c0"
+    },
+    {
+      "name": "verified-replay/final/viewport-commit.c",
+      "bytes": 7354,
+      "sha256": "b19cabe0b68287d20a025d7ead8f06211fc25f8d88994e92a7b81c4c2c6ca113"
+    },
+    {
+      "name": "verified-replay/headless.log",
+      "bytes": 6831,
+      "sha256": "33b6604c998f91b2b06b00ad3e22faf3a836d9b7d5c46e5cec9305712b919165"
+    },
+    {
+      "name": "runtime-failure-gate/headless.log",
+      "bytes": 7469,
+      "sha256": "a207dddfd664846628e8482d8d43e0ccb7e462b243dd7816dd3b25eeb79f413c"
+    },
+    {
+      "name": "root-guard/headless.log",
+      "bytes": 7475,
+      "sha256": "06b14dfd0e46964835c8cfd3c1817793f01edc25f58458ed96c0710062c7d18f"
+    }
+  ],
+  "toolFailureRegression": {
+    "observedInitial": "Ghidra returned0 after a thrown post-script exception.",
+    "unitChecks": 5,
+    "realNegativeProbe": "Existing diagnostic script deliberately called without its required arguments; Java exited0, wrapper printed refusing-success diagnostic and returned1.",
+    "expectedExitCode": 1,
+    "observedExitCode": 1
+  },
+  "remaining": [
+    "Name and map original instance/parent-view restriction fields and unresolved update callback atRVA0x43eee0.",
+    "Verify called original openNURBS5 primitive behavior versus the existing public6 numerical candidates.",
+    "Define portable view-history, target-metadata and transform/screen-cache contracts before native setter reconstruction.",
+    "Implement and differentially verify perspective conversion and recovered complete preset ordering/world-normalized Metal frames.",
+    "Original licensed PC reference, saved-project corpus and physical-device acceptance remain unavailable/unverified."
+  ],
+  "limits": "Static original dependency candidate analysis only, with explicit ABI annotations and original bytes verified. No native setter C# implementation or full camera/UI/private/PC/physical parity claim. Decompiled C/project/archives remain ignored D: artifacts, not redistributed original vendor code.",
+  "verifiedReplay": {
+    "status": "actual_guarded_static_replay_success",
+    "setterInstructions": 301,
+    "typedImports": 52,
+    "views": [
+      {
+        "role": "camera-setter",
+        "entry": "14044c730",
+        "signature": "void OriginalRhino5_SetTargetAndCameraLocation(void * viewport, double * targetValue, double * cameraValue, int mode)",
+        "decompilerSha256": "91c31898b2dd97b83b1600b0331e437ad788a447d002d5df0b926bdf6b58b7c0",
+        "basicBlockCount": 30
+      },
+      {
+        "role": "viewport-commit",
+        "entry": "14044c0c0",
+        "signature": "bool SetVP(ON_Viewport * param_1, int param_2)",
+        "decompilerSha256": "b19cabe0b68287d20a025d7ead8f06211fc25f8d88994e92a7b81c4c2c6ca113",
+        "basicBlockCount": 34
+      }
+    ],
+    "rootGuardNegativeProbe": {
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "error": "Repository root differs from launcher workspace",
+      "targetExecuted": false
+    }
+  }
+}

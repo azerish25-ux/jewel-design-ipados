@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03d",
+  "parentTask": "P08-T01-A05",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "static_original_setter_contract_observed_port_and_runtime_verification_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03d-native-camera-analysis.md",
+  "evidence": "docs/evidence/audit/native-camera-setter-ghidra.json",
+  "portChecklist": "docs/porting/NATIVE_CAMERA_CONTRACT.md",
+  "localChecks": {
+    "nodeRegressions": 39,
+    "passed": 39,
+    "failed": 0,
+    "actualGhidraInitial": "Exact target/function bytes verified;301 instructions/30 blocks.",
+    "actualGhidraRefined": "Corrected formal signatures,52 called-import boundary signatures and full five-region1266-byte commit covered.",
+    "negativeProbe": {
+      "expectedExitCode": 1,
+      "actualExitCode": 1,
+      "reason": "Real zero-exit Java post-script exception is rejected by wrapper."
+    },
+    "finalGuardedReplay": {
+      "exitCode": 0,
+      "originalFunctionHashMatched": true,
+      "typedBoundaryCount": 52
+    },
+    "rootGuardNegativeProbe": {
+      "expectedExitCode": 1,
+      "actualExitCode": 1
+    }
+  },
+  "remaining": [
+    "Name and map original instance/parent-view restriction fields and unresolved update callback atRVA0x43eee0.",
+    "Verify called original openNURBS5 primitive behavior versus the existing public6 numerical candidates.",
+    "Define portable view-history, target-metadata and transform/screen-cache contracts before native setter reconstruction.",
+    "Implement and differentially verify perspective conversion and recovered complete preset ordering/world-normalized Metal frames.",
+    "Original licensed PC reference, saved-project corpus and physical-device acceptance remain unavailable/unverified."
+  ],
+  "limits": "Analysis and necessary D-contained tooling, not a completed native camera port or full parity proof."
+}

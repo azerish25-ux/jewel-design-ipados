@@ -40,7 +40,8 @@
       "sourceAudit": "docs/evidence/audit/camera-frame-source.json",
       "frameWorkCard": "docs/porting/evidence/P08-T01-A05-03a.json",
       "parallelWorkCard": "docs/porting/evidence/P08-T01-A05-03b.json",
-      "nativePresetSetterAudit": "docs/evidence/audit/native-camera-set-locations.json"
+      "nativePresetSetterAudit": "docs/evidence/audit/native-camera-set-locations.json",
+      "nativeWorkCard": "docs/porting/evidence/P08-T01-A05-03d.json"
     }
   ],
   "red": "Rendering.Tests failed CS0246 missing CandidateCameraTransform before implementation.",
