@@ -36,7 +36,7 @@ public sealed class CandidateCameraFrame
     private static CandidateVector3 Subtract(CandidateVector3 a,CandidateVector3 b)=>new(a.X-b.X,a.Y-b.Y,a.Z-b.Z);
     private static double Dot(CandidateVector3 a,CandidateVector3 b)=>a.X*b.X+a.Y*b.Y+a.Z*b.Z;
     private static CandidateVector3 Cross(CandidateVector3 a,CandidateVector3 b)=>new(a.Y*b.Z-b.Y*a.Z,a.Z*b.X-b.Z*a.X,a.X*b.Y-b.X*a.Y);
-    private static double Length(CandidateVector3 v)
+    internal static double SourceVectorLength(CandidateVector3 v)
     {
         double x=Math.Abs(v.X),y=Math.Abs(v.Y),z=Math.Abs(v.Z),length;
         if(y>=x&&y>=z){length=x;x=y;y=length;}
@@ -48,20 +48,20 @@ public sealed class CandidateCameraFrame
     }
     private static bool Unitize(ref CandidateVector3 v)
     {
-        double d=Length(v);
+        double d=SourceVectorLength(v);
         if(double.IsFinite(d))
         {
             if(d>MinimumNormal){v=new(v.X/d,v.Y/d,v.Z/d);return true;}
             if(d>0)
             {
                 var tmp=new CandidateVector3(v.X*8.9884656743115795386465259539451e307,v.Y*8.9884656743115795386465259539451e307,v.Z*8.9884656743115795386465259539451e307);
-                d=Length(tmp);
+                d=SourceVectorLength(tmp);
                 if(double.IsFinite(d)&&d>MinimumNormal){v=new(tmp.X/d,tmp.Y/d,tmp.Z/d);return true;}
             }
         }
         v=new(0,0,0);return false;
     }
-    private static bool Unit(CandidateVector3 v)=>v.X!=Unset&&v.Y!=Unset&&v.Z!=Unset&&Math.Abs(Length(v)-1)<=1e-6;
+    private static bool Unit(CandidateVector3 v)=>v.X!=Unset&&v.Y!=Unset&&v.Z!=Unset&&Math.Abs(SourceVectorLength(v)-1)<=1e-6;
     private static bool Perpendicular(CandidateVector3 a,CandidateVector3 b)=>Math.Abs(Dot(a,b))<=1e-6;
     private bool Failed(){DiagnosticCount++;return false;}
 

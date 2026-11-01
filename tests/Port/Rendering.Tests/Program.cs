@@ -3,3 +3,4 @@ System.Console.WriteLine(CandidateGeometryContractChecks.CadFrameGateAssertions.
 System.Console.WriteLine(CandidateGeometryContractChecks.FrustumAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.CameraMatrixAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.CameraFrameAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.ViewportProjectionAssertions.Run());
