@@ -522,7 +522,14 @@
         "getterBytes": 9,
         "getterSha256": "6d89343b94d9b6f11076b13ade7d7e07da919178924dd4c6be23ee670002deb7"
       }
-    ]
+    ],
+    "copyOnlyOpaqueByte": {
+      "offset": "0x1b",
+      "constructor": "Copy source raw byte",
+      "assignment": "Leave destination byte unchanged",
+      "meaning": "Unresolved original5 identity; do not substitute later6 field naming",
+      "implementation": "Not yet exposed in A01 current data model; required before whole runtime-view copy/history"
+    }
   },
   "guardResolution": {
     "projectionLock": "SetVP byte viewport+0x260 is embedded ON_3dmView(base+0x10).lockedProjection(+0x250); original attribute1.3 ReadBool/WriteByte order and published declaration corroborate identity.",
@@ -556,5 +563,6 @@
     "The shared userdata duplicate thunk typed C signature is not accepted; its direct virtual-dispatch instruction proof is used instead."
   ],
   "ownedCurrentDataEvidence": "docs/porting/evidence/P08-T01-A05-03f-02b-A01.json",
-  "userDataBaseOwnershipEvidence": "docs/evidence/audit/rhino5-userdata-ownership-source.json"
+  "userDataBaseOwnershipEvidence": "docs/evidence/audit/rhino5-userdata-ownership-source.json",
+  "constructorFollowup": "docs/evidence/audit/rhino5-view-copy-constructors-source.json"
 }

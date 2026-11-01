@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "run": 41327402518,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41327402518",
+  "sourceCommit": "13ca0fe621e778ee6205512a63632ace238449fc",
+  "status": "success_actual_artifacts_inspected",
+  "provenanceAssertions": 91,
+  "codecAssertions": 4347,
+  "bindingAssertions": 9,
+  "outputSha256": "192916d8ac077ca3d1dd39f8efa4721cf92b3e5bde30bdb1dfe974b81ff4c58d",
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0,
+    "sha256": "2520e63939c0a70e44e6f66d19d446b4dcb8b056010e350a3edcd5dbac9aa4cb"
+  },
+  "scope": "Actual macOS managed provenance/copy/assignment/source-preserving output and Metal binding compilation. iOS runtime, whole-view history, full3dm/PC and physical acceptance are separate."
+}

@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "windows_provenance_checks_passed_apple_pending",
+  "status": "windows_macos_provenance_passed_ios_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A02-P03-provenance.md",
   "inputCommit": "42ea6122731ef332d69dd1cd98d18dc67bfbb8e5",
   "nativePolicyAudits": [
@@ -40,11 +40,32 @@
     "memory": "Retained read history has no superseded accumulated pair baselines. At most1024 origins; cumulative original bytes and raw preserved writes obey configured MaxPayloadBytes. Rejected reads leave values/origins unchanged.",
     "scope": "Managed file-preservation metadata is not claimed to be an original native field/write policy. One supported codec only; full userdata catalog, whole-view history/document/preset, full3dm/PC and physical acceptance remain open."
   },
-  "apple": "Pending after push",
   "targetExecuted": false,
   "parityRowsClosed": 0,
   "inputHashes": {
     "src/Port/Rendering.Candidate/Rhino5ConcreteUserData.cs": "ac54392f3a726c0cf691661c3cb073621aeb388fa3b32545eb8cf068f14ab41e",
     "src/Port/Views.Candidate/Rhino5UserStringArchiveBinding.cs": "b0a6b1aaa0a2b780cd163cfe539092dea0bfe46c5373d965980c31fba88aa454"
+  },
+  "appleReports": {
+    "numeric": "docs/evidence/apple/userstring-provenance-numeric-results.json"
+  },
+  "appleRuns": {
+    "sourceCommit": "13ca0fe621e778ee6205512a63632ace238449fc",
+    "preflight": {
+      "id": 41327402518,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "visible": {
+      "id": 41327402499,
+      "status": "in_progress"
+    },
+    "reuse": {
+      "id": 41327402534,
+      "status": "in_progress"
+    },
+    "repository": {
+      "id": 41327402481,
+      "status": "in_progress"
+    }
   }
 }

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "object-copy-constructor",
+      "name": "??0ON_Object@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 1822624,
+      "length": 43,
+      "sha256": "e1531e8ca48cfe9052b187a50e88ecc1be1a3da13ae19ffc32936d5ac13ef0c2",
+      "unwindRegions": [
+        {
+          "begin": 1822624,
+          "end": 1822667,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "viewport-copy-constructor",
+      "name": "??0ON_Viewport@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 2510016,
+      "length": 637,
+      "sha256": "b2664507c765195ec6a65520abb4c1020e5ff19b033bcdbdab98a12c25d27a0f",
+      "unwindRegions": [
+        {
+          "begin": 2510016,
+          "end": 2510653,
+          "unwind": 3419784
+        }
+      ]
+    }
+  ]
+}

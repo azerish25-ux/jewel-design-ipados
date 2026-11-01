@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A03",
+  "status": "original_constructor_control_flow_inspected_runtime_view_copy_pending",
+  "targetExecuted": false,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "manifest": "native/Analysis/fixtures/rhino5-view-copy-constructors-regions.json",
+  "methods": [
+    {
+      "role": "object-copy-constructor",
+      "name": "??0ON_Object@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 1822624,
+      "length": 43,
+      "sha256": "e1531e8ca48cfe9052b187a50e88ecc1be1a3da13ae19ffc32936d5ac13ef0c2",
+      "unwindRegions": [
+        {
+          "begin": 1822624,
+          "end": 1822667,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "viewport-copy-constructor",
+      "name": "??0ON_Viewport@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 2510016,
+      "length": 637,
+      "sha256": "b2664507c765195ec6a65520abb4c1020e5ff19b033bcdbdab98a12c25d27a0f",
+      "unwindRegions": [
+        {
+          "begin": 2510016,
+          "end": 2510653,
+          "unwind": 3419784
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "object-copy-constructor",
+      "entry": "1801bcfa0",
+      "signature": "undefined ON_Object(ON_Object * param_1)",
+      "decompilerSha256": "65e0e80e82caed51234a98a3e9b4cd9fb9259ee2dcc27fcb13d1de4c4e33cc99",
+      "blocks": 1
+    },
+    {
+      "role": "viewport-copy-constructor",
+      "entry": "180264cc0",
+      "signature": "undefined ON_Viewport(ON_Viewport * param_1)",
+      "decompilerSha256": "276d01a82af14cddb48558956bfa9c7d946497c3d2e22816ea1bf8d01ef8ed20",
+      "blocks": 1
+    }
+  ],
+  "observations": [
+    "Original ON_Object copy ctor installs base vtable, zeroes header slots+8 and+0x10, calls CopyUserData exactly once.",
+    "Original ON_Viewport copy ctor inlines base initialization, calls CopyUserData once, installs viewport vtable and copies scalar/matrix/UUID/near data; it does not route through viewport assignment or purge a pre-populated list.",
+    "Original viewport assignment has a self guard, purges destination userdata before CopyUserData, then copies mapped numeric fields.",
+    "Constructor copies the opaque byte at+0x1b; assignment copies+0x18,+0x19,+0x1a but leaves+0x1b untouched. The current typed view model does not expose this extra byte."
+  ],
+  "instructionProof": {
+    "copyOnlyByte": {
+      "address": "0x180264d08",
+      "bytes": "0fb6431b88471b",
+      "instructions": [
+        "movzbl 0x1b(%rbx),%eax",
+        "mov %al,0x1b(%rdi)"
+      ]
+    },
+    "constructorCopyUserDataCall": "0x180264ce4 -> 0x1801bd370",
+    "assignmentCalls": [
+      "0x1802cd1b9 -> 0x1801bcff0 PurgeUserData",
+      "0x1802cd1c4 -> 0x1801bd370 CopyUserData"
+    ]
+  },
+  "sourceFiles": {
+    "object-copy-constructor.c": "65e0e80e82caed51234a98a3e9b4cd9fb9259ee2dcc27fcb13d1de4c4e33cc99",
+    "viewport-copy-constructor.c": "276d01a82af14cddb48558956bfa9c7d946497c3d2e22816ea1bf8d01ef8ed20",
+    "viewport-copy-constructor.asm.txt": "81b98c1154ef701ff863813a687f2cabce70272451ddfc5b354b948e92c57402",
+    "viewport-assignment.asm.txt": "40428e1fa28d42aea724b56c61c6d6bcd5d5681b445d1794e03411c7b7baa72f"
+  },
+  "limits": [
+    "Byte+0x1b meaning is unresolved; later published6 field names are not proof of its original5 semantics. Preserve it as opaque state with distinct constructor/assignment rules.",
+    "This is static original-binary analysis only. No original runtime execution, saved-view corpus, complete native registry, whole-view implementation or history/PC parity claim.",
+    "A01 immutable current-value ownership does not execute native polymorphic copies; A02 runtime and P03 provenance now provide one supported concrete reader/copy path."
+  ]
+}
