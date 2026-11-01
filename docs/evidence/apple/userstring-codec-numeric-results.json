@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "run": 41324874884,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41324874884",
+  "sourceCommit": "c93bffdcb3f4b4c88f08c4862dfd1c36893e3aef",
+  "status": "success_actual_artifacts_inspected",
+  "codecAssertions": 4347,
+  "nativeCorpusReads": 1076,
+  "nativeWriteBytes": 12,
+  "bindingAssertions": 9,
+  "resultSha256": "bf2d5814fff0332a5350a9c92a09913e9187e4b895f7a5d12394dc44450a983e",
+  "bindingBuildSha256": "3dcbacf5ebb0f988215277d8e2db0578c5471fc16a35416c3c3cc78c358042eb",
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "scope": "macOS managed execution against recorded full native corpus and actual Metal binding compilation. Independent macOS full-library oracle and actual iOS runtime separately required."
+}
