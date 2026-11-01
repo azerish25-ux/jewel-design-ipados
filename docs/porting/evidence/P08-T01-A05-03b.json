@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "windows_joint_source_and_managed_transition_checks_passed_apple_pending",
+  "status": "windows_macos_joint_source_and_managed_transition_checks_passed_ios_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03b-parallel-transition.md",
   "adr": "docs/porting/ADR-0053-joint-viewport-projection-state.md",
   "sourceAudit": "docs/evidence/audit/camera-parallel-source.json",
@@ -320,10 +320,30 @@
     "dependencies": "No added runtime package; pinned public source hashes/enum/notice retained."
   },
   "remaining": [
-    "Independent macOS Clang and managed transition execution",
     "Actual iPad/iPhone transition execution and adjacent real CAD pixels",
     "Published ChangeToPerspectiveProjection and original native SetCameraLocations behavior/order needed before full source-preset application",
     "Double world-normalized mesh composition, actual preset Metal captures and original-PC/private/physical/full feature acceptance"
   ],
-  "limits": "Numerical source state/transition dependency only. Visible renderer remains on its existing fitted camera. No full parity row closed."
+  "limits": "Numerical source state/transition dependency only. Visible renderer remains on its existing fitted camera. No full parity row closed.",
+  "appleReport": "docs/evidence/apple/viewport-projection-numeric-results.json",
+  "nextPerspectiveAudit": "docs/evidence/audit/camera-perspective-source.json",
+  "appleRuns": {
+    "sourceCommit": "6c5b828b17b44474fe9010d4964ee1d740588f35",
+    "preflight": {
+      "id": 41288307938,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "repository": {
+      "id": 41288307993,
+      "status": "completed_success_github_terminal_status_checked"
+    },
+    "visible": {
+      "id": 41288308125,
+      "status": "in_progress_last_observed"
+    },
+    "reuse": {
+      "id": 41288308020,
+      "status": "in_progress_last_observed"
+    }
+  }
 }

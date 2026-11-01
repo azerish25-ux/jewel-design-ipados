@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03c",
+  "status": "static_published_source_dependency_audit_only",
+  "source": {
+    "repository": "https://github.com/mcneel/opennurbs",
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "file": "opennurbs_viewport.cpp",
+    "sha256": "2403be6f12b9f3fa7c723da44793eda28c78e1e06d2ae7f2c529241c5b0498ce"
+  },
+  "methods": [
+    {
+      "signature": "static bool ChangeFromParallelToPerspectiveHelper(",
+      "sha256": "b92c909485d84cd55196100d1c8dac4c4f2568681e1bea76dc7d3f9efbab999d"
+    },
+    {
+      "signature": "bool ON_Viewport::ChangeToPerspectiveProjection(",
+      "sha256": "84beea8d1b055a50aa645b6b9ead90ecbe4c08ccf54021cdf84888c4b13a94e7"
+    },
+    {
+      "signature": "ON::view_projection ON_Viewport::Projection() const",
+      "sha256": "ab0534ad67eb05ef4c2b7ee4f6002d29681cea6f6c5a9b2b81422f9eb2d64ed5"
+    },
+    {
+      "signature": "bool ON_Viewport::CameraLocationIsLocked() const",
+      "sha256": "38aa843da7610c193380e12ad587e82951d54450f24580f489b017f29aad0f2a"
+    },
+    {
+      "signature": "bool ON_Viewport::GetCamera35mmLensLength( double* lens_length ) const",
+      "sha256": "f34c479b847af842fa36fb930118f5960753d345038d07168ff2e790617a2183"
+    }
+  ],
+  "observations": [
+    "Perspective conversion clears up/direction locks before the already-perspective/symmetry early return; location lock remains.",
+    "The early path changes lens only when a valid positive request differs from the reported lens by strictly more than0.125; its lens setter return is ignored and initial validity return is retained.",
+    "Invalid/nonpositive requested target distance uses TargetDistance(true) before symmetric-frustum dolly and symmetry flags are applied.",
+    "The parallel-to-perspective helper sets projection before checking frustum validity; failure can retain that mutation.",
+    "The helper records the old absolute frustum width and target width-plane point, raises near to1e-8 when near<1e-8 and far>=1e-7, then applies lens through the existing source setter.",
+    "When the source width plane is valid and camera location is unlocked, the helper can move camera backward along CameraZ to keep the old target plane visible; a failed location setter does not replace the helper lens return.",
+    "Only a successful outer result with an initially valid stored target invokes the source target recenter helper."
+  ],
+  "recoveredCommand": {
+    "path": "recovery/canonical/cad/CS/CSUtil.cs",
+    "symbol": "CSUtil.DocumentSetCameraView",
+    "order": [
+      "ChangeToPerspectiveProjection(symmetricFrustum:true,50)",
+      "Select construction plane, pose, up and application camera-view enum",
+      "SetCameraLocations(origin,cameraLocation)",
+      "Camera35mmLensLength=50",
+      "CameraUp=cameraUp",
+      "Conditional ChangeToParallelProjection(symmetricFrustum:true)",
+      "Redraw"
+    ],
+    "limits": "Native RhinoViewport.SetCameraLocations behavior and private command/view side effects require separate source/runtime evidence. The current pose-input sequences do not reproduce this entire command."
+  },
+  "requiredProof": [
+    "Extend unchanged compiled source reference and joint C# state with perspective helper/getter closure.",
+    "Test the exact0.125 threshold, all validity/locks/projection/symmetry combinations, near correction, target width-plane dolly, invalid lens/targets and failure mutation/return ordering.",
+    "Resolve native SetCameraLocations and original command semantics before claiming full preset execution.",
+    "Compose double world/normalized-mesh matrices and capture actual source preset Metal output; retain private Rhino5/PC/physical gates."
+  ],
+  "limits": "Static source dependency audit only; no perspective transition implementation or full source preset parity asserted."
+}

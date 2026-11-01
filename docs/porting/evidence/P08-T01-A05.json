@@ -36,7 +36,7 @@
     },
     {
       "id": "P08-T01-A05-03",
-      "status": "frame_numerics_apple_passed_joint_parallel_transition_windows_passed_renderer_integration_pending",
+      "status": "frame_numerics_apple_passed_joint_parallel_transition_windows_macos_passed_renderer_integration_pending",
       "sourceAudit": "docs/evidence/audit/camera-frame-source.json",
       "frameWorkCard": "docs/porting/evidence/P08-T01-A05-03a.json",
       "parallelWorkCard": "docs/porting/evidence/P08-T01-A05-03b.json"

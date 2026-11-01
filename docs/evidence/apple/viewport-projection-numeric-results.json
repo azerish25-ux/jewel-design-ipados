@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "run": 41288307938,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41288307938",
+  "sourceCommit": "6c5b828b17b44474fe9010d4964ee1d740588f35",
+  "status": "success",
+  "sourceReference": {
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "files": [
+      {
+        "local": ".local/reference/opennurbs6-camera/opennurbs_viewport.cpp",
+        "remote": "opennurbs_viewport.cpp",
+        "sha256": "2403be6f12b9f3fa7c723da44793eda28c78e1e06d2ae7f2c529241c5b0498ce"
+      },
+      {
+        "local": ".local/reference/opennurbs6-plane/opennurbs_point.cpp",
+        "remote": "opennurbs_point.cpp",
+        "sha256": "4aac860b778a37de2942f0bc665c655bed8f98e51e0c94beb542752a08558eeb"
+      },
+      {
+        "local": ".local/reference/opennurbs6-rotation/opennurbs_defines.h",
+        "remote": "opennurbs_defines.h",
+        "sha256": "773d75ecf3dab2d792de490da99a175be548c394a81f11cd9a04cec5c1fe7bd6"
+      },
+      {
+        "local": ".local/reference/opennurbs6-camera/opennurbs_math.h",
+        "remote": "opennurbs_math.h",
+        "sha256": "b3ecf4b86cf6b38af3fdf67f78ee5648136b3ceaffd5792620a647e2c879d673"
+      }
+    ],
+    "pointMethods": [
+      {
+        "signature": "bool ON_IsValid(double x)",
+        "sha256": "18c69d3b924f27669bf7659cf62b74c976c011290eed4dee123f276efb0ae26b"
+      },
+      {
+        "signature": "ON_3dVector ON_3dVector::operator-() const",
+        "sha256": "e92a1852852e0f05160d9d18e59496ad1ba4f2b2ee0df0df04eef027e7983f6d"
+      },
+      {
+        "signature": "double ON_3dVector::operator*( const ON_3dVector& v ) const",
+        "sha256": "b1987163d9e95badef2991c963a093d5c583675dc7ed1e1c88083362cc581ff5"
+      },
+      {
+        "signature": "ON_3dVector ON_3dVector::operator+( const ON_3dVector& v ) const",
+        "sha256": "ec68d16363a4ba87a89d8c05a6b3962fa59a22489b1071785497e937809b0ffd"
+      },
+      {
+        "signature": "ON_3dVector ON_3dVector::operator-( const ON_3dVector& v ) const",
+        "sha256": "14bddeb92336154ed100b42b3b3f1861b4f3e4d1ea43668a759a4313cea269b4"
+      },
+      {
+        "signature": "ON_3dVector operator*(double d, const ON_3dVector& v)",
+        "sha256": "50c2005bf10bedaef66d8bd9f6b73b81e06aaacab0383f57f3a22ef07866f5ab"
+      },
+      {
+        "signature": "ON_3dVector ON_CrossProduct( const ON_3dVector& a , const ON_3dVector& b )",
+        "sha256": "1c8afbc4915a584622ec7d8e1121dc0bb40f9f8bdec54d83b2ea7bb2b79db019"
+      },
+      {
+        "signature": "bool ON_3dVector::operator==( const ON_3dVector& v ) const",
+        "sha256": "494cf19f5ae199b232e9d5ef436b90937622d63199f2f692d19d62686c159b8c"
+      },
+      {
+        "signature": "bool ON_3dPoint::operator==( const ON_3dPoint& v ) const",
+        "sha256": "b7c27a269073e00b2bb49b1684cf775c755694ce9b0d439c231aeddb4318f1e9"
+      },
+      {
+        "signature": "double ON_Length3d(",
+        "sha256": "8fa6a44f3f91bb7beee5890ac084e663891390f796ae4fa69f3e4c4671043f03"
+      },
+      {
+        "signature": "double ON_3dVector::Length() const",
+        "sha256": "c4bcde221dcd92aafb76e865bca21fe57fa69eb59b890db2963101a02289058b"
+      },
+      {
+        "signature": "bool ON_3dVector::Unitize()",
+        "sha256": "d5b1ebb8bce26d3b7285273900d24c603179f06446298f5d5996c7222db3dfd2"
+      },
+      {
+        "signature": "bool ON_3dVector::IsValid() const",
+        "sha256": "931ef3ca8b0f801fae18d6ed5e2a14d49b8a893a0ccf717e98a554951a2cbd89"
+      },
+      {
+        "signature": "bool ON_3dPoint::IsValid() const",
+        "sha256": "c4c3100752811710752629fe7b307c416dfb29daa990080863af19fc7067111c"
+      },
+      {
+        "signature": "double ON_3dVector::MaximumCoordinate() const",
+        "sha256": "d69b465f3160883525f7985ea7d59d613f161ffced74d0ddc36d919c6ac36871"
+      },
+      {
+        "signature": "double ON_3dPoint::MaximumCoordinate() const",
+        "sha256": "266f9d126fb9082fb7153eb6a14fd5810738e95b4832c4cf1a108581c326e285"
+      },
+      {
+        "signature": "ON_3dPoint ON_3dPoint::operator+( const ON_3dVector& v ) const",
+        "sha256": "5d1b93ed431e7a67ca09049103bd6484fad82390bb37ecd415d6c5b3a49b66ee"
+      },
+      {
+        "signature": "ON_3dVector ON_3dPoint::operator-( const ON_3dPoint& p ) const",
+        "sha256": "6f22f40a744532d95dba488f40220a8f302d72238e10bb255fec070e828f68de"
+      },
+      {
+        "signature": "ON_3dPoint ON_3dPoint::operator-( const ON_3dVector& v ) const",
+        "sha256": "ab168bee97e7662a28fad128388de4af8f490d84884ed4cca7ecd6ba9da28502"
+      },
+      {
+        "signature": "double ON_3dPoint::DistanceTo( const ON_3dPoint& p ) const",
+        "sha256": "35891d177606fd25a6217de4bf85e4f6431a71904d68984d264120fdfa3d38ee"
+      }
+    ],
+    "viewportMethods": [
+      {
+        "signature": "bool ON__IsCameraFrameUnitVectorHelper(",
+        "sha256": "81a106c33fa9f25491f87a67fa1e667a9149f5933dcfb3fa30700d8631f96c48"
+      },
+      {
+        "signature": "bool ON__IsCameraFramePerpindicular(",
+        "sha256": "a64dfe86b84ba97c1a2bf4046c4269143f06e8fdcf092258399360f274115e2f"
+      },
+      {
+        "signature": "bool ON_Viewport::IsValidCameraLocation(",
+        "sha256": "fef57f919cded1f3b08fdfc61b0fb50441fd7074e61713c214d3ecdf92a7271d"
+      },
+      {
+        "signature": "bool ON_Viewport::IsValidCameraUpOrDirection(",
+        "sha256": "4662003b7dd8cf15de783c7a85e2ccea37adeb639e7c9b514bee7c82460daca6"
+      },
+      {
+        "signature": "bool ON_Viewport::SetCameraLocation(",
+        "sha256": "dca45147e80bb69dfa2abbc7dfce0a5e350f789b1d52e3cfd54c65558ff39605"
+      },
+      {
+        "signature": "bool ON_Viewport::SetCameraDirection(",
+        "sha256": "6608151a36808f5ba4b0c900d111c7591380d38ecb47f9e8e7aaba58f88e2d86"
+      },
+      {
+        "signature": "bool ON_Viewport::SetCameraUp(",
+        "sha256": "64adf4b03146a9103ef0210478670d280909ad50a3421ae358ff2257d58bb53f"
+      },
+      {
+        "signature": "static bool Internal_SetCameraFameFailed()",
+        "sha256": "f325897a5658a8bfe9924f8dececbde8dbbeba2183290574272ee4b1a41a68a5"
+      },
+      {
+        "signature": "bool ON_Viewport::SetCameraFrame()",
+        "sha256": "c4a746af569c8fb6db35d4f145f5af6a6fea019c4e27fb18d9fea30345ccded2"
+      },
+      {
+        "signature": "bool ON_Viewport::IsValidCamera() const",
+        "sha256": "7ca1f135156e64052c3de7240abab47de34ddb56733b4c6bf0fdda6cd8329218"
+      },
+      {
+        "signature": "bool ON_Viewport::IsValidFrustum() const",
+        "sha256": "96279f372c0bc6cb8a215c3e99cd48e982b449150046d392d97d673fdddf4d37"
+      },
+      {
+        "signature": "ON_3dPoint ON_Viewport::CameraLocation() const",
+        "sha256": "96a3ba1dca253d27c21aa18f332a94f836d27e7eb01621b585b6926ae25c7c9f"
+      },
+      {
+        "signature": "ON_3dVector ON_Viewport::CameraZ() const",
+        "sha256": "bce27af7086e875847de594ae7c944fc1a338fabd938fd7f21f3bc13cf263b4e"
+      },
+      {
+        "signature": "ON_3dPoint ON_Viewport::TargetPoint() const",
+        "sha256": "8f96ca7546b2d86b8c2556a948d9773d0408d904e76309cc9c7a6dc6987ca7f2"
+      },
+      {
+        "signature": "double ON_Viewport::FrustumWidth()",
+        "sha256": "3a7aa3a5a4e18b46159b4f78c500ccd0d1bc8b08908d582fcf0d366b57c3e526"
+      },
+      {
+        "signature": "double ON_Viewport::FrustumHeight()",
+        "sha256": "52cdbd9c2cb92a1a55e87b91a4b8371f87e94519817bcc2c541a23e201d599d2"
+      },
+      {
+        "signature": "bool ON_Viewport::CameraUpIsLocked() const",
+        "sha256": "62a998dba0d21289c99af926e9fd553b8ba6fb8b6489e3bcf0cffadeacc64659"
+      },
+      {
+        "signature": "bool ON_Viewport::FrustumIsLeftRightSymmetric() const",
+        "sha256": "291bfede79b00e0f250d0100b13cb9cab10c1c0aee7b2c03a0f4078c0123ed6f"
+      },
+      {
+        "signature": "bool ON_Viewport::FrustumIsTopBottomSymmetric() const",
+        "sha256": "3f1426858adf075fad525fa03bb9dcfaf14e8ee5bc292396560898bfd6f83f92"
+      },
+      {
+        "signature": "bool ON_Viewport::IsPerspectiveProjection() const",
+        "sha256": "ca62089ba845a6218fa7af0e6b367658a402e7a6ad0e69f4a2e2ab6240dbea2a"
+      },
+      {
+        "signature": "bool ON_Viewport::IsTwoPointPerspectiveProjection() const",
+        "sha256": "7e7179c250755df41880edaf6179b301b5626080ec57ca955f9d55d58f22ffee"
+      },
+      {
+        "signature": "bool ON_Viewport::GetFrustum(\n",
+        "sha256": "34b04b2b03a2772757cc7348dcff69b88033cc5d9be06a5d1f20d8bb6b253f43"
+      },
+      {
+        "signature": "bool ON_Viewport::SetFrustum(\n      double frus_left,",
+        "sha256": "c451a695bfa893dbd05b2587a3f9f53c3dbb16bfdbf6cc54bf68563ba85295ba"
+      },
+      {
+        "signature": "bool ON_Viewport::SetCamera35mmLensLength( double lens_length )",
+        "sha256": "89a65f0815e77b3e6d28c412a46c514fa3d566fce333e1fdf7ba5b8e49b72c6a"
+      },
+      {
+        "signature": "bool ON_Viewport::ChangeToSymmetricFrustum(",
+        "sha256": "2d8968bc3a18694c7d3ed2806e1386448c843bdc70b7bc24f3e45cae60f69490"
+      },
+      {
+        "signature": "double ON_Viewport::TargetDistance(",
+        "sha256": "57ff6b2770aa88532bd326eeaeb711aa532c084582910c00c9180eddbf46982b"
+      },
+      {
+        "signature": "static void UpdateTargetPointHelper(",
+        "sha256": "be1cef54e0726be452d97f79f07ad84e1ef84b2b2259f1172f604b12a795a014"
+      },
+      {
+        "signature": "bool ON_Viewport::SetProjection(",
+        "sha256": "c0fd5a2de127b160073b4f5103c6ea1f950c09579067b6f2a21717c65e7903f7"
+      },
+      {
+        "signature": "bool ON_Viewport::SetTargetPoint(",
+        "sha256": "7bd09df8adca00f9a036dda2134a0bf8e61749b69d5196ec60c51e66d9b8aad8"
+      },
+      {
+        "signature": "void ON_Viewport::SetCameraLocationLock(",
+        "sha256": "9b75871ab4e563adbc06ac6ca5b1e7876c7a530a718db733f64f427e28c28b21"
+      },
+      {
+        "signature": "void ON_Viewport::SetCameraDirectionLock(",
+        "sha256": "75a1b56fab70ed6bb8a1393942a8e35ebcf7b38e184c3f64e5149ea8b19e3c9e"
+      },
+      {
+        "signature": "void ON_Viewport::SetCameraUpLock(",
+        "sha256": "313aaff2dd5199ca15cfff5bce8e5f8c1514d999145b64eec209a54fb41dddb9"
+      },
+      {
+        "signature": "void ON_Viewport::SetFrustumLeftRightSymmetry(",
+        "sha256": "9c6444b5074ec80beae134f16cee0be1a91e9047e4137ea52c53ff9db4e3a43f"
+      },
+      {
+        "signature": "void ON_Viewport::SetFrustumTopBottomSymmetry(",
+        "sha256": "0398eec58823509a0b2621d3e6129c696dc24323ab5dd72334a59e643e219d12"
+      },
+      {
+        "signature": "bool ON_Viewport::ChangeToParallelProjection(",
+        "sha256": "dc47edb0ed5b5ae4d6a7373f020bf2f2f80262745e539a4d37ff072a315cecb8"
+      }
+    ],
+    "projectionEnum": {
+      "body": "enum view_projection : unsigned int\n  { \n    unknown_view       = 0,\n    parallel_view      = 1,\n    perspective_view   = 2\n  };",
+      "sha256": "e13d83d5dfc2540ac685f1ab236844dd8fe979e8a0d753ba654d8d6300bfeecd"
+    },
+    "includeSha256": "8c427bfccbc110a77b72f8c6cef0469618c1137e2ec4215dd7f81d2f00597ecc",
+    "scope": "Unchanged published joint viewport transitions and numeric dependency closure, observation-only containers/cache/diagnostics; no private Rhino5/PC claim."
+  },
+  "native": {
+    "cases": 961,
+    "steps": 6675,
+    "fixture": "tests/Port/Geometry.Candidate.Contracts/Fixtures/viewport-projection-source-cases.json",
+    "fixtureSha256": "f3c4b779385767857919775c4399f501fb3014813fac520f9ee12b9f1987352b",
+    "scope": "Exact published joint viewport transition state; rendered source preset/private Rhino5/PC parity separate."
+  },
+  "managedReports": [
+    "PASS source camera presets:120 unchanged-wrapper comparisons across invariant/en-US/tr-TR, original pose/up/plane/lens/projection, null and unknown-name behavior; source call-order/viewport preference observed, native frustum/zoom/UI/PC parity separate.",
+    "PASS viewport frame ownership:116 resource-only checks; three-frame bound/latest revision, retained replacement/disposal and concurrent idempotent completion; actual GPU presentation tested separately.",
+    "PASS published frustum/lens:1245 independently compiled-source cases, symmetry/two-point/deadband/raw-invalid/sentinel/world-bound/depth-diagnostic/state retention; private Rhino5/Metal projection/PC parity separate.",
+    "PASS published camera matrices:118 compiled-source cases and16 independent Metal clip endpoints; source coefficients/retained failure/frame basis, depth0..1/transpose and invalid float guards; full preset/private Rhino5/PC parity separate.",
+    "PASS published camera frames:730 sequences/2978 source steps; locks/validity/setter order/unset/threshold/degenerate state retention, cache/diagnostics and4 preset matrix compositions; rendered preset/private Rhino5/PC parity separate.",
+    "PASS published viewport transitions:961 sequences/6675 source steps; joint frame/frustum/target state, lock clearing/unknown symmetry bits, dolly/parallel scale, fallback/jitter and failure mutation; source-preset rendering/private Rhino5/PC parity separate."
+  ],
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "artifactHashes": [
+    {
+      "name": "viewport-projection-source.json",
+      "sha256": "f1c01cc37b8f395d320f99ecceff68034d499c801f7e6832082b6a177829149f"
+    },
+    {
+      "name": "viewport-projection-native-cases.json",
+      "sha256": "f9050ff09799d5aba99f2052e3c7c8d7c55e6bcf4520e281f9e498d7a6b5804b"
+    },
+    {
+      "name": "camera-preset-tests.txt",
+      "sha256": "4c643b75a14467af3fe22ee16391d29ccbfecfdcc1677083e810ff8cde7f58ce"
+    },
+    {
+      "name": "metal-binding-build.txt",
+      "sha256": "260105093b722cc252aa71405626c3ae526def97df41b6aebf41b3803a613d4d"
+    }
+  ],
+  "limits": "Published numerical joint viewport transitions and iOS binding compilation. Actual iOS execution, rendered preset application, private Rhino5/PC/physical acceptance remain separate."
+}
