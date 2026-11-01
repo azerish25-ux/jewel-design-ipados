@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-01",
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "targetExecuted": false,
+  "manifest": "native/Analysis/fixtures/rhino5-viewport-commit-regions.json",
+  "methods": [
+    {
+      "role": "get-frustum",
+      "name": "?GetFrustum@ON_Viewport@@QEBA_NPEAN00000@Z",
+      "abi": null,
+      "rva": 2961056,
+      "length": 110,
+      "sha256": "98f9d1185d329d4b5b092abb8f8f6304710004fc51938acc49d61ab47ec79390",
+      "unwindRegions": []
+    },
+    {
+      "role": "get-screen",
+      "name": "?GetScreenPort@ON_Viewport@@QEBA_NPEAH00000@Z",
+      "abi": null,
+      "rva": 2962160,
+      "length": 100,
+      "sha256": "3b5721cf2d303d45e17bbfefaa757f83447e89449084c16a8fa4dd751a3fe6bb",
+      "unwindRegions": []
+    },
+    {
+      "role": "get-xform",
+      "name": "?GetXform@ON_Viewport@@QEBA_NW4coordinate_system@ON@@0AEAVON_Xform@@@Z",
+      "abi": null,
+      "rva": 2965856,
+      "length": 1585,
+      "sha256": "484ad68c2bb59d55b0377169b4c4d01faefd1710553290400c05f5e5c420074b",
+      "unwindRegions": [
+        {
+          "begin": 2965856,
+          "end": 2967441,
+          "unwind": 3406392
+        }
+      ]
+    },
+    {
+      "role": "is-identity",
+      "name": "?IsIdentity@ON_Xform@@QEBA_NN@Z",
+      "abi": null,
+      "rva": 3040512,
+      "length": 141,
+      "sha256": "9856383303d7930daad6fb161e0a512bfc40f0a50af371cfd59297d1ef1caad2",
+      "unwindRegions": []
+    },
+    {
+      "role": "valid-camera",
+      "name": "?IsValidCamera@ON_Viewport@@QEBA_NXZ",
+      "abi": null,
+      "rva": 2940608,
+      "length": 5,
+      "sha256": "2a0c05b547620f32eb862e23015183656e25ac55b8febeff3e039f8d8292e3c8",
+      "unwindRegions": []
+    },
+    {
+      "role": "valid-frustum",
+      "name": "?IsValidFrustum@ON_Viewport@@QEBA_NXZ",
+      "abi": null,
+      "rva": 2940624,
+      "length": 5,
+      "sha256": "80f5245b907cb96951a23a438196712d07e5494847fb25b8ea87d6a7a2272a10",
+      "unwindRegions": []
+    },
+    {
+      "role": "set-view-target",
+      "name": "?SetTargetPoint@ON_3dmView@@QEAA_NVON_3dPoint@@@Z",
+      "abi": null,
+      "rva": 49168,
+      "length": 83,
+      "sha256": "ea6a4c8ad6675eca9a472de0dab55cd1e9287dcee3a1300dca552dcabe4e26dc",
+      "unwindRegions": [
+        {
+          "begin": 49168,
+          "end": 49251,
+          "unwind": 3399328
+        }
+      ]
+    },
+    {
+      "role": "get-view-target",
+      "name": "?TargetPoint@ON_3dmView@@QEBA?AVON_3dPoint@@XZ",
+      "abi": null,
+      "rva": 48992,
+      "length": 175,
+      "sha256": "c7b953d9c451405289b6237a129906cfc195a89bd1ce77948144dc83636c03f8",
+      "unwindRegions": [
+        {
+          "begin": 48992,
+          "end": 49167,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "world-to-camera",
+      "name": "?WorldToCamera@ON_Xform@@QEAAXAEBVON_3dPoint@@AEBVON_3dVector@@11@Z",
+      "abi": null,
+      "rva": 3050000,
+      "length": 255,
+      "sha256": "ec02156869c043501a162902bd257d1e8d76f4fada19bbd5b490dbade66e0a97",
+      "unwindRegions": []
+    },
+    {
+      "role": "camera-to-clip",
+      "name": "?CameraToClip@ON_Xform@@QEAA_NHNNNNNN@Z",
+      "abi": null,
+      "rva": 3050384,
+      "length": 432,
+      "sha256": "f8860a5c34a73f599917707811c8311ef4f4aa1d8dec5d97b3c538352d559c4a",
+      "unwindRegions": [
+        {
+          "begin": 3050384,
+          "end": 3050816,
+          "unwind": 3391392
+        }
+      ]
+    },
+    {
+      "role": "multiply",
+      "name": "??DON_Xform@@QEBA?AV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 3033904,
+      "length": 1310,
+      "sha256": "c15b676dda0ff8e1425cafa3d54574a8f6284e177dba9d58d2d6b94fcd137c7b",
+      "unwindRegions": [
+        {
+          "begin": 3033904,
+          "end": 3035214,
+          "unwind": 3405968
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "get-frustum",
+      "entry": "1802d2ea0",
+      "signature": "bool GetFrustum(double * param_1, double * param_2, double * param_3, double * param_4, double * param_5, double * param_6)",
+      "decompilerSha256": "23b3156a773eed7d9c6592e0ac94ba16b3caebbd846596ae17c9329cb04bfcc2",
+      "basicBlocks": 13
+    },
+    {
+      "role": "get-screen",
+      "entry": "1802d32f0",
+      "signature": "bool GetScreenPort(int * param_1, int * param_2, int * param_3, int * param_4, int * param_5, int * param_6)",
+      "decompilerSha256": "e0c4bc0ae01fd5ad4688fdc2533728253a78b2b4a1c94c03c07b2f813dc8e53d",
+      "basicBlocks": 13
+    },
+    {
+      "role": "get-xform",
+      "entry": "1802d4160",
+      "signature": "bool GetXform(coordinate_system param_1, coordinate_system param_2, ON_Xform * param_3)",
+      "decompilerSha256": "91eb3949c537272b16fe9d557e704fa39bce4f639ff10b68eaef612f3da9d67f",
+      "basicBlocks": 54
+    },
+    {
+      "role": "is-identity",
+      "entry": "1802e6500",
+      "signature": "bool IsIdentity(double param_1)",
+      "decompilerSha256": "f67b806e3766876e6ff77efa1959f8543dd121e91d76c5a82290f26268ba7001",
+      "basicBlocks": 15
+    },
+    {
+      "role": "valid-camera",
+      "entry": "1802cdec0",
+      "signature": "bool IsValidCamera(void)",
+      "decompilerSha256": "576451a2f506334e95054358d0de53de3d5a40446b594f123d94561663bb2f48",
+      "basicBlocks": 1
+    },
+    {
+      "role": "valid-frustum",
+      "entry": "1802cded0",
+      "signature": "bool IsValidFrustum(void)",
+      "decompilerSha256": "6dc55f61068576253ceff3e6818980ccd5c734da70d5f9caeaf09d046cad3f1e",
+      "basicBlocks": 1
+    },
+    {
+      "role": "set-view-target",
+      "entry": "18000c010",
+      "signature": "bool SetTargetPoint(ON_3dPoint param_1)",
+      "decompilerSha256": "503d65c0436d7c98aaf4f2e15261342e2e027cbbc247ebb10732e36926bc090f",
+      "basicBlocks": 1
+    },
+    {
+      "role": "get-view-target",
+      "entry": "18000bf60",
+      "signature": "ON_3dPoint TargetPoint(void)",
+      "decompilerSha256": "226f4b7e8fd921c9e87aa55f4031b5de7de592108e510729ca23f5698e8a6743",
+      "basicBlocks": 5
+    },
+    {
+      "role": "world-to-camera",
+      "entry": "1802e8a10",
+      "signature": "void WorldToCamera(ON_3dPoint * param_1, ON_3dVector * param_2, ON_3dVector * param_3, ON_3dVector * param_4)",
+      "decompilerSha256": "bfe56885deda460097d8d507ff1dfb7742c5d344b76defbc56cdee5e00b7765b",
+      "basicBlocks": 1
+    },
+    {
+      "role": "camera-to-clip",
+      "entry": "1802e8b90",
+      "signature": "bool CameraToClip(int param_1, double param_2, double param_3, double param_4, double param_5, double param_6, double param_7)",
+      "decompilerSha256": "618a69dbeb0d1cfacd145bf7c267ee7c72525055150118b9fbbbfaee23d88e55",
+      "basicBlocks": 8
+    },
+    {
+      "role": "multiply",
+      "entry": "1802e4b30",
+      "signature": "ON_Xform operator*(ON_Xform * param_1)",
+      "decompilerSha256": "530d60bf7bde7fbf491dc7316f4a6d1104192f70f780b8531fb1009c3c400d50",
+      "basicBlocks": 1
+    }
+  ],
+  "acceptedStaticPolicy": [
+    "IsValidCamera/Frustum return stored bytes without revalidating geometry. GetFrustum/GetScreenPort write requested outputs and return stored validity flags.",
+    "GetXform world0->clip2 composes camera-to-clip (including clip modifications) times world-to-camera. Invalid camera/frustum flags leave identity output and return false.",
+    "Camera-to-clip construction uses the default zero3x3/last-diagonal1 matrix; its bool return is ignored in GetXform. Valid flags can therefore return true for equal frustum bounds.",
+    "CameraToClip ordered unequal comparisons include explicit JP branches, so unordered NaN proceeds; WorldToCamera and multiply coefficients agree structurally with pinned published arithmetic. Numeric comparison remains separate from original runtime.",
+    "Identity with tolerance0 rejects nonfinite/unordered coefficients: COMISD tolerance,difference; JB rejects unordered. Only zero tolerance is adopted; published6 adds general tolerance validation absent from this original routine.",
+    "ON_3dmView.SetTargetPoint calls core viewport setter, then always copies the retained/resulting core target at0x100/0x108/0x110 to mirror0x258/0x260/0x268, returning the core bool.",
+    "ON_3dmView.TargetPoint reads core target, diagnoses mismatch with mirror, repairs all three mirror values and returns core target. This getter has a state effect."
+  ],
+  "decompilerLimits": {
+    "getXformReturn": "Do not transcribe decompiler uVar3 cookie return. Actual AL/sil result branches were reviewed in instructions; cookie normal-return body compares/rotates RCX and preserves RAX. Full security-failure runtime behavior is outside this numeric closure.",
+    "identity": "Decompiler strict less-than text loses unordered COMISD/JB rejection; implementation uses an ordered <= predicate.",
+    "metadata": "Raw field offsets are static observations, not public source member names or a completed document/history adapter."
+  },
+  "comparisonScope": "Original world0->clip2/cache primitives only; other coordinate-system paths remain unported here. Published6 full GetXform is the independent compiled comparison, not an original5 execution oracle.",
+  "remaining": [
+    "Implement concrete original commit state, target mirror synchronization/repair, serial/screen cache and effective view guards.",
+    "Statically trace actual document ViewModified/history PushViewProjection behavior before claiming those effects.",
+    "Compose complete source camera command and apply to Metal; original PC/physical acceptance remains open."
+  ]
+}

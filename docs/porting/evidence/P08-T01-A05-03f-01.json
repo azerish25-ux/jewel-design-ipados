@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-01",
+  "parentTask": "P08-T01-A05-03f",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "original_cache_numeric_primitives_windows_passed_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-01-cache-primitives.md",
+  "binaryAudit": "docs/evidence/audit/rhino5-viewport-cache-source.json",
+  "publishedAudit": "docs/evidence/audit/viewport-cache-published-source.json",
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "failure": "CS0103/CS0246 Rhino5Matrix4 missing"
+  },
+  "localChecks": {
+    "compiledSourceCases": 1084,
+    "analyticalOwnershipChecks": 9,
+    "totalAssertions": 19522,
+    "nodeRegressions": 45,
+    "fullManagedNativeSuiteExitCode": 0,
+    "fixtureSha256": "89ceeea4ab5151bad985cc4f6c7eafc9bd3023896587d9dae7dbff05d054195a",
+    "referenceCompiler": "GNU C++17 -O2 -ffp-contract=off -fno-strict-aliasing",
+    "originalStaticViews": 11,
+    "targetExecuted": false
+  },
+  "review": {
+    "correctness": "Original valid-flag retention and ignored projection failure are preserved. Full compiled GetXform reference exercises exact world-to-clip and extra product order; raw degenerate/reversed/NaN inputs remain explicit.",
+    "ownership": "Matrix copies input/output arrays and has immutable backing storage; static identity cannot be changed by consumers.",
+    "scope": "No fake native commit/history/cache serial adapter; numeric primitive is required before concrete state adapter. Other GetXform coordinate paths and original runtime are not claimed.",
+    "provenance": "All published files pinned and validated; original dependency read statically only. Cookie return and unordered decompiler pitfalls explicitly documented."
+  },
+  "appleRuns": {
+    "status": "pending_push"
+  },
+  "remaining": [
+    "Concrete original commit guards/sequential mutations/serial/screen cache and view-target mirror setter/getter repair",
+    "Actual parent-document ViewModified and PushViewProjection history semantics",
+    "Full source command and world-normalized source preset Metal application",
+    "Original-PC and physical-device acceptance"
+  ],
+  "parityRowsClosed": 0
+}

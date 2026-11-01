@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+  "xformSourceSha256": "7b922be97b2d05c50cd5865e32826d87fc2f4926304f55f21bf9344478580258",
+  "viewportSource": {
+    "local": ".local/reference/opennurbs6-camera/opennurbs_viewport.cpp",
+    "remote": "opennurbs_viewport.cpp",
+    "sha256": "2403be6f12b9f3fa7c723da44793eda28c78e1e06d2ae7f2c529241c5b0498ce"
+  },
+  "methods": [
+    {
+      "signature": "ON_Xform::ON_Xform()",
+      "sha256": "9a629016afc9875a1ee8eaf446ef75b1e1458c8b86f195dd5f78c0f1c0cf4c5b"
+    },
+    {
+      "signature": "ON_Xform ON_Xform::operator*( const ON_Xform& rhs ) const",
+      "sha256": "bb1c54dee171a3a3cf1796b7661d4d903e03e7e86ae2e6eca6235b2248f71524"
+    },
+    {
+      "signature": "void ON_Xform::WorldToCamera(",
+      "sha256": "577b2e5863c8336125e4e1f7cadef2e06bf173b4adaaf0c33c4a118e465a8a62"
+    },
+    {
+      "signature": "void ON_Xform::CameraToWorld(",
+      "sha256": "4dcc20033518dca86eb998475b51eb7f157d453686f4f1d67540e7c4d12589b4"
+    },
+    {
+      "signature": "bool ON_Xform::CameraToClip(",
+      "sha256": "4959c33451844d38e28eda791d8ede5b204f3d7a389e72e1d2ea2dad9cd98f3b"
+    },
+    {
+      "signature": "bool ON_Xform::ClipToCamera(",
+      "sha256": "04c7b15cf439c081e834d6bf8321e12f733c927188f5c9a0e9c6d4f7a94b1b54"
+    },
+    {
+      "signature": "bool ON_Xform::ClipToScreen(",
+      "sha256": "09a6d011bb0ad4cd2f7425d434b6522884a603e97622e01be7bc9342060b1f67"
+    },
+    {
+      "signature": "bool ON_Xform::ScreenToClip(",
+      "sha256": "3bed69e73c02c042aece97b6193fe7226ef17788b0913a07e7336ffc781dcfe7"
+    },
+    {
+      "signature": "bool ON_Xform::IsIdentity(",
+      "sha256": "7e22fb90760df96a3b19ef9f27a99bf379d8bc1d0ad25fcc5340359d88428083"
+    },
+    {
+      "signature": "bool ON_Viewport::IsPerspectiveProjection() const",
+      "sha256": "ca62089ba845a6218fa7af0e6b367658a402e7a6ad0e69f4a2e2ab6240dbea2a"
+    },
+    {
+      "signature": "bool ON_Viewport::GetXform(",
+      "sha256": "f8ba4c047f008fdca5837743b2cd93c992f612051ee30677454ec4c18352a3ad"
+    }
+  ],
+  "includeSha256": "8ef5f604ea5e796bdfec92355c4f0d76b3147a77a6c61feea23b9912031d4666",
+  "scope": "Unchanged full published6 GetXform/matrix arithmetic; reference exercises world-to-clip/cache extra product only. Original5 static policy separately reviewed; no original runtime execution."
+}

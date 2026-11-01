@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "get-frustum",
+      "name": "?GetFrustum@ON_Viewport@@QEBA_NPEAN00000@Z",
+      "abi": null,
+      "rva": 2961056,
+      "length": 110,
+      "sha256": "98f9d1185d329d4b5b092abb8f8f6304710004fc51938acc49d61ab47ec79390",
+      "unwindRegions": []
+    },
+    {
+      "role": "get-screen",
+      "name": "?GetScreenPort@ON_Viewport@@QEBA_NPEAH00000@Z",
+      "abi": null,
+      "rva": 2962160,
+      "length": 100,
+      "sha256": "3b5721cf2d303d45e17bbfefaa757f83447e89449084c16a8fa4dd751a3fe6bb",
+      "unwindRegions": []
+    },
+    {
+      "role": "get-xform",
+      "name": "?GetXform@ON_Viewport@@QEBA_NW4coordinate_system@ON@@0AEAVON_Xform@@@Z",
+      "abi": null,
+      "rva": 2965856,
+      "length": 1585,
+      "sha256": "484ad68c2bb59d55b0377169b4c4d01faefd1710553290400c05f5e5c420074b",
+      "unwindRegions": [
+        {
+          "begin": 2965856,
+          "end": 2967441,
+          "unwind": 3406392
+        }
+      ]
+    },
+    {
+      "role": "is-identity",
+      "name": "?IsIdentity@ON_Xform@@QEBA_NN@Z",
+      "abi": null,
+      "rva": 3040512,
+      "length": 141,
+      "sha256": "9856383303d7930daad6fb161e0a512bfc40f0a50af371cfd59297d1ef1caad2",
+      "unwindRegions": []
+    },
+    {
+      "role": "valid-camera",
+      "name": "?IsValidCamera@ON_Viewport@@QEBA_NXZ",
+      "abi": null,
+      "rva": 2940608,
+      "length": 5,
+      "sha256": "2a0c05b547620f32eb862e23015183656e25ac55b8febeff3e039f8d8292e3c8",
+      "unwindRegions": []
+    },
+    {
+      "role": "valid-frustum",
+      "name": "?IsValidFrustum@ON_Viewport@@QEBA_NXZ",
+      "abi": null,
+      "rva": 2940624,
+      "length": 5,
+      "sha256": "80f5245b907cb96951a23a438196712d07e5494847fb25b8ea87d6a7a2272a10",
+      "unwindRegions": []
+    },
+    {
+      "role": "set-view-target",
+      "name": "?SetTargetPoint@ON_3dmView@@QEAA_NVON_3dPoint@@@Z",
+      "abi": null,
+      "rva": 49168,
+      "length": 83,
+      "sha256": "ea6a4c8ad6675eca9a472de0dab55cd1e9287dcee3a1300dca552dcabe4e26dc",
+      "unwindRegions": [
+        {
+          "begin": 49168,
+          "end": 49251,
+          "unwind": 3399328
+        }
+      ]
+    },
+    {
+      "role": "get-view-target",
+      "name": "?TargetPoint@ON_3dmView@@QEBA?AVON_3dPoint@@XZ",
+      "abi": null,
+      "rva": 48992,
+      "length": 175,
+      "sha256": "c7b953d9c451405289b6237a129906cfc195a89bd1ce77948144dc83636c03f8",
+      "unwindRegions": [
+        {
+          "begin": 48992,
+          "end": 49167,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "world-to-camera",
+      "name": "?WorldToCamera@ON_Xform@@QEAAXAEBVON_3dPoint@@AEBVON_3dVector@@11@Z",
+      "abi": null,
+      "rva": 3050000,
+      "length": 255,
+      "sha256": "ec02156869c043501a162902bd257d1e8d76f4fada19bbd5b490dbade66e0a97",
+      "unwindRegions": []
+    },
+    {
+      "role": "camera-to-clip",
+      "name": "?CameraToClip@ON_Xform@@QEAA_NHNNNNNN@Z",
+      "abi": null,
+      "rva": 3050384,
+      "length": 432,
+      "sha256": "f8860a5c34a73f599917707811c8311ef4f4aa1d8dec5d97b3c538352d559c4a",
+      "unwindRegions": [
+        {
+          "begin": 3050384,
+          "end": 3050816,
+          "unwind": 3391392
+        }
+      ]
+    },
+    {
+      "role": "multiply",
+      "name": "??DON_Xform@@QEBA?AV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 3033904,
+      "length": 1310,
+      "sha256": "c15b676dda0ff8e1425cafa3d54574a8f6284e177dba9d58d2d6b94fcd137c7b",
+      "unwindRegions": [
+        {
+          "begin": 3033904,
+          "end": 3035214,
+          "unwind": 3405968
+        }
+      ]
+    }
+  ]
+}

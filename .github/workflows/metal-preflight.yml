@@ -15,6 +15,12 @@ on:
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5ViewportAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5RotationAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5CameraLocationAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Rhino5ViewportCacheAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Fixtures/viewport-cache-source-cases.json"
+      - "scripts/prepare-viewport-cache-reference.cjs"
+      - "scripts/generate-viewport-cache-cases.cjs"
+      - "tests/viewport-cache-reference.test.cjs"
+      - "native/Rendering/ViewportCacheReference/**"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/camera-rotation-source-cases.json"
       - "scripts/prepare-camera-rotation-reference.cjs"
       - "scripts/generate-camera-rotation-cases.cjs"
@@ -99,6 +105,12 @@ jobs:
           clang++ -std=c++17 -O2 -ffp-contract=off -fno-strict-aliasing -I .local/reference/camera-rotation native/Rendering/CameraRotationReference/reference.cpp -o .local/native/camera-rotation-reference
           node scripts/generate-camera-rotation-cases.cjs .local/native/camera-rotation-reference > artifacts/camera-rotation-native-cases.json
           node --test tests/camera-rotation-reference.test.cjs > artifacts/camera-rotation-regressions.txt
+      - name: Verify pinned viewport cache matrix reference
+        run: |
+          node scripts/prepare-viewport-cache-reference.cjs --acquire > artifacts/viewport-cache-source.json
+          clang++ -std=c++17 -O2 -ffp-contract=off -fno-strict-aliasing -I .local/reference/viewport-cache native/Rendering/ViewportCacheReference/reference.cpp -o .local/native/viewport-cache-reference
+          node scripts/generate-viewport-cache-cases.cjs .local/native/viewport-cache-reference > artifacts/viewport-cache-native-cases.json
+          node --test tests/viewport-cache-reference.test.cjs > artifacts/viewport-cache-regressions.txt
       - name: Execute source camera preset differential on macOS
         run: |
           mkdir -p artifacts
