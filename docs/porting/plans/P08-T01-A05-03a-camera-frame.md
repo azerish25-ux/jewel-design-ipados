@@ -15,4 +15,4 @@ Design: CandidateCameraFrame owns an immutable raw state snapshot (location, req
 
 Owned paths: native/Rendering/CameraFrameReference; scripts/prepare-camera-frame-reference.cjs and generate-camera-frame-cases.cjs; Rendering.Candidate/CandidateCameraFrame.cs; shared CameraFrameAssertions/fixture and existing runners/workflows; focused Node tests; evidence/ADR/current-state notes.
 
-Additional device-target check: run41286695881 builds current source as unsigned ios-arm64 Release/AOT using validated native archive producer41181435472. It remains a build-only check and was still in progress when simulator evidence was inspected.
+Additional device-target check: run41286695881 builds current source as unsigned ios-arm64 Release/AOT using validated native archive producer41181435472. Actual build/platform artifacts were inspected after success:52 warnings/zero errors, arm64/IOS executable. This is build-only evidence, with no physical execution claim.

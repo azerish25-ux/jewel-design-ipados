@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "run": 41286695881,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41286695881",
+  "sourceCommit": "e255cd86d67529eb97f33d7ddc5c34040de50684",
+  "frameCodeCheckpoint": "1dfea28b8a6cae877753d0b8c869e7ee0a11c399",
+  "codeDiffFromFrameCheckpoint": "git diff --stat 1dfea28 e255cd8 -- src native tests .github scripts returned empty",
+  "status": "success",
+  "build": {
+    "configuration": "Release",
+    "runtimeIdentifier": "ios-arm64",
+    "unsigned": true,
+    "aot": true,
+    "warnings": 52,
+    "errors": 0,
+    "architecture": "arm64",
+    "platform": "IOS",
+    "minOS": "15.0",
+    "sdk": "26.5",
+    "executableSha256": "3cf42ede4a1606ed8d266da335b368d69f4f525bd9da48d22ebc1579910d1fd1"
+  },
+  "nativeArchive": {
+    "schemaVersion": 1,
+    "occtPin": "b8f597c677811d1f9f4d8a97f5ae2825c0353a42",
+    "runId": "41181435472",
+    "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+    "platform": "ios-arm64",
+    "nativeInputSha256": "6d4e695ca9a910ab2cf52ebb768824f87b6b7dd921b9f1216f98b8779e2f0553",
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "archiveSha256": "5cbb081ce6d0846544064ee4015bbdf815782f353e404a0cfef5be0baf13d22e",
+    "archiveBytes": 75421232,
+    "consumerCommit": "e255cd86d67529eb97f33d7ddc5c34040de50684",
+    "consumerRunId": "41286695881",
+    "scope": "Validated native archive reuse only; app compile/runtime still required."
+  },
+  "artifactHashes": [
+    {
+      "name": "native-app-build.txt",
+      "sha256": "a6997055422dee36e91cdb5a3d138f31392f618c3dc6329c313bfbb30a4d73b9"
+    },
+    {
+      "name": "native-device-platform.txt",
+      "sha256": "f4be9f2183bedf15aeabed171cd49d6e9b570cc92462bb08f7a963aab776437d"
+    },
+    {
+      "name": "native-device-architectures.txt",
+      "sha256": "c1669e1d8edca98769c37d494b76442a1d6e5ffffd7b4da1fb63aef8ebaf6f01"
+    },
+    {
+      "name": "native-device-executable-sha256.txt",
+      "sha256": "6ac1999d2e5873803aa7c5f8959e2f2be614e10bea7fb25640834cd3e55494ad"
+    },
+    {
+      "name": "native-archive-reuse.json",
+      "sha256": "032d204b4c191afb5a9b6b78c6f8ee02f55847813bc716389e7262cd8a5bbe46"
+    }
+  ],
+  "scope": "Actual unsigned native-linked device target compilation/AOT and Mach-O architecture/platform inspection. No physical execution, signing/distribution approval or complete source camera/private Rhino5/PC parity asserted.52 warnings include trim-unsafe recovered DataTable/XML paths; runtime behavior remains a separate gate."
+}

@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "windows_macos_iPad_iPhone_frame_state_checks_passed_device_AOT_pending",
+  "status": "windows_macos_iPad_iPhone_frame_state_checks_and_unsigned_device_AOT_build_passed",
   "plan": "docs/porting/plans/P08-T01-A05-03a-camera-frame.md",
   "adr": "docs/porting/ADR-0052-source-camera-frame-state.md",
   "sourceAudit": "docs/evidence/audit/camera-frame-source.json",
@@ -196,7 +196,6 @@
     "limits": "No recovered source mutation, fallback basis or synthetic CAD output. Published6/private Rhino5/original PC equivalence remains distinct."
   },
   "remaining": [
-    "Unsigned ios-arm64 native-linked Release/AOT compilation is in progress; physical execution remains separate.",
     "Source lens/parallel transition and normalized world-mesh projection integration",
     "Actual source-preset Metal captures and original-PC/physical/full product acceptance"
   ],
@@ -223,11 +222,12 @@
     "deviceAOT": {
       "id": 41286695881,
       "sourceCommit": "e255cd86d67529eb97f33d7ddc5c34040de50684",
-      "status": "in_progress_last_observed",
+      "status": "completed_success_actual_build_archive_identity_and_device_MachO_artifacts_inspected",
       "nativeArchiveProducer": 41181435472
     }
   },
   "sentinelDefinitionAudit": "docs/evidence/audit/camera-frame-sentinels.json",
   "nextTransitionAudit": "docs/evidence/audit/camera-parallel-source.json",
-  "appleRuntimeReport": "docs/evidence/apple/camera-frame-ios-results.json"
+  "appleRuntimeReport": "docs/evidence/apple/camera-frame-ios-results.json",
+  "appleDeviceReport": "docs/evidence/apple/camera-frame-device-results.json"
 }
