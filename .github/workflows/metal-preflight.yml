@@ -17,6 +17,7 @@ on:
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5CameraLocationAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5ViewportCacheAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5ViewportCommitAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Rhino5ViewDataAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/ViewportCaptureAcknowledgement*.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/viewport-cache-source-cases.json"
       - "scripts/prepare-viewport-cache-reference.cjs"

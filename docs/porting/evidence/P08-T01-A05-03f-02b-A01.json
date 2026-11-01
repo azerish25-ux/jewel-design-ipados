@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A01",
+  "parentTask": "P08-T01-A05-03f-02b",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "owned_current_view_data_windows_passed_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A01-view-data.md",
+  "sourceAudit": "docs/evidence/audit/rhino5-whole-view-source.json",
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "failure": "CS0246 missing Rhino5ViewPlane/Metadata/Details/Data and owned payload types"
+  },
+  "localChecks": {
+    "ownedViewAssertions": 27,
+    "fullManagedNativeSuiteExitCode": 0,
+    "nodeRegressions": 54,
+    "repositoryIntegrityExitCode": 0,
+    "inputKind": "Deterministic synthetic converted-view values and bytes; no real saved PC view or native clone execution"
+  },
+  "review": {
+    "copyScope": "Captures all mapped metadata sectors and current viewport details; stale target mirror, raw IEEE payloads, unknown enum/GUID values and duplicate ordered chunks remain unchanged.",
+    "ownership": "Private copied arrays, immutable elements/matrices/strings and copied payload outputs prevent caller mutation from changing retained or updated views.",
+    "runtimeBoundary": "Zero copy-count and unknown-class envelopes remain retained in current data. No native Clone/CopyUserData/history method exists here; no raw byte retention is claimed as polymorphic runtime behavior.",
+    "paths": "Trace/wallpaper/printer strings are inert; model has no IO or native imports.",
+    "defaults": "No native constructor defaults, matrix inversion, target repair or archive decoding synthesized.",
+    "integration": "Actual Apple app must execute27 owned-data checks and still pass existing CAD scene/pixel/ownership gates."
+  },
+  "appleRuns": {
+    "status": "pending_push"
+  },
+  "remaining": [
+    "Actual macOS and both simulator-family results for this source",
+    "Original userdata attach/derived clone/copy-count semantics before whole-view native history copy",
+    "Original constructors/defaults and archive conversion plus saved-view corpus",
+    "Actual document/history continuation and source-preset renderer integration",
+    "Original-PC/physical full parity acceptance"
+  ],
+  "parityRowsClosed": 0
+}

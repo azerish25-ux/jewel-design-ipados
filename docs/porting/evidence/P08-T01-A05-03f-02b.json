@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "original_whole_view_copy_field_coverage_and_named_guards_verified_model_pending",
+  "status": "static_field_map_and_owned_current_data_implemented_windows_native_clone_history_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-whole-view-ownership.md",
   "audit": "docs/evidence/audit/rhino5-whole-view-source.json",
   "checks": {
@@ -23,5 +23,6 @@
     "History and actual document notification/synchronization continuation",
     "Full source preset renderer, original-PC and physical acceptance"
   ],
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "currentViewData": "docs/porting/evidence/P08-T01-A05-03f-02b-A01.json"
 }
