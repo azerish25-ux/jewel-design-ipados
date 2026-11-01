@@ -13,6 +13,12 @@ on:
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5ScalarAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5CameraAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5ViewportAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Rhino5RotationAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Fixtures/camera-rotation-source-cases.json"
+      - "scripts/prepare-camera-rotation-reference.cjs"
+      - "scripts/generate-camera-rotation-cases.cjs"
+      - "tests/camera-rotation-reference.test.cjs"
+      - "native/Rendering/CameraRotationReference/**"
       - "scripts/run-ghidra-local.cjs"
       - "tests/ghidra-local.test.cjs"
       - "tests/fixtures/ghidra-script-failure.txt"
@@ -86,6 +92,12 @@ jobs:
           node scripts/prepare-viewport-projection-reference.cjs --acquire > artifacts/viewport-projection-source.json
           clang++ -std=c++17 -O2 -ffp-contract=off -fno-strict-aliasing -I .local/reference/viewport-projection native/Rendering/ViewportProjectionReference/reference.cpp -o .local/native/viewport-projection-reference
           node scripts/generate-viewport-projection-cases.cjs .local/native/viewport-projection-reference > artifacts/viewport-projection-native-cases.json
+      - name: Verify pinned arbitrary-axis camera rotation
+        run: |
+          node scripts/prepare-camera-rotation-reference.cjs --acquire > artifacts/camera-rotation-source.json
+          clang++ -std=c++17 -O2 -ffp-contract=off -fno-strict-aliasing -I .local/reference/camera-rotation native/Rendering/CameraRotationReference/reference.cpp -o .local/native/camera-rotation-reference
+          node scripts/generate-camera-rotation-cases.cjs .local/native/camera-rotation-reference > artifacts/camera-rotation-native-cases.json
+          node --test tests/camera-rotation-reference.test.cjs > artifacts/camera-rotation-regressions.txt
       - name: Execute source camera preset differential on macOS
         run: |
           mkdir -p artifacts

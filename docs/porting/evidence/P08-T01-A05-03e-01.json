@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03e-01",
+  "parentTask": "P08-T01-A05-03e",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "original_derived_vector_rotation_local_passed_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03e-camera-locations.md",
+  "binaryAudit": "docs/evidence/audit/rhino5-camera-rotation-source.json",
+  "publishedAudit": "docs/evidence/audit/camera-rotation-published-source.json",
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "failure": "CS0103 Rhino5VectorRotation missing; test source compiled as intended"
+  },
+  "localChecks": {
+    "analyticalChecks": 15,
+    "publishedReferenceCases": 608,
+    "totalAssertions": 2448,
+    "fixtureSha256": "3c4f26abb16d33ddd2659647ddc8847f36b302089c8cc6a5f29f07c4b03af72b",
+    "nativeReference": "GNU C++17 -O2 -ffp-contract=off -fno-strict-aliasing",
+    "fullManagedNativeSuiteExitCode": 0,
+    "adjacentNodeChecks": 39,
+    "rotationNodeChecks": 3,
+    "repositoryIntegrityExitCode": 0
+  },
+  "review": {
+    "correctness": "Immutable3x3 vector mapping; preserves original cardinal cleanup, failed-pair diagnostic/identity, zero-axis scaling, robust normalization and vector-only application. Tests include independent invariants and unchanged published arithmetic.",
+    "architecture": "No Features dependency, native archive fingerprint changes, mutable arrays or original runtime dependency.",
+    "security": "Pinned published inputs and static original dependency reads only; no original code execution, credentials or generated artifacts committed.",
+    "limits": "Finite fixture arithmetic comparisons use2e-13 relative/absolute tolerance and do not establish bitwise or malformed nonfinite/signed-zero original5 parity."
+  },
+  "appleRuns": {
+    "status": "pending_push"
+  },
+  "remaining": [
+    "Temporary viewport up/roll recipe and native commit ordering/guards/document/history/cache adapters",
+    "Complete original command preset application to Metal",
+    "Original licensed PC comparisons and physical-device acceptance"
+  ],
+  "parityRowsClosed": 0
+}

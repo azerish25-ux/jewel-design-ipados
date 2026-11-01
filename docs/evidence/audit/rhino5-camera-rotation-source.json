@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T01-A05-03e",
-  "status": "static_original_rotation_dependency_views_observed_implementation_pending",
+  "status": "vector_rotation_implemented_static_original_policy_published_differential_local_passed_apple_pending",
   "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
   "targetExecuted": false,
   "methods": [
@@ -112,14 +112,42 @@
     }
   ],
   "observations": [
-    "The angle overload computes trigonometric values and delegates to the sine/cosine overload. Standard math thunk prototypes still require final annotation before using its decompiler C as a direct algorithm transcription.",
-    "The sine/cosine overload initializes identity, snaps cardinal noise, normalizes a deviating pair, unitizes a nonunit axis and builds the full matrix with optional center translation.",
-    "The vector-transform overload uses only the linear3x3 coefficients; camera-location center translation does not apply to an up vector."
+    "The angle thunks are statically resolved through PE import tables to MSVCR100 sin/cos. No target executed.",
+    "Original 2D length/normalization instructions preserve absolute-value max ordering, minimum-normal threshold, rescale2^1023 and zero-on-failure.",
+    "The vector implementation excludes center translation. Zero axis can scale; failed sine/cosine normalization returns identity with a diagnostic."
   ],
   "remaining": [
-    "Confirm sin/cos thunk identities and remaining unordered/cardinal comparison details from exact instructions.",
-    "Implement the original arbitrary-axis vector rotation and native up/roll recipe with tests before integrating the complete preset command.",
-    "Retain native commit guards, document/history/cache effects and original-PC/physical gates."
+    "Wider malformed nonfinite/signed-zero original instruction/runtime differential coverage.",
+    "Implement temporary viewport up/roll recipe and full native commit guard/document/history/cache contract.",
+    "Source-preset Metal integration; original PC and physical device acceptance."
   ],
-  "limits": "Prepared next dependency while existing Apple jobs were queued. Static original data, not a completed rotation or camera setter port."
+  "limits": "Vector primitive only. Published6 independent reference is not an original5 runtime oracle.",
+  "trigImports": [
+    {
+      "thunkRva": "0x2ff05a",
+      "iatRva": "0x302588",
+      "dll": "MSVCR100.dll",
+      "name": "sin"
+    },
+    {
+      "thunkRva": "0x2ff060",
+      "iatRva": "0x302590",
+      "dll": "MSVCR100.dll",
+      "name": "cos"
+    }
+  ],
+  "normalizationRegions": [
+    {
+      "name": "ON_Length2d",
+      "rva": "0x23d900",
+      "length": 154,
+      "sha256": "8614132c73838667c9b6f132dc151b622c101d3cfbb359a5612eab534ac537c7"
+    },
+    {
+      "name": "ON_2dVector::Unitize",
+      "rva": "0x23da00",
+      "length": 206,
+      "sha256": "7a95ee5f37f8c16a38c52b3a3e0459de6564a51e3a99ce2adced598ed9dcc3a7"
+    }
+  ]
 }
