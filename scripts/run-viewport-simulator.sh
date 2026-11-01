@@ -4,6 +4,7 @@ FAMILY=${1:?supply ipad or iphone}
 case "$FAMILY" in ipad|iphone);; *) echo "Unsupported simulator family" >&2; exit 2;; esac
 OUT="artifacts/viewport-$FAMILY"
 mkdir -p "$OUT"
+rm -f "$OUT/capture-timing.txt" "$OUT/app-capture-timing.txt"
 for phase in original orbit edited empty resized final; do rm -f "$OUT/$phase.png"; done
 rm -f "$OUT/result.txt" "$OUT/runtime-family.txt" "$OUT/report.json" "$OUT/report-verification.json"
 xcrun simctl list devices available -j > "$OUT/devices.json"
@@ -18,7 +19,7 @@ xcrun simctl bootstatus "$UDID" -b | tee "$OUT/bootstatus.txt"
 xcrun simctl install "$UDID" "$APP"
 DATA=$(xcrun simctl get_app_container "$UDID" com.jeweldesign.viewport data)
 [[ "$DATA" == /* && "$DATA" != / ]]
-rm -f "$DATA/Documents/viewport-result.txt" "$DATA/Documents/viewport-result.txt.family" "$DATA/Documents/viewport-result.txt.started" "$DATA/Documents/viewport-report.json" "$DATA/Documents/viewport-stage.txt" "$DATA/Documents/viewport-ack.txt"
+rm -f "$DATA/Documents/viewport-capture-timing.txt" "$DATA/Documents/viewport-result.txt" "$DATA/Documents/viewport-result.txt.family" "$DATA/Documents/viewport-result.txt.started" "$DATA/Documents/viewport-report.json" "$DATA/Documents/viewport-stage.txt" "$DATA/Documents/viewport-ack.txt"
 rm -f "$DATA/Documents/native-metal-original.png" "$DATA/Documents/native-metal-edited.png" "$DATA/Documents/native-metal-orbit.png" "$DATA/Documents/native-metal-empty.png" "$DATA/Documents/native-metal-report.json"
 xcrun simctl launch --terminate-running-process "$UDID" com.jeweldesign.viewport | tee "$OUT/launch.txt"
 last=''
@@ -28,15 +29,19 @@ for i in $(seq 1 600); do
   if test "$payload" != "$last"; then
    [[ "$payload" =~ ^[0-9a-f]{32}\|(original|orbit|edited|empty|resized|final)$ ]]
    phase=${payload#*|}
+   printf 'begin|%s|%s\n' "$payload" "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> "$OUT/capture-timing.txt"
    xcrun simctl io "$UDID" screenshot --type=png "$OUT/$phase.png"
+   printf 'captured|%s|%s\n' "$payload" "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> "$OUT/capture-timing.txt"
    printf '%s' "$payload" > "$DATA/Documents/viewport-ack.pending"
    mv "$DATA/Documents/viewport-ack.pending" "$DATA/Documents/viewport-ack.txt"
+   printf 'acknowledged|%s|%s\n' "$payload" "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> "$OUT/capture-timing.txt"
    last="$payload"
   fi
  fi
  if test -f "$DATA/Documents/viewport-result.txt"; then
   cp "$DATA/Documents/viewport-result.txt" "$OUT/result.txt"
   cp "$DATA/Documents/viewport-result.txt.family" "$OUT/runtime-family.txt"
+  if test -f "$DATA/Documents/viewport-capture-timing.txt"; then cp "$DATA/Documents/viewport-capture-timing.txt" "$OUT/app-capture-timing.txt"; fi
   cat "$OUT/result.txt"
   test "$(cat "$OUT/runtime-family.txt")" = "$FAMILY"
   grep -q '^PASS visible Metal viewport:6 captured stages;' "$OUT/result.txt"
@@ -53,6 +58,7 @@ for i in $(seq 1 600); do
   grep -q '^PASS original-derived Rhino5 camera locations:' "$OUT/result.txt"
   grep -q '^PASS original-derived Rhino5 viewport cache:' "$OUT/result.txt"
   grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
+  grep -q '^PASS viewport screenshot acknowledgement:' "$OUT/result.txt"
   grep -q 'PASS Metal offscreen viewport:actual-CAD pixels=' "$OUT/result.txt"
   cp "$DATA/Documents/viewport-report.json" "$OUT/report.json"
   for phase in original orbit edited empty resized final; do test -s "$OUT/$phase.png"; done

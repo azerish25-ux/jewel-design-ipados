@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "original_cache_numeric_primitives_windows_macos_passed_simulator_pending",
+  "status": "original_cache_windows_macos_iPad_passed_iphone_capture_failed_fix_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03f-01-cache-primitives.md",
   "binaryAudit": "docs/evidence/audit/rhino5-viewport-cache-source.json",
   "publishedAudit": "docs/evidence/audit/viewport-cache-published-source.json",
@@ -39,7 +39,7 @@
     },
     "visible": {
       "id": 41305923992,
-      "status": "in_progress"
+      "status": "completed_failure_iphone_capture_acknowledgement_orbit"
     },
     "repository": {
       "id": 41305924062,
@@ -47,7 +47,7 @@
     },
     "reuse": {
       "id": 41305924028,
-      "status": "in_progress"
+      "status": "completed_success"
     }
   },
   "remaining": [
@@ -59,5 +59,7 @@
   "parityRowsClosed": 0,
   "appleNumericReport": "docs/evidence/apple/rhino5-viewport-cache-numeric-results.json",
   "nextPlan": "docs/porting/plans/P08-T01-A05-03f-02-view-state.md",
-  "historyAudit": "docs/evidence/audit/rhino5-view-history-source.json"
+  "historyAudit": "docs/evidence/audit/rhino5-view-history-source.json",
+  "appleFailedRuntimeReport": "docs/evidence/apple/rhino5-viewport-cache-ios-attempt1.json",
+  "captureFix": "docs/porting/evidence/P08-T01-A05-03f-02a-F01.json"
 }

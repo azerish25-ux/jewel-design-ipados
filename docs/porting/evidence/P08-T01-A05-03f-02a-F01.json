@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02a-F01",
+  "parentTask": "P08-T01-A05-03f-02a",
+  "status": "capture_deadline_regression_fixed_locally_apple_pending",
+  "failureReport": "docs/evidence/apple/rhino5-viewport-cache-ios-attempt1.json",
+  "rootCause": "App capture waiter allowed1500 delays of20ms (~30s), while a real iPhone capture sequence delivered orbit screenshot/ack after that wait expired. Screenshot was written, then driver observed FAIL TimeoutException for orbit. Exact stage request latency was not retained in old artifacts.",
+  "evidenceVsInference": "Timeout and screenshot timing are observed. Runner load/migration as a contributing cause is plausible but not established; new app/driver timestamps will identify future boundary delays.",
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "failure": "Observed slow simulator capture must remain pending at65 seconds",
+    "originalPolicySeconds": 30
+  },
+  "fix": {
+    "deadlineSeconds": 180,
+    "clock": "Stopwatch monotonic elapsed time",
+    "contractChecks": 11,
+    "staleAndWrongPhaseRejected": true,
+    "lateAfterDeadlineRejected": true,
+    "perCaptureTimingRetained": true
+  },
+  "review": {
+    "scope": "Test-app screenshot acknowledgement only. No product camera/math, CAD pixels, tolerance, geometry, scene ordering or FAIL marker relaxed.",
+    "failurePropagation": "CLI screenshot failure, invalid/stale request, missing acknowledgement and exact deadline still fail. No automatic retry or silent pass.",
+    "ownership": "Each capture is bound to the existing random launch token plus exact phase; app and host timing files reset per launch/run and retained with artifacts."
+  },
+  "appleRuns": {
+    "status": "pending_push"
+  },
+  "remaining": [
+    "Inspect actual fixed-source macOS and both iPad/iPhone screenshot/scene results; do not count partial failed iPhone as pass"
+  ],
+  "localChecks": {
+    "timingTokenChecks": 11,
+    "fullManagedNativeSuiteExitCode": 0,
+    "nodeRegressions": 45,
+    "repositoryIntegrityExitCode": 0
+  }
+}

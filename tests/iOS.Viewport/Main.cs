@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Diagnostics;
+using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -33,14 +35,21 @@ public sealed class AppDelegate:UIApplicationDelegate
         var payload=token+"|"+stage;
         File.WriteAllText(Path.Combine(directory,"viewport-stage.pending"),payload);
         File.Move(Path.Combine(directory,"viewport-stage.pending"),Path.Combine(directory,"viewport-stage.txt"),overwrite:true);
-        for(int i=0;i<1500;i++)
+        long started=Stopwatch.GetTimestamp();
+        CaptureTiming("requested",payload,TimeSpan.Zero);
+        while(true)
         {
-            var ack=Path.Combine(directory,"viewport-ack.txt");
-            if(File.Exists(ack)&&File.ReadAllText(ack)==payload)return;
+            var ack=Path.Combine(directory,"viewport-ack.txt");var received=File.Exists(ack)?File.ReadAllText(ack):null;
+            var elapsed=Stopwatch.GetElapsedTime(started);
+            var status=CandidateGeometryContractChecks.ViewportCaptureAcknowledgement.Check(payload,received,elapsed);
+            if(status==CandidateGeometryContractChecks.ScreenshotAcknowledgementStatus.Accepted){CaptureTiming("accepted",payload,elapsed);return;}
+            if(status==CandidateGeometryContractChecks.ScreenshotAcknowledgementStatus.TimedOut)
+            {CaptureTiming("timed-out",payload,elapsed);throw new TimeoutException("Screenshot acknowledgement missing for "+stage+" after "+elapsed.TotalSeconds.ToString("F1",CultureInfo.InvariantCulture)+"s");}
             await Task.Delay(20);
         }
-        throw new TimeoutException("Screenshot acknowledgement missing for "+stage);
     }
+    private void CaptureTiming(string state,string payload,TimeSpan elapsed)=>File.AppendAllText(Path.Combine(directory,"viewport-capture-timing.txt"),state+"|"+payload+"|"+DateTime.UtcNow.ToString("O",CultureInfo.InvariantCulture)+"|"+elapsed.TotalMilliseconds.ToString("F0",CultureInfo.InvariantCulture)+Environment.NewLine);
+
     private async Task Run()
     {
         string resultPath=Path.Combine(directory,"viewport-result.txt");
@@ -56,6 +65,7 @@ public sealed class AppDelegate:UIApplicationDelegate
             var transitions=CandidateGeometryContractChecks.ViewportProjectionAssertions.Run();
             var legacyScalar=CandidateGeometryContractChecks.Rhino5ScalarAssertions.Run();
             var legacyCamera=CandidateGeometryContractChecks.Rhino5CameraAssertions.Run();
+            var capturePolicy=CandidateGeometryContractChecks.ViewportCaptureAcknowledgementAssertions.Run();
             var legacyCommit=CandidateGeometryContractChecks.Rhino5ViewportCommitAssertions.Run();
             var legacyCache=CandidateGeometryContractChecks.Rhino5ViewportCacheAssertions.Run();
             var legacyLocations=CandidateGeometryContractChecks.Rhino5CameraLocationAssertions.Run();
@@ -65,7 +75,7 @@ public sealed class AppDelegate:UIApplicationDelegate
             var parent=Window?.RootViewController?.View??throw new Exception("Visible root view missing");
             var report=await ViewportPresentationChecks.Run(parent,Capture);
             File.WriteAllText(Path.Combine(directory,"viewport-report.json"),JsonSerializer.Serialize(report,ViewportReportContext.Default.ViewportPresentationReport));
-            string result="PASS visible Metal viewport:6 captured stages; source edit/orbit/empty/resize, bounded upload ownership and disposal; full product UI/PC/physical acceptance separate."+Environment.NewLine+gate+Environment.NewLine+camera+Environment.NewLine+frustum+Environment.NewLine+matrices+Environment.NewLine+frames+Environment.NewLine+transitions+Environment.NewLine+legacyScalar+Environment.NewLine+legacyCamera+Environment.NewLine+legacyViewport+Environment.NewLine+legacyRotation+Environment.NewLine+legacyLocations+Environment.NewLine+legacyCache+Environment.NewLine+legacyCommit+Environment.NewLine+offscreen;
+            string result="PASS visible Metal viewport:6 captured stages; source edit/orbit/empty/resize, bounded upload ownership and disposal; full product UI/PC/physical acceptance separate."+Environment.NewLine+gate+Environment.NewLine+camera+Environment.NewLine+frustum+Environment.NewLine+matrices+Environment.NewLine+frames+Environment.NewLine+transitions+Environment.NewLine+legacyScalar+Environment.NewLine+legacyCamera+Environment.NewLine+legacyViewport+Environment.NewLine+legacyRotation+Environment.NewLine+legacyLocations+Environment.NewLine+legacyCache+Environment.NewLine+legacyCommit+Environment.NewLine+capturePolicy+Environment.NewLine+offscreen;
             File.WriteAllText(resultPath+".pending",result);File.Move(resultPath+".pending",resultPath,overwrite:true);Console.WriteLine(result);
         }
         catch(Exception error){File.WriteAllText(resultPath,"FAIL "+error);Console.WriteLine(error);}

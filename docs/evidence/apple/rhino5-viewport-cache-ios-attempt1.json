@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "run": 41305923992,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41305923992",
+  "sourceCommit": "8e4ccfc9d0967b53960bf0f79eca50738c4333d4",
+  "status": "failed_iphone_capture_acknowledgement_orbit",
+  "ipad": {
+    "actualRuntimeFamily": "ipad",
+    "resultSha256": "52cdf54042b3d5c537d69ef2574c57a16fa06727dbb842d4b00cac3b2aeb7afc",
+    "numericReport": "PASS original-derived Rhino5 viewport cache:19522 checks including 1084 compiled published GetXform/cache cases and9 analytical/ownership checks; native commit/history/PC parity separate.",
+    "runtime": {
+      "stages": [
+        "original",
+        "orbit",
+        "edited",
+        "empty",
+        "resized",
+        "final"
+      ],
+      "peakInFlight": 3,
+      "disposalInFlight": 3,
+      "retiredBuffers": 0,
+      "nativePresentationTimingVerified": false,
+      "screenEvidenceRequired": true,
+      "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+    },
+    "screen": {
+      "width": 1640,
+      "height": 2360,
+      "bounds": {
+        "left": 205,
+        "top": 295,
+        "right": 1435,
+        "bottom": 2065
+      },
+      "uniformPixels": 2177100,
+      "foregroundPixels": 428796,
+      "editedPixels": 64797,
+      "orbitPixels": 517987,
+      "resizedPixels": 181766,
+      "finalDifferencePixels": 0,
+      "pngSha256": {
+        "original": "ceed0fa4ab4460da8922c714161175d9f8444b8b87fb695a662c029a5eeeecd1",
+        "orbit": "c2b4c55c5fde026bb9a1dd52d01016892349c6975ef563e937e3c904ebefa766",
+        "edited": "dc35f7f33b2297f204e4fec6d680673ceb8048bc55609167d5394d4752b24f67",
+        "empty": "e2db95fa91da58cb184ec5d1ebeedc39492eebd32da6a4734866f7559949479f",
+        "resized": "d66185a1b0c49b489613cf50eda2e5fde8e2c114ae62ae1c61d49bff714e8ce8",
+        "final": "5419c1fc82f66ceac2d457d9921870bc218991dbc370275b22b5220c9f066215"
+      },
+      "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+    }
+  },
+  "iphone": {
+    "actualRuntimeFamily": "iphone",
+    "failure": "FAIL System.TimeoutException: Screenshot acknowledgement missing for orbit\n   at ViewportPresentationCandidate.AppDelegate.Capture(String stage)\n   at ViewportPresentationCandidate.ViewportPresentationChecks.<>c__DisplayClass5_0.<<Run>g__Record|0>d.MoveNext()\n--- End of stack trace from previous location ---\n   at ViewportPresentationCandidate.ViewportPresentationChecks.Run(UIView parent, Func`2 capture)\n   at ViewportPresentationCandidate.AppDelegate.Run()",
+    "resultSha256": "966503e6b908740f41b76738fd7fbdecd8a89eb09c7048a3b83a6965efdfe071",
+    "retainedScreens": [
+      "original",
+      "orbit"
+    ],
+    "completeSceneAcceptance": false,
+    "retainedNumericPassReport": false
+  },
+  "observedTimeline": {
+    "originalScreenshotWrittenUtc": "2026-11-01T12:33:12.9297260Z",
+    "orbitScreenshotStartedUtc": "2026-11-01T12:34:07.1520850Z",
+    "orbitScreenshotWrittenUtc": "2026-11-01T12:34:18.0915920Z",
+    "timeoutReportedUtc": "2026-11-01T12:34:18.1923030Z"
+  },
+  "scope": "Incomplete iPhone acceptance: failed result retained, not converted into a numeric or scene pass. Cross-process acknowledgement deadline30s nominal was too short for this observed capture cadence; fixed-source Apple rerun required."
+}
