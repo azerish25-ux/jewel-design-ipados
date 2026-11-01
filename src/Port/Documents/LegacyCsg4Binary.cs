@@ -61,7 +61,8 @@ internal static class CsgCrc32
         for (uint i = 0; i < values.Length; i++) { uint c = i; for (int b = 0; b < 8; b++) c = (c & 1) == 0 ? c >> 1 : (c >> 1) ^ 0xedb88320; values[i] = c; }
         return values;
     }
-    public static uint Compute(ReadOnlySpan<byte> data) { uint crc = uint.MaxValue; foreach (byte b in data) crc = (crc >> 8) ^ table[(crc ^ b) & 255]; return ~crc; }
+    public static uint Compute(ReadOnlySpan<byte> data)=>Append(0,data);
+    public static uint Append(uint checksum,ReadOnlySpan<byte> data) { uint crc = ~checksum; foreach (byte b in data) crc = (crc >> 8) ^ table[(crc ^ b) & 255]; return ~crc; }
     public static void Check(byte[] bytes, CsgChunk chunk, int? end = null)
     {
         var actual = Compute(bytes.AsSpan(chunk.Payload, (end ?? chunk.CrcOffset) - chunk.Payload));

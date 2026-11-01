@@ -14,3 +14,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewportCacheAsse
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewportCommitAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewDataAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5UserDataRuntimeAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.LegacyUserStringListAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.UserStringArchiveBindingAssertions.Run());

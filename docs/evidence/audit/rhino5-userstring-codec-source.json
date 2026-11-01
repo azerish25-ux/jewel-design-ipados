@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A02-P02",
+  "targetExecuted": false,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "regions": "native/Analysis/fixtures/rhino5-userstring-codec-regions.json",
+  "functions": [
+    {
+      "role": "string-record-read",
+      "name": "?Read@ON_UserString@@QEAA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 2923824,
+      "length": 495,
+      "sha256": "06d2dc8711de77fdea47b2e6b38483d9b2cb7e64ef002250c135f2a5500d43fa",
+      "unwindRegions": [
+        {
+          "begin": 2923824,
+          "end": 2924319,
+          "unwind": 3584024
+        }
+      ]
+    },
+    {
+      "role": "string-record-write",
+      "name": "?Write@ON_UserString@@QEBA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 2923616,
+      "length": 198,
+      "sha256": "ff3d75d7c12980eec7eab65adc92468bf740b41e4b57759f1a02771aa61abe7f",
+      "unwindRegions": [
+        {
+          "begin": 2923616,
+          "end": 2923814,
+          "unwind": 3570580
+        }
+      ]
+    },
+    {
+      "role": "wide-string-read",
+      "name": "?ReadString@ON_BinaryArchive@@QEAA_NAEAVON_wString@@@Z",
+      "abi": null,
+      "rva": 221584,
+      "length": 210,
+      "sha256": "ec64776c889f338d77c80cf854d5cc17fc3d65bfdffcd9f7fea1fdbc4e97d8a9",
+      "unwindRegions": [
+        {
+          "begin": 221584,
+          "end": 221677,
+          "unwind": 3524976
+        },
+        {
+          "begin": 221677,
+          "end": 221766,
+          "unwind": 3568336
+        },
+        {
+          "begin": 221766,
+          "end": 221783,
+          "unwind": 3568316
+        },
+        {
+          "begin": 221783,
+          "end": 221794,
+          "unwind": 3568300
+        }
+      ]
+    },
+    {
+      "role": "end-read-chunk",
+      "name": "?EndRead3dmChunk@ON_BinaryArchive@@QEAA_N_N@Z",
+      "abi": null,
+      "rva": 247584,
+      "length": 917,
+      "sha256": "b9b1dfdc7a558a83ee6a6cc76b00a609c228bf6f83d56f1ca115f243f25ed8cb",
+      "unwindRegions": [
+        {
+          "begin": 247584,
+          "end": 247615,
+          "unwind": 3523480
+        },
+        {
+          "begin": 247615,
+          "end": 247642,
+          "unwind": 3523460
+        },
+        {
+          "begin": 247642,
+          "end": 247721,
+          "unwind": 3523432
+        },
+        {
+          "begin": 247721,
+          "end": 247986,
+          "unwind": 3523412
+        },
+        {
+          "begin": 247986,
+          "end": 248003,
+          "unwind": 3523396
+        },
+        {
+          "begin": 248003,
+          "end": 248159,
+          "unwind": 3523376
+        },
+        {
+          "begin": 248159,
+          "end": 248412,
+          "unwind": 3523396
+        },
+        {
+          "begin": 248412,
+          "end": 248472,
+          "unwind": 3523356
+        },
+        {
+          "begin": 248472,
+          "end": 248489,
+          "unwind": 3523336
+        },
+        {
+          "begin": 248489,
+          "end": 248501,
+          "unwind": 3523320
+        }
+      ]
+    }
+  ],
+  "observations": [
+    "Original ON_UserString read/write uses nested anonymous1.0 chunks and two wide strings.",
+    "Original wide string reader reads element count then sets length to n-1; final code unit is not required to be zero. Windows raw UTF16 code units are retained.",
+    "Original EndRead3dmChunk increments the archive CRC error count and reports mismatch independently of its bool. Partial chunk data may skip CRC and seek beyond buffer.",
+    "Original conversion runtime ignores virtual reader false and retains partial decoded data; managed safety limits instead throw before replacing opaque data."
+  ],
+  "decompilerLimits": [
+    "ReadInt/ReadFloat shared aliases are not accepted as float schema proof.",
+    "Chained unwind regions and original bytes constrain all four functions; Ghidra pseudo-C alone does not establish type/return fidelity."
+  ],
+  "publishedOracle": {
+    "repository": "https://github.com/mcneel/opennurbs",
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "fullLibrary": true,
+    "originalBinariesExecuted": false,
+    "sourceHashes": {
+      "makefile": "f3e2dc59816623d6425b332bef00e1d4195a17c50af48d9d93bb1a2e8d0d8ff6",
+      "opennurbs_archive.cpp": "d39a59939e4c58e7eb19d510c175e0513215d84b8361ca793e40395c344bff3e",
+      "opennurbs_userdata.cpp": "5c8e32bedf00f02de631b043c4380208c8b575aeb8c662b40b32f8bd916b2a4b",
+      "opennurbs_fsp.cpp": "f703dee8d7a1cae39d5294d3885f7bad272d954d9a52217a23504d97e51be08b",
+      "opennurbs_public.xcodeproj/project.pbxproj": "56671b31fb065b9e51d04784e9542b3f849bf52f9e90d5e485b3749f7f32b4ba"
+    }
+  },
+  "scope": "One native body codec, not full3dm archive or editable PC-project proof."
+}

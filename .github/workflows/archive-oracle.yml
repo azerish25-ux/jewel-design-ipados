@@ -1,0 +1,48 @@
+name: Native user-string archive oracle
+on:
+  push:
+    branches: [codex/dotnet-ios-reuse]
+    paths:
+      - "native/Analysis/OpenNurbs6ArchiveOracle/**"
+      - "scripts/generate-userstring-body-cases.cjs"
+      - "tests/Port/Geometry.Candidate.Contracts/Fixtures/userstring-body-source-cases.json"
+      - "src/Port/Documents/LegacyUserStringListCodec.cs"
+      - ".github/workflows/archive-oracle.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: macos-26
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Acquire pinned full published library
+        run: |
+          mkdir -p .local/reference/opennurbs6-archive-source artifacts
+          git -C .local/reference/opennurbs6-archive-source init
+          git -C .local/reference/opennurbs6-archive-source fetch --depth 1 https://github.com/mcneel/opennurbs.git f2dc7fba67017475b8d530835a40fcfb5372134a
+          git -C .local/reference/opennurbs6-archive-source checkout --detach FETCH_HEAD
+          test "$(git -C .local/reference/opennurbs6-archive-source rev-parse HEAD)" = f2dc7fba67017475b8d530835a40fcfb5372134a
+          git rev-parse HEAD > artifacts/consumer-source.txt
+          git -C .local/reference/opennurbs6-archive-source rev-parse HEAD > artifacts/oracle-pin.txt
+          clang++ --version > artifacts/compiler.txt
+          sw_vers > artifacts/platform.txt
+      - name: Build full published archive implementation
+        run: |
+          cmake -S native/Analysis/OpenNurbs6ArchiveOracle -B .local/native/on6-archive-mac -DON6_SOURCE="$PWD/.local/reference/opennurbs6-archive-source" -DCMAKE_BUILD_TYPE=Debug 2>&1 | tee artifacts/configure.txt
+          cmake --build .local/native/on6-archive-mac --parallel 3 2>&1 | tee artifacts/build.txt
+          git -C .local/reference/opennurbs6-archive-source diff --exit-code
+      - name: Compare actual native writer bytes and malformed reader outcomes
+        run: node scripts/generate-userstring-body-cases.cjs .local/native/on6-archive-mac/archive_oracle | tee artifacts/native-userstring-results.json
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: native-userstring-oracle
+          path: artifacts/
+          retention-days: 14

@@ -8,6 +8,8 @@ public sealed class Rhino5UserDataRuntime
     public bool LeakUserDataOnPurge {get;set;}
     public int DiagnosticCount {get;private set;}
     internal void Error()=>DiagnosticCount++;
+    public int ArchiveCrcErrorCount {get;private set;}
+    public void ReportArchiveCrcErrors(int count){if(count<0)throw new ArgumentOutOfRangeException(nameof(count));ArchiveCrcErrorCount=unchecked(ArchiveCrcErrorCount+count);DiagnosticCount=unchecked(DiagnosticCount+count);}
     public void RegisterClass(Guid id,Func<Rhino5UserDataRuntime,Rhino5UserDataOwner?> create,Func<Rhino5RuntimeUserData,Rhino5UserDataArchive,bool> read)
     {ArgumentNullException.ThrowIfNull(create);ArgumentNullException.ThrowIfNull(read);bindings.Add(id,new(create,read));}
     internal Binding? Find(Guid id)=>bindings.GetValueOrDefault(id);

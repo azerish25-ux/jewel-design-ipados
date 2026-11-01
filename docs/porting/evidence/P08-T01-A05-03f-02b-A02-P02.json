@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A02-P02",
+  "parentTask": "P08-T01-A05-03f-02b-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "windows_native_and_managed_passed_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A02-P02-string-codec.md",
+  "audit": "docs/evidence/audit/rhino5-userstring-codec-source.json",
+  "red": [
+    {
+      "failure": "Missing LegacyUserStringListCodec",
+      "exitCode": 1
+    },
+    {
+      "failure": "Unsupported archive context must be explicit",
+      "exitCode": 1
+    }
+  ],
+  "checks": {
+    "nativeWriterBytes": 12,
+    "nativeReaderCases": 1076,
+    "codecAssertions": 4347,
+    "bindingAssertions": 9,
+    "fullManagedNativeSuiteExitCode": 0,
+    "nodeAdjacentRegressions": 54,
+    "fixtureSha256": "b8316894bfa6fa1b0e7c2c898e205485a97eb2da67be329a45be4f0fef35f4b9"
+  },
+  "review": {
+    "layering": "BCL-only Documents codec; Views.Candidate composes renderer userdata protocol without reversing Documents dependencies.",
+    "behavior": "Native bool, CRC diagnostics, partial append and consumed cursor remain separate. Exact original bytes retained for provenance; canonical write is explicitly1.0.",
+    "bounds": "Payload/pair/UTF16 limits are explicit managed capability boundaries; registration exception retains original unknown data.",
+    "unicode": "Windows UTF16 semantics; native differential corpus uses valid Unicode including embedded nulls, surrogate pairs and combining marks. Malformed Unicode cross-platform reference equivalence not claimed.",
+    "remaining": "Whole3dm framing, full native registry/catalog, actual view-history/document/preset integration, original-PC and physical acceptance remain open."
+  },
+  "windowsToolchain": {
+    "compiler": "MSVC19.44.35228",
+    "configuration": "Release with /Od /DNDEBUG; full published library, C++17, upstream vcxproj platform source additions",
+    "failedAttempts": "MinGW unsupported legacy Windows paths; MSVC/O2 mesh compile crashed repeatedly. /Od successfully builds without source edits.",
+    "launcher": "scripts/run-archive-oracle-local.cjs",
+    "allTaskWritesUnderD": true
+  },
+  "apple": "Pending actual runs after push",
+  "parityRowsClosed": 0
+}
