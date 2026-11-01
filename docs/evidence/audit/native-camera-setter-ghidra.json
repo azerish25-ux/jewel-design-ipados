@@ -149,8 +149,9 @@
     "Only after accepted up, set the temporary target, call SetVP(temp,0), then set original ON_3dmView target. SetVP bool return is not checked by this caller.",
     "SetVP has original view-state/parent-view guards, validates incoming camera/frustum and reads all six frustum values.",
     "Commit clears camera locks/symmetry, applies projection/location/direction/up/frustum, then restores incoming locks/symmetry.",
-    "Commit advances a nonzero change counter, refreshes transform/screen caches and calls an unresolved native update plus PushViewProjection.",
-    "PushViewProjection is inside SetVP and therefore precedes the caller subsequent original ON_3dmView target metadata write; preserve this order rather than normalizing it."
+    "Commit advances a nonzero change counter, refreshes transform/screen caches and calls the parent document ViewModified notification plus PushViewProjection.",
+    "PushViewProjection is inside SetVP and therefore precedes the caller subsequent original ON_3dmView target metadata write; preserve this order rather than normalizing it.",
+    "The39-byte update bridge checks ParentView and its document pointer before calling CRhinoDoc::ViewModified(parentView). This occurs before PushViewProjection and the caller final target metadata write."
   ],
   "knownNativeCalls": [
     {
@@ -172,6 +173,11 @@
       "name": "?View@CRhinoViewport@@QEBAAEBVON_3dmView@@XZ",
       "rva": 2919024,
       "va": "0x1402c8a70"
+    },
+    {
+      "name": "?ViewModified@CRhinoDoc@@QEAAXPEAVCRhinoView@@@Z",
+      "rva": 2562800,
+      "va": "0x140271af0"
     }
   ],
   "artifacts": [
@@ -219,7 +225,7 @@
     "observedExitCode": 1
   },
   "remaining": [
-    "Name and map original instance/parent-view restriction fields and unresolved update callback atRVA0x43eee0.",
+    "Name/map original instance/parent-view restriction fields and implement the now-identified ViewModified notification/history adapters.",
     "Verify called original openNURBS5 primitive behavior versus the existing public6 numerical candidates.",
     "Define portable view-history, target-metadata and transform/screen-cache contracts before native setter reconstruction.",
     "Implement and differentially verify perspective conversion and recovered complete preset ordering/world-normalized Metal frames.",
@@ -252,5 +258,20 @@
       "error": "Repository root differs from launcher workspace",
       "targetExecuted": false
     }
+  },
+  "documentNotification": {
+    "bridgeRva": 4452064,
+    "bridgeBytes": 39,
+    "bridgeSha256": "709b712a157c1b45654b1faa70ce420442be57b01703fd5f820bab5c46885fb4",
+    "parentViewCall": "0x14043eee4 -> CRhinoViewport::ParentView",
+    "documentPointerRead": "parentView+0xD8",
+    "notificationCall": "0x14043eefd -> CRhinoDoc::ViewModified(parentView)",
+    "notificationExport": {
+      "name": "?ViewModified@CRhinoDoc@@QEAAXPEAVCRhinoView@@@Z",
+      "rva": 2562800,
+      "va": "0x140271af0"
+    },
+    "guard": "No call when parent view or its document pointer is null",
+    "scope": "Static exact bridge bytes and imported/exported method identities; document notification implementation and portable adapter remain unverified."
   }
 }

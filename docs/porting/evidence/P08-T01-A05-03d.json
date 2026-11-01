@@ -28,14 +28,27 @@
     "rootGuardNegativeProbe": {
       "expectedExitCode": 1,
       "actualExitCode": 1
-    }
+    },
+    "documentNotification": "Exact39-byte bridge resolves to guarded CRhinoDoc::ViewModified(parentView), before PushViewProjection."
   },
   "remaining": [
-    "Name and map original instance/parent-view restriction fields and unresolved update callback atRVA0x43eee0.",
+    "Name/map original instance/parent-view restriction fields and implement the now-identified ViewModified notification/history adapters.",
     "Verify called original openNURBS5 primitive behavior versus the existing public6 numerical candidates.",
     "Define portable view-history, target-metadata and transform/screen-cache contracts before native setter reconstruction.",
     "Implement and differentially verify perspective conversion and recovered complete preset ordering/world-normalized Metal frames.",
     "Original licensed PC reference, saved-project corpus and physical-device acceptance remain unavailable/unverified."
   ],
-  "limits": "Analysis and necessary D-contained tooling, not a completed native camera port or full parity proof."
+  "limits": "Analysis and necessary D-contained tooling, not a completed native camera port or full parity proof.",
+  "appleReport": "docs/evidence/apple/native-camera-analysis-results.json",
+  "appleRuns": {
+    "sourceCommit": "dd82c6eb9427badd5568b517e79455b6b1c821c7",
+    "preflight": {
+      "id": 41296619350,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "repository": {
+      "id": 41296619297,
+      "status": "completed_success_github_terminal_status_checked"
+    }
+  }
 }

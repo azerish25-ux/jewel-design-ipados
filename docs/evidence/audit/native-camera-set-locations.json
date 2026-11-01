@@ -74,9 +74,11 @@
     "status": "hash_verified_static_views_and_main_control_flow_reviewed_not_ported"
   },
   "next": [
-    "Statically decompile the exact1386-byte original callee and identify its source viewport/target/up/clip-plane/UI side effects and mode1 meaning.",
-    "Compare original binary dependencies with the published numerical candidates; do not assume public openNURBS6 equals private Rhino5.",
-    "Preserve original command ordering and integrate source preset/world-normalized Metal matrices only after these semantics are established."
+    "Name/map original instance/parent-view restriction fields and implement the now-identified ViewModified notification/history adapters.",
+    "Verify called original openNURBS5 primitive behavior versus the existing public6 numerical candidates.",
+    "Define portable view-history, target-metadata and transform/screen-cache contracts before native setter reconstruction.",
+    "Implement and differentially verify perspective conversion and recovered complete preset ordering/world-normalized Metal frames.",
+    "Original licensed PC reference, saved-project corpus and physical-device acceptance remain unavailable/unverified."
   ],
   "limits": "Read-only original dependency binary analysis. No DLL/application loaded or executed. The workspace Rhino5 dependency candidate is not a confirmed licensed original-PC reference build. Native callee behavior, runtime results and full command/private/PC/physical parity remain unverified.",
   "ghidraEvidence": "docs/evidence/audit/native-camera-setter-ghidra.json",

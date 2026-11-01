@@ -12,7 +12,7 @@ The original Rhino5 dependency candidate is now statically traced, not executed.
 | Apply state with original lock/symmetry handling | SetVP temporarily clears locks/flags, applies frame/frustum, restores incoming flags | Existing primitive helpers available; commit adapter pending |
 | Preserve target and view metadata | Temporary target, optional commit target-distance branch, original ON_3dmView target write | Metadata and source command integration pending |
 | Invalidate derived caches and nonzero change serial | Original transform/screen cache and counter updates | Portable view-state/cache contract pending |
-| Preserve view-projection history and update notifications | PushViewProjection export and unresolved update callback | History push precedes the caller final target metadata write; adapters pending and not covered by parameter UndoJournal |
+| Preserve view-projection history and update notifications | Parent document ViewModified bridge and PushViewProjection export | ViewModified precedes history push, which precedes the caller final target metadata write; adapters pending and not covered by parameter UndoJournal |
 | Reproduce the full recovered preset command | Perspective conversion, construction plane/pose, native locations, lens50, up, conditional parallel, redraw | Partial numerical dependencies verified; complete command/preset pixels still open |
 
 Only the original dependency candidate hashes/version are claimed. Original-PC and physical-device observations remain separate gates. No full UI-039 or other parity row is closed by this static work.
