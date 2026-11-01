@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "windows_compiled_source_and_CSharp_frame_state_checks_passed_apple_pending",
+  "status": "windows_macos_compiled_source_and_CSharp_frame_state_checks_passed_ios_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03a-camera-frame.md",
   "adr": "docs/porting/ADR-0052-source-camera-frame-state.md",
   "sourceAudit": "docs/evidence/audit/camera-frame-source.json",
@@ -196,10 +196,31 @@
     "limits": "No recovered source mutation, fallback basis or synthetic CAD output. Published6/private Rhino5/original PC equivalence remains distinct."
   },
   "remaining": [
-    "Independent macOS Clang and managed source frame comparisons",
     "Actual iPad/iPhone source frame execution",
     "Source lens/parallel transition and normalized world-mesh projection integration",
     "Actual source-preset Metal captures and original-PC/physical/full product acceptance"
   ],
-  "limits": "Frame state is a numerical dependency. The visible renderer camera behavior is unchanged and no full parity row is closed."
+  "limits": "Frame state is a numerical dependency. The visible renderer camera behavior is unchanged and no full parity row is closed.",
+  "appleReport": "docs/evidence/apple/camera-frame-numeric-results.json",
+  "appleRuns": {
+    "sourceCommit": "1dfea28b8a6cae877753d0b8c869e7ee0a11c399",
+    "preflight": {
+      "id": 41286158051,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "repository": {
+      "id": 41286158055,
+      "status": "completed_success_github_terminal_status_checked"
+    },
+    "visible": {
+      "id": 41286158021,
+      "status": "in_progress_last_observed"
+    },
+    "reuse": {
+      "id": 41286158029,
+      "status": "in_progress_last_observed"
+    }
+  },
+  "sentinelDefinitionAudit": "docs/evidence/audit/camera-frame-sentinels.json",
+  "nextTransitionAudit": "docs/evidence/audit/camera-parallel-source.json"
 }

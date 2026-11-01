@@ -2,7 +2,7 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Camera-frame dependency: [P08-T01-A05-03a](evidence/P08-T01-A05-03a.json) now preserves published frame/setter state and normalization. Windows passes730 source sequences/2,978 transitions and four preset matrix compositions, including all locks/validity flags, retained failures and subnormal arithmetic. macOS and actual iPad/iPhone execution are pending. Source lens/parallel transitions and applying the projection to rendered mesh remain open.
+Camera-frame dependency: [P08-T01-A05-03a](evidence/P08-T01-A05-03a.json) now preserves published frame/setter state and normalization. Windows and [macOS](../evidence/apple/camera-frame-numeric-results.json) pass730 source sequences/2,978 transitions and four preset matrix compositions, including all locks/validity flags, retained failures and subnormal arithmetic. Actual iPad/iPhone execution remains pending. Source lens/parallel transitions and applying the projection to rendered mesh remain open.
 
 Camera numerical work: [P08-T01-A04](evidence/P08-T01-A04.json) ports published frustum/lens validation and state changes. 1,245 independently compiled-source cases pass on Windows and [macOS](../evidence/apple/frustum-numeric-results.json), including exact world/depth thresholds, symmetry, deadband, both unset sentinels and raw invalid states. The same1,245 cases also passed on [actual iPad/iPhone simulator execution](../evidence/apple/frustum-ios-results.json). Source-preset/projection application to the renderer is still pending.
 

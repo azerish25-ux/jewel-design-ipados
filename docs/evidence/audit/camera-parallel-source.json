@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03b",
+  "status": "static_published_source_dependency_audit_only",
+  "source": {
+    "repository": "https://github.com/mcneel/opennurbs",
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "file": "opennurbs_viewport.cpp",
+    "sha256": "2403be6f12b9f3fa7c723da44793eda28c78e1e06d2ae7f2c529241c5b0498ce"
+  },
+  "methods": [
+    {
+      "signature": "bool ON_Viewport::ChangeToParallelProjection(",
+      "sha256": "dc47edb0ed5b5ae4d6a7373f020bf2f2f80262745e539a4d37ff072a315cecb8"
+    },
+    {
+      "signature": "bool ON_Viewport::ChangeToSymmetricFrustum(",
+      "sha256": "2d8968bc3a18694c7d3ed2806e1386448c843bdc70b7bc24f3e45cae60f69490"
+    },
+    {
+      "signature": "double ON_Viewport::TargetDistance(",
+      "sha256": "57ff6b2770aa88532bd326eeaeb711aa532c084582910c00c9180eddbf46982b"
+    },
+    {
+      "signature": "static void UpdateTargetPointHelper(",
+      "sha256": "be1cef54e0726be452d97f79f07ad84e1ef84b2b2259f1172f604b12a795a014"
+    },
+    {
+      "signature": "bool ON_Viewport::SetProjection(",
+      "sha256": "c0fd5a2de127b160073b4f5103c6ea1f950c09579067b6f2a21717c65e7903f7"
+    },
+    {
+      "signature": "bool ON_Viewport::SetTargetPoint(",
+      "sha256": "7bd09df8adca00f9a036dda2134a0bf8e61749b69d5196ec60c51e66d9b8aad8"
+    },
+    {
+      "signature": "void ON_Viewport::SetCameraLocationLock(",
+      "sha256": "9b75871ab4e563adbc06ac6ca5b1e7876c7a530a718db733f64f427e28c28b21"
+    },
+    {
+      "signature": "void ON_Viewport::SetCameraDirectionLock(",
+      "sha256": "75a1b56fab70ed6bb8a1393942a8e35ebcf7b38e184c3f64e5149ea8b19e3c9e"
+    },
+    {
+      "signature": "void ON_Viewport::SetCameraUpLock(",
+      "sha256": "313aaff2dd5199ca15cfff5bce8e5f8c1514d999145b64eec209a54fb41dddb9"
+    },
+    {
+      "signature": "void ON_Viewport::SetFrustumLeftRightSymmetry(",
+      "sha256": "9c6444b5074ec80beae134f16cee0be1a91e9047e4137ea52c53ff9db4e3a43f"
+    },
+    {
+      "signature": "void ON_Viewport::SetFrustumTopBottomSymmetry(",
+      "sha256": "0398eec58823509a0b2621d3e6129c696dc24323ab5dd72334a59e643e219d12"
+    }
+  ],
+  "observations": [
+    "Parallel conversion clears camera up and direction locks before the already-parallel/symmetry early return; location lock remains.",
+    "Symmetric-frustum conversion changes requested left/right and top/bottom fields first, invalidates projection content for each changed axis, and can dolly the camera using the target plane distance.",
+    "The symmetric-frustum result is not checked by ChangeToParallelProjection before setting symmetry flags. Preserve original mutation/return ordering.",
+    "TargetDistance can fall back to the frustum midpoint only with valid camera/frustum and the requested fallback policy; an invalid/behind-camera target is handled separately.",
+    "Perspective-to-parallel rescales left/right/bottom/top by targetDistance/near when prerequisites hold; near/far are preserved through SetFrustum.",
+    "Target recentering requires valid camera/frustum and positive valid distance; movement below 1e-5*(width+height)+ON_ZERO_TOLERANCE is retained to avoid visible numeric jitter.",
+    "SetProjection changes the projection enum without an explicit projection-content invalidation in this published method; unknown enum falls back to parallel and returns false.",
+    "SetTargetPoint accepts valid point or the full unset point and otherwise retains previous target; its validation does not apply camera-location world bounds."
+  ],
+  "requiredProof": [
+    "Joint raw camera/frame/frustum/projection/target state with cumulative invalidation/diagnostics after each operation; preserve all existing numerical helpers.",
+    "Compile unchanged source transitions and exact point/vector helpers, exercising already-parallel, all symmetry/validity/locks, off-axis target/dolly, unset/behind/huge target, asymmetric fields and failed setters.",
+    "Connect source preset order/lens/projection to double world-frame composition and normalized uploaded mesh without inventing source default framing.",
+    "Capture actual source preset Metal output on iPad/iPhone and keep original private Rhino5/PC/physical comparisons separate."
+  ],
+  "limits": "No transition implementation or runtime comparison is asserted by this audit."
+}

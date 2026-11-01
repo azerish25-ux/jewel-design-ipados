@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+  "sourceUrl": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_statics.cpp",
+  "verifiedDeclarations": [
+    "const ON_3dPoint ON_3dPoint::UnsetPoint(ON_UNSET_VALUE, ON_UNSET_VALUE, ON_UNSET_VALUE);",
+    "const ON_3dVector ON_3dVector::UnsetVector(ON_UNSET_VALUE, ON_UNSET_VALUE, ON_UNSET_VALUE);"
+  ],
+  "sourceLines": [
+    541,
+    559
+  ],
+  "scope": "Official pinned source inspected; confirms the equivalent sentinel constants used by the observation containers. No original private runtime assertion."
+}
