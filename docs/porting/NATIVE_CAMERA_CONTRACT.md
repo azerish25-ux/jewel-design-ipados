@@ -16,3 +16,5 @@ The original Rhino5 dependency candidate is now statically traced, not executed.
 | Reproduce the full recovered preset command | Perspective conversion, construction plane/pose, native locations, lens50, up, conditional parallel, redraw | Partial numerical dependencies verified; complete command/preset pixels still open |
 
 Only the original dependency candidate hashes/version are claimed. Original-PC and physical-device observations remain separate gates. No full UI-039 or other parity row is closed by this static work.
+
+The original core comparison now has a distinct [original5-derived C# numerical implementation](evidence/P08-T01-A05-03c.json), with Windows checks passed and Apple tests pending. Published6 validation/flags are not silently reused as original5. This supplies the core primitives for the native recipe and commit adapters; it does not implement those remaining UI effects.

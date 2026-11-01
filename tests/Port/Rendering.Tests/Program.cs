@@ -4,3 +4,6 @@ System.Console.WriteLine(CandidateGeometryContractChecks.FrustumAssertions.Run()
 System.Console.WriteLine(CandidateGeometryContractChecks.CameraMatrixAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.CameraFrameAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.ViewportProjectionAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ScalarAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5CameraAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewportAssertions.Run());

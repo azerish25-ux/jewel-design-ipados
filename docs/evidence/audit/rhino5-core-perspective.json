@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03c",
+  "status": "original5_static_core_differences_observed_CSharp_implementation_windows_passed_apple_pending",
+  "file": "analysis/runtime-prerequisites/rhino5/System/opennurbsx64.dll",
+  "sha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "targetExecuted": false,
+  "manifest": "native/Analysis/fixtures/rhino5-core-camera-regions.json",
+  "staticMethodCount": 16,
+  "staticViews": [
+    {
+      "role": "perspective",
+      "entry": "1802d1d30",
+      "signature": "bool ChangeToPerspectiveProjection(double param_1, bool param_2, double param_3)",
+      "decompilerSha256": "b1f7347b44e3d5e71aa17483faefac729ab9dc8e4db5468ce84077db4117a06d",
+      "basicBlocks": 26
+    },
+    {
+      "role": "parallel-to-perspective-helper",
+      "entry": "1802d18e0",
+      "signature": "bool Original_parallel_to_perspective_helper(void * viewport, double targetDistance, double lens)",
+      "decompilerSha256": "711d232ef3112dca68bbf6e20609b87cd97433bcc445a8c8fabfd863c83aab67",
+      "basicBlocks": 30
+    },
+    {
+      "role": "target-update-helper",
+      "entry": "1802d1490",
+      "signature": "void Original_target_update_helper(void * viewport, double targetDistance)",
+      "decompilerSha256": "eca26b132e8701353ccebf3ec1f62f35edd19c3af31f18d8b34ccb86b4a8f1b1",
+      "basicBlocks": 20
+    },
+    {
+      "role": "camera-location",
+      "entry": "1802cfad0",
+      "signature": "bool SetCameraLocation(ON_3dPoint * param_1)",
+      "decompilerSha256": "c213e2a757b0718dee48abbbf9bcb06b25dca65613f455b869e31685c494b8c2",
+      "basicBlocks": 15
+    },
+    {
+      "role": "camera-frame",
+      "entry": "1802cfe20",
+      "signature": "bool SetCameraFrame(void)",
+      "decompilerSha256": "af95aa55041274530ab965f9d2d84916a83b4d96a605f92ca791ab6d0c7d583a",
+      "basicBlocks": 93
+    },
+    {
+      "role": "lens-setter",
+      "entry": "1802d3fa0",
+      "signature": "bool SetCamera35mmLensLength(double param_1)",
+      "decompilerSha256": "8b77e6404cd0c7a9f1e35eca7f75c401d6a07376856620afe18837e02aeac5d6",
+      "basicBlocks": 21
+    },
+    {
+      "role": "lens-getter",
+      "entry": "1802d3ec0",
+      "signature": "bool GetCamera35mmLensLength(double * param_1)",
+      "decompilerSha256": "725aa93eac7023007521d936132633174ead91671a43f7d4a17dbfa63c14ae65",
+      "basicBlocks": 17
+    },
+    {
+      "role": "scalar-validity",
+      "entry": "180235490",
+      "signature": "bool ON_IsValid(double param_1)",
+      "decompilerSha256": "2b51c328ace3a04017a85dc90e97929a469611e69d360c18c05ee18cebd98c36",
+      "basicBlocks": 4
+    },
+    {
+      "role": "camera-direction",
+      "entry": "1802cfba0",
+      "signature": "bool SetCameraDirection(ON_3dVector * param_1)",
+      "decompilerSha256": "a736fe224408ba760e7d11ae2e2f3e0d7ea3ffd37a5f5d6d388f9e8b9c547ee6",
+      "basicBlocks": 113
+    },
+    {
+      "role": "camera-up",
+      "entry": "1802cfce0",
+      "signature": "bool SetCameraUp(ON_3dVector * param_1)",
+      "decompilerSha256": "36f926088d8c5b4aff230174250116a25c27ef9d8324a9b54b2831ce65754b41",
+      "basicBlocks": 113
+    },
+    {
+      "role": "frustum-setter",
+      "entry": "1802d2bf0",
+      "signature": "bool SetFrustum(double param_1, double param_2, double param_3, double param_4, double param_5, double param_6)",
+      "decompilerSha256": "ce96df63bb35e335b2906c06d05c6edd6c638a05c6588781d94413f8bda4a157",
+      "basicBlocks": 27
+    },
+    {
+      "role": "parallel",
+      "entry": "1802d1700",
+      "signature": "bool ChangeToParallelProjection(bool param_1)",
+      "decompilerSha256": "f0de228eee33b5698a8b89383f84472b4345122ce84df3962eae7a448f33e0d7",
+      "basicBlocks": 30
+    },
+    {
+      "role": "symmetric",
+      "entry": "1802d5580",
+      "signature": "bool ChangeToSymmetricFrustum(bool param_1, bool param_2, double param_3)",
+      "decompilerSha256": "c86819ff3885294f107729387b96bed7f5d8227ca17446d461e24b18d60f3e30",
+      "basicBlocks": 33
+    },
+    {
+      "role": "target-distance",
+      "entry": "1802dbe50",
+      "signature": "double TargetDistance(bool param_1)",
+      "decompilerSha256": "9904a16087d65e8e485869204437dd94ad3761566984e964e9faa68eaa550b27",
+      "basicBlocks": 22
+    },
+    {
+      "role": "vector-unitize",
+      "entry": "18023e450",
+      "signature": "bool Unitize(void)",
+      "decompilerSha256": "0b2ab82398994a68baa56387a60316b291ca639d956ce342f237790042a421e9",
+      "basicBlocks": 7
+    },
+    {
+      "role": "vector-length",
+      "entry": "18023e320",
+      "signature": "double ON_Length3d(double param_1, double param_2, double param_3)",
+      "decompilerSha256": "1c52891d5f0133cd5514650fcbbda37686b1b1bd4a07927b46174305c281b98c",
+      "basicBlocks": 12
+    }
+  ],
+  "binaryConstants": [
+    {
+      "rva": 3344888,
+      "va": "0x1803309f8",
+      "bytes": "d21d339ebdf8e5ff",
+      "value": -1.23432101234321e+308
+    },
+    {
+      "rva": 3344952,
+      "va": "0x180330a38",
+      "bytes": "0000000000000000",
+      "value": 0
+    },
+    {
+      "rva": 3346200,
+      "va": "0x180330f18",
+      "bytes": "000000000000c03f",
+      "value": 0.125
+    },
+    {
+      "rva": 3344880,
+      "va": "0x1803309f0",
+      "value": 2.2250738585072014e-308,
+      "bytes": "0000000000001000"
+    },
+    {
+      "rva": 3345520,
+      "va": "0x180330c70",
+      "value": 8.98846567431158e+307,
+      "bytes": "000000000000e07f"
+    },
+    {
+      "rva": 3345184,
+      "va": "0x180330b20",
+      "value": 12,
+      "bytes": "0000000000002840"
+    },
+    {
+      "rva": 3345632,
+      "va": "0x180330ce0",
+      "value": 1e-8,
+      "bytes": "3a8c30e28e79453e"
+    },
+    {
+      "rva": 3346448,
+      "va": "0x180331010",
+      "value": 1e-7,
+      "bytes": "48afbc9af2d77a3e"
+    },
+    {
+      "rva": 3344960,
+      "va": "0x180330a40",
+      "value": 0.00001,
+      "bytes": "f168e388b5f8e43e"
+    },
+    {
+      "rva": 3346328,
+      "va": "0x180330f98",
+      "value": 100010000,
+      "bytes": "0000004020d89741"
+    },
+    {
+      "rva": 3344784,
+      "va": "0x180330990",
+      "value": 0.5,
+      "bytes": "000000000000e03f"
+    },
+    {
+      "rva": 3344832,
+      "va": "0x1803309c0",
+      "value": 1,
+      "bytes": "000000000000f03f"
+    },
+    {
+      "name": "?m_path_length_min@ON_Extrusion@@2NB",
+      "rva": 3171040,
+      "value": 2.3283064365386963e-10
+    }
+  ],
+  "differencesFromPublished6": [
+    "Original scalar validity excludes only negative unset and nonfinite values; positive unset remains valid.",
+    "Original camera location uses point validity without later world-coordinate bound. Invalid non-unset requests return false with state retained.",
+    "A valid location assignment does not repair an invalid original camera flag; frame recomputation determines validity. Original camera closure has one camera-valid flag.",
+    "Original direction/up setters validate and reject tiny/invalid input before writing; they retain state for full unset vectors. Direct private frame recomputation has different raw-vector acceptance from those public setters.",
+    "Original frustum validation requires valid ordered bounds and0<near<far, with no published6 world-coordinate cutoff. Post-validation symmetrization can overflow.",
+    "Original core methods do not perform the published6 projection SHA invalidation observations; native UI commit/change cache is separate."
+  ],
+  "unorderedComparisonCaution": "Typed decompiler C may render unordered SSE branches as strict relations. Original getter instructions atRVA0x2d3f0d/0x2d3f59 permit unordered comparisons to reach the NaN-result path; implementation follows instruction conditions, not the misleading if(near>0) C view.",
+  "retainedCommonArithmetic": "Original Length3d/Unitize static views and MIN_NORMAL/2^1023 constants agree with the shared normalization used for valid camera inputs; raw nonfinite length behavior is not asserted identical.",
+  "implemented": [
+    "Rhino5ScalarValidity",
+    "Rhino5CameraState/Rhino5CameraFrame",
+    "Rhino5ViewportState/Rhino5Viewport perspective/parallel/frustum/lens/target core"
+  ],
+  "checks": {
+    "scalarBoundaryCases": 18,
+    "scalarHighWordPatterns": 196608,
+    "frameStateChecks": 32,
+    "analyticalPoses": 4,
+    "viewportStateChecks": 26,
+    "scope": "Binary-control-flow-derived/analytical checks executed in C#. These are not original DLL runtime outputs."
+  },
+  "red": [
+    "Missing Rhino5ScalarValidity CS0103",
+    "Missing Rhino5CameraState CS0246",
+    "Missing Rhino5ViewportState CS0246"
+  ],
+  "artifacts": [
+    {
+      "role": "perspective",
+      "bytes": 2130,
+      "decompilerSha256": "b1f7347b44e3d5e71aa17483faefac729ab9dc8e4db5468ce84077db4117a06d"
+    },
+    {
+      "role": "parallel-to-perspective-helper",
+      "bytes": 4538,
+      "decompilerSha256": "711d232ef3112dca68bbf6e20609b87cd97433bcc445a8c8fabfd863c83aab67"
+    },
+    {
+      "role": "target-update-helper",
+      "bytes": 2471,
+      "decompilerSha256": "eca26b132e8701353ccebf3ec1f62f35edd19c3af31f18d8b34ccb86b4a8f1b1"
+    },
+    {
+      "role": "camera-location",
+      "bytes": 1273,
+      "decompilerSha256": "c213e2a757b0718dee48abbbf9bcb06b25dca65613f455b869e31685c494b8c2"
+    },
+    {
+      "role": "camera-frame",
+      "bytes": 9966,
+      "decompilerSha256": "af95aa55041274530ab965f9d2d84916a83b4d96a605f92ca791ab6d0c7d583a"
+    },
+    {
+      "role": "camera-direction",
+      "bytes": 11356,
+      "decompilerSha256": "a736fe224408ba760e7d11ae2e2f3e0d7ea3ffd37a5f5d6d388f9e8b9c547ee6"
+    },
+    {
+      "role": "camera-up",
+      "bytes": 11305,
+      "decompilerSha256": "36f926088d8c5b4aff230174250116a25c27ef9d8324a9b54b2831ce65754b41"
+    },
+    {
+      "role": "frustum-setter",
+      "bytes": 2359,
+      "decompilerSha256": "ce96df63bb35e335b2906c06d05c6edd6c638a05c6588781d94413f8bda4a157"
+    },
+    {
+      "role": "lens-setter",
+      "bytes": 1777,
+      "decompilerSha256": "8b77e6404cd0c7a9f1e35eca7f75c401d6a07376856620afe18837e02aeac5d6"
+    },
+    {
+      "role": "lens-getter",
+      "bytes": 1448,
+      "decompilerSha256": "725aa93eac7023007521d936132633174ead91671a43f7d4a17dbfa63c14ae65"
+    },
+    {
+      "role": "vector-unitize",
+      "bytes": 1117,
+      "decompilerSha256": "0b2ab82398994a68baa56387a60316b291ca639d956ce342f237790042a421e9"
+    },
+    {
+      "role": "vector-length",
+      "bytes": 1739,
+      "decompilerSha256": "1c52891d5f0133cd5514650fcbbda37686b1b1bd4a07927b46174305c281b98c"
+    },
+    {
+      "role": "scalar-validity",
+      "bytes": 386,
+      "decompilerSha256": "2b51c328ace3a04017a85dc90e97929a469611e69d360c18c05ee18cebd98c36"
+    }
+  ],
+  "remaining": [
+    "macOS and actual iPad/iPhone execution of the new original5-derived C# model",
+    "Wider original-state differential oracle/corpus, including all malformed floating-point branches",
+    "Native SetTargetAndCameraLocation up/roll recipe and SetVP document/history/cache adapters",
+    "Complete source preset ordering, world-normalized Metal camera composition and source-preset captures",
+    "Original licensed PC and physical-device acceptance"
+  ],
+  "limits": "Original dependency candidate static evidence plus explicitly separate C# model. Published6 candidate is retained unchanged for its own tests, not relabeled as Rhino5. No full UI/PC/physical parity row closed."
+}

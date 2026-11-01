@@ -15,9 +15,9 @@ import java.util.*;
 import com.google.gson.*;
 
 public class RefineNativeCamera extends GhidraScript {
-    private String hash(byte[] bytes)throws Exception{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(bytes));}
-    private Address address(long rva){return currentProgram.getImageBase().add(rva);}
-    private Function region(JsonObject spec)throws Exception{
+    protected String hash(byte[] bytes)throws Exception{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(bytes));}
+    protected Address address(long rva){return currentProgram.getImageBase().add(rva);}
+    protected Function region(JsonObject spec)throws Exception{
         long rva=spec.get("rva").getAsLong();int length=spec.get("length").getAsInt();
         if(length<1||length>65536)throw new Exception("Unbounded native region");
         Address start=address(rva),end=start.add(length-1);byte[] bytes=new byte[length];
@@ -35,7 +35,7 @@ public class RefineNativeCamera extends GhidraScript {
         else function.setBody(body);
         return function;
     }
-    private Function external(Address at){
+    protected Function external(Address at){
         Function direct=currentProgram.getFunctionManager().getFunctionAt(at);if(direct!=null&&direct.isExternal())return direct;
         for(Reference reference:currentProgram.getReferenceManager().getReferencesFrom(at)){
             // Called PE import slots can be labels until analysis creates function symbols.
@@ -48,12 +48,12 @@ public class RefineNativeCamera extends GhidraScript {
         }
         return null;
     }
-    private void shape(String name,int doubles)throws Exception{
+    protected void shape(String name,int doubles)throws Exception{
         DataTypeManager manager=currentProgram.getDataTypeManager();List<DataType> matches=new ArrayList<>();manager.findDataTypes(name,matches);
         if(matches.isEmpty()){StructureDataType created=new StructureDataType(CategoryPath.ROOT,name,0,manager);manager.addDataType(created,DataTypeConflictHandler.REPLACE_HANDLER);manager.findDataTypes(name,matches);}
         for(DataType type:matches)if(type instanceof Structure){Structure structure=(Structure)type;structure.deleteAll();for(int i=0;i<doubles;i++)structure.add(DoubleDataType.dataType,doubles==3?new String[]{"x","y","z"}[i]:"m"+i,null);}
     }
-    private Map<String,Object> demangle(Function function,String mangled)throws Exception{
+    protected Map<String,Object> demangle(Function function,String mangled)throws Exception{
         Map<String,Object> item=new LinkedHashMap<>();item.put("mangled",mangled);item.put("address",function.getEntryPoint().toString());
         try{
             DemangledObject object=DemanglerUtil.demangle(currentProgram,mangled);
@@ -64,7 +64,7 @@ public class RefineNativeCamera extends GhidraScript {
         }catch(Exception error){item.put("applied",false);item.put("error",error.toString());}
         return item;
     }
-    private void refresh(Function function)throws Exception{
+    protected void refresh(Function function)throws Exception{
         List<Variable> parameters=new ArrayList<>();
         for(Parameter parameter:function.getParameters())if(!parameter.isAutoParameter())parameters.add(new ParameterImpl(parameter.getName(),parameter.getFormalDataType(),currentProgram));
         function.updateFunction(function.getCallingConventionName(),new ReturnParameterImpl(function.getReturn().getFormalDataType(),currentProgram),parameters,

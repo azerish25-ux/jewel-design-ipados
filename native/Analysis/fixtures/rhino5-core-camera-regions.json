@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "perspective",
+      "name": "?ChangeToPerspectiveProjection@ON_Viewport@@QEAA_NN_NN@Z",
+      "abi": null,
+      "rva": 2956592,
+      "length": 439,
+      "sha256": "f2128d42ed17148e234a8ab190d2dbdf1bf17adebde639f8586f5dcb05c2cea8",
+      "unwindRegions": [
+        {
+          "begin": 2956592,
+          "end": 2957031,
+          "unwind": 3550892
+        }
+      ]
+    },
+    {
+      "role": "parallel-to-perspective-helper",
+      "name": null,
+      "abi": "perspectiveHelper",
+      "rva": 2955488,
+      "length": 1095,
+      "sha256": "746c25940e9b614a70f8b6b7fafd36e9322720ba9dd86284a4a1288613d3f3f9",
+      "unwindRegions": [
+        {
+          "begin": 2955488,
+          "end": 2955558,
+          "unwind": 3526896
+        },
+        {
+          "begin": 2955558,
+          "end": 2955592,
+          "unwind": 3526876
+        },
+        {
+          "begin": 2955592,
+          "end": 2956549,
+          "unwind": 3526840
+        },
+        {
+          "begin": 2956549,
+          "end": 2956558,
+          "unwind": 3526824
+        },
+        {
+          "begin": 2956558,
+          "end": 2956583,
+          "unwind": 3526808
+        }
+      ]
+    },
+    {
+      "role": "target-update-helper",
+      "name": null,
+      "abi": "targetUpdate",
+      "rva": 2954384,
+      "length": 614,
+      "sha256": "5abbb73a165cfebcdb76ae6b182d340dfd0d6fc6ccea5bb64a61bb7b8828e95d",
+      "unwindRegions": [
+        {
+          "begin": 2954384,
+          "end": 2954540,
+          "unwind": 3430800
+        },
+        {
+          "begin": 2954540,
+          "end": 2954981,
+          "unwind": 3430776
+        },
+        {
+          "begin": 2954981,
+          "end": 2954998,
+          "unwind": 3430760
+        }
+      ]
+    },
+    {
+      "role": "camera-location",
+      "name": "?SetCameraLocation@ON_Viewport@@QEAA_NAEBVON_3dPoint@@@Z",
+      "abi": null,
+      "rva": 2947792,
+      "length": 205,
+      "sha256": "b6aef357755104640e57e1b92a5a62e45f5ec96a37eddf7fdb9efd947a32b9b3",
+      "unwindRegions": [
+        {
+          "begin": 2947792,
+          "end": 2947997,
+          "unwind": 3638708
+        }
+      ]
+    },
+    {
+      "role": "camera-frame",
+      "name": "?SetCameraFrame@ON_Viewport@@AEAA_NXZ",
+      "abi": null,
+      "rva": 2948640,
+      "length": 2092,
+      "sha256": "64226f47d2fe0c3f44a9fa57cb9613891c05643d771d4555600f94ba6c07f350",
+      "unwindRegions": [
+        {
+          "begin": 2948640,
+          "end": 2948811,
+          "unwind": 3454672
+        },
+        {
+          "begin": 2948811,
+          "end": 2950052,
+          "unwind": 3454624
+        },
+        {
+          "begin": 2950052,
+          "end": 2950498,
+          "unwind": 3454604
+        },
+        {
+          "begin": 2950498,
+          "end": 2950569,
+          "unwind": 3454588
+        },
+        {
+          "begin": 2950569,
+          "end": 2950599,
+          "unwind": 3454472
+        },
+        {
+          "begin": 2950599,
+          "end": 2950718,
+          "unwind": 3454536
+        },
+        {
+          "begin": 2950718,
+          "end": 2950725,
+          "unwind": 3454488
+        },
+        {
+          "begin": 2950725,
+          "end": 2950732,
+          "unwind": 3454472
+        }
+      ]
+    },
+    {
+      "role": "lens-setter",
+      "name": "?SetCamera35mmLensLength@ON_Viewport@@QEAA_NN@Z",
+      "abi": null,
+      "rva": 2965408,
+      "length": 433,
+      "sha256": "11da3fbfacb26dadebe53d3c2aceb5d7463b63d30743455baaa13417445f8b93",
+      "unwindRegions": [
+        {
+          "begin": 2965408,
+          "end": 2965499,
+          "unwind": 3439136
+        },
+        {
+          "begin": 2965499,
+          "end": 2965708,
+          "unwind": 3526444
+        },
+        {
+          "begin": 2965708,
+          "end": 2965831,
+          "unwind": 3526408
+        },
+        {
+          "begin": 2965831,
+          "end": 2965841,
+          "unwind": 3526392
+        }
+      ]
+    },
+    {
+      "role": "lens-getter",
+      "name": "?GetCamera35mmLensLength@ON_Viewport@@QEBA_NPEAN@Z",
+      "abi": null,
+      "rva": 2965184,
+      "length": 197,
+      "sha256": "81c609660d8d21cbbaf95c12d36d547dc84a8e18190441adce89bda4f17a9f5d",
+      "unwindRegions": [
+        {
+          "begin": 2965184,
+          "end": 2965253,
+          "unwind": 3412620
+        },
+        {
+          "begin": 2965253,
+          "end": 2965354,
+          "unwind": 3430720
+        },
+        {
+          "begin": 2965354,
+          "end": 2965381,
+          "unwind": 3430700
+        }
+      ]
+    },
+    {
+      "role": "scalar-validity",
+      "name": "?ON_IsValid@@YA_NN@Z",
+      "abi": null,
+      "rva": 2315408,
+      "length": 46,
+      "sha256": "e09e285ee8e5685b365a368b161cfc4103cdfaaf4f229cf80f2898c5658aab61",
+      "unwindRegions": []
+    },
+    {
+      "role": "camera-direction",
+      "name": "?SetCameraDirection@ON_Viewport@@QEAA_NAEBVON_3dVector@@@Z",
+      "abi": null,
+      "rva": 2948000,
+      "length": 319,
+      "sha256": "66e0ed860c5569155cb7f6b6381532570dfa2d7883753db1ca96661b1a8c6489",
+      "unwindRegions": [
+        {
+          "begin": 2948000,
+          "end": 2948319,
+          "unwind": 3638708
+        }
+      ]
+    },
+    {
+      "role": "camera-up",
+      "name": "?SetCameraUp@ON_Viewport@@QEAA_NAEBVON_3dVector@@@Z",
+      "abi": null,
+      "rva": 2948320,
+      "length": 319,
+      "sha256": "1797344f95e7ddce08caee6a310c8290b66a5ec3004bbe81cecc4885bf6ecd39",
+      "unwindRegions": [
+        {
+          "begin": 2948320,
+          "end": 2948639,
+          "unwind": 3638708
+        }
+      ]
+    },
+    {
+      "role": "frustum-setter",
+      "name": "?SetFrustum@ON_Viewport@@QEAA_NNNNNNN@Z",
+      "abi": null,
+      "rva": 2960368,
+      "length": 676,
+      "sha256": "4ff41d45a377021f008578c08e5c16da72e5da5456b6e80940e1cfe23fc0e6df",
+      "unwindRegions": [
+        {
+          "begin": 2960368,
+          "end": 2961044,
+          "unwind": 3500668
+        }
+      ]
+    },
+    {
+      "role": "parallel",
+      "name": "?ChangeToParallelProjection@ON_Viewport@@QEAA_N_N@Z",
+      "abi": null,
+      "rva": 2955008,
+      "length": 466,
+      "sha256": "77c32874d3a3219a76d817f3bd0dff1e28f000e0a8fbb80f9e10c52be8834c1f",
+      "unwindRegions": [
+        {
+          "begin": 2955008,
+          "end": 2955108,
+          "unwind": 3500736
+        },
+        {
+          "begin": 2955108,
+          "end": 2955459,
+          "unwind": 3500716
+        },
+        {
+          "begin": 2955459,
+          "end": 2955474,
+          "unwind": 3500700
+        }
+      ]
+    },
+    {
+      "role": "symmetric",
+      "name": "?ChangeToSymmetricFrustum@ON_Viewport@@QEAA_N_N0N@Z",
+      "abi": null,
+      "rva": 2971008,
+      "length": 586,
+      "sha256": "af7f885dd40440d2bc6b98c9c63c9b589cb4f57d4ab46c6405c878662b5ffd81",
+      "unwindRegions": [
+        {
+          "begin": 2971008,
+          "end": 2971141,
+          "unwind": 3473636
+        },
+        {
+          "begin": 2971141,
+          "end": 2971325,
+          "unwind": 3430576
+        },
+        {
+          "begin": 2971325,
+          "end": 2971568,
+          "unwind": 3430556
+        },
+        {
+          "begin": 2971568,
+          "end": 2971584,
+          "unwind": 3430540
+        },
+        {
+          "begin": 2971584,
+          "end": 2971594,
+          "unwind": 3430524
+        }
+      ]
+    },
+    {
+      "role": "target-distance",
+      "name": "?TargetDistance@ON_Viewport@@QEBAN_N@Z",
+      "abi": null,
+      "rva": 2997840,
+      "length": 329,
+      "sha256": "cff53452cf6dbe9164ab58cc55c62e96473424e6635533ce98ff937d6997c9b0",
+      "unwindRegions": [
+        {
+          "begin": 2997840,
+          "end": 2997873,
+          "unwind": 3406284
+        },
+        {
+          "begin": 2997873,
+          "end": 2998132,
+          "unwind": 3406264
+        },
+        {
+          "begin": 2998132,
+          "end": 2998146,
+          "unwind": 3406244
+        },
+        {
+          "begin": 2998146,
+          "end": 2998160,
+          "unwind": 3406244
+        },
+        {
+          "begin": 2998160,
+          "end": 2998169,
+          "unwind": 3406228
+        }
+      ]
+    },
+    {
+      "role": "vector-unitize",
+      "name": "?Unitize@ON_3dVector@@QEAA_NXZ",
+      "abi": null,
+      "rva": 2352208,
+      "length": 254,
+      "sha256": "942038804866323693f6ed82e382737585299728d6f513efbd9d4936757071ae",
+      "unwindRegions": [
+        {
+          "begin": 2352208,
+          "end": 2352462,
+          "unwind": 3437732
+        }
+      ]
+    },
+    {
+      "role": "vector-length",
+      "name": "?ON_Length3d@@YANNNN@Z",
+      "abi": null,
+      "rva": 2351904,
+      "length": 208,
+      "sha256": "00d59188e63bb85b35004fa02481016d2a6e9987b86218f332150df201da2003",
+      "unwindRegions": [
+        {
+          "begin": 2351904,
+          "end": 2352112,
+          "unwind": 3555704
+        }
+      ]
+    }
+  ]
+}

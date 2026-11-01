@@ -46,7 +46,7 @@ public sealed class CandidateCameraFrame
         else length=0;
         return length;
     }
-    private static bool Unitize(ref CandidateVector3 v)
+    internal static bool Unitize(ref CandidateVector3 v)
     {
         double d=SourceVectorLength(v);
         if(double.IsFinite(d))
