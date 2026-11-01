@@ -42,5 +42,12 @@
     "allTaskWritesUnderD": true
   },
   "apple": "Pending actual runs after push",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleFailure": {
+    "run": 41324874964,
+    "error": "AppleClang21 rejects three nullptr returns in bool ON_FixedSizePool::ElementIdIsIncreasing at upstream lines851,857,863.",
+    "fix": "Apple-only, SHA-guarded build-directory copy changes exactly these three returns to false; full source checkout and native archive/userstring algorithms remain unchanged.",
+    "sourceSha256": "f703dee8d7a1cae39d5294d3885f7bad272d954d9a52217a23504d97e51be08b",
+    "status": "replacement_run_pending"
+  }
 }

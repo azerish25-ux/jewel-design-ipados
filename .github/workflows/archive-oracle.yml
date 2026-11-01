@@ -5,6 +5,7 @@ on:
     paths:
       - "native/Analysis/OpenNurbs6ArchiveOracle/**"
       - "scripts/generate-userstring-body-cases.cjs"
+      - "tests/userstring-oracle.test.cjs"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/userstring-body-source-cases.json"
       - "src/Port/Documents/LegacyUserStringListCodec.cs"
       - ".github/workflows/archive-oracle.yml"
@@ -38,6 +39,8 @@ jobs:
           cmake -S native/Analysis/OpenNurbs6ArchiveOracle -B .local/native/on6-archive-mac -DON6_SOURCE="$PWD/.local/reference/opennurbs6-archive-source" -DCMAKE_BUILD_TYPE=Debug 2>&1 | tee artifacts/configure.txt
           cmake --build .local/native/on6-archive-mac --parallel 3 2>&1 | tee artifacts/build.txt
           git -C .local/reference/opennurbs6-archive-source diff --exit-code
+      - name: Verify oracle failure controls
+        run: node --test tests/userstring-oracle.test.cjs | tee artifacts/oracle-regressions.txt
       - name: Compare actual native writer bytes and malformed reader outcomes
         run: node scripts/generate-userstring-body-cases.cjs .local/native/on6-archive-mac/archive_oracle | tee artifacts/native-userstring-results.json
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
