@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A02-P01",
+  "parentTask": "P08-T01-A05-03f-02b-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "managed_userdata_protocol_windows_passed_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A02-P01-runtime.md",
+  "audit": "docs/evidence/audit/rhino5-concrete-userdata-source.json",
+  "red": [
+    {
+      "exitCode": 1,
+      "failure": "CS0246 missing runtime/owner types"
+    },
+    {
+      "exitCode": 1,
+      "failure": "Original purge retains head until end and samples leak flag per node"
+    }
+  ],
+  "checks": {
+    "runtimeAssertions": 50,
+    "nodeRegressions": 54,
+    "fullManagedNativeSuiteExitCode": 0,
+    "originalStaticFunctions": 16,
+    "targetExecuted": false
+  },
+  "review": {
+    "ownership": "Original ordinary attach/detach/purge/nested-copy transitions; immutable current data remains separate.",
+    "conversion": "Required factory/reader bindings. Tests observe protocol, not native binary body codec/class-catalog coverage.",
+    "quirks": "Read false ignored; non-head converted owner not repaired; original5 purge ordering retained; constructor/assignment identity distinctions explicit.",
+    "limits": "Native archive codecs, complete registry/plugins, whole-view history/document and PC/physical acceptance remain unfinished."
+  },
+  "appleRuns": {
+    "status": "pending_push"
+  },
+  "parityRowsClosed": 0
+}

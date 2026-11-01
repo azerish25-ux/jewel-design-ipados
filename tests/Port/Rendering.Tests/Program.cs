@@ -13,3 +13,4 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5CameraLocationAss
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewportCacheAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewportCommitAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewDataAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5UserDataRuntimeAssertions.Run());

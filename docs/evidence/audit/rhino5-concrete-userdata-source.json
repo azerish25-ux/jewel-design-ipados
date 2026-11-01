@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A02-P01",
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "targetExecuted": false,
+  "manifest": "native/Analysis/fixtures/rhino5-concrete-userdata-regions.json",
+  "methods": [
+    {
+      "role": "lookup-userdata",
+      "name": "?GetUserData@ON_Object@@QEBAPEAVON_UserData@@AEBU_GUID@@@Z",
+      "abi": null,
+      "rva": 1823184,
+      "length": 318,
+      "sha256": "1622069868ade7f92ebb6cfccb2207c8d9080076e4f9c83c954db701f9698bbc",
+      "unwindRegions": [
+        {
+          "begin": 1823184,
+          "end": 1823502,
+          "unwind": 3393632
+        }
+      ]
+    },
+    {
+      "role": "unknown-copy-constructor",
+      "name": "??0ON_UnknownUserData@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 2920960,
+      "length": 283,
+      "sha256": "22746fa0ac33792788d04d6c16fa480659e82299b1dbd33bf00b07281e2a0718",
+      "unwindRegions": [
+        {
+          "begin": 2920960,
+          "end": 2921243,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "unknown-assignment",
+      "name": "??4ON_UnknownUserData@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 2921248,
+      "length": 421,
+      "sha256": "6e8566dc86e2baf4c228dc81b7ef7a4e211dafa238c548ea27430900dc838a22",
+      "unwindRegions": [
+        {
+          "begin": 2921248,
+          "end": 2921273,
+          "unwind": 3582884
+        },
+        {
+          "begin": 2921273,
+          "end": 2921532,
+          "unwind": 3597112
+        },
+        {
+          "begin": 2921532,
+          "end": 2921655,
+          "unwind": 3597092
+        },
+        {
+          "begin": 2921655,
+          "end": 2921669,
+          "unwind": 3597076
+        }
+      ]
+    },
+    {
+      "role": "unknown-valid",
+      "name": "?IsValid@ON_UnknownUserData@@UEBAHPEAVON_TextLog@@@Z",
+      "abi": null,
+      "rva": 2921888,
+      "length": 264,
+      "sha256": "edda2540b306cc3ea310d0f4cd96fb7bba86ecfe97ac7219257606f63c965736",
+      "unwindRegions": [
+        {
+          "begin": 2921888,
+          "end": 2922152,
+          "unwind": 3594956
+        }
+      ]
+    },
+    {
+      "role": "unknown-convert",
+      "name": "?Convert@ON_UnknownUserData@@QEBAPEAVON_UserData@@XZ",
+      "abi": null,
+      "rva": 2922976,
+      "length": 329,
+      "sha256": "177a0689b3c85c0025fdefae3c9b16a12ee26488eda66c143004b70f7fed2684",
+      "unwindRegions": [
+        {
+          "begin": 2922976,
+          "end": 2923123,
+          "unwind": 3527040
+        },
+        {
+          "begin": 2923123,
+          "end": 2923144,
+          "unwind": 3527020
+        },
+        {
+          "begin": 2923144,
+          "end": 2923189,
+          "unwind": 3527000
+        },
+        {
+          "begin": 2923189,
+          "end": 2923197,
+          "unwind": 3526984
+        },
+        {
+          "begin": 2923197,
+          "end": 2923222,
+          "unwind": 3526944
+        },
+        {
+          "begin": 2923222,
+          "end": 2923301,
+          "unwind": 3526960
+        },
+        {
+          "begin": 2923301,
+          "end": 2923305,
+          "unwind": 3526944
+        }
+      ]
+    },
+    {
+      "role": "unknown-default",
+      "name": "??0ON_UnknownUserData@@QEAA@XZ",
+      "abi": null,
+      "rva": 2920848,
+      "length": 103,
+      "sha256": "b28a59c0fb4c211e528b67f8aeb0af8462ff07f610d89c2d33e3125f518190a5",
+      "unwindRegions": [
+        {
+          "begin": 2920848,
+          "end": 2920951,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "unknown-read",
+      "name": "?Read@ON_UnknownUserData@@UEAAHAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 2922336,
+      "length": 87,
+      "sha256": "ad5951523100c5927deba69fa5f30682335db67711fa4e250853363b78733eec",
+      "unwindRegions": [
+        {
+          "begin": 2922336,
+          "end": 2922423,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "unknown-write",
+      "name": "?Write@ON_UnknownUserData@@UEBAHAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 2922288,
+      "length": 37,
+      "sha256": "d80e6e3f45af3aa4647856967fc17e857a049f02b7df8f051ebc8bd399e5eef4",
+      "unwindRegions": [
+        {
+          "begin": 2922288,
+          "end": 2922325,
+          "unwind": 3638708
+        }
+      ]
+    },
+    {
+      "role": "strings-copy-constructor",
+      "name": "??0ON_UserStringList@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 2508608,
+      "length": 84,
+      "sha256": "982dc3697819fe85c8b0dfa8bbda0739b03a9e3c1c10b019b0a3e38b5527359a",
+      "unwindRegions": [
+        {
+          "begin": 2508608,
+          "end": 2508692,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "strings-assignment",
+      "name": "??4ON_UserStringList@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 2508704,
+      "length": 54,
+      "sha256": "81fb3d7798722103f08bec0e39bab01473553223d9f9c5e3e7baed79a989a2b9",
+      "unwindRegions": [
+        {
+          "begin": 2508704,
+          "end": 2508758,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "strings-default",
+      "name": "??0ON_UserStringList@@QEAA@XZ",
+      "abi": null,
+      "rva": 2924864,
+      "length": 142,
+      "sha256": "96a89d3c162f2e684ad3ad891c6d82aa88270900d056dc67dc49ae8b2128c600",
+      "unwindRegions": [
+        {
+          "begin": 2924864,
+          "end": 2925006,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "strings-read",
+      "name": "?Read@ON_UserStringList@@UEAAHAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 2925936,
+      "length": 599,
+      "sha256": "3f13a14b1ad55f0fc19f3cd5e0a7570cfe0c7bd0ae5cfa762acb40ca81889b66",
+      "unwindRegions": [
+        {
+          "begin": 2925936,
+          "end": 2926326,
+          "unwind": 3604628
+        },
+        {
+          "begin": 2926326,
+          "end": 2926535,
+          "unwind": 3596932
+        }
+      ]
+    },
+    {
+      "role": "strings-write",
+      "name": "?Write@ON_UserStringList@@UEBAHAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 2925664,
+      "length": 266,
+      "sha256": "9fcc835e5641d58ebac1a98597e83a40ae06a57d0fec07b4ef22f0300e577c9e",
+      "unwindRegions": [
+        {
+          "begin": 2925664,
+          "end": 2925786,
+          "unwind": 3597024
+        },
+        {
+          "begin": 2925786,
+          "end": 2925828,
+          "unwind": 3597004
+        },
+        {
+          "begin": 2925828,
+          "end": 2925881,
+          "unwind": 3596984
+        },
+        {
+          "begin": 2925881,
+          "end": 2925917,
+          "unwind": 3596968
+        },
+        {
+          "begin": 2925917,
+          "end": 2925930,
+          "unwind": 3596952
+        }
+      ]
+    },
+    {
+      "role": "base-valid",
+      "name": "?IsValid@ON_UserData@@UEBAHPEAVON_TextLog@@@Z",
+      "abi": null,
+      "rva": 2919792,
+      "length": 453,
+      "sha256": "648e44568db1c48b61b7eee7d0bd3ce5e7808ee84391429435ca92b5c9726cc5",
+      "unwindRegions": [
+        {
+          "begin": 2919792,
+          "end": 2920245,
+          "unwind": 3597168
+        }
+      ]
+    },
+    {
+      "role": "purge-userdata",
+      "name": "?PurgeUserData@ON_Object@@QEAAXXZ",
+      "abi": null,
+      "rva": 1822704,
+      "length": 101,
+      "sha256": "cc13a8d2971f92de2e1b6df1a93b65ba381e667ecf1883f6b96106874eaf7bdb",
+      "unwindRegions": [
+        {
+          "begin": 1822704,
+          "end": 1822722,
+          "unwind": 3620988
+        },
+        {
+          "begin": 1822722,
+          "end": 1822799,
+          "unwind": 3399640
+        },
+        {
+          "begin": 1822799,
+          "end": 1822805,
+          "unwind": 3399624
+        }
+      ]
+    },
+    {
+      "role": "detach-userdata",
+      "name": "?DetachUserData@ON_Object@@QEAAHPEAVON_UserData@@@Z",
+      "abi": null,
+      "rva": 1823072,
+      "length": 101,
+      "sha256": "1adf9fad51c90a832c52a97b5f9e4ff23e0aaa76743b024a548012b12139fa42",
+      "unwindRegions": []
+    }
+  ],
+  "views": [
+    {
+      "role": "lookup-userdata",
+      "entry": "1801bd1d0",
+      "signature": "ON_UserData * GetUserData(_GUID * param_1)",
+      "decompilerSha256": "dfac626c7917583994b11b709bc37c4a8dbe1f578ef28526e442d33ae6396768",
+      "basicBlocks": 29
+    },
+    {
+      "role": "unknown-copy-constructor",
+      "entry": "1802c9200",
+      "signature": "undefined ON_UnknownUserData(ON_UnknownUserData * param_1)",
+      "decompilerSha256": "a1ae6864602b4b6b80147bdd9f99f1282292c6d8c9f5e8620c38839cf07ea13f",
+      "basicBlocks": 5
+    },
+    {
+      "role": "unknown-assignment",
+      "entry": "1802c9320",
+      "signature": "ON_UnknownUserData * operator=(ON_UnknownUserData * param_1)",
+      "decompilerSha256": "d1d23ca1050e00880cbc90f2c78ed9dc3dbf11c38f5c0df88776145c9b461c4c",
+      "basicBlocks": 9
+    },
+    {
+      "role": "unknown-valid",
+      "entry": "1802c95a0",
+      "signature": "int IsValid(ON_TextLog * param_1)",
+      "decompilerSha256": "e1371fa96a5a903a9d943604c571ac4b23f689c5872e4f6bdd175fa72a1072a7",
+      "basicBlocks": 17
+    },
+    {
+      "role": "unknown-convert",
+      "entry": "1802c99e0",
+      "signature": "ON_UserData * Convert(void)",
+      "decompilerSha256": "81ebfaf278139fb66b3a210e07923cad025202391cf95d67799070970a7cad28",
+      "basicBlocks": 8
+    },
+    {
+      "role": "unknown-default",
+      "entry": "1802c9190",
+      "signature": "undefined ON_UnknownUserData(void)",
+      "decompilerSha256": "19105f905e85f78eb8c3ab6199f3c5679a6637c0bcf71d7331dae5a0cef6170d",
+      "basicBlocks": 1
+    },
+    {
+      "role": "unknown-read",
+      "entry": "1802c9760",
+      "signature": "int Read(ON_BinaryArchive * param_1)",
+      "decompilerSha256": "f430072fb1b25238afda0ca425fe5f619993208f5cd9a022013a83a408497819",
+      "basicBlocks": 1
+    },
+    {
+      "role": "unknown-write",
+      "entry": "1802c9730",
+      "signature": "int Write(ON_BinaryArchive * param_1)",
+      "decompilerSha256": "45b2426dcede5eab5ac6bd61af3f950928bf50c08624a1b42d27937232177573",
+      "basicBlocks": 1
+    },
+    {
+      "role": "strings-copy-constructor",
+      "entry": "180264740",
+      "signature": "undefined ON_UserStringList(ON_UserStringList * param_1)",
+      "decompilerSha256": "ef3df9ae995658149f43b329e228ef1828fc860b7a303d1c60a27f38c5821f7c",
+      "basicBlocks": 1
+    },
+    {
+      "role": "strings-assignment",
+      "entry": "1802647a0",
+      "signature": "ON_UserStringList * operator=(ON_UserStringList * param_1)",
+      "decompilerSha256": "d2f58864d76e062cd967f97b9f6f1a07b8dca5da29f6e427d52f5ed8178353af",
+      "basicBlocks": 1
+    },
+    {
+      "role": "strings-default",
+      "entry": "1802ca140",
+      "signature": "undefined ON_UserStringList(void)",
+      "decompilerSha256": "de545a1e98fcbac43fb147d6929678944e36afdec193a790dc4ac620f48721c0",
+      "basicBlocks": 1
+    },
+    {
+      "role": "strings-read",
+      "entry": "1802ca570",
+      "signature": "int Read(ON_BinaryArchive * param_1)",
+      "decompilerSha256": "606579d3bb229344ee829447e895bb37ba358ffc9581a66a710ad2789d50a86a",
+      "basicBlocks": 35
+    },
+    {
+      "role": "strings-write",
+      "entry": "1802ca460",
+      "signature": "int Write(ON_BinaryArchive * param_1)",
+      "decompilerSha256": "ade74e41f78d981ee0a60ea928a4877bbe822610bd26429aef1ca18f8fab411a",
+      "basicBlocks": 12
+    },
+    {
+      "role": "base-valid",
+      "entry": "1802c8d70",
+      "signature": "int IsValid(ON_TextLog * param_1)",
+      "decompilerSha256": "d8dd24f7b1ed52c9d50ba06825a457e603a13d5bef1525137a7bf068fb20dc07",
+      "basicBlocks": 28
+    },
+    {
+      "role": "purge-userdata",
+      "entry": "1801bcff0",
+      "signature": "void PurgeUserData(void)",
+      "decompilerSha256": "c524bf5a1d2be2c03d49da7173cf842206853bad3ab4dbfb2277cc5e4d704261",
+      "basicBlocks": 6
+    },
+    {
+      "role": "detach-userdata",
+      "entry": "1801bd160",
+      "signature": "int DetachUserData(ON_UserData * param_1)",
+      "decompilerSha256": "bd188a3c0254f4cea4c31c3d6356e4db17457c972a22b5051e26fecd6dca0259",
+      "basicBlocks": 11
+    }
+  ],
+  "publishedComparison": {
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "files": [
+      {
+        "file": "opennurbs_userdata.cpp",
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_userdata.cpp",
+        "sha256": "0243140fde1cac508c0882b2ab4222e5210b8a15840a22dfb806bb7a3240e52a",
+        "bytes": 31667
+      },
+      {
+        "file": "opennurbs_userdata.h",
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_userdata.h",
+        "sha256": "68df852364d756711c2d9714a5f05bc17105e86323f9fa42f6b041ac29e44e9e",
+        "bytes": 20472
+      },
+      {
+        "file": "opennurbs_object.cpp",
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_object.cpp",
+        "sha256": "19858ea299c99155427be4147ddbad3f761692c4bdb79c27338d16e1086cf231",
+        "bytes": 57046
+      }
+    ],
+    "role": "Matching primary published counterparts only; original instruction differences take priority."
+  },
+  "acceptedPolicy": [
+    "Lookup conversion replaces/deletes matched unknown. Original0x1bd2b4..0x1bd306 sets owner only for head replacement; non-head owner is not repaired.",
+    "Conversion copies count/transform before virtual Read and ignores bool. Original0x2c9ae3..0x2c9b23 does not test Read result;0x2c9aaa moves converted pointer to RAX before cookie check.",
+    "Unknown validity requires base validity, positive declared size, nonnull buffer and nonnil original class UUID unequal to unknown runtime class.",
+    "Unknown constructor duplicates buffer/class/version only for nonzero copied count and source size/buffer. Ineligible constructor retains base IDs with empty unknown fields.",
+    "Unknown assignment copies source IDs/app after base assignment and clears userdata ID/unknown fields when ineligible, retaining owner/next.",
+    "String-list copies actual ordered pairs; base assignment retains destination IDs. Default ID/app/count corroborated.",
+    "Original5 purge retains head until END and samples leak flag for EACH node. Published6 clears head first and samples deletion once; this is not substituted."
+  ],
+  "identityProof": {
+    "base": {
+      "uuid": "850324a7-050e-11d4-bffa-0010830122f0",
+      "asciiOffset": 3337256
+    },
+    "unknown": {
+      "uuid": "850324a8-050e-11d4-bffa-0010830122f0",
+      "asciiOffset": 3337768
+    },
+    "strings": {
+      "uuid": "ce28de29-f4c5-4faa-a50a-c3a6849b6329",
+      "asciiOffset": 3338024
+    },
+    "app": {
+      "uuid": "17b3ecda-17ba-4e45-9e67-a2b8d9be520d",
+      "rva": "0x306290",
+      "bytes": "daecb317ba17454e9e67a2b8d9be520d"
+    }
+  },
+  "decompilerLimits": [
+    "Unknown-convert stack-probe/cookie C return is not algorithm truth; normal pointer return and ignored Read bool checked in instructions.",
+    "Base/unknown validity cookie returns rejected; original comparisons and normal EAX result paths checked.",
+    "Archive ReadInt/ReadFloat shared aliases are not accepted as codec transcription. Binary framing/readers remain unported."
+  ],
+  "implementationBoundary": "Managed list protocol and known converted unknown/string copying. Required registered factories/readers perform actual conversion; no successful default reader or arbitrary byte clone.",
+  "managedAdaptations": [
+    "Disposed-reference/short-managed-buffer errors reject unsafe native memory states.",
+    "Reader exceptions propagate with created-object cleanup and original unknown retained; this is managed exception safety, not original exception-runtime parity.",
+    "Native class catalog/create diagnostics and binary readers remain the binding layer."
+  ],
+  "remaining": [
+    "Supported archive body codecs and native class catalog",
+    "Whole-view native copy/history and actual document synchronization",
+    "Original runtime/saved-PC/physical full parity"
+  ]
+}

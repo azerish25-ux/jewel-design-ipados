@@ -76,6 +76,7 @@ for i in $(seq 1 600); do
   grep -q '^PASS original-derived Rhino5 camera locations:' "$OUT/result.txt"
   grep -q '^PASS original-derived Rhino5 viewport cache:' "$OUT/result.txt"
   grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
+  grep -q '^PASS original-derived userdata runtime:' "$OUT/result.txt"
   grep -q '^PASS owned original5 view data:' "$OUT/result.txt"
   grep -q '^PASS viewport screenshot acknowledgement:' "$OUT/result.txt"
   grep -q 'PASS Metal offscreen viewport:actual-CAD pixels=' "$OUT/result.txt"
