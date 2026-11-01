@@ -32,6 +32,7 @@ on:
       - "tests/ghidra-local.test.cjs"
       - "tests/fixtures/ghidra-script-failure.txt"
       - "scripts/check-viewport-capture-surface.cjs"
+      - "scripts/run-viewport-simulator.sh"
       - "scripts/verify-metal-artifacts.cjs"
       - "tests/viewport-capture-surface.test.cjs"
       - "tests/viewport-driver.test.cjs"

@@ -28,8 +28,11 @@ for i in $(seq 1 600); do
  if test -f "$DATA/Documents/viewport-stage.txt"; then
   payload=$(cat "$DATA/Documents/viewport-stage.txt")
   if test "$payload" != "$last"; then
-   [[ "$payload" =~ ^[0-9a-f]{32}\|(original|orbit|edited|empty|resized|final)$ ]]
+   capture_token=${payload%%|*}
    phase=${payload#*|}
+   if test "$capture_token" = "$payload" || test "${#capture_token}" -ne 32; then echo "Invalid viewport capture token" >&2; exit 2; fi
+   case "$capture_token" in *[!0123456789abcdef]*) echo "Invalid viewport capture token" >&2; exit 2;; esac
+   case "$phase" in original|orbit|edited|empty|resized|final) ;; *) echo "Invalid viewport capture phase" >&2; exit 2;; esac
    capture_ready=0
    for attempt in 1 2 3 4 5 6; do
     candidate="$OUT/capture-attempts/$phase-$attempt.png"

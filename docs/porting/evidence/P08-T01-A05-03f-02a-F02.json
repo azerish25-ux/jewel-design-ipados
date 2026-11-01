@@ -26,7 +26,19 @@
     "failures": "Persistent obstruction fails after six attempts without ACK. Stale launch/token/phase, CLI failure, malformed PNG and app monotonic180s expiry remain failures."
   },
   "appleRuns": {
-    "status": "pending_push"
+    "sourceCommit": "260125177d75e6d68071474691ef2ccbe243bcaa",
+    "preflight": {
+      "id": 41309996640,
+      "status": "completed_failure_old_stage_guard_regression"
+    },
+    "visible": {
+      "id": 41309996590,
+      "status": "in_progress"
+    },
+    "repository": {
+      "id": 41309996611,
+      "status": "completed_success"
+    }
   },
   "remaining": [
     "Inspect actual fixed-source iPad/iPhone scene artifacts and screenshot attempt records; failed prior scene is not counted as pass"
@@ -45,5 +57,6 @@
     "sourceFamily": "iphone",
     "stage": "original",
     "imageModified": false
-  }
+  },
+  "guardFollowup": "docs/porting/evidence/P08-T01-A05-03f-02a-F03.json"
 }

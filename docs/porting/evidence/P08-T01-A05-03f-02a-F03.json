@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02a-F03",
+  "parentTask": "P08-T01-A05-03f-02a",
+  "status": "explicit_stage_guard_local_passed_apple_pending",
+  "failedMacRun": 41309996640,
+  "failedMacSourceCommit": "260125177d75e6d68071474691ef2ccbe243bcaa",
+  "observedFailure": "New macOS driver regression observed a screenshot call for an invalid stage path; existing Windows default-shell test rejected it.",
+  "localReproduction": {
+    "command": "node scripts/run-local.cjs node --test tests/viewport-driver.test.cjs",
+    "bash": "5.3.15 compatibility3.1",
+    "redExitCode": 1,
+    "redFailure": "unexpected.txt exists for invalid-stage",
+    "regexProbe": [
+      {
+        "compatibility": "default",
+        "matchStatus": 1
+      },
+      {
+        "compatibility": "3.1",
+        "matchStatus": 0
+      },
+      {
+        "compatibility": "3.2",
+        "matchStatus": 1
+      }
+    ],
+    "limits": "The exact runner compatibility setting was not retained. Equivalent old regex interpretation is reproduced locally; do not assert a specific macOS BASH_COMPAT value."
+  },
+  "fix": "Parse token and phase with literal shell parameter expansion, require exactly32 lowercase hexadecimal characters, and reject any phase outside the six exact names using explicit exit2. No compatibility-sensitive =~ or implicit errexit gate remains.",
+  "review": {
+    "safety": "Malformed stage exits before screenshot, path construction or acknowledgement; cleanup retains original failure status.",
+    "compatibility": "Default and older-compatibility valid captures must still advance; persistent obstruction and malformed PNG failures remain strict.",
+    "scope": "Test driver only, no CAD pixel threshold/background probe/geometry change."
+  },
+  "appleRuns": {
+    "status": "pending_push"
+  },
+  "remaining": [
+    "Verify the actual macOS driver and visible iPad/iPhone jobs for the corrected source"
+  ],
+  "localChecks": {
+    "nodeRegressions": 54,
+    "driverAndCaptureChecks": 13,
+    "repositoryIntegrityExitCode": 0
+  }
+}
