@@ -10,7 +10,9 @@ Design: CandidateViewportProjection owns a value snapshot joining camera frame, 
 - [x] Generate bounded deterministic sequences for all validity/lock/symmetry combinations, raw projection enum, off-axis/behind/unset/huge targets, corrupt frusta, dolly rejection and target jitter boundaries. Compare all fields, return/query results and counters after every step.
 - [x] Add managed assertions first and confirm missing projection API RED. Implement joint state and original transition ordering; require GREEN native differential and adjacent frame/frustum checks.
 - [x] Wire the same assertions into macOS Clang/managed checks, Rendering.Tests, native contracts and actual iPad/iPhone viewport execution. Add fixture and tamper regressions.
-- [ ] Review no fallback geometry/state or unknown-bit loss, run integrity/adjacent checks, commit/push with task ID, inspect actual Actions outputs and record precise Apple/physical limits.
+- [x] Review no fallback geometry/state or unknown-bit loss, run integrity/adjacent checks, commit/push with task ID, inspect actual Actions outputs and record precise Apple/physical limits.
 - [ ] Continue to double world-mesh composition/source preset application; original framing must remain explicit rather than invented.
 
 Owned paths: native/Rendering/ViewportProjectionReference; prepare/generate viewport-projection scripts; Rendering.Candidate/CandidateViewportProjection.cs; internal source-vector-length seam in CandidateCameraFrame; shared assertions/fixture/runners, existing preflight/visible/repository workflows, focused Node regressions, evidence/ADR/current handoff.
+
+Original native setter handoff: docs/evidence/audit/native-camera-set-locations.json locates the exact Rhino5 candidate wrapper/import/original1386-byte callee. Static analysis only; full callee semantics remain unverified. Perspective prerequisite audit: docs/evidence/audit/camera-perspective-source.json.

@@ -1,6 +1,6 @@
 # ADR0053: joint viewport projection state and failure mutation
 
-Status: Windows and independent macOS Clang/managed transitions pass; actual iPad/iPhone verification pending.
+Status: Windows, independent macOS Clang/managed checks and actual iPad/iPhone execution pass961 sequences/6,675 source steps. Adjacent real CAD pixel checks also pass; full preset integration remains open.
 
 CandidateViewportProjection owns an immutable snapshot joining the verified camera frame, frustum, target, raw uint projection and raw symmetry byte. It forwards setters/lens operations through the existing helpers, preserving counters and state changes even on false returns. Unknown symmetry bits survive flag changes. The internal source vector-length helper is shared with target distance; no public frame API changes.
 

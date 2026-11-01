@@ -36,10 +36,11 @@
     },
     {
       "id": "P08-T01-A05-03",
-      "status": "frame_numerics_apple_passed_joint_parallel_transition_windows_macos_passed_renderer_integration_pending",
+      "status": "frame_and_joint_parallel_numerics_windows_macos_iPad_iPhone_passed_full_preset_renderer_integration_pending",
       "sourceAudit": "docs/evidence/audit/camera-frame-source.json",
       "frameWorkCard": "docs/porting/evidence/P08-T01-A05-03a.json",
-      "parallelWorkCard": "docs/porting/evidence/P08-T01-A05-03b.json"
+      "parallelWorkCard": "docs/porting/evidence/P08-T01-A05-03b.json",
+      "nativePresetSetterAudit": "docs/evidence/audit/native-camera-set-locations.json"
     }
   ],
   "red": "Rendering.Tests failed CS0246 missing CandidateCameraTransform before implementation.",

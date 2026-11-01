@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "run": 41288308125,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41288308125",
+  "sourceCommit": "6c5b828b17b44474fe9010d4964ee1d740588f35",
+  "sequencesPerFamily": 961,
+  "sourceStepsPerFamily": 6675,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "resultSha256": "0a81db97d3d1b9ca430e99e7a15799f3babf679314c3d5fb957b831313d9e7ba",
+      "transitionReport": "PASS published viewport transitions:961 sequences/6675 source steps; joint frame/frustum/target state, lock clearing/unknown symmetry bits, dolly/parallel scale, fallback/jitter and failure mutation; source-preset rendering/private Rhino5/PC parity separate.",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "3d4cfbd6c8a899634bb875fc012520cd628d9e0d215ce2c5903fcbd39caf8736",
+          "orbit": "5078ec12ded99ebbcead4cef1d5e8271dfdf44f18766802e92c058d3db468a1f",
+          "edited": "69a8863de5b7864dfe91333a06a9c75998038dab289cc203a9dd4b328f5792df",
+          "empty": "f40dfdd89671c98431b7ca85305bf483fe836c3c12cc090c69117c7bdd2b4be3",
+          "resized": "dfaddb0d472427b56435a82a7340e3ae0edcc56eeffcd7eee1c894f34cbf76e3",
+          "final": "63510a3e835a0aa7a1c96653d2d42a9dd28e068a3c18b7369badf451b413bbc3"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "resultSha256": "0a81db97d3d1b9ca430e99e7a15799f3babf679314c3d5fb957b831313d9e7ba",
+      "transitionReport": "PASS published viewport transitions:961 sequences/6675 source steps; joint frame/frustum/target state, lock clearing/unknown symmetry bits, dolly/parallel scale, fallback/jitter and failure mutation; source-preset rendering/private Rhino5/PC parity separate.",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "882053ec6d6f87b36a6f8bd7d7c0ef195b95cefbf58557f1bc0bcde4e26ddfbf",
+          "orbit": "480b88d4e93686fe029328952640318038958879c3c67f775c634fa280e05747",
+          "edited": "4d5fb2c72059c5fecb6f533bbeed5aef8bda04a5fca13bed4ddd44173ed4cac3",
+          "empty": "ca26147a0939f26da59afb5bb6aa5415b52690ffca90b0b118b8f1517d14d7d8",
+          "resized": "7b5b1fe93cf30c2b566397fb9da32e6e7cbcb6d4e3b33941b5b8a89849ec09b2",
+          "final": "882053ec6d6f87b36a6f8bd7d7c0ef195b95cefbf58557f1bc0bcde4e26ddfbf"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "scope": "Actual joint camera/frustum/target numeric transition assertions on both simulator families plus independently decoded adjacent CAD viewport/offscreen pixels. Visible renderer still uses its generic fitted camera; complete source preset/perspective/native setter/world normalization/private Rhino5/PC/physical acceptance remains open.",
+  "build": {
+    "warnings": 2,
+    "errors": 0,
+    "warningIds": [
+      "CS8765 existing AppDelegate options nullability",
+      "CA1422 existing UIWindow constructor deprecated on iOS26"
+    ]
+  }
+}

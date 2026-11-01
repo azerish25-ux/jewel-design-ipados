@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "windows_macos_joint_source_and_managed_transition_checks_passed_ios_pending",
+  "status": "windows_macos_iPad_iPhone_joint_transition_checks_passed",
   "plan": "docs/porting/plans/P08-T01-A05-03b-parallel-transition.md",
   "adr": "docs/porting/ADR-0053-joint-viewport-projection-state.md",
   "sourceAudit": "docs/evidence/audit/camera-parallel-source.json",
@@ -320,7 +320,6 @@
     "dependencies": "No added runtime package; pinned public source hashes/enum/notice retained."
   },
   "remaining": [
-    "Actual iPad/iPhone transition execution and adjacent real CAD pixels",
     "Published ChangeToPerspectiveProjection and original native SetCameraLocations behavior/order needed before full source-preset application",
     "Double world-normalized mesh composition, actual preset Metal captures and original-PC/private/physical/full feature acceptance"
   ],
@@ -339,11 +338,13 @@
     },
     "visible": {
       "id": 41288308125,
-      "status": "in_progress_last_observed"
+      "status": "completed_success_both_families_actual_transition_results_and_adjacent_pixels_inspected"
     },
     "reuse": {
       "id": 41288308020,
-      "status": "in_progress_last_observed"
+      "status": "completed_success_both_families_github_terminal_status_checked"
     }
-  }
+  },
+  "appleRuntimeReport": "docs/evidence/apple/viewport-projection-ios-results.json",
+  "nativePresetSetterAudit": "docs/evidence/audit/native-camera-set-locations.json"
 }

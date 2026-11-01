@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03d",
+  "status": "static_original_dependency_wrapper_and_callee_location_observed",
+  "tools": [
+    "ILSpy9.1.0.7988 static decompilation",
+    "Node PE export/import/exception table reader",
+    "Existing GNU objdump static AMD64 disassembly"
+  ],
+  "managed": {
+    "file": "analysis/runtime-prerequisites/rhino5/System/RhinoCommon.dll",
+    "sha256": "df4c761c2e3bd3824a0e6ab234a7be7fc95bb5045de27af3e4c3c24dfdc73867",
+    "fileVersion": "5.12.50810.13095",
+    "methods": [
+      {
+        "signature": "public void SetCameraLocations(",
+        "normalizedDecompiledBodySha256": "6cd454312a898cb342cdce545e260b3e34da151d060c3aca351477406eee6ad4"
+      },
+      {
+        "signature": "public bool ChangeToPerspectiveProjection(bool symmetricFrustum, double lensLength)",
+        "normalizedDecompiledBodySha256": "d719f88ab34605716d3e054cdf41b0eefbd4608316842290510a517f08f65303"
+      },
+      {
+        "signature": "public bool ChangeToPerspectiveProjection(double targetDistance, bool symmetricFrustum, double lensLength)",
+        "normalizedDecompiledBodySha256": "41efd079ebe4657770348dd1509d4b26fd89cb0f27349b1c31a0d6217755c2ea"
+      },
+      {
+        "signature": "public bool ChangeToParallelProjection(bool symmetricFrustum)",
+        "normalizedDecompiledBodySha256": "2abff5849de1bd4de6a3a4c9b77b53593e5949b373be7576568bdf719aaa6507"
+      }
+    ],
+    "observations": [
+      "SetCameraLocations obtains NonConstPointer and forwards the two Point3d values to CRhinoViewport_SetCameraLocations without managed geometry arithmetic.",
+      "The bool/double ChangeToPerspectiveProjection overload supplies -1.23432101234321e308 as target distance to the three-argument overload.",
+      "Parallel/perspective wrappers obtain the native pointer and forward to matching CRhinoViewport_VP exports."
+    ]
+  },
+  "nativeWrapper": {
+    "file": "analysis/runtime-prerequisites/rhino5/System/rhcommon_c.dll",
+    "sha256": "14d688bf3a6b5bd122878b8d1c07fd58cd371ef549301f1e22faf158221bdc34",
+    "fileVersionResource": "10-Aug-2015",
+    "machine": "AMD64",
+    "name": "CRhinoViewport_SetCameraLocations",
+    "rva": 457520,
+    "va": "0x18006fb30",
+    "functionBeginRva": 457520,
+    "functionEndRva": 457681,
+    "functionEndVa": "0x18006fbd1",
+    "functionBytesSha256": "b7b6f8911bd36dea6d3a596257f3ca38296b823c9901e92ec6900a3e5cf9061a",
+    "import": {
+      "dll": "rhino.exe",
+      "name": "?SetTargetAndCameraLocation@CRhinoViewport@@QEAAXVON_3dPoint@@0H@Z",
+      "iatRva": 519584,
+      "iatVa": "0x18007eda0"
+    },
+    "observations": [
+      "Copies the two Point3d arguments, tests viewport pointer and calls the imported native member only for non-null viewport.",
+      "The imported method is CRhinoViewport::SetTargetAndCameraLocation(ON_3dPoint,ON_3dPoint,int), with the int parameter register r9d set to1. Its semantic mode meaning is not inferred."
+    ],
+    "cachedDisassemblySha256": "73e1e9eafe190ced3d8d5dda536d7bd3971da1655fe386b38f4fdcbcb03e0193"
+  },
+  "originalCallee": {
+    "file": "analysis/runtime-prerequisites/rhino5/System/Rhino.exe",
+    "sha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+    "fileVersionResource": "10-Aug-2015",
+    "name": "?SetTargetAndCameraLocation@CRhinoViewport@@QEAAXVON_3dPoint@@0H@Z",
+    "rva": 4507440,
+    "va": "0x14044c730",
+    "functionBeginRva": 4507440,
+    "functionEndRva": 4508826,
+    "functionEndVa": "0x14044cc9a",
+    "functionBytesSha256": "f7985a9f51de07cb8638a58cf4aaacf4010e5205e318fb7acca6d31ff334be28",
+    "functionBytes": 1386,
+    "status": "located_and_hashed_not_reconstructed"
+  },
+  "next": [
+    "Statically decompile the exact1386-byte original callee and identify its source viewport/target/up/clip-plane/UI side effects and mode1 meaning.",
+    "Compare original binary dependencies with the published numerical candidates; do not assume public openNURBS6 equals private Rhino5.",
+    "Preserve original command ordering and integrate source preset/world-normalized Metal matrices only after these semantics are established."
+  ],
+  "limits": "Read-only original dependency binary analysis. No DLL/application loaded or executed. The workspace Rhino5 dependency candidate is not a confirmed licensed original-PC reference build. Native callee behavior, runtime results and full command/private/PC/physical parity remain unverified."
+}
