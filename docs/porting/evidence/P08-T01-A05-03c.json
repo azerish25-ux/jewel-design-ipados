@@ -45,5 +45,25 @@
     "Native SetTargetAndCameraLocation up/roll recipe and SetVP document/history/cache adapters",
     "Complete source preset ordering, world-normalized Metal camera composition and source-preset captures",
     "Original licensed PC and physical-device acceptance"
-  ]
+  ],
+  "appleRuns": {
+    "sourceCommit": "1e0f96ce9ed9843417ff419d0e591eec3768e5b2",
+    "preflight": {
+      "id": 41300792200,
+      "status": "queued_last_observed"
+    },
+    "visible": {
+      "id": 41300792235,
+      "status": "queued_last_observed"
+    },
+    "repository": {
+      "id": 41300792223,
+      "status": "completed_success_github_terminal_status_checked"
+    },
+    "reuse": {
+      "id": 41300792197,
+      "status": "queued_last_observed"
+    }
+  },
+  "nextAction": "Re-poll these exact current-source handles; do not redispatch while queued/running. Independently continue native setter/commit adapter work when the numerical phase is platform-reviewed."
 }
