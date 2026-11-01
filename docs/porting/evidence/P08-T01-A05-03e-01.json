@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "original_derived_vector_rotation_local_passed_apple_pending",
+  "status": "original_derived_vector_rotation_windows_macos_iPad_iPhone_passed",
   "plan": "docs/porting/plans/P08-T01-A05-03e-camera-locations.md",
   "binaryAudit": "docs/evidence/audit/rhino5-camera-rotation-source.json",
   "publishedAudit": "docs/evidence/audit/camera-rotation-published-source.json",
@@ -32,12 +32,30 @@
     "limits": "Finite fixture arithmetic comparisons use2e-13 relative/absolute tolerance and do not establish bitwise or malformed nonfinite/signed-zero original5 parity."
   },
   "appleRuns": {
-    "status": "pending_push"
+    "sourceCommit": "8a4308cb560026d64fc96ab5b492a9d12e1b4c5b",
+    "preflight": {
+      "id": 41303346116,
+      "status": "completed_success_artifacts_inspected"
+    },
+    "visible": {
+      "id": 41303346143,
+      "status": "completed_success_both_actual_families_and_pixels_rechecked"
+    },
+    "repository": {
+      "id": 41303346112,
+      "status": "completed_success"
+    },
+    "reuse": {
+      "id": 41303346133,
+      "status": "completed_success"
+    }
   },
   "remaining": [
     "Temporary viewport up/roll recipe and native commit ordering/guards/document/history/cache adapters",
     "Complete original command preset application to Metal",
     "Original licensed PC comparisons and physical-device acceptance"
   ],
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleNumericReport": "docs/evidence/apple/rhino5-rotation-numeric-results.json",
+  "appleRuntimeReport": "docs/evidence/apple/rhino5-rotation-ios-results.json"
 }

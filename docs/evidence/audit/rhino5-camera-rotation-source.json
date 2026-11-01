@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T01-A05-03e",
-  "status": "vector_rotation_implemented_static_original_policy_published_differential_local_passed_apple_pending",
+  "status": "vector_rotation_static_original_policy_windows_macos_iPad_iPhone_checks_passed",
   "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
   "targetExecuted": false,
   "methods": [
@@ -118,7 +118,7 @@
   ],
   "remaining": [
     "Wider malformed nonfinite/signed-zero original instruction/runtime differential coverage.",
-    "Implement temporary viewport up/roll recipe and full native commit guard/document/history/cache contract.",
+    "Temporary viewport recipe is now implemented under P08-T01-A05-03e-02; concrete native commit guards/document/history/cache adapter remains open.",
     "Source-preset Metal integration; original PC and physical device acceptance."
   ],
   "limits": "Vector primitive only. Published6 independent reference is not an original5 runtime oracle.",
@@ -149,5 +149,7 @@
       "length": 206,
       "sha256": "7a95ee5f37f8c16a38c52b3a3e0459de6564a51e3a99ce2adced598ed9dcc3a7"
     }
-  ]
+  ],
+  "appleNumericReport": "docs/evidence/apple/rhino5-rotation-numeric-results.json",
+  "appleRuntimeReport": "docs/evidence/apple/rhino5-rotation-ios-results.json"
 }

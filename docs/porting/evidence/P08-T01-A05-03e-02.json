@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "temporary_viewport_recipe_local_passed_apple_pending",
+  "status": "temporary_viewport_recipe_windows_macos_iPad_iPhone_passed_native_commit_adapter_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03e-camera-locations.md",
   "binaryAudit": "docs/evidence/audit/native-camera-setter-ghidra.json",
   "source": {
@@ -36,7 +36,23 @@
     "security": "No original target execution, credentials, scripts, network geometry or recovery mutation."
   },
   "appleRuns": {
-    "status": "pending_push"
+    "sourceCommit": "97e78a9325e6dcd00022f1036dacddbdee9751f1",
+    "preflight": {
+      "id": 41303854027,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "visible": {
+      "id": 41303853944,
+      "status": "completed_success_both_actual_families_and_pixels_rechecked"
+    },
+    "repository": {
+      "id": 41303853943,
+      "status": "completed_success"
+    },
+    "reuse": {
+      "id": 41303853965,
+      "status": "in_progress"
+    }
   },
   "remaining": [
     "Concrete SetVP guards, lock/symmetry application, cache/serial, document notification and history",
@@ -49,5 +65,8 @@
     "fullManagedNativeSuiteExitCode": 0,
     "adjacentNodeChecks": 42,
     "repositoryIntegrityExitCode": 0
-  }
+  },
+  "appleNumericReport": "docs/evidence/apple/rhino5-camera-locations-numeric-results.json",
+  "appleRuntimeReport": "docs/evidence/apple/rhino5-camera-locations-ios-results.json",
+  "nextPlan": "docs/porting/plans/P08-T01-A05-03f-native-viewport-commit.md"
 }

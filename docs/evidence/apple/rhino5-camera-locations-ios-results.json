@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "run": 41303853944,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41303853944",
+  "sourceCommit": "97e78a9325e6dcd00022f1036dacddbdee9751f1",
+  "status": "success",
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "resultSha256": "f5b02a53373196abd6d2c99d23698ff122d7b8b02d7bd046eaa8fd7bb2fe0a1e",
+      "reports": [
+        "PASS original-derived Rhino5 vector rotation:2448 checks including 608 compiled published-source comparisons and15 analytical/edge checks; original runtime/PC parity separate.",
+        "PASS original-derived Rhino5 camera locations:32 static-policy/analytical checks; temporary copy, up/roll/locks and commit-target protocol; concrete native commit/history/cache and original runtime/PC parity separate."
+      ],
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "328f1e6fac31c5b2fcb98c05ca9169c894b697ebc4c58bfe596d75612c3ae5ce",
+          "orbit": "2638c898bc9e0c185d445c6e7236411a976117b1b541d87957bcbb647364a2ef",
+          "edited": "6690c4494b116b3a290b5e4d366bfabb608917154c9e054329b5180b832b2f31",
+          "empty": "bac1b365b57b5411fdae2ca4590a4dc21051778bfaa73ec5d96f5d6362979bd0",
+          "resized": "b4a2b02daca565d8dbb6d178087e033c467b70640afb4cfeb8fb0b9fc30677d4",
+          "final": "328f1e6fac31c5b2fcb98c05ca9169c894b697ebc4c58bfe596d75612c3ae5ce"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "resultSha256": "f5b02a53373196abd6d2c99d23698ff122d7b8b02d7bd046eaa8fd7bb2fe0a1e",
+      "reports": [
+        "PASS original-derived Rhino5 vector rotation:2448 checks including 608 compiled published-source comparisons and15 analytical/edge checks; original runtime/PC parity separate.",
+        "PASS original-derived Rhino5 camera locations:32 static-policy/analytical checks; temporary copy, up/roll/locks and commit-target protocol; concrete native commit/history/cache and original runtime/PC parity separate."
+      ],
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 3,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "acc0bd17cdae6927f4aed0ca1a9f9fd730340207b210e8c4a48ad892da2ef7d9",
+          "orbit": "919272d54ea6153e2d404673815213897ae217624496c46233e0e7587bb5ac3a",
+          "edited": "f5a7603d81bd45a24589c18e052d497e2f08e64ce59d18dbd8a1aea7d59f876d",
+          "empty": "c9ca125c65fccc8a50b6a0f21019b0a1c0259d657b4260dd022cc77a5f395dd5",
+          "resized": "1daa5d9e77e69184ae19b7b25b714207258f132f63f3a5f66118c954f0d22bd0",
+          "final": "acc0bd17cdae6927f4aed0ca1a9f9fd730340207b210e8c4a48ad892da2ef7d9"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "build": {
+    "warnings": 2,
+    "errors": 0,
+    "knownWarnings": [
+      "CS8765 AppDelegate options nullability",
+      "CA1422 UIWindow constructor deprecated on iOS26"
+    ],
+    "outputSha256": "a3947006302964972ffe6e0a7f8b8733efe2130fa83a43a567bfb4afaa1cdab0"
+  },
+  "scope": "Actual signed iPad/iPhone simulator execution of numeric camera checks plus independent revalidation of adjacent CAD pixels/resources. Visible renderer still generic fitted camera; source preset, native commit/history/cache, original PC and physical-device acceptance remain open."
+}
