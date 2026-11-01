@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "run": 41284469558,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41284469558",
+  "sourceCommit": "aa54cbdb3636f609c1dd330d0d0154953b273962",
+  "status": "success",
+  "sourceReference": {
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "file": "opennurbs_xform.cpp",
+    "sourceSha256": "7b922be97b2d05c50cd5865e32826d87fc2f4926304f55f21bf9344478580258",
+    "methods": [
+      {
+        "signature": "void ON_Xform::WorldToCamera(",
+        "sha256": "577b2e5863c8336125e4e1f7cadef2e06bf173b4adaaf0c33c4a118e465a8a62"
+      },
+      {
+        "signature": "void ON_Xform::CameraToWorld(",
+        "sha256": "4dcc20033518dca86eb998475b51eb7f157d453686f4f1d67540e7c4d12589b4"
+      },
+      {
+        "signature": "bool ON_Xform::CameraToClip(",
+        "sha256": "4959c33451844d38e28eda791d8ede5b204f3d7a389e72e1d2ea2dad9cd98f3b"
+      }
+    ],
+    "includeSha256": "382f9ce84a3b45fa6f7ff20dfd34bfc358f6d357fd7639efa204da0cb723d814",
+    "scope": "Exact published numeric methods with observation matrix/point/vector containers; no private viewport/GPU claim."
+  },
+  "native": {
+    "cases": 118,
+    "fixture": "tests/Port/Geometry.Candidate.Contracts/Fixtures/camera-matrix-source-cases.json",
+    "fixtureSha256": "f46a79cedde3fc4fb85323a218eca912bb5f4a6df13b54b4c2aba3ef6aa8a130",
+    "scope": "Exact published matrix methods; GPU adapter/private camera/PC acceptance separate."
+  },
+  "managedReports": [
+    "PASS source camera presets:120 unchanged-wrapper comparisons across invariant/en-US/tr-TR, original pose/up/plane/lens/projection, null and unknown-name behavior; source call-order/viewport preference observed, native frustum/zoom/UI/PC parity separate.",
+    "PASS viewport frame ownership:116 resource-only checks; three-frame bound/latest revision, retained replacement/disposal and concurrent idempotent completion; actual GPU presentation tested separately.",
+    "PASS published frustum/lens:1245 independently compiled-source cases, symmetry/two-point/deadband/raw-invalid/sentinel/world-bound/depth-diagnostic/state retention; private Rhino5/Metal projection/PC parity separate.",
+    "PASS published camera matrices:118 compiled-source cases and16 independent Metal clip endpoints; source coefficients/retained failure/frame basis, depth0..1/transpose and invalid float guards; full preset/private Rhino5/PC parity separate."
+  ],
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "artifacts": [
+    {
+      "name": "camera-matrix-source.json",
+      "sha256": "c66f3f952fd5d932fc72f562208389f86423ecf49854c60893fe0682ce89aefb"
+    },
+    {
+      "name": "camera-matrix-native-cases.json",
+      "sha256": "84b54c228f5f995c9500434b4b196e67320001fd4921373996da9639a2cb2ff8"
+    },
+    {
+      "name": "camera-preset-tests.txt",
+      "sha256": "a04d2c71916832f05802118b801e4d9eb0b46329cb13cd535aa2c2a77579fa54"
+    },
+    {
+      "name": "metal-binding-build.txt",
+      "sha256": "6e9c3826fff19dee2d59de3c4ce5b23ae0da90f448ca33e4525d70beda185f02"
+    }
+  ],
+  "limits": "Published numerical source and iOS binding compilation; actual simulator execution and full original camera/preset/PC/physical parity require separate evidence."
+}

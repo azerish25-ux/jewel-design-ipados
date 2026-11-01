@@ -1,6 +1,6 @@
 # ADR0051: double projective camera matrices and explicit Metal depth mapping
 
-Status: local compiled-source and independent endpoint tests pass; Apple/compiler/platform checks pending.
+Status: compiled-source/managed matrix checks pass on Windows and macOS; actual iPad/iPhone execution passes the same118 cases and16 independent endpoints. Renderer integration remains open; see [runtime evidence](../evidence/apple/camera-matrix-ios-results.json).
 
 CandidateCameraTransform stores all16 double row-major coefficients. The affine document DTO deliberately fixes its last row and cannot represent perspective projection. WorldToCamera/CameraToWorld use supplied basis/translation directly, preserving published source behavior rather than introducing orthogonalization. CameraToClip retains prior state on exactly equal paired bounds; other raw invalid inputs follow source math and may produce nonfinite coefficients.
 

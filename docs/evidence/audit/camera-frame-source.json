@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03",
+  "status": "static_source_dependency_audit_only",
+  "source": {
+    "repository": "https://github.com/mcneel/opennurbs",
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "file": "opennurbs_viewport.cpp",
+    "sha256": "2403be6f12b9f3fa7c723da44793eda28c78e1e06d2ae7f2c529241c5b0498ce"
+  },
+  "methods": [
+    {
+      "signature": "bool ON__IsCameraFrameUnitVectorHelper(",
+      "sha256": "81a106c33fa9f25491f87a67fa1e667a9149f5933dcfb3fa30700d8631f96c48"
+    },
+    {
+      "signature": "bool ON__IsCameraFramePerpindicular(",
+      "sha256": "a64dfe86b84ba97c1a2bf4046c4269143f06e8fdcf092258399360f274115e2f"
+    },
+    {
+      "signature": "bool ON_Viewport::IsValidCameraLocation(",
+      "sha256": "fef57f919cded1f3b08fdfc61b0fb50441fd7074e61713c214d3ecdf92a7271d"
+    },
+    {
+      "signature": "bool ON_Viewport::IsValidCameraUpOrDirection(",
+      "sha256": "4662003b7dd8cf15de783c7a85e2ccea37adeb639e7c9b514bee7c82460daca6"
+    },
+    {
+      "signature": "bool ON_Viewport::SetCameraLocation(",
+      "sha256": "dca45147e80bb69dfa2abbc7dfce0a5e350f789b1d52e3cfd54c65558ff39605"
+    },
+    {
+      "signature": "bool ON_Viewport::SetCameraDirection(",
+      "sha256": "6608151a36808f5ba4b0c900d111c7591380d38ecb47f9e8e7aaba58f88e2d86"
+    },
+    {
+      "signature": "bool ON_Viewport::SetCameraUp(",
+      "sha256": "64adf4b03146a9103ef0210478670d280909ad50a3421ae358ff2257d58bb53f"
+    },
+    {
+      "signature": "bool ON_Viewport::SetCameraFrame()",
+      "sha256": "c4a746af569c8fb6db35d4f145f5af6a6fea019c4e27fb18d9fea30345ccded2"
+    }
+  ],
+  "observations": [
+    "SetCameraFrame invalidates camera and frame validity and projection hash before validation.",
+    "Direction/up validity requires finite non-sentinel components, maximum absolute component > ON_ZERO_TOLERANCE and < ON_NONSENSE_WORLD_COORDINATE_VALUE.",
+    "Up takes priority only when up is locked and direction is not; otherwise direction takes priority.",
+    "Published Unitize/Length and cross-product operations are dependencies, with unit length and perpendicular guards at 1e-6.",
+    "Failed frame construction retains prior basis fields while validity is false; no replacement identity basis.",
+    "Location lock compares the exact requested point to existing valid location; invalid location input can retain previous state."
+  ],
+  "nextProof": [
+    "Compile unchanged source frame/setter methods with exact published numeric dependencies, explicit state and diagnostic observations.",
+    "Compare lock combinations, setter order, original four presets, zero/near-parallel/short/huge/nonfinite/sentinel cases and all retained fields.",
+    "Only then integrate source lens/parallel-transition and world-normalized mesh transforms, followed by actual Metal preset captures."
+  ],
+  "limits": "Static published-source audit; no native reference execution, private Rhino5 behavior or completed renderer integration asserted.",
+  "dependencies": {
+    "pointSource": {
+      "file": "opennurbs_point.cpp",
+      "sha256": "4aac860b778a37de2942f0bc665c655bed8f98e51e0c94beb542752a08558eeb",
+      "methods": [
+        {
+          "signature": "double ON_Length3d(",
+          "sha256": "8fa6a44f3f91bb7beee5890ac084e663891390f796ae4fa69f3e4c4671043f03"
+        },
+        {
+          "signature": "double ON_3dVector::Length() const",
+          "sha256": "c4bcde221dcd92aafb76e865bca21fe57fa69eb59b890db2963101a02289058b"
+        },
+        {
+          "signature": "bool ON_3dVector::Unitize()",
+          "sha256": "d5b1ebb8bce26d3b7285273900d24c603179f06446298f5d5996c7222db3dfd2"
+        },
+        {
+          "signature": "bool ON_3dVector::IsValid() const",
+          "sha256": "931ef3ca8b0f801fae18d6ed5e2a14d49b8a893a0ccf717e98a554951a2cbd89"
+        },
+        {
+          "signature": "bool ON_3dPoint::IsValid() const",
+          "sha256": "c4c3100752811710752629fe7b307c416dfb29daa990080863af19fc7067111c"
+        },
+        {
+          "signature": "double ON_3dVector::MaximumCoordinate() const",
+          "sha256": "d69b465f3160883525f7985ea7d59d613f161ffced74d0ddc36d919c6ac36871"
+        },
+        {
+          "signature": "double ON_3dPoint::MaximumCoordinate() const",
+          "sha256": "266f9d126fb9082fb7153eb6a14fd5810738e95b4832c4cf1a108581c326e285"
+        }
+      ]
+    },
+    "definesSource": {
+      "file": "opennurbs_defines.h",
+      "sha256": "773d75ecf3dab2d792de490da99a175be548c394a81f11cd9a04cec5c1fe7bd6",
+      "zeroTolerance": "2.3283064365386962890625e-10",
+      "nonsenseWorldCoordinate": "1.0e100"
+    }
+  }
+}

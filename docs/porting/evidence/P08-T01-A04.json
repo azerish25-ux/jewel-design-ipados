@@ -82,11 +82,11 @@
     },
     "repository": {
       "id": 41282741611,
-      "status": "in_progress_last_observed"
+      "status": "completed_success_github_terminal_status_checked"
     },
     "reuse": {
       "id": 41282741688,
-      "status": "in_progress_last_observed"
+      "status": "completed_success_github_terminal_status_checked"
     }
   },
   "appleReport": "docs/evidence/apple/frustum-numeric-results.json",

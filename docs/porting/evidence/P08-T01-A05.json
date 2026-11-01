@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T01-A05",
-  "status": "local_native_and_managed_matrix_adapter_checks_passed_apple_pending",
+  "status": "windows_macos_and_both_ios_families_numeric_matrix_adapter_checks_passed",
   "sourceAudit": "docs/evidence/audit/camera-matrix-source.json",
   "sourceReference": {
     "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
@@ -28,15 +28,16 @@
   "children": [
     {
       "id": "P08-T01-A05-01",
-      "status": "local_exact_source_reference_and118_cases_verified"
+      "status": "windows_and_macos_exact_source_reference_and118_cases_verified"
     },
     {
       "id": "P08-T01-A05-02",
-      "status": "local_CSharp118_cases_and16_Metal_endpoints_passed"
+      "status": "windows_macos_iPad_iPhone_CSharp118_cases_and16_Metal_endpoints_passed"
     },
     {
       "id": "P08-T01-A05-03",
-      "status": "original_preset_projection_integration_pending"
+      "status": "original_preset_projection_integration_pending",
+      "sourceAudit": "docs/evidence/audit/camera-frame-source.json"
     }
   ],
   "red": "Rendering.Tests failed CS0246 missing CandidateCameraTransform before implementation.",
@@ -73,10 +74,49 @@
     ]
   },
   "remaining": [
-    "macOS independent Clang/managed matrices",
-    "Actual iPad/iPhone source matrix and Metal endpoint execution",
     "World-frame construction, source lens/framing/transitions and normalized mesh projection integration",
     "Actual source preset Metal frames, private Rhino5/PC/physical/full feature parity"
   ],
-  "limits": "Renderer behavior unchanged. Published numeric source and checked adapter are not full camera/viewport parity. No full feature row closed."
+  "limits": "Renderer behavior unchanged. Published numeric source and checked adapter are not full camera/viewport parity. No full feature row closed.",
+  "appleRuns": {
+    "sourceCommit": "aa54cbdb3636f609c1dd330d0d0154953b273962",
+    "preflight": {
+      "id": 41284469558,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "visible": {
+      "id": 41284469540,
+      "status": "completed_success_both_families_actual_numeric_results_and_adjacent_pixels_inspected"
+    },
+    "repository": {
+      "id": 41284469519,
+      "status": "completed_success_github_terminal_status_checked"
+    },
+    "reuse": {
+      "id": 41284469635,
+      "status": "completed_success_both_families_github_terminal_status_checked"
+    }
+  },
+  "appleReport": "docs/evidence/apple/camera-matrix-numeric-results.json",
+  "adjacentChecks": {
+    "nodeRegressions": {
+      "tests": 29,
+      "passed": 29,
+      "failed": 0,
+      "command": "node scripts/run-local.cjs node --test tests/metal-workflow.test.cjs tests/native-archive.test.cjs tests/camera-preset-oracle.test.cjs tests/metal-artifacts.test.cjs tests/viewport-report.test.cjs tests/viewport-driver.test.cjs tests/viewport-screenshots.test.cjs tests/frustum-reference.test.cjs tests/camera-matrix-reference.test.cjs"
+    },
+    "repositoryIntegrity": {
+      "command": "node tools/repository/check.cjs",
+      "exitCode": 0,
+      "verifiedRequirements": 0
+    }
+  },
+  "review": {
+    "sourceSemantics": "All16 coefficients and return/retained-failure semantics compared against unchanged published methods; source depth convention explicit.",
+    "gpuBoundary": "Projection packing validates finite representable float coefficients; independent corner/depth and asymmetric transpose checks.",
+    "dataIntegrity": "Recovery baseline unchanged; no silent opaque-data loss, synthetic geometry or replacement camera basis.",
+    "dependencies": "No added runtime package; exact openNURBS source pins/hashes and existing notice retained.",
+    "remaining": "Source-frame construction/lens transitions/actual rendered preset projection and original-PC/physical/full product acceptance remain open."
+  },
+  "appleRuntimeReport": "docs/evidence/apple/camera-matrix-ios-results.json"
 }
