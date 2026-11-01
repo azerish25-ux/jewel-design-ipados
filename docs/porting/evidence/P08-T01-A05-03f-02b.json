@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b",
+  "parentTask": "P08-T01-A05-03f-02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "original_whole_view_copy_field_coverage_and_named_guards_verified_model_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-whole-view-ownership.md",
+  "audit": "docs/evidence/audit/rhino5-whole-view-source.json",
+  "checks": {
+    "originalCoreRegions": 14,
+    "originalMainGuardRegions": 3,
+    "allRegionBytesSha256Verified": true,
+    "allGhidraViewsCompleted": true,
+    "targetExecuted": false,
+    "sharedCloneThunkUsesRawInstructionProof": true,
+    "sharedCloneThunkTypedAliasAccepted": false
+  },
+  "remaining": [
+    "Owned immutable whole-view model and constructor/default semantics",
+    "Actual userdata attach/clone/copy-count ownership, including supported derived types",
+    "History and actual document notification/synchronization continuation",
+    "Full source preset renderer, original-PC and physical acceptance"
+  ],
+  "parityRowsClosed": 0
+}

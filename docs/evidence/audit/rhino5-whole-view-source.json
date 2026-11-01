@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b",
+  "status": "original_copy_field_coverage_and_guard_names_statically_resolved_model_pending",
+  "targetExecuted": false,
+  "coreManifest": "native/Analysis/fixtures/rhino5-whole-view-regions.json",
+  "mainGuardManifest": "native/Analysis/fixtures/rhino5-view-guards-regions.json",
+  "coreTargetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "mainTargetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "wholeViewMethods": [
+    {
+      "role": "view-default-constructor",
+      "name": "??0ON_3dmView@@QEAA@XZ",
+      "abi": null,
+      "rva": 46864,
+      "length": 185,
+      "sha256": "f9956cf8579d7a2cadc2fd645859dfc671b20c9d26c10ed340990e7bb80d314d",
+      "unwindRegions": [
+        {
+          "begin": 46864,
+          "end": 47049,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "view-copy-constructor",
+      "name": "??0ON_3dmView@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 2516704,
+      "length": 565,
+      "sha256": "76d0c6d45bb25e5a4da115e620f3d0bcaf6bf5f8550d4574c10c7832e8ac874b",
+      "unwindRegions": [
+        {
+          "begin": 2516704,
+          "end": 2517269,
+          "unwind": 3617060
+        }
+      ]
+    },
+    {
+      "role": "view-assignment",
+      "name": "??4ON_3dmView@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 75440,
+      "length": 516,
+      "sha256": "8dd7b3c4d9a8c4ef940309a11a3f3e35769d118103c82b1e2105d4dfc70f6ff3",
+      "unwindRegions": [
+        {
+          "begin": 75440,
+          "end": 75956,
+          "unwind": 3617060
+        }
+      ]
+    },
+    {
+      "role": "view-default",
+      "name": "?Default@ON_3dmView@@QEAAXXZ",
+      "abi": null,
+      "rva": 48512,
+      "length": 478,
+      "sha256": "9567fd9e7e1cf27ddaeacaab2b5abb578743e12aa83a52f9c4840a64f2827244",
+      "unwindRegions": [
+        {
+          "begin": 48512,
+          "end": 48990,
+          "unwind": 3528056
+        }
+      ]
+    },
+    {
+      "role": "view-read",
+      "name": "?Read@ON_3dmView@@QEAA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 51936,
+      "length": 1666,
+      "sha256": "2a29fd49592596b0bb03616cc02e6f015328b0392e626ff87b61b5d9907b4446",
+      "unwindRegions": [
+        {
+          "begin": 51936,
+          "end": 51969,
+          "unwind": 3596324
+        },
+        {
+          "begin": 51969,
+          "end": 53371,
+          "unwind": 3596280
+        },
+        {
+          "begin": 53371,
+          "end": 53602,
+          "unwind": 3596264
+        }
+      ]
+    },
+    {
+      "role": "view-write",
+      "name": "?Write@ON_3dmView@@QEBA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 49648,
+      "length": 2281,
+      "sha256": "0d723b9b28c392aee494447ea548bafb6fd755cfc0cd540d8dab83698ec43239",
+      "unwindRegions": [
+        {
+          "begin": 49648,
+          "end": 50183,
+          "unwind": 3596384
+        },
+        {
+          "begin": 50183,
+          "end": 51895,
+          "unwind": 3596364
+        },
+        {
+          "begin": 51895,
+          "end": 51929,
+          "unwind": 3596348
+        }
+      ]
+    },
+    {
+      "role": "viewport-assignment",
+      "name": "??4ON_Viewport@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 2937248,
+      "length": 622,
+      "sha256": "ee0f57ddb096d92a7738f04d6706a47b6bd6f855da3438814df640fc14c5d2bb",
+      "unwindRegions": [
+        {
+          "begin": 2937248,
+          "end": 2937870,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "construction-plane-assignment",
+      "name": "??4ON_3dmConstructionPlane@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 75104,
+      "length": 125,
+      "sha256": "c220376a92a27bdddf8f9ecfcebddcd32f2091dece1fbd38daa1f99621e67be4",
+      "unwindRegions": [
+        {
+          "begin": 75104,
+          "end": 75229,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "trace-image-assignment",
+      "name": "??4ON_3dmViewTraceImage@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 75232,
+      "length": 129,
+      "sha256": "982373b777f129bad0b3656719883edf6d2aa18ffb34f118230c1fac259c57b5",
+      "unwindRegions": [
+        {
+          "begin": 75232,
+          "end": 75361,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "position-assignment",
+      "name": "??4ON_3dmViewPosition@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 42192,
+      "length": 52,
+      "sha256": "fbcf821372392536bb0f97e107023874dac15d57a0da9b8cc3956498ceab8c98",
+      "unwindRegions": []
+    },
+    {
+      "role": "clipping-info-write",
+      "name": "?Write@ON_ClippingPlaneInfo@@QEBA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 1931792,
+      "length": 237,
+      "sha256": "d8772f3b27c107edaaa5c27c60cbdf7531d6fe88f1954c9b7d9fbaaa61971e35",
+      "unwindRegions": [
+        {
+          "begin": 1931792,
+          "end": 1932029,
+          "unwind": 3570580
+        }
+      ]
+    },
+    {
+      "role": "clipping-info-read",
+      "name": "?Read@ON_ClippingPlaneInfo@@QEAA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 1932032,
+      "length": 525,
+      "sha256": "09079478789327ef40ed2451fbafe09de1444d0c53e12af46a8c5ce0cdcf688c",
+      "unwindRegions": [
+        {
+          "begin": 1932032,
+          "end": 1932557,
+          "unwind": 3608704
+        }
+      ]
+    },
+    {
+      "role": "copy-userdata",
+      "name": "?CopyUserData@ON_Object@@QEAAXAEBV1@@Z",
+      "abi": null,
+      "rva": 1823600,
+      "length": 160,
+      "sha256": "13b56fa332ef0b4e1691b8b20184c7291540bba0f164a812e24544a0d2e53c40",
+      "unwindRegions": [
+        {
+          "begin": 1823600,
+          "end": 1823622,
+          "unwind": 3524976
+        },
+        {
+          "begin": 1823622,
+          "end": 1823744,
+          "unwind": 3558252
+        },
+        {
+          "begin": 1823744,
+          "end": 1823755,
+          "unwind": 3558236
+        },
+        {
+          "begin": 1823755,
+          "end": 1823760,
+          "unwind": 3558212
+        }
+      ]
+    },
+    {
+      "role": "duplicate-userdata",
+      "name": "?Duplicate@ON_UserData@@QEBAPEAV1@XZ",
+      "abi": null,
+      "rva": 1683472,
+      "length": 7,
+      "sha256": "c3f67c51e5ce090fa0c688b157cb6af694f16189549bb2c8ffba8fdebe2096f3",
+      "unwindRegions": []
+    }
+  ],
+  "wholeViewViews": [
+    {
+      "role": "view-default-constructor",
+      "entry": "18000b710",
+      "signature": "undefined ON_3dmView(void)",
+      "decompilerSha256": "d3fb655b796858a5377039777d3e775d06503f8e81634c989f4c749a4caf66f4",
+      "basicBlocks": 1
+    },
+    {
+      "role": "view-copy-constructor",
+      "entry": "1802666e0",
+      "signature": "undefined ON_3dmView(ON_3dmView * param_1)",
+      "decompilerSha256": "405a8db1aea89acb78dc13c69708feb9b7901b8d60cb3d901278b03e64e48037",
+      "basicBlocks": 3
+    },
+    {
+      "role": "view-assignment",
+      "entry": "1800126b0",
+      "signature": "ON_3dmView * operator=(ON_3dmView * param_1)",
+      "decompilerSha256": "09ff8f9408c2616ce231552779ab1af35ce00d8510ee114e0ccd8df5a2a0fd00",
+      "basicBlocks": 3
+    },
+    {
+      "role": "view-default",
+      "entry": "18000bd80",
+      "signature": "void Default(void)",
+      "decompilerSha256": "c40f5f583a727f7c677c3c983f541d1714f27fe93a19fe23df2653147589bacb",
+      "basicBlocks": 13
+    },
+    {
+      "role": "view-read",
+      "entry": "18000cae0",
+      "signature": "bool Read(ON_BinaryArchive * param_1)",
+      "decompilerSha256": "87d5159782524ef450c1d47fb004655ee13b5db818e87a950ed04e8accb7831f",
+      "basicBlocks": 87
+    },
+    {
+      "role": "view-write",
+      "entry": "18000c1f0",
+      "signature": "bool Write(ON_BinaryArchive * param_1)",
+      "decompilerSha256": "0622c1000698ccaeba1c861c523f1d27ed7b0d6aaffbed471c096019d944572b",
+      "basicBlocks": 106
+    },
+    {
+      "role": "viewport-assignment",
+      "entry": "1802cd1a0",
+      "signature": "ON_Viewport * operator=(ON_Viewport * param_1)",
+      "decompilerSha256": "0adc18009de6a7e3967835bd7a6d52d2e22795592175cc3c2d3d16045595e4d0",
+      "basicBlocks": 3
+    },
+    {
+      "role": "construction-plane-assignment",
+      "entry": "180012560",
+      "signature": "ON_3dmConstructionPlane * operator=(ON_3dmConstructionPlane * param_1)",
+      "decompilerSha256": "f26f436b52d8fa669dd7c6cebbc22fd9f72c8171369599fb8391f1b7a014a104",
+      "basicBlocks": 1
+    },
+    {
+      "role": "trace-image-assignment",
+      "entry": "1800125e0",
+      "signature": "ON_3dmViewTraceImage * operator=(ON_3dmViewTraceImage * param_1)",
+      "decompilerSha256": "e97486b6fb616459fd1eee388c617b651de4802de746daccc7f5b153b72d2413",
+      "basicBlocks": 1
+    },
+    {
+      "role": "position-assignment",
+      "entry": "18000a4d0",
+      "signature": "ON_3dmViewPosition * operator=(ON_3dmViewPosition * param_1)",
+      "decompilerSha256": "10e6258f282bf10ea4c3ed8403f00893003c093022f83529d61b7fe247c29a30",
+      "basicBlocks": 3
+    },
+    {
+      "role": "clipping-info-write",
+      "entry": "1801d7a10",
+      "signature": "bool Write(ON_BinaryArchive * param_1)",
+      "decompilerSha256": "eb6fb6667b2622c9a68edc54c5298496e31d7caabd2b5a9bc72c412c3bf6fd6b",
+      "basicBlocks": 11
+    },
+    {
+      "role": "clipping-info-read",
+      "entry": "1801d7b00",
+      "signature": "bool Read(ON_BinaryArchive * param_1)",
+      "decompilerSha256": "a6f42b22e5bb68486e44a8958332a1cec42353de057bb913dfb65bc0073fffdf",
+      "basicBlocks": 30
+    },
+    {
+      "role": "copy-userdata",
+      "entry": "1801bd370",
+      "signature": "void CopyUserData(ON_Object * param_1)",
+      "decompilerSha256": "5beb31e1c7318b24164130422488ac62aacedc6279f6b437960aa2e30e4af52d",
+      "basicBlocks": 13
+    },
+    {
+      "role": "duplicate-userdata",
+      "entry": "18019b010",
+      "signature": "ON_3dmObjectAttributes * Duplicate(void)",
+      "decompilerSha256": "597296eaa652b63108feccdab0f0c7b5668785dad255a3e282761f748025d3ef",
+      "basicBlocks": 1,
+      "typedSignatureAccepted": false,
+      "acceptedEvidence": "Raw7-byte thunk jumps through vtable+8 with RCX preserved. Several exports share this address; Ghidra retained another alias return class. Do not infer concrete clone class/layout from this C view."
+    }
+  ],
+  "guardMethods": [
+    {
+      "role": "parent-view-type",
+      "name": "?RhinoViewType@CRhinoView@@QEBAHXZ",
+      "abi": null,
+      "rva": 4212720,
+      "length": 7,
+      "sha256": "83a7e5c0bd2650c3bbde1e37200da1b48fa8b83749eb44b8972fb87873ab536a",
+      "unwindRegions": []
+    },
+    {
+      "role": "parent-main-viewport",
+      "name": "?ActiveViewport@CRhinoView@@UEBAAEAVCRhinoViewport@@XZ",
+      "abi": null,
+      "rva": 4213392,
+      "length": 8,
+      "sha256": "e4ff1cc19086e617d4db62c327b6b5069fdb86a9899956045bd5013f39be60f9",
+      "unwindRegions": []
+    },
+    {
+      "role": "is-page-main-viewport",
+      "name": "?IsPageViewMainViewport@CRhinoViewport@@QEBA_NXZ",
+      "abi": null,
+      "rva": 4516480,
+      "length": 53,
+      "sha256": "b91a11a0bb2ea5ea71a3692e1f01184026f2d4748ba429f32a880262546cdfe4",
+      "unwindRegions": [
+        {
+          "begin": 4516480,
+          "end": 4516533,
+          "unwind": 19055176
+        }
+      ]
+    }
+  ],
+  "guardViews": [
+    {
+      "role": "parent-view-type",
+      "entry": "1404047f0",
+      "signature": "int RhinoViewType(void)",
+      "decompilerSha256": "cb574933ec6772d20a9e1c6139e17312b5947f9b57817582f4dcab4e59b16429",
+      "basicBlocks": 1
+    },
+    {
+      "role": "parent-main-viewport",
+      "entry": "140404a90",
+      "signature": "CRhinoViewport * ActiveViewport(void)",
+      "decompilerSha256": "0cc26b7aaca1f21fa5949a2c52b297e744bdbffe3d3f7906a52bd366a66ae2f6",
+      "basicBlocks": 1
+    },
+    {
+      "role": "is-page-main-viewport",
+      "entry": "14044ea80",
+      "signature": "bool IsPageViewMainViewport(void)",
+      "decompilerSha256": "c3d7da780591ef2fca61d7d252c4f4e03de958f040def94af76901a78f6ed21a",
+      "basicBlocks": 5
+    }
+  ],
+  "publishedComparison": {
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "files": [
+      {
+        "file": "opennurbs_3dm_settings.h",
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_3dm_settings.h",
+        "sha256": "97ab63dd63378cb5af5031431b5ce1c826eedb6ca3c62a305de387e9cf7f210a",
+        "bytes": 47861
+      },
+      {
+        "file": "opennurbs_3dm_settings.cpp",
+        "url": "https://raw.githubusercontent.com/mcneel/opennurbs/f2dc7fba67017475b8d530835a40fcfb5372134a/opennurbs_3dm_settings.cpp",
+        "sha256": "a4e5fce3b52bd2c527e8ddb45788a144f0be371b35d9c994190839dbce0ca5a6",
+        "bytes": 159217
+      }
+    ],
+    "role": "Later published declarations identify corresponding names and version differences; actual original bytes establish offsets/copy branches."
+  },
+  "copiedFields": [
+    {
+      "offset": "0x000..0x237",
+      "name": "viewport",
+      "policy": "ON_Viewport assignment plus userdata copy; preserve numeric fields, UUID, clip matrices and near constraints"
+    },
+    {
+      "offset": "0x238",
+      "name": "clippingPlanes",
+      "policy": "Owned ON_SimpleArray<ON_ClippingPlaneInfo> copy"
+    },
+    {
+      "offset": "0x250",
+      "name": "lockedProjection",
+      "policy": "Byte copied; identified by original attribute1.3 serialization order and pinned published field"
+    },
+    {
+      "offset": "0x258..0x268",
+      "name": "targetMirror",
+      "policy": "Three doubles copied independently; stale mirror remains stale on copy"
+    },
+    {
+      "offset": "0x270",
+      "name": "name",
+      "policy": "ON_wString value copy"
+    },
+    {
+      "offset": "0x278..0x287",
+      "name": "displayModeId",
+      "policy": "16-byte UUID"
+    },
+    {
+      "offset": "0x288",
+      "name": "legacyV3DisplayMode",
+      "policy": "Raw32-bit integer; do not apply later UUID-to-mode normalization"
+    },
+    {
+      "offset": "0x290..0x2b4",
+      "name": "position",
+      "policy": "Four doubles; four flag/reserved bytes at+0x20; final byte at+0x24"
+    },
+    {
+      "offset": "0x2b8",
+      "name": "viewType",
+      "policy": "Raw32-bit view kind"
+    },
+    {
+      "offset": "0x2c0..0x2f8",
+      "name": "pageSettings",
+      "policy": "Page number, width/height, four margins and printer string"
+    },
+    {
+      "offset": "0x300..0x3a7",
+      "name": "constructionPlane",
+      "policy": "Plane128, grid/snap spacing, count/frequency, depth-buffer byte and name"
+    },
+    {
+      "offset": "0x3a8..0x3aa",
+      "name": "visibilityFlags",
+      "policy": "Construction grid, construction axes and world axes bytes; no later separate construction-Z flag"
+    },
+    {
+      "offset": "0x3b0..0x44a",
+      "name": "traceImage",
+      "policy": "Plane128, width/height, path, grayscale/hidden/filter bytes"
+    },
+    {
+      "offset": "0x450..0x459",
+      "name": "wallpaper",
+      "policy": "Path and grayscale/hidden bytes"
+    }
+  ],
+  "viewportCopyDetails": {
+    "userData": {
+      "entryRva": "0x1bd370",
+      "sourceHeadOffset": "0x10",
+      "sourceNextOffset": "0xc8",
+      "copyCountOffset": "0x38",
+      "copyEligibility": "Nonzero32-bit copy count; zero entries skipped",
+      "clone": "Virtual clone through vtable+0x08; null clone skipped",
+      "typeCheck": "Returned class hierarchy must derive from ON_UserData before AttachUserData",
+      "failure": "Rejected attachment destroys clone through vtable+0x10",
+      "limits": "AttachUserData ownership/UUID rules, derived clone implementations and copy-count update semantics still need validation; no raw byte-bag runtime equivalence is claimed."
+    },
+    "flagBytes": "0x20..0x23 copy location/direction/up locks and symmetry byte",
+    "viewportId": "Four32-bit words0x118..0x124 copied",
+    "clipModification": "Two128-byte matrices at0x128 and0x1a8 copied",
+    "nearConstraints": [
+      {
+        "name": "PerspectiveMinNearDist",
+        "offset": "0x228",
+        "getterRva": "0x2cce70",
+        "getterBytes": 9,
+        "getterSha256": "0c067d224117e0293906052cb0ae0e081956f17947ceefd636085a584bf41747"
+      },
+      {
+        "name": "PerspectiveMinNearOverFar",
+        "offset": "0x230",
+        "getterRva": "0x2cce20",
+        "getterBytes": 9,
+        "getterSha256": "6d89343b94d9b6f11076b13ade7d7e07da919178924dd4c6be23ee670002deb7"
+      }
+    ]
+  },
+  "guardResolution": {
+    "projectionLock": "SetVP byte viewport+0x260 is embedded ON_3dmView(base+0x10).lockedProjection(+0x250); original attribute1.3 ReadBool/WriteByte order and published declaration corroborate identity.",
+    "pageMain": "Named IsPageViewMainViewport export checks non-null ParentView, RhinoViewType(+0x600)==1 and MainViewport pointer(+0x108)==this, exactly matching SetVP restriction predicates."
+  },
+  "clippingInfo": {
+    "serializationVersion": "1.0",
+    "fields": [
+      "four plane-equation doubles at0x00",
+      "UUID at0x20",
+      "enabled flag at0x30"
+    ],
+    "limits": "Logical info only; full clipping geometry and archive compatibility separate."
+  },
+  "versionDifferences": {
+    "originalViewAttributes": "1.4",
+    "publishedViewAttributes": "1.8",
+    "laterFieldsNotAdoptedAsOriginal": [
+      "named-view ID",
+      "focal-blur settings",
+      "render size",
+      "separate construction-Z-axis flag"
+    ],
+    "images": "Original strings/flags must not be replaced by later ON_FileReference memory layout."
+  },
+  "limits": [
+    "Read/Write decompiler return inference still has cookie annotation limits; no whole native archive codec claimed.",
+    "Native pointer/string/array/userdata memory cannot be copied as a blob into iOS.",
+    "Owned immutable model/history and actual document notification/synchronization remain unfinished.",
+    "Original-PC, saved-view corpus and physical-device acceptance remain open.",
+    "The shared userdata duplicate thunk typed C signature is not accepted; its direct virtual-dispatch instruction proof is used instead."
+  ]
+}

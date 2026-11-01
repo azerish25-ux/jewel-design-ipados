@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "numeric_commit_state_windows_macos_passed_simulator_pending",
+  "status": "numeric_commit_state_windows_macos_iPad_iPhone_passed_full_adapter_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02a-numeric-commit.md",
   "source": {
     "mainSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
@@ -44,7 +44,7 @@
     },
     "visible": {
       "id": 41307421577,
-      "status": "in_progress"
+      "status": "completed_success_terminal_checked"
     },
     "repository": {
       "id": 41307421558,
@@ -65,5 +65,11 @@
   "captureFix": "docs/porting/evidence/P08-T01-A05-03f-02a-F01.json",
   "appleNumericReport": "docs/evidence/apple/rhino5-numeric-commit-results.json",
   "managedRuntimeReport": "docs/evidence/apple/numeric-commit-capture-fixed-attempt1.json",
-  "captureObstructionFix": "docs/porting/evidence/P08-T01-A05-03f-02a-F02.json"
+  "captureObstructionFix": "docs/porting/evidence/P08-T01-A05-03f-02a-F02.json",
+  "currentRuntimeValidation": {
+    "sourceCommit": "260125177d75e6d68071474691ef2ccbe243bcaa",
+    "run": 41309996590,
+    "status": "completed_success_actual_both_families_pixels_and_capture_attempts_inspected",
+    "report": "docs/evidence/apple/numeric-commit-capture-ready-results.json"
+  }
 }

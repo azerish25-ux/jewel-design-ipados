@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "run": 41311056268,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41311056268",
+  "sourceCommit": "dbfd6fa9f4ded3574ecde272db615ca02f9be088",
+  "status": "success",
+  "captureDriverTests": 13,
+  "captureDriverOutputSha256": "ba3e8b6baba625944baf07b90411730f4481401f7a11274f4b0567ef49440d75",
+  "numericReports": [
+    "PASS viewport screenshot acknowledgement:11 timing/token boundaries; actual simulator screenshot and pixel gates separate.",
+    "PASS source camera presets:120 unchanged-wrapper comparisons across invariant/en-US/tr-TR, original pose/up/plane/lens/projection, null and unknown-name behavior; source call-order/viewport preference observed, native frustum/zoom/UI/PC parity separate.",
+    "PASS viewport frame ownership:116 resource-only checks; three-frame bound/latest revision, retained replacement/disposal and concurrent idempotent completion; actual GPU presentation tested separately.",
+    "PASS published frustum/lens:1245 independently compiled-source cases, symmetry/two-point/deadband/raw-invalid/sentinel/world-bound/depth-diagnostic/state retention; private Rhino5/Metal projection/PC parity separate.",
+    "PASS published camera matrices:118 compiled-source cases and16 independent Metal clip endpoints; source coefficients/retained failure/frame basis, depth0..1/transpose and invalid float guards; full preset/private Rhino5/PC parity separate.",
+    "PASS published camera frames:730 sequences/2978 source steps; locks/validity/setter order/unset/threshold/degenerate state retention, cache/diagnostics and4 preset matrix compositions; rendered preset/private Rhino5/PC parity separate.",
+    "PASS published viewport transitions:961 sequences/6675 source steps; joint frame/frustum/target state, lock clearing/unknown symmetry bits, dolly/parallel scale, fallback/jitter and failure mutation; source-preset rendering/private Rhino5/PC parity separate.",
+    "PASS original Rhino5 scalar validity:18 native-branch boundary cases/196608 IEEE high-word patterns; negative unset/nonfinite reject and positive unset accepts; static byte semantics, original runtime/viewport parity separate.",
+    "PASS original Rhino5 camera frame:32 native-derived state/boundary checks and4 analytical poses; one validity flag, no location repair/world cutoff, reject-with-retention setters and raw tiny frame; static control flow, original runtime/PC parity separate.",
+    "PASS original Rhino5 viewport:26 native-derived perspective/frustum/lens/target checks; legacy limits/sentinels, strict lens threshold, width dolly/locks/near correction and failure mutation; static control flow, original runtime/preset/PC parity separate.",
+    "PASS original-derived Rhino5 vector rotation:2448 checks including 608 compiled published-source comparisons and15 analytical/edge checks; original runtime/PC parity separate.",
+    "PASS original-derived Rhino5 camera locations:32 static-policy/analytical checks; temporary copy, up/roll/locks and commit-target protocol; concrete native commit/history/cache and original runtime/PC parity separate.",
+    "PASS original-derived Rhino5 viewport cache:19522 checks including 1084 compiled published GetXform/cache cases and9 analytical/ownership checks; native commit/history/PC parity separate.",
+    "PASS original-derived Rhino5 numeric viewport commit:58 state/cache/target checks; required document/history continuation, full native setter/PC/physical parity separate."
+  ],
+  "numericOutputSha256": "3c6983e9aa7c6da91108946141301a2aacd2da91d52a979e3111c2fb16de2082",
+  "realIosBindingBuild": {
+    "warnings": 0,
+    "errors": 0,
+    "outputSha256": "01f1299cef8cb9a931bd79120bc4d5810632d42c2d28f881d9e432c0b3a39ac6"
+  },
+  "scope": "Actual macOS default/older-compatibility capture driver/readiness regressions, numeric58/cache19522/token11 and real binding compile. Latest actual simulator scene run remains separately tracked; full port/PC/physical acceptance unproven."
+}

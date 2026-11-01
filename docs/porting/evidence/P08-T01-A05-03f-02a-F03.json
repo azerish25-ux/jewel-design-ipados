@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "taskId": "P08-T01-A05-03f-02a-F03",
   "parentTask": "P08-T01-A05-03f-02a",
-  "status": "explicit_stage_guard_local_passed_apple_pending",
+  "status": "explicit_stage_guard_windows_macos_iPad_iPhone_scene_passed",
   "failedMacRun": 41309996640,
   "failedMacSourceCommit": "260125177d75e6d68071474691ef2ccbe243bcaa",
   "observedFailure": "New macOS driver regression observed a screenshot call for an invalid stage path; existing Windows default-shell test rejected it.",
@@ -34,14 +34,28 @@
     "scope": "Test driver only, no CAD pixel threshold/background probe/geometry change."
   },
   "appleRuns": {
-    "status": "pending_push"
+    "sourceCommit": "dbfd6fa9f4ded3574ecde272db615ca02f9be088",
+    "preflight": {
+      "id": 41311056268,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "visible": {
+      "id": 41311056138,
+      "status": "completed_success_actual_both_families_pixels_and_attempts_inspected"
+    },
+    "repository": {
+      "id": 41311056200,
+      "status": "completed_success"
+    }
   },
   "remaining": [
-    "Verify the actual macOS driver and visible iPad/iPhone jobs for the corrected source"
+    "Continue the full owned-view/document/history port; this harness correction does not close product parity rows."
   ],
   "localChecks": {
     "nodeRegressions": 54,
     "driverAndCaptureChecks": 13,
     "repositoryIntegrityExitCode": 0
-  }
+  },
+  "appleReport": "docs/evidence/apple/portable-capture-guard-results.json",
+  "appleRuntimeReport": "docs/evidence/apple/portable-capture-guard-ios-results.json"
 }

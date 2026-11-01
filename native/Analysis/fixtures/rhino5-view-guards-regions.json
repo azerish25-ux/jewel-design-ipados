@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "parent-view-type",
+      "name": "?RhinoViewType@CRhinoView@@QEBAHXZ",
+      "abi": null,
+      "rva": 4212720,
+      "length": 7,
+      "sha256": "83a7e5c0bd2650c3bbde1e37200da1b48fa8b83749eb44b8972fb87873ab536a",
+      "unwindRegions": []
+    },
+    {
+      "role": "parent-main-viewport",
+      "name": "?ActiveViewport@CRhinoView@@UEBAAEAVCRhinoViewport@@XZ",
+      "abi": null,
+      "rva": 4213392,
+      "length": 8,
+      "sha256": "e4ff1cc19086e617d4db62c327b6b5069fdb86a9899956045bd5013f39be60f9",
+      "unwindRegions": []
+    },
+    {
+      "role": "is-page-main-viewport",
+      "name": "?IsPageViewMainViewport@CRhinoViewport@@QEBA_NXZ",
+      "abi": null,
+      "rva": 4516480,
+      "length": 53,
+      "sha256": "b91a11a0bb2ea5ea71a3692e1f01184026f2d4748ba429f32a880262546cdfe4",
+      "unwindRegions": [
+        {
+          "begin": 4516480,
+          "end": 4516533,
+          "unwind": 19055176
+        }
+      ]
+    }
+  ]
+}

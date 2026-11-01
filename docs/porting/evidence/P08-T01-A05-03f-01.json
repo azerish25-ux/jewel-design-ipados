@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "original_cache_windows_macos_iPad_passed_iphone_capture_failed_fix_pending",
+  "status": "original_cache_numeric_windows_macos_iPad_iPhone_passed_historical_capture_failure_retained",
   "plan": "docs/porting/plans/P08-T01-A05-03f-01-cache-primitives.md",
   "binaryAudit": "docs/evidence/audit/rhino5-viewport-cache-source.json",
   "publishedAudit": "docs/evidence/audit/viewport-cache-published-source.json",
@@ -61,5 +61,11 @@
   "nextPlan": "docs/porting/plans/P08-T01-A05-03f-02-view-state.md",
   "historyAudit": "docs/evidence/audit/rhino5-view-history-source.json",
   "appleFailedRuntimeReport": "docs/evidence/apple/rhino5-viewport-cache-ios-attempt1.json",
-  "captureFix": "docs/porting/evidence/P08-T01-A05-03f-02a-F01.json"
+  "captureFix": "docs/porting/evidence/P08-T01-A05-03f-02a-F01.json",
+  "currentRuntimeValidation": {
+    "sourceCommit": "260125177d75e6d68071474691ef2ccbe243bcaa",
+    "run": 41309996590,
+    "status": "completed_success_actual_both_families_pixels_and_capture_attempts_inspected",
+    "report": "docs/evidence/apple/numeric-commit-capture-ready-results.json"
+  }
 }

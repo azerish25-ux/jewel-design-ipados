@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "taskId": "P08-T01-A05-03f-02a-F02",
   "parentTask": "P08-T01-A05-03f-02a",
-  "status": "notification_obstruction_capture_fix_local_passed_apple_pending",
+  "status": "actual_iPad_iPhone_scene_and_readiness_passed_guard_followup_separate",
   "failureReport": "docs/evidence/apple/numeric-commit-capture-fixed-attempt1.json",
   "rootCause": "First iPhone screenshot contains a system notification banner overlapping unchanged central comparison ROI.76925 mismatched pixels all at y327..411; actual CAD bbox has0 differences. Three-minute handshake itself completed successfully.",
   "red": {
@@ -33,7 +33,7 @@
     },
     "visible": {
       "id": 41309996590,
-      "status": "in_progress"
+      "status": "completed_success_actual_both_families_pixels_and_attempts_inspected"
     },
     "repository": {
       "id": 41309996611,
@@ -41,7 +41,7 @@
     }
   },
   "remaining": [
-    "Inspect actual fixed-source iPad/iPhone scene artifacts and screenshot attempt records; failed prior scene is not counted as pass"
+    "Continue the full port; retained failed notification case remains a regression fixture."
   ],
   "localChecks": {
     "nodeRegressions": 52,
@@ -58,5 +58,12 @@
     "stage": "original",
     "imageModified": false
   },
-  "guardFollowup": "docs/porting/evidence/P08-T01-A05-03f-02a-F03.json"
+  "guardFollowup": "docs/porting/evidence/P08-T01-A05-03f-02a-F03.json",
+  "actualRuntimeReport": "docs/evidence/apple/numeric-commit-capture-ready-results.json",
+  "currentCaptureValidation": {
+    "sourceCommit": "dbfd6fa9f4ded3574ecde272db615ca02f9be088",
+    "run": 41311056138,
+    "status": "completed_success_actual_both_families_pixels_and_attempts_inspected",
+    "report": "docs/evidence/apple/portable-capture-guard-ios-results.json"
+  }
 }

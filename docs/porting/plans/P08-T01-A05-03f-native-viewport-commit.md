@@ -10,7 +10,7 @@ Original Rhino.exe SHA256 951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1
 
 1. Statically compare original GetXform/world-to-clip arithmetic and cache dependencies before adopting published6 matrices as legacy5. Known exports in opennurbsx64.dll: GetXform0x2d4160, GetScreenPort0x2d32f0, GetFrustum0x2d2ea0, IsValidCamera0x2cdec0, IsValidFrustum0x2cded0, Xform.IsIdentity0x2e6500. These are verified export entry addresses only; complete byte regions/semantic equivalence have not been established here.
 2. Inspect ON_3dmView.SetTargetPoint to distinguish embedded viewport target and view metadata effects. Do not collapse those fields or assume independent storage without evidence.
-3. Resolve or explicitly model effective original view restrictions: raw byte at viewport+0x260 rejects; parent+0x600==1 and parent+0x108==this restricts incoming projection to parallel/world XYZ basis. Semantic names for those original fields remain unconfirmed.
+3. Resolve or explicitly model effective original view restrictions: raw byte at viewport+0x260 rejects; parent+0x600==1 and parent+0x108==this restricts incoming projection to parallel/world XYZ basis. Whole-view/named-getter evidence now resolves these as projection locking and IsPageViewMainViewport restrictions; concrete parent-context binding remains required.
 4. Define a concrete owned view state with transform/screen cache serial, extra transform, target metadata, notification and view-history contracts. Reuse existing immutable numeric values; do not introduce empty production callbacks or always-success commits.
 
 ## Required tests before implementation

@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "run": 41309996590,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41309996590",
+  "sourceCommit": "260125177d75e6d68071474691ef2ccbe243bcaa",
+  "status": "success",
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "resultSha256": "ed0e71ec058d4018356c47b24009b306988a911d015e57ecf207ba3b1b065205",
+      "reports": [
+        "PASS original-derived Rhino5 viewport cache:19522 checks including 1084 compiled published GetXform/cache cases and9 analytical/ownership checks; native commit/history/PC parity separate.",
+        "PASS original-derived Rhino5 numeric viewport commit:58 state/cache/target checks; required document/history continuation, full native setter/PC/physical parity separate.",
+        "PASS viewport screenshot acknowledgement:11 timing/token boundaries; actual simulator screenshot and pixel gates separate."
+      ],
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 3,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "d2a73b39d83c1cf70d6da57b41e3e8f3115b2aff63f2375abc74aa27782de2db",
+          "orbit": "bfba649fc9d087ae2df39f50e97229f70d5e5a0f2d00eb3619fcfcbdd4640990",
+          "edited": "abc258d0576169a42752b135893e705e8c487cef09213a2ba2a3fa909f993da4",
+          "empty": "2f4b6d3fbed5c4a83566b5a7a919e1b9f1a96a0719248b4d83b1be7c8b9b9216",
+          "resized": "dbe5da2014326d3e3a469ee57d718252bca41a740a0df7bd4ea3b75a478621b5",
+          "final": "d2a73b39d83c1cf70d6da57b41e3e8f3115b2aff63f2375abc74aa27782de2db"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+      "captureReadiness": {
+        "stages": [
+          {
+            "stage": "original",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "d2a73b39d83c1cf70d6da57b41e3e8f3115b2aff63f2375abc74aa27782de2db"
+              }
+            ]
+          },
+          {
+            "stage": "orbit",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "bfba649fc9d087ae2df39f50e97229f70d5e5a0f2d00eb3619fcfcbdd4640990"
+              }
+            ]
+          },
+          {
+            "stage": "edited",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "abc258d0576169a42752b135893e705e8c487cef09213a2ba2a3fa909f993da4"
+              }
+            ]
+          },
+          {
+            "stage": "empty",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "2f4b6d3fbed5c4a83566b5a7a919e1b9f1a96a0719248b4d83b1be7c8b9b9216"
+              }
+            ]
+          },
+          {
+            "stage": "resized",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "dbe5da2014326d3e3a469ee57d718252bca41a740a0df7bd4ea3b75a478621b5"
+              }
+            ]
+          },
+          {
+            "stage": "final",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "d2a73b39d83c1cf70d6da57b41e3e8f3115b2aff63f2375abc74aa27782de2db"
+              }
+            ]
+          }
+        ],
+        "acceptedTimings": [
+          {
+            "stage": "original",
+            "elapsedMilliseconds": 15245
+          },
+          {
+            "stage": "orbit",
+            "elapsedMilliseconds": 12653
+          },
+          {
+            "stage": "edited",
+            "elapsedMilliseconds": 9238
+          },
+          {
+            "stage": "empty",
+            "elapsedMilliseconds": 2484
+          },
+          {
+            "stage": "resized",
+            "elapsedMilliseconds": 2360
+          },
+          {
+            "stage": "final",
+            "elapsedMilliseconds": 2387
+          }
+        ],
+        "timingSha256": "7f637badde213fcad42d31e5ee986c494d5dd87589532f297e354d6a83e66a37",
+        "fullSceneComparisonUnchanged": true
+      }
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "resultSha256": "ed0e71ec058d4018356c47b24009b306988a911d015e57ecf207ba3b1b065205",
+      "reports": [
+        "PASS original-derived Rhino5 viewport cache:19522 checks including 1084 compiled published GetXform/cache cases and9 analytical/ownership checks; native commit/history/PC parity separate.",
+        "PASS original-derived Rhino5 numeric viewport commit:58 state/cache/target checks; required document/history continuation, full native setter/PC/physical parity separate.",
+        "PASS viewport screenshot acknowledgement:11 timing/token boundaries; actual simulator screenshot and pixel gates separate."
+      ],
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "16f85b68828e3bcb138edcfb719a901cb95f3db22c5ea1befa76cb9cda6178f9",
+          "orbit": "59cb8660d6517d5178428a863511a0f536b2a15bd686d747e687d742b7da9387",
+          "edited": "cadbc6df9adffcd5232a346f7c9e18c30c71c9e9099a8a0f570c4a325f62f9d1",
+          "empty": "00525470f2e38c222b7f365a609e22621669b9425de163ce265a47acc56595e7",
+          "resized": "972c11bd390661cf8abb37e2c3ea312b3a4fd09ec0b96f63202095fa36b02313",
+          "final": "16f85b68828e3bcb138edcfb719a901cb95f3db22c5ea1befa76cb9cda6178f9"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+      "captureReadiness": {
+        "stages": [
+          {
+            "stage": "original",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "16f85b68828e3bcb138edcfb719a901cb95f3db22c5ea1befa76cb9cda6178f9"
+              }
+            ]
+          },
+          {
+            "stage": "orbit",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "59cb8660d6517d5178428a863511a0f536b2a15bd686d747e687d742b7da9387"
+              }
+            ]
+          },
+          {
+            "stage": "edited",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "cadbc6df9adffcd5232a346f7c9e18c30c71c9e9099a8a0f570c4a325f62f9d1"
+              }
+            ]
+          },
+          {
+            "stage": "empty",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "00525470f2e38c222b7f365a609e22621669b9425de163ce265a47acc56595e7"
+              }
+            ]
+          },
+          {
+            "stage": "resized",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "972c11bd390661cf8abb37e2c3ea312b3a4fd09ec0b96f63202095fa36b02313"
+              }
+            ]
+          },
+          {
+            "stage": "final",
+            "attempts": [
+              {
+                "attempt": 1,
+                "ready": true,
+                "blockedPixels": 0,
+                "pngSha256": "16f85b68828e3bcb138edcfb719a901cb95f3db22c5ea1befa76cb9cda6178f9"
+              }
+            ]
+          }
+        ],
+        "acceptedTimings": [
+          {
+            "stage": "original",
+            "elapsedMilliseconds": 10771
+          },
+          {
+            "stage": "orbit",
+            "elapsedMilliseconds": 7698
+          },
+          {
+            "stage": "edited",
+            "elapsedMilliseconds": 8023
+          },
+          {
+            "stage": "empty",
+            "elapsedMilliseconds": 2315
+          },
+          {
+            "stage": "resized",
+            "elapsedMilliseconds": 1663
+          },
+          {
+            "stage": "final",
+            "elapsedMilliseconds": 1695
+          }
+        ],
+        "timingSha256": "0aeaca44a8cc8fd719209f2452711387d0aa22ca6cafa7288859ae50ce038449",
+        "fullSceneComparisonUnchanged": true
+      }
+    }
+  ],
+  "build": {
+    "warnings": 2,
+    "errors": 0,
+    "knownWarnings": [
+      "CS8765 AppDelegate options nullability",
+      "CA1422 UIWindow constructor deprecated on iOS26"
+    ],
+    "outputSha256": "3944e440b17574e15c262a7cec1b13f2be661570d94d8c21e38cb4e34ea21913"
+  },
+  "scope": "Actual signed iPad/iPhone simulator execution of numeric camera checks plus independent revalidation of adjacent CAD pixels/resources. Visible renderer still generic fitted camera; source preset, native commit/history/cache, original PC and physical-device acceptance remain open."
+}

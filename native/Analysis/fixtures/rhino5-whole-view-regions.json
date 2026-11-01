@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "view-default-constructor",
+      "name": "??0ON_3dmView@@QEAA@XZ",
+      "abi": null,
+      "rva": 46864,
+      "length": 185,
+      "sha256": "f9956cf8579d7a2cadc2fd645859dfc671b20c9d26c10ed340990e7bb80d314d",
+      "unwindRegions": [
+        {
+          "begin": 46864,
+          "end": 47049,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "view-copy-constructor",
+      "name": "??0ON_3dmView@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 2516704,
+      "length": 565,
+      "sha256": "76d0c6d45bb25e5a4da115e620f3d0bcaf6bf5f8550d4574c10c7832e8ac874b",
+      "unwindRegions": [
+        {
+          "begin": 2516704,
+          "end": 2517269,
+          "unwind": 3617060
+        }
+      ]
+    },
+    {
+      "role": "view-assignment",
+      "name": "??4ON_3dmView@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 75440,
+      "length": 516,
+      "sha256": "8dd7b3c4d9a8c4ef940309a11a3f3e35769d118103c82b1e2105d4dfc70f6ff3",
+      "unwindRegions": [
+        {
+          "begin": 75440,
+          "end": 75956,
+          "unwind": 3617060
+        }
+      ]
+    },
+    {
+      "role": "view-default",
+      "name": "?Default@ON_3dmView@@QEAAXXZ",
+      "abi": null,
+      "rva": 48512,
+      "length": 478,
+      "sha256": "9567fd9e7e1cf27ddaeacaab2b5abb578743e12aa83a52f9c4840a64f2827244",
+      "unwindRegions": [
+        {
+          "begin": 48512,
+          "end": 48990,
+          "unwind": 3528056
+        }
+      ]
+    },
+    {
+      "role": "view-read",
+      "name": "?Read@ON_3dmView@@QEAA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 51936,
+      "length": 1666,
+      "sha256": "2a29fd49592596b0bb03616cc02e6f015328b0392e626ff87b61b5d9907b4446",
+      "unwindRegions": [
+        {
+          "begin": 51936,
+          "end": 51969,
+          "unwind": 3596324
+        },
+        {
+          "begin": 51969,
+          "end": 53371,
+          "unwind": 3596280
+        },
+        {
+          "begin": 53371,
+          "end": 53602,
+          "unwind": 3596264
+        }
+      ]
+    },
+    {
+      "role": "view-write",
+      "name": "?Write@ON_3dmView@@QEBA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 49648,
+      "length": 2281,
+      "sha256": "0d723b9b28c392aee494447ea548bafb6fd755cfc0cd540d8dab83698ec43239",
+      "unwindRegions": [
+        {
+          "begin": 49648,
+          "end": 50183,
+          "unwind": 3596384
+        },
+        {
+          "begin": 50183,
+          "end": 51895,
+          "unwind": 3596364
+        },
+        {
+          "begin": 51895,
+          "end": 51929,
+          "unwind": 3596348
+        }
+      ]
+    },
+    {
+      "role": "viewport-assignment",
+      "name": "??4ON_Viewport@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 2937248,
+      "length": 622,
+      "sha256": "ee0f57ddb096d92a7738f04d6706a47b6bd6f855da3438814df640fc14c5d2bb",
+      "unwindRegions": [
+        {
+          "begin": 2937248,
+          "end": 2937870,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "construction-plane-assignment",
+      "name": "??4ON_3dmConstructionPlane@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 75104,
+      "length": 125,
+      "sha256": "c220376a92a27bdddf8f9ecfcebddcd32f2091dece1fbd38daa1f99621e67be4",
+      "unwindRegions": [
+        {
+          "begin": 75104,
+          "end": 75229,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "trace-image-assignment",
+      "name": "??4ON_3dmViewTraceImage@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 75232,
+      "length": 129,
+      "sha256": "982373b777f129bad0b3656719883edf6d2aa18ffb34f118230c1fac259c57b5",
+      "unwindRegions": [
+        {
+          "begin": 75232,
+          "end": 75361,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "position-assignment",
+      "name": "??4ON_3dmViewPosition@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 42192,
+      "length": 52,
+      "sha256": "fbcf821372392536bb0f97e107023874dac15d57a0da9b8cc3956498ceab8c98",
+      "unwindRegions": []
+    },
+    {
+      "role": "clipping-info-write",
+      "name": "?Write@ON_ClippingPlaneInfo@@QEBA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 1931792,
+      "length": 237,
+      "sha256": "d8772f3b27c107edaaa5c27c60cbdf7531d6fe88f1954c9b7d9fbaaa61971e35",
+      "unwindRegions": [
+        {
+          "begin": 1931792,
+          "end": 1932029,
+          "unwind": 3570580
+        }
+      ]
+    },
+    {
+      "role": "clipping-info-read",
+      "name": "?Read@ON_ClippingPlaneInfo@@QEAA_NAEAVON_BinaryArchive@@@Z",
+      "abi": null,
+      "rva": 1932032,
+      "length": 525,
+      "sha256": "09079478789327ef40ed2451fbafe09de1444d0c53e12af46a8c5ce0cdcf688c",
+      "unwindRegions": [
+        {
+          "begin": 1932032,
+          "end": 1932557,
+          "unwind": 3608704
+        }
+      ]
+    },
+    {
+      "role": "copy-userdata",
+      "name": "?CopyUserData@ON_Object@@QEAAXAEBV1@@Z",
+      "abi": null,
+      "rva": 1823600,
+      "length": 160,
+      "sha256": "13b56fa332ef0b4e1691b8b20184c7291540bba0f164a812e24544a0d2e53c40",
+      "unwindRegions": [
+        {
+          "begin": 1823600,
+          "end": 1823622,
+          "unwind": 3524976
+        },
+        {
+          "begin": 1823622,
+          "end": 1823744,
+          "unwind": 3558252
+        },
+        {
+          "begin": 1823744,
+          "end": 1823755,
+          "unwind": 3558236
+        },
+        {
+          "begin": 1823755,
+          "end": 1823760,
+          "unwind": 3558212
+        }
+      ]
+    },
+    {
+      "role": "duplicate-userdata",
+      "name": "?Duplicate@ON_UserData@@QEBAPEAV1@XZ",
+      "abi": null,
+      "rva": 1683472,
+      "length": 7,
+      "sha256": "c3f67c51e5ce090fa0c688b157cb6af694f16189549bb2c8ffba8fdebe2096f3",
+      "unwindRegions": []
+    }
+  ]
+}
