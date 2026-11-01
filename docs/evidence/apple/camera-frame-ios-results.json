@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "run": 41286158021,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41286158021",
+  "sourceCommit": "1dfea28b8a6cae877753d0b8c869e7ee0a11c399",
+  "sequencesPerFamily": 730,
+  "sourceStepsPerFamily": 2978,
+  "presetMatrixCompositionsPerFamily": 4,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "resultSha256": "c39476f5cc45cd09988684a25dfc12dc7139bc2fad5865c18f01359d0e9f53c0",
+      "frameReport": "PASS published camera frames:730 sequences/2978 source steps; locks/validity/setter order/unset/threshold/degenerate state retention, cache/diagnostics and4 preset matrix compositions; rendered preset/private Rhino5/PC parity separate.",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "0e925dc87fccc26210c2ee6c4ca2c4190c2d3742ebd47b8fa81272bf279f0275",
+          "orbit": "a52ab2e0f6fb8e77d0bf6e839b468a0d14f38b126a0fa489fcaf87a3acee30f3",
+          "edited": "182ee4c9d91903cb2c52beedbf727aa99d0b565355b4b0547bf8390d9d32aef9",
+          "empty": "4dc1502aaa99f99f9bbbd4bae91c99b46e59197d8697aad5fac5f3fc6c411a2b",
+          "resized": "99cd0df79c48d704b09931d24330c08581208f9f1a05c86b5c8fc5151efa1407",
+          "final": "0e925dc87fccc26210c2ee6c4ca2c4190c2d3742ebd47b8fa81272bf279f0275"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "resultSha256": "c39476f5cc45cd09988684a25dfc12dc7139bc2fad5865c18f01359d0e9f53c0",
+      "frameReport": "PASS published camera frames:730 sequences/2978 source steps; locks/validity/setter order/unset/threshold/degenerate state retention, cache/diagnostics and4 preset matrix compositions; rendered preset/private Rhino5/PC parity separate.",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 2,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "9e0a46d8591792c4aedcb97e4088876070ea497172ecd06de9b962a5ce9dbb9f",
+          "orbit": "24df8a2c4aad7b4ecd33af6e402d4877781f87e9f6026144c50dd786c246238e",
+          "edited": "724d57ca00a73a9e3d1dbda1944b26db895b65aa916539441ff3bb86bc9c447c",
+          "empty": "7b22dedbd31d19fda5a713adcabefbf77f311d4ecf533199c22c0f8fe91f05f4",
+          "resized": "f1bd58ea015c76193040991a55ae5f809ac0edbc1fed62c57664915c2aa2f869",
+          "final": "9e0a46d8591792c4aedcb97e4088876070ea497172ecd06de9b962a5ce9dbb9f"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "scope": "Actual frame/setter numerical assertions on both iOS families and independent adjacent real viewport pixels. Visible camera still uses generic fitted pose; source lens/parallel transition/rendered-preset/private Rhino5/PC/physical parity remains open.",
+  "build": {
+    "warnings": 2,
+    "errors": 0,
+    "warningIds": [
+      "CS8765 existing AppDelegate options nullability",
+      "CA1422 existing UIWindow constructor deprecated on iOS26"
+    ]
+  }
+}

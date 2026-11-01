@@ -1,6 +1,6 @@
 # ADR0052: preserve source camera-frame state and normalization
 
-Status: Windows and independent macOS Clang/managed sequence tests pass; actual iOS runtime results pending.
+Status: Windows, independent macOS Clang/managed checks and actual iPad/iPhone execution pass730 sequences/2,978 source steps. Device AOT compilation is in progress; renderer integration remains open.
 
 CandidateCameraFrame owns immutable value snapshots of raw camera location, requested direction/up, retained basis, validity and locks. Captured validity is kept explicit. Setters preserve lock equality returns and unset/invalid state changes; frame construction clears validity and projection cache before validation, retains the prior basis on failure, and preserves diagnostic versus ordinary parallel-vector failure paths. No fallback basis is manufactured.
 
