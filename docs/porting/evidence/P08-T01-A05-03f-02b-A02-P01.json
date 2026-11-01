@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "managed_userdata_protocol_windows_passed_apple_pending",
+  "status": "managed_userdata_protocol_windows_macos_passed_simulator_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A02-P01-runtime.md",
   "audit": "docs/evidence/audit/rhino5-concrete-userdata-source.json",
   "red": [
@@ -35,7 +35,7 @@
     "sourceCommit": "0819fe1676718ded829c3d30c6f3cdd1413a453f",
     "preflight": {
       "id": 41319443599,
-      "status": "in_progress"
+      "status": "completed_success_actual_artifacts_inspected"
     },
     "visible": {
       "id": 41319443427,
@@ -50,5 +50,6 @@
       "status": "in_progress"
     }
   },
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleNumericReport": "docs/evidence/apple/userdata-runtime-numeric-results.json"
 }
