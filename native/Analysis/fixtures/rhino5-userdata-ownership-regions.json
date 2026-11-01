@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "attach-userdata",
+      "name": "?AttachUserData@ON_Object@@QEAAHPEAVON_UserData@@@Z",
+      "abi": null,
+      "rva": 1822816,
+      "length": 249,
+      "sha256": "b20d3fa3a4b891ac779a79d73aab8f597c6f8af777708f2c46912e2ead7529c4",
+      "unwindRegions": [
+        {
+          "begin": 1822816,
+          "end": 1822861,
+          "unwind": 3477904
+        },
+        {
+          "begin": 1822861,
+          "end": 1823047,
+          "unwind": 3539824
+        },
+        {
+          "begin": 1823047,
+          "end": 1823065,
+          "unwind": 3539808
+        }
+      ]
+    },
+    {
+      "role": "userdata-copy-constructor",
+      "name": "??0ON_UserData@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 2918832,
+      "length": 192,
+      "sha256": "d7c58fc930bde0a27462be7e17d45ab7d26d734b2cfbc42bb9eb8a70801aab56",
+      "unwindRegions": [
+        {
+          "begin": 2918832,
+          "end": 2919024,
+          "unwind": 3393632
+        }
+      ]
+    },
+    {
+      "role": "userdata-assignment",
+      "name": "??4ON_UserData@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 2919088,
+      "length": 120,
+      "sha256": "57715fc2a5d0a4fed31bc6895bd6a47abc741043af83309988bc4735b4b59d5d",
+      "unwindRegions": [
+        {
+          "begin": 2919088,
+          "end": 2919109,
+          "unwind": 3582884
+        },
+        {
+          "begin": 2919109,
+          "end": 2919194,
+          "unwind": 3571648
+        },
+        {
+          "begin": 2919194,
+          "end": 2919208,
+          "unwind": 3571632
+        }
+      ]
+    },
+    {
+      "role": "userdata-default",
+      "name": "??0ON_UserData@@QEAA@XZ",
+      "abi": null,
+      "rva": 2918624,
+      "length": 195,
+      "sha256": "f77c1f0a0325192a1b34f0e99dee900c4fed667b3defed68781731f3fae594f0",
+      "unwindRegions": [
+        {
+          "begin": 2918624,
+          "end": 2918819,
+          "unwind": 3617060
+        }
+      ]
+    }
+  ]
+}

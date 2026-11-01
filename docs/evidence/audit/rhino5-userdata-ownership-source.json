@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A02",
+  "status": "base_userdata_attach_and_copy_fields_statically_observed_derived_clone_pending",
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "targetExecuted": false,
+  "manifest": "native/Analysis/fixtures/rhino5-userdata-ownership-regions.json",
+  "methods": [
+    {
+      "role": "attach-userdata",
+      "name": "?AttachUserData@ON_Object@@QEAAHPEAVON_UserData@@@Z",
+      "abi": null,
+      "rva": 1822816,
+      "length": 249,
+      "sha256": "b20d3fa3a4b891ac779a79d73aab8f597c6f8af777708f2c46912e2ead7529c4",
+      "unwindRegions": [
+        {
+          "begin": 1822816,
+          "end": 1822861,
+          "unwind": 3477904
+        },
+        {
+          "begin": 1822861,
+          "end": 1823047,
+          "unwind": 3539824
+        },
+        {
+          "begin": 1823047,
+          "end": 1823065,
+          "unwind": 3539808
+        }
+      ]
+    },
+    {
+      "role": "userdata-copy-constructor",
+      "name": "??0ON_UserData@@QEAA@AEBV0@@Z",
+      "abi": null,
+      "rva": 2918832,
+      "length": 192,
+      "sha256": "d7c58fc930bde0a27462be7e17d45ab7d26d734b2cfbc42bb9eb8a70801aab56",
+      "unwindRegions": [
+        {
+          "begin": 2918832,
+          "end": 2919024,
+          "unwind": 3393632
+        }
+      ]
+    },
+    {
+      "role": "userdata-assignment",
+      "name": "??4ON_UserData@@QEAAAEAV0@AEBV0@@Z",
+      "abi": null,
+      "rva": 2919088,
+      "length": 120,
+      "sha256": "57715fc2a5d0a4fed31bc6895bd6a47abc741043af83309988bc4735b4b59d5d",
+      "unwindRegions": [
+        {
+          "begin": 2919088,
+          "end": 2919109,
+          "unwind": 3582884
+        },
+        {
+          "begin": 2919109,
+          "end": 2919194,
+          "unwind": 3571648
+        },
+        {
+          "begin": 2919194,
+          "end": 2919208,
+          "unwind": 3571632
+        }
+      ]
+    },
+    {
+      "role": "userdata-default",
+      "name": "??0ON_UserData@@QEAA@XZ",
+      "abi": null,
+      "rva": 2918624,
+      "length": 195,
+      "sha256": "f77c1f0a0325192a1b34f0e99dee900c4fed667b3defed68781731f3fae594f0",
+      "unwindRegions": [
+        {
+          "begin": 2918624,
+          "end": 2918819,
+          "unwind": 3617060
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "attach-userdata",
+      "entry": "1801bd060",
+      "signature": "int AttachUserData(ON_UserData * param_1)",
+      "decompilerSha256": "21dbe46d0b10f662026f2aa622a895bfa73c4d4dbe0d8b5cef0be03dc03f3457",
+      "basicBlocks": 15
+    },
+    {
+      "role": "userdata-copy-constructor",
+      "entry": "1802c89b0",
+      "signature": "undefined ON_UserData(ON_UserData * param_1)",
+      "decompilerSha256": "5015faa806653a6caa685a2f3d0c34cdbdcebc6869d815bbe0c81e0d3f24748a",
+      "basicBlocks": 5
+    },
+    {
+      "role": "userdata-assignment",
+      "entry": "1802c8ab0",
+      "signature": "ON_UserData * operator=(ON_UserData * param_1)",
+      "decompilerSha256": "f081ceae77ab0e8e67008adf805bbd365b54042104e8f0386afeb87b7a0abfae",
+      "basicBlocks": 7
+    },
+    {
+      "role": "userdata-default",
+      "entry": "1802c88e0",
+      "signature": "undefined ON_UserData(void)",
+      "decompilerSha256": "e24ff408d2435371ef00de5c43e405fcc00a53ea070c39844637aabc209d2a62",
+      "basicBlocks": 1
+    }
+  ],
+  "attach": {
+    "entry": "0x1bd060",
+    "guards": [
+      "nonnull userdata",
+      "owner pointer at0xc0 is null",
+      "userdata UUID at0x18 is not nil",
+      "GetUserData for that UUID returns null"
+    ],
+    "unknownClass": "Exact ON_UnknownUserData runtime class triggers Cast and virtual validation; invalid result diagnoses and rejects.",
+    "success": "Sets owner=this, next=head and head=userdata, so successful attachment prepends.",
+    "limits": "GetUserData lookup/conversion behavior and applicable unknown/derived validity must be reviewed before treating this as a pure list predicate."
+  },
+  "copyConstructor": {
+    "entry": "0x2c89b0",
+    "nested": "Initializes base ON_Object and copies nested userdata",
+    "copied": [
+      "userdata UUID0x18",
+      "application UUID0x28",
+      "copy count0x38",
+      "transform128 at0x40"
+    ],
+    "links": "Resets owner0xc0 and next0xc8 to null",
+    "counter": "Zero remains zero; nonzero increments32 bits, with wrapped zero replaced by1"
+  },
+  "assignment": {
+    "entry": "0x2c8ab0",
+    "self": "No mutation",
+    "different": "Purges/copies nested userdata, copies count and transform, applies same increment/skip-zero rule.",
+    "notCopied": [
+      "userdata UUID",
+      "application UUID",
+      "owner pointer",
+      "next pointer"
+    ]
+  },
+  "remaining": [
+    "Inspect applicable derived clone constructors/validators and GetUserData conversions.",
+    "Port ownership/clone dispatcher with supported concrete types; no arbitrary serialized-payload clone.",
+    "Keep current-view capture separate from native history copying; integrate complete owned history/document effects.",
+    "Original runtime/saved-PC-view and physical-device proof remain separate."
+  ]
+}

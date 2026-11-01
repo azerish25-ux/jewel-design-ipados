@@ -502,7 +502,7 @@
       "clone": "Virtual clone through vtable+0x08; null clone skipped",
       "typeCheck": "Returned class hierarchy must derive from ON_UserData before AttachUserData",
       "failure": "Rejected attachment destroys clone through vtable+0x10",
-      "limits": "AttachUserData ownership/UUID rules, derived clone implementations and copy-count update semantics still need validation; no raw byte-bag runtime equivalence is claimed."
+      "limits": "Base attach/constructor/assignment rules are now mapped in the follow-up audit. GetUserData conversions and applicable derived clone/validation remain unfinished; current data ownership is not native clone equivalence."
     },
     "flagBytes": "0x20..0x23 copy location/direction/up locks and symmetry byte",
     "viewportId": "Four32-bit words0x118..0x124 copied",
@@ -551,8 +551,10 @@
   "limits": [
     "Read/Write decompiler return inference still has cookie annotation limits; no whole native archive codec claimed.",
     "Native pointer/string/array/userdata memory cannot be copied as a blob into iOS.",
-    "Owned immutable model/history and actual document notification/synchronization remain unfinished.",
+    "Owned current-value model is implemented under A01; native polymorphic whole-view cloning/history and actual document notification/synchronization remain unfinished.",
     "Original-PC, saved-view corpus and physical-device acceptance remain open.",
     "The shared userdata duplicate thunk typed C signature is not accepted; its direct virtual-dispatch instruction proof is used instead."
-  ]
+  ],
+  "ownedCurrentDataEvidence": "docs/porting/evidence/P08-T01-A05-03f-02b-A01.json",
+  "userDataBaseOwnershipEvidence": "docs/evidence/audit/rhino5-userdata-ownership-source.json"
 }

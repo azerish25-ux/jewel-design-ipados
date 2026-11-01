@@ -2,7 +2,7 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-Owned current-view values: [P08-T01-A05-03f-02b-A01](evidence/P08-T01-A05-03f-02b-A01.json) implements typed view metadata, UUID/screen/clip/inverse/near details, clipping records and immutable owned userdata/unknown bytes. Windows passes27 metadata/IEEE/alias checks, full native suite and54 Node regressions; Apple pending. This retains converted current data without invoking native polymorphic cloning or implying history/archive/PC parity.
+Owned current-view values: [P08-T01-A05-03f-02b-A01](evidence/P08-T01-A05-03f-02b-A01.json) implements typed view metadata, UUID/screen/clip/inverse/near details, clipping records and immutable owned userdata/unknown bytes. Windows and [macOS](../evidence/apple/owned-view-data-numeric-results.json) pass27 metadata/IEEE/alias checks; Windows also passes the full native suite and54 Node regressions. Actual simulator execution remains pending. This retains converted current data without invoking native polymorphic cloning or implying history/archive/PC parity.
 
 Whole-view ownership: [P08-T01-A05-03f-02b](evidence/P08-T01-A05-03f-02b.json) maps14 original core copy/serialization bodies and3 named guard bodies. Projection lock/page-main restrictions, full metadata fields, near constraints and selective polymorphic userdata copying are now explicit. [Owned-model work card](plans/P08-T01-A05-03f-02b-whole-view-ownership.md) retains unresolved userdata clone/attach semantics and complete history/document integration; no parity row closes from static field coverage.
 
