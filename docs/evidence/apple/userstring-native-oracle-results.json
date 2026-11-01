@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "run": 41326002138,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41326002138",
+  "sourceCommit": "5b9a199f889f9be704202417e56ae24b7e487235",
+  "publishedPin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+  "status": "success_actual_artifacts_inspected",
+  "results": {
+    "writes": 12,
+    "reads": 1076,
+    "fixtureSha256": "b8316894bfa6fa1b0e7c2c898e205485a97eb2da67be329a45be4f0fef35f4b9",
+    "verified": true
+  },
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+  "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83",
+  "hashes": {
+    "configure.txt": "91c340dcf11208c30d1f3056417327831d654f26d4d8a26e41bcb8fffa806a62",
+    "build.txt": "8b2221f074d34313acd6430fe50ae15ef86a52d800af4c056c1ce10f7da9158a",
+    "oracle-regressions.txt": "ba45aef0b6815dee48974e9f4b35b71c92aeee67ec3f8a967cef873a99c520d3",
+    "native-userstring-results.json": "4393fd1c8eab90717476869cdf05ea82b0344f9a8c9768154933e5dc212f4df4"
+  },
+  "scope": "Full published library on macOS arm64: actual native writer bytes and native malformed reader outcomes match recorded Windows corpus. Original5 execution, full3dm archive and original-PC project parity remain separate."
+}

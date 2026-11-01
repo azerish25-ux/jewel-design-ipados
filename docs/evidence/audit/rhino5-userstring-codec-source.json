@@ -147,7 +147,30 @@
       "opennurbs_userdata.cpp": "5c8e32bedf00f02de631b043c4380208c8b575aeb8c662b40b32f8bd916b2a4b",
       "opennurbs_fsp.cpp": "f703dee8d7a1cae39d5294d3885f7bad272d954d9a52217a23504d97e51be08b",
       "opennurbs_public.xcodeproj/project.pbxproj": "56671b31fb065b9e51d04784e9542b3f849bf52f9e90d5e485b3749f7f32b4ba"
-    }
+    },
+    "sourceHashesScope": "Windows working-tree bytes; normalized source hashes for compiler adaptations recorded separately.",
+    "compilerAdaptations": {
+      "platform": "Apple only",
+      "generatedCopies": true,
+      "sourceCheckoutModified": false,
+      "archiveAndUserdataAlgorithmsModified": false,
+      "normalization": "CRLF to LF before SHA256 verification",
+      "files": [
+        {
+          "file": "opennurbs_fsp.cpp",
+          "normalizedSha256": "580595ce8c55cbbe189d4a73e504aa6a0e2bff4bd55c93abf0577f611f7bfe98"
+        },
+        {
+          "file": "opennurbs_subd_fragment.cpp",
+          "normalizedSha256": "f50864c08b5b2df1931cea0d5a7b048948df07140b38bdf4e218da1bf335e715"
+        },
+        {
+          "file": "opennurbs_subd_heap.cpp",
+          "normalizedSha256": "82614dcd09c662e8ebcec5d93278bf89e024c840bace2c53610eb84e84a8ca02"
+        }
+      ]
+    },
+    "actualMacReport": "docs/evidence/apple/userstring-native-oracle-results.json"
   },
   "scope": "One native body codec, not full3dm archive or editable PC-project proof."
 }

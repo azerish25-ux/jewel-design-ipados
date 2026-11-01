@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "windows_native_and_managed_passed_apple_pending",
+  "status": "native_windows_macos_and_managed_windows_macos_ipad_iphone_passed",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A02-P02-string-codec.md",
   "audit": "docs/evidence/audit/rhino5-userstring-codec-source.json",
   "red": [
@@ -25,7 +25,8 @@
     "bindingAssertions": 9,
     "fullManagedNativeSuiteExitCode": 0,
     "nodeAdjacentRegressions": 54,
-    "fixtureSha256": "b8316894bfa6fa1b0e7c2c898e205485a97eb2da67be329a45be4f0fef35f4b9"
+    "fixtureSha256": "b8316894bfa6fa1b0e7c2c898e205485a97eb2da67be329a45be4f0fef35f4b9",
+    "nativeOracleFailureControls": 3
   },
   "review": {
     "layering": "BCL-only Documents codec; Views.Candidate composes renderer userdata protocol without reversing Documents dependencies.",
@@ -41,13 +42,61 @@
     "launcher": "scripts/run-archive-oracle-local.cjs",
     "allTaskWritesUnderD": true
   },
-  "apple": "Pending actual runs after push",
   "parityRowsClosed": 0,
   "appleFailure": {
-    "run": 41324874964,
-    "error": "AppleClang21 rejects three nullptr returns in bool ON_FixedSizePool::ElementIdIsIncreasing at upstream lines851,857,863.",
-    "fix": "Apple-only, SHA-guarded build-directory copy changes exactly these three returns to false; full source checkout and native archive/userstring algorithms remain unchanged.",
-    "sourceSha256": "f703dee8d7a1cae39d5294d3885f7bad272d954d9a52217a23504d97e51be08b",
-    "status": "replacement_run_pending"
+    "failedRuns": [
+      {
+        "id": 41324874964,
+        "error": "Three invalid nullptr returns in bool fixed-size-pool helper"
+      },
+      {
+        "id": 41325129749,
+        "error": "Raw source hash differed across checkout line endings"
+      },
+      {
+        "id": 41325237918,
+        "error": "CMake regex match semicolons were treated as list delimiters"
+      },
+      {
+        "id": 41325477307,
+        "error": "Two additional invalid nullptr boolean returns in SubD helpers"
+      },
+      {
+        "id": 41325766793,
+        "error": "Apple CFString implementations excluded in C++ mode, causing missing bridge symbols"
+      }
+    ],
+    "fix": "LF-normalized SHA guards plus exact per-function return count; build-only copies change five invalid bool returns. Apple string source compiles in Objective-C++ mode. Native source checkout/archive algorithms remain unchanged.",
+    "adapterRefactorValidation": "Actual local cmake -P execution produces byte-identical generated copies before/after helper refactor for all three files.",
+    "status": "fixed_verified_full_native_macos_success"
+  },
+  "appleReports": {
+    "macos": "docs/evidence/apple/userstring-codec-numeric-results.json",
+    "ios": "docs/evidence/apple/userstring-codec-ios-results.json",
+    "native": "docs/evidence/apple/userstring-native-oracle-results.json"
+  },
+  "appleRuns": {
+    "productSource": "c93bffdcb3f4b4c88f08c4862dfd1c36893e3aef",
+    "preflight": {
+      "id": 41324874884,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "visible": {
+      "id": 41324874942,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "reuse": {
+      "id": 41324874927,
+      "status": "completed_success"
+    },
+    "repository": {
+      "id": 41324874897,
+      "status": "completed_success"
+    },
+    "native": {
+      "id": 41326002138,
+      "sourceCommit": "5b9a199f889f9be704202417e56ae24b7e487235",
+      "status": "completed_success_actual_artifacts_inspected"
+    }
   }
 }
