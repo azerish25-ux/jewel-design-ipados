@@ -1,0 +1,26 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),crypto=require('node:crypto');
+const root=path.resolve(__dirname,'..'),fixture=path.join(root,'tests/Port/Geometry.Candidate.Contracts/Fixtures/camera-frame-source-cases.json');
+const token=x=>Number.isNaN(x)?'nan':x===Infinity?'inf':x===-Infinity?'-inf':Object.is(x,-0)?'-0':String(x);
+const unset=-1.23432101234321e308,epsilon=2.3283064365386962890625e-10;
+function cases(){
+ const rows=[],seed=[0,0,80,0,0,-80,0,1,0,2,3,4,5,6,7,8,9,10],frame=[0,0,0,0];
+ function add(flags,state,steps){rows.push({id:rows.length,flags,state:state.map(token),steps:steps.map(s=>s.map(token))});}
+ const presets=[[[0,0,80],[0,0,-80],[0,1,0]],[[0,-80,0],[0,80,0],[0,0,1]],[[80,0,0],[-80,0,0],[0,0,1]],[[45,-75,50],[-45,75,-50],[0,0,1]]];
+ for(let flags=0;flags<32;flags++)for(const [eye,dir,up] of presets)add(flags,seed,[[1,...eye],[2,...dir],[3,...up],frame,[1,0,0,81]]);
+ const vectors=[[0,0,0],[0,0,-1],[0,1,0],[0,2,0],[1,2,3],[-0,0,-0],[0,epsilon,0],[0,epsilon*(1-Number.EPSILON),0],[0,epsilon*(1+Number.EPSILON),0],[0,1e-100,0],[0,1e99,0],[0,1e100,0],[0,1,1e-15],[1e-15,0,-1],[unset,unset,unset],[-unset,-unset,-unset],[5e-324,0,0],[5e-324,0,1],[0,5e-324,1],[2.2250738585072014e-308,0,1],[2.225073858507201e-308,0,1],[2.225073858507202e-308,0,1]];
+ for(let field=0;field<3;field++)for(const value of [NaN,Infinity,-Infinity,unset,-unset]){const v=[1,2,3];v[field]=value;vectors.push(v);}
+ for(const flags of [0,3,7,11,19,31])for(const op of [2,3])for(const v of vectors)add(flags,seed,[[op,...v],frame,[op,...(op===2?[0,0,-80]:[0,1,0])],frame]);
+ const positions=[[0,0,0],[1e99,-1e99,1e99],[1e100,0,0],[-1e100,0,0],[unset,unset,unset],[unset,0,0],[-unset,-unset,-unset],[NaN,0,0],[Infinity,0,0],[-0,0,-0]];
+ for(const flags of [0,1,2,3,4,7,31])for(const p of positions)add(flags,seed,[[1,...p],frame,[1,0,0,80]]);
+ // Locked invalid inputs must not suppress subsequent valid replacement; retain prior basis on failed frame.
+ for(const flags of [0,3,11,19,31])for(const offset of [3,6])for(const v of [[0,0,0],[NaN,0,0],[unset,unset,unset],[0,1e100,0]]){const state=seed.slice();state.splice(offset,3,...v);add(flags,state,[frame,[2,0,0,-80],[3,0,1,0],frame]);}
+ for(const locks of [0,8,16,24])for(const scale of [1e-9,1,1e99])for(const delta of [0,1e-16,1e-8,.01]){const state=seed.slice();state.splice(3,6,scale,scale,0,scale,scale*(1+delta),0);add(3|locks,state,[frame,[2,0,0,-80],[3,0,1,0],frame]);}
+ return rows;
+}
+function number(s){if(s==='nan')return NaN;if(s==='inf')return Infinity;if(s==='-inf')return -Infinity;if(typeof s!=='string'||s.trim()!==s||s===''||!Number.isFinite(Number(s)))throw Error('Invalid frame numeric token');return Number(s);}
+function same(a,b,exact=false){const x=number(a),y=number(b);if(x===0&&y===0)return Object.is(x,y);if(x===y)return true;if(exact)return Number.isNaN(x)&&Number.isNaN(y);return Number.isNaN(x)&&Number.isNaN(y)||Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x-y)<=1e-13*Math.max(1,Math.abs(x),Math.abs(y));}
+function run(exe){const rows=cases(),result=cp.spawnSync(path.resolve(root,exe),[],{cwd:root,input:rows.map(r=>[r.id,r.flags,...r.state,r.steps.length,...r.steps.flat()].join(' ')).join('\n')+'\n',encoding:'utf8',timeout:30000,maxBuffer:16*1024*1024});if(result.error)throw result.error;if(result.status!==0)throw Error(result.stderr);const lines=result.stdout.trim().split(/\r?\n/);let index=0;const output=rows.map(r=>({...r,expected:r.steps.map((_,step)=>{const v=(lines[index++]||'').split('\t');if(v.length!==25||Number(v[0])!==r.id||Number(v[1])!==step||v.slice(2,5).some(x=>!['0','1'].includes(x))||v.slice(5,7).some(x=>!/^\d+$/.test(x)))throw Error('Invalid source frame row');return{ok:v[2]==='1',validCamera:v[3]==='1',validFrame:v[4]==='1',invalidations:Number(v[5]),diagnostics:Number(v[6]),values:v.slice(7)};})}));if(index!==lines.length)throw Error('Unexpected source frame rows');return output;}
+function verify(a,b){if(a.length!==b.length)throw Error('Frame case count stale');for(let i=0;i<a.length;i++){if(JSON.stringify({...a[i],expected:null})!==JSON.stringify({...b[i],expected:null})||a[i].expected.length!==b[i].expected.length)throw Error('Frame inputs/step count differ');for(let s=0;s<a[i].expected.length;s++){const x=a[i].expected[s],y=b[i].expected[s];if(JSON.stringify({...x,values:null})!==JSON.stringify({...y,values:null})||x.values.length!==18||y.values.length!==18||x.values.some((v,j)=>!same(v,y.values[j],j<9)))throw Error('Source frame state differs at '+i+':'+s);}}return true;}
+if(require.main===module)try{const rows=run(process.argv[2]);if(process.argv.includes('--write'))fs.writeFileSync(fixture,'{"schemaVersion":1,"cases":[\n'+rows.map(x=>JSON.stringify(x)).join(',\n')+'\n]}\n');verify(JSON.parse(fs.readFileSync(fixture,'utf8')).cases,rows);console.log(JSON.stringify({cases:rows.length,steps:rows.reduce((n,r)=>n+r.steps.length,0),fixture:path.relative(root,fixture).replaceAll('\\','/'),fixtureSha256:crypto.createHash('sha256').update(fs.readFileSync(fixture)).digest('hex'),scope:'Exact published frame/setter/vector state; no original private Rhino5/PC/rendered preset claim.'},null,2));}catch(e){console.error(e.message);process.exitCode=1;}
+module.exports={cases,run,verify};

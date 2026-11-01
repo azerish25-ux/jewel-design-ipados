@@ -44,6 +44,7 @@ for i in $(seq 1 600); do
   grep -q 'PASS source camera presets:120 unchanged-wrapper comparisons' "$OUT/result.txt"
   grep -q 'PASS published frustum/lens:1245 independently compiled-source cases' "$OUT/result.txt"
   grep -q 'PASS published camera matrices:118 compiled-source cases and16 independent Metal clip endpoints;' "$OUT/result.txt"
+  grep -q 'PASS published camera frames:730 sequences/2978 source steps;' "$OUT/result.txt"
   grep -q 'PASS Metal offscreen viewport:actual-CAD pixels=' "$OUT/result.txt"
   cp "$DATA/Documents/viewport-report.json" "$OUT/report.json"
   for phase in original orbit edited empty resized final; do test -s "$OUT/$phase.png"; done

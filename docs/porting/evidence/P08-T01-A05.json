@@ -36,8 +36,9 @@
     },
     {
       "id": "P08-T01-A05-03",
-      "status": "original_preset_projection_integration_pending",
-      "sourceAudit": "docs/evidence/audit/camera-frame-source.json"
+      "status": "frame_numerics_local_passed_lens_projection_renderer_integration_pending",
+      "sourceAudit": "docs/evidence/audit/camera-frame-source.json",
+      "frameWorkCard": "docs/porting/evidence/P08-T01-A05-03a.json"
     }
   ],
   "red": "Rendering.Tests failed CS0246 missing CandidateCameraTransform before implementation.",

@@ -2,3 +2,4 @@ System.Console.WriteLine(CandidateGeometryContractChecks.LegacyCameraPresetAsser
 System.Console.WriteLine(CandidateGeometryContractChecks.CadFrameGateAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.FrustumAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.CameraMatrixAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.CameraFrameAssertions.Run());

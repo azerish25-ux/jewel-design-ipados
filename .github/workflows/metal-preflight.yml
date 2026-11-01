@@ -12,6 +12,11 @@ on:
       - "tests/Port/Geometry.Candidate.Contracts/Recovered/CameraObservationTypes.txt"
       - "scripts/verify-camera-preset-oracle.cjs"
       - "scripts/prepare-frustum-reference.cjs"
+      - "scripts/prepare-camera-frame-reference.cjs"
+      - "scripts/generate-camera-frame-cases.cjs"
+      - "native/Rendering/CameraFrameReference/**"
+      - "tests/Port/Geometry.Candidate.Contracts/CameraFrameAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Fixtures/camera-frame-source-cases.json"
       - "scripts/prepare-camera-matrix-reference.cjs"
       - "scripts/generate-camera-matrix-cases.cjs"
       - "native/Rendering/CameraMatrixReference/**"
@@ -60,6 +65,11 @@ jobs:
           node scripts/prepare-camera-matrix-reference.cjs --acquire > artifacts/camera-matrix-source.json
           clang++ -std=c++17 -O2 -ffp-contract=off -I .local/reference/camera-matrix native/Rendering/CameraMatrixReference/reference.cpp -o .local/native/camera-matrix-reference
           node scripts/generate-camera-matrix-cases.cjs .local/native/camera-matrix-reference > artifacts/camera-matrix-native-cases.json
+      - name: Verify pinned camera frame state differentials
+        run: |
+          node scripts/prepare-camera-frame-reference.cjs --acquire > artifacts/camera-frame-source.json
+          clang++ -std=c++17 -O2 -ffp-contract=off -fno-strict-aliasing -I .local/reference/camera-frame native/Rendering/CameraFrameReference/reference.cpp -o .local/native/camera-frame-reference
+          node scripts/generate-camera-frame-cases.cjs .local/native/camera-frame-reference > artifacts/camera-frame-native-cases.json
       - name: Execute source camera preset differential on macOS
         run: |
           mkdir -p artifacts

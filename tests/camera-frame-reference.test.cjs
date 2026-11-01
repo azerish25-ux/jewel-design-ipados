@@ -1,0 +1,6 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
+const {cases,verify}=require('../scripts/generate-camera-frame-cases.cjs');
+const fixture=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'Port/Geometry.Candidate.Contracts/Fixtures/camera-frame-source-cases.json'),'utf8')).cases;
+test('frame fixture matches deterministic source sequence inputs',()=>{const input=cases();assert.equal(input.length,730);assert.equal(input.reduce((n,r)=>n+r.steps.length,0),2978);assert.deepEqual(fixture.map(r=>({...r,expected:null})),input.map(r=>({...r,expected:null})));assert(verify(fixture,fixture));});
+test('frame differential rejects forged retained state, flags, counters and signed zero',()=>{for(const mutate of [r=>r.expected[0].ok=!r.expected[0].ok,r=>r.expected[0].validCamera=!r.expected[0].validCamera,r=>r.expected[0].validFrame=!r.expected[0].validFrame,r=>r.expected[0].invalidations++,r=>r.expected[0].diagnostics++,r=>r.expected[0].values[9]='100',r=>r.expected[0].values[0]='-0',r=>r.expected[0].values[0]='5e-324',r=>r.expected[0].values[0]='not-a-number',r=>r.expected[0].values.pop()]){const changed=structuredClone(fixture);mutate(changed[0]);assert.throws(()=>verify(changed,fixture));}});
