@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05",
+  "status": "source_acquired_compilation_port_pending",
+  "source": {
+    "repository": "https://github.com/mcneel/opennurbs",
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "file": "opennurbs_xform.cpp",
+    "sha256": "7b922be97b2d05c50cd5865e32826d87fc2f4926304f55f21bf9344478580258",
+    "methods": [
+      {
+        "signature": "void ON_Xform::WorldToCamera(",
+        "sha256": "577b2e5863c8336125e4e1f7cadef2e06bf173b4adaaf0c33c4a118e465a8a62"
+      },
+      {
+        "signature": "void ON_Xform::CameraToWorld(",
+        "sha256": "4dcc20033518dca86eb998475b51eb7f157d453686f4f1d67540e7c4d12589b4"
+      },
+      {
+        "signature": "bool ON_Xform::CameraToClip(",
+        "sha256": "4959c33451844d38e28eda791d8ede5b204f3d7a389e72e1d2ea2dad9cd98f3b"
+      }
+    ]
+  },
+  "findings": [
+    "WorldToCamera writes supplied frame basis/translation without normalizing it",
+    "CameraToClip rejects only equal left/right, bottom/top or near/far before any mutation",
+    "Source clip convention is near+1/far-1; Metal bridge requires homogeneous z=(w-z)/2",
+    "An affine-only DTO cannot preserve the projective fourth row"
+  ],
+  "limits": "Source acquisition/inspection only. No matrix port, native reference execution, private Rhino5, actual camera application or physical/PC parity claimed."
+}
