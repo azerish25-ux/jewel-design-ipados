@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "run": 41282741621,
+  "sourceCommit": "5430569f2530f0728a55270056566f122717ed2f",
+  "casesPerFamily": 1245,
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "resultSha256": "38666aa5b1d20b27b86cd58c7d6c99cf94c6080b13fcde66764aa90d4e3b62c3",
+      "frustumReport": "PASS published frustum/lens:1245 independently compiled-source cases, symmetry/two-point/deadband/raw-invalid/sentinel/world-bound/depth-diagnostic/state retention; private Rhino5/Metal projection/PC parity separate.",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "989ad586e6b60929c43d1838f53d1d9005b0819505c66e611aa125d054770fa4",
+          "orbit": "d0da80bfa9935dc54f5ed541eb503ec6dacd0cb370c0121ae9540ed1e3adf543",
+          "edited": "996c0078898511ba5ff36905b9ef37478373a62dbc7afa930335f8681b18bf76",
+          "empty": "a6918e3e2f0847156c692426fd7aaa4b16d0c04a93fcab1c9cea69203433f607",
+          "resized": "f68b59c18b35b019635b93f420beefc895f430fb071cd809f913627997cecd26",
+          "final": "954c42f65dc3f7a8e0980259d810af223b518c47c34fd17a2a3d0b614d69e471"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "resultSha256": "38666aa5b1d20b27b86cd58c7d6c99cf94c6080b13fcde66764aa90d4e3b62c3",
+      "frustumReport": "PASS published frustum/lens:1245 independently compiled-source cases, symmetry/two-point/deadband/raw-invalid/sentinel/world-bound/depth-diagnostic/state retention; private Rhino5/Metal projection/PC parity separate.",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 3,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "975a82dd3b0e74a5d8918e4d0b80d4c4ec8edf84796ee333c971e6d0370b8217",
+          "orbit": "fa7e5a0bebb8cbb8e26d8a390e74cff9ddee2361f1fa94d33e173152929d19a0",
+          "edited": "ec25f848ab92cbcaf5eb5c7b005c45ed41822e389addac60d5b23d9bfe17977a",
+          "empty": "23061ecd18812a43fcf4079ad4022fabd824a3b0edc5a46e87df100d8ac9eac8",
+          "resized": "a194fac39be3d14fddd1332bad59b03cf4ceeb49745943fa7df49a82ad469fdc",
+          "final": "975a82dd3b0e74a5d8918e4d0b80d4c4ec8edf84796ee333c971e6d0370b8217"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "scope": "Actual numeric frustum/lens assertions on both iOS simulator families plus adjacent real viewport/screen/offscreen checks. Original preset matrices/movement/private Rhino5/PC/physical acceptance remain open."
+}
