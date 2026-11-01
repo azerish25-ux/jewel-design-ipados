@@ -32,7 +32,23 @@
     "limits": "Native archive codecs, complete registry/plugins, whole-view history/document and PC/physical acceptance remain unfinished."
   },
   "appleRuns": {
-    "status": "pending_push"
+    "sourceCommit": "0819fe1676718ded829c3d30c6f3cdd1413a453f",
+    "preflight": {
+      "id": 41319443599,
+      "status": "in_progress"
+    },
+    "visible": {
+      "id": 41319443427,
+      "status": "in_progress"
+    },
+    "repository": {
+      "id": 41319443514,
+      "status": "in_progress"
+    },
+    "reuse": {
+      "id": 41319443511,
+      "status": "in_progress"
+    }
   },
   "parityRowsClosed": 0
 }
