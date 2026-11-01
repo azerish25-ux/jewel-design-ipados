@@ -37,7 +37,7 @@ jobs:
       - name: Build full published archive implementation
         run: |
           cmake -S native/Analysis/OpenNurbs6ArchiveOracle -B .local/native/on6-archive-mac -DON6_SOURCE="$PWD/.local/reference/opennurbs6-archive-source" -DCMAKE_BUILD_TYPE=Debug 2>&1 | tee artifacts/configure.txt
-          cmake --build .local/native/on6-archive-mac --parallel 3 2>&1 | tee artifacts/build.txt
+          cmake --build .local/native/on6-archive-mac --parallel 3 -- -k 2>&1 | tee artifacts/build.txt
           git -C .local/reference/opennurbs6-archive-source diff --exit-code
       - name: Verify oracle failure controls
         run: node --test tests/userstring-oracle.test.cjs | tee artifacts/oracle-regressions.txt

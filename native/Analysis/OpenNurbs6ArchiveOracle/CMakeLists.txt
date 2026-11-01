@@ -48,6 +48,138 @@ if(APPLE)
  file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_fsp.cpp" "${fsp_output}")
  list(REMOVE_ITEM ON_SRC_files "${ON6_SOURCE}/opennurbs_fsp.cpp")
  list(APPEND ON_SRC_files "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_fsp.cpp")
+
+ file(READ "${ON6_SOURCE}/opennurbs_subd_fragment.cpp" extra_text)
+ string(REPLACE "\r\n" "\n" extra_text "${extra_text}")
+ string(SHA256 extra_sha "${extra_text}")
+ if(NOT extra_sha STREQUAL "f50864c08b5b2df1931cea0d5a7b048948df07140b38bdf4e218da1bf335e715")
+  message(FATAL_ERROR "Unexpected opennurbs_subd_fragment.cpp for compiler adaptation")
+ endif()
+ string(REPLACE [==[bool ON_SubDLimitMesh::GetFaceCenterPointAndNormal(
+  const class ON_SubDFace* face,
+  double* P,
+  double* N
+) const
+{
+  if (nullptr != P)
+  {
+    P[0] = ON_DBL_QNAN;
+    P[1] = ON_DBL_QNAN;
+    P[2] = ON_DBL_QNAN;
+  }
+  if (nullptr != N)
+  {
+    N[0] = ON_DBL_QNAN;
+    N[1] = ON_DBL_QNAN;
+    N[2] = ON_DBL_QNAN;
+  }
+  const ON_SubDLimitMeshFragment* fragment = FaceFragment(face);
+  if (nullptr == fragment)
+    return false;
+  if (nullptr == fragment->m_P || nullptr == fragment->m_N)
+    return false;
+  const unsigned int n = fragment->m_grid.m_side_segment_count;
+  const unsigned int P_dex = fragment->IsCompleteFragment() ? (n*(n + 2) / 2) : 0;
+  if (P_dex >= (unsigned int)fragment->m_P_count)
+    return nullptr;
+  const double* fragment_P = fragment->m_P + (P_dex * fragment->m_P_stride);
+  const double* fragment_N = fragment->m_N + (P_dex * fragment->m_N_stride);
+  if (nullptr != P)
+  {
+    P[0] = fragment_P[0];
+    P[1] = fragment_P[1];
+    P[2] = fragment_P[2];
+  }
+  if (nullptr != N)
+  {
+    N[0] = fragment_N[0];
+    N[1] = fragment_N[1];
+    N[2] = fragment_N[2];
+  }
+  return true;
+}
+]==] [==[bool ON_SubDLimitMesh::GetFaceCenterPointAndNormal(
+  const class ON_SubDFace* face,
+  double* P,
+  double* N
+) const
+{
+  if (nullptr != P)
+  {
+    P[0] = ON_DBL_QNAN;
+    P[1] = ON_DBL_QNAN;
+    P[2] = ON_DBL_QNAN;
+  }
+  if (nullptr != N)
+  {
+    N[0] = ON_DBL_QNAN;
+    N[1] = ON_DBL_QNAN;
+    N[2] = ON_DBL_QNAN;
+  }
+  const ON_SubDLimitMeshFragment* fragment = FaceFragment(face);
+  if (nullptr == fragment)
+    return false;
+  if (nullptr == fragment->m_P || nullptr == fragment->m_N)
+    return false;
+  const unsigned int n = fragment->m_grid.m_side_segment_count;
+  const unsigned int P_dex = fragment->IsCompleteFragment() ? (n*(n + 2) / 2) : 0;
+  if (P_dex >= (unsigned int)fragment->m_P_count)
+    return false;
+  const double* fragment_P = fragment->m_P + (P_dex * fragment->m_P_stride);
+  const double* fragment_N = fragment->m_N + (P_dex * fragment->m_N_stride);
+  if (nullptr != P)
+  {
+    P[0] = fragment_P[0];
+    P[1] = fragment_P[1];
+    P[2] = fragment_P[2];
+  }
+  if (nullptr != N)
+  {
+    N[0] = fragment_N[0];
+    N[1] = fragment_N[1];
+    N[2] = fragment_N[2];
+  }
+  return true;
+}
+]==] extra_output "${extra_text}")
+ file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_subd_fragment.cpp" "${extra_output}")
+ list(REMOVE_ITEM ON_SRC_files "${ON6_SOURCE}/opennurbs_subd_fragment.cpp")
+ list(APPEND ON_SRC_files "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_subd_fragment.cpp")
+
+ file(READ "${ON6_SOURCE}/opennurbs_subd_heap.cpp" extra_text)
+ string(REPLACE "\r\n" "\n" extra_text "${extra_text}")
+ string(SHA256 extra_sha "${extra_text}")
+ if(NOT extra_sha STREQUAL "82614dcd09c662e8ebcec5d93278bf89e024c840bace2c53610eb84e84a8ca02")
+  message(FATAL_ERROR "Unexpected opennurbs_subd_heap.cpp for compiler adaptation")
+ endif()
+ string(REPLACE [==[bool ON_SubD_FixedSizeHeap::ReturnPtrArray(
+  unsigned int capacity,
+  void* p
+  )
+{
+  if (nullptr != m_p && capacity <= m_p_index && p == m_p + (m_p_index - capacity))
+  {
+    m_p_index -= capacity;
+    return true;
+  }
+  return ON_SUBD_RETURN_ERROR(nullptr);
+}
+]==] [==[bool ON_SubD_FixedSizeHeap::ReturnPtrArray(
+  unsigned int capacity,
+  void* p
+  )
+{
+  if (nullptr != m_p && capacity <= m_p_index && p == m_p + (m_p_index - capacity))
+  {
+    m_p_index -= capacity;
+    return true;
+  }
+  return ON_SUBD_RETURN_ERROR(false);
+}
+]==] extra_output "${extra_text}")
+ file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_subd_heap.cpp" "${extra_output}")
+ list(REMOVE_ITEM ON_SRC_files "${ON6_SOURCE}/opennurbs_subd_heap.cpp")
+ list(APPEND ON_SRC_files "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_subd_heap.cpp")
 endif()
 add_library(published_zlib STATIC ${ZLIB_SRC_files})
 set_target_properties(published_zlib PROPERTIES OUTPUT_NAME zlib)
