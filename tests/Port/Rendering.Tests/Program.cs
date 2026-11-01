@@ -10,3 +10,4 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewportAssertion
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5RotationAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5CameraLocationAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewportCacheAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewportCommitAssertions.Run());

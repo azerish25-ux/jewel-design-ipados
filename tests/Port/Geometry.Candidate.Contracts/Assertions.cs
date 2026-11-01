@@ -91,6 +91,7 @@ public static class Assertions
         var viewportTransitions=ViewportProjectionAssertions.Run();
         var originalScalar=Rhino5ScalarAssertions.Run();
         var originalCamera=Rhino5CameraAssertions.Run();
+        var originalCommit=Rhino5ViewportCommitAssertions.Run();
         var originalCache=Rhino5ViewportCacheAssertions.Run();
         var originalLocations=Rhino5CameraLocationAssertions.Run();
         var originalRotation=Rhino5RotationAssertions.Run();
@@ -104,6 +105,6 @@ public static class Assertions
         var capPlacement=ProfileCapPlacementAssertions.Run();
         var curveExport=CurveExportAssertions.Run();
         var domeProfiles=DomeProfileAssertions.Run();
-        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam+" "+bounds+" "+outsideRail+" "+storedProfiles+" "+valueGeometry+" "+railNodes+" "+railGraph+" "+selectRail+" "+transforms+" "+placement+" "+rotation+" "+consumer+" "+collectionSockets+" "+ownedCollections+" "+arrayConsumers+" "+sweepPreparation+" "+pairedSweep+" "+brepGraph+" "+nurbsSurfaces+" "+domeProfiles+" "+curveExport+" "+capPlacement+" "+capPlanes+" "+capGraph+" "+sewing+" "+legacyJoin+" "+brepAffine+" "+meshes+" "+viewportPacking+" "+cameraPresets+" "+frameOwnership+" "+frustum+" "+cameraMatrices+" "+cameraFrames+" "+viewportTransitions+" "+originalScalar+" "+originalCamera+" "+originalViewport+" "+originalRotation+" "+originalLocations+" "+originalCache;
+        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam+" "+bounds+" "+outsideRail+" "+storedProfiles+" "+valueGeometry+" "+railNodes+" "+railGraph+" "+selectRail+" "+transforms+" "+placement+" "+rotation+" "+consumer+" "+collectionSockets+" "+ownedCollections+" "+arrayConsumers+" "+sweepPreparation+" "+pairedSweep+" "+brepGraph+" "+nurbsSurfaces+" "+domeProfiles+" "+curveExport+" "+capPlacement+" "+capPlanes+" "+capGraph+" "+sewing+" "+legacyJoin+" "+brepAffine+" "+meshes+" "+viewportPacking+" "+cameraPresets+" "+frameOwnership+" "+frustum+" "+cameraMatrices+" "+cameraFrames+" "+viewportTransitions+" "+originalScalar+" "+originalCamera+" "+originalViewport+" "+originalRotation+" "+originalLocations+" "+originalCache+" "+originalCommit;
     }
 }

@@ -19,7 +19,7 @@ Original Rhino.exe SHA256 951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1
 - Clear old locks and symmetry before sequential projection/location/direction/up/frustum application; restore incoming known flags afterward. Preserve original ignored setter returns and any retained state. Incoming viewport target is not blindly copied by SetVP.
 - Symmetrize incoming bounds in source order before SetFrustum. Test unequal bounds, overflow and downstream false returns without inventing rollback.
 - Nonzero commit mode preserves old positive target distance using new camera Z/location; mode0 skips that branch. Verify invalid/zero/negative old distance.
-- Increment unsigned32 serial and skip zero on wrap. Rebuild matrix only when cache serial differs; failed transform preserves cache and stale serial. Screen width/height reads still occur in the enclosing serial-difference block; failed screen read zeroes both. Extra transform multiplication order must match source.
+- Increment unsigned32 serial and skip zero on wrap. Rebuild matrix only when cache serial differs; failed transform resets the output cache matrix to identity and retains its stale serial. Screen width/height reads still occur in the enclosing serial-difference block; failed screen read zeroes both. Extra transform multiplication order must match source.
 - Notify parent document ViewModified, then push view-projection history, then caller e-02 writes final target metadata, even on false commit. Observe snapshots/order; do not equate view history with parameter UndoJournal.
 
 ## Verification and integration

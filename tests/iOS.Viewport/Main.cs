@@ -56,6 +56,7 @@ public sealed class AppDelegate:UIApplicationDelegate
             var transitions=CandidateGeometryContractChecks.ViewportProjectionAssertions.Run();
             var legacyScalar=CandidateGeometryContractChecks.Rhino5ScalarAssertions.Run();
             var legacyCamera=CandidateGeometryContractChecks.Rhino5CameraAssertions.Run();
+            var legacyCommit=CandidateGeometryContractChecks.Rhino5ViewportCommitAssertions.Run();
             var legacyCache=CandidateGeometryContractChecks.Rhino5ViewportCacheAssertions.Run();
             var legacyLocations=CandidateGeometryContractChecks.Rhino5CameraLocationAssertions.Run();
             var legacyRotation=CandidateGeometryContractChecks.Rhino5RotationAssertions.Run();
@@ -64,7 +65,7 @@ public sealed class AppDelegate:UIApplicationDelegate
             var parent=Window?.RootViewController?.View??throw new Exception("Visible root view missing");
             var report=await ViewportPresentationChecks.Run(parent,Capture);
             File.WriteAllText(Path.Combine(directory,"viewport-report.json"),JsonSerializer.Serialize(report,ViewportReportContext.Default.ViewportPresentationReport));
-            string result="PASS visible Metal viewport:6 captured stages; source edit/orbit/empty/resize, bounded upload ownership and disposal; full product UI/PC/physical acceptance separate."+Environment.NewLine+gate+Environment.NewLine+camera+Environment.NewLine+frustum+Environment.NewLine+matrices+Environment.NewLine+frames+Environment.NewLine+transitions+Environment.NewLine+legacyScalar+Environment.NewLine+legacyCamera+Environment.NewLine+legacyViewport+Environment.NewLine+legacyRotation+Environment.NewLine+legacyLocations+Environment.NewLine+legacyCache+Environment.NewLine+offscreen;
+            string result="PASS visible Metal viewport:6 captured stages; source edit/orbit/empty/resize, bounded upload ownership and disposal; full product UI/PC/physical acceptance separate."+Environment.NewLine+gate+Environment.NewLine+camera+Environment.NewLine+frustum+Environment.NewLine+matrices+Environment.NewLine+frames+Environment.NewLine+transitions+Environment.NewLine+legacyScalar+Environment.NewLine+legacyCamera+Environment.NewLine+legacyViewport+Environment.NewLine+legacyRotation+Environment.NewLine+legacyLocations+Environment.NewLine+legacyCache+Environment.NewLine+legacyCommit+Environment.NewLine+offscreen;
             File.WriteAllText(resultPath+".pending",result);File.Move(resultPath+".pending",resultPath,overwrite:true);Console.WriteLine(result);
         }
         catch(Exception error){File.WriteAllText(resultPath,"FAIL "+error);Console.WriteLine(error);}

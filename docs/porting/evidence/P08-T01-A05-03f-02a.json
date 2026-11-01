@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02a",
+  "parentTask": "P08-T01-A05-03f-02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "numeric_commit_state_windows_checks_passed_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02a-numeric-commit.md",
+  "source": {
+    "mainSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+    "setVpRva": "0x44c0c0",
+    "setVpBytes": 1266,
+    "setVpSha256": "b05d274c3ab09410362b29356b916a356fda7385f13da6aa10363db95faf05b1",
+    "cacheAndTargetAudit": "docs/evidence/audit/rhino5-viewport-cache-source.json",
+    "targetExecuted": false
+  },
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "failure": "CS0246 Rhino5ViewportCommitState missing"
+  },
+  "localChecks": {
+    "commitStateAssertions": 58,
+    "cacheIntegration": "Retained clip-modification and extra-transform coefficients compared with independently compiled source fixture",
+    "fixtureSha256": "89ceeea4ab5151bad985cc4f6c7eafc9bd3023896587d9dae7dbff05d054195a",
+    "fullManagedNativeSuiteExitCode": 0,
+    "nodeRegressions": 45,
+    "repositoryIntegrityExitCode": 0
+  },
+  "review": {
+    "semantics": "Incoming stored flags gate acceptance. Numeric setters mutate in source order with ignored failures. Incoming target is not copied; mode target update mirrors resulting core target. Known locks/symmetry restored after frame updates; old unknown bits retained.",
+    "cacheCorrection": "Earlier parent plan incorrectly said failed GetXform preserves old cache. Direct output address and identity-on-failure prove matrix resets to identity; stale serial remains. Regression covers this and independent screen refresh.",
+    "ownership": "State consists of immutable values and immutable matrix objects; it is explicitly not a whole ON_3dmView history snapshot.",
+    "boundaries": "Core does not implement the full camera commit interface or inject empty document/history callbacks. True numeric acceptance requires the caller to continue document notification then whole-view history before final target write.",
+    "limitations": "Static-original policy and independent published numeric fixture are not original runtime/PC/physical acceptance.",
+    "targetGetterInstructionCheck": "Original UCOMISD/JP branches at0xbf98/0xbfa8/0xbfb9 diagnose unordered coordinates. Raw NaN produces a diagnostic and mirror repair on each read; signed zero compares equal without copy."
+  },
+  "appleRuns": {
+    "status": "pending_push"
+  },
+  "remaining": [
+    "Whole-view immutable snapshot and preserved metadata ownership; history copy coverage",
+    "Actual document notification/view synchronization/controller/timer and history continuation",
+    "Native effective guard context binding, full camera adapter and source-preset renderer application",
+    "Original-PC and physical-device acceptance"
+  ],
+  "parityRowsClosed": 0
+}

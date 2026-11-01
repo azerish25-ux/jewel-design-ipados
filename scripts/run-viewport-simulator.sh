@@ -49,6 +49,10 @@ for i in $(seq 1 600); do
   grep -q 'PASS original Rhino5 scalar validity:18 native-branch boundary cases/196608 IEEE high-word patterns;' "$OUT/result.txt"
   grep -q 'PASS original Rhino5 camera frame:32 native-derived state/boundary checks and4 analytical poses;' "$OUT/result.txt"
   grep -q 'PASS original Rhino5 viewport:26 native-derived perspective/frustum/lens/target checks;' "$OUT/result.txt"
+  grep -q '^PASS original-derived Rhino5 vector rotation:' "$OUT/result.txt"
+  grep -q '^PASS original-derived Rhino5 camera locations:' "$OUT/result.txt"
+  grep -q '^PASS original-derived Rhino5 viewport cache:' "$OUT/result.txt"
+  grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
   grep -q 'PASS Metal offscreen viewport:actual-CAD pixels=' "$OUT/result.txt"
   cp "$DATA/Documents/viewport-report.json" "$OUT/report.json"
   for phase in original orbit edited empty resized final; do test -s "$OUT/$phase.png"; done
