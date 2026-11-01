@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T01-A04",
-  "status": "local_native_and_portable_differentials_passed_apple_pending",
+  "status": "windows_macos_native_managed_differentials_passed_ios_runtime_pending",
   "requirementScope": [
     "P08-T01",
     "UI-039 camera prerequisite"
@@ -65,11 +65,30 @@
     ]
   },
   "remaining": [
-    "Actual macOS clang reference and managed comparison",
     "Actual iPad/iPhone numeric execution",
     "Lens/camera movement/parallel conversion and projection matrices applied to visible source presets",
     "Private Rhino5/original-PC/physical/full feature acceptance"
   ],
   "limits": "Only numerical source math adapted; no original native viewport or GPU geometry simulated. Generic Metal proof camera unchanged. No full parity row closed.",
-  "notice": "native/Rendering/FrustumReference/LICENSE.openNURBS.reference"
+  "notice": "native/Rendering/FrustumReference/LICENSE.openNURBS.reference",
+  "appleRuns": {
+    "sourceCommit": "5430569f2530f0728a55270056566f122717ed2f",
+    "preflight": {
+      "id": 41282741675,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "visible": {
+      "id": 41282741621,
+      "status": "iPad_runtime_in_progress_last_observed"
+    },
+    "repository": {
+      "id": 41282741611,
+      "status": "in_progress_last_observed"
+    },
+    "reuse": {
+      "id": 41282741688,
+      "status": "in_progress_last_observed"
+    }
+  },
+  "appleReport": "docs/evidence/apple/frustum-numeric-results.json"
 }

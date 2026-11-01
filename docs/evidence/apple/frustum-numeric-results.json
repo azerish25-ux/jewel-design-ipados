@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "run": 41282741675,
+  "sourceCommit": "5430569f2530f0728a55270056566f122717ed2f",
+  "nativeCases": {
+    "cases": 1245,
+    "fixture": "tests/Port/Geometry.Candidate.Contracts/Fixtures/frustum-source-cases.json",
+    "fixtureSha256": "fe330b14be1d50df7b462965bcc649b0f5162c5ba1e441fbedb2ce6c0cdfdce7",
+    "scope": "Compiled pinned published numerical methods; no original Rhino5/GPU/PC claim"
+  },
+  "sourceIncludeSha256": "8060ad48d08c75a0e5916662b9f40f03a1c974bac1b9cfe6fee685bf2eff17b0",
+  "managedReport": "PASS source camera presets:120 unchanged-wrapper comparisons across invariant/en-US/tr-TR, original pose/up/plane/lens/projection, null and unknown-name behavior; source call-order/viewport preference observed, native frustum/zoom/UI/PC parity separate.\nPASS viewport frame ownership:116 resource-only checks; three-frame bound/latest revision, retained replacement/disposal and concurrent idempotent completion; actual GPU presentation tested separately.\nPASS published frustum/lens:1245 independently compiled-source cases, symmetry/two-point/deadband/raw-invalid/sentinel/world-bound/depth-diagnostic/state retention; private Rhino5/Metal projection/PC parity separate.",
+  "managedReportSha256": "8fda88e4d47c05cb7c7ad77458d5865490b88ec7792692e4ac9c0e0553a95522",
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0,
+    "logSha256": "1c71124fa34974089c560dde9beb58acf9786fe76f216107aa15ca26956b19dd"
+  },
+  "scope": "Actual macOS clang numerical reference and managed comparisons plus iOS binding compile. iPad/iPhone numeric runtime and source camera projection/application remain separate."
+}
