@@ -7,6 +7,7 @@ on:
       - "src/Port/Views.Candidate/**"
       - "tests/Port/Geometry.Candidate.Contracts/LegacyUserStringListAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/UserStringArchiveBindingAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/UserStringProvenanceAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/userstring-body-source-cases.json"
       - "tests/Port/Geometry.Candidate.Contracts/Geometry.Candidate.Contracts.csproj"
       - "src/Port/Rendering.Candidate*/**"

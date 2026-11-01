@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A02-P03",
+  "parentTask": "P08-T01-A05-03f-02b-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "windows_provenance_checks_passed_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A02-P03-provenance.md",
+  "inputCommit": "42ea6122731ef332d69dd1cd98d18dc67bfbb8e5",
+  "nativePolicyAudits": [
+    "docs/evidence/audit/rhino5-concrete-userdata-source.json",
+    "docs/evidence/audit/rhino5-userstring-codec-source.json"
+  ],
+  "red": [
+    {
+      "exitCode": 1,
+      "failure": "Native-style Duplicate loses actual archive provenance"
+    },
+    {
+      "exitCode": 1,
+      "failure": "Assignment across runtimes must retain immutable source provenance"
+    },
+    {
+      "exitCode": 1,
+      "failure": "Cumulative retained source bytes obey the managed archive budget"
+    }
+  ],
+  "checks": {
+    "provenanceAssertions": 91,
+    "adjacentNodeRegressions": 57,
+    "codecAssertions": 4347,
+    "bindingAssertions": 9,
+    "fullManagedNativeSuiteExitCode": 0
+  },
+  "review": {
+    "ownership": "Immutable composition-owned origin follows native-style concrete duplicate/assignment. Mutable pairs remain cloned independently; original copy-count, IDs, owner and nested selection semantics unchanged. Disposal releases the origin.",
+    "architecture": "Rendering declares an internal metadata marker/slot with one explicit friend assembly Views.Candidate; it does not reference Documents. Actual immutable origin/result/baseline and output policy live in Views.Candidate.",
+    "preservation": "Same-context unchanged single-body data returns exact original bytes, including CRC errors/future/partial/trailing data. Known complete edited bodies use real canonical writer. Mixed/accumulated or opaque edited/context-converted data rejects implicit rewriting; explicit canonical write is separate.",
+    "memory": "Retained read history has no superseded accumulated pair baselines. At most1024 origins; cumulative original bytes and raw preserved writes obey configured MaxPayloadBytes. Rejected reads leave values/origins unchanged.",
+    "scope": "Managed file-preservation metadata is not claimed to be an original native field/write policy. One supported codec only; full userdata catalog, whole-view history/document/preset, full3dm/PC and physical acceptance remain open."
+  },
+  "apple": "Pending after push",
+  "targetExecuted": false,
+  "parityRowsClosed": 0,
+  "inputHashes": {
+    "src/Port/Rendering.Candidate/Rhino5ConcreteUserData.cs": "ac54392f3a726c0cf691661c3cb073621aeb388fa3b32545eb8cf068f14ab41e",
+    "src/Port/Views.Candidate/Rhino5UserStringArchiveBinding.cs": "b0a6b1aaa0a2b780cd163cfe539092dea0bfe46c5373d965980c31fba88aa454"
+  }
+}

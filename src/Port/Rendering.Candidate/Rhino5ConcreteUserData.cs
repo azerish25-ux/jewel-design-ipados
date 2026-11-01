@@ -55,15 +55,16 @@ public sealed class Rhino5UserStringList:Rhino5RuntimeUserData
     public static readonly Guid ClassId=Guid.Parse("ce28de29-f4c5-4faa-a50a-c3a6849b6329");
     public static readonly Guid OpenNurbs4Id=Guid.Parse("17b3ecda-17ba-4e45-9e67-a2b8d9be520d");
     private KeyValuePair<string,string>[] pairs=Array.Empty<KeyValuePair<string,string>>();
+    internal IRhino5UserStringArchiveOrigin? ArchiveOrigin {get;set;}
     public override Guid RuntimeClassId=>ClassId;
     protected override bool Archives=>true;
     public Rhino5UserStringList(Rhino5UserDataRuntime runtime):base(runtime){UserDataId=ClassId;ApplicationId=OpenNurbs4Id;CopyCount=1;}
-    private Rhino5UserStringList(Rhino5UserStringList source):base(source){pairs=(KeyValuePair<string,string>[])source.pairs.Clone();}
+    private Rhino5UserStringList(Rhino5UserStringList source):base(source){pairs=(KeyValuePair<string,string>[])source.pairs.Clone();ArchiveOrigin=source.ArchiveOrigin;}
     public KeyValuePair<string,string>[] CopyPairs()=>(KeyValuePair<string,string>[])pairs.Clone();
     public void ReplacePairs(ReadOnlySpan<KeyValuePair<string,string>> values)
     {Alive();var copy=values.ToArray();foreach(var p in copy){ArgumentNullException.ThrowIfNull(p.Key);ArgumentNullException.ThrowIfNull(p.Value);}pairs=copy;}
     public override Rhino5UserDataOwner Duplicate(){Alive();return new Rhino5UserStringList(this);}
     public void AssignFrom(Rhino5UserStringList source)
-    {Alive();ArgumentNullException.ThrowIfNull(source);source.Alive();if(ReferenceEquals(this,source))return;AssignBaseFrom(source);pairs=(KeyValuePair<string,string>[])source.pairs.Clone();}
-    public override void Dispose(){if(IsDisposed)return;pairs=Array.Empty<KeyValuePair<string,string>>();base.Dispose();}
+    {Alive();ArgumentNullException.ThrowIfNull(source);source.Alive();if(ReferenceEquals(this,source))return;AssignBaseFrom(source);pairs=(KeyValuePair<string,string>[])source.pairs.Clone();ArchiveOrigin=source.ArchiveOrigin;}
+    public override void Dispose(){if(IsDisposed)return;pairs=Array.Empty<KeyValuePair<string,string>>();ArchiveOrigin=null;base.Dispose();}
 }

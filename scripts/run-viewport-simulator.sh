@@ -77,6 +77,7 @@ for i in $(seq 1 600); do
   grep -q '^PASS original-derived Rhino5 viewport cache:' "$OUT/result.txt"
   grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
   grep -q '^PASS legacy native user-string bodies:' "$OUT/result.txt"
+  grep -q '^PASS copied user-string provenance:' "$OUT/result.txt"
   grep -q '^PASS actual user-string archive binding:' "$OUT/result.txt"
   grep -q '^PASS original-derived userdata runtime:' "$OUT/result.txt"
   grep -q '^PASS owned original5 view data:' "$OUT/result.txt"
