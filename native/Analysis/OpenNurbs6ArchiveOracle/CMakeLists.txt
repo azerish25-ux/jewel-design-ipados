@@ -25,161 +25,46 @@ if(MSVC)
  string(REPLACE "/DWIN32" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
  string(REPLACE "/DWIN32" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 endif()
-# Clang rejects three nullptr returns in this unrelated bool helper in the 2019 pin.
-# Compile an audited build-directory copy; never modify the reference checkout/archive code.
+# Clang rejects five nullptr returns in unrelated bool helpers in the 2019 pin.
+# SHA-guarded build copies leave the checkout and archive algorithms unchanged.
 if(APPLE)
- file(READ "${ON6_SOURCE}/opennurbs_fsp.cpp" fsp_text)
- string(REPLACE "\r\n" "\n" fsp_text "${fsp_text}")
- string(SHA256 fsp_sha "${fsp_text}")
- if(NOT fsp_sha STREQUAL "580595ce8c55cbbe189d4a73e504aa6a0e2bff4bd55c93abf0577f611f7bfe98")
-  message(FATAL_ERROR "Unexpected fixed-size-pool source for compiler adaptation")
- endif()
- string(FIND "${fsp_text}" "bool ON_FixedSizePool::ElementIdIsIncreasing(" fsp_begin)
- string(FIND "${fsp_text}" "unsigned int ON_FixedSizePool::ResetElementId(" fsp_end)
- math(EXPR fsp_length "${fsp_end}-${fsp_begin}")
- string(SUBSTRING "${fsp_text}" ${fsp_begin} ${fsp_length} fsp_function)
- string(REGEX MATCHALL "return nullptr" nullptr_returns "${fsp_function}")
- list(LENGTH nullptr_returns nullptr_count)
- if(NOT nullptr_count EQUAL 3)
-  message(FATAL_ERROR "Fixed-size-pool adaptation no longer matches three bool returns")
- endif()
- string(REPLACE "return nullptr;" "return false;" fsp_fixed "${fsp_function}")
- string(REPLACE "${fsp_function}" "${fsp_fixed}" fsp_output "${fsp_text}")
- file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_fsp.cpp" "${fsp_output}")
- list(REMOVE_ITEM ON_SRC_files "${ON6_SOURCE}/opennurbs_fsp.cpp")
- list(APPEND ON_SRC_files "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_fsp.cpp")
-
- file(READ "${ON6_SOURCE}/opennurbs_subd_fragment.cpp" extra_text)
- string(REPLACE "\r\n" "\n" extra_text "${extra_text}")
- string(SHA256 extra_sha "${extra_text}")
- if(NOT extra_sha STREQUAL "f50864c08b5b2df1931cea0d5a7b048948df07140b38bdf4e218da1bf335e715")
-  message(FATAL_ERROR "Unexpected opennurbs_subd_fragment.cpp for compiler adaptation")
- endif()
- string(REPLACE [==[bool ON_SubDLimitMesh::GetFaceCenterPointAndNormal(
-  const class ON_SubDFace* face,
-  double* P,
-  double* N
-) const
-{
-  if (nullptr != P)
-  {
-    P[0] = ON_DBL_QNAN;
-    P[1] = ON_DBL_QNAN;
-    P[2] = ON_DBL_QNAN;
-  }
-  if (nullptr != N)
-  {
-    N[0] = ON_DBL_QNAN;
-    N[1] = ON_DBL_QNAN;
-    N[2] = ON_DBL_QNAN;
-  }
-  const ON_SubDLimitMeshFragment* fragment = FaceFragment(face);
-  if (nullptr == fragment)
-    return false;
-  if (nullptr == fragment->m_P || nullptr == fragment->m_N)
-    return false;
-  const unsigned int n = fragment->m_grid.m_side_segment_count;
-  const unsigned int P_dex = fragment->IsCompleteFragment() ? (n*(n + 2) / 2) : 0;
-  if (P_dex >= (unsigned int)fragment->m_P_count)
-    return nullptr;
-  const double* fragment_P = fragment->m_P + (P_dex * fragment->m_P_stride);
-  const double* fragment_N = fragment->m_N + (P_dex * fragment->m_N_stride);
-  if (nullptr != P)
-  {
-    P[0] = fragment_P[0];
-    P[1] = fragment_P[1];
-    P[2] = fragment_P[2];
-  }
-  if (nullptr != N)
-  {
-    N[0] = fragment_N[0];
-    N[1] = fragment_N[1];
-    N[2] = fragment_N[2];
-  }
-  return true;
-}
-]==] [==[bool ON_SubDLimitMesh::GetFaceCenterPointAndNormal(
-  const class ON_SubDFace* face,
-  double* P,
-  double* N
-) const
-{
-  if (nullptr != P)
-  {
-    P[0] = ON_DBL_QNAN;
-    P[1] = ON_DBL_QNAN;
-    P[2] = ON_DBL_QNAN;
-  }
-  if (nullptr != N)
-  {
-    N[0] = ON_DBL_QNAN;
-    N[1] = ON_DBL_QNAN;
-    N[2] = ON_DBL_QNAN;
-  }
-  const ON_SubDLimitMeshFragment* fragment = FaceFragment(face);
-  if (nullptr == fragment)
-    return false;
-  if (nullptr == fragment->m_P || nullptr == fragment->m_N)
-    return false;
-  const unsigned int n = fragment->m_grid.m_side_segment_count;
-  const unsigned int P_dex = fragment->IsCompleteFragment() ? (n*(n + 2) / 2) : 0;
-  if (P_dex >= (unsigned int)fragment->m_P_count)
-    return false;
-  const double* fragment_P = fragment->m_P + (P_dex * fragment->m_P_stride);
-  const double* fragment_N = fragment->m_N + (P_dex * fragment->m_N_stride);
-  if (nullptr != P)
-  {
-    P[0] = fragment_P[0];
-    P[1] = fragment_P[1];
-    P[2] = fragment_P[2];
-  }
-  if (nullptr != N)
-  {
-    N[0] = fragment_N[0];
-    N[1] = fragment_N[1];
-    N[2] = fragment_N[2];
-  }
-  return true;
-}
-]==] extra_output "${extra_text}")
- file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_subd_fragment.cpp" "${extra_output}")
- list(REMOVE_ITEM ON_SRC_files "${ON6_SOURCE}/opennurbs_subd_fragment.cpp")
- list(APPEND ON_SRC_files "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_subd_fragment.cpp")
-
- file(READ "${ON6_SOURCE}/opennurbs_subd_heap.cpp" extra_text)
- string(REPLACE "\r\n" "\n" extra_text "${extra_text}")
- string(SHA256 extra_sha "${extra_text}")
- if(NOT extra_sha STREQUAL "82614dcd09c662e8ebcec5d93278bf89e024c840bace2c53610eb84e84a8ca02")
-  message(FATAL_ERROR "Unexpected opennurbs_subd_heap.cpp for compiler adaptation")
- endif()
- string(REPLACE [==[bool ON_SubD_FixedSizeHeap::ReturnPtrArray(
-  unsigned int capacity,
-  void* p
-  )
-{
-  if (nullptr != m_p && capacity <= m_p_index && p == m_p + (m_p_index - capacity))
-  {
-    m_p_index -= capacity;
-    return true;
-  }
-  return ON_SUBD_RETURN_ERROR(nullptr);
-}
-]==] [==[bool ON_SubD_FixedSizeHeap::ReturnPtrArray(
-  unsigned int capacity,
-  void* p
-  )
-{
-  if (nullptr != m_p && capacity <= m_p_index && p == m_p + (m_p_index - capacity))
-  {
-    m_p_index -= capacity;
-    return true;
-  }
-  return ON_SUBD_RETURN_ERROR(false);
-}
-]==] extra_output "${extra_text}")
- file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_subd_heap.cpp" "${extra_output}")
- list(REMOVE_ITEM ON_SRC_files "${ON6_SOURCE}/opennurbs_subd_heap.cpp")
- list(APPEND ON_SRC_files "${CMAKE_CURRENT_BINARY_DIR}/opennurbs_subd_heap.cpp")
+ function(adapt_bool_return filename source_sha signature old_return new_return expected_count)
+  file(READ "${ON6_SOURCE}/${filename}" source_text)
+  string(REPLACE "\r\n" "\n" source_text "${source_text}")
+  string(SHA256 actual_sha "${source_text}")
+  if(NOT actual_sha STREQUAL source_sha)
+   message(FATAL_ERROR "Unexpected ${filename} for compiler adaptation")
+  endif()
+  string(FIND "${source_text}" "${signature}" function_begin)
+  if(function_begin LESS 0)
+   message(FATAL_ERROR "Expected bool function not found")
+  endif()
+  string(SUBSTRING "${source_text}" ${function_begin} -1 tail)
+  string(FIND "${tail}" "\n}\n" function_end)
+  if(function_end LESS 0)
+   message(FATAL_ERROR "Expected bool function end not found")
+  endif()
+  math(EXPR function_length "${function_end}+3")
+  string(SUBSTRING "${tail}" 0 ${function_length} function_body)
+  string(REPLACE "${old_return}" "" without_returns "${function_body}")
+  string(LENGTH "${function_body}" before_length)
+  string(LENGTH "${without_returns}" after_length)
+  string(LENGTH "${old_return}" return_length)
+  math(EXPR expected_delta "${return_length}*${expected_count}")
+  math(EXPR actual_delta "${before_length}-${after_length}")
+  if(NOT actual_delta EQUAL expected_delta)
+   message(FATAL_ERROR "Unexpected number of invalid bool returns")
+  endif()
+  string(REPLACE "${old_return}" "${new_return}" fixed_body "${function_body}")
+  string(REPLACE "${function_body}" "${fixed_body}" fixed_source "${source_text}")
+  file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/${filename}" "${fixed_source}")
+  list(REMOVE_ITEM ON_SRC_files "${ON6_SOURCE}/${filename}")
+  list(APPEND ON_SRC_files "${CMAKE_CURRENT_BINARY_DIR}/${filename}")
+  set(ON_SRC_files ${ON_SRC_files} PARENT_SCOPE)
+ endfunction()
+ adapt_bool_return("opennurbs_fsp.cpp" "580595ce8c55cbbe189d4a73e504aa6a0e2bff4bd55c93abf0577f611f7bfe98" "bool ON_FixedSizePool::ElementIdIsIncreasing(" "return nullptr;" "return false;" 3)
+ adapt_bool_return("opennurbs_subd_fragment.cpp" "f50864c08b5b2df1931cea0d5a7b048948df07140b38bdf4e218da1bf335e715" "bool ON_SubDLimitMesh::GetFaceCenterPointAndNormal(" "return nullptr;" "return false;" 1)
+ adapt_bool_return("opennurbs_subd_heap.cpp" "82614dcd09c662e8ebcec5d93278bf89e024c840bace2c53610eb84e84a8ca02" "bool ON_SubD_FixedSizeHeap::ReturnPtrArray(" "return ON_SUBD_RETURN_ERROR(nullptr);" "return ON_SUBD_RETURN_ERROR(false);" 1)
 endif()
 add_library(published_zlib STATIC ${ZLIB_SRC_files})
 set_target_properties(published_zlib PROPERTIES OUTPUT_NAME zlib)
@@ -193,7 +78,7 @@ if(APPLE)
  enable_language(OBJCXX)
  target_sources(published_on6 PRIVATE "${ON6_SOURCE}/opennurbs_apple_nsfont.cpp")
  set_source_files_properties("${ON6_SOURCE}/opennurbs_apple_nsfont.cpp" PROPERTIES LANGUAGE OBJCXX)
- set_source_files_properties("${ON6_SOURCE}/opennurbs_font.cpp" PROPERTIES LANGUAGE OBJCXX)
+ set_source_files_properties("${ON6_SOURCE}/opennurbs_font.cpp" "${ON6_SOURCE}/opennurbs_wstring.cpp" PROPERTIES LANGUAGE OBJCXX)
  target_link_libraries(published_on6 PUBLIC "-framework CoreText" "-framework CoreGraphics" "-framework Foundation")
 endif()
 if(WIN32)
