@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A04",
+  "status": "local_native_and_portable_differentials_passed_apple_pending",
+  "requirementScope": [
+    "P08-T01",
+    "UI-039 camera prerequisite"
+  ],
+  "sourceAudit": "docs/evidence/audit/frustum-lens-native-reference.json",
+  "adr": "docs/porting/ADR-0050-published-frustum-lens-state.md",
+  "children": [
+    {
+      "id": "P08-T01-A04-01",
+      "status": "pinned_native_reference_compiled_and_cases_verified_locally"
+    },
+    {
+      "id": "P08-T01-A04-02",
+      "status": "CSharp1245_local_source_differentials_passed"
+    },
+    {
+      "id": "P08-T01-A04-03",
+      "status": "camera_projection_application_and_actual_preset_images_pending"
+    }
+  ],
+  "red": "Rendering.Tests failed CS0246 missing CandidateFrustumBounds before numerical adaptation.",
+  "checks": {
+    "cases": 1245,
+    "fixture": "tests/Port/Geometry.Candidate.Contracts/Fixtures/frustum-source-cases.json",
+    "fixtureSha256": "fe330b14be1d50df7b462965bcc649b0f5162c5ba1e441fbedb2ce6c0cdfdce7",
+    "coverage": [
+      "All validity/perspective/up-lock/LR/TB flag combinations",
+      "Asymmetric/symmetric and two-point selection",
+      "Strict world/near-far bounds, unset sentinels, NaN/inf/subnormal/extreme lenses",
+      "Depth diagnostics accept valid state; invalid requests retain previous fields",
+      "Strict lens deadband, cache invalidation and signed zero",
+      "Smallest half-angle/aspect failures and raw inconsistent validity states"
+    ],
+    "commands": [
+      {
+        "command": "node scripts/run-local.cjs node scripts/prepare-frustum-reference.cjs",
+        "exitCode": 0
+      },
+      {
+        "command": "existing MinGW C++17 -O2 -ffp-contract=off -fno-strict-aliasing -static reference compile",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/run-local.cjs node scripts/generate-frustum-cases.cjs .local/native/frustum-reference.exe",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+        "exitCode": 0
+      },
+      {
+        "command": "node scripts/run-local.cjs node --test tests/frustum-reference.test.cjs",
+        "exitCode": 0,
+        "tests": 2
+      },
+      {
+        "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+        "exitCode": 0,
+        "scope": "Full adjacent native/managed candidate suite plus1245 numerical frustum cases passed."
+      }
+    ]
+  },
+  "remaining": [
+    "Actual macOS clang reference and managed comparison",
+    "Actual iPad/iPhone numeric execution",
+    "Lens/camera movement/parallel conversion and projection matrices applied to visible source presets",
+    "Private Rhino5/original-PC/physical/full feature acceptance"
+  ],
+  "limits": "Only numerical source math adapted; no original native viewport or GPU geometry simulated. Generic Metal proof camera unchanged. No full parity row closed.",
+  "notice": "native/Rendering/FrustumReference/LICENSE.openNURBS.reference"
+}

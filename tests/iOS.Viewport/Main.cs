@@ -50,11 +50,12 @@ public sealed class AppDelegate:UIApplicationDelegate
             File.WriteAllText(resultPath+".started",token);
             var gate=CandidateGeometryContractChecks.CadFrameGateAssertions.Run();
             var camera=CandidateGeometryContractChecks.LegacyCameraPresetAssertions.Run();
+            var frustum=CandidateGeometryContractChecks.FrustumAssertions.Run();
             var offscreen=NativeGeometryCandidate.MetalViewportChecks.Run(directory);
             var parent=Window?.RootViewController?.View??throw new Exception("Visible root view missing");
             var report=await ViewportPresentationChecks.Run(parent,Capture);
             File.WriteAllText(Path.Combine(directory,"viewport-report.json"),JsonSerializer.Serialize(report,ViewportReportContext.Default.ViewportPresentationReport));
-            string result="PASS visible Metal viewport:6 captured stages; source edit/orbit/empty/resize, bounded upload ownership and disposal; full product UI/PC/physical acceptance separate."+Environment.NewLine+gate+Environment.NewLine+camera+Environment.NewLine+offscreen;
+            string result="PASS visible Metal viewport:6 captured stages; source edit/orbit/empty/resize, bounded upload ownership and disposal; full product UI/PC/physical acceptance separate."+Environment.NewLine+gate+Environment.NewLine+camera+Environment.NewLine+frustum+Environment.NewLine+offscreen;
             File.WriteAllText(resultPath+".pending",result);File.Move(resultPath+".pending",resultPath,overwrite:true);Console.WriteLine(result);
         }
         catch(Exception error){File.WriteAllText(resultPath,"FAIL "+error);Console.WriteLine(error);}

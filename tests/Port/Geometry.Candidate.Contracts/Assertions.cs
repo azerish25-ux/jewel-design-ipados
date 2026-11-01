@@ -85,6 +85,7 @@ public static class Assertions
         var viewportPacking=ViewportPackingAssertions.Run();
         var cameraPresets=LegacyCameraPresetAssertions.Run();
         var frameOwnership=CadFrameGateAssertions.Run();
+        var frustum=FrustumAssertions.Run();
         var meshes=MeshSnapshotAssertions.Run();
         var brepAffine=BrepAffineAssertions.Run();
         var legacyJoin=LegacyJoinGraphAssertions.Run();
@@ -94,6 +95,6 @@ public static class Assertions
         var capPlacement=ProfileCapPlacementAssertions.Run();
         var curveExport=CurveExportAssertions.Run();
         var domeProfiles=DomeProfileAssertions.Run();
-        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam+" "+bounds+" "+outsideRail+" "+storedProfiles+" "+valueGeometry+" "+railNodes+" "+railGraph+" "+selectRail+" "+transforms+" "+placement+" "+rotation+" "+consumer+" "+collectionSockets+" "+ownedCollections+" "+arrayConsumers+" "+sweepPreparation+" "+pairedSweep+" "+brepGraph+" "+nurbsSurfaces+" "+domeProfiles+" "+curveExport+" "+capPlacement+" "+capPlanes+" "+capGraph+" "+sewing+" "+legacyJoin+" "+brepAffine+" "+meshes+" "+viewportPacking+" "+cameraPresets+" "+frameOwnership;
+        return "PASS managed candidate ABI: real box/translate/boolean/copy, retained aliases, typed errors/ownership guards, SafeHandle parent leases and native entry disposal; candidate only, no full kernel/PC/physical or process-memory leak claim. "+curves+" "+ringRail+" "+curveLine+" "+seam+" "+bounds+" "+outsideRail+" "+storedProfiles+" "+valueGeometry+" "+railNodes+" "+railGraph+" "+selectRail+" "+transforms+" "+placement+" "+rotation+" "+consumer+" "+collectionSockets+" "+ownedCollections+" "+arrayConsumers+" "+sweepPreparation+" "+pairedSweep+" "+brepGraph+" "+nurbsSurfaces+" "+domeProfiles+" "+curveExport+" "+capPlacement+" "+capPlanes+" "+capGraph+" "+sewing+" "+legacyJoin+" "+brepAffine+" "+meshes+" "+viewportPacking+" "+cameraPresets+" "+frameOwnership+" "+frustum;
     }
 }

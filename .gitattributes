@@ -8,3 +8,6 @@ reference/fixtures/*.csg -text
 *.json text eol=lf
 *.yml text eol=lf
 src/Port/Domain/Recovered/** -text -whitespace
+
+# Preserve the exact pinned third-party notice bytes.
+native/Rendering/FrustumReference/LICENSE.openNURBS.reference -text -whitespace
