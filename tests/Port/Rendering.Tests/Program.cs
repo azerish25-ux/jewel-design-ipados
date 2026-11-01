@@ -8,3 +8,4 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ScalarAssertions.
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5CameraAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewportAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5RotationAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5CameraLocationAssertions.Run());

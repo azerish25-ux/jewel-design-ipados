@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03e-02",
+  "parentTask": "P08-T01-A05-03e",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "temporary_viewport_recipe_local_passed_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03e-camera-locations.md",
+  "binaryAudit": "docs/evidence/audit/native-camera-setter-ghidra.json",
+  "source": {
+    "file": "Rhino.exe",
+    "sha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+    "rva": "0x44c730",
+    "length": 1386,
+    "functionSha256": "f7985a9f51de07cb8638a58cf4aaacf4010e5205e318fb7acca6d31ff334be28",
+    "targetExecuted": false
+  },
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "failure": "CS0246 IRhino5CameraLocationCommit missing"
+  },
+  "acceptance": [
+    "Invalid point/overflow/tiny direction rejects before writes",
+    "Copied original state; up lock projects new direction and falls back to old direction",
+    "Original roll signed from old basis; world Z, old Y and cross-product rotation fallback",
+    "Location/direction setter failures ignored; subsequent up result controls preparation",
+    "Roll threshold1e-6 and old-camera-Z axis, including final up failure",
+    "Commit mode0 then target metadata even if commit false; rejection before commit writes neither"
+  ],
+  "review": {
+    "correctness": "Read accepted full original setter decompiler and static contract. Independent analytical cases exercise fallback, locks, roll deadband and failure ordering. Full malformed/native runtime differential remains open.",
+    "architecture": "Immutable proposal and required typed commit boundary; no always-success production sink, no fake document/history/cache adapter. Recording sink is test-only and proves protocol.",
+    "ownership": "No mutable collections or native resource ownership in proposal; original value snapshot cannot be modified by temporary setters.",
+    "security": "No original target execution, credentials, scripts, network geometry or recovery mutation."
+  },
+  "appleRuns": {
+    "status": "pending_push"
+  },
+  "remaining": [
+    "Concrete SetVP guards, lock/symmetry application, cache/serial, document notification and history",
+    "Full original command and preset application to Metal",
+    "Original licensed PC runtime comparisons and physical-device acceptance"
+  ],
+  "parityRowsClosed": 0,
+  "localChecks": {
+    "cameraLocationChecks": 32,
+    "fullManagedNativeSuiteExitCode": 0,
+    "adjacentNodeChecks": 42,
+    "repositoryIntegrityExitCode": 0
+  }
+}

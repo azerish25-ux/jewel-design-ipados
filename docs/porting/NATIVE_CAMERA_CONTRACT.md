@@ -4,10 +4,10 @@ The original Rhino5 dependency candidate is now statically traced, not executed.
 
 | Required behavior | Original evidence | Port state |
 | --- | --- | --- |
-| Reject invalid/tiny target-camera direction before changing the viewport | Original setter initial validity checks; exact threshold2^-32 | Native setter adapter pending |
-| Calculate through a temporary viewport copy | Original ON_Viewport copy constructor and final conditional commit | Direct setter sequence is insufficient |
-| Preserve up-lock policy, prior roll and degenerate up fallback | Original52 typed called-import boundary signatures, acos/rotation paths; roll threshold1e-6 | Portable recipe and original primitive comparisons pending |
-| Preserve failure ordering | Up failure avoids viewport commit; after accepted up, SetVP result is ignored and original target metadata setter follows | Must not replace this with an all-fields atomic success/failure policy |
+| Reject invalid/tiny target-camera direction before changing the viewport | Original setter initial validity checks; exact threshold2^-32 | Portable preparation implemented; concrete commit adapter pending |
+| Calculate through a temporary viewport copy | Original ON_Viewport copy constructor and final conditional commit | Copied-state preparation implemented |
+| Preserve up-lock policy, prior roll and degenerate up fallback | Original52 typed called-import boundary signatures, acos/rotation paths; roll threshold1e-6 | Portable recipe implemented; compiled published rotation checks pass, original runtime comparison open |
+| Preserve failure ordering | Up failure avoids viewport commit; after accepted up, SetVP result is ignored and original target metadata setter follows | Typed protocol preserves commit-false then target write; concrete commit adapter pending |
 | Preserve original view restrictions | SetVP byte/parent-view/projection/axis guards | Raw guard conditions observed; semantic field names still unresolved |
 | Apply state with original lock/symmetry handling | SetVP temporarily clears locks/flags, applies frame/frustum, restores incoming flags | Existing primitive helpers available; commit adapter pending |
 | Preserve target and view metadata | Temporary target, optional commit target-distance branch, original ON_3dmView target write | Metadata and source command integration pending |
@@ -17,4 +17,4 @@ The original Rhino5 dependency candidate is now statically traced, not executed.
 
 Only the original dependency candidate hashes/version are claimed. Original-PC and physical-device observations remain separate gates. No full UI-039 or other parity row is closed by this static work.
 
-The original core comparison now has a distinct [original5-derived C# numerical implementation](evidence/P08-T01-A05-03c.json), with Windows checks passed and Apple tests pending. Published6 validation/flags are not silently reused as original5. This supplies the core primitives for the native recipe and commit adapters; it does not implement those remaining UI effects.
+The original core comparison now has a distinct [original5-derived C# numerical implementation](evidence/P08-T01-A05-03c.json), with Windows, macOS and both simulator-family numerical checks passed. Published6 validation/flags are not silently reused as original5. The [temporary-viewport recipe](evidence/P08-T01-A05-03e-02.json) now consumes these core primitives. Its typed commit boundary preserves ordering but does not implement the remaining native UI effects.

@@ -10,3 +10,7 @@ This reviewable child, P08-T01-A05-03e-01, implements immutable arbitrary-axis v
 4. Run adjacent regressions/integrity, review scope/provenance/immutability, record exact results, commit/push. All local generated outputs use D:/run-local; transient D: failures wait five seconds and retry.
 
 Next children: temporary-viewport up/roll recipe; native commit guards/target ordering/document/history/cache adapters; full source preset application to Metal. Original-PC and physical-device acceptance remain open. No parity row closes from this numeric work.
+
+## P08-T01-A05-03e-02 temporary viewport recipe
+
+Consume original setter1386-byte SHA f7985a9f51de07cb8638a58cf4aaacf4010e5205e318fb7acca6d31ff334be28 and e-01 rotation. RED tests cover normal/polar/world-up/third-attempt fallback, signed roll, locks, invalid/tiny requests and failed up. Calculate through copied immutable state. Require a typed commit boundary: mode0, then metadata even on false return. Recording sink proves protocol only; concrete SetVP/history/cache adapter remains open. Local/full/Apple tests required; no parity closure.
