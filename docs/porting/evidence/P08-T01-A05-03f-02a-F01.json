@@ -26,7 +26,23 @@
     "ownership": "Each capture is bound to the existing random launch token plus exact phase; app and host timing files reset per launch/run and retained with artifacts."
   },
   "appleRuns": {
-    "status": "pending_push"
+    "sourceCommit": "59acb186e5fd6809b3006b9c36729d0894ee74f2",
+    "preflight": {
+      "id": 41308104182,
+      "status": "in_progress"
+    },
+    "visible": {
+      "id": 41308104039,
+      "status": "in_progress"
+    },
+    "repository": {
+      "id": 41308104101,
+      "status": "in_progress"
+    },
+    "reuse": {
+      "id": 41308104097,
+      "status": "in_progress"
+    }
   },
   "remaining": [
     "Inspect actual fixed-source macOS and both iPad/iPhone screenshot/scene results; do not count partial failed iPhone as pass"
