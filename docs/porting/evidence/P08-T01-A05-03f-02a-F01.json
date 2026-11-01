@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "taskId": "P08-T01-A05-03f-02a-F01",
   "parentTask": "P08-T01-A05-03f-02a",
-  "status": "capture_deadline_regression_fixed_locally_apple_pending",
+  "status": "actual_iPad_iPhone_numeric_and_ack_protocol_passed_scene_failure_separate",
   "failureReport": "docs/evidence/apple/rhino5-viewport-cache-ios-attempt1.json",
   "rootCause": "App capture waiter allowed1500 delays of20ms (~30s), while a real iPhone capture sequence delivered orbit screenshot/ack after that wait expired. Screenshot was written, then driver observed FAIL TimeoutException for orbit. Exact stage request latency was not retained in old artifacts.",
   "evidenceVsInference": "Timeout and screenshot timing are observed. Runner load/migration as a contributing cause is plausible but not established; new app/driver timestamps will identify future boundary delays.",
@@ -33,7 +33,7 @@
     },
     "visible": {
       "id": 41308104039,
-      "status": "in_progress"
+      "status": "completed_managed_pass_scene_failure_system_notification"
     },
     "repository": {
       "id": 41308104101,
@@ -45,12 +45,14 @@
     }
   },
   "remaining": [
-    "Inspect actual fixed-source macOS and both iPad/iPhone screenshot/scene results; do not count partial failed iPhone as pass"
+    "Full scene acceptance requires unobstructed captures; follow-up F02 retains the separate notification failure and correction."
   ],
   "localChecks": {
     "timingTokenChecks": 11,
     "fullManagedNativeSuiteExitCode": 0,
     "nodeRegressions": 45,
     "repositoryIntegrityExitCode": 0
-  }
+  },
+  "actualRuntimeReport": "docs/evidence/apple/numeric-commit-capture-fixed-attempt1.json",
+  "followup": "docs/porting/evidence/P08-T01-A05-03f-02a-F02.json"
 }

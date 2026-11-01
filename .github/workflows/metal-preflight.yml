@@ -31,6 +31,11 @@ on:
       - "scripts/run-ghidra-local.cjs"
       - "tests/ghidra-local.test.cjs"
       - "tests/fixtures/ghidra-script-failure.txt"
+      - "scripts/check-viewport-capture-surface.cjs"
+      - "scripts/verify-metal-artifacts.cjs"
+      - "tests/viewport-capture-surface.test.cjs"
+      - "tests/viewport-driver.test.cjs"
+      - "tests/fixtures/viewport-iphone-system-banner.png"
       - "scripts/verify-camera-preset-oracle.cjs"
       - "scripts/prepare-frustum-reference.cjs"
       - "scripts/prepare-viewport-projection-reference.cjs"
@@ -120,6 +125,8 @@ jobs:
           dotnet run --project tests/Port/Rendering.Tests | tee artifacts/camera-preset-tests.txt
       - name: Verify D-only native-analysis launch contracts on macOS
         run: node --test tests/ghidra-local.test.cjs | tee artifacts/ghidra-local-contracts.txt
+      - name: Verify actual capture obstruction and bounded driver regressions
+        run: node --test tests/viewport-capture-surface.test.cjs tests/viewport-driver.test.cjs | tee artifacts/capture-surface-regressions.txt
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

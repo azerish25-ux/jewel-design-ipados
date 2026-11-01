@@ -3,7 +3,8 @@ set -euo pipefail
 FAMILY=${1:?supply ipad or iphone}
 case "$FAMILY" in ipad|iphone);; *) echo "Unsupported simulator family" >&2; exit 2;; esac
 OUT="artifacts/viewport-$FAMILY"
-mkdir -p "$OUT"
+mkdir -p "$OUT" "$OUT/capture-attempts"
+for phase in original orbit edited empty resized final; do for attempt in 1 2 3 4 5 6; do rm -f "$OUT/capture-attempts/$phase-$attempt.png" "$OUT/capture-attempts/$phase-$attempt.json"; done; done
 rm -f "$OUT/capture-timing.txt" "$OUT/app-capture-timing.txt"
 for phase in original orbit edited empty resized final; do rm -f "$OUT/$phase.png"; done
 rm -f "$OUT/result.txt" "$OUT/runtime-family.txt" "$OUT/report.json" "$OUT/report-verification.json"
@@ -29,9 +30,23 @@ for i in $(seq 1 600); do
   if test "$payload" != "$last"; then
    [[ "$payload" =~ ^[0-9a-f]{32}\|(original|orbit|edited|empty|resized|final)$ ]]
    phase=${payload#*|}
-   printf 'begin|%s|%s\n' "$payload" "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> "$OUT/capture-timing.txt"
-   xcrun simctl io "$UDID" screenshot --type=png "$OUT/$phase.png"
-   printf 'captured|%s|%s\n' "$payload" "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> "$OUT/capture-timing.txt"
+   capture_ready=0
+   for attempt in 1 2 3 4 5 6; do
+    candidate="$OUT/capture-attempts/$phase-$attempt.png"
+    printf 'begin|%s|%s\n' "$payload" "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> "$OUT/capture-timing.txt"
+    xcrun simctl io "$UDID" screenshot --type=png "$candidate"
+    printf 'captured|%s|%s\n' "$payload" "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> "$OUT/capture-timing.txt"
+    if node scripts/check-viewport-capture-surface.cjs "$candidate" > "$OUT/capture-attempts/$phase-$attempt.json"; then
+     cp "$candidate" "$OUT/$phase.png"
+     capture_ready=1
+     break
+    else
+     capture_status=$?
+     if test "$capture_status" -ne 2; then exit "$capture_status"; fi
+    fi
+    sleep 1
+   done
+   if test "$capture_ready" -ne 1; then echo "Viewport capture remained obstructed for $phase" >&2; exit 1; fi
    printf '%s' "$payload" > "$DATA/Documents/viewport-ack.pending"
    mv "$DATA/Documents/viewport-ack.pending" "$DATA/Documents/viewport-ack.txt"
    printf 'acknowledged|%s|%s\n' "$payload" "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> "$OUT/capture-timing.txt"

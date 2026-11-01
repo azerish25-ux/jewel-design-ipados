@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02a-F02",
+  "parentTask": "P08-T01-A05-03f-02a",
+  "status": "notification_obstruction_capture_fix_local_passed_apple_pending",
+  "failureReport": "docs/evidence/apple/numeric-commit-capture-fixed-attempt1.json",
+  "rootCause": "First iPhone screenshot contains a system notification banner overlapping unchanged central comparison ROI.76925 mismatched pixels all at y327..411; actual CAD bbox has0 differences. Three-minute handshake itself completed successfully.",
+  "red": {
+    "command": "node scripts/run-local.cjs node --test tests/viewport-capture-surface.test.cjs",
+    "exitCode": 1,
+    "failure": "Missing check-viewport-capture-surface API"
+  },
+  "fix": {
+    "knownClearBorderProbe": true,
+    "maximumCaptureAttempts": 6,
+    "retainEveryActualAttempt": true,
+    "onlyObstructionStatus2Retryable": true,
+    "malformedPngOrCliFailureFatal": true,
+    "acknowledgeOnlyUnobstructedCapture": true,
+    "fullSceneRegionUnchanged": true,
+    "fullScenePixelThresholdUnchanged": true
+  },
+  "review": {
+    "scope": "Dedicated renderer harness background readiness, not a universal product image acceptance rule. No PNG editing, crop, hidden overlay mask or cached-preview substitution.",
+    "gates": "Actual unobstructed PNG is retained byte-for-byte; full foreground/edit/orbit/resize/final comparisons remain mandatory. A central CAD mutation passes readiness but still fails final scene gate.",
+    "failures": "Persistent obstruction fails after six attempts without ACK. Stale launch/token/phase, CLI failure, malformed PNG and app monotonic180s expiry remain failures."
+  },
+  "appleRuns": {
+    "status": "pending_push"
+  },
+  "remaining": [
+    "Inspect actual fixed-source iPad/iPhone scene artifacts and screenshot attempt records; failed prior scene is not counted as pass"
+  ],
+  "localChecks": {
+    "nodeRegressions": 52,
+    "captureSurfaceAndDriverChecks": 11,
+    "allTwelvePriorActualScreensReady": true,
+    "corruptedCadStillRejectedByFinalVerifier": true,
+    "repositoryIntegrityExitCode": 0
+  },
+  "fixture": {
+    "path": "tests/fixtures/viewport-iphone-system-banner.png",
+    "sha256": "ca939704bec50e0511531522c8b520ae1ba8a8a74cada2a62a273e484fab88ff",
+    "sourceRun": 41308104039,
+    "sourceFamily": "iphone",
+    "stage": "original",
+    "imageModified": false
+  }
+}

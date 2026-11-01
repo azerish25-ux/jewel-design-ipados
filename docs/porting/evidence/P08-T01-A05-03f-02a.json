@@ -63,5 +63,7 @@
   ],
   "parityRowsClosed": 0,
   "captureFix": "docs/porting/evidence/P08-T01-A05-03f-02a-F01.json",
-  "appleNumericReport": "docs/evidence/apple/rhino5-numeric-commit-results.json"
+  "appleNumericReport": "docs/evidence/apple/rhino5-numeric-commit-results.json",
+  "managedRuntimeReport": "docs/evidence/apple/numeric-commit-capture-fixed-attempt1.json",
+  "captureObstructionFix": "docs/porting/evidence/P08-T01-A05-03f-02a-F02.json"
 }
