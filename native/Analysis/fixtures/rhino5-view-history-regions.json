@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "push-history",
+      "name": "?PushViewProjection@CRhinoViewport@@QEAAXXZ",
+      "abi": null,
+      "rva": 4510432,
+      "length": 233,
+      "sha256": "6ea21cd3193fb201190bc2e7a4caa52934862937e0277a7c1d62014f8f5518d4",
+      "unwindRegions": [
+        {
+          "begin": 4510432,
+          "end": 4510452,
+          "unwind": 18969000
+        },
+        {
+          "begin": 4510452,
+          "end": 4510490,
+          "unwind": 18996660
+        },
+        {
+          "begin": 4510490,
+          "end": 4510544,
+          "unwind": 18996640
+        },
+        {
+          "begin": 4510544,
+          "end": 4510618,
+          "unwind": 18996624
+        },
+        {
+          "begin": 4510618,
+          "end": 4510665,
+          "unwind": 18996608
+        }
+      ]
+    },
+    {
+      "role": "pop-history",
+      "name": "?PopViewProjection@CRhinoViewport@@QEAA_NXZ",
+      "abi": null,
+      "rva": 4511024,
+      "length": 216,
+      "sha256": "fbec7539674f7744aa9dd3d92cdce9381c9ac92db515a94db62f7da1c5e3bf27",
+      "unwindRegions": [
+        {
+          "begin": 4511024,
+          "end": 4511240,
+          "unwind": 20033284
+        }
+      ]
+    },
+    {
+      "role": "document-view-modified",
+      "name": "?ViewModified@CRhinoDoc@@QEAAXPEAVCRhinoView@@@Z",
+      "abi": null,
+      "rva": 2562800,
+      "length": 230,
+      "sha256": "dbcef4f30e3c29864d8d80b1f41899da54ef848e332ddd9a519f8e9b9882c49b",
+      "unwindRegions": [
+        {
+          "begin": 2562800,
+          "end": 2563030,
+          "unwind": 19288088
+        }
+      ]
+    }
+  ]
+}

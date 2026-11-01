@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "original_cache_numeric_primitives_windows_passed_apple_pending",
+  "status": "original_cache_numeric_primitives_windows_macos_passed_simulator_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03f-01-cache-primitives.md",
   "binaryAudit": "docs/evidence/audit/rhino5-viewport-cache-source.json",
   "publishedAudit": "docs/evidence/audit/viewport-cache-published-source.json",
@@ -32,7 +32,23 @@
     "provenance": "All published files pinned and validated; original dependency read statically only. Cookie return and unordered decompiler pitfalls explicitly documented."
   },
   "appleRuns": {
-    "status": "pending_push"
+    "sourceCommit": "8e4ccfc9d0967b53960bf0f79eca50738c4333d4",
+    "preflight": {
+      "id": 41305924083,
+      "status": "completed_success_actual_artifacts_inspected"
+    },
+    "visible": {
+      "id": 41305923992,
+      "status": "in_progress"
+    },
+    "repository": {
+      "id": 41305924062,
+      "status": "completed_success"
+    },
+    "reuse": {
+      "id": 41305924028,
+      "status": "in_progress"
+    }
   },
   "remaining": [
     "Concrete original commit guards/sequential mutations/serial/screen cache and view-target mirror setter/getter repair",
@@ -40,5 +56,8 @@
     "Full source command and world-normalized source preset Metal application",
     "Original-PC and physical-device acceptance"
   ],
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleNumericReport": "docs/evidence/apple/rhino5-viewport-cache-numeric-results.json",
+  "nextPlan": "docs/porting/plans/P08-T01-A05-03f-02-view-state.md",
+  "historyAudit": "docs/evidence/audit/rhino5-view-history-source.json"
 }

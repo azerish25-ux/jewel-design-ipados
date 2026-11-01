@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02",
+  "status": "initial_byte_locked_static_history_and_notification_views_not_implemented",
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "targetExecuted": false,
+  "manifest": "native/Analysis/fixtures/rhino5-view-history-regions.json",
+  "methods": [
+    {
+      "role": "push-history",
+      "name": "?PushViewProjection@CRhinoViewport@@QEAAXXZ",
+      "abi": null,
+      "rva": 4510432,
+      "length": 233,
+      "sha256": "6ea21cd3193fb201190bc2e7a4caa52934862937e0277a7c1d62014f8f5518d4",
+      "unwindRegions": [
+        {
+          "begin": 4510432,
+          "end": 4510452,
+          "unwind": 18969000
+        },
+        {
+          "begin": 4510452,
+          "end": 4510490,
+          "unwind": 18996660
+        },
+        {
+          "begin": 4510490,
+          "end": 4510544,
+          "unwind": 18996640
+        },
+        {
+          "begin": 4510544,
+          "end": 4510618,
+          "unwind": 18996624
+        },
+        {
+          "begin": 4510618,
+          "end": 4510665,
+          "unwind": 18996608
+        }
+      ]
+    },
+    {
+      "role": "pop-history",
+      "name": "?PopViewProjection@CRhinoViewport@@QEAA_NXZ",
+      "abi": null,
+      "rva": 4511024,
+      "length": 216,
+      "sha256": "fbec7539674f7744aa9dd3d92cdce9381c9ac92db515a94db62f7da1c5e3bf27",
+      "unwindRegions": [
+        {
+          "begin": 4511024,
+          "end": 4511240,
+          "unwind": 20033284
+        }
+      ]
+    },
+    {
+      "role": "document-view-modified",
+      "name": "?ViewModified@CRhinoDoc@@QEAAXPEAVCRhinoView@@@Z",
+      "abi": null,
+      "rva": 2562800,
+      "length": 230,
+      "sha256": "dbcef4f30e3c29864d8d80b1f41899da54ef848e332ddd9a519f8e9b9882c49b",
+      "unwindRegions": [
+        {
+          "begin": 2562800,
+          "end": 2563030,
+          "unwind": 19288088
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "push-history",
+      "entry": "14044d2e0",
+      "signature": "void PushViewProjection(void)",
+      "decompilerSha256": "22226dedf2acbc6b80f63d030f50e8f9b94542629597882cf3ff5af3d438e507",
+      "basicBlocks": 9
+    },
+    {
+      "role": "pop-history",
+      "entry": "14044d530",
+      "signature": "bool PopViewProjection(void)",
+      "decompilerSha256": "8679c3fc8f270cf814937c4fbc2760b1bea9e1d1520ab4c75453317708884eb4",
+      "basicBlocks": 3
+    },
+    {
+      "role": "document-view-modified",
+      "entry": "140271af0",
+      "signature": "void ViewModified(CRhinoView * param_1)",
+      "decompilerSha256": "367c01ebd3354ba24035c80f4d0b921173fdc7c90f45c2708a2f999905de97eb",
+      "basicBlocks": 17
+    }
+  ],
+  "pushPolicy": {
+    "snapshot": "Whole ON_3dmView at viewport+0x10, not only numeric viewport or parameter undo state",
+    "arrayOffset": "0x6b8",
+    "indexOffset": "0x6d0",
+    "emptyOrAtEnd": "If count<1 or count-1<=current index, append current view",
+    "branchAfterNavigation": "Otherwise overwrite index+1, then remove last while count>index+2",
+    "bound": "If resulting count>255, remove entry0 once; then index=count-1. Do not invent duplicate suppression.",
+    "ordering": "SetVP invokes document bridge before history push; caller final view-target metadata write occurs after push."
+  },
+  "popPolicy": {
+    "observed": "Takes last saved view, invokes an unresolved saved/current-view merge helper0x44d3d0, applies SetView, clears cached screen dimensions, reapplies client screen size, removes last and resets index.",
+    "return": "Original tail0x44d5f1 explicitly XOR AL,AL; normal returned bool is false even when state changed.",
+    "limits": "Win32 GetClientRect ABI, merge helper, SetView and screen-size behavior need further static refinement. Initial pop C is not a complete accepted algorithm transcription."
+  },
+  "documentNotification": {
+    "entry": "0x271af0",
+    "observed": [
+      "For matching active view and available window, sets a pending byte and schedules a timer only if not already pending.",
+      "For a non-null view whose raw kind at+0x600 is not1, calls RhSynchronizeViews and returns early if false.",
+      "Under a global application option invokes virtual document operation with argument1.",
+      "If an owned controller exists and view is null or matches, invokes helper0x242270 and marks controller state."
+    ],
+    "limits": "Raw globals/fields are not named as application semantics without further evidence. Do not substitute an unconditional modified counter or no-op notification."
+  },
+  "remaining": [
+    "Refine timer/Win32 signatures and actual synchronization/controller effects before concrete UI notification adapter.",
+    "Define whole immutable view snapshot ownership including preserved metadata; do not discard unknown view state.",
+    "Port push/history behavior and target mirror repair together with concrete commit guards/serial/cache/screen contract.",
+    "Original runtime, original-PC and physical-device acceptance remain open."
+  ]
+}
