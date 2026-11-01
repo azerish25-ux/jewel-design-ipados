@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "windows_macos_provenance_passed_ios_pending",
+  "status": "windows_macos_ipad_iphone_provenance_passed",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A02-P03-provenance.md",
   "inputCommit": "42ea6122731ef332d69dd1cd98d18dc67bfbb8e5",
   "nativePolicyAudits": [
@@ -47,7 +47,8 @@
     "src/Port/Views.Candidate/Rhino5UserStringArchiveBinding.cs": "b0a6b1aaa0a2b780cd163cfe539092dea0bfe46c5373d965980c31fba88aa454"
   },
   "appleReports": {
-    "numeric": "docs/evidence/apple/userstring-provenance-numeric-results.json"
+    "numeric": "docs/evidence/apple/userstring-provenance-numeric-results.json",
+    "runtime": "docs/evidence/apple/userstring-provenance-ios-results.json"
   },
   "appleRuns": {
     "sourceCommit": "13ca0fe621e778ee6205512a63632ace238449fc",
@@ -57,15 +58,16 @@
     },
     "visible": {
       "id": 41327402499,
-      "status": "in_progress"
+      "status": "completed_success_actual_artifacts_inspected"
     },
     "reuse": {
       "id": 41327402534,
-      "status": "in_progress"
+      "status": "completed_success"
     },
     "repository": {
       "id": 41327402481,
-      "status": "in_progress"
+      "status": "completed_success"
     }
-  }
+  },
+  "guide": "docs/porting/USER_STRING_ARCHIVES.md"
 }

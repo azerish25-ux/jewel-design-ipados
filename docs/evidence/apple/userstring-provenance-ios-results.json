@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "run": 41327402499,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/41327402499",
+  "sourceCommit": "13ca0fe621e778ee6205512a63632ace238449fc",
+  "status": "success",
+  "simulators": [
+    {
+      "family": "ipad",
+      "selected": {
+        "family": "ipad",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPad (A16)",
+        "udid": "D9DB98A1-6C9C-4B6A-B040-BE7C4207F458"
+      },
+      "actualRuntimeFamily": "ipad",
+      "resultSha256": "2d8397ff8b02d7a1aead7354bd9da5dfc073560f6be40d93eca5053d5f5234de",
+      "reports": [
+        "PASS copied user-string provenance:91 actual-codec copy/assignment/write checks; whole-view history/full3dm/original-PC/physical parity separate."
+      ],
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "a48c25a6cfd7159c49788c15c3d3f3a76a1c44c4c34511b3190653901c2913d7",
+          "orbit": "d0e86758f60c9b02f19ff938f57b5411502fef981ce1352ba58afa16b4754a50",
+          "edited": "6c5b02f57619ed1e2c3f921b94c79bad9c832668ee0d17539473a6efbc3dcfa4",
+          "empty": "449e49b4ee752beabe8217dc6518fe83d7ea80024f2d7e676ba16d6c36507032",
+          "resized": "7afe00df8f5b0c38ee906168802ce37ea884c98671af2733dc1b6ca4f52a367d",
+          "final": "0ed789fc5c9200dbf2254145683566e3c96d83edda95f54b36acbf042dc8ddb1"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "selected": {
+        "family": "iphone",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+        "name": "iPhone 17",
+        "udid": "062CFAA4-9ACF-40ED-A1E2-3625F5ED4DA9"
+      },
+      "actualRuntimeFamily": "iphone",
+      "resultSha256": "2d8397ff8b02d7a1aead7354bd9da5dfc073560f6be40d93eca5053d5f5234de",
+      "reports": [
+        "PASS copied user-string provenance:91 actual-codec copy/assignment/write checks; whole-view history/full3dm/original-PC/physical parity separate."
+      ],
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "54b8eaf01d40a2d4aa467722056ed15528e4136656da1a78297504e516d348af",
+          "orbit": "c05739a132bfe70acf447c0fb5b4e44dd6a779694b152632287ea06e6f341306",
+          "edited": "e4a96aa08bb28691fe5fa6566d585c8c6a54be5b92e1c8a9b60c2a2da5e92dfb",
+          "empty": "7048cc431c7a940b90c658eea6319a860a91cc8f7c44aea8156d548bb1e4041e",
+          "resized": "47a509770af2fd40fc26509481bf9b7309adb8e1531b98e4daa897e70e04caa5",
+          "final": "8b7850cc12418fa3e2f5617233555e56ae683262097184aaf4029cd08fb75fe7"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "build": {
+    "warnings": 2,
+    "errors": 0,
+    "knownWarnings": [
+      "CS8765 AppDelegate options nullability",
+      "CA1422 UIWindow constructor deprecated on iOS26"
+    ],
+    "outputSha256": "057799471f8954105fe2a8e19c4fcfb28b0e30688555db172cfbbb94b4ed09da"
+  },
+  "scope": "Actual signed iPad/iPhone execution of91 real-codec provenance/copy/assignment/source-preserving write checks plus independent validation of adjacent CAD pixels and owned resources. Whole-view copying/history/document, full3dm/PC and physical acceptance remain open."
+}
