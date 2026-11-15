@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "runtime_view_copy_windows_passed_apple_pending_history_open",
+  "status": "runtime_view_copy_windows_macos_ipad_iphone_passed_history_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A03-runtime-view-copy.md",
   "inputCommit": "1de5eaadac0faace435d692e591f4263b608da54",
   "audit": [
@@ -80,9 +80,34 @@
     "run": 41181433871,
     "job": 132739567515,
     "artifact": 14151888839,
-    "status": "fresh_simulator_archive_uploaded_native_ios_retest_in_progress",
+    "status": "completed_success_host_and_native_ios_retests_archive_digest_verified",
     "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
-    "reason": "Old retained artifact expired during pause; producer restarted through connected plugin."
+    "reason": "Old retained artifact expired during pause; producer restarted through connected plugin.",
+    "artifactSha256": "bd30ee8e26d5c06fe8c76b8c398554eefbb99c38c952786c54e5cccd5c05f81c"
   },
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleReports": {
+    "numeric": "docs/evidence/apple/runtime-view-numeric-results.json",
+    "runtime": "docs/evidence/apple/runtime-view-ios-results.json"
+  },
+  "appleRuns": {
+    "sourceCommit": "09fb0ec4ad1d920a0bc51091eef005d344ec82cb",
+    "preflight": {
+      "id": 43693937283,
+      "status": "completed_success_actual_connected_plugin_artifacts_inspected"
+    },
+    "visible": {
+      "id": 43693937224,
+      "status": "completed_success_actual_connected_plugin_artifacts_inspected"
+    },
+    "repository": {
+      "id": 43693937230,
+      "status": "completed_success"
+    },
+    "reuse": {
+      "id": 43693937229,
+      "status": "completed_success_both_families"
+    }
+  },
+  "originalTargetExecuted": false
 }

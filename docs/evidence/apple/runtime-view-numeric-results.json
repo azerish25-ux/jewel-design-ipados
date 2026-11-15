@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "run": 43693937283,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43693937283",
+  "sourceCommit": "09fb0ec4ad1d920a0bc51091eef005d344ec82cb",
+  "status": "success_actual_plugin_artifacts_inspected",
+  "runtimeViewAssertions": 68,
+  "metalBinding": {
+    "warnings": 0,
+    "errors": 0,
+    "outputSha256": "7e5d8bb389480e1da3746f91a735a62a846c80e50f3d33f5f4ac47af98f50ccd"
+  },
+  "assertionOutputSha256": "e06eef884b0baca54b211f99a07b33b1f99fc9bd0760c7a9f085adba818bd213",
+  "artifact": {
+    "id": 14153303155,
+    "sha256": "39e06d5aacc6384af171c4e89b9b13587c9c582978ce0052efcdae422d3e44c6"
+  },
+  "scope": "Actual macOS runtime-view copy/field/ownership execution and Metal binding compilation. Whole history/document/full3dm/original-PC/physical acceptance remain open."
+}
