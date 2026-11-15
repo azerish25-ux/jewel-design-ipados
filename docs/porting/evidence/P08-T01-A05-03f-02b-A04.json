@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "source_backed_history_push_windows_passed_apple_pending",
+  "status": "history_push_windows_macos_ipad_iphone_passed_restore_document_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A04-history-array.md",
   "audit": "docs/evidence/audit/rhino5-view-history-array-source.json",
   "inputCommit": "cd6bd422181b63a991965c5cf79deaf50fca2ea5",
@@ -44,5 +44,28 @@
     "fix": "Windows fixture timeout60 seconds; non-Windows15 seconds and actual app180-second acknowledgement/pixel/retry gates unchanged.",
     "status": "fixed_verified57_node_cases_passed"
   },
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleReports": {
+    "numeric": "docs/evidence/apple/history-push-numeric-results.json",
+    "runtime": "docs/evidence/apple/history-push-ios-results.json"
+  },
+  "appleRuns": {
+    "sourceCommit": "74aeb76372275c9b5a13ec281c56f0459c1cce56",
+    "preflight": {
+      "id": 43699607824,
+      "status": "completed_success_actual_plugin_artifacts_inspected"
+    },
+    "visible": {
+      "id": 43699607775,
+      "status": "completed_success_actual_plugin_artifacts_inspected"
+    },
+    "repository": {
+      "id": 43699607803,
+      "status": "completed_success"
+    },
+    "reuse": {
+      "id": 43699607825,
+      "status": "completed_success_both_families"
+    }
+  }
 }

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "pop-view-merge",
+      "name": null,
+      "abi": "viewMerge",
+      "rva": 4510672,
+      "length": 339,
+      "sha256": "3dbdc56798a529901bbd47900d3f8e86c5e1d0f650d28474547ddd6f40c87d4d",
+      "unwindRegions": [
+        {
+          "begin": 4510672,
+          "end": 4511011,
+          "unwind": 18996556
+        }
+      ]
+    }
+  ]
+}

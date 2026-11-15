@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05",
+  "targetExecuted": false,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "manifest": "native/Analysis/fixtures/rhino5-history-pop-merge-regions.json",
+  "methods": [
+    {
+      "role": "pop-view-merge",
+      "name": null,
+      "abi": "viewMerge",
+      "rva": 4510672,
+      "length": 339,
+      "sha256": "3dbdc56798a529901bbd47900d3f8e86c5e1d0f650d28474547ddd6f40c87d4d",
+      "unwindRegions": [
+        {
+          "begin": 4510672,
+          "end": 4511011,
+          "unwind": 18996556
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "pop-view-merge",
+      "entry": "14044d3d0",
+      "signature": "void Original_pop_view_merge(void * savedView, void * currentView, void * resultView)",
+      "decompilerSha256": "e21e1bf8c44073a814ccdbdabf73241610a42463d02393c1b8f496647d7b7f1c"
+    }
+  ],
+  "observations": [
+    "If result != current, first assign whole current view into result.",
+    "For nonnull saved with all three identities distinct, assign whole current view into result again; then assign saved viewport only. This is two current assignments plus saved viewport assignment, not a single copied saved view.",
+    "Use saved TargetPoint getter, which may repair its stale mirror, then result SetTargetPoint; scalar failure/mirror rules remain source-defined.",
+    "Saved name copied only if its trimmed temporary is nonempty, equals original untrimmed saved name, and current/result viewType !=1. Exact native trim/compare semantics must be inspected before using managed string operations.",
+    "Call SetScreenPort(result,0,0,0,0,0,0) after merge; actual primitive failure/mutation semantics must be verified.",
+    "Pop then SetView/client-screen restores, removes last, sets cursor=count-1 and returnsfalse. Full caller/document/window effects remain unfinished."
+  ],
+  "instructionOutputSha256": "fbb23f17068318c65920c2ca9a6db4bf1c68db99c8134ee37f2c0d3576674c5c",
+  "limits": [
+    "Static original analysis only; no original runtime execution.",
+    "No guessed name trimming, screen setter, SetView or document effect is implemented from this preliminary merge map.",
+    "Managed pointer identity/alias guards require explicit tests; native freed-pointer behavior is not an iOS API."
+  ]
+}
