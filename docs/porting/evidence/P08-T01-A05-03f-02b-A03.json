@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A03",
+  "parentTask": "P08-T01-A05-03f-02b",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "runtime_view_copy_windows_passed_apple_pending_history_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A03-runtime-view-copy.md",
+  "inputCommit": "1de5eaadac0faace435d692e591f4263b608da54",
+  "audit": [
+    "docs/evidence/audit/rhino5-view-copy-constructors-source.json",
+    "docs/evidence/audit/rhino5-whole-view-source.json",
+    "docs/evidence/audit/rhino5-concrete-userdata-source.json"
+  ],
+  "red": [
+    {
+      "exitCode": 1,
+      "failure": "CS0246 missing Rhino5RuntimeView"
+    },
+    {
+      "exitCode": 1,
+      "failure": "Assignment must leave opaque-byte mutation from legitimate copy callbacks intact"
+    }
+  ],
+  "checks": {
+    "runtimeViewAssertions": 68,
+    "fullNativeHostExitCode": 0,
+    "nativeLogSha256": "7131b3a3fdd02bfc1306bfe0d9e55bbdabb754cb7d3c692bc10c3bf730435cfd",
+    "adjacentNodeRegressions": 57,
+    "nodeLogSha256": "5298a0b5c34b841cce875feb926923079730feb0842de28767120f97e707d119"
+  },
+  "review": {
+    "ownership": "Mapped original5 converted fields and actual viewport userdata have one runtime owner. Immutable original capture is explicitly source provenance, not an updated save image.",
+    "nativeOrder": "Constructor copies userdata once before values. Assignment purges/copies before values, leaves byte+0x1b at its current post-callback value and self-assigns without mutation. Source values/clip data are immutable, mutable owner lists are independently cloned.",
+    "import": "Explicit archive context and native unknown-buffer semantics. Valid unknown bodies retain IDs/app/count/transform and original bytes; real registered lookup decodes supported string-list bodies. Invalid/duplicate records reject with cleanup; budgets are explicit managed limits.",
+    "failure": "Managed constructor failure purges completed clones; assignment preserves native-visible partial userdata mutation and old values when virtual copying throws. No original Windows C++ exception-runtime equivalence claim.",
+    "scope": "Full userdata catalog/plugins, actual history container operations, document synchronization/notifications, native defaults, source-preset rendering, full3dm/original-PC/physical acceptance remain open."
+  },
+  "environment": {
+    "allLocalWritesUnderD": true,
+    "githubTransport": "Connected GitHub plugin, owner account azerish25-ux; shared CLI/account configuration untouched.",
+    "restoration": {
+      "nativeHostDllSha256": "24a7f6dad9cef326135fb7b72f9c8fc2504ea174c109609bafd2cd8aead7c2a0",
+      "gccRuntime": {
+        "version": "16.2.0-ucrt-posix-seh-r3",
+        "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/16.2.0posix-23.1.3-14.0.0-ucrt-r3/winlibs-x86_64-posix-seh-gcc-16.2.0-mingw-w64ucrt-14.0.0-r3.zip",
+        "archiveSha256": "3c69305081e4a647144339a936244fcf7d3d9e558319e1ad7be2cd2886d4b6a1",
+        "files": {
+          "libgcc_s_seh-1.dll": {
+            "bytes": 929969,
+            "sha256": "817eafccbb104d1a14fa9e4b894927514c8c502ee80aa1427f57872e55efdca8"
+          },
+          "libstdc++-6.dll": {
+            "bytes": 2597845,
+            "sha256": "538f48a3fe22186e144934ab2ee96645c2a87a56373abfd2c8bec122318fe598"
+          },
+          "libwinpthread-1.dll": {
+            "bytes": 72171,
+            "sha256": "2512e8e9ceecd1c47d894a3cd38b895e1f40f3d42d0ccebc2a1521ee2fe496a9"
+          }
+        }
+      },
+      "testUtilities": {
+        "version": "0.12.0",
+        "url": "https://github.com/uutils/coreutils/releases/download/0.12.0/coreutils-0.12.0-x86_64-pc-windows-msvc.zip",
+        "archiveSha256": "45d6760c136ef42cdba1e2dbb492b0858be98099d6c7fb3e300a3adcfbc54cfe",
+        "entry": "coreutils-0.12.0-x86_64-pc-windows-msvc/tee.exe",
+        "exeSha256": "e8fae02417d6b020c5f86e85f945d06872e6c139bd6217d861c5d79a64960ab7",
+        "seq": {
+          "entry": "coreutils-0.12.0-x86_64-pc-windows-msvc/seq.exe",
+          "sha256": "97e7ac462bbf39623fc48fe50cff9107bfdc53463c166817d452c7e4ba20ccd2",
+          "bytes": 1417728
+        }
+      },
+      "bash": "Existing Codex bundled GNU Bash5.3.15 invoked without profiles; discovered from the installed git path. Local tee/seq supplied under D, without command stubs."
+    }
+  },
+  "nativeArchiveRefresh": {
+    "run": 41181433871,
+    "job": 132739567515,
+    "artifact": 14151888839,
+    "status": "fresh_simulator_archive_uploaded_native_ios_retest_in_progress",
+    "sourceCommit": "cf48a0455261472cd8adb8d61a2674a0dc3d437b",
+    "reason": "Old retained artifact expired during pause; producer restarted through connected plugin."
+  },
+  "parityRowsClosed": 0
+}

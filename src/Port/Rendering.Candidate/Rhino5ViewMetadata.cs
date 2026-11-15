@@ -19,7 +19,12 @@ public sealed record Rhino5ViewMetadata(bool ProjectionLocked,string Name,Guid D
     bool ShowConstructionGrid,bool ShowConstructionAxes,bool ShowWorldAxes,Rhino5TraceImage TraceImage,Rhino5WallpaperImage Wallpaper);
 
 public readonly record struct Rhino5ViewportDetails(Guid ViewportId,Rhino5ScreenPort ScreenPort,
-    Rhino5Matrix4 ClipModification,Rhino5Matrix4 InverseClipModification,double PerspectiveMinNearDist,double PerspectiveMinNearOverFar);
+    Rhino5Matrix4 ClipModification,Rhino5Matrix4 InverseClipModification,double PerspectiveMinNearDist,double PerspectiveMinNearOverFar)
+{
+    /// <summary>Opaque original viewport byte+0x1b: copied on construction, retained by assignment,
+    /// reset to0 by original Initialize. Actual raw captures must supply the source value.</summary>
+    public byte OpaqueCopyByte {get;init;}
+}
 
 /// <summary>Owned converted userdata envelope. Preserving serialized payload is not a native polymorphic clone implementation.</summary>
 public sealed class Rhino5ViewUserData

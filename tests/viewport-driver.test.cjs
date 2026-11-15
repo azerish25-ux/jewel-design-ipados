@@ -1,5 +1,17 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process');
-const root=path.resolve(__dirname,'..'),bash=process.platform==='win32'?'C:/Program Files/Git/bin/bash.exe':'bash';
+const root=path.resolve(__dirname,'..');
+function testBash(){
+ if(process.env.JEWEL_TEST_BASH)return process.env.JEWEL_TEST_BASH;
+ if(process.platform!=='win32')return 'bash';
+ const found=cp.spawnSync('where.exe',['git'],{encoding:'utf8'});
+ const gitPaths=(found.stdout||'').trim().split(/\r?\n/).filter(Boolean);
+ const candidates=['C:/Program Files/Git/bin/bash.exe'];
+ for(const git of gitPaths){const base=path.resolve(path.dirname(git),'..');candidates.push(path.join(base,'bin/bash.exe'),path.join(base,'usr/bin/bash.exe'),path.join(base,'usr/bin/sh.exe'));}
+ const selected=candidates.find(p=>fs.existsSync(p));
+ if(!selected)throw Error('Bash is required for driver regressions; set JEWEL_TEST_BASH to an existing Bash executable.');
+ return selected;
+}
+const bash=testBash();
 // Protocol/control-flow fixtures do not execute or prove native/GPU behavior.
 function scenario(name,compatibility){
  fs.mkdirSync(path.join(root,'.local'),{recursive:true});const dir=fs.mkdtempSync(path.join(root,'.local/viewport-driver-test-'));
@@ -29,7 +41,7 @@ function scenario(name,compatibility){
  'export -f xcrun sleep',
  'source "$SCRIPT" ipad'
  ].join('\n');
- const result=cp.spawnSync(bash,['--noprofile','--norc','-c',mock],{cwd:dir,encoding:'utf8',timeout:15000,env:{...process.env,SCENARIO:name,SCRIPT:path.join(root,'scripts/run-viewport-simulator.sh').replaceAll('\\','/'),MSYS_NO_PATHCONV:'1',BANNER:path.join(root,'tests/fixtures/viewport-iphone-system-banner.png').replaceAll('\\','/'),NORMAL:path.join(root,'docs/evidence/apple/visible-viewport/iphone/final.png').replaceAll('\\','/')}});
+ const result=cp.spawnSync(bash,['--noprofile','--norc','-c',mock],{cwd:dir,encoding:'utf8',timeout:15000,env:{...process.env,...(process.platform==='win32'?{PATH:[process.env.JEWEL_TEST_UTILS||path.join(root,'.local/tools/coreutils'),path.dirname(bash),path.resolve(path.dirname(bash),'../usr/bin'),path.resolve(path.dirname(bash),'../../ucrt64/bin'),process.env.PATH].join(path.delimiter)}:{}),SCENARIO:name,SCRIPT:path.join(root,'scripts/run-viewport-simulator.sh').replaceAll('\\','/'),MSYS_NO_PATHCONV:'1',BANNER:path.join(root,'tests/fixtures/viewport-iphone-system-banner.png').replaceAll('\\','/'),NORMAL:path.join(root,'docs/evidence/apple/visible-viewport/iphone/final.png').replaceAll('\\','/')}});
  return {dir,result};
 }
 test('visible driver preserves launch failure and shuts down the selected simulator',()=>{const {dir,result}=scenario('launch-failure');assert.ifError(result.error);assert.equal(result.status,18,result.stdout+result.stderr);assert.equal(fs.readFileSync(path.join(dir,'cleanup.txt'),'utf8').trim(),'shutdown');});

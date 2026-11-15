@@ -17,3 +17,4 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5UserDataRuntimeAs
 System.Console.WriteLine(CandidateGeometryContractChecks.LegacyUserStringListAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.UserStringArchiveBindingAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.UserStringProvenanceAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5RuntimeViewAssertions.Run());
