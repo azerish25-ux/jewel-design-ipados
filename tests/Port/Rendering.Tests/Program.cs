@@ -19,3 +19,4 @@ System.Console.WriteLine(CandidateGeometryContractChecks.UserStringArchiveBindin
 System.Console.WriteLine(CandidateGeometryContractChecks.UserStringProvenanceAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5RuntimeViewAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewHistoryAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5PopMergeAssertions.Run());

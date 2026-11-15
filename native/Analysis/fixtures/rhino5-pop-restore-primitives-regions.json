@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "set-screen-port",
+      "name": "?SetScreenPort@ON_Viewport@@QEAA_NHHHHHH@Z",
+      "abi": null,
+      "rva": 2962080,
+      "length": 78,
+      "sha256": "c403d02154b5496e76da7a21eac88e5677af77bf6ef9bc5805ff7068442c6bec",
+      "unwindRegions": []
+    },
+    {
+      "role": "view-target-get",
+      "name": "?TargetPoint@ON_3dmView@@QEBA?AVON_3dPoint@@XZ",
+      "abi": null,
+      "rva": 48992,
+      "length": 175,
+      "sha256": "c7b953d9c451405289b6237a129906cfc195a89bd1ce77948144dc83636c03f8",
+      "unwindRegions": [
+        {
+          "begin": 48992,
+          "end": 49167,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "view-target-set",
+      "name": "?SetTargetPoint@ON_3dmView@@QEAA_NVON_3dPoint@@@Z",
+      "abi": null,
+      "rva": 49168,
+      "length": 83,
+      "sha256": "ea6a4c8ad6675eca9a472de0dab55cd1e9287dcee3a1300dca552dcabe4e26dc",
+      "unwindRegions": [
+        {
+          "begin": 49168,
+          "end": 49251,
+          "unwind": 3399328
+        }
+      ]
+    },
+    {
+      "role": "trim-both",
+      "name": "?TrimLeftAndRight@ON_wString@@QEAAXPEB_W@Z",
+      "abi": null,
+      "rva": 3024080,
+      "length": 42,
+      "sha256": "eea02d9f14e448bb8306115c834a302c4c4efdd19c5033dedffe03d30fc34cc1",
+      "unwindRegions": [
+        {
+          "begin": 3024080,
+          "end": 3024122,
+          "unwind": 3419784
+        }
+      ]
+    },
+    {
+      "role": "trim-left",
+      "name": "?TrimLeft@ON_wString@@QEAAXPEB_W@Z",
+      "abi": null,
+      "rva": 3023328,
+      "length": 439,
+      "sha256": "901f3fd80fdf0e5fe238f6493bdd81f89b55831d3e022d29a2614c89af209a95",
+      "unwindRegions": [
+        {
+          "begin": 3023328,
+          "end": 3023380,
+          "unwind": 3549548
+        },
+        {
+          "begin": 3023380,
+          "end": 3023494,
+          "unwind": 3549524
+        },
+        {
+          "begin": 3023494,
+          "end": 3023513,
+          "unwind": 3549504
+        },
+        {
+          "begin": 3023513,
+          "end": 3023649,
+          "unwind": 3549484
+        },
+        {
+          "begin": 3023649,
+          "end": 3023748,
+          "unwind": 3549468
+        },
+        {
+          "begin": 3023748,
+          "end": 3023758,
+          "unwind": 3549452
+        },
+        {
+          "begin": 3023758,
+          "end": 3023767,
+          "unwind": 3549436
+        }
+      ]
+    },
+    {
+      "role": "trim-right",
+      "name": "?TrimRight@ON_wString@@QEAAXPEB_W@Z",
+      "abi": null,
+      "rva": 3023776,
+      "length": 289,
+      "sha256": "e6a11f780f6332fbb343e7c0aeeed29b3905a52f14f87c2d83e9de756d31bd24",
+      "unwindRegions": [
+        {
+          "begin": 3023776,
+          "end": 3023842,
+          "unwind": 3635496
+        },
+        {
+          "begin": 3023842,
+          "end": 3023983,
+          "unwind": 3549416
+        },
+        {
+          "begin": 3023983,
+          "end": 3024044,
+          "unwind": 3549396
+        },
+        {
+          "begin": 3024044,
+          "end": 3024049,
+          "unwind": 3549380
+        },
+        {
+          "begin": 3024049,
+          "end": 3024065,
+          "unwind": 3549364
+        }
+      ]
+    },
+    {
+      "role": "compare-wide",
+      "name": "?Compare@ON_wString@@QEBAHPEB_W@Z",
+      "abi": null,
+      "rva": 3017568,
+      "length": 112,
+      "sha256": "60a4deb30a2edf56068d245b8014105fa7640aa321c01272b162b2c4100f74dd",
+      "unwindRegions": []
+    },
+    {
+      "role": "is-empty",
+      "name": "?IsEmpty@ON_wString@@QEBA_NXZ",
+      "abi": null,
+      "rva": 3014592,
+      "length": 48,
+      "sha256": "aba62e090513bb88813e9911283224a1d89121832ad726a5e333b58e722e138b",
+      "unwindRegions": []
+    }
+  ]
+}

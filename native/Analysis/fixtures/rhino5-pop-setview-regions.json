@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "restore-screen-size",
+      "name": "?SetScreenSize@CRhinoViewport@@QEAAXHH@Z",
+      "abi": null,
+      "rva": 4470032,
+      "length": 543,
+      "sha256": "4148c070ef62837fd59224fb5dec065e8a46815e2fae42b1b1cb9c325eab6b17",
+      "unwindRegions": [
+        {
+          "begin": 4470032,
+          "end": 4470153,
+          "unwind": 19901044
+        },
+        {
+          "begin": 4470153,
+          "end": 4470563,
+          "unwind": 19901020
+        },
+        {
+          "begin": 4470563,
+          "end": 4470575,
+          "unwind": 19901004
+        }
+      ]
+    },
+    {
+      "role": "restore-set-view",
+      "name": "?SetView@CRhinoViewport@@QEAAXAEBVON_3dmView@@@Z",
+      "abi": null,
+      "rva": 2532992,
+      "length": 1068,
+      "sha256": "5ad59bdeab58466d0946d177f63cf207192f0968759f2a8323cc21c4841bbfff",
+      "unwindRegions": [
+        {
+          "begin": 2532992,
+          "end": 2534060,
+          "unwind": 19983260
+        }
+      ]
+    }
+  ]
+}

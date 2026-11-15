@@ -10,9 +10,10 @@ public sealed record Rhino5RuntimeViewImportLimits(int MaxBodies=1_000_000,long 
 public sealed class Rhino5RuntimeView : Rhino5UserDataOwner
 {
     // This private value contains no serialized userdata/chunks. Runtime userdata has exactly
-    // one mutable owner here; original archive envelopes belong only to originalCapture.
+    // one mutable owner here; immutable file envelopes belong to the retained archive origins.
     private Rhino5ViewData values=null!;
     private Rhino5ViewData? originalCapture;
+    private Rhino5ViewData[] archiveOrigins=[];
     public Rhino5ViewportState Viewport=>values.Viewport;
     public CandidatePoint3 TargetMirror=>values.TargetMirror;
     public Rhino5ViewportDetails Details=>values.Details;
@@ -34,6 +35,7 @@ public sealed class Rhino5RuntimeView : Rhino5UserDataOwner
             CopyUserDataFrom(source);
             values=source.values;
             originalCapture=source.originalCapture;
+            archiveOrigins=source.archiveOrigins;
         }
         catch {PurgeUserData();throw;}
     }
@@ -64,6 +66,46 @@ public sealed class Rhino5RuntimeView : Rhino5UserDataOwner
         // callbacks, including a legitimate mutation performed during purge/copy.
         values=source.values.WithDetails(source.Details with {OpaqueCopyByte=Details.OpaqueCopyByte});
         originalCapture=source.originalCapture;
+        archiveOrigins=source.archiveOrigins;
+    }
+
+    /// <summary>Immutable source captures retained by mixed viewport/current metadata state.
+    /// Returned references are immutable provenance, never an updated whole save image.</summary>
+    public Rhino5ViewData[] CopyArchiveOrigins()=>(Rhino5ViewData[])archiveOrigins.Clone();
+
+    /// <summary>Original embedded viewport assignment only. Current metadata/clipping/mirror
+    /// survive; actual userdata and viewport details come from source, except current opaque byte.</summary>
+    public void AssignViewportFrom(Rhino5RuntimeView source)
+    {
+        Alive();ArgumentNullException.ThrowIfNull(source);source.Alive();if(ReferenceEquals(this,source))return;
+        // Reject a known provenance-budget overflow before changing actual owned userdata.
+        int projected=archiveOrigins.Length+source.archiveOrigins.Count(origin=>!archiveOrigins.Any(value=>ReferenceEquals(value,origin)));
+        if(projected>1024)throw new InvalidDataException("Mixed view provenance exceeds managed capture budget.");
+        PurgeUserData();CopyUserDataFrom(source);
+        var origins=new List<Rhino5ViewData>(archiveOrigins);
+        foreach(var origin in source.archiveOrigins)if(!origins.Any(value=>ReferenceEquals(value,origin)))origins.Add(origin);
+        if(origins.Count>1024)throw new InvalidDataException("Mixed view provenance exceeds managed capture budget.");
+        values=values.WithViewport(source.Viewport,TargetMirror).WithDetails(source.Details with {OpaqueCopyByte=Details.OpaqueCopyByte});
+        archiveOrigins=origins.ToArray();
+    }
+    public CandidatePoint3 ReadTargetPoint()
+    {
+        Alive();var target=Viewport.Target;var mirror=TargetMirror;
+        if(!(target.X==mirror.X&&target.Y==mirror.Y&&target.Z==mirror.Z))
+        {Runtime.Error();values=values.WithViewport(Viewport,target);}
+        return target;
+    }
+    public bool TrySetTargetPoint(CandidatePoint3 target)
+    {
+        Alive();var viewport=new Rhino5Viewport(Viewport);bool accepted=viewport.TrySetTarget(target);
+        values=values.WithViewport(viewport.Current,viewport.Current.Target);return accepted;
+    }
+    public bool TrySetScreenPort(int left,int right,int bottom,int top,int near,int far)
+    {
+        Alive();if(left==right||bottom==top)return false;
+        var port=Details.ScreenPort;bool retainDepth=near==0&&far==0;
+        port=new(left,right,bottom,top,retainDepth?port.Near:near,retainDepth?port.Far:far,true);
+        values=values.WithDetails(Details with {ScreenPort=port});return true;
     }
 
     /// <summary>Explicit native unknown-body import, not a whole3dm reader or arbitrary plugin
@@ -86,6 +128,7 @@ public sealed class Rhino5RuntimeView : Rhino5UserDataOwner
         var view=new Rhino5RuntimeView(runtime,capture.Viewport,capture.TargetMirror,capture.Details,
             capture.Metadata,capture.CopyClippingPlanes());
         view.originalCapture=capture;
+        view.archiveOrigins=[capture];
         try
         {
             // Attach prepends. Reverse import retains actual captured source-list order.
@@ -108,6 +151,6 @@ public sealed class Rhino5RuntimeView : Rhino5UserDataOwner
     public override void Dispose()
     {
         if(IsDisposed)return;
-        base.Dispose();originalCapture=null;
+        base.Dispose();originalCapture=null;archiveOrigins=[];
     }
 }
