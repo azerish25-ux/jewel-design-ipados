@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "append-source",
+      "name": "?Append@?$ON_ClassArray@VON_3dmView@@@@QEAAXAEBVON_3dmView@@@Z",
+      "abi": null,
+      "rva": 75968,
+      "length": 327,
+      "sha256": "e2a8117bdb8354584ff98baa394f1fdad0490f8f8d7b54fd18c6b24ac7236b26",
+      "unwindRegions": [
+        {
+          "begin": 75968,
+          "end": 76295,
+          "unwind": 3613436
+        }
+      ]
+    },
+    {
+      "role": "append-new",
+      "name": "?AppendNew@?$ON_ClassArray@VON_3dmView@@@@QEAAAEAVON_3dmView@@XZ",
+      "abi": null,
+      "rva": 73792,
+      "length": 155,
+      "sha256": "3924153d68c03fde7a6f2061280488b06683a77591ace91e2336bc404b34493c",
+      "unwindRegions": [
+        {
+          "begin": 73792,
+          "end": 73947,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "reserve",
+      "name": "?Reserve@?$ON_ClassArray@VON_3dmView@@@@QEAAXH@Z",
+      "abi": null,
+      "rva": 74976,
+      "length": 19,
+      "sha256": "6520ad9ad689ab818c7a0defdaadf1c17f4dba86e6f1ac657a23261340d2b4fe",
+      "unwindRegions": [
+        {
+          "begin": 74976,
+          "end": 74995,
+          "unwind": 3638708
+        }
+      ]
+    },
+    {
+      "role": "set-capacity",
+      "name": "?SetCapacity@?$ON_ClassArray@VON_3dmView@@@@QEAAXH@Z",
+      "abi": null,
+      "rva": 76832,
+      "length": 363,
+      "sha256": "afdb326c07276e94123e337006edd532079765b0ca1e1344b80468b8acbd66de",
+      "unwindRegions": [
+        {
+          "begin": 76832,
+          "end": 77195,
+          "unwind": 3393632
+        }
+      ]
+    },
+    {
+      "role": "move",
+      "name": "?Move@?$ON_ClassArray@VON_3dmView@@@@IEAAXHHH@Z",
+      "abi": null,
+      "rva": 2667008,
+      "length": 158,
+      "sha256": "1bd1e6b2ebc915788e9e0e7bbbab066004945caf8f5c997f978702ab106ceb68",
+      "unwindRegions": [
+        {
+          "begin": 2667008,
+          "end": 2667166,
+          "unwind": 3503428
+        }
+      ]
+    },
+    {
+      "role": "remove-index",
+      "name": "?Remove@?$ON_ClassArray@VON_3dmView@@@@QEAAXH@Z",
+      "abi": null,
+      "rva": 2665120,
+      "length": 188,
+      "sha256": "85d20b16120639469beb52afe3eb553010f530192163eda56adc2f01c98e686c",
+      "unwindRegions": [
+        {
+          "begin": 2665120,
+          "end": 2665157,
+          "unwind": 3553836
+        },
+        {
+          "begin": 2665157,
+          "end": 2665288,
+          "unwind": 3553436
+        },
+        {
+          "begin": 2665288,
+          "end": 2665308,
+          "unwind": 3553420
+        }
+      ]
+    },
+    {
+      "role": "remove-last",
+      "name": "?Remove@?$ON_ClassArray@VON_3dmView@@@@QEAAXXZ",
+      "abi": null,
+      "rva": 2665312,
+      "length": 10,
+      "sha256": "2226fdc32a1af077457cc341863e7532e07754191d30c29da5f00a87d97296d2",
+      "unwindRegions": []
+    },
+    {
+      "role": "construct-default",
+      "name": "?ConstructDefaultElement@?$ON_ClassArray@VON_3dmView@@@@IEAAXPEAVON_3dmView@@@Z",
+      "abi": null,
+      "rva": 80048,
+      "length": 22,
+      "sha256": "c1523a242cffcdeb8a9fac5b2c9cc5b0f88cb8650750db4bffb47cda26a926d2",
+      "unwindRegions": [
+        {
+          "begin": 80048,
+          "end": 80070,
+          "unwind": 3638708
+        }
+      ]
+    },
+    {
+      "role": "destroy-element",
+      "name": "?DestroyElement@?$ON_ClassArray@VON_3dmView@@@@IEAAXAEAVON_3dmView@@@Z",
+      "abi": null,
+      "rva": 80032,
+      "length": 8,
+      "sha256": "4791924cab7556ac1d7d299db6bea3cb09fa7a411f01026411a4d30c5ab81fcd",
+      "unwindRegions": []
+    },
+    {
+      "role": "new-capacity",
+      "name": "?NewCapacity@?$ON_ClassArray@VON_3dmView@@@@QEBAHXZ",
+      "abi": null,
+      "rva": 74912,
+      "length": 55,
+      "sha256": "322005347c7dc808b18c0cd58db030b3bfb4aab0338d828ac015a42d0de7271d",
+      "unwindRegions": []
+    },
+    {
+      "role": "reallocate",
+      "name": "?Realloc@?$ON_ClassArray@VON_3dmView@@@@UEAAPEAVON_3dmView@@PEAV2@H@Z",
+      "abi": null,
+      "rva": 77664,
+      "length": 17,
+      "sha256": "d47d14f76e62d5494d2564607f58e7c869fbf2eae52b7dc81aff142c8432f71f",
+      "unwindRegions": []
+    },
+    {
+      "role": "empty",
+      "name": "?Empty@?$ON_ClassArray@VON_3dmView@@@@QEAAXXZ",
+      "abi": null,
+      "rva": 80080,
+      "length": 139,
+      "sha256": "66de3beacf8b361c3392555a82e3a592378b437856f93feadb9c8887e4b0c2bc",
+      "unwindRegions": [
+        {
+          "begin": 80080,
+          "end": 80100,
+          "unwind": 3480828
+        },
+        {
+          "begin": 80100,
+          "end": 80201,
+          "unwind": 3570124
+        },
+        {
+          "begin": 80201,
+          "end": 80219,
+          "unwind": 3570108
+        }
+      ]
+    },
+    {
+      "role": "destroy",
+      "name": "?Destroy@?$ON_ClassArray@VON_3dmView@@@@QEAAXXZ",
+      "abi": null,
+      "rva": 2666704,
+      "length": 128,
+      "sha256": "d33ba3fa59ead056d19d938a0015bcb778a823fd51eb2954bd166ca152965cec",
+      "unwindRegions": [
+        {
+          "begin": 2666704,
+          "end": 2666720,
+          "unwind": 3396108
+        },
+        {
+          "begin": 2666720,
+          "end": 2666732,
+          "unwind": 3553328
+        },
+        {
+          "begin": 2666732,
+          "end": 2666781,
+          "unwind": 3553308
+        },
+        {
+          "begin": 2666781,
+          "end": 2666819,
+          "unwind": 3553292
+        },
+        {
+          "begin": 2666819,
+          "end": 2666832,
+          "unwind": 3553276
+        }
+      ]
+    },
+    {
+      "role": "destructor",
+      "name": "??1?$ON_ClassArray@VON_3dmView@@@@UEAA@XZ",
+      "abi": null,
+      "rva": 77200,
+      "length": 144,
+      "sha256": "a4cda6ed65d48bbfea339057684b5918d76d71f42815e95d5409a7dce290e2fc",
+      "unwindRegions": [
+        {
+          "begin": 77200,
+          "end": 77226,
+          "unwind": 3396108
+        },
+        {
+          "begin": 77226,
+          "end": 77238,
+          "unwind": 3570384
+        },
+        {
+          "begin": 77238,
+          "end": 77293,
+          "unwind": 3570364
+        },
+        {
+          "begin": 77293,
+          "end": 77331,
+          "unwind": 3570348
+        },
+        {
+          "begin": 77331,
+          "end": 77344,
+          "unwind": 3570332
+        }
+      ]
+    },
+    {
+      "role": "plane-create-from-frame",
+      "name": "?CreateFromFrame@ON_Plane@@QEAA_NAEBVON_3dPoint@@AEBVON_3dVector@@1@Z",
+      "abi": null,
+      "rva": 1896240,
+      "length": 567,
+      "sha256": "d5653473aa58e00b2c4de0996fd988d9e689beb0b664f9adba94a433a8a0e841",
+      "unwindRegions": [
+        {
+          "begin": 1896240,
+          "end": 1896807,
+          "unwind": 3485764
+        }
+      ]
+    },
+    {
+      "role": "construction-plane-default",
+      "name": "?Default@ON_3dmConstructionPlane@@QEAAXXZ",
+      "abi": null,
+      "rva": 40560,
+      "length": 212,
+      "sha256": "22c3e8a6ae41745daf2ce5754b2120a8cd548b35d6c20ff09539a945736e07fb",
+      "unwindRegions": [
+        {
+          "begin": 40560,
+          "end": 40772,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "page-settings-default",
+      "name": "?Default@ON_3dmPageSettings@@QEAAXXZ",
+      "abi": null,
+      "rva": 44880,
+      "length": 96,
+      "sha256": "d23da288032173d46c1667f8f4a0f04026b8d84a1bf853517ae36f89388244a3",
+      "unwindRegions": [
+        {
+          "begin": 44880,
+          "end": 44976,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "trace-image-default",
+      "name": "?Default@ON_3dmViewTraceImage@@QEAAXXZ",
+      "abi": null,
+      "rva": 43184,
+      "length": 193,
+      "sha256": "1922f766ec8b979225a25634deec37d3cc37a1cc994d514bd189f003239c974d",
+      "unwindRegions": [
+        {
+          "begin": 43184,
+          "end": 43377,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "plane-global-initializer",
+      "name": null,
+      "abi": "voidNoArgs",
+      "rva": 3149200,
+      "length": 104,
+      "sha256": "e63d4450c9e78ee8377d15cf2bf2655a1f1505c45e9560c4e2a0dce4205ab33d",
+      "unwindRegions": [
+        {
+          "begin": 3149200,
+          "end": 3149304,
+          "unwind": 3638700
+        }
+      ]
+    },
+    {
+      "role": "plane-equation-create",
+      "name": "?Create@ON_PlaneEquation@@QEAA_NVON_3dPoint@@VON_3dVector@@@Z",
+      "abi": null,
+      "rva": 2353856,
+      "length": 297,
+      "sha256": "2c34fac146e8cec1734f2f0f110100106b4d809c5a6469285ccfa909ca0d0c41",
+      "unwindRegions": [
+        {
+          "begin": 2353856,
+          "end": 2354153,
+          "unwind": 3419784
+        }
+      ]
+    }
+  ]
+}

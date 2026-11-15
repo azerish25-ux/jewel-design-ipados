@@ -9,6 +9,7 @@ on:
       - "tests/Port/Geometry.Candidate.Contracts/UserStringArchiveBindingAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/UserStringProvenanceAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5RuntimeViewAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Rhino5ViewHistoryAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/userstring-body-source-cases.json"
       - "tests/Port/Geometry.Candidate.Contracts/Geometry.Candidate.Contracts.csproj"
       - "src/Port/Rendering.Candidate*/**"

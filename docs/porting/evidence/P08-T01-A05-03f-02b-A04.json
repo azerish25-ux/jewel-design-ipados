@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A04",
+  "parentTask": "P08-T01-A05-03f-02b",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "source_backed_history_push_windows_passed_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A04-history-array.md",
+  "audit": "docs/evidence/audit/rhino5-view-history-array-source.json",
+  "inputCommit": "cd6bd422181b63a991965c5cf79deaf50fca2ea5",
+  "red": [
+    {
+      "exitCode": 1,
+      "failure": "Missing Rhino5ViewDefaults/Rhino5RuntimeViewArray/Rhino5ViewProjectionHistory"
+    }
+  ],
+  "checks": {
+    "focusedHistoryCases": 319,
+    "originalStaticFunctions": 20,
+    "originalTargetExecuted": false,
+    "fullNativeHostExitCode": 0,
+    "nativeOutputSha256": "aa109fcfe826e643942a7823e4ba5cecb2ffb1cad26c1e410495d3db88ce9d28",
+    "adjacentNodeRegressions": 57,
+    "nodeOutputSha256": "c16beb7016a0861cfe51bff2362d9a0e513c964a612acab03ea55ad2be719ccd"
+  },
+  "review": {
+    "behavior": "Actual original-derived defaults, capacity slots, assignment append, full-capacity alias temporary, no-copy relocation, tail reconstruction, branch prune and one-oldest255 cap. Real string-list bodies/copy counts tested.",
+    "boundaries": "Safe managed logical ownership instead of raw native pointer/dangling aliases. Managed4096-slot default budget and checked unsafe integer/memory guards are explicit. No original native allocation-failure equivalence.",
+    "remaining": "Navigation, Pop merge/SetView/screen restore, actual document synchronization/notifications, full3dm/PC/originalUI and physical acceptance remain open."
+  },
+  "environment": {
+    "allLocalWritesD": true,
+    "github": "Connected owner plugin only; shared CLI untouched",
+    "jdk": {
+      "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.21%2B9/OpenJDK17U-jdk_x64_windows_hotspot_17.0.21_9.zip",
+      "sha256": "98518ecf554465057ee5509462631deeee374bc368c12a411d225cd29381f84b",
+      "version": "17.0.21+9",
+      "files": 492
+    }
+  },
+  "fixtureFailure": {
+    "actual": "Windows test Bash processes hit15-second ETIMEDOUT during parallel native/Node checks.",
+    "fix": "Windows fixture timeout60 seconds; non-Windows15 seconds and actual app180-second acknowledgement/pixel/retry gates unchanged.",
+    "status": "fixed_verified57_node_cases_passed"
+  },
+  "parityRowsClosed": 0
+}

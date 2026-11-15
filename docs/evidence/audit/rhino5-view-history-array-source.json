@@ -1,0 +1,600 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A04",
+  "targetExecuted": false,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "manifest": "native/Analysis/fixtures/rhino5-view-history-array-regions.json",
+  "methods": [
+    {
+      "role": "append-source",
+      "name": "?Append@?$ON_ClassArray@VON_3dmView@@@@QEAAXAEBVON_3dmView@@@Z",
+      "abi": null,
+      "rva": 75968,
+      "length": 327,
+      "sha256": "e2a8117bdb8354584ff98baa394f1fdad0490f8f8d7b54fd18c6b24ac7236b26",
+      "unwindRegions": [
+        {
+          "begin": 75968,
+          "end": 76295,
+          "unwind": 3613436
+        }
+      ]
+    },
+    {
+      "role": "append-new",
+      "name": "?AppendNew@?$ON_ClassArray@VON_3dmView@@@@QEAAAEAVON_3dmView@@XZ",
+      "abi": null,
+      "rva": 73792,
+      "length": 155,
+      "sha256": "3924153d68c03fde7a6f2061280488b06683a77591ace91e2336bc404b34493c",
+      "unwindRegions": [
+        {
+          "begin": 73792,
+          "end": 73947,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "reserve",
+      "name": "?Reserve@?$ON_ClassArray@VON_3dmView@@@@QEAAXH@Z",
+      "abi": null,
+      "rva": 74976,
+      "length": 19,
+      "sha256": "6520ad9ad689ab818c7a0defdaadf1c17f4dba86e6f1ac657a23261340d2b4fe",
+      "unwindRegions": [
+        {
+          "begin": 74976,
+          "end": 74995,
+          "unwind": 3638708
+        }
+      ]
+    },
+    {
+      "role": "set-capacity",
+      "name": "?SetCapacity@?$ON_ClassArray@VON_3dmView@@@@QEAAXH@Z",
+      "abi": null,
+      "rva": 76832,
+      "length": 363,
+      "sha256": "afdb326c07276e94123e337006edd532079765b0ca1e1344b80468b8acbd66de",
+      "unwindRegions": [
+        {
+          "begin": 76832,
+          "end": 77195,
+          "unwind": 3393632
+        }
+      ]
+    },
+    {
+      "role": "move",
+      "name": "?Move@?$ON_ClassArray@VON_3dmView@@@@IEAAXHHH@Z",
+      "abi": null,
+      "rva": 2667008,
+      "length": 158,
+      "sha256": "1bd1e6b2ebc915788e9e0e7bbbab066004945caf8f5c997f978702ab106ceb68",
+      "unwindRegions": [
+        {
+          "begin": 2667008,
+          "end": 2667166,
+          "unwind": 3503428
+        }
+      ]
+    },
+    {
+      "role": "remove-index",
+      "name": "?Remove@?$ON_ClassArray@VON_3dmView@@@@QEAAXH@Z",
+      "abi": null,
+      "rva": 2665120,
+      "length": 188,
+      "sha256": "85d20b16120639469beb52afe3eb553010f530192163eda56adc2f01c98e686c",
+      "unwindRegions": [
+        {
+          "begin": 2665120,
+          "end": 2665157,
+          "unwind": 3553836
+        },
+        {
+          "begin": 2665157,
+          "end": 2665288,
+          "unwind": 3553436
+        },
+        {
+          "begin": 2665288,
+          "end": 2665308,
+          "unwind": 3553420
+        }
+      ]
+    },
+    {
+      "role": "remove-last",
+      "name": "?Remove@?$ON_ClassArray@VON_3dmView@@@@QEAAXXZ",
+      "abi": null,
+      "rva": 2665312,
+      "length": 10,
+      "sha256": "2226fdc32a1af077457cc341863e7532e07754191d30c29da5f00a87d97296d2",
+      "unwindRegions": []
+    },
+    {
+      "role": "construct-default",
+      "name": "?ConstructDefaultElement@?$ON_ClassArray@VON_3dmView@@@@IEAAXPEAVON_3dmView@@@Z",
+      "abi": null,
+      "rva": 80048,
+      "length": 22,
+      "sha256": "c1523a242cffcdeb8a9fac5b2c9cc5b0f88cb8650750db4bffb47cda26a926d2",
+      "unwindRegions": [
+        {
+          "begin": 80048,
+          "end": 80070,
+          "unwind": 3638708
+        }
+      ]
+    },
+    {
+      "role": "destroy-element",
+      "name": "?DestroyElement@?$ON_ClassArray@VON_3dmView@@@@IEAAXAEAVON_3dmView@@@Z",
+      "abi": null,
+      "rva": 80032,
+      "length": 8,
+      "sha256": "4791924cab7556ac1d7d299db6bea3cb09fa7a411f01026411a4d30c5ab81fcd",
+      "unwindRegions": []
+    },
+    {
+      "role": "new-capacity",
+      "name": "?NewCapacity@?$ON_ClassArray@VON_3dmView@@@@QEBAHXZ",
+      "abi": null,
+      "rva": 74912,
+      "length": 55,
+      "sha256": "322005347c7dc808b18c0cd58db030b3bfb4aab0338d828ac015a42d0de7271d",
+      "unwindRegions": []
+    },
+    {
+      "role": "reallocate",
+      "name": "?Realloc@?$ON_ClassArray@VON_3dmView@@@@UEAAPEAVON_3dmView@@PEAV2@H@Z",
+      "abi": null,
+      "rva": 77664,
+      "length": 17,
+      "sha256": "d47d14f76e62d5494d2564607f58e7c869fbf2eae52b7dc81aff142c8432f71f",
+      "unwindRegions": []
+    },
+    {
+      "role": "empty",
+      "name": "?Empty@?$ON_ClassArray@VON_3dmView@@@@QEAAXXZ",
+      "abi": null,
+      "rva": 80080,
+      "length": 139,
+      "sha256": "66de3beacf8b361c3392555a82e3a592378b437856f93feadb9c8887e4b0c2bc",
+      "unwindRegions": [
+        {
+          "begin": 80080,
+          "end": 80100,
+          "unwind": 3480828
+        },
+        {
+          "begin": 80100,
+          "end": 80201,
+          "unwind": 3570124
+        },
+        {
+          "begin": 80201,
+          "end": 80219,
+          "unwind": 3570108
+        }
+      ]
+    },
+    {
+      "role": "destroy",
+      "name": "?Destroy@?$ON_ClassArray@VON_3dmView@@@@QEAAXXZ",
+      "abi": null,
+      "rva": 2666704,
+      "length": 128,
+      "sha256": "d33ba3fa59ead056d19d938a0015bcb778a823fd51eb2954bd166ca152965cec",
+      "unwindRegions": [
+        {
+          "begin": 2666704,
+          "end": 2666720,
+          "unwind": 3396108
+        },
+        {
+          "begin": 2666720,
+          "end": 2666732,
+          "unwind": 3553328
+        },
+        {
+          "begin": 2666732,
+          "end": 2666781,
+          "unwind": 3553308
+        },
+        {
+          "begin": 2666781,
+          "end": 2666819,
+          "unwind": 3553292
+        },
+        {
+          "begin": 2666819,
+          "end": 2666832,
+          "unwind": 3553276
+        }
+      ]
+    },
+    {
+      "role": "destructor",
+      "name": "??1?$ON_ClassArray@VON_3dmView@@@@UEAA@XZ",
+      "abi": null,
+      "rva": 77200,
+      "length": 144,
+      "sha256": "a4cda6ed65d48bbfea339057684b5918d76d71f42815e95d5409a7dce290e2fc",
+      "unwindRegions": [
+        {
+          "begin": 77200,
+          "end": 77226,
+          "unwind": 3396108
+        },
+        {
+          "begin": 77226,
+          "end": 77238,
+          "unwind": 3570384
+        },
+        {
+          "begin": 77238,
+          "end": 77293,
+          "unwind": 3570364
+        },
+        {
+          "begin": 77293,
+          "end": 77331,
+          "unwind": 3570348
+        },
+        {
+          "begin": 77331,
+          "end": 77344,
+          "unwind": 3570332
+        }
+      ]
+    },
+    {
+      "role": "plane-create-from-frame",
+      "name": "?CreateFromFrame@ON_Plane@@QEAA_NAEBVON_3dPoint@@AEBVON_3dVector@@1@Z",
+      "abi": null,
+      "rva": 1896240,
+      "length": 567,
+      "sha256": "d5653473aa58e00b2c4de0996fd988d9e689beb0b664f9adba94a433a8a0e841",
+      "unwindRegions": [
+        {
+          "begin": 1896240,
+          "end": 1896807,
+          "unwind": 3485764
+        }
+      ]
+    },
+    {
+      "role": "construction-plane-default",
+      "name": "?Default@ON_3dmConstructionPlane@@QEAAXXZ",
+      "abi": null,
+      "rva": 40560,
+      "length": 212,
+      "sha256": "22c3e8a6ae41745daf2ce5754b2120a8cd548b35d6c20ff09539a945736e07fb",
+      "unwindRegions": [
+        {
+          "begin": 40560,
+          "end": 40772,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "page-settings-default",
+      "name": "?Default@ON_3dmPageSettings@@QEAAXXZ",
+      "abi": null,
+      "rva": 44880,
+      "length": 96,
+      "sha256": "d23da288032173d46c1667f8f4a0f04026b8d84a1bf853517ae36f89388244a3",
+      "unwindRegions": [
+        {
+          "begin": 44880,
+          "end": 44976,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "trace-image-default",
+      "name": "?Default@ON_3dmViewTraceImage@@QEAAXXZ",
+      "abi": null,
+      "rva": 43184,
+      "length": 193,
+      "sha256": "1922f766ec8b979225a25634deec37d3cc37a1cc994d514bd189f003239c974d",
+      "unwindRegions": [
+        {
+          "begin": 43184,
+          "end": 43377,
+          "unwind": 3396108
+        }
+      ]
+    },
+    {
+      "role": "plane-global-initializer",
+      "name": null,
+      "abi": "voidNoArgs",
+      "rva": 3149200,
+      "length": 104,
+      "sha256": "e63d4450c9e78ee8377d15cf2bf2655a1f1505c45e9560c4e2a0dce4205ab33d",
+      "unwindRegions": [
+        {
+          "begin": 3149200,
+          "end": 3149304,
+          "unwind": 3638700
+        }
+      ]
+    },
+    {
+      "role": "plane-equation-create",
+      "name": "?Create@ON_PlaneEquation@@QEAA_NVON_3dPoint@@VON_3dVector@@@Z",
+      "abi": null,
+      "rva": 2353856,
+      "length": 297,
+      "sha256": "2c34fac146e8cec1734f2f0f110100106b4d809c5a6469285ccfa909ca0d0c41",
+      "unwindRegions": [
+        {
+          "begin": 2353856,
+          "end": 2354153,
+          "unwind": 3419784
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "append-source",
+      "entry": "1800128c0",
+      "signature": "void Append(ON_3dmView * param_1)",
+      "decompilerSha256": "d8c9be912e51aaa73e8ee3bae62d71320a8e9a6591b39a8c5ea1e2bfc792668c",
+      "basicBlocks": 18
+    },
+    {
+      "role": "append-new",
+      "entry": "180012040",
+      "signature": "ON_3dmView * AppendNew(void)",
+      "decompilerSha256": "cf031e40310f2f3f79c4bd6880c3524b1b8c3475bd067287186a81290e211320",
+      "basicBlocks": 14
+    },
+    {
+      "role": "reserve",
+      "entry": "1800124e0",
+      "signature": "void Reserve(int param_1)",
+      "decompilerSha256": "30bbc47c1491eb9af1180105ff758bfaf7594920b10ba2efc3679a91f4b2cd4e",
+      "basicBlocks": 3
+    },
+    {
+      "role": "set-capacity",
+      "entry": "180012c20",
+      "signature": "void SetCapacity(int param_1)",
+      "decompilerSha256": "996c2166153e2bdea2803a9f75b1d19865feed9cb39e943c728e7583fb25236e",
+      "basicBlocks": 24
+    },
+    {
+      "role": "move",
+      "entry": "18028b200",
+      "signature": "void Move(int param_1, int param_2, int param_3)",
+      "decompilerSha256": "a51895feb0f1279c78295e540a4e670861deec4c35b9993f41027a1b10f81e3c",
+      "basicBlocks": 12
+    },
+    {
+      "role": "remove-index",
+      "entry": "18028aaa0",
+      "signature": "void Remove(int param_1)",
+      "decompilerSha256": "53636d916b727b717c0ebdd47ee52edee5a04a9d0dabefdc2d5d9309b7024171",
+      "basicBlocks": 6
+    },
+    {
+      "role": "remove-last",
+      "entry": "18028ab60",
+      "signature": "void Remove(void)",
+      "decompilerSha256": "2bbdc0b390da208db62ccd91aa0f856bd209900250449a054293430cd8eac508",
+      "basicBlocks": 6
+    },
+    {
+      "role": "construct-default",
+      "entry": "1800138b0",
+      "signature": "void ConstructDefaultElement(ON_3dmView * param_1)",
+      "decompilerSha256": "b1652d7a0a534f9865b75eaac129bafcb65082387f48e49ca41613a2da7f0c12",
+      "basicBlocks": 3
+    },
+    {
+      "role": "destroy-element",
+      "entry": "1800138a0",
+      "signature": "void DestroyElement(ON_3dmView * param_1)",
+      "decompilerSha256": "091900bd2fd91064df3f76a24e038f67c29a946e34bd3e2569e0181b5c454f02",
+      "basicBlocks": 34
+    },
+    {
+      "role": "new-capacity",
+      "entry": "1800124a0",
+      "signature": "int NewCapacity(void)",
+      "decompilerSha256": "a8fcc86df4d2d657e40ba5b0184946cc9fef5353d0e31a66fee039d7296ba1c3",
+      "basicBlocks": 8
+    },
+    {
+      "role": "reallocate",
+      "entry": "180012f60",
+      "signature": "ON_3dmView * Realloc(ON_3dmView * param_1, int param_2)",
+      "decompilerSha256": "f9338dda6bbcfd2890b5079b8aaeec610711f1613984780e879ff5a7aad731ae",
+      "basicBlocks": 37
+    },
+    {
+      "role": "empty",
+      "entry": "1800138d0",
+      "signature": "void Empty(void)",
+      "decompilerSha256": "d94ec5d36b5b4fc6b671a58b16f62fce3334f2367b36017d9349b308692a2cc7",
+      "basicBlocks": 7
+    },
+    {
+      "role": "destroy",
+      "entry": "18028b0d0",
+      "signature": "void Destroy(void)",
+      "decompilerSha256": "731e592026e1a7472c9ca7325ea5c7cde5f581b0a868acb077b4fd0be6eb917d",
+      "basicBlocks": 6
+    },
+    {
+      "role": "destructor",
+      "entry": "180012d90",
+      "signature": "void ~ON_ClassArray<class_ON_3dmView>(void)",
+      "decompilerSha256": "c773a0ddcb578aff2c9266293cbfaa6a7e1767b2cf02ae783e2edf11866483bf",
+      "basicBlocks": 6
+    },
+    {
+      "role": "plane-create-from-frame",
+      "entry": "1801cef30",
+      "signature": "bool CreateFromFrame(ON_3dPoint * param_1, ON_3dVector * param_2, ON_3dVector * param_3)",
+      "decompilerSha256": "5099eae14bb2b99f1f6605b1811c5cb0809488d2520b58d61c8efd27f0ccfab0",
+      "basicBlocks": 5
+    },
+    {
+      "role": "construction-plane-default",
+      "entry": "180009e70",
+      "signature": "void Default(void)",
+      "decompilerSha256": "f5062667b93a297ff6948c6678f765e215b339b48468c0b9c9cb9291ba286c9c",
+      "basicBlocks": 6
+    },
+    {
+      "role": "page-settings-default",
+      "entry": "18000af50",
+      "signature": "void Default(void)",
+      "decompilerSha256": "dc7967e09e9710730ffc18d57af3383f9c61c299d111be6156a990e205e485f5",
+      "basicBlocks": 6
+    },
+    {
+      "role": "trace-image-default",
+      "entry": "18000a8b0",
+      "signature": "void Default(void)",
+      "decompilerSha256": "c7d75f24814d49fe68b819879eb4fd328edd0811ed52a24378603a925ae13877",
+      "basicBlocks": 6
+    },
+    {
+      "role": "plane-global-initializer",
+      "entry": "180300d90",
+      "signature": "void Original_plane_global_initializer(void)",
+      "decompilerSha256": "d673ed8d012bc256381f026a8db87d62e0fbcee001664e3cf2bdc742c323dc5e",
+      "basicBlocks": 1
+    },
+    {
+      "role": "plane-equation-create",
+      "entry": "18023eac0",
+      "signature": "bool Create(ON_3dPoint param_1, ON_3dVector param_2)",
+      "decompilerSha256": "86242522fe5545fc2ba3a2ce9ecd12584a3e3033db5c52b2865a7fb3308b8f73",
+      "basicBlocks": 12
+    }
+  ],
+  "observations": [
+    "Element stride1120; array pointer+8, count+0x10, capacity+0x14. New capacity starts4, doubles through ordinary history sizes; large-count increment is min(count,0x3a842) beyond the byte threshold0x10000000.",
+    "SetCapacity growth reallocates existing bytes, zeros new tail and default-constructs every new capacity slot. It does not call view copy constructors/assignments for retained elements. Shrink/destruction destroys capacity elements in reverse order.",
+    "Append(source) increments count then invokes view assignment on a preconstructed slot. A full-capacity source alias uses a default temporary + assignment, reserve, then final assignment and temporary destruction.",
+    "AppendNew recreates an unused existing capacity slot; newly grown default slots are returned directly.",
+    "Remove(index) destroys selected view, clears bytes, moves tail with memmove, clears/reconstructs old last slot, then decrements count. RemoveLast delegates with count-1. Empty destroys/reconstructs active slots in reverse and retains capacity.",
+    "Original raw move/resize addresses are not portable. Managed implementation keeps safe logical owner references, preserves values/copy counts and does not claim native dangling-pointer/address alias equivalence.",
+    "Fresh view defaults are grounded in original constructor/default/viewport initialize and construction-plane/page/trace helpers. Shared XY plane resides in non-file-backed data and is initialized by a no-input runtime initializer calling CreateFromFrame(origin0,X1,Y1). Plane equation Create negates the zero dot product, yielding negative-zero D."
+  ],
+  "defaultReferences": [
+    "docs/evidence/audit/rhino5-whole-view-source.json",
+    "docs/evidence/audit/rhino5-view-copy-constructors-source.json"
+  ],
+  "fileBackedConstants": [
+    {
+      "name": "one",
+      "rva": 3344832,
+      "bytes": 8,
+      "hex": "000000000000f03f"
+    },
+    {
+      "name": "sign-mask",
+      "rva": 3344768,
+      "bytes": 8,
+      "hex": "0000000000000080"
+    },
+    {
+      "name": "unset-point",
+      "rva": 4775608,
+      "bytes": 24,
+      "hex": "d21d339ebdf8e5ffd21d339ebdf8e5ffd21d339ebdf8e5ff"
+    },
+    {
+      "name": "x-axis",
+      "rva": 4775656,
+      "bytes": 24,
+      "hex": "000000000000f03f00000000000000000000000000000000"
+    },
+    {
+      "name": "y-axis",
+      "rva": 4775680,
+      "bytes": 24,
+      "hex": "0000000000000000000000000000f03f0000000000000000"
+    },
+    {
+      "name": "z-axis",
+      "rva": 4775704,
+      "bytes": 24,
+      "hex": "00000000000000000000000000000000000000000000f03f"
+    }
+  ],
+  "bssPlane": {
+    "rva": 4791856,
+    "fileBacked": false,
+    "initializerRva": 3149200,
+    "ignoredRawFileMapping": true
+  },
+  "limits": [
+    "Original DLL was read/decompiled only, not executed.",
+    "Native allocation failure, invalid memory access and raw pointer relocation are explicit managed safety boundaries, not full ABI emulation.",
+    "Navigation, Pop merge/SetView/screen restoration and actual document notification/synchronization remain unfinished.",
+    "No original-PC project or physical-device/fullUI parity claim."
+  ],
+  "instructionNotes": [
+    "Original Move call at0x18028b282 passes destination/source addresses and byte count multiplied by0x460 in RCX/RDX/R8. Ghidra memmove() pseudo-C omits these arguments; raw instructions, not that prototype, establish byte relocation.",
+    "Plane global initializer0x300d90 passes origin(0,0,0), X(1,0,0), Y(0,1,0) to original CreateFromFrame. The source global is not file-backed; reading beyond section raw data would misinterpret unrelated file bytes."
+  ],
+  "tools": {
+    "jdk": {
+      "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.21%2B9/OpenJDK17U-jdk_x64_windows_hotspot_17.0.21_9.zip",
+      "sha256": "98518ecf554465057ee5509462631deeee374bc368c12a411d225cd29381f84b",
+      "version": "17.0.21+9",
+      "files": 492
+    },
+    "binutils": {
+      "archiveSha256": "3c69305081e4a647144339a936244fcf7d3d9e558319e1ad7be2cd2886d4b6a1",
+      "source": "https://github.com/brechtsanders/winlibs_mingw/releases/tag/16.2.0posix-23.1.3-14.0.0-ucrt-r3",
+      "files": [
+        {
+          "file": "libgcc_s_seh-1.dll",
+          "sha256": "817eafccbb104d1a14fa9e4b894927514c8c502ee80aa1427f57872e55efdca8"
+        },
+        {
+          "file": "libiconv-2.dll",
+          "sha256": "1324b9d8c394b6012c80ec20691eca95b5046c1a06c5bcc7d26966efd9ca2e28"
+        },
+        {
+          "file": "libintl-8.dll",
+          "sha256": "51e1279b2aefb1e7ec51ad0b47d0e7a3fc39d30d26a6e919518d8bdabe682118"
+        },
+        {
+          "file": "libstdc++-6.dll",
+          "sha256": "538f48a3fe22186e144934ab2ee96645c2a87a56373abfd2c8bec122318fe598"
+        },
+        {
+          "file": "libwinpthread-1.dll",
+          "sha256": "2512e8e9ceecd1c47d894a3cd38b895e1f40f3d42d0ccebc2a1521ee2fe496a9"
+        },
+        {
+          "file": "libzstd.dll",
+          "sha256": "f010307f121a1f2b83ddd93ea156a618c29ebb88c2d53a2fe3e4886124438f45"
+        },
+        {
+          "file": "objdump.exe",
+          "sha256": "31e0217183b137c154df9fb87e0a1e18c85cac3d61cc3ca71083ca70d965cc8c"
+        },
+        {
+          "file": "zlib1.dll",
+          "sha256": "84bd7628d3c14aea881b7ec2197035b7c0a5f64ad6884e01f8d1fcff0021070f"
+        }
+      ]
+    }
+  }
+}

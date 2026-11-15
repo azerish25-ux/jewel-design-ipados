@@ -30,11 +30,13 @@ public class InspectOriginalCore extends RefineNativeCamera {
     if(spec.has("name")&&!spec.get("name").isJsonNull())signatures.add(demangle(function,spec.get("name").getAsString()));
     else {
      String abi=spec.get("abi").getAsString();List<Variable> parameters=new ArrayList<>();
+     if(!abi.equals("voidNoArgs")){
      parameters.add(new ParameterImpl("viewport",new PointerDataType(VoidDataType.dataType,currentProgram.getDataTypeManager()),currentProgram));
      parameters.add(new ParameterImpl("targetDistance",DoubleDataType.dataType,currentProgram));
      if(abi.equals("perspectiveHelper"))parameters.add(new ParameterImpl("lens",DoubleDataType.dataType,currentProgram));
      else if(!abi.equals("targetUpdate"))throw new Exception("Unknown observed helper ABI");
-     DataType result=abi.equals("targetUpdate")?VoidDataType.dataType:BooleanDataType.dataType;
+     }
+     DataType result=(abi.equals("targetUpdate")||abi.equals("voidNoArgs"))?VoidDataType.dataType:BooleanDataType.dataType;
      function.updateFunction("__fastcall",new ReturnParameterImpl(result,currentProgram),parameters,Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,true,SourceType.USER_DEFINED);
     }
    }

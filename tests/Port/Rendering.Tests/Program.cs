@@ -18,3 +18,4 @@ System.Console.WriteLine(CandidateGeometryContractChecks.LegacyUserStringListAss
 System.Console.WriteLine(CandidateGeometryContractChecks.UserStringArchiveBindingAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.UserStringProvenanceAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5RuntimeViewAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewHistoryAssertions.Run());
