@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "run": 43702579541,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43702579541",
+  "sourceCommit": "fb830fac57504ddbadc5f0ea895c7603e2b201c9",
+  "status": "success_actual_connected_plugin_artifacts_inspected",
+  "mergeChecksPerFamily": 52,
+  "simulators": [
+    {
+      "family": "ipad",
+      "resultSha256": "91d1b341b2d49f296da5b7662da5e25dd07e37cecae0f7bfcc2799ece8a2aaf3",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 3,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "50e6f308feb29d3202f8c19ded2770fbe28cbbc7f6daa8598a5c97fa3969504c",
+          "orbit": "831a7d2ab7af1799538c54a46baec099e582ded21078e79ca87839c8943476ff",
+          "edited": "75fd491742aa99815cb87ae8a23194663fd5638b55d52311f7796b927e33abfe",
+          "empty": "179c116378db7128bfa987b47b462071fa65506df43a41d56acd779cda693809",
+          "resized": "2d3268c32d22fa29994c8904d160025e2d72e034419aa8d76ddef10bd582f164",
+          "final": "f6c800130abeb2f4fac055daffd648798e6ab17002d32043458c9fea6555ad76"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "resultSha256": "91d1b341b2d49f296da5b7662da5e25dd07e37cecae0f7bfcc2799ece8a2aaf3",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 3,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "d52d328d9183fe26f76fc227dd6eeef1343673769f6c8dbce4e3f0f835cb1136",
+          "orbit": "847f95b676176e8a6df3cf7b5094288e0bcf4e5de2aab274526c6b8826c75aee",
+          "edited": "b42c1fe33defdf83e3ad6b27f5a84719d3ca45ba005a1dfb8e6ef2f277245f3b",
+          "empty": "9a415b10c10cb0bc5ad44969e9c51755750f67200caedcd0f849d7515daacfc9",
+          "resized": "c4f4659ba059415a1cc35c4b83832b87d60aadbcbb977b1ae4dc5e08616f96ba",
+          "final": "d52d328d9183fe26f76fc227dd6eeef1343673769f6c8dbce4e3f0f835cb1136"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "build": {
+    "warnings": 2,
+    "errors": 0,
+    "knownWarnings": [
+      "CS8765 AppDelegate options nullability",
+      "CA1422 UIWindow constructor deprecated on iOS26"
+    ],
+    "sha256": "568c2130c03c15fc04a14b5fb7c171064a8dc520aeaa5cd6c406ed2b7df1202b"
+  },
+  "artifact": {
+    "id": 14157422895,
+    "sha256": "0fdbb2e9539d41ec1493f565cafb95d37c7f347ddfd2bc4a3e8b6c9e9915afd6"
+  },
+  "scope": "Actual signed iPad/iPhone merge/alias/name/target/port/provenance execution plus independent adjacent CAD PNG/resource validation. Full Pop/SetView/screen/document/source-preset/full3dm/PC/physical acceptance remain open."
+}

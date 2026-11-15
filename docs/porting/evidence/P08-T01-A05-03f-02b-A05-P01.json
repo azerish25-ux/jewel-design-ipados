@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "concrete_merge_windows_passed_apple_pending_full_pop_open",
+  "status": "concrete_merge_windows_macos_ipad_iphone_passed_full_pop_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P01-merge.md",
   "audit": [
     "docs/evidence/audit/rhino5-pop-view-merge-source.json",
@@ -34,5 +34,28 @@
   },
   "github": "Connected owner plugin only; shared CLI unchanged",
   "allLocalWritesD": true,
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleReports": {
+    "numeric": "docs/evidence/apple/pop-merge-numeric-results.json",
+    "runtime": "docs/evidence/apple/pop-merge-ios-results.json"
+  },
+  "appleRuns": {
+    "sourceCommit": "fb830fac57504ddbadc5f0ea895c7603e2b201c9",
+    "preflight": {
+      "id": 43702579566,
+      "status": "completed_success_actual_plugin_artifacts_inspected"
+    },
+    "visible": {
+      "id": 43702579541,
+      "status": "completed_success_actual_plugin_artifacts_inspected"
+    },
+    "repository": {
+      "id": 43702579542,
+      "status": "completed_success"
+    },
+    "reuse": {
+      "id": 43702579562,
+      "status": "completed_success_both_families"
+    }
+  }
 }

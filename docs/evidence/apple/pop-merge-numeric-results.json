@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "run": 43702579566,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43702579566",
+  "sourceCommit": "fb830fac57504ddbadc5f0ea895c7603e2b201c9",
+  "status": "success_actual_connected_plugin_artifacts_inspected",
+  "mergeChecks": 52,
+  "assertionSha256": "6056fc374c9eed667fb4cdd87be3f9479d92b0d7e0180fc9c6619428358f1102",
+  "metalBinding": {
+    "warnings": 0,
+    "errors": 0,
+    "sha256": "a824c7d2ecf968321e94231a7cb6c26da69daa46404df2b8b769c7cf528fc289"
+  },
+  "artifact": {
+    "id": 14156274162,
+    "sha256": "406addf043e637a6b4328a3db899121584f2206c5e06fd77374f9d0c94ba33d2"
+  },
+  "scope": "Actual macOS merge/alias/name/target/port/provenance execution; full Pop/SetView/document/PC/physical acceptance remain open."
+}
