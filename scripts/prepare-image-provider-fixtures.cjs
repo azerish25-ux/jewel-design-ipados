@@ -13,6 +13,8 @@ const fixtures=[
 {name:'low-alpha.png',bytes:png,width:3,height:1,expectedRgba:low},
 {name:'recovered.jpg',bytes:fs.readFileSync(path.join(root,base.jpeg.resourcePath)),width:base.jpeg.width,height:base.jpeg.height}
 ];
+const corpus=JSON.parse(fs.readFileSync(path.join(root,"tests/Port/Geometry.Candidate.Contracts/Fixtures/png-straight-samples.json"),"utf8"));
+for(const c of corpus.cases)fixtures.push({name:c.name+".png",bytes:Buffer.from(c.png,"base64"),width:c.width,height:c.height,expectedRgba:Array.from(Buffer.from(c.rgba,"base64"))});
 const manifest=fixtures.map(({bytes,...f})=>{fs.writeFileSync(path.join(out,f.name),bytes);return {...f,encodedSha256:crypto.createHash('sha256').update(bytes).digest('hex')};});
 fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify({schemaVersion:1,fixtures:manifest,scope:'Analytical image decoder fixtures and unchanged recovered JPEG; no CAD preview substitution'},null,2)+'\n');
 console.log(JSON.stringify({files:manifest.length,output:out}));

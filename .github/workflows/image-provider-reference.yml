@@ -5,6 +5,7 @@ on:
     paths:
       - "native/Rendering/ImageProviderReference/**"
       - "scripts/prepare-image-provider-fixtures.cjs"
+      - "tests/Port/Geometry.Candidate.Contracts/Fixtures/png-straight-samples.json"
       - "scripts/verify-image-provider-observation.cjs"
       - ".github/workflows/image-provider-reference.yml"
   workflow_dispatch:
@@ -36,7 +37,7 @@ jobs:
         run: |
           mkdir -p .local/native
           xcrun clang++ -std=c++17 -O2 -Wall -Wextra -Werror native/Rendering/ImageProviderReference/main.cpp -framework CoreGraphics -framework ImageIO -framework CoreFoundation -o .local/native/image-provider-probe
-          .local/native/image-provider-probe artifacts/image-provider artifacts/image-provider-input/orientation.png artifacts/image-provider-input/opaque.bmp artifacts/image-provider-input/low-alpha.png artifacts/image-provider-input/recovered.jpg > artifacts/image-provider/native.jsonl
+          .local/native/image-provider-probe artifacts/image-provider artifacts/image-provider-input/*.png artifacts/image-provider-input/*.bmp artifacts/image-provider-input/*.jpg > artifacts/image-provider/native.jsonl
           node scripts/verify-image-provider-observation.cjs artifacts/image-provider-input artifacts/image-provider > artifacts/image-provider/observation.json
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         if: always()
