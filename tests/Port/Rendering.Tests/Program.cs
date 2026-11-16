@@ -21,3 +21,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5RuntimeViewAssert
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewHistoryAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5PopMergeAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5SetViewPreflightAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5WallpaperRasterAssertions.Run());

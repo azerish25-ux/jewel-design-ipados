@@ -5,3 +5,5 @@ Consume [render-effect source](../../evidence/audit/rhino5-setview-render-effect
 Resolve UUID display-mode pipeline and binding collections, page/detail classification, viewport-ID preservation and actual image helper internals. Use real iOS Files/local bundled assets and Metal texture ownership with missing/corrupt/gray/hidden/resize/dispose cases. Preserve source metadata and unsupported paths without executing Windows paths. Full parent/page/navigation/Pop/screen/document integration remains required.
 
 All local tools/cache/output D-only with five-second transient retries, GitHub via connected owner plugin. RED normal/boundary/failure before implementation; Windows/native/adjacent and actual macOS/iPad/iPhone evidence. Original-PC/physical acceptance remains open.
+
+Bounded first child: [A01 wallpaper raster arithmetic](P08-T01-A05-03f-02b-A05-P03-A01-wallpaper-raster.md). Portable buffer processing does not complete the required actual decode/resample/render/lifecycle integration above.

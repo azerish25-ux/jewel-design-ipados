@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "raster_arithmetic_windows_passed_apple_pending_full_image_integration_open",
+  "inputCommit": "dadbc516aa0d92358211d8e8b39fe589116d896d",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A01-wallpaper-raster.md",
+  "audit": "docs/evidence/audit/rhino5-wallpaper-raster-source.json",
+  "red": {
+    "exitCode": 1,
+    "failure": "CS0103 missing Rhino5WallpaperRaster"
+  },
+  "checks": {
+    "sizingAndStorageCases": 34,
+    "colorTriples": 16777216,
+    "paletteSha256": "5966f944c04aa9b94a8d4af30c222fefd55c04e0ffe47d8e3609fe9f2225b509",
+    "focusedExitCode": 0,
+    "fullNativeHostExitCode": 0,
+    "adjacentNodeRegressions": 57,
+    "originalTargetExecuted": false
+  },
+  "outputHashes": {
+    "red": "31234f1353dcaa0276d25dd81b86a87252abc882e76fe10426297e5beeecb047",
+    "focused": "0a20fac8020e618aae10fe86f7e89bb6a593259687e1a15830069b69fbf3f3ba",
+    "native": "0665aa6bbcf1ce707a876984616700e50096bd564d2426a800539dcfb1e6f5cf",
+    "adjacent": "4f7fb3167a91fd3717c0b3064ce4fbee5b3a23cbbd78f93b1e83f293e1e69fa4"
+  },
+  "review": {
+    "behavior": "Preserve direct <=9M versus recursive strict<9M divisor, original branch/FP/truncation/alignment, zero-size failure distinction, ordered exact unusual grayscale weights on actual buffers.",
+    "boundary": "No decode, interpolation, original runtime or real wallpaper presentation claim. Managed rejects signed32 overflow explicitly. Original source remains static-only.",
+    "remaining": "Actual bitmap source/decoder/cache, GDI HALFTONE equivalence, Files/Metal lifetimes, full trace/wallpaper setters and SetView/Pop/document/PC/physical acceptance."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin; shared CLI untouched",
+  "parityRowsClosed": 0
+}

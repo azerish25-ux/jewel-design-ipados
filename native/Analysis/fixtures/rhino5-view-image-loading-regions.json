@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "trace-constructor",
+      "name": "??0CRhTraceImage@@QEAA@XZ",
+      "abi": null,
+      "rva": 11745296,
+      "length": 83,
+      "sha256": "56b7301af0051d5304894f142e1cf0f71d46ba5b50c3f7bc151aab98f1134487",
+      "unwindRegions": [
+        {
+          "begin": 11745296,
+          "end": 11745379,
+          "unwind": 18926744
+        }
+      ]
+    },
+    {
+      "role": "wallpaper-resize",
+      "name": "?Resize@CRhWallpaper@@QEAA_NHH@Z",
+      "abi": null,
+      "rva": 11744240,
+      "length": 970,
+      "sha256": "41a1d7d43460a1f647679cd194f6fc434ff921ecda01b5055588b75270e72eff",
+      "unwindRegions": [
+        {
+          "begin": 11744240,
+          "end": 11745210,
+          "unwind": 19876636
+        }
+      ]
+    },
+    {
+      "role": "trace-load-filename",
+      "name": "?SetFilename@CRhTraceImage@@QEAA_NAEBVON_wString@@_N@Z",
+      "abi": null,
+      "rva": 11745456,
+      "length": 264,
+      "sha256": "53fe027e0c7b83b3ef889f792c2d4f385159a26ac69f2021cc98494bcd21b031",
+      "unwindRegions": [
+        {
+          "begin": 11745456,
+          "end": 11745466,
+          "unwind": 18821992
+        },
+        {
+          "begin": 11745466,
+          "end": 11745527,
+          "unwind": 19876612
+        },
+        {
+          "begin": 11745527,
+          "end": 11745606,
+          "unwind": 19876592
+        },
+        {
+          "begin": 11745606,
+          "end": 11745654,
+          "unwind": 19876576
+        },
+        {
+          "begin": 11745654,
+          "end": 11745720,
+          "unwind": 19876560
+        }
+      ]
+    }
+  ]
+}
