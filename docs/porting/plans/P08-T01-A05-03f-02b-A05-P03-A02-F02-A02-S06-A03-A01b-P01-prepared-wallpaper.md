@@ -19,3 +19,11 @@ node scripts/run-local.cjs node scripts/generate-wallpaper-gpu.cjs --check
 node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests
 
 Actual Apple/source upload remains required; independent saved BGRA verifier must pass20 cases/194272 opaque pixels and retained-image failure/disposal checks on BOTH families, along with all18 unchanged prior capture gates. N01 sourcef3363db now independently passed macOS/iPad/iPhone1408 cases, prerequisite artifacts14265057544/14264204948 inspected.
+
+## Actual Apple result
+
+Source0025a45: macOS43948803066 artifact14266466188 proves120 composed native cases/9 guards,4 corpus controls and bindings0 warnings/errors. Actual iPad/iPhone run43948803120 artifact14266378290 proves120/9 plus20 real decoded source-to-GPU cases/194272 exact opaque pixels on EACH family, source failure retains current pixels, source buffers disposed before sampling, renderer disposal with1 pending frame reaches0 textures/targets/vertex buffers/samplers. Independent Windows reread rejects changed raw GPU byte and false sampler retirement; original files restored and reverified. All40 authentic GPU buffers are retained in prepared-wallpaper-readbacks.json.br with pinned digest.
+
+Visible wallpaper now uses actual source preparation; failed source leaves scene revision unchanged. All18 prior captures remain passing with central restoration0 and offscreen CAD SHA047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012 unchanged. Binding0 warnings/errors; testapp retains existing CS8765/CA1422 warnings. Generic reuse43948803071 passes both families. No original/vendor execution or full PC/physical claim.
+
+Remaining complete source parent acceptance: original indexed/other-depth decode and promotion, profile/codec metadata and runtime settings/device budgets, cache/invalidation/document/filename fallback, complete source driver/mipmap/compression behavior, broad PC project corpus and physical-device evidence. Full application port remains unfinished.

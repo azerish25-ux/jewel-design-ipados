@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "f3363db65170dd0ae1685289874404c855660b77",
-  "status": "wallpaper_composition_windows_verified_apple_pending_full_source_parent_open",
+  "status": "explicit_wallpaper_source_windows_macos_ipad_iphone_verified_full_parent_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-P01-prepared-wallpaper.md",
   "audit": "docs/evidence/audit/rhino5-prepared-wallpaper-source.json",
   "checks": {
@@ -36,5 +36,23 @@
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
   "parityRowsClosed": 0,
-  "review": "Explicit normal24/32 wallpaper source path implemented; actual Apple execution pending. Full original codec/cache/document/device/PC/physical acceptance retained."
+  "review": "Explicit24/32 wallpaper source, CPU/native/GPU path independently verified on Windows/macOS/iPad/iPhone. Full original codec/profile/cache/document/device/vendor/PC/physical retained; no parity closure.",
+  "apple": {
+    "sourceCommit": "0025a4583f36d2daa6aae1d3bd29d58b4e0b58db",
+    "macOS": {
+      "run": 43948803066,
+      "conclusion": "success",
+      "evidence": "docs/evidence/apple/prepared-wallpaper-preflight-results.json"
+    },
+    "actualSimulators": {
+      "run": 43948803120,
+      "conclusion": "success",
+      "evidence": "docs/evidence/apple/prepared-wallpaper-ios-results.json"
+    },
+    "genericReuse": {
+      "run": 43948803071,
+      "ipad": "success",
+      "iphone": "success"
+    }
+  }
 }

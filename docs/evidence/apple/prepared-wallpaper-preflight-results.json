@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-P01",
+  "sourceCommit": "0025a4583f36d2daa6aae1d3bd29d58b4e0b58db",
+  "run": 43948803066,
+  "conclusion": "success",
+  "artifactId": 14266466188,
+  "artifactSha256": "a633dae96a19ebf4b8fba18dc50d4bd8956b56140d6b7c50565b920024484b77",
+  "actualArtifactInspected": true,
+  "checks": {
+    "managedWallpaperCases": 120,
+    "guards": 9,
+    "nodeReferenceChecks": 4,
+    "nativeGrayCases": 60,
+    "nativeDivisorCases": 12,
+    "nativeLargeAxisCases": 24,
+    "nativeAlignedWidthCases": 48,
+    "enlargementCases": 1408,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "scope": "Actual managed wallpaper execution and corpus checks on macOS; actual simulator/GPU source path is separate. Full codec/cache/document/vendor/PC/physical remain open.",
+  "allLocalDownloadsD": true
+}
