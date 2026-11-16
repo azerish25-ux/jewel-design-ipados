@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "png": {
+    "base64": "iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGmVYSWZJSSoACAAAAAEAEgEDAAEAAAAGAAAAAAAAALdIESkAAAAVSURBVHicY/jPwPAfDBkY/v8Hkg0ARE4HevSCXeIAAAAASUVORK5CYII=",
+    "width": 2,
+    "height": 2,
+    "orientation": 6,
+    "rawRgba": [
+      255,
+      0,
+      0,
+      255,
+      0,
+      255,
+      0,
+      255,
+      0,
+      0,
+      255,
+      255,
+      128,
+      0,
+      0,
+      128
+    ]
+  },
+  "bmp": {
+    "base64": "Qk1OAAAAAAAAADYAAAAoAAAAAwAAAAIAAAABABgAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAA/////wD///8AAAAAAAD/AP8A/wAAAAAA",
+    "width": 3,
+    "height": 2,
+    "rawRgba": [
+      255,
+      0,
+      0,
+      255,
+      0,
+      255,
+      0,
+      255,
+      0,
+      0,
+      255,
+      255,
+      255,
+      255,
+      255,
+      255,
+      255,
+      0,
+      255,
+      255,
+      0,
+      255,
+      255,
+      255
+    ]
+  },
+  "jpeg": {
+    "resourcePath": "recovery/resources/objects/be44ed615004925219fb684be3f8abc66dc23075eef5a05c478a17d7089c78c2.jpg",
+    "width": 100,
+    "height": 100,
+    "sha256": "be44ed615004925219fb684be3f8abc66dc23075eef5a05c478a17d7089c78c2"
+  },
+  "provenance": "PNG/BMP authored analytical codec fixtures only, not CAD replacement images. JPEG unchanged recovered resource; no original decoder execution."
+}

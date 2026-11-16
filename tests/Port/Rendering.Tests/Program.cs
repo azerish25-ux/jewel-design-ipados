@@ -23,3 +23,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5PopMergeAssertion
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5SetViewPreflightAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5WallpaperRasterAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.LocalImageAssetAssertions.Run());

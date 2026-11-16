@@ -77,6 +77,8 @@ for i in $(seq 1 600); do
   grep -q '^PASS original-derived Rhino5 viewport cache:' "$OUT/result.txt"
   grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
   grep -q '^PASS legacy native user-string bodies:' "$OUT/result.txt"
+  grep -q '^PASS offline encoded image assets:' "$OUT/result.txt"
+  grep -q '^PASS actual offline Apple image decode:' "$OUT/result.txt"
   grep -q '^PASS original-derived wallpaper raster:' "$OUT/result.txt"
   grep -q '^PASS original-derived SetView preflight:' "$OUT/result.txt"
   grep -q '^PASS original-derived Pop merge:' "$OUT/result.txt"

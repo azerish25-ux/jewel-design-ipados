@@ -14,3 +14,5 @@ Consume [original bitmap source](../../evidence/audit/rhino5-bitmap-loading-sour
 Record source input hashes, RED first, precise scope and real output artifacts. Use scripts/run-local.cjs for local tools and caches, all D-only; use connected owner GitHub plugin to publish and inspect Actions. No parity row closes from a decoder smoke test.
 
 Ownership clarification from original SetDib: it creates destination storage and copies bits; false retains caller ownership of input, rather than aliasing that pointer into the result. True frees input only after successful destination creation. Decoder failure path separately frees its temporary copy. Preserve these distinctions in the concrete Apple ownership adapter.
+
+First implementation child: [F01 actual local import/ImageIO decoder](P08-T01-A05-03f-02b-A05-P03-A02-F01-apple-decoder.md). Image textures/display and original setter/document integration remain subsequent mandatory work within this parent.

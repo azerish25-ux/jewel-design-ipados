@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "17d19c28b89465b572bc43c29689562b0b801bfa",
+  "status": "portable_assets_windows_passed_actual_apple_decode_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F01-apple-decoder.md",
+  "sourceAudit": "docs/evidence/audit/rhino5-bitmap-loading-source.json",
+  "red": {
+    "exitCode": 1,
+    "failure": "Missing LocalImageAsset/LocalImageLimits"
+  },
+  "checks": {
+    "portableOwnershipCases": 26,
+    "nativeHostExitCode": 0,
+    "adjacentNodeRegressions": 57,
+    "originalTargetExecuted": false
+  },
+  "outputs": {
+    "red": "59848816d46054691b8adda60e031467655d17f3a263907afeb40573a4117df3",
+    "green": "ca57012e291e9fd59ed9fde6c5b5b27720463f49e981f3e8f07cac1e900e30fa",
+    "native": "22d2370a9fee4c2ecb32f75fadc109f6a16848066bd74d8219a3a8509c14665d",
+    "adjacent": "1be273b642e228fb520b496d28aef1b8e58a6081e2d465519076ba013a250ed8"
+  },
+  "review": {
+    "ownership": "Defensive encoded-byte and decoded-pixel ownership; encoded source survives decoded output disposal; explicit local path selected separately from original inert name. Native ImageIO scopes disposed deterministically.",
+    "failure": "Missing file/empty/encoded-budget/dimension/output-budget errors surfaced; corrupt/unsupported decode rejected, complete-source/frame status checked. Actual Apple pixel/metadata cases pending CI.",
+    "limits": "Output budgets do not cap undocumented internal codec allocations. Exact original LEADTOOLS conversion/format/cache behavior, GDI resampling, actual Metal textures/presentation and source replacement/document lifecycles remain required."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin; shared CLI untouched",
+  "parityRowsClosed": 0
+}
