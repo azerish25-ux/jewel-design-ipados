@@ -11,6 +11,7 @@ namespace ViewportPresentationCandidate;
 
 [JsonSourceGenerationOptions(WriteIndented=true)]
 [JsonSerializable(typeof(ViewportPresentationReport))]
+[JsonSerializable(typeof(WallpaperPresentationReport))]
 internal partial class ViewportReportContext:JsonSerializerContext{}
 public static class Program {public static void Main(string[] args)=>UIApplication.Main(args,null,typeof(AppDelegate));}
 [Register("AppDelegate")]
@@ -66,6 +67,7 @@ public sealed class AppDelegate:UIApplicationDelegate
             var legacyScalar=CandidateGeometryContractChecks.Rhino5ScalarAssertions.Run();
             var legacyCamera=CandidateGeometryContractChecks.Rhino5CameraAssertions.Run();
             var capturePolicy=CandidateGeometryContractChecks.ViewportCaptureAcknowledgementAssertions.Run();
+            var wallpaperPlacement=CandidateGeometryContractChecks.WallpaperPlacementAssertions.Run();
             var pngSamples=CandidateGeometryContractChecks.PngStraightSampleAssertions.Run();
             var straightProvider=CandidateGeometryContractChecks.StraightImageProviderAssertions.Run();
             var straightImage=await CandidateAppleImageChecks.StraightImageDecodeChecks.Run(directory);
@@ -90,8 +92,10 @@ public sealed class AppDelegate:UIApplicationDelegate
             var offscreen=NativeGeometryCandidate.MetalViewportChecks.Run(directory);
             var parent=Window?.RootViewController?.View??throw new Exception("Visible root view missing");
             var report=await ViewportPresentationChecks.Run(parent,Capture);
+            var wallpaperReport=await WallpaperPresentationChecks.Run(parent,Capture);
+            File.WriteAllText(Path.Combine(directory,"wallpaper-report.json"),JsonSerializer.Serialize(wallpaperReport,ViewportReportContext.Default.WallpaperPresentationReport));
             File.WriteAllText(Path.Combine(directory,"viewport-report.json"),JsonSerializer.Serialize(report,ViewportReportContext.Default.ViewportPresentationReport));
-            string result="PASS visible Metal viewport:6 captured stages; source edit/orbit/empty/resize, bounded upload ownership and disposal; full product UI/PC/physical acceptance separate."+Environment.NewLine+gate+Environment.NewLine+camera+Environment.NewLine+frustum+Environment.NewLine+matrices+Environment.NewLine+frames+Environment.NewLine+transitions+Environment.NewLine+legacyScalar+Environment.NewLine+legacyCamera+Environment.NewLine+legacyViewport+Environment.NewLine+legacyRotation+Environment.NewLine+legacyLocations+Environment.NewLine+legacyCache+Environment.NewLine+legacyCommit+Environment.NewLine+ownedViewData+Environment.NewLine+userDataRuntime+Environment.NewLine+stringCodec+Environment.NewLine+stringBinding+Environment.NewLine+stringProvenance+Environment.NewLine+runtimeView+Environment.NewLine+historyPush+Environment.NewLine+popMerge+Environment.NewLine+setViewPreflight+Environment.NewLine+wallpaperRaster+Environment.NewLine+encodedImages+Environment.NewLine+straightProvider+Environment.NewLine+pngSamples+Environment.NewLine+straightImage+Environment.NewLine+appleImages+Environment.NewLine+imageGpu+Environment.NewLine+capturePolicy+Environment.NewLine+offscreen;
+            string result="PASS visible Metal viewport:6 captured stages; source edit/orbit/empty/resize, bounded upload ownership and disposal; full product UI/PC/physical acceptance separate."+Environment.NewLine+gate+Environment.NewLine+camera+Environment.NewLine+frustum+Environment.NewLine+matrices+Environment.NewLine+frames+Environment.NewLine+transitions+Environment.NewLine+legacyScalar+Environment.NewLine+legacyCamera+Environment.NewLine+legacyViewport+Environment.NewLine+legacyRotation+Environment.NewLine+legacyLocations+Environment.NewLine+legacyCache+Environment.NewLine+legacyCommit+Environment.NewLine+ownedViewData+Environment.NewLine+userDataRuntime+Environment.NewLine+stringCodec+Environment.NewLine+stringBinding+Environment.NewLine+stringProvenance+Environment.NewLine+runtimeView+Environment.NewLine+historyPush+Environment.NewLine+popMerge+Environment.NewLine+setViewPreflight+Environment.NewLine+wallpaperRaster+Environment.NewLine+encodedImages+Environment.NewLine+straightProvider+Environment.NewLine+pngSamples+Environment.NewLine+wallpaperPlacement+Environment.NewLine+"PASS visible CAD wallpaper:6 actual captures; real images/mesh composition and retained scene ownership; source filtering/document/PC parity separate."+Environment.NewLine+straightImage+Environment.NewLine+appleImages+Environment.NewLine+imageGpu+Environment.NewLine+capturePolicy+Environment.NewLine+offscreen;
             File.WriteAllText(resultPath+".pending",result);File.Move(resultPath+".pending",resultPath,overwrite:true);Console.WriteLine(result);
         }
         catch(Exception error){File.WriteAllText(resultPath,"FAIL "+error);Console.WriteLine(error);}

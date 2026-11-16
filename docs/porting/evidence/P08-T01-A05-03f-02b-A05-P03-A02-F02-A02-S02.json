@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S02",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "31f0b49670d9817a648f1e006cddfd9aed06a0e2",
+  "status": "visible_composer_implemented_windows_passed_actual_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S02-visible-wallpaper.md",
+  "red": {
+    "exitCode": 1,
+    "failure": "Missing Rhino5WallpaperPlacement"
+  },
+  "checks": {
+    "placementCases": 9,
+    "nativeHostExitCode": 0,
+    "adjacentNodeRegressions": 60,
+    "originalTargetExecuted": false
+  },
+  "outputHashes": {
+    "red": "60e368dad974e11ddfa539adf8d6eee35e13a9999e71c9afc226648537ab6473",
+    "green": "3a251ec6f8ce9f4d299baf34f779d678cb8cae33f0760dc49076441e67d7c1e0",
+    "native": "71dc6750ae98f387f34079b1100060e647124a4e8ac39960ae41299ae3a629c3",
+    "adjacent": "b3456d1bea8cf194672dd7cc50d9cc6a77421090a9482902f84e01c7fb57d045"
+  },
+  "review": {
+    "placement": "Original GDI draw rectangle for supplied resized pixels. Native overflow rejected explicitly. Alpha made opaque for original24bit wallpaper RGB target; input must be straight.",
+    "ownership": "Scene gate retains independently referenced mesh and wallpaper. Shared image pipeline uses matching depth attachment format, depth write disabled, then real CAD encoder restores depth/culling. Actual runtime resource/capture proof pending.",
+    "limits": "Pixel API is not complete original wallpaper file/gray/resize/source SetView behavior. GL placement, GDI filtering, world trace, caches, document/PC/physical remain required."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

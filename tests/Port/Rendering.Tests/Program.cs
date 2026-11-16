@@ -29,3 +29,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.LocalImageAssetAssertio
 System.Console.WriteLine(CandidateGeometryContractChecks.StraightImageProviderAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.PngStraightSampleAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.WallpaperPlacementAssertions.Run());

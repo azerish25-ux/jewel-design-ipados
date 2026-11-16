@@ -14,6 +14,10 @@ on:
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5SetViewPreflightAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5WallpaperRasterAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/LocalImageAssetAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/WallpaperPlacementAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Fixtures/visible-wallpaper.json"
+      - "scripts/verify-wallpaper-screenshots.cjs"
+      - "tests/wallpaper-screenshots.test.cjs"
       - "tests/Port/Geometry.Candidate.Contracts/StraightImageProviderAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/PngStraightSampleAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/png-straight-samples.json"
@@ -151,7 +155,7 @@ jobs:
       - name: Verify D-only native-analysis launch contracts on macOS
         run: node --test tests/ghidra-local.test.cjs | tee artifacts/ghidra-local-contracts.txt
       - name: Verify actual capture obstruction and bounded driver regressions
-        run: node --test tests/viewport-capture-surface.test.cjs tests/viewport-driver.test.cjs | tee artifacts/capture-surface-regressions.txt
+        run: node --test tests/viewport-capture-surface.test.cjs tests/viewport-driver.test.cjs tests/wallpaper-screenshots.test.cjs | tee artifacts/capture-surface-regressions.txt
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

@@ -13,7 +13,7 @@ public sealed class MetalImageQuadRenderer:IDisposable
  private readonly object sync=new();
  private readonly IMTLDevice device;
  private readonly CadFrameGate<ImageTexture> frames=new();
- private IMTLCommandQueue? queue;private IMTLRenderPipelineState? opaque,blended;private IMTLSamplerState? nearest,linear;
+ private IMTLCommandQueue? queue;private MetalImageQuadPipeline? imagePipeline;
  private bool disposed,released;private int targets,buffers;private Exception? lastError;
  public MetalImageQuadStats Stats{get{lock(sync){var s=frames.State;return new(s.InFlight,s.LiveResources,targets,buffers,disposed,released,lastError?.ToString());}}}
  public MetalImageQuadRenderer()
@@ -21,24 +21,7 @@ public sealed class MetalImageQuadRenderer:IDisposable
   device=MTLDevice.SystemDefault??throw new NotSupportedException("Metal device unavailable.");
   try{
    queue=device.CreateCommandQueue()??throw new InvalidOperationException("Image command queue unavailable.");
-   using var stream=typeof(MetalImageQuadRenderer).Assembly.GetManifestResourceStream("ImageQuadMetalShader")??throw new InvalidOperationException("Image shader missing.");
-   using var reader=new StreamReader(stream);using var options=new MTLCompileOptions();
-   using var library=device.CreateLibrary(reader.ReadToEnd(),options,out var error)??throw new InvalidOperationException("Image shader compile failed: "+error);
-   using var vertex=library.CreateFunction("image_quad_vertex")??throw new InvalidOperationException("Image vertex shader missing.");
-   using var fragment=library.CreateFunction("image_quad_fragment")??throw new InvalidOperationException("Image fragment shader missing.");
-   IMTLRenderPipelineState Pipeline(bool blend){
-    using var d=new MTLRenderPipelineDescriptor();d.VertexFunction=vertex;d.FragmentFunction=fragment;
-    var a=d.ColorAttachments[0];a.PixelFormat=MTLPixelFormat.BGRA8Unorm;a.BlendingEnabled=blend;
-    a.SourceRgbBlendFactor=MTLBlendFactor.SourceAlpha;a.DestinationRgbBlendFactor=MTLBlendFactor.OneMinusSourceAlpha;
-    a.SourceAlphaBlendFactor=MTLBlendFactor.SourceAlpha;a.DestinationAlphaBlendFactor=MTLBlendFactor.OneMinusSourceAlpha;
-    return device.CreateRenderPipelineState(d,out var failure)??throw new InvalidOperationException("Image pipeline failed: "+failure);
-   }
-   opaque=Pipeline(false);blended=Pipeline(true);
-   IMTLSamplerState Sampler(MTLSamplerMinMagFilter filter){
-    using var d=new MTLSamplerDescriptor{MinFilter=filter,MagFilter=filter,SAddressMode=MTLSamplerAddressMode.ClampToEdge,TAddressMode=MTLSamplerAddressMode.ClampToEdge,NormalizedCoordinates=true};
-    return device.CreateSamplerState(d)??throw new InvalidOperationException("Image sampler unavailable.");
-   }
-   nearest=Sampler(MTLSamplerMinMagFilter.Nearest);linear=Sampler(MTLSamplerMinMagFilter.Linear);
+   imagePipeline=new MetalImageQuadPipeline(device,MTLPixelFormat.Invalid);
   }catch{Dispose();throw;}
  }
  public void SetImage(DecodedLocalImage image)
@@ -85,9 +68,7 @@ public sealed class MetalImageQuadRenderer:IDisposable
     if(!command.RetainedReferences)throw new InvalidOperationException("Image commands must retain native references.");
     using var pass=MTLRenderPassDescriptor.CreateRenderPassDescriptor();pass.ColorAttachments[0].Texture=target;pass.ColorAttachments[0].LoadAction=MTLLoadAction.Clear;pass.ColorAttachments[0].StoreAction=MTLStoreAction.Store;pass.ColorAttachments[0].ClearColor=clear??new MTLClearColor(0,0,0,0);
     using(var encoder=command.CreateRenderCommandEncoder(pass)??throw new InvalidOperationException("Image encoder unavailable.")){
-     encoder.SetRenderPipelineState(blend?blended!:opaque!);encoder.SetCullMode(MTLCullMode.None);
-     encoder.SetVertexBuffer(vertices,0,0);encoder.SetFragmentTexture(lease.Resource.Texture,0);encoder.SetFragmentSamplerState(filtered?linear!:nearest!,0);
-     encoder.DrawPrimitives(MTLPrimitiveType.Triangle,0,6);encoder.EndEncoding();
+     imagePipeline!.Encode(encoder,lease.Resource.Texture,vertices,filtered,blend);encoder.EndEncoding();
     }
     frame=new ImageFrame(this,lease,target,vertices,command,width,height);targets++;buffers++;
     return frame;
@@ -108,7 +89,7 @@ public sealed class MetalImageQuadRenderer:IDisposable
   }
   if(error is null)frame.Completion.TrySetResult(bytes!);else frame.Completion.TrySetException(error);
  }
- private void ReleaseIfFinished(){if(disposed&&frames.State.InFlight==0&&!released){released=true;foreach(var value in new IDisposable?[]{linear,nearest,blended,opaque,queue})try{value?.Dispose();}catch(Exception failure){lastError??=failure;}}}
+ private void ReleaseIfFinished(){if(disposed&&frames.State.InFlight==0&&!released){released=true;foreach(var value in new IDisposable?[]{imagePipeline,queue})try{value?.Dispose();}catch(Exception failure){lastError??=failure;}}}
  public void Dispose(){lock(sync){if(disposed)return;disposed=true;frames.Dispose();ReleaseIfFinished();}}
  internal sealed class ImageTexture(IMTLTexture texture):IDisposable
  {internal readonly IMTLTexture Texture=texture;public void Dispose()=>Texture.Dispose();}

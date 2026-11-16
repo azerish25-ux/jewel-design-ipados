@@ -34,6 +34,7 @@ internal static class ViewportPresentationChecks
         var empty=CadViewportMesh.FromSnapshot(context.TessellateBrep(emptyShape,.04,.35));
         return new(original,edited,empty,fine);
     }
+    internal static CadViewportMesh BuildOriginalMesh()=>BuildMeshes().Original;
     private static async Task<CadMetalFrameInfo> Present(CadMetalView view,Func<long> change)
     {
         long expected=-1;

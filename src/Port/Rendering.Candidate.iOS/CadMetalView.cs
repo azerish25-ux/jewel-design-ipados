@@ -48,6 +48,10 @@ public sealed class CadMetalView : MTKView
         RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);
         long id=presenter.SetMesh(mesh);SetNeedsDisplay();return id;
     }
+    public long SetWallpaperPixels(DecodedLocalImage image,int storedScale=1)
+    {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);long id=presenter.SetWallpaperPixels(image,storedScale);SetNeedsDisplay();return id;}
+    public void ClearWallpaper()
+    {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);presenter.ClearWallpaper();SetNeedsDisplay();}
     public void SetCameraPose(float yaw,float pitch)
     {
         RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);
