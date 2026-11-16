@@ -18,7 +18,16 @@
     "adjacentNodeChecks": 10,
     "originalExecuted": false
   },
-  "platform": "macOS captured-source verification and unchanged rendering preflight pending",
+  "platform": {
+    "macOS": "docs/evidence/apple/filename-profile-preflight-results.json",
+    "run": 43974031318,
+    "sourceExecuted": false,
+    "retainedSourceCaptureVerified": true,
+    "originalRegionValidationOnMac": false,
+    "adjacentManagedCacheCases": 33,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
   "remaining": [
     "Exact offline portable Unicode NLS1 casing and collation with versioned controls.",
     "CRT fallback locale, external ANSI caller and indirect/plugin mutations.",

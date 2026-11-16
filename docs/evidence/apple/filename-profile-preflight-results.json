@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N01",
+  "sourceCommit": "6526bbea5e3cdaf90868c7905c6d0e44afd8ccdb",
+  "run": 43974031318,
+  "conclusion": "success",
+  "artifactId": 14278904192,
+  "artifactSha256": "bd4eb0990d709293c3d8622a07f286db28a57f9194a2672ab3f8b42cf5fe4ca3",
+  "actualArtifactInspected": true,
+  "observed": {
+    "schemaVersion": 1,
+    "originalInstructionSnippets": 3,
+    "staticOwnerViews": 6,
+    "directManagerCallers": 2,
+    "coreGlobalReferences": 15,
+    "mainProfileReferences": 16,
+    "linearDisassemblyLines": 5037869,
+    "originalFunctionRegionsVerified": 0,
+    "normalNonzeroRequest": {
+      "coreLocaleValue": 1,
+      "unicodeNls": true
+    },
+    "fallbackResetsStringProfile": false,
+    "sourceExecuted": false,
+    "scope": "Static normal startup/requested-language ordering only. Portable Unicode NLS1, ANSI/CRT runtime mutation, document integration, original PC and physical acceptance remain open."
+  },
+  "adjacentManagedCacheResult": "PASS context image cache:33 hit/miss/usage/context/failure/lease/budget cases/65536 exact CRT-C UTF16 lower units/1156 native compare pairs; NLS/ANSI runtime profile and full source document/PC/physical remain open.",
+  "binding": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "scope": "macOS independently validates retained source instruction/reference capture and executes unchanged managed rendering/cache regressions. Original whole PE/full six-region verification was local Windows static analysis; neither platform executed original vendor code. Actual iPad/iPhone rendering remains the separately recorded source-cache proof, unchanged by this analysis-only commit.",
+  "allLocalDownloadsD": true,
+  "fullParityVerified": false
+}
