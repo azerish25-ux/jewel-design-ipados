@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "edb480fb85557a9cf9191d1207b892ff035ba138",
+  "status": "actual_metal_component_implemented_apple_green_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A01-metal-image-quad.md",
+  "red": {
+    "sourceCommit": "c2501ca331e46ae9d74dfeb6c2a536e7f01e1474",
+    "runId": 43835683424,
+    "artifactId": 14210767257,
+    "artifactSha256": "8473413f29b816af4ddf45552e4d5924578182deba891c37871da08686eb94e7",
+    "error": "CS0246 missing MetalImageQuadRenderer",
+    "inspectedActualPluginArtifact": true
+  },
+  "checks": {
+    "adjacentNodeRegressions": 57,
+    "portableExitCode": 0,
+    "originalTargetExecuted": false
+  },
+  "outputHashes": {
+    "adjacent": "ee6a0dda676f46a3a46ae50f44b7764c0bd714495c07a3ed2d802a21194a99b1",
+    "portable": "ca57012e291e9fd59ed9fde6c5b5b27720463f49e981f3e8f07cac1e900e30fa"
+  },
+  "review": {
+    "representation": "Strict straight RGBA8/top-row-first GPU input; opaque F01 decoded BMP valid directly. No implicit lossy unpremultiplication. Exact partial-alpha decoder/cache adapter remains open.",
+    "rendering": "Actual GPU source texture upload, original trace UV order adapted to top-row-first data, nearest/linear clamp-to-edge and explicit source-alpha/one-minus-source-alpha blending for RGB and alpha. No depth attachment, no culling. Four homogeneous clip-space corners supplied explicitly.",
+    "lifetime": "Real prepared native command buffers plus CadFrameGate leases, max3. Replacement owns separate immutable textures. Disposed renderer defers pipeline/queue release until all recorded frames complete or abort. Readback occurs only after real GPU completion; no success delegate substitute.",
+    "remaining": "Original format/cache/alpha conversion, GDI filtering, screen/world/visible image integration, full source setters/document/PC/physical acceptance remain required. This is offscreen GPU component only."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}
