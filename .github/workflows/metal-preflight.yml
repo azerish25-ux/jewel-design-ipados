@@ -10,6 +10,10 @@ on:
       - "scripts/halftone-response-reference.cjs"
       - "scripts/halftone-fixed-reference.cjs"
       - "scripts/halftone-mixed-reference.cjs"
+      - "scripts/halftone-fixup-reference.cjs"
+      - "tests/gdi-fixup-reference.test.cjs"
+      - "reference/fixtures/gdi-fixup-windows-26300.json"
+      - "native/Analysis/fixtures/windows-gdi-fixup-regions.json"
       - "scripts/gdi-decimal-reference.cjs"
       - "reference/fixtures/gdi-mixed-windows-26300.json"
       - "tests/gdi-mixed-reference.test.cjs"
@@ -192,6 +196,10 @@ jobs:
         run: |
           node --test tests/gdi-mixed-reference.test.cjs > artifacts/mixed-halftone-reference-checks.txt
           node scripts/halftone-mixed-reference.cjs reference/fixtures/gdi-mixed-windows-26300.json > artifacts/mixed-halftone-reference.json
+      - name: Verify bounded small-source fixup and no-sharpen branches
+        run: |
+          node --test tests/gdi-fixup-reference.test.cjs > artifacts/fixup-halftone-reference-checks.txt
+          node scripts/halftone-fixup-reference.cjs reference/fixtures/gdi-fixup-windows-26300.json > artifacts/fixup-halftone-reference.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

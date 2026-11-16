@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "94f00aabe76a4af3794e2134b806bf89e556b66814859c285de62173350a5173",
+  "functions": [
+    {
+      "role": "ComputeAABBP",
+      "name": null,
+      "rva": 854140,
+      "length": 1515,
+      "sha256": "33ed6f94e90bae8b41181e67efc1e4a386dae43ed4b960cada80abe72130171e",
+      "unwindRegions": [
+        {
+          "begin": 854140,
+          "end": 855655,
+          "unwind": 3745124
+        }
+      ]
+    },
+    {
+      "role": "ComputeInputColorInfo",
+      "name": null,
+      "rva": 855664,
+      "length": 520,
+      "sha256": "eb8eaab654519373ede39b6f3f58b0d3dfd5b2fd60995fed6ae4452e53407fe3",
+      "unwindRegions": [
+        {
+          "begin": 855664,
+          "end": 856184,
+          "unwind": 3745152
+        }
+      ]
+    },
+    {
+      "role": "CheckBMPNeedFixup",
+      "name": null,
+      "rva": 846256,
+      "length": 1360,
+      "sha256": "b7f08ac1c5973f44b40b65d547baf4ddb23908c0e942b500b9f2faee8f70ebd7",
+      "unwindRegions": [
+        {
+          "begin": 846256,
+          "end": 847616,
+          "unwind": 3744940
+        }
+      ]
+    },
+    {
+      "role": "FixupColorScan",
+      "name": null,
+      "rva": 839716,
+      "length": 1748,
+      "sha256": "27bffeebd15b87bf321f7d414832a68dcaed19b05d06ee9aaaceda09ed8998b9",
+      "unwindRegions": [
+        {
+          "begin": 839716,
+          "end": 841464,
+          "unwind": 3744724
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N04",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "d8c604a97420fee648cd63f56e72247e6deca678",
+  "kind": "current_host_public_windows_dependency_static_and_independent_output",
+  "originalVendorExecuted": false,
+  "targetSha256": "94f00aabe76a4af3794e2134b806bf89e556b66814859c285de62173350a5173",
+  "regionsManifest": "native/Analysis/fixtures/windows-gdi-fixup-regions.json",
+  "staticViews": 4,
+  "sourceFunctions": [
+    {
+      "name": "ComputeAABBP",
+      "rva": 854140,
+      "length": 1515,
+      "sha256": "33ed6f94e90bae8b41181e67efc1e4a386dae43ed4b960cada80abe72130171e"
+    },
+    {
+      "name": "ComputeInputColorInfo",
+      "rva": 855664,
+      "length": 520,
+      "sha256": "eb8eaab654519373ede39b6f3f58b0d3dfd5b2fd60995fed6ae4452e53407fe3"
+    },
+    {
+      "name": "CheckBMPNeedFixup",
+      "rva": 846256,
+      "length": 1360,
+      "sha256": "b7f08ac1c5973f44b40b65d547baf4ddb23908c0e942b500b9f2faee8f70ebd7"
+    },
+    {
+      "name": "FixupColorScan",
+      "rva": 839716,
+      "length": 1748,
+      "sha256": "27bffeebd15b87bf321f7d414832a68dcaed19b05d06ee9aaaceda09ed8998b9"
+    }
+  ],
+  "formulas": {
+    "geometry": "Both floor((destinationAxis*1000+500)/sourceAxis)>667. Bias is constant500, not source/2.",
+    "smallSource": "Default truecolor full positive rectangles, sourceArea<=2304. Eligible input fixup remains active; no-sharpen iff eligible and sourceArea<=destinationArea. Setup may clear newly set no-sharpen on net shrink.",
+    "pattern": "Immutable RGB equality/luma4R+8G+B; reflect both borders. Continued2x2 checker averages all4 output pixels rounded+1>>1; partial checker smooths selected two pixels with12*mutableCenter+4 raw neighbors+8>>4. Alpha unchanged.",
+    "noSharpen": "Shrinking axis floor((2*source*(i+1)-target)/(2*target)); equal/expanding max(0,ceil((2*i+1)*source/(2*target))-1).",
+    "filtered": "Existing native Q13 mixed core accepts already-fixed input; no second extended-checker pass."
+  },
+  "nativeProof": {
+    "producer": "native/Rendering/GdiRgbReference/Program.cs",
+    "profile": "--fixup-probe",
+    "cases": 512,
+    "controls": 576,
+    "sources": 192,
+    "patterns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "depths": [
+      24,
+      32
+    ],
+    "destinationSeeds": [
+      0,
+      90
+    ],
+    "liveOwnedHandles": 0,
+    "corpus": "reference/fixtures/gdi-fixup-windows-26300.json"
+  },
+  "limits": [
+    "Reference only, no product mode4 enablement.",
+    "Source area>2304 unique-colour/scanline gate not validated; explicit rejection.",
+    "Nonmixed axes reject in this module.",
+    "Other DC flags, nondefault profiles/PDEV, clipping, mirrored rectangles, indexed formats, driver versions, source/vendor/PC/physical acceptance remain open."
+  ],
+  "allLocalWritesD": true
+}

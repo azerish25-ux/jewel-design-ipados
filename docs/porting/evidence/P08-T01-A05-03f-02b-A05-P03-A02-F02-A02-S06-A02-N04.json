@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N04",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "d8c604a97420fee648cd63f56e72247e6deca678",
+  "status": "small_mixed_reference_windows_verified_macos_pending_large_gate_product_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N04-fixup-eligibility.md",
+  "audit": "docs/evidence/audit/windows-gdi-fixup-source.json",
+  "checks": {
+    "ownPublicReferenceExitCode": 0,
+    "nativeCases": 512,
+    "nativeControls": 576,
+    "retainedSources": 192,
+    "cases": 512,
+    "exactCases": 512,
+    "fixupCases": 448,
+    "noSharpenCases": 256,
+    "filteredCases": 256,
+    "mismatches": [],
+    "complete": false,
+    "scope": "Small-source default truecolor mixed positive full rectangles only. Large-source color gate, clipping, flags/profiles/limits, product/vendor/PC/physical acceptance remain open.",
+    "windowsNodeRegressions": 31,
+    "ghidraStaticViews": 4,
+    "originalVendorTargetExecuted": false,
+    "repositoryIntegrity": "passed"
+  },
+  "outputHashes": {
+    "reference/fixtures/gdi-fixup-windows-26300.json": "7e6fb138b2e9c51a0157a45d9fd3cc25ac7d1bf555b317a27b68ca6dc46334f5",
+    "native/Rendering/GdiRgbReference/Program.cs": "04953a7a237309cee17bf878f6ed695cedd128d0b9660d7adfb1d40c4632794e",
+    "scripts/halftone-fixup-reference.cjs": "46685b4e3ca23ae6ab2b25976a54bc5d028fbc215969fbcff5d2875855b53d40",
+    "scripts/halftone-mixed-reference.cjs": "51f66991368a9e00f94ba513f54842185d18245e8c5b633dd9884a3811504cd0",
+    "native/Analysis/fixtures/windows-gdi-fixup-regions.json": "64523aebd830a59517ffd25a2dd3f2b23927d18521c6de68fd84d47e52df9187"
+  },
+  "review": "Complete stored bytes agree only for represented small mixed default truecolor domain; large-source colour gate and production HALFTONE remain open. No parity closure.",
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}
