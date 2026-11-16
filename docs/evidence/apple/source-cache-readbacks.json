@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01",
+  "sourceCommit": "6656ade11b6fc1c2f853994529dc07e2945ae9ff",
+  "run": 43967535021,
+  "artifactId": 14277524549,
+  "artifactSha256": "e414051749ea08b00dc2b88346d8d13aaebbb83a674fac902d45636dc13bea40",
+  "nativeFixtureSha256": "98adcf29647c4ae6bf2f33a37958637a43a2db33c19bde25096a30247b6d9ad4",
+  "families": {
+    "ipad": {
+      "report": {
+        "schemaVersion": 1,
+        "frames": [
+          {
+            "stage": "created-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-0.bgra"
+          },
+          {
+            "stage": "cached-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-1.bgra"
+          },
+          {
+            "stage": "failed-gray-retained-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-2.bgra"
+          },
+          {
+            "stage": "created-gray",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+            "file": "source-cache-3.bgra"
+          },
+          {
+            "stage": "failed-source-retained-gray",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+            "file": "source-cache-4.bgra"
+          },
+          {
+            "stage": "invalidated-old-gray-pending",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+            "file": "source-cache-5.bgra"
+          },
+          {
+            "stage": "reloaded-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-6.bgra"
+          },
+          {
+            "stage": "disposed-pending-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-7.bgra"
+          }
+        ],
+        "sourceResolves": 4,
+        "sourceFailures": 2,
+        "independentContexts": 1,
+        "disposalInFlight": 1,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 3
+        }
+      },
+      "readbacks": [
+        {
+          "file": "source-cache-0.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "source-cache-1.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "source-cache-2.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "source-cache-3.bgra",
+          "bytes": 24,
+          "sha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+          "base64": "AAAA/zY2Nv9sbGz/Kioq/2FhYf+Xl5f/"
+        },
+        {
+          "file": "source-cache-4.bgra",
+          "bytes": 24,
+          "sha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+          "base64": "AAAA/zY2Nv9sbGz/Kioq/2FhYf+Xl5f/"
+        },
+        {
+          "file": "source-cache-5.bgra",
+          "bytes": 24,
+          "sha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+          "base64": "AAAA/zY2Nv9sbGz/Kioq/2FhYf+Xl5f/"
+        },
+        {
+          "file": "source-cache-6.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "source-cache-7.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        }
+      ]
+    },
+    "iphone": {
+      "report": {
+        "schemaVersion": 1,
+        "frames": [
+          {
+            "stage": "created-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-0.bgra"
+          },
+          {
+            "stage": "cached-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-1.bgra"
+          },
+          {
+            "stage": "failed-gray-retained-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-2.bgra"
+          },
+          {
+            "stage": "created-gray",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+            "file": "source-cache-3.bgra"
+          },
+          {
+            "stage": "failed-source-retained-gray",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+            "file": "source-cache-4.bgra"
+          },
+          {
+            "stage": "invalidated-old-gray-pending",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+            "file": "source-cache-5.bgra"
+          },
+          {
+            "stage": "reloaded-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-6.bgra"
+          },
+          {
+            "stage": "disposed-pending-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "file": "source-cache-7.bgra"
+          }
+        ],
+        "sourceResolves": 4,
+        "sourceFailures": 2,
+        "independentContexts": 1,
+        "disposalInFlight": 1,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 3
+        }
+      },
+      "readbacks": [
+        {
+          "file": "source-cache-0.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "source-cache-1.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "source-cache-2.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "source-cache-3.bgra",
+          "bytes": 24,
+          "sha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+          "base64": "AAAA/zY2Nv9sbGz/Kioq/2FhYf+Xl5f/"
+        },
+        {
+          "file": "source-cache-4.bgra",
+          "bytes": 24,
+          "sha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+          "base64": "AAAA/zY2Nv9sbGz/Kioq/2FhYf+Xl5f/"
+        },
+        {
+          "file": "source-cache-5.bgra",
+          "bytes": 24,
+          "sha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e",
+          "base64": "AAAA/zY2Nv9sbGz/Kioq/2FhYf+Xl5f/"
+        },
+        {
+          "file": "source-cache-6.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "source-cache-7.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        }
+      ]
+    }
+  }
+}

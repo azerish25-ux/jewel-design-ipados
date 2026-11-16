@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01",
+  "sourceCommit": "6656ade11b6fc1c2f853994529dc07e2945ae9ff",
+  "run": 43967534975,
+  "conclusion": "success",
+  "artifactId": 14277712988,
+  "artifactSha256": "e6f37d065abd091dfff0354dedaf0afc03b0b5901ef7efdc5e665df0b3da5669",
+  "actualArtifactInspected": true,
+  "checks": {
+    "managedCacheCases": 33,
+    "crtLowerUtf16Units": 65536,
+    "nativeCrtComparisons": 1156,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "filenameControls": {
+    "utf16LowerUnits": 65536,
+    "crtComparisons": 1156,
+    "nlsControls": 5780,
+    "portableOrderingMismatches": 140,
+    "portableEqualityMismatches": 4,
+    "scope": "Actual public Windows NLS/UCRT controls, not original runtime profile selection. Portable default collation explicitly rejected as exact original NLS replacement."
+  },
+  "resultLines": [
+    "PASS context image cache:33 hit/miss/usage/context/failure/lease/budget cases/65536 exact CRT-C UTF16 lower units/1156 native compare pairs; NLS/ANSI runtime profile and full source document/PC/physical remain open."
+  ],
+  "scope": "Actual managed cache and Metal binding compilation on macOS. Actual GPU/iPad/iPhone path separate. Explicit CRT-C only; original NLS/ANSI runtime selection, full source/document/view lifecycle and PC/physical remain open.",
+  "allLocalDownloadsD": true
+}

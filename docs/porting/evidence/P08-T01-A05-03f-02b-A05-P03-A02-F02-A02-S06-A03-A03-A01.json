@@ -5,7 +5,7 @@
     "UI-039"
   ],
   "inputCommit": "0cb358dc469651b7777b922ab9d4366cd6e0f0d9",
-  "status": "implemented-local-platform-pending",
+  "status": "component-platform-tested-full-card-open",
   "source": {
     "rhinoSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
     "coreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
@@ -113,7 +113,20 @@
       "exitCode": 0
     }
   },
-  "platformValidation": "macOS initial30 cache cases and0 warning/error Metal build passed on43966139503; actual iPad cached-hit failure43966448738 fixed, rerun pending",
+  "platformValidation": {
+    "preflight": "docs/evidence/apple/source-cache-preflight-results.json",
+    "ios": "docs/evidence/apple/source-cache-ios-results.json",
+    "readbacks": "docs/evidence/apple/source-cache-readbacks.json",
+    "sourceCommit": "6656ade11b6fc1c2f853994529dc07e2945ae9ff",
+    "macOSRun": 43967534975,
+    "visibleRun": 43967535021,
+    "cacheCasesPerPlatform": 33,
+    "gpuReadbacksPerFamily": 8,
+    "exactPixelsPerFamily": 48,
+    "adjacentVisibleCapturesPerFamily": 18,
+    "restoreDifferences": 0,
+    "fullCardAccepted": false
+  },
   "remaining": [
     "Resolve original runtime Windows NLS/ANSI profile and implement its full portable behavior before claiming filename parity.",
     "Connect cache policy/invalidation to actual CadMetalView/document lifecycle and full file/document fallback; current real GPU source cache is MetalImageQuadRenderer component.",
