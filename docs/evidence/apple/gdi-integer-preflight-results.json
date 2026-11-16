@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A01",
+  "sourceCommit": "f283a58acc9579ecab4ea4cd53198ccc8fad82f1",
+  "workflowRun": 43887665368,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43887665368",
+  "conclusion": "success",
+  "artifact": {
+    "id": 14234558959,
+    "sha256": "c4600f0ed6b795dae17f197005502448397b94df5f665f0f6c83c09b87dc197e",
+    "digestVerified": true
+  },
+  "checks": {
+    "exactNativeByteCases": 1596,
+    "explicitHalftoneRejections": 132,
+    "storageDepthBudgetGuards": 9,
+    "corpusRegressions": 5,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "outputHashes": {
+    "numericTests": "5098fcf8b7daa547cad121bd6ecb90cde9238f13159bc0cfc901bd3fac5c9460",
+    "corpusChecks": "f5d3210c4a32a05cd11e67116f6437be29d8a096cba9f76421f2d90509ced7b9",
+    "bindingBuild": "b1a79608aea71d51146a08caa8be53a29c0ee6b46a3e722238eab765398880c0"
+  },
+  "scope": "Actual macOS portable integer byte comparisons and iOS binding compilation. No original vendor/driver/HALFTONE/full RGB/PC/physical parity inferred.",
+  "parityRowsClosed": 0
+}

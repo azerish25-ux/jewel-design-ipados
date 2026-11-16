@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "1334c076c6289265944728b9f55ad3b0c7d9235b",
-  "status": "integer_stretch_implemented_windows_verified_apple_pending",
+  "status": "integer_stretch_windows_macos_verified_ios_runs_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A01-integer-rgb.md",
   "prerequisites": [
     "docs/evidence/audit/rhino5-dib-creation-source.json",
@@ -44,9 +44,22 @@
   "review": {
     "discovery": "Initial center/floor model matched old156 cases but failed expanded mixed-axis controls. Observed current-host joint abs dimension delta<=1 selects clamped direct indices on both axes; otherwise center sample indices. Mode1 compressed spans run from previous selected sample+1 (first0) through current selected sample inclusive. Mode3 copies selected samples. Both24/32 stored bytes, source alpha and destination padding preserved.",
     "holdout": "Joint-delta up/down/mixed/equal controls, dimensions differing2, axis swaps, strong shrink and last-pixel Boolean-tail patterns all included.1440 new native cases plus156 previous cases compare exact. Not an original vendor/MFC/OS/driver oracle.",
-    "remaining": "Actual Apple proof pending. Required HALFTONE childA02 and composed source preparation/integration childA03 remain open; palette/profile/negative-height conversion/source cache/PC/physical remain mandatory."
+    "remaining": "Actual iPad/iPhone proof pending in original runs43887665353/43887665281. macOS1596 exact bytes/132 explicit HALFTONE rejections/9 guards and5 corpus regressions verified; iOS bindings0 warnings/errors. Required HALFTONE A02 and composed source preparation/integration A03, palette/profile/negative-height/source cache/PC/physical remain open."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "apple": {
+    "sourceCommit": "f283a58acc9579ecab4ea4cd53198ccc8fad82f1",
+    "preflight": "docs/evidence/apple/gdi-integer-preflight-results.json",
+    "preflightRun": 43887665368,
+    "repositoryRun": 43887665387,
+    "repositoryConclusion": "success",
+    "visibleRun": 43887665353,
+    "visibleUrl": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43887665353",
+    "visibleStatus": "queued",
+    "reuseRun": 43887665281,
+    "reuseStatus": "in_progress",
+    "observation": "Preserve original live run handles; do not restart from an observation timeout or queue."
+  }
 }
