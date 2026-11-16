@@ -27,7 +27,7 @@ This is a source-backed feature/compatibility checklist for recovered CounterSke
 
 - [Original texture preparation](rhino5-image-preparation-source.json): corrected float ABI, device-size selection, cross-axis/budget order and alpha OR/stored-row semantics; no original runtime execution.
 
-- [Original texture final upload](rhino5-image-upload-source.json): seven original helpers,664 static enum results, BGR/BGRA versus internal compressed storage, allocation/subimage/mipmap and truthful native success limitations.
+- [Original texture final upload](rhino5-image-upload-source.json): seven original helpers,664 static enum results, BGR/BGRA versus internal DXT1/DXT5 storage, allocation/subimage/mipmap and truthful native success limitations.
 
 ## Most consequential findings
 

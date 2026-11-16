@@ -20,7 +20,7 @@
     "repositoryIntegrity": "passed"
   },
   "review": {
-    "correction": "Format classifier is storage units, not channel count; ordinary compressed-storage DIB input remains BGR/BGRA. Original upload boolean can be true without calling a missing compressed extension pointer.",
+    "correction": "Format classifier is storage units, not channel count. DIB compression selects internal0x32/0x35 (DXT1/DXT5 with source capability enabled), with raw external BGR/BGRA. Raw integer immediates correct ambiguous decompiler ASCII character literals. Original upload boolean can be true without calling a missing compressed extension pointer.",
     "scope": "Static original byte/ABI evidence. No product runtime change or original execution. Full compression/mipmap/resample/cache/document/PC/physical parity remains open."
   },
   "allLocalWritesD": true,

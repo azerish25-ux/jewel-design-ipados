@@ -1144,8 +1144,8 @@
     "defaultScope": "Outside enum1..83; external mapper additionally accepts observed native GL enum cases, recorded in Ghidra output but not fully represented in this enum table."
   },
   "observations": {
-    "bitmap": "The normal DIB wrapper1ad030 chooses requested internal enum1 for24bit or2 otherwise; when texture+0x8c is set it chooses0x30/0x31. It always passes raw external enum3 for24bit or4 otherwise, sampleType0x1401. This is ordinary glTexImage2D input, not a precompressed DXT byte buffer.",
-    "channels": "enum3 maps GL_BGR0x80e0; enum4 maps GL_BGRA0x80e1. Internal enum1/3 maps RGB8 0x8051, enum2/4 maps RGBA8 0x8058. Generic compressed storage requests0x30/0x31 map0x84ed/0x84ee, with ordinary BGR/BGRA input retained. Exact compression output is driver-dependent/unmeasured.",
+    "bitmap": "Normal DIB wrapper1ad030 chooses requested internal enum1 for24bit or2 otherwise; when texture+0x8c is set it chooses0x32 for24bit or0x35 otherwise (instruction immediates at1ad226/1ad22b). Those map to DXT1 RGB0x83f0 / DXT5 RGBA0x83f3 when global compression support1415c2ad3 is enabled, otherwise ordinary RGB0x1907 / RGBA0x1908. It always passes raw external enum3 for24bit or4 otherwise, sampleType0x1401. Thus normal bitmap pixels enter ordinary glTexImage2D, not the precompressed DXT byte-buffer path.",
+    "channels": "enum3 maps GL_BGR0x80e0; enum4 maps GL_BGRA0x80e1. Internal enum1/3 maps RGB8 0x8051, enum2/4 maps RGBA8 0x8058. Generic compressed storage requests0x30/0x31 also exist, mapping0x84ed/0x84ee, but are NOT the DIB wrapper selection. Its compression flag selects0x32/0x35 while retaining ordinary BGR/BGRA input. Exact compressed output is driver-dependent/unmeasured.",
     "storage": "Helper1ac520 is storage units: bytes per represented pixel for ordinary enum families, bytes per4x4 block for enabled S3TC0x32..0x35. It is not a universal channel count. Preserve original anomalous family values; do not normalize by guessed names.",
     "allocation": "Raw1aca70 rejects only null pixels or texture name0 before binding. Unsigned width>=storedWidth AND height>=storedHeight chooses allocation; either smaller chooses subimage at level0/offset0. Equal sizes allocate. DIB wrapper stores current dimensions before calling, therefore selects allocation on its normal path.",
     "compressed": "Only external enum0x32..0x35 plus global1415c2ad3 use compressed image/subimage function pointers. Byte count is unchecked uint32(storage*((width+3)>>2)*((height+3)>>2)); widths+3 wrap before shift. Missing compressed upload function pointer skips upload but still follows cleanup and returns true. Never equate original boolean success with actual GPU output.",
@@ -1162,5 +1162,29 @@
     "Actual PC/project corpus and physical-device acceptance"
   ],
   "allLocalWritesD": true,
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "wrapperCrossCheck": {
+    "sourceAudit": "docs/evidence/audit/rhino5-image-texture-cache-source.json",
+    "rva": 1757707,
+    "length": 140,
+    "sha256": "e6ab62bdc45587fe8c1de2ca7673f855d2234fc00b92b88c14b3c5b2b373861d",
+    "criticalInstructions": [
+      {
+        "rva": 1757734,
+        "bytes": "bb35000000",
+        "meaning": "default compressed internal enum0x35"
+      },
+      {
+        "rva": 1757739,
+        "bytes": "b932000000",
+        "meaning": "24bit compressed internal enum0x32"
+      },
+      {
+        "rva": 1757747,
+        "bytes": "0f44d9",
+        "meaning": "select0x32 iff depth24"
+      }
+    ],
+    "review": "Cross-check raw integer immediates; decompiler character literals are ASCII2=0x32 and ASCII5=0x35, not enum0x30/0x31. Correction recorded before any product implementation."
+  }
 }
