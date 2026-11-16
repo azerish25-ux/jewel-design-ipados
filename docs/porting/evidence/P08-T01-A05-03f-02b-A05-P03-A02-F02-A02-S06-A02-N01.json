@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "9e228107b5023ec1ee9bacc8d3cc196d70f2b91d",
-  "status": "halftone_response_measured_portable_model_rejected_macos_validation_pending",
+  "status": "halftone_response_measured_macos_validated_portable_model_rejected",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N01-response-probe.md",
   "producer": "native/Rendering/GdiRgbReference/HalftoneProbe.cs",
   "corpus": "reference/fixtures/gdi-halftone-response-windows-26300.json",
@@ -71,10 +71,11 @@
     "sourceCommit": "2ae425d80a84310848e5c85bdfbc424f146f9270",
     "run": 43892240170,
     "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43892240170",
-    "status": "queued",
+    "status": "success",
     "repositoryRun": 43892240189,
     "repositoryConclusion": "success",
     "scope": "Cross-platform validation of native response data and explicit rejected model; not portable HALFTONE support.",
-    "observation": "Original queued run confirmed live. Preserve run handle and inspect its actual artifact when terminal; never restart due to observation timeout/queue."
+    "observation": "Original queued run completed successfully. Actual artifact independently verified4 checks and52 rejected model cases; no HALFTONE product implementation inferred.",
+    "evidence": "docs/evidence/apple/halftone-response-results.json"
   }
 }

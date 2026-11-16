@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N01",
+  "sourceCommit": "2ae425d80a84310848e5c85bdfbc424f146f9270",
+  "workflowRun": 43892240170,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43892240170",
+  "conclusion": "success",
+  "artifact": {
+    "id": 14237408902,
+    "sha256": "7fff193729f5805abc64af5a3343fd4fa40753f5c31afe2f7a972399cc90c569",
+    "digestVerified": true
+  },
+  "checks": {
+    "corpusRegressions": 4,
+    "nativeResponseCases": 2304,
+    "diagnosticAccepted": false,
+    "diagnosticMismatchCases": 52,
+    "diagnosticMaximumByteDelta": 1,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "outputHashes": {
+    "checks": "b6c37ab13582070f7af36b0a805c60cde85ec8daf82ed9855a38a363397bd16c",
+    "diagnostic": "4df40cb20ff8e16df7bcb27fa9ed59ca1c97269e7ed9dd216a4dafc745a99457",
+    "binding": "b76dafd0566b4c1976083f6c184a530fb3773ef76a4474e1af1dc6298c9b936d"
+  },
+  "scope": "Actual macOS validation of retained public-Windows-GDI response data and explicit model rejection. It does not execute Windows GDI on macOS or implement/verify complete HALFTONE/driver/PC/physical parity.",
+  "parityRowsClosed": 0,
+  "sourceHashes": {
+    "native/Rendering/GdiRgbReference/HalftoneProbe.cs": "39659dc913b19f007ab464c7ea741917f56cb4228041c7ceb01f31cd504c93d4",
+    "native/Rendering/GdiRgbReference/Program.cs": "6489b5c9aed2661d821cee069515e0d317e64e28ceea83c5e915cb86fad8934e",
+    "scripts/halftone-response-reference.cjs": "ecb527a0883ce79be411033e601201580e7e403dd77c9382fcfb923fd0301178",
+    "tests/halftone-response-reference.test.cjs": "f8cebdc25233ab46c893138352da1d31f34889b9726f257e565c5aa3adba42e3",
+    "reference/fixtures/gdi-halftone-response-windows-26300.json": "2efc3156d6edd588657ea8f34513be4fdd842c64833aca61956eae227772693c"
+  }
+}
