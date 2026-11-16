@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "original-wstring-compare-no-case",
+      "name": "?CompareNoCase@ON_wString@@QEBAHPEB_W@Z",
+      "rva": 3018016,
+      "length": 90,
+      "sha256": "1e1874fa607ce215672e9dc8a91a4d1c588d62a56992c818396f0472b3a3f412",
+      "unwindRegions": [],
+      "boundary": "Leaf ends with RET at0x2e0d79 followed by INT3. Tail jumps to0xfbb30."
+    },
+    {
+      "role": "original-wstring-lower",
+      "name": "?MakeLower@ON_wString@@QEAAXXZ",
+      "abi": null,
+      "rva": 1033920,
+      "length": 1925,
+      "sha256": "b029404e6fa5e4b73daf18d50f3bd3d0f91c7e5c5be72afa2d2f4fa9c2fcf578",
+      "unwindRegions": [
+        {
+          "begin": 1033920,
+          "end": 1033980,
+          "unwind": 3586796
+        },
+        {
+          "begin": 1033980,
+          "end": 1035835,
+          "unwind": 3586708
+        },
+        {
+          "begin": 1035835,
+          "end": 1035845,
+          "unwind": 3586692
+        }
+      ]
+    },
+    {
+      "role": "original-wide-compare",
+      "name": null,
+      "abi": "wideCompare",
+      "rva": 1030960,
+      "length": 986,
+      "sha256": "3a82c0203a2afc3b1a4777d0303323f1192660247efa70eadc66be33c60e4ddd",
+      "unwindRegions": [
+        {
+          "begin": 1030960,
+          "end": 1031148,
+          "unwind": 3563416
+        },
+        {
+          "begin": 1031148,
+          "end": 1031153,
+          "unwind": 3563396
+        },
+        {
+          "begin": 1031153,
+          "end": 1031312,
+          "unwind": 3563376
+        },
+        {
+          "begin": 1031312,
+          "end": 1031567,
+          "unwind": 3563360
+        },
+        {
+          "begin": 1031567,
+          "end": 1031946,
+          "unwind": 3563344
+        }
+      ]
+    }
+  ]
+}

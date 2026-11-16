@@ -3,19 +3,19 @@ using Foundation;
 using Metal;
 using JewelDesign.Rendering.Candidate;
 namespace JewelDesign.Rendering.Candidate.iOS;
-public readonly record struct MetalImageQuadStats(int InFlight,int LiveTextures,int LiveTargets,int LiveVertexBuffers,bool IsDisposed,bool PipelineReleased,string? LastError){public int LiveSamplers{get;init;}}
+public readonly record struct MetalImageQuadStats(int InFlight,int LiveTextures,int LiveTargets,int LiveVertexBuffers,bool IsDisposed,bool PipelineReleased,string? LastError){public int LiveSamplers{get;init;}public long TextureUploads{get;init;}}
 
 /// <summary>Real offscreen image-quad GPU component with three retained frame leases.
 /// Input MUST be straight RGBA8/sRGB values, top row first. Does not unpremultiply decoder output,
-/// implement source image caches/SetView, or claim visible/legacy codec parity.</summary>
+/// implement full document/SetView lifecycle, or claim visible/legacy codec parity.</summary>
 public sealed class MetalImageQuadRenderer:IDisposable
 {
  private readonly object sync=new();
  private readonly IMTLDevice device;
  private readonly CadFrameGate<ImageTexture> frames=new();
  private IMTLCommandQueue? queue;private MetalImageQuadPipeline? imagePipeline;
- private bool disposed,released;private int targets,buffers;private Exception? lastError;
- public MetalImageQuadStats Stats{get{lock(sync){var s=frames.State;return new(s.InFlight,s.LiveResources,targets,buffers,disposed,released,lastError?.ToString()){LiveSamplers=imagePipeline?.SamplerCount??0};}}}
+ private bool disposed,released;private long textureUploads;private int targets,buffers,textures;private Rhino5ContextImageCache<CachedSource>? sourceCache;private ulong sourceContext;private static long nextSourceContext;private Exception? lastError;
+ public MetalImageQuadStats Stats{get{lock(sync){var s=frames.State;return new(s.InFlight,textures,targets,buffers,disposed,released,lastError?.ToString()){LiveSamplers=imagePipeline?.SamplerCount??0,TextureUploads=textureUploads};}}}
  public MetalImageQuadRenderer()
  {
   device=MTLDevice.SystemDefault??throw new NotSupportedException("Metal device unavailable.");
@@ -35,6 +35,21 @@ public sealed class MetalImageQuadRenderer:IDisposable
   using var prepared=Rhino5WallpaperPreparation.Prepare(source,sourceDibDepth,requestedWidth,requestedHeight,gray,limits,maxWorkingBytes);
   using var image=prepared.CreateDecodedImage(source);SetImage(image);return prepared.Receipt;
  }
+ /// <summary>Enables original source-cache behavior with an explicit, independently resolved filename profile.</summary>
+ public void ConfigureSourceCache(Rhino5FilenameSemantics filenames,int maximumEntries=32)
+ {ArgumentNullException.ThrowIfNull(filenames);lock(sync){ObjectDisposedException.ThrowIf(disposed,this);var replacement=new Rhino5ContextImageCache<CachedSource>(filenames,maximumEntries);sourceCache?.Dispose();sourceCache=replacement;sourceContext=checked((ulong)Interlocked.Increment(ref nextSourceContext));}}
+ public int SourceCacheEntries{get{lock(sync)return sourceCache?.Count??0;}}
+ public void SetSourceCacheUsage(uint serial){lock(sync){ObjectDisposedException.ThrowIf(disposed,this);(sourceCache??throw new InvalidOperationException("Source filename profile is not configured.")).UsageSerial=serial;}}
+ public Rhino5TextureRasterReceipt SetCachedTextureSource(string filename,Func<DecodedLocalImage> resolve,int sourceDibDepth,Rhino5TextureRasterSettings settings,bool gray=false,Rhino5TextureAnisotropy anisotropy=default,LocalImageLimits? limits=null)
+ {
+  ArgumentNullException.ThrowIfNull(filename);ArgumentNullException.ThrowIfNull(resolve);lock(sync){ObjectDisposedException.ThrowIf(disposed,this);var cache=sourceCache??throw new InvalidOperationException("Explicit legacy filename profile is required before cached source upload.");
+   using var lease=cache.Lookup(sourceContext,filename,gray,()=>{using var source=resolve();using var prepared=Rhino5TextureRasterPreparation.Prepare(source,sourceDibDepth,settings,gray,limits);using var image=prepared.CreateDecodedImage(source);return new CachedSource(Upload(image.Width,image.Height,image.CopyRgba(),anisotropy),prepared.Receipt,source.Source);})??throw new InvalidDataException("Source texture creation failed.");
+   var resource=lease.Resource.Texture.Retain();try{frames.ReplaceResource(resource);}catch{resource.Dispose();throw;}return lease.Resource.Receipt;
+  }
+ }
+ public int InvalidateSource(string filename){lock(sync){ObjectDisposedException.ThrowIf(disposed,this);return(sourceCache??throw new InvalidOperationException("Source cache not configured.")).Invalidate(filename);}}
+ public void ClearSourceCache(){lock(sync){ObjectDisposedException.ThrowIf(disposed,this);sourceCache?.ClearContext(sourceContext);}}
+ private sealed record CachedSource(ImageTexture Texture,Rhino5TextureRasterReceipt Receipt,LocalImageAsset Source):IDisposable{public void Dispose()=>Texture.Dispose();}
  public void SetImage(DecodedLocalImage image,Rhino5TextureAnisotropy anisotropy=default)
  {
   ArgumentNullException.ThrowIfNull(image);lock(sync){ObjectDisposedException.ThrowIf(disposed,this);
@@ -43,21 +58,12 @@ public sealed class MetalImageQuadRenderer:IDisposable
   }
  }
  public void SetImage(int width,int height,ReadOnlySpan<byte> straightRgba,Rhino5TextureAnisotropy anisotropy=default)
+ {lock(sync){ObjectDisposedException.ThrowIf(disposed,this);var resource=Upload(width,height,straightRgba,anisotropy);try{frames.ReplaceResource(resource);}catch{resource.Dispose();throw;}}}
+ private ImageTexture Upload(int width,int height,ReadOnlySpan<byte> straightRgba,Rhino5TextureAnisotropy anisotropy)
  {
-  lock(sync){
-   ObjectDisposedException.ThrowIf(disposed,this);
-   int maximumAnisotropy=anisotropy.ToMetalMaximum();imagePipeline!.EnsureAnisotropy(maximumAnisotropy);
-   int size=new LocalImageLimits().ValidateDimensions(width,height);if(straightRgba.Length!=size)throw new ArgumentException("Straight RGBA storage length differs from image dimensions.",nameof(straightRgba));
-   using var d=MTLTextureDescriptor.CreateTexture2DDescriptor(MTLPixelFormat.RGBA8Unorm,(nuint)width,(nuint)height,false);
-   d.StorageMode=MTLStorageMode.Shared;d.Usage=MTLTextureUsage.ShaderRead;
-   IMTLTexture? texture=device.CreateTexture(d)??throw new InvalidOperationException("Image texture allocation failed.");
-   try{
-    byte[] bytes=straightRgba.ToArray();var pin=GCHandle.Alloc(bytes,GCHandleType.Pinned);
-    try{texture.ReplaceRegion(MTLRegion.Create2D(0,0,(nuint)width,(nuint)height),0,pin.AddrOfPinnedObject(),(nuint)(width*4));}finally{pin.Free();}
-    var resource=new ImageTexture(texture,maximumAnisotropy);texture=null;
-    try{frames.ReplaceResource(resource);}catch{resource.Dispose();throw;}
-   }finally{texture?.Dispose();}
-  }
+  int maximumAnisotropy=anisotropy.ToMetalMaximum();imagePipeline!.EnsureAnisotropy(maximumAnisotropy);int size=new LocalImageLimits().ValidateDimensions(width,height);if(straightRgba.Length!=size)throw new ArgumentException("Straight RGBA storage length differs from image dimensions.",nameof(straightRgba));
+  using var d=MTLTextureDescriptor.CreateTexture2DDescriptor(MTLPixelFormat.RGBA8Unorm,(nuint)width,(nuint)height,false);d.StorageMode=MTLStorageMode.Shared;d.Usage=MTLTextureUsage.ShaderRead;IMTLTexture? texture=device.CreateTexture(d)??throw new InvalidOperationException("Image texture allocation failed.");
+  try{byte[] bytes=straightRgba.ToArray();var pin=GCHandle.Alloc(bytes,GCHandleType.Pinned);try{texture.ReplaceRegion(MTLRegion.Create2D(0,0,(nuint)width,(nuint)height),0,pin.AddrOfPinnedObject(),(nuint)(width*4));}finally{pin.Free();}var resource=new ImageTexture(texture,maximumAnisotropy,()=>{lock(sync)textures--;});texture=null;textures++;textureUploads++;return resource;}finally{texture?.Dispose();}
  }
  /// <summary>Records an actual GPU command without committing it. Quad corners use source order:
  /// (width,0),(width,height),(0,height),(0,0), each supplied as homogeneous clip xyzw.
@@ -102,9 +108,9 @@ public sealed class MetalImageQuadRenderer:IDisposable
   if(error is null)frame.Completion.TrySetResult(bytes!);else frame.Completion.TrySetException(error);
  }
  private void ReleaseIfFinished(){if(disposed&&frames.State.InFlight==0&&!released){released=true;foreach(var value in new IDisposable?[]{imagePipeline,queue})try{value?.Dispose();}catch(Exception failure){lastError??=failure;}}}
- public void Dispose(){lock(sync){if(disposed)return;disposed=true;frames.Dispose();ReleaseIfFinished();}}
- internal sealed class ImageTexture(IMTLTexture texture,int maximumAnisotropy):IDisposable
- {internal readonly IMTLTexture Texture=texture;internal readonly int MaximumAnisotropy=maximumAnisotropy;public void Dispose()=>Texture.Dispose();}
+ public void Dispose(){lock(sync){if(disposed)return;disposed=true;try{sourceCache?.Dispose();}catch(Exception failure){lastError??=failure;}sourceCache=null;frames.Dispose();ReleaseIfFinished();}}
+ internal sealed class ImageTexture(IMTLTexture texture,int maximumAnisotropy,Action released):IDisposable
+ {internal readonly IMTLTexture Texture=texture;internal readonly int MaximumAnisotropy=maximumAnisotropy;private int references=1;internal ImageTexture Retain(){int n;do{n=Volatile.Read(ref references);ObjectDisposedException.ThrowIf(n==0,this);}while(Interlocked.CompareExchange(ref references,checked(n+1),n)!=n);return this;}public void Dispose(){int n=Interlocked.Decrement(ref references);if(n>0)return;if(n<0)throw new InvalidOperationException("Image texture released twice.");try{Texture.Dispose();}finally{released();}}}
  public sealed class ImageFrame:IDisposable
  {
   private readonly MetalImageQuadRenderer owner;private readonly CadFrameLease<ImageTexture> lease;private readonly IMTLBuffer vertices;

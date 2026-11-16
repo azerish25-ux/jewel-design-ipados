@@ -47,3 +47,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.ComposedTextureAssertio
 System.Console.WriteLine(CandidateGeometryContractChecks.GdiEnlargementAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.PreparedWallpaperAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.ContextImageCacheAssertions.Run());

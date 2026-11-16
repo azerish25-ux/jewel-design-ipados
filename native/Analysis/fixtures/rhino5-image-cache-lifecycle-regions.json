@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "ogl-clear-texture-cache",
+      "name": "?ClearTextureCache@CRhinoDisplayEngine_OGL@@UEAAXXZ",
+      "abi": null,
+      "rva": 4897600,
+      "length": 366,
+      "sha256": "2e219341d46e848eb89dd5d3e26b46dc4f1c487184ea55af93fce88373602a2e",
+      "unwindRegions": [
+        {
+          "begin": 4897600,
+          "end": 4897643,
+          "unwind": 18917916
+        },
+        {
+          "begin": 4897643,
+          "end": 4897655,
+          "unwind": 19701776
+        },
+        {
+          "begin": 4897655,
+          "end": 4897820,
+          "unwind": 19701752
+        },
+        {
+          "begin": 4897820,
+          "end": 4897915,
+          "unwind": 19701732
+        },
+        {
+          "begin": 4897915,
+          "end": 4897955,
+          "unwind": 19701712
+        },
+        {
+          "begin": 4897955,
+          "end": 4897966,
+          "unwind": 19701696
+        }
+      ]
+    },
+    {
+      "role": "image-entry-sort",
+      "name": null,
+      "abi": "cacheVoidPointer",
+      "rva": 5188672,
+      "length": 70,
+      "sha256": "ed80e7d50922e29a344f3fd023c73178b821d49b02dbb90d4fc834695d41bcb7",
+      "unwindRegions": [
+        {
+          "begin": 5188672,
+          "end": 5188742,
+          "unwind": 21077652
+        }
+      ]
+    },
+    {
+      "role": "gdi-entry-construct",
+      "name": null,
+      "abi": "cacheEntryConstruct",
+      "rva": 4879728,
+      "length": 157,
+      "sha256": "9130892cba6d264b23cbf6af41f8a5d7585780fbacb9ebf873f36478a054df3d",
+      "unwindRegions": [
+        {
+          "begin": 4879728,
+          "end": 4879885,
+          "unwind": 19163464
+        }
+      ]
+    },
+    {
+      "role": "gdi-entry-release",
+      "name": null,
+      "abi": "cacheVoidPointer",
+      "rva": 4878304,
+      "length": 154,
+      "sha256": "a2179c2afe408d926336cf3aae3c167342f42a17cddf79b441e441f2eb31fa31",
+      "unwindRegions": [
+        {
+          "begin": 4878304,
+          "end": 4878458,
+          "unwind": 19163604
+        }
+      ]
+    },
+    {
+      "role": "ogl-cache-clear-context",
+      "name": null,
+      "abi": "cacheContextVoid",
+      "rva": 5179888,
+      "length": 379,
+      "sha256": "680c65e3b7303cf85008d470f62f147a446d863dd0107fb93be23b8e610a250a",
+      "unwindRegions": [
+        {
+          "begin": 5179888,
+          "end": 5180267,
+          "unwind": 19325156
+        }
+      ]
+    },
+    {
+      "role": "ogl-entry-sort-compare",
+      "name": null,
+      "abi": "cacheCompare",
+      "rva": 5167376,
+      "length": 175,
+      "sha256": "860502e02669aa46f21083de40689d56e100909c3100d2d4c0c0a567017198fa",
+      "unwindRegions": [
+        {
+          "begin": 5167376,
+          "end": 5167406,
+          "unwind": 19314904
+        },
+        {
+          "begin": 5167406,
+          "end": 5167473,
+          "unwind": 19159612
+        },
+        {
+          "begin": 5167473,
+          "end": 5167513,
+          "unwind": 19159588
+        },
+        {
+          "begin": 5167513,
+          "end": 5167542,
+          "unwind": 19159588
+        },
+        {
+          "begin": 5167542,
+          "end": 5167551,
+          "unwind": 19159572
+        }
+      ]
+    },
+    {
+      "role": "gdi-cache-insert",
+      "name": null,
+      "abi": "cacheTwoPointers",
+      "rva": 4878992,
+      "length": 96,
+      "sha256": "9ebab94aaa0a0f29d19379c42e8f39a062573d1f1097685e00bbbaed8b1ff86c",
+      "unwindRegions": [
+        {
+          "begin": 4878992,
+          "end": 4879006,
+          "unwind": 19001224
+        },
+        {
+          "begin": 4879006,
+          "end": 4879086,
+          "unwind": 19163584
+        },
+        {
+          "begin": 4879086,
+          "end": 4879088,
+          "unwind": 19163568
+        }
+      ]
+    }
+  ]
+}

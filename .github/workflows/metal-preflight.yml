@@ -18,6 +18,13 @@ on:
       - "scripts/halftone-fixed-reference.cjs"
       - "scripts/halftone-mixed-reference.cjs"
       - "scripts/halftone-enlargement-reference.cjs"
+      - "scripts/verify-filename-reference.cjs"
+      - "scripts/verify-source-cache-gpu.cjs"
+      - "tests/filename-reference.test.cjs"
+      - "native/Rendering/FilenameReference/**"
+      - "reference/fixtures/windows-filename-semantics.json.br"
+      - "native/Analysis/fixtures/rhino5-image-cache-core-regions.json"
+      - "native/Analysis/fixtures/rhino5-image-cache-lifecycle-regions.json"
       - "scripts/verify-wallpaper-preparation-reference.cjs"
       - "scripts/compact-wallpaper-reference.cjs"
       - "scripts/generate-wallpaper-gpu.cjs"
@@ -241,6 +248,10 @@ jobs:
           node --test tests/wallpaper-preparation-reference.test.cjs > artifacts/prepared-wallpaper-reference-checks.txt
           node scripts/verify-wallpaper-preparation-reference.cjs reference/fixtures/gdi-wallpaper-windows-26300.json.br > artifacts/prepared-wallpaper-reference.json
           node scripts/generate-wallpaper-gpu.cjs --check > artifacts/prepared-wallpaper-gpu-fixture.json
+      - name: Verify original filename dependency facts
+        run: |
+          node --test tests/filename-reference.test.cjs > artifacts/filename-reference-checks.txt
+          node scripts/verify-filename-reference.cjs reference/fixtures/windows-filename-semantics.json.br > artifacts/filename-reference.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

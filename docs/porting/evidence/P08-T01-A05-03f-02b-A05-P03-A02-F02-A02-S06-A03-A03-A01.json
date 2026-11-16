@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "0cb358dc469651b7777b922ab9d4366cd6e0f0d9",
+  "status": "implemented-local-platform-pending",
+  "source": {
+    "rhinoSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+    "coreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+    "manifests": [
+      "native/Analysis/fixtures/rhino5-image-cache-lifecycle-regions.json",
+      "native/Analysis/fixtures/rhino5-image-cache-core-regions.json"
+    ],
+    "originalExecuted": false,
+    "staticViews": [
+      {
+        "path": ".local/evidence/source-cache/core-02/analysis.json",
+        "bytes": 27648,
+        "sha256": "2fa4ae9dcbf79cf20e0caae2f47bd2c2ffaa6234540348146d90ac7b3eb71c5e"
+      },
+      {
+        "path": ".local/evidence/source-cache/core-02/original-wide-compare.c",
+        "bytes": 5620,
+        "sha256": "6e83154209d91f69c5489bfc82dfd89b0be3045bad28b741bbb201b39f98c37d"
+      },
+      {
+        "path": ".local/evidence/source-cache/core-02/original-wstring-compare-no-case.c",
+        "bytes": 6094,
+        "sha256": "de7e47d90b34d026d862461abac195e987398ae771922ff9daa51aec7c23bb0d"
+      },
+      {
+        "path": ".local/evidence/source-cache/core-02/original-wstring-lower.c",
+        "bytes": 11072,
+        "sha256": "99c05a0acff6e3e378b36610d0c823d25684a26d07244e431d9dec51b367f37a"
+      },
+      {
+        "path": ".local/evidence/source-cache/lifecycle-02/analysis.json",
+        "bytes": 8176,
+        "sha256": "ce6fb82b80baa3b6337bcde07e7109f437fc96b6b34773a40627f12b853181c4"
+      },
+      {
+        "path": ".local/evidence/source-cache/lifecycle-02/gdi-cache-insert.c",
+        "bytes": 689,
+        "sha256": "e5f08ca4e99830339c060464b59f0870d8a4dad5c0d9caa8ebb98f57ccf86e8d"
+      },
+      {
+        "path": ".local/evidence/source-cache/lifecycle-02/gdi-entry-construct.c",
+        "bytes": 726,
+        "sha256": "91a0a318f0bc1ca66ad17a3a09893c227ab7bdd3b21fdb950ebded4e2e550644"
+      },
+      {
+        "path": ".local/evidence/source-cache/lifecycle-02/gdi-entry-release.c",
+        "bytes": 1019,
+        "sha256": "2cf8f7c069f0221b4bfd9e9feae4225e5b388f4cad122a5271d3b5d82fcb2f61"
+      },
+      {
+        "path": ".local/evidence/source-cache/lifecycle-02/image-entry-sort.c",
+        "bytes": 374,
+        "sha256": "8ec987290e628bb86a9844ee9705c1d7285b1ac0520d557cd00c387e2afced6b"
+      },
+      {
+        "path": ".local/evidence/source-cache/lifecycle-02/ogl-cache-clear-context.c",
+        "bytes": 2384,
+        "sha256": "5b5403d1a7b63b6543be0c5f1e39df293e6d11e172c566a13e8465792d217e1c"
+      },
+      {
+        "path": ".local/evidence/source-cache/lifecycle-02/ogl-clear-texture-cache.c",
+        "bytes": 2034,
+        "sha256": "e5a34f61c1891b1fe112f077f0f5c23c8820c97b72375dbe82cff0a9d705387f"
+      },
+      {
+        "path": ".local/evidence/source-cache/lifecycle-02/ogl-entry-sort-compare.c",
+        "bytes": 1148,
+        "sha256": "8528178ee49fbd6bfc623dd9fd4fdccf1b74493c943ff7f0f383a443b9a874b5"
+      }
+    ]
+  },
+  "observations": [
+    "OGL lookup groups context, kind1 color/kind3 gray and original ON_wString filename comparator; hits update manager usage serial.",
+    "Overlapping unequal kind masks compare numerically; disjoint or equal masks compare filenames. Context ordering is unsigned.",
+    "Context clear removes matching texture entries in reverse order and releases owned texture/name/entry.",
+    "GDI constructs lowercase filename plus gray/dirty flags and owns DIB plus engine array. Full GDI invalidation owner remains open.",
+    "Original CompareNoCase treats empty ON_wString specially, then dispatches on_wcsicmp; MakeLower and comparison can use Windows Unicode/ANSI NLS or CRT fallback. Actual application runtime profile is unresolved.",
+    "Captured public Windows APIs reject portable .NET invariant collation equivalence:140 ordering differences and4 equality differences in1156 locale1 pairs.",
+    "Production cache requires an explicitly supplied filename profile. Tested CRT-C profile is not claimed as the original application runtime selection."
+  ],
+  "red": [
+    "Cache component absent before implementation.",
+    "Initial raw CRT empty-string comparison assertion failed because ON_wString wrapper returns signed1; corrected implementation using observed original wrapper, native expected data retained."
+  ],
+  "localValidation": {
+    "renderingTests": "pass including30 cache lifecycle cases/65536 exact UTF16 CRT-C lower units/1156 native comparison pairs",
+    "geometryNativeHost": "pass",
+    "nodeAdjacent": {
+      "passed": 18,
+      "failed": 0
+    },
+    "repositoryIntegrity": "pass;0/1451 parity rows verified",
+    "ghidra": {
+      "lifecycleViews": 7,
+      "coreViews": 3,
+      "exitCode": 0
+    }
+  },
+  "platformValidation": "pending actual macOS and iPad/iPhone CI",
+  "remaining": [
+    "Resolve original runtime Windows NLS/ANSI profile and implement its full portable behavior before claiming filename parity.",
+    "Connect cache policy/invalidation to actual CadMetalView/document lifecycle and full file/document fallback; current real GPU source cache is MetalImageQuadRenderer component.",
+    "Original GDI dirty/engine registration and complete purge notification behavior.",
+    "Settings/context recreation, codecs/profiles/mipmaps/compression and physical budgets.",
+    "Original PC corpus/editable PC-iOS-PC and physical devices."
+  ],
+  "fullParityVerified": false
+}

@@ -33,6 +33,8 @@ on:
       - "scripts/run-viewport-simulator.sh"
       - "scripts/verify-composed-texture-gpu.cjs"
       - "scripts/verify-prepared-wallpaper-gpu.cjs"
+      - "scripts/verify-source-cache-gpu.cjs"
+      - "tests/Port/Geometry.Candidate.Contracts/ContextImageCacheAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/PreparedWallpaperAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/prepared-wallpaper-gpu.json.br"
       - "tests/Port/Geometry.Candidate.Contracts/ComposedTextureAssertions.cs"

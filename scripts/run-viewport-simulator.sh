@@ -79,6 +79,8 @@ for i in $(seq 1 600); do
   grep -q '^PASS legacy native user-string bodies:' "$OUT/result.txt"
   grep -q '^PASS offline encoded image assets:' "$OUT/result.txt"
   grep -q '^PASS GDI enlargement:1408 exact complete native buffers' "$OUT/result.txt"
+  grep -q '^PASS context image cache:30 hit/miss/usage/context/failure/lease/budget cases/65536 exact CRT-C UTF16 lower units/1156 native compare pairs;' "$OUT/result.txt"
+  grep -q '^PASS actual source cache GPU:8 exact image readbacks/1 decode-and-upload-free hit/2 retained-image failures/2 invalidated color kinds/1 independent context/1 queued-disposal frame;' "$OUT/result.txt"
   grep -q '^PASS prepared wallpaper:120 exact native stored/RGBA and decoded-adapter cases/9 storage/depth/fit/budget/provenance guards;' "$OUT/result.txt"
   grep -q '^PASS actual prepared wallpaper GPU:20 decoded source/HALFTONE24/post-gray/upload cases/194272 exact opaque pixels/1 retained-image failure guard;' "$OUT/result.txt"
   grep -q '^PASS composed texture preparation:120 exact native stored/RGBA and decoded-adapter cases/17 gray-order distinctions/27 processed-alpha distinctions/10 ownership/storage/depth/budget guards;' "$OUT/result.txt"
@@ -110,6 +112,9 @@ for i in $(seq 1 600); do
   cp "$DATA/Documents/straight-image-gpu.bgra" "$OUT/straight-image-gpu.bgra"
   cp "$DATA/Documents/image-gpu-result.json" "$OUT/image-gpu-result.json"
   cp "$DATA/Documents/image-gpu-bmp.bgra" "$OUT/image-gpu-bmp.bgra"
+  cp "$DATA/Documents/source-cache-gpu.json" "$OUT/source-cache-gpu.json"
+  for index in $(seq 0 7); do cp "$DATA/Documents/source-cache-$index.bgra" "$OUT/source-cache-$index.bgra"; done
+  node scripts/verify-source-cache-gpu.cjs "$OUT" > "$OUT/source-cache-gpu-verification.json"
   cp "$DATA/Documents/prepared-wallpaper-gpu.json" "$OUT/prepared-wallpaper-gpu.json"
   for index in $(seq 0 19); do cp "$DATA/Documents/prepared-wallpaper-$index.bgra" "$OUT/prepared-wallpaper-$index.bgra"; done
   node scripts/verify-prepared-wallpaper-gpu.cjs "$OUT" > "$OUT/prepared-wallpaper-gpu-verification.json"
