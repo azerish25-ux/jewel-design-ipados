@@ -18,6 +18,13 @@ on:
       - "scripts/halftone-fixed-reference.cjs"
       - "scripts/halftone-mixed-reference.cjs"
       - "scripts/halftone-enlargement-reference.cjs"
+      - "scripts/inspect-filename-profile.cjs"
+      - "scripts/verify-filename-profile.cjs"
+      - "docs/evidence/audit/rhino5-filename-profile.json"
+      - "docs/evidence/audit/rhino5-filename-profile-references.json"
+      - "native/Analysis/fixtures/rhino5-filename-profile-main-regions.json"
+      - "native/Analysis/fixtures/rhino5-filename-profile-core-regions.json"
+      - "native/Analysis/Ghidra/InspectOriginalCore.java"
       - "scripts/verify-filename-reference.cjs"
       - "scripts/verify-source-cache-gpu.cjs"
       - "tests/filename-reference.test.cjs"
@@ -252,6 +259,8 @@ jobs:
         run: |
           node --test tests/filename-reference.test.cjs > artifacts/filename-reference-checks.txt
           node scripts/verify-filename-reference.cjs reference/fixtures/windows-filename-semantics.json.br > artifacts/filename-reference.json
+      - name: Verify original filename profile initialization evidence
+        run: node scripts/verify-filename-profile.cjs > artifacts/filename-profile.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

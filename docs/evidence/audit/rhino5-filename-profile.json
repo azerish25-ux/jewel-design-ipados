@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N01",
+  "inputCommit": "0c35bdbf1f1f938d54c244b8257a7687d7212f60",
+  "sourceExecuted": false,
+  "status": "normal-startup-policy-statically-resolved-portable-NLS-open",
+  "source": {
+    "mainSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+    "coreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+    "referenceScanSha256": "bd73d4dd3de42fc78ae53c56944b27578d3ca8eca444341ec574f27ded42f151",
+    "manifests": [
+      "native/Analysis/fixtures/rhino5-filename-profile-main-regions.json",
+      "native/Analysis/fixtures/rhino5-filename-profile-core-regions.json"
+    ],
+    "staticViews": [
+      {
+        "target": "main",
+        "role": "locale-manager-set",
+        "path": ".local/evidence/filename-profile/main-03/locale-manager-set.c",
+        "sha256": "316c860a25bd80a01319d9ab55e706c17aeb3e548ff218b54ae0ed27221fcded",
+        "bytes": 555,
+        "signature": "bool Original_locale_manager_set(void * manager, uint language, uint fallback)"
+      },
+      {
+        "target": "main",
+        "role": "locale-startup-caller",
+        "path": ".local/evidence/filename-profile/main-03/locale-startup-caller.c",
+        "sha256": "35b138e2aef91701d21f835a2d85bcf74d3134d0e2b397a25de5588485bd2651",
+        "bytes": 3609,
+        "signature": "bool Original_locale_startup_caller(void * application, void * manager)"
+      },
+      {
+        "target": "main",
+        "role": "locale-command-caller",
+        "path": ".local/evidence/filename-profile/main-03/locale-command-caller.c",
+        "sha256": "b2155773e775f0e07e7e50c8dd9cb2e41cf6108a1ecc69ec864b698ce4b39729",
+        "bytes": 4429,
+        "signature": "undefined Original_locale_command_caller(void)"
+      },
+      {
+        "target": "main",
+        "role": "ctype-utf8-call-owner",
+        "path": ".local/evidence/filename-profile/main-03/ctype-utf8-call-owner.c",
+        "sha256": "4887f0fa9883e0c981a0915a4785a11f92a1c3ea7ea9e0de4f06d6d331a617cc",
+        "bytes": 13585,
+        "signature": "undefined Original_ctype_utf8_call_owner(void)"
+      },
+      {
+        "target": "core",
+        "role": "string-profile-set",
+        "path": ".local/evidence/filename-profile/core-02/string-profile-set.c",
+        "sha256": "7787c9e7851c0bef7e47a61d9d7c15d103f5c3a2e1edd9078ae2aa92f0c05c07",
+        "bytes": 387,
+        "signature": "uint Original_string_profile_set(uint locale, uint useAnsi)"
+      },
+      {
+        "target": "core",
+        "role": "string-profile-get",
+        "path": ".local/evidence/filename-profile/core-02/string-profile-get.c",
+        "sha256": "70b32004e3a495312d3c13e1d94eee91dfe73ddab48d1678842bf4fabd11d5b4",
+        "bytes": 247,
+        "signature": "uint Original_string_profile_get(void)"
+      }
+    ]
+  },
+  "snippets": [
+    {
+      "role": "main-language-manager",
+      "rva": 13198704,
+      "length": 111,
+      "sha256": "301483b62304385c51ac71bfc096524fb0015d8242c0d05ab73c935bf0e59665",
+      "hex": "48895c24084889742410574883ec208bfa488bd933d28bcf418bf0ff1567a024003b3d55d092007434488bcb893d4ad09200e8a9d5ffff84c07522488bcb893538d09200e897d5ffff84c07510488b5c2430488b7424384883c4205fc3488b5c2430488b742438b0014883c4205fc3"
+    },
+    {
+      "role": "core-profile-setter",
+      "rva": 1030896,
+      "length": 39,
+      "sha256": "cb48c2839d48039eb2e94404a0399501f6fd27e68d54311c629e73ea2c7d4368",
+      "hex": "8b05a25f39004533c985d2458bc1410f94c085c9410f95c14489058d5f390044890d825f3900c3"
+    },
+    {
+      "role": "core-profile-getter",
+      "rva": 1030944,
+      "length": 7,
+      "sha256": "aad9277c8faab08730b8b43bdd405cdefc58ed21607c5986140d5ef315377a11",
+      "hex": "8b05725f3900c3"
+    }
+  ],
+  "findings": [
+    {
+      "id": "PROFILE-01",
+      "fact": "Core global491a98 stores locale!=0 as uint0/1; global491a9c stores useAnsi==0. Setter returns previous global491a98. This is observed binary behavior, not correction of an apparent defect."
+    },
+    {
+      "id": "PROFILE-02",
+      "fact": "Main managerc96570 always calls imported setter(language,0) before comparing/loading UI language. A nonzero requested language selects Unicode NLS with locale1; requested0 disables NLS."
+    },
+    {
+      "id": "PROFILE-03",
+      "fact": "Main setter writes requested UI language and tries loadc93b50. On failure it writes fallback UI language and retries, without calling core setter again. Same-language requests still reset core profile before returning success."
+    },
+    {
+      "id": "PROFILE-04",
+      "fact": "Startup caller1cee00 defaults fallback input1033 before configuration/resolution, selects application/profile language and calls manager unless prerequisite result550 aborts. This static normal path supports Unicode NLS1 for a successful nonzero requested language; live original runtime remains unobserved."
+    },
+    {
+      "id": "PROFILE-05",
+      "fact": "Second direct caller6b1bf0 requests an integer language and passes fallback0. Scanner found2 direct calls to manager; indirect/vtable/dynamic references are outside this scan guarantee."
+    },
+    {
+      "id": "PROFILE-06",
+      "fact": "Only core direct stores to the two queried profile globals occur in the setter in complete linear disassembly. Globals reside in virtual zero-fill tails. Indirect writes and plugin calls remain unproven."
+    },
+    {
+      "id": "PROFILE-07",
+      "fact": "The LC_CTYPE setlocale(2,\".65001\") call belongs to a UTF/string-formatting self-test body, not established startup initialization. Numeric setlocale(4,\"C\") probes and configthreadlocale(-1) query do not prove global case locale changes."
+    }
+  ],
+  "implications": [
+    "Portable default CRT-C is not the statically indicated normal nonzero-language startup profile. Keep it explicitly opt-in.",
+    "Implement original Unicode NLS locale1 LCMapStringW flag0x100 over stored-length UTF16 and CompareStringW flag0x20001 over C-terminated strings, including original ON_wString empty handling and CRT fallback.",
+    "Do not infer core profile from final displayed UI language after fallback. Preserve the original call order and failed-language side effects.",
+    "ANSI API callers, CRT non-C state, indirect/plugin mutation and runtime Windows NLS version remain open. .NET portable collation already has140 ordering and4 equality differences for retained controls."
+  ],
+  "validation": {
+    "linearDisassemblyLines": {
+      "core": 886789,
+      "main": 4151080
+    },
+    "queriedReferences": {
+      "core": 15,
+      "main": 16
+    },
+    "ghidraFinal": {
+      "mainFolder": ".local/evidence/filename-profile/main-03",
+      "coreFolder": ".local/evidence/filename-profile/core-02",
+      "mainViews": 4,
+      "coreViews": 2,
+      "exitCodes": [
+        0,
+        0
+      ]
+    },
+    "adjacentNodeChecks": 10,
+    "fullParityVerified": false
+  },
+  "next": "Acquire versioned complete public Windows NLS1 Unicode casing/collation controls and implement the exact portable behavior; then wire document/view policy using observed initialization state. Full A01/source document/PC/physical scope remains open."
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N01",
+  "inputCommit": "0c35bdbf1f1f938d54c244b8257a7687d7212f60",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "static-normal-startup-policy-resolved-portable-runtime-open",
+  "sourceAudit": "docs/evidence/audit/rhino5-filename-profile.json",
+  "referenceScan": "docs/evidence/audit/rhino5-filename-profile-references.json",
+  "validation": {
+    "wholeOriginalPeFiles": 2,
+    "fullFunctionRegions": 6,
+    "staticOwnerViews": 6,
+    "linearDisassemblyLines": 5037869,
+    "coreReferences": 15,
+    "mainReferences": 16,
+    "adjacentNodeChecks": 10,
+    "originalExecuted": false
+  },
+  "platform": "macOS captured-source verification and unchanged rendering preflight pending",
+  "remaining": [
+    "Exact offline portable Unicode NLS1 casing and collation with versioned controls.",
+    "CRT fallback locale, external ANSI caller and indirect/plugin mutations.",
+    "Actual CadMetalView/document resolver/cache lifecycle, original PC and physical acceptance."
+  ],
+  "fullParityVerified": false
+}

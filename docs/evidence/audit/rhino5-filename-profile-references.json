@@ -1,0 +1,1020 @@
+{
+  "schemaVersion": 1,
+  "reports": [
+    {
+      "file": "opennurbsx64.dll",
+      "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+      "sourceExecuted": false,
+      "selectedImports": [],
+      "queriedAddresses": [
+        "0x180491a98",
+        "0x180491a9c",
+        "0x1800fbaf0",
+        "0x1800fbb20"
+      ],
+      "disassemblyLines": 886789,
+      "matches": [
+        {
+          "match": "   1800fbaf0:\t8b 05 a2 5f 39 00    \tmov    0x395fa2(%rip),%eax        # 0x180491a98",
+          "before": [
+            "   1800fbade:\tcc                   \tint3",
+            "   1800fbadf:\tcc                   \tint3",
+            "   1800fbae0:\t48 ff 25 21 69 20 00 \trex.W jmp *0x206921(%rip)        # 0x180302408",
+            "   1800fbae7:\tcc                   \tint3",
+            "   1800fbae8:\tcc                   \tint3",
+            "   1800fbae9:\tcc                   \tint3",
+            "   1800fbaea:\tcc                   \tint3",
+            "   1800fbaeb:\tcc                   \tint3",
+            "   1800fbaec:\tcc                   \tint3",
+            "   1800fbaed:\tcc                   \tint3",
+            "   1800fbaee:\tcc                   \tint3",
+            "   1800fbaef:\tcc                   \tint3"
+          ],
+          "after": [
+            "   1800fbaf6:\t45 33 c9             \txor    %r9d,%r9d",
+            "   1800fbaf9:\t85 d2                \ttest   %edx,%edx",
+            "   1800fbafb:\t45 8b c1             \tmov    %r9d,%r8d",
+            "   1800fbafe:\t41 0f 94 c0          \tsete   %r8b",
+            "   1800fbb02:\t85 c9                \ttest   %ecx,%ecx",
+            "   1800fbb04:\t41 0f 95 c1          \tsetne  %r9b",
+            "   1800fbb08:\t44 89 05 8d 5f 39 00 \tmov    %r8d,0x395f8d(%rip)        # 0x180491a9c",
+            "   1800fbb0f:\t44 89 0d 82 5f 39 00 \tmov    %r9d,0x395f82(%rip)        # 0x180491a98",
+            "   1800fbb16:\tc3                   \tret",
+            "   1800fbb17:\tcc                   \tint3",
+            "   1800fbb18:\tcc                   \tint3",
+            "   1800fbb19:\tcc                   \tint3"
+          ]
+        },
+        {
+          "match": "   1800fbb08:\t44 89 05 8d 5f 39 00 \tmov    %r8d,0x395f8d(%rip)        # 0x180491a9c",
+          "before": [
+            "   1800fbaeb:\tcc                   \tint3",
+            "   1800fbaec:\tcc                   \tint3",
+            "   1800fbaed:\tcc                   \tint3",
+            "   1800fbaee:\tcc                   \tint3",
+            "   1800fbaef:\tcc                   \tint3",
+            "   1800fbaf0:\t8b 05 a2 5f 39 00    \tmov    0x395fa2(%rip),%eax        # 0x180491a98",
+            "   1800fbaf6:\t45 33 c9             \txor    %r9d,%r9d",
+            "   1800fbaf9:\t85 d2                \ttest   %edx,%edx",
+            "   1800fbafb:\t45 8b c1             \tmov    %r9d,%r8d",
+            "   1800fbafe:\t41 0f 94 c0          \tsete   %r8b",
+            "   1800fbb02:\t85 c9                \ttest   %ecx,%ecx",
+            "   1800fbb04:\t41 0f 95 c1          \tsetne  %r9b"
+          ],
+          "after": [
+            "   1800fbb0f:\t44 89 0d 82 5f 39 00 \tmov    %r9d,0x395f82(%rip)        # 0x180491a98",
+            "   1800fbb16:\tc3                   \tret",
+            "   1800fbb17:\tcc                   \tint3",
+            "   1800fbb18:\tcc                   \tint3",
+            "   1800fbb19:\tcc                   \tint3",
+            "   1800fbb1a:\tcc                   \tint3",
+            "   1800fbb1b:\tcc                   \tint3",
+            "   1800fbb1c:\tcc                   \tint3",
+            "   1800fbb1d:\tcc                   \tint3",
+            "   1800fbb1e:\tcc                   \tint3",
+            "   1800fbb1f:\tcc                   \tint3",
+            "   1800fbb20:\t8b 05 72 5f 39 00    \tmov    0x395f72(%rip),%eax        # 0x180491a98"
+          ]
+        },
+        {
+          "match": "   1800fbb0f:\t44 89 0d 82 5f 39 00 \tmov    %r9d,0x395f82(%rip)        # 0x180491a98",
+          "before": [
+            "   1800fbaec:\tcc                   \tint3",
+            "   1800fbaed:\tcc                   \tint3",
+            "   1800fbaee:\tcc                   \tint3",
+            "   1800fbaef:\tcc                   \tint3",
+            "   1800fbaf0:\t8b 05 a2 5f 39 00    \tmov    0x395fa2(%rip),%eax        # 0x180491a98",
+            "   1800fbaf6:\t45 33 c9             \txor    %r9d,%r9d",
+            "   1800fbaf9:\t85 d2                \ttest   %edx,%edx",
+            "   1800fbafb:\t45 8b c1             \tmov    %r9d,%r8d",
+            "   1800fbafe:\t41 0f 94 c0          \tsete   %r8b",
+            "   1800fbb02:\t85 c9                \ttest   %ecx,%ecx",
+            "   1800fbb04:\t41 0f 95 c1          \tsetne  %r9b",
+            "   1800fbb08:\t44 89 05 8d 5f 39 00 \tmov    %r8d,0x395f8d(%rip)        # 0x180491a9c"
+          ],
+          "after": [
+            "   1800fbb16:\tc3                   \tret",
+            "   1800fbb17:\tcc                   \tint3",
+            "   1800fbb18:\tcc                   \tint3",
+            "   1800fbb19:\tcc                   \tint3",
+            "   1800fbb1a:\tcc                   \tint3",
+            "   1800fbb1b:\tcc                   \tint3",
+            "   1800fbb1c:\tcc                   \tint3",
+            "   1800fbb1d:\tcc                   \tint3",
+            "   1800fbb1e:\tcc                   \tint3",
+            "   1800fbb1f:\tcc                   \tint3",
+            "   1800fbb20:\t8b 05 72 5f 39 00    \tmov    0x395f72(%rip),%eax        # 0x180491a98",
+            "   1800fbb26:\tc3                   \tret"
+          ]
+        },
+        {
+          "match": "   1800fbb20:\t8b 05 72 5f 39 00    \tmov    0x395f72(%rip),%eax        # 0x180491a98",
+          "before": [
+            "   1800fbb08:\t44 89 05 8d 5f 39 00 \tmov    %r8d,0x395f8d(%rip)        # 0x180491a9c",
+            "   1800fbb0f:\t44 89 0d 82 5f 39 00 \tmov    %r9d,0x395f82(%rip)        # 0x180491a98",
+            "   1800fbb16:\tc3                   \tret",
+            "   1800fbb17:\tcc                   \tint3",
+            "   1800fbb18:\tcc                   \tint3",
+            "   1800fbb19:\tcc                   \tint3",
+            "   1800fbb1a:\tcc                   \tint3",
+            "   1800fbb1b:\tcc                   \tint3",
+            "   1800fbb1c:\tcc                   \tint3",
+            "   1800fbb1d:\tcc                   \tint3",
+            "   1800fbb1e:\tcc                   \tint3",
+            "   1800fbb1f:\tcc                   \tint3"
+          ],
+          "after": [
+            "   1800fbb26:\tc3                   \tret",
+            "   1800fbb27:\tcc                   \tint3",
+            "   1800fbb28:\tcc                   \tint3",
+            "   1800fbb29:\tcc                   \tint3",
+            "   1800fbb2a:\tcc                   \tint3",
+            "   1800fbb2b:\tcc                   \tint3",
+            "   1800fbb2c:\tcc                   \tint3",
+            "   1800fbb2d:\tcc                   \tint3",
+            "   1800fbb2e:\tcc                   \tint3",
+            "   1800fbb2f:\tcc                   \tint3",
+            "   1800fbb30:\t40 55                \trex push %rbp",
+            "   1800fbb32:\t41 55                \tpush   %r13"
+          ]
+        },
+        {
+          "match": "   1800fbb60:\t8b 0d 32 5f 39 00    \tmov    0x395f32(%rip),%ecx        # 0x180491a98",
+          "before": [
+            "   1800fbb46:\t1b c0                \tsbb    %eax,%eax",
+            "   1800fbb48:\t48 83 c4 58          \tadd    $0x58,%rsp",
+            "   1800fbb4c:\t41 5d                \tpop    %r13",
+            "   1800fbb4e:\t5d                   \tpop    %rbp",
+            "   1800fbb4f:\tc3                   \tret",
+            "   1800fbb50:\t48 85 d2             \ttest   %rdx,%rdx",
+            "   1800fbb53:\t75 0b                \tjne    0x1800fbb60",
+            "   1800fbb55:\t8d 42 01             \tlea    0x1(%rdx),%eax",
+            "   1800fbb58:\t48 83 c4 58          \tadd    $0x58,%rsp",
+            "   1800fbb5c:\t41 5d                \tpop    %r13",
+            "   1800fbb5e:\t5d                   \tpop    %rbp",
+            "   1800fbb5f:\tc3                   \tret"
+          ],
+          "after": [
+            "   1800fbb66:\t48 89 5c 24 78       \tmov    %rbx,0x78(%rsp)",
+            "   1800fbb6b:\t48 89 7c 24 48       \tmov    %rdi,0x48(%rsp)",
+            "   1800fbb70:\t4c 89 64 24 40       \tmov    %r12,0x40(%rsp)",
+            "   1800fbb75:\t4c 89 74 24 38       \tmov    %r14,0x38(%rsp)",
+            "   1800fbb7a:\t85 c9                \ttest   %ecx,%ecx",
+            "   1800fbb7c:\t0f 84 60 03 00 00    \tje     0x1800fbee2",
+            "   1800fbb82:\t83 3d 13 5f 39 00 00 \tcmpl   $0x0,0x395f13(%rip)        # 0x180491a9c",
+            "   1800fbb89:\t0f 85 1d 03 00 00    \tjne    0x1800fbeac",
+            "   1800fbb8f:\t45 0f b7 45 00       \tmovzwl 0x0(%r13),%r8d",
+            "   1800fbb94:\t49 8b cd             \tmov    %r13,%rcx",
+            "   1800fbb97:\t48 8b c2             \tmov    %rdx,%rax",
+            "   1800fbb9a:\t66 45 85 c0          \ttest   %r8w,%r8w"
+          ]
+        },
+        {
+          "match": "   1800fbb82:\t83 3d 13 5f 39 00 00 \tcmpl   $0x0,0x395f13(%rip)        # 0x180491a9c",
+          "before": [
+            "   1800fbb55:\t8d 42 01             \tlea    0x1(%rdx),%eax",
+            "   1800fbb58:\t48 83 c4 58          \tadd    $0x58,%rsp",
+            "   1800fbb5c:\t41 5d                \tpop    %r13",
+            "   1800fbb5e:\t5d                   \tpop    %rbp",
+            "   1800fbb5f:\tc3                   \tret",
+            "   1800fbb60:\t8b 0d 32 5f 39 00    \tmov    0x395f32(%rip),%ecx        # 0x180491a98",
+            "   1800fbb66:\t48 89 5c 24 78       \tmov    %rbx,0x78(%rsp)",
+            "   1800fbb6b:\t48 89 7c 24 48       \tmov    %rdi,0x48(%rsp)",
+            "   1800fbb70:\t4c 89 64 24 40       \tmov    %r12,0x40(%rsp)",
+            "   1800fbb75:\t4c 89 74 24 38       \tmov    %r14,0x38(%rsp)",
+            "   1800fbb7a:\t85 c9                \ttest   %ecx,%ecx",
+            "   1800fbb7c:\t0f 84 60 03 00 00    \tje     0x1800fbee2"
+          ],
+          "after": [
+            "   1800fbb89:\t0f 85 1d 03 00 00    \tjne    0x1800fbeac",
+            "   1800fbb8f:\t45 0f b7 45 00       \tmovzwl 0x0(%r13),%r8d",
+            "   1800fbb94:\t49 8b cd             \tmov    %r13,%rcx",
+            "   1800fbb97:\t48 8b c2             \tmov    %rdx,%rax",
+            "   1800fbb9a:\t66 45 85 c0          \ttest   %r8w,%r8w",
+            "   1800fbb9e:\t74 35                \tje     0x1800fbbd5",
+            "   1800fbba0:\t41 0f b7 d0          \tmovzwl %r8w,%edx",
+            "   1800fbba4:\t41 b9 80 00 00 00    \tmov    $0x80,%r9d",
+            "   1800fbbaa:\t66 0f 1f 44 00 00    \tnopw   0x0(%rax,%rax,1)",
+            "   1800fbbb0:\t66 41 3b d1          \tcmp    %r9w,%dx",
+            "   1800fbbb4:\t73 1f                \tjae    0x1800fbbd5",
+            "   1800fbbb6:\t0f b7 10             \tmovzwl (%rax),%edx"
+          ]
+        },
+        {
+          "match": "   1800fbd5c:\t8b 0d 36 5d 39 00    \tmov    0x395d36(%rip),%ecx        # 0x180491a98",
+          "before": [
+            "   1800fbd30:\t48 8d 8c 24 80 00 00 \tlea    0x80(%rsp),%rcx",
+            "   1800fbd37:\t00 ",
+            "   1800fbd38:\t39 70 08             \tcmp    %esi,0x8(%rax)",
+            "   1800fbd3b:\t48 0f 4f f3          \tcmovg  %rbx,%rsi",
+            "   1800fbd3f:\te8 cc 5c 1b 00       \tcall   0x1802b1a10",
+            "   1800fbd44:\t48 8b bc 24 80 00 00 \tmov    0x80(%rsp),%rdi",
+            "   1800fbd4b:\t00 ",
+            "   1800fbd4c:\t48 8d 47 f4          \tlea    -0xc(%rdi),%rax",
+            "   1800fbd50:\t48 85 ff             \ttest   %rdi,%rdi",
+            "   1800fbd53:\t75 03                \tjne    0x1800fbd58",
+            "   1800fbd55:\t49 8b c6             \tmov    %r14,%rax",
+            "   1800fbd58:\t44 39 60 08          \tcmp    %r12d,0x8(%rax)"
+          ],
+          "after": [
+            "   1800fbd62:\tba 01 00 02 00       \tmov    $0x20001,%edx",
+            "   1800fbd67:\t4c 0f 4f e7          \tcmovg  %rdi,%r12",
+            "   1800fbd6b:\t41 83 c9 ff          \tor     $0xffffffff,%r9d",
+            "   1800fbd6f:\tc7 44 24 28 ff ff ff \tmovl   $0xffffffff,0x28(%rsp)",
+            "   1800fbd76:\tff ",
+            "   1800fbd77:\t4d 8b c4             \tmov    %r12,%r8",
+            "   1800fbd7a:\t48 89 74 24 20       \tmov    %rsi,0x20(%rsp)",
+            "   1800fbd7f:\tff 15 93 63 20 00    \tcall   *0x206393(%rip)        # 0x180302118",
+            "   1800fbd85:\t48 8b 74 24 50       \tmov    0x50(%rsp),%rsi",
+            "   1800fbd8a:\t83 f8 01             \tcmp    $0x1,%eax",
+            "   1800fbd8d:\t75 46                \tjne    0x1800fbdd5",
+            "   1800fbd8f:\t48 85 db             \ttest   %rbx,%rbx"
+          ]
+        },
+        {
+          "match": "   1800fbf65:\t83 3d 2c 5b 39 00 00 \tcmpl   $0x0,0x395b2c(%rip)        # 0x180491a98",
+          "before": [
+            "   1800fbf39:\t48 83 ec 50          \tsub    $0x50,%rsp",
+            "   1800fbf3d:\t48 8b 01             \tmov    (%rcx),%rax",
+            "   1800fbf40:\t4c 8b f9             \tmov    %rcx,%r15",
+            "   1800fbf43:\t4c 8d 2d e6 bb 38 00 \tlea    0x38bbe6(%rip),%r13        # 0x180487b30",
+            "   1800fbf4a:\t48 8b d0             \tmov    %rax,%rdx",
+            "   1800fbf4d:\t48 85 c0             \ttest   %rax,%rax",
+            "   1800fbf50:\t74 06                \tje     0x1800fbf58",
+            "   1800fbf52:\t48 83 ea 0c          \tsub    $0xc,%rdx",
+            "   1800fbf56:\teb 03                \tjmp    0x1800fbf5b",
+            "   1800fbf58:\t49 8b d5             \tmov    %r13,%rdx",
+            "   1800fbf5b:\t83 7a 04 00          \tcmpl   $0x0,0x4(%rdx)",
+            "   1800fbf5f:\t0f 8e 46 07 00 00    \tjle    0x1800fc6ab"
+          ],
+          "after": [
+            "   1800fbf6c:\t48 89 9c 24 80 00 00 \tmov    %rbx,0x80(%rsp)",
+            "   1800fbf73:\t00 ",
+            "   1800fbf74:\t48 89 74 24 48       \tmov    %rsi,0x48(%rsp)",
+            "   1800fbf79:\t48 89 7c 24 40       \tmov    %rdi,0x40(%rsp)",
+            "   1800fbf7e:\t4c 89 64 24 38       \tmov    %r12,0x38(%rsp)",
+            "   1800fbf83:\t4c 89 74 24 30       \tmov    %r14,0x30(%rsp)",
+            "   1800fbf88:\t0f 84 f0 06 00 00    \tje     0x1800fc67e",
+            "   1800fbf8e:\t83 3d 07 5b 39 00 00 \tcmpl   $0x0,0x395b07(%rip)        # 0x180491a9c",
+            "   1800fbf95:\t0f 85 f3 03 00 00    \tjne    0x1800fc38e",
+            "   1800fbf9b:\t48 8d 0d ba bb 38 00 \tlea    0x38bbba(%rip),%rcx        # 0x180487b5c",
+            "   1800fbfa2:\t48 89 4d 28          \tmov    %rcx,0x28(%rbp)",
+            "   1800fbfa6:\t48 8b c8             \tmov    %rax,%rcx"
+          ]
+        },
+        {
+          "match": "   1800fbf8e:\t83 3d 07 5b 39 00 00 \tcmpl   $0x0,0x395b07(%rip)        # 0x180491a9c",
+          "before": [
+            "   1800fbf56:\teb 03                \tjmp    0x1800fbf5b",
+            "   1800fbf58:\t49 8b d5             \tmov    %r13,%rdx",
+            "   1800fbf5b:\t83 7a 04 00          \tcmpl   $0x0,0x4(%rdx)",
+            "   1800fbf5f:\t0f 8e 46 07 00 00    \tjle    0x1800fc6ab",
+            "   1800fbf65:\t83 3d 2c 5b 39 00 00 \tcmpl   $0x0,0x395b2c(%rip)        # 0x180491a98",
+            "   1800fbf6c:\t48 89 9c 24 80 00 00 \tmov    %rbx,0x80(%rsp)",
+            "   1800fbf73:\t00 ",
+            "   1800fbf74:\t48 89 74 24 48       \tmov    %rsi,0x48(%rsp)",
+            "   1800fbf79:\t48 89 7c 24 40       \tmov    %rdi,0x40(%rsp)",
+            "   1800fbf7e:\t4c 89 64 24 38       \tmov    %r12,0x38(%rsp)",
+            "   1800fbf83:\t4c 89 74 24 30       \tmov    %r14,0x30(%rsp)",
+            "   1800fbf88:\t0f 84 f0 06 00 00    \tje     0x1800fc67e"
+          ],
+          "after": [
+            "   1800fbf95:\t0f 85 f3 03 00 00    \tjne    0x1800fc38e",
+            "   1800fbf9b:\t48 8d 0d ba bb 38 00 \tlea    0x38bbba(%rip),%rcx        # 0x180487b5c",
+            "   1800fbfa2:\t48 89 4d 28          \tmov    %rcx,0x28(%rbp)",
+            "   1800fbfa6:\t48 8b c8             \tmov    %rax,%rcx",
+            "   1800fbfa9:\t48 85 c0             \ttest   %rax,%rax",
+            "   1800fbfac:\t74 06                \tje     0x1800fbfb4",
+            "   1800fbfae:\t48 83 e9 0c          \tsub    $0xc,%rcx",
+            "   1800fbfb2:\teb 03                \tjmp    0x1800fbfb7",
+            "   1800fbfb4:\t49 8b cd             \tmov    %r13,%rcx",
+            "   1800fbfb7:\t45 33 f6             \txor    %r14d,%r14d",
+            "   1800fbfba:\t45 8b e6             \tmov    %r14d,%r12d",
+            "   1800fbfbd:\t41 8b f6             \tmov    %r14d,%esi"
+          ]
+        },
+        {
+          "match": "   1800fc0d8:\t8b 0d ba 59 39 00    \tmov    0x3959ba(%rip),%ecx        # 0x180491a98",
+          "before": [
+            "   1800fc0ac:\t75 03                \tjne    0x1800fc0b1",
+            "   1800fc0ae:\t48 8b c7             \tmov    %rdi,%rax",
+            "   1800fc0b1:\t49 8b fe             \tmov    %r14,%rdi",
+            "   1800fc0b4:\t48 8d 4d 28          \tlea    0x28(%rbp),%rcx",
+            "   1800fc0b8:\t39 78 08             \tcmp    %edi,0x8(%rax)",
+            "   1800fc0bb:\t48 0f 4f fe          \tcmovg  %rsi,%rdi",
+            "   1800fc0bf:\te8 4c 59 1b 00       \tcall   0x1802b1a10",
+            "   1800fc0c4:\t48 8b 5d 28          \tmov    0x28(%rbp),%rbx",
+            "   1800fc0c8:\t48 8d 43 f4          \tlea    -0xc(%rbx),%rax",
+            "   1800fc0cc:\t48 85 db             \ttest   %rbx,%rbx",
+            "   1800fc0cf:\t75 07                \tjne    0x1800fc0d8",
+            "   1800fc0d1:\t48 8d 05 78 ba 38 00 \tlea    0x38ba78(%rip),%rax        # 0x180487b50"
+          ],
+          "after": [
+            "   1800fc0de:\t4d 8b c6             \tmov    %r14,%r8",
+            "   1800fc0e1:\t45 8b cd             \tmov    %r13d,%r9d",
+            "   1800fc0e4:\t44 39 40 08          \tcmp    %r8d,0x8(%rax)",
+            "   1800fc0e8:\tba 00 02 00 00       \tmov    $0x200,%edx",
+            "   1800fc0ed:\t44 89 64 24 28       \tmov    %r12d,0x28(%rsp)",
+            "   1800fc0f2:\t4c 0f 4f c3          \tcmovg  %rbx,%r8",
+            "   1800fc0f6:\t48 89 7c 24 20       \tmov    %rdi,0x20(%rsp)",
+            "   1800fc0fb:\tff 15 07 60 20 00    \tcall   *0x206007(%rip)        # 0x180302108",
+            "   1800fc101:\t4c 63 e8             \tmovslq %eax,%r13",
+            "   1800fc104:\t85 c0                \ttest   %eax,%eax",
+            "   1800fc106:\t0f 8e 40 02 00 00    \tjle    0x1800fc34c",
+            "   1800fc10c:\t45 3b ec             \tcmp    %r12d,%r13d"
+          ]
+        },
+        {
+          "match": "   1800fc410:\t8b 0d 82 56 39 00    \tmov    0x395682(%rip),%ecx        # 0x180491a98",
+          "before": [
+            "   1800fc3ea:\t49 8b cf             \tmov    %r15,%rcx",
+            "   1800fc3ed:\t41 8b de             \tmov    %r14d,%ebx",
+            "   1800fc3f0:\t39 58 08             \tcmp    %ebx,0x8(%rax)",
+            "   1800fc3f3:\t48 0f 4f df          \tcmovg  %rdi,%rbx",
+            "   1800fc3f7:\te8 54 2e 1e 00       \tcall   0x1802df250",
+            "   1800fc3fc:\t4d 8b 1f             \tmov    (%r15),%r11",
+            "   1800fc3ff:\t49 8b c3             \tmov    %r11,%rax",
+            "   1800fc402:\t4d 85 db             \ttest   %r11,%r11",
+            "   1800fc405:\t74 06                \tje     0x1800fc40d",
+            "   1800fc407:\t48 83 e8 0c          \tsub    $0xc,%rax",
+            "   1800fc40b:\teb 03                \tjmp    0x1800fc410",
+            "   1800fc40d:\t49 8b c5             \tmov    %r13,%rax"
+          ],
+          "after": [
+            "   1800fc416:\t4d 8b c6             \tmov    %r14,%r8",
+            "   1800fc419:\t45 8b cc             \tmov    %r12d,%r9d",
+            "   1800fc41c:\t44 39 40 08          \tcmp    %r8d,0x8(%rax)",
+            "   1800fc420:\tba 00 02 00 00       \tmov    $0x200,%edx",
+            "   1800fc425:\t89 74 24 28          \tmov    %esi,0x28(%rsp)",
+            "   1800fc429:\t4d 0f 4f c3          \tcmovg  %r11,%r8",
+            "   1800fc42d:\t48 89 5c 24 20       \tmov    %rbx,0x20(%rsp)",
+            "   1800fc432:\tff 15 c8 5c 20 00    \tcall   *0x205cc8(%rip)        # 0x180302100",
+            "   1800fc438:\t4c 63 e0             \tmovslq %eax,%r12",
+            "   1800fc43b:\t85 c0                \ttest   %eax,%eax",
+            "   1800fc43d:\t0f 8e 1c 02 00 00    \tjle    0x1800fc65f",
+            "   1800fc443:\t44 3b e6             \tcmp    %esi,%r12d"
+          ]
+        },
+        {
+          "match": "   1800fc6f5:\t83 3d 9c 53 39 00 00 \tcmpl   $0x0,0x39539c(%rip)        # 0x180491a98",
+          "before": [
+            "   1800fc6c9:\t48 83 ec 50          \tsub    $0x50,%rsp",
+            "   1800fc6cd:\t48 8b 01             \tmov    (%rcx),%rax",
+            "   1800fc6d0:\t4c 8b f9             \tmov    %rcx,%r15",
+            "   1800fc6d3:\t4c 8d 2d 56 b4 38 00 \tlea    0x38b456(%rip),%r13        # 0x180487b30",
+            "   1800fc6da:\t48 8b d0             \tmov    %rax,%rdx",
+            "   1800fc6dd:\t48 85 c0             \ttest   %rax,%rax",
+            "   1800fc6e0:\t74 06                \tje     0x1800fc6e8",
+            "   1800fc6e2:\t48 83 ea 0c          \tsub    $0xc,%rdx",
+            "   1800fc6e6:\teb 03                \tjmp    0x1800fc6eb",
+            "   1800fc6e8:\t49 8b d5             \tmov    %r13,%rdx",
+            "   1800fc6eb:\t83 7a 04 00          \tcmpl   $0x0,0x4(%rdx)",
+            "   1800fc6ef:\t0f 8e 46 07 00 00    \tjle    0x1800fce3b"
+          ],
+          "after": [
+            "   1800fc6fc:\t48 89 9c 24 80 00 00 \tmov    %rbx,0x80(%rsp)",
+            "   1800fc703:\t00 ",
+            "   1800fc704:\t48 89 74 24 48       \tmov    %rsi,0x48(%rsp)",
+            "   1800fc709:\t48 89 7c 24 40       \tmov    %rdi,0x40(%rsp)",
+            "   1800fc70e:\t4c 89 64 24 38       \tmov    %r12,0x38(%rsp)",
+            "   1800fc713:\t4c 89 74 24 30       \tmov    %r14,0x30(%rsp)",
+            "   1800fc718:\t0f 84 f0 06 00 00    \tje     0x1800fce0e",
+            "   1800fc71e:\t83 3d 77 53 39 00 00 \tcmpl   $0x0,0x395377(%rip)        # 0x180491a9c",
+            "   1800fc725:\t0f 85 f3 03 00 00    \tjne    0x1800fcb1e",
+            "   1800fc72b:\t48 8d 0d 2a b4 38 00 \tlea    0x38b42a(%rip),%rcx        # 0x180487b5c",
+            "   1800fc732:\t48 89 4d 28          \tmov    %rcx,0x28(%rbp)",
+            "   1800fc736:\t48 8b c8             \tmov    %rax,%rcx"
+          ]
+        },
+        {
+          "match": "   1800fc71e:\t83 3d 77 53 39 00 00 \tcmpl   $0x0,0x395377(%rip)        # 0x180491a9c",
+          "before": [
+            "   1800fc6e6:\teb 03                \tjmp    0x1800fc6eb",
+            "   1800fc6e8:\t49 8b d5             \tmov    %r13,%rdx",
+            "   1800fc6eb:\t83 7a 04 00          \tcmpl   $0x0,0x4(%rdx)",
+            "   1800fc6ef:\t0f 8e 46 07 00 00    \tjle    0x1800fce3b",
+            "   1800fc6f5:\t83 3d 9c 53 39 00 00 \tcmpl   $0x0,0x39539c(%rip)        # 0x180491a98",
+            "   1800fc6fc:\t48 89 9c 24 80 00 00 \tmov    %rbx,0x80(%rsp)",
+            "   1800fc703:\t00 ",
+            "   1800fc704:\t48 89 74 24 48       \tmov    %rsi,0x48(%rsp)",
+            "   1800fc709:\t48 89 7c 24 40       \tmov    %rdi,0x40(%rsp)",
+            "   1800fc70e:\t4c 89 64 24 38       \tmov    %r12,0x38(%rsp)",
+            "   1800fc713:\t4c 89 74 24 30       \tmov    %r14,0x30(%rsp)",
+            "   1800fc718:\t0f 84 f0 06 00 00    \tje     0x1800fce0e"
+          ],
+          "after": [
+            "   1800fc725:\t0f 85 f3 03 00 00    \tjne    0x1800fcb1e",
+            "   1800fc72b:\t48 8d 0d 2a b4 38 00 \tlea    0x38b42a(%rip),%rcx        # 0x180487b5c",
+            "   1800fc732:\t48 89 4d 28          \tmov    %rcx,0x28(%rbp)",
+            "   1800fc736:\t48 8b c8             \tmov    %rax,%rcx",
+            "   1800fc739:\t48 85 c0             \ttest   %rax,%rax",
+            "   1800fc73c:\t74 06                \tje     0x1800fc744",
+            "   1800fc73e:\t48 83 e9 0c          \tsub    $0xc,%rcx",
+            "   1800fc742:\teb 03                \tjmp    0x1800fc747",
+            "   1800fc744:\t49 8b cd             \tmov    %r13,%rcx",
+            "   1800fc747:\t45 33 f6             \txor    %r14d,%r14d",
+            "   1800fc74a:\t45 8b e6             \tmov    %r14d,%r12d",
+            "   1800fc74d:\t41 8b f6             \tmov    %r14d,%esi"
+          ]
+        },
+        {
+          "match": "   1800fc868:\t8b 0d 2a 52 39 00    \tmov    0x39522a(%rip),%ecx        # 0x180491a98",
+          "before": [
+            "   1800fc83c:\t75 03                \tjne    0x1800fc841",
+            "   1800fc83e:\t48 8b c7             \tmov    %rdi,%rax",
+            "   1800fc841:\t49 8b fe             \tmov    %r14,%rdi",
+            "   1800fc844:\t48 8d 4d 28          \tlea    0x28(%rbp),%rcx",
+            "   1800fc848:\t39 78 08             \tcmp    %edi,0x8(%rax)",
+            "   1800fc84b:\t48 0f 4f fe          \tcmovg  %rsi,%rdi",
+            "   1800fc84f:\te8 bc 51 1b 00       \tcall   0x1802b1a10",
+            "   1800fc854:\t48 8b 5d 28          \tmov    0x28(%rbp),%rbx",
+            "   1800fc858:\t48 8d 43 f4          \tlea    -0xc(%rbx),%rax",
+            "   1800fc85c:\t48 85 db             \ttest   %rbx,%rbx",
+            "   1800fc85f:\t75 07                \tjne    0x1800fc868",
+            "   1800fc861:\t48 8d 05 e8 b2 38 00 \tlea    0x38b2e8(%rip),%rax        # 0x180487b50"
+          ],
+          "after": [
+            "   1800fc86e:\t4d 8b c6             \tmov    %r14,%r8",
+            "   1800fc871:\t45 8b cd             \tmov    %r13d,%r9d",
+            "   1800fc874:\t44 39 40 08          \tcmp    %r8d,0x8(%rax)",
+            "   1800fc878:\tba 00 01 00 00       \tmov    $0x100,%edx",
+            "   1800fc87d:\t44 89 64 24 28       \tmov    %r12d,0x28(%rsp)",
+            "   1800fc882:\t4c 0f 4f c3          \tcmovg  %rbx,%r8",
+            "   1800fc886:\t48 89 7c 24 20       \tmov    %rdi,0x20(%rsp)",
+            "   1800fc88b:\tff 15 77 58 20 00    \tcall   *0x205877(%rip)        # 0x180302108",
+            "   1800fc891:\t4c 63 e8             \tmovslq %eax,%r13",
+            "   1800fc894:\t85 c0                \ttest   %eax,%eax",
+            "   1800fc896:\t0f 8e 40 02 00 00    \tjle    0x1800fcadc",
+            "   1800fc89c:\t45 3b ec             \tcmp    %r12d,%r13d"
+          ]
+        },
+        {
+          "match": "   1800fcba0:\t8b 0d f2 4e 39 00    \tmov    0x394ef2(%rip),%ecx        # 0x180491a98",
+          "before": [
+            "   1800fcb7a:\t49 8b cf             \tmov    %r15,%rcx",
+            "   1800fcb7d:\t41 8b de             \tmov    %r14d,%ebx",
+            "   1800fcb80:\t39 58 08             \tcmp    %ebx,0x8(%rax)",
+            "   1800fcb83:\t48 0f 4f df          \tcmovg  %rdi,%rbx",
+            "   1800fcb87:\te8 c4 26 1e 00       \tcall   0x1802df250",
+            "   1800fcb8c:\t4d 8b 1f             \tmov    (%r15),%r11",
+            "   1800fcb8f:\t49 8b c3             \tmov    %r11,%rax",
+            "   1800fcb92:\t4d 85 db             \ttest   %r11,%r11",
+            "   1800fcb95:\t74 06                \tje     0x1800fcb9d",
+            "   1800fcb97:\t48 83 e8 0c          \tsub    $0xc,%rax",
+            "   1800fcb9b:\teb 03                \tjmp    0x1800fcba0",
+            "   1800fcb9d:\t49 8b c5             \tmov    %r13,%rax"
+          ],
+          "after": [
+            "   1800fcba6:\t4d 8b c6             \tmov    %r14,%r8",
+            "   1800fcba9:\t45 8b cc             \tmov    %r12d,%r9d",
+            "   1800fcbac:\t44 39 40 08          \tcmp    %r8d,0x8(%rax)",
+            "   1800fcbb0:\tba 00 01 00 00       \tmov    $0x100,%edx",
+            "   1800fcbb5:\t89 74 24 28          \tmov    %esi,0x28(%rsp)",
+            "   1800fcbb9:\t4d 0f 4f c3          \tcmovg  %r11,%r8",
+            "   1800fcbbd:\t48 89 5c 24 20       \tmov    %rbx,0x20(%rsp)",
+            "   1800fcbc2:\tff 15 38 55 20 00    \tcall   *0x205538(%rip)        # 0x180302100",
+            "   1800fcbc8:\t4c 63 e0             \tmovslq %eax,%r12",
+            "   1800fcbcb:\t85 c0                \ttest   %eax,%eax",
+            "   1800fcbcd:\t0f 8e 1c 02 00 00    \tjle    0x1800fcdef",
+            "   1800fcbd3:\t44 3b e6             \tcmp    %esi,%r12d"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Rhino.exe",
+      "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+      "sourceExecuted": false,
+      "selectedImports": [
+        {
+          "dll": "opennurbsx64.dll",
+          "name": "ON_SetStringConversionWindowsLocaleID",
+          "iat": 15599096
+        },
+        {
+          "dll": "MSVCR100.dll",
+          "name": "_configthreadlocale",
+          "iat": 15555176
+        },
+        {
+          "dll": "MSVCR100.dll",
+          "name": "_wsetlocale",
+          "iat": 15556344
+        },
+        {
+          "dll": "MSVCR100.dll",
+          "name": "setlocale",
+          "iat": 15556568
+        }
+      ],
+      "queriedAddresses": [
+        "0x140c96570",
+        "0x1415c35ec",
+        "0x140ee05f8",
+        "0x140ed5a68",
+        "0x140ed5ef8",
+        "0x140ed5fd8"
+      ],
+      "disassemblyLines": 4151080,
+      "matches": [
+        {
+          "match": "   1401cf018:\te8 53 75 ac 00       \tcall   0x140c96570",
+          "before": [
+            "   1401ceff0:\tff 15 b2 47 d1 00    \tcall   *0xd147b2(%rip)        # 0x140ee37a8",
+            "   1401ceff6:\t90                   \tnop",
+            "   1401ceff7:\t48 8d 4d 87          \tlea    -0x79(%rbp),%rcx",
+            "   1401ceffb:\tff 15 a7 47 d1 00    \tcall   *0xd147a7(%rip)        # 0x140ee37a8",
+            "   1401cf001:\t90                   \tnop",
+            "   1401cf002:\t48 8d 4d 6f          \tlea    0x6f(%rbp),%rcx",
+            "   1401cf006:\tff 15 9c 47 d1 00    \tcall   *0xd1479c(%rip)        # 0x140ee37a8",
+            "   1401cf00c:\t32 c0                \txor    %al,%al",
+            "   1401cf00e:\teb 3c                \tjmp    0x1401cf04c",
+            "   1401cf010:\t44 8b c6             \tmov    %esi,%r8d",
+            "   1401cf013:\t8b d3                \tmov    %ebx,%edx",
+            "   1401cf015:\t48 8b cf             \tmov    %rdi,%rcx"
+          ],
+          "after": [
+            "   1401cf01d:\t90                   \tnop",
+            "   1401cf01e:\t48 8d 4c 24 20       \tlea    0x20(%rsp),%rcx",
+            "   1401cf023:\tff 15 0f 2a d1 00    \tcall   *0xd12a0f(%rip)        # 0x140ee1a38",
+            "   1401cf029:\t90                   \tnop",
+            "   1401cf02a:\t48 8d 4d d7          \tlea    -0x29(%rbp),%rcx",
+            "   1401cf02e:\tff 15 74 47 d1 00    \tcall   *0xd14774(%rip)        # 0x140ee37a8",
+            "   1401cf034:\t90                   \tnop",
+            "   1401cf035:\t48 8d 4d 87          \tlea    -0x79(%rbp),%rcx",
+            "   1401cf039:\tff 15 69 47 d1 00    \tcall   *0xd14769(%rip)        # 0x140ee37a8",
+            "   1401cf03f:\t90                   \tnop",
+            "   1401cf040:\t48 8d 4d 6f          \tlea    0x6f(%rbp),%rcx",
+            "   1401cf044:\tff 15 5e 47 d1 00    \tcall   *0xd1475e(%rip)        # 0x140ee37a8"
+          ]
+        },
+        {
+          "match": "   1406b1e17:\te8 54 47 5e 00       \tcall   0x140c96570",
+          "before": [
+            "   1406b1de7:\t88 5f 08             \tmov    %bl,0x8(%rdi)",
+            "   1406b1dea:\t48 8b d0             \tmov    %rax,%rdx",
+            "   1406b1ded:\t48 8d 4d 48          \tlea    0x48(%rbp),%rcx",
+            "   1406b1df1:\tff 15 71 19 83 00    \tcall   *0x831971(%rip)        # 0x140ee3768",
+            "   1406b1df7:\t48 8d 4c 24 40       \tlea    0x40(%rsp),%rcx",
+            "   1406b1dfc:\te8 1f 50 c9 ff       \tcall   0x140346e20",
+            "   1406b1e01:\t83 f8 04             \tcmp    $0x4,%eax",
+            "   1406b1e04:\t75 42                \tjne    0x1406b1e48",
+            "   1406b1e06:\tf2 0f 2c 5d 90       \tcvttsd2si -0x70(%rbp),%ebx",
+            "   1406b1e0b:\t45 33 c0             \txor    %r8d,%r8d",
+            "   1406b1e0e:\t8b d3                \tmov    %ebx,%edx",
+            "   1406b1e10:\t48 8b 0d 49 6d f1 00 \tmov    0xf16d49(%rip),%rcx        # 0x1415c8b60"
+          ],
+          "after": [
+            "   1406b1e1c:\t48 8d 0d bd 68 f1 00 \tlea    0xf168bd(%rip),%rcx        # 0x1415c86e0",
+            "   1406b1e23:\t84 c0                \ttest   %al,%al",
+            "   1406b1e25:\t74 0f                \tje     0x1406b1e36",
+            "   1406b1e27:\t48 8d 15 92 ab 94 00 \tlea    0x94ab92(%rip),%rdx        # 0x140ffc9c0",
+            "   1406b1e2e:\te8 0d a3 b1 ff       \tcall   0x1401cc140",
+            "   1406b1e33:\t90                   \tnop",
+            "   1406b1e34:\teb 12                \tjmp    0x1406b1e48",
+            "   1406b1e36:\t44 8b c3             \tmov    %ebx,%r8d",
+            "   1406b1e39:\t48 8d 15 a0 ab 94 00 \tlea    0x94aba0(%rip),%rdx        # 0x140ffc9e0",
+            "   1406b1e40:\te8 fb a2 b1 ff       \tcall   0x1401cc140",
+            "   1406b1e45:\t90                   \tnop",
+            "   1406b1e46:\teb 00                \tjmp    0x1406b1e48"
+          ]
+        },
+        {
+          "match": "   14072c540:\tff 15 92 9a 7a 00    \tcall   *0x7a9a92(%rip)        # 0x140ed5fd8",
+          "before": [
+            "   14072c506:\t48 8d 4d 72          \tlea    0x72(%rbp),%rcx",
+            "   14072c50a:\te8 b7 15 63 00       \tcall   0x140d5dac6",
+            "   14072c50f:\t33 d2                \txor    %edx,%edx",
+            "   14072c511:\t48 8d 4c 24 71       \tlea    0x71(%rsp),%rcx",
+            "   14072c516:\t44 8d 42 7f          \tlea    0x7f(%rdx),%r8d",
+            "   14072c51a:\t40 88 74 24 70       \tmov    %sil,0x70(%rsp)",
+            "   14072c51f:\te8 a2 15 63 00       \tcall   0x140d5dac6",
+            "   14072c524:\t48 8b 0d 55 eb 7a 00 \tmov    0x7aeb55(%rip),%rcx        # 0x140edb080",
+            "   14072c52b:\tff 15 47 eb 7a 00    \tcall   *0x7aeb47(%rip)        # 0x140edb078",
+            "   14072c531:\t48 8d 15 98 10 8e 00 \tlea    0x8e1098(%rip),%rdx        # 0x14100d5d0",
+            "   14072c538:\tb9 02 00 00 00       \tmov    $0x2,%ecx",
+            "   14072c53d:\t4c 8b f0             \tmov    %rax,%r14"
+          ],
+          "after": [
+            "   14072c546:\t48 8d 54 24 70       \tlea    0x70(%rsp),%rdx",
+            "   14072c54b:\t48 85 d2             \ttest   %rdx,%rdx",
+            "   14072c54e:\t74 12                \tje     0x14072c562",
+            "   14072c550:\t48 8d 4c 24 70       \tlea    0x70(%rsp),%rcx",
+            "   14072c555:\t33 d2                \txor    %edx,%edx",
+            "   14072c557:\t41 b8 80 00 00 00    \tmov    $0x80,%r8d",
+            "   14072c55d:\te8 64 15 63 00       \tcall   0x140d5dac6",
+            "   14072c562:\t4c 8d 4d f0          \tlea    -0x10(%rbp),%r9",
+            "   14072c566:\t4c 8d 05 2b 36 84 00 \tlea    0x84362b(%rip),%r8        # 0x140f6fb98",
+            "   14072c56d:\t48 8d 4c 24 70       \tlea    0x70(%rsp),%rcx",
+            "   14072c572:\tba 80 00 00 00       \tmov    $0x80,%edx",
+            "   14072c577:\tff 15 d3 95 7a 00    \tcall   *0x7a95d3(%rip)        # 0x140ed5b50"
+          ]
+        },
+        {
+          "match": "   14072d548:\tff 15 8a 8a 7a 00    \tcall   *0x7a8a8a(%rip)        # 0x140ed5fd8",
+          "before": [
+            "   14072d51f:\t74 1b                \tje     0x14072d53c",
+            "   14072d521:\te8 1a ff ff ff       \tcall   0x14072d440",
+            "   14072d526:\t84 c0                \ttest   %al,%al",
+            "   14072d528:\t74 12                \tje     0x14072d53c",
+            "   14072d52a:\te8 61 fd ff ff       \tcall   0x14072d290",
+            "   14072d52f:\t84 c0                \ttest   %al,%al",
+            "   14072d531:\t74 09                \tje     0x14072d53c",
+            "   14072d533:\te8 d8 fd ff ff       \tcall   0x14072d310",
+            "   14072d538:\t84 c0                \ttest   %al,%al",
+            "   14072d53a:\t75 27                \tjne    0x14072d563",
+            "   14072d53c:\t48 8d 15 55 cf 8e 00 \tlea    0x8ecf55(%rip),%rdx        # 0x14101a498",
+            "   14072d543:\tb9 04 00 00 00       \tmov    $0x4,%ecx"
+          ],
+          "after": [
+            "   14072d54e:\t48 85 c0             \ttest   %rax,%rax",
+            "   14072d551:\t74 10                \tje     0x14072d563",
+            "   14072d553:\t80 38 43             \tcmpb   $0x43,(%rax)",
+            "   14072d556:\t75 0b                \tjne    0x14072d563",
+            "   14072d558:\t80 78 01 00          \tcmpb   $0x0,0x1(%rax)",
+            "   14072d55c:\t75 05                \tjne    0x14072d563",
+            "   14072d55e:\te8 ed f8 ff ff       \tcall   0x14072ce50",
+            "   14072d563:\t48 83 c4 28          \tadd    $0x28,%rsp",
+            "   14072d567:\tc3                   \tret",
+            "   14072d568:\tcc                   \tint3",
+            "   14072d569:\tcc                   \tint3",
+            "   14072d56a:\tcc                   \tint3"
+          ]
+        },
+        {
+          "match": "   14072d5dd:\tff 15 f5 89 7a 00    \tcall   *0x7a89f5(%rip)        # 0x140ed5fd8",
+          "before": [
+            "   14072d5ae:\t74 21                \tje     0x14072d5d1",
+            "   14072d5b0:\te8 db fc ff ff       \tcall   0x14072d290",
+            "   14072d5b5:\t84 c0                \ttest   %al,%al",
+            "   14072d5b7:\t74 18                \tje     0x14072d5d1",
+            "   14072d5b9:\te8 52 fd ff ff       \tcall   0x14072d310",
+            "   14072d5be:\t84 c0                \ttest   %al,%al",
+            "   14072d5c0:\t74 0f                \tje     0x14072d5d1",
+            "   14072d5c2:\t41 b8 78 8b 00 00    \tmov    $0x8b78,%r8d",
+            "   14072d5c8:\t48 8d 15 51 02 8e 00 \tlea    0x8e0251(%rip),%rdx        # 0x14100d820",
+            "   14072d5cf:\teb 38                \tjmp    0x14072d609",
+            "   14072d5d1:\t48 8d 15 c0 ce 8e 00 \tlea    0x8ecec0(%rip),%rdx        # 0x14101a498",
+            "   14072d5d8:\tb9 04 00 00 00       \tmov    $0x4,%ecx"
+          ],
+          "after": [
+            "   14072d5e3:\t48 85 c0             \ttest   %rax,%rax",
+            "   14072d5e6:\t74 57                \tje     0x14072d63f",
+            "   14072d5e8:\t80 38 43             \tcmpb   $0x43,(%rax)",
+            "   14072d5eb:\t75 52                \tjne    0x14072d63f",
+            "   14072d5ed:\t80 78 01 00          \tcmpb   $0x0,0x1(%rax)",
+            "   14072d5f1:\t75 4c                \tjne    0x14072d63f",
+            "   14072d5f3:\te8 58 f8 ff ff       \tcall   0x14072ce50",
+            "   14072d5f8:\t84 c0                \ttest   %al,%al",
+            "   14072d5fa:\t74 43                \tje     0x14072d63f",
+            "   14072d5fc:\t41 b8 76 8b 00 00    \tmov    $0x8b76,%r8d",
+            "   14072d602:\t48 8d 15 27 01 8e 00 \tlea    0x8e0127(%rip),%rdx        # 0x14100d730",
+            "   14072d609:\t48 8b 3d 50 b5 e9 00 \tmov    0xe9b550(%rip),%rdi        # 0x1415c8b60"
+          ]
+        },
+        {
+          "match": "   14072d735:\tff 15 bd 87 7a 00    \tcall   *0x7a87bd(%rip)        # 0x140ed5ef8",
+          "before": [
+            "   14072d6fa:\t84 c0                \ttest   %al,%al",
+            "   14072d6fc:\t0f 95 c0             \tsetne  %al",
+            "   14072d6ff:\t84 c0                \ttest   %al,%al",
+            "   14072d701:\t48 8d 1d e0 01 8e 00 \tlea    0x8e01e0(%rip),%rbx        # 0x14100d8e8",
+            "   14072d708:\t48 8d 3d 09 73 8b 00 \tlea    0x8b7309(%rip),%rdi        # 0x140fe4a18",
+            "   14072d70f:\t4c 8b c3             \tmov    %rbx,%r8",
+            "   14072d712:\t48 8d 15 e7 01 8e 00 \tlea    0x8e01e7(%rip),%rdx        # 0x14100d900",
+            "   14072d719:\t48 8d 0d c0 af e9 00 \tlea    0xe9afc0(%rip),%rcx        # 0x1415c86e0",
+            "   14072d720:\t4c 0f 45 c7          \tcmovne %rdi,%r8",
+            "   14072d724:\te8 c7 eb a9 ff       \tcall   0x1401cc2f0",
+            "   14072d729:\t48 8d 15 40 02 8e 00 \tlea    0x8e0240(%rip),%rdx        # 0x14100d970",
+            "   14072d730:\tb9 04 00 00 00       \tmov    $0x4,%ecx"
+          ],
+          "after": [
+            "   14072d73b:\t4c 8d 05 56 02 8e 00 \tlea    0x8e0256(%rip),%r8        # 0x14100d998",
+            "   14072d742:\t48 8d 15 67 02 8e 00 \tlea    0x8e0267(%rip),%rdx        # 0x14100d9b0",
+            "   14072d749:\t48 85 c0             \ttest   %rax,%rax",
+            "   14072d74c:\t48 8d 0d 8d af e9 00 \tlea    0xe9af8d(%rip),%rcx        # 0x1415c86e0",
+            "   14072d753:\t4c 0f 45 c0          \tcmovne %rax,%r8",
+            "   14072d757:\te8 94 eb a9 ff       \tcall   0x1401cc2f0",
+            "   14072d75c:\te8 0f f9 ff ff       \tcall   0x14072d070",
+            "   14072d761:\t84 c0                \ttest   %al,%al",
+            "   14072d763:\t75 04                \tjne    0x14072d769",
+            "   14072d765:\t32 c0                \txor    %al,%al",
+            "   14072d767:\teb 1c                \tjmp    0x14072d785",
+            "   14072d769:\te8 12 fa ff ff       \tcall   0x14072d180"
+          ]
+        },
+        {
+          "match": "   140c93677:\tc7 05 6b ff 92 00 00 \tmovl   $0x0,0x92ff6b(%rip)        # 0x1415c35ec",
+          "before": [
+            "   140c9364d:\tcc                   \tint3",
+            "   140c9364e:\tcc                   \tint3",
+            "   140c9364f:\tcc                   \tint3",
+            "   140c93650:\t48 89 5c 24 08       \tmov    %rbx,0x8(%rsp)",
+            "   140c93655:\t48 89 74 24 10       \tmov    %rsi,0x10(%rsp)",
+            "   140c9365a:\t57                   \tpush   %rdi",
+            "   140c9365b:\t48 83 ec 20          \tsub    $0x20,%rsp",
+            "   140c9365f:\t48 8b d9             \tmov    %rcx,%rbx",
+            "   140c93662:\te8 d9 1d 00 00       \tcall   0x140c95440",
+            "   140c93667:\t8b 93 c8 00 00 00    \tmov    0xc8(%rbx),%edx",
+            "   140c9366d:\t83 c2 08             \tadd    $0x8,%edx",
+            "   140c93670:\tc7 43 68 00 00 00 00 \tmovl   $0x0,0x68(%rbx)"
+          ],
+          "after": [
+            "   140c9367e:\t00 00 00 ",
+            "   140c93681:\t39 93 cc 00 00 00    \tcmp    %edx,0xcc(%rbx)",
+            "   140c93687:\t7d 0c                \tjge    0x140c93695",
+            "   140c93689:\t48 8d 8b b8 00 00 00 \tlea    0xb8(%rbx),%rcx",
+            "   140c93690:\te8 8b 3b 00 00       \tcall   0x140c97220",
+            "   140c93695:\tbf 08 00 00 00       \tmov    $0x8,%edi",
+            "   140c9369a:\t66 0f 1f 44 00 00    \tnopw   0x0(%rax,%rax,1)",
+            "   140c936a0:\t48 8d 8b b8 00 00 00 \tlea    0xb8(%rbx),%rcx",
+            "   140c936a7:\te8 54 39 00 00       \tcall   0x140c97000",
+            "   140c936ac:\t48 ff cf             \tdec    %rdi",
+            "   140c936af:\t48 89 58 78          \tmov    %rbx,0x78(%rax)",
+            "   140c936b3:\t75 eb                \tjne    0x140c936a0"
+          ]
+        },
+        {
+          "match": "   140c93be0:\t8b 15 06 fa 92 00    \tmov    0x92fa06(%rip),%edx        # 0x1415c35ec",
+          "before": [
+            "   140c93bac:\t4c 89 7e 5c          \tmov    %r15,0x5c(%rsi)",
+            "   140c93bb0:\t48 8b ce             \tmov    %rsi,%rcx",
+            "   140c93bb3:\te8 e8 1d 00 00       \tcall   0x140c959a0",
+            "   140c93bb8:\t48 8b ce             \tmov    %rsi,%rcx",
+            "   140c93bbb:\te8 f0 19 00 00       \tcall   0x140c955b0",
+            "   140c93bc0:\t48 8b ce             \tmov    %rsi,%rcx",
+            "   140c93bc3:\te8 58 16 00 00       \tcall   0x140c95220",
+            "   140c93bc8:\t41 8b df             \tmov    %r15d,%ebx",
+            "   140c93bcb:\t39 9e f0 00 00 00    \tcmp    %ebx,0xf0(%rsi)",
+            "   140c93bd1:\t0f 8e a9 00 00 00    \tjle    0x140c93c80",
+            "   140c93bd7:\t66 0f 1f 84 00 00 00 \tnopw   0x0(%rax,%rax,1)",
+            "   140c93bde:\t00 00 "
+          ],
+          "after": [
+            "   140c93be6:\t48 8d 4d 77          \tlea    0x77(%rbp),%rcx",
+            "   140c93bea:\te8 b1 2f 00 00       \tcall   0x140c96ba0",
+            "   140c93bef:\t90                   \tnop",
+            "   140c93bf0:\t48 8d 4d 67          \tlea    0x67(%rbp),%rcx",
+            "   140c93bf4:\tff 15 a6 fb 24 00    \tcall   *0x24fba6(%rip)        # 0x140ee37a0",
+            "   140c93bfa:\t90                   \tnop",
+            "   140c93bfb:\t48 63 c3             \tmovslq %ebx,%rax",
+            "   140c93bfe:\t4c 8b 86 e8 00 00 00 \tmov    0xe8(%rsi),%r8",
+            "   140c93c05:\t4c 8b 4d 77          \tmov    0x77(%rbp),%r9",
+            "   140c93c09:\t4c 89 4c 24 20       \tmov    %r9,0x20(%rsp)",
+            "   140c93c0e:\t4d 8b 04 c0          \tmov    (%r8,%rax,8),%r8",
+            "   140c93c12:\t48 8d 15 ef 27 45 00 \tlea    0x4527ef(%rip),%rdx        # 0x1410e6408"
+          ]
+        },
+        {
+          "match": "   140c93ca6:\t44 8b 05 3f f9 92 00 \tmov    0x92f93f(%rip),%r8d        # 0x1415c35ec",
+          "before": [
+            "   140c93c72:\tff c3                \tinc    %ebx",
+            "   140c93c74:\t3b 9e f0 00 00 00    \tcmp    0xf0(%rsi),%ebx",
+            "   140c93c7a:\t0f 8c 60 ff ff ff    \tjl     0x140c93be0",
+            "   140c93c80:\t45 8b ef             \tmov    %r15d,%r13d",
+            "   140c93c83:\t44 39 be f0 00 00 00 \tcmp    %r15d,0xf0(%rsi)",
+            "   140c93c8a:\t0f 8e e2 01 00 00    \tjle    0x140c93e72",
+            "   140c93c90:\t48 8d 4d 67          \tlea    0x67(%rbp),%rcx",
+            "   140c93c94:\tff 15 06 fb 24 00    \tcall   *0x24fb06(%rip)        # 0x140ee37a0",
+            "   140c93c9a:\t90                   \tnop",
+            "   140c93c9b:\t48 8d 4d 7f          \tlea    0x7f(%rbp),%rcx",
+            "   140c93c9f:\tff 15 fb fa 24 00    \tcall   *0x24fafb(%rip)        # 0x140ee37a0",
+            "   140c93ca5:\t90                   \tnop"
+          ],
+          "after": [
+            "   140c93cad:\t48 8d 4d 67          \tlea    0x67(%rbp),%rcx",
+            "   140c93cb1:\t80 7e 09 00          \tcmpb   $0x0,0x9(%rsi)",
+            "   140c93cb5:\t48 8d 15 6c 27 45 00 \tlea    0x45276c(%rip),%rdx        # 0x1410e6428",
+            "   140c93cbc:\t75 07                \tjne    0x140c93cc5",
+            "   140c93cbe:\t48 8d 15 8b 0e 29 00 \tlea    0x290e8b(%rip),%rdx        # 0x140f24b50",
+            "   140c93cc5:\tff 15 75 fa 24 00    \tcall   *0x24fa75(%rip)        # 0x140ee3740",
+            "   140c93ccb:\t44 8b 05 1a f9 92 00 \tmov    0x92f91a(%rip),%r8d        # 0x1415c35ec",
+            "   140c93cd2:\t48 8d 15 57 27 45 00 \tlea    0x452757(%rip),%rdx        # 0x1410e6430",
+            "   140c93cd9:\t48 8d 4d 7f          \tlea    0x7f(%rbp),%rcx",
+            "   140c93cdd:\tff 15 5d fa 24 00    \tcall   *0x24fa5d(%rip)        # 0x140ee3740",
+            "   140c93ce3:\t4d 63 dd             \tmovslq %r13d,%r11",
+            "   140c93ce6:\t4c 8b 86 e8 00 00 00 \tmov    0xe8(%rsi),%r8"
+          ]
+        },
+        {
+          "match": "   140c93ccb:\t44 8b 05 1a f9 92 00 \tmov    0x92f91a(%rip),%r8d        # 0x1415c35ec",
+          "before": [
+            "   140c93c94:\tff 15 06 fb 24 00    \tcall   *0x24fb06(%rip)        # 0x140ee37a0",
+            "   140c93c9a:\t90                   \tnop",
+            "   140c93c9b:\t48 8d 4d 7f          \tlea    0x7f(%rbp),%rcx",
+            "   140c93c9f:\tff 15 fb fa 24 00    \tcall   *0x24fafb(%rip)        # 0x140ee37a0",
+            "   140c93ca5:\t90                   \tnop",
+            "   140c93ca6:\t44 8b 05 3f f9 92 00 \tmov    0x92f93f(%rip),%r8d        # 0x1415c35ec",
+            "   140c93cad:\t48 8d 4d 67          \tlea    0x67(%rbp),%rcx",
+            "   140c93cb1:\t80 7e 09 00          \tcmpb   $0x0,0x9(%rsi)",
+            "   140c93cb5:\t48 8d 15 6c 27 45 00 \tlea    0x45276c(%rip),%rdx        # 0x1410e6428",
+            "   140c93cbc:\t75 07                \tjne    0x140c93cc5",
+            "   140c93cbe:\t48 8d 15 8b 0e 29 00 \tlea    0x290e8b(%rip),%rdx        # 0x140f24b50",
+            "   140c93cc5:\tff 15 75 fa 24 00    \tcall   *0x24fa75(%rip)        # 0x140ee3740"
+          ],
+          "after": [
+            "   140c93cd2:\t48 8d 15 57 27 45 00 \tlea    0x452757(%rip),%rdx        # 0x1410e6430",
+            "   140c93cd9:\t48 8d 4d 7f          \tlea    0x7f(%rbp),%rcx",
+            "   140c93cdd:\tff 15 5d fa 24 00    \tcall   *0x24fa5d(%rip)        # 0x140ee3740",
+            "   140c93ce3:\t4d 63 dd             \tmovslq %r13d,%r11",
+            "   140c93ce6:\t4c 8b 86 e8 00 00 00 \tmov    0xe8(%rsi),%r8",
+            "   140c93ced:\t4c 8b 4d 67          \tmov    0x67(%rbp),%r9",
+            "   140c93cf1:\t4f 8b 04 d8          \tmov    (%r8,%r11,8),%r8",
+            "   140c93cf5:\t48 8d 15 44 27 45 00 \tlea    0x452744(%rip),%rdx        # 0x1410e6440",
+            "   140c93cfc:\t48 8d 4d 6f          \tlea    0x6f(%rbp),%rcx",
+            "   140c93d00:\tff 15 3a fa 24 00    \tcall   *0x24fa3a(%rip)        # 0x140ee3740",
+            "   140c93d06:\t4c 8d 05 db 8a 2a 00 \tlea    0x2a8adb(%rip),%r8        # 0x140f3c7e8",
+            "   140c93d0d:\t48 8d 15 80 af 37 00 \tlea    0x37af80(%rip),%rdx        # 0x14100ec94"
+          ]
+        },
+        {
+          "match": "   140c9658b:\tff 15 67 a0 24 00    \tcall   *0x24a067(%rip)        # 0x140ee05f8",
+          "before": [
+            "   140c9656d:\tcc                   \tint3",
+            "   140c9656e:\tcc                   \tint3",
+            "   140c9656f:\tcc                   \tint3",
+            "   140c96570:\t48 89 5c 24 08       \tmov    %rbx,0x8(%rsp)",
+            "   140c96575:\t48 89 74 24 10       \tmov    %rsi,0x10(%rsp)",
+            "   140c9657a:\t57                   \tpush   %rdi",
+            "   140c9657b:\t48 83 ec 20          \tsub    $0x20,%rsp",
+            "   140c9657f:\t8b fa                \tmov    %edx,%edi",
+            "   140c96581:\t48 8b d9             \tmov    %rcx,%rbx",
+            "   140c96584:\t33 d2                \txor    %edx,%edx",
+            "   140c96586:\t8b cf                \tmov    %edi,%ecx",
+            "   140c96588:\t41 8b f0             \tmov    %r8d,%esi"
+          ],
+          "after": [
+            "   140c96591:\t3b 3d 55 d0 92 00    \tcmp    0x92d055(%rip),%edi        # 0x1415c35ec",
+            "   140c96597:\t74 34                \tje     0x140c965cd",
+            "   140c96599:\t48 8b cb             \tmov    %rbx,%rcx",
+            "   140c9659c:\t89 3d 4a d0 92 00    \tmov    %edi,0x92d04a(%rip)        # 0x1415c35ec",
+            "   140c965a2:\te8 a9 d5 ff ff       \tcall   0x140c93b50",
+            "   140c965a7:\t84 c0                \ttest   %al,%al",
+            "   140c965a9:\t75 22                \tjne    0x140c965cd",
+            "   140c965ab:\t48 8b cb             \tmov    %rbx,%rcx",
+            "   140c965ae:\t89 35 38 d0 92 00    \tmov    %esi,0x92d038(%rip)        # 0x1415c35ec",
+            "   140c965b4:\te8 97 d5 ff ff       \tcall   0x140c93b50",
+            "   140c965b9:\t84 c0                \ttest   %al,%al",
+            "   140c965bb:\t75 10                \tjne    0x140c965cd"
+          ]
+        },
+        {
+          "match": "   140c96591:\t3b 3d 55 d0 92 00    \tcmp    0x92d055(%rip),%edi        # 0x1415c35ec",
+          "before": [
+            "   140c9656e:\tcc                   \tint3",
+            "   140c9656f:\tcc                   \tint3",
+            "   140c96570:\t48 89 5c 24 08       \tmov    %rbx,0x8(%rsp)",
+            "   140c96575:\t48 89 74 24 10       \tmov    %rsi,0x10(%rsp)",
+            "   140c9657a:\t57                   \tpush   %rdi",
+            "   140c9657b:\t48 83 ec 20          \tsub    $0x20,%rsp",
+            "   140c9657f:\t8b fa                \tmov    %edx,%edi",
+            "   140c96581:\t48 8b d9             \tmov    %rcx,%rbx",
+            "   140c96584:\t33 d2                \txor    %edx,%edx",
+            "   140c96586:\t8b cf                \tmov    %edi,%ecx",
+            "   140c96588:\t41 8b f0             \tmov    %r8d,%esi",
+            "   140c9658b:\tff 15 67 a0 24 00    \tcall   *0x24a067(%rip)        # 0x140ee05f8"
+          ],
+          "after": [
+            "   140c96597:\t74 34                \tje     0x140c965cd",
+            "   140c96599:\t48 8b cb             \tmov    %rbx,%rcx",
+            "   140c9659c:\t89 3d 4a d0 92 00    \tmov    %edi,0x92d04a(%rip)        # 0x1415c35ec",
+            "   140c965a2:\te8 a9 d5 ff ff       \tcall   0x140c93b50",
+            "   140c965a7:\t84 c0                \ttest   %al,%al",
+            "   140c965a9:\t75 22                \tjne    0x140c965cd",
+            "   140c965ab:\t48 8b cb             \tmov    %rbx,%rcx",
+            "   140c965ae:\t89 35 38 d0 92 00    \tmov    %esi,0x92d038(%rip)        # 0x1415c35ec",
+            "   140c965b4:\te8 97 d5 ff ff       \tcall   0x140c93b50",
+            "   140c965b9:\t84 c0                \ttest   %al,%al",
+            "   140c965bb:\t75 10                \tjne    0x140c965cd",
+            "   140c965bd:\t48 8b 5c 24 30       \tmov    0x30(%rsp),%rbx"
+          ]
+        },
+        {
+          "match": "   140c9659c:\t89 3d 4a d0 92 00    \tmov    %edi,0x92d04a(%rip)        # 0x1415c35ec",
+          "before": [
+            "   140c96575:\t48 89 74 24 10       \tmov    %rsi,0x10(%rsp)",
+            "   140c9657a:\t57                   \tpush   %rdi",
+            "   140c9657b:\t48 83 ec 20          \tsub    $0x20,%rsp",
+            "   140c9657f:\t8b fa                \tmov    %edx,%edi",
+            "   140c96581:\t48 8b d9             \tmov    %rcx,%rbx",
+            "   140c96584:\t33 d2                \txor    %edx,%edx",
+            "   140c96586:\t8b cf                \tmov    %edi,%ecx",
+            "   140c96588:\t41 8b f0             \tmov    %r8d,%esi",
+            "   140c9658b:\tff 15 67 a0 24 00    \tcall   *0x24a067(%rip)        # 0x140ee05f8",
+            "   140c96591:\t3b 3d 55 d0 92 00    \tcmp    0x92d055(%rip),%edi        # 0x1415c35ec",
+            "   140c96597:\t74 34                \tje     0x140c965cd",
+            "   140c96599:\t48 8b cb             \tmov    %rbx,%rcx"
+          ],
+          "after": [
+            "   140c965a2:\te8 a9 d5 ff ff       \tcall   0x140c93b50",
+            "   140c965a7:\t84 c0                \ttest   %al,%al",
+            "   140c965a9:\t75 22                \tjne    0x140c965cd",
+            "   140c965ab:\t48 8b cb             \tmov    %rbx,%rcx",
+            "   140c965ae:\t89 35 38 d0 92 00    \tmov    %esi,0x92d038(%rip)        # 0x1415c35ec",
+            "   140c965b4:\te8 97 d5 ff ff       \tcall   0x140c93b50",
+            "   140c965b9:\t84 c0                \ttest   %al,%al",
+            "   140c965bb:\t75 10                \tjne    0x140c965cd",
+            "   140c965bd:\t48 8b 5c 24 30       \tmov    0x30(%rsp),%rbx",
+            "   140c965c2:\t48 8b 74 24 38       \tmov    0x38(%rsp),%rsi",
+            "   140c965c7:\t48 83 c4 20          \tadd    $0x20,%rsp",
+            "   140c965cb:\t5f                   \tpop    %rdi"
+          ]
+        },
+        {
+          "match": "   140c965ae:\t89 35 38 d0 92 00    \tmov    %esi,0x92d038(%rip)        # 0x1415c35ec",
+          "before": [
+            "   140c96584:\t33 d2                \txor    %edx,%edx",
+            "   140c96586:\t8b cf                \tmov    %edi,%ecx",
+            "   140c96588:\t41 8b f0             \tmov    %r8d,%esi",
+            "   140c9658b:\tff 15 67 a0 24 00    \tcall   *0x24a067(%rip)        # 0x140ee05f8",
+            "   140c96591:\t3b 3d 55 d0 92 00    \tcmp    0x92d055(%rip),%edi        # 0x1415c35ec",
+            "   140c96597:\t74 34                \tje     0x140c965cd",
+            "   140c96599:\t48 8b cb             \tmov    %rbx,%rcx",
+            "   140c9659c:\t89 3d 4a d0 92 00    \tmov    %edi,0x92d04a(%rip)        # 0x1415c35ec",
+            "   140c965a2:\te8 a9 d5 ff ff       \tcall   0x140c93b50",
+            "   140c965a7:\t84 c0                \ttest   %al,%al",
+            "   140c965a9:\t75 22                \tjne    0x140c965cd",
+            "   140c965ab:\t48 8b cb             \tmov    %rbx,%rcx"
+          ],
+          "after": [
+            "   140c965b4:\te8 97 d5 ff ff       \tcall   0x140c93b50",
+            "   140c965b9:\t84 c0                \ttest   %al,%al",
+            "   140c965bb:\t75 10                \tjne    0x140c965cd",
+            "   140c965bd:\t48 8b 5c 24 30       \tmov    0x30(%rsp),%rbx",
+            "   140c965c2:\t48 8b 74 24 38       \tmov    0x38(%rsp),%rsi",
+            "   140c965c7:\t48 83 c4 20          \tadd    $0x20,%rsp",
+            "   140c965cb:\t5f                   \tpop    %rdi",
+            "   140c965cc:\tc3                   \tret",
+            "   140c965cd:\t48 8b 5c 24 30       \tmov    0x30(%rsp),%rbx",
+            "   140c965d2:\t48 8b 74 24 38       \tmov    0x38(%rsp),%rsi",
+            "   140c965d7:\tb0 01                \tmov    $0x1,%al",
+            "   140c965d9:\t48 83 c4 20          \tadd    $0x20,%rsp"
+          ]
+        },
+        {
+          "match": "   140c97690:\t81 3d 52 bf 92 00 09 \tcmpl   $0x409,0x92bf52(%rip)        # 0x1415c35ec",
+          "before": [
+            "   140c9765c:\t33 db                \txor    %ebx,%ebx",
+            "   140c9765e:\t48 89 59 08          \tmov    %rbx,0x8(%rcx)",
+            "   140c97662:\t48 89 59 10          \tmov    %rbx,0x10(%rcx)",
+            "   140c97666:\t48 8d 05 6b 02 45 00 \tlea    0x45026b(%rip),%rax        # 0x1410e78d8",
+            "   140c9766d:\t48 89 41 20          \tmov    %rax,0x20(%rcx)",
+            "   140c97671:\t48 89 59 28          \tmov    %rbx,0x28(%rcx)",
+            "   140c97675:\t48 89 59 30          \tmov    %rbx,0x30(%rcx)",
+            "   140c97679:\t48 8d 05 80 02 45 00 \tlea    0x450280(%rip),%rax        # 0x1410e7900",
+            "   140c97680:\t48 89 41 38          \tmov    %rax,0x38(%rcx)",
+            "   140c97684:\t48 89 59 40          \tmov    %rbx,0x40(%rcx)",
+            "   140c97688:\t48 89 59 48          \tmov    %rbx,0x48(%rcx)",
+            "   140c9768c:\t48 89 51 50          \tmov    %rdx,0x50(%rcx)"
+          ],
+          "after": [
+            "   140c97697:\t04 00 00 ",
+            "   140c9769a:\t0f 84 22 01 00 00    \tje     0x140c977c2",
+            "   140c976a0:\t48 89 59 08          \tmov    %rbx,0x8(%rcx)",
+            "   140c976a4:\t48 89 59 10          \tmov    %rbx,0x10(%rcx)",
+            "   140c976a8:\t48 8b 02             \tmov    (%rdx),%rax",
+            "   140c976ab:\t49 8b d0             \tmov    %r8,%rdx",
+            "   140c976ae:\t49 8b ca             \tmov    %r10,%rcx",
+            "   140c976b1:\tff 50 10             \tcall   *0x10(%rax)",
+            "   140c976b4:\t88 47 1c             \tmov    %al,0x1c(%rdi)",
+            "   140c976b7:\t89 1d 5f c1 92 00    \tmov    %ebx,0x92c15f(%rip)        # 0x1415c381c",
+            "   140c976bd:\t48 8d 0d fc fe 44 00 \tlea    0x44fefc(%rip),%rcx        # 0x1410e75c0",
+            "   140c976c4:\te8 07 fe ff ff       \tcall   0x140c974d0"
+          ]
+        },
+        {
+          "match": "   140d5d69d:\tff 15 c5 83 17 00    \tcall   *0x1783c5(%rip)        # 0x140ed5a68",
+          "before": [
+            "   140d5d662:\t48 8b 15 5f 84 17 00 \tmov    0x17845f(%rip),%rdx        # 0x140ed5ac8",
+            "   140d5d669:\t8b 05 49 b6 85 00    \tmov    0x85b649(%rip),%eax        # 0x1415b8cb8",
+            "   140d5d66f:\t89 02                \tmov    %eax,(%rdx)",
+            "   140d5d671:\te8 56 05 00 00       \tcall   0x140d5dbcc",
+            "   140d5d676:\te8 a5 06 00 00       \tcall   0x140d5dd20",
+            "   140d5d67b:\t83 3d 66 64 8b 00 00 \tcmpl   $0x0,0x8b6466(%rip)        # 0x141613ae8",
+            "   140d5d682:\t75 0d                \tjne    0x140d5d691",
+            "   140d5d684:\t48 8d 0d d5 10 55 ff \tlea    -0xaaef2b(%rip),%rcx        # 0x1402ae760",
+            "   140d5d68b:\tff 15 df 83 17 00    \tcall   *0x1783df(%rip)        # 0x140ed5a70",
+            "   140d5d691:\t83 3d 80 f1 81 00 ff \tcmpl   $0xffffffff,0x81f180(%rip)        # 0x14157c818",
+            "   140d5d698:\t75 09                \tjne    0x140d5d6a3",
+            "   140d5d69a:\t83 c9 ff             \tor     $0xffffffff,%ecx"
+          ],
+          "after": [
+            "   140d5d6a3:\t33 c0                \txor    %eax,%eax",
+            "   140d5d6a5:\t48 83 c4 28          \tadd    $0x28,%rsp",
+            "   140d5d6a9:\tc3                   \tret",
+            "   140d5d6aa:\tcc                   \tint3",
+            "   140d5d6ab:\tcc                   \tint3",
+            "   140d5d6ac:\t48 83 ec 28          \tsub    $0x28,%rsp",
+            "   140d5d6b0:\te8 6f 06 00 00       \tcall   0x140d5dd24",
+            "   140d5d6b5:\t48 83 c4 28          \tadd    $0x28,%rsp",
+            "   140d5d6b9:\te9 26 fd ff ff       \tjmp    0x140d5d3e4",
+            "   140d5d6be:\tcc                   \tint3",
+            "   140d5d6bf:\tcc                   \tint3",
+            "   140d5d6c0:\t48 89 5c 24 10       \tmov    %rbx,0x10(%rsp)"
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Complete objdump linear -d listing search for recorded globals, setter/getter and imported locale calls. Does not prove all indirect/dynamic/runtime references."
+}

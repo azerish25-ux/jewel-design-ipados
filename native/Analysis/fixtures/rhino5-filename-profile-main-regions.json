@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "locale-manager-set",
+      "name": null,
+      "abi": "localeManagerSetter",
+      "rva": 13198704,
+      "length": 111,
+      "sha256": "301483b62304385c51ac71bfc096524fb0015d8242c0d05ab73c935bf0e59665",
+      "unwindRegions": [
+        {
+          "begin": 13198704,
+          "end": 13198815,
+          "unwind": 19288088
+        }
+      ]
+    },
+    {
+      "role": "locale-startup-caller",
+      "name": null,
+      "abi": "localeStartup",
+      "rva": 1895936,
+      "length": 602,
+      "sha256": "f4f0c5cc5720d4bbd5bab49abc7c1a00e0a5ac5722d477ab265a221acf89b91e",
+      "unwindRegions": [
+        {
+          "begin": 1895936,
+          "end": 1896538,
+          "unwind": 19806504
+        }
+      ]
+    },
+    {
+      "role": "locale-command-caller",
+      "name": null,
+      "abi": "preserve",
+      "rva": 7019504,
+      "length": 636,
+      "sha256": "0faa7148edeaed3dd4a77ce241e922cce2c5d97554678325c67ab0801cfc8c7e",
+      "unwindRegions": [
+        {
+          "begin": 7019504,
+          "end": 7020140,
+          "unwind": 19972204
+        }
+      ]
+    },
+    {
+      "role": "ctype-utf8-call-owner",
+      "name": null,
+      "abi": "preserve",
+      "rva": 7521040,
+      "length": 2815,
+      "sha256": "5bb331b6aa87531914166759a84cebfe1dea9e5e6655aedd4474dce4b59684ce",
+      "unwindRegions": [
+        {
+          "begin": 7521040,
+          "end": 7521320,
+          "unwind": 19692576
+        },
+        {
+          "begin": 7521320,
+          "end": 7521489,
+          "unwind": 19692552
+        },
+        {
+          "begin": 7521489,
+          "end": 7521497,
+          "unwind": 19692532
+        },
+        {
+          "begin": 7521497,
+          "end": 7522213,
+          "unwind": 19692508
+        },
+        {
+          "begin": 7522213,
+          "end": 7523258,
+          "unwind": 19692488
+        },
+        {
+          "begin": 7523258,
+          "end": 7523515,
+          "unwind": 19692468
+        },
+        {
+          "begin": 7523515,
+          "end": 7523833,
+          "unwind": 19692452
+        },
+        {
+          "begin": 7523833,
+          "end": 7523840,
+          "unwind": 19692428
+        },
+        {
+          "begin": 7523840,
+          "end": 7523855,
+          "unwind": 19692412
+        }
+      ]
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "ON_SetStringConversionWindowsLocaleID",
+      "returnType": "uint",
+      "parameters": [
+        "uint",
+        "uint"
+      ]
+    },
+    {
+      "name": "setlocale",
+      "returnType": "byte*",
+      "parameters": [
+        "int",
+        "byte*"
+      ]
+    }
+  ]
+}

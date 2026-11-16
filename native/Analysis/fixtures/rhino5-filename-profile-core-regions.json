@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "string-profile-set",
+      "name": null,
+      "abi": "localeCoreSetter",
+      "rva": 1030896,
+      "length": 39,
+      "sha256": "cb48c2839d48039eb2e94404a0399501f6fd27e68d54311c629e73ea2c7d4368",
+      "unwindRegions": [],
+      "boundary": "LeafRET atfbb16, INT3 before next exportfbb20."
+    },
+    {
+      "role": "string-profile-get",
+      "name": null,
+      "abi": "localeCoreGetter",
+      "rva": 1030944,
+      "length": 7,
+      "sha256": "aad9277c8faab08730b8b43bdd405cdefc58ed21607c5986140d5ef315377a11",
+      "unwindRegions": [],
+      "boundary": "LeafRET atfbb26; next exportfbb30."
+    }
+  ]
+}
