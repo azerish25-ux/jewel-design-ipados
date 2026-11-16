@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N03",
+  "inputCommit": "cc0445fb32d46e2abad9c8a9e99b119bd7a8706c",
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "targetExecuted": false,
+  "manifest": "native/Analysis/fixtures/rhino5-dib-creation-regions.json",
+  "methods": [
+    {
+      "role": "dib-create",
+      "name": "?CreateDib@CRhinoUiDib@@QEAAPEAUtagBITMAPINFO@@HHH_NPEAVCPalette@@@Z",
+      "rva": 13331728,
+      "length": 663,
+      "sha256": "7a6ad8486ecc51713b5f1ca5366eb758071424488706091698bd5a99f66eab76",
+      "unwindRegions": [
+        {
+          "begin": 13331728,
+          "end": 13332391,
+          "unwind": 18810984
+        }
+      ]
+    },
+    {
+      "role": "dib-select",
+      "name": "?DCSelectBitmap@CRhinoUiDib@@QEAAH_N@Z",
+      "rva": 13321104,
+      "length": 131,
+      "sha256": "d8b807d5ddb1b1754d2abeffd5c4368b0b2bc53175f42357ae52d7e5a4a52ee7",
+      "unwindRegions": [
+        {
+          "begin": 13321104,
+          "end": 13321235,
+          "unwind": 19055176
+        }
+      ]
+    },
+    {
+      "role": "dib-default-constructor",
+      "name": "??0CRhinoUiDib@@QEAA@XZ",
+      "rva": 13320256,
+      "length": 77,
+      "sha256": "38fa08be1be673182505dedc89511490dc92e84d2b6bf6630caf97cdf97a4a55",
+      "unwindRegions": [
+        {
+          "begin": 13320256,
+          "end": 13320333,
+          "unwind": 19055176
+        }
+      ]
+    },
+    {
+      "role": "dib-storage-width",
+      "name": "?GetStorageWidth@CRhinoUiDib@@QEBAIXZ",
+      "rva": 13329264,
+      "length": 115,
+      "sha256": "032678b2646fd2996779c48e00252fad11d3b37a55c242353a957d143dba4b26",
+      "unwindRegions": []
+    },
+    {
+      "role": "dib-destroy",
+      "name": "?DestroyDib@CRhinoUiDib@@QEAAXXZ",
+      "rva": 13320352,
+      "length": 238,
+      "sha256": "517d23c81bff19c370a9dcbd31483fa9a66ba3ce7f05100fc21a296f8678372f",
+      "unwindRegions": [
+        {
+          "begin": 13320352,
+          "end": 13320590,
+          "unwind": 19021808
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "dib-create",
+      "signature": "tagBITMAPINFO * CreateDib(int param_1, int param_2, int param_3, bool param_4, CPalette * param_5)",
+      "decompilerSha256": "a09ac08c30b0235bea458cc7bfe3982805b47654696065a52e3ec7f15bc36faa"
+    },
+    {
+      "role": "dib-select",
+      "signature": "int DCSelectBitmap(bool param_1)",
+      "decompilerSha256": "6449b9e6b04a114cf3ba495296fbceaa856ec79e67f8640e9b06f1ed11353dbc"
+    },
+    {
+      "role": "dib-default-constructor",
+      "signature": "undefined CRhinoUiDib(void)",
+      "decompilerSha256": "9aca59a109c20fceb395ab497b5b4c0fd24e7150df797d09e2ebad6dcc4291ec"
+    },
+    {
+      "role": "dib-storage-width",
+      "signature": "uint GetStorageWidth(void)",
+      "decompilerSha256": "2c590a90515f67ccf2676e11eda23e0ec17c919628d21a6beb1590bea862729a"
+    },
+    {
+      "role": "dib-destroy",
+      "signature": "void DestroyDib(void)",
+      "decompilerSha256": "9428793f48e882244bdf603d30a9666e9fff82be2254f4a01eb207ddf7ceeb75"
+    }
+  ],
+  "externalSignatures": [
+    {
+      "external": "CreateDIBSection",
+      "address": "EXTERNAL:00001fc1",
+      "decoded": "void * CreateDIBSection(void * arg1, void * arg2, uint arg3, void * * arg4, void * arg5, uint arg6)",
+      "applied": true
+    },
+    {
+      "external": "CreateCompatibleDC",
+      "address": "EXTERNAL:00001faa",
+      "decoded": "void * CreateCompatibleDC(void * arg1)",
+      "applied": true
+    },
+    {
+      "external": "SelectObject",
+      "address": "EXTERNAL:00001fa0",
+      "decoded": "void * SelectObject(void * arg1, void * arg2)",
+      "applied": true
+    },
+    {
+      "external": "GetObjectW",
+      "address": "EXTERNAL:00001fb0",
+      "decoded": "int GetObjectW(void * arg1, int arg2, void * arg3)",
+      "applied": true
+    },
+    {
+      "external": "GetPaletteEntries",
+      "address": "EXTERNAL:00001fbb",
+      "decoded": "uint GetPaletteEntries(void * arg1, uint arg2, uint arg3, void * arg4)",
+      "applied": true
+    },
+    {
+      "external": "SelectPalette",
+      "address": "EXTERNAL:00001f94",
+      "decoded": "void * SelectPalette(void * arg1, void * arg2, int arg3)",
+      "applied": true
+    },
+    {
+      "external": "RealizePalette",
+      "address": "EXTERNAL:00001fa5",
+      "decoded": "uint RealizePalette(void * arg1)",
+      "applied": true
+    },
+    {
+      "external": "DeleteObject",
+      "address": "EXTERNAL:00001fac",
+      "decoded": "int DeleteObject(void * arg1)",
+      "applied": true
+    },
+    {
+      "external": "DeleteDC",
+      "address": "EXTERNAL:00001f9d",
+      "decoded": "int DeleteDC(void * arg1)",
+      "applied": true
+    }
+  ],
+  "layout": {
+    "objectOffsets": {
+      "bitmapInfo": 8,
+      "bits": 16,
+      "resource": 24,
+      "nativeHdc": 32,
+      "cdcPointer": 40,
+      "embeddedCdc": 48,
+      "palette": 80,
+      "hbitmap": 88,
+      "oldBitmap": 96,
+      "oldPalette": 104
+    },
+    "bitmapInfoHeaderBytes": 40,
+    "planes": 1,
+    "compression": 0,
+    "xPelsPerMeter": 0,
+    "yPelsPerMeter": 0,
+    "clrUsed": 0,
+    "clrImportant": 0,
+    "createDibSection": {
+      "hdc": 0,
+      "usage": 0,
+      "section": 0,
+      "offset": 0
+    },
+    "createCompatibleDC": {
+      "hdc": 0
+    },
+    "selection": "Boolean fourth CreateDib argument chooses selection of created bitmap into the new HDC. Caller resize path supplies true and no palette."
+  },
+  "observations": {
+    "header": "Destroy old DIB before allocation. Width/height copied as signed input ints without negation/absolute value; depth truncated to16bits. BI_RGB40byte header. SizeImage is original uint32 stride result times signed height modulo32. Normal texture resize supplies positive width/height, hence bottom-up. Do not infer that every decoded source image has the same orientation.",
+    "trueColorStride": "For clrUsed0 and depth outside1/4/8, original uint32 expression is ((depth16*width32+31)>>3)&0x1ffffffc. Multiplication/addition wrap at32bits. For ordinary positive24/32bit dimensions this is DWORD-aligned row bytes.",
+    "indexedStride": "If clrUsed nonzero or depth1/4/8, helper computes ((uintWidth/(8/depth16))+3)&0xfffffffc with integer division. It truncates packed-pixel tails instead of the usual ceil rule. For incompatible combinations division by zero is possible. This observed quirk is NOT silently replaced with a standard stride algorithm and is not proof the original low-depth runtime safely accepts every width.",
+    "nativeAllocation": "CreateDIBSection(NULL,header,DIB_RGB_COLORS0,&bits,NULL,0), then CreateCompatibleDC(NULL) and MFC CDC attach thunk. A zero bits pointer/HDC or failed attach triggers DestroyDib and null return. Header allocation failure returns null. No explicit pixel-fill loop in inspected creation body. SelectObject return is stored without checking HGDI_ERROR; do not treat static return as proof of actual native selection success.",
+    "defaultState": "Inspected constructor initializes owned handles/pointers to0 after embedded CDC constructor. No SetStretchBltMode/SetBrushOrgEx call observed in these five bodies. External MFC thunks and OS-created DC defaults are not independently proved by this audit.",
+    "resampleCaller": "Existing hash-locked wrapper1ad030 sets HALFTONE4 iff signed integer sourceWidth/destWidth>=2 OR sourceHeight/destHeight>=2. Shrinks smaller than2x retain DC mode. It then StretchBlt SRCCOPY0xcc0020 and separately repairs32bit alpha by source OR helper. No direct SetBrushOrgEx call observed in that wrapper. Public documentation recommends brush-origin setup; do not add it to a source-faithful oracle without observing the actual effective origin.",
+    "selection": "DCSelectBitmap(true) fails if CDC pointer/HBITMAP absent; selects only when oldBitmap0. False clears oldBitmap before restoring it; failure leaves field0. Already-selected/already-unselected cases return1.",
+    "cleanup": "DestroyDib frees resource/header, restores/deletes palette, detaches CDC, restores old bitmap, deletes HBITMAP and HDC, then zeros all owned pointers. Real native cleanup result/driver behavior is not inferred from these static calls."
+  },
+  "rawCrossCheck": {
+    "createDibSha256": "d38aa875758a9a34a4cfa7a13da3e32de81e3e29760519f300facaad19448796",
+    "storageWidthLeaf": {
+      "rva": 13329264,
+      "length": 115,
+      "finalRetRva": 13329378,
+      "noUnwindEntry": true
+    },
+    "knownImports": {
+      "CreateDIBSectionIatRva": 15553872,
+      "CreateCompatibleDCIatRva": 15553688,
+      "SelectObjectIatRva": 15553608
+    }
+  },
+  "primaryReferences": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-setstretchbltmode",
+    "https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-stretchblt"
+  ],
+  "nextProof": "Build an owned public-Win32 reference executable on D: that creates source-like24/32bit positive-height BI_RGB DIBs and memory DCs, records actual stretch/brush/map/ICM state, calls source-condition StretchBlt, flushes and exports exact stored RGB/alpha/stride bytes. Separate OS-GDI evidence from original vendor runtime; compare source no-origin-reset and controlled origin variants before selecting a portable filter.",
+  "remaining": [
+    "Resolve MFC attach/default state and effective DC brush/stretch/ICM settings before calling public-GDI results source-equivalent",
+    "Measure actual Windows RGB filtering/bit-depth conversion at ratio boundaries, odd/padded rows, asymmetric scales and palette depths",
+    "Implement exact measured portable RGB resize and compose with existing original alpha repair",
+    "Original vendor runtime, PC corpus and physical-device parity"
+  ],
+  "allLocalWritesD": true,
+  "parityRowsClosed": 0
+}

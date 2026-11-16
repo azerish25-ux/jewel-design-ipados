@@ -31,6 +31,8 @@ This is a source-backed feature/compatibility checklist for recovered CounterSke
 
 - [Original texture anisotropy](rhino5-texture-anisotropy-source.json): mode normalization, extension/no-query distinction, float divisors and explicit Metal representability; original-driver equality remains unverified.
 
+- [Original DIB creation and selection](rhino5-dib-creation-source.json): five original bodies and nine Win32 ABIs, header/orientation/stride/selection/cleanup, indexed-stride quirks and exact HALFTONE ratio boundary. Actual RGB resample measurement remains required.
+
 ## Most consequential findings
 
 1. A PC portfolio is .csp XML plus GUID-pair .csg designs and sibling preview/history files. An STL/3DM geometry export is a different contract. [Project.cs:101](<../../../recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs#L101>) — public string ProjectInfoFilePath.

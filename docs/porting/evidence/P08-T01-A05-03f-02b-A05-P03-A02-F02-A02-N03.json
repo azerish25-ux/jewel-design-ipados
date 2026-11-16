@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N03",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "cc0445fb32d46e2abad9c8a9e99b119bd7a8706c",
+  "status": "original_dib_setup_static_verified_public_gdi_oracle_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N03-dib-setup-audit.md",
+  "audit": "docs/evidence/audit/rhino5-dib-creation-source.json",
+  "checks": {
+    "originalTargetExecuted": false,
+    "ghidraExitCode": 0,
+    "verifiedBodies": 5,
+    "explicitWin32Abis": 9,
+    "reportSha256": "c2aba0e66b8c149bb9deb22506f710f2e7573fae30b856c96b4a987d8fc03aff",
+    "repositoryIntegrity": "passed"
+  },
+  "review": "Header/stride/selection/cleanup and caller ratio boundary are static original evidence. Source DC defaults/MFC state, actual RGB pixels/public-GDI oracle/portable resampler/PC/physical remain separate. S05 original iOS run43879034941 remains live and is not restarted.",
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

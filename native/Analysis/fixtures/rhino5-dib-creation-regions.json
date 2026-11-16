@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "dib-create",
+      "name": "?CreateDib@CRhinoUiDib@@QEAAPEAUtagBITMAPINFO@@HHH_NPEAVCPalette@@@Z",
+      "rva": 13331728,
+      "length": 663,
+      "sha256": "7a6ad8486ecc51713b5f1ca5366eb758071424488706091698bd5a99f66eab76",
+      "unwindRegions": [
+        {
+          "begin": 13331728,
+          "end": 13332391,
+          "unwind": 18810984
+        }
+      ]
+    },
+    {
+      "role": "dib-select",
+      "name": "?DCSelectBitmap@CRhinoUiDib@@QEAAH_N@Z",
+      "rva": 13321104,
+      "length": 131,
+      "sha256": "d8b807d5ddb1b1754d2abeffd5c4368b0b2bc53175f42357ae52d7e5a4a52ee7",
+      "unwindRegions": [
+        {
+          "begin": 13321104,
+          "end": 13321235,
+          "unwind": 19055176
+        }
+      ]
+    },
+    {
+      "role": "dib-default-constructor",
+      "name": "??0CRhinoUiDib@@QEAA@XZ",
+      "rva": 13320256,
+      "length": 77,
+      "sha256": "38fa08be1be673182505dedc89511490dc92e84d2b6bf6630caf97cdf97a4a55",
+      "unwindRegions": [
+        {
+          "begin": 13320256,
+          "end": 13320333,
+          "unwind": 19055176
+        }
+      ]
+    },
+    {
+      "role": "dib-storage-width",
+      "name": "?GetStorageWidth@CRhinoUiDib@@QEBAIXZ",
+      "rva": 13329264,
+      "length": 115,
+      "sha256": "032678b2646fd2996779c48e00252fad11d3b37a55c242353a957d143dba4b26",
+      "unwindRegions": []
+    },
+    {
+      "role": "dib-destroy",
+      "name": "?DestroyDib@CRhinoUiDib@@QEAAXXZ",
+      "rva": 13320352,
+      "length": 238,
+      "sha256": "517d23c81bff19c370a9dcbd31483fa9a66ba3ce7f05100fc21a296f8678372f",
+      "unwindRegions": [
+        {
+          "begin": 13320352,
+          "end": 13320590,
+          "unwind": 19021808
+        }
+      ]
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "CreateDIBSection",
+      "returnType": "void*",
+      "parameters": [
+        "void*",
+        "void*",
+        "uint",
+        "void**",
+        "void*",
+        "uint"
+      ]
+    },
+    {
+      "name": "CreateCompatibleDC",
+      "returnType": "void*",
+      "parameters": [
+        "void*"
+      ]
+    },
+    {
+      "name": "SelectObject",
+      "returnType": "void*",
+      "parameters": [
+        "void*",
+        "void*"
+      ]
+    },
+    {
+      "name": "GetObjectW",
+      "returnType": "int",
+      "parameters": [
+        "void*",
+        "int",
+        "void*"
+      ]
+    },
+    {
+      "name": "GetPaletteEntries",
+      "returnType": "uint",
+      "parameters": [
+        "void*",
+        "uint",
+        "uint",
+        "void*"
+      ]
+    },
+    {
+      "name": "SelectPalette",
+      "returnType": "void*",
+      "parameters": [
+        "void*",
+        "void*",
+        "int"
+      ]
+    },
+    {
+      "name": "RealizePalette",
+      "returnType": "uint",
+      "parameters": [
+        "void*"
+      ]
+    },
+    {
+      "name": "DeleteObject",
+      "returnType": "int",
+      "parameters": [
+        "void*"
+      ]
+    },
+    {
+      "name": "DeleteDC",
+      "returnType": "int",
+      "parameters": [
+        "void*"
+      ]
+    }
+  ]
+}
