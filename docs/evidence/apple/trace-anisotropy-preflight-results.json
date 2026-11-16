@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S05",
+  "sourceCommit": "13381ec97fd25589b30d852dab4ad6dfa0daef5a",
+  "workflowRun": 43879034820,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43879034820",
+  "conclusion": "success",
+  "artifact": {
+    "id": 14231318330,
+    "sha256": "09f645061fa8ba031e95b5c9394bb63fe78c7d16973821571004df418b2e8dd4",
+    "digestVerified": true
+  },
+  "portableCases": 48,
+  "binding": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "outputHashes": {
+    "numericTests": "bd7aec2eb83aec0daf388de14b61b579dd999d49d5ed4276a70e0bb3cfd0fef7",
+    "bindingBuild": "8fb64403ebddf1f4d4f70fe115070682b2a4af1e27241ff769aa63246b1f712c"
+  },
+  "scope": "macOS source policy and real iOS binding compilation only; actual GPU descriptors/footprints/visible simulator/PC/physical acceptance separate.",
+  "parityRowsClosed": 0
+}

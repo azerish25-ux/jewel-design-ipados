@@ -29,6 +29,8 @@ This is a source-backed feature/compatibility checklist for recovered CounterSke
 
 - [Original texture final upload](rhino5-image-upload-source.json): seven original helpers,664 static enum results, BGR/BGRA versus internal DXT1/DXT5 storage, allocation/subimage/mipmap and truthful native success limitations.
 
+- [Original texture anisotropy](rhino5-texture-anisotropy-source.json): mode normalization, extension/no-query distinction, float divisors and explicit Metal representability; original-driver equality remains unverified.
+
 ## Most consequential findings
 
 1. A PC portfolio is .csp XML plus GUID-pair .csg designs and sibling preview/history files. An STL/3DM geometry export is a different contract. [Project.cs:101](<../../../recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs#L101>) — public string ProjectInfoFilePath.
