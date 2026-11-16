@@ -51,10 +51,14 @@ internal sealed class CadMetalDrawablePresenter : IDisposable
     }
     internal void ClearWallpaper(){lock(sync){ObjectDisposedException.ThrowIf(disposed,this);var mesh=current?.Mesh?.Retain();var trace=current?.Trace?.Retain();var scene=new CadMetalGpuScene(mesh,null,trace,current?.TraceInfo);try{frames.ReplaceResource(scene);current=scene;}catch{scene.Dispose();throw;}}}
     internal long SetTracePixels(DecodedLocalImage image,Rhino5TraceImage info,int sourceDibDepth,Rhino5TextureAnisotropy anisotropy)
+    =>SetTracePixelsCore(image,info,sourceDibDepth,anisotropy,true);
+    internal long SetPreparedTracePixels(DecodedLocalImage image,Rhino5TraceImage info,int sourceDibDepth,Rhino5TextureAnisotropy anisotropy)
+    {if(image.PixelSource!=DecodedPixelSource.PreparedTexture)throw new ArgumentException("Trace source requires the typed composed preparation result.",nameof(image));return SetTracePixelsCore(image,info,sourceDibDepth,anisotropy,false);}
+    private long SetTracePixelsCore(DecodedLocalImage image,Rhino5TraceImage info,int sourceDibDepth,Rhino5TextureAnisotropy anisotropy,bool applyGray)
     {
      ArgumentNullException.ThrowIfNull(image);lock(sync){ObjectDisposedException.ThrowIf(disposed,this);if(image.AlphaRepresentation!=RgbaAlphaRepresentation.Straight)throw new NotSupportedException("Trace pixels require explicit straight RGBA.");
       int maximumAnisotropy=anisotropy.ToMetalMaximum();
-      _=Rhino5TracePlane.Create(info,image.Width,image.Height);byte[] bytes=Rhino5TraceRaster.Prepare(image.CopyRgba(),image.Width,image.Height,sourceDibDepth,info.GrayScale);tracePipeline??=new(renderer.Device,MTLPixelFormat.Depth32Float,true);tracePipeline.EnsureAnisotropy(maximumAnisotropy);
+      _=Rhino5TracePlane.Create(info,image.Width,image.Height);byte[] bytes=applyGray?Rhino5TraceRaster.Prepare(image.CopyRgba(),image.Width,image.Height,sourceDibDepth,info.GrayScale):image.CopyRgba();tracePipeline??=new(renderer.Device,MTLPixelFormat.Depth32Float,true);tracePipeline.EnsureAnisotropy(maximumAnisotropy);
       using var description=MTLTextureDescriptor.CreateTexture2DDescriptor(MTLPixelFormat.RGBA8Unorm,(nuint)image.Width,(nuint)image.Height,false);description.StorageMode=MTLStorageMode.Shared;description.Usage=MTLTextureUsage.ShaderRead;
       IMTLTexture? texture=renderer.Device.CreateTexture(description)??throw new InvalidOperationException("Trace texture allocation failed.");CadMetalGpuTrace? resource=null;CadMetalGpuMesh? mesh=null;CadMetalGpuWallpaper? wallpaper=null;CadMetalGpuScene? scene=null;bool transferred=false;
       try{var pin=System.Runtime.InteropServices.GCHandle.Alloc(bytes,System.Runtime.InteropServices.GCHandleType.Pinned);try{texture.ReplaceRegion(MTLRegion.Create2D(0,0,(nuint)image.Width,(nuint)image.Height),0,pin.AddrOfPinnedObject(),(nuint)(image.Width*4));}finally{pin.Free();}

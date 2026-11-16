@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "2318fb6a4b2f185f345ad4dcbc9263af61109572",
+  "originalTargetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "originalTargetExecuted": false,
+  "sourceMethods": [
+    {
+      "role": "ogl-texture-create",
+      "name": null,
+      "abi": "textureCreate",
+      "rva": 5164624,
+      "length": 1417,
+      "sha256": "b38a8d2e454a1bbd86e922d76f9e8e16133cebc76adffe99223f47257b425b32",
+      "unwindRegions": [
+        {
+          "begin": 5164624,
+          "end": 5166041,
+          "unwind": 19895608
+        }
+      ]
+    },
+    {
+      "role": "ogl-texture-upload-bitmap",
+      "name": null,
+      "abi": "textureUpload",
+      "rva": 1757232,
+      "length": 677,
+      "sha256": "0253230bb9c2c450261361071866fe777a76045532ab2d168ad753eb47d6d348",
+      "unwindRegions": [
+        {
+          "begin": 1757232,
+          "end": 1757909,
+          "unwind": 19587604
+        }
+      ]
+    },
+    {
+      "role": "texture-dimensions",
+      "name": null,
+      "abi": "textureDimensions",
+      "rva": 1756816,
+      "length": 412,
+      "sha256": "029daac8de9f07726fc71b01345dafb3c3a0a873b7196b8174ea72c9ecf19dbd",
+      "unwindRegions": [
+        {
+          "begin": 1756816,
+          "end": 1757228,
+          "unwind": 19369324
+        }
+      ]
+    },
+    {
+      "role": "texture-alpha-repair",
+      "name": null,
+      "abi": "alphaRepair",
+      "rva": 1756288,
+      "length": 517,
+      "sha256": "f4098b93df297e38656f213068b251d4af4785e5fde92aa8f997f2dec29b4d02",
+      "unwindRegions": [
+        {
+          "begin": 1756288,
+          "end": 1756326,
+          "unwind": 19210708
+        },
+        {
+          "begin": 1756326,
+          "end": 1756380,
+          "unwind": 19210688
+        },
+        {
+          "begin": 1756380,
+          "end": 1756408,
+          "unwind": 19210652
+        },
+        {
+          "begin": 1756408,
+          "end": 1756650,
+          "unwind": 19210628
+        },
+        {
+          "begin": 1756650,
+          "end": 1756789,
+          "unwind": 19210608
+        },
+        {
+          "begin": 1756789,
+          "end": 1756797,
+          "unwind": 19210592
+        },
+        {
+          "begin": 1756797,
+          "end": 1756805,
+          "unwind": 19210576
+        }
+      ]
+    },
+    {
+      "role": "trace-dib-grayscale",
+      "name": "?ConvertToGrayScale@CRhinoUiDib@@QEAA_NXZ",
+      "abi": null,
+      "rva": 13337216,
+      "length": 1302,
+      "sha256": "1c2206f0617e879fd8ac5486e9265dc32a1367ffab747bf3f2355f152d4b88b9",
+      "unwindRegions": [
+        {
+          "begin": 13337216,
+          "end": 13337252,
+          "unwind": 18811804
+        },
+        {
+          "begin": 13337252,
+          "end": 13337346,
+          "unwind": 18811776
+        },
+        {
+          "begin": 13337346,
+          "end": 13337926,
+          "unwind": 18811756
+        },
+        {
+          "begin": 13337926,
+          "end": 13338503,
+          "unwind": 18811740
+        },
+        {
+          "begin": 13338503,
+          "end": 13338510,
+          "unwind": 18811712
+        },
+        {
+          "begin": 13338510,
+          "end": 13338518,
+          "unwind": 18811696
+        }
+      ]
+    }
+  ],
+  "order": [
+    "Original creation: read file/document bitmap then optional ConvertToGrayScale before normal upload. Option3 depth promotion and cube paths remain separate.",
+    "Normal upload: source dimensions/depth plus explicit max/memory/fraction/POT state determine target.",
+    "Unchanged24/32 dimensions: original processed source uploads directly; no stretch or alpha repair.",
+    "Changed dimensions: new same-depth24/32 DIB, fresh default DC; HALFTONE iff integer source/destination ratio>=2 on either axis, otherwise current measured mode1.",
+    "After successful32bit resize, OR destination alpha with the grayscale-processed source alpha in native stored-row mapping.",
+    "Normalize positive bottom-up BGR/BGRA to straight top-row RGBA, RGB24 opaque. No unpremultiplication/profile assumption/depth guess.",
+    "Metal source upload prepares before replacement; failed source preparation retains the previous image, prepared bytes are not grayscaled again."
+  ],
+  "nativeProof": {
+    "profile": "--texture-preparation-probe",
+    "cases": 120,
+    "repeats": 120,
+    "constantControls": 40,
+    "noResizeControls": 12,
+    "grayAlternatives": 60,
+    "grayOrderCases": 17,
+    "processedAlphaCases": 27,
+    "orVsReplacementPixels": 166,
+    "liveHandles": 0,
+    "corpus": "reference/fixtures/gdi-composed-texture-windows-26300.json",
+    "corpusSha256": "57d12b935663cf058647ba2155a599006d651060ac6ab07c18039cc32393b8c3",
+    "scope": "Owned public Windows GDI RGB. Original gray/alpha algorithms are independently mapped static code, never original-executable runtime results."
+  },
+  "implementation": {
+    "preparer": "src/Port/Rendering.Candidate/Rhino5TextureRasterPreparation.cs",
+    "sourceOwnership": "Copy-only input/output, disposed-buffer guards, source logical-pixel SHA binding before decoded provenance association, original encoded asset/orientation/frame count retained.",
+    "settings": "Explicit device maximum/memory budget/single fraction/POT, original prepared DIB depth explicit. Premultiplied source and RGB24 declarations dropping partial alpha reject.",
+    "allocation": "Preflight decoded/source/output budgets and conservative working storage before copy; zero-size native outcome rejects before division/allocation.",
+    "entryPoints": [
+      "CadMetalView.SetTraceSource",
+      "MetalImageQuadRenderer.SetTextureSource"
+    ]
+  },
+  "applePending": {
+    "cases": 20,
+    "decoded": "Real RGB/RGBA PNG inputs losslessly encoded from native source samples",
+    "pixels": 584,
+    "upload": "Raw actual Metal texture/sample/readback, source disposed before commit; final renderer disposed with1 pending frame",
+    "retention": "1 failed source replacement must preserve previous image",
+    "adjacent": "All18 existing visible captures/independent GPU/resource gates retained"
+  },
+  "remaining": [
+    "Lower/indexed/other bit depth and option3 forced promotion, original codec/profile/DC acquisition",
+    "Actual runtime device/settings state and source cache/invalidation/document fallback",
+    "Complete mipmap/compression/source driver effects",
+    "Larger image/filter budgets and remaining unsupported domains",
+    "Original vendor/PC/physical-device acceptance; no feature row closed"
+  ],
+  "allLocalWritesD": true
+}

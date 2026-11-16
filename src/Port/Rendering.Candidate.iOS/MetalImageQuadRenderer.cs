@@ -24,6 +24,12 @@ public sealed class MetalImageQuadRenderer:IDisposable
    imagePipeline=new MetalImageQuadPipeline(device,MTLPixelFormat.Invalid);
   }catch{Dispose();throw;}
  }
+ /// <summary>Prepares actual decoded source pixels in original normal texture order before GPU replacement.</summary>
+ public Rhino5TextureRasterReceipt SetTextureSource(DecodedLocalImage source,int sourceDibDepth,Rhino5TextureRasterSettings settings,bool gray=false,Rhino5TextureAnisotropy anisotropy=default,LocalImageLimits? limits=null)
+ {
+  using var prepared=Rhino5TextureRasterPreparation.Prepare(source,sourceDibDepth,settings,gray,limits);
+  using var image=prepared.CreateDecodedImage(source);SetImage(image,anisotropy);return prepared.Receipt;
+ }
  public void SetImage(DecodedLocalImage image,Rhino5TextureAnisotropy anisotropy=default)
  {
   ArgumentNullException.ThrowIfNull(image);lock(sync){ObjectDisposedException.ThrowIf(disposed,this);

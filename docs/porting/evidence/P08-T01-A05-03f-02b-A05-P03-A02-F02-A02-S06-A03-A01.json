@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "2318fb6a4b2f185f345ad4dcbc9263af61109572",
+  "status": "composed_cpu_windows_verified_apple_gpu_pending_full_parent_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01-composed-texture.md",
+  "audit": "docs/evidence/audit/rhino5-composed-texture-source.json",
+  "checks": {
+    "nativeProducerExit": 0,
+    "cases": 120,
+    "exactStoredAndRgba": 120,
+    "decodedAdapterCases": 120,
+    "guards": 10,
+    "grayOrderCases": 17,
+    "processedAlphaCases": 27,
+    "orVsReplacementPixels": 166,
+    "existingManagedHalftoneCases": 3860,
+    "existingIntegerCases": 1596,
+    "nativeHostExit": 0,
+    "nodeAdjacentUniqueTests": 47,
+    "nodeRuns": [
+      15,
+      39
+    ],
+    "repositoryIntegrity": "passed",
+    "initialMissingComponentBuildFailed": true,
+    "originalVendorExecuted": false
+  },
+  "outputHashes": {
+    "corpus": "57d12b935663cf058647ba2155a599006d651060ac6ab07c18039cc32393b8c3",
+    "producer": "82f19eb72888aa979c494dc2b0b732bea93a8ce5958ebdb76afca05ca5c5d5db",
+    "component": "0110d77c90db86733fc3a50674553bf27e9a88ab1ab38dde37b28fd8bf7a65a3",
+    "gpuFixture": "98adcf29647c4ae6bf2f33a37958637a43a2db33c19bde25096a30247b6d9ad4"
+  },
+  "review": "Normal explicit24/32 source path implemented, actual Apple execution pending. Full A03 scope including codecs/cache/document/PC/physical retained; no parity closure.",
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

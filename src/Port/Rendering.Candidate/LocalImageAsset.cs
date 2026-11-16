@@ -50,7 +50,7 @@ public sealed record LocalImageLimits(int MaxEncodedBytes=32*1024*1024,int MaxPi
 }
 
 public enum RgbaAlphaRepresentation {Premultiplied,Straight}
-public enum DecodedPixelSource {CallerSupplied,DrawingContext,NativeProvider,EncodedPng}
+public enum DecodedPixelSource {CallerSupplied,DrawingContext,NativeProvider,EncodedPng,PreparedTexture}
 
 /// <summary>Owned top-row-first RGBA8/sRGB with explicit alpha representation; source EXIF orientation retained,
 /// not applied. Source bytes preserve other metadata. Not original LEADTOOLS/GDI conversion parity.</summary>
@@ -68,7 +68,7 @@ public sealed class DecodedLocalImage:IDisposable
  {
   ArgumentNullException.ThrowIfNull(source);if(width<1||height<1||(long)width*height>int.MaxValue/4||(long)width*height*4!=pixels.Length)throw new ArgumentException("RGBA dimensions/storage mismatch.");
   if(alphaRepresentation is not (RgbaAlphaRepresentation.Premultiplied or RgbaAlphaRepresentation.Straight))throw new ArgumentOutOfRangeException(nameof(alphaRepresentation));
-  if(pixelSource is not (DecodedPixelSource.CallerSupplied or DecodedPixelSource.DrawingContext or DecodedPixelSource.NativeProvider or DecodedPixelSource.EncodedPng))throw new ArgumentOutOfRangeException(nameof(pixelSource));
+  if(pixelSource is not (DecodedPixelSource.CallerSupplied or DecodedPixelSource.DrawingContext or DecodedPixelSource.NativeProvider or DecodedPixelSource.EncodedPng or DecodedPixelSource.PreparedTexture))throw new ArgumentOutOfRangeException(nameof(pixelSource));
   AlphaRepresentation=alphaRepresentation;ProviderLayout=providerLayout;PixelSource=pixelSource;
   Source=source;Width=width;Height=height;SourceOrientation=orientation;SourceFrameCount=frames;TypeIdentifier=type;rgba=pixels.ToArray();
  }

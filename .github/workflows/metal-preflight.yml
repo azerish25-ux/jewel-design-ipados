@@ -4,6 +4,13 @@ on:
     branches: [codex/dotnet-ios-reuse]
     paths:
       - "native/Rendering/GdiRgbReference/**"
+      - "scripts/verify-composed-texture-reference.cjs"
+      - "scripts/verify-composed-texture-gpu.cjs"
+      - "scripts/generate-composed-texture-gpu.cjs"
+      - "tests/composed-texture-reference.test.cjs"
+      - "reference/fixtures/gdi-composed-texture-windows-26300.json"
+      - "tests/Port/Geometry.Candidate.Contracts/ComposedTextureAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Fixtures/composed-texture-gpu.json"
       - "reference/fixtures/gdi-rgb-windows-26300.json"
       - "reference/fixtures/gdi-integer-windows-26300.json"
       - "reference/fixtures/gdi-halftone-response-windows-26300.json"
@@ -208,6 +215,11 @@ jobs:
         run: |
           node --test tests/gdi-large-fixup-reference.test.cjs > artifacts/large-fixup-halftone-reference-checks.txt
           node scripts/halftone-large-fixup-reference.cjs reference/fixtures/gdi-large-fixup-windows-26300.json.br > artifacts/large-fixup-halftone-reference.json
+      - name: Verify composed native texture/source order corpus
+        run: |
+          node --test tests/composed-texture-reference.test.cjs > artifacts/composed-texture-reference-checks.txt
+          node scripts/generate-composed-texture-gpu.cjs --check > artifacts/composed-texture-fixture-check.json
+          node scripts/verify-composed-texture-reference.cjs reference/fixtures/gdi-composed-texture-windows-26300.json > artifacts/composed-texture-reference.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

@@ -54,6 +54,15 @@ public sealed class CadMetalView : MTKView
     {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);presenter.ClearWallpaper();SetNeedsDisplay();}
     public long SetTracePixels(DecodedLocalImage image,Rhino5TraceImage info,int sourceDibDepth,Rhino5TextureAnisotropy anisotropy=default)
     {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);long id=presenter.SetTracePixels(image,info,sourceDibDepth,anisotropy);SetNeedsDisplay();return id;}
+    /// <summary>Prepares actual decoded source pixels in original gray/size/filter/alpha order before atomic GPU replacement.
+    /// Source DIB depth and runtime size inputs must be resolved explicitly by the caller.</summary>
+    public long SetTraceSource(DecodedLocalImage source,Rhino5TraceImage info,int sourceDibDepth,Rhino5TextureRasterSettings settings,Rhino5TextureAnisotropy anisotropy=default,LocalImageLimits? limits=null)
+    {
+        RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);
+        using var prepared=Rhino5TextureRasterPreparation.Prepare(source,sourceDibDepth,settings,info.GrayScale,limits);
+        using var image=prepared.CreateDecodedImage(source);
+        long id=presenter.SetPreparedTracePixels(image,info,prepared.DibBitDepth,anisotropy);SetNeedsDisplay();return id;
+    }
     public void SetTraceState(Rhino5TraceImage info)
     {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);presenter.SetTraceState(info);SetNeedsDisplay();}
     public void ClearTrace()

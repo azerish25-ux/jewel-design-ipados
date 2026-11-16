@@ -39,9 +39,9 @@ internal static class TracePresentationChecks
   async Task Record(string name,CadMetalFrameInfo frame){marks.Add(new(name,frame.Revision,frame.MeshUploadId,frame.TraceUploadId,frame.Width,frame.Height,CadViewportCamera.MatrixScalars(frame.ViewProjection),frame.TraceAnisotropy));await capture(name);}
   await Record("trace-original",await Present(view,()=>view.SetMesh(mesh)));
   long meshes=view.Stats.MeshUploads;
-  await Record("trace-image",await Present(view,()=>view.SetTracePixels(image,info,32,Rhino5TextureAnisotropy.ForApplicationSetting(1,true,16))));
+  await Record("trace-image",await Present(view,()=>view.SetTraceSource(image,info,32,new(512,1048576,1f,false),Rhino5TextureAnisotropy.ForApplicationSetting(1,true,16))));
   long images=view.Stats.ImageUploads;
-  long revision=view.Stats.SceneRevision;try{view.SetTracePixels(image,info,32,Rhino5TextureAnisotropy.ForTextureMode(3,true,1.5f));throw new Exception("Expected source sampler rejection");}catch(NotSupportedException){}
+  long revision=view.Stats.SceneRevision;try{view.SetTraceSource(image,info,32,new(1,0,1f,false));throw new Exception("Expected failed source preparation");}catch(System.IO.InvalidDataException){}Check(view.Stats.SceneRevision==revision,"Failed source preparation replaced current trace");try{view.SetTracePixels(image,info,32,Rhino5TextureAnisotropy.ForTextureMode(3,true,1.5f));throw new Exception("Expected source sampler rejection");}catch(NotSupportedException){}
   Check(view.Stats.SceneRevision==revision&&view.Stats.ImageUploads==images,"Unsupported sampler replacement changed visible image/revision");
   Check(view.Stats.MeshUploads==meshes&&view.Stats.LiveImageTextures==1,"Trace upload changed mesh identity/resources");
   await Record("trace-orbit",await Present(view,()=>view.SetCameraPose(-.7f,.2f)));

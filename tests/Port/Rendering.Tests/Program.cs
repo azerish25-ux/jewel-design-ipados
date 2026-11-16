@@ -41,3 +41,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.TextureAnisotropyAssert
 System.Console.WriteLine(CandidateGeometryContractChecks.GdiIntegerStretchAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.GdiHalftoneStretchAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.ComposedTextureAssertions.Run());
