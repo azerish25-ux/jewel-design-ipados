@@ -41,6 +41,13 @@ public sealed class MetalImageQuadRenderer:IDisposable
    nearest=Sampler(MTLSamplerMinMagFilter.Nearest);linear=Sampler(MTLSamplerMinMagFilter.Linear);
   }catch{Dispose();throw;}
  }
+ public void SetImage(DecodedLocalImage image)
+ {
+  ArgumentNullException.ThrowIfNull(image);lock(sync){ObjectDisposedException.ThrowIf(disposed,this);
+   if(image.AlphaRepresentation!=RgbaAlphaRepresentation.Straight)throw new NotSupportedException("The typed image upload requires straight RGBA. Premultiplied pixels are not silently unpremultiplied.");
+   SetImage(image.Width,image.Height,image.CopyRgba());
+  }
+ }
  public void SetImage(int width,int height,ReadOnlySpan<byte> straightRgba)
  {
   lock(sync){

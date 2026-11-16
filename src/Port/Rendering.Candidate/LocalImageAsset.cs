@@ -49,20 +49,26 @@ public sealed record LocalImageLimits(int MaxEncodedBytes=32*1024*1024,int MaxPi
  }
 }
 
-/// <summary>Owned top-row-first RGBA8, premultiplied alpha in sRGB; source EXIF orientation retained,
+public enum RgbaAlphaRepresentation {Premultiplied,Straight}
+
+/// <summary>Owned top-row-first RGBA8/sRGB with explicit alpha representation; source EXIF orientation retained,
 /// not applied. Source bytes preserve other metadata. Not original LEADTOOLS/GDI conversion parity.</summary>
 public sealed class DecodedLocalImage:IDisposable
 {
- private byte[]? rgba;
+ private byte[]? rgba;private readonly object sync=new();
+ public RgbaAlphaRepresentation AlphaRepresentation{get;}
+ public ImageProviderLayout? ProviderLayout{get;}
  public LocalImageAsset Source{get;}
  public int Width{get;} public int Height{get;}
  public long SourceOrientation{get;} public long SourceFrameCount{get;} public int FrameIndex=>0;
  public string TypeIdentifier{get;}
- public DecodedLocalImage(LocalImageAsset source,int width,int height,long orientation,long frames,string type,ReadOnlySpan<byte> pixels)
+ public DecodedLocalImage(LocalImageAsset source,int width,int height,long orientation,long frames,string type,ReadOnlySpan<byte> pixels,RgbaAlphaRepresentation alphaRepresentation=RgbaAlphaRepresentation.Premultiplied,ImageProviderLayout? providerLayout=null)
  {
   ArgumentNullException.ThrowIfNull(source);if(width<1||height<1||(long)width*height>int.MaxValue/4||(long)width*height*4!=pixels.Length)throw new ArgumentException("RGBA dimensions/storage mismatch.");
+  if(alphaRepresentation is not (RgbaAlphaRepresentation.Premultiplied or RgbaAlphaRepresentation.Straight))throw new ArgumentOutOfRangeException(nameof(alphaRepresentation));
+  AlphaRepresentation=alphaRepresentation;ProviderLayout=providerLayout;
   Source=source;Width=width;Height=height;SourceOrientation=orientation;SourceFrameCount=frames;TypeIdentifier=type;rgba=pixels.ToArray();
  }
- public byte[] CopyRgba(){ObjectDisposedException.ThrowIf(rgba is null,this);return (byte[])rgba.Clone();}
- public void Dispose(){if(rgba is {} bytes){Array.Clear(bytes);rgba=null;}}
+ public byte[] CopyRgba(){lock(sync){ObjectDisposedException.ThrowIf(rgba is null,this);return (byte[])rgba.Clone();}}
+ public void Dispose(){lock(sync){if(rgba is {} bytes){Array.Clear(bytes);rgba=null;}}}
 }

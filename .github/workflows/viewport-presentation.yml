@@ -14,6 +14,8 @@ on:
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5SetViewPreflightAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5WallpaperRasterAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/LocalImageAssetAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/StraightImageProviderAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/Fixtures/straight-image-alpha.json"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/local-image-decode.json"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/userstring-body-source-cases.json"
       - "tests/Port/Geometry.Candidate.Contracts/Geometry.Candidate.Contracts.csproj"

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "199cc3dcece54b6b1df3237c306a1258442cfaf1",
+  "status": "portable_straight_provider_windows_passed_actual_ios_decode_gpu_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S01-straight-provider.md",
+  "nativePrerequisite": "docs/evidence/apple/native-image-provider-results.json",
+  "red": {
+    "exitCode": 1,
+    "failure": "Missing ImageProviderLayout/StraightRgbaProvider/typed DecodedLocalImage constructor"
+  },
+  "checks": {
+    "portableCases": 46,
+    "nativeHostExitCode": 0,
+    "adjacentNodeRegressions": 57,
+    "originalTargetExecuted": false
+  },
+  "outputHashes": {
+    "red": "adaf10ea9fdc2ffdbcbabbe569c128a625b3a39068a933b676bbb84de20a54b7",
+    "green": "9c4d64c5452eb52aa1c164d90cf22c796e570477ba9f7043ec9477d1630848ac",
+    "native": "a1d736ebea9a9321b9199c5a1c45c4382ee778e048be4d4c5af4e93c1b1f68e9",
+    "adjacent": "0d6c25ad64850c4e390391939abdf38a604f7658cda5432f41237050142b968c"
+  },
+  "review": {
+    "conversion": "Lossless supported RGB8 channel/row repacking only. No premul alpha division, guessed byte order, profile transformation or reduced precision. Encoded bytes and provider metadata remain available.",
+    "representation": "Existing Decode/default constructors remain premultiplied; DecodeStraight explicitly labels straight output. Typed Metal upload rejects premultiplied output. Copy/disposal uses a lock to avoid partial cleared snapshots.",
+    "native": "Only unsafe use checks CGImage.Decode pointer for null; no pointer dereference. Native data/properties/source scopes disposed. Budgets constrain owned buffers, not opaque internal codec allocations.",
+    "remaining": "Actual iOS layouts/pixels pending. Wider profile/bit-depth/palette/format conversion, original source codec/cache/GDI, visible images/document/SetView/PC/physical parity remain required."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

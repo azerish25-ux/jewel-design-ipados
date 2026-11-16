@@ -25,3 +25,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5SetViewPreflightA
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5WallpaperRasterAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.LocalImageAssetAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.StraightImageProviderAssertions.Run());
