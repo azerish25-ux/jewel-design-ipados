@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "managed-native-exhaustive-pass-platform-pending",
+  "status": "recorded-version-lower-component-platform-tested-full-parent-open",
   "sourceProfileAudit": "docs/evidence/audit/rhino5-filename-profile.json",
   "originalCodeExecuted": false,
   "collector": {
@@ -51,13 +51,27 @@
     "managedWindowsNativeMatches": true,
     "nullBudgetUtf16Guards": 7,
     "portableInvariantDifferencesOnCollectorHost": 419,
-    "adjacentNodeChecks": 20
+    "adjacentNodeChecks": 20,
+    "geometryNativeHost": "pass adjacent real native host contracts"
   },
   "remaining": [
-    "Actual macOS/iPad/iPhone execution pending.",
     "Complete NLS1 filename collation, original CRT/ANSI fallback and runtime mutation.",
     "Actual source/document/view policy integration and other mapping snapshots.",
     "Original PC corpus and physical-device/full feature acceptance."
   ],
-  "fullParityVerified": false
+  "fullParityVerified": false,
+  "platform": {
+    "macOS": "docs/evidence/apple/unicode-nls-lower-preflight-results.json",
+    "ios": "docs/evidence/apple/unicode-nls-lower-ios-results.json",
+    "sourceCommit": "295b74c75249d7253bce89a2cee5a0d1e0621e30",
+    "macOSRun": 43977069978,
+    "visibleRun": 43977070018,
+    "unitScalarCasesPerPlatform": 1114112,
+    "contextsPerPlatform": 3329,
+    "guardsPerPlatform": 7,
+    "adjacentCapturesPerFamily": 18,
+    "restoreDifferences": 0,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  }
 }
