@@ -10,6 +10,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import com.google.gson.*;
 public class InspectOriginalCore extends RefineNativeCamera {
+ private DataType observedType(String name)throws Exception{
+  if(name.endsWith("*"))return new PointerDataType(observedType(name.substring(0,name.length()-1)),currentProgram.getDataTypeManager());
+  switch(name){case "void":return VoidDataType.dataType;case "int":return IntegerDataType.dataType;case "uint":return UnsignedIntegerDataType.dataType;case "byte":return UnsignedCharDataType.dataType;case "float":return FloatDataType.dataType;case "double":return DoubleDataType.dataType;default:throw new Exception("Unknown explicit external ABI type "+name);}
+ }
  @Override public void run()throws Exception{
   String[] args=getScriptArgs();if(args.length!=3)throw new Exception("Expected manifest, output folder and root");
   Path root=Paths.get(args[2]).toRealPath(),out=Paths.get(args[1]).toAbsolutePath().normalize();
@@ -59,6 +63,15 @@ public class InspectOriginalCore extends RefineNativeCamera {
    for(Function function:called.values())if(function.getName().startsWith("?"))signatures.add(demangle(function,function.getName()));
    shape("ON_3dPoint",3);shape("ON_3dVector",3);shape("ON_Xform",16);
    Set<Function> all=new LinkedHashSet<>(called.values());all.addAll(functions);for(Function function:all)refresh(function);
+   if(manifest.has("externalSignatures"))for(JsonElement element:manifest.getAsJsonArray("externalSignatures")){
+    JsonObject abi=element.getAsJsonObject();String name=abi.get("name").getAsString();boolean found=false;
+    for(Function function:called.values())if(function.getName().equals(name)){
+     List<Variable> parameters=new ArrayList<>();int index=0;for(JsonElement type:abi.getAsJsonArray("parameters"))parameters.add(new ParameterImpl("arg"+(++index),observedType(type.getAsString()),currentProgram));
+     function.updateFunction("__fastcall",new ReturnParameterImpl(observedType(abi.get("returnType").getAsString()),currentProgram),parameters,Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,true,SourceType.USER_DEFINED);
+     Map<String,Object> item=new LinkedHashMap<>();item.put("external",name);item.put("address",function.getEntryPoint().toString());item.put("decoded",function.getPrototypeString(true,false));item.put("applied",true);signatures.add(item);found=true;
+    }
+    if(!found)throw new Exception("Requested explicit external ABI not called: "+name);
+   }
    engine=new DecompInterface();engine.toggleCCode(true);engine.toggleSyntaxTree(true);if(!engine.openProgram(currentProgram))throw new Exception("Core decompiler open failed");
    for(int i=0;i<functions.size();i++){
     Function function=functions.get(i);JsonObject spec=manifest.getAsJsonArray("functions").get(i).getAsJsonObject();DecompileResults result=engine.decompileFunction(function,90,monitor);

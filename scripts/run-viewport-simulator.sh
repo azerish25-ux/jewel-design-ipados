@@ -78,6 +78,7 @@ for i in $(seq 1 600); do
   grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
   grep -q '^PASS legacy native user-string bodies:' "$OUT/result.txt"
   grep -q '^PASS offline encoded image assets:' "$OUT/result.txt"
+  grep -q '^PASS actual Metal image quad:' "$OUT/result.txt"
   grep -q '^PASS actual offline Apple image decode:' "$OUT/result.txt"
   grep -q '^PASS original-derived wallpaper raster:' "$OUT/result.txt"
   grep -q '^PASS original-derived SetView preflight:' "$OUT/result.txt"
@@ -90,6 +91,8 @@ for i in $(seq 1 600); do
   grep -q '^PASS owned original5 view data:' "$OUT/result.txt"
   grep -q '^PASS viewport screenshot acknowledgement:' "$OUT/result.txt"
   grep -q 'PASS Metal offscreen viewport:actual-CAD pixels=' "$OUT/result.txt"
+  cp "$DATA/Documents/image-gpu-result.json" "$OUT/image-gpu-result.json"
+  cp "$DATA/Documents/image-gpu-bmp.bgra" "$OUT/image-gpu-bmp.bgra"
   cp "$DATA/Documents/viewport-report.json" "$OUT/report.json"
   for phase in original orbit edited empty resized final; do test -s "$OUT/$phase.png"; done
   node scripts/check-viewport-report.cjs "$OUT/report.json" > "$OUT/report-verification.json"
