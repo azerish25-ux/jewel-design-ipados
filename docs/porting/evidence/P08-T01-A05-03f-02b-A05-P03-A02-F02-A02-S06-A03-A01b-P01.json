@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-P01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "f3363db65170dd0ae1685289874404c855660b77",
+  "status": "wallpaper_composition_windows_verified_apple_pending_full_source_parent_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-P01-prepared-wallpaper.md",
+  "audit": "docs/evidence/audit/rhino5-prepared-wallpaper-source.json",
+  "checks": {
+    "nativeProducerExit": 0,
+    "nativeCases": 120,
+    "nativeRepeats": 120,
+    "opaqueControls": 120,
+    "managedExactStoredAndRgba": 120,
+    "decodedAdapterCases": 120,
+    "guards": 9,
+    "oldManagedCases": 3860,
+    "enlargementCases": 1408,
+    "normalComposedCases": 120,
+    "integerCases": 1596,
+    "nodeChecks": 56,
+    "nativeHostExit": 0,
+    "originalVendorExecuted": false,
+    "initialMissingPreparationBuildFailed": true,
+    "compactionReproduced": true
+  },
+  "outputHashes": {
+    "component": "2a03cb6ed0220aed533ae1661607e9dfef77a003d06183c255299432d6e0dd6f",
+    "producer": "14a607d60b116711b433249981ee5c16583437fcad41078b019aa490698b1f8b",
+    "fixture": "ec1e26857b5914677364c88e97022ad2c1b1db3e44fe7f14edd460846083c2ba",
+    "gpuFixture": "f935f8da96228da581762c3c8bb09780471acc4e57ee9ce1bcaa9ca7a5e837be"
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0,
+  "review": "Explicit normal24/32 wallpaper source path implemented; actual Apple execution pending. Full original codec/cache/document/device/PC/physical acceptance retained."
+}

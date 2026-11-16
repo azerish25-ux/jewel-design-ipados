@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-N01",
+  "sourceCommit": "f3363db65170dd0ae1685289874404c855660b77",
+  "run": 43944650453,
+  "conclusion": "success",
+  "artifactId": 14265057544,
+  "artifactSha256": "6ae0dc74cbc110a419c7863d2a1237dbd21c229964411b667bf667a98e859174",
+  "actualArtifactInspected": true,
+  "checks": {
+    "managedExactCases": 1408,
+    "referenceExactStoredAndRgba": 1408,
+    "nodeTests": 3,
+    "oldManagedCases": 3860,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "scope": "Default truecolor positive rectangles and represented axis/depth domains, not full source driver/PC/physical parity.",
+  "allLocalDownloadsD": true
+}

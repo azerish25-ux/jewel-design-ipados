@@ -79,6 +79,8 @@ for i in $(seq 1 600); do
   grep -q '^PASS legacy native user-string bodies:' "$OUT/result.txt"
   grep -q '^PASS offline encoded image assets:' "$OUT/result.txt"
   grep -q '^PASS GDI enlargement:1408 exact complete native buffers' "$OUT/result.txt"
+  grep -q '^PASS prepared wallpaper:120 exact native stored/RGBA and decoded-adapter cases/9 storage/depth/fit/budget/provenance guards;' "$OUT/result.txt"
+  grep -q '^PASS actual prepared wallpaper GPU:20 decoded source/HALFTONE24/post-gray/upload cases/194272 exact opaque pixels/1 retained-image failure guard;' "$OUT/result.txt"
   grep -q '^PASS composed texture preparation:120 exact native stored/RGBA and decoded-adapter cases/17 gray-order distinctions/27 processed-alpha distinctions/10 ownership/storage/depth/budget guards;' "$OUT/result.txt"
   grep -q '^PASS actual composed texture GPU:20 decoded PNG/source preparation/upload/readback cases/584 exact pixels/1 retained-image failure guard;' "$OUT/result.txt"
   grep -q '^PASS managed GDI HALFTONE:3860 exact complete stored-buffer cases/7 explicit storage/depth/domain/budget guards;' "$OUT/result.txt"
@@ -108,6 +110,9 @@ for i in $(seq 1 600); do
   cp "$DATA/Documents/straight-image-gpu.bgra" "$OUT/straight-image-gpu.bgra"
   cp "$DATA/Documents/image-gpu-result.json" "$OUT/image-gpu-result.json"
   cp "$DATA/Documents/image-gpu-bmp.bgra" "$OUT/image-gpu-bmp.bgra"
+  cp "$DATA/Documents/prepared-wallpaper-gpu.json" "$OUT/prepared-wallpaper-gpu.json"
+  for index in $(seq 0 19); do cp "$DATA/Documents/prepared-wallpaper-$index.bgra" "$OUT/prepared-wallpaper-$index.bgra"; done
+  node scripts/verify-prepared-wallpaper-gpu.cjs "$OUT" > "$OUT/prepared-wallpaper-gpu-verification.json"
   cp "$DATA/Documents/composed-texture-gpu.json" "$OUT/composed-texture-gpu.json"
   for index in $(seq 0 19); do cp "$DATA/Documents/composed-texture-$index.bgra" "$OUT/composed-texture-$index.bgra"; done
   node scripts/verify-composed-texture-gpu.cjs "$OUT" > "$OUT/composed-texture-gpu-verification.json"

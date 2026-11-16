@@ -45,3 +45,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.GdiHalftoneStretchAsser
 System.Console.WriteLine(CandidateGeometryContractChecks.ComposedTextureAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.GdiEnlargementAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.PreparedWallpaperAssertions.Run());

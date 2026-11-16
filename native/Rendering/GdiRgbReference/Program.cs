@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text.Json;
 
 if(!OperatingSystem.IsWindows())throw new PlatformNotSupportedException("Public Windows GDI reference only.");
+bool wallpaperProbe=args.Length==2&&args[1]=="--wallpaper-preparation-probe";
 bool enlargementProbe=args.Length==2&&args[1]=="--enlargement-probe";
 bool textureProbe=args.Length==2&&args[1]=="--texture-preparation-probe";
 bool integerProbe=args.Length==2&&args[1]=="--integer-probe";
@@ -11,9 +12,10 @@ bool halftoneProbe=args.Length==2&&args[1]=="--halftone-probe";
 bool mixedProbe=args.Length==2&&args[1]=="--mixed-probe";
 bool largeFixupProbe=args.Length==2&&args[1]=="--large-fixup-probe";
 bool fixupProbe=args.Length==2&&args[1]=="--fixup-probe";
-if(args.Length!=1&&!integerProbe&&!halftoneProbe&&!mixedProbe&&!fixupProbe&&!largeFixupProbe&&!textureProbe&&!enlargementProbe)throw new ArgumentException("Expected output JSON under this D: repository, optional --integer-probe/--halftone-probe/--mixed-probe/--fixup-probe/--large-fixup-probe/--texture-preparation-probe/--enlargement-probe.");
+if(args.Length!=1&&!integerProbe&&!halftoneProbe&&!mixedProbe&&!fixupProbe&&!largeFixupProbe&&!textureProbe&&!enlargementProbe&&!wallpaperProbe)throw new ArgumentException("Expected output JSON under this D: repository, optional --integer-probe/--halftone-probe/--mixed-probe/--fixup-probe/--large-fixup-probe/--texture-preparation-probe/--enlargement-probe/--wallpaper-preparation-probe.");
 string root=Path.GetFullPath(Environment.CurrentDirectory),output=Path.GetFullPath(args[0]);
 if(!root.StartsWith("D:"+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase)||!output.StartsWith(root+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase))throw new InvalidOperationException("Reference output leaves D: workspace.");
+if(wallpaperProbe){WallpaperPreparationProbe.Run(output);return;}
 if(enlargementProbe){EnlargementProbe.Run(output);return;}
 if(textureProbe){TexturePreparationProbe.Run(output);return;}
 if(halftoneProbe){HalftoneProbe.Run(output);return;}

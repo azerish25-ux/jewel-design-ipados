@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-P01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "f3363db65170dd0ae1685289874404c855660b77",
+  "originalTargetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "originalTargetExecuted": false,
+  "owner": {
+    "name": "CRhWallpaper::Resize",
+    "rva": 11744240,
+    "cachedBodySha256": "4597d5df1aaed2b464fe99593196b966fbbf0e96bc66830570b003073e97852b",
+    "source": "D-only original-view-image-loading-01/wallpaper-resize.c; existing source-locked audit baseline"
+  },
+  "order": [
+    "Original wallpaper fits/divides requested dimensions at9M pixels, aligns width to4; aligned width is actual stretch width.",
+    "Always create24bit destination and select HALFTONE4 regardless source/destination ratio, including equal dimensions.",
+    "Source24/32 RGB contributes to opaque destination; source32 alpha is ignored by this original path. No alpha OR.",
+    "Optional grayscale mutates full BGR triples AFTER resampling, weights0.299/0.589/0.111, truncation without+0.5. Constant128 becomes127.",
+    "Normalize top-row RGBA with alpha255, retain encoded source/provenance and use original downscale divisor as wallpaper placement scale.",
+    "Source/budget/fit failures occur before GPU replacement; result ownership and pending frames retire independently."
+  ],
+  "nativeCapture": {
+    "profile": "--wallpaper-preparation-probe",
+    "cases": 120,
+    "repeats": 120,
+    "opaqueControls": 120,
+    "sources": 48,
+    "ownedHandles": 0,
+    "rawAcquisitionSha256": "08dd13e2adf0ba8b708b904f2dae77394babcf9de30411d390f31552f6a2aeb8",
+    "fixture": "reference/fixtures/gdi-wallpaper-windows-26300.json.br",
+    "packedSha256": "ec1e26857b5914677364c88e97022ad2c1b1db3e44fe7f14edd460846083c2ba",
+    "decodedSha256": "4763b3f91b3282d2b7c4c4d3dcc59dda64bfb829361399dd25082815fc24e76a",
+    "stored": "Full native pre-gray/final sidecars remain on D, validated by reproducible compactor; complete output stored/RGBA digests retained."
+  },
+  "sourceAPIs": [
+    "Rhino5WallpaperPreparation.Prepare/PrepareStored",
+    "CadMetalView.SetWallpaperSource",
+    "MetalImageQuadRenderer.SetWallpaperSource"
+  ],
+  "guards": "Explicit24/32 source, straight source only, zero-fit and storage/budget failure, original logical pixels bound to decoded provenance, independent output copies/disposal. Explicit opaque wallpaper semantics allow32bit partial alpha input.",
+  "budget": "Source/output limits and stage-specific conservative estimate plus adapter/result storage; default512MiB, configurable by runtime owner. Actual mobile working-set/device budget acquisition remains separate.",
+  "pendingApple": {
+    "cpuCases": 120,
+    "guards": 9,
+    "actualPngGpuCases": 20,
+    "pixels": 194272,
+    "depths": [
+      24,
+      32
+    ],
+    "covers": "aligned/equal/shrink/fast/general, constant128 post-gray,5000 source axis/3000 output axis with divisor2, failed source retention and pending-frame cleanup",
+    "adjacent": "All18 captures preserved; visible paper-green now uses source preparation"
+  },
+  "remaining": [
+    "Original palette/other-depth decode and profile/metadata acquisition",
+    "Real runtime source-cache/invalidation/document/filename fallback",
+    "Actual settings/device memory acquisition and complete large-input performance/physical limits",
+    "Source driver equivalence, full PC project corpus and physical devices"
+  ],
+  "allLocalWritesD": true
+}

@@ -18,6 +18,13 @@ on:
       - "scripts/halftone-fixed-reference.cjs"
       - "scripts/halftone-mixed-reference.cjs"
       - "scripts/halftone-enlargement-reference.cjs"
+      - "scripts/verify-wallpaper-preparation-reference.cjs"
+      - "scripts/compact-wallpaper-reference.cjs"
+      - "scripts/generate-wallpaper-gpu.cjs"
+      - "scripts/verify-prepared-wallpaper-gpu.cjs"
+      - "tests/wallpaper-preparation-reference.test.cjs"
+      - "reference/fixtures/gdi-wallpaper-windows-26300.json.br"
+      - "tests/Port/Geometry.Candidate.Contracts/Fixtures/prepared-wallpaper-gpu.json.br"
       - "scripts/compact-enlargement-reference.cjs"
       - "tests/gdi-enlargement-reference.test.cjs"
       - "reference/fixtures/gdi-enlargement-windows-26300.json.br"
@@ -229,6 +236,11 @@ jobs:
         run: |
           node --test tests/gdi-enlargement-reference.test.cjs > artifacts/gdi-enlargement-reference-checks.txt
           node scripts/halftone-enlargement-reference.cjs reference/fixtures/gdi-enlargement-windows-26300.json.br > artifacts/gdi-enlargement-reference.json
+      - name: Verify original wallpaper native source pipeline
+        run: |
+          node --test tests/wallpaper-preparation-reference.test.cjs > artifacts/prepared-wallpaper-reference-checks.txt
+          node scripts/verify-wallpaper-preparation-reference.cjs reference/fixtures/gdi-wallpaper-windows-26300.json.br > artifacts/prepared-wallpaper-reference.json
+          node scripts/generate-wallpaper-gpu.cjs --check > artifacts/prepared-wallpaper-gpu-fixture.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

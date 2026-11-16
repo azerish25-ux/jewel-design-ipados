@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "724fd66eb512c62ac7c7af48a64bcdbbc4c8c8c5",
-  "status": "managed_enlargement_windows_verified_apple_pending_wallpaper_parent_open",
+  "status": "managed_enlargement_windows_macos_ipad_iphone_verified_wallpaper_parent_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-N01-enlargement-prerequisite.md",
   "audit": "docs/evidence/audit/windows-gdi-enlargement-source.json",
   "checks": {
@@ -41,5 +41,22 @@
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
   "parityRowsClosed": 0,
-  "review": "Required wallpaper prerequisite implemented in C#; actual Apple execution pending. Full wallpaper/codec/cache/document/vendor/PC/physical acceptance remains open."
+  "review": "Required wallpaper prerequisite implemented in C#; actual Apple execution pending. Full wallpaper/codec/cache/document/vendor/PC/physical acceptance remains open.",
+  "apple": {
+    "macOS": {
+      "run": 43944650453,
+      "conclusion": "success",
+      "evidence": "docs/evidence/apple/gdi-enlargement-preflight-results.json"
+    },
+    "actualSimulators": {
+      "run": 43944650487,
+      "conclusion": "success",
+      "evidence": "docs/evidence/apple/gdi-enlargement-ios-results.json"
+    },
+    "genericReuse": {
+      "run": 43944650506,
+      "ipad": "success",
+      "iphone": "success"
+    }
+  }
 }

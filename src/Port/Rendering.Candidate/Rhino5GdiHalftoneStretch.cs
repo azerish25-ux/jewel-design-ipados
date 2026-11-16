@@ -15,15 +15,7 @@ public static class Rhino5GdiHalftoneStretch
   ArgumentOutOfRangeException.ThrowIfNegativeOrZero(maxWorkingBytes);
   int pixel=depth/8,destinationPixel=outputDepth/8,ss=(sw*pixel+3)&~3,stride=(w*destinationPixel+3)&~3;
   if(source.Length!=ss*sh)throw new ArgumentException("Source storage differs from positive DWORD rows.",nameof(source));
-  // Conservative peak by actual stage shape, including a possible immutable-source fixup clone.
-  long sourcePixels=(long)sw*sh,targetPixels=(long)w*h,stages;
-  if(sw>w&&sh>h)stages=24*sourcePixels+12L*w*sh+24*targetPixels;
-  else if(sw>w)stages=24*sourcePixels+36L*w*sh+12*targetPixels;
-  else if(sh>h)stages=24*sourcePixels+36L*sw*h+12*targetPixels;
-  else if(sw<w&&sh<h&&w<=5*sw&&h<=5*sh)stages=24*sourcePixels+12*targetPixels+12L*sw;
-  else if(sw<w&&sh<h)stages=36*sourcePixels+12L*w*sh+12*targetPixels;
-  else stages=36*sourcePixels+12*targetPixels;
-  long working=stages+source.Length+(long)stride*h+64L*(sw+sh+w+h)+65536;
+  long working=EstimateWorkingStorage(sw,sh,w,h,source.Length,(long)stride*h);
   if(working>maxWorkingBytes)throw new InvalidDataException("HALFTONE conservative working storage budget exceeded.");
   int[] raw=new int[sw*sh*3];for(int y=0;y<sh;y++)for(int x=0;x<sw;x++){int s=(sh-1-y)*ss+x*pixel,i=(y*sw+x)*3;raw[i]=source[s+2];raw[i+1]=source[s+1];raw[i+2]=source[s];}
   var policy=Policy(raw,sw,sh,w,h);int[] input=policy.Fixup?Fixup(raw,sw,sh):raw,output;
@@ -38,6 +30,18 @@ public static class Rhino5GdiHalftoneStretch
   byte[] result=new byte[stride*h];if(destinationSeed!=0)Array.Fill(result,destinationSeed);
   for(int y=0;y<h;y++)for(int x=0;x<w;x++){int d=(h-1-y)*stride+x*destinationPixel,i=(y*w+x)*3;result[d]=(byte)output[i+2];result[d+1]=(byte)output[i+1];result[d+2]=(byte)output[i];if(outputDepth==32)result[d+3]=0;}
   return result;
+ }
+ internal static long EstimateWorkingStorage(int sw,int sh,int w,int h,long sourceLength,long outputLength)
+ {
+  // Conservative peak by actual stage shape, including a possible immutable-source fixup clone.
+  long sourcePixels=(long)sw*sh,targetPixels=(long)w*h,stages;
+  if(sw>w&&sh>h)stages=24*sourcePixels+12L*w*sh+24*targetPixels;
+  else if(sw>w)stages=24*sourcePixels+36L*w*sh+12*targetPixels;
+  else if(sh>h)stages=24*sourcePixels+36L*sw*h+12*targetPixels;
+  else if(sw<w&&sh<h&&w<=5*sw&&h<=5*sh)stages=24*sourcePixels+12*targetPixels+12L*sw;
+  else if(sw<w&&sh<h)stages=36*sourcePixels+12L*w*sh+12*targetPixels;
+  else stages=36*sourcePixels+12*targetPixels;
+  return stages+sourceLength+outputLength+64L*(sw+sh+w+h)+65536;
  }
  private static int Clamp(int v)=>Math.Clamp(v,0,255);
  private static int Sample(int n,int d,int i)=>n>d?(2*n*(i+1)-d)/(2*d):Math.Max(0,((2*i+1)*n+2*d-1)/(2*d)-1);
@@ -69,7 +73,7 @@ public static class Rhino5GdiHalftoneStretch
  }
  private static Weight[][] Shrink(int n,int d)
  {
-  var rows=new Weight[d][];for(int x=0;x<d;x++){var row=new List<Weight>();int total=0,previous=0;for(int i=0;i<n;i++){int overlap=Math.Max(0,Math.Min((x+1)*n,(i+1)*d)-Math.Max(x*n,i*d));if(overlap==0)continue;total+=overlap;int cumulative=(int)((long)total*8192/n);row.Add(new(i,cumulative-previous));previous=cumulative;}if(previous!=8192)throw new InvalidOperationException("Q13 shrinking coefficient sum.");rows[x]=row.ToArray();}return rows;
+  var rows=new Weight[d][];for(int x=0;x<d;x++){var row=new List<Weight>();int total=0,previous=0;for(int i=x*n/d;i<((x+1)*n+d-1)/d;i++){int overlap=Math.Max(0,Math.Min((x+1)*n,(i+1)*d)-Math.Max(x*n,i*d));if(overlap==0)continue;total+=overlap;int cumulative=(int)((long)total*8192/n);row.Add(new(i,cumulative-previous));previous=cumulative;}if(previous!=8192)throw new InvalidOperationException("Q13 shrinking coefficient sum.");rows[x]=row.ToArray();}return rows;
  }
  private static int Floor(int a,int b){int q=a/b;return a<0&&a%b!=0?q-1:q;}
  private static Weight[][] Expand(int n,int d)

@@ -42,9 +42,9 @@ public static class Rhino5TextureRasterPreparation
   if(working>maxWorkingBytes)throw new InvalidDataException("Composed texture working storage budget exceeded before allocation.");
   return d;
  }
- private static void Pack(ReadOnlySpan<byte> rgba,int w,int h,int depth,Span<byte> stored)
+ internal static void Pack(ReadOnlySpan<byte> rgba,int w,int h,int depth,Span<byte> stored)
  {int stride=Stride(w,depth),pixel=depth/8;for(int y=0;y<h;y++)for(int x=0;x<w;x++){int s=(y*w+x)*4,d=(h-1-y)*stride+x*pixel;stored[d]=rgba[s+2];stored[d+1]=rgba[s+1];stored[d+2]=rgba[s];if(depth==32)stored[d+3]=rgba[s+3];}}
- private static byte[] Normalize(ReadOnlySpan<byte> stored,int w,int h,int depth)
+ internal static byte[] Normalize(ReadOnlySpan<byte> stored,int w,int h,int depth)
  {int stride=Stride(w,depth),pixel=depth/8;byte[] rgba=new byte[checked(w*h*4)];for(int y=0;y<h;y++)for(int x=0;x<w;x++){int s=(h-1-y)*stride+x*pixel,d=(y*w+x)*4;rgba[d]=stored[s+2];rgba[d+1]=stored[s+1];rgba[d+2]=stored[s];rgba[d+3]=depth==32?stored[s+3]:(byte)255;}return rgba;}
 }
 
@@ -59,8 +59,9 @@ public sealed class Rhino5PreparedTexture:IDisposable
  internal Rhino5PreparedTexture(int sw,int sh,int w,int h,int depth,bool gray,int mode,string sourcePixelHash,byte[] ownedStored,byte[] ownedRgba){SourceWidth=sw;SourceHeight=sh;Width=w;Height=h;DibBitDepth=depth;GrayScale=gray;StretchMode=mode;this.sourcePixelHash=sourcePixelHash;stored=ownedStored;rgba=ownedRgba;}
  public byte[] CopyStored(){lock(sync){ObjectDisposedException.ThrowIf(stored is null,this);return(byte[])stored!.Clone();}}
  public byte[] CopyRgba(){lock(sync){ObjectDisposedException.ThrowIf(rgba is null,this);return(byte[])rgba!.Clone();}}
- public DecodedLocalImage CreateDecodedImage(DecodedLocalImage source)
- {ArgumentNullException.ThrowIfNull(source);if(source.Width!=SourceWidth||source.Height!=SourceHeight||Convert.ToHexString(SHA256.HashData(source.CopyRgba()))!=sourcePixelHash)throw new ArgumentException("Decoded provenance does not match the original prepared source pixels.",nameof(source));return new(source.Source,Width,Height,source.SourceOrientation,source.SourceFrameCount,source.TypeIdentifier,CopyRgba(),RgbaAlphaRepresentation.Straight,null,DecodedPixelSource.PreparedTexture);}
+ public DecodedLocalImage CreateDecodedImage(DecodedLocalImage source)=>CreateDecodedImage(source,DecodedPixelSource.PreparedTexture);
+ internal DecodedLocalImage CreateDecodedImage(DecodedLocalImage source,DecodedPixelSource preparedKind)
+ {ArgumentNullException.ThrowIfNull(source);if(source.Width!=SourceWidth||source.Height!=SourceHeight||Convert.ToHexString(SHA256.HashData(source.CopyRgba()))!=sourcePixelHash)throw new ArgumentException("Decoded provenance does not match the original prepared source pixels.",nameof(source));return new(source.Source,Width,Height,source.SourceOrientation,source.SourceFrameCount,source.TypeIdentifier,CopyRgba(),RgbaAlphaRepresentation.Straight,null,preparedKind);}
  public void Dispose(){lock(sync){if(stored is {} s)Array.Clear(s);if(rgba is {} r)Array.Clear(r);stored=null;rgba=null;}}
 }
 

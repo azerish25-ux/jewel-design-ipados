@@ -44,7 +44,8 @@ internal static class WallpaperPresentationChecks
   }
   await Record("paper-original",await Present(view,()=>view.SetMesh(mesh)),0);
   long uploads=view.Stats.MeshUploads;
-  await Record("paper-green",await Present(view,()=>view.SetWallpaperPixels(green)),1);
+  await Record("paper-green",await Present(view,()=>view.SetWallpaperSource(green,32,512,512)),1);
+  long sourceRevision=view.Stats.SceneRevision;try{view.SetWallpaperSource(green,32,512,512,false,null,1);throw new Exception("Expected source wallpaper budget failure");}catch(System.IO.InvalidDataException){}Check(view.Stats.SceneRevision==sourceRevision,"Failed wallpaper source replaced current scene");
   Check(view.Stats.MeshUploads==uploads&&view.Stats.LiveMeshBuffers==2,"Wallpaper upload replaced/reuploaded CAD mesh");
   await Record("paper-blue",await Present(view,()=>view.SetWallpaperPixels(blue,2)),2);
   Check(view.Stats.MeshUploads==uploads&&view.Stats.LiveImageTextures==1,"Image replacement retained obsolete texture after completed frame");

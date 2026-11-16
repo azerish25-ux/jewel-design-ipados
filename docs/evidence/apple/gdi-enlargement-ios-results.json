@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-N01",
+  "sourceCommit": "f3363db65170dd0ae1685289874404c855660b77",
+  "run": 43944650487,
+  "conclusion": "success",
+  "artifactId": 14264204948,
+  "artifactSha256": "8a1c0383ab266aeefaf501a4b4155b9c4ffd764322b13182360d22372cc54fd7",
+  "actualArtifactInspected": true,
+  "managedExactCasesPerFamily": 1408,
+  "oldManagedCasesPerFamily": 3860,
+  "families": {
+    "ipad": {
+      "cad": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "c5f4e81351ad050b66aa4f956a7d24289f4bd44fd10cdeea30c829c8630cbae3",
+          "orbit": "168dae3fd96aaa303b8e1b2efb78f86e9f760ebcdac775022f834afec44c7eb7",
+          "edited": "0790f0afc31877d41e3333d8420a4f6528f2c62eb722d53c308bc49325f1327f",
+          "empty": "bf1fd1cd65836fea553376efeb64e0058c6cef2b1969db145cad4c3f1c9bbdcd",
+          "resized": "22b97928a64e20e9e94773019b43482651f062987760b97ef8b7a3ba9e703909",
+          "final": "26f1a4831fe4e68b2fbb4efc78a428025ffc3668aad9c2c43c6f2752e16ace09"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "wallpaper": {
+        "schemaVersion": 1,
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "right": 1435,
+          "top": 295,
+          "bottom": 2065
+        },
+        "results": [
+          {
+            "stage": "paper-green",
+            "checkedBackground": 101214,
+            "checkedCad": 2075886,
+            "colored": 101214,
+            "rectangle": {
+              "left": 564,
+              "top": 924,
+              "width": 512,
+              "height": 512
+            }
+          },
+          {
+            "stage": "paper-blue",
+            "checkedBackground": 663608,
+            "checkedCad": 1513492,
+            "colored": 663608,
+            "rectangle": {
+              "left": 308,
+              "top": 668,
+              "width": 1024,
+              "height": 1024
+            }
+          }
+        ],
+        "differences": {
+          "paper-clear": 0,
+          "paper-final": 0
+        },
+        "disposalInFlight": 1,
+        "retiredImages": 0,
+        "retiredMeshBuffers": 0,
+        "pngSha256": {
+          "paper-original": "26f1a4831fe4e68b2fbb4efc78a428025ffc3668aad9c2c43c6f2752e16ace09",
+          "paper-green": "1303ca92b6099e663171c96a1738300c3dbc61ab53e03ce6c6c5e207d2914385",
+          "paper-blue": "6be1af07526eda6310fd0b61b75b35cf34fd668fc0c9f925ed9def4073d628c9",
+          "paper-clear": "26f1a4831fe4e68b2fbb4efc78a428025ffc3668aad9c2c43c6f2752e16ace09",
+          "paper-resized": "4d7a7f528fa7eaf91bb452b5b37ef23b81463a225f5e1436d033714e4f0e4ac5",
+          "paper-final": "26f1a4831fe4e68b2fbb4efc78a428025ffc3668aad9c2c43c6f2752e16ace09"
+        },
+        "scope": "Actual visible supplied resized wallpaper pixels and regenerated CAD composition. Original resampling/GL/trace/document/PC/physical acceptance separate."
+      },
+      "trace": {
+        "schemaVersion": 1,
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "right": 1435,
+          "top": 295,
+          "bottom": 2065
+        },
+        "counts": {
+          "trace-image": 738676,
+          "trace-orbit": 754366,
+          "trace-moved": 210332
+        },
+        "worldMotionPixels": 733168,
+        "movedPixels": 528344,
+        "differences": {
+          "trace-hidden": 0,
+          "trace-final": 0
+        },
+        "disposalInFlight": 1,
+        "pngSha256": {
+          "trace-original": "26f1a4831fe4e68b2fbb4efc78a428025ffc3668aad9c2c43c6f2752e16ace09",
+          "trace-image": "5dc86229d3a0d646a5575f3e86685042e1881f975e7c6904221a8e19cfcd5200",
+          "trace-orbit": "0da5b1d2d8024b6ac16a172c59e701132fdea3e435e79ec371f5be2f6ff4f66f",
+          "trace-hidden": "70a52b89f8684caed29d55c8e2e351b9f99d99636257f8c372b79a289df8c735",
+          "trace-moved": "84f41805945bf252bdf4e31157085f7a6f20f2ab4280eb0ff5b5f06d7764e29c",
+          "trace-final": "70a52b89f8684caed29d55c8e2e351b9f99d99636257f8c372b79a289df8c735"
+        },
+        "scope": "Actual prepared world-plane pixels/candidate camera/mesh composition and metadata/ownership. Original source camera/cache/mipmap/filtering/failure diagnostics/document/PC/physical parity separate."
+      },
+      "ownership": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "offscreen": {
+        "width": 320,
+        "height": 320,
+        "foregroundPixels": 16109,
+        "editedPixels": 12377,
+        "orbitPixels": 19835,
+        "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+        "orderPixels": 0,
+        "pngSha256": {
+          "original": "6da73fa31ed84f2114cf25d60fc3c42432248b294c5ebe590e55a3cef16c346c",
+          "edited": "cf0fb200efd7b35497b876549e5de0c2c055e1886c4bb02fab7f2c00dc504ddc",
+          "orbit": "fd8986b8493f30e6407035861b5278587c306478ebc7de4995643b15ba9ec905",
+          "empty": "014213d8c543df47774080f72485fbbe701af3934f5a6b8ed625705c838e13d0"
+        },
+        "bgraSha256": {
+          "original": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+          "edited": "13c7273d8a6bf87ec7b0dea40cd0471c1f7d9b31e88cf46f6f24767d459dcb35",
+          "orbit": "4f719534df68c2670848a824a2aa9111f0a942ab1428a544578fe932cd34aee5",
+          "empty": "8fadfc1b0a327f76aafa537d961d823f8229d24f3dcaa6f04d61cb1e6d029612"
+        },
+        "depthOrderScope": "Real harness raw-frame comparison; reordered PNG not retained in this checkpoint."
+      }
+    },
+    "iphone": {
+      "cad": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "0c426f6a7fb5901922388471eb846a493fe3076d2d95aaadadccdbbd9713e89b",
+          "orbit": "ff89330d9c3b381d92f358d9ea1def352fd4951a5bb6f07e6a10793174bd4784",
+          "edited": "347a7ee23015905d10a3b966e20083fad800152e321c034a2b17117d79eacfe9",
+          "empty": "8e272c4b20e68a4600580799b2a44c31b0a330deab0a6a8c20e5d999222ae5b2",
+          "resized": "45d0b9808b2d94fbbd091cc60cc736cd476b3d5de3fe7f8b45c95eff59cf5270",
+          "final": "0c426f6a7fb5901922388471eb846a493fe3076d2d95aaadadccdbbd9713e89b"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "wallpaper": {
+        "schemaVersion": 1,
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "right": 1055,
+          "top": 327,
+          "bottom": 2294
+        },
+        "results": [
+          {
+            "stage": "paper-green",
+            "checkedBackground": 122375,
+            "checkedCad": 1657760,
+            "colored": 122375,
+            "rectangle": {
+              "left": 347,
+              "top": 1055,
+              "width": 512,
+              "height": 512
+            }
+          },
+          {
+            "stage": "paper-blue",
+            "checkedBackground": 694139,
+            "checkedCad": 1085996,
+            "colored": 694139,
+            "rectangle": {
+              "left": 91,
+              "top": 799,
+              "width": 1024,
+              "height": 1024
+            }
+          }
+        ],
+        "differences": {
+          "paper-clear": 0,
+          "paper-final": 0
+        },
+        "disposalInFlight": 2,
+        "retiredImages": 0,
+        "retiredMeshBuffers": 0,
+        "pngSha256": {
+          "paper-original": "0c426f6a7fb5901922388471eb846a493fe3076d2d95aaadadccdbbd9713e89b",
+          "paper-green": "b5de9aa14d76a67a7eae2fe8d91182bc52049fab0ad8ae60a315f8ef202ebeaa",
+          "paper-blue": "88545008cfb4d86c7f6ce3baab87c26fce401dfeb7d2ecc3cb0f4852ed55f50d",
+          "paper-clear": "0c426f6a7fb5901922388471eb846a493fe3076d2d95aaadadccdbbd9713e89b",
+          "paper-resized": "ea8135ae676af2617d3d9dc4b6e0c6ee76f780746cfac97c1a4bd777aee28244",
+          "paper-final": "0c426f6a7fb5901922388471eb846a493fe3076d2d95aaadadccdbbd9713e89b"
+        },
+        "scope": "Actual visible supplied resized wallpaper pixels and regenerated CAD composition. Original resampling/GL/trace/document/PC/physical acceptance separate."
+      },
+      "trace": {
+        "schemaVersion": 1,
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "right": 1055,
+          "top": 327,
+          "bottom": 2294
+        },
+        "counts": {
+          "trace-image": 430389,
+          "trace-orbit": 444872,
+          "trace-moved": 124010
+        },
+        "worldMotionPixels": 387627,
+        "movedPixels": 306379,
+        "differences": {
+          "trace-hidden": 0,
+          "trace-final": 0
+        },
+        "disposalInFlight": 1,
+        "pngSha256": {
+          "trace-original": "7da8028ad4bcbb5ab9b9a0c04ae0f48392a5af2ca35be9ab52ed7c39c2c33fe8",
+          "trace-image": "75eaa4cc82579f659749147c635ebdd6dcfd890908a5f8704e487271990baab5",
+          "trace-orbit": "53e5a846c15749fb298c8285714de4d6bb5fa0016850321e987b9813676359d1",
+          "trace-hidden": "7da8028ad4bcbb5ab9b9a0c04ae0f48392a5af2ca35be9ab52ed7c39c2c33fe8",
+          "trace-moved": "f4ed2e09691fd070f8576791998a9a97de09de2c783711153f968137cdd72060",
+          "trace-final": "7da8028ad4bcbb5ab9b9a0c04ae0f48392a5af2ca35be9ab52ed7c39c2c33fe8"
+        },
+        "scope": "Actual prepared world-plane pixels/candidate camera/mesh composition and metadata/ownership. Original source camera/cache/mipmap/filtering/failure diagnostics/document/PC/physical parity separate."
+      },
+      "ownership": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "offscreen": {
+        "width": 320,
+        "height": 320,
+        "foregroundPixels": 16109,
+        "editedPixels": 12377,
+        "orbitPixels": 19835,
+        "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+        "orderPixels": 0,
+        "pngSha256": {
+          "original": "6da73fa31ed84f2114cf25d60fc3c42432248b294c5ebe590e55a3cef16c346c",
+          "edited": "cf0fb200efd7b35497b876549e5de0c2c055e1886c4bb02fab7f2c00dc504ddc",
+          "orbit": "fd8986b8493f30e6407035861b5278587c306478ebc7de4995643b15ba9ec905",
+          "empty": "014213d8c543df47774080f72485fbbe701af3934f5a6b8ed625705c838e13d0"
+        },
+        "bgraSha256": {
+          "original": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+          "edited": "13c7273d8a6bf87ec7b0dea40cd0471c1f7d9b31e88cf46f6f24767d459dcb35",
+          "orbit": "4f719534df68c2670848a824a2aa9111f0a942ab1428a544578fe932cd34aee5",
+          "empty": "8fadfc1b0a327f76aafa537d961d823f8229d24f3dcaa6f04d61cb1e6d029612"
+        },
+        "depthOrderScope": "Real harness raw-frame comparison; reordered PNG not retained in this checkpoint."
+      }
+    }
+  },
+  "scope": "Actual iPad/iPhone simulator numeric execution and independent18-capture/resource checks. Original wallpaper source composition/codecs/cache/vendor/PC/physical separate.",
+  "allLocalDownloadsD": true
+}

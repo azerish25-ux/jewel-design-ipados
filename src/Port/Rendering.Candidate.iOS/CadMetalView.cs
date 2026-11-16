@@ -50,6 +50,14 @@ public sealed class CadMetalView : MTKView
     }
     public long SetWallpaperPixels(DecodedLocalImage image,int storedScale=1)
     {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);long id=presenter.SetWallpaperPixels(image,storedScale);SetNeedsDisplay();return id;}
+    /// <summary>Runs original wallpaper fit/HALFTONE24/post-gray CPU preparation before replacing GPU pixels.</summary>
+    public long SetWallpaperSource(DecodedLocalImage source,int sourceDibDepth,int requestedWidth,int requestedHeight,bool gray=false,LocalImageLimits? limits=null,long maxWorkingBytes=512L*1024*1024)
+    {
+        RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);
+        using var prepared=Rhino5WallpaperPreparation.Prepare(source,sourceDibDepth,requestedWidth,requestedHeight,gray,limits,maxWorkingBytes);
+        using var image=prepared.CreateDecodedImage(source);
+        long id=presenter.SetWallpaperPixels(image,prepared.Plan.DownscaleDivisor);SetNeedsDisplay();return id;
+    }
     public void ClearWallpaper()
     {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);presenter.ClearWallpaper();SetNeedsDisplay();}
     public long SetTracePixels(DecodedLocalImage image,Rhino5TraceImage info,int sourceDibDepth,Rhino5TextureAnisotropy anisotropy=default)

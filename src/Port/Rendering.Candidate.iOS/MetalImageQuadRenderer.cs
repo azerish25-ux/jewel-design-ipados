@@ -30,6 +30,11 @@ public sealed class MetalImageQuadRenderer:IDisposable
   using var prepared=Rhino5TextureRasterPreparation.Prepare(source,sourceDibDepth,settings,gray,limits);
   using var image=prepared.CreateDecodedImage(source);SetImage(image,anisotropy);return prepared.Receipt;
  }
+ public Rhino5WallpaperRasterReceipt SetWallpaperSource(DecodedLocalImage source,int sourceDibDepth,int requestedWidth,int requestedHeight,bool gray=false,LocalImageLimits? limits=null,long maxWorkingBytes=512L*1024*1024)
+ {
+  using var prepared=Rhino5WallpaperPreparation.Prepare(source,sourceDibDepth,requestedWidth,requestedHeight,gray,limits,maxWorkingBytes);
+  using var image=prepared.CreateDecodedImage(source);SetImage(image);return prepared.Receipt;
+ }
  public void SetImage(DecodedLocalImage image,Rhino5TextureAnisotropy anisotropy=default)
  {
   ArgumentNullException.ThrowIfNull(image);lock(sync){ObjectDisposedException.ThrowIf(disposed,this);
