@@ -2,6 +2,8 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
+Public Windows GDI RGB prerequisite: [N04](evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N04.json) measures288 current-host cases/432 repeatability and independent RGB controls, with42 retained source rasters and0 owned native handles. Independent byte/row/mode/hash validation and12 Node regressions pass. Mode3/HALFTONE differ in48 control groups; portable RGB algorithm and original vendor/OS/driver/profile/PC parity remain open.
+
 Original DIB resize setup: [N03 static audit](evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N03.json) resolves five original bodies and nine Win32 ABIs. Normal resized24/32bit DIBs use positive-height BI_RGB/DWORD rows; HALFTONE is selected only when an integer shrink ratio reaches2. Palette stride has source quirks. Next public-GDI oracle must record actual DC state and exact pixels; static setup does not prove RGB filtering.
 
 Trace anisotropy: [S05](evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S05.json) adds source mode/extension/single-float policy and exact Metal representability, bounded real sampler caches, retained per-image/trace sampler snapshots and explicit unsupported replacement failure. Windows48 policy cases, full native host and60 adjacent regressions pass. [macOS evidence](../evidence/apple/trace-anisotropy-preflight-results.json) verifies48 cases and binding0 warnings/errors. Actual iPad/iPhone GPU/visible [run43879034941](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43879034941) remains queued; preserve this run and inspect its actual artifacts. Complete source driver/cache/settings/mipmap/compression/document/PC/physical acceptance remains open.

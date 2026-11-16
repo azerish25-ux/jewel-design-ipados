@@ -1,0 +1,8 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {verify}=require('../scripts/verify-gdi-rgb-reference.cjs');
+const fixture=()=>JSON.parse(fs.readFileSync(path.join(__dirname,'../reference/fixtures/gdi-rgb-windows-26300.json'),'utf8'));
+test('retained current-host public GDI pixels retain shape/hash/rows/mode controls and native cleanup',()=>{const result=verify(fixture());assert.equal(result.cases,288);assert.equal(result.sources,42);assert.equal(result.groups,96);assert.equal(result.identityControls,48);assert.equal(result.constantControls,96);assert.equal(result.rgbModeDifferenceGroups,48);assert.equal(result.liveOwnedHandles,0);});
+test('reject changed public GDI output bytes and fabricated cleanup',()=>{let r=fixture();let bytes=Buffer.from(r.Cases[0].StoredBase64,'base64');bytes[0]^=1;r.Cases[0].StoredBase64=bytes.toString('base64');assert.throws(()=>verify(r));r=fixture();r.LiveOwnedHandles=1;assert.throws(()=>verify(r));});
+test('reject a mode changed below the integer2x threshold and missing source rows',()=>{let r=fixture();let c=r.Cases.find(c=>c.RequestedMode===0&&c.EffectiveStretchMode===1);c.EffectiveStretchMode=4;assert.throws(()=>verify(r));r=fixture();r.Sources.pop();assert.throws(()=>verify(r));});
+test('reject wrong packed stride, row/channel mapping and case identity',()=>{let r=fixture();r.Cases[0].Stride+=4;assert.throws(()=>verify(r));r=fixture();let b=Buffer.from(r.Cases[0].RgbaBase64,'base64');b[0]^=1;r.Cases[0].RgbaBase64=b.toString('base64');assert.throws(()=>verify(r));r=fixture();r.Cases[0].Pattern=1;assert.throws(()=>verify(r));});

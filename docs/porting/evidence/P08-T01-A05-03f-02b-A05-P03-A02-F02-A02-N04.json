@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N04",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "63d3a5cf92cf20cfb8b0d27cf35431d994d73f28",
+  "status": "public_windows_gdi_rgb_measured_cross_platform_validation_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N04-gdi-rgb-reference.md",
+  "prerequisite": "docs/evidence/audit/rhino5-dib-creation-source.json",
+  "producer": "native/Rendering/GdiRgbReference/Program.cs",
+  "corpus": "reference/fixtures/gdi-rgb-windows-26300.json",
+  "verifier": "scripts/verify-gdi-rgb-reference.cjs",
+  "checks": {
+    "originalTargetExecuted": false,
+    "ownReferenceExitCode": 0,
+    "cases": 288,
+    "controls": 432,
+    "liveOwnedHandles": 0,
+    "independent": {
+      "schemaVersion": 1,
+      "cases": 288,
+      "sources": 42,
+      "groups": 96,
+      "identityControls": 48,
+      "constantControls": 96,
+      "rgbModeDifferenceGroups": 48,
+      "liveOwnedHandles": 0,
+      "scope": "Current-host public Windows GDI bytes and retained metadata only; original vendor/MFC/OS/driver/portable RGB parity separate."
+    },
+    "nodeRegressions": 12
+  },
+  "outputHashes": {
+    "producer": "6b0b8bb6a10aa17bbe23aee1d8f3efc9697524058aaba14aaa474175f849a614",
+    "corpus": "16e87fc877d088632f079fe9a9b43012ff5adc176c52bbc9909f8ad48c02d2c9",
+    "rawOutput": "8bf188bdcff6f5bcb4d5a2b9b0438861fe2827ecee00ec353f429c023b6838c7",
+    "runLog": "b9f5bb81860da1ed826b447e841de3156178acd3e6ba5d15e05602cfff671530"
+  },
+  "observations": {
+    "environment": "Microsoft Windows 10.0.26300",
+    "actualFreshDc": "Stretch mode1/brush(0,0)/map1/ICM1, all measured newly-created destination bytes zero on this host. Explicit destination seeds0/90 are retained per case, not inferred for arbitrary original documents.",
+    "controls": "8 size tuples x3 patterns x2 depths x2 destination seeds x3 stretch selections.42 unique sources,288 cases, each repeated with fresh native DIBs.432 repeatability plus independent constant/identity RGB controls.24bit padding and32bit alpha stored exactly; no modern alpha correction.",
+    "differences": "Mode3 versusHALFTONE yields differing RGB in48 of96 controlled groups. This demonstrates measured filter distinctions; it does not establish original OS/driver output or a portable reconstruction algorithm."
+  },
+  "review": {
+    "scope": "Public current-host Windows GDI API measurement, not original vendor/MFC runtime, complete bit-depth/codec/profile catalog or PC parity.",
+    "remaining": "Implement measured portable RGB resampling and bind existing original alpha OR repair. Broaden palette/top-down/profile/brush/DC-state coverage; original vendor/driver/PC/physical evidence remains open. Source S05 iOS run43879034941 preserved."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

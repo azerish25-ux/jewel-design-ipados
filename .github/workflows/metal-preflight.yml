@@ -3,6 +3,10 @@ on:
   push:
     branches: [codex/dotnet-ios-reuse]
     paths:
+      - "native/Rendering/GdiRgbReference/**"
+      - "reference/fixtures/gdi-rgb-windows-26300.json"
+      - "scripts/verify-gdi-rgb-reference.cjs"
+      - "tests/gdi-rgb-reference.test.cjs"
       - "src/Port/Documents/**"
       - "src/Port/Views.Candidate/**"
       - "tests/Port/Geometry.Candidate.Contracts/LegacyUserStringListAssertions.cs"
@@ -159,6 +163,8 @@ jobs:
         run: node --test tests/ghidra-local.test.cjs | tee artifacts/ghidra-local-contracts.txt
       - name: Verify actual capture obstruction and bounded driver regressions
         run: node --test tests/viewport-capture-surface.test.cjs tests/viewport-driver.test.cjs tests/wallpaper-screenshots.test.cjs | tee artifacts/capture-surface-regressions.txt
+      - name: Verify retained public Windows GDI RGB corpus
+        run: node --test tests/gdi-rgb-reference.test.cjs > artifacts/gdi-rgb-reference-checks.txt
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts
