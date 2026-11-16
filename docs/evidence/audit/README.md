@@ -15,6 +15,9 @@ This is a source-backed feature/compatibility checklist for recovered CounterSke
 - [Wallpaper raster source and exact grayscale constants](rhino5-wallpaper-raster-source.json): portable arithmetic and all-color checksum; full decode/render remains open.
 - [Bitmap lookup, decoder and storage ownership](rhino5-bitmap-loading-source.json): seven original bodies, ordinal codec imports, and failure/lifetime rules. [Next image implementation card](../../porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-image-decode.md).
 
+- [Original codec module inventory](rhino5-image-codec-module-inventory.json): installed filter/library hashes; current fixtures do not establish full format support.
+- [Original image drawing and trace grayscale](rhino5-image-drawing-source.json): eight source bodies, world/screen paths and trace rounding/alpha differences; raw GL/GDI refinement remains required.
+
 ## Most consequential findings
 
 1. A PC portfolio is .csp XML plus GUID-pair .csg designs and sibling preview/history files. An STL/3DM geometry export is a different contract. [Project.cs:101](<../../../recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs#L101>) — public string ProjectInfoFilePath.

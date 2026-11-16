@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "pipeline-wallpaper",
+      "name": "?DrawWallpaper@CRhinoDisplayPipeline@@UEAAXAEBVCRhWallpaper@@@Z",
+      "abi": null,
+      "rva": 5048880,
+      "length": 344,
+      "sha256": "e41fceb7fd0c5dab0d98cc480bece775debe5868ce2ca730c8c7ea6e4c7677f1",
+      "unwindRegions": [
+        {
+          "begin": 5048880,
+          "end": 5049224,
+          "unwind": 19838352
+        }
+      ]
+    },
+    {
+      "role": "pipeline-trace",
+      "name": "?DrawTraceImage@CRhinoDisplayPipeline@@UEAAXAEBVCRhTraceImage@@@Z",
+      "abi": null,
+      "rva": 5049280,
+      "length": 344,
+      "sha256": "b792931fce3c128bab39e7fda22823149554073bc05af5ef5a68708b744619bf",
+      "unwindRegions": [
+        {
+          "begin": 5049280,
+          "end": 5049624,
+          "unwind": 19838240
+        }
+      ]
+    },
+    {
+      "role": "gdi-wallpaper",
+      "name": "?DrawWallpaper@CRhinoDisplayEngine_GDI@@UEAAXAEBVCRhWallpaper@@@Z",
+      "abi": null,
+      "rva": 4874320,
+      "length": 346,
+      "sha256": "cdf882450a5fb09f0f555904ba84e977feaff0b9f9a157b277f7753b02383b83",
+      "unwindRegions": [
+        {
+          "begin": 4874320,
+          "end": 4874351,
+          "unwind": 19329140
+        },
+        {
+          "begin": 4874351,
+          "end": 4874652,
+          "unwind": 19329112
+        },
+        {
+          "begin": 4874652,
+          "end": 4874666,
+          "unwind": 19329096
+        }
+      ]
+    },
+    {
+      "role": "gdi-trace",
+      "name": "?DrawTraceImage@CRhinoDisplayEngine_GDI@@UEAAXAEBVCRhTraceImage@@@Z",
+      "abi": null,
+      "rva": 4876928,
+      "length": 358,
+      "sha256": "e68f7688dd1f86bac6967fa1dcb0b4d6be1e813de9575f17f5eefc4e2da7e617",
+      "unwindRegions": [
+        {
+          "begin": 4876928,
+          "end": 4877286,
+          "unwind": 19899040
+        }
+      ]
+    },
+    {
+      "role": "ogl-wallpaper",
+      "name": "?DrawWallpaper@CRhinoDisplayEngine_OGL@@UEAAXAEBVCRhWallpaper@@@Z",
+      "abi": null,
+      "rva": 4943440,
+      "length": 1151,
+      "sha256": "c50b0b973cc4e92991d2a40212942fc88e60b64b7e80050b5fbe99511d93ea18",
+      "unwindRegions": [
+        {
+          "begin": 4943440,
+          "end": 4944591,
+          "unwind": 19328196
+        }
+      ]
+    },
+    {
+      "role": "ogl-trace",
+      "name": "?DrawTraceImage@CRhinoDisplayEngine_OGL@@UEAAXAEBVCRhTraceImage@@@Z",
+      "abi": null,
+      "rva": 4944592,
+      "length": 1448,
+      "sha256": "0990b2e5fc1c48cd5279f2cc909bcba340f8a50279318f445a4ac0098c72401d",
+      "unwindRegions": [
+        {
+          "begin": 4944592,
+          "end": 4946040,
+          "unwind": 19943720
+        }
+      ]
+    },
+    {
+      "role": "trace-get-image",
+      "name": "?GetImage@CRhTraceImage@@QEBA_NAEAVCRhinoDib@@@Z",
+      "abi": null,
+      "rva": 11745728,
+      "length": 147,
+      "sha256": "a8cbe8d047af4b88387383e898cb2507b6adbfaf31c345faaa3c74741fab43f1",
+      "unwindRegions": [
+        {
+          "begin": 11745728,
+          "end": 11745875,
+          "unwind": 19288088
+        }
+      ]
+    },
+    {
+      "role": "trace-dib-grayscale",
+      "name": "?ConvertToGrayScale@CRhinoUiDib@@QEAA_NXZ",
+      "abi": null,
+      "rva": 13337216,
+      "length": 1302,
+      "sha256": "1c2206f0617e879fd8ac5486e9265dc32a1367ffab747bf3f2355f152d4b88b9",
+      "unwindRegions": [
+        {
+          "begin": 13337216,
+          "end": 13337252,
+          "unwind": 18811804
+        },
+        {
+          "begin": 13337252,
+          "end": 13337346,
+          "unwind": 18811776
+        },
+        {
+          "begin": 13337346,
+          "end": 13337926,
+          "unwind": 18811756
+        },
+        {
+          "begin": 13337926,
+          "end": 13338503,
+          "unwind": 18811740
+        },
+        {
+          "begin": 13338503,
+          "end": 13338510,
+          "unwind": 18811712
+        },
+        {
+          "begin": 13338510,
+          "end": 13338518,
+          "unwind": 18811696
+        }
+      ]
+    }
+  ]
+}

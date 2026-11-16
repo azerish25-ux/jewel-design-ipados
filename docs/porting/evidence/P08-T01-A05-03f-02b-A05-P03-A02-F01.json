@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "17d19c28b89465b572bc43c29689562b0b801bfa",
-  "status": "portable_assets_windows_passed_actual_apple_decode_pending",
+  "status": "local_assets_and_real_apple_decode_windows_macos_ipad_iphone_passed_full_image_rendering_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F01-apple-decoder.md",
   "sourceAudit": "docs/evidence/audit/rhino5-bitmap-loading-source.json",
   "red": {
@@ -27,10 +27,41 @@
   },
   "review": {
     "ownership": "Defensive encoded-byte and decoded-pixel ownership; encoded source survives decoded output disposal; explicit local path selected separately from original inert name. Native ImageIO scopes disposed deterministically.",
-    "failure": "Missing file/empty/encoded-budget/dimension/output-budget errors surfaced; corrupt/unsupported decode rejected, complete-source/frame status checked. Actual Apple pixel/metadata cases pending CI.",
-    "limits": "Output budgets do not cap undocumented internal codec allocations. Exact original LEADTOOLS conversion/format/cache behavior, GDI resampling, actual Metal textures/presentation and source replacement/document lifecycles remain required."
+    "failure": "Actual Apple33 cases per family verify known PNG/BMP pixels/alpha/row order, retained EXIF orientation6, decoded100x100 unchanged JPEG, corrupt/truncated and encoded/pixel/output budgets, repeat/disposal. Windows/macOS26 portable ownership cases pass. Unsupported wider formats remain acceptance work.",
+    "limits": "Output budgets do not cap undocumented internal codec allocations. Exact original LEADTOOLS conversion/format/cache behavior, GDI resampling, actual Metal textures/presentation and source replacement/document lifecycles remain required.",
+    "next": "F02 actual texture/drawing integration consumes8 original drawing/grayscale bodies. Separate trace rounding/alpha handling and world-plane mapping from wallpaper screen-space/flat-storage processing. Source API refinement and original codec compatibility remain open."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin; shared CLI untouched",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleReports": {
+    "numeric": "docs/evidence/apple/offline-image-decode-numeric-results.json",
+    "runtime": "docs/evidence/apple/offline-image-decode-ios-results.json"
+  },
+  "appleRuns": [
+    {
+      "id": 43831605308,
+      "name": "Repository integrity and bounded proofs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43831605219,
+      "name": "Metal renderer binding preflight",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43831605197,
+      "name": "Visible CAD viewport experiment",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43831605194,
+      "name": "Recovered CSharp iOS reuse",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
 }

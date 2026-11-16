@@ -11,3 +11,5 @@ Budgets constrain this component encoded/output allocations, not undocumented Im
 All local writes/cache/tools D-only through run-local. Five-second transient D retries. GitHub owner plugin only.
 
 API references: [CGImageSource](https://learn.microsoft.com/en-us/dotnet/api/imageio.cgimagesource?view=net-ios-26.5-10.0), [CGBitmapContext](https://learn.microsoft.com/en-us/dotnet/api/coregraphics.cgbitmapcontext.-ctor?view=net-ios-26.5-10.0), [CGColorSpace](https://learn.microsoft.com/en-us/dotnet/api/coregraphics.cgcolorspace?view=net-ios-26.4-10.0), [RGBA flags](https://learn.microsoft.com/en-us/dotnet/api/coregraphics.cgbitmapflags?view=net-ios-26.4-10.0). These describe API behavior, not recovered Windows decoder equivalence.
+
+Verified result: [execution evidence](../evidence/P08-T01-A05-03f-02b-A05-P03-A02-F01.json), Windows/macOS26 ownership cases and actual iPad/iPhone33 decoder cases per family; adjacent CAD captures unchanged. This completes F01 only, not parent A02, texture/drawing or full parity.

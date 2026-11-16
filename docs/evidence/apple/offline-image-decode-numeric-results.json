@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F01",
+  "sourceCommit": "15009837458338b522fd391c078c077c835aa562",
+  "runId": 43831605219,
+  "jobId": 133178011566,
+  "artifactId": 14209250516,
+  "artifactSha256": "306f0e7bb162af338f3cb7ebe7a54309187d8e1eb413809cbeb505a4c4ee7396",
+  "status": "success_actual_connected_plugin_artifact_inspected",
+  "portableOwnershipCases": 26,
+  "appleDecoderCompiled": true,
+  "bindingWarnings": 0,
+  "bindingErrors": 0,
+  "outputs": {
+    "numericSha256": "eeec8b44afb950402044e060f48550afb08e3bef6414493f1fc04061168dc3e8",
+    "bindingSha256": "8dd6d7ee5d4b63010969d2935b99eb63a4be83b8ec2cc86bb8d24b1fd7120e88"
+  },
+  "limits": "macOS portable execution and iOS decoder compilation only. Actual decoder pixels require simulator evidence; original codec/format/GDI/texture/PC/physical parity remains separate."
+}

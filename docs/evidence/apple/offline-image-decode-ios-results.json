@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F01",
+  "sourceCommit": "15009837458338b522fd391c078c077c835aa562",
+  "runId": 43831605197,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43831605197",
+  "artifact": {
+    "id": 14210135521,
+    "sha256": "17712261efa14bf06c853465aec5dd6f49a79d57b5357e7116d5506c1d8694b5"
+  },
+  "status": "success_actual_connected_plugin_artifacts_inspected",
+  "portableOwnershipChecksPerFamily": 26,
+  "realAppleDecodeChecksPerFamily": 33,
+  "fixtureSha256": "cfa4b53ab7dd0973aa77f2a2de7aed6aef5aa919c46acd5340637505be666449",
+  "simulators": [
+    {
+      "family": "ipad",
+      "resultSha256": "0e37b999b86a412192ee7bc862850f233ccf0b5b0e1956b27c01442d8af2bc01",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 2,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "222cd47c294fc4a330c99953a411ae7df7c70929d73b210668f59671c6fb405c",
+          "orbit": "7b61721ec0a26f411a7365879665e5241c42f43783395cdeb6079d7303da72eb",
+          "edited": "b58e9a5552c70e9f2c0815bed4e05863affce4d9c1ab6ebdbbca5df99acac60a",
+          "empty": "186380afc9e5c0a731a7fd2478c2e11e6c8ff5c38ad50a4d9810150653642244",
+          "resized": "67dc43924199cb303b0f34ca035f2197f64d5acc70e327143225970300fa8e8d",
+          "final": "4d3edeb4366a17a78762bcab0a42ea0cc633f7144e93701bc8f66346ecd9063e"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "resultSha256": "0e37b999b86a412192ee7bc862850f233ccf0b5b0e1956b27c01442d8af2bc01",
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "62e6334ed80c86ce7c39b25dc48540298828981fdda3f859373faab16ab28cac",
+          "orbit": "d3f940f053baae520babeef882dc42ea47b60d30cd2177d3e18a8b1437d1c92a",
+          "edited": "92861c3b70c00720b855cc0e3b22444d48199e05822b68459f409ab5e2b922a3",
+          "empty": "5cd4800172d38bed38e51ff4ac45f5497b220b220796fa267c1cca549caae41a",
+          "resized": "fe9abc273c305e1795f15cde0565b456ac351d92dfe56961aa1b7c130cfe37cd",
+          "final": "62e6334ed80c86ce7c39b25dc48540298828981fdda3f859373faab16ab28cac"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "build": {
+    "bindingWarnings": 0,
+    "bindingErrors": 0,
+    "appWarnings": 2,
+    "appErrors": 0,
+    "knownWarnings": [
+      "CS8765 AppDelegate options nullability",
+      "CA1422 UIWindow iOS26 constructor"
+    ]
+  },
+  "scope": "Actual local ImageIO decode/pixels/ownership/budget failures only. Analytical PNG/BMP and unchanged recovered JPEG; no original LEADTOOLS/GDI conversion/format parity, real image textures/presentation, source setter/document/UI/PC/physical acceptance."
+}

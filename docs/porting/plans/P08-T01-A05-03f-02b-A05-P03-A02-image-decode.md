@@ -1,6 +1,6 @@
 # A05-P03-A02 actual offline image decoding and ownership
 
-Parent: [SetView collaborators](P08-T01-A05-03f-02b-A05-P03-setview-effects.md); requirement UI-039. This is next work, not implemented behavior.
+Parent: [SetView collaborators](P08-T01-A05-03f-02b-A05-P03-setview-effects.md); requirement UI-039. This parent is in progress: F01 actual local assets/Apple decoding is verified in its bounded fixtures; full image formats, source conversion, textures/drawing and setter/document integration remain open.
 
 Consume [original bitmap source](../../evidence/audit/rhino5-bitmap-loading-source.json) and [raster source](../../evidence/audit/rhino5-wallpaper-raster-source.json). Retain original requested filename and encoded bytes separately from any decoded object, texture or Windows path. Original table success can precede decode failure. Original codec entry points and hashes are recorded; do not execute the Windows DLLs.
 
@@ -16,3 +16,7 @@ Record source input hashes, RED first, precise scope and real output artifacts. 
 Ownership clarification from original SetDib: it creates destination storage and copies bits; false retains caller ownership of input, rather than aliasing that pointer into the result. True frees input only after successful destination creation. Decoder failure path separately frees its temporary copy. Preserve these distinctions in the concrete Apple ownership adapter.
 
 First implementation child: [F01 actual local import/ImageIO decoder](P08-T01-A05-03f-02b-A05-P03-A02-F01-apple-decoder.md). Image textures/display and original setter/document integration remain subsequent mandatory work within this parent.
+
+Format acceptance must consume the [original codec module inventory](../../evidence/audit/rhino5-image-codec-module-inventory.json). PNG/BMP/JPEG fixtures cover only this initial decoder step; do not close remaining format families based on the installed module names or Apple API support declarations.
+
+Next concrete image rendering child: [F02 texture ownership/source drawing](P08-T01-A05-03f-02b-A05-P03-A02-F02-image-textures.md). Read the original trace grayscale/alpha and wallpaper/trace draw differences before using F01 decoded pixels in Metal.

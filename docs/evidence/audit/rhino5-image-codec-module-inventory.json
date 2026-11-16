@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F01",
+  "originalTargetExecuted": false,
+  "sourceDirectory": "analysis/runtime-prerequisites/rhino5/System",
+  "modules": [
+    {
+      "file": "Lfbmp15x.dll",
+      "bytes": 34960,
+      "sha256": "48c53ddcf9913eddcad9fdc6b32af836f6cd89991670eb6370ef22888a774946",
+      "exportCount": 4
+    },
+    {
+      "file": "Lfcmp15x.dll",
+      "bytes": 473232,
+      "sha256": "3221525766b70f67f5b265bde2ab76b2aea3caeb75ebda3418822619e9a63569",
+      "exportCount": 41
+    },
+    {
+      "file": "Lffax15x.dll",
+      "bytes": 79504,
+      "sha256": "914acc128db2c43b6f964645ff0a6a4c002c7f21ed57fc76b6b4a2be228b36d5",
+      "exportCount": 14
+    },
+    {
+      "file": "Lfpcx15x.dll",
+      "bytes": 25232,
+      "sha256": "9cbf83277b85ef753c1c702cc0df8f24054516de9920c2a8d2dec8b7222f0f38",
+      "exportCount": 4
+    },
+    {
+      "file": "Lfpng15x.dll",
+      "bytes": 151184,
+      "sha256": "f40b9220a05471392a5c1a563699cdcb473f5fd3ca2bc94bd349e7beb5615d92",
+      "exportCount": 4
+    },
+    {
+      "file": "Lftga15x.dll",
+      "bytes": 22672,
+      "sha256": "a32a2b061cbcb9b3fd1ae63c1643cc5a23af4e3072c8fe552a968fbb44d7c415",
+      "exportCount": 3
+    },
+    {
+      "file": "Lftif15x.dll",
+      "bytes": 202896,
+      "sha256": "3004b8c81f78ef512b4ca8a90d42648af72d06bc3549807fbc7ffa4a11acad5e",
+      "exportCount": 43
+    },
+    {
+      "file": "Ltdis15x.dll",
+      "bytes": 349840,
+      "sha256": "e4cb3dbd0fc31db3b6d451f56fff4b8f58f7827c7564ae8e1e6fa96380ae27f2",
+      "exportCount": 144
+    },
+    {
+      "file": "Ltfil15x.dll",
+      "bytes": 231056,
+      "sha256": "2761db22e0fd613b226c3a2dd49b741a020e9057a2db306c1f3c46872a7f95f9",
+      "exportCount": 257
+    },
+    {
+      "file": "Ltkrn15x.dll",
+      "bytes": 622224,
+      "sha256": "bccd891a058c177f8e791381844856f514de59ec84a1e591c40d0b95b3d16d74",
+      "exportCount": 370
+    }
+  ],
+  "scope": "Installed original decoder/filter module inventory only. Module presence/names do not prove runtime support or port format parity.",
+  "appleCoverage": "Current real decoder fixtures cover analytical PNG/BMP and one unchanged JPEG only. PCX/TGA/TIFF/fax/compressed-family variants, multi-frame, profile/orientation/bit-depth edge cases remain acceptance work."
+}
