@@ -8,6 +8,11 @@ on:
       - "reference/fixtures/gdi-integer-windows-26300.json"
       - "reference/fixtures/gdi-halftone-response-windows-26300.json"
       - "scripts/halftone-response-reference.cjs"
+      - "scripts/halftone-fixed-reference.cjs"
+      - "scripts/windows-gdi-symbols.cjs"
+      - "tests/native-halftone-reference.test.cjs"
+      - "native/Analysis/Ghidra/InspectWindowsGdi.java"
+      - "native/Analysis/fixtures/windows-gdi-halftone-regions.json"
       - "tests/halftone-response-reference.test.cjs"
       - "scripts/verify-gdi-rgb-reference.cjs"
       - "tests/gdi-rgb-reference.test.cjs"
@@ -173,6 +178,11 @@ jobs:
         run: |
           node --test tests/halftone-response-reference.test.cjs > artifacts/halftone-response-checks.txt
           node scripts/halftone-response-reference.cjs analyze reference/fixtures/gdi-halftone-response-windows-26300.json > artifacts/halftone-rejected-model.json
+      - name: Verify native-derived fixed HALFTONE reference domains
+        run: |
+          node --test tests/native-halftone-reference.test.cjs > artifacts/native-halftone-reference-checks.txt
+          node scripts/halftone-fixed-reference.cjs response reference/fixtures/gdi-halftone-response-windows-26300.json > artifacts/native-halftone-response.json
+          node scripts/halftone-fixed-reference.cjs raster reference/fixtures/gdi-rgb-windows-26300.json > artifacts/native-halftone-raster.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

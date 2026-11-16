@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N02",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "53d2aa371107c2f104fbe3e3e81e7feb8c38c588",
+  "status": "native_fixed_point_located_reference_domains_verified_mixed_and_product_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N02-native-implementation.md",
+  "audit": "docs/evidence/audit/windows-gdi-halftone-source.json",
+  "checks": {
+    "copiedTargetHashesVerified": true,
+    "pdbGuidAndDbiImageAgeVerified": true,
+    "independentExportMatches": 2397,
+    "strictGhidraExitCode": 0,
+    "strictViews": 13,
+    "explicitAbis": 1,
+    "inferredUnverifiedAbis": 12,
+    "exactResponseCases": 2304,
+    "exactRasterCases": 108,
+    "explicitMixedRasterCasesPending": 24,
+    "adjacentNodeRegressions": 21,
+    "repositoryIntegrity": "passed"
+  },
+  "review": "Native13bit reference resolves all52 prior1D counterexamples and matches represented raster domains. Analysis reference is outside product; complete mixed-axis helpers/flags/clipping/profiles/source preparation/PC/physical remain mandatory.",
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

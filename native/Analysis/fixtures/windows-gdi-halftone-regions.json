@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "94f00aabe76a4af3794e2134b806bf89e556b66814859c285de62173350a5173",
+  "source": "current-host Windows GDI dependency; static only",
+  "functions": [
+    {
+      "role": "EngStretchBlt",
+      "name": null,
+      "rva": 798992,
+      "length": 1404,
+      "sha256": "82356d342da54c2ce036cc3c32b0e8125b04226c6d2222416540b80249255dc2",
+      "unwindRegions": [
+        {
+          "begin": 798992,
+          "end": 800396,
+          "unwind": 3742420
+        }
+      ]
+    },
+    {
+      "role": "EngStretchBltNew",
+      "name": null,
+      "rva": 800404,
+      "length": 8671,
+      "sha256": "628e734b74b7d2a07ac589746c1725c5f4fc00c8cb3859478df9138703df7aec",
+      "unwindRegions": [
+        {
+          "begin": 800404,
+          "end": 809075,
+          "unwind": 3742456
+        }
+      ]
+    },
+    {
+      "role": "AAHalftoneBitmap",
+      "name": null,
+      "rva": 848092,
+      "length": 2033,
+      "sha256": "0ecc911e5970106c53ea17fee17fa0964e10b12cfadd00725e82a05163c05084",
+      "unwindRegions": [
+        {
+          "begin": 848092,
+          "end": 850125,
+          "unwind": 3745008
+        }
+      ]
+    },
+    {
+      "role": "SetupAAHeader",
+      "name": null,
+      "rva": 850132,
+      "length": 3999,
+      "sha256": "22ca42640c75fc6e5e3584ba2a4b800155fba22299564364ecf2696606f53180",
+      "unwindRegions": [
+        {
+          "begin": 850132,
+          "end": 854131,
+          "unwind": 3745088
+        }
+      ]
+    },
+    {
+      "role": "BuildShrinkAAInfo",
+      "name": null,
+      "rva": 858080,
+      "length": 1978,
+      "sha256": "119562222d95e2df28f74a6e73a8b2f0f1575e70e826c00fd76b2b318765b4e4",
+      "unwindRegions": [
+        {
+          "begin": 858080,
+          "end": 860058,
+          "unwind": 3745248
+        }
+      ]
+    },
+    {
+      "role": "BuildExpandAAInfo",
+      "name": null,
+      "rva": 861120,
+      "length": 2301,
+      "sha256": "9ed4d93b652efd01ef97cb00ea0640aa21482a4ec4443b88f1a3a993388a291a",
+      "unwindRegions": [
+        {
+          "begin": 861120,
+          "end": 863421,
+          "unwind": 3745332
+        }
+      ]
+    },
+    {
+      "role": "ShrinkDIB_CY_SrkCX",
+      "name": null,
+      "rva": 828384,
+      "length": 3136,
+      "sha256": "2b4b5f576fa52299ca471cfba83861ff557eaea13ec20972f70c5aee6bff4992",
+      "unwindRegions": [
+        {
+          "begin": 828384,
+          "end": 828457,
+          "unwind": 3743948
+        },
+        {
+          "begin": 828457,
+          "end": 829214,
+          "unwind": 3743968
+        },
+        {
+          "begin": 829214,
+          "end": 829586,
+          "unwind": 3744008
+        },
+        {
+          "begin": 829586,
+          "end": 830291,
+          "unwind": 3744028
+        },
+        {
+          "begin": 830291,
+          "end": 830321,
+          "unwind": 3744068
+        },
+        {
+          "begin": 830321,
+          "end": 830889,
+          "unwind": 3744084
+        },
+        {
+          "begin": 830889,
+          "end": 830898,
+          "unwind": 3744124
+        },
+        {
+          "begin": 830898,
+          "end": 831097,
+          "unwind": 3744140
+        },
+        {
+          "begin": 831097,
+          "end": 831118,
+          "unwind": 3744180
+        },
+        {
+          "begin": 831118,
+          "end": 831405,
+          "unwind": 3744196
+        },
+        {
+          "begin": 831405,
+          "end": 831520,
+          "unwind": 3744236
+        }
+      ]
+    },
+    {
+      "role": "ShrinkDIB_CY",
+      "name": null,
+      "rva": 824800,
+      "length": 2141,
+      "sha256": "99eb8f8a945c397a679a96759948385f00340b70c14bf7590f2e118ae644e279",
+      "unwindRegions": [
+        {
+          "begin": 824800,
+          "end": 826941,
+          "unwind": 3743836
+        }
+      ]
+    },
+    {
+      "role": "SrkYDIB_SrkCX",
+      "name": null,
+      "rva": 831536,
+      "length": 340,
+      "sha256": "12cbebbf6f554d97ce2d548b892423e2c8fb3340ff6599606a75ea8fa5d79c9b",
+      "unwindRegions": [
+        {
+          "begin": 831536,
+          "end": 831596,
+          "unwind": 3744252
+        },
+        {
+          "begin": 831596,
+          "end": 831690,
+          "unwind": 3744272
+        },
+        {
+          "begin": 831690,
+          "end": 831707,
+          "unwind": 3744292
+        },
+        {
+          "begin": 831707,
+          "end": 831833,
+          "unwind": 3744312
+        },
+        {
+          "begin": 831833,
+          "end": 831876,
+          "unwind": 3744332
+        }
+      ]
+    },
+    {
+      "role": "GetFixupScan",
+      "name": null,
+      "rva": 833684,
+      "length": 361,
+      "sha256": "4dedc8d9cd7d5d8df188dec186d8f5cf4964f954bdf73aadd39ddc85d3cace9a",
+      "unwindRegions": [
+        {
+          "begin": 833684,
+          "end": 834045,
+          "unwind": 3744392
+        }
+      ]
+    },
+    {
+      "role": "FixupColorScan",
+      "name": null,
+      "rva": 839716,
+      "length": 1748,
+      "sha256": "27bffeebd15b87bf321f7d414832a68dcaed19b05d06ee9aaaceda09ed8998b9",
+      "unwindRegions": [
+        {
+          "begin": 839716,
+          "end": 841464,
+          "unwind": 3744724
+        }
+      ]
+    },
+    {
+      "role": "SharpenInput",
+      "name": null,
+      "rva": 835936,
+      "length": 453,
+      "sha256": "a4506492e4e5802fa06439af37c01c05e6f96f430170b8006a8bd6436e8be788",
+      "unwindRegions": [
+        {
+          "begin": 835936,
+          "end": 836389,
+          "unwind": 3744620
+        }
+      ],
+      "parameters": [
+        "uint",
+        "void*",
+        "void*",
+        "void*",
+        "void*",
+        "int"
+      ],
+      "returnType": "void*"
+    },
+    {
+      "role": "OutputAATo32BPP_RGB",
+      "name": null,
+      "rva": 828176,
+      "length": 189,
+      "sha256": "deef61e87b4c69531c91c5778f576571f6e45de311347bd8b7c045615e48dec5",
+      "unwindRegions": [
+        {
+          "begin": 828176,
+          "end": 828365,
+          "unwind": 3867936
+        }
+      ]
+    }
+  ]
+}
