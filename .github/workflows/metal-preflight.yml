@@ -11,6 +11,10 @@ on:
       - "scripts/halftone-fixed-reference.cjs"
       - "scripts/halftone-mixed-reference.cjs"
       - "scripts/halftone-fixup-reference.cjs"
+      - "scripts/halftone-large-fixup-reference.cjs"
+      - "scripts/compact-large-gdi-reference.cjs"
+      - "tests/gdi-large-fixup-reference.test.cjs"
+      - "reference/fixtures/gdi-large-fixup-windows-26300.json.br"
       - "tests/gdi-fixup-reference.test.cjs"
       - "reference/fixtures/gdi-fixup-windows-26300.json"
       - "native/Analysis/fixtures/windows-gdi-fixup-regions.json"
@@ -200,6 +204,10 @@ jobs:
         run: |
           node --test tests/gdi-fixup-reference.test.cjs > artifacts/fixup-halftone-reference-checks.txt
           node scripts/halftone-fixup-reference.cjs reference/fixtures/gdi-fixup-windows-26300.json > artifacts/fixup-halftone-reference.json
+      - name: Verify measured large-source colour gate
+        run: |
+          node --test tests/gdi-large-fixup-reference.test.cjs > artifacts/large-fixup-halftone-reference-checks.txt
+          node scripts/halftone-large-fixup-reference.cjs reference/fixtures/gdi-large-fixup-windows-26300.json.br > artifacts/large-fixup-halftone-reference.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

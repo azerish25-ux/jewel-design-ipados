@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "d8c604a97420fee648cd63f56e72247e6deca678",
-  "status": "small_mixed_reference_windows_verified_macos_pending_large_gate_product_open",
+  "status": "small_mixed_reference_windows_macos_verified_large_gate_product_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N04-fixup-eligibility.md",
   "audit": "docs/evidence/audit/windows-gdi-fixup-source.json",
   "checks": {
@@ -37,5 +37,11 @@
   "review": "Complete stored bytes agree only for represented small mixed default truecolor domain; large-source colour gate and production HALFTONE remain open. No parity closure.",
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "apple": {
+    "sourceCommit": "0c6743cfb2121cf79afcac1af6313bf8f788a2a9",
+    "run": 43918744770,
+    "conclusion": "success",
+    "evidence": "docs/evidence/apple/fixup-halftone-reference-results.json"
+  }
 }

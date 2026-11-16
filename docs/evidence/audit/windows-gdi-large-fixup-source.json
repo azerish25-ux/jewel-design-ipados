@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N05",
+  "inputCommit": "0c6743cfb2121cf79afcac1af6313bf8f788a2a9",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "targetSha256": "94f00aabe76a4af3794e2134b806bf89e556b66814859c285de62173350a5173",
+  "staticSource": "docs/evidence/audit/windows-gdi-fixup-source.json",
+  "originalVendorExecuted": false,
+  "profile": "--large-fixup-probe",
+  "sourceAreas": [
+    2303,
+    2304,
+    2305,
+    2352,
+    16383,
+    16384,
+    16385,
+    16512
+  ],
+  "patterns": [
+    0,
+    1,
+    3,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "native": {
+    "cases": 576,
+    "controls": 624,
+    "sources": 192,
+    "liveOwnedHandles": 0,
+    "fullAcquisitionSha256": "af2e45174efced0012dee80f9f188a0b2a7f92a88ef5fb11894ee7d8239b3471"
+  },
+  "rule": {
+    "small": "Delegate source area<=2304 default candidate rule from N04.",
+    "middle": "Area2305..16384 starts unique-colour limit area>>3, scans every row. A row adding no colours subtracts width from remaining area; remaining<2305 sets no-sharpen and exits, otherwise limit becomes remaining>>4. Stop when distinct count exceeds current limit.",
+    "large": "Area>16384 samples every sixth row, initial limit20, with no remaining-area adjustment.",
+    "colour": "Convert to RGB; if R==B, mask lowest2bits of all three channels even when G differs. Alpha excluded.",
+    "final": "Distinct<20 sets no-sharpen. Limit20 clears input-fixup iff distinct>20. Other limits clear fixup iff distinct>20 OR distinct<=limit. Default net shrink clears no-sharpen later.",
+    "filter": "Same independently checked Q13 mixed stage core, with full/partial input fixup as selected."
+  },
+  "storage": {
+    "fixture": "reference/fixtures/gdi-large-fixup-windows-26300.json.br",
+    "packedBytes": 455717,
+    "packedSha256": "8470285b2978b11fcc73df730c359cca137246a7af1ff60e79f2c383c545d84e",
+    "decodedBytes": 5051020,
+    "decodedSha256": "d1d728d24f8a4f0c5aa2425ecea7fe45a5e5e26a01bae5a41c13e555c1973ccc",
+    "inputRasters": 94,
+    "proof": "All native input RGBA samples retained with source stored hashes. Case complete stored buffer and normalized RGBA SHA256 retained; expected raw outputs remain in75MB D acquisition, reproducible by owned producer. No sampled output hash or omitted alpha/padding.",
+    "compactor": "scripts/compact-large-gdi-reference.cjs"
+  },
+  "limitations": [
+    "Mixed full positive rectangles/default truecolor/current-host source only.",
+    "Other profiles/flags, clip/mirror/indexed formats and large nonmixed behavior not closed.",
+    "Not product C# HALFTONE or source composed integration.",
+    "Original vendor runtime, PC project corpus, physical devices and all feature rows stay open."
+  ],
+  "allLocalWritesD": true
+}

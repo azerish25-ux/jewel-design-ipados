@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N04",
+  "sourceCommit": "0c6743cfb2121cf79afcac1af6313bf8f788a2a9",
+  "workflowRun": 43918744770,
+  "conclusion": "success",
+  "artifactId": 14253656816,
+  "artifactSha256": "f3002bffaf14b67873f48e41e3cc33783fb7fe30754c4b69c91db65c2260ce76",
+  "actualArtifactInspected": true,
+  "checks": {
+    "nodeTests": 5,
+    "cases": 512,
+    "exactCases": 512,
+    "fixupCases": 448,
+    "noSharpenCases": 256,
+    "filteredCases": 256,
+    "mismatches": [],
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "complete": false,
+  "scope": "Analysis reference only. No product HALFTONE, original vendor/PC/physical proof or feature closure.",
+  "allLocalDownloadsD": true
+}

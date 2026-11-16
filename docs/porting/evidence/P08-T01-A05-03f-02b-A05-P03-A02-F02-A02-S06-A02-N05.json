@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N05",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "0c6743cfb2121cf79afcac1af6313bf8f788a2a9",
+  "status": "large_mixed_reference_windows_verified_macos_pending_product_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N05-large-fixup-gate.md",
+  "audit": "docs/evidence/audit/windows-gdi-large-fixup-source.json",
+  "checks": {
+    "ownPublicReferenceExitCode": 0,
+    "nativeCases": 576,
+    "nativeControls": 624,
+    "retainedSources": 192,
+    "exactCompleteStoredDigests": 576,
+    "exactCompleteRgbaDigests": 576,
+    "windowsNodeRegressions": 35,
+    "compactionReproduced": true,
+    "originalVendorTargetExecuted": false
+  },
+  "outputHashes": {
+    "producer": "8b9cdc545f28682d38d7e613406d5984aa3f3b7d2da507d09757a46c6bc4285b",
+    "reference": "b1d6f5647a741bfd37a7b4e20ee92b064ed77e229c13f3e5f555c62c67d34d51",
+    "fixture": "8470285b2978b11fcc73df730c359cca137246a7af1ff60e79f2c383c545d84e",
+    "fullAcquisition": "af2e45174efced0012dee80f9f188a0b2a7f92a88ef5fb11894ee7d8239b3471"
+  },
+  "review": "Bounded default mixed colour-gate proof only, completefalse; all product/vendor/PC/physical acceptance retained.",
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}
