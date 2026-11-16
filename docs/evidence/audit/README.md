@@ -18,6 +18,8 @@ This is a source-backed feature/compatibility checklist for recovered CounterSke
 - [Original codec module inventory](rhino5-image-codec-module-inventory.json): installed filter/library hashes; current fixtures do not establish full format support.
 - [Original image drawing and trace grayscale](rhino5-image-drawing-source.json): eight source bodies, world/screen paths and trace rounding/alpha differences; raw GL/GDI refinement remains required.
 
+- [Refined image drawing ABIs](rhino5-image-drawing-abi-source.json):23 actual imported graphics prototypes,9 original bodies, UV/filter/blend/centering and verified0.1 raster offset; original cache/visible integration remains open.
+
 ## Most consequential findings
 
 1. A PC portfolio is .csp XML plus GUID-pair .csg designs and sibling preview/history files. An STL/3DM geometry export is a different contract. [Project.cs:101](<../../../recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs#L101>) — public string ProjectInfoFilePath.

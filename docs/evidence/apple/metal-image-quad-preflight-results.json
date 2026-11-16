@@ -1,14 +1,20 @@
 {
   "schemaVersion": 1,
   "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A01",
-  "sourceCommit": "5b556df29dc73a79ce7d51ea20059f045b051816",
-  "runId": 43836910668,
-  "artifactId": 14212080207,
-  "artifactSha256": "a2b0ad4d379cf02aa19b02ea260481ddf5e56acd277cf874e4c98404ea24c419",
+  "sourceCommit": "c631969346b7300065e4b078c96e78f88ad71d37",
+  "runId": 43838540053,
+  "artifactId": 14212730347,
+  "artifactSha256": "57ab21384df3184d789898bec68aaa85e214ca1ac01ab118f5e205418df896bf",
   "status": "success_actual_connected_plugin_artifact_inspected",
   "bindingWarnings": 0,
   "bindingErrors": 0,
-  "bindingOutputSha256": "8909741cc3be769a3776d5136920561b1b481d1af71ee011d9fed6faa632b44e",
+  "bindingOutputSha256": "fe35c4dadc17e2b9f9613aecdb43a7e34c46f630723967a9ba042064e773409d",
   "portableChecksOutputSha256": "eeec8b44afb950402044e060f48550afb08e3bef6414493f1fc04061168dc3e8",
-  "scope": "Compiled real Metal image renderer and Apple test bindings; actual shader compilation/GPU pixels/lifetime execution require simulator report."
+  "scope": "Compiled real Metal image renderer and Apple test bindings; actual shader compilation/GPU pixels/lifetime execution require simulator report.",
+  "previousSourceCompile": {
+    "sourceCommit": "5b556df29dc73a79ce7d51ea20059f045b051816",
+    "runId": 43836910668,
+    "artifactId": 14212080207,
+    "artifactSha256": "a2b0ad4d379cf02aa19b02ea260481ddf5e56acd277cf874e4c98404ea24c419"
+  }
 }

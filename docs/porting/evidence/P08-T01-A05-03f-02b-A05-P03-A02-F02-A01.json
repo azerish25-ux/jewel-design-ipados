@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "edb480fb85557a9cf9191d1207b892ff035ba138",
-  "status": "actual_metal_component_implemented_apple_green_pending",
+  "status": "actual_gpu_17_checks_passed_both_families_stronger_linear_edge_retest_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A01-metal-image-quad.md",
   "red": {
     "sourceCommit": "c2501ca331e46ae9d74dfeb6c2a536e7f01e1474",
@@ -29,7 +29,8 @@
     "representation": "Strict straight RGBA8/top-row-first GPU input; opaque F01 decoded BMP valid directly. No implicit lossy unpremultiplication. Exact partial-alpha decoder/cache adapter remains open.",
     "rendering": "Actual GPU source texture upload, original trace UV order adapted to top-row-first data, nearest/linear clamp-to-edge and explicit source-alpha/one-minus-source-alpha blending for RGB and alpha. No depth attachment, no culling. Four homogeneous clip-space corners supplied explicitly.",
     "lifetime": "Real prepared native command buffers plus CadFrameGate leases, max3. Replacement owns separate immutable textures. Disposed renderer defers pipeline/queue release until all recorded frames complete or abort. Readback occurs only after real GPU completion; no success delegate substitute.",
-    "remaining": "Original format/cache/alpha conversion, GDI filtering, screen/world/visible image integration, full source setters/document/PC/physical acceptance remain required. This is offscreen GPU component only."
+    "remaining": "Original format/cache/alpha conversion, GDI filtering, screen/world/visible image integration, full source setters/document/PC/physical acceptance remain required. This is offscreen GPU component only.",
+    "edgeTest": "Review strengthened the clipped1x1-image case to filtered=true, exercising linear border taps and distinguishing clamp-to-edge from clamp-to-zero. Renderer configuration unchanged; new actual Apple run pending."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
@@ -40,8 +41,17 @@
     "artifactId": 14211966469,
     "artifactSha256": "43504a61f1c8884ea764fc8969ee08eeeb8ee7ec2a821cf9c3f595c34c15a9b7",
     "observed": "Image GPU command failed: NotEnqueued",
-    "cause": "Completion handler installed on uncommitted command; abort disposal can deliver NotEnqueued and poison later frame results.",
-    "fix": "Install completion handler when CommitAsync actually submits; ignore callbacks after frame resources already released. Existing uncommitted-cancellation assertion now requires LastError null.",
-    "status": "fix_implemented_actual_apple_retest_pending"
+    "cause": "Observed callback status NotEnqueued; code had a completion handler before actual commit and no released-frame guard. Inferred cleanup/cancellation callback hazard; failed artifact alone does not identify the exact test checkpoint.",
+    "fix": "Install completion handler only at CommitAsync, and ignore callbacks after frame resources have already been released. Genuine submitted/unreleased GPU failures still fault the task; no pixel/resource gates removed.",
+    "status": "fixed_actual_ipad_iphone_artifacts_inspected",
+    "resolved": {
+      "sourceCommit": "c631969346b7300065e4b078c96e78f88ad71d37",
+      "runId": 43838539923,
+      "artifactId": 14212667818,
+      "artifactSha256": "c42844fedd0566a121ccce6576e8f9ccc94c9eabcaa4031dfcf8dd74ad91f5cd",
+      "checksPerFamily": 17,
+      "retiredOwnedTexturesTargetsBuffers": 0,
+      "lastError": null
+    }
   }
 }
