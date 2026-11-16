@@ -5,9 +5,11 @@ using System.Text.Json;
 
 if(!OperatingSystem.IsWindows())throw new PlatformNotSupportedException("Public Windows GDI reference only.");
 bool integerProbe=args.Length==2&&args[1]=="--integer-probe";
-if(args.Length!=1&&!integerProbe)throw new ArgumentException("Expected output JSON under this D: repository, optional --integer-probe.");
+bool halftoneProbe=args.Length==2&&args[1]=="--halftone-probe";
+if(args.Length!=1&&!integerProbe&&!halftoneProbe)throw new ArgumentException("Expected output JSON under this D: repository, optional --integer-probe/--halftone-probe.");
 string root=Path.GetFullPath(Environment.CurrentDirectory),output=Path.GetFullPath(args[0]);
 if(!root.StartsWith("D:"+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase)||!output.StartsWith(root+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase))throw new InvalidOperationException("Reference output leaves D: workspace.");
+if(halftoneProbe){HalftoneProbe.Run(output);return;}
 var sizes=new[]{(1,1,1,1),(3,2,3,2),(3,2,5,7),(7,5,4,3),(8,6,4,3),(9,7,4,3),(4,8,8,4),(13,7,7,4)};
 if(integerProbe)sizes=[(1,1,1,1),(2,3,3,2),(3,5,5,3),(4,3,7,2),(5,4,3,7),(6,5,11,3),(7,3,4,5),(9,7,5,4),(11,9,6,5),(13,7,7,4),(5,13,3,7),(7,5,5,7),(1,9,5,5),(9,1,5,5),(2,9,3,7),(9,2,7,3),(3,1,2,1),(1,3,1,2),(3,3,2,2),(3,4,2,4),(4,3,4,2),(2,3,3,3),(3,5,2,4),(3,7,2,5),(5,3,4,2),(7,1,6,1),(1,7,1,6),(7,7,6,6),(7,3,6,5),(7,3,6,4),(7,3,6,6),(4,5,3,4),(4,5,3,7),(2,1,1,1),(2,2,1,1),(9,4,8,3),(11,5,12,6),(5,9,6,8),(7,7,8,8),(13,15,12,16),(9,9,7,7),(5,5,1,1),(8,6,2,2),(9,7,1,2),(32,7,3,2)];
 var sources=new List<SourceCase>();var cases=new List<ResizeCase>();int controls=0;
@@ -63,7 +65,7 @@ sealed class Dib:IDisposable
  public byte[] ReadRgba(){var b=ReadStored();byte[] r=new byte[Width*Height*4];for(int y=0;y<Height;y++)for(int x=0;x<Width;x++){int s=(Height-1-y)*Stride+x*(Depth/8),d=(y*Width+x)*4;r[d]=b[s+2];r[d+1]=b[s+1];r[d+2]=b[s];r[d+3]=Depth==32?b[s+3]:(byte)255;}return r;}
  public void Dispose(){var errors=new List<string>();if(oldBitmap!=0&&Dc!=0){var restored=Native.SelectObject(Dc,oldBitmap);if(restored==0||restored==-1)errors.Add("Restore bitmap");oldBitmap=0;}if(bitmap!=0){if(Native.DeleteObject(bitmap))LiveHandles--;else errors.Add("Delete bitmap");bitmap=0;}if(Dc!=0){if(Native.DeleteDC(Dc))LiveHandles--;else errors.Add("Delete HDC");Dc=0;}bits=0;if(errors.Count!=0)throw new Exception(string.Join(",",errors));}
 }
-static class Native
+static partial class Native
 {
  [StructLayout(LayoutKind.Sequential)]public struct Header{public uint Size;public int Width,Height;public ushort Planes,BitCount;public uint Compression,SizeImage;public int XPelsPerMeter,YPelsPerMeter;public uint ClrUsed,ClrImportant;}
  [StructLayout(LayoutKind.Sequential)]public struct Point{public int X,Y;}

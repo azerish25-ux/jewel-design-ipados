@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "9e228107b5023ec1ee9bacc8d3cc196d70f2b91d",
+  "status": "halftone_response_measured_portable_model_rejected_macos_validation_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N01-response-probe.md",
+  "producer": "native/Rendering/GdiRgbReference/HalftoneProbe.cs",
+  "corpus": "reference/fixtures/gdi-halftone-response-windows-26300.json",
+  "reference": "scripts/halftone-response-reference.cjs",
+  "checks": {
+    "ownNativeExitCode": 0,
+    "originalTargetExecuted": false,
+    "nativeCases": 2304,
+    "nativeControls": 3024,
+    "independentConstantControls": 720,
+    "liveOwnedHandles": 0,
+    "adjacentNodeRegressions": 17,
+    "repositoryIntegrity": "passed"
+  },
+  "outputHashes": {
+    "producer": "39659dc913b19f007ab464c7ea741917f56cb4228041c7ceb01f31cd504c93d4",
+    "launcher": "6489b5c9aed2661d821cee069515e0d317e64e28ceea83c5e915cb86fad8934e",
+    "raw": "c20c6156e7b2ab390c1b9fd8116c4b186f054f86b9bab2f4b29e746292b890ff",
+    "corpus": "2efc3156d6edd588657ea8f34513be4fdd842c64833aca61956eae227772693c",
+    "run": "4296b0310ac7ce5b1f1c23e2e4e1a72f2ea657c7006f0feaac1ebe3caa49b144"
+  },
+  "observations": {
+    "colorState": {
+      "Size": 24,
+      "Flags": 0,
+      "IlluminantIndex": 0,
+      "RedGamma": 10000,
+      "GreenGamma": 10000,
+      "BlueGamma": 10000,
+      "ReferenceBlack": 0,
+      "ReferenceWhite": 10000,
+      "Contrast": 0,
+      "Brightness": 0,
+      "Colorfulness": 0,
+      "RedGreenTint": 0
+    },
+    "colorStateUnchanged": true,
+    "brushOrigins": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "probe": "Both axes,24/32bit, source lengths2/3/4/5/7/8, target lengths1/2/3/4/5/7, five constants, ramp,255/128 impulses and primary-channel controls. Source/output bytes retained exactly.",
+    "candidate": {
+      "accepted": false,
+      "scope": "1D double box-area plus neighbor sharpening and lower enlargement ties; diagnostic outside product only",
+      "exactCases": 2252,
+      "mismatchCases": 52,
+      "maximumByteDelta": 1
+    },
+    "counterexample": "3->1 gray255 impulse at source0: nativeRGB84 while candidateRGB85. Unity10000 gamma and unchanged color state do not establish the exact filtering/quantization algorithm."
+  },
+  "review": {
+    "fidelity": "Do not promote2252 matching cases into full HALFTONE parity or a production fallback. Existing mode4 rejection remains unchanged.",
+    "remaining": "Recover precise coefficient/accumulator/rounding order, full2D and mixed-axis filtering, color/profile/brush and original vendor/MFC/OS/driver behavior; compose source preparation only after complete HALFTONE acceptance. PC/physical remain open."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

@@ -6,6 +6,9 @@ on:
       - "native/Rendering/GdiRgbReference/**"
       - "reference/fixtures/gdi-rgb-windows-26300.json"
       - "reference/fixtures/gdi-integer-windows-26300.json"
+      - "reference/fixtures/gdi-halftone-response-windows-26300.json"
+      - "scripts/halftone-response-reference.cjs"
+      - "tests/halftone-response-reference.test.cjs"
       - "scripts/verify-gdi-rgb-reference.cjs"
       - "tests/gdi-rgb-reference.test.cjs"
       - "src/Port/Documents/**"
@@ -166,6 +169,10 @@ jobs:
         run: node --test tests/viewport-capture-surface.test.cjs tests/viewport-driver.test.cjs tests/wallpaper-screenshots.test.cjs | tee artifacts/capture-surface-regressions.txt
       - name: Verify retained public Windows GDI RGB corpus
         run: node --test tests/gdi-rgb-reference.test.cjs > artifacts/gdi-rgb-reference-checks.txt
+      - name: Verify HALFTONE response and rejected approximation
+        run: |
+          node --test tests/halftone-response-reference.test.cjs > artifacts/halftone-response-checks.txt
+          node scripts/halftone-response-reference.cjs analyze reference/fixtures/gdi-halftone-response-windows-26300.json > artifacts/halftone-rejected-model.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts
