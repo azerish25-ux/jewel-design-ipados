@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "ffe5fc03cb7cb7ce8e7bdf8b7d0930aa163231e5",
-  "status": "world_trace_implemented_windows_passed_actual_apple_pending",
+  "status": "prepared_world_trace_bounded_verified_macos_ipad_iphone",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S04-visible-trace.md",
   "audit": "docs/evidence/audit/rhino5-trace-plane-source.json",
   "red": {
@@ -28,9 +28,16 @@
   "review": {
     "geometry": "Original PointAt/addition order, extent/aspect/UV corner rules; actual CAD center/radius shared before same GPU view-projection. Current fitted camera remains candidate.",
     "lifetime": "Separate retained trace upload and metadata scene state. Mesh/wallpaper swaps retain trace. Pose/hide/filter does not change upload. Gray/file changes require new source resolution/pixels.",
-    "remaining": "Actual Apple proof pending. Original source camera/channel sequence/cache/mipmap/RGB filtering/diagnostics/source setters/document/PC/physical remain mandatory."
+    "remaining": "Prepared trace pixels/geometry/retained scene and candidate-camera simulator composition only. Original camera/channel order/cache/RGB resampling/mipmap/anisotropy/diagnostics/document/PC/physical-device acceptance remain open."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "apple": {
+    "sourceCommit": "603f36b8f699d2e621df4253349e4e483cfe8a8a",
+    "preflight": "docs/evidence/apple/trace-plane-preflight-results.json",
+    "visible": "docs/evidence/apple/trace-plane-ios-results.json",
+    "actualTraceCapturesPerFamily": 6,
+    "hiddenAndClearPixelDifferences": 0
+  }
 }

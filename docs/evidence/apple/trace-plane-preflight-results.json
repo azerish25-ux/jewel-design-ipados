@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S04",
+  "sourceCommit": "603f36b8f699d2e621df4253349e4e483cfe8a8a",
+  "runId": 43871907249,
+  "artifactId": 14227579368,
+  "artifactSha256": "5d432bdd3b62d3625d7655afd032b34f7d7cc695c3df9b64cc0eda114dac9a72",
+  "status": "success_actual_connected_plugin_artifact_inspected",
+  "tracePlaneCases": 13,
+  "bindingWarnings": 0,
+  "bindingErrors": 0,
+  "outputHashes": {
+    "portable": "f3e11f351ee079a0de19e278e4d3566c62af646f76d8d32423bee3923ceb47d4",
+    "binding": "9d49e2389e166cb1decea6aec8a1d3e02ea7c5ba551ecf452fc431226159b338"
+  },
+  "scope": "macOS execution of source-derived trace geometry/gray and iOS bindings compile; actual visible/GPU/source-original/PC parity separate."
+}

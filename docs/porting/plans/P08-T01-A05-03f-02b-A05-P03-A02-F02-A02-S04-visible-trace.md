@@ -9,3 +9,7 @@ Retained trace native upload is separate from wallpaper/mesh. Pose/hide/filter m
 Verify13 portable cases, real actual-library CAD plus decoded trace pixels, separate six trace-* captures (none/image/orbit/hidden/pose/final), no reupload on orbit/pose/hide/filter, native disposal stress, independent screenshots requiring world image motion and exact hide/clear reproduction. Existing CAD/wallpaper/offscreen GPU gates unchanged. All local work/cache D-only, owner plugin publication and actual macOS/iPad/iPhone checks;5-second D retries.
 
 This low-level API accepts already-prepared image pixels. Full source camera, exact complete original channel sequencing, texture cache/size/RGB resampling/mipmap/anisotropy, missing-image diagnostic, source setters/document/PC/physical acceptance remain open. No parity row closes here.
+
+API boundary: [prepared world trace images](../VISIBLE_TRACE_IMAGES.md).
+
+Verified source603f36b: macOS13 portable cases/bindings0 warnings/errors; actual iPad/iPhone each capture all6 trace phases and independently pass motion/hidden/clear/resource checks. See [Apple results](../../evidence/apple/trace-plane-ios-results.json). Existing CAD/wallpaper restore with0 changed pixels and original offscreen BGRA hash047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012. Reuse/repository workflows pass. No parity row closes.
