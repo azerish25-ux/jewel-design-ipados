@@ -66,5 +66,15 @@
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "apple": {
+    "sourceCommit": "2ae425d80a84310848e5c85bdfbc424f146f9270",
+    "run": 43892240170,
+    "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43892240170",
+    "status": "queued",
+    "repositoryRun": 43892240189,
+    "repositoryConclusion": "success",
+    "scope": "Cross-platform validation of native response data and explicit rejected model; not portable HALFTONE support.",
+    "observation": "Original queued run confirmed live. Preserve run handle and inspect its actual artifact when terminal; never restart due to observation timeout/queue."
+  }
 }
