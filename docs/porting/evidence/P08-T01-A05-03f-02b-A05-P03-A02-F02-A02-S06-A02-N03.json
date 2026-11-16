@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "5b63a9818916f314d415da84bd1428af1c0819cf",
-  "status": "default_mixed_reference_measured_exact_generalization_fixup_and_product_open",
+  "status": "default_mixed_reference_windows_macos_verified_eligibility_and_product_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N03-mixed-axis.md",
   "audit": "docs/evidence/audit/windows-gdi-mixed-source.json",
   "checks": {
@@ -32,5 +32,12 @@
   "review": "Default represented truecolor full-rectangle reference only. Full fixup eligibility/partial branches, flags/clipping/profiles/limits/generalization and production integration stay open; completefalse is deliberate.",
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "apple": {
+    "sourceCommit": "02fe9b0e7a10aebc1b15341b07de732c517694bb",
+    "run": 43913874796,
+    "conclusion": "success",
+    "evidence": "docs/evidence/apple/mixed-halftone-reference-results.json",
+    "scope": "Reference-only default measured domains; completefalse preserved."
+  }
 }

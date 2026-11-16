@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N03",
+  "sourceCommit": "02fe9b0e7a10aebc1b15341b07de732c517694bb",
+  "workflowRun": 43913874796,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43913874796",
+  "conclusion": "success",
+  "artifact": {
+    "id": 14249007305,
+    "sha256": "9d08824e57ef94e47fe1b44a5c6c473ee3af229ee12d5f9494f2b8a58067c475",
+    "digestVerified": true
+  },
+  "checks": {
+    "referenceRegressions": 5,
+    "newMixedCases": 336,
+    "exactMixedCases": 336,
+    "priorMixedCases": 24,
+    "mathematicalLogFacts": 901,
+    "mathematicalSlopes": 9000,
+    "referenceComplete": false,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "outputHashes": {
+    "checks": "ab96048a007b0f41f4f55f9b16b08cad74ab6ad6cb52aa036d5f793778c3d9b5",
+    "reference": "ace854f8b76a6cda308742e4a43d2b784cc7d2aa4d2378b20ee4ba6c02cb6a16",
+    "binding": "18207d62847117fa4f608f58212894482615b4e0418ba5b71691957f374f7a49"
+  },
+  "scope": "Actual macOS analysis-reference/corpus/table facts validation only. Full fixup eligibility/partial branches, flags/clipping/profiles/limits/generalization, production integration and vendor/PC/physical acceptance remain open.",
+  "parityRowsClosed": 0,
+  "sourceHashes": {
+    "scripts/halftone-mixed-reference.cjs": "b9a43238087791d128d1853aaa1e31a7102ed892c9b431b01095ce24bc88699d",
+    "scripts/gdi-decimal-reference.cjs": "ec4f01a259d2ba502052066bc284983cb229fba9b0d5ce4f7eb052be40055bc7",
+    "scripts/verify-gdi-rgb-reference.cjs": "cd375bcc31472ed37500bfe35183184fca5ee49ce0aef6928099cb240506773a",
+    "reference/fixtures/gdi-mixed-windows-26300.json": "13e3e0cfa485a9b68959958f5965178ce122ac90a400cb5ca07eec4fb0821649",
+    "native/Rendering/GdiRgbReference/Program.cs": "153f57a46cb9d16875d9c3ee892cd12d88fbb354c08bc0b644669b9d2272f303",
+    "tests/gdi-mixed-reference.test.cjs": "037fc0e6ee6a50d0e675062ab9904bbdced387d54ca6d0cc880e1457a4fdce63"
+  }
+}
