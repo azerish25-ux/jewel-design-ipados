@@ -78,6 +78,8 @@ for i in $(seq 1 600); do
   grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
   grep -q '^PASS legacy native user-string bodies:' "$OUT/result.txt"
   grep -q '^PASS offline encoded image assets:' "$OUT/result.txt"
+  grep -q '^PASS original texture preparation:' "$OUT/result.txt"
+  grep -q '^PASS actual texture preparation GPU:' "$OUT/result.txt"
   grep -q '^PASS original GDI wallpaper placement:' "$OUT/result.txt"
   grep -q '^PASS visible CAD wallpaper:' "$OUT/result.txt"
   grep -q '^PASS lossless PNG samples:' "$OUT/result.txt"
@@ -100,6 +102,8 @@ for i in $(seq 1 600); do
   cp "$DATA/Documents/straight-image-gpu.bgra" "$OUT/straight-image-gpu.bgra"
   cp "$DATA/Documents/image-gpu-result.json" "$OUT/image-gpu-result.json"
   cp "$DATA/Documents/image-gpu-bmp.bgra" "$OUT/image-gpu-bmp.bgra"
+  cp "$DATA/Documents/texture-preparation-gpu.json" "$OUT/texture-preparation-gpu.json"
+  cp "$DATA/Documents/texture-preparation-gpu.bgra" "$OUT/texture-preparation-gpu.bgra"
   cp "$DATA/Documents/wallpaper-report.json" "$OUT/wallpaper-report.json"
   cp "$DATA/Documents/viewport-report.json" "$OUT/report.json"
   for phase in original orbit edited empty resized final paper-original paper-green paper-blue paper-clear paper-resized paper-final; do test -s "$OUT/$phase.png"; done

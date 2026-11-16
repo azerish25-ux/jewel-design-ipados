@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "texture-dimensions",
+      "name": null,
+      "abi": "textureDimensions",
+      "rva": 1756816,
+      "length": 412,
+      "sha256": "029daac8de9f07726fc71b01345dafb3c3a0a873b7196b8174ea72c9ecf19dbd",
+      "unwindRegions": [
+        {
+          "begin": 1756816,
+          "end": 1757228,
+          "unwind": 19369324
+        }
+      ]
+    },
+    {
+      "role": "texture-alpha-repair",
+      "name": null,
+      "abi": "alphaRepair",
+      "rva": 1756288,
+      "length": 517,
+      "sha256": "f4098b93df297e38656f213068b251d4af4785e5fde92aa8f997f2dec29b4d02",
+      "unwindRegions": [
+        {
+          "begin": 1756288,
+          "end": 1756326,
+          "unwind": 19210708
+        },
+        {
+          "begin": 1756326,
+          "end": 1756380,
+          "unwind": 19210688
+        },
+        {
+          "begin": 1756380,
+          "end": 1756408,
+          "unwind": 19210652
+        },
+        {
+          "begin": 1756408,
+          "end": 1756650,
+          "unwind": 19210628
+        },
+        {
+          "begin": 1756650,
+          "end": 1756789,
+          "unwind": 19210608
+        },
+        {
+          "begin": 1756789,
+          "end": 1756797,
+          "unwind": 19210592
+        },
+        {
+          "begin": 1756797,
+          "end": 1756805,
+          "unwind": 19210576
+        }
+      ]
+    },
+    {
+      "role": "texture-maximum",
+      "name": null,
+      "abi": "textureMaximum",
+      "rva": 1754704,
+      "length": 201,
+      "sha256": "e84c2c32ad965c794b54bdcf05453047ffe91f1982c090b24f7ae103f68a0b23",
+      "unwindRegions": [
+        {
+          "begin": 1754704,
+          "end": 1754766,
+          "unwind": 21077652
+        },
+        {
+          "begin": 1754766,
+          "end": 1754843,
+          "unwind": 19210740
+        },
+        {
+          "begin": 1754843,
+          "end": 1754905,
+          "unwind": 19210720
+        }
+      ]
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "glGetIntegerv",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "int*"
+      ]
+    }
+  ]
+}

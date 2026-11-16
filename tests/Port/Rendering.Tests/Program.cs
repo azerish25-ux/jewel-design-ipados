@@ -31,3 +31,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.StraightImageProviderAs
 System.Console.WriteLine(CandidateGeometryContractChecks.PngStraightSampleAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.WallpaperPlacementAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.TexturePreparationAssertions.Run());

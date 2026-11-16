@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S03",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "203f1f0fbea1985cc5aa97170d79740972adfe68",
+  "status": "original_preparation_windows_passed_actual_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S03-texture-preparation.md",
+  "audit": "docs/evidence/audit/rhino5-image-preparation-source.json",
+  "red": {
+    "exitCode": 1,
+    "failure": "Missing Rhino5TexturePreparation"
+  },
+  "checks": {
+    "portableCases": 21,
+    "nativeHostExitCode": 0,
+    "adjacentNodeRegressions": 60,
+    "originalTargetExecuted": false
+  },
+  "outputHashes": {
+    "red": "bf7d6167d3dab89c718c141b62348408060326fed14e419faa5b292da43462e5",
+    "green": "ae7d632c4df4bb46bc360da2ae2c5b6a2891271919436f90fadde7565d94fa24",
+    "native": "062dc1aa194f459fd147fdd01f30eeca2b23333f4c2fc126a86a922387f14295",
+    "adjacent": "d4003d7520bccb85448b19cf543244f09004cf297f427895a0f7b0e8496af24e"
+  },
+  "review": {
+    "dimensions": "Original ceil/maximum/cross-axis order and single-precision budget loop; explicit runtime inputs. Native unsafe integer overflow/negative loop domain rejected; NaN/zero outcomes retained.",
+    "alpha": "Bitwise OR of sampled source alpha, native stored-row nearest mapping, RGB/padding unchanged; top-down RGBA adapter reproduces reversed DIB row-coordinate sampling.",
+    "remaining": "Actual Apple execution/GPU proof pending. No GDI RGB filtering, complete source load/cache/mipmap/trace/world/document/PC/physical equivalence claim."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

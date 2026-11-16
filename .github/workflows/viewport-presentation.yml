@@ -15,6 +15,7 @@ on:
       - "tests/Port/Geometry.Candidate.Contracts/Rhino5WallpaperRasterAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/LocalImageAssetAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/WallpaperPlacementAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/TexturePreparationAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/visible-wallpaper.json"
       - "scripts/verify-wallpaper-screenshots.cjs"
       - "tests/Port/Geometry.Candidate.Contracts/StraightImageProviderAssertions.cs"

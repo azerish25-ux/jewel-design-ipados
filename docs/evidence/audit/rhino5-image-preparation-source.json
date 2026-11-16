@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S03",
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "targetExecuted": false,
+  "methods": [
+    {
+      "role": "texture-dimensions",
+      "name": null,
+      "abi": "textureDimensions",
+      "rva": 1756816,
+      "length": 412,
+      "sha256": "029daac8de9f07726fc71b01345dafb3c3a0a873b7196b8174ea72c9ecf19dbd",
+      "unwindRegions": [
+        {
+          "begin": 1756816,
+          "end": 1757228,
+          "unwind": 19369324
+        }
+      ]
+    },
+    {
+      "role": "texture-alpha-repair",
+      "name": null,
+      "abi": "alphaRepair",
+      "rva": 1756288,
+      "length": 517,
+      "sha256": "f4098b93df297e38656f213068b251d4af4785e5fde92aa8f997f2dec29b4d02",
+      "unwindRegions": [
+        {
+          "begin": 1756288,
+          "end": 1756326,
+          "unwind": 19210708
+        },
+        {
+          "begin": 1756326,
+          "end": 1756380,
+          "unwind": 19210688
+        },
+        {
+          "begin": 1756380,
+          "end": 1756408,
+          "unwind": 19210652
+        },
+        {
+          "begin": 1756408,
+          "end": 1756650,
+          "unwind": 19210628
+        },
+        {
+          "begin": 1756650,
+          "end": 1756789,
+          "unwind": 19210608
+        },
+        {
+          "begin": 1756789,
+          "end": 1756797,
+          "unwind": 19210592
+        },
+        {
+          "begin": 1756797,
+          "end": 1756805,
+          "unwind": 19210576
+        }
+      ]
+    },
+    {
+      "role": "texture-maximum",
+      "name": null,
+      "abi": "textureMaximum",
+      "rva": 1754704,
+      "length": 201,
+      "sha256": "e84c2c32ad965c794b54bdcf05453047ffe91f1982c090b24f7ae103f68a0b23",
+      "unwindRegions": [
+        {
+          "begin": 1754704,
+          "end": 1754766,
+          "unwind": 21077652
+        },
+        {
+          "begin": 1754766,
+          "end": 1754843,
+          "unwind": 19210740
+        },
+        {
+          "begin": 1754843,
+          "end": 1754905,
+          "unwind": 19210720
+        }
+      ]
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "glGetIntegerv",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "int*"
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "texture-dimensions",
+      "signature": "void Original_texture_dimensions(void * dib, float memoryFraction, bool powerOfTwo, int * width, int * height)",
+      "decompilerSha256": "953df4ccb0424cef2603ba0ae0aae64cd96e672ae5cb87d1f48db12f1065a8ff"
+    },
+    {
+      "role": "texture-alpha-repair",
+      "signature": "void Original_texture_alpha_repair(void * source, void * destination)",
+      "decompilerSha256": "798c12576af2e737a80e2798e5a97a04fcdba9380b50f24ddc49bfc4f8eb49d7"
+    },
+    {
+      "role": "texture-maximum",
+      "signature": "uint Original_texture_maximum(void)",
+      "decompilerSha256": "d4dd4793aee325dfca7c0e58956988145352033c22fb4d372c7f9d32558532b0"
+    }
+  ],
+  "abiCorrection": {
+    "rva": 1756816,
+    "sourceArgument2": "float memoryFraction in XMM1, saved to XMM6. Upload caller loads MOVSS from runtime global0x1415c7ec8. The maximum selector uses global current-context state, no source dib argument.",
+    "rawSizingSha256": "4cd9bbbb216faa605d51e7c8a4106c1a414bbf44aec9aa836c1e2ea7f4905591",
+    "rawCallerSha256": "f8320dabc5278087f0782bee07384ea503c41a2b1c6529d09e310da3b25ad7d5"
+  },
+  "observations": {
+    "maximum": "Current context record caches max texture dimension at+0x28; if -1 queries glGetIntegerv0xd33. Missing context emits ON_ErrorEx and queries directly.",
+    "dimensions": "Ceil powers individually; choose limit if ceil exceeds maximum, else original or ceil dependingflag. If only one axis changed, ceil the other unchanged axis even if flagfalse. BytesPerPixel=max rule: depth<24 ->3, else depth>>3. uint32 byte estimate divided by uint32 runtime memory budget using single-precision; while ratio>memoryFraction halve both signed dimensions.",
+    "alpha": "Source bitmap must32bit and both DIB DCs valid. x lookup uses trunc(double x * sourceWidth/destWidth), y uses same ratio in stored row order. Destination pixel OR source pixel &0xff000000; existing nonzero alpha is not overwritten. RGB untouched. Top-down logical adapter must reverse row indices, not use ordinary nearest top-down sampling."
+  },
+  "remaining": [
+    "Actual configured globals/device capability acquisition",
+    "GDI RGB HALFTONE/StretchBlt filtering and legacy bit-depth conversion",
+    "Full source cache/mipmap/anisotropy/trace and document lifecycle integration",
+    "Original-PC/physical evidence"
+  ],
+  "allLocalWritesD": true,
+  "parityRowsClosed": 0
+}
