@@ -1,0 +1,9 @@
+# P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S05 source trace anisotropy
+
+UI-039; input51fd930055e436990214ec9aeba63ed8cfedc29a. Consume original texture-create4ece50 and bind1ac2e0 hashes from rhino5-image-texture-cache-source.json; raw single-float constants and divss order verified before implementation. Application settings1/2/3 select texture modes1/2/3; other settings select0. Extension absent performs no anisotropy parameter call (fresh sampler default1); mode0 sets1 without querying maximum; modes1/2/other nonzero use source maximum/4,/2,/1. Preserve raw fractional/nonfinite policy outcomes; explicit Metal adapter rejects unrepresentable values instead of rounding/clamping.
+
+RED: missing portable policy. Test application normalization versus raw texture-mode semantics, extension/no-query behavior, exact single-float division, fractional/nonfinite/out-of-range failure and every Metal integer1..16. Implement real shared Metal sampler cache bounded32 states, retained trace upload snapshots and offscreen frame snapshots; source settings supplied explicitly at upload, no invented global cache invalidation. Old frame ownership and disposal must retain native samplers.
+
+Actual GPU tests exercise enabled sampler uploads/readback, failed replacement preserving prior image, three independently sampled in-flight revisions through disposal, and visible trace metadata/orbit/hide without reupload. Keep all existing18 visible captures/independent verifiers. Run Windows portable and adjacent tests; GitHub macOS binding/numeric plus actual iPad/iPhone. Record tested source and artifact hashes. Local cache/files D-only, connected owner GitHub plugin only.
+
+No original-PC anisotropic pixel parity claim: backend filter implementation/physical GPU differ. Full original settings/document/cache invalidation, mipmaps/compression/RGB resampling and complete camera/PC/physical acceptance remain mandatory.

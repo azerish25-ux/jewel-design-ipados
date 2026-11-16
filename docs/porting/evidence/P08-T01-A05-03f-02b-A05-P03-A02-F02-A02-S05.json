@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S05",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "51fd930055e436990214ec9aeba63ed8cfedc29a",
+  "status": "anisotropy_implemented_windows_passed_actual_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S05-trace-anisotropy.md",
+  "audit": "docs/evidence/audit/rhino5-texture-anisotropy-source.json",
+  "red": {
+    "exitCode": 1,
+    "failure": "Missing Rhino5TextureAnisotropy"
+  },
+  "checks": {
+    "portableCases": 48,
+    "adjacentNodeRegressions": 60,
+    "repositoryIntegrity": "passed",
+    "originalTargetExecuted": false
+  },
+  "outputHashes": {
+    "red": "24ec76724be093b49d074ad5075a8c469ab1d0acbafe500845c2222d0ae4982f",
+    "green": "0a294846f0e727298ce749fa0d36290d7e23b09027701cd452620fe274cccae3",
+    "adjacent": "e9057ca1036226ae2c3f1d9521c3c5b854c9ee171855a9c8bc01e0cd3e1b5e94"
+  },
+  "review": {
+    "source": "Exact source mode normalization, extension/no-query and single-float divisor policy. Unrepresentable Metal values explicitly reject before replacing native pixels.",
+    "lifetime": "Sampler state cached at most32 per pipeline, retained until all frames finish; per-image trace/offscreen snapshots capture selected anisotropy. Real image/mesh leases unchanged.",
+    "remaining": "Actual Apple binding/runtime and measured footprints pending. Full original cache/settings invalidation/driver filtering/mipmap/compression/RGB resampling/source camera/document/PC/physical parity remain open."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

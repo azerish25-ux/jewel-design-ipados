@@ -3,7 +3,7 @@ using Foundation;
 using Metal;
 using JewelDesign.Rendering.Candidate;
 namespace JewelDesign.Rendering.Candidate.iOS;
-public readonly record struct MetalImageQuadStats(int InFlight,int LiveTextures,int LiveTargets,int LiveVertexBuffers,bool IsDisposed,bool PipelineReleased,string? LastError);
+public readonly record struct MetalImageQuadStats(int InFlight,int LiveTextures,int LiveTargets,int LiveVertexBuffers,bool IsDisposed,bool PipelineReleased,string? LastError){public int LiveSamplers{get;init;}}
 
 /// <summary>Real offscreen image-quad GPU component with three retained frame leases.
 /// Input MUST be straight RGBA8/sRGB values, top row first. Does not unpremultiply decoder output,
@@ -15,7 +15,7 @@ public sealed class MetalImageQuadRenderer:IDisposable
  private readonly CadFrameGate<ImageTexture> frames=new();
  private IMTLCommandQueue? queue;private MetalImageQuadPipeline? imagePipeline;
  private bool disposed,released;private int targets,buffers;private Exception? lastError;
- public MetalImageQuadStats Stats{get{lock(sync){var s=frames.State;return new(s.InFlight,s.LiveResources,targets,buffers,disposed,released,lastError?.ToString());}}}
+ public MetalImageQuadStats Stats{get{lock(sync){var s=frames.State;return new(s.InFlight,s.LiveResources,targets,buffers,disposed,released,lastError?.ToString()){LiveSamplers=imagePipeline?.SamplerCount??0};}}}
  public MetalImageQuadRenderer()
  {
   device=MTLDevice.SystemDefault??throw new NotSupportedException("Metal device unavailable.");
@@ -24,17 +24,18 @@ public sealed class MetalImageQuadRenderer:IDisposable
    imagePipeline=new MetalImageQuadPipeline(device,MTLPixelFormat.Invalid);
   }catch{Dispose();throw;}
  }
- public void SetImage(DecodedLocalImage image)
+ public void SetImage(DecodedLocalImage image,Rhino5TextureAnisotropy anisotropy=default)
  {
   ArgumentNullException.ThrowIfNull(image);lock(sync){ObjectDisposedException.ThrowIf(disposed,this);
    if(image.AlphaRepresentation!=RgbaAlphaRepresentation.Straight)throw new NotSupportedException("The typed image upload requires straight RGBA. Premultiplied pixels are not silently unpremultiplied.");
-   SetImage(image.Width,image.Height,image.CopyRgba());
+   SetImage(image.Width,image.Height,image.CopyRgba(),anisotropy);
   }
  }
- public void SetImage(int width,int height,ReadOnlySpan<byte> straightRgba)
+ public void SetImage(int width,int height,ReadOnlySpan<byte> straightRgba,Rhino5TextureAnisotropy anisotropy=default)
  {
   lock(sync){
    ObjectDisposedException.ThrowIf(disposed,this);
+   int maximumAnisotropy=anisotropy.ToMetalMaximum();imagePipeline!.EnsureAnisotropy(maximumAnisotropy);
    int size=new LocalImageLimits().ValidateDimensions(width,height);if(straightRgba.Length!=size)throw new ArgumentException("Straight RGBA storage length differs from image dimensions.",nameof(straightRgba));
    using var d=MTLTextureDescriptor.CreateTexture2DDescriptor(MTLPixelFormat.RGBA8Unorm,(nuint)width,(nuint)height,false);
    d.StorageMode=MTLStorageMode.Shared;d.Usage=MTLTextureUsage.ShaderRead;
@@ -42,7 +43,7 @@ public sealed class MetalImageQuadRenderer:IDisposable
    try{
     byte[] bytes=straightRgba.ToArray();var pin=GCHandle.Alloc(bytes,GCHandleType.Pinned);
     try{texture.ReplaceRegion(MTLRegion.Create2D(0,0,(nuint)width,(nuint)height),0,pin.AddrOfPinnedObject(),(nuint)(width*4));}finally{pin.Free();}
-    var resource=new ImageTexture(texture);texture=null;
+    var resource=new ImageTexture(texture,maximumAnisotropy);texture=null;
     try{frames.ReplaceResource(resource);}catch{resource.Dispose();throw;}
    }finally{texture?.Dispose();}
   }
@@ -68,7 +69,7 @@ public sealed class MetalImageQuadRenderer:IDisposable
     if(!command.RetainedReferences)throw new InvalidOperationException("Image commands must retain native references.");
     using var pass=MTLRenderPassDescriptor.CreateRenderPassDescriptor();pass.ColorAttachments[0].Texture=target;pass.ColorAttachments[0].LoadAction=MTLLoadAction.Clear;pass.ColorAttachments[0].StoreAction=MTLStoreAction.Store;pass.ColorAttachments[0].ClearColor=clear??new MTLClearColor(0,0,0,0);
     using(var encoder=command.CreateRenderCommandEncoder(pass)??throw new InvalidOperationException("Image encoder unavailable.")){
-     imagePipeline!.Encode(encoder,lease.Resource.Texture,vertices,filtered,blend);encoder.EndEncoding();
+     imagePipeline!.Encode(encoder,lease.Resource.Texture,vertices,filtered,blend,lease.Resource.MaximumAnisotropy);encoder.EndEncoding();
     }
     frame=new ImageFrame(this,lease,target,vertices,command,width,height);targets++;buffers++;
     return frame;
@@ -91,8 +92,8 @@ public sealed class MetalImageQuadRenderer:IDisposable
  }
  private void ReleaseIfFinished(){if(disposed&&frames.State.InFlight==0&&!released){released=true;foreach(var value in new IDisposable?[]{imagePipeline,queue})try{value?.Dispose();}catch(Exception failure){lastError??=failure;}}}
  public void Dispose(){lock(sync){if(disposed)return;disposed=true;frames.Dispose();ReleaseIfFinished();}}
- internal sealed class ImageTexture(IMTLTexture texture):IDisposable
- {internal readonly IMTLTexture Texture=texture;public void Dispose()=>Texture.Dispose();}
+ internal sealed class ImageTexture(IMTLTexture texture,int maximumAnisotropy):IDisposable
+ {internal readonly IMTLTexture Texture=texture;internal readonly int MaximumAnisotropy=maximumAnisotropy;public void Dispose()=>Texture.Dispose();}
  public sealed class ImageFrame:IDisposable
  {
   private readonly MetalImageQuadRenderer owner;private readonly CadFrameLease<ImageTexture> lease;private readonly IMTLBuffer vertices;
@@ -100,7 +101,8 @@ public sealed class MetalImageQuadRenderer:IDisposable
   internal readonly IMTLTexture Target;internal readonly int Width,Height;internal bool IsReleased=>freed;
   internal readonly TaskCompletionSource<byte[]> Completion=new(TaskCreationOptions.RunContinuationsAsynchronously);
   internal ImageFrame(MetalImageQuadRenderer owner,CadFrameLease<ImageTexture> lease,IMTLTexture target,IMTLBuffer vertices,IMTLCommandBuffer command,int width,int height)
-  {this.owner=owner;this.lease=lease;Target=target;this.vertices=vertices;this.command=command;Width=width;Height=height;}
+  {this.owner=owner;this.lease=lease;Target=target;this.vertices=vertices;this.command=command;Width=width;Height=height;MaximumAnisotropy=lease.Resource.MaximumAnisotropy;}
+  public int MaximumAnisotropy{get;}
   public Task<byte[]> CommitAsync()
   {
    lock(owner.sync){if(state!=0)throw new InvalidOperationException("Image frame has already committed or been disposed.");state=1;try{command.AddCompletedHandler(value=>owner.Complete(this,value));command.Commit();}catch(Exception failure){var error=Release(failure);owner.lastError??=error;owner.ReleaseIfFinished();Completion.TrySetException(error!);}return Completion.Task;}

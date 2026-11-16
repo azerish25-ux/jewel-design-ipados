@@ -4,9 +4,9 @@ using Metal;
 using JewelDesign.Rendering.Candidate;
 namespace JewelDesign.Rendering.Candidate.iOS;
 
-public readonly record struct CadMetalFrameInfo(long FrameId,long Revision,long MeshUploadId,int Width,int Height,double? PresentedTime,bool SupportsNativePresentationTiming,Matrix4x4 ViewProjection){public long ImageUploadId{get;init;}public long TraceUploadId{get;init;}}
+public readonly record struct CadMetalFrameInfo(long FrameId,long Revision,long MeshUploadId,int Width,int Height,double? PresentedTime,bool SupportsNativePresentationTiming,Matrix4x4 ViewProjection){public long ImageUploadId{get;init;}public long TraceUploadId{get;init;}public int TraceAnisotropy{get;init;}}
 public readonly record struct CadMetalViewStats(long MeshUploads,long SubmittedFrames,long CompletedFrames,long PresentedFrames,
-    int InFlightFrames,int PeakInFlightFrames,int LiveMeshResources,int LiveMeshBuffers,bool IsDisposed,string? LastError){public long ImageUploads{get;init;}public int LiveImageTextures{get;init;}public int LiveSceneResources{get;init;}public long SceneRevision{get;init;}}
+    int InFlightFrames,int PeakInFlightFrames,int LiveMeshResources,int LiveMeshBuffers,bool IsDisposed,string? LastError){public long ImageUploads{get;init;}public int LiveImageTextures{get;init;}public int LiveSceneResources{get;init;}public long SceneRevision{get;init;}public int LiveImageSamplers{get;init;}}
 
 /// <summary>Owns retained CAD uploads and asynchronous frame resources for one visible view.</summary>
 internal sealed class CadMetalDrawablePresenter : IDisposable
@@ -23,7 +23,7 @@ internal sealed class CadMetalDrawablePresenter : IDisposable
     internal Action<Exception>? Failed;
     internal Action? Completed;
     internal bool CanSubmit{get{lock(sync){var state=frames.State;return !disposed&&state.NeedsFrame&&state.InFlight<CadFrameGate<CadMetalGpuScene>.MaximumFramesInFlight;}}}
-    internal CadMetalViewStats Stats{get{lock(sync){var state=frames.State;return new(uploads,submitted,completed,presented,state.InFlight,peak,meshes,buffers,disposed,lastError?.ToString()){ImageUploads=imageUploads,LiveImageTextures=imageTextures,LiveSceneResources=state.LiveResources,SceneRevision=state.Revision};}}}
+    internal CadMetalViewStats Stats{get{lock(sync){var state=frames.State;return new(uploads,submitted,completed,presented,state.InFlight,peak,meshes,buffers,disposed,lastError?.ToString()){ImageUploads=imageUploads,LiveImageTextures=imageTextures,LiveSceneResources=state.LiveResources,SceneRevision=state.Revision,LiveImageSamplers=(imagePipeline?.SamplerCount??0)+(tracePipeline?.SamplerCount??0)};}}}
 
     internal long SetMesh(CadViewportMesh mesh)
     {
@@ -50,14 +50,15 @@ internal sealed class CadMetalDrawablePresenter : IDisposable
      }
     }
     internal void ClearWallpaper(){lock(sync){ObjectDisposedException.ThrowIf(disposed,this);var mesh=current?.Mesh?.Retain();var trace=current?.Trace?.Retain();var scene=new CadMetalGpuScene(mesh,null,trace,current?.TraceInfo);try{frames.ReplaceResource(scene);current=scene;}catch{scene.Dispose();throw;}}}
-    internal long SetTracePixels(DecodedLocalImage image,Rhino5TraceImage info,int sourceDibDepth)
+    internal long SetTracePixels(DecodedLocalImage image,Rhino5TraceImage info,int sourceDibDepth,Rhino5TextureAnisotropy anisotropy)
     {
      ArgumentNullException.ThrowIfNull(image);lock(sync){ObjectDisposedException.ThrowIf(disposed,this);if(image.AlphaRepresentation!=RgbaAlphaRepresentation.Straight)throw new NotSupportedException("Trace pixels require explicit straight RGBA.");
-      _=Rhino5TracePlane.Create(info,image.Width,image.Height);byte[] bytes=Rhino5TraceRaster.Prepare(image.CopyRgba(),image.Width,image.Height,sourceDibDepth,info.GrayScale);tracePipeline??=new(renderer.Device,MTLPixelFormat.Depth32Float,true);
+      int maximumAnisotropy=anisotropy.ToMetalMaximum();
+      _=Rhino5TracePlane.Create(info,image.Width,image.Height);byte[] bytes=Rhino5TraceRaster.Prepare(image.CopyRgba(),image.Width,image.Height,sourceDibDepth,info.GrayScale);tracePipeline??=new(renderer.Device,MTLPixelFormat.Depth32Float,true);tracePipeline.EnsureAnisotropy(maximumAnisotropy);
       using var description=MTLTextureDescriptor.CreateTexture2DDescriptor(MTLPixelFormat.RGBA8Unorm,(nuint)image.Width,(nuint)image.Height,false);description.StorageMode=MTLStorageMode.Shared;description.Usage=MTLTextureUsage.ShaderRead;
       IMTLTexture? texture=renderer.Device.CreateTexture(description)??throw new InvalidOperationException("Trace texture allocation failed.");CadMetalGpuTrace? resource=null;CadMetalGpuMesh? mesh=null;CadMetalGpuWallpaper? wallpaper=null;CadMetalGpuScene? scene=null;bool transferred=false;
       try{var pin=System.Runtime.InteropServices.GCHandle.Alloc(bytes,System.Runtime.InteropServices.GCHandleType.Pinned);try{texture.ReplaceRegion(MTLRegion.Create2D(0,0,(nuint)image.Width,(nuint)image.Height),0,pin.AddrOfPinnedObject(),(nuint)(image.Width*4));}finally{pin.Free();}
-       resource=new(checked(imageUploads+1),texture,image.Width,image.Height,info,sourceDibDepth,ImageReleased);texture=null;imageTextures++;mesh=current?.Mesh?.Retain();wallpaper=current?.Wallpaper?.Retain();scene=new(mesh,wallpaper,resource,info);frames.ReplaceResource(scene);transferred=true;current=scene;imageUploads=resource.UploadId;return imageUploads;
+       resource=new(checked(imageUploads+1),texture,image.Width,image.Height,info,sourceDibDepth,maximumAnisotropy,ImageReleased);texture=null;imageTextures++;mesh=current?.Mesh?.Retain();wallpaper=current?.Wallpaper?.Retain();scene=new(mesh,wallpaper,resource,info);frames.ReplaceResource(scene);transferred=true;current=scene;imageUploads=resource.UploadId;return imageUploads;
       }catch{if(!transferred){if(scene is not null)scene.Dispose();else{resource?.Dispose();mesh?.Dispose();wallpaper?.Dispose();}}throw;}finally{texture?.Dispose();}
      }
     }
@@ -86,8 +87,8 @@ internal sealed class CadMetalDrawablePresenter : IDisposable
                 command=renderer.CreateCommandBuffer();
                 if(!command.RetainedReferences)throw new InvalidOperationException("Visible commands must retain presentation textures.");
                 using(var encoder=command.CreateRenderCommandEncoder(pass)??throw new InvalidOperationException("Visible render encoder unavailable."))
-                {if(scene.Wallpaper is {} wallpaper)imagePipeline!.Encode(encoder,wallpaper.Texture,quad!,false,false);if(traceQuad is not null&&scene.Trace is {} trace){encoder.SetVertexBuffer(camera,0,1);tracePipeline!.Encode(encoder,trace.Texture,traceQuad,scene.TraceInfo!.Value.Filtered,trace.DibDepth==32);}renderer.Encode(encoder,mesh?.Vertices,mesh?.Indices,camera,mesh?.TriangleCount??0);encoder.EndEncoding();}
-                var info=new CadMetalFrameInfo(checked(++nextFrame),lease.Revision,mesh?.UploadId??0,width,height,null,CadMetalTimingCapabilities.SupportsNativeTiming(drawable),matrix){ImageUploadId=scene.Wallpaper?.UploadId??0,TraceUploadId=scene.Trace?.UploadId??0};
+                {if(scene.Wallpaper is {} wallpaper)imagePipeline!.Encode(encoder,wallpaper.Texture,quad!,false,false);if(traceQuad is not null&&scene.Trace is {} trace){encoder.SetVertexBuffer(camera,0,1);tracePipeline!.Encode(encoder,trace.Texture,traceQuad,scene.TraceInfo!.Value.Filtered,trace.DibDepth==32,trace.MaximumAnisotropy);}renderer.Encode(encoder,mesh?.Vertices,mesh?.Indices,camera,mesh?.TriangleCount??0);encoder.EndEncoding();}
+                var info=new CadMetalFrameInfo(checked(++nextFrame),lease.Revision,mesh?.UploadId??0,width,height,null,CadMetalTimingCapabilities.SupportsNativeTiming(drawable),matrix){ImageUploadId=scene.Wallpaper?.UploadId??0,TraceUploadId=scene.Trace?.UploadId??0,TraceAnisotropy=scene.Trace?.MaximumAnisotropy??1};
                 frame=new Submission(lease,camera,quad,traceQuad,command,drawable,info);
                 var owned=frame;
                 if(info.SupportsNativePresentationTiming)drawable.AddPresentedHandler(value=>OnPresented(owned.Info with{PresentedTime=value.PresentedTime}));

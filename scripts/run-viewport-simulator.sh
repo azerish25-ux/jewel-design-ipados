@@ -107,6 +107,8 @@ for i in $(seq 1 600); do
   cp "$DATA/Documents/texture-preparation-gpu.json" "$OUT/texture-preparation-gpu.json"
   cp "$DATA/Documents/texture-preparation-gpu.bgra" "$OUT/texture-preparation-gpu.bgra"
   cp "$DATA/Documents/trace-report.json" "$OUT/trace-report.json"
+  cp "$DATA/Documents/anisotropy-gpu.json" "$OUT/anisotropy-gpu.json"
+  for maximum in 1 4 8 16; do cp "$DATA/Documents/anisotropy-$maximum.bgra" "$OUT/anisotropy-$maximum.bgra"; done
   cp "$DATA/Documents/wallpaper-report.json" "$OUT/wallpaper-report.json"
   cp "$DATA/Documents/viewport-report.json" "$OUT/report.json"
   for phase in original orbit edited empty resized final paper-original paper-green paper-blue paper-clear paper-resized paper-final trace-original trace-image trace-orbit trace-hidden trace-moved trace-final; do test -s "$OUT/$phase.png"; done

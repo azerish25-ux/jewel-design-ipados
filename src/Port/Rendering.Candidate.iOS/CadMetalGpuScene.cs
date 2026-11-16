@@ -23,9 +23,9 @@ internal sealed class CadMetalGpuWallpaper(long uploadId,IMTLTexture texture,int
  }
 }
 
-internal sealed class CadMetalGpuTrace(long uploadId,IMTLTexture texture,int width,int height,JewelDesign.Rendering.Candidate.Rhino5TraceImage info,int dibDepth,Action<Exception?> released):IDisposable
+internal sealed class CadMetalGpuTrace(long uploadId,IMTLTexture texture,int width,int height,JewelDesign.Rendering.Candidate.Rhino5TraceImage info,int dibDepth,int maximumAnisotropy,Action<Exception?> released):IDisposable
 {
- internal readonly long UploadId=uploadId;internal readonly IMTLTexture Texture=texture;internal readonly int Width=width,Height=height,DibDepth=dibDepth;internal readonly JewelDesign.Rendering.Candidate.Rhino5TraceImage Info=info;private int references=1;
+ internal readonly long UploadId=uploadId;internal readonly IMTLTexture Texture=texture;internal readonly int Width=width,Height=height,DibDepth=dibDepth,MaximumAnisotropy=maximumAnisotropy;internal readonly JewelDesign.Rendering.Candidate.Rhino5TraceImage Info=info;private int references=1;
  internal CadMetalGpuTrace Retain(){int value;do{value=Volatile.Read(ref references);ObjectDisposedException.ThrowIf(value==0,this);}while(Interlocked.CompareExchange(ref references,checked(value+1),value)!=value);return this;}
  public void Dispose(){int left=Interlocked.Decrement(ref references);if(left>0)return;if(left<0)throw new InvalidOperationException("Trace reference released twice.");Exception? error=null;try{Texture.Dispose();}catch(Exception failure){error=failure;}released(error);}
 }

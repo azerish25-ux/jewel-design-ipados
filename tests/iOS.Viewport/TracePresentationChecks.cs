@@ -10,7 +10,7 @@ using JewelDesign.Geometry.Candidate;
 using JewelDesign.Rendering.Candidate;
 using JewelDesign.Rendering.Candidate.iOS;
 namespace ViewportPresentationCandidate;
-internal sealed record TraceFrameMark(string Stage,long Revision,long MeshUploadId,long TraceUploadId,int Width,int Height,float[] Matrix);
+internal sealed record TraceFrameMark(string Stage,long Revision,long MeshUploadId,long TraceUploadId,int Width,int Height,float[] Matrix,int Anisotropy);
 internal sealed record TracePresentationReport(int SchemaVersion,List<TraceFrameMark> Frames,CadMetalViewStats Hidden,CadMetalViewStats BeforeDisposal,CadMetalViewStats AfterDisposal,int DisposalInFlight,string Scope);
 internal static class TracePresentationChecks
 {
@@ -36,25 +36,28 @@ internal static class TracePresentationChecks
   var info=new Rhino5TraceImage(plane,2.4*r,1.8*r,"world-trace.png",false,false,false);
   var view=new CadMetalView(parent.Bounds){AutoresizingMask=UIViewAutoresizing.FlexibleWidth|UIViewAutoresizing.FlexibleHeight};parent.AddSubview(view);parent.LayoutIfNeeded();
   var marks=new List<TraceFrameMark>();
-  async Task Record(string name,CadMetalFrameInfo frame){marks.Add(new(name,frame.Revision,frame.MeshUploadId,frame.TraceUploadId,frame.Width,frame.Height,CadViewportCamera.MatrixScalars(frame.ViewProjection)));await capture(name);}
+  async Task Record(string name,CadMetalFrameInfo frame){marks.Add(new(name,frame.Revision,frame.MeshUploadId,frame.TraceUploadId,frame.Width,frame.Height,CadViewportCamera.MatrixScalars(frame.ViewProjection),frame.TraceAnisotropy));await capture(name);}
   await Record("trace-original",await Present(view,()=>view.SetMesh(mesh)));
   long meshes=view.Stats.MeshUploads;
-  await Record("trace-image",await Present(view,()=>view.SetTracePixels(image,info,32)));
+  await Record("trace-image",await Present(view,()=>view.SetTracePixels(image,info,32,Rhino5TextureAnisotropy.ForApplicationSetting(1,true,16))));
   long images=view.Stats.ImageUploads;
+  long revision=view.Stats.SceneRevision;try{view.SetTracePixels(image,info,32,Rhino5TextureAnisotropy.ForTextureMode(3,true,1.5f));throw new Exception("Expected source sampler rejection");}catch(NotSupportedException){}
+  Check(view.Stats.SceneRevision==revision&&view.Stats.ImageUploads==images,"Unsupported sampler replacement changed visible image/revision");
   Check(view.Stats.MeshUploads==meshes&&view.Stats.LiveImageTextures==1,"Trace upload changed mesh identity/resources");
   await Record("trace-orbit",await Present(view,()=>view.SetCameraPose(-.7f,.2f)));
   Check(view.Stats.MeshUploads==meshes&&view.Stats.ImageUploads==images,"Orbit reuploaded world trace/mesh");
   await Record("trace-hidden",await Present(view,()=>{view.SetCameraPose(.6f,.35f);view.SetTraceState(info with{Hidden=true});}));
+  Check(marks.Where(x=>x.TraceUploadId!=0).All(x=>x.Anisotropy==4),"Visible trace sampler changed during orbit/hide");
   var hidden=view.Stats;Check(hidden.LiveImageTextures==1&&hidden.ImageUploads==images,"Hidden state discarded/reuploaded loaded trace");
   var moved=info with{Width=0,Height=1.1*r,Filtered=true,Plane=plane with{Origin=new(c.X-.8*r,c.Y-.55*r,c.Z-.7*r)}};
   await Record("trace-moved",await Present(view,()=>view.SetTraceState(moved)));
   Check(view.Stats.ImageUploads==images,"Trace pose/filter metadata reuploaded pixels");
   await Record("trace-final",await Present(view,view.ClearTrace));
   await Drain(()=>view.Stats.InFlightFrames==0&&view.Stats.LiveImageTextures==0);
-  for(int i=0;i<12;i++){view.SetTracePixels(image,info with{Hidden=i%3==0,Filtered=i%2==0},32);view.SetMesh(mesh);view.Draw();}
+  for(int i=0;i<12;i++){view.SetTracePixels(image,info with{Hidden=i%3==0,Filtered=i%2==0},32,Rhino5TextureAnisotropy.ForApplicationSetting(i%4,true,16));view.SetMesh(mesh);view.Draw();}
   var before=view.Stats;int pending=before.InFlightFrames;view.RemoveFromSuperview();view.Dispose();
   await Drain(()=>view.Stats.InFlightFrames==0&&view.Stats.LiveSceneResources==0&&view.Stats.LiveImageTextures==0&&view.Stats.LiveMeshResources==0);
-  var after=view.Stats;Check(after.LastError is null&&after.LiveMeshBuffers==0,"Trace scene disposal retained work/failure");
+  var after=view.Stats;Check(after.LastError is null&&after.LiveMeshBuffers==0&&after.LiveImageSamplers==0,"Trace scene disposal retained work/failure");
   return new(1,marks,hidden,before,after,pending,"Actual world-plane trace pixels with current fitted candidate camera/mesh normalization. Original source camera/cache/mipmaps/resampling/missing-texture diagnostics/document/PC/physical parity remains open.");
  }
 }

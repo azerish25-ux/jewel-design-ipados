@@ -35,3 +35,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.WallpaperPlacementAsser
 System.Console.WriteLine(CandidateGeometryContractChecks.TexturePreparationAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.TracePlaneAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.TextureAnisotropyAssertions.Run());
