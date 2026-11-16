@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S02",
+  "sourceCommit": "b2950d8d0b7952c5ee75a2a79c24098f794276e4",
+  "runId": 43858605723,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43858605723",
+  "artifact": {
+    "id": 14222738089,
+    "sha256": "6cc95348d2352271ed49da100cbcf16fc6faf3c0bbd223150abe80158a97344e"
+  },
+  "status": "success_actual_connected_plugin_artifacts_independently_rechecked",
+  "placementCases": 9,
+  "adjacentNodeRegressions": 60,
+  "separateVisibleStages": 6,
+  "simulators": [
+    {
+      "family": "ipad",
+      "resultSha256": "10da5a0e677f95bc90470d4f8c88c3ffa66df0df5f564b457eb3e04064c9ab45",
+      "wallpaper": {
+        "schemaVersion": 1,
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "right": 1435,
+          "top": 295,
+          "bottom": 2065
+        },
+        "results": [
+          {
+            "stage": "paper-green",
+            "checkedBackground": 101214,
+            "checkedCad": 2075886,
+            "colored": 101214,
+            "rectangle": {
+              "left": 564,
+              "top": 924,
+              "width": 512,
+              "height": 512
+            }
+          },
+          {
+            "stage": "paper-blue",
+            "checkedBackground": 663608,
+            "checkedCad": 1513492,
+            "colored": 663608,
+            "rectangle": {
+              "left": 308,
+              "top": 668,
+              "width": 1024,
+              "height": 1024
+            }
+          }
+        ],
+        "differences": {
+          "paper-clear": 0,
+          "paper-final": 0
+        },
+        "disposalInFlight": 1,
+        "retiredImages": 0,
+        "retiredMeshBuffers": 0,
+        "pngSha256": {
+          "paper-original": "7d2036b442fbaca22a191cb139f5b7381e02a6bbf2166887244b89f39ca10604",
+          "paper-green": "6bc06ea7e268cbcbe790a586c325530ff267a9e69ee1aee642eed9604880624f",
+          "paper-blue": "4f947ab09f8c76ee4d2bc618c1103263d459573451deed00cb093fe0137b38dc",
+          "paper-clear": "0eee0c8b7ecb8a94767c0bf9ff15347a50fa798a78e3f376bb10868a228bd6a1",
+          "paper-resized": "7ce2cfd026144fdb38b8788e9593d720ee418fffc46874c9a00ebb3f8a5574bc",
+          "paper-final": "0eee0c8b7ecb8a94767c0bf9ff15347a50fa798a78e3f376bb10868a228bd6a1"
+        },
+        "scope": "Actual visible supplied resized wallpaper pixels and regenerated CAD composition. Original resampling/GL/trace/document/PC/physical acceptance separate."
+      },
+      "sourceReport": {
+        "SchemaVersion": 1,
+        "Frames": [
+          {
+            "Stage": "paper-original",
+            "Revision": 1,
+            "MeshUploadId": 1,
+            "ImageUploadId": 0,
+            "Width": 1640,
+            "Height": 2360,
+            "Left": 0,
+            "Top": 0,
+            "ImageWidth": 0,
+            "ImageHeight": 0
+          },
+          {
+            "Stage": "paper-green",
+            "Revision": 2,
+            "MeshUploadId": 1,
+            "ImageUploadId": 1,
+            "Width": 1640,
+            "Height": 2360,
+            "Left": 564,
+            "Top": 924,
+            "ImageWidth": 512,
+            "ImageHeight": 512
+          },
+          {
+            "Stage": "paper-blue",
+            "Revision": 3,
+            "MeshUploadId": 1,
+            "ImageUploadId": 2,
+            "Width": 1640,
+            "Height": 2360,
+            "Left": 308,
+            "Top": 668,
+            "ImageWidth": 1024,
+            "ImageHeight": 1024
+          },
+          {
+            "Stage": "paper-clear",
+            "Revision": 4,
+            "MeshUploadId": 1,
+            "ImageUploadId": 0,
+            "Width": 1640,
+            "Height": 2360,
+            "Left": 0,
+            "Top": 0,
+            "ImageWidth": 0,
+            "ImageHeight": 0
+          },
+          {
+            "Stage": "paper-resized",
+            "Revision": 6,
+            "MeshUploadId": 1,
+            "ImageUploadId": 3,
+            "Width": 1544,
+            "Height": 2200,
+            "Left": 260,
+            "Top": 588,
+            "ImageWidth": 1024,
+            "ImageHeight": 1024
+          },
+          {
+            "Stage": "paper-final",
+            "Revision": 1,
+            "MeshUploadId": 1,
+            "ImageUploadId": 0,
+            "Width": 1640,
+            "Height": 2360,
+            "Left": 0,
+            "Top": 0,
+            "ImageWidth": 0,
+            "ImageHeight": 0
+          }
+        ],
+        "AfterClear": {
+          "MeshUploads": 1,
+          "SubmittedFrames": 4,
+          "CompletedFrames": 4,
+          "PresentedFrames": 0,
+          "InFlightFrames": 0,
+          "PeakInFlightFrames": 1,
+          "LiveMeshResources": 1,
+          "LiveMeshBuffers": 2,
+          "IsDisposed": false,
+          "LastError": null,
+          "ImageUploads": 2,
+          "LiveImageTextures": 0,
+          "LiveSceneResources": 1,
+          "SceneRevision": 4
+        },
+        "BeforeDisposal": {
+          "MeshUploads": 13,
+          "SubmittedFrames": 18,
+          "CompletedFrames": 17,
+          "PresentedFrames": 0,
+          "InFlightFrames": 1,
+          "PeakInFlightFrames": 2,
+          "LiveMeshResources": 1,
+          "LiveMeshBuffers": 2,
+          "IsDisposed": false,
+          "LastError": null,
+          "ImageUploads": 15,
+          "LiveImageTextures": 1,
+          "LiveSceneResources": 1,
+          "SceneRevision": 30
+        },
+        "AfterDisposal": {
+          "MeshUploads": 13,
+          "SubmittedFrames": 18,
+          "CompletedFrames": 18,
+          "PresentedFrames": 0,
+          "InFlightFrames": 0,
+          "PeakInFlightFrames": 2,
+          "LiveMeshResources": 0,
+          "LiveMeshBuffers": 0,
+          "IsDisposed": true,
+          "LastError": null,
+          "ImageUploads": 15,
+          "LiveImageTextures": 0,
+          "LiveSceneResources": 0,
+          "SceneRevision": 30
+        },
+        "FinalView": {
+          "MeshUploads": 1,
+          "SubmittedFrames": 1,
+          "CompletedFrames": 1,
+          "PresentedFrames": 0,
+          "InFlightFrames": 0,
+          "PeakInFlightFrames": 1,
+          "LiveMeshResources": 1,
+          "LiveMeshBuffers": 2,
+          "IsDisposed": false,
+          "LastError": null,
+          "ImageUploads": 0,
+          "LiveImageTextures": 0,
+          "LiveSceneResources": 1,
+          "SceneRevision": 1
+        },
+        "DisposalInFlight": 1,
+        "Scope": "Actual visible source-GDI placement of supplied resized opaque wallpaper pixels composed with regenerated CAD. GDI resampling, trace world-plane, source setters/document/PC/physical parity remain open."
+      },
+      "baselineFinalDifference": 0,
+      "baselineRetiredBuffers": 0,
+      "offscreenCadSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+      "gallery": "docs/evidence/apple/visible-wallpaper/ipad-blue.png"
+    },
+    {
+      "family": "iphone",
+      "resultSha256": "10da5a0e677f95bc90470d4f8c88c3ffa66df0df5f564b457eb3e04064c9ab45",
+      "wallpaper": {
+        "schemaVersion": 1,
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "right": 1055,
+          "top": 327,
+          "bottom": 2294
+        },
+        "results": [
+          {
+            "stage": "paper-green",
+            "checkedBackground": 122375,
+            "checkedCad": 1657760,
+            "colored": 122375,
+            "rectangle": {
+              "left": 347,
+              "top": 1055,
+              "width": 512,
+              "height": 512
+            }
+          },
+          {
+            "stage": "paper-blue",
+            "checkedBackground": 694139,
+            "checkedCad": 1085996,
+            "colored": 694139,
+            "rectangle": {
+              "left": 91,
+              "top": 799,
+              "width": 1024,
+              "height": 1024
+            }
+          }
+        ],
+        "differences": {
+          "paper-clear": 0,
+          "paper-final": 0
+        },
+        "disposalInFlight": 1,
+        "retiredImages": 0,
+        "retiredMeshBuffers": 0,
+        "pngSha256": {
+          "paper-original": "ba883a8a03037240d3a300ece0220f1859b702462484985c1028298c899131ae",
+          "paper-green": "a866a7a39596024200f08b6a5d704eee6c7c05918c5ef7808a24c495c2d5bb7d",
+          "paper-blue": "af125d9da8151b50ba312566f8448492780e2011289efa3313b589d277551fc3",
+          "paper-clear": "ba883a8a03037240d3a300ece0220f1859b702462484985c1028298c899131ae",
+          "paper-resized": "966390aa7a754bd666cda5b1b701ef4b5cf31e6185538c2897d6daa8188b1a2f",
+          "paper-final": "ba883a8a03037240d3a300ece0220f1859b702462484985c1028298c899131ae"
+        },
+        "scope": "Actual visible supplied resized wallpaper pixels and regenerated CAD composition. Original resampling/GL/trace/document/PC/physical acceptance separate."
+      },
+      "sourceReport": {
+        "SchemaVersion": 1,
+        "Frames": [
+          {
+            "Stage": "paper-original",
+            "Revision": 1,
+            "MeshUploadId": 1,
+            "ImageUploadId": 0,
+            "Width": 1206,
+            "Height": 2622,
+            "Left": 0,
+            "Top": 0,
+            "ImageWidth": 0,
+            "ImageHeight": 0
+          },
+          {
+            "Stage": "paper-green",
+            "Revision": 2,
+            "MeshUploadId": 1,
+            "ImageUploadId": 1,
+            "Width": 1206,
+            "Height": 2622,
+            "Left": 347,
+            "Top": 1055,
+            "ImageWidth": 512,
+            "ImageHeight": 512
+          },
+          {
+            "Stage": "paper-blue",
+            "Revision": 3,
+            "MeshUploadId": 1,
+            "ImageUploadId": 2,
+            "Width": 1206,
+            "Height": 2622,
+            "Left": 91,
+            "Top": 799,
+            "ImageWidth": 1024,
+            "ImageHeight": 1024
+          },
+          {
+            "Stage": "paper-clear",
+            "Revision": 4,
+            "MeshUploadId": 1,
+            "ImageUploadId": 0,
+            "Width": 1206,
+            "Height": 2622,
+            "Left": 0,
+            "Top": 0,
+            "ImageWidth": 0,
+            "ImageHeight": 0
+          },
+          {
+            "Stage": "paper-resized",
+            "Revision": 6,
+            "MeshUploadId": 1,
+            "ImageUploadId": 3,
+            "Width": 1062,
+            "Height": 2382,
+            "Left": 19,
+            "Top": 679,
+            "ImageWidth": 1024,
+            "ImageHeight": 1024
+          },
+          {
+            "Stage": "paper-final",
+            "Revision": 1,
+            "MeshUploadId": 1,
+            "ImageUploadId": 0,
+            "Width": 1206,
+            "Height": 2622,
+            "Left": 0,
+            "Top": 0,
+            "ImageWidth": 0,
+            "ImageHeight": 0
+          }
+        ],
+        "AfterClear": {
+          "MeshUploads": 1,
+          "SubmittedFrames": 4,
+          "CompletedFrames": 4,
+          "PresentedFrames": 0,
+          "InFlightFrames": 0,
+          "PeakInFlightFrames": 1,
+          "LiveMeshResources": 1,
+          "LiveMeshBuffers": 2,
+          "IsDisposed": false,
+          "LastError": null,
+          "ImageUploads": 2,
+          "LiveImageTextures": 0,
+          "LiveSceneResources": 1,
+          "SceneRevision": 4
+        },
+        "BeforeDisposal": {
+          "MeshUploads": 13,
+          "SubmittedFrames": 18,
+          "CompletedFrames": 17,
+          "PresentedFrames": 0,
+          "InFlightFrames": 1,
+          "PeakInFlightFrames": 3,
+          "LiveMeshResources": 1,
+          "LiveMeshBuffers": 2,
+          "IsDisposed": false,
+          "LastError": null,
+          "ImageUploads": 15,
+          "LiveImageTextures": 1,
+          "LiveSceneResources": 1,
+          "SceneRevision": 30
+        },
+        "AfterDisposal": {
+          "MeshUploads": 13,
+          "SubmittedFrames": 18,
+          "CompletedFrames": 18,
+          "PresentedFrames": 0,
+          "InFlightFrames": 0,
+          "PeakInFlightFrames": 3,
+          "LiveMeshResources": 0,
+          "LiveMeshBuffers": 0,
+          "IsDisposed": true,
+          "LastError": null,
+          "ImageUploads": 15,
+          "LiveImageTextures": 0,
+          "LiveSceneResources": 0,
+          "SceneRevision": 30
+        },
+        "FinalView": {
+          "MeshUploads": 1,
+          "SubmittedFrames": 1,
+          "CompletedFrames": 1,
+          "PresentedFrames": 0,
+          "InFlightFrames": 0,
+          "PeakInFlightFrames": 1,
+          "LiveMeshResources": 1,
+          "LiveMeshBuffers": 2,
+          "IsDisposed": false,
+          "LastError": null,
+          "ImageUploads": 0,
+          "LiveImageTextures": 0,
+          "LiveSceneResources": 1,
+          "SceneRevision": 1
+        },
+        "DisposalInFlight": 1,
+        "Scope": "Actual visible source-GDI placement of supplied resized opaque wallpaper pixels composed with regenerated CAD. GDI resampling, trace world-plane, source setters/document/PC/physical parity remain open."
+      },
+      "baselineFinalDifference": 0,
+      "baselineRetiredBuffers": 0,
+      "offscreenCadSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+      "gallery": "docs/evidence/apple/visible-wallpaper/iphone-blue.png"
+    }
+  ],
+  "productHashes": {
+    "src/Port/Rendering.Candidate/Rhino5WallpaperPlacement.cs": "3246631c17ffb3bb21200d0aca2a8387fad67cd8e0a145d9ab963c5f1e2db4fd",
+    "src/Port/Rendering.Candidate.iOS/CadMetalDrawablePresenter.cs": "724f904e6ff3dc4fb1cc5b32db4e8c8e8ac61fc64726a4b2058e426bcf6ce687",
+    "src/Port/Rendering.Candidate.iOS/CadMetalGpuScene.cs": "3352915794ff54a4544160719ceefd6ab26e55871734ba956b644436b6948e0a",
+    "src/Port/Rendering.Candidate.iOS/CadMetalGpuMesh.cs": "1845f267759d635a8b483fcac04007d1077ea54636c44ae7fc08c24a47a44c8b",
+    "src/Port/Rendering.Candidate.iOS/MetalImageQuadPipeline.cs": "72a0d66b685eb11bc50fa4e5bcd3e0632edc38028dd5d74da832081d7b3e2cdd",
+    "src/Port/Rendering.Candidate.iOS/MetalImageQuadRenderer.cs": "485b65fc001a7a5f699ebe8e7f2539de37b82172296cc55dd7c8142634bfce54",
+    "src/Port/Rendering.Candidate.iOS/CadMetalView.cs": "a395689c50480b0ac1a130f08d82ba960e28fd9bc3669c2d2f94f1d51c0eab9d"
+  },
+  "build": {
+    "bindingWarnings": 0,
+    "bindingErrors": 0,
+    "appWarnings": 2,
+    "appErrors": 0,
+    "knownWarnings": [
+      "CS8765 AppDelegate options nullability",
+      "CA1422 UIWindow iOS26 constructor"
+    ]
+  },
+  "visualReview": "Actual iPad blue capture inspected: real native regenerated ring over the correctly centered background rectangle; untouched captures preserved in gallery.",
+  "scope": "Visible GDI draw placement/composition of supplied resized opaque pixels and retained real image/mesh ownership only. Original source resampling/GL/trace/cache/source setters/document/PC/physical acceptance remains open."
+}

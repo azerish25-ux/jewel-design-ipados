@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S02",
+  "sourceCommit": "b2950d8d0b7952c5ee75a2a79c24098f794276e4",
+  "runId": 43858605649,
+  "artifactId": 14221522763,
+  "artifactSha256": "891cd428011c29d3f361d0a2d87d7c998f0988aa670f31b12adc65876e13bc7d",
+  "status": "success_actual_connected_plugin_artifact_inspected",
+  "placementCases": 9,
+  "bindingWarnings": 0,
+  "bindingErrors": 0,
+  "hashes": {
+    "binding": "2252dcd59596c244b3840fe8921ec4e90ec4f6be68390a5273e55bb4e1e9bf07",
+    "portable": "349d199ae7ec9b30c49f28832d427ff9e2cd5a3b7f2aa5903a66035a57d609b3"
+  },
+  "scope": "macOS portable execution and actual image/CAD iOS bindings compile. Visible pixels/resources require separate runtime evidence; full source wallpaper/PC parity remains open."
+}

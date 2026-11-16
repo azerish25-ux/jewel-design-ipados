@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "31f0b49670d9817a648f1e006cddfd9aed06a0e2",
-  "status": "visible_composer_implemented_windows_passed_actual_apple_pending",
+  "status": "visible_cad_wallpaper_macos_ipad_iphone_verified_full_source_pipeline_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S02-visible-wallpaper.md",
   "red": {
     "exitCode": 1,
@@ -26,10 +26,40 @@
   },
   "review": {
     "placement": "Original GDI draw rectangle for supplied resized pixels. Native overflow rejected explicitly. Alpha made opaque for original24bit wallpaper RGB target; input must be straight.",
-    "ownership": "Scene gate retains independently referenced mesh and wallpaper. Shared image pipeline uses matching depth attachment format, depth write disabled, then real CAD encoder restores depth/culling. Actual runtime resource/capture proof pending.",
+    "ownership": "Actual both families verified real image/mesh replacements with bound3 scene submissions, disposal observed with1 pending frame each and all owned mesh/image/scene resources retired without error. Separate screenshot comparisons preserve actual CAD and outside-image pixels; clear/final region difference0.",
     "limits": "Pixel API is not complete original wallpaper file/gray/resize/source SetView behavior. GL placement, GDI filtering, world trace, caches, document/PC/physical remain required."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleReports": {
+    "preflight": "docs/evidence/apple/visible-wallpaper-preflight-results.json",
+    "runtime": "docs/evidence/apple/visible-wallpaper-ios-results.json"
+  },
+  "appleRuns": [
+    {
+      "id": 43858605748,
+      "name": "Repository integrity and bounded proofs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43858605765,
+      "name": "Recovered CSharp iOS reuse",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43858605649,
+      "name": "Metal renderer binding preflight",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43858605723,
+      "name": "Visible CAD viewport experiment",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
 }

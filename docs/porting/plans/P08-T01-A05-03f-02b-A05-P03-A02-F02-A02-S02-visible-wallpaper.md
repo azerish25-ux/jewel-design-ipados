@@ -11,3 +11,7 @@ Cases:9 original placement/boundary checks; actual decoded controlled opaque512p
 Owned files: CadMetalDrawablePresenter/View, retained mesh/scene/image classes, shared MetalImageQuadPipeline and old offscreen renderer using it, portable placement, actual iOS acceptance harness and strict screenshot verifier. Run Windows focused/native/60 adjacent, macOS compile and actual iPad/iPhone captures. New scene statistics distinguish unique mesh/image and scene resources; no fabricated native presentation timestamps.
 
 Full original resampling/GL/camera/trace-world-plane/mipmap/anisotropy/cache/source setters/document/PC/physical acceptance remains open. No parity row closes here. Keep all local tools/cache/output D-only; owner GitHub plugin for commit/push/Actions; five-second D retries; no original vendor binary execution.
+
+API boundary and ownership: [visible wallpaper composition](../VISIBLE_WALLPAPER_COMPOSITION.md).
+
+Verified result: [actual Apple/runtime evidence](../evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S02.json), six independent wallpaper stages per family plus unchanged six CAD stages. Image placement/background/CAD masks match; clear/final differences0. Disposal with1 actual pending frame per family retires all owned resources. [Unmodified capture gallery](../../evidence/apple/visible-wallpaper/README.md). Parent full image/source pipeline remains open.
