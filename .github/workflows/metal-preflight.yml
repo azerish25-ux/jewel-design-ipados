@@ -29,6 +29,11 @@ on:
       - "scripts/verify-source-cache-gpu.cjs"
       - "tests/filename-reference.test.cjs"
       - "native/Rendering/FilenameReference/**"
+      - "native/Rendering/NlsLowerReference/**"
+      - "scripts/verify-nls-lower-reference.cjs"
+      - "tests/nls-lower-reference.test.cjs"
+      - "reference/fixtures/windows-nls1-lower-60502.json.br"
+      - "tests/Port/Geometry.Candidate.Contracts/UnicodeNlsLowerAssertions.cs"
       - "reference/fixtures/windows-filename-semantics.json.br"
       - "native/Analysis/fixtures/rhino5-image-cache-core-regions.json"
       - "native/Analysis/fixtures/rhino5-image-cache-lifecycle-regions.json"
@@ -261,6 +266,10 @@ jobs:
           node scripts/verify-filename-reference.cjs reference/fixtures/windows-filename-semantics.json.br > artifacts/filename-reference.json
       - name: Verify original filename profile initialization evidence
         run: node scripts/verify-filename-profile.cjs > artifacts/filename-profile.json
+      - name: Verify exhaustive native Unicode NLS1 lowercase corpus
+        run: |
+          node --test tests/nls-lower-reference.test.cjs > artifacts/unicode-nls-lower-reference-checks.txt
+          node scripts/verify-nls-lower-reference.cjs > artifacts/unicode-nls-lower-reference.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

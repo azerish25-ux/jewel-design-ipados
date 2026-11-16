@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A01",
+  "inputCommit": "e0062d0fba984a2d181908dc62b04566fba69749",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "managed-native-exhaustive-pass-platform-pending",
+  "sourceProfileAudit": "docs/evidence/audit/rhino5-filename-profile.json",
+  "originalCodeExecuted": false,
+  "collector": {
+    "path": "native/Rendering/NlsLowerReference/Program.cs",
+    "sha256": "d001c5fde1b78a85bac96a26e5fe2d52a4cd5f7df1bf46acfb1f0a1ed6f578e9",
+    "api": "public kernel32 LCMapStringW(1,0x100), explicit UTF16 length and sourceLength+16 destination capacity",
+    "os": "Microsoft Windows 10.0.26300",
+    "version": {
+      "NlsVersion": 394498,
+      "DefinedVersion": 394498,
+      "EffectiveId": 1025,
+      "CustomVersion": "00000001-57ee-1e5c-00b4-d0000bb1e11e"
+    },
+    "nativeRecords": {
+      "path": ".local/evidence/nls-lower/windows-01.json.native-records.bin",
+      "bytes": 13238272,
+      "sha256": "c84dd6f2cd0ad2a7e2a6fe69d0b3bcb8fcfc1c3f953b0d2e0b56de6485c99e6d"
+    }
+  },
+  "reference": {
+    "path": "reference/fixtures/windows-nls1-lower-60502.json.br",
+    "sha256": "f0268c6a6b764d64d1e44cc52dde0b6712eee39b9c6417d9c8ab7d1f71ad519c",
+    "decodedSha256": "45f10d37f2950af872407236b8308008496e26e1e9d91dee8f5d6e17bbe9e6c9"
+  },
+  "productResource": {
+    "path": "src/Port/Rendering.Candidate/Fixtures/windows-nls1-lower-60502.bin",
+    "bytes": 8136,
+    "sha256": "06e58c3cbbd38bcce4af8e99bb4f0693148fb5144ca9db23ef65fc9711d3ab70"
+  },
+  "red": [
+    "Missing portable component reproduced CS0103 before implementation.",
+    "Independent native capture rejects using .NET invariant casing as exact:419 individual mappings differ."
+  ],
+  "validation": {
+    "individualUtf16Units": 65536,
+    "supplementaryScalarPairs": 1048576,
+    "totalUnitScalarCases": 1114112,
+    "nativeContexts": 3329,
+    "changedMappings": 1013,
+    "nativeFailures": 0,
+    "contextCompositionMismatches": 0,
+    "nativeStreamDigestReconstructed": true,
+    "managedWindowsNativeMatches": true,
+    "nullBudgetUtf16Guards": 7,
+    "portableInvariantDifferencesOnCollectorHost": 419,
+    "adjacentNodeChecks": 20
+  },
+  "remaining": [
+    "Actual macOS/iPad/iPhone execution pending.",
+    "Complete NLS1 filename collation, original CRT/ANSI fallback and runtime mutation.",
+    "Actual source/document/view policy integration and other mapping snapshots.",
+    "Original PC corpus and physical-device/full feature acceptance."
+  ],
+  "fullParityVerified": false
+}

@@ -49,3 +49,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.GdiEnlargementAssertion
 System.Console.WriteLine(CandidateGeometryContractChecks.PreparedWallpaperAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.ContextImageCacheAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.UnicodeNlsLowerAssertions.Run());

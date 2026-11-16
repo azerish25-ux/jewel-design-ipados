@@ -35,6 +35,8 @@ on:
       - "scripts/verify-prepared-wallpaper-gpu.cjs"
       - "scripts/verify-source-cache-gpu.cjs"
       - "tests/Port/Geometry.Candidate.Contracts/ContextImageCacheAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/UnicodeNlsLowerAssertions.cs"
+      - "reference/fixtures/windows-nls1-lower-60502.json.br"
       - "tests/Port/Geometry.Candidate.Contracts/PreparedWallpaperAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/Fixtures/prepared-wallpaper-gpu.json.br"
       - "tests/Port/Geometry.Candidate.Contracts/ComposedTextureAssertions.cs"

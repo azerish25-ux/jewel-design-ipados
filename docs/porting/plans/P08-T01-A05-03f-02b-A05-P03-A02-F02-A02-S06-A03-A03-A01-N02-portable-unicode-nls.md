@@ -1,0 +1,5 @@
+# P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02 exact offline Unicode NLS filename behavior
+
+UI-039; inpute0062d0fba984a2d181908dc62b04566fba69749. N01 proves normal nonzero-language startup selects locale1 Unicode NLS. Preserve original LCMapStringW lower flag0x100 with stored UTF16 length, CompareStringW flags0x20001 with C terminators, ON_wString empty behavior and explicit CRT fallback. Casing and collation are separate gates; neither an ordinal comparer nor portable ICU default substitutes for complete original behavior.
+
+A01: versioned exhaustive Windows Unicode lower reference, exact offline managed mapping and context/buffer/error behavior, tested on Windows/macOS and both Apple simulator families. A02: full versioned Windows NLS1 comparison/sort behavior, contractions/expansions/weights/ignore-width and fallback; independent native corpus and original source conditions. A03: original initialization/state changes and actual document/view cache integration. Full parent/feature/PC/physical acceptance remains open until all gates pass.
