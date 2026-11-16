@@ -109,8 +109,18 @@ public sealed class MetalImageQuadRenderer:IDisposable
  }
  private void ReleaseIfFinished(){if(disposed&&frames.State.InFlight==0&&!released){released=true;foreach(var value in new IDisposable?[]{imagePipeline,queue})try{value?.Dispose();}catch(Exception failure){lastError??=failure;}}}
  public void Dispose(){lock(sync){if(disposed)return;disposed=true;try{sourceCache?.Dispose();}catch(Exception failure){lastError??=failure;}sourceCache=null;frames.Dispose();ReleaseIfFinished();}}
- internal sealed class ImageTexture(IMTLTexture texture,int maximumAnisotropy,Action released):IDisposable
- {internal readonly IMTLTexture Texture=texture;internal readonly int MaximumAnisotropy=maximumAnisotropy;private int references=1;internal ImageTexture Retain(){int n;do{n=Volatile.Read(ref references);ObjectDisposedException.ThrowIf(n==0,this);}while(Interlocked.CompareExchange(ref references,checked(n+1),n)!=n);return this;}public void Dispose(){int n=Interlocked.Decrement(ref references);if(n>0)return;if(n<0)throw new InvalidOperationException("Image texture released twice.");try{Texture.Dispose();}finally{released();}}}
+ // Each frame-gate transfer receives a distinct ownership token for one shared physical texture.
+ internal sealed class ImageTexture:IDisposable
+ {
+  private sealed class Shared(IMTLTexture texture,int maximumAnisotropy,Action released)
+  {internal readonly IMTLTexture Texture=texture;internal readonly int MaximumAnisotropy=maximumAnisotropy;internal int References=1;internal readonly Action Released=released;}
+  private readonly Shared shared;private int disposed;
+  internal IMTLTexture Texture=>shared.Texture;internal int MaximumAnisotropy=>shared.MaximumAnisotropy;
+  internal ImageTexture(IMTLTexture texture,int maximumAnisotropy,Action released)=>shared=new(texture,maximumAnisotropy,released);
+  private ImageTexture(Shared shared)=>this.shared=shared;
+  internal ImageTexture Retain(){ObjectDisposedException.ThrowIf(Volatile.Read(ref disposed)!=0,this);int n;do{n=Volatile.Read(ref shared.References);ObjectDisposedException.ThrowIf(n==0,this);}while(Interlocked.CompareExchange(ref shared.References,checked(n+1),n)!=n);return new(shared);}
+  public void Dispose(){if(Interlocked.Exchange(ref disposed,1)!=0)return;int n=Interlocked.Decrement(ref shared.References);if(n>0)return;if(n<0)throw new InvalidOperationException("Image texture released twice.");try{shared.Texture.Dispose();}finally{shared.Released();}}
+ }
  public sealed class ImageFrame:IDisposable
  {
   private readonly MetalImageQuadRenderer owner;private readonly CadFrameLease<ImageTexture> lease;private readonly IMTLBuffer vertices;

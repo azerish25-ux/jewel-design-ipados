@@ -75,7 +75,14 @@
         "bytes": 1148,
         "sha256": "8528178ee49fbd6bfc623dd9fd4fdccf1b74493c943ff7f0f383a443b9a874b5"
       }
-    ]
+    ],
+    "unicodeLowerCallsite": {
+      "rva": 1035168,
+      "length": 40,
+      "sha256": "119a45b1a12cfd6e7e07807a61b3543a2ccde7dafe775d87eed67d3e7dc1d2c4",
+      "hex": "8b0df24e39004d8bc6458bcc44394008ba00010000897424284d0f4fc348895c2420ff1538552000",
+      "observed": "RCX locale global491a98; EDX0x100; R8 source array; R9D stored ON_wString length; target/temp buffer capacity storedLength+16. LCMapStringW indirect call at fcbc2 via IAT302100. Public native probe uses explicit stored string length, including embedded NUL."
+    }
   },
   "observations": [
     "OGL lookup groups context, kind1 color/kind3 gray and original ON_wString filename comparator; hits update manager usage serial.",
@@ -89,7 +96,8 @@
   "red": [
     "Cache component absent before implementation.",
     "Initial raw CRT empty-string comparison assertion failed because ON_wString wrapper returns signed1; corrected implementation using observed original wrapper, native expected data retained.",
-    "New comparison-failure regression reproduced partial invalidation and lost cache ownership. Invalidation now completes every comparison before any removal; failed comparison retains both entries and later valid invalidation retires both resources."
+    "New comparison-failure regression reproduced partial invalidation and lost cache ownership. Invalidation now completes every comparison before any removal; failed comparison retains both entries and later valid invalidation retires both resources.",
+    "Actual iPad run43966448738/job133647047123 failed on cached hit: Resource ownership has already been transferred to this frame gate. ImageTexture.Retain returned the same ownership object. Fixed by distinct per-transfer ownership tokens around shared refcounted physical texture; actual same-hit GPU regression retained."
   ],
   "localValidation": {
     "renderingTests": "pass including33 cache lifecycle cases/65536 exact UTF16 CRT-C lower units/1156 native comparison pairs",
@@ -105,7 +113,7 @@
       "exitCode": 0
     }
   },
-  "platformValidation": "pending actual macOS and iPad/iPhone CI",
+  "platformValidation": "macOS initial30 cache cases and0 warning/error Metal build passed on43966139503; actual iPad cached-hit failure43966448738 fixed, rerun pending",
   "remaining": [
     "Resolve original runtime Windows NLS/ANSI profile and implement its full portable behavior before claiming filename parity.",
     "Connect cache policy/invalidation to actual CadMetalView/document lifecycle and full file/document fallback; current real GPU source cache is MetalImageQuadRenderer component.",
