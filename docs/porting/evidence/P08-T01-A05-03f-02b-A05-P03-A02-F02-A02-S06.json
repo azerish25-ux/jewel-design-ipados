@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "in_progress_integer_child_apple_pending_halftone_and_integration_required",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-rgb-preparation.md",
+  "requiredChildren": [
+    "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A01",
+    "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02",
+    "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03"
+  ],
+  "acceptance": [
+    "Exact original integer and HALFTONE RGB resampling, conversion/stride/color state with independent native reference",
+    "Compose dimension and original alpha repair/gray/upload ordering without fallback",
+    "Complete source cache/document/PC/physical integration; no parity closure from helper tests"
+  ],
+  "parityRowsClosed": 0
+}

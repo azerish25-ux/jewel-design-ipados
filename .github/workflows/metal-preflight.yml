@@ -5,6 +5,7 @@ on:
     paths:
       - "native/Rendering/GdiRgbReference/**"
       - "reference/fixtures/gdi-rgb-windows-26300.json"
+      - "reference/fixtures/gdi-integer-windows-26300.json"
       - "scripts/verify-gdi-rgb-reference.cjs"
       - "tests/gdi-rgb-reference.test.cjs"
       - "src/Port/Documents/**"

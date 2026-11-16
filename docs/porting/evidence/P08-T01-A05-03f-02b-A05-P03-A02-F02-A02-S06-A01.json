@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "1334c076c6289265944728b9f55ad3b0c7d9235b",
+  "status": "integer_stretch_implemented_windows_verified_apple_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A01-integer-rgb.md",
+  "prerequisites": [
+    "docs/evidence/audit/rhino5-dib-creation-source.json",
+    "docs/porting/evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N04.json"
+  ],
+  "red": {
+    "exitCode": 1,
+    "failure": "Missing Rhino5GdiIntegerStretch"
+  },
+  "checks": {
+    "publicGdiExitCode": 0,
+    "newNativeCases": 1440,
+    "newNativeControls": 1824,
+    "newNativeSources": 288,
+    "exactPortableCases": 1596,
+    "explicitHalftoneRejections": 132,
+    "storageDepthBudgetGuards": 9,
+    "nativeHostExitCode": 0,
+    "originalTargetExecuted": false,
+    "adjacentNodeRegressions": 26,
+    "repositoryIntegrity": "passed"
+  },
+  "corpus": "reference/fixtures/gdi-integer-windows-26300.json",
+  "producer": "native/Rendering/GdiRgbReference/Program.cs",
+  "verifier": "scripts/verify-gdi-rgb-reference.cjs",
+  "outputHashes": {
+    "red": "5f2838d6e718bceae6e09dbaf6e1220eb1d2837488a67adb8e70d7ac79b1ac22",
+    "green": "f93a4fde5b9b39838d5f65bbcd7be5ea776e103b6aa04f8d17ba63660674efcb",
+    "native": "ffd5300d1b95c2c70f0b9a32c4e5c6fbec48accb7977dda8d14ed391f95d7893",
+    "adjacent": "bd72febacd318c1f22dbb6011f0c70e0f3a4b0ddf01d2acc5b3ac1e21721e671",
+    "nativeReference": "0fdd6d6f3a6891d8c4695e044a7be84b5e93784f8fb98cff1a8bc845355dd588",
+    "corpus": "825324680ebd34433663bf7af694ce9a0fc217fe6dd832f1b82f138eeef3fbfc",
+    "producer": "71070689c322416ec69618a6fb06749cae1332ac6eadfd3a17133573bd72841a"
+  },
+  "review": {
+    "discovery": "Initial center/floor model matched old156 cases but failed expanded mixed-axis controls. Observed current-host joint abs dimension delta<=1 selects clamped direct indices on both axes; otherwise center sample indices. Mode1 compressed spans run from previous selected sample+1 (first0) through current selected sample inclusive. Mode3 copies selected samples. Both24/32 stored bytes, source alpha and destination padding preserved.",
+    "holdout": "Joint-delta up/down/mixed/equal controls, dimensions differing2, axis swaps, strong shrink and last-pixel Boolean-tail patterns all included.1440 new native cases plus156 previous cases compare exact. Not an original vendor/MFC/OS/driver oracle.",
+    "remaining": "Actual Apple proof pending. Required HALFTONE childA02 and composed source preparation/integration childA03 remain open; palette/profile/negative-height conversion/source cache/PC/physical remain mandatory."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}
