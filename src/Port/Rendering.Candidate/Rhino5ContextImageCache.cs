@@ -42,7 +42,7 @@ public sealed class Rhino5ContextImageCache<T>:IDisposable where T:class,IDispos
  }
  private Lease NewLease(Entry entry){entry.Retain();return new(entry.Value,entry.Release);}
  public int ClearContext(ulong context){List<Entry> removed=[];lock(sync){ObjectDisposedException.ThrowIf(disposed,this);for(int i=entries.Count-1;i>=0;i--)if(entries[i].Key.Context==context){removed.Add(entries[i]);entries.RemoveAt(i);}mutation++;}ReleaseAll(removed);return removed.Count;}
- public int Invalidate(string filename){ArgumentNullException.ThrowIfNull(filename);List<Entry> removed=[];lock(sync){ObjectDisposedException.ThrowIf(disposed,this);for(int i=entries.Count-1;i>=0;i--)if(filenames.Compare(entries[i].Key.Filename,filename)==0){removed.Add(entries[i]);entries.RemoveAt(i);}mutation++;}ReleaseAll(removed);return removed.Count;}
+ public int Invalidate(string filename){ArgumentNullException.ThrowIfNull(filename);List<Entry> removed=[];lock(sync){ObjectDisposedException.ThrowIf(disposed,this);for(int i=entries.Count-1;i>=0;i--)if(filenames.Compare(entries[i].Key.Filename,filename)==0)removed.Add(entries[i]);foreach(var entry in removed)entries.Remove(entry);mutation++;}ReleaseAll(removed);return removed.Count;}
  private static void ReleaseAll(List<Entry> removed){List<Exception>? errors=null;foreach(var entry in removed)try{entry.Release();}catch(Exception e){(errors??=[]).Add(e);}if(errors is not null)throw new AggregateException("Cached image release failed.",errors);}
  public void Dispose(){List<Entry> removed;lock(sync){if(disposed)return;disposed=true;removed=entries.AsEnumerable().Reverse().ToList();entries.Clear();mutation++;}ReleaseAll(removed);}
  public sealed class Lease:IDisposable

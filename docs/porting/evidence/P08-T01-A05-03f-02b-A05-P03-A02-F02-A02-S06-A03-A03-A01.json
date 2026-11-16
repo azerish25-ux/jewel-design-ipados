@@ -88,10 +88,11 @@
   ],
   "red": [
     "Cache component absent before implementation.",
-    "Initial raw CRT empty-string comparison assertion failed because ON_wString wrapper returns signed1; corrected implementation using observed original wrapper, native expected data retained."
+    "Initial raw CRT empty-string comparison assertion failed because ON_wString wrapper returns signed1; corrected implementation using observed original wrapper, native expected data retained.",
+    "New comparison-failure regression reproduced partial invalidation and lost cache ownership. Invalidation now completes every comparison before any removal; failed comparison retains both entries and later valid invalidation retires both resources."
   ],
   "localValidation": {
-    "renderingTests": "pass including30 cache lifecycle cases/65536 exact UTF16 CRT-C lower units/1156 native comparison pairs",
+    "renderingTests": "pass including33 cache lifecycle cases/65536 exact UTF16 CRT-C lower units/1156 native comparison pairs",
     "geometryNativeHost": "pass",
     "nodeAdjacent": {
       "passed": 18,
