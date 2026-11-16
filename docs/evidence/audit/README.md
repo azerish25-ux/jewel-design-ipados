@@ -27,6 +27,8 @@ This is a source-backed feature/compatibility checklist for recovered CounterSke
 
 - [Original texture preparation](rhino5-image-preparation-source.json): corrected float ABI, device-size selection, cross-axis/budget order and alpha OR/stored-row semantics; no original runtime execution.
 
+- [Original texture final upload](rhino5-image-upload-source.json): seven original helpers,664 static enum results, BGR/BGRA versus internal compressed storage, allocation/subimage/mipmap and truthful native success limitations.
+
 ## Most consequential findings
 
 1. A PC portfolio is .csp XML plus GUID-pair .csg designs and sibling preview/history files. An STL/3DM geometry export is a different contract. [Project.cs:101](<../../../recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs#L101>) — public string ProjectInfoFilePath.

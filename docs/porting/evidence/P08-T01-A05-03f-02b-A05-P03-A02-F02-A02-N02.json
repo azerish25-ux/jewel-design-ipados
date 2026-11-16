@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N02",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "edf344f1864a231d534a44d40a332558a18ed3a4",
+  "status": "original_upload_static_verified_runtime_integration_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N02-upload-audit.md",
+  "audit": "docs/evidence/audit/rhino5-image-upload-source.json",
+  "checks": {
+    "targetExecuted": false,
+    "ghidraExitCode": 0,
+    "verifiedBodies": 7,
+    "staticEnumResults": 664,
+    "ghidraReportSha256": "771caecf6f54f404a00d4a7950bf0514c92af9d4051aa68b1819207836b8e2a5",
+    "logSha256": "e214c64bb4f9b010970730af0193cef4e32af9cc3c192e75ad51b2f7d8ad4521",
+    "launcherRegressions": 5,
+    "repositoryIntegrity": "passed"
+  },
+  "review": {
+    "correction": "Format classifier is storage units, not channel count; ordinary compressed-storage DIB input remains BGR/BGRA. Original upload boolean can be true without calling a missing compressed extension pointer.",
+    "scope": "Static original byte/ABI evidence. No product runtime change or original execution. Full compression/mipmap/resample/cache/document/PC/physical parity remains open."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

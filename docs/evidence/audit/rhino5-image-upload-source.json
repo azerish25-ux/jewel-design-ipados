@@ -1,0 +1,1166 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N02",
+  "inputCommit": "edf344f1864a231d534a44d40a332558a18ed3a4",
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "targetExecuted": false,
+  "manifest": "native/Analysis/fixtures/rhino5-image-upload-regions.json",
+  "methods": [
+    {
+      "role": "texture-initialize",
+      "name": null,
+      "abi": "textureInitialize",
+      "rva": 1753472,
+      "length": 351,
+      "sha256": "4634cb473d370764c13cd8493ef0abeaffba5bdfd8357894f5101771b2c978a7",
+      "unwindRegions": [
+        {
+          "begin": 1753472,
+          "end": 1753823,
+          "unwind": 20141132
+        }
+      ]
+    },
+    {
+      "role": "texture-raw-upload",
+      "name": null,
+      "abi": "textureRawUpload",
+      "rva": 1755760,
+      "length": 526,
+      "sha256": "2032f7ff50817d8e6313c284f0acef9ab5d8a7538027f7789c7d3f7074585c0b",
+      "unwindRegions": [
+        {
+          "begin": 1755760,
+          "end": 1756286,
+          "unwind": 20234084
+        }
+      ]
+    },
+    {
+      "role": "texture-internal-format",
+      "name": null,
+      "abi": "textureFormatMap",
+      "rva": 1750864,
+      "length": 607,
+      "sha256": "805f007184c80e1623cbeb420ac8ea19e8bff37a04ea1a486f15e4d1c1076116",
+      "unwindRegions": []
+    },
+    {
+      "role": "texture-sample-type",
+      "name": null,
+      "abi": "textureFormatMap",
+      "rva": 1751760,
+      "length": 279,
+      "sha256": "01b9660434d7b236199f9edc523e16e1aaced229730c81accd1729b150efa173",
+      "unwindRegions": []
+    },
+    {
+      "role": "texture-external-format",
+      "name": null,
+      "abi": "textureFormatMap",
+      "rva": 1752048,
+      "length": 528,
+      "sha256": "2a47b1def7fd8389856ee8377a683730d3b11881c5842a61e72a2547656ce2eb",
+      "unwindRegions": []
+    },
+    {
+      "role": "texture-format-storage",
+      "name": null,
+      "abi": "textureFormatMap",
+      "rva": 1754400,
+      "length": 299,
+      "sha256": "54d78bb9d2e5a2450a8b90f2234d2be240516954f2f0d5913ef2c5a4b8f036e9",
+      "unwindRegions": []
+    },
+    {
+      "role": "texture-upload-finish",
+      "name": null,
+      "abi": "textureFinish",
+      "rva": 1754304,
+      "length": 87,
+      "sha256": "513bba53942394bda1cf43f7f359a53308bad5f2eaa7e009fece1956be7f317f",
+      "unwindRegions": [
+        {
+          "begin": 1754304,
+          "end": 1754391,
+          "unwind": 19055176
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "texture-initialize",
+      "signature": "bool Original_texture_initialize(void * texture, uint target, uint format)",
+      "decompilerSha256": "31d4fdcde1166534ef81b5c337db64f606e6f1e76c6324af5a51225ba2604469"
+    },
+    {
+      "role": "texture-raw-upload",
+      "signature": "bool Original_texture_raw_upload(void * texture, uint width, uint height, uint format, uint sampleType, void * pixels)",
+      "decompilerSha256": "df1ec5c25751c94527f2c580f23cb8b909f3a0a18b6b76e17368930954c7689d"
+    },
+    {
+      "role": "texture-internal-format",
+      "signature": "uint Original_texture_internal_format(uint format)",
+      "decompilerSha256": "634ee9500c9faafc8c8c77615a7e6ed9aadec24de4661e5275e5c519fda577f5"
+    },
+    {
+      "role": "texture-sample-type",
+      "signature": "uint Original_texture_sample_type(uint format)",
+      "decompilerSha256": "39dbbec2204b7ffe34724a14d9095aa2fbf1866c46124b000f1d442b982bdea9"
+    },
+    {
+      "role": "texture-external-format",
+      "signature": "uint Original_texture_external_format(uint format)",
+      "decompilerSha256": "903f6d4b58b88a9844c4b79debf341b3e5beab30298929247a1cf524ad7f5f59"
+    },
+    {
+      "role": "texture-format-storage",
+      "signature": "uint Original_texture_format_storage(uint format)",
+      "decompilerSha256": "d81dc62fbc346f67a88b0db16f6f689e725f0de5b7fe83e9aea3466e52735c2e"
+    },
+    {
+      "role": "texture-upload-finish",
+      "signature": "bool Original_texture_upload_finish(void * texture)",
+      "decompilerSha256": "b818df1a75dc25c559f6151f09ea4d81708d0f2d984f4fdbc7b586b450004156"
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "glTexImage2D",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "uint",
+        "uint",
+        "void*"
+      ]
+    },
+    {
+      "name": "glTexSubImage2D",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "uint",
+        "uint",
+        "void*"
+      ]
+    },
+    {
+      "name": "glBindTexture",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint"
+      ]
+    },
+    {
+      "name": "glGenTextures",
+      "returnType": "void",
+      "parameters": [
+        "int",
+        "uint*"
+      ]
+    },
+    {
+      "name": "glTexParameteri",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "int"
+      ]
+    },
+    {
+      "name": "glTexEnvi",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "int"
+      ]
+    },
+    {
+      "name": "glHint",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint"
+      ]
+    },
+    {
+      "name": "glDisable",
+      "returnType": "void",
+      "parameters": [
+        "uint"
+      ]
+    }
+  ],
+  "staticFormatTable": {
+    "columns": [
+      "format",
+      "internalOff",
+      "internalOn",
+      "sampleTypeOff",
+      "sampleTypeOn",
+      "externalOff",
+      "externalOn",
+      "storageOff",
+      "storageOn"
+    ],
+    "rows": [
+      [
+        1,
+        32849,
+        32849,
+        5121,
+        5121,
+        6407,
+        6407,
+        3,
+        3
+      ],
+      [
+        2,
+        32856,
+        32856,
+        5121,
+        5121,
+        32993,
+        32993,
+        4,
+        4
+      ],
+      [
+        3,
+        32849,
+        32849,
+        5121,
+        5121,
+        32992,
+        32992,
+        3,
+        3
+      ],
+      [
+        4,
+        32856,
+        32856,
+        5121,
+        5121,
+        32993,
+        32993,
+        4,
+        4
+      ],
+      [
+        5,
+        6402,
+        6402,
+        5126,
+        5126,
+        6402,
+        6402,
+        4,
+        4
+      ],
+      [
+        6,
+        33189,
+        33189,
+        5126,
+        5126,
+        6402,
+        6402,
+        2,
+        2
+      ],
+      [
+        7,
+        33190,
+        33190,
+        5126,
+        5126,
+        6402,
+        6402,
+        3,
+        3
+      ],
+      [
+        8,
+        33191,
+        33191,
+        5126,
+        5126,
+        6402,
+        6402,
+        4,
+        4
+      ],
+      [
+        9,
+        32856,
+        32856,
+        5121,
+        5121,
+        32993,
+        32993,
+        4,
+        4
+      ],
+      [
+        10,
+        32856,
+        32856,
+        5121,
+        5121,
+        32993,
+        32993,
+        4,
+        4
+      ],
+      [
+        11,
+        32847,
+        32847,
+        5121,
+        5121,
+        6407,
+        6407,
+        2,
+        2
+      ],
+      [
+        12,
+        32854,
+        32854,
+        5121,
+        5121,
+        32993,
+        32993,
+        2,
+        2
+      ],
+      [
+        13,
+        32853,
+        32853,
+        5121,
+        5121,
+        32993,
+        32993,
+        1,
+        1
+      ],
+      [
+        14,
+        10768,
+        10768,
+        5121,
+        5121,
+        6407,
+        6407,
+        1,
+        1
+      ],
+      [
+        15,
+        32850,
+        32850,
+        5123,
+        5123,
+        6407,
+        6407,
+        4,
+        4
+      ],
+      [
+        16,
+        32857,
+        32857,
+        32822,
+        32822,
+        32993,
+        32993,
+        4,
+        4
+      ],
+      [
+        17,
+        32851,
+        32851,
+        5123,
+        5123,
+        6407,
+        6407,
+        5,
+        5
+      ],
+      [
+        18,
+        32858,
+        32858,
+        5123,
+        5123,
+        32993,
+        32993,
+        6,
+        6
+      ],
+      [
+        19,
+        32852,
+        32852,
+        5123,
+        5123,
+        6407,
+        6407,
+        6,
+        6
+      ],
+      [
+        20,
+        32859,
+        32859,
+        5123,
+        5123,
+        32993,
+        32993,
+        8,
+        8
+      ],
+      [
+        21,
+        32831,
+        32831,
+        5121,
+        5121,
+        6409,
+        6409,
+        1,
+        1
+      ],
+      [
+        22,
+        32832,
+        32832,
+        5121,
+        5121,
+        6409,
+        6409,
+        1,
+        1
+      ],
+      [
+        23,
+        32827,
+        32827,
+        5121,
+        5121,
+        6406,
+        6406,
+        1,
+        1
+      ],
+      [
+        24,
+        32828,
+        32828,
+        5121,
+        5121,
+        6406,
+        6406,
+        1,
+        1
+      ],
+      [
+        25,
+        32829,
+        32829,
+        5121,
+        5121,
+        6406,
+        6406,
+        2,
+        2
+      ],
+      [
+        26,
+        32830,
+        32830,
+        5121,
+        5121,
+        6406,
+        6406,
+        2,
+        2
+      ],
+      [
+        27,
+        32841,
+        32841,
+        5121,
+        5121,
+        6407,
+        6407,
+        1,
+        1
+      ],
+      [
+        28,
+        32842,
+        32842,
+        5121,
+        5121,
+        6407,
+        6407,
+        1,
+        1
+      ],
+      [
+        29,
+        32843,
+        32843,
+        5121,
+        5121,
+        6407,
+        6407,
+        1,
+        1
+      ],
+      [
+        30,
+        32844,
+        32844,
+        5121,
+        5121,
+        6407,
+        6407,
+        2,
+        2
+      ],
+      [
+        31,
+        32845,
+        32845,
+        5121,
+        5121,
+        6407,
+        6407,
+        2,
+        2
+      ],
+      [
+        32,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        33,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        34,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        35,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        36,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        37,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        38,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        39,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        40,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        41,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        42,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        43,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        44,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        45,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        46,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        47,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        48,
+        34029,
+        34029,
+        5121,
+        5121,
+        6407,
+        6407,
+        3,
+        3
+      ],
+      [
+        49,
+        34030,
+        34030,
+        5121,
+        5121,
+        32993,
+        32993,
+        4,
+        4
+      ],
+      [
+        50,
+        6407,
+        33776,
+        5121,
+        50,
+        6407,
+        33776,
+        3,
+        8
+      ],
+      [
+        51,
+        6408,
+        33777,
+        5121,
+        51,
+        6408,
+        33777,
+        4,
+        8
+      ],
+      [
+        52,
+        6408,
+        33778,
+        5121,
+        52,
+        6408,
+        33778,
+        4,
+        16
+      ],
+      [
+        53,
+        6408,
+        33779,
+        5121,
+        53,
+        6408,
+        33779,
+        4,
+        16
+      ],
+      [
+        54,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        55,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        56,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        57,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        58,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        59,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        60,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        61,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        62,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        63,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        64,
+        34843,
+        34843,
+        5131,
+        5131,
+        6407,
+        6407,
+        6,
+        6
+      ],
+      [
+        65,
+        34842,
+        34842,
+        5131,
+        5131,
+        32993,
+        32993,
+        8,
+        8
+      ],
+      [
+        66,
+        34844,
+        34844,
+        5131,
+        5131,
+        6406,
+        6406,
+        2,
+        2
+      ],
+      [
+        67,
+        34845,
+        34845,
+        5131,
+        5131,
+        6407,
+        6407,
+        2,
+        2
+      ],
+      [
+        68,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        69,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        70,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        71,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        72,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        73,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        74,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        75,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        76,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        77,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        78,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        79,
+        6407,
+        6407,
+        5121,
+        5121,
+        32992,
+        32992,
+        0,
+        0
+      ],
+      [
+        80,
+        34837,
+        34837,
+        5126,
+        5126,
+        6407,
+        6407,
+        12,
+        12
+      ],
+      [
+        81,
+        34836,
+        34836,
+        5126,
+        5126,
+        32993,
+        32993,
+        16,
+        16
+      ],
+      [
+        82,
+        34838,
+        34838,
+        5126,
+        5126,
+        6406,
+        6406,
+        4,
+        4
+      ],
+      [
+        83,
+        34839,
+        34839,
+        5126,
+        5126,
+        6407,
+        6407,
+        4,
+        4
+      ]
+    ],
+    "validation": "All83 enum entries in four original byte-index/jump tables and both global compression states were resolved through recognized machine-code return leaves.664 scalar results. Tables/data included in region hashes. This is static byte evaluation, not original runtime execution.",
+    "sha256": "37bd8f2d86fcf057528ac1722a4f80ead0145f90d3f2c0b98b6186a066a64a5b",
+    "defaults": {
+      "internal": 6407,
+      "sampleType": 5121,
+      "external": 32992,
+      "storage": 0
+    },
+    "defaultScope": "Outside enum1..83; external mapper additionally accepts observed native GL enum cases, recorded in Ghidra output but not fully represented in this enum table."
+  },
+  "observations": {
+    "bitmap": "The normal DIB wrapper1ad030 chooses requested internal enum1 for24bit or2 otherwise; when texture+0x8c is set it chooses0x30/0x31. It always passes raw external enum3 for24bit or4 otherwise, sampleType0x1401. This is ordinary glTexImage2D input, not a precompressed DXT byte buffer.",
+    "channels": "enum3 maps GL_BGR0x80e0; enum4 maps GL_BGRA0x80e1. Internal enum1/3 maps RGB8 0x8051, enum2/4 maps RGBA8 0x8058. Generic compressed storage requests0x30/0x31 map0x84ed/0x84ee, with ordinary BGR/BGRA input retained. Exact compression output is driver-dependent/unmeasured.",
+    "storage": "Helper1ac520 is storage units: bytes per represented pixel for ordinary enum families, bytes per4x4 block for enabled S3TC0x32..0x35. It is not a universal channel count. Preserve original anomalous family values; do not normalize by guessed names.",
+    "allocation": "Raw1aca70 rejects only null pixels or texture name0 before binding. Unsigned width>=storedWidth AND height>=storedHeight chooses allocation; either smaller chooses subimage at level0/offset0. Equal sizes allocate. DIB wrapper stores current dimensions before calling, therefore selects allocation on its normal path.",
+    "compressed": "Only external enum0x32..0x35 plus global1415c2ad3 use compressed image/subimage function pointers. Byte count is unchecked uint32(storage*((width+3)>>2)*((height+3)>>2)); widths+3 wrap before shift. Missing compressed upload function pointer skips upload but still follows cleanup and returns true. Never equate original boolean success with actual GPU output.",
+    "mipmaps": "After uncompressed upload, texture+0x34>0 and global1415c2c40 cause indirect target-only mipmap call through1415c2c38. Compressed branch suppresses it. Initialization also sets0x8191 to mipmap-enabled flag and hint0x8192/0x1102 when that global is set. Capability initialization and exact legacy driver effects remain separate.",
+    "state": "Initialize releases/updates through unresolved virtual slots+0x80/+0x78, stores target/format/sampleType at+0x14/+0x10/+0x18, generates name if0, binds, applies environment/wrap/min/mag and disables texgenS/T/R/Q. Finish optionally switches active unit from+0x90, disables target, unbinds when name nonzero, restores unit0x84c0 and returns true. No glGetError call observed in these bodies.",
+    "abiReview": "x64 raw args RCX texture,EDX width,R8D height,R9D format,caller stack+0x28 sampleType,+0x30 pixels. Width/height comparisons are unsigned; compressed format range signed. Finish AL=1 confirmed atRET; corrected explicit bool ABI. Indirect extension/virtual callees are identified by instruction arguments; decompiler guessed prototypes are not authoritative."
+  },
+  "primaryApiReference": "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/api/GL/glext.h",
+  "remaining": [
+    "Source extension pointer initialization and actual driver/compressed mipmap behavior",
+    "Original GDI RGB HALFTONE resampling/profile conversions and DIB row alignment",
+    "Cache invalidation/current context/document file fallback/setter failure ordering",
+    "Map source sampler/mipmap/anisotropy and compression capabilities onto real iOS Metal resources without silent approximation",
+    "Actual PC/project corpus and physical-device acceptance"
+  ],
+  "allLocalWritesD": true,
+  "parityRowsClosed": 0
+}

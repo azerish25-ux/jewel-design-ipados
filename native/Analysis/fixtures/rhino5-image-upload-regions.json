@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "texture-initialize",
+      "name": null,
+      "abi": "textureInitialize",
+      "rva": 1753472,
+      "length": 351,
+      "sha256": "4634cb473d370764c13cd8493ef0abeaffba5bdfd8357894f5101771b2c978a7",
+      "unwindRegions": [
+        {
+          "begin": 1753472,
+          "end": 1753823,
+          "unwind": 20141132
+        }
+      ]
+    },
+    {
+      "role": "texture-raw-upload",
+      "name": null,
+      "abi": "textureRawUpload",
+      "rva": 1755760,
+      "length": 526,
+      "sha256": "2032f7ff50817d8e6313c284f0acef9ab5d8a7538027f7789c7d3f7074585c0b",
+      "unwindRegions": [
+        {
+          "begin": 1755760,
+          "end": 1756286,
+          "unwind": 20234084
+        }
+      ]
+    },
+    {
+      "role": "texture-internal-format",
+      "name": null,
+      "abi": "textureFormatMap",
+      "rva": 1750864,
+      "length": 607,
+      "sha256": "805f007184c80e1623cbeb420ac8ea19e8bff37a04ea1a486f15e4d1c1076116",
+      "unwindRegions": []
+    },
+    {
+      "role": "texture-sample-type",
+      "name": null,
+      "abi": "textureFormatMap",
+      "rva": 1751760,
+      "length": 279,
+      "sha256": "01b9660434d7b236199f9edc523e16e1aaced229730c81accd1729b150efa173",
+      "unwindRegions": []
+    },
+    {
+      "role": "texture-external-format",
+      "name": null,
+      "abi": "textureFormatMap",
+      "rva": 1752048,
+      "length": 528,
+      "sha256": "2a47b1def7fd8389856ee8377a683730d3b11881c5842a61e72a2547656ce2eb",
+      "unwindRegions": []
+    },
+    {
+      "role": "texture-format-storage",
+      "name": null,
+      "abi": "textureFormatMap",
+      "rva": 1754400,
+      "length": 299,
+      "sha256": "54d78bb9d2e5a2450a8b90f2234d2be240516954f2f0d5913ef2c5a4b8f036e9",
+      "unwindRegions": []
+    },
+    {
+      "role": "texture-upload-finish",
+      "name": null,
+      "abi": "textureFinish",
+      "rva": 1754304,
+      "length": 87,
+      "sha256": "513bba53942394bda1cf43f7f359a53308bad5f2eaa7e009fece1956be7f317f",
+      "unwindRegions": [
+        {
+          "begin": 1754304,
+          "end": 1754391,
+          "unwind": 19055176
+        }
+      ]
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "glTexImage2D",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "uint",
+        "uint",
+        "void*"
+      ]
+    },
+    {
+      "name": "glTexSubImage2D",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "int",
+        "int",
+        "int",
+        "int",
+        "int",
+        "uint",
+        "uint",
+        "void*"
+      ]
+    },
+    {
+      "name": "glBindTexture",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint"
+      ]
+    },
+    {
+      "name": "glGenTextures",
+      "returnType": "void",
+      "parameters": [
+        "int",
+        "uint*"
+      ]
+    },
+    {
+      "name": "glTexParameteri",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "int"
+      ]
+    },
+    {
+      "name": "glTexEnvi",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "int"
+      ]
+    },
+    {
+      "name": "glHint",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint"
+      ]
+    },
+    {
+      "name": "glDisable",
+      "returnType": "void",
+      "parameters": [
+        "uint"
+      ]
+    }
+  ]
+}

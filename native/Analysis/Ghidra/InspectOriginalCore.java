@@ -34,7 +34,10 @@ public class InspectOriginalCore extends RefineNativeCamera {
     if(spec.has("name")&&!spec.get("name").isJsonNull())signatures.add(demangle(function,spec.get("name").getAsString()));
     else {
      String abi=spec.get("abi").getAsString();List<Variable> parameters=new ArrayList<>();
-     if(abi.equals("textureMaximum")){
+     if(abi.equals("textureFormatMap")){parameters.add(new ParameterImpl("format",observedType("uint"),currentProgram));
+     }else if(abi.equals("textureInitialize")){parameters.add(new ParameterImpl("texture",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("target",observedType("uint"),currentProgram));parameters.add(new ParameterImpl("format",observedType("uint"),currentProgram));
+     }else if(abi.equals("textureRawUpload")){parameters.add(new ParameterImpl("texture",observedType("void*"),currentProgram));for(String name:new String[]{"width","height","format","sampleType"})parameters.add(new ParameterImpl(name,observedType("uint"),currentProgram));parameters.add(new ParameterImpl("pixels",observedType("void*"),currentProgram));
+     }else if(abi.equals("textureMaximum")){
      }else if(abi.equals("textureDimensions")){
       parameters.add(new ParameterImpl("dib",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("memoryFraction",observedType("float"),currentProgram));parameters.add(new ParameterImpl("powerOfTwo",BooleanDataType.dataType,currentProgram));parameters.add(new ParameterImpl("width",observedType("int*"),currentProgram));parameters.add(new ParameterImpl("height",observedType("int*"),currentProgram));
      }else if(abi.equals("alphaRepair")){for(String name:new String[]{"source","destination"})parameters.add(new ParameterImpl(name,observedType("void*"),currentProgram));
@@ -50,7 +53,7 @@ public class InspectOriginalCore extends RefineNativeCamera {
       parameters.add(new ParameterImpl("manager",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("filename",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("gray",BooleanDataType.dataType,currentProgram));parameters.add(new ParameterImpl("context",observedType("void*"),currentProgram));
      }else if(abi.equals("gdiTraceLookup")){
       for(String name:new String[]{"manager","trace","engine"})parameters.add(new ParameterImpl(name,observedType("void*"),currentProgram));
-     }else if(abi.equals("textureBind")){parameters.add(new ParameterImpl("texture",observedType("void*"),currentProgram));
+     }else if(abi.equals("textureFinish")||abi.equals("textureBind")){parameters.add(new ParameterImpl("texture",observedType("void*"),currentProgram));
      }else if(abi.equals("viewValidation")||abi.equals("viewportIdRestore")){
       parameters.add(new ParameterImpl("view",new PointerDataType(VoidDataType.dataType,currentProgram.getDataTypeManager()),currentProgram));
       if(abi.equals("viewportIdRestore"))parameters.add(new ParameterImpl("oldViewportId",new PointerDataType(VoidDataType.dataType,currentProgram.getDataTypeManager()),currentProgram));
@@ -62,7 +65,7 @@ public class InspectOriginalCore extends RefineNativeCamera {
      if(abi.equals("perspectiveHelper"))parameters.add(new ParameterImpl("lens",DoubleDataType.dataType,currentProgram));
      else if(!abi.equals("targetUpdate"))throw new Exception("Unknown observed helper ABI");
      }
-     DataType result=abi.equals("textureMaximum")?observedType("uint"):(abi.equals("textureLookup")||abi.equals("gdiTraceLookup")||abi.equals("textureEntryFind")||abi.equals("textureCreate")||abi.equals("bitmapCacheFind"))?observedType("void*"):(abi.equals("textureDimensions")||abi.equals("alphaRepair")||abi.equals("textureBind")||abi.equals("targetUpdate")||abi.equals("voidNoArgs")||abi.equals("viewMerge")||abi.equals("viewportIdRestore"))?VoidDataType.dataType:BooleanDataType.dataType;
+     DataType result=(abi.equals("textureMaximum")||abi.equals("textureFormatMap"))?observedType("uint"):(abi.equals("textureLookup")||abi.equals("gdiTraceLookup")||abi.equals("textureEntryFind")||abi.equals("textureCreate")||abi.equals("bitmapCacheFind"))?observedType("void*"):(abi.equals("textureDimensions")||abi.equals("alphaRepair")||abi.equals("textureBind")||abi.equals("targetUpdate")||abi.equals("voidNoArgs")||abi.equals("viewMerge")||abi.equals("viewportIdRestore"))?VoidDataType.dataType:BooleanDataType.dataType;
      function.updateFunction("__fastcall",new ReturnParameterImpl(result,currentProgram),parameters,Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,true,SourceType.USER_DEFINED);
     }
    }
