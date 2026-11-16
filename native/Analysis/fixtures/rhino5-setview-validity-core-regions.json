@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "viewport-is-valid",
+      "name": "?IsValid@ON_Viewport@@UEBAHPEAVON_TextLog@@@Z",
+      "abi": null,
+      "rva": 2940640,
+      "length": 116,
+      "sha256": "e5442d41c0b2c077d80e98d549c13c8d9b8f766a85691dddca6a6db8c19fc95f",
+      "unwindRegions": [
+        {
+          "begin": 2940640,
+          "end": 2940756,
+          "unwind": 3638708
+        }
+      ]
+    }
+  ]
+}

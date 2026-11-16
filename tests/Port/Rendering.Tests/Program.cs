@@ -20,3 +20,4 @@ System.Console.WriteLine(CandidateGeometryContractChecks.UserStringProvenanceAss
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5RuntimeViewAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5ViewHistoryAssertions.Run());
 System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5PopMergeAssertions.Run());
+System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5SetViewPreflightAssertions.Run());

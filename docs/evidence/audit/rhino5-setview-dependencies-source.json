@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P02",
+  "targetExecuted": false,
+  "mainSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "coreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "methods": [
+    {
+      "role": "setview-validation",
+      "abi": "viewValidation",
+      "rva": 2532352,
+      "name": null,
+      "length": 633,
+      "sha256": "e3f19d71b027f71905c893da1d148eaa1351682bfcba03b940ef8bdfe54ff89b",
+      "unwindRegions": [
+        {
+          "begin": 2532352,
+          "end": 2532763,
+          "unwind": 19026472
+        },
+        {
+          "begin": 2532763,
+          "end": 2532985,
+          "unwind": 19016056
+        }
+      ]
+    },
+    {
+      "role": "setview-uuid-restore",
+      "abi": "viewportIdRestore",
+      "rva": 2531968,
+      "name": null,
+      "length": 378,
+      "sha256": "23502ead26f1682e918b81d1fe2826fcc76ebc0f91ac9a488d33087d185c9332",
+      "unwindRegions": [
+        {
+          "begin": 2531968,
+          "end": 2532346,
+          "unwind": 19656720
+        }
+      ]
+    }
+  ],
+  "coreMethods": [
+    {
+      "role": "viewport-is-valid",
+      "name": "?IsValid@ON_Viewport@@UEBAHPEAVON_TextLog@@@Z",
+      "abi": null,
+      "rva": 2940640,
+      "length": 116,
+      "sha256": "e5442d41c0b2c077d80e98d549c13c8d9b8f766a85691dddca6a6db8c19fc95f",
+      "unwindRegions": [
+        {
+          "begin": 2940640,
+          "end": 2940756,
+          "unwind": 3638708
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "setview-validation",
+      "entry": "14026a400",
+      "signature": "bool Original_setview_validation(void * view)",
+      "decompilerSha256": "afd0ca7c49c3a33948947814b017ad4ebb78bd1049a7a87fdc0a8abdb63b82be"
+    },
+    {
+      "role": "setview-uuid-restore",
+      "entry": "14026a280",
+      "signature": "void Original_setview_uuid_restore(void * view, void * oldViewportId)",
+      "decompilerSha256": "2706e33225069e6eaf19131fad5c3f9740f324ff28a02540caa5bd1007df07c0"
+    }
+  ],
+  "coreViews": [
+    {
+      "role": "viewport-is-valid",
+      "entry": "1802cdee0",
+      "signature": "int IsValid(ON_TextLog * param_1)",
+      "decompilerSha256": "dac50d355a5904500ff395d38d1c6b13691e70a141a3deb85b6ae0863470d1cc"
+    }
+  ],
+  "constants": [
+    {
+      "rva": 17760104,
+      "hex": "ac43d2d15d72323c"
+    },
+    {
+      "rva": 17751328,
+      "hex": "00c84e676dc1ab43"
+    },
+    {
+      "rva": 17729848,
+      "hex": "000000000000f03d"
+    },
+    {
+      "rva": 17727680,
+      "hex": "ffffffffffffff7f"
+    }
+  ],
+  "observations": [
+    "Validation call receives input view in RCX and consumes AL bool. The virtual viewport IsValid(null) checks camera/frustum/port flags only.",
+    "Checks original scalar validity on location/requested direction/up and X/Y/Z basis, all frustum fields, absolute width/height spans1e-18..1e18 inclusive. Projection2 additionally checks near>=2^-32; no normalization, enum coercion or far/near ordering is added.",
+    "UUID helper collects bound display conduits, removes existing bindings to this viewport, changes viewport UUID, then re-adds missing bindings with viewport pointer/current UUID. This is a concrete display integration dependency, not just a UUID assignment."
+  ],
+  "limits": [
+    "Static original analysis, not original runtime outputs.",
+    "Preflight implementation does not execute full SetView/conduit/image/display/parent/document effects.",
+    "Managed disposed/null guards remain explicit safety boundaries."
+  ]
+}

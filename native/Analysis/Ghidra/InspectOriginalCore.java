@@ -30,7 +30,10 @@ public class InspectOriginalCore extends RefineNativeCamera {
     if(spec.has("name")&&!spec.get("name").isJsonNull())signatures.add(demangle(function,spec.get("name").getAsString()));
     else {
      String abi=spec.get("abi").getAsString();List<Variable> parameters=new ArrayList<>();
-     if(abi.equals("viewMerge")){
+     if(abi.equals("viewValidation")||abi.equals("viewportIdRestore")){
+      parameters.add(new ParameterImpl("view",new PointerDataType(VoidDataType.dataType,currentProgram.getDataTypeManager()),currentProgram));
+      if(abi.equals("viewportIdRestore"))parameters.add(new ParameterImpl("oldViewportId",new PointerDataType(VoidDataType.dataType,currentProgram.getDataTypeManager()),currentProgram));
+     }else if(abi.equals("viewMerge")){
       for(String name:new String[]{"savedView","currentView","resultView"})parameters.add(new ParameterImpl(name,new PointerDataType(VoidDataType.dataType,currentProgram.getDataTypeManager()),currentProgram));
      }else if(!abi.equals("voidNoArgs")){
      parameters.add(new ParameterImpl("viewport",new PointerDataType(VoidDataType.dataType,currentProgram.getDataTypeManager()),currentProgram));
@@ -38,7 +41,7 @@ public class InspectOriginalCore extends RefineNativeCamera {
      if(abi.equals("perspectiveHelper"))parameters.add(new ParameterImpl("lens",DoubleDataType.dataType,currentProgram));
      else if(!abi.equals("targetUpdate"))throw new Exception("Unknown observed helper ABI");
      }
-     DataType result=(abi.equals("targetUpdate")||abi.equals("voidNoArgs")||abi.equals("viewMerge"))?VoidDataType.dataType:BooleanDataType.dataType;
+     DataType result=(abi.equals("targetUpdate")||abi.equals("voidNoArgs")||abi.equals("viewMerge")||abi.equals("viewportIdRestore"))?VoidDataType.dataType:BooleanDataType.dataType;
      function.updateFunction("__fastcall",new ReturnParameterImpl(result,currentProgram),parameters,Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,true,SourceType.USER_DEFINED);
     }
    }

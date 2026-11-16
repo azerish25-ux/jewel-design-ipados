@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "setview-validation",
+      "abi": "viewValidation",
+      "rva": 2532352,
+      "name": null,
+      "length": 633,
+      "sha256": "e3f19d71b027f71905c893da1d148eaa1351682bfcba03b940ef8bdfe54ff89b",
+      "unwindRegions": [
+        {
+          "begin": 2532352,
+          "end": 2532763,
+          "unwind": 19026472
+        },
+        {
+          "begin": 2532763,
+          "end": 2532985,
+          "unwind": 19016056
+        }
+      ]
+    },
+    {
+      "role": "setview-uuid-restore",
+      "abi": "viewportIdRestore",
+      "rva": 2531968,
+      "name": null,
+      "length": 378,
+      "sha256": "23502ead26f1682e918b81d1fe2826fcc76ebc0f91ac9a488d33087d185c9332",
+      "unwindRegions": [
+        {
+          "begin": 2531968,
+          "end": 2532346,
+          "unwind": 19656720
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P02",
+  "parentTask": "P08-T01-A05-03f-02b-A05",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "setview_preflight_windows_passed_apple_pending_full_setview_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P02-setview-preflight.md",
+  "audit": "docs/evidence/audit/rhino5-setview-dependencies-source.json",
+  "inputCommit": "ff3b6dad3f656eb899cd60b14e4e5bedc5fba280",
+  "red": [
+    {
+      "exitCode": 1,
+      "failure": "Missing Rhino5SetViewPreflight"
+    }
+  ],
+  "checks": {
+    "preflightCases": 179,
+    "fullNativeHostExitCode": 0,
+    "nativeOutputSha256": "fb27891854b248a84bd911bd731829aab6b5249f8abab9260654b98ab050cbf1",
+    "adjacentNodeRegressions": 57,
+    "nodeOutputSha256": "6b768ae0b022b4e8792c019ea768efa2647c3db6d2d590b0dd3f6bb6f4e02bff",
+    "originalTargetExecuted": false
+  },
+  "review": {
+    "behavior": "Original three validity flags, all camera/requested/basis and frustum scalar checks, inclusive absolute span1e-18..1e18 limits and projection2 near>=2^-32. Read-only, no normalizing frame/bounds or invented enum/far-order rules.",
+    "boundary": "Null/disposed managed objects reject explicitly; no original native pointer/undefined access emulation.",
+    "remaining": "Actual SetView must integrate conduit unbind/change/rebind, parent page/detail selection, positions/cplane, names/images/display, serial/screen-cache and document effects. Full Pop still pending."
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only; shared CLI configuration untouched",
+  "parityRowsClosed": 0
+}
