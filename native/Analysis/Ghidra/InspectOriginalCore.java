@@ -34,7 +34,18 @@ public class InspectOriginalCore extends RefineNativeCamera {
     if(spec.has("name")&&!spec.get("name").isJsonNull())signatures.add(demangle(function,spec.get("name").getAsString()));
     else {
      String abi=spec.get("abi").getAsString();List<Variable> parameters=new ArrayList<>();
-     if(abi.equals("viewValidation")||abi.equals("viewportIdRestore")){
+     if(abi.equals("textureEntryFind")){
+      for(String name:new String[]{"manager","filename","context"})parameters.add(new ParameterImpl(name,observedType("void*"),currentProgram));parameters.add(new ParameterImpl("kind",observedType("uint"),currentProgram));
+     }else if(abi.equals("textureCreate")){
+      parameters.add(new ParameterImpl("filename",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("gray",BooleanDataType.dataType,currentProgram));parameters.add(new ParameterImpl("option",observedType("uint"),currentProgram));parameters.add(new ParameterImpl("context",observedType("void*"),currentProgram));
+     }else if(abi.equals("bitmapCacheFind")){
+      parameters.add(new ParameterImpl("manager",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("filename",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("gray",BooleanDataType.dataType,currentProgram));
+     }else if(abi.equals("textureLookup")){
+      parameters.add(new ParameterImpl("manager",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("filename",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("gray",BooleanDataType.dataType,currentProgram));parameters.add(new ParameterImpl("context",observedType("void*"),currentProgram));
+     }else if(abi.equals("gdiTraceLookup")){
+      for(String name:new String[]{"manager","trace","engine"})parameters.add(new ParameterImpl(name,observedType("void*"),currentProgram));
+     }else if(abi.equals("textureBind")){parameters.add(new ParameterImpl("texture",observedType("void*"),currentProgram));
+     }else if(abi.equals("viewValidation")||abi.equals("viewportIdRestore")){
       parameters.add(new ParameterImpl("view",new PointerDataType(VoidDataType.dataType,currentProgram.getDataTypeManager()),currentProgram));
       if(abi.equals("viewportIdRestore"))parameters.add(new ParameterImpl("oldViewportId",new PointerDataType(VoidDataType.dataType,currentProgram.getDataTypeManager()),currentProgram));
      }else if(abi.equals("viewMerge")){
@@ -45,7 +56,7 @@ public class InspectOriginalCore extends RefineNativeCamera {
      if(abi.equals("perspectiveHelper"))parameters.add(new ParameterImpl("lens",DoubleDataType.dataType,currentProgram));
      else if(!abi.equals("targetUpdate"))throw new Exception("Unknown observed helper ABI");
      }
-     DataType result=(abi.equals("targetUpdate")||abi.equals("voidNoArgs")||abi.equals("viewMerge")||abi.equals("viewportIdRestore"))?VoidDataType.dataType:BooleanDataType.dataType;
+     DataType result=(abi.equals("textureLookup")||abi.equals("gdiTraceLookup")||abi.equals("textureEntryFind")||abi.equals("textureCreate")||abi.equals("bitmapCacheFind"))?observedType("void*"):(abi.equals("textureBind")||abi.equals("targetUpdate")||abi.equals("voidNoArgs")||abi.equals("viewMerge")||abi.equals("viewportIdRestore"))?VoidDataType.dataType:BooleanDataType.dataType;
      function.updateFunction("__fastcall",new ReturnParameterImpl(result,currentProgram),parameters,Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,true,SourceType.USER_DEFINED);
     }
    }

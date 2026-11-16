@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "199cc3dcece54b6b1df3237c306a1258442cfaf1",
-  "status": "portable_straight_provider_windows_passed_actual_ios_decode_gpu_pending",
+  "status": "exact_png_sample_path_windows_passed_actual_ios_retest_pending",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S01-straight-provider.md",
   "nativePrerequisite": "docs/evidence/apple/native-image-provider-results.json",
   "red": {
@@ -17,21 +17,38 @@
     "portableCases": 46,
     "nativeHostExitCode": 0,
     "adjacentNodeRegressions": 57,
-    "originalTargetExecuted": false
+    "originalTargetExecuted": false,
+    "pngSampleCases": 84
   },
   "outputHashes": {
     "red": "adaf10ea9fdc2ffdbcbabbe569c128a625b3a39068a933b676bbb84de20a54b7",
-    "green": "9c4d64c5452eb52aa1c164d90cf22c796e570477ba9f7043ec9477d1630848ac",
-    "native": "a1d736ebea9a9321b9199c5a1c45c4382ee778e048be4d4c5af4e93c1b1f68e9",
-    "adjacent": "0d6c25ad64850c4e390391939abdf38a604f7658cda5432f41237050142b968c"
+    "green": "7c7f88da2a26ccdab118709e81e98e7980703e7ff8999904daf498c26181cf72",
+    "native": "96a30fbcaa973e4bcc6a98dd5cb7e08900c7e81aea79558e51d1d6ea8bda81f4",
+    "adjacent": "aea8f3aae725cc01ad05af02d71dcb441597f67b9b69d0a0ee479ae614b337b7",
+    "png": "7c7f88da2a26ccdab118709e81e98e7980703e7ff8999904daf498c26181cf72",
+    "pngRed": "b17d493648e4fea15ad0af25b7279ce92707e0635b1542c18b0d4b14153a200b"
   },
   "review": {
     "conversion": "Lossless supported RGB8 channel/row repacking only. No premul alpha division, guessed byte order, profile transformation or reduced precision. Encoded bytes and provider metadata remain available.",
     "representation": "Existing Decode/default constructors remain premultiplied; DecodeStraight explicitly labels straight output. Typed Metal upload rejects premultiplied output. Copy/disposal uses a lock to avoid partial cleared snapshots.",
-    "native": "Only unsafe use checks CGImage.Decode pointer for null; no pointer dereference. Native data/properties/source scopes disposed. Budgets constrain owned buffers, not opaque internal codec allocations.",
-    "remaining": "Actual iOS layouts/pixels pending. Wider profile/bit-depth/palette/format conversion, original source codec/cache/GDI, visible images/document/SetView/PC/physical parity remain required."
+    "native": "DecodeStraight keeps actual provider metadata and chooses encoded PNG integer samples where iOS providers premultiply. Explicit pixel-origin enum distinguishes caller/drawing/native/PNG paths; the only unsafe use checks a decode pointer for null.",
+    "remaining": "Native iOS PNG/GPU retest pending. Direct sample codec supports valid1/2/4/8-bit integer color types and Adam7, not color-profile transformation,16-bit reduction or APNG frame selection. Wider original codec/cache/GDI/visible/document/PC/physical parity remains mandatory."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "runtimeRegression": {
+    "sourceCommit": "a5ea444f27a450282c7334fcfbff7ce917cfd434",
+    "runId": 43847716653,
+    "artifactId": 14217200935,
+    "artifactSha256": "57c706b6bef024f934f181aad43e82abd0c8c68c4ddb592842ce73442375cebc",
+    "observed": "iOS provider RGB8/sRGB bitmapInfo1, premultiplied last; differs from native macOS bitmapInfo3 observation.",
+    "decision": "Reject lossy alpha division. PNGs use direct encoded integer samples with explicit EncodedPng provenance, while other supported unassociated/opaque native layouts copy directly.",
+    "status": "direct_png_fix_implemented_actual_ios_retest_pending"
+  },
+  "pngRed": {
+    "exitCode": 1,
+    "failure": "Missing PngStraightSamples"
+  },
+  "pngSpec": "https://www.w3.org/TR/png/"
 }

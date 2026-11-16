@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "ogl-texture-lookup",
+      "name": null,
+      "abi": "textureLookup",
+      "rva": 5167552,
+      "length": 179,
+      "sha256": "382b610df6bee8db04ac87898d1862aee5abc5317bf3effc7670e5d6839814f9",
+      "unwindRegions": [
+        {
+          "begin": 5167552,
+          "end": 5167731,
+          "unwind": 20141132
+        }
+      ]
+    },
+    {
+      "role": "gdi-trace-lookup",
+      "name": null,
+      "abi": "gdiTraceLookup",
+      "rva": 4879088,
+      "length": 349,
+      "sha256": "8628086ca78ef3c92f1ee1e0390ede4b686f6dbac44146fd8e12a049efeedcfa",
+      "unwindRegions": [
+        {
+          "begin": 4879088,
+          "end": 4879437,
+          "unwind": 19898984
+        }
+      ]
+    },
+    {
+      "role": "ogl-texture-bind",
+      "name": null,
+      "abi": "textureBind",
+      "rva": 1753824,
+      "length": 474,
+      "sha256": "8a2f34df4035e97655bcfc117eec257d56155c7a7ac3641f6f66bb729f9f9bc4",
+      "unwindRegions": [
+        {
+          "begin": 1753824,
+          "end": 1754024,
+          "unwind": 19050080
+        },
+        {
+          "begin": 1754024,
+          "end": 1754110,
+          "unwind": 19210776
+        },
+        {
+          "begin": 1754110,
+          "end": 1754298,
+          "unwind": 19210760
+        }
+      ]
+    },
+    {
+      "role": "ogl-texture-entry-find",
+      "name": null,
+      "abi": "textureEntryFind",
+      "rva": 5167152,
+      "length": 212,
+      "sha256": "e6731cd7c3884c6a15dab0727779b8e8025db93bece9b04b3341c8b124cd572a",
+      "unwindRegions": [
+        {
+          "begin": 5167152,
+          "end": 5167364,
+          "unwind": 19326912
+        }
+      ]
+    },
+    {
+      "role": "ogl-texture-create",
+      "name": null,
+      "abi": "textureCreate",
+      "rva": 5164624,
+      "length": 1417,
+      "sha256": "b38a8d2e454a1bbd86e922d76f9e8e16133cebc76adffe99223f47257b425b32",
+      "unwindRegions": [
+        {
+          "begin": 5164624,
+          "end": 5166041,
+          "unwind": 19895608
+        }
+      ]
+    },
+    {
+      "role": "gdi-bitmap-cache-find",
+      "name": null,
+      "abi": "bitmapCacheFind",
+      "rva": 4878672,
+      "length": 310,
+      "sha256": "daec7dd4e6a3b329394007eba8134a025c75a962c1d679f6158afe2a25808fc3",
+      "unwindRegions": [
+        {
+          "begin": 4878672,
+          "end": 4878982,
+          "unwind": 19328952
+        }
+      ]
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "glBindTexture",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint"
+      ]
+    },
+    {
+      "name": "glTexParameterf",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "float"
+      ]
+    },
+    {
+      "name": "glGetFloatv",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "float*"
+      ]
+    },
+    {
+      "name": "glTexGeni",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "int"
+      ]
+    }
+  ]
+}

@@ -78,6 +78,7 @@ for i in $(seq 1 600); do
   grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
   grep -q '^PASS legacy native user-string bodies:' "$OUT/result.txt"
   grep -q '^PASS offline encoded image assets:' "$OUT/result.txt"
+  grep -q '^PASS lossless PNG samples:' "$OUT/result.txt"
   grep -q '^PASS straight image provider:' "$OUT/result.txt"
   grep -q '^PASS actual straight image decode:' "$OUT/result.txt"
   grep -q '^PASS actual Metal image quad:' "$OUT/result.txt"

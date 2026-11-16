@@ -27,3 +27,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Rhino5WallpaperRasterAs
 System.Console.WriteLine(CandidateGeometryContractChecks.LocalImageAssetAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.StraightImageProviderAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.PngStraightSampleAssertions.Run());

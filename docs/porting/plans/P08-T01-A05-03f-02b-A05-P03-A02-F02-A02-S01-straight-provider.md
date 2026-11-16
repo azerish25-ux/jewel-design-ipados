@@ -11,3 +11,7 @@ Cases: normal/boundary layouts, endian/alpha placement, padding/missing last-row
 Validation: Windows focused/full native/57 adjacent; macOS portable/bindings and actual iPad/iPhone. No original Windows binaries execute. All local tools/cache/output D-only; GitHub owner plugin for commits/Actions; five-second D retries.
 
 Full format/profile/bit-depth/palette coverage, original LEADTOOLS/GDI/cache conversion, visible image/world/screen/source setter/document/PC/physical acceptance remain required. No parity row closes from this adapter.
+
+Actual iOS result differs from macOS: source a5ea444f27a450282c7334fcfbff7ce917cfd434, run43847716653, actual artifact14217200935 showed RGB8/sRGB bitmapInfo1 (premultiplied last). No alpha division fallback. Implement direct PNG integer samples for exact colors, retaining source/provider metadata and explicit pixel-origin tagging; other supported native layouts still copy directly.
+
+PNG sample decoder follows [W3C PNG third edition](https://www.w3.org/TR/png/): CRC, zlib header/Adler and bounded exact inflated rows; all five filters, Adam7 and integer color types0/2/3/4/6 with1/2/4/8-bit valid combinations and tRNS/palette. Samples only, no profile transform.16-bit precision reduction and APNG selection reject explicitly, remaining required capabilities. Independent Node encoder provides22 normal fixtures plus malformed/unsupported cases. Existing iOS tests still demand all256 original alpha/color samples and actual GPU bytes/blending.

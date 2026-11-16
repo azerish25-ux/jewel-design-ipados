@@ -20,7 +20,7 @@ public static class StraightImageDecodeChecks
   byte[] encoded=Convert.FromBase64String(f.GetProperty("encodedBase64").GetString()!),wanted=Convert.FromBase64String(f.GetProperty("expectedRgba").GetString()!);
   var source=LocalImageAsset.FromBytes(@"C:\original\alpha.png",encoded);
   using var image=AppleLocalImageDecoder.DecodeStraight(source);
-  Check(image.AlphaRepresentation==RgbaAlphaRepresentation.Straight,"Explicit straight-alpha result");
+  Check(image.AlphaRepresentation==RgbaAlphaRepresentation.Straight&&image.PixelSource==DecodedPixelSource.EncodedPng,"Explicit straight-alpha PNG sample extraction, no premultiplied-provider reconstruction");
   Check(image.Width==16&&image.Height==16&&image.SourceFrameCount==1,"Real provider dimensions/frame");
   Check(image.CopyRgba().AsSpan().SequenceEqual(wanted),"All256 alpha values retain original non-primary and transparent RGB exactly");
   Check(source.ContentSha256==f.GetProperty("encodedSha256").GetString()&&image.Source.CopyEncodedBytes().AsSpan().SequenceEqual(encoded),"Original encoded source retained exactly");
