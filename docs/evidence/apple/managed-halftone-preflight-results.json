@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-P01",
+  "sourceCommit": "afcae96ab7b6a369ad63e4a6a0abf6469d0ef1e4",
+  "workflowRun": 43923021656,
+  "conclusion": "success",
+  "artifactId": 14254917072,
+  "artifactSha256": "211c1132df5f7757f0891353241986999747d70d4cb91467eb1798953c959b2c",
+  "actualArtifactInspected": true,
+  "checks": {
+    "managedExactStoredCases": 3860,
+    "managedGuards": 7,
+    "integerExactCases": 1596,
+    "integerHalftoneRejections": 132,
+    "integerGuards": 9,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "scope": "Actual managed C# macOS numerical execution and iOS binding build. Actual simulator execution is a separate report; full source composition/vendor/PC/physical remain open.",
+  "allLocalDownloadsD": true
+}

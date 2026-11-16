@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "602779f520eecbb6f3cf7df6039327fc959e3534",
-  "status": "managed_component_windows_verified_apple_execution_pending_source_composition_open",
+  "status": "bounded_managed_component_windows_macos_ipad_iphone_verified_full_source_integration_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-P01-managed-halftone.md",
   "nativeSources": [
     "docs/evidence/audit/windows-gdi-halftone-source.json",
@@ -49,5 +49,27 @@
   "review": "C# implementation is separate from integer API; no approximation fallback. Actual macOS and iPad/iPhone execution required. S06-A03 source composition, broader domains, original vendor/PC/physical acceptance remain mandatory.",
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "apple": {
+    "sourceCommit": "afcae96ab7b6a369ad63e4a6a0abf6469d0ef1e4",
+    "macOS": {
+      "run": 43923021656,
+      "conclusion": "success",
+      "evidence": "docs/evidence/apple/managed-halftone-preflight-results.json"
+    },
+    "actualSimulators": {
+      "run": 43923021449,
+      "conclusion": "success",
+      "evidence": "docs/evidence/apple/managed-halftone-ios-results.json"
+    },
+    "genericReuse": {
+      "run": 43923021545,
+      "attempt": 2,
+      "iphone": "success",
+      "ipad": "success",
+      "originalCancelledJob": 133495011278,
+      "retriedJob": 133505321798,
+      "note": "Attempt1 iPad job cancelled before any steps/runner assignment; only that terminal job was retried. Both actual requested-family steps now succeeded at same source SHA. New component proof remains the separate3860/7 visible app evidence."
+    }
+  }
 }
