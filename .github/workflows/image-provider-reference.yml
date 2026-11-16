@@ -1,0 +1,46 @@
+name: Native Apple image provider observation
+on:
+  push:
+    branches: [codex/dotnet-ios-reuse]
+    paths:
+      - "native/Rendering/ImageProviderReference/**"
+      - "scripts/prepare-image-provider-fixtures.cjs"
+      - "scripts/verify-image-provider-observation.cjs"
+      - ".github/workflows/image-provider-reference.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  observe:
+    runs-on: macos-26
+    timeout-minutes: 8
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+      - name: Record source and pinned Apple tools
+        run: |
+          mkdir -p artifacts/image-provider
+          sudo xcode-select -s /Applications/Xcode_26.6.app
+          git rev-parse HEAD > artifacts/image-provider/source.txt
+          xcodebuild -version > artifacts/image-provider/xcode.txt
+      - name: Prepare bounded codec fixtures
+        run: node scripts/prepare-image-provider-fixtures.cjs artifacts/image-provider-input
+      - name: Compile and run real native ImageIO provider probe
+        run: |
+          mkdir -p .local/native
+          xcrun clang++ -std=c++17 -O2 -Wall -Wextra -Werror native/Rendering/ImageProviderReference/main.cpp -framework CoreGraphics -framework ImageIO -framework CoreFoundation -o .local/native/image-provider-probe
+          .local/native/image-provider-probe artifacts/image-provider artifacts/image-provider-input/orientation.png artifacts/image-provider-input/opaque.bmp artifacts/image-provider-input/low-alpha.png artifacts/image-provider-input/recovered.jpg > artifacts/image-provider/native.jsonl
+          node scripts/verify-image-provider-observation.cjs artifacts/image-provider-input artifacts/image-provider > artifacts/image-provider/observation.json
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: native-image-provider-observation
+          path: artifacts/
+          retention-days: 14
