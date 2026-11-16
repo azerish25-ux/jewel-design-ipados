@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01",
+  "sourceCommit": "9ee29e0e284531f9c74e101c9470fbae3054bf00",
+  "workflowRun": 43934049501,
+  "conclusion": "success",
+  "artifactId": 14259693492,
+  "artifactSha256": "bbf4898069bf7ce75c7418c596e315b51dcf2fe22ba693999b3a0525eb2c4573",
+  "actualArtifactInspected": true,
+  "checks": {
+    "managedComposedCases": 120,
+    "managedGuards": 10,
+    "grayOrderCases": 17,
+    "processedAlphaCases": 27,
+    "orVsReplacementPixels": 166,
+    "noResizeCases": 12,
+    "integerCases": 42,
+    "halftoneCases": 66,
+    "nodeReferenceCases": 6,
+    "exactNativePngInputs": 20,
+    "existingManagedHalftone": 3860,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "initialFailure": {
+    "run": 43933001391,
+    "sourceCommit": "80a8d912f973ad05b948726734b60434719fa1b3",
+    "reason": "Compressed PNG strings differ across zlib versions. Fixed by exact headers/CRC/decompressed native input comparison; runtime and fixture unchanged."
+  },
+  "scope": "Actual macOS managed composed pixel execution and source/corpus guards. Original codec/cache/driver/PC/physical remain open.",
+  "allLocalDownloadsD": true
+}

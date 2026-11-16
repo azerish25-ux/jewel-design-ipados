@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "2318fb6a4b2f185f345ad4dcbc9263af61109572",
-  "status": "composed_windows_macos_numeric_verified_portable_fixture_fix_pending_gpu_live",
+  "status": "normal_composed_path_windows_macos_ipad_iphone_verified_full_parent_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01-composed-texture.md",
   "audit": "docs/evidence/audit/rhino5-composed-texture-source.json",
   "checks": {
@@ -37,7 +37,7 @@
     "component": "0110d77c90db86733fc3a50674553bf27e9a88ab1ab38dde37b28fd8bf7a65a3",
     "gpuFixture": "98adcf29647c4ae6bf2f33a37958637a43a2db33c19bde25096a30247b6d9ad4"
   },
-  "review": "Normal explicit24/32 source path implemented, actual Apple execution pending. Full A03 scope including codecs/cache/document/PC/physical retained; no parity closure.",
+  "review": "Normal explicit24/32 source path independently verified Windows/macOS/actual iPad/iPhone. Full A03 scope including wallpaper-specific RGB path, codecs/cache/document/PC/physical retained; no parity closure.",
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
   "parityRowsClosed": 0,
@@ -53,5 +53,25 @@
     "failedCheck": "Generated PNG compressed byte equality across different zlib versions. Retained native case metadata and C# numerical comparisons passed.",
     "fix": "Validate exact native metadata, PNG chunk bounds/headers/CRCs and exact decompressed captured samples; valid alternative deflate bytes accepted, CRC corruption and valid PNG wrong samples reject.",
     "runtimeAndNativeFixtureChanged": false
+  },
+  "apple": {
+    "macOS": {
+      "sourceCommit": "9ee29e0e284531f9c74e101c9470fbae3054bf00",
+      "run": 43934049501,
+      "conclusion": "success",
+      "evidence": "docs/evidence/apple/composed-texture-preflight-results.json"
+    },
+    "actualSimulators": {
+      "sourceCommit": "80a8d912f973ad05b948726734b60434719fa1b3",
+      "run": 43933001456,
+      "conclusion": "success",
+      "evidence": "docs/evidence/apple/composed-texture-ios-results.json"
+    },
+    "runtimeSourceUnchangedBetweenCommits": true,
+    "genericReuse": {
+      "run": 43933001332,
+      "ipad": "success",
+      "iphone": "success"
+    }
   }
 }

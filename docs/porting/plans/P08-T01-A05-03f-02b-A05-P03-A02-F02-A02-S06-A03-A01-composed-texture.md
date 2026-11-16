@@ -25,3 +25,13 @@ Actual simulator: existing visible workflow must run20 real decoded PNG/filter/u
 ## Cross-platform fixture correction
 
 Actual first macOS run43933001391 artifact14259637241 passed all120 C# composed cases/10 guards but failed generated PNG compressed-byte equality. Host zlib versions emitted different valid deflate streams. The corrected check verifies unchanged full native metadata plus PNG structure/CRC and exact decompressed native input samples. Added regressions accept different valid compression and reject bad CRC or a CRC-valid PNG with altered native samples. Native expected pixels and runtime C# were unchanged; the existing actual simulator run43933001456 at80a8d9 remains live. New macOS run must pass the corrected6 corpus checks and binding build.
+
+## Verified actual Apple result
+
+MacOS run43934049501/source9ee29e0 artifact14259693492 verifies120/10 managed cases,6 native/PNG portability checks and bindings0 warnings/errors. Actual simulator run43933001456/source80a8d9 artifact14259558323 verifies120/10 and20 actual PNG/source preparation/upload/readback cases/584 exact pixels on EACH iPad and iPhone. One failed source request retains previous pixels; source images are disposed before GPU sampling; disposing renderer with1 pending frame completes with0 textures/targets/vertices/samplers. Independent verifier rejects an altered raw GPU byte and nonzero resource claim; original artifact files restored and reverified.
+
+All18 existing captures per family pass, central-region restoration0, offscreen CAD SHA unchanged047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012; visible trace uses the real new source-preparation API and retains prior scene on preparation failure. Binding0 warnings/errors; testapp retains2 existing CS8765/CA1422 warnings. Generic reuse43933001332 passes both jobs. Runtime C# and native/GPU fixtures are unchanged between80a8d9 and9ee29e0; only fixture verification/docs changed.
+
+Full S06-A03 remains open: wallpaper-specific GetImage sizing/24bit conversion/gray-after-resize path, source codecs/depth/palette/promotion/profiles, actual settings/cache/document lifecycle, large-image budgets, original driver/vendor/PC and physical devices. Do not route wallpaper through the normal OGL gray-before-size policy.
+
+Next owning-source check: original-view-image-loading-01/wallpaper-resize.c, CRhWallpaper::Resize RVA0xb333f0, explicitly sets destination HALFTONE4 unconditionally, creates aligned-width24bit output and THEN applies gray without+0.5. This makes large nonmixed HALFTONE enlargement a real application prerequisite, not an optional generic-GDI expansion. Source32 alpha is ignored by the forced24bit path. Keep this separate from normal texture mode selection/gray-before ordering.
