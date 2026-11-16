@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "63d3a5cf92cf20cfb8b0d27cf35431d994d73f28",
-  "status": "public_windows_gdi_rgb_measured_cross_platform_validation_pending",
+  "status": "public_windows_gdi_rgb_measured_macos_corpus_verified_portable_filter_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N04-gdi-rgb-reference.md",
   "prerequisite": "docs/evidence/audit/rhino5-dib-creation-source.json",
   "producer": "native/Rendering/GdiRgbReference/Program.cs",
@@ -29,7 +29,8 @@
       "liveOwnedHandles": 0,
       "scope": "Current-host public Windows GDI bytes and retained metadata only; original vendor/MFC/OS/driver/portable RGB parity separate."
     },
-    "nodeRegressions": 12
+    "nodeRegressions": 12,
+    "repositoryIntegrity": "passed"
   },
   "outputHashes": {
     "producer": "6b0b8bb6a10aa17bbe23aee1d8f3efc9697524058aaba14aaa474175f849a614",
@@ -49,5 +50,6 @@
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "apple": "docs/evidence/apple/gdi-rgb-reference-results.json"
 }

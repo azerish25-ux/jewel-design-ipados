@@ -15,3 +15,5 @@ Reproduce on Windows (existing D: SDK):
     node scripts/run-local.cjs node --test tests/gdi-rgb-reference.test.cjs
 
 [Retained corpus](../../../reference/fixtures/gdi-rgb-windows-26300.json) supports cross-platform validation; macOS CI validates this Windows evidence without claiming to execute Win32 APIs. [Evidence](../evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N04.json) records exact producer/corpus hashes.
+
+Cross-platform [macOS artifact validation](../../evidence/apple/gdi-rgb-reference-results.json) passes4 actual retained corpus corruption/metadata checks at source07c8fa0, with binding0 warnings/errors. Public Win32 reference executes on Windows only; portable RGB reconstruction and original vendor/driver proof remain required.

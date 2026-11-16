@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "51fd930055e436990214ec9aeba63ed8cfedc29a",
-  "status": "anisotropy_implemented_windows_macos_passed_ios_run_queued",
+  "status": "source_anisotropy_bounded_verified_windows_macos_ipad_iphone",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S05-trace-anisotropy.md",
   "audit": "docs/evidence/audit/rhino5-texture-anisotropy-source.json",
   "red": {
@@ -29,7 +29,7 @@
   "review": {
     "source": "Exact source mode normalization, extension/no-query and single-float divisor policy. Unrepresentable Metal values explicitly reject before replacing native pixels.",
     "lifetime": "Sampler state cached at most32 per pipeline, retained until all frames finish; per-image trace/offscreen snapshots capture selected anisotropy. Real image/mesh leases unchanged.",
-    "remaining": "Actual iPad/iPhone GPU and visible run43879034941 queued. macOS48 policy cases and binding0 warnings/errors verified. Full original cache/settings invalidation/driver filtering/mipmap/compression/RGB resampling/source camera/document/PC/physical parity remains open."
+    "remaining": "Source settings/cache invalidation, complete original-driver filtering/mipmaps/compression/RGB resampling/source camera/document/PC corpus/physical-device parity remain open."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
@@ -41,7 +41,8 @@
     "preflight": "docs/evidence/apple/trace-anisotropy-preflight-results.json",
     "visibleRun": 43879034941,
     "visibleUrl": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43879034941",
-    "visibleStatus": "queued",
-    "observation": "Original run preserved. Do not restart due to queue or observation timeout; inspect actual GPU/visible artifacts when terminal."
+    "visibleStatus": "success",
+    "observation": "Original queued run completed successfully; actual artifact independently verified.",
+    "visibleEvidence": "docs/evidence/apple/trace-anisotropy-ios-results.json"
   }
 }

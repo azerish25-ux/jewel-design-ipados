@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N04",
+  "sourceCommit": "07c8fa0689727bfa88bbe54d0efbaa88cec7ff9e",
+  "workflowRun": 43883030530,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43883030530",
+  "conclusion": "success",
+  "artifact": {
+    "id": 14233601742,
+    "sha256": "e9aae56f5a6ac2b1505e6fde7f3067d1e470e97338895ba61dfedf91aed58f38",
+    "digestVerified": true
+  },
+  "checks": {
+    "corpusRegressionCases": 4,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "outputHashes": {
+    "corpusChecks": "ff2b0a35806ff76086dbc1e945ee13e4fba9ea3206fe263cfd1037f9fa35e250",
+    "bindingBuild": "cd068529f0dcca7fb18540aee8a8501a9d9f6e30dd9991e7aeca3029e792fd92"
+  },
+  "scope": "macOS independently validates retained public-Windows-GDI bytes/metadata and negative controls. This does not execute Windows GDI on macOS, reproduce original vendor/driver pixels, or implement portable RGB resampling.",
+  "parityRowsClosed": 0
+}
