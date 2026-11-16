@@ -43,3 +43,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.GdiIntegerStretchAssert
 System.Console.WriteLine(CandidateGeometryContractChecks.GdiHalftoneStretchAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.ComposedTextureAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.GdiEnlargementAssertions.Run());

@@ -78,6 +78,7 @@ for i in $(seq 1 600); do
   grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
   grep -q '^PASS legacy native user-string bodies:' "$OUT/result.txt"
   grep -q '^PASS offline encoded image assets:' "$OUT/result.txt"
+  grep -q '^PASS GDI enlargement:1408 exact complete native buffers' "$OUT/result.txt"
   grep -q '^PASS composed texture preparation:120 exact native stored/RGBA and decoded-adapter cases/17 gray-order distinctions/27 processed-alpha distinctions/10 ownership/storage/depth/budget guards;' "$OUT/result.txt"
   grep -q '^PASS actual composed texture GPU:20 decoded PNG/source preparation/upload/readback cases/584 exact pixels/1 retained-image failure guard;' "$OUT/result.txt"
   grep -q '^PASS managed GDI HALFTONE:3860 exact complete stored-buffer cases/7 explicit storage/depth/domain/budget guards;' "$OUT/result.txt"

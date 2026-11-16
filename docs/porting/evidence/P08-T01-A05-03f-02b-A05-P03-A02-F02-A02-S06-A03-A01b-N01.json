@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-N01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "724fd66eb512c62ac7c7af48a64bcdbbc4c8c8c5",
+  "status": "managed_enlargement_windows_verified_apple_pending_wallpaper_parent_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-N01-enlargement-prerequisite.md",
+  "audit": "docs/evidence/audit/windows-gdi-enlargement-source.json",
+  "checks": {
+    "nativeCaptureExit": 0,
+    "nativeCases": 1408,
+    "nativeRepeatabilityControls": 1408,
+    "nativeConstants": 176,
+    "nativeHandles": 0,
+    "managedExactStored": 1408,
+    "jsExactStoredAndRgba": 1408,
+    "sourceImmutable": true,
+    "staticViews": 15,
+    "ghidraExit": 0,
+    "initialMissingOverloadBuildFailed": true,
+    "existingManagedCases": 3860,
+    "existingComposedCases": 120,
+    "existingIntegerCases": 1596,
+    "oldManagedGuards": 7,
+    "guardChange": "Prior unsupported-enlargement guard replaced by explicit nonpositive working-budget guard; valid enlargement is now implemented.",
+    "nodeChecks": 44,
+    "driverChecks": 8,
+    "nativeHostExit": 0,
+    "repositoryIntegrity": "passed",
+    "compactionReproduced": true
+  },
+  "outputHashes": {
+    "component": "4cc9ed5d2b6817b8b616cbe74e48e3b2bd2b4d51e343db8a773752125bc40074",
+    "producer": "538df5dd3484f8d7a501d7ccf755c45e519dfa1aae4f0fda2613b85f06ccacab",
+    "reference": "64a9f3d26f40b5e3b433273f7b0d273a7e63c78813944aaf98de52b205cf7134",
+    "fixture": "0ef312840e493c3ae7a21635bf88ab8335fa23f0eab0072764e16d35f63225d0"
+  },
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0,
+  "review": "Required wallpaper prerequisite implemented in C#; actual Apple execution pending. Full wallpaper/codec/cache/document/vendor/PC/physical acceptance remains open."
+}

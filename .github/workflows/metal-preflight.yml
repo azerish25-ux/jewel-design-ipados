@@ -17,6 +17,11 @@ on:
       - "scripts/halftone-response-reference.cjs"
       - "scripts/halftone-fixed-reference.cjs"
       - "scripts/halftone-mixed-reference.cjs"
+      - "scripts/halftone-enlargement-reference.cjs"
+      - "scripts/compact-enlargement-reference.cjs"
+      - "tests/gdi-enlargement-reference.test.cjs"
+      - "reference/fixtures/gdi-enlargement-windows-26300.json.br"
+      - "native/Analysis/fixtures/windows-gdi-enlargement-regions.json"
       - "scripts/halftone-fixup-reference.cjs"
       - "scripts/halftone-large-fixup-reference.cjs"
       - "scripts/compact-large-gdi-reference.cjs"
@@ -220,6 +225,10 @@ jobs:
           node --test tests/composed-texture-reference.test.cjs > artifacts/composed-texture-reference-checks.txt
           node scripts/generate-composed-texture-gpu.cjs --check > artifacts/composed-texture-fixture-check.json
           node scripts/verify-composed-texture-reference.cjs reference/fixtures/gdi-composed-texture-windows-26300.json > artifacts/composed-texture-reference.json
+      - name: Verify native enlargement/unity/depth-conversion domains
+        run: |
+          node --test tests/gdi-enlargement-reference.test.cjs > artifacts/gdi-enlargement-reference-checks.txt
+          node scripts/halftone-enlargement-reference.cjs reference/fixtures/gdi-enlargement-windows-26300.json.br > artifacts/gdi-enlargement-reference.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

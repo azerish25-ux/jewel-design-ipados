@@ -19,7 +19,7 @@ public static class GdiHalftoneStretchAssertions
   Reject<ArgumentException>(()=>Rhino5GdiHalftoneStretch.ResizeStored([],1,1,24,1,1));
   Reject<InvalidDataException>(()=>Rhino5GdiHalftoneStretch.ResizeStored(new byte[4],1,1,32,2,2,0,new(MaxPixels:1)));
   Reject<InvalidDataException>(()=>Rhino5GdiHalftoneStretch.ResizeStored(new byte[4],1,1,32,2,2,0,null,1));
-  Reject<NotSupportedException>(()=>Rhino5GdiHalftoneStretch.ResizeStored(new byte[49*49*4],49,49,32,50,50));
+  Reject<ArgumentOutOfRangeException>(()=>Rhino5GdiHalftoneStretch.ResizeStored(new byte[4],1,1,32,1,1,0,null,0));
   if(cases!=3860)throw new Exception("Incomplete managed native coverage "+cases);
   return "PASS managed GDI HALFTONE:"+cases+" exact complete stored-buffer cases/"+guards+" explicit storage/depth/domain/budget guards; default current-host component only, source integration/vendor/PC/physical parity open.";
  }

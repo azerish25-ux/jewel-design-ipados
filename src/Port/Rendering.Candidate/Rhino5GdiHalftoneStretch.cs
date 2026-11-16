@@ -2,31 +2,41 @@ namespace JewelDesign.Rendering.Candidate;
 
 /// <summary>Current-host measured default Win32 HALFTONE arithmetic for full positive BI_RGB24/32 rectangles.
 /// Original vendor/DC profiles/clipping and composed image preparation remain separate. No alpha repair is applied.
-/// Large nonmixed enlargement and dimensions beyond1024 explicitly reject; conservative working storage is bounded.</summary>
+/// Fast/general enlargement and truecolor depth conversion are source-backed; dimensions beyond16384 and over-budget working storage reject.</summary>
 public static class Rhino5GdiHalftoneStretch
 {
  private readonly record struct Weight(int Index,int Value);
- public static byte[] ResizeStored(ReadOnlySpan<byte> source,int sw,int sh,int depth,int w,int h,byte destinationSeed=0,LocalImageLimits? limits=null,long maxWorkingBytes=64*1024*1024)
+ public static byte[] ResizeStored(ReadOnlySpan<byte> source,int sw,int sh,int depth,int w,int h,byte destinationSeed=0,LocalImageLimits? limits=null,long maxWorkingBytes=64*1024*1024,int? destinationDepth=null)
  {
   if(depth is not (24 or 32))throw new NotSupportedException("HALFTONE requires BI_RGB24/32 stored source bytes.");
+  int outputDepth=destinationDepth??depth;if(outputDepth is not(24 or 32))throw new NotSupportedException("HALFTONE destination requires BI_RGB24/32.");
   limits??=new();limits.ValidateDimensions(sw,sh);limits.ValidateDimensions(w,h);
-  if(sw>1024||sh>1024||w>1024||h>1024)throw new InvalidDataException("HALFTONE component dimension budget is1024.");
+  if(sw>16384||sh>16384||w>16384||h>16384)throw new InvalidDataException("HALFTONE component dimension budget is16384.");
   ArgumentOutOfRangeException.ThrowIfNegativeOrZero(maxWorkingBytes);
-  int pixel=depth/8,ss=(sw*pixel+3)&~3,stride=(w*pixel+3)&~3;
+  int pixel=depth/8,destinationPixel=outputDepth/8,ss=(sw*pixel+3)&~3,stride=(w*destinationPixel+3)&~3;
   if(source.Length!=ss*sh)throw new ArgumentException("Source storage differs from positive DWORD rows.",nameof(source));
-  // Includes simultaneous source, output, intermediate int RGB rasters and weight storage with headroom.
-  long working=48L*((long)sw*sh+(long)sw*h+(long)w*sh+(long)w*h)+source.Length+(long)stride*h;
+  // Conservative peak by actual stage shape, including a possible immutable-source fixup clone.
+  long sourcePixels=(long)sw*sh,targetPixels=(long)w*h,stages;
+  if(sw>w&&sh>h)stages=24*sourcePixels+12L*w*sh+24*targetPixels;
+  else if(sw>w)stages=24*sourcePixels+36L*w*sh+12*targetPixels;
+  else if(sh>h)stages=24*sourcePixels+36L*sw*h+12*targetPixels;
+  else if(sw<w&&sh<h&&w<=5*sw&&h<=5*sh)stages=24*sourcePixels+12*targetPixels+12L*sw;
+  else if(sw<w&&sh<h)stages=36*sourcePixels+12L*w*sh+12*targetPixels;
+  else stages=36*sourcePixels+12*targetPixels;
+  long working=stages+source.Length+(long)stride*h+64L*(sw+sh+w+h)+65536;
   if(working>maxWorkingBytes)throw new InvalidDataException("HALFTONE conservative working storage budget exceeded.");
-  if(sw<=w&&sh<=h&&(long)sw*sh>2304)throw new NotSupportedException("Large nonmixed enlargement/identity requires separate source proof.");
   int[] raw=new int[sw*sh*3];for(int y=0;y<sh;y++)for(int x=0;x<sw;x++){int s=(sh-1-y)*ss+x*pixel,i=(y*sw+x)*3;raw[i]=source[s+2];raw[i+1]=source[s+1];raw[i+2]=source[s];}
   var policy=Policy(raw,sw,sh,w,h);int[] input=policy.Fixup?Fixup(raw,sw,sh):raw,output;
   if(policy.NoSharpen){output=new int[w*h*3];for(int y=0;y<h;y++)for(int x=0;x<w;x++){int i=(Sample(sh,h,y)*sw+Sample(sw,w,x))*3,j=(y*w+x)*3;Array.Copy(input,i,output,j,3);}}
   else if(sw>w&&sh>h){var horizontal=ApplyX(input,sw,sh,w,Shrink(sw,w),true);var vertical=ApplyY(horizontal,w,sh,h,Shrink(sh,h),false);output=Sharp2(vertical,w,h);}
   else if(sw>w){var horizontal=SharpX(ApplyX(input,sw,sh,w,Shrink(sw,w),false),w,sh,15);output=sh<h?ApplyY(SharpY(horizontal,w,sh,2),w,sh,h,Expand(sh,h),true):horizontal;}
   else if(sh>h){var vertical=SharpY(ApplyY(input,sw,sh,h,Shrink(sh,h),false),sw,h,15);output=sw<w?ApplyX(SharpX(vertical,sw,h,2),sw,h,w,Expand(sw,w),true):vertical;}
-  else throw new NotSupportedException("Unproved sharpened enlargement domain.");
+  else if(sw==w&&sh==h)output=input;
+  else if(sw<w&&sh<h){if(w<=5*sw&&h<=5*sh)output=FastBoth(input,sw,sh,w,h);else output=ApplyY(ApplyX(SharpInput2(input,sw,sh),sw,sh,w,Expand(sw,w),true),w,sh,h,Expand(sh,h),true);}
+  else if(sw<w)output=ApplyX(SharpX(input,sw,sh,2),sw,sh,w,Expand(sw,w),true);
+  else output=ApplyY(SharpY(input,sw,sh,2),sw,sh,h,Expand(sh,h),true);
   byte[] result=new byte[stride*h];if(destinationSeed!=0)Array.Fill(result,destinationSeed);
-  for(int y=0;y<h;y++)for(int x=0;x<w;x++){int d=(h-1-y)*stride+x*pixel,i=(y*w+x)*3;result[d]=(byte)output[i+2];result[d+1]=(byte)output[i+1];result[d+2]=(byte)output[i];if(depth==32)result[d+3]=0;}
+  for(int y=0;y<h;y++)for(int x=0;x<w;x++){int d=(h-1-y)*stride+x*destinationPixel,i=(y*w+x)*3;result[d]=(byte)output[i+2];result[d+1]=(byte)output[i+1];result[d+2]=(byte)output[i];if(outputDepth==32)result[d+3]=0;}
   return result;
  }
  private static int Clamp(int v)=>Math.Clamp(v,0,255);
@@ -81,6 +91,24 @@ public static class Rhino5GdiHalftoneStretch
  {int[] output=new int[input.Length];for(int y=0;y<h;y++)for(int x=0;x<w;x++)for(int k=0;k<3;k++){int i=(y*w+x)*3+k;output[i]=Clamp((6*input[i]-input[(Math.Max(0,y-1)*w+x)*3+k]-input[(Math.Min(h-1,y+1)*w+x)*3+k])>>shift);}return output;}
  private static int[] Sharp2(int[] input,int w,int h)
  {int[] output=new int[input.Length];for(int y=0;y<h;y++)for(int x=0;x<w;x++)for(int k=0;k<3;k++){int i=(y*w+x)*3+k;output[i]=Clamp((12*input[i]-input[(y*w+Math.Max(0,x-1))*3+k]-input[(y*w+Math.Min(w-1,x+1))*3+k]-input[(Math.Max(0,y-1)*w+x)*3+k]-input[(Math.Min(h-1,y+1)*w+x)*3+k])>>16);}return output;}
+ private static int[] SharpInput2(int[] input,int w,int h)
+ {int[] output=new int[input.Length];for(int y=0;y<h;y++)for(int x=0;x<w;x++)for(int k=0;k<3;k++)output[(y*w+x)*3+k]=InputSharpAt(input,w,h,x,y,k);return output;}
+ private static int InputSharpAt(int[] input,int w,int h,int x,int y,int k)
+ {int At(int px,int py)=>input[(Math.Clamp(py,0,h-1)*w+Math.Clamp(px,0,w-1))*3+k];return Clamp((12*At(x,y)-At(x-1,y)-At(x+1,y)-At(x,y-1)-At(x,y+1))>>3);}
+ private readonly record struct FastStencil(int Source,int Previous,int Current,int Next,int Shift);
+ // Integer run stencils from native FastExpAA_CX/CY; valid only for strict enlargement up to5x.
+ private static readonly int[][][] FastStencils=[[],[[5,22,5,5]],[[1,3,0,2],[0,3,1,2]],[[3,5,0,3],[1,14,1,4],[0,5,3,3]],[[3,5,0,3],[3,12,1,4],[1,12,3,4],[0,5,3,3]],[[13,19,0,5],[6,25,1,5],[3,26,3,5],[1,25,6,5],[0,19,13,5]]];
+ private static FastStencil[] FastRows(int n,int d)
+ {int[] counts=new int[n];for(int i=0;i<d;i++)counts[Sample(n,d,i)]++;var rows=new List<FastStencil>(d);for(int source=0;source<n;source++)foreach(var s in FastStencils[counts[source]])rows.Add(new(source,s[0],s[1],s[2],s[3]));return rows.ToArray();}
+ private static int[] FastBoth(int[] input,int sw,int sh,int w,int h)
+ {
+  var rowsX=FastRows(sw,w);var rowsY=FastRows(sh,h);int[] output=new int[w*h*3],vertical=new int[sw*3];
+  for(int y=0;y<h;y++){var row=rowsY[y];for(int x=0;x<sw;x++)for(int k=0;k<3;k++)vertical[x*3+k]=(row.Previous*InputSharpAt(input,sw,sh,x,row.Source-1,k)+row.Current*InputSharpAt(input,sw,sh,x,row.Source,k)+row.Next*InputSharpAt(input,sw,sh,x,row.Source+1,k)+(1<<(row.Shift-1)))>>row.Shift;
+   // Raw virtual Y scans are sharpened before the vertical stencil; X padding repeats the already filtered edge.
+   for(int x=0;x<w;x++){var q=rowsX[x];for(int k=0;k<3;k++)output[(y*w+x)*3+k]=(q.Previous*vertical[Math.Max(0,q.Source-1)*3+k]+q.Current*vertical[q.Source*3+k]+q.Next*vertical[Math.Min(sw-1,q.Source+1)*3+k]+(1<<(q.Shift-1)))>>q.Shift;}
+  }
+  return output;
+ }
  private static class DecimalKernel
  {
   private static readonly int[] Log=Enumerable.Range(0,901).Select(i=>RoundedLog((100+i)/100.0)).ToArray();

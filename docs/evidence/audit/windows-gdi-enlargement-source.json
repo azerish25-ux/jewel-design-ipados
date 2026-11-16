@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b-N01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01b",
+  "inputCommit": "724fd66eb512c62ac7c7af48a64bcdbbc4c8c8c5",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "targetSha256": "94f00aabe76a4af3794e2134b806bf89e556b66814859c285de62173350a5173",
+  "originalVendorExecuted": false,
+  "staticManifest": "native/Analysis/fixtures/windows-gdi-enlargement-regions.json",
+  "staticViews": 15,
+  "staticReportSha256": "7c46b783e315dbd722aa1bbed0eb5763e3e83abeb320b7be8f3e89bbed5ddcea",
+  "nativePublicCapture": {
+    "profile": "--enlargement-probe",
+    "cases": 1408,
+    "repeats": 1408,
+    "constantControls": 176,
+    "sources": 128,
+    "liveOwnedHandles": 0,
+    "rawAcquisitionSha256": "9b1323bd0f8c169102f7575c29aa1853e7c04d1dfd9e87891843715960dd7257",
+    "rawStoredSidecars": "D-only .local/evidence/gdi-enlargement-extended-reference-stored;1408 full native buffers",
+    "sourceDepths": [
+      24,
+      32
+    ],
+    "destinationDepths": [
+      24,
+      32
+    ],
+    "seeds": [
+      0,
+      90
+    ]
+  },
+  "branches": {
+    "noSharpen": 960,
+    "unity": 56,
+    "single": 152,
+    "fast": 192,
+    "general": 48
+  },
+  "sourceFacts": {
+    "fastSelection": "ComputeAABBP sets0x4000 for both strictly enlarging axes with each destination<=5*source and no initial no-sharpen; Setup clears fast flag after effective no-sharpen selection.",
+    "fastOrder": "SharpenInput uses12*C-L-R-U-D then arithmetic>>3/clamp. Raw edge-repeat virtual Y scans are sharpened; native integer run stencils apply Y first then X. X edge repeats the already Y-filtered pixel.",
+    "runs": "Lower-tie replicate counts select exact1..5 run stencils. Native FastExpAA_CX/CY dyadic numerators/rounding are reproduced, not general floating interpolation.",
+    "generalOrder": "Above5x on either growing axis, sharpen actual source, X Q13 rounded byte pass then Y Q13 rounded byte pass; Y border clamps sharpened source rows. This differs from fast raw virtual Y rows.",
+    "unity": "Effective no-sharpen/fixup still applies; high-color unity path copies prepared RGB. Output32 alpha0, output24 padding retained.",
+    "single": "One expanding/one equal axis uses that axis6*C-prev-next>>2 pre-sharpen then native Q13 expansion.",
+    "conversion": "Source24/32 both feed RGB math; destination24 writes opaque normalized alpha255 with seeded DWORD padding, destination32 writes alpha0. Source alpha does not change native SRCCOPY RGB.",
+    "budget": "Dimension bound16384 with explicit LocalImageLimits and conservative stage-specific peak CPU storage including possible immutable-source fixup clone, filters, coefficient metadata and stored input/output."
+  },
+  "fixture": {
+    "path": "reference/fixtures/gdi-enlargement-windows-26300.json.br",
+    "packedBytes": 263937,
+    "packedSha256": "0ef312840e493c3ae7a21635bf88ab8335fa23f0eab0072764e16d35f63225d0",
+    "decodedSha256": "8e25b82f06be84e72122333c92a5123a107423dcdbe1ae05a7a004c7f1054bb8",
+    "retained": "Native source RGBA/storage digests and complete output stored/RGBA SHA256; raw output sidecars retained on D and checked during compaction.",
+    "compactor": "scripts/compact-enlargement-reference.cjs"
+  },
+  "review": "New exact instructions for ExpYDIB_ExpCX plus ComputeAABBP fast selection and fast/general scan ordering corroborate all1408 independent native buffers. Original/default driver/profile/clip/indexed/PC/physical and actual wallpaper composition stay open.",
+  "allLocalWritesD": true
+}

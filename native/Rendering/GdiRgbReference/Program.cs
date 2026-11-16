@@ -4,15 +4,17 @@ using System.Security.Cryptography;
 using System.Text.Json;
 
 if(!OperatingSystem.IsWindows())throw new PlatformNotSupportedException("Public Windows GDI reference only.");
+bool enlargementProbe=args.Length==2&&args[1]=="--enlargement-probe";
 bool textureProbe=args.Length==2&&args[1]=="--texture-preparation-probe";
 bool integerProbe=args.Length==2&&args[1]=="--integer-probe";
 bool halftoneProbe=args.Length==2&&args[1]=="--halftone-probe";
 bool mixedProbe=args.Length==2&&args[1]=="--mixed-probe";
 bool largeFixupProbe=args.Length==2&&args[1]=="--large-fixup-probe";
 bool fixupProbe=args.Length==2&&args[1]=="--fixup-probe";
-if(args.Length!=1&&!integerProbe&&!halftoneProbe&&!mixedProbe&&!fixupProbe&&!largeFixupProbe&&!textureProbe)throw new ArgumentException("Expected output JSON under this D: repository, optional --integer-probe/--halftone-probe/--mixed-probe/--fixup-probe/--large-fixup-probe/--texture-preparation-probe.");
+if(args.Length!=1&&!integerProbe&&!halftoneProbe&&!mixedProbe&&!fixupProbe&&!largeFixupProbe&&!textureProbe&&!enlargementProbe)throw new ArgumentException("Expected output JSON under this D: repository, optional --integer-probe/--halftone-probe/--mixed-probe/--fixup-probe/--large-fixup-probe/--texture-preparation-probe/--enlargement-probe.");
 string root=Path.GetFullPath(Environment.CurrentDirectory),output=Path.GetFullPath(args[0]);
 if(!root.StartsWith("D:"+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase)||!output.StartsWith(root+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase))throw new InvalidOperationException("Reference output leaves D: workspace.");
+if(enlargementProbe){EnlargementProbe.Run(output);return;}
 if(textureProbe){TexturePreparationProbe.Run(output);return;}
 if(halftoneProbe){HalftoneProbe.Run(output);return;}
 var sizes=new[]{(1,1,1,1),(3,2,3,2),(3,2,5,7),(7,5,4,3),(8,6,4,3),(9,7,4,3),(4,8,8,4),(13,7,7,4)};
