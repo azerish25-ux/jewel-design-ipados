@@ -2,7 +2,7 @@
 
 The recovery is present; the application port is unfinished. Feature/type parity rows remain unverified.
 
-SetView preflight: [A05-P02](evidence/P08-T01-A05-03f-02b-A05-P02.json) ports the source-defined input guard; Windows passes179 flag/scalar/span/near boundary cases, full native host and57 adjacent regressions. Apple execution is pending. UUID restoration is now traced as conduit unbind/change/rebind, not a simple ID setter; full SetView/Pop/document/UI/PC/physical work remains open.
+SetView preflight: [A05-P02](evidence/P08-T01-A05-03f-02b-A05-P02.json) ports the source-defined input guard; Windows passes179 flag/scalar/span/near boundary cases, full native host and57 adjacent regressions. [macOS execution](../evidence/apple/setview-preflight-numeric-results.json) and [actual iPad/iPhone execution](../evidence/apple/setview-preflight-ios-results.json) also pass179 cases, independently reproducing adjacent CAD pixels with final-frame difference0. UUID restoration is now traced as conduit unbind/change/rebind, not a simple ID setter; full SetView/Pop/document/UI/PC/physical work remains open.
 
 Concrete Pop merge prerequisite: [A05-P01](evidence/P08-T01-A05-03f-02b-A05-P01.json) implements actual merge/alias/copy ordering, target/mirror effects, native name eligibility, port guards and mixed archive provenance. Windows passes52 checks, full native host and57 adjacent regressions. [macOS execution](../evidence/apple/pop-merge-numeric-results.json) and [actual iPad/iPhone execution](../evidence/apple/pop-merge-ios-results.json) also pass52 checks, with zero final CAD-frame difference and no new binding warnings. Actual Pop/SetView/screen/document/UI/PC/physical acceptance remain open.
 

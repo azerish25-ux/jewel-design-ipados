@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "setview_preflight_windows_passed_apple_pending_full_setview_open",
+  "status": "setview_preflight_windows_macos_ipad_iphone_passed_full_setview_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P02-setview-preflight.md",
   "audit": "docs/evidence/audit/rhino5-setview-dependencies-source.json",
   "inputCommit": "ff3b6dad3f656eb899cd60b14e4e5bedc5fba280",
@@ -30,5 +30,28 @@
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only; shared CLI configuration untouched",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleReports": {
+    "numeric": "docs/evidence/apple/setview-preflight-numeric-results.json",
+    "runtime": "docs/evidence/apple/setview-preflight-ios-results.json"
+  },
+  "appleRuns": {
+    "sourceCommit": "56b09b6d9d107665796b48208f1e693933400f9e",
+    "preflight": {
+      "id": 43822756546,
+      "status": "completed_success_actual_plugin_artifacts_inspected"
+    },
+    "visible": {
+      "id": 43822756622,
+      "status": "completed_success_actual_plugin_artifacts_inspected"
+    },
+    "repository": {
+      "id": 43822756573,
+      "status": "completed_success"
+    },
+    "reuse": {
+      "id": 43822756597,
+      "status": "completed_success_both_families"
+    }
+  }
 }

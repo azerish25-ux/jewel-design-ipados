@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "set-display-id",
+      "name": "?SetDisplayMode@CRhinoViewport@@QEAA_NAEBU_GUID@@@Z",
+      "abi": null,
+      "rva": 4452912,
+      "length": 1288,
+      "sha256": "6ea6f3939d4a5555702b0ade30e0fb75a6ab458386213f495904e9032e07c75b",
+      "unwindRegions": [
+        {
+          "begin": 4452912,
+          "end": 4454200,
+          "unwind": 19945656
+        }
+      ]
+    },
+    {
+      "role": "set-display-legacy",
+      "name": "?SetDisplayMode@CRhinoViewport@@QEAA_NW4display_mode@ON@@@Z",
+      "abi": null,
+      "rva": 4454208,
+      "length": 260,
+      "sha256": "88c9dbaee1c5bc52a74b3e1fa6331ac03108a7f78edd36baa4298b896f096975",
+      "unwindRegions": [
+        {
+          "begin": 4454208,
+          "end": 4454468,
+          "unwind": 21077644
+        }
+      ]
+    },
+    {
+      "role": "set-name",
+      "name": "?SetName@CRhinoViewport@@QEAA_NPEB_W@Z",
+      "abi": null,
+      "rva": 4452576,
+      "length": 238,
+      "sha256": "2b96b29d75d83a8d2c9e0af3ca2f5e1820658685ad7b90e6f185def46bf0a512",
+      "unwindRegions": [
+        {
+          "begin": 4452576,
+          "end": 4452814,
+          "unwind": 19795488
+        }
+      ]
+    },
+    {
+      "role": "set-trace",
+      "name": "?SetTraceImage@CRhinoViewport@@QEAA_NAEBVON_3dmViewTraceImage@@@Z",
+      "abi": null,
+      "rva": 4515856,
+      "length": 451,
+      "sha256": "60b95cce34cf0909441173f2c7bbfd7c891958288794db548acf5ef5097e5bb3",
+      "unwindRegions": [
+        {
+          "begin": 4515856,
+          "end": 4516307,
+          "unwind": 19900088
+        }
+      ]
+    },
+    {
+      "role": "set-wallpaper",
+      "name": "?SetWallpaperImage@CRhinoViewport@@QEAA_NAEBVON_3dmWallpaperImage@@@Z",
+      "abi": null,
+      "rva": 4515376,
+      "length": 437,
+      "sha256": "8968c4509c6f2417daafa7bb74f78b887013ab82f2daeb164d378e237574ac82",
+      "unwindRegions": [
+        {
+          "begin": 4515376,
+          "end": 4515813,
+          "unwind": 19900180
+        }
+      ]
+    }
+  ]
+}

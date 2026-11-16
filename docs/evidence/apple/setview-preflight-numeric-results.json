@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "run": 43822756546,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43822756546",
+  "sourceCommit": "56b09b6d9d107665796b48208f1e693933400f9e",
+  "status": "success_actual_connected_plugin_artifacts_inspected",
+  "preflightChecks": 179,
+  "assertionSha256": "acbd69c109479f90d1ff6e06c2f93d1acacc934ce70c35c94762d265144557aa",
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0,
+    "sha256": "0907c19aafb9fde985224874ba5079671488aafd203aae5a20860a39e1153f07"
+  },
+  "artifact": {
+    "id": 14205013421,
+    "sha256": "a84b2f8c320e75935a7d6242c3d78c1e80ebccc2aa079606f3078b03d44d2eb7"
+  },
+  "scope": "Actual macOS SetView input-preflight execution and Metal binding compile; complete SetView/conduit/image/display/document/Pop/PC/physical acceptance remain open."
+}

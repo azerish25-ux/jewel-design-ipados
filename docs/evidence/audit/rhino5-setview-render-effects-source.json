@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03",
+  "targetExecuted": false,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "manifest": "native/Analysis/fixtures/rhino5-setview-render-effects-regions.json",
+  "methods": [
+    {
+      "role": "set-display-id",
+      "name": "?SetDisplayMode@CRhinoViewport@@QEAA_NAEBU_GUID@@@Z",
+      "abi": null,
+      "rva": 4452912,
+      "length": 1288,
+      "sha256": "6ea6f3939d4a5555702b0ade30e0fb75a6ab458386213f495904e9032e07c75b",
+      "unwindRegions": [
+        {
+          "begin": 4452912,
+          "end": 4454200,
+          "unwind": 19945656
+        }
+      ]
+    },
+    {
+      "role": "set-display-legacy",
+      "name": "?SetDisplayMode@CRhinoViewport@@QEAA_NW4display_mode@ON@@@Z",
+      "abi": null,
+      "rva": 4454208,
+      "length": 260,
+      "sha256": "88c9dbaee1c5bc52a74b3e1fa6331ac03108a7f78edd36baa4298b896f096975",
+      "unwindRegions": [
+        {
+          "begin": 4454208,
+          "end": 4454468,
+          "unwind": 21077644
+        }
+      ]
+    },
+    {
+      "role": "set-name",
+      "name": "?SetName@CRhinoViewport@@QEAA_NPEB_W@Z",
+      "abi": null,
+      "rva": 4452576,
+      "length": 238,
+      "sha256": "2b96b29d75d83a8d2c9e0af3ca2f5e1820658685ad7b90e6f185def46bf0a512",
+      "unwindRegions": [
+        {
+          "begin": 4452576,
+          "end": 4452814,
+          "unwind": 19795488
+        }
+      ]
+    },
+    {
+      "role": "set-trace",
+      "name": "?SetTraceImage@CRhinoViewport@@QEAA_NAEBVON_3dmViewTraceImage@@@Z",
+      "abi": null,
+      "rva": 4515856,
+      "length": 451,
+      "sha256": "60b95cce34cf0909441173f2c7bbfd7c891958288794db548acf5ef5097e5bb3",
+      "unwindRegions": [
+        {
+          "begin": 4515856,
+          "end": 4516307,
+          "unwind": 19900088
+        }
+      ]
+    },
+    {
+      "role": "set-wallpaper",
+      "name": "?SetWallpaperImage@CRhinoViewport@@QEAA_NAEBVON_3dmWallpaperImage@@@Z",
+      "abi": null,
+      "rva": 4515376,
+      "length": 437,
+      "sha256": "8968c4509c6f2417daafa7bb74f78b887013ab82f2daeb164d378e237574ac82",
+      "unwindRegions": [
+        {
+          "begin": 4515376,
+          "end": 4515813,
+          "unwind": 19900180
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "set-display-id",
+      "entry": "14043f230",
+      "signature": "bool SetDisplayMode(_GUID * param_1)",
+      "decompilerSha256": "ad4e7c8d8c0fa7389a5cd8761580f047d24c3641203acce172a7dcfcc1a66c20"
+    },
+    {
+      "role": "set-display-legacy",
+      "entry": "14043f740",
+      "signature": "bool SetDisplayMode(display_mode param_1)",
+      "decompilerSha256": "6474983f62fb87257166c93f5791abc6fea65e82c8018802da6c79b099fbed5b"
+    },
+    {
+      "role": "set-name",
+      "entry": "14043f0e0",
+      "signature": "bool SetName(wchar_t * param_1)",
+      "decompilerSha256": "12c098d2729e38dc95c6b50e5928b3cec81187e41dff4a374a93cf5adff90dba"
+    },
+    {
+      "role": "set-trace",
+      "entry": "14044e810",
+      "signature": "bool SetTraceImage(ON_3dmViewTraceImage * param_1)",
+      "decompilerSha256": "b552bdf6da8417b38efd60c94dde91cc26423dfef25e3454aacb215d38a145e5"
+    },
+    {
+      "role": "set-wallpaper",
+      "entry": "14044e630",
+      "signature": "bool SetWallpaperImage(ON_3dmWallpaperImage * param_1)",
+      "decompilerSha256": "be69d3924a28f517c12f7bdcd40dfcd49dcefe02a538c76e8fdca1941ae29e3b"
+    }
+  ],
+  "observations": [
+    "SetName constructs a NUL-terminated name, trims right then left with native trim set; accepts nonempty result even unchanged. Changed name updates parent title using active-view identity and invokes application view notification.",
+    "SetTraceImage deletes old loaded trace first. Nonempty filename allocates new runtime trace, copies plane/dimensions/hidden/filter. Visible replacement invokes real filename/gray-scale loading; failure returns before stored trace metadata assignment and redraw/document notifications. Hidden replacement skips loading.",
+    "SetWallpaperImage deletes old runtime wallpaper first. Nonempty filename creates image, records gray/hidden, and visible replacement calls real resize/decode with current dimensions. Failure returns before stored metadata assignment and parent redraw/document effects.",
+    "Legacy display mode honors a global force-wireframe flag, maps modes2/3 or default1 through configured display objects/UUIDs and delegates to UUID SetDisplayMode. Full UUID pipeline still needs detailed policy comparison/implementation.",
+    "UUID display setter resolves attributes plus registered pipeline, falling back to configured wireframe if needed. A changed resolved nonnil ID is stored before serial/cache refresh; cache failure can reportfalse after state changes. Parent-dependent display-pipeline rebuild and notification callbacks occur later, with old/new IDs passed to an observer. These are real renderer lifecycle requirements, not an enum-only update."
+  ],
+  "limits": [
+    "Static original bodies only, no original runtime or image decoding evidence.",
+    "Empty filename/hidden/load-failure/destruction order must have real local assets and renderer effects; no placeholder loaded-image success.",
+    "Actual parent title/application notification, image rendering/resize and display-mode SDK/plugin behavior remain unimplemented; these records do not close SetView/Pop/UI/PC/physical parity."
+  ]
+}
