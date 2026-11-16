@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "edb480fb85557a9cf9191d1207b892ff035ba138",
-  "status": "actual_gpu_17_checks_passed_both_families_stronger_linear_edge_retest_pending",
+  "status": "actual_metal_quad_ipad_iphone_pixels_lifetimes_verified_parent_integration_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A01-metal-image-quad.md",
   "red": {
     "sourceCommit": "c2501ca331e46ae9d74dfeb6c2a536e7f01e1474",
@@ -19,18 +19,21 @@
   "checks": {
     "adjacentNodeRegressions": 57,
     "portableExitCode": 0,
-    "originalTargetExecuted": false
+    "originalTargetExecuted": false,
+    "actualGpuChecksPerFamily": 17,
+    "nativeHostExitCode": 0
   },
   "outputHashes": {
     "adjacent": "ee6a0dda676f46a3a46ae50f44b7764c0bd714495c07a3ed2d802a21194a99b1",
-    "portable": "ca57012e291e9fd59ed9fde6c5b5b27720463f49e981f3e8f07cac1e900e30fa"
+    "portable": "ca57012e291e9fd59ed9fde6c5b5b27720463f49e981f3e8f07cac1e900e30fa",
+    "native": "22d2370a9fee4c2ecb32f75fadc109f6a16848066bd74d8219a3a8509c14665d"
   },
   "review": {
     "representation": "Strict straight RGBA8/top-row-first GPU input; opaque F01 decoded BMP valid directly. No implicit lossy unpremultiplication. Exact partial-alpha decoder/cache adapter remains open.",
     "rendering": "Actual GPU source texture upload, original trace UV order adapted to top-row-first data, nearest/linear clamp-to-edge and explicit source-alpha/one-minus-source-alpha blending for RGB and alpha. No depth attachment, no culling. Four homogeneous clip-space corners supplied explicitly.",
     "lifetime": "Real prepared native command buffers plus CadFrameGate leases, max3. Replacement owns separate immutable textures. Disposed renderer defers pipeline/queue release until all recorded frames complete or abort. Readback occurs only after real GPU completion; no success delegate substitute.",
     "remaining": "Original format/cache/alpha conversion, GDI filtering, screen/world/visible image integration, full source setters/document/PC/physical acceptance remain required. This is offscreen GPU component only.",
-    "edgeTest": "Review strengthened the clipped1x1-image case to filtered=true, exercising linear border taps and distinguishing clamp-to-edge from clamp-to-zero. Renderer configuration unchanged; new actual Apple run pending."
+    "edgeTest": "Stronger filtered=true clipped1x1-image case passed actual iPad/iPhone; real bilinear border taps exercise clamp-to-edge. Renderer source unchanged from callback fix; source hashes verified."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
@@ -53,5 +56,30 @@
       "retiredOwnedTexturesTargetsBuffers": 0,
       "lastError": null
     }
-  }
+  },
+  "appleReports": {
+    "preflight": "docs/evidence/apple/metal-image-quad-preflight-results.json",
+    "runtime": "docs/evidence/apple/metal-image-quad-ios-results.json"
+  },
+  "appleRuns": [
+    {
+      "id": 43840990291,
+      "name": "Metal renderer binding preflight",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43840990325,
+      "name": "Repository integrity and bounded proofs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43840990305,
+      "name": "Visible CAD viewport experiment",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "sourceAudit": "docs/evidence/audit/rhino5-image-drawing-abi-source.json"
 }

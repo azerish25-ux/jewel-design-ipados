@@ -9,3 +9,5 @@ RED: new Apple checks reference missing MetalImageQuadRenderer; publish/run actu
 Strict representation boundary: SetImage accepts straight RGBA8 input. F01 premultiplied RGBA may be passed directly only if opaque. No lossy unpremultiplication adapter is supplied or claimed exact. Full partial-alpha decoder representation/cache conversion, GDI HALFTONE, screen wallpaper/world trace integration, visible image evidence, source setters/document/PC/physical acceptance remain mandatory and open. This child closes no parity row.
 
 All local tools/cache/evidence D-only via run-local; owner GitHub plugin only. No original binaries executed.
+
+Result: [actual GPU evidence](../evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A01.json) passes17 cases on each iPad/iPhone simulator, including strengthened linear clamp edges, straight-alpha interpolation, real pending-command replacement/disposal and all owned texture/target/vertex resources retired. Initial NotEnqueued callback regression and its fix are preserved. This completes this offscreen primitive only; full F02/visible/source integration remains open.

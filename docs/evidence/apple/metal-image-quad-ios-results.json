@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A01",
+  "sourceCommit": "8d2720a7da3f7ee4c5c88fed94f07663483e1f49",
+  "runId": 43840990305,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43840990305",
+  "artifact": {
+    "id": 14213297896,
+    "sha256": "70c721e3199adab462ae618f765267e1dc0187e15b756c4ca2831aca91b4fe6f"
+  },
+  "status": "success_actual_connected_plugin_artifacts_independently_rechecked",
+  "realGpuChecksPerFamily": 17,
+  "linearEdgeCaseIncluded": true,
+  "straightAlphaInterpolationIncluded": true,
+  "sourceProductHashes": {
+    "src/Port/Rendering.Candidate.iOS/MetalImageQuadRenderer.cs": "e27d11430901555822d56cbea87abd8ba769ca2f31a180fc58cdb8095a98dbfc",
+    "src/Port/Rendering.Candidate.iOS/ImageQuad.msl.txt": "bb1d2abf3f48ba25b8133d14bc85cd21fcaad3fcbcfd0c92d8b8f1c3588ec20d",
+    "tests/iOS.Viewport/MetalImageQuadChecks.cs": "73a95c261305ba3155762da6c18742bb8bce85debca0b7c958fee0bbb720127f"
+  },
+  "simulators": [
+    {
+      "family": "ipad",
+      "resultSha256": "d4903787e435ee4eb4cab9cda59e49484b118c604b2ccbe838480df206cd5821",
+      "gpu": {
+        "schemaVersion": 1,
+        "checks": 17,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null
+        },
+        "scope": "Actual offscreen image GPU sampling and owned lifetimes; full CAD image presentation/legacy decode adapter/PC/physical acceptance separate."
+      },
+      "bmpBgraSha256": "e7d26740420b45437f203ad0d19d38f207b9c77d31c6cb41cc2d66fed5b53b77",
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "517c0ee8c922b5386f4bdc620bd9dea849ce9ed96ceec8f53083046fa676a1d1",
+          "orbit": "2e96f795928254617d903d042bb184cf8795ca63c88004ddc52a6004e50043e1",
+          "edited": "d7c56289f0b53ef9c9ea537afa1c129cbdca9776ea89d344aad171ebc4d69cbb",
+          "empty": "8ab12953b16884266e78bbb156884922094b11156d787297bc8320353e189715",
+          "resized": "ddddbe59872c9b36322d90613ffe69195e555052053c0cea8ad126a6d962ff98",
+          "final": "e1d7d12b5915724136a92ef251f3d406baaa1d7a520a946d82f1738ddf6a44f9"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 2,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "resultSha256": "d4903787e435ee4eb4cab9cda59e49484b118c604b2ccbe838480df206cd5821",
+      "gpu": {
+        "schemaVersion": 1,
+        "checks": 17,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null
+        },
+        "scope": "Actual offscreen image GPU sampling and owned lifetimes; full CAD image presentation/legacy decode adapter/PC/physical acceptance separate."
+      },
+      "bmpBgraSha256": "e7d26740420b45437f203ad0d19d38f207b9c77d31c6cb41cc2d66fed5b53b77",
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "0364fda783531da6c97aebf2de7e90146b57ba790382f01338280cfda76f1cd5",
+          "orbit": "66a013b3224f83920278943cbc73d9a8a8e8443a4195f6595eb529f2552d217d",
+          "edited": "91caf6d5ee5c82f90ce3acce03c52c9a7f37aedbae068e7e93d44f51d8549d69",
+          "empty": "58ed2be77e149869859160c1d0a8b3a9d5742bc9dc469a7ed7fa545d03f28d31",
+          "resized": "0ee97a84138442bb3b617081f46a4e82e85d2ac047241077fd37b0a098f534ae",
+          "final": "bbb3d9bffc98515b7ef73366dc5571e75101e184ff7da76eb0a45b6d3a9913c7"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "build": {
+    "bindingWarnings": 0,
+    "bindingErrors": 0,
+    "appWarnings": 2,
+    "appErrors": 0,
+    "knownWarnings": [
+      "CS8765 AppDelegate options nullability",
+      "CA1422 UIWindow iOS26 constructor"
+    ]
+  },
+  "limits": "Actual offscreen GPU input/sampling/lifetimes only. Straight RGBA input; no lossy premul adapter. Full visible images, legacy codec/cache/GDI/source setters/document/PC/physical parity remains open."
+}

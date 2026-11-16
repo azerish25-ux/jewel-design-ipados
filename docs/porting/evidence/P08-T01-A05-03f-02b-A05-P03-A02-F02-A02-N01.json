@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N01",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "native_macos_provider_observed_ios_adapter_pending",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N01-provider-observation.md",
+  "report": "docs/evidence/apple/native-image-provider-results.json",
+  "checks": {
+    "fixtureInputs": 4,
+    "pngStraightRgbaExact": 2,
+    "bmpDirectRgbaExact": 1,
+    "jpegProviderObserved": 1,
+    "originalTargetExecuted": false
+  },
+  "review": "Actual native provider bytes retain non-primary low-alpha/transparent RGB in the tested PNGs. Byte depths/strides/alpha flags/color-space names recorded; Mac results must not be extrapolated to all iOS layouts or source codec equivalence.",
+  "parityRowsClosed": 0,
+  "allLocalWritesD": true
+}

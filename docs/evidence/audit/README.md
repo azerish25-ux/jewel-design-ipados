@@ -20,6 +20,8 @@ This is a source-backed feature/compatibility checklist for recovered CounterSke
 
 - [Refined image drawing ABIs](rhino5-image-drawing-abi-source.json):23 actual imported graphics prototypes,9 original bodies, UV/filter/blend/centering and verified0.1 raster offset; original cache/visible integration remains open.
 
+- [Native Apple provider observations](../apple/native-image-provider-results.json): measured raw low-alpha/transparent RGB preservation on macOS; iOS adapter and wider conversion parity still required.
+
 ## Most consequential findings
 
 1. A PC portfolio is .csp XML plus GUID-pair .csg designs and sibling preview/history files. An STL/3DM geometry export is a different contract. [Project.cs:101](<../../../recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs#L101>) — public string ProjectInfoFilePath.
