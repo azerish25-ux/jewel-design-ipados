@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S03",
+  "sourceCommit": "b3f97665f9cc71052d42636a34fa0e25ecd9537d",
+  "runId": 43863042382,
+  "artifactId": 14225080245,
+  "artifactSha256": "b9b312bca11b21423f8010981529ed3b6b066677e7ec4f22a97fdf7822b87f57",
+  "status": "success_actual_connected_plugin_artifact_inspected",
+  "preparationCases": 21,
+  "bindingWarnings": 0,
+  "bindingErrors": 0,
+  "outputHashes": {
+    "portable": "5785b9e8ae9f5b364e9127fa27e34a7fc04a1c5055ef9443fa4a0c65b65f6a94",
+    "binding": "39c3d59d336551c745c50e246623e076782ff39395b69694618fc5ba5091357c"
+  },
+  "scope": "macOS execution of original-derived sizing/alpha arithmetic and iOS binding compilation. No original runtime/GDI filtering/PC parity claim."
+}

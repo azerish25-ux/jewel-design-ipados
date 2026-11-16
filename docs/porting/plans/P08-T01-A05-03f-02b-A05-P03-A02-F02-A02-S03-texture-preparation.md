@@ -11,3 +11,5 @@ Port alpha repair as nearest sampling in native DIB stored-row order with bitwis
 Windows analytical/boundary cases and actual Apple execution/GPU sampling must verify repaired bytes; no original vendor binary execution. Pixel RGB filtering is still provided externally; original GDI HALFTONE/size-helper globals/cache/context settings and full trace/source setter/document/PC/physical work remain required. No parity row closes.
 
 All local files/tools/cache/output D-only through run-local. Five-second transient retries. GitHub owner plugin for commits/Actions.
+
+Verified result: [actual execution/GPU evidence](../evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S03.json), Windows/macOS/iPad/iPhone21 cases and6 repaired GPU pixels per family. Alpha bytes match source OR and bottom-up sampling exactly; RGB preserved. Adjacent CAD/wallpaper capture reproduction remains exact. Full RGB filtering and source pipeline integration remain open.

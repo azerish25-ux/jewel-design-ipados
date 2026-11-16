@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "203f1f0fbea1985cc5aa97170d79740972adfe68",
-  "status": "original_preparation_windows_passed_actual_apple_pending",
+  "status": "original_preparation_windows_macos_ipad_iphone_gpu_verified_full_source_filtering_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S03-texture-preparation.md",
   "audit": "docs/evidence/audit/rhino5-image-preparation-source.json",
   "red": {
@@ -17,7 +17,8 @@
     "portableCases": 21,
     "nativeHostExitCode": 0,
     "adjacentNodeRegressions": 60,
-    "originalTargetExecuted": false
+    "originalTargetExecuted": false,
+    "actualGpuRepairedPixelsPerFamily": 6
   },
   "outputHashes": {
     "red": "bf7d6167d3dab89c718c141b62348408060326fed14e419faa5b292da43462e5",
@@ -28,9 +29,39 @@
   "review": {
     "dimensions": "Original ceil/maximum/cross-axis order and single-precision budget loop; explicit runtime inputs. Native unsafe integer overflow/negative loop domain rejected; NaN/zero outcomes retained.",
     "alpha": "Bitwise OR of sampled source alpha, native stored-row nearest mapping, RGB/padding unchanged; top-down RGBA adapter reproduces reversed DIB row-coordinate sampling.",
-    "remaining": "Actual Apple execution/GPU proof pending. No GDI RGB filtering, complete source load/cache/mipmap/trace/world/document/PC/physical equivalence claim."
+    "remaining": "Actual iPad/iPhone21 cases and6 GPU pixels match, CAD/wallpaper clear/final differences0. Original GDI RGB filtering, concrete runtime globals, complete source cache/mipmap/trace-world/document/PC/physical work remain required."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleReports": {
+    "preflight": "docs/evidence/apple/texture-preparation-preflight-results.json",
+    "runtime": "docs/evidence/apple/texture-preparation-ios-results.json"
+  },
+  "appleRuns": [
+    {
+      "id": 43863042382,
+      "name": "Metal renderer binding preflight",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43863042189,
+      "name": "Repository integrity and bounded proofs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43863042432,
+      "name": "Visible CAD viewport experiment",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43863042282,
+      "name": "Recovered CSharp iOS reuse",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
 }
