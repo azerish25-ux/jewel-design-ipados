@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03",
+  "targetExecuted": false,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "methods": [
+    {
+      "role": "bitmap-table-lookup",
+      "name": "?Bitmap@CRhinoBitmapTable@@QEBAPEBVCRhinoBitmap@@PEB_W_N@Z",
+      "abi": null,
+      "rva": 2151984,
+      "length": 287,
+      "sha256": "6e573524131bec4464892b7aefaa60f65246fd28ac1d82e7c9477b5103034476",
+      "unwindRegions": [
+        {
+          "begin": 2151984,
+          "end": 2152031,
+          "unwind": 18813584
+        },
+        {
+          "begin": 2152031,
+          "end": 2152218,
+          "unwind": 19856520
+        },
+        {
+          "begin": 2152218,
+          "end": 2152252,
+          "unwind": 19856492
+        },
+        {
+          "begin": 2152252,
+          "end": 2152271,
+          "unwind": 19856476
+        }
+      ]
+    },
+    {
+      "role": "bitmap-to-dib",
+      "name": "?Dib@CRhinoBitmap@@QEBAPEAVCRhinoDib@@PEAV2@@Z",
+      "abi": null,
+      "rva": 2147616,
+      "length": 385,
+      "sha256": "642c1eaf964c2205c3014b9938689eb9eafd093146a6ec1b2a239b76f05593de",
+      "unwindRegions": [
+        {
+          "begin": 2147616,
+          "end": 2148001,
+          "unwind": 19658992
+        }
+      ]
+    },
+    {
+      "role": "bitmap-table-add-file",
+      "name": "?AddBitmap@CRhinoBitmapTable@@QEAAPEBVCRhinoBitmap@@PEB_W_N@Z",
+      "abi": null,
+      "rva": 2149872,
+      "length": 980,
+      "sha256": "714773a35540f769663216024108327bbcf8069dc9b643f3f762066f92a0f01e",
+      "unwindRegions": [
+        {
+          "begin": 2149872,
+          "end": 2150852,
+          "unwind": 19804776
+        }
+      ]
+    },
+    {
+      "role": "dib-decode-memory",
+      "name": "?ReadFromMemory@CRhinoDib@@QEAAHPEBXH@Z",
+      "abi": null,
+      "rva": 4763808,
+      "length": 398,
+      "sha256": "15c7b5c8966f4c072e32b8571e5ed8346c3b4474706cc04b660d4d08c2f9fc4e",
+      "unwindRegions": [
+        {
+          "begin": 4763808,
+          "end": 4763866,
+          "unwind": 19648748
+        },
+        {
+          "begin": 4763866,
+          "end": 4764024,
+          "unwind": 19648728
+        },
+        {
+          "begin": 4764024,
+          "end": 4764082,
+          "unwind": 19648708
+        },
+        {
+          "begin": 4764082,
+          "end": 4764153,
+          "unwind": 19648688
+        },
+        {
+          "begin": 4764153,
+          "end": 4764183,
+          "unwind": 19648672
+        },
+        {
+          "begin": 4764183,
+          "end": 4764206,
+          "unwind": 19648656
+        }
+      ]
+    },
+    {
+      "role": "dib-set-storage",
+      "name": "?SetDib@CRhinoUiDib@@QEAAHPEAUtagBITMAPINFO@@_N@Z",
+      "abi": null,
+      "rva": 13333216,
+      "length": 375,
+      "sha256": "117bdfbc29c274e029c373ce490f3f1eb8a18d5a9e45c71a7ddbaad58af5c2cc",
+      "unwindRegions": [
+        {
+          "begin": 13333216,
+          "end": 13333591,
+          "unwind": 18811072
+        }
+      ]
+    },
+    {
+      "role": "dib-copy-storage",
+      "name": "?RhinoUiDIBCopy@@YAPEAUtagBITMAPINFO@@AEBU1@@Z",
+      "abi": null,
+      "rva": 13316320,
+      "length": 444,
+      "sha256": "ab5437517ef08bd309a12f25b0dec7e08dfa3d1eb3cf2cd2ef6d3f337de34a6d",
+      "unwindRegions": [
+        {
+          "begin": 13316320,
+          "end": 13316764,
+          "unwind": 18809256
+        }
+      ]
+    },
+    {
+      "role": "dib-storage-size",
+      "name": "?GetStorageSize@CRhinoUiDib@@QEBAIXZ",
+      "abi": null,
+      "rva": 1243616,
+      "length": 42,
+      "sha256": "5e625efef80d9dd38685133726d0fd8c3e0373635c62f1931a8291c0cb460045",
+      "unwindRegions": [
+        {
+          "begin": 1243616,
+          "end": 1243658,
+          "unwind": 19021808
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "bitmap-table-lookup",
+      "decompilerSha256": "efb1a00e4c87603be377b2d10cc2bc7596dc0054d114eec67e9ed362fac10e8b"
+    },
+    {
+      "role": "bitmap-to-dib",
+      "decompilerSha256": "5160e7935bd987aaaaad058302d82851297f077d9792e5c1248b9930ab0af65f"
+    },
+    {
+      "role": "bitmap-table-add-file",
+      "decompilerSha256": "8623cff30d79fdacf7e1d451c5db0a1c46e0f1bcd97f03fe22621b391454bf81"
+    },
+    {
+      "role": "dib-decode-memory",
+      "decompilerSha256": "4ea8bcf8a223332b8b17393483ccd0db4f494f78e34be4eb9d79c88bfad910a4"
+    },
+    {
+      "role": "dib-set-storage",
+      "decompilerSha256": "11ca2c99a6f98150e81000169b805f8b593025c5ffb34072305167d5065d0c07"
+    },
+    {
+      "role": "dib-copy-storage",
+      "decompilerSha256": "6db6bf046bb38d121371c81113673d5ae4282d2be374ea19a917973c06860157"
+    },
+    {
+      "role": "dib-storage-size",
+      "decompilerSha256": "753b5656a1f3bc78a732558a91ab4335f3b5b039bf654007e552c254246a050b"
+    }
+  ],
+  "imports": [
+    {
+      "dll": "Ltfil15x.dll",
+      "iatRva": 15555032,
+      "ordinal": 67,
+      "name": null,
+      "originalSha256": "2761db22e0fd613b226c3a2dd49b741a020e9057a2db306c1f3c46872a7f95f9",
+      "functionRva": 133296,
+      "exportNames": [
+        "L_LoadBitmapMemory"
+      ]
+    },
+    {
+      "dll": "Ltkrn15x.dll",
+      "iatRva": 15555056,
+      "ordinal": 11,
+      "name": null,
+      "originalSha256": "bccd891a058c177f8e791381844856f514de59ec84a1e591c40d0b95b3d16d74",
+      "functionRva": 154032,
+      "exportNames": [
+        "L_ChangeToDIB"
+      ]
+    }
+  ],
+  "observations": {
+    "lookup": "Reject null/empty; sort table by filename; binary case-insensitive lookup; update cached index. Missing and load=true calls AddBitmap(filename,false).",
+    "addFile": "Checks existing entry before filesystem resolution. Uses file resolver (override or FindFileImpl); reads complete encoded file into owned memory; new/existing entry stores ON_EmbeddedBitmap original requested filename, byte size, owned bytes, CRC32 and fresh UUID. Bitmap cache presence does not prove decoding succeeds. Existing replacement payload cleanup occurs only after file read succeeds.",
+    "dib": "Embedded payload converts through CRhinoDib::ReadFromMemory; optional caller DIB versus allocated result has different cleanup on decode failure. Existing ON_WindowsBitmap BITMAPINFO uses SetDib(false); newly inspected SetDib proves its destination allocation/copy, not retained aliasing of the source buffer.",
+    "decode": "Null/empty rejects. L_LoadBitmapMemory, positive result then L_ChangeToDIB/GlobalLock/RhinoUiDIBCopy; only after successful copy is old DIB destroyed and new DIB installed. Failed SetDib frees copied memory. Existing selected bitmap may be refreshed. -9 load error prints a diagnostic. Exact imported codec flags and bit-depth policy remain to disassemble.",
+    "codec": "Original decoder imports by ordinal: Ltfil15x.dll #67 L_LoadBitmapMemory and Ltkrn15x.dll #11 L_ChangeToDIB, confirmed against static export tables and original DLL hashes. Windows decoder dependency is separate from portable arithmetic; no original DLL executed.",
+    "setDib": "Null input destroys destination and returns0. Creates palette and destination DIB from source width/height/bitcount; copies pixel storage only when calculated source and destination byte counts match. Return reflects nonnull CreateDib, not a separate pixel-copy success flag. On successful creation, bool=true frees input through configured allocator/onfree; false leaves caller input owned by caller. Failed creation does not free input. Previous palette is released.",
+    "copyDib": "RhinoUiDIBCopy creates new DIB of source dimensions/bitcount, derives palette count from explicit clrUsed or bitdepth1/4/8 defaults2/16/256, validates matching nonzero pixel-storage byte counts, then copies palette and bits. On mismatch/zero storage frees new allocation and returns null. Does not establish arbitrary compressed/top-down/header/profile format equivalence.",
+    "storageSize": "GetStorageSize returns GetStorageWidth()*Height() in unsigned32 result; grayscale processes floor(result/3) triples. Managed raster receives a bounded explicit span and avoids unsafe signed/unsigned allocation arithmetic."
+  },
+  "next": "Implement local bounded encoded-byte asset ownership separate from real Apple decode success. Acquire real supported-format fixtures, characterize original codec conversion/pixel behavior, then ImageIO/Metal integration. Do not emulate cache presence as successful decode or execute original Windows codec DLLs.",
+  "allLocalWritesD": true,
+  "parityRowsClosed": 0,
+  "decoderAbi": {
+    "readMemoryRva": 4763808,
+    "loadBitmapMemory": "Win64 RCX=encoded bytes; RDX=stack bitmap struct; R8D=0xd4 struct size; R9D=0; stack arg5=1,arg6=encoded byte count,arg7=0,arg8=0. Exact named option semantics not inferred without matching version headers.",
+    "changeToDib": "RCX=bitmap struct; EDX=0. Returns global-memory handle consumed through GlobalLock/copy/unlock/free."
+  }
+}

@@ -10,6 +10,11 @@ This is a source-backed feature/compatibility checklist for recovered CounterSke
 - [All GUIDs and serializer matrix](<TYPE-COMPATIBILITY-MATRIX.md>) — 654 types.
 - [Conditional bottom-up estimate](<ESTIMATE.md>) — scope, assumptions, blockers and budget.
 
+## Viewport image dependencies
+
+- [Wallpaper raster source and exact grayscale constants](rhino5-wallpaper-raster-source.json): portable arithmetic and all-color checksum; full decode/render remains open.
+- [Bitmap lookup, decoder and storage ownership](rhino5-bitmap-loading-source.json): seven original bodies, ordinal codec imports, and failure/lifetime rules. [Next image implementation card](../../porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-image-decode.md).
+
 ## Most consequential findings
 
 1. A PC portfolio is .csp XML plus GUID-pair .csg designs and sibling preview/history files. An STL/3DM geometry export is a different contract. [Project.cs:101](<../../../recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs#L101>) — public string ProjectInfoFilePath.

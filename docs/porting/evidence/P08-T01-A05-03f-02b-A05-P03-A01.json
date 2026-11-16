@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "raster_arithmetic_windows_passed_apple_pending_full_image_integration_open",
+  "status": "raster_arithmetic_windows_macos_ipad_iphone_passed_full_image_integration_open",
   "inputCommit": "dadbc516aa0d92358211d8e8b39fe589116d896d",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A01-wallpaper-raster.md",
   "audit": "docs/evidence/audit/rhino5-wallpaper-raster-source.json",
@@ -31,9 +31,40 @@
   "review": {
     "behavior": "Preserve direct <=9M versus recursive strict<9M divisor, original branch/FP/truncation/alignment, zero-size failure distinction, ordered exact unusual grayscale weights on actual buffers.",
     "boundary": "No decode, interpolation, original runtime or real wallpaper presentation claim. Managed rejects signed32 overflow explicitly. Original source remains static-only.",
-    "remaining": "Actual bitmap source/decoder/cache, GDI HALFTONE equivalence, Files/Metal lifetimes, full trace/wallpaper setters and SetView/Pop/document/PC/physical acceptance."
+    "remaining": "Actual bitmap source/decoder/cache, GDI HALFTONE equivalence, Files/Metal lifetimes, full trace/wallpaper setters and SetView/Pop/document/PC/physical acceptance.",
+    "staticFollowup": "Seven bitmap lookup/add/decode/copy/storage bodies inspected; ordinal codec DLL export identities and input ownership verified statically. Next implementation A05-P03-A02 actual offline decoding/Metal ownership; parent remains open."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin; shared CLI untouched",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "appleReports": {
+    "numeric": "docs/evidence/apple/wallpaper-raster-numeric-results.json",
+    "runtime": "docs/evidence/apple/wallpaper-raster-ios-results.json"
+  },
+  "appleRuns": [
+    {
+      "id": 43827162682,
+      "name": "Recovered CSharp iOS reuse",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43827162708,
+      "name": "Metal renderer binding preflight",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43827162709,
+      "name": "Repository integrity and bounded proofs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43827162670,
+      "name": "Visible CAD viewport experiment",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
 }

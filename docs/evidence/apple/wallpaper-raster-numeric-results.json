@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A01",
+  "sourceCommit": "dab266161c43e7fdd5b76eb7d77f874a995093ab",
+  "runId": 43827162708,
+  "jobId": 133163626834,
+  "artifactId": 14207640198,
+  "artifactSha256": "819c12fe5689988cd9610773031d50c11aeac941872a9d698f865e5fbf8bb24c",
+  "status": "completed_success_actual_plugin_artifact_inspected",
+  "checks": {
+    "sizingAndStorageCases": 34,
+    "colorTriples": 16777216,
+    "goldenSha256": "5966f944c04aa9b94a8d4af30c222fefd55c04e0ffe47d8e3609fe9f2225b509",
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "outputSha256": {
+    "numeric": "8b85feee5d2db02676268db7d75859903e38622e8b9ce628a0f3580f33b5dc70",
+    "binding": "2ac6e8007a1b33d39c30929d3e70c9325b2fc90414d71bd05d8f3d6983714116",
+    "golden": "da31e6b0554c4a980780bcd8e6f25c57f57537da4f670bcf67f760b2d0cf2716"
+  },
+  "limits": "Arithmetic and real buffer mutation only; no original runtime/GDI pixel oracle, image decoder/presentation, SetView/PC/physical equivalence.",
+  "allLocalWritesD": true
+}

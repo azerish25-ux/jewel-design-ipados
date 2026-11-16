@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "bitmap-table-lookup",
+      "name": "?Bitmap@CRhinoBitmapTable@@QEBAPEBVCRhinoBitmap@@PEB_W_N@Z",
+      "abi": null,
+      "rva": 2151984,
+      "length": 287,
+      "sha256": "6e573524131bec4464892b7aefaa60f65246fd28ac1d82e7c9477b5103034476",
+      "unwindRegions": [
+        {
+          "begin": 2151984,
+          "end": 2152031,
+          "unwind": 18813584
+        },
+        {
+          "begin": 2152031,
+          "end": 2152218,
+          "unwind": 19856520
+        },
+        {
+          "begin": 2152218,
+          "end": 2152252,
+          "unwind": 19856492
+        },
+        {
+          "begin": 2152252,
+          "end": 2152271,
+          "unwind": 19856476
+        }
+      ]
+    },
+    {
+      "role": "bitmap-to-dib",
+      "name": "?Dib@CRhinoBitmap@@QEBAPEAVCRhinoDib@@PEAV2@@Z",
+      "abi": null,
+      "rva": 2147616,
+      "length": 385,
+      "sha256": "642c1eaf964c2205c3014b9938689eb9eafd093146a6ec1b2a239b76f05593de",
+      "unwindRegions": [
+        {
+          "begin": 2147616,
+          "end": 2148001,
+          "unwind": 19658992
+        }
+      ]
+    },
+    {
+      "role": "bitmap-table-add-file",
+      "name": "?AddBitmap@CRhinoBitmapTable@@QEAAPEBVCRhinoBitmap@@PEB_W_N@Z",
+      "abi": null,
+      "rva": 2149872,
+      "length": 980,
+      "sha256": "714773a35540f769663216024108327bbcf8069dc9b643f3f762066f92a0f01e",
+      "unwindRegions": [
+        {
+          "begin": 2149872,
+          "end": 2150852,
+          "unwind": 19804776
+        }
+      ]
+    },
+    {
+      "role": "dib-decode-memory",
+      "name": "?ReadFromMemory@CRhinoDib@@QEAAHPEBXH@Z",
+      "abi": null,
+      "rva": 4763808,
+      "length": 398,
+      "sha256": "15c7b5c8966f4c072e32b8571e5ed8346c3b4474706cc04b660d4d08c2f9fc4e",
+      "unwindRegions": [
+        {
+          "begin": 4763808,
+          "end": 4763866,
+          "unwind": 19648748
+        },
+        {
+          "begin": 4763866,
+          "end": 4764024,
+          "unwind": 19648728
+        },
+        {
+          "begin": 4764024,
+          "end": 4764082,
+          "unwind": 19648708
+        },
+        {
+          "begin": 4764082,
+          "end": 4764153,
+          "unwind": 19648688
+        },
+        {
+          "begin": 4764153,
+          "end": 4764183,
+          "unwind": 19648672
+        },
+        {
+          "begin": 4764183,
+          "end": 4764206,
+          "unwind": 19648656
+        }
+      ]
+    },
+    {
+      "role": "dib-set-storage",
+      "name": "?SetDib@CRhinoUiDib@@QEAAHPEAUtagBITMAPINFO@@_N@Z",
+      "abi": null,
+      "rva": 13333216,
+      "length": 375,
+      "sha256": "117bdfbc29c274e029c373ce490f3f1eb8a18d5a9e45c71a7ddbaad58af5c2cc",
+      "unwindRegions": [
+        {
+          "begin": 13333216,
+          "end": 13333591,
+          "unwind": 18811072
+        }
+      ]
+    },
+    {
+      "role": "dib-copy-storage",
+      "name": "?RhinoUiDIBCopy@@YAPEAUtagBITMAPINFO@@AEBU1@@Z",
+      "abi": null,
+      "rva": 13316320,
+      "length": 444,
+      "sha256": "ab5437517ef08bd309a12f25b0dec7e08dfa3d1eb3cf2cd2ef6d3f337de34a6d",
+      "unwindRegions": [
+        {
+          "begin": 13316320,
+          "end": 13316764,
+          "unwind": 18809256
+        }
+      ]
+    },
+    {
+      "role": "dib-storage-size",
+      "name": "?GetStorageSize@CRhinoUiDib@@QEBAIXZ",
+      "abi": null,
+      "rva": 1243616,
+      "length": 42,
+      "sha256": "5e625efef80d9dd38685133726d0fd8c3e0373635c62f1931a8291c0cb460045",
+      "unwindRegions": [
+        {
+          "begin": 1243616,
+          "end": 1243658,
+          "unwind": 19021808
+        }
+      ]
+    }
+  ]
+}

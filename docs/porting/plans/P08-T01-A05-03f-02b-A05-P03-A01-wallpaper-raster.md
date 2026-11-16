@@ -9,3 +9,5 @@ RED: missing Rhino5WallpaperRaster (Windows compiler exit1). Tests cover exact9M
 Own src/Port/Rendering.Candidate/Rhino5WallpaperRaster.cs, common assertions and existing host/macOS/iPad/iPhone drivers. Keep actual CAD capture gates. Run Windows focused/native,57 adjacent Node checks, macOS numerics/bindings and actual iPad/iPhone execution through owner plugin. Original binaries remain static-only; local output D-only.
 
 Still required: real local image resolution/decoding, GDI HALFTONE equivalence or a measured alternative, bitmap/cache lifetimes, Metal texture/display, hidden/failure transitions and full SetView/Pop/document/PC/physical acceptance. This child closes no parity row.
+
+Result: [Windows/macOS/iPad/iPhone evidence](../evidence/P08-T01-A05-03f-02b-A05-P03-A01.json) verifies34 sizing/storage cases and all16,777,216 RGB triples per platform. Adjacent actual CAD captures reproduce with final-region difference0 and retired buffers0. This completes this arithmetic child only; parent image/decode/render work remains open.
