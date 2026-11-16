@@ -356,6 +356,15 @@
         "uint",
         "uint"
       ]
+    },
+    {
+      "name": "glTexEnvfv",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "float*"
+      ]
     }
   ],
   "abiReferences": [

@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A01",
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "targetExecuted": false,
+  "manifest": "native/Analysis/fixtures/rhino5-image-drawing-abi-regions.json",
+  "methods": [
+    {
+      "role": "pipeline-wallpaper",
+      "name": "?DrawWallpaper@CRhinoDisplayPipeline@@UEAAXAEBVCRhWallpaper@@@Z",
+      "abi": null,
+      "rva": 5048880,
+      "length": 344,
+      "sha256": "e41fceb7fd0c5dab0d98cc480bece775debe5868ce2ca730c8c7ea6e4c7677f1",
+      "unwindRegions": [
+        {
+          "begin": 5048880,
+          "end": 5049224,
+          "unwind": 19838352
+        }
+      ]
+    },
+    {
+      "role": "pipeline-trace",
+      "name": "?DrawTraceImage@CRhinoDisplayPipeline@@UEAAXAEBVCRhTraceImage@@@Z",
+      "abi": null,
+      "rva": 5049280,
+      "length": 344,
+      "sha256": "b792931fce3c128bab39e7fda22823149554073bc05af5ef5a68708b744619bf",
+      "unwindRegions": [
+        {
+          "begin": 5049280,
+          "end": 5049624,
+          "unwind": 19838240
+        }
+      ]
+    },
+    {
+      "role": "gdi-wallpaper",
+      "name": "?DrawWallpaper@CRhinoDisplayEngine_GDI@@UEAAXAEBVCRhWallpaper@@@Z",
+      "abi": null,
+      "rva": 4874320,
+      "length": 346,
+      "sha256": "cdf882450a5fb09f0f555904ba84e977feaff0b9f9a157b277f7753b02383b83",
+      "unwindRegions": [
+        {
+          "begin": 4874320,
+          "end": 4874351,
+          "unwind": 19329140
+        },
+        {
+          "begin": 4874351,
+          "end": 4874652,
+          "unwind": 19329112
+        },
+        {
+          "begin": 4874652,
+          "end": 4874666,
+          "unwind": 19329096
+        }
+      ]
+    },
+    {
+      "role": "gdi-trace",
+      "name": "?DrawTraceImage@CRhinoDisplayEngine_GDI@@UEAAXAEBVCRhTraceImage@@@Z",
+      "abi": null,
+      "rva": 4876928,
+      "length": 358,
+      "sha256": "e68f7688dd1f86bac6967fa1dcb0b4d6be1e813de9575f17f5eefc4e2da7e617",
+      "unwindRegions": [
+        {
+          "begin": 4876928,
+          "end": 4877286,
+          "unwind": 19899040
+        }
+      ]
+    },
+    {
+      "role": "ogl-wallpaper",
+      "name": "?DrawWallpaper@CRhinoDisplayEngine_OGL@@UEAAXAEBVCRhWallpaper@@@Z",
+      "abi": null,
+      "rva": 4943440,
+      "length": 1151,
+      "sha256": "c50b0b973cc4e92991d2a40212942fc88e60b64b7e80050b5fbe99511d93ea18",
+      "unwindRegions": [
+        {
+          "begin": 4943440,
+          "end": 4944591,
+          "unwind": 19328196
+        }
+      ]
+    },
+    {
+      "role": "ogl-trace",
+      "name": "?DrawTraceImage@CRhinoDisplayEngine_OGL@@UEAAXAEBVCRhTraceImage@@@Z",
+      "abi": null,
+      "rva": 4944592,
+      "length": 1448,
+      "sha256": "0990b2e5fc1c48cd5279f2cc909bcba340f8a50279318f445a4ac0098c72401d",
+      "unwindRegions": [
+        {
+          "begin": 4944592,
+          "end": 4946040,
+          "unwind": 19943720
+        }
+      ]
+    },
+    {
+      "role": "trace-get-image",
+      "name": "?GetImage@CRhTraceImage@@QEBA_NAEAVCRhinoDib@@@Z",
+      "abi": null,
+      "rva": 11745728,
+      "length": 147,
+      "sha256": "a8cbe8d047af4b88387383e898cb2507b6adbfaf31c345faaa3c74741fab43f1",
+      "unwindRegions": [
+        {
+          "begin": 11745728,
+          "end": 11745875,
+          "unwind": 19288088
+        }
+      ]
+    },
+    {
+      "role": "trace-dib-grayscale",
+      "name": "?ConvertToGrayScale@CRhinoUiDib@@QEAA_NXZ",
+      "abi": null,
+      "rva": 13337216,
+      "length": 1302,
+      "sha256": "1c2206f0617e879fd8ac5486e9265dc32a1367ffab747bf3f2355f152d4b88b9",
+      "unwindRegions": [
+        {
+          "begin": 13337216,
+          "end": 13337252,
+          "unwind": 18811804
+        },
+        {
+          "begin": 13337252,
+          "end": 13337346,
+          "unwind": 18811776
+        },
+        {
+          "begin": 13337346,
+          "end": 13337926,
+          "unwind": 18811756
+        },
+        {
+          "begin": 13337926,
+          "end": 13338503,
+          "unwind": 18811740
+        },
+        {
+          "begin": 13338503,
+          "end": 13338510,
+          "unwind": 18811712
+        },
+        {
+          "begin": 13338510,
+          "end": 13338518,
+          "unwind": 18811696
+        }
+      ]
+    },
+    {
+      "role": "ogl-blend-map",
+      "name": "?BlendMap@CRhinoDisplayEngine_OGL@@IEAAXHM@Z",
+      "abi": null,
+      "rva": 4921360,
+      "length": 290,
+      "sha256": "fe4258f7937159acab9d9fccdfa07e19f21c9fb93c914d2d23fac16912e64432",
+      "unwindRegions": [
+        {
+          "begin": 4921360,
+          "end": 4921650,
+          "unwind": 19162592
+        }
+      ]
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "BitBlt",
+      "returnType": "int",
+      "parameters": [
+        "void*",
+        "int",
+        "int",
+        "int",
+        "int",
+        "void*",
+        "int",
+        "int",
+        "uint"
+      ]
+    },
+    {
+      "name": "StretchBlt",
+      "returnType": "int",
+      "parameters": [
+        "void*",
+        "int",
+        "int",
+        "int",
+        "int",
+        "void*",
+        "int",
+        "int",
+        "int",
+        "int",
+        "uint"
+      ]
+    },
+    {
+      "name": "glDrawPixels",
+      "returnType": "void",
+      "parameters": [
+        "int",
+        "int",
+        "uint",
+        "uint",
+        "void*"
+      ]
+    },
+    {
+      "name": "glRasterPos2i",
+      "returnType": "void",
+      "parameters": [
+        "int",
+        "int"
+      ]
+    },
+    {
+      "name": "glRasterPos2d",
+      "returnType": "void",
+      "parameters": [
+        "double",
+        "double"
+      ]
+    },
+    {
+      "name": "glTexCoord2d",
+      "returnType": "void",
+      "parameters": [
+        "double",
+        "double"
+      ]
+    },
+    {
+      "name": "glVertex3dv",
+      "returnType": "void",
+      "parameters": [
+        "double*"
+      ]
+    },
+    {
+      "name": "glColor4f",
+      "returnType": "void",
+      "parameters": [
+        "float",
+        "float",
+        "float",
+        "float"
+      ]
+    },
+    {
+      "name": "glEnable",
+      "returnType": "void",
+      "parameters": [
+        "uint"
+      ]
+    },
+    {
+      "name": "glDisable",
+      "returnType": "void",
+      "parameters": [
+        "uint"
+      ]
+    },
+    {
+      "name": "glDepthMask",
+      "returnType": "void",
+      "parameters": [
+        "byte"
+      ]
+    },
+    {
+      "name": "glPushAttrib",
+      "returnType": "void",
+      "parameters": [
+        "uint"
+      ]
+    },
+    {
+      "name": "glPopAttrib",
+      "returnType": "void",
+      "parameters": []
+    },
+    {
+      "name": "glBegin",
+      "returnType": "void",
+      "parameters": [
+        "uint"
+      ]
+    },
+    {
+      "name": "glEnd",
+      "returnType": "void",
+      "parameters": []
+    },
+    {
+      "name": "glTexEnvi",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "int"
+      ]
+    },
+    {
+      "name": "glTexParameteri",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "int"
+      ]
+    },
+    {
+      "name": "glMatrixMode",
+      "returnType": "void",
+      "parameters": [
+        "uint"
+      ]
+    },
+    {
+      "name": "glLoadIdentity",
+      "returnType": "void",
+      "parameters": []
+    },
+    {
+      "name": "glBlendFunc",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint"
+      ]
+    },
+    {
+      "name": "glLightModeli",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "int"
+      ]
+    },
+    {
+      "name": "glPolygonMode",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint"
+      ]
+    },
+    {
+      "name": "glTexEnvfv",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "float*"
+      ]
+    }
+  ],
+  "appliedExternalCount": 23,
+  "views": [
+    {
+      "role": "pipeline-wallpaper",
+      "signature": "void DrawWallpaper(CRhWallpaper * param_1)",
+      "decompilerSha256": "4e5d6259c0108a9f008e2dd3a89a65719517449950c51571f7f76feb76fe3bd4"
+    },
+    {
+      "role": "pipeline-trace",
+      "signature": "void DrawTraceImage(CRhTraceImage * param_1)",
+      "decompilerSha256": "17018e6760855cd0b32dfa7376fca5063a5b1a86b621eec05131793d13438ef5"
+    },
+    {
+      "role": "gdi-wallpaper",
+      "signature": "void DrawWallpaper(CRhWallpaper * param_1)",
+      "decompilerSha256": "be57750770c3ae0cc7d6176d8f6537b4558210bd39910954b7c740df0bd4ce10"
+    },
+    {
+      "role": "gdi-trace",
+      "signature": "void DrawTraceImage(CRhTraceImage * param_1)",
+      "decompilerSha256": "251c9093fab9ebbd426f7379131b1c9b9c1485bc7e8c1a65e4ba34d73724d9ce"
+    },
+    {
+      "role": "ogl-wallpaper",
+      "signature": "void DrawWallpaper(CRhWallpaper * param_1)",
+      "decompilerSha256": "fb45a344a896412d1f78ddc337cb8b343c145fd64d9b8251e6666ffb99a82b0e"
+    },
+    {
+      "role": "ogl-trace",
+      "signature": "void DrawTraceImage(CRhTraceImage * param_1)",
+      "decompilerSha256": "072e086e262b5491c06b6c2e226185460f77ec2a29b1a443b8f720e3e746511a"
+    },
+    {
+      "role": "trace-get-image",
+      "signature": "bool GetImage(CRhinoDib * param_1)",
+      "decompilerSha256": "423969e31f284eb61e6c7a31319fc4184971335445f7c01242c68007d5305430"
+    },
+    {
+      "role": "trace-dib-grayscale",
+      "signature": "bool ConvertToGrayScale(void)",
+      "decompilerSha256": "5e9f875d96a899267d31b28e73199958d4a7696260ce51408169eaccb6f24ac3"
+    },
+    {
+      "role": "ogl-blend-map",
+      "signature": "void BlendMap(int param_1, float param_2)",
+      "decompilerSha256": "478271418c30252942d9d4ffb0ea1cceb178ca0027916b7843bdc145a6b0d7e1"
+    }
+  ],
+  "observations": {
+    "trace": {
+      "uvVertexPairs": [
+        "(1,0)->plane(width,0)",
+        "(1,1)->plane(width,height)",
+        "(0,1)->plane(0,height)",
+        "(0,0)->plane(0,0)"
+      ],
+      "filter": "glTexParameteri(target,0x2800/0x2801,0x2600+Filtered): nearest0x2600 or linear0x2601 for MAG and MIN.",
+      "wrap": "0x812f clamp-to-edge when extension available, otherwise0x2900 clamp, for S0x2802/T0x2803.",
+      "state": "glPolygonMode0x408/0x1b02 fill both faces; disable lighting0xb50, depth0xb71, cull0xb44; depthMask0. Texture env REPLACE0x2101 initially, texture matrix identity. White RGBA(1,1,1,1). Four-channel branch enables blend0xbe2 with factors0x302/0x303 for source alpha/one-minus source alpha.",
+      "blendMap": "If GL>=1.3 switches RGB combine to INTERPOLATE with selected texture/previous color and constant alpha param2. Caller normal trace passes1.0. Does not by itself establish decoded pixel or inherited alpha-combiner equivalence.",
+      "missing": "Enable same source-alpha blending; red RGBA(.25,0,0,.25), original world-plane quad followed by diagnostic text. Current Metal component does not yet implement this visible error branch."
+    },
+    "gdiWallpaper": "Hidden returns without drawing. Factor<2: BitBlt at((clientW-imageW)/2,(clientH-imageH)/2), source(0,0), SRCCOPY0xcc0020. Otherwise StretchBlt destination centered at factor*imageWidth/Height, original source extent unchanged.",
+    "oglWallpaper": "Simple path uses nonnegative centered offsets; screen raster Y=clientH-centerY with optional subtract0.1 offset (verified file-backed constant). Pixel draw format BGR0x80e0 or BGRA0x80e1 for32bit, type unsigned-byte0x1401. Special region path scales by min(regionW/imageW,regionH/imageH), truncates, centers in region and blits before a separate raster helper."
+  },
+  "boundaries": [
+    "Original binaries never executed; exact bytes/known ABI annotations only.",
+    "Opaque pipeline class layouts, texture cache decode/order/gray and complete GDI/GL inherited state still require resolution.",
+    "Metal component accepts explicitly straight RGBA/top-row-first, not a lossy reconstruction of F01 premultiplied data.",
+    "Actual visible image/source setter/document/PC/physical acceptance remains open."
+  ],
+  "allLocalWritesD": true,
+  "parityRowsClosed": 0,
+  "rasterOffset": {
+    "rva": 17729656,
+    "value": 0.1,
+    "bytes": "9a9999999999b93f"
+  }
+}

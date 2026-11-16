@@ -83,7 +83,7 @@ public sealed class MetalImageQuadRenderer:IDisposable
      encoder.DrawPrimitives(MTLPrimitiveType.Triangle,0,6);encoder.EndEncoding();
     }
     frame=new ImageFrame(this,lease,target,vertices,command,width,height);targets++;buffers++;
-    var submitted=frame;command.AddCompletedHandler(value=>Complete(submitted,value));return frame;
+    return frame;
    }catch{if(frame is not null)lastError??=frame.Release(null);else{command?.Dispose();vertices?.Dispose();target?.Dispose();lease.Dispose();}throw;}
   }
  }
@@ -91,6 +91,7 @@ public sealed class MetalImageQuadRenderer:IDisposable
  {
   byte[]? bytes=null;Exception? error=null;
   lock(sync){
+   if(frame.IsReleased)return;
    try{
     if(command.Status!=MTLCommandBufferStatus.Completed)throw new InvalidOperationException("Image GPU command failed: "+command.Status+" "+command.Error);
     bytes=new byte[checked(frame.Width*frame.Height*4)];var pin=GCHandle.Alloc(bytes,GCHandleType.Pinned);
@@ -108,13 +109,13 @@ public sealed class MetalImageQuadRenderer:IDisposable
  {
   private readonly MetalImageQuadRenderer owner;private readonly CadFrameLease<ImageTexture> lease;private readonly IMTLBuffer vertices;
   private readonly IMTLCommandBuffer command;private int state;private bool freed;
-  internal readonly IMTLTexture Target;internal readonly int Width,Height;
+  internal readonly IMTLTexture Target;internal readonly int Width,Height;internal bool IsReleased=>freed;
   internal readonly TaskCompletionSource<byte[]> Completion=new(TaskCreationOptions.RunContinuationsAsynchronously);
   internal ImageFrame(MetalImageQuadRenderer owner,CadFrameLease<ImageTexture> lease,IMTLTexture target,IMTLBuffer vertices,IMTLCommandBuffer command,int width,int height)
   {this.owner=owner;this.lease=lease;Target=target;this.vertices=vertices;this.command=command;Width=width;Height=height;}
   public Task<byte[]> CommitAsync()
   {
-   lock(owner.sync){if(state!=0)throw new InvalidOperationException("Image frame has already committed or been disposed.");state=1;try{command.Commit();}catch(Exception failure){var error=Release(failure);owner.lastError??=error;owner.ReleaseIfFinished();Completion.TrySetException(error!);}return Completion.Task;}
+   lock(owner.sync){if(state!=0)throw new InvalidOperationException("Image frame has already committed or been disposed.");state=1;try{command.AddCompletedHandler(value=>owner.Complete(this,value));command.Commit();}catch(Exception failure){var error=Release(failure);owner.lastError??=error;owner.ReleaseIfFinished();Completion.TrySetException(error!);}return Completion.Task;}
   }
   internal Exception? Release(Exception? error)
   {

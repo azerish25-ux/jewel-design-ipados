@@ -37,7 +37,7 @@ public static class MetalImageQuadChecks
   renderer.SetImage(2,1,[255,0,0,0,0,0,255,255]);using(var f=renderer.PrepareFrame(1,1,filtered:true)){var b=await f.CommitAsync();Check(Math.Abs(b[0]-128)<=1&&b[1]==0&&Math.Abs(b[2]-128)<=1&&Math.Abs(b[3]-128)<=1,"Straight alpha interpolation retains transparent texel RGB");}
   renderer.SetImage(1,1,green);using(var f=renderer.PrepareFrame(4,4,quad:[3,-1,0,1,3,1,0,1,-3,1,0,1,-3,-1,0,1])){var b=await f.CommitAsync();Check(Enumerable.Range(0,16).All(i=>b[i*4+1]==255),"Clipped image quad and clamp-to-edge sampling");}
   renderer.SetImage(1,1,[255,0,0,128]);using(var f=renderer.PrepareFrame(1,1,blend:true,clear:new MTLClearColor(0,0,1,1))){var b=await f.CommitAsync();Check(Math.Abs(b[2]-128)<=1&&b[1]==0&&Math.Abs(b[0]-127)<=1&&Math.Abs(b[3]-191)<=1,"Original SRC_ALPHA/ONE_MINUS_SRC_ALPHA applies to RGB and alpha");}
-  renderer.SetImage(1,1,red);using(var cancelled=renderer.PrepareFrame(1,1)){}Check(renderer.Stats.InFlight==0,"Abandoned uncommitted image frame releases real resources");
+  renderer.SetImage(1,1,red);using(var cancelled=renderer.PrepareFrame(1,1)){}Check(renderer.Stats.InFlight==0&&renderer.Stats.LastError is null,"Abandoned uncommitted image frame releases real resources without a GPU failure callback");
   renderer.SetImage(1,1,red);using var a=renderer.PrepareFrame(1,1);
   renderer.SetImage(1,1,green);using var bframe=renderer.PrepareFrame(1,1);
   renderer.SetImage(1,1,blue);using var c=renderer.PrepareFrame(1,1);

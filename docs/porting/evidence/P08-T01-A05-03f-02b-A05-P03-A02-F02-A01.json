@@ -33,5 +33,15 @@
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "runtimeRegression": {
+    "sourceCommit": "5b556df29dc73a79ce7d51ea20059f045b051816",
+    "runId": 43836910632,
+    "artifactId": 14211966469,
+    "artifactSha256": "43504a61f1c8884ea764fc8969ee08eeeb8ee7ec2a821cf9c3f595c34c15a9b7",
+    "observed": "Image GPU command failed: NotEnqueued",
+    "cause": "Completion handler installed on uncommitted command; abort disposal can deliver NotEnqueued and poison later frame results.",
+    "fix": "Install completion handler when CommitAsync actually submits; ignore callbacks after frame resources already released. Existing uncommitted-cancellation assertion now requires LastError null.",
+    "status": "fix_implemented_actual_apple_retest_pending"
+  }
 }
