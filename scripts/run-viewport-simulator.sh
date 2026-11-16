@@ -4,9 +4,9 @@ FAMILY=${1:?supply ipad or iphone}
 case "$FAMILY" in ipad|iphone);; *) echo "Unsupported simulator family" >&2; exit 2;; esac
 OUT="artifacts/viewport-$FAMILY"
 mkdir -p "$OUT" "$OUT/capture-attempts"
-for phase in original orbit edited empty resized final paper-original paper-green paper-blue paper-clear paper-resized paper-final; do for attempt in 1 2 3 4 5 6; do rm -f "$OUT/capture-attempts/$phase-$attempt.png" "$OUT/capture-attempts/$phase-$attempt.json"; done; done
+for phase in original orbit edited empty resized final paper-original paper-green paper-blue paper-clear paper-resized paper-final trace-original trace-image trace-orbit trace-hidden trace-moved trace-final; do for attempt in 1 2 3 4 5 6; do rm -f "$OUT/capture-attempts/$phase-$attempt.png" "$OUT/capture-attempts/$phase-$attempt.json"; done; done
 rm -f "$OUT/capture-timing.txt" "$OUT/app-capture-timing.txt"
-for phase in original orbit edited empty resized final paper-original paper-green paper-blue paper-clear paper-resized paper-final; do rm -f "$OUT/$phase.png"; done
+for phase in original orbit edited empty resized final paper-original paper-green paper-blue paper-clear paper-resized paper-final trace-original trace-image trace-orbit trace-hidden trace-moved trace-final; do rm -f "$OUT/$phase.png"; done
 rm -f "$OUT/result.txt" "$OUT/runtime-family.txt" "$OUT/report.json" "$OUT/report-verification.json"
 xcrun simctl list devices available -j > "$OUT/devices.json"
 node scripts/ios-device.cjs "$OUT/devices.json" "$FAMILY" > "$OUT/selected-device.json"
@@ -32,7 +32,7 @@ for i in $(seq 1 600); do
    phase=${payload#*|}
    if test "$capture_token" = "$payload" || test "${#capture_token}" -ne 32; then echo "Invalid viewport capture token" >&2; exit 2; fi
    case "$capture_token" in *[!0123456789abcdef]*) echo "Invalid viewport capture token" >&2; exit 2;; esac
-   case "$phase" in original|orbit|edited|empty|resized|final|paper-original|paper-green|paper-blue|paper-clear|paper-resized|paper-final) ;; *) echo "Invalid viewport capture phase" >&2; exit 2;; esac
+   case "$phase" in original|orbit|edited|empty|resized|final|paper-original|paper-green|paper-blue|paper-clear|paper-resized|paper-final|trace-original|trace-image|trace-orbit|trace-hidden|trace-moved|trace-final) ;; *) echo "Invalid viewport capture phase" >&2; exit 2;; esac
    capture_ready=0
    for attempt in 1 2 3 4 5 6; do
     candidate="$OUT/capture-attempts/$phase-$attempt.png"
@@ -78,6 +78,8 @@ for i in $(seq 1 600); do
   grep -q '^PASS original-derived Rhino5 numeric viewport commit:' "$OUT/result.txt"
   grep -q '^PASS legacy native user-string bodies:' "$OUT/result.txt"
   grep -q '^PASS offline encoded image assets:' "$OUT/result.txt"
+  grep -q '^PASS original trace plane:' "$OUT/result.txt"
+  grep -q '^PASS visible world trace:' "$OUT/result.txt"
   grep -q '^PASS original texture preparation:' "$OUT/result.txt"
   grep -q '^PASS actual texture preparation GPU:' "$OUT/result.txt"
   grep -q '^PASS original GDI wallpaper placement:' "$OUT/result.txt"
@@ -104,12 +106,14 @@ for i in $(seq 1 600); do
   cp "$DATA/Documents/image-gpu-bmp.bgra" "$OUT/image-gpu-bmp.bgra"
   cp "$DATA/Documents/texture-preparation-gpu.json" "$OUT/texture-preparation-gpu.json"
   cp "$DATA/Documents/texture-preparation-gpu.bgra" "$OUT/texture-preparation-gpu.bgra"
+  cp "$DATA/Documents/trace-report.json" "$OUT/trace-report.json"
   cp "$DATA/Documents/wallpaper-report.json" "$OUT/wallpaper-report.json"
   cp "$DATA/Documents/viewport-report.json" "$OUT/report.json"
-  for phase in original orbit edited empty resized final paper-original paper-green paper-blue paper-clear paper-resized paper-final; do test -s "$OUT/$phase.png"; done
+  for phase in original orbit edited empty resized final paper-original paper-green paper-blue paper-clear paper-resized paper-final trace-original trace-image trace-orbit trace-hidden trace-moved trace-final; do test -s "$OUT/$phase.png"; done
   node scripts/check-viewport-report.cjs "$OUT/report.json" > "$OUT/report-verification.json"
   node scripts/verify-viewport-screenshots.cjs "$OUT" > "$OUT/screen-pixel-verification.json"
   node scripts/verify-wallpaper-screenshots.cjs "$OUT" > "$OUT/wallpaper-pixel-verification.json"
+  node scripts/verify-trace-screenshots.cjs "$OUT" > "$OUT/trace-pixel-verification.json"
   mkdir -p "$OUT/offscreen"
   for phase in original edited orbit empty; do cp "$DATA/Documents/native-metal-$phase.png" "$OUT/offscreen/$phase.png"; done
   cp "$DATA/Documents/native-metal-report.json" "$OUT/offscreen/report.json"

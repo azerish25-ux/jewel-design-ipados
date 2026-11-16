@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S04",
+  "targetExecuted": false,
+  "mainSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "coreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "drawSource": "docs/evidence/audit/rhino5-image-drawing-abi-source.json",
+  "pointAt": {
+    "role": "original-plane-point-at",
+    "rva": 1893440,
+    "length": 90,
+    "sha256": "2e1579d7e6a49f334d89b0c487de681a822d8413fbe84c460f8975117dec5d93",
+    "unwindRegions": [],
+    "boundary": "Leaf ends with RET at1893529; next bytes are INT3 padding before next overload."
+  },
+  "rawPointAtSha256": "46f0f4ffceae1a8bc2c1886feba25c15570ef1d099f2b0f80c49404a5c11f462",
+  "observations": {
+    "point": "Each component performs(s*X+Origin)+t*Y using scalar double SSE; Z axis/equation not used by PointAt2D. No orthonormal-axis normalization inserted.",
+    "extent": "Hidden skips; both zero extents skip. With a loaded texture, missing width=(textureW/textureH)*height; missing height=(1/(textureW/textureH))*width. Native negative extents retained; managed nonfinite guard explicit.",
+    "corners": "Draw order(width,0),(width,height),(0,height),(0,0) paired with UV(1,0),(1,1),(0,1),(0,0). Top-first texture adaptation retained by shared shader.",
+    "gray": "Source ConvertToGrayScale uses weights0.299/0.589/0.111 plus0.5 then truncation.24bit stays opaque;32bit writes computed gray to all4 bytes, including alpha. Low-level API requires explicit original prepared DIB depth, not inferred from promoted ImageIO provider depth.",
+    "composition": "World trace uses the same mesh center/radius normalization and GPU view-projection as actual CAD. Background placement before CAD follows prepared underlay role; current fitted candidate camera is not original CounterSketch camera parity."
+  },
+  "documentation": {
+    "url": "https://developer.rhino3d.com/api/cpp/class_c_rhino_display_engine___o_g_l.html",
+    "note": "Current Rhino9 documentation describes DrawTraceImage as background bitmap on construction plane. Supporting context only; original5 byte evidence remains primary, exact full original channel sequencing still open."
+  },
+  "remaining": [
+    "Full original source view camera integration",
+    "Original texture cache/dimension/resampling/mipmap/anisotropy policies",
+    "Missing texture diagnostic quad/text and source setter/document notifications",
+    "Complete profile/format/PC/physical acceptance"
+  ],
+  "allLocalWritesD": true,
+  "parityRowsClosed": 0
+}

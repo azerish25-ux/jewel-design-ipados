@@ -33,3 +33,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.PngStraightSampleAssert
 System.Console.WriteLine(CandidateGeometryContractChecks.WallpaperPlacementAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.TexturePreparationAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.TracePlaneAssertions.Run());

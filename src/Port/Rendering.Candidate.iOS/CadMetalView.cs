@@ -52,6 +52,12 @@ public sealed class CadMetalView : MTKView
     {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);long id=presenter.SetWallpaperPixels(image,storedScale);SetNeedsDisplay();return id;}
     public void ClearWallpaper()
     {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);presenter.ClearWallpaper();SetNeedsDisplay();}
+    public long SetTracePixels(DecodedLocalImage image,Rhino5TraceImage info,int sourceDibDepth)
+    {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);long id=presenter.SetTracePixels(image,info,sourceDibDepth);SetNeedsDisplay();return id;}
+    public void SetTraceState(Rhino5TraceImage info)
+    {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);presenter.SetTraceState(info);SetNeedsDisplay();}
+    public void ClearTrace()
+    {RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);presenter.ClearTrace();SetNeedsDisplay();}
     public void SetCameraPose(float yaw,float pitch)
     {
         RequireMainThread();ObjectDisposedException.ThrowIf(viewDisposed,this);

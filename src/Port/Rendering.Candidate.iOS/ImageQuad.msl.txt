@@ -1,13 +1,18 @@
 #include <metal_stdlib>
 using namespace metal;
 struct ImageRaster { float4 position [[position]]; float2 uv; };
-vertex ImageRaster image_quad_vertex(uint id [[vertex_id]],device const float4* quad [[buffer(0)]]) {
+ImageRaster image_quad_base(uint id,device const float4* quad) {
  const uint corners[6]={0,1,2,0,2,3};
  const float2 sourceUv[4]={float2(1,0),float2(1,1),float2(0,1),float2(0,0)};
  uint corner=corners[id];ImageRaster out;out.position=quad[corner];
  // Source trace UV v0 is world-plane bottom; uploaded rows are explicitly top first.
  out.uv=float2(sourceUv[corner].x,1-sourceUv[corner].y);return out;
 }
+vertex ImageRaster image_quad_vertex(uint id [[vertex_id]],device const float4* quad [[buffer(0)]]) {return image_quad_base(id,quad);}
 fragment float4 image_quad_fragment(ImageRaster in [[stage_in]],texture2d<float> image [[texture(0)]],sampler filtering [[sampler(0)]]) {
  return image.sample(filtering,in.uv);
+}
+
+vertex ImageRaster image_world_vertex(uint id [[vertex_id]],device const float4* quad [[buffer(0)]],constant float4x4& viewProjection [[buffer(1)]]) {
+ ImageRaster out=image_quad_base(id,quad);out.position=viewProjection*out.position;return out;
 }

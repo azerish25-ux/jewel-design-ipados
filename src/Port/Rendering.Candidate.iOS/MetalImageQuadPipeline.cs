@@ -5,12 +5,12 @@ namespace JewelDesign.Rendering.Candidate.iOS;
 internal sealed class MetalImageQuadPipeline:IDisposable
 {
  private IMTLRenderPipelineState? opaque,blended;private IMTLSamplerState? nearest,linear;private IMTLDepthStencilState? noDepth;private bool disposed;
- internal MetalImageQuadPipeline(IMTLDevice device,MTLPixelFormat depthFormat)
+ internal MetalImageQuadPipeline(IMTLDevice device,MTLPixelFormat depthFormat,bool worldPlane=false)
  {try{
    using var stream=typeof(MetalImageQuadRenderer).Assembly.GetManifestResourceStream("ImageQuadMetalShader")??throw new InvalidOperationException("Image shader missing.");
    using var reader=new StreamReader(stream);using var options=new MTLCompileOptions();
    using var library=device.CreateLibrary(reader.ReadToEnd(),options,out var error)??throw new InvalidOperationException("Image shader compile failed: "+error);
-   using var vertex=library.CreateFunction("image_quad_vertex")??throw new InvalidOperationException("Image vertex shader missing.");
+   using var vertex=library.CreateFunction(worldPlane?"image_world_vertex":"image_quad_vertex")??throw new InvalidOperationException("Image vertex shader missing.");
    using var fragment=library.CreateFunction("image_quad_fragment")??throw new InvalidOperationException("Image fragment shader missing.");
    IMTLRenderPipelineState Pipeline(bool blend){
     using var d=new MTLRenderPipelineDescriptor();d.VertexFunction=vertex;d.FragmentFunction=fragment;d.DepthAttachmentPixelFormat=depthFormat;
