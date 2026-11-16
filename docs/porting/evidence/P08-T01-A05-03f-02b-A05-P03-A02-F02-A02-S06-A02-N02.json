@@ -26,5 +26,15 @@
   "review": "Native13bit reference resolves all52 prior1D counterexamples and matches represented raster domains. Analysis reference is outside product; complete mixed-axis helpers/flags/clipping/profiles/source preparation/PC/physical remain mandatory.",
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "apple": {
+    "sourceCommit": "fa0ab8551965ae3f5fd75b64f15dd2d8c8eea16c",
+    "run": 43901694813,
+    "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43901694813",
+    "status": "queued",
+    "repositoryRun": 43901694739,
+    "repositoryConclusion": "success",
+    "scope": "Cross-platform source-derived reference domains/identity guards only; no production HALFTONE support.",
+    "observation": "Original queued macOS job confirmed live; preserve run and inspect actual reference JSON/check artifacts when terminal."
+  }
 }

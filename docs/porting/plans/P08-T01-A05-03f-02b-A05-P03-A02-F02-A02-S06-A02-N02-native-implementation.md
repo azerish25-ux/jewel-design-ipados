@@ -24,3 +24,9 @@ Native-derived reference now matches all2304 stored1D response cases, including 
     node scripts/run-local.cjs node scripts/halftone-fixed-reference.cjs raster reference/fixtures/gdi-rgb-windows-26300.json
 
 Windows21 adjacent regressions and repository integrity pass; macOS artifact validation is required next.
+
+Fresh strict import command (existing D: tools and cached target, set GHIDRA_JAVA first):
+
+    node scripts/run-local.cjs node scripts/run-ghidra-local.cjs .local/ghidra/projects WindowsGdiHalftoneStrict -import .local/reference/windows-gdi/win32kfull.sys -loader PeLoader -loader-ordinalLookup false -loader-loadLocalLibraries false -loader-loadSystemLibraries false -loader-linkExistingProjectLibraries false -noanalysis -max-cpu 2 -scriptPath native/Analysis/Ghidra -postScript InspectWindowsGdi.java native/Analysis/fixtures/windows-gdi-halftone-regions.json .local/evidence/native-halftone/decompiled-03 . -log .local/evidence/native-halftone/ghidra-03.log -scriptlog .local/evidence/native-halftone/script-03.log
+
+Checkpointfa0ab85: repository43901694739 passed. Original [macOS reference validation43901694813](https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43901694813) remains queued; preserve this run. Expected artifacts: native-halftone-reference-checks.txt (4 passing checks), native-halftone-response.json (2304 exact/no mismatches), native-halftone-raster.json (108 exact/no represented mismatches,24 explicitly unsupported, completefalse). This is reference-domain proof; full mixed/clip/flags/profile/generalization/product/PC/physical acceptance stays open.
