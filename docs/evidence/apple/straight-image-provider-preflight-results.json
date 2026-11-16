@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S01",
+  "sourceCommit": "de4ac21bffdebc5b8af910a623ee94b575b21538",
+  "runId": 43852347355,
+  "artifactId": 14218376836,
+  "artifactSha256": "a35a4cb08f3a56c1ed4b8568b2defaa71836411266a9f7a65c24aaffbe69e9ff",
+  "status": "success_actual_connected_plugin_artifact_inspected",
+  "portableProviderCases": 46,
+  "pngSampleCases": 84,
+  "bindingWarnings": 0,
+  "bindingErrors": 0,
+  "outputHashes": {
+    "portable": "ac600cbdea26cc3b1f69f727b9c020e8f565087cded6087befce6d28f5e3ca8a",
+    "binding": "b6a710fbb885b22953d73a3e50f2b1746c261ec2513b776853aa6d933e49dddf"
+  },
+  "scope": "macOS portable execution and iOS bindings compile only. Actual iOS encoded sample/GPU proof recorded separately; wider color/format/source/PC parity remains open."
+}

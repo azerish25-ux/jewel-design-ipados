@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "199cc3dcece54b6b1df3237c306a1258442cfaf1",
-  "status": "exact_png_sample_path_windows_passed_actual_ios_retest_pending",
+  "status": "lossless_straight_samples_windows_macos_ipad_iphone_verified_visible_integration_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S01-straight-provider.md",
   "nativePrerequisite": "docs/evidence/apple/native-image-provider-results.json",
   "red": {
@@ -18,7 +18,9 @@
     "nativeHostExitCode": 0,
     "adjacentNodeRegressions": 57,
     "originalTargetExecuted": false,
-    "pngSampleCases": 84
+    "pngSampleCases": 84,
+    "actualAppleCasesPerFamily": 19,
+    "exactAlphaLevels": 256
   },
   "outputHashes": {
     "red": "adaf10ea9fdc2ffdbcbabbe569c128a625b3a39068a933b676bbb84de20a54b7",
@@ -32,7 +34,7 @@
     "conversion": "Lossless supported RGB8 channel/row repacking only. No premul alpha division, guessed byte order, profile transformation or reduced precision. Encoded bytes and provider metadata remain available.",
     "representation": "Existing Decode/default constructors remain premultiplied; DecodeStraight explicitly labels straight output. Typed Metal upload rejects premultiplied output. Copy/disposal uses a lock to avoid partial cleared snapshots.",
     "native": "DecodeStraight keeps actual provider metadata and chooses encoded PNG integer samples where iOS providers premultiply. Explicit pixel-origin enum distinguishes caller/drawing/native/PNG paths; the only unsafe use checks a decode pointer for null.",
-    "remaining": "Native iOS PNG/GPU retest pending. Direct sample codec supports valid1/2/4/8-bit integer color types and Adam7, not color-profile transformation,16-bit reduction or APNG frame selection. Wider original codec/cache/GDI/visible/document/PC/physical parity remains mandatory."
+    "remaining": "Exact tested iOS samples/GPU bytes verified. Full color-profile,16bit/APNG/wider native layouts/original source codec/cache/GDI/visible/source setter/document/PC/physical acceptance remains required."
   },
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
@@ -44,11 +46,56 @@
     "artifactSha256": "57c706b6bef024f934f181aad43e82abd0c8c68c4ddb592842ce73442375cebc",
     "observed": "iOS provider RGB8/sRGB bitmapInfo1, premultiplied last; differs from native macOS bitmapInfo3 observation.",
     "decision": "Reject lossy alpha division. PNGs use direct encoded integer samples with explicit EncodedPng provenance, while other supported unassociated/opaque native layouts copy directly.",
-    "status": "direct_png_fix_implemented_actual_ios_retest_pending"
+    "status": "fixed_exact_encoded_png_samples_verified_both_families"
   },
   "pngRed": {
     "exitCode": 1,
     "failure": "Missing PngStraightSamples"
   },
-  "pngSpec": "https://www.w3.org/TR/png/"
+  "pngSpec": "https://www.w3.org/TR/png/",
+  "appleReports": {
+    "preflight": "docs/evidence/apple/straight-image-provider-preflight-results.json",
+    "runtime": "docs/evidence/apple/straight-image-provider-ios-results.json",
+    "independentNative": "docs/evidence/apple/png-straight-native-reference-results.json"
+  },
+  "appleRuns": [
+    {
+      "id": 43852347257,
+      "name": "Repository integrity and bounded proofs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43852347355,
+      "name": "Metal renderer binding preflight",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43852347298,
+      "name": "Recovered CSharp iOS reuse",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43852347363,
+      "name": "Visible CAD viewport experiment",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "nativeOracleRuns": [
+    {
+      "id": 43852979413,
+      "name": "Native Apple image provider observation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 43852979325,
+      "name": "Repository integrity and bounded proofs",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
 }

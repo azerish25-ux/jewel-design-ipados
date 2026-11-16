@@ -13,3 +13,5 @@ Integrate GPU encoding into the real visible CAD renderer with retained combined
 Retain original replacement failure behavior and explicit missing-texture diagnostics. Wire real parent/document notifications, SetView/Pop/screen effects; no success callbacks or mock caches. Full format catalog, GDI filtering, original-PC and physical acceptance remain open until measured.
 
 Native prerequisite evidence: [macOS provider observation](../evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-N01.json) shows exact straight RGBA for the two controlled PNGs, including low-alpha/transparent RGB. Original BMP provider uses skip-last32bit; JPEG provider observed. Implement the typed iOS adapter and test actual device-family layouts rather than unpremultiplying F01 output.
+
+Original cache/upload prerequisites: [seven-body source audit](../../evidence/audit/rhino5-image-texture-cache-source.json) now records per-context/lowercase-name/kind matching, file-first then embedded fallback, settings-controlled anisotropy/mipmaps, normal GL2D upload and GDI resize/32bit alpha repair. Visible integration must preserve these policies; direct raw PNG/GPU success does not close them.

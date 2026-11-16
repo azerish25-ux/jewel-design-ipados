@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S01",
+  "sourceCommit": "de4ac21bffdebc5b8af910a623ee94b575b21538",
+  "runId": 43852347363,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43852347363",
+  "artifact": {
+    "id": 14221375703,
+    "sha256": "32668228123e5864791fba5e0214d6fc8a09b9f06136fdd03d993f806fe105b8"
+  },
+  "status": "success_actual_connected_plugin_artifacts_independently_rechecked",
+  "portableProviderCases": 46,
+  "pngSampleCases": 84,
+  "actualAppleCasesPerFamily": 19,
+  "exactAlphaLevels": 256,
+  "encodedSampleOrigin": "EncodedPng verified by runtime assertion; actual iOS provider layout remains premultiplied and is retained as provenance",
+  "simulators": [
+    {
+      "family": "ipad",
+      "resultSha256": "ca31631010c505a55b1449e797af610a10492a4d78317fe8a27b1d9634840f0a",
+      "report": {
+        "schemaVersion": 1,
+        "checks": 19,
+        "alphaLevels": 256,
+        "layout": {
+          "bitsPerComponent": 8,
+          "bitsPerPixel": 32,
+          "bytesPerRow": 64,
+          "bitmapInfo": 1,
+          "colorSpaceModel": 1,
+          "colorSpaceName": "kCGColorSpaceSRGB",
+          "hasDecodeArray": false
+        },
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null
+        }
+      },
+      "gpuBgraSha256": "8fcbfa9fa9c03032d2cff44b6ddda8ceb0c215b347d6e47f61ec1f78f0c748eb",
+      "screen": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "f71895598dddf5148b82a1ae94ae20a5177d2415732f4ec55633e08181d8cb92",
+          "orbit": "223f0f9a7bf532f6ea3b4ad2ad8059c18d086d49599e12a27199ca9f821468aa",
+          "edited": "13284d5311f757f6f8c1cb240cfe05d7a18b65b817fabefd021899c5de2f19ce",
+          "empty": "b407a324121ccbf57af357be50d9e082a2f884565d25349eed9b7923a0179b4f",
+          "resized": "1e32770ae2cb04e6bfce1c620d43d172f9026c89acbc0241ec218d93d80529e5",
+          "final": "f71895598dddf5148b82a1ae94ae20a5177d2415732f4ec55633e08181d8cb92"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 3,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "offscreenCadSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    },
+    {
+      "family": "iphone",
+      "resultSha256": "ca31631010c505a55b1449e797af610a10492a4d78317fe8a27b1d9634840f0a",
+      "report": {
+        "schemaVersion": 1,
+        "checks": 19,
+        "alphaLevels": 256,
+        "layout": {
+          "bitsPerComponent": 8,
+          "bitsPerPixel": 32,
+          "bytesPerRow": 64,
+          "bitmapInfo": 1,
+          "colorSpaceModel": 1,
+          "colorSpaceName": "kCGColorSpaceSRGB",
+          "hasDecodeArray": false
+        },
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null
+        }
+      },
+      "gpuBgraSha256": "8fcbfa9fa9c03032d2cff44b6ddda8ceb0c215b347d6e47f61ec1f78f0c748eb",
+      "screen": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "42451ecc16fbf2c1eb6598b97527fdaad740dd52305763d1735fa98606a89434",
+          "orbit": "e9fbd4062687c198af7bfc4a62f6533c3c041163a4f2faf25157f64899d013ee",
+          "edited": "84c232adb9c614d87f0935a83e4c9fb282b504261870ac5a03c84056a6e53910",
+          "empty": "8d25449277c363b585c6484d9385db5691712eb90ec9c8350bea58cf35f31545",
+          "resized": "fcb90561d71672ac470f137f1cede99984c8946c7eee4ce5e9b21aff12892441",
+          "final": "1f98fdfa3a69c479143bcaae5979fb93074a895050be659d91e8219c23ee1bfa"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "runtime": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 2,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "offscreenCadSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012"
+    }
+  ],
+  "productHashes": {
+    "src/Port/Rendering.Candidate/PngStraightSamples.cs": "62f85fac182abdc8e8a6f73791e530baaf5b0185651b7ff47ed89689b87648a3",
+    "src/Port/Rendering.Candidate/StraightRgbaProvider.cs": "c2b0a7b66e7d139c0a2ca9b6733805195d5196278c0f2e06a210fa41ba187fc0",
+    "src/Port/Rendering.Candidate/LocalImageAsset.cs": "377dfed0358a989e5c716d1aa31d51a3ee778916868444ddb8dcfe4fb5507e8c",
+    "src/Port/Rendering.Candidate.iOS/AppleLocalImageDecoder.cs": "ca0ba99d846c73c7d1d22ac739eada117a285151f7d1b5a995e9b14567bb2072",
+    "src/Port/Rendering.Candidate.iOS/MetalImageQuadRenderer.cs": "dae9aab47861121af1a0685d6f633838e1c1e021c81d2f1a1880e6006878ba33",
+    "tests/iOS.Viewport/StraightImageDecodeChecks.cs": "61956f3d696936aefed64847b674ab8b268c50019ce4a4c7b453a2278c431c42"
+  },
+  "build": {
+    "bindingWarnings": 0,
+    "bindingErrors": 0,
+    "appWarnings": 2,
+    "appErrors": 0,
+    "knownWarnings": [
+      "CS8765 AppDelegate options nullability",
+      "CA1422 UIWindow iOS26 constructor"
+    ]
+  },
+  "scope": "Supported lossless PNG integer samples and native RGB8 provider adapters/typed GPU input. Wider color/profile/high-depth/APNG/original codec/cache/GDI/visible/document/PC/physical acceptance remains open."
+}

@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02",
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "targetExecuted": false,
+  "methods": [
+    {
+      "role": "ogl-texture-lookup",
+      "name": null,
+      "abi": "textureLookup",
+      "rva": 5167552,
+      "length": 179,
+      "sha256": "382b610df6bee8db04ac87898d1862aee5abc5317bf3effc7670e5d6839814f9",
+      "unwindRegions": [
+        {
+          "begin": 5167552,
+          "end": 5167731,
+          "unwind": 20141132
+        }
+      ]
+    },
+    {
+      "role": "gdi-trace-lookup",
+      "name": null,
+      "abi": "gdiTraceLookup",
+      "rva": 4879088,
+      "length": 349,
+      "sha256": "8628086ca78ef3c92f1ee1e0390ede4b686f6dbac44146fd8e12a049efeedcfa",
+      "unwindRegions": [
+        {
+          "begin": 4879088,
+          "end": 4879437,
+          "unwind": 19898984
+        }
+      ]
+    },
+    {
+      "role": "ogl-texture-bind",
+      "name": null,
+      "abi": "textureBind",
+      "rva": 1753824,
+      "length": 474,
+      "sha256": "8a2f34df4035e97655bcfc117eec257d56155c7a7ac3641f6f66bb729f9f9bc4",
+      "unwindRegions": [
+        {
+          "begin": 1753824,
+          "end": 1754024,
+          "unwind": 19050080
+        },
+        {
+          "begin": 1754024,
+          "end": 1754110,
+          "unwind": 19210776
+        },
+        {
+          "begin": 1754110,
+          "end": 1754298,
+          "unwind": 19210760
+        }
+      ]
+    },
+    {
+      "role": "ogl-texture-entry-find",
+      "name": null,
+      "abi": "textureEntryFind",
+      "rva": 5167152,
+      "length": 212,
+      "sha256": "e6731cd7c3884c6a15dab0727779b8e8025db93bece9b04b3341c8b124cd572a",
+      "unwindRegions": [
+        {
+          "begin": 5167152,
+          "end": 5167364,
+          "unwind": 19326912
+        }
+      ]
+    },
+    {
+      "role": "ogl-texture-create",
+      "name": null,
+      "abi": "textureCreate",
+      "rva": 5164624,
+      "length": 1417,
+      "sha256": "b38a8d2e454a1bbd86e922d76f9e8e16133cebc76adffe99223f47257b425b32",
+      "unwindRegions": [
+        {
+          "begin": 5164624,
+          "end": 5166041,
+          "unwind": 19895608
+        }
+      ]
+    },
+    {
+      "role": "gdi-bitmap-cache-find",
+      "name": null,
+      "abi": "bitmapCacheFind",
+      "rva": 4878672,
+      "length": 310,
+      "sha256": "daec7dd4e6a3b329394007eba8134a025c75a962c1d679f6158afe2a25808fc3",
+      "unwindRegions": [
+        {
+          "begin": 4878672,
+          "end": 4878982,
+          "unwind": 19328952
+        }
+      ]
+    },
+    {
+      "role": "ogl-texture-upload-bitmap",
+      "name": null,
+      "abi": "textureUpload",
+      "rva": 1757232,
+      "length": 677,
+      "sha256": "0253230bb9c2c450261361071866fe777a76045532ab2d168ad753eb47d6d348",
+      "unwindRegions": [
+        {
+          "begin": 1757232,
+          "end": 1757909,
+          "unwind": 19587604
+        }
+      ]
+    }
+  ],
+  "views": [
+    {
+      "role": "ogl-texture-lookup",
+      "signature": "void * Original_ogl_texture_lookup(void * manager, void * filename, bool gray, void * context)",
+      "decompilerSha256": "841867363907f8eac995cb16bd5335c7cfc080b056fb25dd51fbda5f86970958"
+    },
+    {
+      "role": "gdi-trace-lookup",
+      "signature": "void * Original_gdi_trace_lookup(void * manager, void * trace, void * engine)",
+      "decompilerSha256": "7fd79bc2ba571df6cb9c24228fe6547cfb16f6c1d6b861fcca2d305fb79cdba4"
+    },
+    {
+      "role": "ogl-texture-bind",
+      "signature": "void Original_ogl_texture_bind(void * texture)",
+      "decompilerSha256": "561e53d0051b211fadb0445ffd49376f373673f9abaf5dde28989643e39b9eda"
+    },
+    {
+      "role": "ogl-texture-entry-find",
+      "signature": "void * Original_ogl_texture_entry_find(void * manager, void * filename, void * context, uint kind)",
+      "decompilerSha256": "e659913ed6f026198290dd8573ea99e359e67fed4ca2ff2b095eae893d61b7f4"
+    },
+    {
+      "role": "ogl-texture-create",
+      "signature": "void * Original_ogl_texture_create(void * filename, bool gray, uint option, void * context)",
+      "decompilerSha256": "8d886e48cbbda4db4bdf4fff111969d22002d00a300bad5224b7d8b135d856a3"
+    },
+    {
+      "role": "gdi-bitmap-cache-find",
+      "signature": "void * Original_gdi_bitmap_cache_find(void * manager, void * filename, bool gray)",
+      "decompilerSha256": "b179da277328db541d47fa9961b716e5750a1fc1c8f1865cdbeaf62bdef5c95c"
+    },
+    {
+      "role": "ogl-texture-upload-bitmap",
+      "signature": "bool Original_ogl_texture_upload_bitmap(void * texture, void * dib)",
+      "decompilerSha256": "6fe348ce588eda3c823f19074bb8806d7b22be5c21af53f01d121b2407cdb49f"
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "glBindTexture",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint"
+      ]
+    },
+    {
+      "name": "glTexParameterf",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "float"
+      ]
+    },
+    {
+      "name": "glGetFloatv",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "float*"
+      ]
+    },
+    {
+      "name": "glTexGeni",
+      "returnType": "void",
+      "parameters": [
+        "uint",
+        "uint",
+        "int"
+      ]
+    }
+  ],
+  "observations": {
+    "oglLookup": "Reject null filename/context. Select kind1 for color or3 for gray, lookup before create(filename,gray,option1,context), append/sort new entry, update usage counter, return its texture pointer.",
+    "oglFind": "Binary search ordered by context, conditional kind comparison and ON_wString::CompareNoCase. Compare name when(kind & entryKind)==0 OR kinds equal; otherwise compare numeric kinds. Common lookup kinds1/3 therefore distinguish color and gray. Do not reduce all possible kind masks to a simple tuple equality.",
+    "creation": "ReadFromFile first; on failure use active-document existing Bitmap(filename,false) and Dib. Gray calls ConvertToGrayScale; option3 additionally increases depth32 before conversion. Requires requested context equal wglGetCurrentContext and nonzero current DC; successful CPU decoding alone is not texture success. Normal trace uses option1. option0x56 has cube-layout branches4x3,3x4,6x1; other texture/mipmap/settings helpers remain unresolved.",
+    "entry": "Stores requested filename then MakeLower. Entry associates context, kind/color-gray, usage and owned texture. Template alias CRhinoDimStyle in generated C is a guessed shared specialization, not a real image type.",
+    "gdi": "Build lowercase filename plus gray search key, then bsearch. Trace lookup calls real GetImage on cache miss, destroys failed entry and returns null, clears dirty flag and registers unique engine usage before returning DIB. Comparator callback/invalidation policy still need refinement.",
+    "bind": "Binds actual target/name, restores wrap/filter/env state, optional mipmap generation flag and anisotropy. Handles optional texture-coordinate generation. Trace draw later overrides wrap/MIN/MAG; application anisotropy setting persists.",
+    "upload": "Normal bitmap upload targets GL_TEXTURE_2D0xde1. Adjust dimensions through helper1ace90; if depth<24 or dimensions change, create resized DIB at depth>=24 and StretchBlt from original. Downsample ratio>1 chooses HALFTONE4.32bit resize invokes alpha-repair helper1acc80. Records resulting dimensions, chooses internal format/compression settings and uploads mode3 for24bit or4 otherwise, unsigned-byte0x1401. Raw format mapping/upload and dimension/alpha helpers still require refinement."
+  },
+  "anisotropy": {
+    "sourceMaxQuery": 34047,
+    "sourceParameter": 34046,
+    "off": 1,
+    "divisorForMode1": 4,
+    "divisorForMode2": 2,
+    "divisorOtherwise": 1
+  },
+  "remaining": [
+    "Dimension/power-of-two helper1ace90,32bit alpha repair1acc80, internal-format selector1ac180 and final upload1aca70",
+    "Format classifier1ac520 must not be called channel count without verifying its enum/byte-size meaning",
+    "Cache invalidation and callback comparator ordering",
+    "Complete color/gray/profile and context-replacement lifecycle",
+    "Real visible images/source setters/document/PC/physical acceptance"
+  ],
+  "allLocalWritesD": true,
+  "parityRowsClosed": 0
+}

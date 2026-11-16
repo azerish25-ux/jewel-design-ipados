@@ -34,7 +34,9 @@ public class InspectOriginalCore extends RefineNativeCamera {
     if(spec.has("name")&&!spec.get("name").isJsonNull())signatures.add(demangle(function,spec.get("name").getAsString()));
     else {
      String abi=spec.get("abi").getAsString();List<Variable> parameters=new ArrayList<>();
-     if(abi.equals("textureEntryFind")){
+     if(abi.equals("textureUpload")){
+      parameters.add(new ParameterImpl("texture",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("dib",observedType("void*"),currentProgram));
+     }else if(abi.equals("textureEntryFind")){
       for(String name:new String[]{"manager","filename","context"})parameters.add(new ParameterImpl(name,observedType("void*"),currentProgram));parameters.add(new ParameterImpl("kind",observedType("uint"),currentProgram));
      }else if(abi.equals("textureCreate")){
       parameters.add(new ParameterImpl("filename",observedType("void*"),currentProgram));parameters.add(new ParameterImpl("gray",BooleanDataType.dataType,currentProgram));parameters.add(new ParameterImpl("option",observedType("uint"),currentProgram));parameters.add(new ParameterImpl("context",observedType("void*"),currentProgram));

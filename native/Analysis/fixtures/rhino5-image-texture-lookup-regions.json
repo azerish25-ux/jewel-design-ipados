@@ -101,6 +101,21 @@
           "unwind": 19328952
         }
       ]
+    },
+    {
+      "role": "ogl-texture-upload-bitmap",
+      "name": null,
+      "abi": "textureUpload",
+      "rva": 1757232,
+      "length": 677,
+      "sha256": "0253230bb9c2c450261361071866fe777a76045532ab2d168ad753eb47d6d348",
+      "unwindRegions": [
+        {
+          "begin": 1757232,
+          "end": 1757909,
+          "unwind": 19587604
+        }
+      ]
     }
   ],
   "externalSignatures": [

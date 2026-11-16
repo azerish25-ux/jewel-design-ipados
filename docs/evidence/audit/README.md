@@ -22,6 +22,9 @@ This is a source-backed feature/compatibility checklist for recovered CounterSke
 
 - [Native Apple provider observations](../apple/native-image-provider-results.json): measured raw low-alpha/transparent RGB preservation on macOS; iOS adapter and wider conversion parity still required.
 
+- [Original image texture cache/upload](rhino5-image-texture-cache-source.json):7 static bodies, context/kind/name matching, file/embedded fallback and resize/alpha repair obligations.
+- [PNG sample native reference](../apple/png-straight-native-reference-results.json):22 controlled rasters match actual macOS provider components; wider source codec/color behavior remains unverified.
+
 ## Most consequential findings
 
 1. A PC portfolio is .csp XML plus GUID-pair .csg designs and sibling preview/history files. An STL/3DM geometry export is a different contract. [Project.cs:101](<../../../recovery/canonical/desktop/GV.CounterSketch.Studio.Model.Objects/Project.cs#L101>) — public string ProjectInfoFilePath.
