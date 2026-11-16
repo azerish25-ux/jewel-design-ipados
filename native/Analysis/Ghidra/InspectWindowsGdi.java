@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import com.google.gson.*;
 public class InspectWindowsGdi extends RefineNativeCamera {
- private DataType type(String value)throws Exception{if(value.endsWith("*"))return new PointerDataType(type(value.substring(0,value.length()-1)),currentProgram.getDataTypeManager());switch(value){case "void":return VoidDataType.dataType;case "uint":return UnsignedIntegerDataType.dataType;case "int":return IntegerDataType.dataType;default:throw new Exception("Unverified GDI ABI type "+value);}}
+ private DataType type(String value)throws Exception{if(value.endsWith("*"))return new PointerDataType(type(value.substring(0,value.length()-1)),currentProgram.getDataTypeManager());switch(value){case "void":return VoidDataType.dataType;case "uint":return UnsignedIntegerDataType.dataType;case "int":return IntegerDataType.dataType;case "u64":return UnsignedLongLongDataType.dataType;default:throw new Exception("Unverified GDI ABI type "+value);}}
  @Override public void run()throws Exception{
   String[] args=getScriptArgs();if(args.length!=3)throw new Exception("Expected manifest, output, root");
   Path root=Paths.get(args[2]).toRealPath(),manifest=Paths.get(args[0]).toAbsolutePath().normalize(),out=Paths.get(args[1]).toAbsolutePath().normalize();
@@ -22,7 +22,7 @@ public class InspectWindowsGdi extends RefineNativeCamera {
   try{
    List<Function> functions=new ArrayList<>();
    for(JsonElement element:spec.getAsJsonArray("functions")){
-    JsonObject item=element.getAsJsonObject();Function function=region(item);function.setName("Gdi_"+item.get("role").getAsString(),SourceType.USER_DEFINED);
+    JsonObject item=element.getAsJsonObject();Function function=region(item);function.setName(item.has("displayName")?item.get("displayName").getAsString():"Gdi_"+item.get("role").getAsString(),SourceType.USER_DEFINED);if(item.has("noReturn"))function.setNoReturn(item.get("noReturn").getAsBoolean());
     if(item.has("parameters")){List<Variable> parameters=new ArrayList<>();int i=0;for(JsonElement p:item.getAsJsonArray("parameters"))parameters.add(new ParameterImpl("arg"+(++i),type(p.getAsString()),currentProgram));function.updateFunction("__fastcall",new ReturnParameterImpl(type(item.get("returnType").getAsString()),currentProgram),parameters,Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,true,SourceType.USER_DEFINED);}
     functions.add(function);
    }

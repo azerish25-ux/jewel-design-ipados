@@ -1,0 +1,13 @@
+'use strict';
+// Source-derived expansion-kernel decimal domain only; not a general replacement for Windows FD6.
+const crypto=require('node:crypto');
+const log=Array.from({length:901},(_,i)=>Math.round(Math.log10((100+i)/100)*1000000));
+const slopes=Array.from({length:900},(_,i)=>Array.from({length:10},(_,j)=>Math.round(Math.log10((100+i+(j+1)/10)/100)*1000000)-Math.round(Math.log10((100+i+j/10)/100)*1000000)));
+function roundDiv(a,b){if(!Number.isSafeInteger(a)||!Number.isSafeInteger(b)||a<0||b<1)throw Error('Positive safe decimal division');return Math.floor((a+Math.floor(b/2))/b);}
+function logarithm(value){if(!Number.isInteger(value)||value<1||value>1000000)throw Error('Fractional FD6 log domain');let scaled=value*100,exponent=0;while(scaled<100000000){scaled*=10;exponent--;}let i=Math.floor(scaled/1000000)-100,fraction=scaled%1000000,segment=Math.floor(fraction/100000),result=log[i];if(fraction){for(let j=0;j<segment;j++)result+=slopes[i][j];result+=roundDiv(slopes[i][segment]*(fraction%100000),100000);}return result+exponent*1000000;}
+function antiLog(value){if(!Number.isInteger(value)||value>0)throw Error('Nonpositive FD6 mantissa domain');if(value<-5999999)return 1;let exponent=Math.floor(value/1000000),rem=value-exponent*1000000;if(rem===0)return roundDiv(1000000,10**(-exponent));let lo=0,hi=900;while(lo+1<hi){let mid=(lo+hi)>>1;if(log[mid]<=rem)lo=mid;else hi=mid;}let m=rem-log[lo],fraction=0;for(let j=0;j<10;j++){if(m<=slopes[lo][j]){fraction=j*100000+roundDiv(m*100000,slopes[lo][j]);break;}m-=slopes[lo][j];}return roundDiv((lo+100)*1000000+fraction,10**(2-exponent));}
+function multiply(a,b){return Math.sign(a*b)*roundDiv(Math.abs(a*b),1000000);}
+function divide(a,b){if(b===0)throw Error('Decimal divisor0 outside represented kernel domain');return Math.sign(a*b)*roundDiv(Math.abs(a)*1000000,Math.abs(b));}
+function power(value,inverse){if(!Number.isInteger(value)||value<0||value>1000000||typeof inverse!=='boolean')throw Error('Fractional kernel power domain');return value===0?0:antiLog(inverse?divide(logarithm(value),1414214):multiply(logarithm(value),1414214));}
+function tableFacts(){let a=Buffer.alloc(901*4),b=Buffer.alloc(9000*2);log.forEach((v,i)=>a.writeInt32LE(v,i*4));slopes.forEach((r,i)=>r.forEach((v,j)=>b.writeUInt16LE(v,(i*10+j)*2)));return {logCount:901,slopeCount:9000,logSha256:crypto.createHash('sha256').update(a).digest('hex'),slopeSha256:crypto.createHash('sha256').update(b).digest('hex'),scope:'Rounded mathematical log facts reproduce the inspected native table/decoded slopes; no Windows binary/table package included.'};}
+module.exports={roundDiv,logarithm,antiLog,multiply,divide,power,tableFacts};

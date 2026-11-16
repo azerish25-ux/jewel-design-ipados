@@ -31,10 +31,13 @@
     "sourceCommit": "fa0ab8551965ae3f5fd75b64f15dd2d8c8eea16c",
     "run": 43901694813,
     "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43901694813",
-    "status": "queued",
+    "status": "success",
     "repositoryRun": 43901694739,
     "repositoryConclusion": "success",
     "scope": "Cross-platform source-derived reference domains/identity guards only; no production HALFTONE support.",
-    "observation": "Original queued macOS job confirmed live; preserve run and inspect actual reference JSON/check artifacts when terminal."
+    "observation": "Actual macOS reference artifact verifies4 tests,2304 exact response cases,108 exact raster cases and24 explicitly unsupported mixed cases at sourcefa0ab85.",
+    "attempt": 2,
+    "evidence": "docs/evidence/apple/native-halftone-reference-results.json",
+    "history": "Attempt1 workflow failed with job cancelled before running. Retried only confirmed-cancelled job through owner plugin; attempt2 succeeded and actual artifact was verified."
   }
 }

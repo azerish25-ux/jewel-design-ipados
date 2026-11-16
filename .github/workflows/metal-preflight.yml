@@ -9,6 +9,11 @@ on:
       - "reference/fixtures/gdi-halftone-response-windows-26300.json"
       - "scripts/halftone-response-reference.cjs"
       - "scripts/halftone-fixed-reference.cjs"
+      - "scripts/halftone-mixed-reference.cjs"
+      - "scripts/gdi-decimal-reference.cjs"
+      - "reference/fixtures/gdi-mixed-windows-26300.json"
+      - "tests/gdi-mixed-reference.test.cjs"
+      - "native/Analysis/fixtures/windows-gdi-mixed-regions.json"
       - "scripts/windows-gdi-symbols.cjs"
       - "tests/native-halftone-reference.test.cjs"
       - "native/Analysis/Ghidra/InspectWindowsGdi.java"
@@ -183,6 +188,10 @@ jobs:
           node --test tests/native-halftone-reference.test.cjs > artifacts/native-halftone-reference-checks.txt
           node scripts/halftone-fixed-reference.cjs response reference/fixtures/gdi-halftone-response-windows-26300.json > artifacts/native-halftone-response.json
           node scripts/halftone-fixed-reference.cjs raster reference/fixtures/gdi-rgb-windows-26300.json > artifacts/native-halftone-raster.json
+      - name: Verify measured mixed HALFTONE reference domains
+        run: |
+          node --test tests/gdi-mixed-reference.test.cjs > artifacts/mixed-halftone-reference-checks.txt
+          node scripts/halftone-mixed-reference.cjs reference/fixtures/gdi-mixed-windows-26300.json > artifacts/mixed-halftone-reference.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

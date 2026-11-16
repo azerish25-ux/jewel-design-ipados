@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N03",
+  "parentTask": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "5b63a9818916f314d415da84bd1428af1c0819cf",
+  "status": "default_mixed_reference_measured_exact_generalization_fixup_and_product_open",
+  "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N03-mixed-axis.md",
+  "audit": "docs/evidence/audit/windows-gdi-mixed-source.json",
+  "checks": {
+    "ownPublicReferenceExitCode": 0,
+    "nativeCases": 336,
+    "nativeControls": 384,
+    "exactReferenceCases": 336,
+    "exactPriorMixedCases": 24,
+    "windowsNodeRegressions": 26,
+    "ghidraExitCode": 0,
+    "staticViews": 23,
+    "originalVendorTargetExecuted": false,
+    "repositoryIntegrity": "passed"
+  },
+  "outputHashes": {
+    "corpus": "13e3e0cfa485a9b68959958f5965178ce122ac90a400cb5ca07eec4fb0821649",
+    "producer": "153f57a46cb9d16875d9c3ee892cd12d88fbb354c08bc0b644669b9d2272f303",
+    "reference": "b9a43238087791d128d1853aaa1e31a7102ed892c9b431b01095ce24bc88699d",
+    "decimal": "ec4f01a259d2ba502052066bc284983cb229fba9b0d5ce4f7eb052be40055bc7",
+    "nativeRun": "bc0d0a864be78dcc12a469bf7ce96b9bf2b3d215f107c078fc686212d2868f1d",
+    "staticReport": "e277db17ccc262bcca1eac64ec5e96ff2db1e718af9297ecda334fb05a10a956"
+  },
+  "review": "Default represented truecolor full-rectangle reference only. Full fixup eligibility/partial branches, flags/clipping/profiles/limits/generalization and production integration stay open; completefalse is deliberate.",
+  "allLocalWritesD": true,
+  "github": "Connected owner plugin only",
+  "parityRowsClosed": 0
+}

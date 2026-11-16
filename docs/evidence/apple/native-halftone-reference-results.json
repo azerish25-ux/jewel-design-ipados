@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N02",
+  "sourceCommit": "fa0ab8551965ae3f5fd75b64f15dd2d8c8eea16c",
+  "workflowRun": 43901694813,
+  "attempt": 2,
+  "url": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/43901694813",
+  "conclusion": "success",
+  "artifact": {
+    "id": 14246709538,
+    "sha256": "01b45a21fcb4ad643b41c3d5c99334543688155e50f0d22f71d59f135cec7259",
+    "digestVerified": true
+  },
+  "checks": {
+    "referenceRegressions": 4,
+    "exactResponseCases": 2304,
+    "exactRasterCases": 108,
+    "explicitMixedCasesPending": 24,
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "outputHashes": {
+    "checks": "3de8a1fa730a95f2f14e5a178fc639e2903802a2656bcde69b6cb2866f0df10b",
+    "response": "8adb5e1046ff0b55553b9288515adc6c9aab49433451403fca2b7746319e3b02",
+    "raster": "fb96eb356cd0ecc4172d5d0a4581c525778bac6c66178988e10ee566cf41eb15",
+    "binding": "ba50d4486a35fba83da468643aaea4d4ddfa3fa51a843cf20012b484adb0c221"
+  },
+  "history": "Attempt1 job cancelled before running and workflow failed. Retried only that confirmed-cancelled job through owner GitHub plugin; attempt2 succeeded.",
+  "scope": "Native-derived analysis reference domains on macOS, not Windows/kernel execution on macOS, production HALFTONE or original vendor/PC/physical parity.",
+  "parityRowsClosed": 0
+}

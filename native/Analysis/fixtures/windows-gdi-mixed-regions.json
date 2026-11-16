@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "94f00aabe76a4af3794e2134b806bf89e556b66814859c285de62173350a5173",
+  "functions": [
+    {
+      "role": "DivFD6",
+      "name": null,
+      "rva": 1590664,
+      "length": 184,
+      "sha256": "c7e808e085a1fe24ab1b80ac9b3ca7d56eb3b85a4a340baab50b68ea5e3c9e4e",
+      "unwindRegions": [
+        {
+          "begin": 1590664,
+          "end": 1590848,
+          "unwind": 3733496
+        }
+      ]
+    },
+    {
+      "role": "RaisePower",
+      "name": null,
+      "rva": 1589584,
+      "length": 307,
+      "sha256": "1614d47bab49ab6e9d3ec1d65927aa5f5dbab51a3574c063988cb9cac5235187",
+      "unwindRegions": [
+        {
+          "begin": 1589584,
+          "end": 1589891,
+          "unwind": 3781832
+        }
+      ]
+    },
+    {
+      "role": "ExpandDIB_CY",
+      "name": null,
+      "rva": 1544416,
+      "length": 2528,
+      "sha256": "71fb6a7019d9ffb62627bafdb88b89d48eaf94ba4cde524bd7c7f59625cc4ebc",
+      "unwindRegions": [
+        {
+          "begin": 1544416,
+          "end": 1546944,
+          "unwind": 3780068
+        }
+      ]
+    },
+    {
+      "role": "ExpandDIB_CY_ExpCX",
+      "name": null,
+      "rva": 1810384,
+      "length": 2276,
+      "sha256": "7e4a8776c099580e119c9a1a0c20f969d96ac97d734a25e6932e2eeb4598c47c",
+      "unwindRegions": [
+        {
+          "begin": 1810384,
+          "end": 1812660,
+          "unwind": 3793976
+        }
+      ]
+    },
+    {
+      "role": "FastExpAA_CY",
+      "name": null,
+      "rva": 831888,
+      "length": 1789,
+      "sha256": "15edbbe5fc09f4ce96581db47a7a17c5085a240d61b786beda916e844cc98205",
+      "unwindRegions": [
+        {
+          "begin": 831888,
+          "end": 833677,
+          "unwind": 3744348
+        }
+      ]
+    },
+    {
+      "role": "BuildRepData",
+      "name": null,
+      "rva": 863428,
+      "length": 609,
+      "sha256": "deb8673d9b0d25466797516e35f0a5d280af47233059c9006e47ee708c6ab780",
+      "unwindRegions": [
+        {
+          "begin": 863428,
+          "end": 864037,
+          "unwind": 3745372
+        }
+      ]
+    },
+    {
+      "role": "BltDIB_CY",
+      "name": null,
+      "rva": 837376,
+      "length": 1290,
+      "sha256": "3c18d820267e7daa9da656ffe69bf167e8b61865fca20a1c0fd3e9104d129eff",
+      "unwindRegions": [
+        {
+          "begin": 837376,
+          "end": 838666,
+          "unwind": 3744668
+        }
+      ]
+    },
+    {
+      "role": "RepDIB_CY",
+      "name": null,
+      "rva": 827328,
+      "length": 839,
+      "sha256": "57b609d4db7a86138dc28ffaf9145be6ea0c022cec6b1afdcf8c87bc909ff0f4",
+      "unwindRegions": [
+        {
+          "begin": 827328,
+          "end": 828167,
+          "unwind": 3743904
+        }
+      ]
+    },
+    {
+      "role": "RepDIB_CX",
+      "name": null,
+      "rva": 841472,
+      "length": 95,
+      "sha256": "17587b72541058608e9976251ea5c9a2b7556ce885eea45937dc771539653203",
+      "unwindRegions": [
+        {
+          "begin": 841472,
+          "end": 841567,
+          "unwind": 3744752
+        }
+      ]
+    },
+    {
+      "role": "ExpandDIB_CX",
+      "name": null,
+      "rva": 1448256,
+      "length": 1377,
+      "sha256": "4b95aa62003d5c4ddb4f5349d5fb6fefc07b3c4f7f3fa085a4d54abbfba7a535",
+      "unwindRegions": [
+        {
+          "begin": 1448256,
+          "end": 1448460,
+          "unwind": 3775264
+        },
+        {
+          "begin": 1448460,
+          "end": 1448886,
+          "unwind": 3775284
+        },
+        {
+          "begin": 1448886,
+          "end": 1449407,
+          "unwind": 3775320
+        },
+        {
+          "begin": 1449407,
+          "end": 1449430,
+          "unwind": 3775340
+        },
+        {
+          "begin": 1449430,
+          "end": 1449460,
+          "unwind": 3775360
+        },
+        {
+          "begin": 1449460,
+          "end": 1449633,
+          "unwind": 3775400
+        }
+      ]
+    },
+    {
+      "role": "FastExpAA_CX",
+      "name": null,
+      "rva": 1337696,
+      "length": 1853,
+      "sha256": "4d6fb6561fb5ae6d48a7df9a8927648aacd2ebaaba2f3ce4ce12af38f04c4dc3",
+      "unwindRegions": [
+        {
+          "begin": 1337696,
+          "end": 1339549,
+          "unwind": 3769908
+        }
+      ]
+    },
+    {
+      "role": "Log",
+      "name": null,
+      "rva": 1591468,
+      "length": 335,
+      "sha256": "e9b8d2f4a3f3fd543bf179240d1849713b19b10ac7c8900e07a04b91a1c5c1bb",
+      "unwindRegions": [
+        {
+          "begin": 1591468,
+          "end": 1591803,
+          "unwind": 3781908
+        }
+      ]
+    },
+    {
+      "role": "AntiLog",
+      "name": null,
+      "rva": 1589900,
+      "length": 454,
+      "sha256": "a8e35a13c8bc6f478aa1f87870d49e82fc260149f15972ca00651056411cf060",
+      "unwindRegions": [
+        {
+          "begin": 1589900,
+          "end": 1590354,
+          "unwind": 3781860
+        }
+      ]
+    },
+    {
+      "role": "MulFD6",
+      "name": null,
+      "rva": 1589276,
+      "length": 299,
+      "sha256": "448053fb1d87091a5b26c627687fc92aa72527a7c4ba6ec28d46ba73b43cadd5",
+      "unwindRegions": [
+        {
+          "begin": 1589276,
+          "end": 1589575,
+          "unwind": 3781816
+        }
+      ]
+    },
+    {
+      "role": "U64DivU32RoundUp",
+      "name": null,
+      "rva": 1590856,
+      "length": 603,
+      "sha256": "22af405198acc2d88c37f8f01cf822a839aec35d1464a1931907e609ca0be2d6",
+      "unwindRegions": [
+        {
+          "begin": 1590856,
+          "end": 1591459,
+          "unwind": 3781876
+        }
+      ]
+    },
+    {
+      "role": "ShrinkDIB_CX",
+      "name": null,
+      "rva": 1637520,
+      "length": 806,
+      "sha256": "1c1bd8e823561353289673b56b0fc7797c73e07a2f9bdd2489845cddd86bbfe4",
+      "unwindRegions": [
+        {
+          "begin": 1637520,
+          "end": 1638326,
+          "unwind": 3784864
+        }
+      ]
+    },
+    {
+      "role": "FractionToMantissa",
+      "name": null,
+      "rva": 1591812,
+      "length": 281,
+      "sha256": "2169a4b08efcbc3635ee955db1105d267d074cfa2f904faa255e6f43855ebd46",
+      "unwindRegions": [
+        {
+          "begin": 1591812,
+          "end": 1592093,
+          "unwind": 3761548
+        }
+      ]
+    },
+    {
+      "role": "MantissaToFraction",
+      "name": null,
+      "rva": 1590360,
+      "length": 296,
+      "sha256": "6cda7b9f74c95a2fed9378277500ae410b0431b359b4314e4359901262039ff3",
+      "unwindRegions": [
+        {
+          "begin": 1590360,
+          "end": 1590656,
+          "unwind": 3774112
+        }
+      ]
+    },
+    {
+      "role": "CheckBMPNeedFixup",
+      "name": null,
+      "rva": 846256,
+      "length": 1360,
+      "sha256": "b7f08ac1c5973f44b40b65d547baf4ddb23908c0e942b500b9f2faee8f70ebd7",
+      "unwindRegions": [
+        {
+          "begin": 846256,
+          "end": 847616,
+          "unwind": 3744940
+        }
+      ]
+    },
+    {
+      "role": "GraySharpenInput",
+      "name": null,
+      "rva": 3215120,
+      "length": 208,
+      "sha256": "8aad7f259f9f9f1993d7bcfada48a9cbf356e83b94fa871c5bf4be0ae3266b47",
+      "unwindRegions": [
+        {
+          "begin": 3215120,
+          "end": 3215328,
+          "unwind": 3756868
+        }
+      ]
+    },
+    {
+      "role": "_local_unwind",
+      "displayName": "_local_unwind",
+      "name": null,
+      "rva": 3525376,
+      "length": 12,
+      "sha256": "835e933f2dad0a44d1942aee9e030cb753113059b5d43b146dc8d57babb1b9fa",
+      "unwindRegions": [
+        {
+          "begin": 3525376,
+          "end": 3525388,
+          "unwind": 3867936
+        }
+      ],
+      "parameters": [
+        "void*",
+        "void*"
+      ],
+      "returnType": "void",
+      "noReturn": true
+    },
+    {
+      "role": "__security_check_cookie",
+      "displayName": "__security_check_cookie",
+      "name": null,
+      "rva": 3525440,
+      "length": 30,
+      "sha256": "e46e805fa52ae5e5aa8ea43f299c5a4b1a05a277a8a4cda77cc9a402a6407a76",
+      "unwindRegions": [
+        {
+          "begin": 3525440,
+          "end": 3525470,
+          "unwind": 3832656
+        }
+      ],
+      "parameters": [
+        "u64"
+      ],
+      "returnType": "void",
+      "noReturn": false
+    },
+    {
+      "role": "memset",
+      "displayName": "memset",
+      "name": null,
+      "rva": 3526784,
+      "length": 263,
+      "sha256": "97630166772322aa5f93aa1305cdd166c539e512d4812100fe28b34918cd8306",
+      "unwindRegions": [
+        {
+          "begin": 3526784,
+          "end": 3527047,
+          "unwind": 3832664
+        }
+      ],
+      "parameters": [
+        "void*",
+        "int",
+        "u64"
+      ],
+      "returnType": "void*",
+      "noReturn": false
+    }
+  ]
+}

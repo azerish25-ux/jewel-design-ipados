@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N03",
+  "inputCommit": "5b63a9818916f314d415da84bd1428af1c0819cf",
+  "targetSha256": "94f00aabe76a4af3794e2134b806bf89e556b66814859c285de62173350a5173",
+  "analysisMode": "static_only_no_driver_loading_debugging_injection_or_private_function_invocation",
+  "originalVendorTargetExecuted": false,
+  "prerequisite": "docs/evidence/audit/windows-gdi-halftone-source.json",
+  "manifest": "native/Analysis/fixtures/windows-gdi-mixed-regions.json",
+  "functions": [
+    {
+      "role": "DivFD6",
+      "name": null,
+      "rva": 1590664,
+      "length": 184,
+      "sha256": "c7e808e085a1fe24ab1b80ac9b3ca7d56eb3b85a4a340baab50b68ea5e3c9e4e",
+      "unwindRegions": [
+        {
+          "begin": 1590664,
+          "end": 1590848,
+          "unwind": 3733496
+        }
+      ]
+    },
+    {
+      "role": "RaisePower",
+      "name": null,
+      "rva": 1589584,
+      "length": 307,
+      "sha256": "1614d47bab49ab6e9d3ec1d65927aa5f5dbab51a3574c063988cb9cac5235187",
+      "unwindRegions": [
+        {
+          "begin": 1589584,
+          "end": 1589891,
+          "unwind": 3781832
+        }
+      ]
+    },
+    {
+      "role": "ExpandDIB_CY",
+      "name": null,
+      "rva": 1544416,
+      "length": 2528,
+      "sha256": "71fb6a7019d9ffb62627bafdb88b89d48eaf94ba4cde524bd7c7f59625cc4ebc",
+      "unwindRegions": [
+        {
+          "begin": 1544416,
+          "end": 1546944,
+          "unwind": 3780068
+        }
+      ]
+    },
+    {
+      "role": "ExpandDIB_CY_ExpCX",
+      "name": null,
+      "rva": 1810384,
+      "length": 2276,
+      "sha256": "7e4a8776c099580e119c9a1a0c20f969d96ac97d734a25e6932e2eeb4598c47c",
+      "unwindRegions": [
+        {
+          "begin": 1810384,
+          "end": 1812660,
+          "unwind": 3793976
+        }
+      ]
+    },
+    {
+      "role": "FastExpAA_CY",
+      "name": null,
+      "rva": 831888,
+      "length": 1789,
+      "sha256": "15edbbe5fc09f4ce96581db47a7a17c5085a240d61b786beda916e844cc98205",
+      "unwindRegions": [
+        {
+          "begin": 831888,
+          "end": 833677,
+          "unwind": 3744348
+        }
+      ]
+    },
+    {
+      "role": "BuildRepData",
+      "name": null,
+      "rva": 863428,
+      "length": 609,
+      "sha256": "deb8673d9b0d25466797516e35f0a5d280af47233059c9006e47ee708c6ab780",
+      "unwindRegions": [
+        {
+          "begin": 863428,
+          "end": 864037,
+          "unwind": 3745372
+        }
+      ]
+    },
+    {
+      "role": "BltDIB_CY",
+      "name": null,
+      "rva": 837376,
+      "length": 1290,
+      "sha256": "3c18d820267e7daa9da656ffe69bf167e8b61865fca20a1c0fd3e9104d129eff",
+      "unwindRegions": [
+        {
+          "begin": 837376,
+          "end": 838666,
+          "unwind": 3744668
+        }
+      ]
+    },
+    {
+      "role": "RepDIB_CY",
+      "name": null,
+      "rva": 827328,
+      "length": 839,
+      "sha256": "57b609d4db7a86138dc28ffaf9145be6ea0c022cec6b1afdcf8c87bc909ff0f4",
+      "unwindRegions": [
+        {
+          "begin": 827328,
+          "end": 828167,
+          "unwind": 3743904
+        }
+      ]
+    },
+    {
+      "role": "RepDIB_CX",
+      "name": null,
+      "rva": 841472,
+      "length": 95,
+      "sha256": "17587b72541058608e9976251ea5c9a2b7556ce885eea45937dc771539653203",
+      "unwindRegions": [
+        {
+          "begin": 841472,
+          "end": 841567,
+          "unwind": 3744752
+        }
+      ]
+    },
+    {
+      "role": "ExpandDIB_CX",
+      "name": null,
+      "rva": 1448256,
+      "length": 1377,
+      "sha256": "4b95aa62003d5c4ddb4f5349d5fb6fefc07b3c4f7f3fa085a4d54abbfba7a535",
+      "unwindRegions": [
+        {
+          "begin": 1448256,
+          "end": 1448460,
+          "unwind": 3775264
+        },
+        {
+          "begin": 1448460,
+          "end": 1448886,
+          "unwind": 3775284
+        },
+        {
+          "begin": 1448886,
+          "end": 1449407,
+          "unwind": 3775320
+        },
+        {
+          "begin": 1449407,
+          "end": 1449430,
+          "unwind": 3775340
+        },
+        {
+          "begin": 1449430,
+          "end": 1449460,
+          "unwind": 3775360
+        },
+        {
+          "begin": 1449460,
+          "end": 1449633,
+          "unwind": 3775400
+        }
+      ]
+    },
+    {
+      "role": "FastExpAA_CX",
+      "name": null,
+      "rva": 1337696,
+      "length": 1853,
+      "sha256": "4d6fb6561fb5ae6d48a7df9a8927648aacd2ebaaba2f3ce4ce12af38f04c4dc3",
+      "unwindRegions": [
+        {
+          "begin": 1337696,
+          "end": 1339549,
+          "unwind": 3769908
+        }
+      ]
+    },
+    {
+      "role": "Log",
+      "name": null,
+      "rva": 1591468,
+      "length": 335,
+      "sha256": "e9b8d2f4a3f3fd543bf179240d1849713b19b10ac7c8900e07a04b91a1c5c1bb",
+      "unwindRegions": [
+        {
+          "begin": 1591468,
+          "end": 1591803,
+          "unwind": 3781908
+        }
+      ]
+    },
+    {
+      "role": "AntiLog",
+      "name": null,
+      "rva": 1589900,
+      "length": 454,
+      "sha256": "a8e35a13c8bc6f478aa1f87870d49e82fc260149f15972ca00651056411cf060",
+      "unwindRegions": [
+        {
+          "begin": 1589900,
+          "end": 1590354,
+          "unwind": 3781860
+        }
+      ]
+    },
+    {
+      "role": "MulFD6",
+      "name": null,
+      "rva": 1589276,
+      "length": 299,
+      "sha256": "448053fb1d87091a5b26c627687fc92aa72527a7c4ba6ec28d46ba73b43cadd5",
+      "unwindRegions": [
+        {
+          "begin": 1589276,
+          "end": 1589575,
+          "unwind": 3781816
+        }
+      ]
+    },
+    {
+      "role": "U64DivU32RoundUp",
+      "name": null,
+      "rva": 1590856,
+      "length": 603,
+      "sha256": "22af405198acc2d88c37f8f01cf822a839aec35d1464a1931907e609ca0be2d6",
+      "unwindRegions": [
+        {
+          "begin": 1590856,
+          "end": 1591459,
+          "unwind": 3781876
+        }
+      ]
+    },
+    {
+      "role": "ShrinkDIB_CX",
+      "name": null,
+      "rva": 1637520,
+      "length": 806,
+      "sha256": "1c1bd8e823561353289673b56b0fc7797c73e07a2f9bdd2489845cddd86bbfe4",
+      "unwindRegions": [
+        {
+          "begin": 1637520,
+          "end": 1638326,
+          "unwind": 3784864
+        }
+      ]
+    },
+    {
+      "role": "FractionToMantissa",
+      "name": null,
+      "rva": 1591812,
+      "length": 281,
+      "sha256": "2169a4b08efcbc3635ee955db1105d267d074cfa2f904faa255e6f43855ebd46",
+      "unwindRegions": [
+        {
+          "begin": 1591812,
+          "end": 1592093,
+          "unwind": 3761548
+        }
+      ]
+    },
+    {
+      "role": "MantissaToFraction",
+      "name": null,
+      "rva": 1590360,
+      "length": 296,
+      "sha256": "6cda7b9f74c95a2fed9378277500ae410b0431b359b4314e4359901262039ff3",
+      "unwindRegions": [
+        {
+          "begin": 1590360,
+          "end": 1590656,
+          "unwind": 3774112
+        }
+      ]
+    },
+    {
+      "role": "CheckBMPNeedFixup",
+      "name": null,
+      "rva": 846256,
+      "length": 1360,
+      "sha256": "b7f08ac1c5973f44b40b65d547baf4ddb23908c0e942b500b9f2faee8f70ebd7",
+      "unwindRegions": [
+        {
+          "begin": 846256,
+          "end": 847616,
+          "unwind": 3744940
+        }
+      ]
+    },
+    {
+      "role": "GraySharpenInput",
+      "name": null,
+      "rva": 3215120,
+      "length": 208,
+      "sha256": "8aad7f259f9f9f1993d7bcfada48a9cbf356e83b94fa871c5bf4be0ae3266b47",
+      "unwindRegions": [
+        {
+          "begin": 3215120,
+          "end": 3215328,
+          "unwind": 3756868
+        }
+      ]
+    },
+    {
+      "role": "_local_unwind",
+      "displayName": "_local_unwind",
+      "name": null,
+      "rva": 3525376,
+      "length": 12,
+      "sha256": "835e933f2dad0a44d1942aee9e030cb753113059b5d43b146dc8d57babb1b9fa",
+      "unwindRegions": [
+        {
+          "begin": 3525376,
+          "end": 3525388,
+          "unwind": 3867936
+        }
+      ],
+      "parameters": [
+        "void*",
+        "void*"
+      ],
+      "returnType": "void",
+      "noReturn": true
+    },
+    {
+      "role": "__security_check_cookie",
+      "displayName": "__security_check_cookie",
+      "name": null,
+      "rva": 3525440,
+      "length": 30,
+      "sha256": "e46e805fa52ae5e5aa8ea43f299c5a4b1a05a277a8a4cda77cc9a402a6407a76",
+      "unwindRegions": [
+        {
+          "begin": 3525440,
+          "end": 3525470,
+          "unwind": 3832656
+        }
+      ],
+      "parameters": [
+        "u64"
+      ],
+      "returnType": "void",
+      "noReturn": false
+    },
+    {
+      "role": "memset",
+      "displayName": "memset",
+      "name": null,
+      "rva": 3526784,
+      "length": 263,
+      "sha256": "97630166772322aa5f93aa1305cdd166c539e512d4812100fe28b34918cd8306",
+      "unwindRegions": [
+        {
+          "begin": 3526784,
+          "end": 3527047,
+          "unwind": 3832664
+        }
+      ],
+      "parameters": [
+        "void*",
+        "int",
+        "u64"
+      ],
+      "returnType": "void*",
+      "noReturn": false
+    }
+  ],
+  "views": [
+    {
+      "role": "DivFD6",
+      "entry": "140184588",
+      "signature": "undefined Gdi_DivFD6()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "06cc41a369c04f204424cd3fc150d99234106d60b9551dd8a0e15985c47cecf4"
+    },
+    {
+      "role": "RaisePower",
+      "entry": "140184150",
+      "signature": "undefined Gdi_RaisePower()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "ccd2875cbcb36928c52e36a179d5f5cfaba37cb6185d0c6e73877f21c0342782"
+    },
+    {
+      "role": "ExpandDIB_CY",
+      "entry": "1401790e0",
+      "signature": "undefined Gdi_ExpandDIB_CY()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "18eef2d44b3abf6f394e7c9aef5ffbb8858576c154e853e3cffb2dc65a9ed142"
+    },
+    {
+      "role": "ExpandDIB_CY_ExpCX",
+      "entry": "1401b9fd0",
+      "signature": "undefined Gdi_ExpandDIB_CY_ExpCX()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "f0cf452a9e1082e3d2c4f235d0ee952d2fea610180bcc261702da08d1f1400c2"
+    },
+    {
+      "role": "FastExpAA_CY",
+      "entry": "1400cb190",
+      "signature": "undefined Gdi_FastExpAA_CY()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "e271dee30019ac213917a261b2032bd37db2af927b554cfa3210ba013bf6d490"
+    },
+    {
+      "role": "BuildRepData",
+      "entry": "1400d2cc4",
+      "signature": "undefined Gdi_BuildRepData()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "72b9ab9119228aa7194285a3d18587ba00b3da20fb71e5fd4d4ec4735eed1bf8"
+    },
+    {
+      "role": "BltDIB_CY",
+      "entry": "1400cc700",
+      "signature": "undefined Gdi_BltDIB_CY()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "0db044cfb6007481a68ce55d006c8dbae9c3e826747abdbe88ef8da8ba23bb4e"
+    },
+    {
+      "role": "RepDIB_CY",
+      "entry": "1400c9fc0",
+      "signature": "undefined Gdi_RepDIB_CY()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "89c33c6606e9a97c6584ae2cd78bcd0e7a5d812561b8f70563a838da464c7874"
+    },
+    {
+      "role": "RepDIB_CX",
+      "entry": "1400cd700",
+      "signature": "undefined Gdi_RepDIB_CX()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "e38d6847013b34839451391817587446ab1f8fd1b9753165a3b9048855135e26"
+    },
+    {
+      "role": "ExpandDIB_CX",
+      "entry": "140161940",
+      "signature": "undefined Gdi_ExpandDIB_CX()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "7959629e39cf3a7636931ab1727840c9d5f8d391e8eeb18ecbe38da3896c9163"
+    },
+    {
+      "role": "FastExpAA_CX",
+      "entry": "140146960",
+      "signature": "undefined Gdi_FastExpAA_CX()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "c2858d9183fc26ae2aa2a0e9e51272f06aae29d08c39b8e49f7fe0b62c113793"
+    },
+    {
+      "role": "Log",
+      "entry": "1401848ac",
+      "signature": "undefined Gdi_Log()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "d46e8a850337737c47b95ecfb91ad207af7b41645e1a50eb8457e6340026651b"
+    },
+    {
+      "role": "AntiLog",
+      "entry": "14018428c",
+      "signature": "undefined Gdi_AntiLog()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "88633d4b9cade5f5cce62aaec2049189727016b20c4a6daa9e9262767a0d71da"
+    },
+    {
+      "role": "MulFD6",
+      "entry": "14018401c",
+      "signature": "undefined Gdi_MulFD6()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "be64b9174cabcc5cc574eea8305ef65f8dfcf06a057968eb2bfe30cd60440c1c"
+    },
+    {
+      "role": "U64DivU32RoundUp",
+      "entry": "140184648",
+      "signature": "undefined Gdi_U64DivU32RoundUp()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "81b13553c8c4638aedeba0a453993ad2bd961b824d29e09065be7190675e44e7"
+    },
+    {
+      "role": "ShrinkDIB_CX",
+      "entry": "14018fc90",
+      "signature": "undefined Gdi_ShrinkDIB_CX()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "b973731fdb3885ac01905e8afb41d3cb8df34f33f599b752a8e0ee81aff33c53"
+    },
+    {
+      "role": "FractionToMantissa",
+      "entry": "140184a04",
+      "signature": "undefined Gdi_FractionToMantissa()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "ce061b3f53408019e0985ba2fac00c7d971a87277a0c1360ae87433d2ba858b8"
+    },
+    {
+      "role": "MantissaToFraction",
+      "entry": "140184458",
+      "signature": "undefined Gdi_MantissaToFraction()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "c5ae0469c39846251c49b6648e723d91aabfcb984fa096553ddea41488b80f8b"
+    },
+    {
+      "role": "CheckBMPNeedFixup",
+      "entry": "1400ce9b0",
+      "signature": "undefined Gdi_CheckBMPNeedFixup()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "feffb192af78b731f36b0b9c3caa43bd8f21a67549e612e4372cc3ce4c5e00e7"
+    },
+    {
+      "role": "GraySharpenInput",
+      "entry": "140310f10",
+      "signature": "undefined Gdi_GraySharpenInput()",
+      "abi": "decompiler_inferred_unverified",
+      "decompilerSha256": "533ef1358815beb0c2db79fb2bbcc45e29d20d83fdce3f80f96fdf757755e965"
+    },
+    {
+      "role": "_local_unwind",
+      "entry": "14035cb00",
+      "signature": "void _local_unwind(void * arg1, void * arg2)",
+      "abi": "explicit_instruction_reviewed",
+      "decompilerSha256": "1ec2b404afbefd970acf3491b38a7e863c0d91f2ef4f63fe144c4e471f1a3bce"
+    },
+    {
+      "role": "__security_check_cookie",
+      "entry": "14035cb40",
+      "signature": "void __security_check_cookie(ulonglong arg1)",
+      "abi": "explicit_instruction_reviewed",
+      "decompilerSha256": "75cb79045c619ccce66c19a881b764d2a972cfedc33513d8e008f550c0ec9634"
+    },
+    {
+      "role": "memset",
+      "entry": "14035d080",
+      "signature": "void * memset(void * arg1, int arg2, ulonglong arg3)",
+      "abi": "explicit_instruction_reviewed",
+      "decompilerSha256": "32e6f17e1e373f7c7697ebc2914d67911acaa5155f0d75f8528483fb5a703518"
+    }
+  ],
+  "sourceRuntimeAnnotations": "Memory/cleanup signatures and non-returning _local_unwind are analysis metadata only; no binary modification. They correct misleading decompiler cleanup fallthrough; other mixed signatures/layouts remain inferred.",
+  "observations": {
+    "order": "Fused Q13 shrink/sharpen on shrinking axis; pre-sharpen bytes on expanding axis; apply expansion weights with+4096/shift13. Both directions independently measured.",
+    "decimal": "1e6 kernel values; native DivFD6/RaisePower with1414214 and inverse flag abovehalf; exacthalf retains500000. Log/AntiLog piecewise interpolation uses mathematical rounded log facts and integer slopes, not direct floating Math.pow.",
+    "quantization": "Rightmost-to-leftmost source contribution normalization carries the Q13 remainder. Left-to-right normalization left one-byte errors under fractional controls.",
+    "lookupFacts": {
+      "logCount": 901,
+      "slopeCount": 9000,
+      "logSha256": "e328bfac8b372c5a3da39e3da6d2e15e99d9caf09847fc2deb76c8e2519001a6",
+      "slopeSha256": "5f39837a18381e91a423bc019b141db0b52d0fc78b35ccb8d16d98905642710f",
+      "scope": "Rounded mathematical log facts reproduce the inspected native table/decoded slopes; no Windows binary/table package included.",
+      "nativeLogRva": 3648960,
+      "nativePackedSlopeRva": 3652576,
+      "nativeLogSha256": "e328bfac8b372c5a3da39e3da6d2e15e99d9caf09847fc2deb76c8e2519001a6",
+      "decodedNativeSlopeSha256": "5f39837a18381e91a423bc019b141db0b52d0fc78b35ccb8d16d98905642710f",
+      "nativeLogMatches": 901,
+      "nativeDecodedSlopeMatches": 9000
+    },
+    "fixup": "Reflected-border fully continued checker blocks average two colors with+1/shift1 in represented default mixed paths. Full fixup eligibility, partial brightness-dependent branches, flags and broader domains remain unresolved. Generic attempts to enable inferred partial branches disagreed with native controls and are not accepted.",
+    "diagnostics": "Scratch REPL callback binding and require-cache issues were isolated; final comparisons use fresh-process modules and explicit arithmetic. Committed preceding fixed-reference tests were unaffected."
+  },
+  "measurement": {
+    "producer": "native/Rendering/GdiRgbReference/Program.cs",
+    "flag": "--mixed-probe",
+    "corpus": "reference/fixtures/gdi-mixed-windows-26300.json",
+    "sources": 168,
+    "cases": 336,
+    "controls": 384,
+    "scope": "Current-host public Win32 positive-height BI_RGB24/32 memory DIB/SRCCOPY, not original vendor/MFC/OS/driver."
+  },
+  "reference": {
+    "script": "scripts/halftone-mixed-reference.cjs",
+    "decimal": "scripts/gdi-decimal-reference.cjs",
+    "newCorpus": {
+      "cases": 336,
+      "exactCases": 336,
+      "mismatches": [],
+      "complete": false,
+      "scope": "Retained default truecolor mixed full-rectangle analysis cases only. Extended checker condition included; full eligibility/partial fixup, flags/clipping/profiles/generalization/vendor/PC/physical and product integration remain open."
+    },
+    "priorCorpus": {
+      "cases": 24,
+      "exactCases": 24,
+      "mismatches": [],
+      "complete": false,
+      "scope": "Retained default truecolor mixed full-rectangle analysis cases only. Extended checker condition included; full eligibility/partial fixup, flags/clipping/profiles/generalization/vendor/PC/physical and product integration remain open."
+    },
+    "productionImplemented": false
+  },
+  "remaining": [
+    "Full input-fixup eligibility and partial branches with correct source state/control-flow review and independent controls",
+    "Broader clipping/orientation/profiles/flags/limits/generalization",
+    "Production C# port and complete source dimension/conversion/gray/alpha OR/cache/document composition",
+    "Original vendor/MFC/OS/driver/PC and physical-device acceptance"
+  ],
+  "allLocalWritesD": true,
+  "windowsBinariesOrPdbPackagesPublished": false,
+  "parityRowsClosed": 0
+}
