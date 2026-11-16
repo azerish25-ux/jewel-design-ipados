@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "0c6743cfb2121cf79afcac1af6313bf8f788a2a9",
-  "status": "large_mixed_reference_windows_verified_macos_pending_product_open",
+  "status": "large_mixed_reference_windows_macos_verified_product_open",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N05-large-fixup-gate.md",
   "audit": "docs/evidence/audit/windows-gdi-large-fixup-source.json",
   "checks": {
@@ -29,5 +29,11 @@
   "review": "Bounded default mixed colour-gate proof only, completefalse; all product/vendor/PC/physical acceptance retained.",
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "apple": {
+    "sourceCommit": "602779f520eecbb6f3cf7df6039327fc959e3534",
+    "run": 43921406011,
+    "conclusion": "success",
+    "evidence": "docs/evidence/apple/large-fixup-halftone-reference-results.json"
+  }
 }

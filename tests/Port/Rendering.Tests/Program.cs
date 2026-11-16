@@ -39,3 +39,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.TracePlaneAssertions.Ru
 System.Console.WriteLine(CandidateGeometryContractChecks.TextureAnisotropyAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.GdiIntegerStretchAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.GdiHalftoneStretchAssertions.Run());

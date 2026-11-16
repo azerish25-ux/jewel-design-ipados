@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A02-N05",
+  "sourceCommit": "602779f520eecbb6f3cf7df6039327fc959e3534",
+  "workflowRun": 43921406011,
+  "conclusion": "success",
+  "artifactId": 14253644034,
+  "artifactSha256": "e5963f5958ba99ade1745cf26a1ff573c1a6f3de51891dd31f1dae15ac5ef27c",
+  "actualArtifactInspected": true,
+  "checks": {
+    "nodeTests": 4,
+    "cases": 576,
+    "exactCases": 576,
+    "fixupCases": 208,
+    "noSharpenCases": 288,
+    "filteredCases": 288,
+    "mismatches": [],
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "complete": false,
+  "scope": "Independent default mixed native input/complete output digest reference; not C# product or original vendor/PC/physical proof.",
+  "allLocalDownloadsD": true
+}
