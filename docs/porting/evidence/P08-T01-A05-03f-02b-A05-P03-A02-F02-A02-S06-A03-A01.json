@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "2318fb6a4b2f185f345ad4dcbc9263af61109572",
-  "status": "composed_cpu_windows_verified_apple_gpu_pending_full_parent_open",
+  "status": "composed_windows_macos_numeric_verified_portable_fixture_fix_pending_gpu_live",
   "plan": "docs/porting/plans/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A01-composed-texture.md",
   "audit": "docs/evidence/audit/rhino5-composed-texture-source.json",
   "checks": {
@@ -21,10 +21,11 @@
     "existingManagedHalftoneCases": 3860,
     "existingIntegerCases": 1596,
     "nativeHostExit": 0,
-    "nodeAdjacentUniqueTests": 47,
+    "nodeAdjacentUniqueTests": 49,
     "nodeRuns": [
       15,
-      39
+      39,
+      6
     ],
     "repositoryIntegrity": "passed",
     "initialMissingComponentBuildFailed": true,
@@ -39,5 +40,18 @@
   "review": "Normal explicit24/32 source path implemented, actual Apple execution pending. Full A03 scope including codecs/cache/document/PC/physical retained; no parity closure.",
   "allLocalWritesD": true,
   "github": "Connected owner plugin only",
-  "parityRowsClosed": 0
+  "parityRowsClosed": 0,
+  "initialApplePreflight": {
+    "sourceCommit": "80a8d912f973ad05b948726734b60434719fa1b3",
+    "run": 43933001391,
+    "conclusion": "failure",
+    "artifactId": 14259637241,
+    "artifactSha256": "1001e984cfa9b6e58ea1eab58ad51d506f3825b0cdd7b0fbb5adafdb6aa9cfe9",
+    "actualArtifactInspected": true,
+    "managedComposedCases": 120,
+    "managedGuards": 10,
+    "failedCheck": "Generated PNG compressed byte equality across different zlib versions. Retained native case metadata and C# numerical comparisons passed.",
+    "fix": "Validate exact native metadata, PNG chunk bounds/headers/CRCs and exact decompressed captured samples; valid alternative deflate bytes accepted, CRC corruption and valid PNG wrong samples reject.",
+    "runtimeAndNativeFixtureChanged": false
+  }
 }

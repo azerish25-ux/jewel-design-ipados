@@ -21,3 +21,7 @@ CPU tests: node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.
 Native corpus controls: node scripts/run-local.cjs node --test tests/composed-texture-reference.test.cjs
 
 Actual simulator: existing visible workflow must run20 real decoded PNG/filter/upload/readback cases/584 pixels and source-failure/disposal controls on EACH iPad/iPhone, with independent scripts/verify-composed-texture-gpu.cjs over saved bytes and all18 prior capture gates. Inspect the pinned artifact, never infer simulator execution from a macOS build.
+
+## Cross-platform fixture correction
+
+Actual first macOS run43933001391 artifact14259637241 passed all120 C# composed cases/10 guards but failed generated PNG compressed-byte equality. Host zlib versions emitted different valid deflate streams. The corrected check verifies unchanged full native metadata plus PNG structure/CRC and exact decompressed native input samples. Added regressions accept different valid compression and reject bad CRC or a CRC-valid PNG with altered native samples. Native expected pixels and runtime C# were unchanged; the existing actual simulator run43933001456 at80a8d9 remains live. New macOS run must pass the corrected6 corpus checks and binding build.
