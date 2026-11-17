@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P03",
+  "parentTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "35b4e8cf0aed7368dbea3be6d58bc73ac00ffada",
+  "status": "source-entry-c-prefix-windows-tested-apple-pending",
+  "originalExecuted": false,
+  "sourceContract": "docs/evidence/audit/cache-entry-name-copy-contract.json",
+  "implementation": {
+    "path": "src/Port/Rendering.Candidate/Rhino5ContextImageCache.cs",
+    "change": "Copy filename C prefix inside owned entry-construction transaction before selected lower; lookup query and standalone stored-string lower unchanged"
+  },
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "actual": "Entry stored data after source C-prefix boundary: Crt/C/case2"
+  },
+  "windows": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 0,
+    "modeCrtStringCases": 144,
+    "prefixQueryOwnershipFailureChecks": 444,
+    "adjacentNativeSortOrders": 10431,
+    "adjacentNativeSortCallbackEvents": 1972827,
+    "adjacentCacheOrderingChecks": 9,
+    "adjacentRuntimeTransitions": 68,
+    "adjacentRuntimeChecks": 683,
+    "adjacentNodeChecks": 17,
+    "nativeHostExitCode": 0,
+    "repositoryIntegrity": true
+  },
+  "limits": [
+    "Source-derived entry-copy contract; original app never executed",
+    "Generic factory input/path resolution policy is unchanged and remains separate work",
+    "Native GDI cache/document/view/PC/physical/full application acceptance remains open"
+  ]
+}

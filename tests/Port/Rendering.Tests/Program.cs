@@ -71,3 +71,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.StringRuntimeAssertions
 System.Console.WriteLine(CandidateGeometryContractChecks.CacheNativeOrderingAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.CrtSortAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.CacheEntryNameAssertions.Run());

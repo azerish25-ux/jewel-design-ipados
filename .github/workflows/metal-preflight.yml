@@ -38,6 +38,7 @@ on:
       - "native/Analysis/fixtures/crt100-sort-regions.json"
       - "tests/Port/Geometry.Candidate.Contracts/CrtSortAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/CacheNativeOrderingAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/CacheEntryNameAssertions.cs"
       - "native/Rendering/AnsiNlsReference/**"
       - "scripts/prepare-ansi-profile.cjs"
       - "tests/ansi-profile.test.cjs"
