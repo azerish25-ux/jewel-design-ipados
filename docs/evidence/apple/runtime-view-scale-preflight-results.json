@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A03-S02",
+  "sourceCommit": "c77779053d913f18127049496297b78fef9efcb6",
+  "runId": 44074951784,
+  "runUrl": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/44074951784",
+  "jobId": 134010459933,
+  "conclusion": "success",
+  "artifact": {
+    "id": 14323869536,
+    "name": "metal-binding-preflight",
+    "sha256": "db1f8c680a15fc3f6002ed29c3fbca6d7e0da5d8bf31a57e9b176321a21ed738",
+    "entries": 68,
+    "bytes": 74729
+  },
+  "scaleChecks": 44,
+  "metalBindingBuild": {
+    "succeeded": true,
+    "warnings": 0,
+    "errors": 0
+  },
+  "reports": [
+    {
+      "path": "runtime-view-scale.txt",
+      "sha256": "8efa63db1639271bf7091369e9607b8d44222ce559a9c075ae9f0f5a3adde55a",
+      "bytes": 165
+    },
+    {
+      "path": "metal-binding-build.txt",
+      "sha256": "4c17d9e8a5bc016eaea99173d2bf124f349a06b6e96a8904f78a3ad8346b110c",
+      "bytes": 2951
+    }
+  ],
+  "scope": "Actual macOS runtime-view scale execution and iOS binding compilation; no original application, client-rectangle adapter, full synchronization/document/PC or physical-device acceptance."
+}

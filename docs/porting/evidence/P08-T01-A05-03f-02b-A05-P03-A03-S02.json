@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "83bd0724e1b9ce9bac9f3137cc3aa6f55460e81a",
-  "status": "runtime-view-scale-implemented-windows-focused-pass-platform-validation-pending",
+  "status": "runtime-view-scale-implemented-windows-macos-ipad-iphone-verified-full-synchronization-open",
   "sourceContracts": [
     "docs/evidence/audit/rhino5-document-view-owner-source.json",
     "docs/evidence/audit/rhino5-view-scale-distance-source.json"
@@ -28,7 +28,9 @@
       "exitCode": 0,
       "scaleChecks": 44,
       "existingSharedContractsPassed": true
-    }
+    },
+    "repositoryIntegrity": true,
+    "freshOriginalDistanceSourceImageChecked": true
   },
   "originalExecuted": false,
   "limits": [
@@ -43,5 +45,20 @@
     "actualRuntimeMirrorRepair": true,
     "noDocumentStubAdded": true,
     "failedNativeFrustumExplicit": true
-  }
+  },
+  "platformEvidence": [
+    "docs/evidence/apple/runtime-view-scale-preflight-results.json",
+    "docs/evidence/apple/runtime-view-scale-ios-results.json"
+  ],
+  "relatedRuns": {
+    "repository": {
+      "runId": 44074951793,
+      "conclusion": "success"
+    },
+    "recoveredCsharpReuse": {
+      "runId": 44074951894,
+      "conclusion": "success"
+    }
+  },
+  "changedNextAction": "Implement concrete registered-view lifetimes and source-ordered multi-view camera/target/frustum synchronization using this runtime measurement; connect actual rendering invalidation. Document timer/dirty/properties and source image-setter partial-failure ownership remain explicit prerequisites, never success stubs."
 }

@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A03-S02",
+  "sourceCommit": "c77779053d913f18127049496297b78fef9efcb6",
+  "runId": 44074952021,
+  "runUrl": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/44074952021",
+  "jobId": 134010460392,
+  "conclusion": "success",
+  "artifact": {
+    "id": 14325258125,
+    "name": "visible-viewport-evidence",
+    "sha256": "25f407d8373dd87f7ba64f301ee70256f192f17944114e2ce137951a749f9cdd",
+    "entries": 328,
+    "bytes": 21979215
+  },
+  "appBuild": {
+    "errors": 0,
+    "warnings": 2,
+    "existingWarningCodes": [
+      "CS8765",
+      "CA1422"
+    ]
+  },
+  "families": {
+    "ipad": {
+      "runtimeViewScale": {
+        "checks": 44,
+        "resultLine": "PASS runtime-view synchronization scale: 44 source arithmetic/rectangle/mirror/ownership/boundary checks; full registered-view/document/platform/PC parity separate."
+      },
+      "resultReportSha256": "4ab59c592ccbb53e427f07ced821e822ee81f222e57bd353378320f7116cc4eb",
+      "priorCapturesVerified": 18,
+      "restorationDifferencePixels": {
+        "cad": 0,
+        "wallpaper": {
+          "paper-clear": 0,
+          "paper-final": 0
+        },
+        "trace": {
+          "trace-hidden": 0,
+          "trace-final": 0
+        }
+      },
+      "fixedProfileGpu": {
+        "frames": 8,
+        "exactPixels": 48
+      },
+      "liveProfileGpu": {
+        "frames": 17,
+        "exactNativePixels": 682,
+        "resources": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 8
+        }
+      },
+      "retiredTraceResources": {
+        "MeshUploads": 13,
+        "SubmittedFrames": 18,
+        "CompletedFrames": 18,
+        "PresentedFrames": 0,
+        "InFlightFrames": 0,
+        "PeakInFlightFrames": 2,
+        "LiveMeshResources": 0,
+        "LiveMeshBuffers": 0,
+        "IsDisposed": true,
+        "LastError": null,
+        "ImageUploads": 13,
+        "LiveImageTextures": 0,
+        "LiveSceneResources": 0,
+        "SceneRevision": 31,
+        "LiveImageSamplers": 0
+      },
+      "retiredWallpaperResources": {
+        "MeshUploads": 13,
+        "SubmittedFrames": 18,
+        "CompletedFrames": 18,
+        "PresentedFrames": 0,
+        "InFlightFrames": 0,
+        "PeakInFlightFrames": 3,
+        "LiveMeshResources": 0,
+        "LiveMeshBuffers": 0,
+        "IsDisposed": true,
+        "LastError": null,
+        "ImageUploads": 15,
+        "LiveImageTextures": 0,
+        "LiveSceneResources": 0,
+        "SceneRevision": 30,
+        "LiveImageSamplers": 0
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+      "captureSha256": {
+        "cad": {
+          "original": "e60b263e6f9eaf1150d5c239115b701258730e27a04083729cb51f5c66e05aa5",
+          "orbit": "82f8c7e0acbb35dac8b27dede1eaf1ad2bcb216d768f2b9319a3e55d817bcc93",
+          "edited": "c1260fdf51096f1e2ad8c954178ede78eae91a75fb8529c1a81300a18f050586",
+          "empty": "5f5fb939970be9bf07ca1b9666244ed0a91d5c3bac186e63003e9bac00df56a5",
+          "resized": "75f40bc1a13c7d3626e98df3a3b9769250e7462ac18c19e9cfd0b1a0b1db0dd4",
+          "final": "d580ee5139ce326f7676dd66f40bfa49b3005ad536de3725124a00c5e56bed73"
+        },
+        "wallpaper": {
+          "paper-original": "d580ee5139ce326f7676dd66f40bfa49b3005ad536de3725124a00c5e56bed73",
+          "paper-green": "bc16565d0ee81720b4154d75ef84c912931366b637694abb3d1d677bf2bd7619",
+          "paper-blue": "7204fd8ceb8a87650cff47a237b500568ae52a655fa69973e2709df34674fce8",
+          "paper-clear": "d580ee5139ce326f7676dd66f40bfa49b3005ad536de3725124a00c5e56bed73",
+          "paper-resized": "472a5be7a79b93eeb47e3702a2770b62af79f4673576dc709043ba24fa27b0ef",
+          "paper-final": "d580ee5139ce326f7676dd66f40bfa49b3005ad536de3725124a00c5e56bed73"
+        },
+        "trace": {
+          "trace-original": "d580ee5139ce326f7676dd66f40bfa49b3005ad536de3725124a00c5e56bed73",
+          "trace-image": "6f7b99fa72eab79d8f7705a7f0d48de7f669f87b4ea404a4dbc9087e7c5799ab",
+          "trace-orbit": "63c4ccc7ebaad3ce5a85705f2fe9f4db77e50e61219daa3bdeb05c8b43e8e504",
+          "trace-hidden": "d580ee5139ce326f7676dd66f40bfa49b3005ad536de3725124a00c5e56bed73",
+          "trace-moved": "f9730563e3c39263e247c720805a8e5aebdf96392bf1246f55883a8f33d59e4a",
+          "trace-final": "d580ee5139ce326f7676dd66f40bfa49b3005ad536de3725124a00c5e56bed73"
+        }
+      }
+    },
+    "iphone": {
+      "runtimeViewScale": {
+        "checks": 44,
+        "resultLine": "PASS runtime-view synchronization scale: 44 source arithmetic/rectangle/mirror/ownership/boundary checks; full registered-view/document/platform/PC parity separate."
+      },
+      "resultReportSha256": "4ab59c592ccbb53e427f07ced821e822ee81f222e57bd353378320f7116cc4eb",
+      "priorCapturesVerified": 18,
+      "restorationDifferencePixels": {
+        "cad": 0,
+        "wallpaper": {
+          "paper-clear": 0,
+          "paper-final": 0
+        },
+        "trace": {
+          "trace-hidden": 0,
+          "trace-final": 0
+        }
+      },
+      "fixedProfileGpu": {
+        "frames": 8,
+        "exactPixels": 48
+      },
+      "liveProfileGpu": {
+        "frames": 17,
+        "exactNativePixels": 682,
+        "resources": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 8
+        }
+      },
+      "retiredTraceResources": {
+        "MeshUploads": 13,
+        "SubmittedFrames": 17,
+        "CompletedFrames": 17,
+        "PresentedFrames": 0,
+        "InFlightFrames": 0,
+        "PeakInFlightFrames": 3,
+        "LiveMeshResources": 0,
+        "LiveMeshBuffers": 0,
+        "IsDisposed": true,
+        "LastError": null,
+        "ImageUploads": 13,
+        "LiveImageTextures": 0,
+        "LiveSceneResources": 0,
+        "SceneRevision": 31,
+        "LiveImageSamplers": 0
+      },
+      "retiredWallpaperResources": {
+        "MeshUploads": 13,
+        "SubmittedFrames": 18,
+        "CompletedFrames": 18,
+        "PresentedFrames": 0,
+        "InFlightFrames": 0,
+        "PeakInFlightFrames": 2,
+        "LiveMeshResources": 0,
+        "LiveMeshBuffers": 0,
+        "IsDisposed": true,
+        "LastError": null,
+        "ImageUploads": 15,
+        "LiveImageTextures": 0,
+        "LiveSceneResources": 0,
+        "SceneRevision": 30,
+        "LiveImageSamplers": 0
+      },
+      "offscreenBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+      "captureSha256": {
+        "cad": {
+          "original": "db8a531d1f4865cf717ad969ef12735c6aeefd6068fcde47a0dbfe0bb8f2139f",
+          "orbit": "8e3c7e7ae897f80f60d4207f45534deb14f8d0e2c01f4d90803f6b69b6cca9bd",
+          "edited": "be11dde7206ac24164b368317775c11edb65a6594a4acbea16f2c9bb2844fc39",
+          "empty": "3180442aa25f295991f213acbf94fa1d495b8645063d783a9df1612291ea73aa",
+          "resized": "792812189b468f21004683f428c8aa1bd3f9ac4024c54db6f5a8ab89eb281c7e",
+          "final": "55fc48054bb77ccfe3daba6d775d71462bcc569db6152b493ed7e8ce24ca9e40"
+        },
+        "wallpaper": {
+          "paper-original": "55fc48054bb77ccfe3daba6d775d71462bcc569db6152b493ed7e8ce24ca9e40",
+          "paper-green": "231152a542e7ec9387ed2c35a8ae2152b63028858b2f0a1595890a1908588513",
+          "paper-blue": "3b6eba4775d194907bf48447bda08c7c17161e5e4a2680e04b70fc57ec144f17",
+          "paper-clear": "55fc48054bb77ccfe3daba6d775d71462bcc569db6152b493ed7e8ce24ca9e40",
+          "paper-resized": "0e494f62d49c2a0ae7c9df24472f047458b1993f42b2b3d16ded78af36606e07",
+          "paper-final": "55fc48054bb77ccfe3daba6d775d71462bcc569db6152b493ed7e8ce24ca9e40"
+        },
+        "trace": {
+          "trace-original": "55fc48054bb77ccfe3daba6d775d71462bcc569db6152b493ed7e8ce24ca9e40",
+          "trace-image": "84b0b42281aa8efa2b173b6b387cce3ff4a935ed8934b8d0b151c53f69fec18e",
+          "trace-orbit": "2960a26b6b4c0163e1821b5eb5ab7cc627fa98b39146780da863cdbc4b5434bc",
+          "trace-hidden": "ea0fa05a5c22055ae185d02e55a4616b82b94440956fa556811ba3b3bcbc5615",
+          "trace-moved": "7c056969310a83a0155ec52ae3bb42c420986e6a7e3af73dfeb831055896cfbf",
+          "trace-final": "ea0fa05a5c22055ae185d02e55a4616b82b94440956fa556811ba3b3bcbc5615"
+        }
+      }
+    }
+  },
+  "limits": [
+    "Actual iPad/iPhone simulator execution only; physical-device evidence remains open",
+    "Runtime scale changes real target-mirror state, but is not wired to complete registered-view/document/image-setter ownership",
+    "Client rectangle is explicitly supplied; platform rectangle acquisition remains open",
+    "Invalid native frustum output is undefined and explicitly unsupported",
+    "No original application execution, PC-project round trip or full application parity"
+  ]
+}
