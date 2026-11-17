@@ -177,6 +177,52 @@
           "unwind": 659888
         }
       ]
+    },
+    {
+      "role": "nls-jamo-index",
+      "name": null,
+      "abi": "explicit",
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "unit",
+            "type": "ushort"
+          }
+        ]
+      },
+      "rva": 337448,
+      "length": 62,
+      "sha256": "045bdbd36e076dc62cc0e7c5fe8507f3f91da35e0ed2d58263c983afbeadf2f5",
+      "unwindRegions": [],
+      "boundary": "Leaf ends with RET at52665, followed by INT3."
+    },
+    {
+      "role": "nls-jamo-update",
+      "name": null,
+      "abi": "explicit",
+      "signature": {
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "kind",
+            "type": "uint"
+          },
+          {
+            "name": "row",
+            "type": "byte*"
+          },
+          {
+            "name": "state",
+            "type": "byte*"
+          }
+        ]
+      },
+      "rva": 283772,
+      "length": 103,
+      "sha256": "c224d3774644857cb38e78f11e3832ebc59fb1ea0fa8d3b274fdef90f16c1864",
+      "unwindRegions": [],
+      "boundary": "Leaf ends with RET at454e2; internal branch RETs and INT3 are included."
     }
   ],
   "structures": [

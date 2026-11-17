@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A02",
+  "inputCommit": "d55efe3aa29040d7655832d943bf0655e9df5362",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "direct-state-machine-windows-native-pass-apple-pending",
+  "sourceAudit": "docs/evidence/audit/windows-nls-direct-engine.json",
+  "red": [
+    "Missing Rhino5NlsDirectComparer reproduced CS0103 before production implementation.",
+    "First exhaustive build exposed MSBuild bin culture inference; raw binary resources now explicitly WithCulture=false."
+  ],
+  "windowsValidation": {
+    "originalStringComparisons": 40663,
+    "preservedKeyOrderDisagreements": 213,
+    "exhaustiveDirectComparisons": 4456448,
+    "allJamoComparisons": 6507500,
+    "allJamoTriples": 1626875,
+    "stressComparisons": 103280,
+    "totalComparisons": 11107891,
+    "nullBudgetTerminatorGuards": 7,
+    "nativeErrors": 0,
+    "nativeRepeatStreamsIdentical": true,
+    "managedWindowsMismatches": 0
+  },
+  "adjacentNodeChecks": 26,
+  "originalTargetExecuted": false,
+  "platform": "macOS/iPad/iPhone pending",
+  "remaining": [
+    "Actual macOS and both simulator executions and adjacent capture/resource acceptance.",
+    "Original ON_wString empty wrapper, CRT/ANSI failure and runtime profile state integration.",
+    "Actual document/view cache integration, original PC corpus and physical/full-feature acceptance."
+  ],
+  "fullParityVerified": false
+}

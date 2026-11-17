@@ -32,6 +32,17 @@ on:
       - "native/Rendering/NlsLowerReference/**"
       - "native/Rendering/NlsSortReference/**"
       - "native/Rendering/NlsDispatchReference/**"
+      - "native/Rendering/NlsDirectReference/**"
+      - "native/Rendering/NlsJamoReference/**"
+      - "native/Rendering/NlsStringStressReference/**"
+      - "scripts/generate-nls-direct-stress.cjs"
+      - "scripts/compact-nls-direct-reference.cjs"
+      - "scripts/prepare-nls-jamo-inputs.cjs"
+      - "scripts/verify-nls-direct-reference.cjs"
+      - "tests/nls-direct-reference.test.cjs"
+      - "tests/Port/Geometry.Candidate.Contracts/NlsDirectComparisonAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/NlsDirectExhaustiveAssertions.cs"
+      - "reference/fixtures/nls-direct-*"
       - "scripts/prepare-nls-comparison-inputs.cjs"
       - "scripts/verify-nls-comparison-inputs.cjs"
       - "tests/nls-comparison-inputs.test.cjs"
@@ -294,6 +305,10 @@ jobs:
         run: |
           node --test tests/nls-comparison-inputs.test.cjs > artifacts/nls-comparison-input-checks.txt
           node scripts/verify-nls-comparison-inputs.cjs > artifacts/nls-comparison-inputs.json
+      - name: Verify direct NLS comparison native references
+        run: |
+          node --test tests/nls-direct-reference.test.cjs > artifacts/nls-direct-reference-checks.txt
+          node scripts/verify-nls-direct-reference.cjs > artifacts/nls-direct-reference.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

@@ -1,0 +1,4 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{verify,pins}=require('../scripts/verify-nls-direct-reference.cjs');
+test('exhaustive native direct, all-Jamo and adversarial references retain complete results',()=>{const value=verify();assert.equal(value.exhaustiveComparisons,4456448);assert.equal(value.jamoComparisons,6507500);assert.equal(value.stressComparisons,103280);assert.equal(value.jamoInputRows,357);});
+test('changed direct native metadata/result/stress artifact is rejected',()=>{const data=pins.map(([name])=>fs.readFileSync(path.join(__dirname,'../reference/fixtures',name)));for(let i=0;i<data.length;i++){const changed=data.slice();changed[i]=Buffer.from(data[i]);changed[i][100]^=1;assert.throws(()=>verify(changed),/packed native fixture changed/);}});

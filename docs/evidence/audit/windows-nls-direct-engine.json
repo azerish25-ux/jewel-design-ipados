@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A02",
+  "inputCommit": "d55efe3aa29040d7655832d943bf0655e9df5362",
+  "sourceInputAudit": "docs/evidence/audit/windows-nls-direct-inputs.json",
+  "originalTargetExecuted": false,
+  "profile": {
+    "locale": 1,
+    "publicFlags": 131073,
+    "callbackFlags": 134348801,
+    "sortVersion": 394498,
+    "caseMapsNull": true,
+    "contractionsNull": true,
+    "traits": 0
+  },
+  "implementation": {
+    "path": "src/Port/Rendering.Candidate/Rhino5NlsDirectComparer.cs",
+    "sha256": "a6361ddfdb424b88b6685ae1464cfd1ed3863d257d2b75c77f349cd535dfe81a",
+    "usesRecordedNameLookup": false,
+    "usesSortKeyOrdering": false,
+    "usesPlatformCollation": false
+  },
+  "nativeValidation": {
+    "originalStringComparisons": 40663,
+    "preservedKeyOrderDisagreements": 213,
+    "exhaustiveDirectComparisons": 4456448,
+    "allJamoComparisons": 6507500,
+    "allJamoTriples": 1626875,
+    "stressComparisons": 103280,
+    "totalComparisons": 11107891,
+    "nullBudgetTerminatorGuards": 7,
+    "nativeErrors": 0,
+    "nativeRepeatStreamsIdentical": true,
+    "managedWindowsMismatches": 0
+  },
+  "jamoInput": {
+    "path": "src/Port/Rendering.Candidate/Fixtures/windows-nls1-jamo-60502.bin",
+    "bytes": 2856,
+    "rows": 357,
+    "sha256": "4f8e7acefeeead6cd25f22cb801db55603813760bb9072c84cf2d31ed95a5f86",
+    "nativeDataOffset": 3382884
+  },
+  "staticViews": [
+    {
+      "role": "nls-direct-fast",
+      "path": ".local/evidence/nls-engine/decompile-04/nls-direct-fast.c",
+      "sha256": "7edb7039d00c14b8f7dc785f1f8488e7cec759d58a2b9a39f3ef8fc46be56dc1",
+      "bytes": 16865,
+      "signature": "int FUN_180005c40(void * sort, uint flags, ushort * first, int firstCount, ushort * second, int secondCount)"
+    },
+    {
+      "role": "nls-direct-long",
+      "path": ".local/evidence/nls-engine/decompile-04/nls-direct-long.c",
+      "sha256": "d4a267c52ca4dbbf449b9acdcad8da4c052c025f317b22468e91b8592030c208",
+      "bytes": 118566,
+      "signature": "int Original_nls_direct_long(NlsCompareState * state)"
+    },
+    {
+      "role": "nls-old-hangul",
+      "path": ".local/evidence/nls-engine/decompile-04/nls-old-hangul.c",
+      "sha256": "5284389e24643c6923618d05d6c361aae8a374bbf90eb0bc5539aca3ccef989a",
+      "bytes": 1395,
+      "signature": "void Original_nls_old_hangul(void * caseMap, NlsStringState * state)"
+    },
+    {
+      "role": "nls-map-old-hangul",
+      "path": ".local/evidence/nls-engine/decompile-04/nls-map-old-hangul.c",
+      "sha256": "9574cb58d41e3ea3bbf42c8040dd0842375419aeb7a931ae498a8bfdcaea32da",
+      "bytes": 5703,
+      "signature": "int Original_nls_map_old_hangul(void * caseMap, ushort * cursor, ushort * end, ushort * unicodeWeight, uchar * extra)"
+    },
+    {
+      "role": "nls-jamo-index",
+      "path": ".local/evidence/nls-engine/decompile-04/nls-jamo-index.c",
+      "sha256": "8503f439796761498236aa15b46dbf28ca7c0989b6b6a7d5d9e06c685379e12f",
+      "bytes": 434,
+      "signature": "int Original_nls_jamo_index(ushort unit)"
+    },
+    {
+      "role": "nls-jamo-update",
+      "path": ".local/evidence/nls-engine/decompile-04/nls-jamo-update.c",
+      "sha256": "05cafffed14ffecf4942f43a1603b33a9dedfc4326c4cb52f90db1daf7197471",
+      "bytes": 625,
+      "signature": "void Original_nls_jamo_update(uint kind, uchar * row, uchar * state)"
+    }
+  ],
+  "scope": "Successful fixed-profile NLS comparison engine. Original ON_wString empty wrapper/CRT/ANSI/fallback/state/document and original PC/physical/full application acceptance remain open.",
+  "fullParityVerified": false
+}

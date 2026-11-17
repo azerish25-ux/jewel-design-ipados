@@ -53,3 +53,9 @@ System.Console.WriteLine(CandidateGeometryContractChecks.ContextImageCacheAssert
 System.Console.WriteLine(CandidateGeometryContractChecks.UnicodeNlsLowerAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.NlsComparisonInputAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.NlsDirectComparisonAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.NlsDirectExhaustiveAssertions.RunExhaustive());
+System.Console.WriteLine(CandidateGeometryContractChecks.NlsDirectExhaustiveAssertions.RunJamo());
+System.Console.WriteLine(CandidateGeometryContractChecks.NlsDirectExhaustiveAssertions.RunStress());
