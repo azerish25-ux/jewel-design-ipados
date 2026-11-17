@@ -35,6 +35,7 @@ on:
       - "scripts/prepare-ansi-profile.cjs"
       - "tests/ansi-profile.test.cjs"
       - "tests/Port/Geometry.Candidate.Contracts/AnsiNlsProfileAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/StringRuntimeAssertions.cs"
       - "native/Analysis/fixtures/rhino5-ansi-decoder-helper-regions.json"
       - "scripts/verify-ansi-nls-reference.cjs"
       - "scripts/verify-ansi-source-contract.cjs"

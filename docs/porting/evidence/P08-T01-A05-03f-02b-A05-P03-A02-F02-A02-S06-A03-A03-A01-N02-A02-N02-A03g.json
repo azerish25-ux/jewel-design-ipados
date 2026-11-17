@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03g",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "be057fdca94e4c20f2fd22f2335e422ca8bc1e10",
+  "status": "mutable-string-runtime-windows-tested-apple-pending",
+  "sourceExecuted": false,
+  "sourceReferences": [
+    "docs/evidence/audit/rhino5-filename-profile.json",
+    "native/Analysis/fixtures/rhino5-filename-profile-core-regions.json",
+    "docs/evidence/apple/portable-ansi-ios-results.json",
+    "docs/evidence/apple/portable-crt-profiles-ios-results.json"
+  ],
+  "implementation": {
+    "path": "src/Port/Rendering.Candidate/Rhino5StringRuntimeProfile.cs",
+    "sha256": "19ca6437dbe973072834f999ab7aaa3857ccdeac262f02bd0d0b99324bbea342",
+    "behavior": "Original ordered Boolean flag stores/getter; explicit recorded CRT selection; live filename delegates and CRT/Unicode/ANSI value dispatch"
+  },
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "error": "CS0246 missing Rhino5StringRuntimeProfile/CS0103 missing runtime mode"
+  },
+  "windows": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 0,
+    "sourceFlagTransitions": 68,
+    "literalModeCacheGuardChecks": 683,
+    "adjacentNodeChecks": 16,
+    "nativeHostExitCode": 0,
+    "repositoryIntegrity": true,
+    "profileSourceManifestVerifierExitCode": 0
+  },
+  "review": {
+    "rejectedTestAssumption": "Conventional Turkish I casing was not used as an oracle. Retained native snapshots show I/i comparison0 and I->i in all three profiles; actual Ý/ý unit/whole maps and measured word-sort controls establish the profile differences.",
+    "sourceTruth": "Any nonzero locale request stores1; useAnsi0 stores Unicode1; changing the core flags never mutates the explicit current-CRT model or resets an existing cache."
+  },
+  "limits": [
+    "Source-derived transition/value contract; original DLL never executes",
+    "One application-owned shared service still needs real host/document/view/language integration",
+    "Recorded CRT configuration is not arbitrary setlocale/thread-local CRT emulation",
+    "Ordered stores and single-thread transitions tested; no original data-race/atomic-whole-snapshot claim",
+    "Native duplicate-key search/sort, uncaptured NLS failure/errno/log callbacks and full PC/physical/application parity remain open"
+  ]
+}
