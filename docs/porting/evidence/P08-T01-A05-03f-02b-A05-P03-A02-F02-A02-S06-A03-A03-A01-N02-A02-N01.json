@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "native-reference-acquired-macos-pending-direct-engine-open",
+  "status": "native-reference-macos-validated-direct-engine-open",
   "sourceAudit": "docs/evidence/audit/windows-nls-sort-sources.json",
   "native": {
     "originalTargetExecuted": false,
@@ -29,7 +29,13 @@
   "localValidation": {
     "nodeChecks": 14,
     "independentFullStreamAndPairVerification": "pass",
-    "macOS": "pending"
+    "macOS": {
+      "path": "docs/evidence/apple/unicode-nls-sort-preflight-results.json",
+      "run": 43986296649,
+      "retainedReferenceChecks": 2,
+      "bindingWarnings": 0,
+      "bindingErrors": 0
+    }
   },
   "remaining": [
     "Full offline direct CompareStringW engine, including all special-weight/Jamo/combining/position behavior.",

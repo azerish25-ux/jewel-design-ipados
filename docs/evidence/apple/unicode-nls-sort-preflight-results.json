@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N01",
+  "sourceCommit": "5f4db699335e0a2312e0363cddec62bd7a499a0d",
+  "run": 43986296649,
+  "conclusion": "success",
+  "artifactId": 14285427982,
+  "artifactSha256": "d99f4c40d295a275763b2e5a020ef2c0469f5da2b82a9a095d69b06e3c7550f9",
+  "actualArtifactInspected": true,
+  "reference": {
+    "schemaVersion": 1,
+    "unitScalarKeys": 1114112,
+    "fullStringKeys": 15547,
+    "repeatedNativeComparisons": 40663,
+    "targetedVariantPairs": 3400,
+    "lengthBoundaryPairs": 72,
+    "nativeErrors": 0,
+    "nativeRepeatMismatches": 0,
+    "rejectedSortKeyComparisonCases": 213,
+    "rejectedNaiveCompositionCases": 9407,
+    "individualStringBindings": 1475,
+    "defaultWeightRows": 60669,
+    "expansionRows": 730,
+    "compatibilityRows": 955,
+    "ordinaryPublishedNativeKeyMatches": 6029,
+    "version": {
+      "NlsVersion": 394498,
+      "DefinedVersion": 394498,
+      "EffectiveId": 1025,
+      "CustomVersion": "00000001-57ee-1e5c-00b4-d0000bb1e11e"
+    },
+    "scope": "Native/public reference only. Full direct NLS comparator, special weight/Jamo algorithms, original wrapper/CRT/ANSI/document and PC/physical acceptance remain open."
+  },
+  "nativeReferenceChecks": 2,
+  "adjacentManagedCacheCases": 33,
+  "adjacentUnicodeLowerCases": 1114112,
+  "binding": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "scope": "Actual macOS validation of retained native Windows keys/repeated comparisons and public parsed weight data, plus unchanged rendering/casing regressions and Metal compilation. Native Windows API acquisition was on Windows. No offline direct comparer or new iOS runtime behavior is claimed; full engine/wrapper/CRT/ANSI/state/document and PC/physical acceptance remain open.",
+  "allLocalDownloadsD": true,
+  "fullParityVerified": false
+}
