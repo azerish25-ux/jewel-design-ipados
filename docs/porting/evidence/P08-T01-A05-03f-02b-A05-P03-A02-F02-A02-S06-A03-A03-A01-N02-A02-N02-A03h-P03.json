@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "35b4e8cf0aed7368dbea3be6d58bc73ac00ffada",
-  "status": "source-entry-c-prefix-windows-tested-apple-pending",
+  "status": "source-entry-c-prefix-platform-tested-resolver-document-and-live-gpu-open",
   "originalExecuted": false,
   "sourceContract": "docs/evidence/audit/cache-entry-name-copy-contract.json",
   "implementation": {
@@ -36,5 +36,7 @@
     "Source-derived entry-copy contract; original app never executed",
     "Generic factory input/path resolution policy is unchanged and remains separate work",
     "Native GDI cache/document/view/PC/physical/full application acceptance remains open"
-  ]
+  ],
+  "applePreflight": "docs/evidence/apple/cache-entry-copy-preflight-results.json",
+  "appleSimulators": "docs/evidence/apple/cache-entry-copy-ios-results.json"
 }

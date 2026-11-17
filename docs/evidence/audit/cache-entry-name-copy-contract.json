@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "nextTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P03",
   "parentTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h",
-  "status": "source-rule-locally-reviewed-portable-entry-fix-pending",
+  "status": "portable-entry-rule-implemented-and-platform-tested-full-acceptance-open",
   "originalExecuted": false,
   "originalCoreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
   "source": {
@@ -37,5 +37,9 @@
     "Static source review only; no original execution",
     "Not yet implemented in portable entry construction",
     "Factory/file resolution, standalone value APIs, full document/PC/physical acceptance are separate"
-  ]
+  ],
+  "resolution": {
+    "sourceCommit": "e314c7067a4a33d438b17c42940a848940a944ea",
+    "proof": "docs/evidence/apple/cache-entry-copy-ios-results.json"
+  }
 }
