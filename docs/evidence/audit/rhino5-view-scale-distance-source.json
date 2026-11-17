@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A03-S02",
+  "originalExecuted": false,
+  "originalMainManifest": "native/Analysis/fixtures/rhino5-document-view-owner-regions.json",
+  "coreImageSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "helpers": [
+    {
+      "name": "?DistanceTo@ON_3dPoint@@QEBANAEBV1@@Z",
+      "rva": 2344672,
+      "length": 33,
+      "kind": "leaf-tail-jump",
+      "sha256": "d09ba347c834c99f491a19cc05d936b159f7bf45807eaa211f184cdc6e63c820"
+    },
+    {
+      "name": "?ON_Length3d@@YANNNN@Z",
+      "rva": 2351904,
+      "length": 208,
+      "kind": "whole-unwind-function",
+      "sha256": "00d59188e63bb85b35004fa02481016d2a6e9987b86218f332150df201da2003"
+    }
+  ],
+  "constants": [
+    {
+      "rva": 3344816,
+      "kind": "absolute-mask",
+      "hex": "7fffffffffffffff"
+    },
+    {
+      "rva": 3344880,
+      "kind": "minimum-normal",
+      "value": 2.2250738585072014e-308
+    },
+    {
+      "rva": 3344832,
+      "kind": "one",
+      "value": 1
+    }
+  ],
+  "sourceObservation": "DistanceTo subtracts camera minus mirror components then tail-jumps to ON_Length3d. Length selects maximum absolute component with y-then-z tie order, scales normal values before sqrt, and returns finite positive subnormal maximum or zero. Main scale divides radius by near first, then multiplies distance and divides client minimum.",
+  "publishedCrossCheck": {
+    "pin": "f2dc7fba67017475b8d530835a40fcfb5372134a",
+    "pointFileSha256": "4aac860b778a37de2942f0bc665c655bed8f98e51e0c94beb542752a08558eeb",
+    "lengthBodySha256": "8fa6a44f3f91bb7beee5890ac084e663891390f796ae4fa69f3e4c4671043f03",
+    "distanceBodySha256": "35891d177606fd25a6217de4bf85e4f6431a71904d68984d264120fdfa3d38ee",
+    "verifier": "scripts/prepare-viewport-projection-reference.cjs"
+  },
+  "limits": [
+    "Static original bytes/disassembly and published dependency cross-check only; no original binary execution",
+    "No undefined failed-GetFrustum output reconstruction",
+    "Platform client rectangle acquisition and full synchronization/document/view integration remain open"
+  ]
+}

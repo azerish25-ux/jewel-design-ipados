@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A03-S02",
+  "parentTaskId": "P08-T01-A05-03f-02b-A05-P03-A03",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "83bd0724e1b9ce9bac9f3137cc3aa6f55460e81a",
+  "status": "runtime-view-scale-implemented-windows-focused-pass-platform-validation-pending",
+  "sourceContracts": [
+    "docs/evidence/audit/rhino5-document-view-owner-source.json",
+    "docs/evidence/audit/rhino5-view-scale-distance-source.json"
+  ],
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/ViewScale.Runner",
+    "exitCode": 1,
+    "error": "Missing actual runtime-view synchronization scale and target-mirror ownership.",
+    "kind": "Runtime assertion after successful compilation, before implementation"
+  },
+  "green": {
+    "focusedCommand": "node scripts/run-local.cjs dotnet run --project tests/Port/ViewScale.Runner",
+    "exitCode": 0,
+    "sourceArithmeticAndOwnershipChecks": 44,
+    "adjacentNodeTests": 9,
+    "publishedPointSourcePreparation": true,
+    "actualNativeHost": {
+      "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Geometry.Candidate.HostTests -- .local/native/windows-gnu/jewel_occt_candidate_host.dll",
+      "exitCode": 0,
+      "scaleChecks": 44,
+      "existingSharedContractsPassed": true
+    }
+  },
+  "originalExecuted": false,
+  "limits": [
+    "Caller supplies client rectangle; Apple/Windows acquisition is not implemented here",
+    "Native failed-GetFrustum outputs are undefined and explicitly unsupported",
+    "No whole registered-view synchronization/document timer/properties/image-setter implementation is claimed",
+    "No original-runtime/PC-project/physical-device or full application acceptance"
+  ],
+  "review": {
+    "sourceOrderedMinimum": true,
+    "nativeDistanceTailAndConstantsChecked": true,
+    "actualRuntimeMirrorRepair": true,
+    "noDocumentStubAdded": true,
+    "failedNativeFrustumExplicit": true
+  }
+}

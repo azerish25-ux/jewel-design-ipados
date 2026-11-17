@@ -3,6 +3,8 @@ on:
   push:
     branches: [codex/dotnet-ios-reuse]
     paths:
+      - "tests/Port/Geometry.Candidate.Contracts/Rhino5ViewScaleAssertions.cs"
+      - "tests/Port/ViewScale.Runner/**"
       - "src/Port/Documents/**"
       - "src/Port/Views.Candidate/**"
       - "tests/Port/Geometry.Candidate.Contracts/LegacyUserStringListAssertions.cs"

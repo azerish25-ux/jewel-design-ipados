@@ -100,6 +100,45 @@ public sealed class Rhino5RuntimeView : Rhino5UserDataOwner
         Alive();var viewport=new Rhino5Viewport(Viewport);bool accepted=viewport.TrySetTarget(target);
         values=values.WithViewport(viewport.Current,viewport.Current.Target);return accepted;
     }
+    /// <summary>Original synchronization measurement over a caller-supplied Win32 client rectangle.
+    /// Repairs the live target mirror for perspective views. Platform rectangle acquisition and
+    /// document/multi-view effects are separate. Failed client dimensions leave scale unchanged.</summary>
+    public bool TryGetSynchronizationScale(int left,int top,int right,int bottom,ref double scale)
+    {
+        Alive();
+        int width=unchecked(right-left),height=unchecked(bottom-top);
+        int size=width<=height?width:height;
+        if(size<=0)return false;
+        // Original ignores GetFrustum failure and reads uninitialized outputs. There is no
+        // portable defined result for that state; never fabricate a successful measurement.
+        if(!Viewport.FrustumValid)throw new NotSupportedException("Synchronization scale requires a valid captured frustum; native failed-output behavior is undefined.");
+        var bounds=Viewport.Bounds;
+        double radius=Math.Abs(bounds.Bottom),candidate=Math.Abs(bounds.Top);
+        if(candidate<radius)radius=candidate;
+        candidate=Math.Abs(bounds.Left);if(candidate<radius)radius=candidate;
+        candidate=Math.Abs(bounds.Right);if(candidate<radius)radius=candidate;
+        double distance=1;
+        if(Viewport.Projection==Rhino5Viewport.Perspective)
+        {
+            radius/=bounds.Near;
+            var camera=Viewport.Frame.Location;
+            ReadTargetPoint();
+            var target=TargetMirror;
+            distance=SynchronizationDistance(camera.X-target.X,camera.Y-target.Y,camera.Z-target.Z);
+        }
+        scale=(distance*radius)/size;return true;
+    }
+    // Original ON_3dPoint::DistanceTo tail-jumps to ON_Length3d. Keep its scaling, tie
+    // selection and subnormal branch, rather than sqrt(dx*dx+dy*dy+dz*dz).
+    private static double SynchronizationDistance(double x,double y,double z)
+    {
+        x=Math.Abs(x);y=Math.Abs(y);z=Math.Abs(z);
+        if(y>=x&&y>=z){double swap=x;x=y;y=swap;}
+        else if(z>=x&&z>=y){double swap=x;x=z;z=swap;}
+        if(x>2.2250738585072014e-308){y/=x;z/=x;return x*Math.Sqrt(1+y*y+z*z);}
+        return x>0&&double.IsFinite(x)?x:0;
+    }
+
     public bool TrySetScreenPort(int left,int right,int bottom,int top,int near,int far)
     {
         Alive();if(left==right||bottom==top)return false;

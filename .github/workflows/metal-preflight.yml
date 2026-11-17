@@ -3,6 +3,8 @@ on:
   push:
     branches: [codex/dotnet-ios-reuse]
     paths:
+      - "tests/Port/Geometry.Candidate.Contracts/Rhino5ViewScaleAssertions.cs"
+      - "tests/Port/ViewScale.Runner/**"
       - "native/Rendering/GdiRgbReference/**"
       - "scripts/verify-composed-texture-reference.cjs"
       - "scripts/verify-composed-texture-gpu.cjs"
@@ -358,6 +360,8 @@ jobs:
           node scripts/verify-crt-sort-reference.cjs > artifacts/crt-sort-reference.json
       - name: Verify authentic live runtime GPU captures
         run: node --test tests/live-string-cache-gpu.test.cjs > artifacts/live-runtime-gpu-reference-checks.txt
+      - name: Execute runtime-view synchronization scale contracts
+        run: dotnet run --project tests/Port/ViewScale.Runner | tee artifacts/runtime-view-scale.txt
       - name: Verify document/view owner source manifest
         run: |
           node --test tests/document-view-owner-source.test.cjs > artifacts/document-view-owner-source-checks.txt
