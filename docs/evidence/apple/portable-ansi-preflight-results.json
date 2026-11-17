@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03f",
+  "sourceCommit": "f200735a6cf02aac32bcbe925c09164e6bf53775",
+  "run": 44045002189,
+  "conclusion": "success",
+  "artifactId": 14310673483,
+  "artifactSha256": "8766f3a67ea21bff4552eee3e6f66a09184d418fe93d01d80bad6ac4454fcb5e",
+  "actualArtifactInspected": true,
+  "tests": {
+    "nativeScalarByteOutputs": 1112064,
+    "nativeComparisonPairs": 65536,
+    "nativeLowerPairs": 65536,
+    "nativeDecodePairs": 65536,
+    "sourceDerivedLegacyRecoveryCases": 4096,
+    "boundaryAndCacheChecks": 136,
+    "adjacentDirectNativeComparisons": 11107891,
+    "adjacentCrtLowerInputs": 3342336,
+    "adjacentCrtComparisons": 3345804
+  },
+  "resource": {
+    "bytes": 800,
+    "sha256": "3a88c315e6ffe2092d9e4f923ecab1a9b8fdf4976bcc438c636c0a899da2324d"
+  },
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "resultLogSha256": "d7a7cc92eb0a05e27177ab68b2c0cda276db97518d37c6d31516e45eb8144729",
+  "limits": [
+    "Decoder/dispatch expectations are source-derived; original application not executed",
+    "Explicit recorded CP1256 profile only; current runtime selection, document/view/PC/physical/full parity remain open"
+  ]
+}

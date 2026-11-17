@@ -5,7 +5,7 @@
     "UI-039"
   ],
   "inputCommit": "6b67392a99319b8a50fbe2fdb4c5f8f244afbc12",
-  "status": "portable-ansi-profile-windows-tested-apple-pending",
+  "status": "portable-ansi-profile-platform-tested-runtime-and-document-integration-open",
   "sourceExecuted": false,
   "sourceReferences": [
     "docs/evidence/audit/rhino5-ansi-contract.json",
@@ -54,5 +54,7 @@
     "Explicit recorded NLS1 CP1256 profile and supplied recorded CRT fallback only",
     "Private decoder covers reachable transformed-prefix domain, not every unrelated legacy UTF8 API input",
     "Mutable runtime selection, other versions/current CRT, errno/allocation, full document/view/original-PC/physical/application parity remain open"
-  ]
+  ],
+  "applePreflight": "docs/evidence/apple/portable-ansi-preflight-results.json",
+  "appleSimulators": "docs/evidence/apple/portable-ansi-ios-results.json"
 }
