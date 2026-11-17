@@ -68,12 +68,21 @@
   "validation": {
     "command": "node scripts/run-local.cjs node --test tests/crt100-reference.test.cjs",
     "exitCode": 0,
-    "checks": 2
+    "checks": 2,
+    "repositoryIntegrity": true,
+    "nativeHostExitCode": 0,
+    "controlledExistingOutputRejection": {
+      "exitCode": 1,
+      "output": "InvalidOperationException: Fresh D repository output and runtime required",
+      "overwrite": false
+    },
+    "controlledCollectorReacquisitionByteIdentical": true
   },
   "limits": [
     "Original loaded CRT100 build/current locale not established",
     "Whole _wcslwr buffer behavior and allocation/failure path unmeasured",
     "ANSI conversion and native NLS failure/current-CRT dispatch remain open",
     "No document/view profile adoption or PC/physical/full parity established"
-  ]
+  ],
+  "appleReferenceValidation": "docs/evidence/apple/crt100-reference-preflight-results.json"
 }

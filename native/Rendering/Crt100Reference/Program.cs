@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text.Json;
+try {
 if(!OperatingSystem.IsWindows()||RuntimeInformation.ProcessArchitecture!=Architecture.X64)throw new PlatformNotSupportedException();
 string root=Path.GetFullPath(Environment.CurrentDirectory),dll=Path.GetFullPath(args[0]),output=Path.GetFullPath(args[1]);
 if(!root.StartsWith("D:"+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase)||!dll.StartsWith(root+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase)||!output.StartsWith(root+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase)||File.Exists(output))throw new InvalidOperationException("Fresh D repository output and runtime required");
@@ -30,6 +31,8 @@ try{
  }
 }finally{NativeLibrary.Free(library);}
 Directory.CreateDirectory(Path.GetDirectoryName(output)!);using var destination=new FileStream(output,FileMode.CreateNew);JsonSerializer.Serialize(destination,new{SchemaVersion=1,Kind="installed_microsoft_crt100_explicit_locale_reference",OriginalTargetExecuted=false,RuntimeSha256=hash,RuntimeFileVersion=System.Diagnostics.FileVersionInfo.GetVersionInfo(dll).FileVersion,OS=RuntimeInformation.OSDescription,Architecture=RuntimeInformation.ProcessArchitecture.ToString(),Profiles=profiles,Scope="Owned public Microsoft CRT100 explicit locale calls. Not original loaded-runtime/current-locale proof; no production fallback/state adoption."});
+}
+catch(Exception error){Console.Error.WriteLine(error.GetType().Name+": "+error.Message);Environment.ExitCode=1;}
 [UnmanagedFunctionPointer(CallingConvention.Cdecl,CharSet=CharSet.Ansi)]delegate nint Create(int category,string locale);
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]delegate void Free(nint locale);
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]delegate uint Lower(uint value,nint locale);

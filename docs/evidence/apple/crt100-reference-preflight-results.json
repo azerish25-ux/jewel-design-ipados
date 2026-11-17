@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03b",
+  "sourceCommit": "5150f6a0f928eb588d9bf9937760cbcabff3d267",
+  "run": 44028725683,
+  "conclusion": "success",
+  "artifactId": 14303339492,
+  "artifactSha256": "c074e03c2a0e5f089ccc297f86e1a5c8615b0b521cc6cfb968fa8be6337e8f05",
+  "actualArtifactInspected": true,
+  "results": {
+    "profiles": 3,
+    "lowerUnits": 196608,
+    "repeatedPairs": 3468,
+    "crtCMatchesUcrt": true,
+    "nonCLowerDifferences": [
+      947,
+      946
+    ],
+    "nonCPairDifferences": [
+      186,
+      186
+    ],
+    "originalRuntimeExecuted": false
+  },
+  "tests": {
+    "pass": 2,
+    "fail": 0
+  },
+  "scope": "macOS independently validates immutable Windows public CRT100 corpus; it does not execute the Windows runtime or establish original current locale."
+}

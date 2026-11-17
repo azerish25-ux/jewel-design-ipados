@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03a",
+  "sourceCommit": "61d70b43a8e0affd0ec86e7ab03d2ed9b1e03ee8",
+  "run": 44027826170,
+  "conclusion": "success",
+  "artifactId": 14303931972,
+  "artifactSha256": "b4922aefceac4d8856241a6c0571be55ab3ff4766d72e94134a8f12e864014a8",
+  "actualArtifactInspected": true,
+  "tests": {
+    "nativeWrapperPairs": 40663,
+    "boundaryAndCacheChecks": 75,
+    "adjacentDirectNativeComparisons": 11107891,
+    "adjacentCacheCases": 33,
+    "crtLowerUnits": 65536,
+    "crtPairs": 1156
+  },
+  "build": {
+    "bindingWarnings": 0,
+    "bindingErrors": 0
+  },
+  "resultLog": ".local/evidence/nls-filename-policy/apple/preflight/camera-preset-tests.txt",
+  "resultLogSha256": "5a0d7ab5ea1ba0d9921d32464e4c489c63ece8fcdd5da12c529f555e2123659b",
+  "limits": [
+    "Explicit fixed successful Unicode profile only",
+    "ANSI, current-CRT failure fallback, locale-state/document/view adoption and PC/physical acceptance remain open"
+  ]
+}
