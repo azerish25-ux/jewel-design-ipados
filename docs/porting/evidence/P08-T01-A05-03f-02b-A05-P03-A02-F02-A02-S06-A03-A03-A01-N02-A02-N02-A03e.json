@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03e",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "7976d8e07901f1b2017f14182ef2c22aa099e0d6",
+  "status": "original-ansi-source-and-public-backend-acquired-apple-validation-pending",
+  "sourceExecuted": false,
+  "sourceContract": "docs/evidence/audit/rhino5-ansi-contract.json",
+  "nativeCapture": {
+    "paths": [
+      ".local/evidence/ansi-source/native-ansi-03.json",
+      ".local/evidence/ansi-source/native-ansi-04.json"
+    ],
+    "byteIdentical": true,
+    "fixture": "reference/fixtures/windows-nls1-ansi-60502.json.br",
+    "packedBytes": 82859,
+    "decodedBytes": 369597,
+    "packedSha256": "2e1f9de8cc1f01afbbcaf57b64d6ffb8533ea9f7ccb5dcfbf2dec18a8805d741",
+    "decodedSha256": "9e152b324d0bb13a97c41d10b49efe37bea6d03d7e40ddc54281339f83e5a0b8"
+  },
+  "results": {
+    "codePage": 1256,
+    "byteMappings": 256,
+    "repeatedNativeComparisons": 65536,
+    "pairLowerBuffers": 65536,
+    "pairDecodeBuffers": 65536,
+    "unicodeScalarLowerCalls": 1112064,
+    "changedUnicodeScalars": 50349,
+    "invalidUtf8Outputs": 4096,
+    "reconstructedInvalidUtf8Range": [
+      1097728,
+      1101823
+    ],
+    "localeWideDifferences": 0,
+    "acpDifferences": 10460,
+    "originalRuntimeExecuted": false
+  },
+  "windowsValidation": {
+    "originalPeBytesChecked": true,
+    "wholeFunctions": 9,
+    "chainedRegions": 46,
+    "totalFunctionBytes": 3751,
+    "ghidraExitCode": 0,
+    "defaultDJavaInvocationExitCode": 0,
+    "nativeCollectorExitCode": 0,
+    "tests": 3,
+    "exitCode": 0,
+    "adjacentNodeChecks": 13,
+    "repositoryIntegrity": true
+  },
+  "limits": [
+    "Original PE statically reviewed, never executed",
+    "macOS can independently reconstruct public native API corpus but has no original PE",
+    "Complete source conversion/legacy decoder/ANSI runtime selection and current-CRT failure paths remain open",
+    "Source document/view/original-PC/physical/full application parity remains open"
+  ]
+}

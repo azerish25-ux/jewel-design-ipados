@@ -1,0 +1,4 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),reference=require('../scripts/verify-ansi-nls-reference.cjs');
+test('native ANSI CP1256 controls retain complete byte matrices and every Unicode scalar lower digest',()=>{const r=reference.verify(reference.load());assert.equal(r.unicodeScalarLowerCalls,1112064);assert.equal(r.repeatedNativeComparisons,65536);assert.equal(r.invalidUtf8Outputs,4096);assert.equal(r.acpDifferences,10460);});
+test('native ANSI corpus rejects changed locale, matrix, scalar digest or decoder-boundary evidence',()=>{for(const mutate of [r=>r.CodePage=1252,r=>r.PairCompareWBase64=Buffer.alloc(65536).toString('base64'),r=>r.Planes[16].NativeSha256='0'.repeat(64),r=>r.InvalidUtf8OutputCount=0,r=>r.ZeroLengthLower.Error=0]){const r=reference.load();mutate(r);assert.throws(()=>reference.verify(r));}});

@@ -30,7 +30,7 @@ function main(){
  const application=fs.readFileSync(path.join(toolRoot,'Ghidra/application.properties'),'utf8');
  if(!/^application.version=11\.1\.2\r?$/m.test(application))throw Error('Pinned Ghidra version differs');
  const vmArgs=[...properties.matchAll(/^VMARGS(?:_WINDOWS)?=(.+)\r?$/gm)].map(m=>m[1].trim());
- const config=configuration({root:local.root,javaExe:process.env.GHIDRA_JAVA||'C:/Program Files/Microsoft/jdk-17.0.20.101-hotspot/bin/java.exe',baseEnv:local.env,vmArgs,args:process.argv.slice(2)});
+ const config=configuration({root:local.root,javaExe:process.env.GHIDRA_JAVA||path.join(local.root,'.local/tools/jdk-17/bin/java.exe'),baseEnv:local.env,vmArgs,args:process.argv.slice(2)});
  const realRoot=fs.realpathSync(config.root).toLowerCase();
  if(!/^d:[\\/]/i.test(realRoot))throw Error('Resolved workspace leaves D:');
  for(const dir of config.dirs){fs.mkdirSync(dir,{recursive:true});if(!fs.realpathSync(dir).toLowerCase().startsWith(realRoot+path.sep))throw Error('Resolved Ghidra directory leaves workspace');}

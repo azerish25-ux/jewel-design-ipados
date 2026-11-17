@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "ansi-utf8-measure",
+      "rva": 3010048,
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "inputCount",
+            "type": "int"
+          },
+          {
+            "name": "input",
+            "type": "ushort*"
+          }
+        ]
+      },
+      "name": null,
+      "length": 125,
+      "sha256": "641cc8899120e2664243eb9852a4e454fb0de4094013fa8d5dfbf32c2464a57e",
+      "unwindRegions": [
+        {
+          "begin": 3010048,
+          "end": 3010096,
+          "unwind": 3576100
+        },
+        {
+          "begin": 3010096,
+          "end": 3010165,
+          "unwind": 3500536
+        },
+        {
+          "begin": 3010165,
+          "end": 3010173,
+          "unwind": 3500520
+        }
+      ]
+    },
+    {
+      "role": "ansi-utf8-write",
+      "rva": 3010176,
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "inputCount",
+            "type": "int"
+          },
+          {
+            "name": "input",
+            "type": "ushort*"
+          },
+          {
+            "name": "capacity",
+            "type": "int"
+          },
+          {
+            "name": "output",
+            "type": "byte*"
+          }
+        ]
+      },
+      "name": null,
+      "length": 225,
+      "sha256": "d427cc5728131717707c19550d98d9bae3322f00c26519acf674cf42bb60120a",
+      "unwindRegions": [
+        {
+          "begin": 3010176,
+          "end": 3010273,
+          "unwind": 3399272
+        },
+        {
+          "begin": 3010273,
+          "end": 3010366,
+          "unwind": 3500500
+        },
+        {
+          "begin": 3010366,
+          "end": 3010388,
+          "unwind": 3500480
+        },
+        {
+          "begin": 3010388,
+          "end": 3010401,
+          "unwind": 3500464
+        }
+      ]
+    },
+    {
+      "role": "convert-utf16-utf8",
+      "rva": 2914496,
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "testByteOrder",
+            "type": "int"
+          },
+          {
+            "name": "input",
+            "type": "ushort*"
+          },
+          {
+            "name": "inputCount",
+            "type": "int"
+          },
+          {
+            "name": "output",
+            "type": "byte*"
+          },
+          {
+            "name": "capacity",
+            "type": "int"
+          },
+          {
+            "name": "errorStatus",
+            "type": "uint*"
+          },
+          {
+            "name": "errorMask",
+            "type": "uint"
+          },
+          {
+            "name": "replacement",
+            "type": "uint"
+          },
+          {
+            "name": "nextInput",
+            "type": "ushort**"
+          }
+        ]
+      },
+      "name": "ON_ConvertUTF16ToUTF8",
+      "length": 655,
+      "sha256": "5659c53369370dff4ca21f93822a0ca0bfd9263a93038f881d3e560e44fa6288",
+      "unwindRegions": [
+        {
+          "begin": 2914496,
+          "end": 2914640,
+          "unwind": 3431156
+        },
+        {
+          "begin": 2914640,
+          "end": 2914699,
+          "unwind": 3431136
+        },
+        {
+          "begin": 2914699,
+          "end": 2915043,
+          "unwind": 3431108
+        },
+        {
+          "begin": 2915043,
+          "end": 2915088,
+          "unwind": 3431088
+        },
+        {
+          "begin": 2915088,
+          "end": 2915111,
+          "unwind": 3431072
+        },
+        {
+          "begin": 2915111,
+          "end": 2915151,
+          "unwind": 3431056
+        }
+      ]
+    },
+    {
+      "role": "decode-utf16",
+      "rva": 2912576,
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "input",
+            "type": "ushort*"
+          },
+          {
+            "name": "inputCount",
+            "type": "int"
+          },
+          {
+            "name": "errorParameters",
+            "type": "void*"
+          },
+          {
+            "name": "codePoint",
+            "type": "uint*"
+          }
+        ]
+      },
+      "name": "ON_DecodeUTF16",
+      "length": 408,
+      "sha256": "02b23830ac89294dc6c2e170c2d014ef9d613fd4ac6bed05d28242cf87dd14c9",
+      "unwindRegions": [
+        {
+          "begin": 2912576,
+          "end": 2912625,
+          "unwind": 3407708
+        },
+        {
+          "begin": 2912625,
+          "end": 2912729,
+          "unwind": 3407684
+        },
+        {
+          "begin": 2912729,
+          "end": 2912752,
+          "unwind": 3407660
+        },
+        {
+          "begin": 2912752,
+          "end": 2912814,
+          "unwind": 3407632
+        },
+        {
+          "begin": 2912814,
+          "end": 2912916,
+          "unwind": 3407608
+        },
+        {
+          "begin": 2912916,
+          "end": 2912941,
+          "unwind": 3407592
+        },
+        {
+          "begin": 2912941,
+          "end": 2912945,
+          "unwind": 3407564
+        },
+        {
+          "begin": 2912945,
+          "end": 2912967,
+          "unwind": 3407544
+        },
+        {
+          "begin": 2912967,
+          "end": 2912984,
+          "unwind": 3407528
+        }
+      ]
+    },
+    {
+      "role": "ansi-byte-string-assignment",
+      "rva": 3015008,
+      "signature": {
+        "returnType": "void*",
+        "parameters": [
+          {
+            "name": "destination",
+            "type": "void*"
+          },
+          {
+            "name": "source",
+            "type": "void*"
+          }
+        ]
+      },
+      "name": "??4ON_wString@@QEAAAEBV0@AEBVON_String@@@Z",
+      "length": 114,
+      "sha256": "baa1a8c00b7556758c97b3aae797232536dc7caa432f07f622ef3348434649c2",
+      "unwindRegions": [
+        {
+          "begin": 3015008,
+          "end": 3015066,
+          "unwind": 3396108
+        },
+        {
+          "begin": 3015066,
+          "end": 3015101,
+          "unwind": 3549844
+        },
+        {
+          "begin": 3015101,
+          "end": 3015122,
+          "unwind": 3549828
+        }
+      ]
+    },
+    {
+      "role": "ansi-copy-bytes-to-wide",
+      "rva": 3011920,
+      "signature": {
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "destination",
+            "type": "void*"
+          },
+          {
+            "name": "byteCount",
+            "type": "int"
+          },
+          {
+            "name": "source",
+            "type": "byte*"
+          }
+        ]
+      },
+      "name": "?CopyToArray@ON_wString@@IEAAXHPEBD@Z",
+      "length": 297,
+      "sha256": "2a353a498372a04687f85e0956f0026f4226f645eb0f3322d4660cefc285bfe3",
+      "unwindRegions": [
+        {
+          "begin": 3011920,
+          "end": 3011976,
+          "unwind": 3525656
+        },
+        {
+          "begin": 3011976,
+          "end": 3012064,
+          "unwind": 3525636
+        },
+        {
+          "begin": 3012064,
+          "end": 3012217,
+          "unwind": 3525620
+        }
+      ]
+    },
+    {
+      "role": "ansi-utf8-to-wide",
+      "rva": 3010416,
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "inputCount",
+            "type": "int"
+          },
+          {
+            "name": "input",
+            "type": "byte*"
+          },
+          {
+            "name": "capacity",
+            "type": "int"
+          },
+          {
+            "name": "output",
+            "type": "ushort*"
+          }
+        ]
+      },
+      "name": null,
+      "length": 229,
+      "sha256": "a15cb4bcdb2d8d4ee19f1b8bf8983ba1b14b3ff619205718938ff52b934e633f",
+      "unwindRegions": [
+        {
+          "begin": 3010416,
+          "end": 3010532,
+          "unwind": 3500452
+        },
+        {
+          "begin": 3010532,
+          "end": 3010635,
+          "unwind": 3500432
+        },
+        {
+          "begin": 3010635,
+          "end": 3010645,
+          "unwind": 3500416
+        }
+      ]
+    },
+    {
+      "role": "convert-utf8-utf16",
+      "rva": 2913456,
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "testByteOrder",
+            "type": "int"
+          },
+          {
+            "name": "input",
+            "type": "byte*"
+          },
+          {
+            "name": "inputCount",
+            "type": "int"
+          },
+          {
+            "name": "output",
+            "type": "ushort*"
+          },
+          {
+            "name": "capacity",
+            "type": "int"
+          },
+          {
+            "name": "errorStatus",
+            "type": "uint*"
+          },
+          {
+            "name": "errorMask",
+            "type": "uint"
+          },
+          {
+            "name": "replacement",
+            "type": "uint"
+          },
+          {
+            "name": "nextInput",
+            "type": "byte**"
+          }
+        ]
+      },
+      "name": "ON_ConvertUTF8ToUTF16",
+      "length": 577,
+      "sha256": "81d9462c07a3cc4b231cc0c95904c9dae1bab809f4bcb10544251401c1fe3d02",
+      "unwindRegions": [
+        {
+          "begin": 2913456,
+          "end": 2913589,
+          "unwind": 3455352
+        },
+        {
+          "begin": 2913589,
+          "end": 2913594,
+          "unwind": 3455332
+        },
+        {
+          "begin": 2913594,
+          "end": 2913613,
+          "unwind": 3455312
+        },
+        {
+          "begin": 2913613,
+          "end": 2913648,
+          "unwind": 3455292
+        },
+        {
+          "begin": 2913648,
+          "end": 2913919,
+          "unwind": 3455272
+        },
+        {
+          "begin": 2913919,
+          "end": 2913929,
+          "unwind": 3455256
+        },
+        {
+          "begin": 2913929,
+          "end": 2913979,
+          "unwind": 3455240
+        },
+        {
+          "begin": 2913979,
+          "end": 2913998,
+          "unwind": 3455224
+        },
+        {
+          "begin": 2913998,
+          "end": 2914033,
+          "unwind": 3455208
+        }
+      ]
+    },
+    {
+      "role": "decode-utf8",
+      "rva": 2911344,
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "input",
+            "type": "byte*"
+          },
+          {
+            "name": "inputCount",
+            "type": "int"
+          },
+          {
+            "name": "errorParameters",
+            "type": "void*"
+          },
+          {
+            "name": "codePoint",
+            "type": "uint*"
+          }
+        ]
+      },
+      "name": "ON_DecodeUTF8",
+      "length": 1121,
+      "sha256": "568983f97303418ab2e2106bbc97088f45b9023be9374a10e356f1dd0536dfb7",
+      "unwindRegions": [
+        {
+          "begin": 2911344,
+          "end": 2911402,
+          "unwind": 3431276
+        },
+        {
+          "begin": 2911402,
+          "end": 2911753,
+          "unwind": 3431256
+        },
+        {
+          "begin": 2911753,
+          "end": 2912061,
+          "unwind": 3431232
+        },
+        {
+          "begin": 2912061,
+          "end": 2912082,
+          "unwind": 3431216
+        },
+        {
+          "begin": 2912082,
+          "end": 2912450,
+          "unwind": 3431188
+        },
+        {
+          "begin": 2912450,
+          "end": 2912465,
+          "unwind": 3431172
+        }
+      ]
+    }
+  ]
+}

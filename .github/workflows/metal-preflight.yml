@@ -31,6 +31,14 @@ on:
       - "native/Rendering/FilenameReference/**"
       - "native/Rendering/Crt100Reference/**"
       - "native/Rendering/Crt100WideReference/**"
+      - "native/Rendering/AnsiNlsReference/**"
+      - "scripts/verify-ansi-nls-reference.cjs"
+      - "scripts/verify-ansi-source-contract.cjs"
+      - "tests/ansi-nls-reference.test.cjs"
+      - "tests/ansi-source-contract.test.cjs"
+      - "reference/fixtures/windows-nls1-ansi-60502.json.br"
+      - "native/Analysis/fixtures/rhino5-ansi-conversion-regions.json"
+      - "docs/evidence/audit/rhino5-ansi-contract.json"
       - "scripts/prepare-crt100-profiles.cjs"
       - "tests/crt100-profiles.test.cjs"
       - "tests/Port/Geometry.Candidate.Contracts/Crt100ProfileAssertions.cs"
@@ -314,6 +322,11 @@ jobs:
         run: |
           node --test tests/crt100-profiles.test.cjs > artifacts/crt100-profiles-checks.txt
           node scripts/prepare-crt100-profiles.cjs > artifacts/crt100-profiles.json
+      - name: Verify original ANSI contract and complete public NLS byte backend
+        run: |
+          node --test tests/ansi-nls-reference.test.cjs tests/ansi-source-contract.test.cjs > artifacts/ansi-reference-checks.txt
+          node scripts/verify-ansi-nls-reference.cjs > artifacts/ansi-nls-reference.json
+          node scripts/verify-ansi-source-contract.cjs > artifacts/ansi-source-contract.json
       - name: Verify original filename profile initialization evidence
         run: node scripts/verify-filename-profile.cjs > artifacts/filename-profile.json
       - name: Verify exhaustive native Unicode NLS1 lowercase corpus

@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03e",
+  "sourceExecuted": false,
+  "originalCoreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "manifest": "native/Analysis/fixtures/rhino5-ansi-conversion-regions.json",
+  "manifestSha256": "e7f98d69b5e7dd295d73b4c6ed84dfcb5293d100f19a0dcc57788571154a254e",
+  "staticBytes": {
+    "functions": 9,
+    "chainedRegions": 46,
+    "totalBytes": 3751,
+    "localOriginalPeVerified": true
+  },
+  "views": [
+    {
+      "role": "ansi-utf8-measure",
+      "path": ".local/evidence/ansi-source/decompile-04/ansi-utf8-measure.c",
+      "sha256": "642be4c698cb50014e2f563177c733ff3c6afbbf5ad0fc3db05417f8e9fe2bb3",
+      "bytes": 509,
+      "signature": "int Original_ansi_utf8_measure(int inputCount, ushort * input)"
+    },
+    {
+      "role": "ansi-utf8-write",
+      "path": ".local/evidence/ansi-source/decompile-04/ansi-utf8-write.c",
+      "sha256": "84cbfcdf63d65a54e667815bf31045d844b76be9f59b8e651696f62bc8849eb7",
+      "bytes": 757,
+      "signature": "int Original_ansi_utf8_write(int inputCount, ushort * input, int capacity, uchar * output)"
+    },
+    {
+      "role": "convert-utf16-utf8",
+      "path": ".local/evidence/ansi-source/decompile-04/convert-utf16-utf8.c",
+      "sha256": "380c6d37805e97339d83782ea4078878a49c46077124c9cf00b2aeac70642369",
+      "bytes": 3780,
+      "signature": "int Original_convert_utf16_utf8(int testByteOrder, ushort * input, int inputCount, uchar * output, int capacity, uint * errorStatus, uint errorMask, uint replacement, ushort * * nextInput)"
+    },
+    {
+      "role": "decode-utf16",
+      "path": ".local/evidence/ansi-source/decompile-04/decode-utf16.c",
+      "sha256": "78dcbc808e4c6f16c8bceafffaf6d403ceae72dc04546af51f37fbc1782e9fc3",
+      "bytes": 1705,
+      "signature": "int Original_decode_utf16(ushort * input, int inputCount, void * errorParameters, uint * codePoint)"
+    },
+    {
+      "role": "ansi-byte-string-assignment",
+      "path": ".local/evidence/ansi-source/decompile-04/ansi-byte-string-assignment.c",
+      "sha256": "39d04475dbcf1ddc25d7f31231a77c40cc89c72a21737cbd3932d73d7ddad923",
+      "bytes": 1282,
+      "signature": "void * operator=(void * destination, void * source)"
+    },
+    {
+      "role": "ansi-copy-bytes-to-wide",
+      "path": ".local/evidence/ansi-source/decompile-04/ansi-copy-bytes-to-wide.c",
+      "sha256": "ed25334bb0798c842ddd6532ed361f33291b8f48e81e1c7e6a1e411eb6bcabc2",
+      "bytes": 1928,
+      "signature": "void Original_ansi_copy_bytes_to_wide(void * destination, int byteCount, uchar * source)"
+    },
+    {
+      "role": "ansi-utf8-to-wide",
+      "path": ".local/evidence/ansi-source/decompile-04/ansi-utf8-to-wide.c",
+      "sha256": "a50ca6814c2f5c46e0d80f74e44fcc8c178b894232d208216ec898b43d21170a",
+      "bytes": 869,
+      "signature": "int Original_ansi_utf8_to_wide(int inputCount, uchar * input, int capacity, ushort * output)"
+    },
+    {
+      "role": "convert-utf8-utf16",
+      "path": ".local/evidence/ansi-source/decompile-04/convert-utf8-utf16.c",
+      "sha256": "c15c7638b417d0ac082bc9bce39ed1f5adc554b531f80f4ad71a6b588539ea08",
+      "bytes": 3554,
+      "signature": "int Original_convert_utf8_utf16(int testByteOrder, uchar * input, int inputCount, ushort * output, int capacity, uint * errorStatus, uint errorMask, uint replacement, uchar * * nextInput)"
+    },
+    {
+      "role": "decode-utf8",
+      "path": ".local/evidence/ansi-source/decompile-04/decode-utf8.c",
+      "sha256": "d6f19a3276d52617a812df470f849b7500296a98fb1737b60feaf4752bd62757",
+      "bytes": 5566,
+      "signature": "int Original_decode_utf8(uchar * input, int inputCount, void * errorParameters, uint * codePoint)"
+    }
+  ],
+  "callerManifest": "native/Analysis/fixtures/rhino5-image-cache-core-regions.json",
+  "callerDisassembly": {
+    "path": ".local/evidence/ansi-source/lower-disassembly.txt",
+    "sha256": "d0456252ba7068371ba43708378ccf8dc9c2495b403881a2155e8bbf2c2f7cb0"
+  },
+  "findings": [
+    {
+      "id": "ANSI-01",
+      "fact": "w2c_size measures ON_ConvertUTF16ToUTF8 with testByteOrder0/errorMask0/replacement0 and returns a nonnegative converted-prefix byte count after logging errors. w2c writes with errorMask0xffffffff/replacement0xfffd into that measured capacity; it cannot append replacement/suffix beyond a strict-prefix capacity."
+    },
+    {
+      "id": "ANSI-02",
+      "fact": "on_wcsicmp uses current CRT if its parallel ASCII scan reaches a terminator in either string. If both current units remain nonzero at a non-ASCII stop, it converts both C prefixes to UTF8 and calls CompareStringA with stored locale1,flags0x20001,counts-1. Native results1/2/3 normalize to-1/0/1; other results fall back to current CRT."
+    },
+    {
+      "id": "ANSI-03",
+      "fact": "ANSI MakeLower scans the wide C prefix before conversion. LCMapStringA uses locale1/flags0x100/sourceCount=n converted bytes/destinationCapacity=2*n+16. Failure or excessive result falls back to CRT on the original string; successful byte-string assignment replaces the old wide value, including loss of any original post-NUL stored suffix."
+    },
+    {
+      "id": "ANSI-04",
+      "fact": "ON_wString assignment from ON_String obtains byteCount via strlen and uses CopyToArray/c2w. c2w calls ON_ConvertUTF8ToUTF16 with testByteOrder0/errorMask0xffffffff/replacement0xfffd and retains the actual returned wide length. Default .NET replacement grouping is not presumed equivalent to the legacy decoder."
+    },
+    {
+      "id": "ANSI-05",
+      "fact": "The public NLS1 ANSI backend uses CP1256 on the recorded host, not system ACP1252. All65536 ANSI comparisons match corresponding CP1256-decoded CompareStringW controls;10460 differ from system-ACP decoded controls."
+    },
+    {
+      "id": "ANSI-06",
+      "fact": "All1112064 valid scalar ANSI lowercase calls match bytewise composition of the256 measured lower bytes.27 bytes change, including0x8c->0x9c.50349 scalar encodings change and4096 become invalid UTF8, with input rangeU+10C000..U+10CFFF. The original masked decoder path must be preserved; no original application runtime was executed."
+    }
+  ],
+  "publicSourceCorroboration": {
+    "path": ".local/reference/opennurbs6-archive-source/opennurbs_wstring.cpp",
+    "sha256": "5a78b333bee3281312d82cc138c979eb50678ad771a0fae1c02e7a138e00980c",
+    "scope": "w2c_size/w2c/c2w argument policies corroborate the binary review; no general version equivalence inferred."
+  },
+  "launcher": {
+    "observedInitialFailure": "Default C JDK missing; initial invocation exit1",
+    "fix": "Default now selects existing .local/tools/jdk-17/bin/java.exe under D; explicit GHIDRA_JAVA still overrides",
+    "realDefaultInvocationExitCode": 0,
+    "output": ".local/evidence/ansi-source/decompile-04"
+  },
+  "limits": [
+    "Static original source review and public API measurements are distinct from original runtime execution",
+    "Source conversion helpers/legacy decoder and complete ANSI policy are not yet implemented in portable C#",
+    "Original locale/state/current CRT and runtime-error allocation paths remain open",
+    "Complete source document/view/PC/physical/full application parity remains unverified"
+  ]
+}
