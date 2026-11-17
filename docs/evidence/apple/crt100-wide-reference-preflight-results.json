@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03c",
+  "sourceCommit": "1bbc87b5525df0e99cc93c5dfd5180460df071f0",
+  "run": 44031393590,
+  "conclusion": "success",
+  "artifactId": 14304618809,
+  "artifactSha256": "d8258185d49f1e545c8ce1bd736aced1c0c1818e69d6923844d34619be883803",
+  "actualArtifactInspected": true,
+  "results": {
+    "profiles": 3,
+    "wholeLowerInputs": 3342336,
+    "repeatedComparePairs": 3345804,
+    "wholeBuffers": 147,
+    "localeRestored": true,
+    "originalTargetExecuted": false,
+    "profileResults": [
+      {
+        "locale": "C",
+        "wholeLowerUnitDifferences": 0,
+        "supplementaryChanges": 0,
+        "lowerCompareDisagreements": 0,
+        "wholeVsUnitContexts": 0
+      },
+      {
+        "locale": "English_United States.1252",
+        "wholeLowerUnitDifferences": 0,
+        "supplementaryChanges": 40,
+        "lowerCompareDisagreements": 40,
+        "wholeVsUnitContexts": 1
+      },
+      {
+        "locale": "Turkish",
+        "wholeLowerUnitDifferences": 1,
+        "supplementaryChanges": 40,
+        "lowerCompareDisagreements": 41,
+        "wholeVsUnitContexts": 2
+      }
+    ]
+  },
+  "tests": {
+    "pass": 2,
+    "fail": 0
+  },
+  "scope": "macOS independently reconstructs complete retained Windows native output/comparison digests and validates whole-buffer counterexamples. It does not execute Windows CRT or prove original runtime/current locale."
+}

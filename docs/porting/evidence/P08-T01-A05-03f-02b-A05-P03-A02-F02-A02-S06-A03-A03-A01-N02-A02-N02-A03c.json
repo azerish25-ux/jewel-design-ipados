@@ -5,14 +5,64 @@
     "UI-039"
   ],
   "inputCommit": "ea24e67a4c72fd0f1467e116f1e4e627a98fb923",
-  "status": "windows-exhaustive-wide-entrypoint-reference-acquired-apple-validation-pending",
+  "status": "complete-recorded-wide-entrypoint-corpus-windows-and-macos-validated-production-fallback-open",
   "sourceExecuted": false,
   "runtime": {
     "sha256": "2b7ab898b2f64f4cd1ae651c93d7eb9556208fd8d8d40d425e856c83d86d2346",
     "fileVersion": "10.00.40219.473",
     "path": ".local/reference/windows-crt100/msvcr100.dll",
     "originalTargetExecuted": false,
-    "originalImportEvidence": "docs/porting/evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03b.json"
+    "originalImportEvidence": "docs/porting/evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03b.json",
+    "staticEntryPoints": [
+      {
+        "name": "_towlower_l",
+        "rva": 261292,
+        "length": 213,
+        "sha256": "233875817406c4a16a2ae893475c5d863c5f61c28213956d286345288e3ea7f1",
+        "unwind": 659376,
+        "interpretation": "Static export/unwind boundary only; control flow not yet reviewed"
+      },
+      {
+        "name": "_wcsicmp",
+        "rva": 376172,
+        "length": 134,
+        "sha256": "55bc3269ede2185120d2b5f90a6c536b058b397881d9920ec2577a0c95026abb",
+        "unwind": 662784,
+        "interpretation": "Static export/unwind boundary only; control flow not yet reviewed"
+      },
+      {
+        "name": "_wcsicmp_l",
+        "rva": 375908,
+        "length": 258,
+        "sha256": "2f56b7c1339d1854df21d531480452f0ede8aaf450960007fa38455ebab1cc46",
+        "unwind": 653232,
+        "interpretation": "Static export/unwind boundary only; control flow not yet reviewed"
+      },
+      {
+        "name": "_wcslwr",
+        "rva": 377356,
+        "length": 111,
+        "sha256": "d0b8c7c439516cb71b7c725a427cdc4b8dfa71ead617a624963ee49695fc1052",
+        "unwind": 655404,
+        "interpretation": "Static export/unwind boundary only; control flow not yet reviewed"
+      },
+      {
+        "name": "_wcslwr_l",
+        "rva": 377320,
+        "length": 30,
+        "sha256": "3aada3d38f33e1e407765f50d6623029bd806a84a750034c6a09f6c1addfafd5",
+        "unwind": 655404,
+        "interpretation": "Static export/unwind boundary only; control flow not yet reviewed"
+      },
+      {
+        "name": "_wcslwr_s_l",
+        "rva": 377220,
+        "length": 75,
+        "sha256": "4d14d6e16cde9f6dc36a198da0ad239fe566d8c22e109582315d4748c2d1721f",
+        "unwind": 672040,
+        "interpretation": "Static export/unwind boundary only; control flow not yet reviewed"
+      }
+    ]
   },
   "captures": {
     "paths": [
@@ -74,12 +124,15 @@
   "validation": {
     "command": "node scripts/run-local.cjs node --test tests/crt100-wide-reference.test.cjs",
     "exitCode": 0,
-    "checks": 2
+    "checks": 2,
+    "adjacentNodeChecks": 9,
+    "repositoryIntegrity": true
   },
   "limits": [
     "Original runtime build/current locale not established",
     "Other CRT locales/ANSI and actual NLS failure dispatch remain open",
     "Whole-buffer composition checked on49 cases per profile, not all strings",
     "Production fallback/locale mutation/source document/view/PC/physical parity remain open"
-  ]
+  ],
+  "appleReferenceValidation": "docs/evidence/apple/crt100-wide-reference-preflight-results.json"
 }
