@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "direct-state-machine-windows-native-pass-apple-pending",
+  "status": "fixed-profile-direct-engine-platform-tested-original-integration-open",
   "sourceAudit": "docs/evidence/audit/windows-nls-direct-engine.json",
   "red": [
     "Missing Rhino5NlsDirectComparer reproduced CS0103 before production implementation.",
@@ -26,9 +26,18 @@
   },
   "adjacentNodeChecks": 26,
   "originalTargetExecuted": false,
-  "platform": "macOS/iPad/iPhone pending",
+  "platform": {
+    "macOS": "docs/evidence/apple/nls-direct-engine-preflight-results.json",
+    "ios": "docs/evidence/apple/nls-direct-engine-ios-results.json",
+    "sourceCommit": "df653b82ff914b60f9ba92c8893294c872f818d6",
+    "macOSRun": 44003753317,
+    "visibleRun": 44003753299,
+    "nativeComparisonsPerPlatform": 11107891,
+    "guardsPerPlatform": 7,
+    "adjacentCapturesPerFamily": 18,
+    "restoreDifferences": 0
+  },
   "remaining": [
-    "Actual macOS and both simulator executions and adjacent capture/resource acceptance.",
     "Original ON_wString empty wrapper, CRT/ANSI failure and runtime profile state integration.",
     "Actual document/view cache integration, original PC corpus and physical/full-feature acceptance."
   ],

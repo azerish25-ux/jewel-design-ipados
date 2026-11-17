@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A02",
+  "sourceCommit": "df653b82ff914b60f9ba92c8893294c872f818d6",
+  "run": 44003753317,
+  "conclusion": "success",
+  "artifactId": 14294061041,
+  "artifactSha256": "9a4976a0de7f8b8b065940da8b9953f71bffdbc314a3abc89709c65a18a8961e",
+  "actualArtifactInspected": true,
+  "nativeComparisonCases": 11107891,
+  "nullBudgetTerminatorGuards": 7,
+  "preservedKeyOrderDisagreements": 213,
+  "resultLines": [
+    "PASS direct NLS1 strings:40663 exact native comparisons/213 preserved key-order disagreements; original wrapper/CRT/ANSI/state/document/PC/physical acceptance remain open.",
+    "PASS direct NLS1 exhaustive:4456448 exact native comparisons/0 mismatches; recorded fixed profile, wrapper/CRT/ANSI/state/document/PC/physical remain open.",
+    "PASS direct NLS1 Hangul:6507500 exact native comparisons/0 mismatches; all supported triple inputs, wrapper/CRT/ANSI/state/document/PC/physical remain open.",
+    "PASS direct NLS1 stress:103280 exact native comparisons/7 null/budget/terminator guards; original wrapper/CRT/ANSI/state/document/PC/physical remain open."
+  ],
+  "reference": {
+    "schemaVersion": 1,
+    "exhaustiveComparisons": 4456448,
+    "jamoComparisons": 6507500,
+    "jamoTriples": 1626875,
+    "stressComparisons": 103280,
+    "stressGroups": {
+      "all-public-mapping-contexts": 53920,
+      "ignored-insertion": 8192,
+      "adjacent-unit-mutation": 8192,
+      "expansion-insertion": 8192,
+      "repeat-insertion": 8192,
+      "word-punctuation-mutation": 8192,
+      "mark-order-mutation": 8192,
+      "long-mark-mutation": 104,
+      "long-leading-mark": 104
+    },
+    "nativeErrors": 0,
+    "nativeRepeatMismatches": 0,
+    "jamoInputRows": 357,
+    "scope": "Independent retained native references. Managed implementation/platform proofs separate; original wrapper/CRT/ANSI/state/document/PC/physical remain open."
+  },
+  "bindingWarnings": 0,
+  "bindingErrors": 0,
+  "scope": "Actual macOS direct fixed-profile engine execution. Actual iOS and original wrapper/CRT/ANSI/state/document/PC/physical acceptance remain separate.",
+  "allLocalDownloadsD": true,
+  "fullParityVerified": false
+}
