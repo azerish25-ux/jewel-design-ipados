@@ -59,3 +59,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.NlsDirectComparisonAsse
 System.Console.WriteLine(CandidateGeometryContractChecks.NlsDirectExhaustiveAssertions.RunExhaustive());
 System.Console.WriteLine(CandidateGeometryContractChecks.NlsDirectExhaustiveAssertions.RunJamo());
 System.Console.WriteLine(CandidateGeometryContractChecks.NlsDirectExhaustiveAssertions.RunStress());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.NlsFilenamePolicyAssertions.Run());

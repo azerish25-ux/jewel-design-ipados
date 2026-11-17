@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03a",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "b535e14f0a3b653614c7566a5321c29767024faa",
+  "status": "windows-tested-apple-pending",
+  "sourceExecuted": false,
+  "source": {
+    "path": ".local/evidence/source-cache/core-02/original-wstring-compare-no-case.c",
+    "sha256": "de7e47d90b34d026d862461abac195e987398ae771922ff9daa51aec7c23bb0d",
+    "rva": "0x2e0d20",
+    "evidence": "original stored-length/right-null/first-NUL guard, then fixed successful Unicode NLS engine"
+  },
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "error": "CS0117 missing UnicodeNls1Reference60502"
+  },
+  "windows": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 0,
+    "nativeWrapperPairs": 40663,
+    "boundaryAndCacheChecks": 75,
+    "adjacentDirectComparisons": 11107891
+  },
+  "limits": [
+    "Explicit successful locale1 version60502 profile only",
+    "Native failure to current CRT locale and ANSI conversion remain open",
+    "Original runtime locale mutation and document/view policy adoption remain open",
+    "Original-PC, physical-device and all feature parity rows remain unverified"
+  ]
+}

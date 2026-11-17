@@ -10,6 +10,17 @@ public sealed class Rhino5FilenameSemantics
  public string Lower(string name){ArgumentNullException.ThrowIfNull(name);return lower(name);}
  public int Compare(string? first,string? second)=>compare(first,second);
  private static char Fold(char c)=>c>='A'&&c<='Z'?(char)(c+32):c;
+ /// <summary>Explicit successful Unicode NLS1 profile, pinned to the captured 0x60502 tables.
+ /// Models ON_wString's stored-length empty guard before C-terminated comparison.
+ /// This does not select runtime locale state or emulate native API failure/ANSI conversion.</summary>
+ public static Rhino5FilenameSemantics UnicodeNls1Reference60502 { get; } = new(
+  "original-Unicode-NLS1/60502/successful-fixed-profile",
+  name => Rhino5UnicodeNlsLowercase.Reference60502.Lower(name),
+  (left,right) => {
+   if (string.IsNullOrEmpty(right) || right[0] == 0) return string.IsNullOrEmpty(left) ? 0 : 1;
+   if (string.IsNullOrEmpty(left)) return -1;
+   return Rhino5NlsDirectComparer.Reference60502.Compare(left,right);
+  });
  public static Rhino5FilenameSemantics CrtCLocale{get;}=new("original-NLS-disabled/CRT-C/UTF16",name=>{char[] chars=name.ToCharArray();for(int i=0;i<chars.Length&&chars[i]!=0;i++)chars[i]=Fold(chars[i]);return new(chars);},(left,right)=>{if(string.IsNullOrEmpty(right)||right[0]==0)return string.IsNullOrEmpty(left)?0:1;if(string.IsNullOrEmpty(left))return -1;int i=0;while(true){char a=i<left.Length?Fold(left[i]):'\0',b=i<right.Length?Fold(right[i]):'\0';if(a!=b)return a-b;if(a==0)return 0;i++;}});
 }
 public readonly record struct Rhino5ImageCacheKey(ulong Context,uint Kind,string Filename);

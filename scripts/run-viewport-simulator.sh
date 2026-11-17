@@ -82,6 +82,7 @@ for i in $(seq 1 600); do
   grep -q '^PASS context image cache:33 hit/miss/usage/context/failure/lease/budget cases/65536 exact CRT-C UTF16 lower units/1156 native compare pairs;' "$OUT/result.txt"
   grep -q '^PASS Unicode NLS1 lower:1114112 exact native unit/scalar mappings/3329 native contexts/7 null/budget/UTF16 guards;' "$OUT/result.txt"
   grep -q '^PASS NLS1 comparison inputs:65536 exact active native weights/730 exact ordered expansions/2 expansion-index guards;' "$OUT/result.txt"
+  grep -q '^PASS NLS1 filename policy:40663 native wrapper pairs/75 boundary/cache checks;' "$OUT/result.txt"
   grep -q '^PASS direct NLS1 strings:40663 exact native comparisons/213 preserved key-order disagreements;' "$OUT/result.txt"
   grep -q '^PASS direct NLS1 exhaustive:4456448 exact native comparisons/0 mismatches;' "$OUT/result.txt"
   grep -q '^PASS direct NLS1 Hangul:6507500 exact native comparisons/0 mismatches;' "$OUT/result.txt"
