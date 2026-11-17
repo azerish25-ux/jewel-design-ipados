@@ -5,7 +5,7 @@
     "UI-039"
   ],
   "inputCommit": "be057fdca94e4c20f2fd22f2335e422ca8bc1e10",
-  "status": "mutable-string-runtime-windows-tested-apple-pending",
+  "status": "mutable-string-runtime-platform-tested-host-document-and-native-ordering-open",
   "sourceExecuted": false,
   "sourceReferences": [
     "docs/evidence/audit/rhino5-filename-profile.json",
@@ -43,5 +43,8 @@
     "Recorded CRT configuration is not arbitrary setlocale/thread-local CRT emulation",
     "Ordered stores and single-thread transitions tested; no original data-race/atomic-whole-snapshot claim",
     "Native duplicate-key search/sort, uncaptured NLS failure/errno/log callbacks and full PC/physical/application parity remain open"
-  ]
+  ],
+  "applePreflight": "docs/evidence/apple/mutable-string-runtime-preflight-results.json",
+  "appleSimulators": "docs/evidence/apple/mutable-string-runtime-ios-results.json",
+  "nextConfirmedGap": "docs/evidence/audit/native-cache-ordering-gap.json"
 }

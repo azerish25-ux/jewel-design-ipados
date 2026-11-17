@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03g",
+  "sourceCommit": "8dbafc80a4500f4b6cccbdfa2361275bbc1b38d3",
+  "run": 44051725608,
+  "conclusion": "success",
+  "artifactId": 14313957436,
+  "artifactSha256": "057caa00782cc759f025f031fac412eddb6efa1b9bd6712b96fdaaeea25bc322",
+  "actualArtifactInspected": true,
+  "tests": {
+    "sourceFlagTransitions": 68,
+    "literalModeCacheGuardChecks": 683,
+    "adjacentAnsiScalarByteOutputs": 1112064,
+    "adjacentCrtNativeLowerInputs": 3342336,
+    "adjacentDirectNativeComparisons": 11107891
+  },
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "resultLogSha256": "aa6c769e57382957c2a7583e5ad02d2b452e3c225db362eca7f8bc15e93ab16e",
+  "limits": [
+    "Source-derived ordered single-thread transition/value contract; original DLL never executed",
+    "Explicit recorded CRT fallback, not arbitrary/thread-local CRT emulation",
+    "Full native ordering/document/view/original-PC/physical parity remains open"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "parentTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03g",
+  "nextTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h",
+  "status": "ordering-gap-reproduced-locally-full-oracle-and-cache-fix-pending",
+  "originalExecuted": false,
+  "source": {
+    "originalCoreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+    "qsortExport": "?ON_qsort@@YAXPEAX_K1P6AHPEBX2@Z@Z",
+    "qsortRva": 2813936,
+    "qsortThunkBytes": 7,
+    "qsortThunkSha256": "c8cc39478d169df81ee3336091037318434631ea38c76bfbe546c849d0d228a4",
+    "import": {
+      "dll": "MSVCR100.dll",
+      "name": "qsort",
+      "iat": 3154640
+    },
+    "sortOwner": ".local/evidence/source-cache/lifecycle-02/image-entry-sort.c",
+    "sortOwnerSha256": "8ec987290e628bb86a9844ee9705c1d7285b1ac0520d557cd00c387e2afced6b",
+    "openGlSearch": ".local/evidence/original-texture-lookup-03/ogl-texture-entry-find.c",
+    "openGlSearchSha256": "e659913ed6f026198290dd8573ea99e359e67fed4ca2ff2b095eae893d61b7f4"
+  },
+  "publicProbe": {
+    "module": ".local/reference/windows-crt100/msvcr100.dll",
+    "moduleSha256": "2b7ab898b2f64f4cd1ae651c93d7eb9556208fd8d8d40d425e856c83d86d2346",
+    "source": ".local/agent-state/cache-sort-probe/Program.cs",
+    "sourceSha256": "13a53c6913240c9e7e36c69c24b794b854e76c3af6becfa4d283230a2bb3104f",
+    "output": ".local/evidence/mutable-string-runtime/cache-sort-comparison.txt",
+    "outputSha256": "803969ba87b17b7dbfadc4680eef0053ba7f53bb97afdc286897b56d51b0506c",
+    "recordWidth": 8,
+    "equalKeyCases": [
+      {
+        "count": 2,
+        "native": [
+          1,
+          0
+        ],
+        "managed": [
+          0,
+          1
+        ]
+      },
+      {
+        "count": 3,
+        "native": [
+          1,
+          2,
+          0
+        ],
+        "managed": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "count": 7,
+        "native": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ],
+        "managed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "count": 8,
+        "native": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "managed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    ],
+    "sameObservedAtCounts": [
+      9,
+      16
+    ]
+  },
+  "findings": [
+    "Original ON_qsort is a7-byte tail jump to imported MSVCR100.dll qsort; cache sorting uses width8 pointer records.",
+    "OpenGL cache search already uses floor((low+high)/2), matching the current portable search. GDI bitmap search uses a separate bsearch path and must not be conflated.",
+    "Managed List.Sort does not preserve the original CRT tie permutation for these small equal-key arrays. Existing portable cache search/sort must not be accepted as full parity."
+  ],
+  "limits": [
+    "This is a bounded local public-CRT probe, not a complete tracked native sort oracle or original app execution.",
+    "Ignored probe source/output are local evidence; promote a reproducible native collector and expand normal/boundary/duplicate/pivot cases before implementation.",
+    "Current runtime owner covers a one-entry transition without ambiguity; this evidence does not revoke its scoped result or close complete cache/document/PC/physical parity."
+  ]
+}
