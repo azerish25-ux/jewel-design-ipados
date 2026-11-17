@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "4a6aef7e6b9e6d762eb5d6983f973b7b3abf3de7",
-  "status": "native-cache-sort-windows-tested-apple-pending",
+  "status": "native-cache-sort-platform-tested-entry-copy-and-document-open",
   "originalAppExecuted": false,
   "implementation": {
     "sort": "src/Port/Rendering.Candidate/Rhino5Crt100QSort.cs",
@@ -34,5 +34,7 @@
     "Width8-equivalent value ordering for pinned runtime snapshot; original app never executes",
     "Original entry C-prefix copying, GDI bsearch and full document/view integration remain open",
     "Original error/race/physical-device and full PC/application parity remain unverified"
-  ]
+  ],
+  "applePreflight": "docs/evidence/apple/native-cache-sort-preflight-results.json",
+  "appleSimulators": "docs/evidence/apple/native-cache-sort-ios-results.json"
 }

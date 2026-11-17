@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "taskIds": [
+    "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P01",
+    "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P02"
+  ],
+  "sourceCommit": "32c12d414752aed4fb4ce5699ad9052b634ad77a",
+  "run": 44057694818,
+  "conclusion": "success",
+  "artifactId": 14316827592,
+  "artifactSha256": "417ab57eb7a9e985e1a0585933dbf81995434d7efb573ab76de33cf3c92286a6",
+  "actualArtifactInspected": true,
+  "execution": {
+    "exactNativeIdentityOrders": 10431,
+    "exactNativeCallbackEvents": 1972827,
+    "dependencyGuards": 2,
+    "actualCacheAliasLeaseAtomicityChecks": 9
+  },
+  "independentCorpusValidation": {
+    "nativeCases": 10431,
+    "comparisonEventsPerPass": 1972827,
+    "managedOrderDifferences": 10053,
+    "exhaustiveTernaryCases": 9841,
+    "independentlyReconstructedShortSortCases": 9931,
+    "maximumElements": 4097,
+    "recordWidth": 8,
+    "originalAppExecuted": false,
+    "source": {
+      "functions": 2,
+      "chainedRegions": 6,
+      "totalBytes": 948,
+      "sourceImageChecked": false,
+      "originalAppExecuted": false
+    }
+  },
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "resultLogSha256": "ce153a5841411b2496370d62d69396f732d2822b26158e56323521466ec2d4cc",
+  "limits": [
+    "Pinned public CRT snapshot oracle; original app not executed",
+    "Mac source verification is manifest-only; original source image checked locally on D",
+    "Entry C-prefix copying, full document/view/GDI/PC/physical parity remain open"
+  ]
+}

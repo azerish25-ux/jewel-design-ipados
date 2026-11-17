@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "parentTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03g",
   "nextTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h",
-  "status": "ordering-gap-reproduced-locally-full-oracle-and-cache-fix-pending",
+  "status": "recorded-equal-key-qsort-gap-fixed-and-platform-tested-entry-copy-open",
   "originalExecuted": false,
   "source": {
     "originalCoreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
@@ -112,5 +112,11 @@
     "This is a bounded local public-CRT probe, not a complete tracked native sort oracle or original app execution.",
     "Ignored probe source/output are local evidence; promote a reproducible native collector and expand normal/boundary/duplicate/pivot cases before implementation.",
     "Current runtime owner covers a one-entry transition without ambiguity; this evidence does not revoke its scoped result or close complete cache/document/PC/physical parity."
-  ]
+  ],
+  "resolution": {
+    "sourceCommit": "32c12d414752aed4fb4ce5699ad9052b634ad77a",
+    "portableSort": "src/Port/Rendering.Candidate/Rhino5Crt100QSort.cs",
+    "cache": "src/Port/Rendering.Candidate/Rhino5ContextImageCache.cs",
+    "windowsMacIosProof": "docs/evidence/apple/native-cache-sort-ios-results.json"
+  }
 }

@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "4a6aef7e6b9e6d762eb5d6983f973b7b3abf3de7",
-  "status": "complete-public-sort-oracle-windows-captured-apple-pending",
+  "status": "complete-recorded-sort-oracle-windows-and-apple-validated",
   "originalAppExecuted": false,
   "runtime": {
     "sha256": "2b7ab898b2f64f4cd1ae651c93d7eb9556208fd8d8d40d425e856c83d86d2346",
@@ -54,5 +54,7 @@
     "focusedTests": 3,
     "adjacentNodeChecks": 17,
     "repositoryIntegrity": true
-  }
+  },
+  "applePreflight": "docs/evidence/apple/native-cache-sort-preflight-results.json",
+  "appleSimulators": "docs/evidence/apple/native-cache-sort-ios-results.json"
 }

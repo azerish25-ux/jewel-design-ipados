@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "nextTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P03",
+  "parentTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h",
+  "status": "source-rule-locally-reviewed-portable-entry-fix-pending",
+  "originalExecuted": false,
+  "originalCoreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "source": {
+    "caller": ".local/evidence/original-texture-lookup-03/ogl-texture-create.c",
+    "callerSha256": "8d886e48cbbda4db4bdf4fff111969d22002d00a300bad5224b7d8b135d856a3",
+    "assignmentExport": "??4ON_wString@@QEAAAEBV0@PEB_W@Z",
+    "rva": 3015328,
+    "length": 83,
+    "unwindRegions": [
+      {
+        "begin": 3015328,
+        "end": 3015351,
+        "unwind": 3396108
+      },
+      {
+        "begin": 3015351,
+        "end": 3015387,
+        "unwind": 3549772
+      },
+      {
+        "begin": 3015387,
+        "end": 3015411,
+        "unwind": 3549756
+      }
+    ],
+    "sha256": "dcf12f561c7a1f96f4c0d7c9a6c12513950760409c333f78aaa82dfef3ddc9a4",
+    "disassembly": ".local/evidence/native-cache-sort/static/entry-name-assign.txt",
+    "disassemblySha256": "c1b71af154c0563b3daf1bb2763bf67b82b2dbdc4c41b3abe1b7678e492f30f5"
+  },
+  "finding": "Entry wchar_t-pointer assignment scans to first NUL before MakeLower. It is distinct from lowercasing an existing stored-length ON_wString value.",
+  "limits": [
+    "Static source review only; no original execution",
+    "Not yet implemented in portable entry construction",
+    "Factory/file resolution, standalone value APIs, full document/PC/physical acceptance are separate"
+  ]
+}
