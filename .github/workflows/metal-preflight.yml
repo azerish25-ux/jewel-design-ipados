@@ -29,6 +29,10 @@ on:
       - "scripts/verify-source-cache-gpu.cjs"
       - "tests/filename-reference.test.cjs"
       - "native/Rendering/FilenameReference/**"
+      - "native/Rendering/Crt100Reference/**"
+      - "scripts/verify-crt100-reference.cjs"
+      - "tests/crt100-reference.test.cjs"
+      - "reference/fixtures/windows-crt100-locales.json.br"
       - "native/Rendering/NlsLowerReference/**"
       - "native/Rendering/NlsSortReference/**"
       - "native/Rendering/NlsDispatchReference/**"
@@ -291,6 +295,10 @@ jobs:
         run: |
           node --test tests/filename-reference.test.cjs > artifacts/filename-reference-checks.txt
           node scripts/verify-filename-reference.cjs reference/fixtures/windows-filename-semantics.json.br > artifacts/filename-reference.json
+      - name: Verify public Microsoft CRT100 explicit-locale reference
+        run: |
+          node --test tests/crt100-reference.test.cjs > artifacts/crt100-reference-checks.txt
+          node scripts/verify-crt100-reference.cjs > artifacts/crt100-reference.json
       - name: Verify original filename profile initialization evidence
         run: node scripts/verify-filename-profile.cjs > artifacts/filename-profile.json
       - name: Verify exhaustive native Unicode NLS1 lowercase corpus

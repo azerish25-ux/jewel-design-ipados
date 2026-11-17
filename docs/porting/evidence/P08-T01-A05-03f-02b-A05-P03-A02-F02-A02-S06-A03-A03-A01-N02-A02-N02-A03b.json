@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03b",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "61d70b43a8e0affd0ec86e7ab03d2ed9b1e03ee8",
+  "status": "public-crt100-controls-acquired-production-runtime-policy-open",
+  "sourceExecuted": false,
+  "sourceImports": [
+    {
+      "dll": "MSVCR100.dll",
+      "name": "_free_locale",
+      "iat": 3154864
+    },
+    {
+      "dll": "MSVCR100.dll",
+      "name": "_create_locale",
+      "iat": 3154872
+    },
+    {
+      "dll": "MSVCR100.dll",
+      "name": "_wcslwr",
+      "iat": 3154928
+    },
+    {
+      "dll": "MSVCR100.dll",
+      "name": "_wcsicmp",
+      "iat": 3154944
+    }
+  ],
+  "runtime": {
+    "source": "C:/Windows/System32/msvcr100.dll",
+    "copy": ".local/reference/windows-crt100/msvcr100.dll",
+    "sha256": "2b7ab898b2f64f4cd1ae651c93d7eb9556208fd8d8d40d425e856c83d86d2346",
+    "fileVersion": "10.00.40219.473",
+    "signatureStatus": "Valid",
+    "signer": "Microsoft Corporation",
+    "committed": false
+  },
+  "captures": {
+    "paths": [
+      ".local/evidence/crt100/reference-02.json",
+      ".local/evidence/crt100/reference-03.json"
+    ],
+    "byteIdentical": true,
+    "fixture": "reference/fixtures/windows-crt100-locales.json.br",
+    "packedSha256": "06b67db6802801b528d11831f7699a3bb83581ba457518963c3d3e5d57553474",
+    "decodedSha256": "b75499bf3e9a9edfc1d3e582eb21cb5b2287d5a6fa17006086bb26219aafaf36",
+    "packedBytes": 87055,
+    "decodedBytes": 808144
+  },
+  "results": {
+    "profiles": 3,
+    "lowerUnits": 196608,
+    "repeatedPairs": 3468,
+    "crtCMatchesUcrt": true,
+    "nonCLowerDifferences": [
+      947,
+      946
+    ],
+    "nonCPairDifferences": [
+      186,
+      186
+    ],
+    "originalRuntimeExecuted": false
+  },
+  "validation": {
+    "command": "node scripts/run-local.cjs node --test tests/crt100-reference.test.cjs",
+    "exitCode": 0,
+    "checks": 2
+  },
+  "limits": [
+    "Original loaded CRT100 build/current locale not established",
+    "Whole _wcslwr buffer behavior and allocation/failure path unmeasured",
+    "ANSI conversion and native NLS failure/current-CRT dispatch remain open",
+    "No document/view profile adoption or PC/physical/full parity established"
+  ]
+}
