@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A03-S01",
+  "sourceCommit": "0f9c622334b317a2f00838f642ad4923f238c96d",
+  "runId": 44072818182,
+  "runUrl": "https://github.com/azerish25-ux/jewel-design-ipados/actions/runs/44072818182",
+  "jobId": 134003067705,
+  "conclusion": "success",
+  "repositoryRunId": 44072818169,
+  "artifact": {
+    "id": 14323187957,
+    "name": "metal-binding-preflight",
+    "sha256": "251cfce5d81fbea78177fae2d679719f13f5037c2ea57356a143bade9d11087d",
+    "entries": 67,
+    "bytes": 74539
+  },
+  "manifestVerification": {
+    "functions": 7,
+    "chainedRegions": 8,
+    "leafFunctions": 1,
+    "totalPinnedBytes": 4260,
+    "explicitWin32Abis": 3,
+    "sourceImageChecked": false,
+    "originalExecuted": false,
+    "scope": "Manifest integrity only; no original image or runtime verified here."
+  },
+  "focusedTests": {
+    "passed": 1,
+    "failed": 0
+  },
+  "metalBindingBuild": {
+    "succeeded": true,
+    "warnings": 0,
+    "errors": 0
+  },
+  "retainedReports": [
+    {
+      "path": "document-view-owner-source.json",
+      "sha256": "365e5d89b46c98f47990af5e24f1b8de1c6235158604a5f6c4aca3e8aa5c5f8e",
+      "bytes": 263
+    },
+    {
+      "path": "document-view-owner-source-checks.txt",
+      "sha256": "4490cc91bfd49ad20c4a6d7a842d0b7d3fd47e26131cd7c3f2741511cf16a72d",
+      "bytes": 222
+    },
+    {
+      "path": "metal-binding-build.txt",
+      "sha256": "c4682c7ea7ed9d1b318995f92bc118b73c687d7bae29e872f69934fe05a75ca9",
+      "bytes": 2947
+    }
+  ],
+  "limits": [
+    "macOS verifies the pinned source manifest; it does not verify original PE bytes or execute original behavior",
+    "iOS simulator binding build only; this card adds no portable document/view adapter and no iPad execution proof",
+    "Full document/view/SetView/Pop/PC-project/physical-device and application parity remain open"
+  ]
+}

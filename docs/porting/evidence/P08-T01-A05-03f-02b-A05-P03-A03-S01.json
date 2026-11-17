@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "0c7c60d438a0a657ede1ce3103b893dc2c7ba1da",
-  "status": "document-view-owner-source-locally-reviewed-portable-adapters-open",
+  "status": "source-contract-captured-local-bytes-and-macos-manifest-verified-portable-adapters-open",
   "originalExecuted": false,
   "sourceContract": "docs/evidence/audit/rhino5-document-view-owner-source.json",
   "sourceManifest": "native/Analysis/fixtures/rhino5-document-view-owner-regions.json",
@@ -19,7 +19,8 @@
     "originalSourceImageChecked": true,
     "ghidraExitCode": 0,
     "focusedTests": 1,
-    "repositoryIntegrity": true
+    "repositoryIntegrity": true,
+    "focusedAndAdjacentTests": 9
   },
   "changedNextAction": "Implement actual registered-view lifetimes, guarded synchronization and properties/dirty/timer ownership before wiring image setters. Do not substitute a dirty counter or assume synchronization is a no-op.",
   "limits": [
@@ -27,5 +28,6 @@
     "Remote default verifier can check only pinned manifest integrity without original source image",
     "Virtual slots/opaque settings/command and UI population dependencies require further mapping and concrete implementation",
     "All SetView/Pop/document/GDI/PC/physical/full application parity remains open"
-  ]
+  ],
+  "appleValidation": "docs/evidence/apple/document-view-owner-preflight-results.json"
 }
