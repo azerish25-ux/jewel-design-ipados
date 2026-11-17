@@ -1,0 +1,784 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P04",
+  "sourceCommit": "2560ef6d5789f7bf6f2e988137cf497f248b68c8",
+  "run": 44065611057,
+  "artifactId": 14320367790,
+  "artifactSha256": "94820023e5c71e5d654c9ee0a319bc61037511f4dedc31dfdc3bca40ff20c143",
+  "families": {
+    "ipad": {
+      "report": {
+        "schemaVersion": 1,
+        "frames": [
+          {
+            "stage": "crt-sharp-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-0.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 1,
+            "resolves": 1,
+            "cacheEntries": 1,
+            "localeFlag": 0,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "unicode-alias-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-1.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 1,
+            "resolves": 1,
+            "cacheEntries": 1,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "crt-new-ss-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-2.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 2,
+            "resolves": 2,
+            "cacheEntries": 2,
+            "localeFlag": 0,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "same-request-reset-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-3.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 2,
+            "resolves": 2,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "unicode-insert-z-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-4.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 3,
+            "resolves": 3,
+            "cacheEntries": 3,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "unicode-native-tie-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-5.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 3,
+            "resolves": 3,
+            "cacheEntries": 3,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "pending-b-after-invalidate",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-6.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 4,
+            "resolves": 4,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "replaced-with-w-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-7.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 4,
+            "resolves": 4,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "ansi-first-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-8.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 5,
+            "resolves": 5,
+            "cacheEntries": 1,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "ansi-second-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-9.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 6,
+            "resolves": 6,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "failed-resolve-retained-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-10.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 6,
+            "resolves": 6,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "ansi-decoded-native-tie-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-11.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 6,
+            "resolves": 6,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "c-prefix-resolver-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-12.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 7,
+            "resolves": 7,
+            "cacheEntries": 3,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "c-prefix-alias-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-13.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 7,
+            "resolves": 7,
+            "cacheEntries": 3,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "leading-nul-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-14.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 8,
+            "resolves": 8,
+            "cacheEntries": 4,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "empty-prefix-alias-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-15.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 8,
+            "resolves": 8,
+            "cacheEntries": 4,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "disposed-pending-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-16.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 8,
+            "resolves": 8,
+            "cacheEntries": 0,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          }
+        ],
+        "transitions": [
+          {
+            "requested": 1033,
+            "useAnsi": 0,
+            "previous": 0,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "requested": 0,
+            "useAnsi": 0,
+            "previous": 1,
+            "localeFlag": 0,
+            "unicodeFlag": 1
+          },
+          {
+            "requested": 1033,
+            "useAnsi": 1,
+            "previous": 0,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "requested": 1033,
+            "useAnsi": 0,
+            "previous": 1,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "requested": 1033,
+            "useAnsi": 1,
+            "previous": 1,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          }
+        ],
+        "configurationCount": 1,
+        "sourceResolves": 8,
+        "aliasHits": 6,
+        "sourceFailures": 1,
+        "removedByInvalidation": 4,
+        "pendingFrames": 2,
+        "prefixResolverPreservedProvenance": true,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 8
+        }
+      },
+      "readbacks": [
+        {
+          "file": "live-string-cache-0.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-1.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-2.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-3.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-4.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-5.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-6.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-7.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-8.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-9.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-10.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-11.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-12.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-13.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-14.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-15.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-16.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        }
+      ]
+    },
+    "iphone": {
+      "report": {
+        "schemaVersion": 1,
+        "frames": [
+          {
+            "stage": "crt-sharp-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-0.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 1,
+            "resolves": 1,
+            "cacheEntries": 1,
+            "localeFlag": 0,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "unicode-alias-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-1.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 1,
+            "resolves": 1,
+            "cacheEntries": 1,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "crt-new-ss-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-2.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 2,
+            "resolves": 2,
+            "cacheEntries": 2,
+            "localeFlag": 0,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "same-request-reset-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-3.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 2,
+            "resolves": 2,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "unicode-insert-z-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-4.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 3,
+            "resolves": 3,
+            "cacheEntries": 3,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "unicode-native-tie-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-5.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 3,
+            "resolves": 3,
+            "cacheEntries": 3,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "pending-b-after-invalidate",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-6.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 4,
+            "resolves": 4,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "replaced-with-w-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-7.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 4,
+            "resolves": 4,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "stage": "ansi-first-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-8.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 5,
+            "resolves": 5,
+            "cacheEntries": 1,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "ansi-second-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-9.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 6,
+            "resolves": 6,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "failed-resolve-retained-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-10.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 6,
+            "resolves": 6,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "ansi-decoded-native-tie-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-11.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 6,
+            "resolves": 6,
+            "cacheEntries": 2,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "c-prefix-resolver-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-12.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 7,
+            "resolves": 7,
+            "cacheEntries": 3,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "c-prefix-alias-a",
+            "nativeIndex": 1,
+            "width": 3,
+            "height": 2,
+            "file": "live-string-cache-13.bgra",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+            "uploads": 7,
+            "resolves": 7,
+            "cacheEntries": 3,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "leading-nul-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-14.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 8,
+            "resolves": 8,
+            "cacheEntries": 4,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "empty-prefix-alias-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-15.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 8,
+            "resolves": 8,
+            "cacheEntries": 4,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "stage": "disposed-pending-b",
+            "nativeIndex": 61,
+            "width": 8,
+            "height": 8,
+            "file": "live-string-cache-16.bgra",
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+            "uploads": 8,
+            "resolves": 8,
+            "cacheEntries": 0,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          }
+        ],
+        "transitions": [
+          {
+            "requested": 1033,
+            "useAnsi": 0,
+            "previous": 0,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "requested": 0,
+            "useAnsi": 0,
+            "previous": 1,
+            "localeFlag": 0,
+            "unicodeFlag": 1
+          },
+          {
+            "requested": 1033,
+            "useAnsi": 1,
+            "previous": 0,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          },
+          {
+            "requested": 1033,
+            "useAnsi": 0,
+            "previous": 1,
+            "localeFlag": 1,
+            "unicodeFlag": 1
+          },
+          {
+            "requested": 1033,
+            "useAnsi": 1,
+            "previous": 1,
+            "localeFlag": 1,
+            "unicodeFlag": 0
+          }
+        ],
+        "configurationCount": 1,
+        "sourceResolves": 8,
+        "aliasHits": 6,
+        "sourceFailures": 1,
+        "removedByInvalidation": 4,
+        "pendingFrames": 2,
+        "prefixResolverPreservedProvenance": true,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 8
+        }
+      },
+      "readbacks": [
+        {
+          "file": "live-string-cache-0.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-1.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-2.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-3.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-4.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-5.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-6.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-7.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-8.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-9.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-10.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-11.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-12.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-13.bgra",
+          "bytes": 24,
+          "sha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634",
+          "base64": "AAAA/xFJH/8ikj7/ZQ1P/3ZWbv+Hn43/"
+        },
+        {
+          "file": "live-string-cache-14.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-15.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        },
+        {
+          "file": "live-string-cache-16.bgra",
+          "bytes": 256,
+          "sha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9",
+          "base64": "BAgD/xnVQf9ALYf/X/X1/5GQKP/jKzX/9feg/3hZ9f9YFUT/f+Oe/9Jd4P/ZNzH/3MFW/y9Xw/81aaD/ZHAy/8gdn//W8d//UGhR/1MyVf9x3MX/ZmvL/6JrN//FfWz/cD6i/4GAcf9Ph1D/ele7/6Kbbv/GUlz/aIhS/3GHyv9RWVz/fzpG/7Kis/9/bZX/jnId/5dER/84mrb/XJKP/6RhPv+sWa3/sK2u/zB8K/86h1j/XFKu/5iwr/+mnCz/j2yf/ydmzv8vtCH/eH5n/6eVsv/JYc7/0LEi/2qqhf9Vefr/poEK/8GIhP/4Fdb/0rjH/wqQCv8bCYj/bNnZ/w=="
+        }
+      ]
+    }
+  }
+}

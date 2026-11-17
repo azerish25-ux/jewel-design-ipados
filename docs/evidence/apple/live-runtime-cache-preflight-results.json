@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P04",
+  "sourceCommit": "2560ef6d5789f7bf6f2e988137cf497f248b68c8",
+  "run": 44065610862,
+  "conclusion": "success",
+  "artifactId": 14320855950,
+  "artifactSha256": "7a91ea6882433880ff289edb887ea0874943e2808ab863883fd292ab116090d8",
+  "actualArtifactInspected": true,
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "scope": "Actual macOS companion binding/portable regressions. The live GPU test executes in the separate iPad/iPhone simulator run, whose artifacts are independently verified."
+}

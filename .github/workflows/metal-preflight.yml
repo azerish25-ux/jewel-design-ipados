@@ -28,6 +28,8 @@ on:
       - "scripts/verify-filename-reference.cjs"
       - "scripts/verify-source-cache-gpu.cjs"
       - "scripts/verify-live-string-cache-gpu.cjs"
+      - "tests/live-string-cache-gpu.test.cjs"
+      - "docs/evidence/apple/live-runtime-cache-readbacks.json"
       - "tests/iOS.Viewport/LiveRuntimeSourceCacheGpuChecks.cs"
       - "tests/filename-reference.test.cjs"
       - "native/Rendering/FilenameReference/**"
@@ -350,6 +352,8 @@ jobs:
         run: |
           node --test tests/crt-sort-reference.test.cjs > artifacts/crt-sort-reference-checks.txt
           node scripts/verify-crt-sort-reference.cjs > artifacts/crt-sort-reference.json
+      - name: Verify authentic live runtime GPU captures
+        run: node --test tests/live-string-cache-gpu.test.cjs > artifacts/live-runtime-gpu-reference-checks.txt
       - name: Verify original filename profile initialization evidence
         run: node scripts/verify-filename-profile.cjs > artifacts/filename-profile.json
       - name: Verify exhaustive native Unicode NLS1 lowercase corpus

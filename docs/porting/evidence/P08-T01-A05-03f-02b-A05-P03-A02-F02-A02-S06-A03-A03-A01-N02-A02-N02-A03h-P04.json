@@ -6,7 +6,7 @@
     "UI-039"
   ],
   "inputCommit": "04d50964ec1610546077afd3d798eb42d0716191",
-  "status": "live-runtime-gpu-checks-authored-actual-apple-execution-pending",
+  "status": "actual-live-profile-metal-cache-tested-ipad-and-iphone-document-owner-open",
   "originalExecuted": false,
   "productionIntegration": {
     "renderer": "src/Port/Rendering.Candidate.iOS/MetalImageQuadRenderer.cs",
@@ -42,5 +42,14 @@
     "repositoryIntegrity": true,
     "diffCheck": true,
     "actualGpuExecuted": false
+  },
+  "applePreflight": "docs/evidence/apple/live-runtime-cache-preflight-results.json",
+  "appleSimulators": "docs/evidence/apple/live-runtime-cache-ios-results.json",
+  "actualRawBuffers": "docs/evidence/apple/live-runtime-cache-readbacks.json",
+  "postArtifactTests": {
+    "checks": 2,
+    "pass": 2,
+    "source": "tests/live-string-cache-gpu.test.cjs",
+    "usesAuthenticCapturedData": true
   }
 }

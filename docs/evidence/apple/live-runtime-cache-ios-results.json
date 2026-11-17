@@ -1,0 +1,1184 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P04",
+  "sourceCommit": "2560ef6d5789f7bf6f2e988137cf497f248b68c8",
+  "run": 44065611057,
+  "conclusion": "success",
+  "artifactId": 14320367790,
+  "artifactSha256": "94820023e5c71e5d654c9ee0a319bc61037511f4dedc31dfdc3bca40ff20c143",
+  "actualArtifactInspected": true,
+  "checksPerFamily": {
+    "actualGpuReadbacks": 17,
+    "exactNativeReferencePixels": 682,
+    "coreProfileTransitions": 5,
+    "decodeUploadFreeHits": 6,
+    "sourceUploads": 8,
+    "retainedResolverFailures": 1,
+    "explicitlyInvalidatedEntries": 4,
+    "pendingFrames": 2,
+    "adjacentCaptures": 18,
+    "restorationDifferencePixels": 0
+  },
+  "unchangedExistingFixedProfileReadbacks": 16,
+  "liveFamilies": {
+    "ipad": {
+      "frames": 17,
+      "exactNativePixels": 682,
+      "sourceResolves": 8,
+      "decodeUploadFreeHits": 6,
+      "sourceFailures": 1,
+      "profileTransitions": 5,
+      "configurationCount": 1,
+      "removedByInvalidation": 4,
+      "pendingFrames": 2,
+      "stats": {
+        "inFlight": 0,
+        "liveTextures": 0,
+        "liveTargets": 0,
+        "liveVertexBuffers": 0,
+        "isDisposed": true,
+        "pipelineReleased": true,
+        "lastError": null,
+        "liveSamplers": 0,
+        "textureUploads": 8
+      },
+      "framesVerified": [
+        {
+          "stage": "crt-sharp-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "unicode-alias-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "crt-new-ss-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "same-request-reset-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "unicode-insert-z-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "unicode-native-tie-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "pending-b-after-invalidate",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "replaced-with-w-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "ansi-first-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "ansi-second-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "failed-resolve-retained-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "ansi-decoded-native-tie-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "c-prefix-resolver-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "c-prefix-alias-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "leading-nul-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "empty-prefix-alias-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "disposed-pending-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        }
+      ],
+      "scope": "Actual mutable-profile Metal cache uploads/readbacks; source-derived transitions, original application/document/PC/physical parity remain open."
+    },
+    "iphone": {
+      "frames": 17,
+      "exactNativePixels": 682,
+      "sourceResolves": 8,
+      "decodeUploadFreeHits": 6,
+      "sourceFailures": 1,
+      "profileTransitions": 5,
+      "configurationCount": 1,
+      "removedByInvalidation": 4,
+      "pendingFrames": 2,
+      "stats": {
+        "inFlight": 0,
+        "liveTextures": 0,
+        "liveTargets": 0,
+        "liveVertexBuffers": 0,
+        "isDisposed": true,
+        "pipelineReleased": true,
+        "lastError": null,
+        "liveSamplers": 0,
+        "textureUploads": 8
+      },
+      "framesVerified": [
+        {
+          "stage": "crt-sharp-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "unicode-alias-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "crt-new-ss-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "same-request-reset-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "unicode-insert-z-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "unicode-native-tie-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "pending-b-after-invalidate",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "replaced-with-w-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "ansi-first-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "ansi-second-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "failed-resolve-retained-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "ansi-decoded-native-tie-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "c-prefix-resolver-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "c-prefix-alias-a",
+          "nativeIndex": 1,
+          "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+        },
+        {
+          "stage": "leading-nul-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "empty-prefix-alias-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        },
+        {
+          "stage": "disposed-pending-b",
+          "nativeIndex": 61,
+          "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+        }
+      ],
+      "scope": "Actual mutable-profile Metal cache uploads/readbacks; source-derived transitions, original application/document/PC/physical parity remain open."
+    }
+  },
+  "baselineFamilies": {
+    "ipad": {
+      "sourceCacheGpu": {
+        "schemaVersion": 1,
+        "frames": 8,
+        "exactPixels": 48,
+        "sourceResolves": 4,
+        "decodeUploadFreeHits": 1,
+        "sourceFailures": 2,
+        "invalidatedColorKinds": 2,
+        "independentContexts": 1,
+        "disposalInFlight": 1,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 3
+        },
+        "results": [
+          {
+            "stage": "created-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "stage": "cached-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "stage": "failed-gray-retained-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "stage": "created-gray",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e"
+          },
+          {
+            "stage": "failed-source-retained-gray",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e"
+          },
+          {
+            "stage": "invalidated-old-gray-pending",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e"
+          },
+          {
+            "stage": "reloaded-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "stage": "disposed-pending-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          }
+        ],
+        "scope": "Actual source-cache GPU lifecycle with explicit legacy CRT-C filename policy. Windows NLS/ANSI runtime selection, full document/cache integration and PC/physical remain open."
+      },
+      "wallpaperGpu": {
+        "schemaVersion": 1,
+        "cases": 20,
+        "exactPixels": 194272,
+        "rejectedSourceReplacements": 1,
+        "disposalInFlight": 1,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 20
+        },
+        "hashes": [
+          {
+            "nativeIndex": 4,
+            "bgraSha256": "dd7276de8fd2b6cb084c61cb01806f8c1854c9d2fb7b8ef717b349fe9af681f4"
+          },
+          {
+            "nativeIndex": 5,
+            "bgraSha256": "ca847d0534c22c30e9d9dbdd7044ba706973a64b94d7c324f494a64285b3d4d3"
+          },
+          {
+            "nativeIndex": 10,
+            "bgraSha256": "dd7276de8fd2b6cb084c61cb01806f8c1854c9d2fb7b8ef717b349fe9af681f4"
+          },
+          {
+            "nativeIndex": 11,
+            "bgraSha256": "ca847d0534c22c30e9d9dbdd7044ba706973a64b94d7c324f494a64285b3d4d3"
+          },
+          {
+            "nativeIndex": 12,
+            "bgraSha256": "a66e9a8d37aa4b6321765e6aeac6a2931e6ff807e21e57332568ae7616598776"
+          },
+          {
+            "nativeIndex": 13,
+            "bgraSha256": "e459d83ccae2418dc3c0059b72fee4195a825f57754d6b4e2ccc2d41b6582103"
+          },
+          {
+            "nativeIndex": 18,
+            "bgraSha256": "a66e9a8d37aa4b6321765e6aeac6a2931e6ff807e21e57332568ae7616598776"
+          },
+          {
+            "nativeIndex": 19,
+            "bgraSha256": "e459d83ccae2418dc3c0059b72fee4195a825f57754d6b4e2ccc2d41b6582103"
+          },
+          {
+            "nativeIndex": 38,
+            "bgraSha256": "6ee820e0e8f482ced1da053f9297e7e52a3eaff426adf6d250373d7a9b828466"
+          },
+          {
+            "nativeIndex": 39,
+            "bgraSha256": "807c8304a4d0eb5167e299b13b78507b8b3447c9c28beb3e4bb2a5b63aa40980"
+          },
+          {
+            "nativeIndex": 44,
+            "bgraSha256": "6ee820e0e8f482ced1da053f9297e7e52a3eaff426adf6d250373d7a9b828466"
+          },
+          {
+            "nativeIndex": 45,
+            "bgraSha256": "807c8304a4d0eb5167e299b13b78507b8b3447c9c28beb3e4bb2a5b63aa40980"
+          },
+          {
+            "nativeIndex": 62,
+            "bgraSha256": "b4e610742ea09d5d2919fbd7624ea51f74d051d4db5bd6166fb3486f7527a40d"
+          },
+          {
+            "nativeIndex": 63,
+            "bgraSha256": "97f74358164ae180ae606725d5d137c4a4765efe9ae799342bb2c9056d819ff0"
+          },
+          {
+            "nativeIndex": 68,
+            "bgraSha256": "b4e610742ea09d5d2919fbd7624ea51f74d051d4db5bd6166fb3486f7527a40d"
+          },
+          {
+            "nativeIndex": 69,
+            "bgraSha256": "97f74358164ae180ae606725d5d137c4a4765efe9ae799342bb2c9056d819ff0"
+          },
+          {
+            "nativeIndex": 74,
+            "bgraSha256": "17aef21b138bcbe13dc89a562a4c917257dca8832334aee31ce4e14f7c5ea726"
+          },
+          {
+            "nativeIndex": 81,
+            "bgraSha256": "52d5dec030e0ac921e06e7f300f1bbd40d87ba8829b8050acad7ef92f20049ee"
+          },
+          {
+            "nativeIndex": 116,
+            "bgraSha256": "6265353c5cf30f42e4a2ba94d2ad70b63f690a76a6c0a3283330726e6d1de588"
+          },
+          {
+            "nativeIndex": 117,
+            "bgraSha256": "25d2b8fb9dcf8c9cb607ce625d3e2d4681d2c55384cb5f16b267a24e3739c19d"
+          }
+        ],
+        "scope": "Actual decoded PNG/original wallpaper fitting/HALFTONE24/post-gray/opaque sampling for represented cases. Full codec/cache/document/vendor/PC/physical remains open."
+      },
+      "composedTextureGpu": {
+        "schemaVersion": 1,
+        "cases": 20,
+        "exactPixels": 584,
+        "rejectedSourceReplacements": 1,
+        "disposalInFlight": 1,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 20
+        },
+        "hashes": [
+          {
+            "nativeIndex": 1,
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "nativeIndex": 4,
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e"
+          },
+          {
+            "nativeIndex": 7,
+            "bgraSha256": "f29d2fa7efd08ef83913554a33a1576926baff368019f1807f427cff6d3d7d44"
+          },
+          {
+            "nativeIndex": 10,
+            "bgraSha256": "c68fdb2decf5a065d24a83f3fd6449758ef54254871d1445f866e79608408208"
+          },
+          {
+            "nativeIndex": 13,
+            "bgraSha256": "e106910a20a58da3335d4e331f1e6130483ab0470e008008cd8b776d88c37caf"
+          },
+          {
+            "nativeIndex": 16,
+            "bgraSha256": "ffb7be6519f8359caf4d3c04b20959e45bd46d3be301c24c709e49ae29042a89"
+          },
+          {
+            "nativeIndex": 19,
+            "bgraSha256": "7a5d3a0bddd279fcd9c4424a3220be043d8282abe8c3d1338d089592755bc9f8"
+          },
+          {
+            "nativeIndex": 22,
+            "bgraSha256": "b03709113933dea38d3ca36814c0fe7d04780d0d6a2b9be4c774e7b0f31297d2"
+          },
+          {
+            "nativeIndex": 61,
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+          },
+          {
+            "nativeIndex": 62,
+            "bgraSha256": "f13733ea17e3694057f17bdca1ac981edca73c8844b83b0295a05e612eb21f7a"
+          },
+          {
+            "nativeIndex": 64,
+            "bgraSha256": "3e5bcf155b96301fdee3a6dec7d5638e2e2699c55d1c30353d7c43d8e2c8c90a"
+          },
+          {
+            "nativeIndex": 65,
+            "bgraSha256": "c73f4012181cc7d75e23137559740ae512c6d9482a4dabd4529d947494c2e976"
+          },
+          {
+            "nativeIndex": 67,
+            "bgraSha256": "75dc6484129eaf235e53584f3f47ad2121f488de864273b6c577e223eb684a37"
+          },
+          {
+            "nativeIndex": 68,
+            "bgraSha256": "a9e6211d6077519c2ca53e24a8ab2759c79d80d8cb0fcc5bcd3037810b906f77"
+          },
+          {
+            "nativeIndex": 70,
+            "bgraSha256": "d81a5b5446b2332697fc4581b697adf4864a9d47823b07713183d99522dc0be2"
+          },
+          {
+            "nativeIndex": 71,
+            "bgraSha256": "11b1875a611f923680720e151baadde043b9d28a5ddb35c7caab36a7f70d622c"
+          },
+          {
+            "nativeIndex": 74,
+            "bgraSha256": "61d423e24f14ed74f1f2cf412ee69ba12f1a261a4bf974f8d7218cc391a7229a"
+          },
+          {
+            "nativeIndex": 77,
+            "bgraSha256": "4d3d19ae43b4b8f052d9a98af7c3310b98c6e776f84b65ff222fad7c579486bc"
+          },
+          {
+            "nativeIndex": 80,
+            "bgraSha256": "240cf9c5f251d89c307ea1a1319703addba77f9692379e2f91b62a17519c89df"
+          },
+          {
+            "nativeIndex": 83,
+            "bgraSha256": "d54485150329cd1f0b94150621a7063ab469856d78a2093bf1b762b544fa0173"
+          }
+        ],
+        "scope": "Actual decoded PNG/native-order preparation and GPU sampling for represented normal24/32bit cases; original codec/cache/vendor/PC/physical acceptance separate."
+      },
+      "cad": {
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "top": 295,
+          "right": 1435,
+          "bottom": 2065
+        },
+        "uniformPixels": 2177100,
+        "foregroundPixels": 428796,
+        "editedPixels": 64797,
+        "orbitPixels": 517987,
+        "resizedPixels": 181766,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "ec00dee9d47d9b4992e429c16b20f4336104d86293eb71e188c56be26e5b068e",
+          "orbit": "b689c8d63d4c7bfbae8cbcfe1d98846129ae46846a2f5ef59d5c838deaee854c",
+          "edited": "90f1407cf2e0eac52b6c1e12817ab2da14e0b045275657eb6771ceff4a5d7444",
+          "empty": "f3e69c454f2f05d71c61a2ba9b0ffacd630999ce4141f6bd68e5769dedb4cf38",
+          "resized": "ad60cfb524a6a615991a95c775299f7e7f3ba41ece7f82a6b4f4459718be561d",
+          "final": "3b4976640ecf0b35dcbaa412f1a33506c1ba05e7f537afed8f19897e8d4dd059"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "wallpaper": {
+        "schemaVersion": 1,
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "right": 1435,
+          "top": 295,
+          "bottom": 2065
+        },
+        "results": [
+          {
+            "stage": "paper-green",
+            "checkedBackground": 101214,
+            "checkedCad": 2075886,
+            "colored": 101214,
+            "rectangle": {
+              "left": 564,
+              "top": 924,
+              "width": 512,
+              "height": 512
+            }
+          },
+          {
+            "stage": "paper-blue",
+            "checkedBackground": 663608,
+            "checkedCad": 1513492,
+            "colored": 663608,
+            "rectangle": {
+              "left": 308,
+              "top": 668,
+              "width": 1024,
+              "height": 1024
+            }
+          }
+        ],
+        "differences": {
+          "paper-clear": 0,
+          "paper-final": 0
+        },
+        "disposalInFlight": 1,
+        "retiredImages": 0,
+        "retiredMeshBuffers": 0,
+        "pngSha256": {
+          "paper-original": "3b4976640ecf0b35dcbaa412f1a33506c1ba05e7f537afed8f19897e8d4dd059",
+          "paper-green": "a1e879090f188b7af4cf354918b5b522e450c4b448ec11a31e1868d911e9d332",
+          "paper-blue": "7895561cd41ace6ba666af236fb6fbc31179b0c27970b0cafc771af4c12d81d5",
+          "paper-clear": "3b4976640ecf0b35dcbaa412f1a33506c1ba05e7f537afed8f19897e8d4dd059",
+          "paper-resized": "739c5517b9c2d69ba3dff5df8ee396b8efafa84e0523ef8088bd1a933aef0d6c",
+          "paper-final": "3b4976640ecf0b35dcbaa412f1a33506c1ba05e7f537afed8f19897e8d4dd059"
+        },
+        "scope": "Actual visible supplied resized wallpaper pixels and regenerated CAD composition. Original resampling/GL/trace/document/PC/physical acceptance separate."
+      },
+      "trace": {
+        "schemaVersion": 1,
+        "width": 1640,
+        "height": 2360,
+        "bounds": {
+          "left": 205,
+          "right": 1435,
+          "top": 295,
+          "bottom": 2065
+        },
+        "counts": {
+          "trace-image": 738676,
+          "trace-orbit": 754366,
+          "trace-moved": 210332
+        },
+        "worldMotionPixels": 733168,
+        "movedPixels": 528344,
+        "differences": {
+          "trace-hidden": 0,
+          "trace-final": 0
+        },
+        "disposalInFlight": 1,
+        "pngSha256": {
+          "trace-original": "3b4976640ecf0b35dcbaa412f1a33506c1ba05e7f537afed8f19897e8d4dd059",
+          "trace-image": "1d611f574a833ed7146f034f036904d379a57df00bbadf12cb81acc1f31ca143",
+          "trace-orbit": "7ea5b2c137dd0839fe3c6c556159ed94c45b87f8040bb00d95019a3eb38710e0",
+          "trace-hidden": "3b4976640ecf0b35dcbaa412f1a33506c1ba05e7f537afed8f19897e8d4dd059",
+          "trace-moved": "fbb154533aa4e0b379e868f21dca64099acada0b120147078f0bab7127f158bc",
+          "trace-final": "3b4976640ecf0b35dcbaa412f1a33506c1ba05e7f537afed8f19897e8d4dd059"
+        },
+        "scope": "Actual prepared world-plane pixels/candidate camera/mesh composition and metadata/ownership. Original source camera/cache/mipmap/filtering/failure diagnostics/document/PC/physical parity separate."
+      },
+      "ownership": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "offscreen": {
+        "width": 320,
+        "height": 320,
+        "foregroundPixels": 16109,
+        "editedPixels": 12377,
+        "orbitPixels": 19835,
+        "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+        "orderPixels": 0,
+        "pngSha256": {
+          "original": "6da73fa31ed84f2114cf25d60fc3c42432248b294c5ebe590e55a3cef16c346c",
+          "edited": "cf0fb200efd7b35497b876549e5de0c2c055e1886c4bb02fab7f2c00dc504ddc",
+          "orbit": "fd8986b8493f30e6407035861b5278587c306478ebc7de4995643b15ba9ec905",
+          "empty": "014213d8c543df47774080f72485fbbe701af3934f5a6b8ed625705c838e13d0"
+        },
+        "bgraSha256": {
+          "original": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+          "edited": "13c7273d8a6bf87ec7b0dea40cd0471c1f7d9b31e88cf46f6f24767d459dcb35",
+          "orbit": "4f719534df68c2670848a824a2aa9111f0a942ab1428a544578fe932cd34aee5",
+          "empty": "8fadfc1b0a327f76aafa537d961d823f8229d24f3dcaa6f04d61cb1e6d029612"
+        },
+        "depthOrderScope": "Real harness raw-frame comparison; reordered PNG not retained in this checkpoint."
+      },
+      "traceAfterDisposal": {
+        "MeshUploads": 13,
+        "SubmittedFrames": 18,
+        "CompletedFrames": 18,
+        "PresentedFrames": 0,
+        "InFlightFrames": 0,
+        "PeakInFlightFrames": 2,
+        "LiveMeshResources": 0,
+        "LiveMeshBuffers": 0,
+        "IsDisposed": true,
+        "LastError": null,
+        "ImageUploads": 13,
+        "LiveImageTextures": 0,
+        "LiveSceneResources": 0,
+        "SceneRevision": 31,
+        "LiveImageSamplers": 0
+      },
+      "wallpaperAfterDisposal": {
+        "MeshUploads": 13,
+        "SubmittedFrames": 18,
+        "CompletedFrames": 18,
+        "PresentedFrames": 0,
+        "InFlightFrames": 0,
+        "PeakInFlightFrames": 2,
+        "LiveMeshResources": 0,
+        "LiveMeshBuffers": 0,
+        "IsDisposed": true,
+        "LastError": null,
+        "ImageUploads": 15,
+        "LiveImageTextures": 0,
+        "LiveSceneResources": 0,
+        "SceneRevision": 30,
+        "LiveImageSamplers": 0
+      },
+      "resultLines": [
+        "PASS context image cache:33 hit/miss/usage/context/failure/lease/budget cases/65536 exact CRT-C UTF16 lower units/1156 native compare pairs; NLS/ANSI runtime profile and full source document/PC/physical remain open.",
+        "PASS Unicode NLS1 lower:1114112 exact native unit/scalar mappings/3329 native contexts/7 null/budget/UTF16 guards; explicit captured profile, full NLS comparison/CRT/ANSI/document/PC/physical remain open.",
+        "PASS NLS1 comparison inputs:65536 exact active native weights/730 exact ordered expansions/2 expansion-index guards; full direct comparison/Jamo/wrapper/CRT/ANSI/document/PC/physical remain open.",
+        "PASS source entry-name copy:144 mode/CRT/string cases/444 C-prefix/query/ownership/failure checks; factory path resolution/full document/PC/physical remain open.",
+        "PASS native cache ordering:9 actual alias-selection/lease/atomic-failure checks; source entry-copy/document/PC/physical remain open.",
+        "PASS CRT100 portable qsort:10431 exact native orders/1972827 exact callback events/2 dependency guards; width8-equivalent value sorting, original cache/document/PC/physical acceptance separate.",
+        "PASS mutable string runtime:68 source flag transitions/683 literal/mode/cache/guard checks; explicit recorded CRT snapshots, full document/native-array/PC/physical remain open.",
+        "PASS ANSI portable profile:1112064 native scalar byte outputs/65536 native comparison pairs/65536 native lower pairs/65536 native decode pairs/4096 legacy recovery cases/136 boundary/cache checks; explicit recorded profile, runtime/document/PC/physical remain open.",
+        "PASS CRT100 portable profiles:3342336 native lower inputs/3345804 native comparisons/147 whole buffers/257 boundary/cache checks; recorded snapshots only, current-state/ANSI/failure/document/PC/physical remain open.",
+        "PASS NLS1 filename policy:40663 native wrapper pairs/75 boundary/cache checks; fixed successful profile, CRT/ANSI failure/state/document/PC/physical remain open.",
+        "PASS direct NLS1 strings:40663 exact native comparisons/213 preserved key-order disagreements; original wrapper/CRT/ANSI/state/document/PC/physical acceptance remain open.",
+        "PASS direct NLS1 exhaustive:4456448 exact native comparisons/0 mismatches; recorded fixed profile, wrapper/CRT/ANSI/state/document/PC/physical remain open.",
+        "PASS direct NLS1 Hangul:6507500 exact native comparisons/0 mismatches; all supported triple inputs, wrapper/CRT/ANSI/state/document/PC/physical remain open.",
+        "PASS direct NLS1 stress:103280 exact native comparisons/7 null/budget/terminator guards; original wrapper/CRT/ANSI/state/document/PC/physical remain open.",
+        "PASS actual source cache GPU:8 exact image readbacks/1 decode-and-upload-free hit/2 retained-image failures/2 invalidated color kinds/1 independent context/1 queued-disposal frame; explicit CRT-C policy, NLS/document/PC/physical remain open."
+      ]
+    },
+    "iphone": {
+      "sourceCacheGpu": {
+        "schemaVersion": 1,
+        "frames": 8,
+        "exactPixels": 48,
+        "sourceResolves": 4,
+        "decodeUploadFreeHits": 1,
+        "sourceFailures": 2,
+        "invalidatedColorKinds": 2,
+        "independentContexts": 1,
+        "disposalInFlight": 1,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 3
+        },
+        "results": [
+          {
+            "stage": "created-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "stage": "cached-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "stage": "failed-gray-retained-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "stage": "created-gray",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e"
+          },
+          {
+            "stage": "failed-source-retained-gray",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e"
+          },
+          {
+            "stage": "invalidated-old-gray-pending",
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e"
+          },
+          {
+            "stage": "reloaded-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "stage": "disposed-pending-color",
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          }
+        ],
+        "scope": "Actual source-cache GPU lifecycle with explicit legacy CRT-C filename policy. Windows NLS/ANSI runtime selection, full document/cache integration and PC/physical remain open."
+      },
+      "wallpaperGpu": {
+        "schemaVersion": 1,
+        "cases": 20,
+        "exactPixels": 194272,
+        "rejectedSourceReplacements": 1,
+        "disposalInFlight": 1,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 20
+        },
+        "hashes": [
+          {
+            "nativeIndex": 4,
+            "bgraSha256": "dd7276de8fd2b6cb084c61cb01806f8c1854c9d2fb7b8ef717b349fe9af681f4"
+          },
+          {
+            "nativeIndex": 5,
+            "bgraSha256": "ca847d0534c22c30e9d9dbdd7044ba706973a64b94d7c324f494a64285b3d4d3"
+          },
+          {
+            "nativeIndex": 10,
+            "bgraSha256": "dd7276de8fd2b6cb084c61cb01806f8c1854c9d2fb7b8ef717b349fe9af681f4"
+          },
+          {
+            "nativeIndex": 11,
+            "bgraSha256": "ca847d0534c22c30e9d9dbdd7044ba706973a64b94d7c324f494a64285b3d4d3"
+          },
+          {
+            "nativeIndex": 12,
+            "bgraSha256": "a66e9a8d37aa4b6321765e6aeac6a2931e6ff807e21e57332568ae7616598776"
+          },
+          {
+            "nativeIndex": 13,
+            "bgraSha256": "e459d83ccae2418dc3c0059b72fee4195a825f57754d6b4e2ccc2d41b6582103"
+          },
+          {
+            "nativeIndex": 18,
+            "bgraSha256": "a66e9a8d37aa4b6321765e6aeac6a2931e6ff807e21e57332568ae7616598776"
+          },
+          {
+            "nativeIndex": 19,
+            "bgraSha256": "e459d83ccae2418dc3c0059b72fee4195a825f57754d6b4e2ccc2d41b6582103"
+          },
+          {
+            "nativeIndex": 38,
+            "bgraSha256": "6ee820e0e8f482ced1da053f9297e7e52a3eaff426adf6d250373d7a9b828466"
+          },
+          {
+            "nativeIndex": 39,
+            "bgraSha256": "807c8304a4d0eb5167e299b13b78507b8b3447c9c28beb3e4bb2a5b63aa40980"
+          },
+          {
+            "nativeIndex": 44,
+            "bgraSha256": "6ee820e0e8f482ced1da053f9297e7e52a3eaff426adf6d250373d7a9b828466"
+          },
+          {
+            "nativeIndex": 45,
+            "bgraSha256": "807c8304a4d0eb5167e299b13b78507b8b3447c9c28beb3e4bb2a5b63aa40980"
+          },
+          {
+            "nativeIndex": 62,
+            "bgraSha256": "b4e610742ea09d5d2919fbd7624ea51f74d051d4db5bd6166fb3486f7527a40d"
+          },
+          {
+            "nativeIndex": 63,
+            "bgraSha256": "97f74358164ae180ae606725d5d137c4a4765efe9ae799342bb2c9056d819ff0"
+          },
+          {
+            "nativeIndex": 68,
+            "bgraSha256": "b4e610742ea09d5d2919fbd7624ea51f74d051d4db5bd6166fb3486f7527a40d"
+          },
+          {
+            "nativeIndex": 69,
+            "bgraSha256": "97f74358164ae180ae606725d5d137c4a4765efe9ae799342bb2c9056d819ff0"
+          },
+          {
+            "nativeIndex": 74,
+            "bgraSha256": "17aef21b138bcbe13dc89a562a4c917257dca8832334aee31ce4e14f7c5ea726"
+          },
+          {
+            "nativeIndex": 81,
+            "bgraSha256": "52d5dec030e0ac921e06e7f300f1bbd40d87ba8829b8050acad7ef92f20049ee"
+          },
+          {
+            "nativeIndex": 116,
+            "bgraSha256": "6265353c5cf30f42e4a2ba94d2ad70b63f690a76a6c0a3283330726e6d1de588"
+          },
+          {
+            "nativeIndex": 117,
+            "bgraSha256": "25d2b8fb9dcf8c9cb607ce625d3e2d4681d2c55384cb5f16b267a24e3739c19d"
+          }
+        ],
+        "scope": "Actual decoded PNG/original wallpaper fitting/HALFTONE24/post-gray/opaque sampling for represented cases. Full codec/cache/document/vendor/PC/physical remains open."
+      },
+      "composedTextureGpu": {
+        "schemaVersion": 1,
+        "cases": 20,
+        "exactPixels": 584,
+        "rejectedSourceReplacements": 1,
+        "disposalInFlight": 1,
+        "stats": {
+          "inFlight": 0,
+          "liveTextures": 0,
+          "liveTargets": 0,
+          "liveVertexBuffers": 0,
+          "isDisposed": true,
+          "pipelineReleased": true,
+          "lastError": null,
+          "liveSamplers": 0,
+          "textureUploads": 20
+        },
+        "hashes": [
+          {
+            "nativeIndex": 1,
+            "bgraSha256": "8257fcf93d0983bd9e2147d042778bf92f3ee766b3589d916f118e06d2c4f634"
+          },
+          {
+            "nativeIndex": 4,
+            "bgraSha256": "8d4720ff6e1cd754381b2004477cbc7e4da3ed6d1761b16e4dc94a7f60002a0e"
+          },
+          {
+            "nativeIndex": 7,
+            "bgraSha256": "f29d2fa7efd08ef83913554a33a1576926baff368019f1807f427cff6d3d7d44"
+          },
+          {
+            "nativeIndex": 10,
+            "bgraSha256": "c68fdb2decf5a065d24a83f3fd6449758ef54254871d1445f866e79608408208"
+          },
+          {
+            "nativeIndex": 13,
+            "bgraSha256": "e106910a20a58da3335d4e331f1e6130483ab0470e008008cd8b776d88c37caf"
+          },
+          {
+            "nativeIndex": 16,
+            "bgraSha256": "ffb7be6519f8359caf4d3c04b20959e45bd46d3be301c24c709e49ae29042a89"
+          },
+          {
+            "nativeIndex": 19,
+            "bgraSha256": "7a5d3a0bddd279fcd9c4424a3220be043d8282abe8c3d1338d089592755bc9f8"
+          },
+          {
+            "nativeIndex": 22,
+            "bgraSha256": "b03709113933dea38d3ca36814c0fe7d04780d0d6a2b9be4c774e7b0f31297d2"
+          },
+          {
+            "nativeIndex": 61,
+            "bgraSha256": "2a127f1d59d7e9e3b3418874f654b4f45425f5da5d95c4f45271e6eaf61e7cf9"
+          },
+          {
+            "nativeIndex": 62,
+            "bgraSha256": "f13733ea17e3694057f17bdca1ac981edca73c8844b83b0295a05e612eb21f7a"
+          },
+          {
+            "nativeIndex": 64,
+            "bgraSha256": "3e5bcf155b96301fdee3a6dec7d5638e2e2699c55d1c30353d7c43d8e2c8c90a"
+          },
+          {
+            "nativeIndex": 65,
+            "bgraSha256": "c73f4012181cc7d75e23137559740ae512c6d9482a4dabd4529d947494c2e976"
+          },
+          {
+            "nativeIndex": 67,
+            "bgraSha256": "75dc6484129eaf235e53584f3f47ad2121f488de864273b6c577e223eb684a37"
+          },
+          {
+            "nativeIndex": 68,
+            "bgraSha256": "a9e6211d6077519c2ca53e24a8ab2759c79d80d8cb0fcc5bcd3037810b906f77"
+          },
+          {
+            "nativeIndex": 70,
+            "bgraSha256": "d81a5b5446b2332697fc4581b697adf4864a9d47823b07713183d99522dc0be2"
+          },
+          {
+            "nativeIndex": 71,
+            "bgraSha256": "11b1875a611f923680720e151baadde043b9d28a5ddb35c7caab36a7f70d622c"
+          },
+          {
+            "nativeIndex": 74,
+            "bgraSha256": "61d423e24f14ed74f1f2cf412ee69ba12f1a261a4bf974f8d7218cc391a7229a"
+          },
+          {
+            "nativeIndex": 77,
+            "bgraSha256": "4d3d19ae43b4b8f052d9a98af7c3310b98c6e776f84b65ff222fad7c579486bc"
+          },
+          {
+            "nativeIndex": 80,
+            "bgraSha256": "240cf9c5f251d89c307ea1a1319703addba77f9692379e2f91b62a17519c89df"
+          },
+          {
+            "nativeIndex": 83,
+            "bgraSha256": "d54485150329cd1f0b94150621a7063ab469856d78a2093bf1b762b544fa0173"
+          }
+        ],
+        "scope": "Actual decoded PNG/native-order preparation and GPU sampling for represented normal24/32bit cases; original codec/cache/vendor/PC/physical acceptance separate."
+      },
+      "cad": {
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "top": 327,
+          "right": 1055,
+          "bottom": 2294
+        },
+        "uniformPixels": 1780135,
+        "foregroundPixels": 232581,
+        "editedPixels": 35906,
+        "orbitPixels": 283622,
+        "resizedPixels": 144759,
+        "finalDifferencePixels": 0,
+        "pngSha256": {
+          "original": "c6a45f1f8d4a87ea2ea756623029dd80f1e25214faeb24b9d36283327213696f",
+          "orbit": "5bd788dc023e8e7dfc415f7bcf888749ecdf7a3854215c0be4b2e9bbc130cce3",
+          "edited": "5e4aa4e4b22b02609fa8bf6b840ee4ffd825ab5b28a5fbe89fae99796d5181c7",
+          "empty": "41be2b06aa3c2fb91dd1c76a2bbf517d9df482eb4e101c055c2a2f8730e2dddc",
+          "resized": "1c95a68ffe0af9c1696508ed12d14b10d046209639aa075a7c7fae8947089aa4",
+          "final": "c6a45f1f8d4a87ea2ea756623029dd80f1e25214faeb24b9d36283327213696f"
+        },
+        "scope": "Central screen-region scene consistency only; original-PC image quality and native presentation timestamps are separate acceptance."
+      },
+      "wallpaper": {
+        "schemaVersion": 1,
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "right": 1055,
+          "top": 327,
+          "bottom": 2294
+        },
+        "results": [
+          {
+            "stage": "paper-green",
+            "checkedBackground": 122375,
+            "checkedCad": 1657760,
+            "colored": 122375,
+            "rectangle": {
+              "left": 347,
+              "top": 1055,
+              "width": 512,
+              "height": 512
+            }
+          },
+          {
+            "stage": "paper-blue",
+            "checkedBackground": 694139,
+            "checkedCad": 1085996,
+            "colored": 694139,
+            "rectangle": {
+              "left": 91,
+              "top": 799,
+              "width": 1024,
+              "height": 1024
+            }
+          }
+        ],
+        "differences": {
+          "paper-clear": 0,
+          "paper-final": 0
+        },
+        "disposalInFlight": 1,
+        "retiredImages": 0,
+        "retiredMeshBuffers": 0,
+        "pngSha256": {
+          "paper-original": "c6a45f1f8d4a87ea2ea756623029dd80f1e25214faeb24b9d36283327213696f",
+          "paper-green": "7de85582315461c95ee1d01c9bfc557a6e78c7c7da2c71c4bc5ef031926f79e2",
+          "paper-blue": "32275083b58eac4b8526e9b2ce52f76bb2bdd43c1c4c66ab5e4908e48ad1b801",
+          "paper-clear": "c6a45f1f8d4a87ea2ea756623029dd80f1e25214faeb24b9d36283327213696f",
+          "paper-resized": "7d1bab41b48ac74a28029f4022c11a11a79f4fa3b4a1a677d02c42d1ee350809",
+          "paper-final": "c6a45f1f8d4a87ea2ea756623029dd80f1e25214faeb24b9d36283327213696f"
+        },
+        "scope": "Actual visible supplied resized wallpaper pixels and regenerated CAD composition. Original resampling/GL/trace/document/PC/physical acceptance separate."
+      },
+      "trace": {
+        "schemaVersion": 1,
+        "width": 1206,
+        "height": 2622,
+        "bounds": {
+          "left": 150,
+          "right": 1055,
+          "top": 327,
+          "bottom": 2294
+        },
+        "counts": {
+          "trace-image": 430389,
+          "trace-orbit": 444872,
+          "trace-moved": 124010
+        },
+        "worldMotionPixels": 387627,
+        "movedPixels": 306379,
+        "differences": {
+          "trace-hidden": 0,
+          "trace-final": 0
+        },
+        "disposalInFlight": 1,
+        "pngSha256": {
+          "trace-original": "c6a45f1f8d4a87ea2ea756623029dd80f1e25214faeb24b9d36283327213696f",
+          "trace-image": "cd56885b2bac42ab865339686e62ba569753c6209fc891b29ef0534634076767",
+          "trace-orbit": "ae2162aae4f2aef93398d463e0d1e20987b731205b77dbfc4ff699bc47074bc2",
+          "trace-hidden": "756b376408cc266f104af10080b308542a1f0b4485aafad46d95028cef686133",
+          "trace-moved": "78470d3991262abc0fc40711f9b084ed21b907399ca36c8ec9b2d3d837ea95b0",
+          "trace-final": "756b376408cc266f104af10080b308542a1f0b4485aafad46d95028cef686133"
+        },
+        "scope": "Actual prepared world-plane pixels/candidate camera/mesh composition and metadata/ownership. Original source camera/cache/mipmap/filtering/failure diagnostics/document/PC/physical parity separate."
+      },
+      "ownership": {
+        "stages": [
+          "original",
+          "orbit",
+          "edited",
+          "empty",
+          "resized",
+          "final"
+        ],
+        "peakInFlight": 3,
+        "disposalInFlight": 1,
+        "retiredBuffers": 0,
+        "nativePresentationTimingVerified": false,
+        "screenEvidenceRequired": true,
+        "scope": "GPU/resource gates and available native timing only; displayed CAD requires actual screenshot evidence separately."
+      },
+      "offscreen": {
+        "width": 320,
+        "height": 320,
+        "foregroundPixels": 16109,
+        "editedPixels": 12377,
+        "orbitPixels": 19835,
+        "originalBgraSha256": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+        "orderPixels": 0,
+        "pngSha256": {
+          "original": "6da73fa31ed84f2114cf25d60fc3c42432248b294c5ebe590e55a3cef16c346c",
+          "edited": "cf0fb200efd7b35497b876549e5de0c2c055e1886c4bb02fab7f2c00dc504ddc",
+          "orbit": "fd8986b8493f30e6407035861b5278587c306478ebc7de4995643b15ba9ec905",
+          "empty": "014213d8c543df47774080f72485fbbe701af3934f5a6b8ed625705c838e13d0"
+        },
+        "bgraSha256": {
+          "original": "047cb13264fcfaafc45204662c1fe3c07f6fab17f166e1417c1d190e18ded012",
+          "edited": "13c7273d8a6bf87ec7b0dea40cd0471c1f7d9b31e88cf46f6f24767d459dcb35",
+          "orbit": "4f719534df68c2670848a824a2aa9111f0a942ab1428a544578fe932cd34aee5",
+          "empty": "8fadfc1b0a327f76aafa537d961d823f8229d24f3dcaa6f04d61cb1e6d029612"
+        },
+        "depthOrderScope": "Real harness raw-frame comparison; reordered PNG not retained in this checkpoint."
+      },
+      "traceAfterDisposal": {
+        "MeshUploads": 13,
+        "SubmittedFrames": 18,
+        "CompletedFrames": 18,
+        "PresentedFrames": 0,
+        "InFlightFrames": 0,
+        "PeakInFlightFrames": 2,
+        "LiveMeshResources": 0,
+        "LiveMeshBuffers": 0,
+        "IsDisposed": true,
+        "LastError": null,
+        "ImageUploads": 13,
+        "LiveImageTextures": 0,
+        "LiveSceneResources": 0,
+        "SceneRevision": 31,
+        "LiveImageSamplers": 0
+      },
+      "wallpaperAfterDisposal": {
+        "MeshUploads": 13,
+        "SubmittedFrames": 18,
+        "CompletedFrames": 18,
+        "PresentedFrames": 0,
+        "InFlightFrames": 0,
+        "PeakInFlightFrames": 2,
+        "LiveMeshResources": 0,
+        "LiveMeshBuffers": 0,
+        "IsDisposed": true,
+        "LastError": null,
+        "ImageUploads": 15,
+        "LiveImageTextures": 0,
+        "LiveSceneResources": 0,
+        "SceneRevision": 30,
+        "LiveImageSamplers": 0
+      },
+      "resultLines": [
+        "PASS context image cache:33 hit/miss/usage/context/failure/lease/budget cases/65536 exact CRT-C UTF16 lower units/1156 native compare pairs; NLS/ANSI runtime profile and full source document/PC/physical remain open.",
+        "PASS Unicode NLS1 lower:1114112 exact native unit/scalar mappings/3329 native contexts/7 null/budget/UTF16 guards; explicit captured profile, full NLS comparison/CRT/ANSI/document/PC/physical remain open.",
+        "PASS NLS1 comparison inputs:65536 exact active native weights/730 exact ordered expansions/2 expansion-index guards; full direct comparison/Jamo/wrapper/CRT/ANSI/document/PC/physical remain open.",
+        "PASS source entry-name copy:144 mode/CRT/string cases/444 C-prefix/query/ownership/failure checks; factory path resolution/full document/PC/physical remain open.",
+        "PASS native cache ordering:9 actual alias-selection/lease/atomic-failure checks; source entry-copy/document/PC/physical remain open.",
+        "PASS CRT100 portable qsort:10431 exact native orders/1972827 exact callback events/2 dependency guards; width8-equivalent value sorting, original cache/document/PC/physical acceptance separate.",
+        "PASS mutable string runtime:68 source flag transitions/683 literal/mode/cache/guard checks; explicit recorded CRT snapshots, full document/native-array/PC/physical remain open.",
+        "PASS ANSI portable profile:1112064 native scalar byte outputs/65536 native comparison pairs/65536 native lower pairs/65536 native decode pairs/4096 legacy recovery cases/136 boundary/cache checks; explicit recorded profile, runtime/document/PC/physical remain open.",
+        "PASS CRT100 portable profiles:3342336 native lower inputs/3345804 native comparisons/147 whole buffers/257 boundary/cache checks; recorded snapshots only, current-state/ANSI/failure/document/PC/physical remain open.",
+        "PASS NLS1 filename policy:40663 native wrapper pairs/75 boundary/cache checks; fixed successful profile, CRT/ANSI failure/state/document/PC/physical remain open.",
+        "PASS direct NLS1 strings:40663 exact native comparisons/213 preserved key-order disagreements; original wrapper/CRT/ANSI/state/document/PC/physical acceptance remain open.",
+        "PASS direct NLS1 exhaustive:4456448 exact native comparisons/0 mismatches; recorded fixed profile, wrapper/CRT/ANSI/state/document/PC/physical remain open.",
+        "PASS direct NLS1 Hangul:6507500 exact native comparisons/0 mismatches; all supported triple inputs, wrapper/CRT/ANSI/state/document/PC/physical remain open.",
+        "PASS direct NLS1 stress:103280 exact native comparisons/7 null/budget/terminator guards; original wrapper/CRT/ANSI/state/document/PC/physical remain open.",
+        "PASS actual source cache GPU:8 exact image readbacks/1 decode-and-upload-free hit/2 retained-image failures/2 invalidated color kinds/1 independent context/1 queued-disposal frame; explicit CRT-C policy, NLS/document/PC/physical remain open."
+      ]
+    }
+  },
+  "build": {
+    "bindingWarnings": 0,
+    "bindingErrors": 0,
+    "testAppSummary": [
+      "2 Warning(s)",
+      "0 Error(s)"
+    ],
+    "knownWarningCodes": [
+      "CS8765",
+      "CA1422"
+    ]
+  },
+  "limits": [
+    "Actual Metal renderer/cache operation with source-derived profile transitions; original application never executed",
+    "Raw expected pixels come from independent native raster fixtures, not a recorded preview substituted for rendering",
+    "Application language/document composition, selected-file resolver policy, GDI/PC/physical/full application parity remain open"
+  ]
+}
