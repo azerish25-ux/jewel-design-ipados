@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "functions": [
+    {
+      "role": "document-view-modified",
+      "rva": 2562800,
+      "signature": {
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "document",
+            "type": "void*"
+          },
+          {
+            "name": "view",
+            "type": "void*"
+          }
+        ]
+      },
+      "name": "?ViewModified@CRhinoDoc@@QEAAXPEAVCRhinoView@@@Z",
+      "length": 230,
+      "sha256": "dbcef4f30e3c29864d8d80b1f41899da54ef848e332ddd9a519f8e9b9882c49b",
+      "unwindRegions": [
+        {
+          "begin": 2562800,
+          "end": 2563030,
+          "unwind": 19288088
+        }
+      ]
+    },
+    {
+      "role": "viewport-parent-view",
+      "rva": 4451936,
+      "signature": {
+        "returnType": "void*",
+        "parameters": [
+          {
+            "name": "viewport",
+            "type": "void*"
+          }
+        ]
+      },
+      "name": "?ParentView@CRhinoViewport@@QEBAPEAVCRhinoView@@XZ",
+      "length": 114,
+      "sha256": "7a16812bb41ba783fd2999ee1b4a6e7587a5affbfc374291acb75b61c893f239",
+      "unwindRegions": [
+        {
+          "begin": 4451936,
+          "end": 4452050,
+          "unwind": 19055176
+        }
+      ]
+    },
+    {
+      "role": "view-redraw-hint",
+      "rva": 4237488,
+      "length": 126,
+      "boundary": "Leaf ends with RET at0x40a92d followed by INT3.",
+      "signature": {
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "view",
+            "type": "void*"
+          },
+          {
+            "name": "hint",
+            "type": "uint"
+          }
+        ]
+      },
+      "name": "?SetRedrawDisplayHint@CRhinoView@@QEBAXI@Z",
+      "sha256": "d16eb8f4d653dec5eb6792749ea9af7777bf7969233ba447beb151c29a78cdf9",
+      "unwindRegions": []
+    },
+    {
+      "role": "synchronize-views",
+      "rva": 7497552,
+      "signature": {
+        "returnType": "byte",
+        "parameters": [
+          {
+            "name": "sourceView",
+            "type": "void*"
+          }
+        ]
+      },
+      "name": "?RhSynchronizeViews@@YA_NPEAVCRhinoView@@@Z",
+      "length": 1477,
+      "sha256": "16d1fd9d1f0b98c18407b63b3c6f325d34e41fa6c12564f987dfd2039b3e23cd",
+      "unwindRegions": [
+        {
+          "begin": 7497552,
+          "end": 7499029,
+          "unwind": 19740640
+        }
+      ]
+    },
+    {
+      "role": "view-sync-scale",
+      "rva": 7499040,
+      "signature": {
+        "returnType": "byte",
+        "parameters": [
+          {
+            "name": "view",
+            "type": "void*"
+          },
+          {
+            "name": "scale",
+            "type": "double*"
+          }
+        ]
+      },
+      "name": null,
+      "length": 478,
+      "sha256": "136800db2099fe56674970fbba14d8f8587c74b3cf2e58cb29602daa37716a48",
+      "unwindRegions": [
+        {
+          "begin": 7499040,
+          "end": 7499150,
+          "unwind": 19108756
+        },
+        {
+          "begin": 7499150,
+          "end": 7499498,
+          "unwind": 19108732
+        },
+        {
+          "begin": 7499498,
+          "end": 7499518,
+          "unwind": 19108716
+        }
+      ]
+    },
+    {
+      "role": "view-properties-refresh",
+      "rva": 2368112,
+      "signature": {
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "propertiesOwner",
+            "type": "void*"
+          }
+        ]
+      },
+      "name": null,
+      "length": 249,
+      "sha256": "a7492d008c7ebda9a2d26ee7b7d955a5aa96eb01783335371f1c407e5ee8615f",
+      "unwindRegions": [
+        {
+          "begin": 2368112,
+          "end": 2368361,
+          "unwind": 18842800
+        }
+      ]
+    },
+    {
+      "role": "view-properties-populate",
+      "rva": 2365568,
+      "name": null,
+      "length": 1586,
+      "sha256": "4f93d7da1ce215bd7320011f61a8d1725666cf3879d89d94150e0437d455de4f",
+      "unwindRegions": [
+        {
+          "begin": 2365568,
+          "end": 2367154,
+          "unwind": 19357688
+        }
+      ],
+      "signature": {
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "propertiesData",
+            "type": "void*"
+          },
+          {
+            "name": "includeContext",
+            "type": "byte"
+          }
+        ]
+      }
+    }
+  ],
+  "externalSignatures": [
+    {
+      "name": "GetClientRect",
+      "returnType": "int",
+      "parameters": [
+        "void*",
+        "void*"
+      ]
+    },
+    {
+      "name": "IsWindow",
+      "returnType": "int",
+      "parameters": [
+        "void*"
+      ]
+    },
+    {
+      "name": "SetTimer",
+      "returnType": "ulong",
+      "parameters": [
+        "void*",
+        "ulong",
+        "uint",
+        "void*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A03-S01",
+  "originalExecuted": false,
+  "sourceImageSha256": "951ff639f2c9b61bbf7c32a67169d0e23bdbd026f74ada80ace9b1f02b1b48eb",
+  "manifest": "native/Analysis/fixtures/rhino5-document-view-owner-regions.json",
+  "manifestSha256": "3c800c93ec1e3f3a85b3e99853d060d5cf82a456bccd8a273ca634eeeddd7e88",
+  "wholeFunctions": 7,
+  "totalPinnedBytes": 4260,
+  "sourceImageLocallyChecked": true,
+  "views": [
+    {
+      "role": "document-view-modified",
+      "path": ".local/evidence/document-view-owner/static/decompile-03/document-view-modified.c",
+      "sha256": "53af2ec5d313dcead8a533106ab76aa25a6c9d299c4f540ce10dd9653c2fe192",
+      "signature": "void ViewModified(void * document, void * view)",
+      "bytes": 1509
+    },
+    {
+      "role": "viewport-parent-view",
+      "path": ".local/evidence/document-view-owner/static/decompile-03/viewport-parent-view.c",
+      "sha256": "8711237dbb6240ac77c26053317760034d5e21971757c530859d072dfd12f5ff",
+      "signature": "void * ParentView(void * viewport)",
+      "bytes": 1029
+    },
+    {
+      "role": "view-redraw-hint",
+      "path": ".local/evidence/document-view-owner/static/decompile-03/view-redraw-hint.c",
+      "sha256": "04f9e5c3b184a25ffee2e9d8898fab0ee1522cb584cbbf819d06c228ef04d8c0",
+      "signature": "void SetRedrawDisplayHint(void * view, uint hint)",
+      "bytes": 1085
+    },
+    {
+      "role": "synchronize-views",
+      "path": ".local/evidence/document-view-owner/static/decompile-03/synchronize-views.c",
+      "sha256": "1edeb845f11d3beb59f66f6debdf57b063ccc3b7ec852973a82926b61d3e7577",
+      "signature": "uchar RhSynchronizeViews(void * sourceView)",
+      "bytes": 8033
+    },
+    {
+      "role": "view-sync-scale",
+      "path": ".local/evidence/document-view-owner/static/decompile-03/view-sync-scale.c",
+      "sha256": "94aa2dee88a55f7f29436d1b38634fa1c9b8927720d63cec3f008817420b8fde",
+      "signature": "uchar Original_view_sync_scale(void * view, double * scale)",
+      "bytes": 3524
+    },
+    {
+      "role": "view-properties-refresh",
+      "path": ".local/evidence/document-view-owner/static/decompile-03/view-properties-refresh.c",
+      "sha256": "b29ac38587c559dd2ad61dd9d54b913e12ad5dc233190b99aea781cd1a64c3a2",
+      "signature": "void Original_view_properties_refresh(void * propertiesOwner)",
+      "bytes": 15679
+    },
+    {
+      "role": "view-properties-populate",
+      "path": ".local/evidence/document-view-owner/static/decompile-03/view-properties-populate.c",
+      "sha256": "faee6c5d83d2a214124854caa2ff53e4878cbfeb79f58e1d416f1e5b8e1047e4",
+      "signature": "void Original_view_properties_populate(void * propertiesData, uchar includeContext)",
+      "bytes": 14386
+    }
+  ],
+  "explicitExternalAbis": [
+    {
+      "external": "GetClientRect",
+      "address": "EXTERNAL:00001f5d",
+      "decoded": "int GetClientRect(void * arg1, void * arg2)",
+      "applied": true
+    },
+    {
+      "external": "IsWindow",
+      "address": "EXTERNAL:00001f67",
+      "decoded": "int IsWindow(void * arg1)",
+      "applied": true
+    },
+    {
+      "external": "SetTimer",
+      "address": "EXTERNAL:00001f60",
+      "decoded": "ulonglong SetTimer(void * arg1, ulonglong arg2, uint arg3, void * arg4)",
+      "applied": true
+    }
+  ],
+  "reviewCorrections": [
+    {
+      "rejected": ".local/evidence/document-view-owner/static/decompile-01/view-sync-scale.c",
+      "reason": "Missing GetClientRect output-pointer ABI made the zero-initialized client rectangle appear unchanged and collapsed the helper to false. Explicit Win32 two-argument ABI restores actual branches."
+    },
+    {
+      "rejected": "Treating the249-byte properties refresh as an isolated body",
+      "reason": "Its tail jump targets the separate1586-byte population helper at0x241880. Both are now pinned. A decompiler block bounding range can span wrapper/tail addresses; the gap is not assumed executed or covered."
+    }
+  ],
+  "findings": [
+    {
+      "id": "DOC-VIEW-01",
+      "fact": "ParentView returns a cached view only while it remains in the application registered-view list; stale cached links issue source error reporting and are cleared to null."
+    },
+    {
+      "id": "DOC-VIEW-02",
+      "fact": "ViewModified can schedule active-view refresh first using IsWindow and SetTimer(ID10,200ms,null), guarded by a pending flag. Non-page views call RhSynchronizeViews; a false reentrant result returns before later dirty/properties effects."
+    },
+    {
+      "id": "DOC-VIEW-03",
+      "fact": "Document virtual slot+0xd8 is invoked with1 only when application setting+0xf8 is enabled. Document properties owner+0xd40 is refreshed only for null changed view or its selected view, then flagged+0x1458."
+    },
+    {
+      "id": "DOC-VIEW-04",
+      "fact": "RhSynchronizeViews returns false when its global guard already equals1. Otherwise disabled settings/null/maximized/perspective/missing-document/invalid-scale paths return true without synchronization. Accepted paths snapshot eligible non-page views and set the guard before updating other eligible parallel views."
+    },
+    {
+      "id": "DOC-VIEW-05",
+      "fact": "Synchronization computes source/destination scale ratio, adjusts target/camera in the destination camera plane, scales four lateral frustum bounds while retaining near/far, applies SetTarget and SetVP, sets view bytes at+0x618 and requests RedrawViewHelper. It clears the guard on normal completion; no exception-cleanup equivalence is inferred."
+    },
+    {
+      "id": "DOC-VIEW-06",
+      "fact": "The scale helper obtains client size from GetClientRect and requires positive min(width,height); it uses the minimum absolute lateral frustum bound, divides by near for perspective, multiplies by mirror-target/camera distance for perspective or source constant1 otherwise, then divides by min client size. It ignores GetFrustum success and calls TargetPoint before reading mirror values; invalid uninitialized-output behavior is not reconstructed."
+    },
+    {
+      "id": "DOC-VIEW-07",
+      "fact": "Redraw hint is unsigned min(current,incoming), with additional source debug-counter behavior for hint3. Properties refresh/population has real document/command/view/plane dependencies rather than a simple counter."
+    }
+  ],
+  "limits": [
+    "Static original source only; original application never executes",
+    "MFC timer/window scheduling, virtual document ownership, properties population and synchronization still require concrete portable implementations",
+    "No source data-race/uninitialized-output/exception-cleanup or opaque-field meaning is invented",
+    "Complete SetView/Pop/document/GDI/PC/physical/full application acceptance remains open"
+  ]
+}

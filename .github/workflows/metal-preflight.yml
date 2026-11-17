@@ -20,6 +20,10 @@ on:
       - "scripts/halftone-enlargement-reference.cjs"
       - "scripts/inspect-filename-profile.cjs"
       - "scripts/verify-filename-profile.cjs"
+      - "native/Analysis/fixtures/rhino5-document-view-owner-regions.json"
+      - "scripts/verify-document-view-owner-source.cjs"
+      - "tests/document-view-owner-source.test.cjs"
+      - "docs/evidence/audit/rhino5-document-view-owner-source.json"
       - "docs/evidence/audit/rhino5-filename-profile.json"
       - "docs/evidence/audit/rhino5-filename-profile-references.json"
       - "native/Analysis/fixtures/rhino5-filename-profile-main-regions.json"
@@ -354,6 +358,10 @@ jobs:
           node scripts/verify-crt-sort-reference.cjs > artifacts/crt-sort-reference.json
       - name: Verify authentic live runtime GPU captures
         run: node --test tests/live-string-cache-gpu.test.cjs > artifacts/live-runtime-gpu-reference-checks.txt
+      - name: Verify document/view owner source manifest
+        run: |
+          node --test tests/document-view-owner-source.test.cjs > artifacts/document-view-owner-source-checks.txt
+          node scripts/verify-document-view-owner-source.cjs > artifacts/document-view-owner-source.json
       - name: Verify original filename profile initialization evidence
         run: node scripts/verify-filename-profile.cjs > artifacts/filename-profile.json
       - name: Verify exhaustive native Unicode NLS1 lowercase corpus
