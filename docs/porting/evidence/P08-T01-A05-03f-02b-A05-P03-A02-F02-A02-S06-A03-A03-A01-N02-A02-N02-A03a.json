@@ -5,7 +5,7 @@
     "UI-039"
   ],
   "inputCommit": "b535e14f0a3b653614c7566a5321c29767024faa",
-  "status": "windows-tested-apple-pending",
+  "status": "fixed-successful-unicode-filename-wrapper-platform-tested-runtime-integration-open",
   "sourceExecuted": false,
   "source": {
     "path": ".local/evidence/source-cache/core-02/original-wstring-compare-no-case.c",
@@ -23,12 +23,17 @@
     "exitCode": 0,
     "nativeWrapperPairs": 40663,
     "boundaryAndCacheChecks": 75,
-    "adjacentDirectComparisons": 11107891
+    "adjacentDirectComparisons": 11107891,
+    "adjacentNodeChecks": 19,
+    "nativeHostExitCode": 0,
+    "repositoryIntegrity": true
   },
   "limits": [
     "Explicit successful locale1 version60502 profile only",
     "Native failure to current CRT locale and ANSI conversion remain open",
     "Original runtime locale mutation and document/view policy adoption remain open",
     "Original-PC, physical-device and all feature parity rows remain unverified"
-  ]
+  ],
+  "applePreflight": "docs/evidence/apple/nls-filename-policy-preflight-results.json",
+  "appleSimulators": "docs/evidence/apple/nls-filename-policy-ios-results.json"
 }
