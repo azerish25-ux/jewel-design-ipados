@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A01",
+  "sourceCommit": "3ee573079c412f0812e8a53b66fe119a9962c96c",
+  "run": 43995498606,
+  "conclusion": "success",
+  "artifactId": 14289912395,
+  "artifactSha256": "658e879ce3594ed708d07dd28e94358ef4800bddae2016754c8f6816d6e5d153",
+  "actualArtifactInspected": true,
+  "checks": {
+    "schemaVersion": 1,
+    "characterWeights": 65536,
+    "orderedExpansions": 730,
+    "expansionMarkers": 729,
+    "completeActiveWeightSha256": "42ef9f244f091136a6a94ddf747b3d13e4cb1bf7b8367956abcdf0bb42affba0",
+    "completeActiveExpansionSha256": "9d68be72650078da8ea7e72785b37abc8ffaaa87fcdd4f8ae507d0dcf258aa3e",
+    "productResourceSha256": "79d2e430fb8e0ee7b9558cdc3119dc609e2f1798392c50a63a4895bbc87533dd",
+    "scope": "Exact fixed-profile engine inputs only. Full direct comparison/Jamo/wrapper/CRT/ANSI/state/document/PC/physical remain open."
+  },
+  "managedExpansionIndexGuards": 2,
+  "resultLines": [
+    "PASS NLS1 comparison inputs:65536 exact active native weights/730 exact ordered expansions/2 expansion-index guards; full direct comparison/Jamo/wrapper/CRT/ANSI/document/PC/physical remain open."
+  ],
+  "bindingWarnings": 0,
+  "bindingErrors": 0,
+  "scope": "Actual macOS managed input-provider execution and independent native-digest validation; full direct comparison and actual iOS execution remain separate.",
+  "allLocalDownloadsD": true,
+  "fullParityVerified": false
+}

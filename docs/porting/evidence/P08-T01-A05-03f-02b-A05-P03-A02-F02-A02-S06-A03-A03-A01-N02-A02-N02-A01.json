@@ -5,7 +5,7 @@
   "requirementIds": [
     "UI-039"
   ],
-  "status": "portable-input-provider-native-tested-apple-pending-full-engine-open",
+  "status": "complete-input-provider-platform-tested-full-direct-engine-open",
   "sourceAudit": "docs/evidence/audit/windows-nls-direct-inputs.json",
   "red": [
     "Missing Rhino5NlsComparisonInputs reproduced CS0103 before implementation.",
@@ -19,14 +19,26 @@
     "completeActiveNativeByteEquality": true,
     "adjacentNodeChecks": 24,
     "staticViews": 4,
-    "originalTargetExecuted": false
+    "originalTargetExecuted": false,
+    "geometryNativeHost": "pass adjacent real native host contracts"
   },
   "resource": {
     "path": "src/Port/Rendering.Candidate/Fixtures/windows-nls1-comparison-inputs-60502.bin",
     "bytes": 265088,
     "sha256": "79d2e430fb8e0ee7b9558cdc3119dc609e2f1798392c50a63a4895bbc87533dd"
   },
-  "platform": "macOS/iPad/iPhone pending",
+  "platform": {
+    "macOS": "docs/evidence/apple/nls-comparison-inputs-preflight-results.json",
+    "ios": "docs/evidence/apple/nls-comparison-inputs-ios-results.json",
+    "sourceCommit": "3ee573079c412f0812e8a53b66fe119a9962c96c",
+    "macOSRun": 43995498606,
+    "visibleRun": 43995498526,
+    "characterWeightsPerPlatform": 65536,
+    "expansionPairsPerPlatform": 730,
+    "indexGuardsPerPlatform": 2,
+    "adjacentCapturesPerFamily": 18,
+    "restorationDifferences": 0
+  },
   "remaining": [
     "Complete direct comparison state machine and Jamo/extra-weight transitions against40663 repeated comparisons, including213 key-order disagreements.",
     "Original ON_wString empty/CRT/ANSI/fallback/runtime profile/document ownership.",
