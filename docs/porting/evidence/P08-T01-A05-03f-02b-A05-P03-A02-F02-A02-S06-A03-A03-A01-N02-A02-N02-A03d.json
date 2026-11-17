@@ -5,7 +5,7 @@
     "UI-039"
   ],
   "inputCommit": "84ba137246e78b4eb241b6b30f7876de488d1b02",
-  "status": "portable-recorded-crt-profiles-windows-tested-apple-pending",
+  "status": "portable-recorded-crt-profiles-platform-tested-original-state-integration-open",
   "sourceExecuted": false,
   "sourceReferences": [
     "reference/fixtures/windows-crt100-wide.json.br",
@@ -50,6 +50,10 @@
     "Whole-buffer composition supported on49 recorded contexts per profile, not proof for every string",
     "Native failure/allocation behavior and ANSI conversion remain open",
     "No implicit runtime profile change or document/view cache adoption",
-    "Original-PC, physical-device and full application parity remain unverified"
-  ]
+    "Original-PC, physical-device and full application parity remain unverified",
+    "Captured _wcslwr success denotes public pointer/value results, not every private helper errno/allocation outcome"
+  ],
+  "applePreflight": "docs/evidence/apple/portable-crt-profiles-preflight-results.json",
+  "staticValueAlgorithmReview": "docs/evidence/audit/crt100-profile-control-flow.json",
+  "appleSimulators": "docs/evidence/apple/portable-crt-profiles-ios-results.json"
 }

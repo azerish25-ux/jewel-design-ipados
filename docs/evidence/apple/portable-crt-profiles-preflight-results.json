@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03d",
+  "sourceCommit": "c6bbcb66b8c1cffa85df55165b857a9f2d22175c",
+  "run": 44033266119,
+  "conclusion": "success",
+  "artifactId": 14305968622,
+  "artifactSha256": "9b5d8db9de47111f92110a333f6b03edc0ccac5ebb8e7ce461a8d643d0d5fa52",
+  "actualArtifactInspected": true,
+  "tests": {
+    "nativeLowerInputs": 3342336,
+    "nativeComparisons": 3345804,
+    "wholeBuffers": 147,
+    "boundaryAndCacheChecks": 257,
+    "adjacentDirectComparisons": 11107891,
+    "adjacentNlsFilenamePairs": 40663,
+    "adjacentNlsFilenameChecks": 75
+  },
+  "resource": {
+    "bytes": 16476,
+    "sha256": "7aad75e02af1cab78bc7fc4d9a71bcec227a1fbc116cb0069a81e817691133cd"
+  },
+  "bindingBuild": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "resultLogSha256": "f97bc9aa29e951b6b923d1d516c4ef5e7b04d57219eaf356508fe4592ba81b01",
+  "limits": [
+    "Three explicit recorded CRT snapshots only; original current state and other runtime/locales remain open",
+    "Native failure/errno/ANSI, source document/view adoption and original-PC/physical/full application parity remain open"
+  ]
+}

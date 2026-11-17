@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03d",
+  "runtimeSha256": "2b7ab898b2f64f4cd1ae651c93d7eb9556208fd8d8d40d425e856c83d86d2346",
+  "mode": "static bounded PE export/unwind disassembly; runtime not executed for this review",
+  "regions": [
+    {
+      "name": "_wcsicmp",
+      "rva": 376172,
+      "length": 134,
+      "sha256": "55bc3269ede2185120d2b5f90a6c536b058b397881d9920ec2577a0c95026abb",
+      "disassemblySha256": "3f718db6de97a3b01d17a769239707c037f9cf9c7af3a58b212160a9781b923c"
+    },
+    {
+      "name": "_wcsicmp_l",
+      "rva": 375908,
+      "length": 258,
+      "sha256": "2f56b7c1339d1854df21d531480452f0ede8aaf450960007fa38455ebab1cc46",
+      "disassemblySha256": "f960eec03fb8888db0347b80a620739fabdb9bf00d8657a1741213ad336cc922"
+    },
+    {
+      "name": "_wcslwr",
+      "rva": 377356,
+      "length": 111,
+      "sha256": "d0b8c7c439516cb71b7c725a427cdc4b8dfa71ead617a624963ee49695fc1052",
+      "disassemblySha256": "c5aa3012eccb990a676159b4543493545b3f90229b466e67530c23a663f3be51"
+    },
+    {
+      "name": "_wcslwr_l",
+      "rva": 377320,
+      "length": 30,
+      "sha256": "3aada3d38f33e1e407765f50d6623029bd806a84a750034c6a09f6c1addfafd5",
+      "disassemblySha256": "83d7390f0e4a04954ea09e3327b21410177b3cb9821552485c0ade423662a5cb"
+    },
+    {
+      "name": "_wcslwr_s_l",
+      "rva": 377220,
+      "length": 75,
+      "sha256": "4d14d6e16cde9f6dc36a198da0ad239fe566d8c22e109582315d4748c2d1721f",
+      "disassemblySha256": "ec03497b61f389be4b3ef00b760adfaf8f0481828225ff72caf1913f006ff7be"
+    },
+    {
+      "name": "private-whole-lower-helper",
+      "rva": 376720,
+      "length": 491,
+      "sha256": "4e8ef28d618706a0aa2a82f3a9aa0d7b06264e9680769c40f089dd5718b26e44",
+      "disassemblySha256": "dbd897b9adb68839ddd9ba52f3bb2124bf51b2e94fbb8f32418c5fd71658cce1"
+    }
+  ],
+  "findings": [
+    {
+      "id": "CRT-FLOW-01",
+      "fact": "_wcsicmp_l loads unsigned16-bit units, applies ASCII A-Z+32 in C, otherwise calls exported _towlower_l separately on each unit, advances by2 and returns first mapped-unit difference. It does not decode supplementary scalars."
+    },
+    {
+      "id": "CRT-FLOW-02",
+      "fact": "_wcslwr directly uses terminated ASCII A-Z+32 on its unchanged-locale fast path; otherwise calls _wcslwr_s_l with size_t(-1), then returns the original buffer pointer."
+    },
+    {
+      "id": "CRT-FLOW-03",
+      "fact": "The private whole-lower helper uses terminated ASCII in C; nonzero locale issues two mapping-helper calls with flags0x100 and sourceCount-1, allocates temporary output and copies it back only on a successful mapping path."
+    },
+    {
+      "id": "CRT-FLOW-04",
+      "fact": "The raw _wcslwr pointer return alone does not prove the private secure helper had no error; the original wrapper ignores that error code. Captured Success/LowerFailures describe public pointer results and guarded output values, not errno or every internal allocation/mapping outcome."
+    }
+  ],
+  "scope": "Supports separate value-operation algorithms. This review does not claim parity for errno/invalid-parameter handlers, every possible whole-buffer context, other locales/runtime versions, original current locale or document/PC/physical behavior.",
+  "mappingHelper": {
+    "export": "__crtLCMapStringW",
+    "rva": 476364,
+    "identity": "Exact named export at the two observed call targets"
+  }
+}
