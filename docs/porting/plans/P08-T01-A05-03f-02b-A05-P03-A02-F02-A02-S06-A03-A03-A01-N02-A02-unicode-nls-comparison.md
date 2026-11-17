@@ -1,0 +1,5 @@
+# P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02 complete Unicode NLS1 filename comparison
+
+UI-039; inputbb54745e081296394243b39c0e70f7f907a56b73. Full acceptance is CompareStringW(1,0x20001) success/failure behavior over C-terminated UTF16, original ON_wString empty handling and CRT fallback, with exact captured NLS version and explicit state. Keep expansions/contractions, diacritics, word-sort punctuation positions, width/kana, combining sequences, Hangul/Jamo, supplementary/unpaired UTF16 and budgets. No ordinal/ICU approximation or pre-recorded-name lookup substitutes for the comparison engine.
+
+N01: acquire exhaustive native scalar/unit sort keys and broad complete-string/native-pair corpus; compare independently against published sorting data and protocol algorithms, retaining hashes and rejecting compositional shortcuts. N02: implement the full portable weight/key engine, independently differential-test complete outputs and comparisons on Windows/macOS and both simulator families. N03: original wrapper/fallback/state and real source-cache/document/view integration. Full parent and UI-039/PC/physical acceptance remain open.

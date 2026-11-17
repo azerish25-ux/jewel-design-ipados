@@ -30,6 +30,16 @@ on:
       - "tests/filename-reference.test.cjs"
       - "native/Rendering/FilenameReference/**"
       - "native/Rendering/NlsLowerReference/**"
+      - "native/Rendering/NlsSortReference/**"
+      - "scripts/acquire-nls-sort-sources.cjs"
+      - "scripts/compact-nls-sort-reference.cjs"
+      - "scripts/prepare-nls-sort-weights.cjs"
+      - "scripts/verify-nls-sort-reference.cjs"
+      - "tests/nls-sort-reference.test.cjs"
+      - "reference/fixtures/windows-nls1-sort-60502.json.br"
+      - "reference/fixtures/windows-nls1-sort-keys-60502.bin.br"
+      - "reference/fixtures/windows-nls1-published-weights-60502.bin.br"
+      - "docs/evidence/audit/windows-nls-sort-sources.json"
       - "scripts/verify-nls-lower-reference.cjs"
       - "tests/nls-lower-reference.test.cjs"
       - "reference/fixtures/windows-nls1-lower-60502.json.br"
@@ -270,6 +280,10 @@ jobs:
         run: |
           node --test tests/nls-lower-reference.test.cjs > artifacts/unicode-nls-lower-reference-checks.txt
           node scripts/verify-nls-lower-reference.cjs > artifacts/unicode-nls-lower-reference.json
+      - name: Verify exhaustive native NLS1 comparison and published reference data
+        run: |
+          node --test tests/nls-sort-reference.test.cjs > artifacts/unicode-nls-sort-reference-checks.txt
+          node scripts/verify-nls-sort-reference.cjs > artifacts/unicode-nls-sort-reference.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

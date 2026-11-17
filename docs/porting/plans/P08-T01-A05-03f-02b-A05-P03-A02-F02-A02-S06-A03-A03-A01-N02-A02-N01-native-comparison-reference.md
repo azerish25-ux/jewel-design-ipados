@@ -1,0 +1,9 @@
+# P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N01 native comparison/key and weight reference
+
+Acquire public LCMapStringW(1,0x20401) keys and CompareStringW(1,0x20001) results with C terminators, exact UTF16 bytes and NLSVERSIONINFOEX. Retain exhaustive units/scalars and independent context/pair controls, including punctuation position, expansions/contractions/combining marks and malformed UTF16. Verify sort-key byte comparison agrees with native CompareString where applicable; keep wrapper empty semantics separate. Acquire official Microsoft weights/protocol artifacts under ignored D storage, validate contents and version alignment before product use. This is analysis/acquisition; no original execution or guessed fallback.
+
+Pin input, collector hashes, native errors and complete output stream digests. Published tables are not accepted as matching the captured engine until native outputs prove it. Product reconstruction, Apple tests and original document/PC/physical acceptance remain mandatory later gates.
+
+Final Windows reference:1114112 unit/scalar keys and15547 complete strings,40663 comparisons each repeated,3400 variant/72 long-boundary pairs,0 failures/repeat changes. The direct API and sort-key ordering differ on213 pairs; naive per-unit key grouping fails9407 strings. Those are negative controls for implementations, not permission to alter expected comparisons.
+
+Official Windows11 NLSVERSION0x60502/default GUID match captured metadata;60669 default/730 expansion/955 compatibility rows are retained. All6029 eligible ordinary symbol keys agree with native. Full special/Jamo and direct-comparison algorithms remain unverified. Public KernelBase/PDB identity also matches1892 exports; deeper dispatch is not reconstructed. [Source audit](../../evidence/audit/windows-nls-sort-sources.json), [reproduction instructions](../../../native/Rendering/NlsSortReference/README.md). Actual macOS reference verification pending.

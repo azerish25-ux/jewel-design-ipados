@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N01",
+  "inputCommit": "bb54745e081296394243b39c0e70f7f907a56b73",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "native-reference-acquired-macos-pending-direct-engine-open",
+  "sourceAudit": "docs/evidence/audit/windows-nls-sort-sources.json",
+  "native": {
+    "originalTargetExecuted": false,
+    "unitScalarKeys": 1114112,
+    "fullStringKeys": 15547,
+    "repeatedComparisons": 40663,
+    "targetedVariantPairs": 3400,
+    "lengthBoundaryPairs": 72,
+    "nativeErrors": 0,
+    "repeatMismatches": 0,
+    "rejectedKeyComparatorCases": 213,
+    "rejectedNaiveGroupCases": 9407
+  },
+  "published": {
+    "defaultWeightRows": 60669,
+    "expansionRows": 730,
+    "compatibilityRows": 955,
+    "ordinaryNativeKeyMatches": 6029,
+    "fullDirectAlgorithmVerified": false
+  },
+  "localValidation": {
+    "nodeChecks": 14,
+    "independentFullStreamAndPairVerification": "pass",
+    "macOS": "pending"
+  },
+  "remaining": [
+    "Full offline direct CompareStringW engine, including all special-weight/Jamo/combining/position behavior.",
+    "Original ON_wString empty wrapper, CRT/ANSI failures and runtime profile changes.",
+    "Actual document/view cache lifecycle and original PC/physical/full application acceptance."
+  ],
+  "fullParityVerified": false
+}
