@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03c",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "ea24e67a4c72fd0f1467e116f1e4e627a98fb923",
+  "status": "windows-exhaustive-wide-entrypoint-reference-acquired-apple-validation-pending",
+  "sourceExecuted": false,
+  "runtime": {
+    "sha256": "2b7ab898b2f64f4cd1ae651c93d7eb9556208fd8d8d40d425e856c83d86d2346",
+    "fileVersion": "10.00.40219.473",
+    "path": ".local/reference/windows-crt100/msvcr100.dll",
+    "originalTargetExecuted": false,
+    "originalImportEvidence": "docs/porting/evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03b.json"
+  },
+  "captures": {
+    "paths": [
+      ".local/evidence/crt100-wide/reference-04.json",
+      ".local/evidence/crt100-wide/reference-05.json"
+    ],
+    "byteIdentical": true,
+    "fixture": "reference/fixtures/windows-crt100-wide.json.br",
+    "packedBytes": 163675,
+    "decodedBytes": 1965539,
+    "packedSha256": "d985a9cf166f485665b673f8df10ba7287de9ee8c3a6059b88a89a0b2116da54",
+    "decodedSha256": "6b74a96076c12140d18f981f58721811c8bc58b3128729080ed8c419ccbd1f84"
+  },
+  "results": {
+    "profiles": 3,
+    "wholeLowerInputs": 3342336,
+    "repeatedComparePairs": 3345804,
+    "wholeBuffers": 147,
+    "localeRestored": true,
+    "originalTargetExecuted": false,
+    "profileResults": [
+      {
+        "locale": "C",
+        "wholeLowerUnitDifferences": 0,
+        "supplementaryChanges": 0,
+        "lowerCompareDisagreements": 0,
+        "wholeVsUnitContexts": 0
+      },
+      {
+        "locale": "English_United States.1252",
+        "wholeLowerUnitDifferences": 0,
+        "supplementaryChanges": 40,
+        "lowerCompareDisagreements": 40,
+        "wholeVsUnitContexts": 1
+      },
+      {
+        "locale": "Turkish",
+        "wholeLowerUnitDifferences": 1,
+        "supplementaryChanges": 40,
+        "lowerCompareDisagreements": 41,
+        "wholeVsUnitContexts": 2
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "CRT-WIDE-01",
+      "fact": "English and Turkish whole-buffer lower change40 Deseret scalars, but _wcsicmp compares every original/lowered pair unequal with result-40."
+    },
+    {
+      "id": "CRT-WIDE-02",
+      "fact": "Turkish whole lower maps U+00DD to U+00FD while explicit _towlower_l retains U+00DD; actual _wcsicmp returns-32 against whole-lowered output."
+    },
+    {
+      "id": "CRT-WIDE-03",
+      "fact": "C whole lower/compare agree with prior explicit controls; all native calls succeed, post-NUL guards remain unchanged and owned process CRT locale is restored."
+    }
+  ],
+  "validation": {
+    "command": "node scripts/run-local.cjs node --test tests/crt100-wide-reference.test.cjs",
+    "exitCode": 0,
+    "checks": 2
+  },
+  "limits": [
+    "Original runtime build/current locale not established",
+    "Other CRT locales/ANSI and actual NLS failure dispatch remain open",
+    "Whole-buffer composition checked on49 cases per profile, not all strings",
+    "Production fallback/locale mutation/source document/view/PC/physical parity remain open"
+  ]
+}

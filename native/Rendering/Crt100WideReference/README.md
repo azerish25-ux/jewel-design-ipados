@@ -1,0 +1,12 @@
+# Imported CRT wide-string entrypoint controls
+
+This owned public-API collector loads only Microsoft's hash-pinned installed MSVCR100.dll copy under ignored D: storage. It changes/restores that runtime's locale inside its own process and calls _wcslwr/_wcsicmp, the actual entrypoint names imported by the original core. No Rhino/CounterSketch binary or script executes. No runtime DLL is committed.
+
+    node scripts/run-local.cjs dotnet run --project native/Rendering/Crt100WideReference -- .local/reference/windows-crt100/msvcr100.dll .local/evidence/crt100-wide/reference-fresh.json
+    node scripts/run-local.cjs node --test tests/crt100-wide-reference.test.cjs
+
+For each of C, English_United States.1252 and Turkish, capture all65536 individual UTF16 units and1048576 supplementary scalar pairs through _wcslwr. Check every post-NUL guard and preserve each changed output plus the digest of the complete native stream. Compare every input against its actual whole-lowered output through _wcsicmp twice, retaining all nonzero results and full native digests. Also compare1156 prior pairs twice and lower49 whole buffers (embedded NUL, malformed UTF16, supplementary/Greek/Turkish context and concatenated BMP). Two complete final acquisitions are byte-identical. All native calls succeed and the process CRT locale is restored.
+
+The results disprove a shared lowercase/comparison map: English/Turkish whole lower changes40 Deseret scalars which compare unequal to their original input. Turkish whole lower maps U+00DD to U+00FD, while its explicit unit-lower control leaves U+00DD unchanged; _wcsicmp returns-32 against the whole-lowered result. These differences must survive any port, including cache-key behavior. No platform invariant casing or scalar-insensitive comparer is an exact substitute.
+
+This is the installed runtime10.00.40219.473 on the recorded host, not proof of the original application's loaded runtime/current locale. Other CRT locales, ANSI conversion, native failure dispatch, allocation semantics and document/view/PC/physical behavior remain open. The49 whole-buffer cases support the measured composition but are not proof for every possible string.

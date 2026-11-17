@@ -1,0 +1,4 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),reference=require('../scripts/verify-crt100-wide-reference.cjs');
+test('actual current CRT entrypoints retain every UTF16/scalar output and native lower/compare disagreements',()=>{const r=reference.verify(reference.load());assert.equal(r.wholeLowerInputs,3342336);assert.equal(r.repeatedComparePairs,3345804);assert.equal(r.wholeBuffers,147);assert.deepEqual(r.profileResults.map(p=>p.lowerCompareDisagreements),[0,40,41]);});
+test('whole-string CRT evidence rejects modified mappings, native repeats and flattened code-unit assumptions',()=>{for(const mutate of [r=>r.LocaleRestored=false,r=>r.Profiles[1].SupplementaryChanges[0].OutputSecondUtf16++,r=>r.Profiles[2].UnitWholeCompareNonzero[0].Result=0,r=>r.Profiles[0].Comparisons[0].Repeat=999,r=>r.Profiles[1].LowerContexts[38].PerUnitEqual=true]){const r=reference.load();mutate(r);assert.throws(()=>reference.verify(r));}});
