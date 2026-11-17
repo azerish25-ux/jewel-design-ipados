@@ -82,6 +82,7 @@ for i in $(seq 1 600); do
   grep -q '^PASS context image cache:33 hit/miss/usage/context/failure/lease/budget cases/65536 exact CRT-C UTF16 lower units/1156 native compare pairs;' "$OUT/result.txt"
   grep -q '^PASS Unicode NLS1 lower:1114112 exact native unit/scalar mappings/3329 native contexts/7 null/budget/UTF16 guards;' "$OUT/result.txt"
   grep -q '^PASS NLS1 comparison inputs:65536 exact active native weights/730 exact ordered expansions/2 expansion-index guards;' "$OUT/result.txt"
+  grep -q '^PASS live string runtime GPU:17 native image readbacks/682 exact pixels/5 profile transitions/6 decode-upload-free hits/2 retained pending frames;' "$OUT/result.txt"
   grep -q '^PASS source entry-name copy:144 mode/CRT/string cases/444 C-prefix/query/ownership/failure checks;' "$OUT/result.txt"
   grep -q '^PASS native cache ordering:9 actual alias-selection/lease/atomic-failure checks;' "$OUT/result.txt"
   grep -q '^PASS CRT100 portable qsort:10431 exact native orders/1972827 exact callback events/2 dependency guards;' "$OUT/result.txt"
@@ -125,6 +126,9 @@ for i in $(seq 1 600); do
   cp "$DATA/Documents/straight-image-gpu.bgra" "$OUT/straight-image-gpu.bgra"
   cp "$DATA/Documents/image-gpu-result.json" "$OUT/image-gpu-result.json"
   cp "$DATA/Documents/image-gpu-bmp.bgra" "$OUT/image-gpu-bmp.bgra"
+  cp "$DATA/Documents/live-string-cache-gpu.json" "$OUT/live-string-cache-gpu.json"
+  for index in $(seq 0 16); do cp "$DATA/Documents/live-string-cache-$index.bgra" "$OUT/live-string-cache-$index.bgra"; done
+  node scripts/verify-live-string-cache-gpu.cjs "$OUT" > "$OUT/live-string-cache-gpu-verification.json"
   cp "$DATA/Documents/source-cache-gpu.json" "$OUT/source-cache-gpu.json"
   for index in $(seq 0 7); do cp "$DATA/Documents/source-cache-$index.bgra" "$OUT/source-cache-$index.bgra"; done
   node scripts/verify-source-cache-gpu.cjs "$OUT" > "$OUT/source-cache-gpu-verification.json"

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P04",
+  "parentTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "04d50964ec1610546077afd3d798eb42d0716191",
+  "status": "live-runtime-gpu-checks-authored-actual-apple-execution-pending",
+  "originalExecuted": false,
+  "productionIntegration": {
+    "renderer": "src/Port/Rendering.Candidate.iOS/MetalImageQuadRenderer.cs",
+    "configuration": "One ConfigureSourceCache call with shared Rhino5StringRuntimeProfile.FilenameSemantics; existing production API unchanged"
+  },
+  "checks": {
+    "path": "tests/iOS.Viewport/LiveRuntimeSourceCacheGpuChecks.cs",
+    "independentVerifier": "scripts/verify-live-string-cache-gpu.cjs",
+    "nativeFixture": "tests/Port/Geometry.Candidate.Contracts/Fixtures/composed-texture-gpu.json",
+    "nativeIndices": [
+      1,
+      61
+    ],
+    "plannedReadbacks": 17,
+    "plannedNativePixels": 682,
+    "plannedTransitions": 5,
+    "plannedDecodeUploadFreeHits": 6,
+    "plannedPendingFrames": 2
+  },
+  "red": {
+    "command": "node scripts/run-local.cjs node scripts/verify-live-string-cache-gpu.cjs .local/evidence/cache-entry-copy/apple/visible/viewport-ipad",
+    "exitCode": 1,
+    "actual": "Previous authentic artifact has no live-string-cache-gpu.json; existing fixed-profile baseline cannot satisfy the new integration gate"
+  },
+  "limits": [
+    "No actual GPU outcome claimed before source-bound Apple artifact inspection",
+    "Native images and source-derived policy transitions; original app never executed",
+    "Existing fixed CRT-C GPU baseline is preserved separately",
+    "Application language/document composition, filesystem resolver policy, GDI/PC/physical/full application parity remain open"
+  ],
+  "windowsValidation": {
+    "adjacentNodeChecks": 14,
+    "repositoryIntegrity": true,
+    "diffCheck": true,
+    "actualGpuExecuted": false
+  }
+}

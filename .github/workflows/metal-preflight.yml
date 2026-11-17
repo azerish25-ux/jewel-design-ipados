@@ -27,6 +27,8 @@ on:
       - "native/Analysis/Ghidra/InspectOriginalCore.java"
       - "scripts/verify-filename-reference.cjs"
       - "scripts/verify-source-cache-gpu.cjs"
+      - "scripts/verify-live-string-cache-gpu.cjs"
+      - "tests/iOS.Viewport/LiveRuntimeSourceCacheGpuChecks.cs"
       - "tests/filename-reference.test.cjs"
       - "native/Rendering/FilenameReference/**"
       - "native/Rendering/Crt100Reference/**"

@@ -34,6 +34,7 @@ on:
       - "scripts/verify-composed-texture-gpu.cjs"
       - "scripts/verify-prepared-wallpaper-gpu.cjs"
       - "scripts/verify-source-cache-gpu.cjs"
+      - "scripts/verify-live-string-cache-gpu.cjs"
       - "tests/Port/Geometry.Candidate.Contracts/ContextImageCacheAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/UnicodeNlsLowerAssertions.cs"
       - "tests/Port/Geometry.Candidate.Contracts/NlsComparisonInputAssertions.cs"
