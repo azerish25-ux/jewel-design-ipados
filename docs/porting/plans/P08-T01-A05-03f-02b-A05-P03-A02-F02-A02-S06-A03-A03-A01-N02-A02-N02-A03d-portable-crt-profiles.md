@@ -1,0 +1,7 @@
+# P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03d: versioned portable CRT profiles
+
+UI-039; input84ba137246e78b4eb241b6b30f7876de488d1b02. Parent A03c retains actual imported _wcslwr/_wcsicmp controls, all unit/scalar lower outputs and original/lowered comparisons for three explicit installed-runtime locales. Implement immutable separate whole-lower/unit-compare maps and40 measured supplementary lower mappings for each non-C profile. No host Unicode/culture tables or names lookup. Preserve C termination, full stored string suffix, raw comparison magnitude and original stored-length filename guard. Do not infer runtime locale or use one map for both operations.
+
+Owned files: compact data generator/resource, C# profile implementation, shared native-corpus assertions, runners/Apple driver and platform evidence. RED must fail for missing profile class. Verify3342336 actual native lower outputs,3345804 comparisons,147 whole buffers, null/budget/terminator guards and real cache misses/invalidation/leases. Compare full streams/digests, not sampled aggregate counts. Run Windows/native host/adjacent Node/integrity and actual macOS/iPad/iPhone CI.
+
+This child supports only C/English1252/Turkish1254 snapshots of recorded runtime10.00.40219.473. Other locales, original loaded runtime/current state, NLS failure dispatch, ANSI conversion, allocation/failure semantics, source document/view/PC/physical/full application parity remain open.49 whole-buffer cases do not prove every possible context; preserve that limit.

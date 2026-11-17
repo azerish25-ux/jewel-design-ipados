@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03d",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "84ba137246e78b4eb241b6b30f7876de488d1b02",
+  "status": "portable-recorded-crt-profiles-windows-tested-apple-pending",
+  "sourceExecuted": false,
+  "sourceReferences": [
+    "reference/fixtures/windows-crt100-wide.json.br",
+    "reference/fixtures/windows-crt100-locales.json.br",
+    "docs/porting/evidence/P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03c.json"
+  ],
+  "resource": {
+    "path": "src/Port/Rendering.Candidate/Fixtures/crt100-profiles-40219.bin",
+    "bytes": 16476,
+    "sha256": "7aad75e02af1cab78bc7fc4d9a71bcec227a1fbc116cb0069a81e817691133cd",
+    "generator": "scripts/prepare-crt100-profiles.cjs"
+  },
+  "implementation": {
+    "path": "src/Port/Rendering.Candidate/Rhino5Crt100FilenameProfile.cs",
+    "sha256": "551541c699442fd6c8e2d9869a3bd71de28c4a156509b1e39df0fd57f0d8d9f1",
+    "source": "Authored C# with immutable separate native-capture-derived maps; no current-platform casing/collation or lookup by whole filename"
+  },
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "errors": [
+      "CS0103 missing Rhino5Crt100FilenameProfile",
+      "CS0246 missing Rhino5Crt100Locale"
+    ]
+  },
+  "windows": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 0,
+    "nativeLowerInputs": 3342336,
+    "nativeComparisons": 3345804,
+    "wholeBuffers": 147,
+    "boundaryAndCacheChecks": 257,
+    "adjacentNativeDirectComparisons": 11107891,
+    "adjacentNlsFilenamePairs": 40663,
+    "adjacentNlsFilenameChecks": 75,
+    "adjacentNodeChecks": 19,
+    "repositoryIntegrity": true,
+    "nativeHostExitCode": 0
+  },
+  "limits": [
+    "Three explicit snapshots of installed runtime10.00.40219.473 only; original loaded runtime/current locale and other locales remain open",
+    "Whole-buffer composition supported on49 recorded contexts per profile, not proof for every string",
+    "Native failure/allocation behavior and ANSI conversion remain open",
+    "No implicit runtime profile change or document/view cache adoption",
+    "Original-PC, physical-device and full application parity remain unverified"
+  ]
+}

@@ -31,6 +31,9 @@ on:
       - "native/Rendering/FilenameReference/**"
       - "native/Rendering/Crt100Reference/**"
       - "native/Rendering/Crt100WideReference/**"
+      - "scripts/prepare-crt100-profiles.cjs"
+      - "tests/crt100-profiles.test.cjs"
+      - "tests/Port/Geometry.Candidate.Contracts/Crt100ProfileAssertions.cs"
       - "scripts/verify-crt100-wide-reference.cjs"
       - "tests/crt100-wide-reference.test.cjs"
       - "reference/fixtures/windows-crt100-wide.json.br"
@@ -307,6 +310,10 @@ jobs:
         run: |
           node --test tests/crt100-wide-reference.test.cjs > artifacts/crt100-wide-reference-checks.txt
           node scripts/verify-crt100-wide-reference.cjs > artifacts/crt100-wide-reference.json
+      - name: Verify portable CRT profile resource against complete native captures
+        run: |
+          node --test tests/crt100-profiles.test.cjs > artifacts/crt100-profiles-checks.txt
+          node scripts/prepare-crt100-profiles.cjs > artifacts/crt100-profiles.json
       - name: Verify original filename profile initialization evidence
         run: node scripts/verify-filename-profile.cjs > artifacts/filename-profile.json
       - name: Verify exhaustive native Unicode NLS1 lowercase corpus
