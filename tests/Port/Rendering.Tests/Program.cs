@@ -67,3 +67,7 @@ System.Console.WriteLine(CandidateGeometryContractChecks.Crt100ProfileAssertions
 System.Console.WriteLine(CandidateGeometryContractChecks.AnsiNlsProfileAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.StringRuntimeAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.CacheNativeOrderingAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.CrtSortAssertions.Run());

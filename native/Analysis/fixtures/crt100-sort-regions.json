@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "2b7ab898b2f64f4cd1ae651c93d7eb9556208fd8d8d40d425e856c83d86d2346",
+  "functions": [
+    {
+      "role": "crt-qsort",
+      "rva": 495168,
+      "signature": {
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "base",
+            "type": "byte*"
+          },
+          {
+            "name": "count",
+            "type": "ulong"
+          },
+          {
+            "name": "width",
+            "type": "ulong"
+          },
+          {
+            "name": "compare",
+            "type": "void*"
+          }
+        ]
+      },
+      "name": "qsort",
+      "length": 759,
+      "sha256": "e456ccf0428d56d35ca7b3c0a39e65603037183b9b7eb2f7c001f23c327989fd",
+      "unwindRegions": [
+        {
+          "begin": 495168,
+          "end": 495248,
+          "unwind": 666820
+        },
+        {
+          "begin": 495248,
+          "end": 495914,
+          "unwind": 666784
+        },
+        {
+          "begin": 495914,
+          "end": 495927,
+          "unwind": 666768
+        }
+      ]
+    },
+    {
+      "role": "crt-shortsort",
+      "rva": 494960,
+      "signature": {
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "low",
+            "type": "byte*"
+          },
+          {
+            "name": "high",
+            "type": "byte*"
+          },
+          {
+            "name": "width",
+            "type": "ulong"
+          },
+          {
+            "name": "compare",
+            "type": "void*"
+          }
+        ]
+      },
+      "name": null,
+      "length": 189,
+      "sha256": "087a4dfbebf6dc0cf6f1779fd3cc05ac707b3c3dbe99981ddf1aea5e6939b2f8",
+      "unwindRegions": [
+        {
+          "begin": 494960,
+          "end": 494983,
+          "unwind": 666752
+        },
+        {
+          "begin": 494983,
+          "end": 495147,
+          "unwind": 666724
+        },
+        {
+          "begin": 495147,
+          "end": 495149,
+          "unwind": 666708
+        }
+      ]
+    }
+  ]
+}

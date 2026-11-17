@@ -1,0 +1,5 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),reference=require('../scripts/verify-crt-sort-reference.cjs');
+test('complete native sort orders retain exhaustive ternary inputs, callbacks and nonstable ties',()=>{const r=reference.verify(reference.load());assert.equal(r.nativeCases,10431);assert.equal(r.comparisonEventsPerPass,1972827);assert.equal(r.managedOrderDifferences,10053);assert.equal(r.exhaustiveTernaryCases,9841);});
+test('sort corpus rejects changed native identity, trace, permutation and guard evidence',()=>{for(const mutate of [r=>r.RecordWidth=4,r=>r.Cases[4].NativeTraceSha256='0'.repeat(64),r=>r.Cases[4].NativeIds=[0,0],r=>r.Cases[4].GuardsIntact=false]){const r=reference.load();mutate(r);assert.throws(()=>reference.verify(r));}});
+test('sort source manifest is pinned without claiming a remote binary check',()=>{const r=reference.verifySource();assert.equal(r.totalBytes,948);assert.equal(r.sourceImageChecked,false);assert.equal(r.originalAppExecuted,false);});

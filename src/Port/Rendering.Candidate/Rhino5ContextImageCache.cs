@@ -48,7 +48,7 @@ public sealed class Rhino5ContextImageCache<T>:IDisposable where T:class,IDispos
    while(low<=high){int mid=(low+high)/2,comparison=CompareKeys(filenames,entries[mid].Key,key);if(comparison<0)low=mid+1;else if(comparison>0)high=mid-1;else{entries[mid].Usage=usage;return NewLease(entries[mid]);}}
    if(entries.Count>=maximumEntries)throw new InvalidDataException("Source image cache entry budget reached; explicit invalidation is required.");long before=mutation;T? resource=create();if(resource is null)return null;
    if(disposed||mutation!=before){resource.Dispose();throw new InvalidOperationException("Source cache changed during image creation.");}
-   Entry entry;try{entry=new(new(context,key.Kind,filenames.Lower(filename)),resource,usage);var sorted=entries.ToList();sorted.Add(entry);sorted.Sort((a,b)=>CompareKeys(filenames,a.Key,b.Key));entries.Clear();entries.AddRange(sorted);mutation++;}catch{resource.Dispose();throw;}return NewLease(entry);
+   Entry entry;try{entry=new(new(context,key.Kind,filenames.Lower(filename)),resource,usage);var sorted=entries.ToList();sorted.Add(entry);Rhino5Crt100QSort.Sort(sorted,(a,b)=>CompareKeys(filenames,a.Key,b.Key));entries.Clear();entries.AddRange(sorted);mutation++;}catch{resource.Dispose();throw;}return NewLease(entry);
   }
  }
  private Lease NewLease(Entry entry){entry.Retain();return new(entry.Value,entry.Release);}

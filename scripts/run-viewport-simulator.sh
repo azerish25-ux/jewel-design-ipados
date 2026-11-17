@@ -82,6 +82,8 @@ for i in $(seq 1 600); do
   grep -q '^PASS context image cache:33 hit/miss/usage/context/failure/lease/budget cases/65536 exact CRT-C UTF16 lower units/1156 native compare pairs;' "$OUT/result.txt"
   grep -q '^PASS Unicode NLS1 lower:1114112 exact native unit/scalar mappings/3329 native contexts/7 null/budget/UTF16 guards;' "$OUT/result.txt"
   grep -q '^PASS NLS1 comparison inputs:65536 exact active native weights/730 exact ordered expansions/2 expansion-index guards;' "$OUT/result.txt"
+  grep -q '^PASS native cache ordering:9 actual alias-selection/lease/atomic-failure checks;' "$OUT/result.txt"
+  grep -q '^PASS CRT100 portable qsort:10431 exact native orders/1972827 exact callback events/2 dependency guards;' "$OUT/result.txt"
   grep -q '^PASS mutable string runtime:68 source flag transitions/683 literal/mode/cache/guard checks;' "$OUT/result.txt"
   grep -q '^PASS ANSI portable profile:1112064 native scalar byte outputs/65536 native comparison pairs/65536 native lower pairs/65536 native decode pairs/4096 legacy recovery cases/136 boundary/cache checks;' "$OUT/result.txt"
   grep -q '^PASS CRT100 portable profiles:3342336 native lower inputs/3345804 native comparisons/147 whole buffers/257 boundary/cache checks;' "$OUT/result.txt"

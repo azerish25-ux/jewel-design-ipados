@@ -31,6 +31,13 @@ on:
       - "native/Rendering/FilenameReference/**"
       - "native/Rendering/Crt100Reference/**"
       - "native/Rendering/Crt100WideReference/**"
+      - "native/Rendering/CrtSortReference/**"
+      - "scripts/verify-crt-sort-reference.cjs"
+      - "tests/crt-sort-reference.test.cjs"
+      - "reference/fixtures/crt100-qsort-width8.json.br"
+      - "native/Analysis/fixtures/crt100-sort-regions.json"
+      - "tests/Port/Geometry.Candidate.Contracts/CrtSortAssertions.cs"
+      - "tests/Port/Geometry.Candidate.Contracts/CacheNativeOrderingAssertions.cs"
       - "native/Rendering/AnsiNlsReference/**"
       - "scripts/prepare-ansi-profile.cjs"
       - "tests/ansi-profile.test.cjs"
@@ -336,6 +343,10 @@ jobs:
         run: |
           node --test tests/ansi-profile.test.cjs > artifacts/ansi-profile-checks.txt
           node scripts/prepare-ansi-profile.cjs > artifacts/ansi-profile.json
+      - name: Verify complete native CRT sort reference
+        run: |
+          node --test tests/crt-sort-reference.test.cjs > artifacts/crt-sort-reference-checks.txt
+          node scripts/verify-crt-sort-reference.cjs > artifacts/crt-sort-reference.json
       - name: Verify original filename profile initialization evidence
         run: node scripts/verify-filename-profile.cjs > artifacts/filename-profile.json
       - name: Verify exhaustive native Unicode NLS1 lowercase corpus

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P02",
+  "parentTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "4a6aef7e6b9e6d762eb5d6983f973b7b3abf3de7",
+  "status": "native-cache-sort-windows-tested-apple-pending",
+  "originalAppExecuted": false,
+  "implementation": {
+    "sort": "src/Port/Rendering.Candidate/Rhino5Crt100QSort.cs",
+    "sortSha256": "6befbd946a2d402c6b9f12ab395bd9012d02adaee2aa21401766ae9c4b59105a",
+    "cache": "src/Port/Rendering.Candidate/Rhino5ContextImageCache.cs",
+    "algorithm": "Authored generic value translation of complete pinned native control flow; no order table or host sort"
+  },
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "actual": "Stored alias selected image1; native width8 equal-key order requires image2"
+  },
+  "windows": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 0,
+    "exactNativeOrders": 10431,
+    "exactNativeCallbackEvents": 1972827,
+    "dependencyGuards": 2,
+    "actualCacheAliasLeaseAtomicityChecks": 9,
+    "adjacentNodeChecks": 17,
+    "nativeHostExitCode": 0,
+    "repositoryIntegrity": true
+  },
+  "limits": [
+    "Width8-equivalent value ordering for pinned runtime snapshot; original app never executes",
+    "Original entry C-prefix copying, GDI bsearch and full document/view integration remain open",
+    "Original error/race/physical-device and full PC/application parity remain unverified"
+  ]
+}

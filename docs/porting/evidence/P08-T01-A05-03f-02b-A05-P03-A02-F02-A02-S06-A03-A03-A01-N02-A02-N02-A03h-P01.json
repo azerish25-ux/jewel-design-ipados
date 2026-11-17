@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h-P01",
+  "parentTaskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03h",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "4a6aef7e6b9e6d762eb5d6983f973b7b3abf3de7",
+  "status": "complete-public-sort-oracle-windows-captured-apple-pending",
+  "originalAppExecuted": false,
+  "runtime": {
+    "sha256": "2b7ab898b2f64f4cd1ae651c93d7eb9556208fd8d8d40d425e856c83d86d2346",
+    "fileVersion": "10.00.40219.473",
+    "path": ".local/reference/windows-crt100/msvcr100.dll",
+    "originalAppModule": false
+  },
+  "captures": {
+    "paths": [
+      ".local/evidence/native-cache-sort/reference-01.json",
+      ".local/evidence/native-cache-sort/reference-02.json"
+    ],
+    "byteIdentical": true,
+    "fixture": "reference/fixtures/crt100-qsort-width8.json.br",
+    "packedBytes": 745704,
+    "decodedBytes": 5381810,
+    "packedSha256": "ea2dc607815dbcfda80b4582969b58cdc57318b0a6ca231eb65331901dfd241f",
+    "decodedSha256": "c42be68d54caeb1ccc5a97277491c783c3d19bd07ab9c9d8e5def86a08d8b869"
+  },
+  "results": {
+    "nativeCases": 10431,
+    "comparisonEventsPerPass": 1972827,
+    "managedOrderDifferences": 10053,
+    "exhaustiveTernaryCases": 9841,
+    "independentlyReconstructedShortSortCases": 9931,
+    "maximumElements": 4097,
+    "recordWidth": 8,
+    "originalAppExecuted": false
+  },
+  "source": {
+    "manifest": "native/Analysis/fixtures/crt100-sort-regions.json",
+    "functions": 2,
+    "chainedRegions": 6,
+    "bytes": 948,
+    "sourceImageChecked": true,
+    "controlFlow": "cutoff8 maximal-first shortsort; median-of-three with equal-run trimming; larger-partition push and smaller immediate processing;62 native stack slots"
+  },
+  "limits": [
+    "Public installed Microsoft runtime only; original CounterSketch/Rhino not executed",
+    "Recorded numeric key/id equivalence classes, not original image-entry callback objects",
+    "Remote source verification is manifest-only without the source DLL",
+    "Cache entry-copy/GDI search/full document/PC/physical acceptance remain open"
+  ],
+  "windowsValidation": {
+    "focusedTests": 3,
+    "adjacentNodeChecks": 17,
+    "repositoryIntegrity": true
+  }
+}
