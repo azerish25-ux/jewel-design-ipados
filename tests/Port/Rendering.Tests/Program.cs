@@ -63,3 +63,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.NlsDirectExhaustiveAsse
 System.Console.WriteLine(CandidateGeometryContractChecks.NlsFilenamePolicyAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.Crt100ProfileAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.AnsiNlsProfileAssertions.Run());

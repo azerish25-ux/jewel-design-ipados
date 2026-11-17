@@ -32,6 +32,10 @@ on:
       - "native/Rendering/Crt100Reference/**"
       - "native/Rendering/Crt100WideReference/**"
       - "native/Rendering/AnsiNlsReference/**"
+      - "scripts/prepare-ansi-profile.cjs"
+      - "tests/ansi-profile.test.cjs"
+      - "tests/Port/Geometry.Candidate.Contracts/AnsiNlsProfileAssertions.cs"
+      - "native/Analysis/fixtures/rhino5-ansi-decoder-helper-regions.json"
       - "scripts/verify-ansi-nls-reference.cjs"
       - "scripts/verify-ansi-source-contract.cjs"
       - "tests/ansi-nls-reference.test.cjs"
@@ -327,6 +331,10 @@ jobs:
           node --test tests/ansi-nls-reference.test.cjs tests/ansi-source-contract.test.cjs > artifacts/ansi-reference-checks.txt
           node scripts/verify-ansi-nls-reference.cjs > artifacts/ansi-nls-reference.json
           node scripts/verify-ansi-source-contract.cjs > artifacts/ansi-source-contract.json
+      - name: Verify portable ANSI mapping resource
+        run: |
+          node --test tests/ansi-profile.test.cjs > artifacts/ansi-profile-checks.txt
+          node scripts/prepare-ansi-profile.cjs > artifacts/ansi-profile.json
       - name: Verify original filename profile initialization evidence
         run: node scripts/verify-filename-profile.cjs > artifacts/filename-profile.json
       - name: Verify exhaustive native Unicode NLS1 lowercase corpus

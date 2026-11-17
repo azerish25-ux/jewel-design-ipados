@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "functions": [
+    {
+      "role": "decode-utf8-helper",
+      "name": null,
+      "rva": 2910624,
+      "length": 707,
+      "sha256": "670280e9eb4fdb8d9e557d509ad5129fcc562227e25d243a5a8564e70c70d790",
+      "unwindRegions": [],
+      "boundary": "Leaf with final RET at0x2c6c62 followed by INT3; no pdata record.",
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "input",
+            "type": "byte*"
+          },
+          {
+            "name": "inputCount",
+            "type": "int"
+          },
+          {
+            "name": "codePoint",
+            "type": "uint*"
+          },
+          {
+            "name": "errorStatus",
+            "type": "uint*"
+          },
+          {
+            "name": "firstByte",
+            "type": "byte"
+          }
+        ]
+      }
+    },
+    {
+      "role": "decode-utf8",
+      "rva": 2911344,
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "input",
+            "type": "byte*"
+          },
+          {
+            "name": "inputCount",
+            "type": "int"
+          },
+          {
+            "name": "errorParameters",
+            "type": "void*"
+          },
+          {
+            "name": "codePoint",
+            "type": "uint*"
+          }
+        ]
+      },
+      "name": "ON_DecodeUTF8",
+      "length": 1121,
+      "sha256": "568983f97303418ab2e2106bbc97088f45b9023be9374a10e356f1dd0536dfb7",
+      "unwindRegions": [
+        {
+          "begin": 2911344,
+          "end": 2911402,
+          "unwind": 3431276
+        },
+        {
+          "begin": 2911402,
+          "end": 2911753,
+          "unwind": 3431256
+        },
+        {
+          "begin": 2911753,
+          "end": 2912061,
+          "unwind": 3431232
+        },
+        {
+          "begin": 2912061,
+          "end": 2912082,
+          "unwind": 3431216
+        },
+        {
+          "begin": 2912082,
+          "end": 2912450,
+          "unwind": 3431188
+        },
+        {
+          "begin": 2912450,
+          "end": 2912465,
+          "unwind": 3431172
+        }
+      ]
+    }
+  ]
+}

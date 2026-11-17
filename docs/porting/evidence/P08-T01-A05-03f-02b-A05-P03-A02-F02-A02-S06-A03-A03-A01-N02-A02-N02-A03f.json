@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03f",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "inputCommit": "6b67392a99319b8a50fbe2fdb4c5f8f244afbc12",
+  "status": "portable-ansi-profile-windows-tested-apple-pending",
+  "sourceExecuted": false,
+  "sourceReferences": [
+    "docs/evidence/audit/rhino5-ansi-contract.json",
+    "docs/evidence/audit/ansi-decoder-recovery-status.json",
+    "reference/fixtures/windows-nls1-ansi-60502.json.br"
+  ],
+  "implementation": {
+    "path": "src/Port/Rendering.Candidate/Rhino5AnsiNlsProfile.cs",
+    "sha256": "c20ed431b8b6aa48ffc2eae5d5c472545d29350126cdcbf859915d116a024215",
+    "kind": "Authored portable C#; native-derived tables plus source-derived conversion/decoder/routing, no Windows/device codec calls"
+  },
+  "resource": {
+    "path": "src/Port/Rendering.Candidate/Fixtures/windows-nls1-ansi-60502.bin",
+    "bytes": 800,
+    "sha256": "3a88c315e6ffe2092d9e4f923ecab1a9b8fdf4976bcc438c636c0a899da2324d"
+  },
+  "red": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 1,
+    "error": "CS0103 missing Rhino5AnsiNlsProfile/Rhino5AnsiCompareRoute"
+  },
+  "windows": {
+    "command": "node scripts/run-local.cjs dotnet run --project tests/Port/Rendering.Tests",
+    "exitCode": 0,
+    "nativeScalarByteOutputs": 1112064,
+    "nativeComparisonPairs": 65536,
+    "nativeLowerPairs": 65536,
+    "nativeDecodePairs": 65536,
+    "sourceDerivedLegacyRecoveryCases": 4096,
+    "boundaryAndCacheChecks": 136,
+    "adjacentDirectNativeComparisons": 11107891,
+    "adjacentCrtLowerInputs": 3342336,
+    "adjacentCrtComparisons": 3345804,
+    "adjacentCrtBoundaryCacheChecks": 257,
+    "adjacentNodeChecks": 17,
+    "repositoryIntegrity": true,
+    "decoderHelperOriginalBytesChecked": true,
+    "nativeHostExitCode": 0
+  },
+  "review": {
+    "correction": "Original four-byte invalid-scalar recovery consumes4 and returns U+FFFD without setting an error bit. DecodeErrors remains0; LegacyReplacementGroups is separate port trace metadata. The accepted internal helper ABI has five arguments.",
+    "ghidraExitCode": 0
+  },
+  "limits": [
+    "Native byte outputs are actual public Windows measurements; whole conversion/decoder/dispatch expectations are source-derived, not original application execution",
+    "Explicit recorded NLS1 CP1256 profile and supplied recorded CRT fallback only",
+    "Private decoder covers reachable transformed-prefix domain, not every unrelated legacy UTF8 API input",
+    "Mutable runtime selection, other versions/current CRT, errno/allocation, full document/view/original-PC/physical/application parity remain open"
+  ]
+}

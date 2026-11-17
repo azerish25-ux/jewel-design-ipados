@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03f",
+  "sourceExecuted": false,
+  "originalCoreSha256": "15c1be75b8ca3b0a42d2dc0c9b2a3de81730ff09b06ca16fb55d3a1a7a766e7c",
+  "manifest": "native/Analysis/fixtures/rhino5-ansi-decoder-helper-regions.json",
+  "manifestSha256": "e306f577fa5d8b7fa2c7b497d853f882957b9c50d15369db7484b50c0ab029e7",
+  "views": [
+    {
+      "role": "decode-utf8-helper",
+      "path": ".local/evidence/portable-ansi/static/decompile-02/decode-utf8-helper.c",
+      "sha256": "1d22d5c85c84ddcc46e72a5ce252fd5400ae9b480a8d271ccc9f513087349fb3",
+      "signature": "int Original_decode_utf8_helper(uchar * input, int inputCount, uint * codePoint, uint * errorStatus, uchar firstByte)"
+    },
+    {
+      "role": "decode-utf8",
+      "path": ".local/evidence/portable-ansi/static/decompile-02/decode-utf8.c",
+      "sha256": "b6c48ff241ea4ac51d38552c663cba6d03e501550f721fb8aa2844c299d4aba9",
+      "signature": "int Original_decode_utf8(uchar * input, int inputCount, void * errorParameters, uint * codePoint)"
+    }
+  ],
+  "findings": [
+    {
+      "id": "ANSI-DECODE-01",
+      "fact": "The optimized internal helper at0x2c69a0 takes five arguments, including a preloaded leading byte in stack slot0x28. The initial four-argument annotation was rejected after the live-in stack reference was inspected; the accepted typed view uses five."
+    },
+    {
+      "id": "ANSI-DECODE-02",
+      "fact": "Its four-byte structural branch returns4 and writes the decoded integer; it only sets error8 for an overlong value below0x10000. A structurally complete F4 9C xx xx group decodes above0x10ffff without setting error16."
+    },
+    {
+      "id": "ANSI-DECODE-03",
+      "fact": "The outer decoder detects the invalid code point and emits the supplied U+FFFD while retaining status0 and consuming4 bytes. The portable component therefore returns DecodeErrors0 and separately tracks LegacyReplacementGroups; it must not invent a native error16."
+    }
+  ],
+  "scope": "Static original decoder value/status contract only; original DLL never executes. Full unrelated legacy UTF8 API behavior, runtime state, document/PC/physical acceptance remain open."
+}
