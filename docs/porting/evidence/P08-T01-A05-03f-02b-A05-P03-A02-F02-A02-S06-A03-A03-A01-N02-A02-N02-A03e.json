@@ -5,7 +5,7 @@
     "UI-039"
   ],
   "inputCommit": "7976d8e07901f1b2017f14182ef2c22aa099e0d6",
-  "status": "original-ansi-source-and-public-backend-acquired-apple-validation-pending",
+  "status": "original-ansi-source-reviewed-public-backend-windows-and-macos-validated-portable-pipeline-open",
   "sourceExecuted": false,
   "sourceContract": "docs/evidence/audit/rhino5-ansi-contract.json",
   "nativeCapture": {
@@ -55,5 +55,6 @@
     "macOS can independently reconstruct public native API corpus but has no original PE",
     "Complete source conversion/legacy decoder/ANSI runtime selection and current-CRT failure paths remain open",
     "Source document/view/original-PC/physical/full application parity remains open"
-  ]
+  ],
+  "appleReferenceValidation": "docs/evidence/apple/ansi-reference-preflight-results.json"
 }

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A03e",
+  "sourceCommit": "864b993527439be9b259fa4bae28080bd62d9b0b",
+  "run": 44040227869,
+  "conclusion": "success",
+  "artifactId": 14309475864,
+  "artifactSha256": "50e7525afc025606e668db70eb320d0b67241693ee6a6239c23990a51f6216c5",
+  "actualArtifactInspected": true,
+  "nativeCorpusReconstruction": {
+    "codePage": 1256,
+    "byteMappings": 256,
+    "repeatedNativeComparisons": 65536,
+    "pairLowerBuffers": 65536,
+    "pairDecodeBuffers": 65536,
+    "unicodeScalarLowerCalls": 1112064,
+    "changedUnicodeScalars": 50349,
+    "invalidUtf8Outputs": 4096,
+    "reconstructedInvalidUtf8Range": [
+      1097728,
+      1101823
+    ],
+    "localeWideDifferences": 0,
+    "acpDifferences": 10460,
+    "originalRuntimeExecuted": false
+  },
+  "originalSourceManifestCheck": {
+    "functions": 9,
+    "chainedRegions": 46,
+    "totalFunctionBytes": 3751,
+    "manifestPinned": true,
+    "originalBytesChecked": false,
+    "originalExecuted": false,
+    "scope": "Manifest integrity only; no original PE bytes/runtime available in this verification."
+  },
+  "tests": {
+    "pass": 3,
+    "fail": 0
+  },
+  "scope": "Actual macOS independent full reconstruction of retained Windows public ANSI measurements. Original PE bytes were checked locally on D; macOS checks only the pinned source manifest and does not execute original Windows code. Portable ANSI pipeline remains open."
+}
