@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A01",
+  "inputCommit": "e5f8bcec2f07b5b00acc52e666e9cd08cdf410d7",
+  "requirementIds": [
+    "UI-039"
+  ],
+  "status": "portable-input-provider-native-tested-apple-pending-full-engine-open",
+  "sourceAudit": "docs/evidence/audit/windows-nls-direct-inputs.json",
+  "red": [
+    "Missing Rhino5NlsComparisonInputs reproduced CS0103 before implementation.",
+    "Initial inline hash-array layout rejected; accepted callback bytes match the exact image.",
+    "Initial public6-argument LongCompareString interpretation rejected; typed view uses one state pointer."
+  ],
+  "validation": {
+    "windowsManagedNativeWeights": 65536,
+    "windowsManagedNativeExpansionPairs": 730,
+    "expansionIndexGuards": 2,
+    "completeActiveNativeByteEquality": true,
+    "adjacentNodeChecks": 24,
+    "staticViews": 4,
+    "originalTargetExecuted": false
+  },
+  "resource": {
+    "path": "src/Port/Rendering.Candidate/Fixtures/windows-nls1-comparison-inputs-60502.bin",
+    "bytes": 265088,
+    "sha256": "79d2e430fb8e0ee7b9558cdc3119dc609e2f1798392c50a63a4895bbc87533dd"
+  },
+  "platform": "macOS/iPad/iPhone pending",
+  "remaining": [
+    "Complete direct comparison state machine and Jamo/extra-weight transitions against40663 repeated comparisons, including213 key-order disagreements.",
+    "Original ON_wString empty/CRT/ANSI/fallback/runtime profile/document ownership.",
+    "Original PC corpus, physical devices and full application feature acceptance."
+  ],
+  "fullParityVerified": false
+}

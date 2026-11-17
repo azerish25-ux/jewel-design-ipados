@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "taskId": "P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02-A01",
+  "inputCommit": "e5f8bcec2f07b5b00acc52e666e9cd08cdf410d7",
+  "originalTargetExecuted": false,
+  "publicApiExecutedInOwnedProcess": true,
+  "dispatch": {
+    "schemaVersion": 1,
+    "imageSha256": "e132eba4166256e2f414b91fe7d5386590bc5ea8626aee5af9c9738383cf2ae1",
+    "pdbSha256": "c3127b30252d8a0249bf1ebf024f77e36b207123c41264905c807711a2dd659c",
+    "identity": {
+      "guid": "E8C3A48CAC7EB60D8781D8C10020C44F",
+      "imageAge": 1,
+      "infoAge": 2,
+      "dbiAge": 1,
+      "rule": "Exact GUID; PDB info age>=image age; DBI age=image age. Microsoft PDB loader compatibility rule."
+    },
+    "publicSymbols": 5941,
+    "directExportMatches": 890,
+    "explicitStubMatches": 581,
+    "selected": [
+      {
+        "name": "SortCompareString",
+        "rva": 23616
+      },
+      {
+        "name": "LongCompareString",
+        "rva": 26304
+      },
+      {
+        "name": "GetOldHangulWeight",
+        "rva": 76584
+      },
+      {
+        "name": "MapOldHangulSortKey",
+        "rva": 76792
+      },
+      {
+        "name": "SortTblPtrs",
+        "rva": 795520
+      }
+    ],
+    "liveCallbackRva": 23616,
+    "liveFirst32Sha256": "6445696c70d712be2917e6c750d6a6928df535c46feb13a396d451830c18c260",
+    "fixedProfile": {
+      "caseMap130Null": true,
+      "caseMap138Null": true,
+      "traits140": 0,
+      "compression150Null": true
+    },
+    "originalTargetExecuted": false,
+    "scope": "Exact owned-process callback, symbol and byte identity. Full direct comparator still requires implementation."
+  },
+  "activeInputs": {
+    "CharacterUnits": 65536,
+    "ExpansionPairs": 730,
+    "WeightSha256": "42ef9f244f091136a6a94ddf747b3d13e4cb1bf7b8367956abcdf0bb42affba0",
+    "ExpansionSha256": "9d68be72650078da8ea7e72785b37abc8ffaaa87fcdd4f8ae507d0dcf258aa3e"
+  },
+  "sourceRawWeightBytes": 262144,
+  "sourceOrderedExpansionBytes": 2920,
+  "publicSource": "https://www.microsoft.com/en-us/download/details.aspx?id=10921",
+  "publicSourceSha256": "f0bab873ed8901ae17afc4848c7d9e0a7de4310942effb2b54b538411b26d542",
+  "reconstructedAllWeights": true,
+  "reconstructedAllOrderedExpansions": true,
+  "collector": {
+    "path": "native/Rendering/NlsDispatchReference/Program.cs",
+    "sha256": "175e8d3f12ee7bdf247956516b1ab687edef89961b28033654e83496d0e70a02"
+  },
+  "regions": "native/Analysis/fixtures/windows-nls-direct-regions.json",
+  "staticViews": [
+    {
+      "role": "nls-direct-fast",
+      "path": ".local/evidence/nls-engine/decompile-02/nls-direct-fast.c",
+      "sha256": "7edb7039d00c14b8f7dc785f1f8488e7cec759d58a2b9a39f3ef8fc46be56dc1",
+      "bytes": 16865,
+      "signature": "int FUN_180005c40(void * sort, uint flags, ushort * first, int firstCount, ushort * second, int secondCount)"
+    },
+    {
+      "role": "nls-direct-long",
+      "path": ".local/evidence/nls-engine/decompile-02/nls-direct-long.c",
+      "sha256": "d4a267c52ca4dbbf449b9acdcad8da4c052c025f317b22468e91b8592030c208",
+      "bytes": 118566,
+      "signature": "int Original_nls_direct_long(NlsCompareState * state)"
+    },
+    {
+      "role": "nls-old-hangul",
+      "path": ".local/evidence/nls-engine/decompile-02/nls-old-hangul.c",
+      "sha256": "5284389e24643c6923618d05d6c361aae8a374bbf90eb0bc5539aca3ccef989a",
+      "bytes": 1395,
+      "signature": "void Original_nls_old_hangul(void * caseMap, NlsStringState * state)"
+    },
+    {
+      "role": "nls-map-old-hangul",
+      "path": ".local/evidence/nls-engine/decompile-02/nls-map-old-hangul.c",
+      "sha256": "8999fbac8285105791ce52d1d46fb8f73e3fe6b6b2e3aa9fc442f31f5646a5b9",
+      "bytes": 5643,
+      "signature": "int Original_nls_map_old_hangul(void * caseMap, ushort * cursor, ushort * end, ushort * unicodeWeight, uchar * extra)"
+    }
+  ],
+  "limitations": [
+    "Native input provider only; full direct comparison engine not implemented.",
+    "Initial LongCompareString6-argument interpretation rejected; actual signature is one state pointer.",
+    "Fast wrapper cookie-check return model not accepted literally.",
+    "Ghidra analysis/system C remains ignored, not production source.",
+    "Original wrapper/CRT/ANSI/state/document/PC/physical acceptance remains open."
+  ],
+  "fullParityVerified": false
+}

@@ -31,6 +31,12 @@ on:
       - "native/Rendering/FilenameReference/**"
       - "native/Rendering/NlsLowerReference/**"
       - "native/Rendering/NlsSortReference/**"
+      - "native/Rendering/NlsDispatchReference/**"
+      - "scripts/prepare-nls-comparison-inputs.cjs"
+      - "scripts/verify-nls-comparison-inputs.cjs"
+      - "tests/nls-comparison-inputs.test.cjs"
+      - "tests/Port/Geometry.Candidate.Contracts/NlsComparisonInputAssertions.cs"
+      - "native/Analysis/fixtures/windows-nls-direct-regions.json"
       - "scripts/acquire-nls-sort-sources.cjs"
       - "scripts/compact-nls-sort-reference.cjs"
       - "scripts/prepare-nls-sort-weights.cjs"
@@ -284,6 +290,10 @@ jobs:
         run: |
           node --test tests/nls-sort-reference.test.cjs > artifacts/unicode-nls-sort-reference-checks.txt
           node scripts/verify-nls-sort-reference.cjs > artifacts/unicode-nls-sort-reference.json
+      - name: Verify complete active-native comparison inputs
+        run: |
+          node --test tests/nls-comparison-inputs.test.cjs > artifacts/nls-comparison-input-checks.txt
+          node scripts/verify-nls-comparison-inputs.cjs > artifacts/nls-comparison-inputs.json
       - name: Compile real Metal binding library
         run: |
           mkdir -p artifacts

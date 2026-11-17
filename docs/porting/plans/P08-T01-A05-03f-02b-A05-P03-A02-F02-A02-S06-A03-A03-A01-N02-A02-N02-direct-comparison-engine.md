@@ -1,0 +1,7 @@
+# P08-T01-A05-03f-02b-A05-P03-A02-F02-A02-S06-A03-A03-A01-N02-A02-N02 full offline direct NLS1 comparison engine
+
+UI-039; inpute5f8bcec2f07b5b00acc52e666e9cd08cdf410d7. Implement direct CompareStringW(1,0x20001), not sort-key ordering (213 native disagreements). Retain all original UTF16/C-terminator/empty/CRT/ANSI/state/document acceptance in parent. Trace exact current public Windows dispatch/algorithm and table owners before porting. Original vendor binaries remain static-only; owned Windows API probes/static system analysis are allowed. No source/ordinary-character subset or prerecorded-name lookup substitutes for the complete engine.
+
+Capture module/code/PDB identity, explicit ABI and complete function regions. Define direct native corpus RED first, then implement the full managed algorithm and test complete keys/40663 comparisons plus targeted new branch controls on Windows/macOS and both simulator families. Missing branches remain open, never guessed. All local tools/cache/output D; owner GitHub plugin only.
+
+A01: identify live callback and fixed-profile context, recover full native state layouts, reconstruct all default weights/ordered expansions from public data and implement the portable input provider with exhaustive native-byte verification. A02: implement the complete direct state machine and Jamo/extra-weight helpers against native comparisons. A03: source wrapper/fallback/state/document integration. No input-provider result closes this full engine.

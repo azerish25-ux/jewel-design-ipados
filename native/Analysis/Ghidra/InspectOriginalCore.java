@@ -10,9 +10,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import com.google.gson.*;
 public class InspectOriginalCore extends RefineNativeCamera {
+ private final Map<String,DataType> explicitTypes=new LinkedHashMap<>();
  private DataType observedType(String name)throws Exception{
   if(name.endsWith("*"))return new PointerDataType(observedType(name.substring(0,name.length()-1)),currentProgram.getDataTypeManager());
-  switch(name){case "void":return VoidDataType.dataType;case "int":return IntegerDataType.dataType;case "uint":return UnsignedIntegerDataType.dataType;case "byte":return UnsignedCharDataType.dataType;case "float":return FloatDataType.dataType;case "double":return DoubleDataType.dataType;default:throw new Exception("Unknown explicit external ABI type "+name);}
+  if(explicitTypes.containsKey(name))return explicitTypes.get(name);
+  switch(name){case "void":return VoidDataType.dataType;case "int":return IntegerDataType.dataType;case "uint":return UnsignedIntegerDataType.dataType;case "ushort":return UnsignedShortDataType.dataType;case "ulong":return UnsignedLongLongDataType.dataType;case "byte":return UnsignedCharDataType.dataType;case "float":return FloatDataType.dataType;case "double":return DoubleDataType.dataType;default:throw new Exception("Unknown explicit external ABI type "+name);}
  }
  @Override public void run()throws Exception{
   String[] args=getScriptArgs();if(args.length!=3)throw new Exception("Expected manifest, output folder and root");
@@ -28,9 +30,19 @@ public class InspectOriginalCore extends RefineNativeCamera {
   try{
    List<Function> functions=new ArrayList<>();Map<Address,Function> called=new LinkedHashMap<>();
    for(JsonElement element:manifest.getAsJsonArray("functions"))functions.add(region(element.getAsJsonObject()));
-   shape("ON_3dPoint",3);shape("ON_3dVector",3);shape("ON_Xform",16);
+
+   if(manifest.has("structures")){
+    for(JsonElement element:manifest.getAsJsonArray("structures")){JsonObject spec=element.getAsJsonObject();explicitTypes.put(spec.get("name").getAsString(),new StructureDataType(new CategoryPath("/ExplicitNative"),spec.get("name").getAsString(),spec.get("length").getAsInt()));}
+    for(JsonElement element:manifest.getAsJsonArray("structures")){JsonObject spec=element.getAsJsonObject();Structure structure=(Structure)explicitTypes.get(spec.get("name").getAsString());for(JsonElement fieldElement:spec.getAsJsonArray("fields")){JsonObject field=fieldElement.getAsJsonObject();DataType type=observedType(field.get("type").getAsString());structure.replaceAtOffset(field.get("offset").getAsInt(),type,type.getLength(),field.get("name").getAsString(),null);}explicitTypes.put(spec.get("name").getAsString(),currentProgram.getDataTypeManager().addDataType(structure,DataTypeConflictHandler.REPLACE_HANDLER));}
+   }
+shape("ON_3dPoint",3);shape("ON_3dVector",3);shape("ON_Xform",16);
    for(int i=0;i<functions.size();i++){
     JsonObject spec=manifest.getAsJsonArray("functions").get(i).getAsJsonObject();Function function=functions.get(i);
+    if(spec.has("signature")&&!spec.get("signature").isJsonNull()){
+     JsonObject signature=spec.getAsJsonObject("signature");List<Variable> parameters=new ArrayList<>();
+     for(JsonElement element:signature.getAsJsonArray("parameters")){JsonObject parameter=element.getAsJsonObject();parameters.add(new ParameterImpl(parameter.get("name").getAsString(),observedType(parameter.get("type").getAsString()),currentProgram));}
+     function.updateFunction("__fastcall",new ReturnParameterImpl(observedType(signature.get("returnType").getAsString()),currentProgram),parameters,Function.FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS,true,SourceType.USER_DEFINED);continue;
+    }
     if(spec.has("name")&&!spec.get("name").isJsonNull())signatures.add(demangle(function,spec.get("name").getAsString()));
     else {
      String abi=spec.get("abi").getAsString();if(abi.equals("preserve"))continue;List<Variable> parameters=new ArrayList<>();

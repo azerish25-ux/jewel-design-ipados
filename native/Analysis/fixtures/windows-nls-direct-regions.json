@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "targetSha256": "e132eba4166256e2f414b91fe7d5386590bc5ea8626aee5af9c9738383cf2ae1",
+  "functions": [
+    {
+      "role": "nls-direct-fast",
+      "name": null,
+      "abi": "explicit",
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "sort",
+            "type": "void*"
+          },
+          {
+            "name": "flags",
+            "type": "uint"
+          },
+          {
+            "name": "first",
+            "type": "ushort*"
+          },
+          {
+            "name": "firstCount",
+            "type": "int"
+          },
+          {
+            "name": "second",
+            "type": "ushort*"
+          },
+          {
+            "name": "secondCount",
+            "type": "int"
+          }
+        ]
+      },
+      "rva": 23616,
+      "length": 2669,
+      "sha256": "dcaca807d38418af5019edd1c6a91199139f062a147980eb203a58dcdd98bb56",
+      "unwindRegions": [
+        {
+          "begin": 23616,
+          "end": 23807,
+          "unwind": 657936
+        },
+        {
+          "begin": 23807,
+          "end": 24162,
+          "unwind": 657968
+        },
+        {
+          "begin": 24162,
+          "end": 24174,
+          "unwind": 657988
+        },
+        {
+          "begin": 24174,
+          "end": 24235,
+          "unwind": 658004
+        },
+        {
+          "begin": 24235,
+          "end": 24266,
+          "unwind": 658024
+        },
+        {
+          "begin": 24266,
+          "end": 26092,
+          "unwind": 658040
+        },
+        {
+          "begin": 26092,
+          "end": 26116,
+          "unwind": 658060
+        },
+        {
+          "begin": 26116,
+          "end": 26261,
+          "unwind": 658076
+        },
+        {
+          "begin": 26261,
+          "end": 26285,
+          "unwind": 658096
+        }
+      ]
+    },
+    {
+      "role": "nls-direct-long",
+      "name": null,
+      "abi": "explicit",
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "state",
+            "type": "NlsCompareState*"
+          }
+        ]
+      },
+      "rva": 26304,
+      "length": 17960,
+      "sha256": "735bf95565da2b6577eae3d3f541efb4030d26b24d9f45d0abb687b5a540ebaf",
+      "unwindRegions": [
+        {
+          "begin": 26304,
+          "end": 44264,
+          "unwind": 658112
+        }
+      ]
+    },
+    {
+      "role": "nls-old-hangul",
+      "name": null,
+      "abi": "explicit",
+      "signature": {
+        "returnType": "void",
+        "parameters": [
+          {
+            "name": "caseMap",
+            "type": "void*"
+          },
+          {
+            "name": "state",
+            "type": "NlsStringState*"
+          }
+        ]
+      },
+      "rva": 76584,
+      "length": 200,
+      "sha256": "86d880b2b3b91c64266e741994639b3552933489e4fa49eda76b48a44329d3fe",
+      "unwindRegions": [
+        {
+          "begin": 76584,
+          "end": 76784,
+          "unwind": 659872
+        }
+      ]
+    },
+    {
+      "role": "nls-map-old-hangul",
+      "name": null,
+      "abi": "explicit",
+      "signature": {
+        "returnType": "int",
+        "parameters": [
+          {
+            "name": "caseMap",
+            "type": "void*"
+          },
+          {
+            "name": "cursor",
+            "type": "ushort*"
+          },
+          {
+            "name": "end",
+            "type": "ushort*"
+          },
+          {
+            "name": "unicodeWeight",
+            "type": "ushort*"
+          },
+          {
+            "name": "extra",
+            "type": "byte*"
+          }
+        ]
+      },
+      "rva": 76792,
+      "length": 1048,
+      "sha256": "f4a7b2208dbf5501685e650f9a71fc238dd55be69bc7f5ed4b2c798401439d9c",
+      "unwindRegions": [
+        {
+          "begin": 76792,
+          "end": 77840,
+          "unwind": 659888
+        }
+      ]
+    }
+  ],
+  "structures": [
+    {
+      "name": "NlsStringState",
+      "length": 48,
+      "fields": [
+        {
+          "name": "start",
+          "offset": 0,
+          "type": "ushort*"
+        },
+        {
+          "name": "end",
+          "offset": 8,
+          "type": "ushort*"
+        },
+        {
+          "name": "stopAtNul",
+          "offset": 16,
+          "type": "uint"
+        },
+        {
+          "name": "cursor",
+          "offset": 24,
+          "type": "ushort*"
+        },
+        {
+          "name": "pendingExpansion",
+          "offset": 32,
+          "type": "uint"
+        },
+        {
+          "name": "weight",
+          "offset": 36,
+          "type": "uint"
+        },
+        {
+          "name": "expansionUnit",
+          "offset": 40,
+          "type": "ushort"
+        },
+        {
+          "name": "currentUnit",
+          "offset": 42,
+          "type": "ushort"
+        },
+        {
+          "name": "jamoExtra",
+          "offset": 44,
+          "type": "uint"
+        }
+      ]
+    },
+    {
+      "name": "NlsSortNode",
+      "length": 400,
+      "fields": [
+        {
+          "name": "caseMap130",
+          "offset": 304,
+          "type": "void*"
+        },
+        {
+          "name": "caseMap138",
+          "offset": 312,
+          "type": "void*"
+        },
+        {
+          "name": "traits",
+          "offset": 320,
+          "type": "uint"
+        },
+        {
+          "name": "compression",
+          "offset": 336,
+          "type": "void*"
+        }
+      ]
+    },
+    {
+      "name": "NlsCompareState",
+      "length": 176,
+      "fields": [
+        {
+          "name": "node",
+          "offset": 0,
+          "type": "NlsSortNode*"
+        },
+        {
+          "name": "caseMap",
+          "offset": 8,
+          "type": "void*"
+        },
+        {
+          "name": "mode10",
+          "offset": 16,
+          "type": "uint"
+        },
+        {
+          "name": "mode14",
+          "offset": 20,
+          "type": "uint"
+        },
+        {
+          "name": "mode18",
+          "offset": 24,
+          "type": "uint"
+        },
+        {
+          "name": "mode1c",
+          "offset": 28,
+          "type": "uint"
+        },
+        {
+          "name": "mode20",
+          "offset": 32,
+          "type": "uint"
+        },
+        {
+          "name": "mode24",
+          "offset": 36,
+          "type": "uint"
+        },
+        {
+          "name": "mode28",
+          "offset": 40,
+          "type": "uint"
+        },
+        {
+          "name": "mode2c",
+          "offset": 44,
+          "type": "uint"
+        },
+        {
+          "name": "mode30",
+          "offset": 48,
+          "type": "uint"
+        },
+        {
+          "name": "mode34",
+          "offset": 52,
+          "type": "uint"
+        },
+        {
+          "name": "mode38",
+          "offset": 56,
+          "type": "uint"
+        },
+        {
+          "name": "mode3c",
+          "offset": 60,
+          "type": "uint"
+        },
+        {
+          "name": "first",
+          "offset": 64,
+          "type": "NlsStringState"
+        },
+        {
+          "name": "second",
+          "offset": 112,
+          "type": "NlsStringState"
+        },
+        {
+          "name": "extraMask",
+          "offset": 160,
+          "type": "uint"
+        },
+        {
+          "name": "caseResult",
+          "offset": 164,
+          "type": "uint"
+        },
+        {
+          "name": "punctResult",
+          "offset": 168,
+          "type": "uint"
+        }
+      ]
+    }
+  ]
+}

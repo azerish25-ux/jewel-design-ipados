@@ -51,3 +51,5 @@ System.Console.WriteLine(CandidateGeometryContractChecks.PreparedWallpaperAssert
 System.Console.WriteLine(CandidateGeometryContractChecks.ContextImageCacheAssertions.Run());
 
 System.Console.WriteLine(CandidateGeometryContractChecks.UnicodeNlsLowerAssertions.Run());
+
+System.Console.WriteLine(CandidateGeometryContractChecks.NlsComparisonInputAssertions.Run());
